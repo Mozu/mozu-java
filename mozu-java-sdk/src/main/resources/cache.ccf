@@ -1,0 +1,10 @@
+jcs.region.productDetailsCache=DC
+jcs.region.productDetailsCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.region.productDetailsCache.cacheattributes.MaxObjects=1000
+jcs.region.productDetailsCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+jcs.region.productDetailsCache.cacheattributes.ShrinkerIntervalSeconds=60
+jcs.region.productDetailsCache.cacheattributes.MaxSpoolPerRun=500
+jcs.region.productDetailsCache.elementattributes=org.apache.jcs.engine.ElementAttributes
+jcs.region.productDetailsCache.elementattributes.IsEternal=false
+jcs.region.productDetailsCache.cacheattributes.UseMemoryShrinker=true
+jcs.default=LTCP

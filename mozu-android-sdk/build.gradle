@@ -1,0 +1,69 @@
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android-library'
+
+sourceCompatibility = 1.6
+archivesBaseName='mozu-api-android'
+version = '1.7.0'
+group='com.mozu.api'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+repositories {
+    maven {
+          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public/"
+    }
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.0"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 19
+    }
+    release {
+        runProguard false
+        proguardFile getDefaultProguardFile('proguard-android.txt')
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:19.0.0'
+    compile 'com.android.support:gridlayout-v7:19.0.0'
+    compile 'com.android.support:appcompat-v7:19.0.0'
+
+    compile ("com.mozu.api:mozu-api-core:1.7.0") {
+        exclude group: 'mysql'
+        exclude group: 'xerces'
+        exclude group: 'berkeleydb'
+        exclude group: 'hsqldb'
+        exclude group: 'tomcat'
+        exclude group: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents'
+        
+        changing = true
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/releases/") {
+                authentication(userName: "deployment", password: "deployment123")
+             }
+       }
+    }
+}

@@ -1,0 +1,83 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.6
+
+archivesBaseName='MozuSample'
+version = '1.7.4'
+group='wars'
+httpPort = 8001 
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Mozu Sample Application', 'Implementation-Version': version
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+repositories {
+    maven {
+          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
+    }
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+	ext {
+		springVersion='3.2.4.RELEASE'
+	}	
+	providedCompile 'javax.servlet:servlet-api:2.5'
+	compile("javax.servlet:jstl:1.2")
+
+    compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-expression', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-test', version: springVersion
+
+	compile ("javax.servlet:servlet-api:2.5") 
+
+    compile ("com.mozu.api:mozu-api-java:1.7.4"){
+    	exclude group: 'mysql'
+    	exclude group: 'xerces'
+    	exclude group: 'berkeleydb'
+    	exclude group: 'hsqldb'
+    	exclude group: 'tomcat'
+    	
+    	changing = true
+    }
+	
+	compile ("org.slf4j:slf4j-api:1.7.5")
+	compile ("org.slf4j:slf4j-log4j12:1.7.5")
+	compile ('log4j:log4j:1.2.17')
+            
+            
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/releases/") {
+                authentication(userName: "deployment", password: "deployment123")
+             }
+       }
+    }
+}
