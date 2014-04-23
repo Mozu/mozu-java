@@ -24,6 +24,8 @@ public class WishlistResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public WishlistResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

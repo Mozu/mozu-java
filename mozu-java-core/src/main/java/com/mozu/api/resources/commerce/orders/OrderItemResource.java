@@ -24,6 +24,8 @@ public class OrderItemResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public OrderItemResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

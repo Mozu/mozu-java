@@ -24,6 +24,8 @@ public class TransactionResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public TransactionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

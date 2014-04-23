@@ -24,6 +24,8 @@ public class SubscriptionResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public SubscriptionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

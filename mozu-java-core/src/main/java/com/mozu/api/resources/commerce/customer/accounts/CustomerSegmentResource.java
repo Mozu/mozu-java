@@ -24,6 +24,8 @@ public class CustomerSegmentResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerSegmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

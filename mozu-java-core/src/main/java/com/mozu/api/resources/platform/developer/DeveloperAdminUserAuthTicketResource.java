@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class DeveloperAdminUserAuthTicketResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public DeveloperAdminUserAuthTicketResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public DeveloperAdminUserAuthTicketResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Generate an authentication ticket for a developer account.
@@ -52,6 +66,7 @@ public class DeveloperAdminUserAuthTicketResource {
 	public com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> client = com.mozu.api.clients.platform.developer.DeveloperAdminUserAuthTicketClient.createDeveloperUserAuthTicketClient( userAuthInfo,  developerAccountId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -88,6 +103,7 @@ public class DeveloperAdminUserAuthTicketResource {
 	public com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> client = com.mozu.api.clients.platform.developer.DeveloperAdminUserAuthTicketClient.refreshDeveloperAuthTicketClient( existingAuthTicket,  developerAccountId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -105,6 +121,7 @@ public class DeveloperAdminUserAuthTicketResource {
 	public void deleteUserAuthTicket(String refreshToken) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.platform.developer.DeveloperAdminUserAuthTicketClient.deleteUserAuthTicketClient( refreshToken);
+		client.setContext(_apiContext);
 		client.executeRequest();
 
 	}

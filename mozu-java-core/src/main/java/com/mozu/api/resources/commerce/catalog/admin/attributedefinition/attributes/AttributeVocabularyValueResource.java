@@ -24,6 +24,8 @@ public class AttributeVocabularyValueResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public AttributeVocabularyValueResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

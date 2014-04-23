@@ -21,32 +21,6 @@ public class RegularHours implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The Saturday label array describes the range of hours this location is normally open on Saturdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
-	 */
-	protected Hours saturday;
-
-	public Hours getSaturday() {
-		return this.saturday;
-	}
-
-	public void setSaturday(Hours saturday) {
-		this.saturday = saturday;
-	}
-
-	/**
-	 * The Sunday label array describes the range of hours this location is normally open on Sundays. For example: {"Label": "10:00 AM - 6:00 PM"}.
-	 */
-	protected Hours sunday;
-
-	public Hours getSunday() {
-		return this.sunday;
-	}
-
-	public void setSunday(Hours sunday) {
-		this.sunday = sunday;
-	}
-
-	/**
 	 * The Friday label array describes the range of hours this location is normally open on Fridays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
 	protected Hours friday;
@@ -70,6 +44,32 @@ public class RegularHours implements Serializable
 
 	public void setMonday(Hours monday) {
 		this.monday = monday;
+	}
+
+	/**
+	 * The Saturday label array describes the range of hours this location is normally open on Saturdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
+	 */
+	protected Hours saturday;
+
+	public Hours getSaturday() {
+		return this.saturday;
+	}
+
+	public void setSaturday(Hours saturday) {
+		this.saturday = saturday;
+	}
+
+	/**
+	 * The Sunday label array describes the range of hours this location is normally open on Sundays. For example: {"Label": "10:00 AM - 6:00 PM"}.
+	 */
+	protected Hours sunday;
+
+	public Hours getSunday() {
+		return this.sunday;
+	}
+
+	public void setSunday(Hours sunday) {
+		this.sunday = sunday;
 	}
 
 	/**

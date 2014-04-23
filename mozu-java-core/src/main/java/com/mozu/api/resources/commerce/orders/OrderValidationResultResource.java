@@ -24,6 +24,8 @@ public class OrderValidationResultResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public OrderValidationResultResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

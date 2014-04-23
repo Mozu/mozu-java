@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class EventNotificationResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public EventNotificationResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public EventNotificationResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Retrieves a list of events.
@@ -51,6 +65,7 @@ public class EventNotificationResource {
 	public com.mozu.api.contracts.event.EventCollection getEvents(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.event.EventCollection> client = com.mozu.api.clients.event.EventNotificationClient.getEventsClient( startIndex,  pageSize,  sortBy,  filter);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -69,6 +84,7 @@ public class EventNotificationResource {
 	public com.mozu.api.contracts.event.Event getEvent(String eventId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.event.Event> client = com.mozu.api.clients.event.EventNotificationClient.getEventClient( eventId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 

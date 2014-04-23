@@ -24,6 +24,8 @@ public class PackageResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

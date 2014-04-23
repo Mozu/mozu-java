@@ -24,6 +24,8 @@ public class CustomerSegmentResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerSegmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
@@ -110,11 +112,12 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.AddSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
-	 * @param accountIds 
 	 * @param id 
+	 * @param accountIds 
 	 * @return 
+	 * @see int
 	 */
-	public void addSegmentAccounts(Integer accountIds, Integer id) throws Exception
+	public void addSegmentAccounts(List<Integer> accountIds, Integer id) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.addSegmentAccountsClient( accountIds,  id);
 		client.setContext(_apiContext);
@@ -166,11 +169,12 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.DeleteSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
-	 * @param accountIds 
 	 * @param id 
+	 * @param accountIds 
 	 * @return 
+	 * @see int
 	 */
-	public void deleteSegmentAccounts(Integer accountIds, Integer id) throws Exception
+	public void deleteSegmentAccounts(List<Integer> accountIds, Integer id) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.deleteSegmentAccountsClient( accountIds,  id);
 		client.setContext(_apiContext);

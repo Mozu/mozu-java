@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class ApplicationVersionResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public ApplicationVersionResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public ApplicationVersionResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Retrieves the list of applications associated with the developer account scoped to the user claim specified in the request.
@@ -33,6 +47,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.ApplicationCollection getAllApplications() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.ApplicationCollection> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getAllApplicationsClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -65,6 +80,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.Application getApplication(Integer applicationId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.Application> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getApplicationClient( applicationId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -83,6 +99,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.ApplicationVersion getApplicationVersion(Integer applicationVersionId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.ApplicationVersion> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getApplicationVersionClient( applicationVersionId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -101,6 +118,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.PackageCollection getPackages(Integer applicationVersionId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.PackageCollection> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getPackagesClient( applicationVersionId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -120,6 +138,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.Package getPackage(Integer applicationVersionId, Integer packageId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getPackageClient( applicationVersionId,  packageId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -139,6 +158,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.FolderMetadata getPackageItemsMetadata(Integer applicationVersionId, Integer packageId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getPackageItemsMetadataClient( applicationVersionId,  packageId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -159,6 +179,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.FileMetadata getPackageItemMetadata(Integer applicationVersionId, Integer packageId, String itempath) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getPackageItemMetadataClient( applicationVersionId,  packageId,  itempath);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -178,6 +199,7 @@ public class ApplicationVersionResource {
 	public java.io.InputStream getPackageFilesZip(Integer applicationVersionId, Integer packageId) throws Exception
 	{
 		MozuClient<java.io.InputStream> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.getPackageFilesZipClient( applicationVersionId,  packageId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -198,6 +220,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.Package addPackage(com.mozu.api.contracts.appdev.Package pkg, Integer applicationVersionId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.Package> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.addPackageClient( pkg,  applicationVersionId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -219,6 +242,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.FileMetadata changePackageFileNameOrPath(com.mozu.api.contracts.appdev.RenameInfo renameInfo, Integer applicationVersionId, Integer packageId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.changePackageFileNameOrPathClient( renameInfo,  applicationVersionId,  packageId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -241,6 +265,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.FileMetadata addPackageFile(java.io.InputStream stream, Integer applicationVersionId, Integer packageId, String filepath, String  contentType) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.addPackageFileClient( stream,  applicationVersionId,  packageId,  filepath,  contentType);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -263,6 +288,7 @@ public class ApplicationVersionResource {
 	public com.mozu.api.contracts.appdev.FileMetadata updatePackageFile(java.io.InputStream stream, Integer applicationVersionId, Integer packageId, String filepath, String  contentType) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.updatePackageFileClient( stream,  applicationVersionId,  packageId,  filepath,  contentType);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -282,6 +308,7 @@ public class ApplicationVersionResource {
 	public void deletePackageFile(Integer applicationVersionId, Integer packageId, String filepath) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.platform.developer.ApplicationVersionClient.deletePackageFileClient( applicationVersionId,  packageId,  filepath);
+		client.setContext(_apiContext);
 		client.executeRequest();
 
 	}

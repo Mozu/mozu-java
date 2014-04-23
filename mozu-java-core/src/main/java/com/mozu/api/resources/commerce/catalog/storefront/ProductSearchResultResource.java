@@ -24,6 +24,8 @@ public class ProductSearchResultResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ProductSearchResultResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

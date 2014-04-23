@@ -24,6 +24,8 @@ public class CardResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CardResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

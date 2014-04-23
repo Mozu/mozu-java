@@ -24,6 +24,8 @@ public class CustomerNoteResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerNoteResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

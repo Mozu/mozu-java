@@ -24,6 +24,8 @@ public class VisitResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public VisitResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

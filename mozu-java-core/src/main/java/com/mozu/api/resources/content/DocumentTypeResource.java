@@ -24,6 +24,8 @@ public class DocumentTypeResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public DocumentTypeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

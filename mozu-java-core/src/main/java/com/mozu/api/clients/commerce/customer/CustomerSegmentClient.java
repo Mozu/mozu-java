@@ -120,17 +120,19 @@ public class CustomerSegmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountIds 
 	 * @param id 
+	 * @param accountIds 
 	 * @return Mozu.Api.MozuClient 
+	 * @see int
 	 */
-	public static MozuClient addSegmentAccountsClient(Integer accountIds, Integer id) throws Exception
+	public static MozuClient addSegmentAccountsClient(List<Integer> accountIds, Integer id) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentAccountsUrl(accountIds, id);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentAccountsUrl(id);
 		String verb = "POST";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(accountIds);
 		return mozuClient;
 
 	}
@@ -190,17 +192,19 @@ public class CustomerSegmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountIds 
 	 * @param id 
+	 * @param accountIds 
 	 * @return Mozu.Api.MozuClient 
+	 * @see int
 	 */
-	public static MozuClient deleteSegmentAccountsClient(Integer accountIds, Integer id) throws Exception
+	public static MozuClient deleteSegmentAccountsClient(List<Integer> accountIds, Integer id) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.deleteSegmentAccountsUrl(accountIds, id);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.deleteSegmentAccountsUrl(id);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(accountIds);
 		return mozuClient;
 
 	}

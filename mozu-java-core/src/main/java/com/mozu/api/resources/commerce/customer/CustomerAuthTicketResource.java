@@ -24,11 +24,31 @@ public class CustomerAuthTicketResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerAuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
 	
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
+	 *	Stream stream = customerauthticket.CreateAnonymousShopperAuthTicket();
+	 * </code></pre></p>
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream createAnonymousShopperAuthTicket() throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createAnonymousShopperAuthTicketClient();
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
 	/**
 	 * 
 	 * <p><pre><code>

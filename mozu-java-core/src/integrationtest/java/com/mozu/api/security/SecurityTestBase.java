@@ -17,7 +17,6 @@ public class SecurityTestBase {
     static public final int TENANT_ID = ConfigProperties.getIntProperty("tenant.id");
     
     static public final String USER_DEVELOPER = ConfigProperties.getStringProperty("username.developer");
-    static public final String USER_SHOPPER = ConfigProperties.getStringProperty("username.shopper");
     static public final String USER_TENANT = ConfigProperties.getStringProperty("username.tenant");
     static public final String PASSWORD = ConfigProperties.getStringProperty("password");
 

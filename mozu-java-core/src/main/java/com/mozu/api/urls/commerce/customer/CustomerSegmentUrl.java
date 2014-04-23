@@ -55,14 +55,12 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for AddSegmentAccounts
-	 * @param accountIds 
 	 * @param id 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addSegmentAccountsUrl(Integer accountIds, Integer id)
+	public static MozuUrl addSegmentAccountsUrl(Integer id)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}/accounts");
-		formatter.formatUrl("accountIds", accountIds);
 		formatter.formatUrl("id", id);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -93,14 +91,12 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for DeleteSegmentAccounts
-	 * @param accountIds 
 	 * @param id 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteSegmentAccountsUrl(Integer accountIds, Integer id)
+	public static MozuUrl deleteSegmentAccountsUrl(Integer id)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}/accounts");
-		formatter.formatUrl("accountIds", accountIds);
 		formatter.formatUrl("id", id);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

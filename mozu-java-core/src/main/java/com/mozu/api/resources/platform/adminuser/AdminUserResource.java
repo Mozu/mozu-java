@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class AdminUserResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public AdminUserResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public AdminUserResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Retrieves the details of the specified administrator user account.
@@ -34,6 +48,7 @@ public class AdminUserResource {
 	public com.mozu.api.contracts.core.User getUser(String userId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserClient( userId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -52,6 +67,7 @@ public class AdminUserResource {
 	public com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(String userId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.tenant.TenantCollection> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getTenantScopesForUserClient( userId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 

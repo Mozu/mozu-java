@@ -24,6 +24,8 @@ public class AdjustmentResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public AdjustmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

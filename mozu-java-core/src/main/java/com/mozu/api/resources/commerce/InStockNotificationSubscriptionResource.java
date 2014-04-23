@@ -24,6 +24,8 @@ public class InStockNotificationSubscriptionResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public InStockNotificationSubscriptionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

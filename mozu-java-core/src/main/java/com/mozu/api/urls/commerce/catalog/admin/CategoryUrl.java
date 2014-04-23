@@ -57,11 +57,13 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for AddCategory
+	 * @param incrementSequence 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addCategoryUrl()
+	public static MozuUrl addCategoryUrl(Boolean incrementSequence)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/?incrementSequence={incrementSequence}");
+		formatter.formatUrl("incrementSequence", incrementSequence);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

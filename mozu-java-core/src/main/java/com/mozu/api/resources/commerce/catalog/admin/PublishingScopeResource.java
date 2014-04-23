@@ -24,6 +24,8 @@ public class PublishingScopeResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public PublishingScopeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

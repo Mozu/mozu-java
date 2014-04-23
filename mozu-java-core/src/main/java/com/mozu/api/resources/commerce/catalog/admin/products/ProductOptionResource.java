@@ -24,6 +24,8 @@ public class ProductOptionResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ProductOptionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

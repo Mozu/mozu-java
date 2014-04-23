@@ -24,6 +24,8 @@ public class LocationInventoryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public LocationInventoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

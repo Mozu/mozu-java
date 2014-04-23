@@ -24,6 +24,8 @@ public class DocumentDraftSummaryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public DocumentDraftSummaryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

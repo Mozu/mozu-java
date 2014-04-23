@@ -32,7 +32,7 @@ public class UrlFormatter {
     {
 	    String encodedValue = null;
         try {
-            encodedValue = URLEncoder.encode(String.valueOf(value), "UTF-8");
+            encodedValue = URLEncoder.encode(String.valueOf(value), "UTF-8").replace("+", "%20");
         } catch (UnsupportedEncodingException uee) {
             throw new ApiException("Bad encoding of URL" + uee.getMessage());
         }

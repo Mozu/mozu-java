@@ -129,7 +129,26 @@ public class CategoryClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Category> addCategoryClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.addCategoryUrl();
+		return addCategoryClient(dataViewMode,  category,  null);
+	}
+
+	/**
+	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient(dataViewMode,  category,  incrementSequence);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Category category = client.Result();
+	 * </code></pre></p>
+	 * @param incrementSequence 
+	 * @param category Properties of the new category. Required properties: ParentCategoryID and Content.Name.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
+	 * @see com.mozu.api.contracts.productadmin.Category
+	 * @see com.mozu.api.contracts.productadmin.Category
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Category> addCategoryClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.addCategoryUrl(incrementSequence);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Category.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient = new MozuClient(clz);

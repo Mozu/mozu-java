@@ -28,6 +28,19 @@ public class Location implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * User-defined code to assign to this location.
+	 */
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
 	 * User-defined description of this location.
 	 */
 	protected String description;
@@ -114,19 +127,6 @@ public class Location implements Serializable
 	}
 	public void setTags(List<String> tags) {
 		this.tags = tags;
-	}
-
-	/**
-	 * User-defined code to assign to this location.
-	 */
-	protected String code;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	/**

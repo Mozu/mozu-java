@@ -24,6 +24,8 @@ public class GeneralSettingsResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public GeneralSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

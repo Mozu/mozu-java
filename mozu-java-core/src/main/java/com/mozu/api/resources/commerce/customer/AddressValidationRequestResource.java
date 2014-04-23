@@ -24,6 +24,8 @@ public class AddressValidationRequestResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public AddressValidationRequestResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

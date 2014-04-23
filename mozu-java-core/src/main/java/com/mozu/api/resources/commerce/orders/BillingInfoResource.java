@@ -24,6 +24,8 @@ public class BillingInfoResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public BillingInfoResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

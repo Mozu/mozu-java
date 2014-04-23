@@ -24,6 +24,8 @@ public class EventDeliverySummaryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public EventDeliverySummaryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

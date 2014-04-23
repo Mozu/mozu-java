@@ -24,6 +24,8 @@ public class CartResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CartResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

@@ -22,6 +22,16 @@ public class ProductType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Integer masterCatalogId;
+
+	public Integer getMasterCatalogId() {
+		return this.masterCatalogId;
+	}
+
+	public void setMasterCatalogId(Integer masterCatalogId) {
+		this.masterCatalogId = masterCatalogId;
+	}
+
 	/**
 	 * Identifier of the entity.
 	 */
@@ -46,16 +56,6 @@ public class ProductType implements Serializable
 
 	public void setIsBaseProductType(Boolean isBaseProductType) {
 		this.isBaseProductType = isBaseProductType;
-	}
-
-	protected Integer masterCatalogId;
-
-	public Integer getMasterCatalogId() {
-		return this.masterCatalogId;
-	}
-
-	public void setMasterCatalogId(Integer masterCatalogId) {
-		this.masterCatalogId = masterCatalogId;
 	}
 
 	/**

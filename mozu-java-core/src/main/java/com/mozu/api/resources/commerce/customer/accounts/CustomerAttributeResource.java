@@ -24,6 +24,8 @@ public class CustomerAttributeResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerAttributeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

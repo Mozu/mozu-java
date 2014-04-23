@@ -13,7 +13,7 @@ apply plugin: 'android-library'
 
 sourceCompatibility = 1.6
 archivesBaseName='mozu-api-android'
-version = '1.7.0'
+version = '1.7.10'
 group='com.mozu.api'
 
 task wrapper(type: Wrapper) {
@@ -21,9 +21,8 @@ task wrapper(type: Wrapper) {
 }
 
 repositories {
-    maven {
-          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public/"
-    }
+    mavenCentral()
+    mavenLocal()
 }
 
 android {
@@ -45,7 +44,7 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:19.0.0'
     compile 'com.android.support:appcompat-v7:19.0.0'
 
-    compile ("com.mozu.api:mozu-api-core:1.7.0") {
+    compile ("com.mozu.api:mozu-api-core:1.7.10") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
@@ -55,15 +54,5 @@ dependencies {
         exclude group: 'org.apache.httpcomponents'
         
         changing = true
-    }
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/releases/") {
-                authentication(userName: "deployment", password: "deployment123")
-             }
-       }
     }
 }

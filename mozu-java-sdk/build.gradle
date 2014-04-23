@@ -5,7 +5,7 @@ apply plugin: 'maven'
 sourceCompatibility = 1.6
 
 archivesBaseName='mozu-api-java'
-version = '1.7.4'
+version = '1.7.10'
 group='com.mozu.api'
 
 jar {
@@ -15,18 +15,17 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.8'
+    gradleVersion = '1.11'
 }
 
 repositories {
-    maven {
-          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public/"
-    }
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
 
-    compile ("com.mozu.api:mozu-api-core:1.7.4") {
+    compile ("com.mozu.api:mozu-api-core:1.7.10") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
@@ -58,14 +57,4 @@ task javadocJar(type: Jar) {
 artifacts {
     archives sourcesJar
     archives javadocJar
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/releases/") {
-                authentication(userName: "deployment", password: "deployment123")
-             }
-       }
-    }
 }

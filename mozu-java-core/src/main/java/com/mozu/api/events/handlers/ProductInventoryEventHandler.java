@@ -13,6 +13,8 @@ import com.mozu.api.events.model.EventHandlerStatus;
 
 public interface ProductInventoryEventHandler {
 
+		public EventHandlerStatus instock(ApiContext apiContext, Event event);
+		public EventHandlerStatus outofstock(ApiContext apiContext, Event event);
 		public EventHandlerStatus updated(ApiContext apiContext, Event event);
 
 }

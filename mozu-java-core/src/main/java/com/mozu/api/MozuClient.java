@@ -56,22 +56,23 @@ public class MozuClient<TResult> {
     public void setContext(ApiContext apiContext) {
         this.apiContext = apiContext;
 
-        if (apiContext.getTenantId() > 0) {
-            addHeader(Headers.X_VOL_TENANT, String.valueOf(apiContext.getTenantId()));
+        if (apiContext != null) {
+            if (apiContext.getTenantId() > 0) {
+                addHeader(Headers.X_VOL_TENANT, String.valueOf(apiContext.getTenantId()));
+            }
+    
+            if (apiContext.getSiteId() != null && apiContext.getSiteId() > 0) {
+                addHeader(Headers.X_VOL_SITE, String.valueOf(apiContext.getSiteId()));
+            }
+    
+            if (apiContext.getMasterCatalogId() != null && apiContext.getMasterCatalogId() > 0) {
+                addHeader(Headers.X_VOL_MASTER_CATALOG, String.valueOf(apiContext.getMasterCatalogId()));
+            }
+    
+            if (apiContext.getCatalogId() != null && apiContext.getCatalogId() > 0) {
+                addHeader(Headers.X_VOL_CATALOG, String.valueOf(apiContext.getCatalogId()));
+            }
         }
-
-        if (apiContext.getSiteId() != null && apiContext.getSiteId() > 0) {
-            addHeader(Headers.X_VOL_SITE, String.valueOf(apiContext.getSiteId()));
-        }
-
-        if (apiContext.getMasterCatalogId() != null && apiContext.getMasterCatalogId() > 0) {
-            addHeader(Headers.X_VOL_MASTER_CATALOG, String.valueOf(apiContext.getMasterCatalogId()));
-        }
-
-        if (apiContext.getCatalogId() != null && apiContext.getCatalogId() > 0) {
-            addHeader(Headers.X_VOL_CATALOG, String.valueOf(apiContext.getCatalogId()));
-        }
-
     }
 
     public void setBaseAddress(String baseAddress) {
@@ -130,7 +131,7 @@ public class MozuClient<TResult> {
 
     protected void validateContext() throws Exception {
         if (resourceUrl.getLocation() == MozuUrl.UrlLocation.TENANT_POD) {
-            if (apiContext.getTenantId() <= 0)
+            if (apiContext == null || apiContext.getTenantId() <= 0)
                 throw new ApiException("TenantId is missing");
 
             if (StringUtils.isBlank(apiContext.getTenantUrl())) {

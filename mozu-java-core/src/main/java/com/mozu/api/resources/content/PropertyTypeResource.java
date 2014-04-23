@@ -24,6 +24,8 @@ public class PropertyTypeResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public PropertyTypeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import mockit.Expectations;
-import mockit.Mock;
-import mockit.MockUp;
 import mockit.Mocked;
 
 import org.joda.time.DateTime;
@@ -18,9 +16,10 @@ import org.junit.Test;
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
-import com.mozu.api.utils.ConfigProperties;
 
 public class CryptoTest {
+	private static final String TEST_SHARED_SECRET = "bc0aa4944cc74341b59ba2fc01666571";
+	
     @Test
     public void testCryptoHash () {
         String body = "This is the body...blah, blah, blah";
@@ -47,7 +46,7 @@ public class CryptoTest {
                 AppAuthenticator.getInstance(); returns(appAuth);
                 appAuth.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
-            { mockAppAuthInfo.getSharedSecret(); returns(ConfigProperties.getStringProperty(ConfigProperties.SHARED_SECRET)); }
+            { mockAppAuthInfo.getSharedSecret(); returns(TEST_SHARED_SECRET); }
         }; 
         
         String body = "This is a test of the crypto validation";
@@ -62,8 +61,7 @@ public class CryptoTest {
         System.out.println(dateString);
 
         apiContext.setHeaderDate(dateString);
-        String hmacSha256 = Crypto.getHash(ConfigProperties
-                .getStringProperty(ConfigProperties.SHARED_SECRET), dateString, body);
+        String hmacSha256 = Crypto.getHash(TEST_SHARED_SECRET, dateString, body);
         apiContext.setHmacSha256(hmacSha256);
         
         assertTrue(Crypto.isRequestValid(apiContext, body));
@@ -79,7 +77,7 @@ public class CryptoTest {
                 AppAuthenticator.getInstance(); returns(appAuth);
                 appAuth.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
-            { mockAppAuthInfo.getSharedSecret(); returns(ConfigProperties.getStringProperty(ConfigProperties.SHARED_SECRET)); }
+            { mockAppAuthInfo.getSharedSecret(); returns(TEST_SHARED_SECRET); }
         }; 
         
         String body = "This is a test of the crypto validation";
@@ -93,8 +91,7 @@ public class CryptoTest {
         String dateString = sdf.format(new Date(cur));
 
         apiContext.setHeaderDate(dateString);
-        String hmacSha256 = Crypto.getHash(ConfigProperties
-                .getStringProperty(ConfigProperties.SHARED_SECRET), dateString, body);
+        String hmacSha256 = Crypto.getHash(TEST_SHARED_SECRET, dateString, body);
         apiContext.setHmacSha256(hmacSha256);
         
         assertFalse(Crypto.isRequestValid(apiContext, body));

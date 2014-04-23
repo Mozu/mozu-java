@@ -24,6 +24,8 @@ public class TenantDataResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public TenantDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

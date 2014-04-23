@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class TenantAdminUserAuthTicketResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public TenantAdminUserAuthTicketResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public TenantAdminUserAuthTicketResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
@@ -52,6 +66,7 @@ public class TenantAdminUserAuthTicketResource {
 	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.createUserAuthTicketClient( userAuthInfo,  tenantId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -88,6 +103,7 @@ public class TenantAdminUserAuthTicketResource {
 	public com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket refreshAuthTicket(com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, Integer tenantId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.refreshAuthTicketClient( existingAuthTicket,  tenantId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -105,6 +121,7 @@ public class TenantAdminUserAuthTicketResource {
 	public void deleteUserAuthTicket(String refreshToken) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.deleteUserAuthTicketClient( refreshToken);
+		client.setContext(_apiContext);
 		client.executeRequest();
 
 	}

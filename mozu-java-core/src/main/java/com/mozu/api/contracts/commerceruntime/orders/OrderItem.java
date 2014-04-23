@@ -26,19 +26,6 @@ public class OrderItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Total amount of shipping fees associated with the specified item in the order.
-	 */
-	protected Double shippingTotal;
-
-	public Double getShippingTotal() {
-		return this.shippingTotal;
-	}
-
-	public void setShippingTotal(Double shippingTotal) {
-		this.shippingTotal = shippingTotal;
-	}
-
-	/**
 	 * The subtotal of the order item including any applied discount calculations.
 	 */
 	protected Double discountedTotal;
@@ -218,6 +205,19 @@ public class OrderItem implements Serializable
 
 	public void setShippingTaxTotal(Double shippingTaxTotal) {
 		this.shippingTaxTotal = shippingTaxTotal;
+	}
+
+	/**
+	 * Total amount of shipping fees associated with the specified item in the order.
+	 */
+	protected Double shippingTotal;
+
+	public Double getShippingTotal() {
+		return this.shippingTotal;
+	}
+
+	public void setShippingTotal(Double shippingTotal) {
+		this.shippingTotal = shippingTotal;
 	}
 
 	/**

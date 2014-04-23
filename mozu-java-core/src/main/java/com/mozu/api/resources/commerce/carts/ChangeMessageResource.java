@@ -24,6 +24,8 @@ public class ChangeMessageResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ChangeMessageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

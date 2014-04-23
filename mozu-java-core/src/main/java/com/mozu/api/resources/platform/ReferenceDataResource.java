@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class ReferenceDataResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public ReferenceDataResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public ReferenceDataResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
@@ -48,6 +62,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.AddressSchema getAddressSchema(String countryCode) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.AddressSchema> client = com.mozu.api.clients.platform.ReferenceDataClient.getAddressSchemaClient( countryCode);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -65,6 +80,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.AddressSchemaCollection getAddressSchemas() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.AddressSchemaCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getAddressSchemasClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -83,6 +99,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.core.Behavior getBehavior(Integer behaviorId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.Behavior> client = com.mozu.api.clients.platform.ReferenceDataClient.getBehaviorClient( behaviorId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -100,6 +117,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.core.BehaviorCategoryCollection getBehaviorCategories() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getBehaviorCategoriesClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -118,6 +136,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.core.BehaviorCategory getBehaviorCategory(Integer categoryId) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.BehaviorCategory> client = com.mozu.api.clients.platform.ReferenceDataClient.getBehaviorCategoryClient( categoryId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -150,6 +169,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.core.BehaviorCollection getBehaviors(String userType) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.core.BehaviorCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getBehaviorsClient( userType);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -167,6 +187,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.ContentLocaleCollection getContentLocales() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.ContentLocaleCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getContentLocalesClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -184,6 +205,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.CountryCollection getCountries() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.CountryCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getCountriesClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -201,6 +223,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.CurrencyCollection getCurrencies() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.CurrencyCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getCurrenciesClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -218,6 +241,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.TimeZoneCollection getTimeZones() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.TimeZoneCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getTimeZonesClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -235,6 +259,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.TopLevelDomainCollection getTopLevelDomains() throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.TopLevelDomainCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getTopLevelDomainsClient();
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -267,6 +292,7 @@ public class ReferenceDataResource {
 	public com.mozu.api.contracts.reference.UnitOfMeasureCollection getUnitsOfMeasure(String filter) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.UnitOfMeasureCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getUnitsOfMeasureClient( filter);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 

@@ -24,6 +24,8 @@ public class UserDataResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public UserDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

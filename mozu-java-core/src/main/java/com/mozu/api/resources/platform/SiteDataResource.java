@@ -24,6 +24,8 @@ public class SiteDataResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public SiteDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

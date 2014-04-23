@@ -20,19 +20,6 @@ public class CommerceUnitPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The calculated amount of the discount to apply.
-	 */
-	protected Double discountAmount;
-
-	public Double getDiscountAmount() {
-		return this.discountAmount;
-	}
-
-	public void setDiscountAmount(Double discountAmount) {
-		this.discountAmount = discountAmount;
-	}
-
-	/**
 	 * Represents the total price of the line item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount.
 	 */
 	protected Double extendedAmount;

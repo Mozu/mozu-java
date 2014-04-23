@@ -24,6 +24,8 @@ public class ReturnResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ReturnResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

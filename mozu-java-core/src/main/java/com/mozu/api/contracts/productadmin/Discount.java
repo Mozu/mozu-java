@@ -23,16 +23,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer maximumUsesPerUser;
-
-	public Integer getMaximumUsesPerUser() {
-		return this.maximumUsesPerUser;
-	}
-
-	public void setMaximumUsesPerUser(Integer maximumUsesPerUser) {
-		this.maximumUsesPerUser = maximumUsesPerUser;
-	}
-
 	/**
 	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
 	 */
@@ -93,6 +83,16 @@ public class Discount implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	protected Integer maximumUsesPerUser;
+
+	public Integer getMaximumUsesPerUser() {
+		return this.maximumUsesPerUser;
+	}
+
+	public void setMaximumUsesPerUser(Integer maximumUsesPerUser) {
+		this.maximumUsesPerUser = maximumUsesPerUser;
 	}
 
 	/**

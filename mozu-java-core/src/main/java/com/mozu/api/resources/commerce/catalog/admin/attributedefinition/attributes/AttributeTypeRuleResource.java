@@ -24,6 +24,8 @@ public class AttributeTypeRuleResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public AttributeTypeRuleResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

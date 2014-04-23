@@ -24,6 +24,8 @@ public class ProductPropertyResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ProductPropertyResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

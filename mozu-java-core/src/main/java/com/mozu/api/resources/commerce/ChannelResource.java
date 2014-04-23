@@ -24,6 +24,8 @@ public class ChannelResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ChannelResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

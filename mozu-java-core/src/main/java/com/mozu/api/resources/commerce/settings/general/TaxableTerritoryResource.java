@@ -24,6 +24,8 @@ public class TaxableTerritoryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public TaxableTerritoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

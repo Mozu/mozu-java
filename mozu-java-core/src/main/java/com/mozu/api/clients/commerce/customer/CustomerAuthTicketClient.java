@@ -23,6 +23,29 @@ public class CustomerAuthTicketClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=CreateAnonymousShopperAuthTicketClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> createAnonymousShopperAuthTicketClient() throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createAnonymousShopperAuthTicketUrl();
+		String verb = "GET";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

@@ -24,6 +24,8 @@ public class SiteShippingSettingsResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public SiteShippingSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

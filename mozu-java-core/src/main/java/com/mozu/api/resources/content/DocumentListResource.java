@@ -24,6 +24,8 @@ public class DocumentListResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public DocumentListResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

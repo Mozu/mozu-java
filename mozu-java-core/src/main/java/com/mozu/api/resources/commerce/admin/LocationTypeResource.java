@@ -24,6 +24,8 @@ public class LocationTypeResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public LocationTypeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

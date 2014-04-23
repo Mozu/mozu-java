@@ -24,6 +24,8 @@ public class CategoryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
@@ -116,7 +118,24 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient(dataViewMode,  category);
+		return addCategory(dataViewMode,  category,  null);
+	}
+
+	/**
+	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	Category category = category.AddCategory(dataViewMode,  category,  incrementSequence);
+	 * </code></pre></p>
+	 * @param incrementSequence 
+	 * @param category Properties of the new category. Required properties: ParentCategoryID and Content.Name.
+	 * @return com.mozu.api.contracts.productadmin.Category
+	 * @see com.mozu.api.contracts.productadmin.Category
+	 * @see com.mozu.api.contracts.productadmin.Category
+	 */
+	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient(dataViewMode,  category,  incrementSequence);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -24,6 +24,8 @@ public class OrderNoteResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public OrderNoteResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

@@ -24,6 +24,8 @@ public class CategoryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

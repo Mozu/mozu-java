@@ -24,6 +24,8 @@ public class DiscountResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public DiscountResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

@@ -24,6 +24,8 @@ public class ProductExtraResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ProductExtraResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

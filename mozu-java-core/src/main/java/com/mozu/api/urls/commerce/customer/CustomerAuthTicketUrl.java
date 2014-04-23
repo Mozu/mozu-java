@@ -14,6 +14,16 @@ public class CustomerAuthTicketUrl
 {
 
 	/**
+	 * Get Resource Url for CreateAnonymousShopperAuthTicket
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createAnonymousShopperAuthTicketUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/anonymousshopper");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateUserAuthTicket
 	 * @return   String Resource Url
 	 */

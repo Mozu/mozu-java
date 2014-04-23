@@ -24,6 +24,8 @@ public class ProductTypeVariationResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ProductTypeVariationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

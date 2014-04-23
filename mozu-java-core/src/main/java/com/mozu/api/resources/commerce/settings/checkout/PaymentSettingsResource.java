@@ -24,6 +24,8 @@ public class PaymentSettingsResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public PaymentSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

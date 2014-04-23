@@ -24,6 +24,8 @@ public class ShipmentResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public ShipmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

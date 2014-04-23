@@ -24,6 +24,8 @@ public class CreditAuditEntryResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CreditAuditEntryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

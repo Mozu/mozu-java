@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class TenantResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public TenantResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public TenantResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Retrieve details about a specific tenant by providing the tenant ID.
@@ -42,6 +56,7 @@ public class TenantResource {
 				return tenant;
 			}
 		MozuClient<com.mozu.api.contracts.tenant.Tenant> client = com.mozu.api.clients.platform.TenantClient.getTenantClient( tenantId);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		tenant = client.getResult();
 		if (cache!=null)

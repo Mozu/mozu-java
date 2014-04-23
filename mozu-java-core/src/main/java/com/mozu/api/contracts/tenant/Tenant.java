@@ -10,8 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.tenant.MasterCatalog;
 import com.mozu.api.contracts.tenant.Site;
+import com.mozu.api.contracts.tenant.MasterCatalog;
 
 /**
  *	Properties of a tenant, which the logical grouping of all a company's sites and catalogs.
@@ -75,17 +75,6 @@ public class Tenant implements Serializable
 	}
 
 	/**
-	 * Collection of master catalogs associated with the tenant.
-	 */
-	protected List<MasterCatalog> masterCatalogs;
-	public List<MasterCatalog> getMasterCatalogs() {
-		return this.masterCatalogs;
-	}
-	public void setMasterCatalogs(List<MasterCatalog> masterCatalogs) {
-		this.masterCatalogs = masterCatalogs;
-	}
-
-	/**
 	 * Collection of sites associated with the tenant.
 	 */
 	protected List<Site> sites;
@@ -94,6 +83,17 @@ public class Tenant implements Serializable
 	}
 	public void setSites(List<Site> sites) {
 		this.sites = sites;
+	}
+
+	/**
+	 * Collection of master catalogs associated with the tenant.
+	 */
+	protected List<MasterCatalog> masterCatalogs;
+	public List<MasterCatalog> getMasterCatalogs() {
+		return this.masterCatalogs;
+	}
+	public void setMasterCatalogs(List<MasterCatalog> masterCatalogs) {
+		this.masterCatalogs = masterCatalogs;
 	}
 
 }

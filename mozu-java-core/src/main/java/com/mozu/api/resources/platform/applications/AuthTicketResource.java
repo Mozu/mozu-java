@@ -20,6 +20,20 @@ import org.apache.commons.lang.StringUtils;
  * </summary>
  */
 public class AuthTicketResource {
+	///
+	/// <see cref="Mozu.Api.ApiContext"/>
+	///
+	private ApiContext _apiContext;
+
+		public AuthTicketResource() 
+	{
+		_apiContext = null;
+	}
+	 
+	public AuthTicketResource(ApiContext apiContext) 
+	{
+		_apiContext = apiContext;
+	}
 	
 	/**
 	 * Generate an authentication ticket for an application.
@@ -35,6 +49,7 @@ public class AuthTicketResource {
 	public com.mozu.api.contracts.appdev.AuthTicket authenticateApp(com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.authenticateAppClient( appAuthInfo);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -54,6 +69,7 @@ public class AuthTicketResource {
 	public com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.refreshAppAuthTicketClient( authTicketRequest);
+		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
 
@@ -71,6 +87,7 @@ public class AuthTicketResource {
 	public void deleteAppAuthTicket(String refreshToken) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.platform.applications.AuthTicketClient.deleteAppAuthTicketClient( refreshToken);
+		client.setContext(_apiContext);
 		client.executeRequest();
 
 	}

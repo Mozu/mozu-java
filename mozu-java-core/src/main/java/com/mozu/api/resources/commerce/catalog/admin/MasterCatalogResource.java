@@ -24,6 +24,8 @@ public class MasterCatalogResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public MasterCatalogResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;

@@ -24,6 +24,8 @@ public class CustomerCheckoutSettingsResource {
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
+
+	
 	public CustomerCheckoutSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
