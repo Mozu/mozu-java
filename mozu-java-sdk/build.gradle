@@ -1,0 +1,60 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.6
+
+archivesBaseName='mozu-api-java'
+version = '1.7.10'
+group='com.mozu.api'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Mozu Java API', 'Implementation-Version': version
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+
+    compile ("com.mozu.api:mozu-api-core:1.7.10") {
+        exclude group: 'mysql'
+        exclude group: 'xerces'
+        exclude group: 'berkeleydb'
+        exclude group: 'hsqldb'
+        exclude group: 'tomcat'
+        
+        changing = true
+    }
+
+	compile ("jcs:jcs:1.3") {
+		exclude group: 'mysql'
+	}
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
