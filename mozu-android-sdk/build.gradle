@@ -13,7 +13,7 @@ apply plugin: 'android-library'
 
 sourceCompatibility = 1.6
 archivesBaseName='mozu-api-android'
-version = '1.7.10'
+version = '1.7.12'
 group='com.mozu.api'
 
 task wrapper(type: Wrapper) {
@@ -44,7 +44,7 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:19.0.0'
     compile 'com.android.support:appcompat-v7:19.0.0'
 
-    compile ("com.mozu.api:mozu-api-core:1.7.10") {
+    compile ("com.mozu.api:mozu-api-core:1.7.12") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'

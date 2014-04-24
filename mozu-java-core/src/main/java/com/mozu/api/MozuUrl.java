@@ -12,7 +12,7 @@ public class MozuUrl {
     }
 
     public MozuUrl(String url, UrlLocation location) {
-        this.url = url.toLowerCase();
+        this.url = url;
         this.location = location;
     }
 
