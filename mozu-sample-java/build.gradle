@@ -70,4 +70,3 @@ dependencies {
 test {
     systemProperties 'property': 'value'
 }
-

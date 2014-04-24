@@ -1,12 +1,13 @@
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.6.+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
 apply plugin: 'android-library'
@@ -17,11 +18,11 @@ version = '1.7.12'
 group='com.mozu.api'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.8'
+    gradleVersion = '1.11'
 }
 
 repositories {
-    mavenCentral()
+    mavenCentral() 
     mavenLocal()
 }
 
@@ -33,9 +34,14 @@ android {
         minSdkVersion 7
         targetSdkVersion 19
     }
-    release {
-        runProguard false
-        proguardFile getDefaultProguardFile('proguard-android.txt')
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
     }
 }
 
@@ -54,5 +60,16 @@ dependencies {
         exclude group: 'org.apache.httpcomponents'
         
         changing = true
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication){
+            artifactId project.archivesBaseName
+            artifact file("build/libs/${project.archivesBaseName}-${project.version}.aar")
+            pom.withXml {
+            }
+        }
     }
 }
