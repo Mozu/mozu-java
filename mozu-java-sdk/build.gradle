@@ -19,8 +19,9 @@ task wrapper(type: Wrapper) {
 }
 
 repositories {
-    mavenCentral()
-    mavenLocal()
+    maven {
+          mavenCentral()
+    }
 }
 
 dependencies {
@@ -58,3 +59,4 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
+
