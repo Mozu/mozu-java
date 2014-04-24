@@ -19,9 +19,7 @@ task wrapper(type: Wrapper) {
 }
 
 repositories {
-    maven {
-          mavenCentral()
-    }
+	mavenCentral()
 }
 
 dependencies {
