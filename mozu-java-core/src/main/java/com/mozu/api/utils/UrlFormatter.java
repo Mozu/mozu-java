@@ -9,7 +9,7 @@ public class UrlFormatter {
 	public String resourceUrl;
 	
 	public UrlFormatter(String resourceUrl) {
-		this.resourceUrl = resourceUrl;
+		this.resourceUrl = resourceUrl.toLowerCase();
 	}
 	
 	public String getResourceUrl() {
@@ -37,18 +37,16 @@ public class UrlFormatter {
             throw new ApiException("Bad encoding of URL" + uee.getMessage());
         }
         String paramLowerCase = paramName.toLowerCase();
-        String resourceUrlLowerCase = resourceUrl.toLowerCase();
-        resourceUrlLowerCase = resourceUrlLowerCase.replace("{"+paramLowerCase+"}", value == null ? "" : encodedValue);
-        resourceUrlLowerCase = resourceUrlLowerCase.replace("{*"+paramLowerCase+"}", value == null ? "" : encodedValue);
+        //String resourceUrlLowerCase = resourceUrl.toLowerCase();
+        resourceUrl = resourceUrl.replace("{"+paramLowerCase+"}", value == null ? "" : encodedValue);
+        resourceUrl = resourceUrl.replace("{*"+paramLowerCase+"}", value == null ? "" : encodedValue);
         String removeString = "&" + paramLowerCase + "=";
-        if (value == null && resourceUrlLowerCase.contains(removeString)) 
-            resourceUrlLowerCase= resourceUrlLowerCase.replace(removeString,"");
+        if (value == null && resourceUrl.contains(removeString)) 
+        	resourceUrl= resourceUrl.replace(removeString,"");
 
         removeString = paramLowerCase + "=";
-        if (value == null && resourceUrlLowerCase.contains(removeString)) 
-            resourceUrlLowerCase = resourceUrlLowerCase.replace(removeString, "");
-
-        resourceUrl = resourceUrlLowerCase;
+        if (value == null && resourceUrl.contains(removeString)) 
+        	resourceUrl = resourceUrl.replace(removeString, "");
         formatUrl();
     }
 }
