@@ -49,12 +49,14 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for AddLocationInventory
+	 * @param performUpserts 
 	 * @param productCode ProductCodeBase
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addLocationInventoryUrl(String productCode)
+	public static MozuUrl addLocationInventoryUrl(Boolean performUpserts, String productCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{ProductCode}/LocationInventory");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{ProductCode}/LocationInventory?performUpserts={performUpserts}");
+		formatter.formatUrl("performUpserts", performUpserts);
 		formatter.formatUrl("productCode", productCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

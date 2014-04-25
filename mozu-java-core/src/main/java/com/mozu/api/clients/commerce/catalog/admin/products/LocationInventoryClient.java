@@ -108,7 +108,27 @@ public class LocationInventoryClient {
 	 */
 	public static MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> addLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.addLocationInventoryUrl(productCode);
+		return addLocationInventoryClient(dataViewMode,  locationInventoryList,  productCode,  null);
+	}
+
+	/**
+	 * Creates a new location inventory definition for the product code specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient=AddLocationInventoryClient(dataViewMode,  locationInventoryList,  productCode,  performUpserts);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LocationInventory locationInventory = client.Result();
+	 * </code></pre></p>
+	 * @param performUpserts 
+	 * @param productCode ProductCodeBase
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
+	 * @see com.mozu.api.contracts.productadmin.LocationInventory
+	 * @see com.mozu.api.contracts.productadmin.LocationInventory
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> addLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, Boolean performUpserts) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.addLocationInventoryUrl(performUpserts, productCode);
 		String verb = "POST";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.LocationInventory>(){}.getClass();
 		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient = new MozuClient(clz);

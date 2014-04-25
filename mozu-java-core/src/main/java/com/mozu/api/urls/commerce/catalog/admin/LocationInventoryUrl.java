@@ -50,12 +50,14 @@ public class LocationInventoryUrl
 	/**
 	 * Get Resource Url for AddLocationInventory
 	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param performUpserts 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addLocationInventoryUrl(String locationCode)
+	public static MozuUrl addLocationInventoryUrl(String locationCode, Boolean performUpserts)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/locationinventory/{locationCode}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/locationinventory/{locationCode}?performUpserts={performUpserts}");
 		formatter.formatUrl("locationCode", locationCode);
+		formatter.formatUrl("performUpserts", performUpserts);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

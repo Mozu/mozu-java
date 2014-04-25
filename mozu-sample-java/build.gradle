@@ -7,7 +7,7 @@ apply plugin: 'jetty'
 sourceCompatibility = 1.6
 
 archivesBaseName='MozuSample'
-version = '1.7.12'
+version = '1.7.14'
 group='wars'
 httpPort = 8001 
 

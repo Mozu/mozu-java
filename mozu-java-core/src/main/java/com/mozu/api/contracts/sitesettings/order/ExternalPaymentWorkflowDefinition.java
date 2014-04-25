@@ -22,19 +22,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the associated external payment workflow definition is enabled for the site.
-	 */
-	protected Boolean isEnabled;
-
-	public Boolean getIsEnabled() {
-		return this.isEnabled;
-	}
-
-	public void setIsEnabled(Boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
-
-	/**
 	 * The name of the external payment workflow definition.
 	 */
 	protected String name;
@@ -45,6 +32,19 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * If true, the associated external payment workflow definition is enabled for the site.
+	 */
+	protected Boolean isEnabled;
+
+	public Boolean getIsEnabled() {
+		return this.isEnabled;
+	}
+
+	public void setIsEnabled(Boolean isEnabled) {
+		this.isEnabled = isEnabled;
 	}
 
 	/**

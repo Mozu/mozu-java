@@ -5,7 +5,7 @@ apply plugin: 'maven'
 sourceCompatibility = 1.6
 
 archivesBaseName='mozu-api-core'
-version = '1.7.12'
+version = '1.7.14'
 group='com.mozu.api'
 
 jar {
