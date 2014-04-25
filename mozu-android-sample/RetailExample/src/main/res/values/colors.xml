@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="searchbar">#c0c0c0</color>
+    <color name="list_background">#f3f3f3</color>
+    <color name="list_field_background">#e0e0e0</color>
+</resources>
