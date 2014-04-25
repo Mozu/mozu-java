@@ -103,7 +103,25 @@ public class LocationInventoryResource {
 	 */
 	public List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.addLocationInventoryClient(dataViewMode,  locationInventoryList,  productCode);
+		return addLocationInventory(dataViewMode,  locationInventoryList,  productCode,  null);
+	}
+
+	/**
+	 * Creates a new location inventory definition for the product code specified in the request.
+	 * <p><pre><code>
+	 *	LocationInventory locationinventory = new LocationInventory();
+	 *	LocationInventory locationInventory = locationinventory.AddLocationInventory(dataViewMode,  locationInventoryList,  productCode,  performUpserts);
+	 * </code></pre></p>
+	 * @param performUpserts 
+	 * @param productCode ProductCodeBase
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
+	 * @see com.mozu.api.contracts.productadmin.LocationInventory
+	 * @see com.mozu.api.contracts.productadmin.LocationInventory
+	 */
+	public List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, Boolean performUpserts) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.addLocationInventoryClient(dataViewMode,  locationInventoryList,  productCode,  performUpserts);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

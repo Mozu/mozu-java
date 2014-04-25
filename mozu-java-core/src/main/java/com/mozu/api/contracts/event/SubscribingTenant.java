@@ -6,13 +6,15 @@
  */
 package com.mozu.api.contracts.event;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.event.SubscribingSite;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SubscribingSite implements Serializable
+public class SubscribingTenant implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
@@ -27,14 +29,24 @@ public class SubscribingSite implements Serializable
 		this.isActive = isActive;
 	}
 
-	protected Integer siteId;
+	protected String subscribingContextLevelType;
 
-	public Integer getSiteId() {
-		return this.siteId;
+	public String getSubscribingContextLevelType() {
+		return this.subscribingContextLevelType;
 	}
 
-	public void setSiteId(Integer siteId) {
-		this.siteId = siteId;
+	public void setSubscribingContextLevelType(String subscribingContextLevelType) {
+		this.subscribingContextLevelType = subscribingContextLevelType;
+	}
+
+	protected Integer tenantId;
+
+	public Integer getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
 	}
 
 	protected AuditInfo auditInfo;
@@ -45,6 +57,14 @@ public class SubscribingSite implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected List<SubscribingSite> subscribingSites;
+	public List<SubscribingSite> getSubscribingSites() {
+		return this.subscribingSites;
+	}
+	public void setSubscribingSites(List<SubscribingSite> subscribingSites) {
+		this.subscribingSites = subscribingSites;
 	}
 
 }
