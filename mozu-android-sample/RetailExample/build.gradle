@@ -1,8 +1,5 @@
 buildscript {
     repositories {
-//        maven {
-//            url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public/"
-//        }
         mavenCentral()
         mavenLocal()
     }
@@ -15,9 +12,6 @@ apply plugin: 'android'
 
 repositories {
 
-//    maven {
-//        url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public/"
-//    }
     mavenCentral()
     mavenLocal()
 
@@ -67,7 +61,7 @@ dependencies {
         jacksonVersion='2.2.3'
     }
 
-    compile ("com.mozu.api:mozu-api-android:1.7.12@aar"){
+    compile ("com.mozu.api:mozu-api-android:1.7.14@aar"){
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
@@ -76,7 +70,7 @@ dependencies {
 
         changing = true
     }
-    compile ("com.mozu.api:mozu-api-core:1.7.12")
+    compile ("com.mozu.api:mozu-api-core:1.7.14")
 
     compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
