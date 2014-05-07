@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -187,7 +188,7 @@ public class MozuClient<TResult> {
 
         if (verb.equals("POST") || verb.equals("PUT")) {
             if (StringUtils.isNotBlank(httpContent)) {
-                StringEntity entity = new StringEntity(httpContent);
+                StringEntity entity = new StringEntity(httpContent, Consts.UTF_8);
                 request.setEntity(entity);
             } else if (this.streamContent != null) {
                 InputStreamEntity entity = new InputStreamEntity(this.streamContent, -1);
@@ -197,7 +198,7 @@ public class MozuClient<TResult> {
 
         request.setHeader("Accept", "application/json");
         if (!headers.containsKey(Headers.CONTENT_TYPE)) {
-            request.setHeader("Content-type", "application/json");
+            request.setHeader("Content-type", "application/json; charset=utf-8");
         }
         if (apiContext != null && apiContext.getUserAuthTicket() != null) {
             setUserClaims();
