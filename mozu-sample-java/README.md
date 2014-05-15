@@ -22,4 +22,9 @@ Running the Sample application:
 * Use a browser to go to the Mozu Sample application (Default: http://localhost:8080/MozuSample)
 * Get the Application ID and Shared Secret from the application you installed in step 3.  You can get this from the Applications page in the Mozu Dev Center.
 * The user name and password is your development account credentials.
-* Once logged in, you can access the tenant and site you created in step 4.  You should be able to see the products and orders you created in step 6 and 7. 
+* Once logged in, you can access the tenant and site you created in step 4.  You should be able to see the products and orders you created in step 6 and 7.
+
+Running with Fiddler:
+Fiddler is a tool that Mozu developer use to debug calls going to the Mozu REST service.  It is very helpful for diagnosing any problems sending requests to Mozu.  To enable Fiddler for the Java SDK, you can set the following parameters in  src/main/resources/mozu_config.properties:
+proxy.host=localhost
+proxy.port=8888     
