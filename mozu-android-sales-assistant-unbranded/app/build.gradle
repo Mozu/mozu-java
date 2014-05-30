@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:0.10.+'
     }
 }
 apply plugin: 'android'
@@ -54,9 +54,8 @@ android {
 
 dependencies {
     compile 'com.google.code.gson:gson:2.2.+'
-    compile 'com.android.support:support-v4:19.0.0'
-    //compile 'com.android.support:gridlayout-v7:19.0.0'
-    //compile 'com.android.support:appcompat-v7:19.0.0'
+    compile 'com.android.support:support-v4:19.1.0'
+
     ext {
         jacksonVersion='2.2.3'
     }
@@ -78,5 +77,4 @@ dependencies {
     compile "commons-io:commons-io:2.4"
     compile "org.apache.commons:commons-lang3:3.0"
     compile "com.google.zxing:core:2.0"
-    //compile "javax.sql:jdbc-stdext:2.0"
 }

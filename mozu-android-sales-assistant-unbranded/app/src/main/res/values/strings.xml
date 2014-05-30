@@ -4,7 +4,7 @@
     <string name="app_auth_shared_secret"></string>
 
 
-    <string name="app_name">Mozu Retail Example</string>
+    <string name="app_name">Mozu Android Sales Assistant (Unbranded)</string>
     <string name="not_available">n/a</string>
     <string name="none">none</string>
     <string name="app_auth_title">Please Wait</string>
