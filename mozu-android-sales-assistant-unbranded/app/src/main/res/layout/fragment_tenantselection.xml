@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tenantselection_background"
-    tools:context="com.mozu.example.RetailExample.ui.tenantselection.TenantSelectionActivity"
+    tools:context="com.mozu.android.SalesAssistantUnbranded.ui.tenantselection.TenantSelectionActivity"
     tools:ignore="Overdraw">
 
     <ListView
