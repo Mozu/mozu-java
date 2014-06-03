@@ -31,9 +31,8 @@ task wrapper(type: Wrapper) {
 }
 
 repositories {
-    maven {
-          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
-    }   
+    mavenCentral()
+    mavenLocal()
 }
 
 configurations.all {
@@ -79,14 +78,6 @@ test {
     systemProperties 'property': 'value'
 }
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/snapshots/") {
-                authentication(userName: "deployment", password: "deployment123")
-             }
-       }
-    }
 }
 
 
