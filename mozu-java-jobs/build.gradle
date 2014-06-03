@@ -1,0 +1,92 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.7
+
+archivesBaseName='mozu.api.scheduling'
+group='wars'
+httpPort=8002
+
+// Dynamically insert TeamCity build number if available
+if (hasProperty("teamcity")) {
+	version = teamcity["build.number"]
+		println "TeamCity build number passed into gradle is " + version
+	}
+	else {
+// Manually insert the version numbers here when building outside of TeamCity
+	version = '0.0.1-LocalBuild'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Mozu SDK Scheduling Add-on', 'Implementation-Version': version
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+repositories {
+    maven {
+          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
+    }   
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+
+    ext {
+        springVersion='3.2.4.RELEASE'
+    }   
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    compile("javax.servlet:jstl:1.2")
+
+    compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-expression', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-test', version: springVersion
+    compile group: 'org.springframework', name: 'spring-oxm', version: springVersion
+    compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    
+    compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
+    compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
+    compile ("org.springframework.integration:spring-integration-ftp:3.0.2.RELEASE");
+    compile ("org.springframework.integration:spring-integration-sftp:3.0.2.RELEASE");
+
+    compile "org.apache.commons:commons-lang3:3.2.1"
+	compile ("org.slf4j:slf4j-api:1.7.5")
+	compile ("org.slf4j:slf4j-log4j12:1.7.5")
+	compile ('log4j:log4j:1.2.17')
+    compile ('org.quartz-scheduler:quartz:2.2.1')
+
+    testCompile 'com.googlecode.jmockit:jmockit:0.999.11'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/repositories/snapshots/") {
+                authentication(userName: "deployment", password: "deployment123")
+             }
+       }
+    }
+}
+
+
