@@ -2,7 +2,7 @@
 <resources>
     <string name="app_auth_appid"></string>
     <string name="app_auth_shared_secret"></string>
-
+    <string name="service_endpoint">https://sandbox.mozu.com</string>
 
     <string name="app_name">Mozu Android Sales Assistant (Unbranded)</string>
     <string name="not_available">n/a</string>
