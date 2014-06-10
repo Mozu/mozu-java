@@ -4,7 +4,9 @@
 
 package com.mozu.jobs.scheduler;
 
+import java.util.Calendar;
 import java.util.Properties;
+import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 
@@ -199,8 +201,7 @@ public class JobScheduler {
      *  implement org.qrtz.Job
      */
     public void addDailyJob(Integer tenantId, Integer siteId, String hours,
-            String minutes, String identity,
-            Class jobClass) {
+            String minutes, String timezone, String identity, Class jobClass) {
 
         if (scheduler==null)
             throw new IllegalStateException("Scheduler not initialized");
@@ -215,7 +216,7 @@ public class JobScheduler {
                 .withIdentity(identity+JOB, tenantIdString)
                 .build();
 
-        Trigger trigger = createCronTrigger(hours, minutes, tenantId, siteId, identity);
+        Trigger trigger = createCronTrigger(hours, minutes, timezone, tenantId, siteId, identity);
         
         try {
             scheduler.scheduleJob(job, trigger);
@@ -324,7 +325,8 @@ public class JobScheduler {
      * @param identity A name used to identify the trigger group
      * @param jobClass Class to be invoked when the schedule fires. This class must
      */
-    public void updateJob(Integer tenantId, Integer siteId, String hours, String minutes, String identity, Class jobClass ) {
+    public void updateJob(Integer tenantId, Integer siteId, String hours, String minutes, 
+            String timezone, String identity, Class jobClass ) {
         if (StringUtils.isBlank(hours) || StringUtils.isBlank(minutes)) {
             String errMsg = "Atttempt to update sync schedule to an invalid time";
             logger.warn(errMsg);
@@ -350,7 +352,7 @@ public class JobScheduler {
             logger.info("Previous trigger not found for " + tenantId);
         }
         
-        addDailyJob(tenantId, siteId, hours, minutes, identity, jobClass);
+        addDailyJob(tenantId, siteId, hours, minutes, timezone, identity, jobClass);
     }
 
     /**
@@ -401,8 +403,11 @@ public class JobScheduler {
         if (schedFrequencyHours.intValue()==24) {
             // use a Cron scheduler so it runs daily at 23:15 and is
             // not thrown by DST changes.
-            return createCronTrigger(new Integer(HOUR_OF_DAY).toString(), 
-                    new Integer(offset).toString(), tenantId, siteId, identity);
+            return createCronTrigger(
+                    new Integer(HOUR_OF_DAY).toString(), 
+                    new Integer(offset).toString(), 
+                    Calendar.getInstance().getTimeZone().getID(),  
+                    tenantId, siteId, identity);
         } else {
             // use a simple schedule at 15 minutes past the hour
             trigger = TriggerBuilder.newTrigger()
@@ -421,16 +426,19 @@ public class JobScheduler {
         return trigger;
     }
 
-    private Trigger createCronTrigger(String hours, String minutes,
+    private Trigger createCronTrigger(String hours, String minutes, String timezone,
             Integer tenantId, Integer siteId, String identity) {
         String tenantIdString = tenantId.toString() + 
                 ((siteId!=null)?"_" + siteId.toString():"");
-        
-            // Create a cron trigger
+
+        TimeZone tz = TimeZone.getTimeZone(timezone);
+
+        // Create a cron trigger
         Trigger trigger = TriggerBuilder.newTrigger()
             .withIdentity(identity+TRIGGER, tenantIdString)
             .withSchedule(
                     CronScheduleBuilder.cronSchedule("0 " + minutes + " " + hours + " * * ?" )
+                    .inTimeZone(tz)
                     )
             .usingJobData(TENANT_ID_KEY, tenantId)
             .usingJobData(SITE_ID_KEY, siteId)

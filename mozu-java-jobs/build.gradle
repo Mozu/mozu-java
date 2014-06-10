@@ -1,14 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
-apply plugin: 'war'
-apply plugin: 'jetty'
 
 sourceCompatibility = 1.7
 
-archivesBaseName='mozu.api.scheduling'
-group='wars'
-httpPort=8002
+archivesBaseName='mozu-api-jobs'
+group='com.mozu.api'
 
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
@@ -22,7 +19,7 @@ if (hasProperty("teamcity")) {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Mozu SDK Scheduling Add-on', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'Mozu SDK Jobs Add-on', 'Implementation-Version': version
     }
 }
 
@@ -45,7 +42,7 @@ dependencies {
     ext {
         springVersion='3.2.4.RELEASE'
     }   
-    providedCompile 'javax.servlet:servlet-api:2.5'
+    compile("javax.servlet:servlet-api:2.5")
     compile("javax.servlet:jstl:1.2")
 
     compile group: 'org.springframework', name: 'spring-aop', version: springVersion
@@ -61,8 +58,6 @@ dependencies {
     
     compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
     compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
-    compile ("org.springframework.integration:spring-integration-ftp:3.0.2.RELEASE");
-    compile ("org.springframework.integration:spring-integration-sftp:3.0.2.RELEASE");
 
     compile "org.apache.commons:commons-lang3:3.2.1"
 	compile ("org.slf4j:slf4j-api:1.7.5")
@@ -76,6 +71,21 @@ dependencies {
 
 test {
     systemProperties 'property': 'value'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }
 
 }

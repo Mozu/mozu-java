@@ -81,7 +81,7 @@ public class ScheduledJob implements Job {
         }
     }
 
-    public JobParameters buildJobParams() {
+    public JobParameters buildJobParams() throws JobExecutionException {
         JobParametersBuilder builder = new JobParametersBuilder();
         builder.addLong("tenantId", tenantId.longValue());
         builder.addLong("siteId", siteId.longValue());
