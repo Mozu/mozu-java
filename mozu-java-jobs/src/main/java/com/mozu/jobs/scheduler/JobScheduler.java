@@ -63,11 +63,11 @@ public class JobScheduler {
     private static final String QRTZ_DATASOURCE_PROP =      "org.quartz.jobStore.dataSource";
     private static final String QRTZ_THREAD_POOL_PROP =     "org.quartz.threadPool.class";
     private static final String QRTZ_THREAD_COUNT_PROP =    "org.quartz.threadPool.threadCount";
-    private static final String QRTZ_DRIVER_PROP =          "org.quartz.dataSource.bvconversation.driver";
-    private static final String QRTZ_URL_PROP =             "org.quartz.dataSource.bvconversation.URL";
-    private static final String QRTZ_USER_PROP =            "org.quartz.dataSource.bvconversation.user";
-    private static final String QRTZ_PASSWORD_PROP =        "org.quartz.dataSource.bvconversation.password";
-    private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.bvconversation.maxConnections";
+    private static final String QRTZ_DRIVER_PROP =          "org.quartz.dataSource.mozu.driver";
+    private static final String QRTZ_URL_PROP =             "org.quartz.dataSource.mozu.URL";
+    private static final String QRTZ_USER_PROP =            "org.quartz.dataSource.mozu.user";
+    private static final String QRTZ_PASSWORD_PROP =        "org.quartz.dataSource.mozu.password";
+    private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.mozu.maxConnections";
 
     @Value("${org.quartz.scheduler.instanceName}")
     String qrtz_instanceName;
@@ -87,19 +87,19 @@ public class JobScheduler {
     @Value("${org.quartz.threadPool.threadCount}")
     String qrtz_threadCount;
 
-    @Value("${org.quartz.dataSource.bvconversation.driver}")
+    @Value("${org.quartz.dataSource.mozu.driver}")
     String qrtz_driver;
 
-    @Value("${org.quartz.dataSource.bvconversation.URL}")
+    @Value("${org.quartz.dataSource.mozu.URL}")
     String qrtz_URL;
 
-    @Value("${org.quartz.dataSource.bvconversation.user}")
+    @Value("${org.quartz.dataSource.mozu.user}")
     String qrtz_user;
 
-    @Value("${org.quartz.dataSource.bvconversation.password}")
+    @Value("${org.quartz.dataSource.mozu.password}")
     String qrtz_password;
 
-    @Value("${org.quartz.dataSource.bvconversation.maxConnections}")
+    @Value("${org.quartz.dataSource.mozu.maxConnections}")
     String qrtz_maxConnections;
 
     @Autowired
