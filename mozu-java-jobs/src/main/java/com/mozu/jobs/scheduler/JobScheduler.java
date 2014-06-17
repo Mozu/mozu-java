@@ -5,17 +5,22 @@
 package com.mozu.jobs.scheduler;
 
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.apache.commons.lang3.StringUtils;
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;
 import org.quartz.DateBuilder;
+import org.quartz.Job;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
+import org.quartz.JobExecutionContext;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -141,6 +146,16 @@ public class JobScheduler {
             logger.warn("Error starting Quartz scheduler: " + e.getMessage());
         }
         logger.debug("QrtzScheduler started");
+    }
+    
+    @PreDestroy
+    public void cleanup() {
+        logger.info("Shutting down scheduler");
+        try {
+            scheduler.shutdown();
+        } catch (SchedulerException e) {
+            logger.error("Exception shutting down scheduler: " + e.getMessage());
+        }
     }
 
     /**
