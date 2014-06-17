@@ -14,8 +14,14 @@ apply plugin: 'android-library'
 
 sourceCompatibility = 1.6
 archivesBaseName='mozu-api-android'
-version = '1.7.15'
-group='com.mozu.api'
+if (hasProperty("teamcity")) {
+    version = teamcity["build.number"]
+    println "TeamCity build number passed into gradle is " + version
+} else {
+    // Manually insert the version numbers here when building outside of TeamCity
+    version = '1.7.18-SNAPSHOT'
+}
+group='com.mozu'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
@@ -23,7 +29,9 @@ task wrapper(type: Wrapper) {
 
 repositories {
     mavenCentral()
-    mavenLocal()
+    maven {        
+          url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
 }
 
 android {
@@ -50,7 +58,7 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:19.0.0'
     compile 'com.android.support:appcompat-v7:19.0.0'
 
-    compile ("com.mozu.api:mozu-api-core:"+version) {
+    compile ("com.mozu:mozu-api-core:"+version) {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
