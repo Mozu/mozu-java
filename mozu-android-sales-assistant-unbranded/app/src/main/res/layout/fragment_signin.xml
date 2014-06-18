@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/login_background"
-    tools:context="com.mozu.example.RetailExample.ui.signin.SignInActivity"
+    tools:context="com.mozu.android.SalesAssistantUnbranded.ui.signin.SignInActivity"
     tools:ignore="Overdraw">
 
 
