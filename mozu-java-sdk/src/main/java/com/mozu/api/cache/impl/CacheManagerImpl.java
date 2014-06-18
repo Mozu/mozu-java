@@ -2,6 +2,8 @@ package com.mozu.api.cache.impl;
 
 import org.apache.jcs.JCS;
 import org.apache.jcs.access.exception.CacheException;
+import org.apache.jcs.engine.control.CompositeCache;
+import org.apache.jcs.engine.control.CompositeCacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +12,7 @@ import com.mozu.api.cache.CacheManagerFactory;
 
 public class CacheManagerImpl<T> implements CacheManager<T> {
     private static final Logger logger = LoggerFactory.getLogger(CacheManagerImpl.class);
+    private static final String CACHE_NAME = "mozuCache";
 	private JCS jcsCache;
 	private boolean _isInitialized = false;
 	
@@ -19,7 +22,7 @@ public class CacheManagerImpl<T> implements CacheManager<T> {
     public void startCache() {
         try {
           // Loading the cache using the configuration file
-          jcsCache = JCS.getInstance("mozuCache");
+          jcsCache = JCS.getInstance(CACHE_NAME);
           _isInitialized = true;
         } catch (CacheException e) {
             logger.warn("Cache initialization failed");
@@ -52,4 +55,11 @@ public class CacheManagerImpl<T> implements CacheManager<T> {
 	        e.printStackTrace();
 		}
 	}
+	
+    public void stopCache() {
+        CompositeCacheManager.getInstance().freeCache(CACHE_NAME);
+        CompositeCache.elementEventQ.destroy();
+        CompositeCacheManager.getInstance().shutDown();
+        logger.debug("Cache cleanup complete");
+    }
 }
