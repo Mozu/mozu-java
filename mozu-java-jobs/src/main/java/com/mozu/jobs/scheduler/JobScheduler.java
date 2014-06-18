@@ -5,17 +5,22 @@
 package com.mozu.jobs.scheduler;
 
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.apache.commons.lang3.StringUtils;
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;
 import org.quartz.DateBuilder;
+import org.quartz.Job;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
+import org.quartz.JobExecutionContext;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -63,11 +68,11 @@ public class JobScheduler {
     private static final String QRTZ_DATASOURCE_PROP =      "org.quartz.jobStore.dataSource";
     private static final String QRTZ_THREAD_POOL_PROP =     "org.quartz.threadPool.class";
     private static final String QRTZ_THREAD_COUNT_PROP =    "org.quartz.threadPool.threadCount";
-    private static final String QRTZ_DRIVER_PROP =          "org.quartz.dataSource.bvconversation.driver";
-    private static final String QRTZ_URL_PROP =             "org.quartz.dataSource.bvconversation.URL";
-    private static final String QRTZ_USER_PROP =            "org.quartz.dataSource.bvconversation.user";
-    private static final String QRTZ_PASSWORD_PROP =        "org.quartz.dataSource.bvconversation.password";
-    private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.bvconversation.maxConnections";
+    private static final String QRTZ_DRIVER_PROP =          "org.quartz.dataSource.mozu.driver";
+    private static final String QRTZ_URL_PROP =             "org.quartz.dataSource.mozu.URL";
+    private static final String QRTZ_USER_PROP =            "org.quartz.dataSource.mozu.user";
+    private static final String QRTZ_PASSWORD_PROP =        "org.quartz.dataSource.mozu.password";
+    private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.mozu.maxConnections";
 
     @Value("${org.quartz.scheduler.instanceName}")
     String qrtz_instanceName;
@@ -87,19 +92,19 @@ public class JobScheduler {
     @Value("${org.quartz.threadPool.threadCount}")
     String qrtz_threadCount;
 
-    @Value("${org.quartz.dataSource.bvconversation.driver}")
+    @Value("${org.quartz.dataSource.mozu.driver}")
     String qrtz_driver;
 
-    @Value("${org.quartz.dataSource.bvconversation.URL}")
+    @Value("${org.quartz.dataSource.mozu.URL}")
     String qrtz_URL;
 
-    @Value("${org.quartz.dataSource.bvconversation.user}")
+    @Value("${org.quartz.dataSource.mozu.user}")
     String qrtz_user;
 
-    @Value("${org.quartz.dataSource.bvconversation.password}")
+    @Value("${org.quartz.dataSource.mozu.password}")
     String qrtz_password;
 
-    @Value("${org.quartz.dataSource.bvconversation.maxConnections}")
+    @Value("${org.quartz.dataSource.mozu.maxConnections}")
     String qrtz_maxConnections;
 
     @Autowired
@@ -141,6 +146,16 @@ public class JobScheduler {
             logger.warn("Error starting Quartz scheduler: " + e.getMessage());
         }
         logger.debug("QrtzScheduler started");
+    }
+
+    @PreDestroy
+    public void cleanup() {
+        logger.info("Shutting down scheduler");
+        try {
+            scheduler.shutdown();
+        } catch (SchedulerException e) {
+            logger.error("Exception shutting down scheduler: " + e.getMessage());
+        }
     }
 
     /**

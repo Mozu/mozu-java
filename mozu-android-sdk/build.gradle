@@ -19,7 +19,7 @@ if (hasProperty("teamcity")) {
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.18-SNAPSHOT'
+    version = '1.7.16'
 }
 group='com.mozu'
 
