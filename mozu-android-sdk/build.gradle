@@ -1,6 +1,7 @@
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: 'signing'
 
 buildscript {
     repositories {
@@ -29,9 +30,7 @@ task wrapper(type: Wrapper) {
 
 repositories {
     mavenCentral()
-    maven {        
-          url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+    mavenLocal()
 }
 
 android {
@@ -82,5 +81,57 @@ publishing {
  }
 }
 
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+ 
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+              authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+ 
+            pom.project {
+               name 'mozu-api-java'
+               packaging 'jar'
+               description 'Mozu Java is a SDK that enables you to create robust Java applications that integrate with the Mozu platform'
+               url 'https://github.com/Mozu/mozu-java.git'
+ 
+               scm {
+                   url 'scm:git@github.com:Mozu/mozu-java.git'
+                   connection 'scm:git@github.com:Mozu/mozu-java.git'
+                   developerConnection 'scm:git@github.com:Mozu/mozu-java.git'
+               }
+ 
+               licenses {
+                   license {
+                       name 'The MIT License (MIT)'
+                       url 'http://http://opensource.org/licenses/MIT'
+                       distribution 'repo'
+                   }
+               }
+ 
+               developers {
+                   developer {
+                       id 'bob_hewett'
+                       name 'Bob Hewett'
+                   }
+                   developer {
+                       id 'john_gatti'
+                       name 'John Gatti'
+                   }
+                   developer {
+                       id 'sanjay_mandadi'
+                       name 'Sanjay Mandadi'
+                   }
+                   
+               }
+           }
+        }
+    }
+}
 
 
