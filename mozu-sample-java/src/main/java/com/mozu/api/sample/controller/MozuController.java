@@ -40,7 +40,6 @@ import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.AuthenticationScope;
 import com.mozu.api.security.Scope;
 import com.mozu.api.security.UserAuthenticator;
-import com.sun.org.apache.bcel.internal.generic.ATHROW;
 /**
  * Handles requests for the application home page.
  */
