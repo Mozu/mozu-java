@@ -12,7 +12,7 @@ if (hasProperty("teamcity")) {
         println "TeamCity build number passed into gradle is " + version
    } else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.16'
+    version = '1.7.17-SNAPSHOT'
    }
 group='wars'
 httpPort = 8001 
