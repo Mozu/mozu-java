@@ -10,6 +10,7 @@ import org.apache.http.HttpResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiError;
+import com.mozu.api.ApiError.Item;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AppAuthenticator;
@@ -22,8 +23,7 @@ public class HttpHelper {
             try {
                 ApiError apiError = mapper.readValue(response.getEntity().getContent(), ApiError.class);
                 apiError.setCorrelationId(getHeaderValue(Headers.X_VOL_CORRELATION, response));
-                throw new ApiException("Mozu Error: "
-                        + apiError.getMessage(), apiError);
+                throw new ApiException(getMozuErrorMessage(apiError), apiError);
             } catch (JsonProcessingException jpe) {
                 throw new ApiException("An error has occurred. Status Code: " + statusCode   
                         + " Status Message: " + response.getStatusLine().getReasonPhrase());
@@ -34,6 +34,28 @@ public class HttpHelper {
         }
     }
     
+    private static String getMozuErrorMessage(ApiError apiError) {
+        StringBuilder errorMessage = new StringBuilder("Error returned from Mozu. Correlation ID: ");
+        
+        errorMessage.append(apiError.getCorrelationId());
+        errorMessage.append(".  Message: ");
+        
+        if (StringUtils.isNotBlank(apiError.getMessage())) {
+            errorMessage.append(apiError.getMessage());
+        } else if (apiError.getExceptionDetail() != null && StringUtils.isNotBlank(apiError.getExceptionDetail().getMessage())) {
+            errorMessage.append(apiError.getExceptionDetail().getMessage());
+        } else if (apiError.getItems().size() > 0) {
+            for (Item item : apiError.getItems()) {
+                errorMessage.append(item.getMessage());
+                errorMessage.append(". Error Code: ").append(item.getErrorCode());
+            }
+        } else {
+            errorMessage.append("No error message returned from Mozu.");
+        }
+        
+        return errorMessage.toString();
+    }
+
     static public HttpHost getProxyHost () {;
         HttpHost proxyHttpHost = null;
        String proxyHost = ConfigProperties.getStringProperty(ConfigProperties.PROXY_HOST);
