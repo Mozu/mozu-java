@@ -16,6 +16,7 @@ import mockit.*;
 
 import com.mozu.api.contracts.tenant.Site;
 import com.mozu.api.contracts.tenant.Tenant;
+import com.mozu.api.security.AppAuthenticator;
 
 public class MozuApiContextTest {
     private static final Integer TENANT_ID = new Integer(11);
@@ -36,6 +37,7 @@ public class MozuApiContextTest {
     @Mocked HttpRequest mockRequest;
     @Mocked Header mockHeader;
     @Mocked HttpServletRequest mockServletRequest;
+    @Mocked AppAuthenticator mockAppAuthenticator;
     
     @Before
     public void setUp() throws Exception {
