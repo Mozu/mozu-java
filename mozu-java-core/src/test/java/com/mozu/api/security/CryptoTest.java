@@ -20,6 +20,8 @@ import com.mozu.api.contracts.appdev.AppAuthInfo;
 public class CryptoTest {
 	private static final String TEST_SHARED_SECRET = "bc0aa4944cc74341b59ba2fc01666571";
 	
+	@Mocked AppAuthenticator mockAppAuthenticator;
+	
     @Test
     public void testCryptoHash () {
         String body = "This is the body...blah, blah, blah";
@@ -40,11 +42,10 @@ public class CryptoTest {
     public void validRequestTest() {
         
         new Expectations() {
-            AppAuthenticator appAuth;
             {
                 AppAuthenticator.initialize();
-                AppAuthenticator.getInstance(); returns(appAuth);
-                appAuth.getAppAuthInfo(); returns(mockAppAuthInfo);
+                AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
+                mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
             { mockAppAuthInfo.getSharedSecret(); returns(TEST_SHARED_SECRET); }
         }; 
@@ -71,11 +72,10 @@ public class CryptoTest {
     @Test
     public void oldRequestTest() {
         new Expectations() {
-            AppAuthenticator appAuth;
             {
                 AppAuthenticator.initialize();
-                AppAuthenticator.getInstance(); returns(appAuth);
-                appAuth.getAppAuthInfo(); returns(mockAppAuthInfo);
+                AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
+                mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
             { mockAppAuthInfo.getSharedSecret(); returns(TEST_SHARED_SECRET); }
         }; 

@@ -45,6 +45,7 @@ public class AppAuthenticatorUnitTest {
     @Mocked DefaultHttpClient mockHttpClient;
     @Mocked HttpResponse mockHttpResponse;
     @Mocked HttpEntity mockHttpEntity;
+    @Mocked HttpHelper mockHttpHelper;
     
     @Before
     public void setUp() throws Exception {
@@ -76,8 +77,6 @@ public class AppAuthenticatorUnitTest {
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpEntity.getContent(); result= IOUtils.toInputStream(jsonString); }
@@ -100,8 +99,6 @@ public class AppAuthenticatorUnitTest {
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpEntity.getContent(); result= IOUtils.toInputStream(jsonString); }
@@ -151,8 +148,6 @@ public class AppAuthenticatorUnitTest {
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); result=new ApiException("Mozu Error: "); }
         };
         
@@ -178,8 +173,6 @@ public class AppAuthenticatorUnitTest {
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpEntity.getContent(); result= IOUtils.toInputStream("Bad Data"); }
@@ -208,16 +201,12 @@ public class AppAuthenticatorUnitTest {
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpEntity.getContent(); result=iStream; }
             { mockHttpPost.setHeader("Accept", "application/json"); }
             { mockHttpPost.setHeader("Content-type", "application/json"); }
             { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            @SuppressWarnings("unused")
-            HttpHelper hh2;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpEntity.getContent(); result=iStream; }

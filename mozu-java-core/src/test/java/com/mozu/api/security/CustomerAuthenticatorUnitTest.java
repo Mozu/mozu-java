@@ -52,6 +52,8 @@ public class CustomerAuthenticatorUnitTest {
     @Mocked HttpPost mockHttpPost;
     @Mocked HttpResponse mockHttpResponse;
     @Mocked HttpEntity mockHttpEntity;
+    @Mocked AppAuthenticator mockAppAuthenticator;
+    @Mocked HttpHelper mockHttpHelper;
 
     @Before
     public void setUp() throws Exception {
@@ -92,16 +94,12 @@ public class CustomerAuthenticatorUnitTest {
                 mockMozuUrl.getUrl(); 
                 result=MOZU_URL;
             }
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuthenticator;
             {
                 AppAuthenticator.addAuthHeader(mockHttpPut);
             }
             {
                 mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
             }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             {
                 HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
             }
@@ -142,16 +140,12 @@ public class CustomerAuthenticatorUnitTest {
                 mockMozuUrl.getUrl(); 
                 result=MOZU_URL;
             }
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuthenticator;
             {
                 AppAuthenticator.addAuthHeader(mockHttpPut);
             }
             {
                 mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
             }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             {
                 HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
             }
@@ -192,16 +186,12 @@ public class CustomerAuthenticatorUnitTest {
                 mockMozuUrl.getUrl(); 
                 result=MOZU_URL;
             }
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuthenticator;
             {
                 AppAuthenticator.addAuthHeader(mockHttpPut);
             }
             {
                 mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
             }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             {
                 HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
             }
@@ -244,16 +234,12 @@ public class CustomerAuthenticatorUnitTest {
                 mockMozuUrl.getUrl(); 
                 result=MOZU_URL;
             }
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuthenticator;
             {
                 AppAuthenticator.addAuthHeader(mockHttpPut);
             }
             {
                 mockDefaultHttpClient.execute((HttpPost)any); returns(mockHttpResponse);
             }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             {
                 HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
             }
@@ -296,16 +282,12 @@ public class CustomerAuthenticatorUnitTest {
                 mockMozuUrl.getUrl(); 
                 result=MOZU_URL;
             }
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuthenticator;
             {
                 AppAuthenticator.addAuthHeader(mockHttpPut);
             }
             {
                 mockDefaultHttpClient.execute((HttpPost)any); returns(mockHttpResponse);
             }
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             {
                 HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); result=new ApiException(MOZU_ERROR_MSG);
             }
