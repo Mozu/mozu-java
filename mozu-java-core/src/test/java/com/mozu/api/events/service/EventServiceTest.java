@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.NonStrict;
+import mockit.NonStrictExpectations;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpStatus;
@@ -61,6 +61,8 @@ public class EventServiceTest {
     @Mocked CartItem mockCartItem;
     @Mocked Product mockProduct;
     @Mocked ApiContext mockApiContext;
+    @Mocked IOUtils mockIOUtils;
+    @Mocked Crypto mockCrypto;
     
     @BeforeClass
     public static void registerHandler() {
@@ -100,12 +102,7 @@ public class EventServiceTest {
             { AppAuthenticator.isUseSSL(); result=false; times=2; } 
             { mockHttpServletRequest.getHeader(Headers.DATE); result=HEADER_DATE; }
             { mockHttpServletRequest.getInputStream(); result=mockServletInputStream; }
-            @NonStrict
-            IOUtils ioUtils;
             { IOUtils.toString(mockServletInputStream); result=jsonString; }
-            
-            @NonStrict
-            Crypto crypto;
             { Crypto.isRequestValid((ApiContext)any, (String)any); result=true; }
         };
 
@@ -131,12 +128,7 @@ public class EventServiceTest {
             { AppAuthenticator.isUseSSL(); result=false; times=2; } 
             { mockHttpServletRequest.getHeader(Headers.DATE); result=HEADER_DATE; }
             { mockHttpServletRequest.getInputStream(); result=mockServletInputStream; }
-            @NonStrict
-            IOUtils ioUtils;
             { IOUtils.toString(mockServletInputStream); result=jsonString; }
-            
-            @NonStrict
-            Crypto crypto;
             { Crypto.isRequestValid((ApiContext)any, (String)any); result=true; }
         };
 
@@ -163,12 +155,7 @@ public class EventServiceTest {
             { AppAuthenticator.isUseSSL(); result=false; times=2; } 
             { mockHttpServletRequest.getHeader(Headers.DATE); result=HEADER_DATE; }
             { mockHttpServletRequest.getInputStream(); result=mockServletInputStream; }
-            @NonStrict
-            IOUtils ioUtils;
             { IOUtils.toString(mockServletInputStream); result=jsonString; }
-
-            @NonStrict
-            Crypto crypto;
             { Crypto.isRequestValid((ApiContext)any, (String)any); result=true; }
         };
 
@@ -193,15 +180,10 @@ public class EventServiceTest {
             { AppAuthenticator.isUseSSL(); result=false; times=2; } 
             { mockHttpServletRequest.getHeader(Headers.DATE); result=HEADER_DATE; }
             { mockHttpServletRequest.getInputStream(); result=mockServletInputStream; }
-            @NonStrict
-            IOUtils ioUtils;
             { IOUtils.toString(mockServletInputStream); result=jsonString; }
-
             { AppAuthenticator.getInstance(); returns(mockAppAuthenticator); }
             { mockAppAuthenticator.getAppAuthInfo(); result=mockAppAuthInfo; }
             { mockAppAuthInfo.getSharedSecret(); result=HMAC_SHA_256; }
-            @NonStrict
-            Crypto crypto;
             { Crypto.isRequestValid((ApiContext)any, (String)any); result=false; }
         };
 

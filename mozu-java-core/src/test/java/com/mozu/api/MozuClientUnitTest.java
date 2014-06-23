@@ -9,7 +9,6 @@ import java.util.Map;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.NonStrict;
 import mockit.NonStrictExpectations;
 
 import org.apache.http.HttpHost;
@@ -53,7 +52,8 @@ public final class MozuClientUnitTest {
     @Mocked Tenant mockTenant;
     @Mocked BasicHttpEntityEnclosingRequest mockHttpRequest;
     @Mocked DefaultHttpClient mockHttpClient;
-    
+    @Mocked HttpHelper mockHttpelper;
+    @Mocked UserAuthenticator mockUserAuthenticator;
 
     @Before
     public void setUp() throws Exception {
@@ -195,8 +195,7 @@ public final class MozuClientUnitTest {
 //        final DateTime curDate = new DateTime();
 //        
 //        new Expectations() {
-//            @NonStrict final UserAuthenticator mock = null;
-//            { UserAuthenticator.ensureAuthTicket(mockAuthTicket); result=mockAuthenticationProfile; }
+//            { UserAuthenticator.ensureAuthTicket(mockAuthTicket); result=mockAuthTicket; }
 //            { mockAuthenticationProfile.getAuthTicket(); result=mockAuthTicket; }
 //            { mockAuthTicket.getAccessToken(); result=AUTH_ACCESS_TOKEN; }
 //            { mockAuthTicket.setAccessToken(AUTH_ACCESS_TOKEN); }
@@ -216,7 +215,6 @@ public final class MozuClientUnitTest {
 //    @Test
 //    public void setUserAuthNullAuthTest() {
 //        new Expectations() {
-//            @NonStrict final UserAuthenticator mock = null;
 //            { UserAuthenticator.ensureAuthTicket(mockAuthTicket); result=null; }
 //            { mockAuthTicket.getAccessToken(); result=AUTH_ACCESS_TOKEN; }
 //        }; 
@@ -247,18 +245,10 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getUrl(); result=TENANT_URL; }
             { mockHttpRequest.setEntity((StringEntity)any); }
             { mockHttpRequest.setHeader(anyString, anyString); times=2; }
-
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuth;
-            { 
-                AppAuthenticator.addAuthHeader(mockHttpRequest); 
-            }
+            { AppAuthenticator.addAuthHeader(mockHttpRequest); }
             { mockHttpRequest.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION); }
             
             { mockHttpClient.execute((HttpHost)any, mockHttpRequest); result=mockHttpResponse; }
-            
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper)any); }
         };
 
@@ -290,17 +280,10 @@ public final class MozuClientUnitTest {
             { mockHttpRequest.setEntity((StringEntity)any); }
             { mockHttpRequest.setHeader(anyString, anyString); times=2; }
 
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuth;
-            { 
-                AppAuthenticator.addAuthHeader(mockHttpRequest); 
-            }
+            { AppAuthenticator.addAuthHeader(mockHttpRequest); }
             { mockHttpRequest.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION); }
             
             { mockHttpClient.execute((HttpHost)any, mockHttpRequest); result=mockHttpResponse; }
-            
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper)any); }
         };
 
@@ -331,18 +314,10 @@ public final class MozuClientUnitTest {
            { mockResourceUrl.getUrl(); result=TENANT_URL; }
            { mockHttpRequest.setEntity((StringEntity)any); }
            { mockHttpRequest.setHeader(anyString, anyString); times=2; }
-
-           @SuppressWarnings("unused")
-           AppAuthenticator appAuth;
-           { 
-               AppAuthenticator.addAuthHeader(mockHttpRequest); 
-           }
+           { AppAuthenticator.addAuthHeader(mockHttpRequest); }
            { mockHttpRequest.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION); }
            
            { mockHttpClient.execute((HttpHost)any, mockHttpRequest); result=mockHttpResponse; }
-           
-           @SuppressWarnings("unused")
-           HttpHelper hh;
            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper)any); }
        };
 
@@ -374,17 +349,11 @@ public final class MozuClientUnitTest {
             { mockHttpRequest.setEntity((StringEntity)any); }
             { mockHttpRequest.setHeader(anyString, anyString); times=2; }
 
-            @SuppressWarnings("unused")
-            AppAuthenticator appAuth;
-            { 
-                AppAuthenticator.addAuthHeader(mockHttpRequest); 
-            }
+            { AppAuthenticator.addAuthHeader(mockHttpRequest); }
             { mockHttpRequest.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION); }
             
             { mockHttpClient.execute((HttpHost)any, mockHttpRequest); result=mockHttpResponse; }
             
-            @SuppressWarnings("unused")
-            HttpHelper hh;
             { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper)any); }
         };
 
