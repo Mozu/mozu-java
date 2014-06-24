@@ -285,6 +285,16 @@ public class WishlistItem implements Serializable
 		this.product = product;
 	}
 
+	protected AppliedProductDiscount productDiscount;
+
+	public AppliedProductDiscount getProductDiscount() {
+		return this.productDiscount;
+	}
+
+	public void setProductDiscount(AppliedProductDiscount productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
 	/**
 	 * Array of product discounts applicable to an item in a wish list. This property is not used at this time and is reserved for future functionality.
 	 */

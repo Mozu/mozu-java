@@ -285,6 +285,16 @@ public class OrderItem implements Serializable
 		this.product = product;
 	}
 
+	protected AppliedProductDiscount productDiscount;
+
+	public AppliedProductDiscount getProductDiscount() {
+		return this.productDiscount;
+	}
+
+	public void setProductDiscount(AppliedProductDiscount productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
 	/**
 	 * List of product discounts that apply to the item in the order.
 	 */
