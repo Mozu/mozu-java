@@ -10,13 +10,6 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.Discount;
-import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.productadmin.BundledProduct;
-import com.mozu.api.contracts.productadmin.ProductLocalizedContent;
-import com.mozu.api.contracts.productadmin.ProductExtra;
-import com.mozu.api.contracts.productadmin.ProductInventoryInfo;
-import com.mozu.api.contracts.productadmin.ProductOption;
 import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 import com.mozu.api.contracts.productadmin.ProductPricingBehaviorInfo;
@@ -26,6 +19,13 @@ import com.mozu.api.contracts.productadmin.ProductPublishingInfo;
 import com.mozu.api.contracts.productadmin.ProductLocalizedSEOContent;
 import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
+import com.mozu.api.contracts.productadmin.Discount;
+import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.productadmin.BundledProduct;
+import com.mozu.api.contracts.productadmin.ProductLocalizedContent;
+import com.mozu.api.contracts.productadmin.ProductExtra;
+import com.mozu.api.contracts.productadmin.ProductInventoryInfo;
+import com.mozu.api.contracts.productadmin.ProductOption;
 
 /**
  *	Properties of the product such as product code, product name, and product price.
@@ -260,6 +260,108 @@ public class Product implements Serializable
 	}
 
 	/**
+	 * Width of the package in imperial units of feet and inches.
+	 */
+	protected Measurement packageWidth;
+
+	public Measurement getPackageWidth() {
+		return this.packageWidth;
+	}
+
+	public void setPackageWidth(Measurement packageWidth) {
+		this.packageWidth = packageWidth;
+	}
+
+	protected ProductPrice price;
+
+	public ProductPrice getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(ProductPrice price) {
+		this.price = price;
+	}
+
+	protected ProductPricingBehaviorInfo pricingBehavior;
+
+	public ProductPricingBehaviorInfo getPricingBehavior() {
+		return this.pricingBehavior;
+	}
+
+	public void setPricingBehavior(ProductPricingBehaviorInfo pricingBehavior) {
+		this.pricingBehavior = pricingBehavior;
+	}
+
+	/**
+	 * Properties defined for a product as they appear in its associated catalogs.
+	 */
+	protected List<ProductInCatalogInfo> productInCatalogs;
+	public List<ProductInCatalogInfo> getProductInCatalogs() {
+		return this.productInCatalogs;
+	}
+	public void setProductInCatalogs(List<ProductInCatalogInfo> productInCatalogs) {
+		this.productInCatalogs = productInCatalogs;
+	}
+
+	/**
+	 * The list of product properties to set in product admin.
+	 */
+	protected List<ProductProperty> properties;
+	public List<ProductProperty> getProperties() {
+		return this.properties;
+	}
+	public void setProperties(List<ProductProperty> properties) {
+		this.properties = properties;
+	}
+
+	/**
+	 * Properties of the product publishing settings for the associated product.
+	 */
+	protected ProductPublishingInfo publishingInfo;
+
+	public ProductPublishingInfo getPublishingInfo() {
+		return this.publishingInfo;
+	}
+
+	public void setPublishingInfo(ProductPublishingInfo publishingInfo) {
+		this.publishingInfo = publishingInfo;
+	}
+
+	/**
+	 * search engine optimized product content.
+	 */
+	protected ProductLocalizedSEOContent seoContent;
+
+	public ProductLocalizedSEOContent getSeoContent() {
+		return this.seoContent;
+	}
+
+	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
+		this.seoContent = seoContent;
+	}
+
+	protected ProductSupplierInfo supplierInfo;
+
+	public ProductSupplierInfo getSupplierInfo() {
+		return this.supplierInfo;
+	}
+
+	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
+		this.supplierInfo = supplierInfo;
+	}
+
+	/**
+	 * The list of product variation options that exist in product admin.
+	 */
+	protected List<ProductVariationOption> variationOptions;
+	public List<ProductVariationOption> getVariationOptions() {
+		return this.variationOptions;
+	}
+	public void setVariationOptions(List<ProductVariationOption> variationOptions) {
+		this.variationOptions = variationOptions;
+	}
+
+	/**
 	 * List of discounts available for a product.
 	 */
 	protected List<Discount> applicableDiscounts;
@@ -376,108 +478,6 @@ public class Product implements Serializable
 
 	public void setPackageWeight(Measurement packageWeight) {
 		this.packageWeight = packageWeight;
-	}
-
-	/**
-	 * Width of the package in imperial units of feet and inches.
-	 */
-	protected Measurement packageWidth;
-
-	public Measurement getPackageWidth() {
-		return this.packageWidth;
-	}
-
-	public void setPackageWidth(Measurement packageWidth) {
-		this.packageWidth = packageWidth;
-	}
-
-	protected ProductPrice price;
-
-	public ProductPrice getPrice() {
-		return this.price;
-	}
-
-	public void setPrice(ProductPrice price) {
-		this.price = price;
-	}
-
-	protected ProductPricingBehaviorInfo pricingBehavior;
-
-	public ProductPricingBehaviorInfo getPricingBehavior() {
-		return this.pricingBehavior;
-	}
-
-	public void setPricingBehavior(ProductPricingBehaviorInfo pricingBehavior) {
-		this.pricingBehavior = pricingBehavior;
-	}
-
-	/**
-	 * Properties defined for a product as they appear in its associated catalogs.
-	 */
-	protected List<ProductInCatalogInfo> productInCatalogs;
-	public List<ProductInCatalogInfo> getProductInCatalogs() {
-		return this.productInCatalogs;
-	}
-	public void setProductInCatalogs(List<ProductInCatalogInfo> productInCatalogs) {
-		this.productInCatalogs = productInCatalogs;
-	}
-
-	/**
-	 * The list of product properties to set in product admin.
-	 */
-	protected List<ProductProperty> properties;
-	public List<ProductProperty> getProperties() {
-		return this.properties;
-	}
-	public void setProperties(List<ProductProperty> properties) {
-		this.properties = properties;
-	}
-
-	/**
-	 * Properties of the product publishing settings for the associated product.
-	 */
-	protected ProductPublishingInfo publishingInfo;
-
-	public ProductPublishingInfo getPublishingInfo() {
-		return this.publishingInfo;
-	}
-
-	public void setPublishingInfo(ProductPublishingInfo publishingInfo) {
-		this.publishingInfo = publishingInfo;
-	}
-
-	/**
-	 * search engine optimized product content.
-	 */
-	protected ProductLocalizedSEOContent seoContent;
-
-	public ProductLocalizedSEOContent getSeoContent() {
-		return this.seoContent;
-	}
-
-	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
-		this.seoContent = seoContent;
-	}
-
-	protected ProductSupplierInfo supplierInfo;
-
-	public ProductSupplierInfo getSupplierInfo() {
-		return this.supplierInfo;
-	}
-
-	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
-		this.supplierInfo = supplierInfo;
-	}
-
-	/**
-	 * The list of product variation options that exist in product admin.
-	 */
-	protected List<ProductVariationOption> variationOptions;
-	public List<ProductVariationOption> getVariationOptions() {
-		return this.variationOptions;
-	}
-	public void setVariationOptions(List<ProductVariationOption> variationOptions) {
-		this.variationOptions = variationOptions;
 	}
 
 }
