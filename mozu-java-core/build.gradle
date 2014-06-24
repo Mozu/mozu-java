@@ -1,11 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'jetty'
 
 sourceCompatibility = 1.6
 
 archivesBaseName='mozu-api-core'
-version = '1.7.15'
+version = '1.7.16'
 group='com.mozu.api'
 
 jar {
@@ -23,6 +24,7 @@ repositories {
 }
 
 dependencies {
+    providedCompile 'javax.servlet:servlet-api:2.5'
 	ext {
 		jacksonVersion='2.2.3'
 	}
@@ -30,7 +32,6 @@ dependencies {
     compile "org.apache.httpcomponents:httpclient:4.2.6"
 	compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion" 
     compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
-    compile "org.apache.tomcat:servlet-api:6.0.37"
     compile "commons-configuration:commons-configuration:1.10"
 	
 	compile "joda-time:joda-time:2.3"
