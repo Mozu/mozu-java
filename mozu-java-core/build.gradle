@@ -73,6 +73,8 @@ signing {
 }
 
 artifacts {
+    archives jar
+    
     archives sourcesJar
     archives javadocJar
 }
@@ -83,7 +85,7 @@ if (hasProperty("sonatypeUsername")) {
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
      
-                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
                   authentication(userName: sonatypeUsername, password: sonatypePassword)
                 }
 
