@@ -15,7 +15,7 @@ buildscript {
 apply plugin: 'android-library'
 
 sourceCompatibility = 1.6
-archivesBaseName='mozu-android-sdk'
+archivesBaseName='mozu-api-android'
 if (hasProperty("teamcity")) {
     version = teamcity["build.number"]
     println "TeamCity build number passed into gradle is " + version
@@ -28,7 +28,7 @@ ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 group='com.mozu'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '1.12'
 }
 
 repositories {
@@ -60,7 +60,7 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:19.0.0'
     compile 'com.android.support:appcompat-v7:19.0.0'
 
-    compile ("com.mozu:mozu-java-core:"+version) {
+    compile ("com.mozu:mozu-api-core:"+version) {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'

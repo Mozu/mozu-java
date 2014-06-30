@@ -5,7 +5,7 @@ apply plugin: 'signing'
 
 sourceCompatibility = 1.6
 
-archivesBaseName='mozu-java-sdk'
+archivesBaseName='mozu-api-java'
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
     version = teamcity["build.number"]
@@ -26,7 +26,7 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '1.12'
 }
 
 repositories {
@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
 
-    compile ("com.mozu:mozu-java-core:"+version) {
+    compile ("com.mozu:mozu-api-core:"+version) {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
