@@ -21,71 +21,6 @@ public class PaymentInteraction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If applicable, the total monetary amount associated with this payment interaction.
-	 */
-	protected Double amount;
-
-	public Double getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
-
-	/**
-	 * If applicable, the check number associated with this payment interaction.
-	 */
-	protected String checkNumber;
-
-	public String getCheckNumber() {
-		return this.checkNumber;
-	}
-
-	public void setCheckNumber(String checkNumber) {
-		this.checkNumber = checkNumber;
-	}
-
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
-	protected String currencyCode;
-
-	public String getCurrencyCode() {
-		return this.currencyCode;
-	}
-
-	public void setCurrencyCode(String currencyCode) {
-		this.currencyCode = currencyCode;
-	}
-
-	/**
-	 * If required by the payment gateway, the authorization code of the transaction.
-	 */
-	protected String gatewayAuthCode;
-
-	public String getGatewayAuthCode() {
-		return this.gatewayAuthCode;
-	}
-
-	public void setGatewayAuthCode(String gatewayAuthCode) {
-		this.gatewayAuthCode = gatewayAuthCode;
-	}
-
-	/**
-	 * AVS codes supplied by the payment gateway.
-	 */
-	protected String gatewayAVSCodes;
-
-	public String getGatewayAVSCodes() {
-		return this.gatewayAVSCodes;
-	}
-
-	public void setGatewayAVSCodes(String gatewayAVSCodes) {
-		this.gatewayAVSCodes = gatewayAVSCodes;
-	}
-
-	/**
 	 * CVV2 codes supplied by the payment gateway.
 	 */
 	protected String gatewayCVV2Codes;
@@ -288,6 +223,71 @@ public class PaymentInteraction implements Serializable
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	/**
+	 * If applicable, the total monetary amount associated with this payment interaction.
+	 */
+	protected Double amount;
+
+	public Double getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	/**
+	 * If applicable, the check number associated with this payment interaction.
+	 */
+	protected String checkNumber;
+
+	public String getCheckNumber() {
+		return this.checkNumber;
+	}
+
+	public void setCheckNumber(String checkNumber) {
+		this.checkNumber = checkNumber;
+	}
+
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
+	protected String currencyCode;
+
+	public String getCurrencyCode() {
+		return this.currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	/**
+	 * If required by the payment gateway, the authorization code of the transaction.
+	 */
+	protected String gatewayAuthCode;
+
+	public String getGatewayAuthCode() {
+		return this.gatewayAuthCode;
+	}
+
+	public void setGatewayAuthCode(String gatewayAuthCode) {
+		this.gatewayAuthCode = gatewayAuthCode;
+	}
+
+	/**
+	 * AVS codes supplied by the payment gateway.
+	 */
+	protected String gatewayAVSCodes;
+
+	public String getGatewayAVSCodes() {
+		return this.gatewayAVSCodes;
+	}
+
+	public void setGatewayAVSCodes(String gatewayAVSCodes) {
+		this.gatewayAVSCodes = gatewayAVSCodes;
 	}
 
 	/**
