@@ -272,16 +272,6 @@ public class CartItem implements Serializable
 		this.product = product;
 	}
 
-	protected AppliedProductDiscount productDiscount;
-
-	public AppliedProductDiscount getProductDiscount() {
-		return this.productDiscount;
-	}
-
-	public void setProductDiscount(AppliedProductDiscount productDiscount) {
-		this.productDiscount = productDiscount;
-	}
-
 	/**
 	 * List of product-level discounts projected to apply to the cart item at checkout.
 	 */

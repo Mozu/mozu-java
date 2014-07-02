@@ -12,7 +12,7 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
  * Use the Fulfillment Information resource to manage shipping or pickup information for orders.
