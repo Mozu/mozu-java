@@ -85,8 +85,6 @@ if (hasProperty("sonatypeUsername")) {
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
                 
-                updateReleaseInfo = false
-                
                 repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
                   authentication(userName: sonatypeUsername, password: sonatypePassword)
                 }
