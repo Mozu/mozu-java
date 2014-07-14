@@ -23,13 +23,13 @@ public class HttpHelper {
             try {
                 ApiError apiError = mapper.readValue(response.getEntity().getContent(), ApiError.class);
                 apiError.setCorrelationId(getHeaderValue(Headers.X_VOL_CORRELATION, response));
-                throw new ApiException(getMozuErrorMessage(apiError), apiError);
+                throw new ApiException(getMozuErrorMessage(apiError), apiError, statusCode);
             } catch (JsonProcessingException jpe) {
                 throw new ApiException("An error has occurred. Status Code: " + statusCode   
-                        + " Status Message: " + response.getStatusLine().getReasonPhrase());
+                        + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
             } catch (IOException ioe) {
                 throw new ApiException("An error occurred. Status Code: " + statusCode   
-                        + " Status Message: " + response.getStatusLine().getReasonPhrase());
+                        + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
             }
         }
     }
