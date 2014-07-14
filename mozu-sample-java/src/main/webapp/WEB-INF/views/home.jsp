@@ -41,7 +41,7 @@
 		            <input type="submit" value="Authenticate"/>
 		        </td>
 		      </tr>
-		   </table
+		   </table>
         </form>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
