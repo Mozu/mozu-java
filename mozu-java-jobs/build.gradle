@@ -5,7 +5,7 @@ apply plugin: 'maven'
 sourceCompatibility = 1.7
 
 archivesBaseName='mozu-api-jobs'
-group='com.mozu.api'
+group='com.mozu'
 
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
