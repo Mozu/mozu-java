@@ -1,11 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 sourceCompatibility = 1.7
 
 archivesBaseName='mozu-api-jobs'
-group='com.mozu.api'
+group='com.mozu'
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
@@ -14,7 +16,7 @@ if (hasProperty("teamcity")) {
 	}
 	else {
 // Manually insert the version numbers here when building outside of TeamCity
-	version = '1.0.1'
+	version = '1.0.2'
 }
 
 jar {
@@ -83,9 +85,68 @@ task javadocJar(type: Jar) {
     from javadoc.destinationDir
 }
 
+signing {
+    required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
 artifacts {
+    archives jar
     archives sourcesJar
     archives javadocJar
 }
 
+if (hasProperty("sonatypeUsername")) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+                
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                  authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
 
+                snapshotRepository (url: "https://oss.sonatype.org/content/repositories/snapshots") {
+                  authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
+     
+                pom.project {
+                   name 'mozu-java-jobs'
+                   packaging 'jar'
+                   description 'Mozu Java Jobs contains helper classes for running Spring Batch and Quartz scheduling'
+                   url 'https://github.com/Mozu/mozu-java.git'
+     
+                   scm {
+                       url 'scm:git@github.com:Mozu/mozu-java.git'
+                       connection 'scm:git@github.com:Mozu/mozu-java.git'
+                       developerConnection 'scm:git@github.com:Mozu/mozu-java.git'
+                   }
+     
+                   licenses {
+                       license {
+                           name 'The MIT License (MIT)'
+                           url 'http://opensource.org/licenses/MIT'
+                           distribution 'repo'
+                       }
+                   }
+     
+                   developers {
+                       developer {
+                           id 'bob_hewett'
+                           name 'Bob Hewett'
+                       }
+                       developer {
+                           id 'john_gatti'
+                           name 'John Gatti'
+                       }
+                       developer {
+                           id 'sanjay_mandadi'
+                           name 'Sanjay Mandadi'
+                       }
+                       
+                   }
+               }
+            }
+        }
+    }
+}
