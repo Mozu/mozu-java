@@ -4,22 +4,22 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 
-archivesBaseName='mozu-api-jobs'
+archivesBaseName='mozu-api-base'
 group='com.mozu'
 
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
-	version = teamcity["build.number"]
-		println "TeamCity build number passed into gradle is " + version
-	}
-	else {
+    version = teamcity["build.number"]
+        println "TeamCity build number passed into gradle is " + version
+    }
+    else {
 // Manually insert the version numbers here when building outside of TeamCity
-	version = '1.1.0-SNAPSHOT'
+    version = '1.0.1'
 }
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Mozu SDK Jobs Add-on', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'Mozu SDK Base Add-on', 'Implementation-Version': version
     }
 }
 
@@ -29,7 +29,9 @@ task wrapper(type: Wrapper) {
 
 repositories {
     mavenCentral()
-    mavenLocal()
+    maven {
+          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
+    }  
 }
 
 configurations.all {
@@ -59,10 +61,20 @@ dependencies {
     compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
     compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
 
+    compile ("com.mozu:mozu-api-java:1.7.19"){
+        exclude group: 'mysql'
+        exclude group: 'xerces'
+        exclude group: 'berkeleydb'
+        exclude group: 'hsqldb'
+        exclude group: 'tomcat'
+        
+        changing = true
+    }
+
     compile "org.apache.commons:commons-lang3:3.2.1"
-	compile ("org.slf4j:slf4j-api:1.7.5")
-	compile ("org.slf4j:slf4j-log4j12:1.7.5")
-	compile ('log4j:log4j:1.2.17')
+    compile ("org.slf4j:slf4j-api:1.7.5")
+    compile ("org.slf4j:slf4j-log4j12:1.7.5")
+    compile ('log4j:log4j:1.2.17')
     compile ('org.quartz-scheduler:quartz:2.2.1')
 
     testCompile 'com.googlecode.jmockit:jmockit:0.999.11'
