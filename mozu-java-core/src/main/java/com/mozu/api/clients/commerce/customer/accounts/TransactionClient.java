@@ -60,7 +60,27 @@ public class TransactionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.Transaction> addTransactionClient(com.mozu.api.contracts.customer.Transaction transaction, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.addTransactionUrl(accountId);
+		return addTransactionClient( transaction,  accountId,  null);
+	}
+
+	/**
+	 * Creates a new transaction for the customer account specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient=AddTransactionClient( transaction,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Transaction transaction = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields 
+	 * @param transaction Properties of the transaction to create for the customer account.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
+	 * @see com.mozu.api.contracts.customer.Transaction
+	 * @see com.mozu.api.contracts.customer.Transaction
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.Transaction> addTransactionClient(com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.addTransactionUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.Transaction.class;
 		MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient = new MozuClient(clz);

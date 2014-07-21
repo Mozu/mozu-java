@@ -47,6 +47,16 @@ public class ProductExtraValue implements Serializable
 		this.isDefaulted = isDefaulted;
 	}
 
+	protected Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
 	/**
 	 * Properties of a defined value for a product extra attribute.
 	 */

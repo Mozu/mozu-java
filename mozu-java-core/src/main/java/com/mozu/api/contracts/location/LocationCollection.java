@@ -24,13 +24,13 @@ public class LocationCollection implements Serializable
 	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */
-	protected Integer pageCount;
+	protected Long pageCount;
 
-	public Integer getPageCount() {
+	public Long getPageCount() {
 		return this.pageCount;
 	}
 
-	public void setPageCount(Integer pageCount) {
+	public void setPageCount(Long pageCount) {
 		this.pageCount = pageCount;
 	}
 
@@ -63,13 +63,13 @@ public class LocationCollection implements Serializable
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Integer totalCount;
+	protected Long totalCount;
 
-	public Integer getTotalCount() {
+	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Integer totalCount) {
+	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
 	}
 

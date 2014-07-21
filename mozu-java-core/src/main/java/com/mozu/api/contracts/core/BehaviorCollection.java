@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.Behavior;
 
 /**
- *	***Always private and should not be published.***
+ *	List of application behaviors and details for each record in the list.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BehaviorCollection implements Serializable
@@ -24,13 +24,13 @@ public class BehaviorCollection implements Serializable
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Integer totalCount;
+	protected Long totalCount;
 
-	public Integer getTotalCount() {
+	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Integer totalCount) {
+	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
 	}
 

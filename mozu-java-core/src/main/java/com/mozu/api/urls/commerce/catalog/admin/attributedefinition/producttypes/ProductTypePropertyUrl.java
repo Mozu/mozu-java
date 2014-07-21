@@ -28,25 +28,29 @@ public class ProductTypePropertyUrl
 	/**
 	 * Get Resource Url for GetProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPropertyUrl(String attributeFQN, Integer productTypeId)
+	public static MozuUrl getPropertyUrl(String attributeFQN, String fields, Integer productTypeId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productTypeId", productTypeId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddProperty
+	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addPropertyUrl(Integer productTypeId)
+	public static MozuUrl addPropertyUrl(String fields, Integer productTypeId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties?fields={fields}");
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productTypeId", productTypeId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -54,13 +58,15 @@ public class ProductTypePropertyUrl
 	/**
 	 * Get Resource Url for UpdateProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updatePropertyUrl(String attributeFQN, Integer productTypeId)
+	public static MozuUrl updatePropertyUrl(String attributeFQN, String fields, Integer productTypeId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Properties/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productTypeId", productTypeId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

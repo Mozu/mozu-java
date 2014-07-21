@@ -15,10 +15,10 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocations
-	 * @param filter 
-	 * @param pageSize 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
@@ -33,7 +33,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param locationCode 
+	 * @param locationCode The merchant-defined code of the location to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUrl(String locationCode)
@@ -55,7 +55,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for UpdateLocation
-	 * @param locationCode 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationUrl(String locationCode)
@@ -67,7 +67,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for DeleteLocation
-	 * @param locationCode 
+	 * @param locationCode The merchant-defined code of the location to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationUrl(String locationCode)

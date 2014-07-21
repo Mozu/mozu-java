@@ -22,6 +22,19 @@ public class Field implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Identifier of the field.
+	 */
+	protected Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/**
 	 * Label for the field.
 	 */
 	protected String label;
@@ -45,19 +58,6 @@ public class Field implements Serializable
 
 	public void setOrder(Integer order) {
 		this.order = order;
-	}
-
-	/**
-	 * Identifier of the field.
-	 */
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	/**

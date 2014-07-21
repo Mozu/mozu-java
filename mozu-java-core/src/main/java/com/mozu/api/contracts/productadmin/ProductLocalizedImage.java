@@ -32,6 +32,9 @@ public class ProductLocalizedImage implements Serializable
 		this.altText = altText;
 	}
 
+	/**
+	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
+	 */
 	protected String cmsId;
 
 	public String getCmsId() {

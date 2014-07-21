@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,28 +19,24 @@ public class SearchSuggestion implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The query term entered by the shopper.
-	 */
-	protected String query;
+	protected Object suggestion;
 
-	public String getQuery() {
-		return this.query;
+	public Object getSuggestion() {
+		return this.suggestion;
 	}
 
-	public void setQuery(String query) {
-		this.query = query;
+	public void setSuggestion(Object suggestion) {
+		this.suggestion = suggestion;
 	}
 
-	/**
-	 * The term suggestions to return based on the specified query value.
-	 */
-	protected List<String> suggestions;
-	public List<String> getSuggestions() {
-		return this.suggestions;
+	protected String suggestionType;
+
+	public String getSuggestionType() {
+		return this.suggestionType;
 	}
-	public void setSuggestions(List<String> suggestions) {
-		this.suggestions = suggestions;
+
+	public void setSuggestionType(String suggestionType) {
+		this.suggestionType = suggestionType;
 	}
 
 }

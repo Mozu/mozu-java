@@ -33,7 +33,24 @@ public class ChangeMessageClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> getMessagesClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.getMessagesUrl();
+		return getMessagesClient( null);
+	}
+
+	/**
+	 * Retrieves the messages associated with the current shopper's cart.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient=GetMessagesClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> getMessagesClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.getMessagesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient = new MozuClient(clz);

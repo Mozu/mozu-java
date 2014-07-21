@@ -34,17 +34,18 @@ public class AttributeTypeRuleClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getAttributeTypeRulesClient(dataViewMode,  null,  null,  null,  null);
+		return getAttributeTypeRulesClient(dataViewMode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of attribute type rules according to optional filter criteria and sort options. Attribute type rules help drive the behavior of attributes on a storefront page.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeTypeRuleCollection attributeTypeRuleCollection = client.Result();
 	 * </code></pre></p>
+	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param sortBy 
@@ -53,9 +54,9 @@ public class AttributeTypeRuleClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeTypeRuleUrl.getAttributeTypeRulesUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeTypeRuleUrl.getAttributeTypeRulesUrl(fields, filter, pageSize, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient = new MozuClient(clz);

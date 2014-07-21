@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	The login information for a customer account.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerLoginInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The email address associated with the customer login.
+	 */
 	protected String emailAddress;
 
 	public String getEmailAddress() {
@@ -26,6 +32,9 @@ public class CustomerLoginInfo implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
+	/**
+	 * If true, this customer account data was imported from an external program.
+	 */
 	protected Boolean isImport;
 
 	public Boolean getIsImport() {
@@ -36,6 +45,9 @@ public class CustomerLoginInfo implements Serializable
 		this.isImport = isImport;
 	}
 
+	/**
+	 * The password associated with the customer login.
+	 */
 	protected String password;
 
 	public String getPassword() {
@@ -46,6 +58,9 @@ public class CustomerLoginInfo implements Serializable
 		this.password = password;
 	}
 
+	/**
+	 * The user name associated with the customer login.
+	 */
 	protected String username;
 
 	public String getUsername() {
