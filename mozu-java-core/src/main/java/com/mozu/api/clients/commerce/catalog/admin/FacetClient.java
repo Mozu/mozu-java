@@ -34,25 +34,26 @@ public class FacetClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(com.mozu.api.DataViewMode dataViewMode, Integer facetId) throws Exception
 	{
-		return getFacetClient(dataViewMode,  facetId,  null);
+		return getFacetClient(dataViewMode,  facetId,  null,  null);
 	}
 
 	/**
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient(dataViewMode,  facetId,  validate);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient(dataViewMode,  facetId,  validate,  fields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
+	 * @param fields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(com.mozu.api.DataViewMode dataViewMode, Integer facetId, Boolean validate) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(com.mozu.api.DataViewMode dataViewMode, Integer facetId, Boolean validate, String fields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetUrl(facetId, validate);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetUrl(facetId, fields, validate);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
@@ -77,26 +78,27 @@ public class FacetClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
 	{
-		return getFacetCategoryListClient(dataViewMode,  categoryId,  null,  null);
+		return getFacetCategoryListClient(dataViewMode,  categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient(dataViewMode,  categoryId,  includeAvailable,  validate);
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient(dataViewMode,  categoryId,  includeAvailable,  validate,  fields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
+	 * @param fields 
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean includeAvailable, Boolean validate) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean includeAvailable, Boolean validate, String fields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryId, includeAvailable, validate);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryId, fields, includeAvailable, validate);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.FacetSet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = new MozuClient(clz);
@@ -108,21 +110,40 @@ public class FacetClient {
 	}
 
 	/**
-	 * Creates a new category, price, or attribute facet. Supply the category or attribute source to use for the facet values.
+	 * Creates a new category, price, or attribute facet. Define the category or attribute source to use for the facet values.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=AddFacetClient(dataViewMode,  facet);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param facet Properties of the new facet to create. Required properties: Source, FacetType, IsHidden, and CategoryId.
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> addFacetClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.addFacetUrl();
+		return addFacetClient(dataViewMode,  facet,  null);
+	}
+
+	/**
+	 * Creates a new category, price, or attribute facet. Define the category or attribute source to use for the facet values.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=AddFacetClient(dataViewMode,  facet,  fields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Facet facet = client.Result();
+	 * </code></pre></p>
+	 * @param fields 
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
+	 * @see com.mozu.api.contracts.productadmin.Facet
+	 * @see com.mozu.api.contracts.productadmin.Facet
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> addFacetClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet, String fields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.addFacetUrl(fields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
@@ -143,14 +164,34 @@ public class FacetClient {
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to modify.
-	 * @param facet Properties of the defined facet to modify. Required properties: Source, FacetType, IsHidden, and CategoryId.
+	 * @param facet Properties of the defined facet to modify.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> updateFacetClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.updateFacetUrl(facetId);
+		return updateFacetClient(dataViewMode,  facet,  facetId,  null);
+	}
+
+	/**
+	 * Modifies one or more properties of a defined facet.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=UpdateFacetClient(dataViewMode,  facet,  facetId,  fields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Facet facet = client.Result();
+	 * </code></pre></p>
+	 * @param facetId Unique identifier of the facet to modify.
+	 * @param fields 
+	 * @param facet Properties of the defined facet to modify.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
+	 * @see com.mozu.api.contracts.productadmin.Facet
+	 * @see com.mozu.api.contracts.productadmin.Facet
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> updateFacetClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId, String fields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.updateFacetUrl(facetId, fields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);

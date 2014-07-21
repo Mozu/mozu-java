@@ -51,19 +51,141 @@ public class ProductPropertyResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContents(dataViewMode,  productCode,  attributeFQN,  value);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @return List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> getPropertyValueLocalizedContents(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.getPropertyValueLocalizedContentsClient(dataViewMode,  productCode,  attributeFQN,  value);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode) throws Exception
+	{
+		return getPropertyValueLocalizedContent(dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param fields 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.getPropertyValueLocalizedContentClient(dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  fields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieves the details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
 	 *	ProductProperty productProperty = productproperty.GetProperty(dataViewMode,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
 	public com.mozu.api.contracts.productadmin.ProductProperty getProperty(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.getPropertyClient(dataViewMode,  productCode,  attributeFQN);
+		return getProperty(dataViewMode,  productCode,  attributeFQN,  null);
+	}
+
+	/**
+	 * Retrieves the details of a property attribute configuration for the product specified in the request.
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductProperty productProperty = productproperty.GetProperty(dataViewMode,  productCode,  attributeFQN,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @return com.mozu.api.contracts.productadmin.ProductProperty
+	 * @see com.mozu.api.contracts.productadmin.ProductProperty
+	 */
+	public com.mozu.api.contracts.productadmin.ProductProperty getProperty(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.getPropertyClient(dataViewMode,  productCode,  attributeFQN,  fields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value) throws Exception
+	{
+		return addPropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param fields 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.addPropertyValueLocalizedContentClient(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -84,7 +206,93 @@ public class ProductPropertyResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductProperty addProperty(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.addPropertyClient(dataViewMode,  productProperty,  productCode);
+		return addProperty(dataViewMode,  productProperty,  productCode,  null);
+	}
+
+	/**
+	 * Configures a property attribute for the product specified in the request.
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductProperty productProperty = productproperty.AddProperty(dataViewMode,  productProperty,  productCode,  fields);
+	 * </code></pre></p>
+	 * @param fields 
+	 * @param productCode 
+	 * @param productProperty Properties of the property attribute to configure for a product.
+	 * @return com.mozu.api.contracts.productadmin.ProductProperty
+	 * @see com.mozu.api.contracts.productadmin.ProductProperty
+	 * @see com.mozu.api.contracts.productadmin.ProductProperty
+	 */
+	public com.mozu.api.contracts.productadmin.ProductProperty addProperty(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.addPropertyClient(dataViewMode,  productProperty,  productCode,  fields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContents(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
+	 * @return List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> updatePropertyValueLocalizedContents(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> localizedContent, String productCode, String attributeFQN, String value) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.updatePropertyValueLocalizedContentsClient(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode) throws Exception
+	{
+		return updatePropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param fields 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedContent 
+	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.updatePropertyValueLocalizedContentClient(dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -106,7 +314,26 @@ public class ProductPropertyResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductProperty updateProperty(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.updatePropertyClient(dataViewMode,  productProperty,  productCode,  attributeFQN);
+		return updateProperty(dataViewMode,  productProperty,  productCode,  attributeFQN,  null);
+	}
+
+	/**
+	 * Update one or more details of a property attribute configuration for the product specified in the request.
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	ProductProperty productProperty = productproperty.UpdateProperty(dataViewMode,  productProperty,  productCode,  attributeFQN,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
+	 * @param productCode 
+	 * @param productProperty Details of the property attribute to update for the product configuration.
+	 * @return com.mozu.api.contracts.productadmin.ProductProperty
+	 * @see com.mozu.api.contracts.productadmin.ProductProperty
+	 * @see com.mozu.api.contracts.productadmin.ProductProperty
+	 */
+	public com.mozu.api.contracts.productadmin.ProductProperty updateProperty(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.updatePropertyClient(dataViewMode,  productProperty,  productCode,  attributeFQN,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -126,6 +353,26 @@ public class ProductPropertyResource {
 	public void deleteProperty(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.deletePropertyClient(dataViewMode,  productCode,  attributeFQN);
+		client.setContext(_apiContext);
+		client.executeRequest();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductProperty productproperty = new ProductProperty();
+	 *	productproperty.DeletePropertyValueLocalizedContent(dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return 
+	 */
+	public void deletePropertyValueLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.deletePropertyValueLocalizedContentClient(dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

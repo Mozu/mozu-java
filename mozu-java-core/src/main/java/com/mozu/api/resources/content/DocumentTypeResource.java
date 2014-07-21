@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * The DocumentTypes resource is a part of the Content Service.
+ * Use the Document Types resource to view the document types supplied by the Content API.
  * </summary>
  */
 public class DocumentTypeResource {
@@ -42,23 +42,24 @@ public class DocumentTypeResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getDocumentTypes(dataViewMode,  null,  null);
+		return getDocumentTypes(dataViewMode,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentTypeCollection documentTypeCollection = documenttype.GetDocumentTypes(dataViewMode,  pageSize,  startIndex);
+	 *	DocumentTypeCollection documentTypeCollection = documenttype.GetDocumentTypes(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
-	public com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex) throws Exception
+	public com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> client = com.mozu.api.clients.content.DocumentTypeClient.getDocumentTypesClient(dataViewMode,  pageSize,  startIndex);
+		MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> client = com.mozu.api.clients.content.DocumentTypeClient.getDocumentTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -77,7 +78,99 @@ public class DocumentTypeResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentType getDocumentType(com.mozu.api.DataViewMode dataViewMode, String documentTypeName) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentType> client = com.mozu.api.clients.content.DocumentTypeClient.getDocumentTypeClient(dataViewMode,  documentTypeName);
+		return getDocumentType(dataViewMode,  documentTypeName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentType documenttype = new DocumentType();
+	 *	DocumentType documentType = documenttype.GetDocumentType(dataViewMode,  documentTypeName,  responseFields);
+	 * </code></pre></p>
+	 * @param documentTypeName 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 */
+	public com.mozu.api.contracts.content.DocumentType getDocumentType(com.mozu.api.DataViewMode dataViewMode, String documentTypeName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.DocumentType> client = com.mozu.api.clients.content.DocumentTypeClient.getDocumentTypeClient(dataViewMode,  documentTypeName,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentType documenttype = new DocumentType();
+	 *	DocumentType documentType = documenttype.CreateDocumentType(dataViewMode,  documentType);
+	 * </code></pre></p>
+	 * @param documentType 
+	 * @return com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 */
+	public com.mozu.api.contracts.content.DocumentType createDocumentType(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType) throws Exception
+	{
+		return createDocumentType(dataViewMode,  documentType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentType documenttype = new DocumentType();
+	 *	DocumentType documentType = documenttype.CreateDocumentType(dataViewMode,  documentType,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param documentType 
+	 * @return com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 */
+	public com.mozu.api.contracts.content.DocumentType createDocumentType(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.DocumentType> client = com.mozu.api.clients.content.DocumentTypeClient.createDocumentTypeClient(dataViewMode,  documentType,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentType documenttype = new DocumentType();
+	 *	DocumentType documentType = documenttype.UpdateDocumentType(dataViewMode,  documentType,  documentTypeName);
+	 * </code></pre></p>
+	 * @param documentTypeName 
+	 * @param documentType 
+	 * @return com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 */
+	public com.mozu.api.contracts.content.DocumentType updateDocumentType(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName) throws Exception
+	{
+		return updateDocumentType(dataViewMode,  documentType,  documentTypeName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentType documenttype = new DocumentType();
+	 *	DocumentType documentType = documenttype.UpdateDocumentType(dataViewMode,  documentType,  documentTypeName,  responseFields);
+	 * </code></pre></p>
+	 * @param documentTypeName 
+	 * @param responseFields 
+	 * @param documentType 
+	 * @return com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 * @see com.mozu.api.contracts.content.DocumentType
+	 */
+	public com.mozu.api.contracts.content.DocumentType updateDocumentType(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.DocumentType> client = com.mozu.api.clients.content.DocumentTypeClient.updateDocumentTypeClient(dataViewMode,  documentType,  documentTypeName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

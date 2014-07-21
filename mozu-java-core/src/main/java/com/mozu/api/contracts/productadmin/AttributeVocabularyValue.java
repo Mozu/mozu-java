@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -57,6 +58,14 @@ public class AttributeVocabularyValue implements Serializable
 
 	public void setContent(AttributeVocabularyValueLocalizedContent content) {
 		this.content = content;
+	}
+
+	protected List<AttributeVocabularyValueLocalizedContent> localizedContent;
+	public List<AttributeVocabularyValueLocalizedContent> getLocalizedContent() {
+		return this.localizedContent;
+	}
+	public void setLocalizedContent(List<AttributeVocabularyValueLocalizedContent> localizedContent) {
+		this.localizedContent = localizedContent;
 	}
 
 }

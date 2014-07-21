@@ -84,14 +84,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.Behavior> mozuClient=GetBehaviorClient( behaviorId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Behavior behavior = client.Result();
 	 * </code></pre></p>
-	 * @param behaviorId ***Always private and should not be published.***
+	 * @param behaviorId Unique identifier of the behavior.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.Behavior>
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -108,7 +108,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the list of behavior categories.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> mozuClient=GetBehaviorCategoriesClient();
 	 * client.setBaseAddress(url);
@@ -131,14 +131,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of the behavior category specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategory> mozuClient=GetBehaviorCategoryClient( categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId ***Always private and should not be published.***
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -155,7 +155,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient=GetBehaviorsClient();
 	 * client.setBaseAddress(url);
@@ -171,14 +171,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient=GetBehaviorsClient( userType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCollection behaviorCollection = client.Result();
 	 * </code></pre></p>
-	 * @param userType 
+	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCollection>
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
 	 */

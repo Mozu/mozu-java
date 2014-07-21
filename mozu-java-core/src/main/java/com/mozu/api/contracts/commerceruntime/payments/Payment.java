@@ -50,6 +50,9 @@ public class Payment implements Serializable
 		this.amountCredited = amountCredited;
 	}
 
+	/**
+	 * The total amount originally requested for this payment.
+	 */
 	protected Double amountRequested;
 
 	public Double getAmountRequested() {

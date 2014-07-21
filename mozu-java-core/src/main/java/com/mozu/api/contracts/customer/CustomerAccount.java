@@ -52,6 +52,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * The email address associated with the customer account.
+	 */
 	protected String emailAddress;
 
 	public String getEmailAddress() {
@@ -62,6 +65,9 @@ public class CustomerAccount implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
+	/**
+	 * Unique identifier an external system uses to identify this customer account.
+	 */
 	protected String externalId;
 
 	public String getExternalId() {
@@ -72,6 +78,9 @@ public class CustomerAccount implements Serializable
 		this.externalId = externalId;
 	}
 
+	/**
+	 * The first name associated with the customer account.
+	 */
 	protected String firstName;
 
 	public String getFirstName() {
@@ -95,6 +104,9 @@ public class CustomerAccount implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If true, this customer account represents an anonymous shopper.
+	 */
 	protected Boolean isAnonymous;
 
 	public Boolean getIsAnonymous() {
@@ -105,6 +117,9 @@ public class CustomerAccount implements Serializable
 		this.isAnonymous = isAnonymous;
 	}
 
+	/**
+	 * The last name associated with the customer account.
+	 */
 	protected String lastName;
 
 	public String getLastName() {
@@ -115,6 +130,9 @@ public class CustomerAccount implements Serializable
 		this.lastName = lastName;
 	}
 
+	/**
+	 * Language used for the entity. Currently, only "en-US" is supported.
+	 */
 	protected String localeCode;
 
 	public String getLocaleCode() {
@@ -152,7 +170,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the user associated with the customer account.
+	 * Unique identifier of the user associated with the customer account. All customer accounts must have a defined user ID. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected String userId;
 
@@ -164,6 +182,9 @@ public class CustomerAccount implements Serializable
 		this.userId = userId;
 	}
 
+	/**
+	 * The user name of the user associated with the customer account.
+	 */
 	protected String userName;
 
 	public String getUserName() {
@@ -233,6 +254,9 @@ public class CustomerAccount implements Serializable
 		this.notes = notes;
 	}
 
+	/**
+	 * List of customer segments associated with the customer account. Customer accounts can be members of any number of segments.
+	 */
 	protected List<CustomerSegment> segments;
 	public List<CustomerSegment> getSegments() {
 		return this.segments;

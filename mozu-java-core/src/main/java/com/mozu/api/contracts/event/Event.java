@@ -20,6 +20,9 @@ public class Event implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the catalog of products used by a site.
+	 */
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -30,6 +33,9 @@ public class Event implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
+	 */
 	protected String correlationId;
 
 	public String getCorrelationId() {
@@ -79,6 +85,9 @@ public class Event implements Serializable
 		this.isTest = isTest;
 	}
 
+	/**
+	 * The unique identifier of the master catalog associated with the entity.
+	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {

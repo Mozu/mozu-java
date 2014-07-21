@@ -15,13 +15,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * 
+ * Use the Location Types resource to manage the types of locations your tenant maintains, such as warehouses, physical storefronts, and kiosks.
  * </summary>
  */
 public class LocationTypeClient {
 	
 	/**
-	 * 
+	 * Retrieve a list of all location types defined for the tenant.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.location.LocationType>> mozuClient=GetLocationTypesClient();
 	 * client.setBaseAddress(url);
@@ -44,14 +44,14 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of the location type specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=GetLocationTypeClient( locationTypeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param locationTypeCode 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
@@ -68,14 +68,14 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new location type based on the information specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=AddLocationTypeClient( locationType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param locationType 
+	 * @param locationType Properties of the location type to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -94,15 +94,15 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * 
+	 * Updates the name of a defined location type.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=UpdateLocationTypeClient( locationType,  locationTypeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param locationTypeCode 
-	 * @param locationType 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationType Properties of the location type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -121,13 +121,13 @@ public class LocationTypeClient {
 	}
 
 	/**
-	 * 
+	 * Deletes the location type specified in the request.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteLocationTypeClient( locationTypeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationTypeCode 
+	 * @param locationTypeCode User-defined code used to identify the location type.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationTypeClient(String locationTypeCode) throws Exception

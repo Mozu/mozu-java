@@ -53,6 +53,16 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
 	/**
 	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
 	 */
@@ -66,6 +76,9 @@ public class Product implements Serializable
 		this.isActive = isActive;
 	}
 
+	/**
+	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -159,6 +172,9 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -183,7 +199,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC code) of the product.
+	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
 	protected String upc;
 
@@ -227,6 +243,9 @@ public class Product implements Serializable
 		this.availableShippingDiscounts = availableShippingDiscounts;
 	}
 
+	/**
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
 		return this.bundledProducts;
@@ -297,7 +316,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
+	 * Unit price that the tenant intends to sell the product if no sale price is set.
 	 */
 	protected ProductPrice price;
 
@@ -333,7 +352,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of product properties set up in product admin.
+	 * The list of product property attributes defined for the product.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {

@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	The authentication information required to generate an authentication ticket for a customer account.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerUserAuthInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The password of the user associated with the customer account.
+	 */
 	protected String password;
 
 	public String getPassword() {
@@ -26,6 +32,9 @@ public class CustomerUserAuthInfo implements Serializable
 		this.password = password;
 	}
 
+	/**
+	 * The user name of the user associated with the customer account.
+	 */
 	protected String username;
 
 	public String getUsername() {

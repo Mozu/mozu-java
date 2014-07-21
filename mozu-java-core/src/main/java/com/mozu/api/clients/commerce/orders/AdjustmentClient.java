@@ -36,18 +36,19 @@ public class AdjustmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyShippingAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId) throws Exception
 	{
-		return applyShippingAdjustmentClient( adjustment,  orderId,  null,  null);
+		return applyShippingAdjustmentClient( adjustment,  orderId,  null,  null,  null);
 	}
 
 	/**
 	 * Applies a shipping adjustment to the specified order.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyShippingAdjustmentClient( adjustment,  orderId,  updateMode,  version);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyShippingAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipping adjustment.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to apply the shipping adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param adjustment Properties of the shipping adjustment to apply to the order.
@@ -55,9 +56,9 @@ public class AdjustmentClient {
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyShippingAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyShippingAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyShippingAdjustmentUrl(orderId, updateMode, version);
+		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyShippingAdjustmentUrl(orderId, responseFields, updateMode, version);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
@@ -84,18 +85,19 @@ public class AdjustmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId) throws Exception
 	{
-		return applyAdjustmentClient( adjustment,  orderId,  null,  null);
+		return applyAdjustmentClient( adjustment,  orderId,  null,  null,  null);
 	}
 
 	/**
 	 * Applies a price adjustment to the specified order.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyAdjustmentClient( adjustment,  orderId,  updateMode,  version);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the adjustment.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to apply the adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param adjustment Properties of the price adjustment to apply to the order.
@@ -103,9 +105,9 @@ public class AdjustmentClient {
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyAdjustmentUrl(orderId, updateMode, version);
+		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyAdjustmentUrl(orderId, responseFields, updateMode, version);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);

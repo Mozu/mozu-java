@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -58,6 +59,14 @@ public class ProductPropertyValue implements Serializable
 
 	public void setContent(ProductPropertyValueLocalizedContent content) {
 		this.content = content;
+	}
+
+	protected List<ProductPropertyValueLocalizedContent> localizedContent;
+	public List<ProductPropertyValueLocalizedContent> getLocalizedContent() {
+		return this.localizedContent;
+	}
+	public void setLocalizedContent(List<ProductPropertyValueLocalizedContent> localizedContent) {
+		this.localizedContent = localizedContent;
 	}
 
 }

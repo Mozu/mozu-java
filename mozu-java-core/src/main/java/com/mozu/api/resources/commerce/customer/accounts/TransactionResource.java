@@ -64,7 +64,25 @@ public class TransactionResource {
 	 */
 	public com.mozu.api.contracts.customer.Transaction addTransaction(com.mozu.api.contracts.customer.Transaction transaction, Integer accountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.Transaction> client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.addTransactionClient( transaction,  accountId);
+		return addTransaction( transaction,  accountId,  null);
+	}
+
+	/**
+	 * Creates a new transaction for the customer account specified in the request.
+	 * <p><pre><code>
+	 *	Transaction transaction = new Transaction();
+	 *	Transaction transaction = transaction.AddTransaction( transaction,  accountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields 
+	 * @param transaction Properties of the transaction to create for the customer account.
+	 * @return com.mozu.api.contracts.customer.Transaction
+	 * @see com.mozu.api.contracts.customer.Transaction
+	 * @see com.mozu.api.contracts.customer.Transaction
+	 */
+	public com.mozu.api.contracts.customer.Transaction addTransaction(com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.Transaction> client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.addTransactionClient( transaction,  accountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

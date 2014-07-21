@@ -65,7 +65,25 @@ public class ProductTypeExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtraClient(dataViewMode,  productTypeId,  attributeFQN);
+		return getExtra(dataViewMode,  productTypeId,  attributeFQN,  null);
+	}
+
+	/**
+	 * Retrieves the details of an extra attribute definition for the specified product type.
+	 * <p><pre><code>
+	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
+	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(dataViewMode,  productTypeId,  attributeFQN,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
+	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
+	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
+	 */
+	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtraClient(dataViewMode,  productTypeId,  attributeFQN,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -87,7 +105,26 @@ public class ProductTypeExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.addExtraClient(dataViewMode,  attributeInProductType,  productTypeId);
+		return addExtra(dataViewMode,  attributeInProductType,  productTypeId,  null);
+	}
+
+	/**
+	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
+	 * <p><pre><code>
+	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
+	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra(dataViewMode,  attributeInProductType,  productTypeId,  fields);
+	 * </code></pre></p>
+	 * @param fields 
+	 * @param productTypeId Identifier of the product type.
+	 * @param dataViewMode DataViewMode
+	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
+	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
+	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
+	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
+	 */
+	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.addExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -110,7 +147,27 @@ public class ProductTypeExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.updateExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+		return updateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null);
+	}
+
+	/**
+	 * Update the definition of an extra attribute for the specified product type.
+	 * <p><pre><code>
+	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
+	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
+	 * @param productTypeId Identifier of the product type.
+	 * @param dataViewMode DataViewMode
+	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
+	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
+	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
+	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
+	 */
+	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.updateExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

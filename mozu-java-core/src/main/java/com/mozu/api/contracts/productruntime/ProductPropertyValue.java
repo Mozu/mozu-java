@@ -9,6 +9,7 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
  *	Values of a product property attribute.
@@ -43,6 +44,16 @@ public class ProductPropertyValue implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+
+	protected AttributeVocabularyValueDisplayInfo displayInfo;
+
+	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 }

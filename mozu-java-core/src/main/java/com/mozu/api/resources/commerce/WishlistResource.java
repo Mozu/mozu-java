@@ -42,27 +42,28 @@ public class WishlistResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection getWishlists() throws Exception
 	{
-		return getWishlists( null,  null,  null,  null,  null,  null);
+		return getWishlists( null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of shopper wish lists according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	WishlistCollection wishlistCollection = wishlist.GetWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit);
+	 *	WishlistCollection wishlistCollection = wishlist.GetWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 */
-	public com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection getWishlists(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit) throws Exception
+	public com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection getWishlists(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistsClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistsClient( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -81,7 +82,23 @@ public class WishlistResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlist(String wishlistId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistClient( wishlistId);
+		return getWishlist( wishlistId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the shopper wish list specified in the request.
+	 * <p><pre><code>
+	 *	Wishlist wishlist = new Wishlist();
+	 *	Wishlist wishlist = wishlist.GetWishlist( wishlistId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 */
+	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlist(String wishlistId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistClient( wishlistId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -89,19 +106,36 @@ public class WishlistResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a wish list by supplying the wish list name.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
 	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlistByName(Integer customerAccountId, String wishlistName) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistByNameClient( customerAccountId,  wishlistName);
+		return getWishlistByName( customerAccountId,  wishlistName,  null);
+	}
+
+	/**
+	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * <p><pre><code>
+	 *	Wishlist wishlist = new Wishlist();
+	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName,  responseFields);
+	 * </code></pre></p>
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param responseFields 
+	 * @param wishlistName The name of the wish list to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 */
+	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlistByName(Integer customerAccountId, String wishlistName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.getWishlistByNameClient( customerAccountId,  wishlistName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -121,7 +155,24 @@ public class WishlistResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist createWishlist(com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.createWishlistClient( wishlist);
+		return createWishlist( wishlist,  null);
+	}
+
+	/**
+	 * Creates a new shopper wish list for the associated customer account. Although customer accounts are maintained at the tenant level, the system stores wish lists at the site level. Newly created wish lists do not have any items.
+	 * <p><pre><code>
+	 *	Wishlist wishlist = new Wishlist();
+	 *	Wishlist wishlist = wishlist.CreateWishlist( wishlist,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param wishlist Properties of the wish list to create.
+	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 */
+	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist createWishlist(com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.createWishlistClient( wishlist,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -142,7 +193,25 @@ public class WishlistResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist updateWishlist(com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist, String wishlistId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.updateWishlistClient( wishlist,  wishlistId);
+		return updateWishlist( wishlist,  wishlistId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a shopper wish list defined for a customer account.
+	 * <p><pre><code>
+	 *	Wishlist wishlist = new Wishlist();
+	 *	Wishlist wishlist = wishlist.UpdateWishlist( wishlist,  wishlistId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param wishlistId Unique identifier of the shopper wish list to update.
+	 * @param wishlist Properties of the shopper wish list to update.
+	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
+	 */
+	public com.mozu.api.contracts.commerceruntime.wishlists.Wishlist updateWishlist(com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist, String wishlistId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> client = com.mozu.api.clients.commerce.WishlistClient.updateWishlistClient( wishlist,  wishlistId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

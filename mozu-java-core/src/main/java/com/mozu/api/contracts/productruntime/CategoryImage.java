@@ -32,6 +32,9 @@ public class CategoryImage implements Serializable
 		this.altText = altText;
 	}
 
+	/**
+	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 */
 	protected String cmsId;
 
 	public String getCmsId() {

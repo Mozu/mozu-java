@@ -35,7 +35,26 @@ public class AuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.appdev.AuthTicket> authenticateAppClient(com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.authenticateAppUrl();
+		return authenticateAppClient( appAuthInfo,  null);
+	}
+
+	/**
+	 * Generate an authentication ticket for an application.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=AuthenticateAppClient( appAuthInfo,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AuthTicket authTicket = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
+	 * @see com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.appdev.AuthTicket> authenticateAppClient(com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.authenticateAppUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.appdev.AuthTicket.class;
 		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = new MozuClient(clz);
@@ -61,7 +80,26 @@ public class AuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.appdev.AuthTicket> refreshAppAuthTicketClient(com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.refreshAppAuthTicketUrl();
+		return refreshAppAuthTicketClient( authTicketRequest,  null);
+	}
+
+	/**
+	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient=RefreshAppAuthTicketClient( authTicketRequest,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AuthTicket authTicket = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
+	 * @see com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.appdev.AuthTicket> refreshAppAuthTicketClient(com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.refreshAppAuthTicketUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.appdev.AuthTicket.class;
 		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = new MozuClient(clz);
