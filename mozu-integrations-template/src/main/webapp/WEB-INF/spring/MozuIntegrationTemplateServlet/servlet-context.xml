@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/**" location="/resources/" />
+
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory 
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/" />
+        <beans:property name="suffix" value=".jsp" />
+    </beans:bean>
+    -->
+    <context:property-placeholder location="classpath:mozu_config.properties, file:${catalina.home}/conf/Kount/mozu_config.properties" ignore-resource-not-found="true"/>
+
+    <context:component-scan base-package="com.mozu.apptest" />
+    
+    <beans:bean id="environments" name="environments" class="java.util.HashMap">
+        <beans:constructor-arg>
+            <beans:map>
+                <beans:entry key="Production" value="https://home.mozu.com" />
+                <beans:entry key="CI" value="http://home.mozu-ci.volusion.com" />
+                <beans:entry key="Dev" value="http://mozu-dev.com" />
+            </beans:map>
+        </beans:constructor-arg>
+    </beans:bean>
+	
+    <!-- Configures Handler Interceptors -->
+    <mvc:interceptors>
+         <mvc:interceptor>
+            <mvc:mapping path="/api/config/**"/>
+            <beans:bean class="com.mozu.apptest.controllers.ConfigurationSecurityInterceptor" />
+         </mvc:interceptor>
+    </mvc:interceptors>
+    
+    <beans:bean id="cacheManagerImpl" name="cacheManagerImpl" class="com.mozu.api.cache.impl.CacheManagerImpl" 
+        init-method="startCache" destroy-method="stopCache" lazy-init="false">
+    </beans:bean>
+
+</beans:beans>
