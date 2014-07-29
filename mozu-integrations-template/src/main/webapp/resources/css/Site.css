@@ -1,0 +1,519 @@
+@font-face {
+    font-family: 'mozicons';
+    src:url('fonts/mozicons.eot');
+    src: url('fonts/mozicons.eot?#iefix') format('embedded-opentype'),
+        url('fonts/mozicons.woff') format('woff'),
+        url('fonts/mozicons.tff') format('truetype'),
+        url('fonts/mozicons.svg#MyriadWebProItalic') format('svg')
+}
+
+
+ .masthead .mozulogo {
+    display: block;
+    overflow: hidden;
+    height: 32px;
+    position: relative;
+    width: 32px;
+    width: 125px;
+}
+
+.mozulogo:after
+ {
+    color: #d2463c;
+    content: "\E037";
+    font-family: mozicons;
+    text-align:match-parent;
+    font-size: 20px;
+    font-weight: normal!important;
+    line-height: 1.0;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+ .well .well-white 
+ {
+     background-color: white;
+     border-color: white;    
+ }
+
+
+ .well-info {
+    min-height: 20px;
+    padding: 40px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(191,191,191,1);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+ }
+
+
+
+.checkboxes input
+{
+    vertical-align: middle;
+}
+
+.checkboxes label span
+{
+    vertical-align: middle;
+}
+
+.field {
+    padding-bottom: 10px;
+}
+
+
+
+.text-error {
+    margin-top: -10px;
+}
+
+.table thead th {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.notification {
+    font-family:"Source Sans Pro";
+    font-size:14px;
+    color:rgba(255,255,255,1);
+    border-radius:2px;
+    text-align:left;
+    font-size:14px;
+    line-height:20px;
+    padding:10px 30px 10px 10px;
+    margin:20px 0;
+    position:relative;
+}
+
+.notification a {
+    color:rgba(255,255,255,1);
+    text-decoration: underline;
+}
+
+.error {
+    background-color:rgba(210,70,60,1);
+}
+
+
+.icon {
+    width:20px;
+    height:20px;
+    float:left;
+    margin:0 10px 0 0;
+    clear:right;
+    display:table-cell;
+}
+
+.error .icon {
+    background:transparent url(../images/icon_error.png) no-repeat center center;
+
+}
+
+.loadingicon {
+    background:transparent url(../images/ajax-loader.gif) no-repeat center center;
+    width: 100%; 
+    height: 100%;
+}
+
+.close {
+    position:absolute;
+    top:10px;
+    right:10px;
+    height:20px;
+    width:20px;
+    cursor:pointer;
+    background:url(images/close-white.png) no-repeat center center;
+}
+
+.message {
+    display:table-cell;
+    margin:0;
+    padding:0;
+}
+
+
+
+.success {
+    background-color:rgba(37,174,144,1);
+}
+
+.success .icon {
+    background:transparent url(images/icon-success.png) no-repeat center center;
+}
+
+.icon_remove {
+    content: url("images/icon_remove.png");
+}
+
+
+.mozu label {
+    color:rgba(51,51,51,1);
+    font-weight:700;
+    font-size:14px;
+    line-height:21px;
+    display:block;
+    font-family: "Source Sans Pro"
+}
+
+.requiredContent:before {
+    color:red;
+    content: "* ";
+} 
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+h2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  float: left;
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 400;
+}
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
+
+}
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-bottom: 5px;
+}
+
+.right {
+    text-align: right;
+}
+.button {
+    display: inline-block;
+    padding: 4px 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+    .button.tab {
+        width: 100%;
+        min-height: 20px;
+        border: 1px solid #bfbfbf;
+        border-top-width: 0;
+        background-color: #f2f2f2;
+        color: #333;
+        font-weight: 400;
+        text-align: left;
+        padding: 5px;
+        cursor: pointer;
+    }
+        .button.tab.active {
+            border-top-width: 0px;
+            border-right-width: 1px;
+            border-right-color: white;
+            background-color: white;
+            color: #d2463c;
+        }
+        .button.tab:hover {
+            background-color: #e5e5e5;
+        }
+        .button.tab.active:hover {
+            background-color: inherit;
+        }
+    .button.primary-action {
+        height: 30px;
+        min-width: 70px;
+        float: right;
+        border: 1px solid #b83e35;
+        border-radius: 2px;
+        background-color: #d2463c;
+    }
+
+.button.primary-action:hover {
+  background-color: #b83e35;
+}
+.app-container {
+    display: block;
+    background-color: white;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+.app {
+    height: 98%;
+    width: 99%;
+    margin: auto;
+}
+.header-actions {
+  width: 100%;
+  float: left;
+  clear: both;
+  height: 8%;
+}
+.tab-container {
+  clear: both;
+  width: 100%;
+  float: left;
+  height: 87%;
+}
+.help-icon {
+  display: block;
+}
+.tab-view {
+    display: block;
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+    float: left;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.tab-view.config {
+  width: 810px;
+  height: 100%;
+}
+.tabs {
+    display: block;
+    width: 15%;
+    height: 100%;
+    float: left;
+    margin-right: -1px;
+    position: relative;
+    z-index: 0;
+    border-top: 1px solid #bfbfbf;
+}
+.help-icon-link {
+  width: 16px;
+  height: 15px;
+  margin-top: 10px;
+  float: right;
+}
+.footer-actions {
+  margin-top: 10px;
+  width: 100%;
+  float: left;
+  clear: both;
+  height: 5%;
+}
+.branding-text {
+  margin-top: 10px;
+  float: left;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+}
+.tab-divider {
+  height: 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  clear: both;
+  border-top: 1px solid #bfbfbf;
+  float: left;
+  width: 100%;
+}
+.tab-field {
+    width: 300px;
+    height: 25px;
+    margin-bottom: 20px;
+    padding: 0px 10px;
+    border-radius: 2px;
+    border: 1px solid #bfbfbf;
+    font-weight: 400;
+    float: left;
+    clear: both;
+    box-sizing: border-box;
+}
+.tab-field.checkbox-field {
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+.tab-field-label {
+    width: 300px;
+    font-weight: 700;
+    float: left;
+    clear: both;
+    margin-bottom: 5px;
+}
+.row {
+    width: 100%;
+    min-width: 625px;
+    float: left;
+}
+.tab-full-column {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.tab-first-column {
+  min-width: 300px;
+  float: left;
+  clear: both;
+  width: 48%;
+}
+.tab-second-column {
+  min-width: 300px;
+  margin-left: 4%;
+  float: left;
+  width: 48%;
+}
+.tab-checkbox-container {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    float: left;
+    clear: both;
+}
+.tab-checkbox-container.with-input {
+  margin-bottom: 0px;
+}
+.tab-checkbox-label {
+  font-weight: 700;
+  padding-left: 5px;    
+}
+.tab-checkbox-label-p {
+    max-width: 390px;
+    font-size: 12px;
+    line-height: 15px;
+    padding-left: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.tab-p {
+    float: left;
+    margin: 10px 0 20px;
+}
+
+.dropdown {
+    float: left;
+    clear: left;
+    margin: 0 0 20px;
+    height: 30px;
+    min-width: 300px;
+}
+
+.ko-grid {margin-bottom: 5px; background-color:White;width: 100%;float: left;clear: both }
+.ko-grid thead { background-color: #333; color:#fff;    border: 1px solid #333; border-bottom-width: 0;font-weight: bold; }
+.ko-grid tbody {border: 1px solid #bfbfbf; border-top-width: 0; box-sizing: border-box; }
+.ko-grid tr:nth-child(even) { background-color: #DDD; }
+.ko-grid td { padding: 5px 0px; }
+.ko-grid tbody td { border-bottom: 1px solid #e5e5e5; border-bottom: 1px solid rgba(191,191,191,.2);}
+.ko-link { cursor: pointer; color: skyblue}
+
+.ko-grid-pageLinks { margin-bottom: 1em;float: left; }
+.ko-grid-pageLinks a { padding: 0.5em; }
+.ko-grid-pageLinks a.selected { background-color: Black; color: White; }
+
+
+.mz-button{
+    margin:5px;
+    padding:3px 20px 5px;
+    border-radius:2px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', Verdana, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    min-width: 70px;
+    cursor: pointer;
+}
+
+.mz-button:disabled{
+    opacity: .4;
+    cursor: default;
+}
+
+/* Primary Action Buttons */
+.mz-button.primary{
+    border:1px solid rgba(158, 53, 46, 1);
+    background-color: rgba(209, 69, 59, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.mz-button.primary:hover{
+    border: 1px solid rgba(145, 49, 42, 1);
+    background-color: rgba(196, 66, 57, 1);
+    box-shadow: inset 0 -1px 0 rgba(119, 21, 14, 1);
+}
+
+.mz-button.primary:active{
+    background-color: rgba(145, 49, 42, 1);
+    box-shadow: inset 0 -1px 0 rgba(145, 49, 42, 1);
+}
+
+.mz-button.primary:disabled:hover, .mz-button.primary:disabled:active{
+    border:1px solid rgba(158, 53, 46, 1);
+    background-color: rgba(209, 69, 59, 1);
+    box-shadow: inset 0 0 0;
+}   
+
+/* Secondary Action Buttons */
+.mz-button.secondary{
+    border:1px solid rgba(191, 191, 191, 1);
+    background-color: rgba(242, 242, 242, 1); /* 5% Black*/
+    color: rgba(51, 51, 51, 1);
+}
+
+.mz-button.secondary:hover{
+    background-color: rgba(230, 230, 230, 1); /* 10% Black */
+    box-shadow: inset 0 -1px 0 rgba(179, 179, 179, 1);
+}
+
+.mz-button.secondary:active{
+    background-color: rgba(188, 188, 188, 1); /* 25% Black */
+    box-shadow: inset 0 -1px 0 rgba(179, 179, 179, 1);
+}
+
+.mz-button.secondary:disabled:hover, .mz-button.secondary:disabled:active{
+    border: 1px solid rgba(191, 191, 191, 1);
+    background-color: rgba(241, 241, 241, 1);
+    box-shadow: inset 0 0 0;
+}
