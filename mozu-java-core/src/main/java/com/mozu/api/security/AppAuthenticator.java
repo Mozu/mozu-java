@@ -129,7 +129,7 @@ public class AppAuthenticator {
     }
 
     public void authenticateApp() {
-        String resourceUrl = getBaseUrl() + AuthTicketUrl.authenticateAppUrl(null).getUrl();
+        String resourceUrl = getBaseUrl() + AuthTicketUrl.authenticateAppUrl().getUrl();
         
         executeRequest( this.appAuthInfo, new HttpPost(resourceUrl) );
 
@@ -141,7 +141,7 @@ public class AppAuthenticator {
      */
     public void refreshAppAuthTicket() {
 
-        String resourceUrl = getBaseUrl() + AuthTicketUrl.refreshAppAuthTicketUrl(null).getUrl();
+        String resourceUrl = getBaseUrl() + AuthTicketUrl.refreshAppAuthTicketUrl().getUrl();
 
         AuthTicketRequest authTicketRequest = new AuthTicketRequest();
         authTicketRequest.setRefreshToken(appAuthTicket.getRefreshToken());

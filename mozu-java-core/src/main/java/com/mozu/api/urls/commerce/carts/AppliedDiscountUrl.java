@@ -17,15 +17,13 @@ public class AppliedDiscountUrl
 	 * Get Resource Url for ApplyCoupon
 	 * @param cartId 
 	 * @param couponCode 
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl applyCouponUrl(String cartId, String couponCode, String responseFields)
+	public static MozuUrl applyCouponUrl(String cartId, String couponCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/coupons/{couponCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/coupons/{couponCode}");
 		formatter.formatUrl("cartId", cartId);
 		formatter.formatUrl("couponCode", couponCode);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

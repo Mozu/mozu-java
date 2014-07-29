@@ -14,6 +14,20 @@ public class PackageUrl
 {
 
 	/**
+	 * Get Resource Url for GetPackage
+	 * @param orderId Unique identifier of the order associated with the package to retrieve.
+	 * @param packageId Unique identifier of the package to retrieve.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getPackageUrl(String orderId, String packageId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages/{packageId}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("packageId", packageId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetAvailablePackageFulfillmentActions
 	 * @param orderId Unique identifier of the order associated with the package fulfillment.
 	 * @param packageId Unique identifier of the package associated with the fulfillment actions to retrieve.
@@ -42,32 +56,14 @@ public class PackageUrl
 	}
 
 	/**
-	 * Get Resource Url for GetPackage
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getPackageUrl(String orderId, String packageId, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages/{packageId}?responseFields={responseFields}");
-		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("packageId", packageId);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for CreatePackage
 	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createPackageUrl(String orderId, String responseFields)
+	public static MozuUrl createPackageUrl(String orderId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages");
 		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -75,15 +71,13 @@ public class PackageUrl
 	 * Get Resource Url for UpdatePackage
 	 * @param orderId Unique identifier of the order associated with the package to update.
 	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updatePackageUrl(String orderId, String packageId, String responseFields)
+	public static MozuUrl updatePackageUrl(String orderId, String packageId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages/{packageId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/packages/{packageId}");
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("packageId", packageId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

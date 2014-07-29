@@ -96,14 +96,4 @@ public class ShippingRate implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
-	protected String shippingZoneCode;
-
-	public String getShippingZoneCode() {
-		return this.shippingZoneCode;
-	}
-
-	public void setShippingZoneCode(String shippingZoneCode) {
-		this.shippingZoneCode = shippingZoneCode;
-	}
-
 }

@@ -60,27 +60,7 @@ public class OrderValidationResultClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> addValidationResultClient(com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId) throws Exception
 	{
-		return addValidationResultClient( validationResult,  orderId,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient=AddValidationResultClient( validationResult,  orderId,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * OrderValidationResult orderValidationResult = client.Result();
-	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param validationResult 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
-	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> addValidationResultClient(com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderValidationResultUrl.addValidationResultUrl(orderId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderValidationResultUrl.addValidationResultUrl(orderId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient = new MozuClient(clz);

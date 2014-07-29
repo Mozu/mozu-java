@@ -16,15 +16,13 @@ public class DocumentTypeUrl
 	/**
 	 * Get Resource Url for GetDocumentTypes
 	 * @param pageSize 
-	 * @param responseFields 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentTypesUrl(Integer pageSize, String responseFields, Integer startIndex)
+	public static MozuUrl getDocumentTypesUrl(Integer pageSize, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/?pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/?pageSize={pageSize}&startIndex={startIndex}");
 		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -32,40 +30,12 @@ public class DocumentTypeUrl
 	/**
 	 * Get Resource Url for GetDocumentType
 	 * @param documentTypeName 
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentTypeUrl(String documentTypeName, String responseFields)
+	public static MozuUrl getDocumentTypeUrl(String documentTypeName)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/{documentTypeName}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/{documentTypeName}");
 		formatter.formatUrl("documentTypeName", documentTypeName);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for CreateDocumentType
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl createDocumentTypeUrl(String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for UpdateDocumentType
-	 * @param documentTypeName 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl updateDocumentTypeUrl(String documentTypeName, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documenttypes/{documentTypeName}?responseFields={responseFields}");
-		formatter.formatUrl("documentTypeName", documentTypeName);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

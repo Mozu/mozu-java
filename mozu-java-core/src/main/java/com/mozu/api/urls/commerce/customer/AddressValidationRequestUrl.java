@@ -15,13 +15,11 @@ public class AddressValidationRequestUrl
 
 	/**
 	 * Get Resource Url for ValidateAddress
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl validateAddressUrl(String responseFields)
+	public static MozuUrl validateAddressUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/addressvalidation/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/addressvalidation/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

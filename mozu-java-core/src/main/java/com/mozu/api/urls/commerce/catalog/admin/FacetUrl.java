@@ -16,15 +16,13 @@ public class FacetUrl
 	/**
 	 * Get Resource Url for GetFacet
 	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param fields 
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getFacetUrl(Integer facetId, String fields, Boolean validate)
+	public static MozuUrl getFacetUrl(Integer facetId, Boolean validate)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/{facetId}?validate={validate}&fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/{facetId}?validate={validate}");
 		formatter.formatUrl("facetId", facetId);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("validate", validate);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -32,16 +30,14 @@ public class FacetUrl
 	/**
 	 * Get Resource Url for GetFacetCategoryList
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
-	 * @param fields 
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getFacetCategoryListUrl(Integer categoryId, String fields, Boolean includeAvailable, Boolean validate)
+	public static MozuUrl getFacetCategoryListUrl(Integer categoryId, Boolean includeAvailable, Boolean validate)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/category/{categoryId}?includeAvailable={includeAvailable}&validate={validate}&fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/category/{categoryId}?includeAvaliable={includeAvailable}&validate={validate}");
 		formatter.formatUrl("categoryId", categoryId);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("includeAvailable", includeAvailable);
 		formatter.formatUrl("validate", validate);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -49,27 +45,23 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for AddFacet
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addFacetUrl(String fields)
+	public static MozuUrl addFacetUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateFacet
 	 * @param facetId Unique identifier of the facet to modify.
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateFacetUrl(Integer facetId, String fields)
+	public static MozuUrl updateFacetUrl(Integer facetId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/{facetId}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/facets/{facetId}");
 		formatter.formatUrl("facetId", facetId);
-		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -45,14 +45,4 @@ public class TargetedShippingMethod implements Serializable
 		this.name = name;
 	}
 
-	protected String zone;
-
-	public String getZone() {
-		return this.zone;
-	}
-
-	public void setZone(String zone) {
-		this.zone = zone;
-	}
-
 }

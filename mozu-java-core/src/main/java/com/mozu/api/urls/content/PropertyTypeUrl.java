@@ -16,15 +16,13 @@ public class PropertyTypeUrl
 	/**
 	 * Get Resource Url for GetPropertyTypes
 	 * @param pageSize 
-	 * @param responseFields 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPropertyTypesUrl(Integer pageSize, String responseFields, Integer startIndex)
+	public static MozuUrl getPropertyTypesUrl(Integer pageSize, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/?pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/?pageSize={pageSize}&startIndex={startIndex}");
 		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -32,14 +30,12 @@ public class PropertyTypeUrl
 	/**
 	 * Get Resource Url for GetPropertyType
 	 * @param propertyTypeName 
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPropertyTypeUrl(String propertyTypeName, String responseFields)
+	public static MozuUrl getPropertyTypeUrl(String propertyTypeName)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/{propertyTypeName}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/{propertyTypeName}");
 		formatter.formatUrl("propertyTypeName", propertyTypeName);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

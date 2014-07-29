@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.orders.OrderValidationMessage;
 
-/**
- *	Properties of the resulting order validation performed by an order validation capability.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderValidationResult implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
 	protected DateTime createdDate;
 
 	public DateTime getCreatedDate() {
@@ -34,9 +28,6 @@ public class OrderValidationResult implements Serializable
 		this.createdDate = createdDate;
 	}
 
-	/**
-	 * The status returned from the order validation capability for the order specified in the request, which is Pass, Fail, Error, or Review.
-	 */
 	protected String status;
 
 	public String getStatus() {
@@ -47,9 +38,6 @@ public class OrderValidationResult implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Read-only identifier defined by the order validation capability that uniquely identifies this validation operation.
-	 */
 	protected String validationId;
 
 	public String getValidationId() {
@@ -60,9 +48,6 @@ public class OrderValidationResult implements Serializable
 		this.validationId = validationId;
 	}
 
-	/**
-	 * Read-only name of this order validator supplied by the capability.
-	 */
 	protected String validatorName;
 
 	public String getValidatorName() {
@@ -73,9 +58,6 @@ public class OrderValidationResult implements Serializable
 		this.validatorName = validatorName;
 	}
 
-	/**
-	 * The type of order validator supplied by the capability. At this time, the only supported validator type is Fraud.
-	 */
 	protected String validatorType;
 
 	public String getValidatorType() {
@@ -86,9 +68,6 @@ public class OrderValidationResult implements Serializable
 		this.validatorType = validatorType;
 	}
 
-	/**
-	 * Collection of messages returned by the order validation capability.
-	 */
 	protected List<OrderValidationMessage> messages;
 	public List<OrderValidationMessage> getMessages() {
 		return this.messages;

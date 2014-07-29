@@ -28,14 +28,12 @@ public class TransactionUrl
 	/**
 	 * Get Resource Url for AddTransaction
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addTransactionUrl(Integer accountId, String responseFields)
+	public static MozuUrl addTransactionUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/transactions?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/transactions");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

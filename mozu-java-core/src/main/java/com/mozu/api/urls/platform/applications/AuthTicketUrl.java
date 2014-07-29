@@ -15,25 +15,21 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for AuthenticateApp
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl authenticateAppUrl(String responseFields)
+	public static MozuUrl authenticateAppUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/authtickets/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/authtickets/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RefreshAppAuthTicket
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl refreshAppAuthTicketUrl(String responseFields)
+	public static MozuUrl refreshAppAuthTicketUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/authtickets/refresh-ticket?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/authtickets/refresh-ticket");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 

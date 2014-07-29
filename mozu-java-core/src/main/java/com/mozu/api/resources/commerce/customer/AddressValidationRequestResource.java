@@ -44,24 +44,7 @@ public class AddressValidationRequestResource {
 	 */
 	public com.mozu.api.contracts.customer.AddressValidationResponse validateAddress(com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest) throws Exception
 	{
-		return validateAddress( addressValidationRequest,  null);
-	}
-
-	/**
-	 * Validates the customer address supplied in the request.
-	 * <p><pre><code>
-	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
-	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.ValidateAddress( addressValidationRequest,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param addressValidationRequest Properties of the address to validate.
-	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
-	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
-	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
-	 */
-	public com.mozu.api.contracts.customer.AddressValidationResponse validateAddress(com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> client = com.mozu.api.clients.commerce.customer.AddressValidationRequestClient.validateAddressClient( addressValidationRequest,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> client = com.mozu.api.clients.commerce.customer.AddressValidationRequestClient.validateAddressClient( addressValidationRequest);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

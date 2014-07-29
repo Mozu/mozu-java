@@ -32,43 +32,6 @@ public class CardResource {
 	}
 	
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
-	 * <p><pre><code>
-	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @return com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 */
-	public com.mozu.api.contracts.customer.Card getAccountCard(Integer accountId, String cardId) throws Exception
-	{
-		return getAccountCard( accountId,  cardId,  null);
-	}
-
-	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
-	 * <p><pre><code>
-	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 */
-	public com.mozu.api.contracts.customer.Card getAccountCard(Integer accountId, String cardId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.getAccountCardClient( accountId,  cardId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
@@ -80,23 +43,27 @@ public class CardResource {
 	 */
 	public com.mozu.api.contracts.customer.CardCollection getAccountCards(Integer accountId) throws Exception
 	{
-		return getAccountCards( accountId,  null);
+		MozuClient<com.mozu.api.contracts.customer.CardCollection> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.getAccountCardsClient( accountId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Retrieves all stored credit cards for the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	CardCollection cardCollection = card.GetAccountCards( accountId,  responseFields);
+	 *	Card card = card.GetAccountCard( accountId,  cardId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.CardCollection
-	 * @see com.mozu.api.contracts.customer.CardCollection
+	 * @param accountId 
+	 * @param cardId 
+	 * @return com.mozu.api.contracts.customer.Card
+	 * @see com.mozu.api.contracts.customer.Card
 	 */
-	public com.mozu.api.contracts.customer.CardCollection getAccountCards(Integer accountId, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.Card getAccountCard(Integer accountId, String cardId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CardCollection> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.getAccountCardsClient( accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.getAccountCardClient( accountId,  cardId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -117,25 +84,7 @@ public class CardResource {
 	 */
 	public com.mozu.api.contracts.customer.Card addAccountCard(com.mozu.api.contracts.customer.Card card, Integer accountId) throws Exception
 	{
-		return addAccountCard( card,  accountId,  null);
-	}
-
-	/**
-	 * Creates a new credit card record and stores it for the customer account.
-	 * <p><pre><code>
-	 *	Card card = new Card();
-	 *	Card card = card.AddAccountCard( card,  accountId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @param card Properties of the customer credit card to add to the account.
-	 * @return com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 */
-	public com.mozu.api.contracts.customer.Card addAccountCard(com.mozu.api.contracts.customer.Card card, Integer accountId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.addAccountCardClient( card,  accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.addAccountCardClient( card,  accountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -149,7 +98,7 @@ public class CardResource {
 	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -157,26 +106,7 @@ public class CardResource {
 	 */
 	public com.mozu.api.contracts.customer.Card updateAccountCard(com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId) throws Exception
 	{
-		return updateAccountCard( card,  accountId,  cardId,  null);
-	}
-
-	/**
-	 * Update one or more properties of a credit card defined for a customer account.
-	 * <p><pre><code>
-	 *	Card card = new Card();
-	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
-	 * @param responseFields 
-	 * @param card Properties of the customer account credit card to update.
-	 * @return com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 * @see com.mozu.api.contracts.customer.Card
-	 */
-	public com.mozu.api.contracts.customer.Card updateAccountCard(com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.updateAccountCardClient( card,  accountId,  cardId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.Card> client = com.mozu.api.clients.commerce.customer.accounts.CardClient.updateAccountCardClient( card,  accountId,  cardId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

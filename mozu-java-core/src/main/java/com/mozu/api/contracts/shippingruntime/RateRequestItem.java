@@ -6,11 +6,9 @@
  */
 package com.mozu.api.contracts.shippingruntime;
 
-import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.shippingruntime.ProductSummary;
 import com.mozu.api.contracts.shippingruntime.ItemMeasurements;
 
 /**
@@ -59,14 +57,6 @@ public class RateRequestItem implements Serializable
 
 	public void setShipsByItself(Boolean shipsByItself) {
 		this.shipsByItself = shipsByItself;
-	}
-
-	protected List<ProductSummary> productSummaries;
-	public List<ProductSummary> getProductSummaries() {
-		return this.productSummaries;
-	}
-	public void setProductSummaries(List<ProductSummary> productSummaries) {
-		this.productSummaries = productSummaries;
 	}
 
 	/**

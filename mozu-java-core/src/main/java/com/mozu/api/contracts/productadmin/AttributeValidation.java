@@ -20,7 +20,7 @@ public class AttributeValidation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * System-supplied and read-only.
+	 *  System-supplied and read-only.
 	 */
 	protected DateTime maxDateValue;
 
@@ -59,7 +59,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * System-supplied and read-only.
+	 *  System-supplied and read-only.
 	 */
 	protected DateTime minDateValue;
 

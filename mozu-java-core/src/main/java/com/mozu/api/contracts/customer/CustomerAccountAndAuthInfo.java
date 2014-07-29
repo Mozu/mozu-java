@@ -11,18 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
-/**
- *	The authentication information associated with a customer account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAccountAndAuthInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, this customer account and its associated data was imported from an external source.
-	 */
 	protected Boolean isImport;
 
 	public Boolean getIsImport() {
@@ -33,9 +27,6 @@ public class CustomerAccountAndAuthInfo implements Serializable
 		this.isImport = isImport;
 	}
 
-	/**
-	 * The password required to authenticate this customer account.
-	 */
 	protected String password;
 
 	public String getPassword() {
@@ -46,9 +37,6 @@ public class CustomerAccountAndAuthInfo implements Serializable
 		this.password = password;
 	}
 
-	/**
-	 * The unique identifier of the customer account.
-	 */
 	protected CustomerAccount account;
 
 	public CustomerAccount getAccount() {

@@ -37,18 +37,17 @@ public class ProductTypeVariationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId) throws Exception
 	{
-		return generateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  null,  null,  null,  null,  null,  null);
+		return generateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Generates the variations possible for a product associated with the product type based on the option values supplied in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductVariationPagedCollection productVariationPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode 
@@ -61,9 +60,9 @@ public class ProductTypeVariationClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeVariationUrl.generateProductVariationsUrl(fields, filter, pageSize, productCode, productTypeId, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeVariationUrl.generateProductVariationsUrl(filter, pageSize, productCode, productTypeId, sortBy, startIndex);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationPagedCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient = new MozuClient(clz);

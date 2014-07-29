@@ -87,12 +87,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
+	 * ***Always private and should not be published.***
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	Behavior behavior = referencedata.GetBehavior( behaviorId);
 	 * </code></pre></p>
-	 * @param behaviorId Unique identifier of the behavior.
+	 * @param behaviorId ***Always private and should not be published.***
 	 * @return com.mozu.api.contracts.core.Behavior
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -106,7 +106,7 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * Retrieves the list of behavior categories.
+	 * ***Always private and should not be published.***
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategoryCollection behaviorCategoryCollection = referencedata.GetBehaviorCategories();
@@ -124,12 +124,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * Retrieves the details of the behavior category specified in the request.
+	 * ***Always private and should not be published.***
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.GetBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId ***Always private and should not be published.***
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -143,7 +143,7 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * ***Always private and should not be published.***
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.GetBehaviors();
@@ -157,12 +157,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * Retrieves a list of application behaviors.
+	 * ***Always private and should not be published.***
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.GetBehaviors( userType);
 	 * </code></pre></p>
-	 * @param userType The user type associated with the behaviors to retrieve.
+	 * @param userType 
 	 * @return com.mozu.api.contracts.core.BehaviorCollection
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
 	 */

@@ -20,7 +20,7 @@ public class CategoryLocalizedImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront.
+	 * Descriptive text associated with the image or video that appears on the web  storefront.
 	 */
 	protected String altText;
 
@@ -32,9 +32,6 @@ public class CategoryLocalizedImage implements Serializable
 		this.altText = altText;
 	}
 
-	/**
-	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
-	 */
 	protected String cmsId;
 
 	public String getCmsId() {

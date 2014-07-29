@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Return Shipments subresource to manage shipments for a return replacement.
+ * Use the return shipments subresource to manage shipments for a return replacement.
  * </summary>
  */
 public class ShipmentResource {
@@ -44,24 +44,7 @@ public class ShipmentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String returnId, String shipmentId) throws Exception
 	{
-		return getShipment( returnId,  shipmentId,  null);
-	}
-
-	/**
-	 * Retrieves the details of the specified return replacement shipment.
-	 * <p><pre><code>
-	 *	Shipment shipment = new Shipment();
-	 *	Shipment shipment = shipment.GetShipment( returnId,  shipmentId,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
-	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
-	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String returnId, String shipmentId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.returns.ShipmentClient.getShipmentClient( returnId,  shipmentId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.returns.ShipmentClient.getShipmentClient( returnId,  shipmentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -59,16 +59,6 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
-	protected String displayIntention;
-
-	public String getDisplayIntention() {
-		return this.displayIntention;
-	}
-
-	public void setDisplayIntention(String displayIntention) {
-		this.displayIntention = displayIntention;
-	}
-
 	/**
 	 * The input type (such as date or text area) accepted for the attribute's data type.
 	 */
@@ -93,26 +83,6 @@ public class AttributeDetail implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	protected Boolean searchableInStorefront;
-
-	public Boolean getSearchableInStorefront() {
-		return this.searchableInStorefront;
-	}
-
-	public void setSearchableInStorefront(Boolean searchableInStorefront) {
-		this.searchableInStorefront = searchableInStorefront;
-	}
-
-	protected Boolean searchDisplayValue;
-
-	public Boolean getSearchDisplayValue() {
-		return this.searchDisplayValue;
-	}
-
-	public void setSearchDisplayValue(Boolean searchDisplayValue) {
-		this.searchDisplayValue = searchDisplayValue;
 	}
 
 	/**

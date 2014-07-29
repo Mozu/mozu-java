@@ -71,9 +71,6 @@ public class UserProfile implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The user name associated with the user profile.
-	 */
 	protected String userName;
 
 	public String getUserName() {

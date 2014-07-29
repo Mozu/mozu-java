@@ -11,18 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InStockNotificationSubscription implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the customer associated with the in-stock notification subscription.
-	 */
 	protected Integer customerId;
 
 	public Integer getCustomerId() {
@@ -33,9 +27,6 @@ public class InStockNotificationSubscription implements Serializable
 		this.customerId = customerId;
 	}
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected String email;
 
 	public String getEmail() {
@@ -46,9 +37,6 @@ public class InStockNotificationSubscription implements Serializable
 		this.email = email;
 	}
 
-	/**
-	 * Unique identifier of the customer in-stock notification subscription.
-	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -59,9 +47,6 @@ public class InStockNotificationSubscription implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Tenant-defined code that identifies the customer in-stock notification subscription.
-	 */
 	protected String locationCode;
 
 	public String getLocationCode() {
@@ -72,9 +57,6 @@ public class InStockNotificationSubscription implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -85,9 +67,6 @@ public class InStockNotificationSubscription implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

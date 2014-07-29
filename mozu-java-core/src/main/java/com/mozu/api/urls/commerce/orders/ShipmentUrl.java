@@ -16,15 +16,13 @@ public class ShipmentUrl
 	/**
 	 * Get Resource Url for GetShipment
 	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
-	 * @param responseFields 
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getShipmentUrl(String orderId, String responseFields, String shipmentId)
+	public static MozuUrl getShipmentUrl(String orderId, String shipmentId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/{shipmentId}");
 		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("shipmentId", shipmentId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

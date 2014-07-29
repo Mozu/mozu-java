@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	The type of preauthorization gateway.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PreAuthorizeTransactionTypeDataContract implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Description of the preauthorization transaction type.
-	 */
 	protected String description;
 
 	public String getDescription() {
@@ -45,9 +39,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of preauthorization transaction.
-	 */
 	protected String type;
 
 	public String getType() {

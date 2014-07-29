@@ -15,7 +15,6 @@ public class ProductTypeVariationUrl
 
 	/**
 	 * Get Resource Url for GenerateProductVariations
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode 
@@ -24,10 +23,9 @@ public class ProductTypeVariationUrl
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl generateProductVariationsUrl(String fields, String filter, Integer pageSize, String productCode, Integer productTypeId, String sortBy, Integer startIndex)
+	public static MozuUrl generateProductVariationsUrl(String filter, Integer pageSize, String productCode, Integer productTypeId, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/variations?productCode={productCode}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/variations?productCode={productCode}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("productCode", productCode);

@@ -16,16 +16,14 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for GetAccountAttribute
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields 
+	 * @param attributeFQN 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
+	public static MozuUrl getAccountAttributeUrl(Integer accountId, String attributeFQN)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes/{attributeFQN}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes/{attributeFQN}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -34,18 +32,16 @@ public class CustomerAttributeUrl
 	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
-	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountAttributesUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getAccountAttributesUrl(Integer accountId, String filter, Integer pageSize, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -54,14 +50,12 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for AddAccountAttribute
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountAttributeUrl(Integer accountId, String responseFields)
+	public static MozuUrl addAccountAttributeUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -69,15 +63,13 @@ public class CustomerAttributeUrl
 	 * Get Resource Url for UpdateAccountAttribute
 	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN 
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
+	public static MozuUrl updateAccountAttributeUrl(Integer accountId, String attributeFQN)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes/{attributeFQN}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/attributes/{attributeFQN}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

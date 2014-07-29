@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of an application behavior.
+ *	***Always private and should not be published.***
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Behavior implements Serializable
@@ -21,7 +21,7 @@ public class Behavior implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the behavior category.
+	 * Unique identifier for the storefront container used to organize products.
 	 */
 	protected Integer categoryId;
 
@@ -34,7 +34,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the behavior.
+	 * Identifier of the entity.
 	 */
 	protected Integer id;
 
@@ -46,9 +46,6 @@ public class Behavior implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If true, this application behavior is not part of the public Mozu API.
-	 */
 	protected Boolean isPrivate;
 
 	public Boolean getIsPrivate() {
@@ -59,9 +56,6 @@ public class Behavior implements Serializable
 		this.isPrivate = isPrivate;
 	}
 
-	/**
-	 * The name of the behavior.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -73,7 +67,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * For validation purposes, the integer value must be a list of behavior IDs.
+	 * For validation purposes, the integer value must be a list of behavior Id's.
 	 */
 	protected List<Integer> requiresBehaviorIds;
 	public List<Integer> getRequiresBehaviorIds() {
@@ -83,9 +77,6 @@ public class Behavior implements Serializable
 		this.requiresBehaviorIds = requiresBehaviorIds;
 	}
 
-	/**
-	 * The user types that are valid for this behavior.
-	 */
 	protected List<String> validUserTypes;
 	public List<String> getValidUserTypes() {
 		return this.validUserTypes;

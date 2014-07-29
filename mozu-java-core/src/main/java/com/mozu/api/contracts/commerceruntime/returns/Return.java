@@ -27,16 +27,16 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
+	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Double lossTotal;
+	protected Integer tenantId;
 
-	public Double getLossTotal() {
-		return this.lossTotal;
+	public Integer getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setLossTotal(Double lossTotal) {
-		this.lossTotal = lossTotal;
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
 	}
 
 	/**
@@ -126,6 +126,19 @@ public class Return implements Serializable
 
 	public void setLocationCode(String locationCode) {
 		this.locationCode = locationCode;
+	}
+
+	/**
+	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
+	 */
+	protected Double lossTotal;
+
+	public Double getLossTotal() {
+		return this.lossTotal;
+	}
+
+	public void setLossTotal(Double lossTotal) {
+		this.lossTotal = lossTotal;
 	}
 
 	/**
@@ -282,19 +295,6 @@ public class Return implements Serializable
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
-	protected Integer tenantId;
-
-	public Integer getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Integer tenantId) {
-		this.tenantId = tenantId;
 	}
 
 	/**

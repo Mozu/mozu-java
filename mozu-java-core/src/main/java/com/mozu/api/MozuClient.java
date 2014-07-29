@@ -20,7 +20,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
@@ -116,19 +115,11 @@ public class MozuClient<TResult> {
             String className = responseType.getName();
             if (className.equals(java.io.InputStream.class.getName())) {
                 tResult = (TResult) httpResponseMessage.getEntity().getContent();
-            } else if (className.equals(com.fasterxml.jackson.databind.JsonNode.class.getName())) {
-                tResult = (TResult)deserializeJObject ();
             } else {
                 tResult = deserialize(getStringResult(), responseType);
             }
         }
         return tResult;
-    }
-
-    private JsonNode deserializeJObject() throws Exception {
-        HttpEntity httpEntity = httpResponseMessage.getEntity();
-        InputStream stream = (InputStream) httpEntity.getContent();
-        return mapper.readTree(stream);
     }
 
     public HttpResponse getResponse() {

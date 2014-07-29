@@ -42,24 +42,23 @@ public class DocumentListResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentListCollection getDocumentLists(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getDocumentLists(dataViewMode,  null,  null,  null);
+		return getDocumentLists(dataViewMode,  null,  null);
 	}
 
 	/**
 	 * Retrieves a collection of document lists.
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentListCollection documentListCollection = documentlist.GetDocumentLists(dataViewMode,  pageSize,  startIndex,  responseFields);
+	 *	DocumentListCollection documentListCollection = documentlist.GetDocumentLists(dataViewMode,  pageSize,  startIndex);
 	 * </code></pre></p>
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentListCollection
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
 	 */
-	public com.mozu.api.contracts.content.DocumentListCollection getDocumentLists(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.DocumentListCollection getDocumentLists(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentListCollection> client = com.mozu.api.clients.content.DocumentListClient.getDocumentListsClient(dataViewMode,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentListCollection> client = com.mozu.api.clients.content.DocumentListClient.getDocumentListsClient(dataViewMode,  pageSize,  startIndex);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -78,119 +77,10 @@ public class DocumentListResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentList getDocumentList(com.mozu.api.DataViewMode dataViewMode, String documentListName) throws Exception
 	{
-		return getDocumentList(dataViewMode,  documentListName,  null);
-	}
-
-	/**
-	 * Retrieve the details of a document list by providing the list name.
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.GetDocumentList(dataViewMode,  documentListName,  responseFields);
-	 * </code></pre></p>
-	 * @param documentListName The name of the document list.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 */
-	public com.mozu.api.contracts.content.DocumentList getDocumentList(com.mozu.api.DataViewMode dataViewMode, String documentListName, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.getDocumentListClient(dataViewMode,  documentListName,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.getDocumentListClient(dataViewMode,  documentListName);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList(dataViewMode,  list);
-	 * </code></pre></p>
-	 * @param list 
-	 * @return com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 */
-	public com.mozu.api.contracts.content.DocumentList createDocumentList(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list) throws Exception
-	{
-		return createDocumentList(dataViewMode,  list,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList(dataViewMode,  list,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param list 
-	 * @return com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 */
-	public com.mozu.api.contracts.content.DocumentList createDocumentList(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.createDocumentListClient(dataViewMode,  list,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.UpdateDocumentList(dataViewMode,  list,  documentListName);
-	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param list 
-	 * @return com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 */
-	public com.mozu.api.contracts.content.DocumentList updateDocumentList(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String documentListName) throws Exception
-	{
-		return updateDocumentList(dataViewMode,  list,  documentListName,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.UpdateDocumentList(dataViewMode,  list,  documentListName,  responseFields);
-	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param responseFields 
-	 * @param list 
-	 * @return com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 * @see com.mozu.api.contracts.content.DocumentList
-	 */
-	public com.mozu.api.contracts.content.DocumentList updateDocumentList(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String documentListName, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.updateDocumentListClient(dataViewMode,  list,  documentListName,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	documentlist.DeleteDocumentList(dataViewMode,  documentListName);
-	 * </code></pre></p>
-	 * @param documentListName 
-	 * @return 
-	 */
-	public void deleteDocumentList(com.mozu.api.DataViewMode dataViewMode, String documentListName) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.content.DocumentListClient.deleteDocumentListClient(dataViewMode,  documentListName);
-		client.setContext(_apiContext);
-		client.executeRequest();
 
 	}
 

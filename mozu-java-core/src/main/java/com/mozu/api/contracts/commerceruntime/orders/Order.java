@@ -10,12 +10,11 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.Adjustment;
 import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
+import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
-import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
@@ -38,9 +37,6 @@ public class Order implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The date and time the order was accepted by the tenant.
-	 */
 	protected DateTime acceptedDate;
 
 	public DateTime getAcceptedDate() {
@@ -61,9 +57,6 @@ public class Order implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
-	/**
-	 * The amount of the order the shopper can receive in the event of a return. This amount represents the amount captured at the time the order was submitted, not when the order was returned.
-	 */
 	protected Double amountAvailableForRefund;
 
 	public Double getAmountAvailableForRefund() {
@@ -74,9 +67,6 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
-	/**
-	 * The total amount of the order not currently associated with a payment. The shopper must create one or more payments to satisfy this amount before the order can be fully paid.
-	 */
 	protected Double amountRemainingForPayment;
 
 	public Double getAmountRemainingForPayment() {
@@ -175,7 +165,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The type of interaction the shopper used to submit the order. Possible values are Website, Call, Store, or Unknown.
+	 * The type of interaction the shopper used to submit the order. Possibel values are Website, Call, Store, or Unknown.
 	 */
 	protected String customerInteractionType;
 
@@ -265,9 +255,6 @@ public class Order implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
-	/**
-	 * Unique identifier used by an external program to identify a Mozu order.
-	 */
 	protected String externalId;
 
 	public String getExternalId() {
@@ -317,16 +304,6 @@ public class Order implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
-	protected Double handlingSubtotal;
-
-	public Double getHandlingSubtotal() {
-		return this.handlingSubtotal;
-	}
-
-	public void setHandlingSubtotal(Double handlingSubtotal) {
-		this.handlingSubtotal = handlingSubtotal;
-	}
-
 	/**
 	 * If the handling fee for the order is subject to sales tax, the total tax amount.
 	 */
@@ -340,9 +317,6 @@ public class Order implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
-	/**
-	 * This total represents the handling amount value with any applied discounts.
-	 */
 	protected Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -379,9 +353,6 @@ public class Order implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
-	 */
 	protected DateTime importDate;
 
 	public DateTime getImportDate() {
@@ -418,9 +389,6 @@ public class Order implements Serializable
 		this.isDraft = isDraft;
 	}
 
-	/**
-	 * If true, the shopper can return any of the items in this order to the tenant.
-	 */
 	protected Boolean isEligibleForReturns;
 
 	public Boolean getIsEligibleForReturns() {
@@ -627,7 +595,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current status of this order. Possible values are "Pending", "Submitted", "Processing", "Pending Review", "Closed", or "Cancelled". System-supplied and read-only.
+	 * The current status of this order. Possible values are "New", "Open", "Processing", "Closed", or "Cancelled". System-supplied and read-only.
 	 */
 	protected String status;
 
@@ -717,16 +685,6 @@ public class Order implements Serializable
 		this.totalCollected = totalCollected;
 	}
 
-	protected String type;
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	/**
 	 * The current version number of the order.
 	 */
@@ -767,19 +725,6 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
-	}
-
-	/**
 	 * Properties of an ad-hoc price adjustment for an order.
 	 */
 	protected Adjustment adjustment;
@@ -804,6 +749,19 @@ public class Order implements Serializable
 	}
 
 	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
+	/**
 	 * Container for the customer billing information associated with an order.
 	 */
 	protected BillingInfo billingInfo;
@@ -825,14 +783,6 @@ public class Order implements Serializable
 	}
 	public void setChangeMessages(List<ChangeMessage> changeMessages) {
 		this.changeMessages = changeMessages;
-	}
-
-	protected List<DigitalPackage> digitalPackages;
-	public List<DigitalPackage> getDigitalPackages() {
-		return this.digitalPackages;
-	}
-	public void setDigitalPackages(List<DigitalPackage> digitalPackages) {
-		this.digitalPackages = digitalPackages;
 	}
 
 	/**
@@ -970,9 +920,6 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
-	/**
-	 * Response returned by an order validation capability application.
-	 */
 	protected List<OrderValidationResult> validationResults;
 	public List<OrderValidationResult> getValidationResults() {
 		return this.validationResults;

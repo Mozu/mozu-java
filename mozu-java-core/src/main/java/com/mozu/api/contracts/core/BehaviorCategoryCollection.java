@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.BehaviorCategory;
 
 /**
- *	List of categories of application behaviors.
+ *	***Always private and should not be published.***
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BehaviorCategoryCollection implements Serializable
@@ -24,13 +24,13 @@ public class BehaviorCategoryCollection implements Serializable
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Long totalCount;
+	protected Integer totalCount;
 
-	public Long getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Long totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 

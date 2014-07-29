@@ -25,27 +25,23 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateUserAuthTicket
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createUserAuthTicketUrl(String responseFields)
+	public static MozuUrl createUserAuthTicketUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RefreshUserAuthTicket
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
-	 * @param responseFields 
+	 * @param refreshToken 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl refreshUserAuthTicketUrl(String refreshToken, String responseFields)
+	public static MozuUrl refreshUserAuthTicketUrl(String refreshToken)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/refresh?refreshToken={refreshToken}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/refresh?refreshToken={refreshToken}");
 		formatter.formatUrl("refreshToken", refreshToken);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

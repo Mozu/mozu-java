@@ -25,9 +25,6 @@ public class ProductInCatalogInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {

@@ -13,7 +13,6 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.AttributeMetadataItem;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.AttributeLocalizedContent;
-import com.mozu.api.contracts.productadmin.AttributeSearchSettings;
 import com.mozu.api.contracts.productadmin.AttributeValidation;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
@@ -25,6 +24,19 @@ public class Attribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The administrative name of the product attribute as it appears in Mozu Admin.
+	 */
+	protected String adminName;
+
+	public String getAdminName() {
+		return this.adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
 
 	/**
 	 * Merchant-defined identifier of the product attribute used to generate the attribute's fully qualified name.
@@ -143,9 +155,6 @@ public class Attribute implements Serializable
 		this.isProperty = isProperty;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -183,19 +192,6 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * The administrative name of the product attribute as it appears in Mozu Admin.
-	 */
-	protected String adminName;
-
-	public String getAdminName() {
-		return this.adminName;
-	}
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
-	}
-
-	/**
 	 * List of key-value pairs that store metadata associated with the product attribute.
 	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
@@ -230,24 +226,6 @@ public class Attribute implements Serializable
 
 	public void setContent(AttributeLocalizedContent content) {
 		this.content = content;
-	}
-
-	protected List<AttributeLocalizedContent> localizedContent;
-	public List<AttributeLocalizedContent> getLocalizedContent() {
-		return this.localizedContent;
-	}
-	public void setLocalizedContent(List<AttributeLocalizedContent> localizedContent) {
-		this.localizedContent = localizedContent;
-	}
-
-	protected AttributeSearchSettings searchSettings;
-
-	public AttributeSearchSettings getSearchSettings() {
-		return this.searchSettings;
-	}
-
-	public void setSearchSettings(AttributeSearchSettings searchSettings) {
-		this.searchSettings = searchSettings;
 	}
 
 	/**
