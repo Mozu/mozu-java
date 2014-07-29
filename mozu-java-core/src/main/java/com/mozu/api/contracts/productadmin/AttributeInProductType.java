@@ -11,10 +11,11 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.Attribute;
+import com.mozu.api.contracts.productadmin.AttributeInProductTypeDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueInProductType;
 
 /**
- *	A product type is like a product template that can be reused in the product admin service. Assign a product type to have certain attributes.
+ *	Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeInProductType implements Serializable
@@ -111,6 +112,16 @@ public class AttributeInProductType implements Serializable
 
 	public void setAttributeDetail(Attribute attributeDetail) {
 		this.attributeDetail = attributeDetail;
+	}
+
+	protected AttributeInProductTypeDisplayInfo displayInfo;
+
+	public AttributeInProductTypeDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeInProductTypeDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 	/**

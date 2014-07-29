@@ -23,33 +23,7 @@ public class DocumentType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * User-defined description of the document type.
-	 */
-	protected String description;
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
-	 * The name that displays for the document type.
-	 */
-	protected String displayName;
-
-	public String getDisplayName() {
-		return this.displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
-
-	/**
-	 * The document type scope specifies where the the template can be used such as "Global".
+	 * Specifies where the document type can be used across the site. If the document type has no scope restrictions, the scope is "Global".
 	 */
 	protected String documentTypeScope;
 
@@ -85,6 +59,32 @@ public class DocumentType implements Serializable
 
 	public void setParentTypeName(String parentTypeName) {
 		this.parentTypeName = parentTypeName;
+	}
+
+	/**
+	 * User-defined description of the document type.
+	 */
+	protected String description;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * The name that displays for the document type.
+	 */
+	protected String displayName;
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	/**

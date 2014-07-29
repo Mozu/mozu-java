@@ -45,6 +45,9 @@ public class Card implements Serializable
 		this.cardType = cardType;
 	}
 
+	/**
+	 * Unique identifier of the customer account contact associated with the credit card.
+	 */
 	protected Integer contactId;
 
 	public Integer getContactId() {

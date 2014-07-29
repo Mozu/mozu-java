@@ -37,6 +37,19 @@ public class ProductValidationSummary implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * If true, this product should not be packaged with other items and should ship by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -109,6 +122,9 @@ public class ProductValidationSummary implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
+	/**
+	 * The usage type of this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -142,6 +158,9 @@ public class ProductValidationSummary implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
+	/**
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 */
 	protected List<BundledProductSummary> bundledProducts;
 	public List<BundledProductSummary> getBundledProducts() {
 		return this.bundledProducts;

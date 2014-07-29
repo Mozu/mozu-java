@@ -14,12 +14,18 @@ import com.mozu.api.contracts.productadmin.CustomerSegment;
 import com.mozu.api.contracts.productadmin.CategoryDiscountCondition;
 import com.mozu.api.contracts.productadmin.ProductDiscountCondition;
 
+/**
+ *	Properties of the conditions that must be met for a discount to apply to an order.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountCondition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If the discount is a coupon, the code required to redeem the coupon.
+	 */
 	protected String couponCode;
 
 	public String getCouponCode() {
@@ -30,6 +36,9 @@ public class DiscountCondition implements Serializable
 		this.couponCode = couponCode;
 	}
 
+	/**
+	 * The date and time on which the discount expires and cannot be redeemed.
+	 */
 	protected DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
@@ -40,6 +49,19 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	protected Integer maximumRedemptionsPerOrder;
+
+	public Integer getMaximumRedemptionsPerOrder() {
+		return this.maximumRedemptionsPerOrder;
+	}
+
+	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
+		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
+	}
+
+	/**
+	 * The maximum number of times the discount can be redeemed.
+	 */
 	protected Integer maxRedemptionCount;
 
 	public Integer getMaxRedemptionCount() {
@@ -50,6 +72,19 @@ public class DiscountCondition implements Serializable
 		this.maxRedemptionCount = maxRedemptionCount;
 	}
 
+	protected Double minimumCategorySubtotalBeforeDiscounts;
+
+	public Double getMinimumCategorySubtotalBeforeDiscounts() {
+		return this.minimumCategorySubtotalBeforeDiscounts;
+	}
+
+	public void setMinimumCategorySubtotalBeforeDiscounts(Double minimumCategorySubtotalBeforeDiscounts) {
+		this.minimumCategorySubtotalBeforeDiscounts = minimumCategorySubtotalBeforeDiscounts;
+	}
+
+	/**
+	 * The minimum customer lifetime value amount required to redeem this discount.
+	 */
 	protected Double minimumLifetimeValueAmount;
 
 	public Double getMinimumLifetimeValueAmount() {
@@ -60,6 +95,9 @@ public class DiscountCondition implements Serializable
 		this.minimumLifetimeValueAmount = minimumLifetimeValueAmount;
 	}
 
+	/**
+	 * The minimum order amount required to redeem this discount.
+	 */
 	protected Double minimumOrderAmount;
 
 	public Double getMinimumOrderAmount() {
@@ -68,6 +106,26 @@ public class DiscountCondition implements Serializable
 
 	public void setMinimumOrderAmount(Double minimumOrderAmount) {
 		this.minimumOrderAmount = minimumOrderAmount;
+	}
+
+	protected Integer minimumQuantityProductsRequiredInCategories;
+
+	public Integer getMinimumQuantityProductsRequiredInCategories() {
+		return this.minimumQuantityProductsRequiredInCategories;
+	}
+
+	public void setMinimumQuantityProductsRequiredInCategories(Integer minimumQuantityProductsRequiredInCategories) {
+		this.minimumQuantityProductsRequiredInCategories = minimumQuantityProductsRequiredInCategories;
+	}
+
+	protected Integer minimumQuantityRequiredProducts;
+
+	public Integer getMinimumQuantityRequiredProducts() {
+		return this.minimumQuantityRequiredProducts;
+	}
+
+	public void setMinimumQuantityRequiredProducts(Integer minimumQuantityRequiredProducts) {
+		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
 	protected Boolean requiresAuthenticatedUser;
@@ -80,6 +138,9 @@ public class DiscountCondition implements Serializable
 		this.requiresAuthenticatedUser = requiresAuthenticatedUser;
 	}
 
+	/**
+	 * If true, redemption of this discount requires entry of a coupon code.
+	 */
 	protected Boolean requiresCoupon;
 
 	public Boolean getRequiresCoupon() {
@@ -90,6 +151,9 @@ public class DiscountCondition implements Serializable
 		this.requiresCoupon = requiresCoupon;
 	}
 
+	/**
+	 * The earliest date and time this discount can be redeemed.
+	 */
 	protected DateTime startDate;
 
 	public DateTime getStartDate() {
@@ -100,6 +164,9 @@ public class DiscountCondition implements Serializable
 		this.startDate = startDate;
 	}
 
+	/**
+	 * List of customer segments associated with the discount. Shoppers who are members of an associated customer segment can redeem this discount.
+	 */
 	protected List<CustomerSegment> customerSegments;
 	public List<CustomerSegment> getCustomerSegments() {
 		return this.customerSegments;
@@ -108,6 +175,9 @@ public class DiscountCondition implements Serializable
 		this.customerSegments = customerSegments;
 	}
 
+	/**
+	 * List of the product categories that are not eligible for the discount.
+	 */
 	protected List<CategoryDiscountCondition> excludedCategories;
 	public List<CategoryDiscountCondition> getExcludedCategories() {
 		return this.excludedCategories;
@@ -116,6 +186,9 @@ public class DiscountCondition implements Serializable
 		this.excludedCategories = excludedCategories;
 	}
 
+	/**
+	 * List of the products that are not eligible for the discount.
+	 */
 	protected List<ProductDiscountCondition> excludedProducts;
 	public List<ProductDiscountCondition> getExcludedProducts() {
 		return this.excludedProducts;
@@ -124,6 +197,9 @@ public class DiscountCondition implements Serializable
 		this.excludedProducts = excludedProducts;
 	}
 
+	/**
+	 * List of product categories that are eligible for the discount.
+	 */
 	protected List<CategoryDiscountCondition> includedCategories;
 	public List<CategoryDiscountCondition> getIncludedCategories() {
 		return this.includedCategories;
@@ -132,6 +208,9 @@ public class DiscountCondition implements Serializable
 		this.includedCategories = includedCategories;
 	}
 
+	/**
+	 * List of products that are eligible for the discount.
+	 */
 	protected List<ProductDiscountCondition> includedProducts;
 	public List<ProductDiscountCondition> getIncludedProducts() {
 		return this.includedProducts;

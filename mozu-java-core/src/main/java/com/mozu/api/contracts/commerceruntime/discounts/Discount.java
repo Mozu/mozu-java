@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of a discount defined for a product or order in a storefront.
+ *	Properties of a discount defined for a product, order, or shipping on a web storefront.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable

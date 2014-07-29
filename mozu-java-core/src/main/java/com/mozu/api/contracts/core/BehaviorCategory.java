@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	***Always private and should not be published.***
+ *	Properties of a category of application behaviors.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BehaviorCategory implements Serializable
@@ -20,7 +20,7 @@ public class BehaviorCategory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Identifier of the entity.
+	 * Unique identifier of the behavior.
 	 */
 	protected Integer id;
 
@@ -32,6 +32,9 @@ public class BehaviorCategory implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The name of the behavior.
+	 */
 	protected String name;
 
 	public String getName() {

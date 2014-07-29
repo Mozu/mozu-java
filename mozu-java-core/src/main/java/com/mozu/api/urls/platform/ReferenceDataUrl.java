@@ -37,7 +37,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehavior
-	 * @param behaviorId ***Always private and should not be published.***
+	 * @param behaviorId Unique identifier of the behavior.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorUrl(Integer behaviorId)
@@ -59,7 +59,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategory
-	 * @param categoryId ***Always private and should not be published.***
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorCategoryUrl(Integer categoryId)
@@ -71,7 +71,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviors
-	 * @param userType 
+	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorsUrl(String userType)

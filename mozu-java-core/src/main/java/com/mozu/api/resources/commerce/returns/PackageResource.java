@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the return packages subresource to manage physical packages used to ship return replacement items.
+ * Use the Return Packages subresource to manage physical packages used to ship return replacement items.
  * </summary>
  */
 public class PackageResource {
@@ -31,26 +31,6 @@ public class PackageResource {
 		_apiContext = apiContext;
 	}
 	
-	/**
-	 * Retrieves the details of a package of return replacement items.
-	 * <p><pre><code>
-	 *	Package package = new Package();
-	 *	Package package = package.GetPackage( returnId,  packageId);
-	 * </code></pre></p>
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
-	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(String returnId, String packageId) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageClient( returnId,  packageId);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
 	/**
 	 * Retrieves the package label image supplied by the carrier for a return replacement.
 	 * <p><pre><code>
@@ -72,6 +52,43 @@ public class PackageResource {
 	}
 
 	/**
+	 * Retrieves the details of a package of return replacement items.
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.GetPackage( returnId,  packageId);
+	 * </code></pre></p>
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(String returnId, String packageId) throws Exception
+	{
+		return getPackage( returnId,  packageId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a package of return replacement items.
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.GetPackage( returnId,  packageId,  responseFields);
+	 * </code></pre></p>
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(String returnId, String packageId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageClient( returnId,  packageId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Creates a new physical package of return replacement items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
@@ -85,7 +102,25 @@ public class PackageResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.createPackageClient( pkg,  returnId);
+		return createPackage( pkg,  returnId,  null);
+	}
+
+	/**
+	 * Creates a new physical package of return replacement items.
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.CreatePackage( pkg,  returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param package Properties of the physical package for a return replacement.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.createPackageClient( pkg,  returnId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -107,7 +142,26 @@ public class PackageResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId, String packageId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.updatePackageClient( pkg,  returnId,  packageId);
+		return updatePackage( pkg,  returnId,  packageId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a package associated with a return replacement.
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Package package = package.UpdatePackage( pkg,  returnId,  packageId,  responseFields);
+	 * </code></pre></p>
+	 * @param packageId Unique identifier of the return replacement package to update.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param package Properties of the return replacement package to update.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId, String packageId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> client = com.mozu.api.clients.commerce.returns.PackageClient.updatePackageClient( pkg,  returnId,  packageId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

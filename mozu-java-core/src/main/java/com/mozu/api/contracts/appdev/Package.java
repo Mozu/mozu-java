@@ -11,22 +11,28 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
+/**
+ *	Properties of a package of files associated with a version of an application or theme.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Package implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationVersionId;
+	protected Integer applicationId;
 
-	public Integer getApplicationVersionId() {
-		return this.applicationVersionId;
+	public Integer getApplicationId() {
+		return this.applicationId;
 	}
 
-	public void setApplicationVersionId(Integer applicationVersionId) {
-		this.applicationVersionId = applicationVersionId;
+	public void setApplicationId(Integer applicationId) {
+		this.applicationId = applicationId;
 	}
 
+	/**
+	 * Integer that represents the number of files in the application package.
+	 */
 	protected Integer assetFileCount;
 
 	public Integer getAssetFileCount() {
@@ -37,6 +43,9 @@ public class Package implements Serializable
 		this.assetFileCount = assetFileCount;
 	}
 
+	/**
+	 * Unique identifier of the package.
+	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -47,16 +56,9 @@ public class Package implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isDeleted;
-
-	public Boolean getIsDeleted() {
-		return this.isDeleted;
-	}
-
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-
+	/**
+	 * If true, this package is currently locked for editing.
+	 */
 	protected Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -67,6 +69,9 @@ public class Package implements Serializable
 		this.isLocked = isLocked;
 	}
 
+	/**
+	 * If true, this application package is a release candidate. If false, this application version package is a development package.
+	 */
 	protected Boolean isReleasePackage;
 
 	public Boolean getIsReleasePackage() {
@@ -77,6 +82,9 @@ public class Package implements Serializable
 		this.isReleasePackage = isReleasePackage;
 	}
 
+	/**
+	 * The name of the application package.
+	 */
 	protected String name;
 
 	public String getName() {
@@ -87,6 +95,9 @@ public class Package implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * User ID of the developer who owns the application package.
+	 */
 	protected String userId;
 
 	public String getUserId() {
@@ -97,6 +108,9 @@ public class Package implements Serializable
 		this.userId = userId;
 	}
 
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

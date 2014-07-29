@@ -15,11 +15,13 @@ public class ObjectUrl
 
 	/**
 	 * Get Resource Url for GetRates
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getRatesUrl()
+	public static MozuUrl getRatesUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-rates");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-rates?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
