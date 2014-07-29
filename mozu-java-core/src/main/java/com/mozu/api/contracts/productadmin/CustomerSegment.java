@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Properties of a customer segment used to group sets of customers for targeted reporting and discounts.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSegment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Unique identifier of the customer segment.
+	 */
 	protected Integer id;
 
 	public Integer getId() {

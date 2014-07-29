@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.productruntime.BundledProduct;
+import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
  *	Represents the values that are the product option selections for a shopper to choose when ordering a product.
@@ -134,6 +136,26 @@ public class ProductOptionValue implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+
+	protected BundledProduct bundledProduct;
+
+	public BundledProduct getBundledProduct() {
+		return this.bundledProduct;
+	}
+
+	public void setBundledProduct(BundledProduct bundledProduct) {
+		this.bundledProduct = bundledProduct;
+	}
+
+	protected AttributeVocabularyValueDisplayInfo displayInfo;
+
+	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 }

@@ -42,15 +42,16 @@ public class DiscountResource {
 	 */
 	public com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getDiscounts(dataViewMode,  null,  null,  null,  null);
+		return getDiscounts(dataViewMode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountCollection discountCollection = discount.GetDiscounts(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+	 *	DiscountCollection discountCollection = discount.GetDiscounts(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
 	 * </code></pre></p>
+	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param sortBy 
@@ -58,28 +59,9 @@ public class DiscountResource {
 	 * @return com.mozu.api.contracts.productadmin.DiscountCollection
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
 	 */
-	public com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves the details of a single discount.
-	 * <p><pre><code>
-	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.GetDiscount(dataViewMode,  discountId);
-	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @return com.mozu.api.contracts.productadmin.Discount
-	 * @see com.mozu.api.contracts.productadmin.Discount
-	 */
-	public com.mozu.api.contracts.productadmin.Discount getDiscount(com.mozu.api.DataViewMode dataViewMode, Integer discountId) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountClient(dataViewMode,  discountId);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -98,7 +80,58 @@ public class DiscountResource {
 	 */
 	public com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(com.mozu.api.DataViewMode dataViewMode, Integer discountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountContentClient(dataViewMode,  discountId);
+		return getDiscountContent(dataViewMode,  discountId,  null);
+	}
+
+	/**
+	 * Retrieves the localized content specified for the specified discount.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent(dataViewMode,  discountId,  fields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param fields 
+	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(com.mozu.api.DataViewMode dataViewMode, Integer discountId, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountContentClient(dataViewMode,  discountId,  fields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Retrieves the details of a single discount.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	Discount discount = discount.GetDiscount(dataViewMode,  discountId);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @return com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 */
+	public com.mozu.api.contracts.productadmin.Discount getDiscount(com.mozu.api.DataViewMode dataViewMode, Integer discountId) throws Exception
+	{
+		return getDiscount(dataViewMode,  discountId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a single discount.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	Discount discount = discount.GetDiscount(dataViewMode,  discountId,  fields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param fields 
+	 * @return com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 */
+	public com.mozu.api.contracts.productadmin.Discount getDiscount(com.mozu.api.DataViewMode dataViewMode, Integer discountId, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountClient(dataViewMode,  discountId,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -116,7 +149,22 @@ public class DiscountResource {
 	 */
 	public String generateRandomCoupon(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		MozuClient<String> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.generateRandomCouponClient(dataViewMode);
+		return generateRandomCoupon(dataViewMode,  null);
+	}
+
+	/**
+	 * Generates a random code for a coupon.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	string string = discount.GenerateRandomCoupon(dataViewMode,  fields);
+	 * </code></pre></p>
+	 * @param fields 
+	 * @return string
+	 * @see string
+	 */
+	public String generateRandomCoupon(com.mozu.api.DataViewMode dataViewMode, String fields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.generateRandomCouponClient(dataViewMode,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -124,40 +172,36 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Creates a discount.
+	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.CreateDiscount(dataViewMode,  discount);
 	 * </code></pre></p>
-	 * @param discount Properties of the discount to create. Required properties: Content.Name, AmountType, StartDate, and Target.Type.
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
 	public com.mozu.api.contracts.productadmin.Discount createDiscount(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.createDiscountClient(dataViewMode,  discount);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return createDiscount(dataViewMode,  discount,  null);
 	}
 
 	/**
-	 * Modifies a discount.
+	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.UpdateDiscount(dataViewMode,  discount,  discountId);
+	 *	Discount discount = discount.CreateDiscount(dataViewMode,  discount,  fields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param discount Properties of the discount to update. Required properties: Content.Name, AmountType, StartDate, and Target.Type. Any unspecified properties are set to null and boolean variables are set to false.
+	 * @param fields 
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
-	public com.mozu.api.contracts.productadmin.Discount updateDiscount(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId) throws Exception
+	public com.mozu.api.contracts.productadmin.Discount createDiscount(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, String fields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.updateDiscountClient(dataViewMode,  discount,  discountId);
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.createDiscountClient(dataViewMode,  discount,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -165,20 +209,77 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Modifies the localized content for the specified discount. Rename the discount without modifying any other discount properties.
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.UpdateDiscountContent(dataViewMode,  content,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param content New Name and/or LocaleCode. Properties of the content to update. Required property: Name.
+	 * @param content The discount content to update, including the discount name.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
 	public com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.updateDiscountContentClient(dataViewMode,  content,  discountId);
+		return updateDiscountContent(dataViewMode,  content,  discountId,  null);
+	}
+
+	/**
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.UpdateDiscountContent(dataViewMode,  content,  discountId,  fields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param fields 
+	 * @param content The discount content to update, including the discount name.
+	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
+	 */
+	public com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.updateDiscountContentClient(dataViewMode,  content,  discountId,  fields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Updates one or more properties of a defined discount.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	Discount discount = discount.UpdateDiscount(dataViewMode,  discount,  discountId);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param discount Properties of the discount to update.
+	 * @return com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 */
+	public com.mozu.api.contracts.productadmin.Discount updateDiscount(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId) throws Exception
+	{
+		return updateDiscount(dataViewMode,  discount,  discountId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a defined discount.
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	Discount discount = discount.UpdateDiscount(dataViewMode,  discount,  discountId,  fields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param fields 
+	 * @param discount Properties of the discount to update.
+	 * @return com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 * @see com.mozu.api.contracts.productadmin.Discount
+	 */
+	public com.mozu.api.contracts.productadmin.Discount updateDiscount(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId, String fields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.updateDiscountClient(dataViewMode,  discount,  discountId,  fields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

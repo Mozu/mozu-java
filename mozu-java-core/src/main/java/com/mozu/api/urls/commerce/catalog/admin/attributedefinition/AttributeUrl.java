@@ -15,15 +15,17 @@ public class AttributeUrl
 
 	/**
 	 * Get Resource Url for GetAttributes
+	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributesUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getAttributesUrl(String fields, String filter, Integer pageSize, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&fields={fields}");
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("sortBy", sortBy);
@@ -34,34 +36,40 @@ public class AttributeUrl
 	/**
 	 * Get Resource Url for GetAttribute
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributeUrl(String attributeFQN)
+	public static MozuUrl getAttributeUrl(String attributeFQN, String fields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddAttribute
+	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAttributeUrl()
+	public static MozuUrl addAttributeUrl(String fields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/?fields={fields}");
+		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateAttribute
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAttributeUrl(String attributeFQN)
+	public static MozuUrl updateAttributeUrl(String attributeFQN, String fields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

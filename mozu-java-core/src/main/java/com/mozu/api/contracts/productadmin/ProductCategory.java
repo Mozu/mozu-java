@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	The category to which a product belongs.
+ *	The site category to which a product belongs.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCategory implements Serializable

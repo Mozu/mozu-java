@@ -32,6 +32,9 @@ public class ProductInventoryInfo implements Serializable
 		this.manageStock = manageStock;
 	}
 
+	/**
+	 * The location code for the direct ship location associated with the available online stock.
+	 */
 	protected String onlineLocationCode;
 
 	public String getOnlineLocationCode() {

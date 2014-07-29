@@ -28,25 +28,29 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for GetExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getExtraUrl(String attributeFQN, String productCode)
+	public static MozuUrl getExtraUrl(String attributeFQN, String fields, String productCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddExtra
+	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addExtraUrl(String productCode)
+	public static MozuUrl addExtraUrl(String fields, String productCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras?fields={fields}");
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -54,13 +58,15 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for UpdateExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode)
+	public static MozuUrl updateExtraUrl(String attributeFQN, String fields, String productCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}?fields={fields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

@@ -12,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.customer.CustomerSegment;
 
+/**
+ *	Paged list of customer segments.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSegmentCollection implements Serializable
 {
@@ -28,6 +31,9 @@ public class CustomerSegmentCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
+	/**
+	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 */
 	protected Integer pageSize;
 
 	public Integer getPageSize() {
@@ -38,6 +44,9 @@ public class CustomerSegmentCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
+	/**
+	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 */
 	protected Integer startIndex;
 
 	public Integer getStartIndex() {
@@ -48,6 +57,9 @@ public class CustomerSegmentCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
+	/**
+	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
+	 */
 	protected Integer totalCount;
 
 	public Integer getTotalCount() {

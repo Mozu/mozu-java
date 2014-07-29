@@ -35,7 +35,26 @@ public class ShipmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> getShipmentClient(String orderId, String shipmentId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.getShipmentUrl(orderId, shipmentId);
+		return getShipmentClient( orderId,  shipmentId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the order shipment specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient=GetShipmentClient( orderId,  shipmentId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Shipment shipment = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param responseFields 
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> getShipmentClient(String orderId, String shipmentId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.getShipmentUrl(orderId, responseFields, shipmentId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Shipment.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = new MozuClient(clz);

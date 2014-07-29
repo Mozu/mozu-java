@@ -15,7 +15,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Provide dynamic search results to shoppers as they browse and search for products on the storefront. Suggest possible search terms as the shopper enters text.
+ * Use the Product Search resource to provide dynamic search results to shoppers as they browse and search for products on the web storefront, and to suggest possible search terms as the shopper enters text.
  * </summary>
  */
 public class ProductSearchResultClient {
@@ -33,13 +33,13 @@ public class ProductSearchResultClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient() throws Exception
 	{
-		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex);
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductSearchResult productSearchResult = client.Result();
@@ -58,14 +58,15 @@ public class ProductSearchResultClient {
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product search results by any of its properties, including product code, type, category, and name. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=categoryId+eq+12"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param query The terms to search on.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchResult>
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetSettings, facetStartIndex, facetTemplate, facetTemplateSubset, facetValueFilter, filter, pageSize, query, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetSettings, facetStartIndex, facetTemplate, facetTemplateSubset, facetValueFilter, filter, pageSize, query, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductSearchResult.class;
 		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient = new MozuClient(clz);
@@ -78,38 +79,40 @@ public class ProductSearchResultClient {
 	/**
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> mozuClient=SuggestClient();
+	 * MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> mozuClient=SuggestClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * SearchSuggestion searchSuggestion = client.Result();
+	 * SearchSuggestionResult searchSuggestionResult = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.SearchSuggestion>
-	 * @see com.mozu.api.contracts.productruntime.SearchSuggestion
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.SearchSuggestionResult>
+	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> suggestClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> suggestClient() throws Exception
 	{
-		return suggestClient( null,  null);
+		return suggestClient( null,  null,  null,  null);
 	}
 
 	/**
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> mozuClient=SuggestClient( q,  pageSize);
+	 * MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> mozuClient=SuggestClient( query,  groups,  pageSize,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * SearchSuggestion searchSuggestion = client.Result();
+	 * SearchSuggestionResult searchSuggestionResult = client.Result();
 	 * </code></pre></p>
+	 * @param groups 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q Text that the shopper is currently entering.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.SearchSuggestion>
-	 * @see com.mozu.api.contracts.productruntime.SearchSuggestion
+	 * @param query 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.SearchSuggestionResult>
+	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> suggestClient(String q, Integer pageSize) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> suggestClient(String query, String groups, Integer pageSize, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.suggestUrl(pageSize, q);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.suggestUrl(groups, pageSize, query, responseFields);
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.productruntime.SearchSuggestion.class;
-		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> mozuClient = new MozuClient(clz);
+		Class<?> clz = com.mozu.api.contracts.productruntime.SearchSuggestionResult.class;
+		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

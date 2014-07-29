@@ -6,11 +6,9 @@
  */
 package com.mozu.api.contracts.content;
 
-import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.content.PropertyValue;
 
 /**
  *	The document properties that define the content used by the content management system (CMS).
@@ -167,11 +165,13 @@ public class Document implements Serializable
 	/**
 	 * List of properties for the given property value.
 	 */
-	protected List<PropertyValue> properties;
-	public List<PropertyValue> getProperties() {
+	protected com.fasterxml.jackson.databind.JsonNode properties;
+
+	public com.fasterxml.jackson.databind.JsonNode getProperties() {
 		return this.properties;
 	}
-	public void setProperties(List<PropertyValue> properties) {
+
+	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
 		this.properties = properties;
 	}
 

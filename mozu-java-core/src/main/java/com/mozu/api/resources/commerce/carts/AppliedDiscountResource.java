@@ -44,7 +44,24 @@ public class AppliedDiscountResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode);
+		return applyCoupon( cartId,  couponCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
+	 *	Cart cart = applieddiscount.ApplyCoupon( cartId,  couponCode,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param couponCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -10,6 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.content.View;
 
 /**
  *	The list of document types and related properties that define content used by the content management system (CMS).
@@ -21,7 +22,7 @@ public class DocumentList implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * A document type is a template.
+	 * List of document types associated with this document list.
 	 */
 	protected List<String> documentTypes;
 	public List<String> getDocumentTypes() {
@@ -44,6 +45,16 @@ public class DocumentList implements Serializable
 		this.enablePublishing = enablePublishing;
 	}
 
+	protected Object metaData;
+
+	public Object getMetaData() {
+		return this.metaData;
+	}
+
+	public void setMetaData(Object metaData) {
+		this.metaData = metaData;
+	}
+
 	/**
 	 * The name of the document list.
 	 */
@@ -57,6 +68,26 @@ public class DocumentList implements Serializable
 		this.name = name;
 	}
 
+	protected String scope;
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
+	protected String security;
+
+	public String getSecurity() {
+		return this.security;
+	}
+
+	public void setSecurity(String security) {
+		this.security = security;
+	}
+
 	/**
 	 * If true, changes documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
@@ -68,6 +99,22 @@ public class DocumentList implements Serializable
 
 	public void setSupportsPublishing(Boolean supportsPublishing) {
 		this.supportsPublishing = supportsPublishing;
+	}
+
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
+	}
+
+	protected List<View> views;
+	public List<View> getViews() {
+		return this.views;
+	}
+	public void setViews(List<View> views) {
+		this.views = views;
 	}
 
 }
