@@ -43,23 +43,7 @@ public class CartResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart getCart(String cartId) throws Exception
 	{
-		return getCart( cartId,  null);
-	}
-
-	/**
-	 * Retrieves the cart specified in the request.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetCart( cartId,  responseFields);
-	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.Cart getCart(String cartId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getCartClient( cartId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getCartClient( cartId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -77,22 +61,7 @@ public class CartResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart() throws Exception
 	{
-		return getOrCreateCart( null);
-	}
-
-	/**
-	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetOrCreateCart( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getOrCreateCartClient( responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getOrCreateCartClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -110,57 +79,7 @@ public class CartResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary() throws Exception
 	{
-		return getCartSummary( null);
-	}
-
-	/**
-	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetCartSummary( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> client = com.mozu.api.clients.commerce.CartClient.getCartSummaryClient( responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetUserCartSummary( userId);
-	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(String userId) throws Exception
-	{
-		return getUserCartSummary( userId,  null);
-	}
-
-	/**
-	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetUserCartSummary( userId,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(String userId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> client = com.mozu.api.clients.commerce.CartClient.getUserCartSummaryClient( userId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> client = com.mozu.api.clients.commerce.CartClient.getCartSummaryClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -179,23 +98,26 @@ public class CartResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(String userId) throws Exception
 	{
-		return getUserCart( userId,  null);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getUserCartClient( userId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Retrieves the cart of the user specified in the request.
+	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetUserCart( userId,  responseFields);
+	 *	CartSummary cartSummary = cart.GetUserCartSummary( userId);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
-	public com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(String userId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(String userId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.getUserCartClient( userId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartSummary> client = com.mozu.api.clients.commerce.CartClient.getUserCartSummaryClient( userId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -215,24 +137,7 @@ public class CartResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(com.mozu.api.contracts.commerceruntime.carts.Cart cart) throws Exception
 	{
-		return updateCart( cart,  null);
-	}
-
-	/**
-	 * Update the current shopper's cart.
-	 * <p><pre><code>
-	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.UpdateCart( cart,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param cart All of the properties of the cart to update. The product code is required.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(com.mozu.api.contracts.commerceruntime.carts.Cart cart, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.updateCartClient( cart,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.CartClient.updateCartClient( cart);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

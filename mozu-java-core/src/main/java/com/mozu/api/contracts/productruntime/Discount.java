@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of a defined product, order, or shipping discount.
+ *	Properties of a defined product discount.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -33,7 +33,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The date and time the discount can no longer be redeemed. Date in UTC Date/Time. System-supplied and read only.
+	 * The date and time when the product discount will no longer be active. Date in UTC Date/Time. System-supplied and read-only.
 	 */
 	protected DateTime expirationDate;
 
@@ -56,7 +56,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The localizable name assigned for the product discount.
+	 * The name assigned for the product discount.
 	 */
 	protected String name;
 

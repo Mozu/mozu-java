@@ -35,7 +35,7 @@ public class ProductOptionSelections implements Serializable
 	}
 
 	/**
-	 * List of option attributes associated with the product and the associated values currently defined for this product configuration.
+	 * List of product options and values currently selected.
 	 */
 	protected List<ProductOptionSelection> options;
 	public List<ProductOptionSelection> getOptions() {

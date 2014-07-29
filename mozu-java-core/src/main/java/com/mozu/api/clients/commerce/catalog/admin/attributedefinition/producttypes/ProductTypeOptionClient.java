@@ -62,27 +62,7 @@ public class ProductTypeOptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> getOptionClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return getOptionClient(dataViewMode,  productTypeId,  attributeFQN,  null);
-	}
-
-	/**
-	 * Retrieves the details of an option attribute defined for the specified product type.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=GetOptionClient(dataViewMode,  productTypeId,  attributeFQN,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productTypeId The identifier of the product type.
-	 * @param dataViewMode DataViewMode
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> getOptionClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.getOptionUrl(attributeFQN, fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.getOptionUrl(attributeFQN, productTypeId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);
@@ -110,28 +90,7 @@ public class ProductTypeOptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> addOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId) throws Exception
 	{
-		return addOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  null);
-	}
-
-	/**
-	 * Assigns an option attribute to the product type based on the information supplied in the request.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=AddOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productTypeId Identifier of the product type.
-	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the option attribute to define for the specified product type.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> addOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.addOptionUrl(fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.addOptionUrl(productTypeId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);
@@ -161,29 +120,7 @@ public class ProductTypeOptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> updateOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return updateOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null);
-	}
-
-	/**
-	 * Updates an option attribute definition for the specified product type.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=UpdateOptionClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productTypeId Identifier of the product type.
-	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType Properties of the option product attribute to define for the specified product type.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> updateOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.updateOptionUrl(attributeFQN, fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeOptionUrl.updateOptionUrl(attributeFQN, productTypeId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);

@@ -21,16 +21,6 @@ public class RatesResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String shippingZoneCode;
-
-	public String getShippingZoneCode() {
-		return this.shippingZoneCode;
-	}
-
-	public void setShippingZoneCode(String shippingZoneCode) {
-		this.shippingZoneCode = shippingZoneCode;
-	}
-
 	/**
 	 * Arrayed list of calculated shipping rates for each assocuated carrier.
 	 */

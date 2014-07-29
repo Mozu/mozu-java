@@ -35,26 +35,7 @@ public class AppliedDiscountClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> applyCouponClient(String cartId, String couponCode) throws Exception
 	{
-		return applyCouponClient( cartId,  couponCode,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=ApplyCouponClient( cartId,  couponCode,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Cart cart = client.Result();
-	 * </code></pre></p>
-	 * @param cartId 
-	 * @param couponCode 
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
-	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> applyCouponClient(String cartId, String couponCode, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.carts.AppliedDiscountUrl.applyCouponUrl(cartId, couponCode, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.carts.AppliedDiscountUrl.applyCouponUrl(cartId, couponCode);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = new MozuClient(clz);

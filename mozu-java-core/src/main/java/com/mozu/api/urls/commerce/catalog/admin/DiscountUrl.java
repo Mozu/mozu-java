@@ -15,17 +15,15 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscounts
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDiscountsUrl(String fields, String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getDiscountsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("sortBy", sortBy);
@@ -34,82 +32,70 @@ public class DiscountUrl
 	}
 
 	/**
-	 * Get Resource Url for GetDiscountContent
+	 * Get Resource Url for GetDiscount
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDiscountContentUrl(Integer discountId, String fields)
+	public static MozuUrl getDiscountUrl(Integer discountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/content?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}");
 		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetDiscount
+	 * Get Resource Url for GetDiscountContent
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDiscountUrl(Integer discountId, String fields)
+	public static MozuUrl getDiscountContentUrl(Integer discountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/content");
 		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GenerateRandomCoupon
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl generateRandomCouponUrl(String fields)
+	public static MozuUrl generateRandomCouponUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/generate-random-coupon?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/generate-random-coupon");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateDiscount
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createDiscountUrl(String fields)
+	public static MozuUrl createDiscountUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateDiscount
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateDiscountUrl(Integer discountId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}");
+		formatter.formatUrl("discountId", discountId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateDiscountContent
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateDiscountContentUrl(Integer discountId, String fields)
+	public static MozuUrl updateDiscountContentUrl(Integer discountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/content?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/content");
 		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for UpdateDiscount
-	 * @param discountId Unique identifier of the discount to update.
-	 * @param fields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl updateDiscountUrl(Integer discountId, String fields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}?fields={fields}");
-		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

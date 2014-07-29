@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Customer Authentication Tickets resource to generate and refresh authentication tickets for customer accounts.
+ * 
  * </summary>
  */
 public class CustomerAuthTicketResource {
@@ -50,36 +50,19 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Generates a new authentication ticket for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
-	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
+	 * @param userAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo) throws Exception
 	{
-		return createUserAuthTicket( userAuthInfo,  null);
-	}
-
-	/**
-	 * Generates a new authentication ticket for a customer account.
-	 * <p><pre><code>
-	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
-	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
-	 */
-	public com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createUserAuthTicketClient( userAuthInfo,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createUserAuthTicketClient( userAuthInfo);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -87,34 +70,18 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken);
 	 * </code></pre></p>
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param refreshToken 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(String refreshToken) throws Exception
 	{
-		return refreshUserAuthTicket( refreshToken,  null);
-	}
-
-	/**
-	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
-	 * <p><pre><code>
-	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken,  responseFields);
-	 * </code></pre></p>
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
-	 */
-	public com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(String refreshToken, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.refreshUserAuthTicketClient( refreshToken,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.refreshUserAuthTicketClient( refreshToken);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

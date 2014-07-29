@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Cart Items subresource to manage a collection of items in an active shopping cart.
+ * Use the cart items subresource to manage a collection of items in an active shopping cart.
  * </summary>
  */
 public class CartItemResource {
@@ -32,6 +32,24 @@ public class CartItemResource {
 	}
 	
 	/**
+	 * Retrieves a list of cart items including the total number of items in the cart.
+	 * <p><pre><code>
+	 *	CartItem cartitem = new CartItem();
+	 *	CartItemCollection cartItemCollection = cartitem.GetCartItems();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartItemCollection getCartItems() throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemsClient();
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieves a particular cart item by providing the cart item ID.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
@@ -43,56 +61,7 @@ public class CartItemResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartItem getCartItem(String cartItemId) throws Exception
 	{
-		return getCartItem( cartItemId,  null);
-	}
-
-	/**
-	 * Retrieves a particular cart item by providing the cart item ID.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.GetCartItem( cartItemId,  responseFields);
-	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItem getCartItem(String cartItemId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemClient( cartItemId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItemCollection cartItemCollection = cartitem.GetCartItems();
-	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItemCollection getCartItems() throws Exception
-	{
-		return getCartItems( null);
-	}
-
-	/**
-	 * Retrieves a list of cart items including the total number of items in the cart.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItemCollection cartItemCollection = cartitem.GetCartItems( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItemCollection getCartItems(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemsClient( responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.getCartItemClient( cartItemId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -112,61 +81,7 @@ public class CartItemResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartItem addItemToCart(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem) throws Exception
 	{
-		return addItemToCart( cartItem,  null);
-	}
-
-	/**
-	 * Adds a product to the current shopper's cart.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.AddItemToCart( cartItem,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param cartItem All properties of the new cart item. The product code is required.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItem addItemToCart(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemToCartClient( cartItem,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItemQuantity( cartItemId,  quantity);
-	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemQuantity(String cartItemId, Integer quantity) throws Exception
-	{
-		return updateCartItemQuantity( cartItemId,  quantity,  null);
-	}
-
-	/**
-	 * Update the quantity of an individual cart item in the cart of the current shopper.
-	 * <p><pre><code>
-	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItemQuantity( cartItemId,  quantity,  responseFields);
-	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update quantity.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemQuantity(String cartItemId, Integer quantity, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemQuantityClient( cartItemId,  quantity,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.addItemToCartClient( cartItem);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -187,25 +102,27 @@ public class CartItemResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItem(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartItemId) throws Exception
 	{
-		return updateCartItem( cartItem,  cartItemId,  null);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemClient( cartItem,  cartItemId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Update the product or product quantity of an item in the current shopper's cart.
+	 * Update the quantity of an individual cart item in the cart of the current shopper.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItem( cartItem,  cartItemId,  responseFields);
+	 *	CartItem cartItem = cartitem.UpdateCartItemQuantity( cartItemId,  quantity);
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
-	 * @param cartItem The properties of the cart item to update.
+	 * @param cartItemId Identifier of the cart item to update quantity.
+	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItem(com.mozu.api.contracts.commerceruntime.carts.CartItem cartItem, String cartItemId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.carts.CartItem updateCartItemQuantity(String cartItemId, Integer quantity) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemClient( cartItem,  cartItemId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> client = com.mozu.api.clients.commerce.carts.CartItemClient.updateCartItemQuantityClient( cartItemId,  quantity);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

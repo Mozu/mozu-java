@@ -16,78 +16,66 @@ public class CartUrl
 	/**
 	 * Get Resource Url for GetCart
 	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCartUrl(String cartId, String responseFields)
+	public static MozuUrl getCartUrl(String cartId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}");
 		formatter.formatUrl("cartId", cartId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetOrCreateCart
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrCreateCartUrl(String responseFields)
+	public static MozuUrl getOrCreateCartUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetCartSummary
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCartSummaryUrl(String responseFields)
+	public static MozuUrl getCartSummaryUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/summary?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for GetUserCartSummary
-	 * @param responseFields 
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getUserCartSummaryUrl(String responseFields, String userId)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}/summary?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		formatter.formatUrl("userId", userId);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/summary");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetUserCart
-	 * @param responseFields 
 	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getUserCartUrl(String responseFields, String userId)
+	public static MozuUrl getUserCartUrl(String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}");
+		formatter.formatUrl("userId", userId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetUserCartSummary
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getUserCartSummaryUrl(String userId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/user/{userId}/summary");
 		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateCart
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateCartUrl(String responseFields)
+	public static MozuUrl updateCartUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

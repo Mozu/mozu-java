@@ -42,65 +42,29 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAccountCollection getAccounts() throws Exception
 	{
-		return getAccounts( null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return getAccounts( null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of customer accounts.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.GetAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields);
+	 *	CustomerAccountCollection customerAccountCollection = customeraccount.GetAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous);
 	 * </code></pre></p>
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
+	 * @param isAnonymous 
 	 * @param pageSize 
 	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerAccountCollection getAccounts(Integer startIndex, Integer pageSize, String sortBy, String filter, String fields, String q, Integer qLimit, Boolean isAnonymous, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAccountCollection getAccounts(Integer startIndex, Integer pageSize, String sortBy, String filter, String fields, String q, Integer qLimit, Boolean isAnonymous) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getAccountsClient( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves the current login state of the customer account specified in the request.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginState( accountId);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @return com.mozu.api.contracts.customer.LoginState
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginState(Integer accountId) throws Exception
-	{
-		return getLoginState( accountId,  null);
-	}
-
-	/**
-	 * Retrieves the current login state of the customer account specified in the request.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginState( accountId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.LoginState
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginState(Integer accountId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateClient( accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getAccountsClient( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -119,23 +83,26 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAccount getAccount(Integer accountId) throws Exception
 	{
-		return getAccount( accountId,  null);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getAccountClient( accountId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Retrieve details of a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.GetAccount( accountId,  responseFields);
+	 *	LoginState loginState = customeraccount.GetLoginState( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.CustomerAccount
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
+	 * @param accountId 
+	 * @return com.mozu.api.contracts.customer.LoginState
+	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public com.mozu.api.contracts.customer.CustomerAccount getAccount(Integer accountId, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.LoginState getLoginState(Integer accountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getAccountClient( accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateClient( accountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -155,24 +122,7 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAccount addAccount(com.mozu.api.contracts.customer.CustomerAccount account) throws Exception
 	{
-		return addAccount( account,  null);
-	}
-
-	/**
-	 * Creates a new customer account based on the information specified in the request.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.AddAccount( account,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param account Properties of the customer account to update.
-	 * @return com.mozu.api.contracts.customer.CustomerAccount
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 */
-	public com.mozu.api.contracts.customer.CustomerAccount addAccount(com.mozu.api.contracts.customer.CustomerAccount account, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountClient( account,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountClient( account);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -199,38 +149,20 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param accountId 
+	 * @param customerAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket addLoginToExistingCustomer(com.mozu.api.contracts.customer.CustomerLoginInfo customerAuthInfo, Integer accountId) throws Exception
 	{
-		return addLoginToExistingCustomer( customerAuthInfo,  accountId,  null);
-	}
-
-	/**
-	 * Adds a new user login to a defined customer account.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @param customerAuthInfo The authentication information for the customer account.
-	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
-	 */
-	public com.mozu.api.contracts.customer.CustomerAuthTicket addLoginToExistingCustomer(com.mozu.api.contracts.customer.CustomerLoginInfo customerAuthInfo, Integer accountId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addLoginToExistingCustomerClient( customerAuthInfo,  accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addLoginToExistingCustomerClient( customerAuthInfo,  accountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -238,12 +170,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates the customer lifetime value of the specified customer account in the event of an order import or a lifetime value calculation error.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.RecomputeCustomerLifetimeValue( accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
+	 * @param accountId 
 	 * @return 
 	 */
 	public void recomputeCustomerLifetimeValue(Integer accountId) throws Exception
@@ -255,13 +187,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Lock or unlock a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.SetLoginLocked( isLocked,  accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account.
-	 * @param isLocked If true, the customer account is locked from logging in.
+	 * @param accountId 
+	 * @param isLocked 
 	 * @return 
 	 * @see bool
 	 */
@@ -274,13 +206,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Requires the password for the customer account to be changed.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.SetPasswordChangeRequired( isPasswordChangeRequired,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param isPasswordChangeRequired If true, the password for the customer account must be changed.
+	 * @param accountId 
+	 * @param isPasswordChangeRequired 
 	 * @return 
 	 * @see bool
 	 */
@@ -293,36 +225,19 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo);
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket addAccountAndLogin(com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo accountAndAuthInfo) throws Exception
 	{
-		return addAccountAndLogin( accountAndAuthInfo,  null);
-	}
-
-	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
-	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
-	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
-	 */
-	public com.mozu.api.contracts.customer.CustomerAuthTicket addAccountAndLogin(com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo accountAndAuthInfo, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountAndLoginClient( accountAndAuthInfo,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountAndLoginClient( accountAndAuthInfo);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -330,36 +245,19 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers);
 	 * </code></pre></p>
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
 	 */
 	public com.mozu.api.contracts.customer.CustomerAccountCollection addAccounts(List<com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo> customers) throws Exception
 	{
-		return addAccounts( customers,  null);
-	}
-
-	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param customers Properties of the customer accounts to create.
-	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
-	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
-	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
-	 */
-	public com.mozu.api.contracts.customer.CustomerAccountCollection addAccounts(List<com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo> customers, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountsClient( customers,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountsClient( customers);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -367,34 +265,18 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress);
 	 * </code></pre></p>
-	 * @param emailAddress The email address associated with the customer account.
+	 * @param emailAddress 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
 	public com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(String emailAddress) throws Exception
 	{
-		return getLoginStateByEmailAddress( emailAddress,  null);
-	}
-
-	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress,  responseFields);
-	 * </code></pre></p>
-	 * @param emailAddress The email address associated with the customer account.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.LoginState
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(String emailAddress, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -402,34 +284,18 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName);
 	 * </code></pre></p>
-	 * @param userName The user name associated with the customer account.
+	 * @param userName 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
 	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName) throws Exception
 	{
-		return getLoginStateByUserName( userName,  null);
-	}
-
-	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userName The user name associated with the customer account.
-	 * @return com.mozu.api.contracts.customer.LoginState
-	 * @see com.mozu.api.contracts.customer.LoginState
-	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -437,12 +303,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Resets the password for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.ResetPassword( resetPasswordInfo);
 	 * </code></pre></p>
-	 * @param resetPasswordInfo Information required to reset the password for a customer account.
+	 * @param resetPasswordInfo 
 	 * @return 
 	 * @see com.mozu.api.contracts.customer.ResetPasswordInfo
 	 */
@@ -468,25 +334,7 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAccount updateAccount(com.mozu.api.contracts.customer.CustomerAccount account, Integer accountId) throws Exception
 	{
-		return updateAccount( account,  accountId,  null);
-	}
-
-	/**
-	 * Updates a customer account.
-	 * <p><pre><code>
-	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.UpdateAccount( account,  accountId,  responseFields);
-	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
-	 * @param account Properties of the customer account to update.
-	 * @return com.mozu.api.contracts.customer.CustomerAccount
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 * @see com.mozu.api.contracts.customer.CustomerAccount
-	 */
-	public com.mozu.api.contracts.customer.CustomerAccount updateAccount(com.mozu.api.contracts.customer.CustomerAccount account, Integer accountId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.updateAccountClient( account,  accountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.updateAccountClient( account,  accountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

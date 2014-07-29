@@ -14,62 +14,54 @@ public class CardUrl
 {
 
 	/**
-	 * Get Resource Url for GetAccountCard
+	 * Get Resource Url for GetAccountCards
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountCardUrl(Integer accountId, String cardId, String responseFields)
+	public static MozuUrl getAccountCardsUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards/{cardId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("cardId", cardId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetAccountCards
-	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * Get Resource Url for GetAccountCard
+	 * @param accountId 
+	 * @param cardId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountCardsUrl(Integer accountId, String responseFields)
+	public static MozuUrl getAccountCardUrl(Integer accountId, String cardId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards/{cardId}");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("cardId", cardId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountCardUrl(Integer accountId, String responseFields)
+	public static MozuUrl addAccountCardUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
-	 * @param responseFields 
+	 * @param cardId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAccountCardUrl(Integer accountId, String cardId, String responseFields)
+	public static MozuUrl updateAccountCardUrl(Integer accountId, String cardId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards/{cardId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/cards/{cardId}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("cardId", cardId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

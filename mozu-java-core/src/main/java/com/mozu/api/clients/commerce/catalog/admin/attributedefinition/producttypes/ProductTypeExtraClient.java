@@ -62,27 +62,7 @@ public class ProductTypeExtraClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> getExtraClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return getExtraClient(dataViewMode,  productTypeId,  attributeFQN,  null);
-	}
-
-	/**
-	 * Retrieves the details of an extra attribute definition for the specified product type.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=GetExtraClient(dataViewMode,  productTypeId,  attributeFQN,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
-	 * @param dataViewMode DataViewMode
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> getExtraClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.getExtraUrl(attributeFQN, fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.getExtraUrl(attributeFQN, productTypeId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);
@@ -110,28 +90,7 @@ public class ProductTypeExtraClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> addExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId) throws Exception
 	{
-		return addExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  null);
-	}
-
-	/**
-	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=AddExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productTypeId Identifier of the product type.
-	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> addExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.addExtraUrl(fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.addExtraUrl(productTypeId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);
@@ -161,29 +120,7 @@ public class ProductTypeExtraClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> updateExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return updateExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null);
-	}
-
-	/**
-	 * Update the definition of an extra attribute for the specified product type.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient=UpdateExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * AttributeInProductType attributeInProductType = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productTypeId Identifier of the product type.
-	 * @param dataViewMode DataViewMode
-	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeInProductType>
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> updateExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String fields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.updateExtraUrl(attributeFQN, fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraUrl.updateExtraUrl(attributeFQN, productTypeId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeInProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> mozuClient = new MozuClient(clz);

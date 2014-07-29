@@ -43,23 +43,27 @@ public class PaymentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(String orderId) throws Exception
 	{
-		return getPayments( orderId,  null);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> client = com.mozu.api.clients.commerce.orders.PaymentClient.getPaymentsClient( orderId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Retrieves information about all payment transactions submitted for the specified order.
+	 * Retrieves information about a specific payment transaction submitted for the specified order.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	PaymentCollection paymentCollection = payment.GetPayments( orderId,  responseFields);
+	 *	Payment payment = payment.GetPayment( orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
-	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
+	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
+	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
-	public com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(String orderId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(String orderId, String paymentId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> client = com.mozu.api.clients.commerce.orders.PaymentClient.getPaymentsClient( orderId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> client = com.mozu.api.clients.commerce.orders.PaymentClient.getPaymentClient( orderId,  paymentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -87,43 +91,6 @@ public class PaymentResource {
 	}
 
 	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
-	 * <p><pre><code>
-	 *	Payment payment = new Payment();
-	 *	Payment payment = payment.GetPayment( orderId,  paymentId);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
-	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
-	 */
-	public com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(String orderId, String paymentId) throws Exception
-	{
-		return getPayment( orderId,  paymentId,  null);
-	}
-
-	/**
-	 * Retrieves information about a specific payment transaction submitted for the specified order.
-	 * <p><pre><code>
-	 *	Payment payment = new Payment();
-	 *	Payment payment = payment.GetPayment( orderId,  paymentId,  responseFields);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment transaction.
-	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
-	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
-	 */
-	public com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(String orderId, String paymentId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> client = com.mozu.api.clients.commerce.orders.PaymentClient.getPaymentClient( orderId,  paymentId,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * Performs the specified action for an individual order payment transaction.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
@@ -138,26 +105,7 @@ public class PaymentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order performPaymentAction(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String paymentId) throws Exception
 	{
-		return performPaymentAction( action,  orderId,  paymentId,  null);
-	}
-
-	/**
-	 * Performs the specified action for an individual order payment transaction.
-	 * <p><pre><code>
-	 *	Payment payment = new Payment();
-	 *	Order order = payment.PerformPaymentAction( action,  orderId,  paymentId,  responseFields);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the payment.
-	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields 
-	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
-	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order performPaymentAction(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String paymentId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.PaymentClient.performPaymentActionClient( action,  orderId,  paymentId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.PaymentClient.performPaymentActionClient( action,  orderId,  paymentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -178,25 +126,7 @@ public class PaymentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId) throws Exception
 	{
-		return createPaymentAction( action,  orderId,  null);
-	}
-
-	/**
-	 * Creates a new payment transaction for the specified order and performs the specified action.
-	 * <p><pre><code>
-	 *	Payment payment = new Payment();
-	 *	Order order = payment.CreatePaymentAction( action,  orderId,  responseFields);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields 
-	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
-	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
-	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.PaymentClient.createPaymentActionClient( action,  orderId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.PaymentClient.createPaymentActionClient( action,  orderId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -44,24 +44,7 @@ public class ShipmentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String orderId, String shipmentId) throws Exception
 	{
-		return getShipment( orderId,  shipmentId,  null);
-	}
-
-	/**
-	 * Retrieves the details of the order shipment specified in the request.
-	 * <p><pre><code>
-	 *	Shipment shipment = new Shipment();
-	 *	Shipment shipment = shipment.GetShipment( orderId,  shipmentId,  responseFields);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
-	 * @param responseFields 
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
-	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String orderId, String shipmentId, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getShipmentClient( orderId,  shipmentId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getShipmentClient( orderId,  shipmentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

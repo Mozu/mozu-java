@@ -40,16 +40,6 @@ public class ProductPrice implements Serializable
 		this.catalogSalePrice = catalogSalePrice;
 	}
 
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
 	protected Double msrp;
 
 	public Double getMsrp() {

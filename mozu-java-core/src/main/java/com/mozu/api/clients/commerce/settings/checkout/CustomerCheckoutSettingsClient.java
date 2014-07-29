@@ -15,7 +15,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
+ * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
  * </summary>
  */
 public class CustomerCheckoutSettingsClient {

@@ -36,9 +36,6 @@ public class ProductVariation implements Serializable
 		this.deltaWeight = deltaWeight;
 	}
 
-	/**
-	 * Describes the types of fulfillment that are supported for this product variation. A variation can support direct ship, in-store pickup, or both. Supported fulfillment types are defined at the master catalog level. Client administrators cannot override the supported fulfillment types at the catalog level.
-	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
@@ -61,7 +58,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * If true, the production variation is no longer available for sale. For example, if a client stops selling all "small" shirts, all product variations with the "small" option are set to IsOrphan. System-supplied and read only.
+	 * If true, the production variation is no longer available for sale. For example, if a merchant stops selling all "small" shirts, all product variations with the "small" option are set to IsOrphan. System-supplied and read-only.
 	 */
 	protected Boolean isOrphan;
 
@@ -146,9 +143,6 @@ public class ProductVariation implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Supplier-defined properties assigned for the product variation.
-	 */
 	protected ProductSupplierInfo supplierInfo;
 
 	public ProductSupplierInfo getSupplierInfo() {

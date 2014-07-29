@@ -11,28 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
 
-/**
- *	Properties of a component product in a product bundle. A product bundle can represent either a collection of multiple products sold as a single entity, or a collection of the same product sold as a package. For example, a 10-pack of socks.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BundledProduct implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
-	/**
-	 * The description defined for a component product in a product bundle. System-supplied and read only.
-	 */
 	protected String description;
 
 	public String getDescription() {
@@ -43,19 +27,6 @@ public class BundledProduct implements Serializable
 		this.description = description;
 	}
 
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
-	/**
-	 * If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
-	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -66,9 +37,6 @@ public class BundledProduct implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
-	/**
-	 * The name of a component product in a product bundle. System-supplied and read only.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -79,29 +47,6 @@ public class BundledProduct implements Serializable
 		this.name = name;
 	}
 
-	protected String optionAttributeFQN;
-
-	public String getOptionAttributeFQN() {
-		return this.optionAttributeFQN;
-	}
-
-	public void setOptionAttributeFQN(String optionAttributeFQN) {
-		this.optionAttributeFQN = optionAttributeFQN;
-	}
-
-	protected Object optionValue;
-
-	public Object getOptionValue() {
-		return this.optionValue;
-	}
-
-	public void setOptionValue(Object optionValue) {
-		this.optionValue = optionValue;
-	}
-
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -112,9 +57,6 @@ public class BundledProduct implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Unique identifier of the product reservation associated with the component product in a product bundle. System-supplied and read only.
-	 */
 	protected Integer productReservationId;
 
 	public Integer getProductReservationId() {
@@ -125,9 +67,6 @@ public class BundledProduct implements Serializable
 		this.productReservationId = productReservationId;
 	}
 
-	/**
-	 * The quantity of a component product in its product bundle. System-supplied and read only.
-	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -138,9 +77,6 @@ public class BundledProduct implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {

@@ -35,16 +35,6 @@ public class Package implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	protected String code;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	/**
 	 * The date and time the package shipped to the customer.
 	 */
@@ -58,9 +48,6 @@ public class Package implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
-	/**
-	 * The location code that represents the location from which this package will ship.
-	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {

@@ -11,7 +11,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.appdev.Package;
+import com.mozu.api.contracts.appdev.ApplicationVersion;
 
 /**
  *	Properties of an application registered in Dev Center.
@@ -74,22 +74,15 @@ public class Application implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	protected List<Package> devPackages;
-	public List<Package> getDevPackages() {
-		return this.devPackages;
+	/**
+	 * Array list of the versions defined for an application.
+	 */
+	protected List<ApplicationVersion> versions;
+	public List<ApplicationVersion> getVersions() {
+		return this.versions;
 	}
-	public void setDevPackages(List<Package> devPackages) {
-		this.devPackages = devPackages;
-	}
-
-	protected Package releasePackage;
-
-	public Package getReleasePackage() {
-		return this.releasePackage;
-	}
-
-	public void setReleasePackage(Package releasePackage) {
-		this.releasePackage = releasePackage;
+	public void setVersions(List<ApplicationVersion> versions) {
+		this.versions = versions;
 	}
 
 }

@@ -42,22 +42,7 @@ public class ChangeMessageResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages() throws Exception
 	{
-		return getMessages( null);
-	}
-
-	/**
-	 * Retrieves the messages associated with the current shopper's cart.
-	 * <p><pre><code>
-	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.GetMessages( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
-	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
-	 */
-	public com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.getMessagesClient( responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.getMessagesClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

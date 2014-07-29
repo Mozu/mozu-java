@@ -44,24 +44,7 @@ public class ProductVariationResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey) throws Exception
 	{
-		return getProductVariation(dataViewMode,  productCode,  variationKey,  null);
-	}
-
-	/**
-	 * Retrieves the details of a product variation based on the supplied product code and variation key.
-	 * <p><pre><code>
-	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.GetProductVariation(dataViewMode,  productCode,  variationKey,  fields);
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @return com.mozu.api.contracts.productadmin.ProductVariation
-	 * @see com.mozu.api.contracts.productadmin.ProductVariation
-	 */
-	public com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationClient(dataViewMode,  productCode,  variationKey,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationClient(dataViewMode,  productCode,  variationKey);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,16 +63,15 @@ public class ProductVariationResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getProductVariations(dataViewMode,  productCode,  null,  null,  null,  null,  null);
+		return getProductVariations(dataViewMode,  productCode,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the product variations configured for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.GetProductVariations(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.GetProductVariations(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -98,9 +80,30 @@ public class ProductVariationResource {
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 */
-	public com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationsClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationsClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationCollection productVariationCollection = productvariation.UpdateProductVariations(dataViewMode,  productVariations,  productCode);
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationsClient(dataViewMode,  productVariations,  productCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -122,65 +125,7 @@ public class ProductVariationResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductVariation updateProductVariation(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey) throws Exception
 	{
-		return updateProductVariation(dataViewMode,  productVariation,  productCode,  variationKey,  null);
-	}
-
-	/**
-	 * Modifies the details of a variation, based on the supplied variation key, for the specified product code.
-	 * <p><pre><code>
-	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.UpdateProductVariation(dataViewMode,  productVariation,  productCode,  variationKey,  fields);
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param productVariation Wrapper for the properties of the specified product variation.
-	 * @return com.mozu.api.contracts.productadmin.ProductVariation
-	 * @see com.mozu.api.contracts.productadmin.ProductVariation
-	 * @see com.mozu.api.contracts.productadmin.ProductVariation
-	 */
-	public com.mozu.api.contracts.productadmin.ProductVariation updateProductVariation(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationClient(dataViewMode,  productVariation,  productCode,  variationKey,  fields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
-	 * <p><pre><code>
-	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationCollection productVariationCollection = productvariation.UpdateProductVariations(dataViewMode,  productVariations,  productCode);
-	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
-	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 */
-	public com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode) throws Exception
-	{
-		return updateProductVariations(dataViewMode,  productVariations,  productCode,  null);
-	}
-
-	/**
-	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
-	 * <p><pre><code>
-	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationCollection productVariationCollection = productvariation.UpdateProductVariations(dataViewMode,  productVariations,  productCode,  fields);
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
-	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 */
-	public com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationsClient(dataViewMode,  productVariations,  productCode,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationClient(dataViewMode,  productVariation,  productCode,  variationKey);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

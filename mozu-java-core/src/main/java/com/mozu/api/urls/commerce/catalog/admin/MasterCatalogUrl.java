@@ -15,40 +15,34 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalogs
-	 * @param fields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getMasterCatalogsUrl(String fields)
+	public static MozuUrl getMasterCatalogsUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetMasterCatalog
-	 * @param fields 
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getMasterCatalogUrl(String fields, Integer masterCatalogId)
+	public static MozuUrl getMasterCatalogUrl(Integer masterCatalogId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/{masterCatalogId}?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/{masterCatalogId}");
 		formatter.formatUrl("masterCatalogId", masterCatalogId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateMasterCatalog
-	 * @param fields 
 	 * @param masterCatalogId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateMasterCatalogUrl(String fields, Integer masterCatalogId)
+	public static MozuUrl updateMasterCatalogUrl(Integer masterCatalogId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/{masterCatalogId}?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/mastercatalogs/{masterCatalogId}");
 		formatter.formatUrl("masterCatalogId", masterCatalogId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

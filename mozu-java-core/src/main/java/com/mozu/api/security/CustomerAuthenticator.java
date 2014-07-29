@@ -47,7 +47,7 @@ public class CustomerAuthenticator {
             throws ApiException {
 
         String resourceUrl = getTenantDomain(tenantId)
-                + CustomerAuthTicketUrl.refreshUserAuthTicketUrl(authTicket.getRefreshToken(), null).getUrl();
+                + CustomerAuthTicketUrl.refreshUserAuthTicketUrl(authTicket.getRefreshToken()).getUrl();
 
         HttpClient client = new DefaultHttpClient();
         HttpPut put = new HttpPut(resourceUrl);
@@ -87,7 +87,7 @@ public class CustomerAuthenticator {
     public static CustomerAuthenticationProfile authenticate(CustomerUserAuthInfo userAuthInfo,  Integer tenantId, Integer siteId) {
 
         String resourceUrl = getTenantDomain(tenantId)
-                + CustomerAuthTicketUrl.createUserAuthTicketUrl(null).getUrl(); // AuthTicketUrl.AuthenticateAppUrl();
+                + CustomerAuthTicketUrl.createUserAuthTicketUrl().getUrl(); // AuthTicketUrl.AuthenticateAppUrl();
 
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(resourceUrl);

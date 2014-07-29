@@ -13,11 +13,11 @@ import com.mozu.api.events.model.EventHandlerStatus;
 
 public interface OrderEventHandler {
 
-		public EventHandlerStatus abandoned(ApiContext apiContext, Event event);
 		public EventHandlerStatus cancelled(ApiContext apiContext, Event event);
 		public EventHandlerStatus closed(ApiContext apiContext, Event event);
 		public EventHandlerStatus fulfilled(ApiContext apiContext, Event event);
 		public EventHandlerStatus opened(ApiContext apiContext, Event event);
 		public EventHandlerStatus pendingreview(ApiContext apiContext, Event event);
 		public EventHandlerStatus updated(ApiContext apiContext, Event event);
+
 }

@@ -17,15 +17,13 @@ public class CustomerContactUrl
 	 * Get Resource Url for GetAccountContact
 	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
 	 * @param contactId Unique identifier of the customer account contact to retrieve.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountContactUrl(Integer accountId, Integer contactId, String responseFields)
+	public static MozuUrl getAccountContactUrl(Integer accountId, Integer contactId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts/{contactId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts/{contactId}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("contactId", contactId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -34,18 +32,16 @@ public class CustomerContactUrl
 	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountContactsUrl(Integer accountId, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getAccountContactsUrl(Integer accountId, String filter, Integer pageSize, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -54,14 +50,12 @@ public class CustomerContactUrl
 	/**
 	 * Get Resource Url for AddAccountContact
 	 * @param accountId Unique identifier of the customer account containing the new contact.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountContactUrl(Integer accountId, String responseFields)
+	public static MozuUrl addAccountContactUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts");
 		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -69,15 +63,13 @@ public class CustomerContactUrl
 	 * Get Resource Url for UpdateAccountContact
 	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
 	 * @param contactId Unique identifer of the customer account contact being updated.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAccountContactUrl(Integer accountId, Integer contactId, String responseFields)
+	public static MozuUrl updateAccountContactUrl(Integer accountId, Integer contactId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts/{contactId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/contacts/{contactId}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("contactId", contactId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -22,18 +22,8 @@ public class ProductType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
 	/**
-	 * Unique identifier of the product type.
+	 * Identifier of the entity.
 	 */
 	protected Integer id;
 
@@ -58,9 +48,6 @@ public class ProductType implements Serializable
 		this.isBaseProductType = isBaseProductType;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -72,7 +59,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * Name of the product type, such as "Shoes" or "TVs."
+	 * Name of the product type, such as "Shoes" or "TVs".
 	 */
 	protected String name;
 
@@ -97,9 +84,6 @@ public class ProductType implements Serializable
 		this.productCount = productCount;
 	}
 
-	/**
-	 * List of product usages that describe how products of this type are used. Products of this type can be Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle). Product type usages cannot be both Bundle and Configurable.
-	 */
 	protected List<String> productUsages;
 	public List<String> getProductUsages() {
 		return this.productUsages;

@@ -42,26 +42,25 @@ public class CreditResource {
 	 */
 	public com.mozu.api.contracts.customer.credit.CreditCollection getCredits() throws Exception
 	{
-		return getCredits( null,  null,  null,  null,  null);
+		return getCredits( null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of store credits applied to customer accounts, according any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	CreditCollection creditCollection = credit.GetCredits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CreditCollection creditCollection = credit.GetCredits( startIndex,  pageSize,  sortBy,  filter);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.customer.credit.CreditCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditCollection
 	 */
-	public com.mozu.api.contracts.customer.credit.CreditCollection getCredits(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.credit.CreditCollection getCredits(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.credit.CreditCollection> client = com.mozu.api.clients.commerce.customer.CreditClient.getCreditsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.credit.CreditCollection> client = com.mozu.api.clients.commerce.customer.CreditClient.getCreditsClient( startIndex,  pageSize,  sortBy,  filter);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,23 +79,7 @@ public class CreditResource {
 	 */
 	public com.mozu.api.contracts.customer.credit.Credit getCredit(String code) throws Exception
 	{
-		return getCredit( code,  null);
-	}
-
-	/**
-	 * Retrieves the details of a store credit applied to a customer account.
-	 * <p><pre><code>
-	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.GetCredit( code,  responseFields);
-	 * </code></pre></p>
-	 * @param code User-defined code that identifies the store credit to retrieve.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 */
-	public com.mozu.api.contracts.customer.credit.Credit getCredit(String code, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.getCreditClient( code,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.getCreditClient( code);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -116,59 +99,7 @@ public class CreditResource {
 	 */
 	public com.mozu.api.contracts.customer.credit.Credit addCredit(com.mozu.api.contracts.customer.credit.Credit credit) throws Exception
 	{
-		return addCredit( credit,  null);
-	}
-
-	/**
-	 * Creates a new store credit for the customer account specified in the request.
-	 * <p><pre><code>
-	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AddCredit( credit,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param credit Properties of the store credit to create.
-	 * @return com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 */
-	public com.mozu.api.contracts.customer.credit.Credit addCredit(com.mozu.api.contracts.customer.credit.Credit credit, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.addCreditClient( credit,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Associates an unclaimed customer credit with the shopper user authenticated in the request header.
-	 * <p><pre><code>
-	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AssociateCreditToShopper( code);
-	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
-	 * @return com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 */
-	public com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(String code) throws Exception
-	{
-		return associateCreditToShopper( code,  null);
-	}
-
-	/**
-	 * Associates an unclaimed customer credit with the shopper user authenticated in the request header.
-	 * <p><pre><code>
-	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AssociateCreditToShopper( code,  responseFields);
-	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 */
-	public com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(String code, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.associateCreditToShopperClient( code,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.addCreditClient( credit);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -189,25 +120,26 @@ public class CreditResource {
 	 */
 	public com.mozu.api.contracts.customer.credit.Credit updateCredit(com.mozu.api.contracts.customer.credit.Credit credit, String code) throws Exception
 	{
-		return updateCredit( credit,  code,  null);
+		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.updateCreditClient( credit,  code);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
 	}
 
 	/**
-	 * Updates one or more properties of a defined store credit applied to a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.UpdateCredit( credit,  code,  responseFields);
+	 *	Credit credit = credit.AssociateCreditToShopper( code);
 	 * </code></pre></p>
-	 * @param code User-defined code of the store credit to update.
-	 * @param responseFields 
-	 * @param credit Properties of the store credit to update.
+	 * @param code 
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
-	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
-	public com.mozu.api.contracts.customer.credit.Credit updateCredit(com.mozu.api.contracts.customer.credit.Credit credit, String code, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.updateCreditClient( credit,  code,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.credit.Credit> client = com.mozu.api.clients.commerce.customer.CreditClient.associateCreditToShopperClient( code);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

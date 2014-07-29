@@ -28,14 +28,12 @@ public class OrderValidationResultUrl
 	/**
 	 * Get Resource Url for AddValidationResult
 	 * @param orderId 
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addValidationResultUrl(String orderId, String responseFields)
+	public static MozuUrl addValidationResultUrl(String orderId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/validationresults?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/validationresults");
 		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -42,25 +42,24 @@ public class DocumentDraftSummaryResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return listDocumentDraftSummaries(dataViewMode,  null,  null,  null,  null);
+		return listDocumentDraftSummaries(dataViewMode,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries(dataViewMode,  pageSize,  startIndex,  documentLists,  responseFields);
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries(dataViewMode,  pageSize,  startIndex,  documentLists);
 	 * </code></pre></p>
 	 * @param documentLists Lists that contain the document drafts.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String documentLists, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String documentLists) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.DocumentDraftSummaryClient.listDocumentDraftSummariesClient(dataViewMode,  pageSize,  startIndex,  documentLists,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.DocumentDraftSummaryClient.listDocumentDraftSummariesClient(dataViewMode,  pageSize,  startIndex,  documentLists);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

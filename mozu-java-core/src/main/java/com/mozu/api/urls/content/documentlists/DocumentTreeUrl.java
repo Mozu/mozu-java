@@ -14,6 +14,20 @@ public class DocumentTreeUrl
 {
 
 	/**
+	 * Get Resource Url for GetTreeDocument
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getTreeDocumentUrl(String documentListName, String documentName)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}");
+		formatter.formatUrl("documentListName", documentListName);
+		formatter.formatUrl("documentName", documentName);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetTreeDocumentContent
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
@@ -24,22 +38,6 @@ public class DocumentTreeUrl
 		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}/content");
 		formatter.formatUrl("documentListName", documentListName);
 		formatter.formatUrl("documentName", documentName);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for GetTreeDocument
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getTreeDocumentUrl(String documentListName, String documentName, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}?responseFields={responseFields}");
-		formatter.formatUrl("documentListName", documentListName);
-		formatter.formatUrl("documentName", documentName);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

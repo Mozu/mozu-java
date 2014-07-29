@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Storefront Categories resource to view the product category hierarchy as it appears to shoppers who are browsing the storefront. The hierarchy can be returned as a flat list or as a category tree.
+ * Get the product category hierarchy as it appears to shoppers who are browsing the storefront. The hierarchy can be returned as a flat list or as a category tree.
  * </summary>
  */
 public class CategoryResource {
@@ -42,26 +42,25 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories() throws Exception
 	{
-		return getCategories( null,  null,  null,  null,  null);
+		return getCategories( null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories( filter,  startIndex,  pageSize,  sortBy);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productruntime.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productruntime.CategoryPagedCollection
 	 */
-	public com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(String filter, Integer startIndex, Integer pageSize, String sortBy) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoriesClient( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoriesClient( filter,  startIndex,  pageSize,  sortBy);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,24 +79,23 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Category getCategory(Integer categoryId) throws Exception
 	{
-		return getCategory( categoryId,  null,  null);
+		return getCategory( categoryId,  null);
 	}
 
 	/**
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory( categoryId,  allowInactive,  responseFields);
+	 *	Category category = category.GetCategory( categoryId,  allowInactive);
 	 * </code></pre></p>
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param categoryId Unique identifier for the storefront container used to organize products.
-	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productruntime.Category
 	 * @see com.mozu.api.contracts.productruntime.Category
 	 */
-	public com.mozu.api.contracts.productruntime.Category getCategory(Integer categoryId, Boolean allowInactive, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.Category getCategory(Integer categoryId, Boolean allowInactive) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Category> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryClient( categoryId,  allowInactive,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Category> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryClient( categoryId,  allowInactive);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -115,22 +113,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree() throws Exception
 	{
-		return getCategoryTree( null);
-	}
-
-	/**
-	 * Retrieves the list of product categories that appear on the storefront organized in a hierarchical format. Hidden categories do not appear in the list.
-	 * <p><pre><code>
-	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetCategoryTree( responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.productruntime.CategoryCollection
-	 * @see com.mozu.api.contracts.productruntime.CategoryCollection
-	 */
-	public com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryTreeClient( responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryTreeClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

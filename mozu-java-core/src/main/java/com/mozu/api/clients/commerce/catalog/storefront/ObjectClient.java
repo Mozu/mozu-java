@@ -35,26 +35,7 @@ public class ObjectClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> getRatesClient(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest) throws Exception
 	{
-		return getRatesClient( rateRequest,  null);
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * RatesResponse ratesResponse = client.Result();
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param rateRequest 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
-	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
-	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
-	 */
-	public static MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> getRatesClient(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ObjectUrl.getRatesUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ObjectUrl.getRatesUrl();
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.shippingruntime.RatesResponse.class;
 		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient = new MozuClient(clz);

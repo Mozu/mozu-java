@@ -42,26 +42,25 @@ public class ChannelGroupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups() throws Exception
 	{
-		return getChannelGroups( null,  null,  null,  null,  null);
+		return getChannelGroups( null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of defined channel groups according to any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	ChannelGroup channelgroup = new ChannelGroup();
-	 *	ChannelGroupCollection channelGroupCollection = channelgroup.GetChannelGroups( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ChannelGroupCollection channelGroupCollection = channelgroup.GetChannelGroups( startIndex,  pageSize,  sortBy,  filter);
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter FilterSetAll
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection
 	 */
-	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection> client = com.mozu.api.clients.commerce.ChannelGroupClient.getChannelGroupsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection> client = com.mozu.api.clients.commerce.ChannelGroupClient.getChannelGroupsClient( startIndex,  pageSize,  sortBy,  filter);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,23 +79,7 @@ public class ChannelGroupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup getChannelGroup(String code) throws Exception
 	{
-		return getChannelGroup( code,  null);
-	}
-
-	/**
-	 * Retrieves the details of a defined channel group.
-	 * <p><pre><code>
-	 *	ChannelGroup channelgroup = new ChannelGroup();
-	 *	ChannelGroup channelGroup = channelgroup.GetChannelGroup( code,  responseFields);
-	 * </code></pre></p>
-	 * @param code The code that uniquely identifies the channel group.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 */
-	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup getChannelGroup(String code, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.getChannelGroupClient( code,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.getChannelGroupClient( code);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -116,24 +99,7 @@ public class ChannelGroupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup createChannelGroup(com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup) throws Exception
 	{
-		return createChannelGroup( channelGroup,  null);
-	}
-
-	/**
-	 * Creates a new group of channels with common information.
-	 * <p><pre><code>
-	 *	ChannelGroup channelgroup = new ChannelGroup();
-	 *	ChannelGroup channelGroup = channelgroup.CreateChannelGroup( channelGroup,  responseFields);
-	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param channelGroup Properties of the channel group to create.
-	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 */
-	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup createChannelGroup(com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.createChannelGroupClient( channelGroup,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.createChannelGroupClient( channelGroup);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -154,25 +120,7 @@ public class ChannelGroupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup updateChannelGroup(com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String code) throws Exception
 	{
-		return updateChannelGroup( channelGroup,  code,  null);
-	}
-
-	/**
-	 * Updates one or more properties of a defined channel group.
-	 * <p><pre><code>
-	 *	ChannelGroup channelgroup = new ChannelGroup();
-	 *	ChannelGroup channelGroup = channelgroup.UpdateChannelGroup( channelGroup,  code,  responseFields);
-	 * </code></pre></p>
-	 * @param code Code that identifies the channel group.
-	 * @param responseFields 
-	 * @param channelGroup Properties of the channel group to update.
-	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
-	 */
-	public com.mozu.api.contracts.commerceruntime.channels.ChannelGroup updateChannelGroup(com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String code, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.updateChannelGroupClient( channelGroup,  code,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelGroup> client = com.mozu.api.clients.commerce.ChannelGroupClient.updateChannelGroupClient( channelGroup,  code);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

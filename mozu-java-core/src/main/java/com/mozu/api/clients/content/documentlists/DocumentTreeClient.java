@@ -21,6 +21,32 @@ import org.apache.commons.lang3.StringUtils;
 public class DocumentTreeClient {
 	
 	/**
+	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Document document = client.Result();
+	 * </code></pre></p>
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
+	 * @see com.mozu.api.contracts.content.Document
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.getTreeDocumentUrl(documentListName, documentName);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.content.Document.class;
+		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetTreeDocumentContentClient(dataViewMode,  documentListName,  documentName);
@@ -47,51 +73,6 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Document document = client.Result();
-	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
-	 * @see com.mozu.api.contracts.content.Document
-	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName) throws Exception
-	{
-		return getTreeDocumentClient(dataViewMode,  documentListName,  documentName,  null);
-	}
-
-	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Document document = client.Result();
-	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
-	 * @see com.mozu.api.contracts.content.Document
-	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.getTreeDocumentUrl(documentListName, documentName, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.content.Document.class;
-		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
-		return mozuClient;
-
-	}
-
-	/**
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateTreeDocumentContentClient(dataViewMode,  stream,  documentListName,  documentName,  contentType);
@@ -100,7 +81,7 @@ public class DocumentTreeClient {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
@@ -128,7 +109,7 @@ public class DocumentTreeClient {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */

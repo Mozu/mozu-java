@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 
 /**
- *	Properties of a product configuration with shopper-selected options.
+ *	Properties of a created product selection.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConfiguredProduct implements Serializable
@@ -92,9 +92,6 @@ public class ConfiguredProduct implements Serializable
 		this.availableShippingDiscounts = availableShippingDiscounts;
 	}
 
-	/**
-	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
-	 */
 	protected ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -130,7 +127,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * Unit price that the tenant intends to sell the product if no sale price is set.
+	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
 	 */
 	protected ProductPrice price;
 

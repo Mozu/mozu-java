@@ -128,9 +128,6 @@ public class ReturnItem implements Serializable
 		this.shippingLossTaxAmount = shippingLossTaxAmount;
 	}
 
-	/**
-	 * Properties of a collection of component products that make up a single returned product bundle with its own product code.
-	 */
 	protected List<ReturnBundle> bundledProducts;
 	public List<ReturnBundle> getBundledProducts() {
 		return this.bundledProducts;

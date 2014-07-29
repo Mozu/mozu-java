@@ -32,6 +32,26 @@ public class DocumentTreeResource {
 	}
 	
 	/**
+	 * Retrieves a document based on its document list and folder path in the document hierarchy.
+	 * <p><pre><code>
+	 *	DocumentTree documenttree = new DocumentTree();
+	 *	Document document = documenttree.GetTreeDocument(dataViewMode,  documentListName,  documentName);
+	 * </code></pre></p>
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @return com.mozu.api.contracts.content.Document
+	 * @see com.mozu.api.contracts.content.Document
+	 */
+	public com.mozu.api.contracts.content.Document getTreeDocument(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentTreeClient.getTreeDocumentClient(dataViewMode,  documentListName,  documentName);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
@@ -52,43 +72,6 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
-	 * <p><pre><code>
-	 *	DocumentTree documenttree = new DocumentTree();
-	 *	Document document = documenttree.GetTreeDocument(dataViewMode,  documentListName,  documentName);
-	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @return com.mozu.api.contracts.content.Document
-	 * @see com.mozu.api.contracts.content.Document
-	 */
-	public com.mozu.api.contracts.content.Document getTreeDocument(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName) throws Exception
-	{
-		return getTreeDocument(dataViewMode,  documentListName,  documentName,  null);
-	}
-
-	/**
-	 * Retrieves a document based on its document list and folder path in the document hierarchy.
-	 * <p><pre><code>
-	 *	DocumentTree documenttree = new DocumentTree();
-	 *	Document document = documenttree.GetTreeDocument(dataViewMode,  documentListName,  documentName,  responseFields);
-	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
-	 * @return com.mozu.api.contracts.content.Document
-	 * @see com.mozu.api.contracts.content.Document
-	 */
-	public com.mozu.api.contracts.content.Document getTreeDocument(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentTreeClient.getTreeDocumentClient(dataViewMode,  documentListName,  documentName,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
@@ -96,7 +79,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return 
 	 * @see Stream
 	 */
@@ -116,7 +99,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return 
 	 * @see Stream
 	 */

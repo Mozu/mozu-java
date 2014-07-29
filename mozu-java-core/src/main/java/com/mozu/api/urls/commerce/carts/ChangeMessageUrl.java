@@ -15,13 +15,11 @@ public class ChangeMessageUrl
 
 	/**
 	 * Get Resource Url for GetMessages
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getMessagesUrl(String responseFields)
+	public static MozuUrl getMessagesUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current/messages?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/current/messages");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

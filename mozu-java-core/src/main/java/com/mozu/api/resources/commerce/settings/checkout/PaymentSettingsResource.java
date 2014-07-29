@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 
 /** <summary>
- * Use the Payment Settings resource to specify settings when creating payments for order checkout on the site.
+ * Specify settings when creating payments for order checkout on the site.
  * </summary>
  */
 public class PaymentSettingsResource {

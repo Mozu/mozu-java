@@ -63,24 +63,7 @@ public class ProductExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductExtra getExtra(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
 	{
-		return getExtra(dataViewMode,  productCode,  attributeFQN,  null);
-	}
-
-	/**
-	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
-	 * <p><pre><code>
-	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.GetExtra(dataViewMode,  productCode,  attributeFQN,  fields);
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @return com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 */
-	public com.mozu.api.contracts.productadmin.ProductExtra getExtra(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.getExtraClient(dataViewMode,  productCode,  attributeFQN,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.getExtraClient(dataViewMode,  productCode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -101,25 +84,7 @@ public class ProductExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductExtra addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode) throws Exception
 	{
-		return addExtra(dataViewMode,  productExtra,  productCode,  null);
-	}
-
-	/**
-	 * Configure an extra attribute for the product specified in the request.
-	 * <p><pre><code>
-	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.AddExtra(dataViewMode,  productExtra,  productCode,  fields);
-	 * </code></pre></p>
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productExtra Properties of the product extra to configure for the specified product.
-	 * @return com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 */
-	public com.mozu.api.contracts.productadmin.ProductExtra addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.addExtraClient(dataViewMode,  productExtra,  productCode,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.addExtraClient(dataViewMode,  productExtra,  productCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -141,26 +106,7 @@ public class ProductExtraResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductExtra updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN) throws Exception
 	{
-		return updateExtra(dataViewMode,  productExtra,  productCode,  attributeFQN,  null);
-	}
-
-	/**
-	 * Updates the configuration of an extra attribute for the product specified in the request.
-	 * <p><pre><code>
-	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.UpdateExtra(dataViewMode,  productExtra,  productCode,  attributeFQN,  fields);
-	 * </code></pre></p>
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productExtra Properties of the extra attribute to update for the specified product.
-	 * @return com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 */
-	public com.mozu.api.contracts.productadmin.ProductExtra updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, String fields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.updateExtraClient(dataViewMode,  productExtra,  productCode,  attributeFQN,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.updateExtraClient(dataViewMode,  productExtra,  productCode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

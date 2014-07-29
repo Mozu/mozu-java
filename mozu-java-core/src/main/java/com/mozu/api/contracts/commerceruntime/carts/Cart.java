@@ -47,9 +47,6 @@ public class Cart implements Serializable
 		this.couponCodes = couponCodes;
 	}
 
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
 	protected String currencyCode;
 
 	public String getCurrencyCode() {

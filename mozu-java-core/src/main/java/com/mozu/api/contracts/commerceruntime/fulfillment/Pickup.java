@@ -34,16 +34,6 @@ public class Pickup implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	protected String code;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	/**
 	 * The date and time the customer picked up the order items.
 	 */
@@ -57,9 +47,6 @@ public class Pickup implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
-	/**
-	 * The location code that represents the location where the shopper will fulfill this pickup.
-	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {

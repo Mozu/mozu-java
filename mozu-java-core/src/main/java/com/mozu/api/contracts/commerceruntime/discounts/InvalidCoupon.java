@@ -36,16 +36,6 @@ public class InvalidCoupon implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected Integer discountId;
-
-	public Integer getDiscountId() {
-		return this.discountId;
-	}
-
-	public void setDiscountId(Integer discountId) {
-		this.discountId = discountId;
-	}
-
 	protected String reason;
 
 	public String getReason() {

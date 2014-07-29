@@ -16,14 +16,12 @@ public class FulfillmentActionUrl
 	/**
 	 * Get Resource Url for PerformFulfillmentAction
 	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl performFulfillmentActionUrl(String orderId, String responseFields)
+	public static MozuUrl performFulfillmentActionUrl(String orderId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/actions/?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/actions/");
 		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

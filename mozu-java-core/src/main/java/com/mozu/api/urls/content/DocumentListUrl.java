@@ -16,15 +16,13 @@ public class DocumentListUrl
 	/**
 	 * Get Resource Url for GetDocumentLists
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentListsUrl(Integer pageSize, String responseFields, Integer startIndex)
+	public static MozuUrl getDocumentListsUrl(Integer pageSize, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/?pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/?pageSize={pageSize}&startIndex={startIndex}");
 		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -32,49 +30,9 @@ public class DocumentListUrl
 	/**
 	 * Get Resource Url for GetDocumentList
 	 * @param documentListName The name of the document list.
-	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentListUrl(String documentListName, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}?responseFields={responseFields}");
-		formatter.formatUrl("documentListName", documentListName);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for CreateDocumentList
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl createDocumentListUrl(String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/?responseFields={responseFields}");
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for UpdateDocumentList
-	 * @param documentListName 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl updateDocumentListUrl(String documentListName, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}?responseFields={responseFields}");
-		formatter.formatUrl("documentListName", documentListName);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for DeleteDocumentList
-	 * @param documentListName 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl deleteDocumentListUrl(String documentListName)
+	public static MozuUrl getDocumentListUrl(String documentListName)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}");
 		formatter.formatUrl("documentListName", documentListName);

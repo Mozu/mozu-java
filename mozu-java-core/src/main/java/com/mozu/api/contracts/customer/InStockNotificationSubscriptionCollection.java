@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.customer.InStockNotificationSubscription;
 
-/**
- *	Collection of push notifications to which the shopper subscribes.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InStockNotificationSubscriptionCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
-	 */
 	protected Integer pageCount;
 
 	public Integer getPageCount() {
@@ -34,9 +28,6 @@ public class InStockNotificationSubscriptionCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
-	/**
-	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 */
 	protected Integer pageSize;
 
 	public Integer getPageSize() {
@@ -47,9 +38,6 @@ public class InStockNotificationSubscriptionCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
-	/**
-	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
-	 */
 	protected Integer startIndex;
 
 	public Integer getStartIndex() {
@@ -60,9 +48,6 @@ public class InStockNotificationSubscriptionCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
-	/**
-	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
-	 */
 	protected Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -73,9 +58,6 @@ public class InStockNotificationSubscriptionCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
-	/**
-	 * An array list of objects in the returned collection.
-	 */
 	protected List<InStockNotificationSubscription> items;
 	public List<InStockNotificationSubscription> getItems() {
 		return this.items;

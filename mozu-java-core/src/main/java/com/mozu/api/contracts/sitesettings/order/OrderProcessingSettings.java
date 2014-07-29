@@ -20,16 +20,6 @@ public class OrderProcessingSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer abandonedOrderThresholdInMinutes;
-
-	public Integer getAbandonedOrderThresholdInMinutes() {
-		return this.abandonedOrderThresholdInMinutes;
-	}
-
-	public void setAbandonedOrderThresholdInMinutes(Integer abandonedOrderThresholdInMinutes) {
-		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
-	}
-
 	/**
 	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
 	 */
