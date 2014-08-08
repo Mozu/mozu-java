@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.mzdb;
 
-import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -55,14 +54,6 @@ public class EntityCollection implements Serializable
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	protected List<com.fasterxml.jackson.databind.JsonNode> items;
-	public List<com.fasterxml.jackson.databind.JsonNode> getItems() {
-		return this.items;
-	}
-	public void setItems(List<com.fasterxml.jackson.databind.JsonNode> items) {
-		this.items = items;
 	}
 
 }

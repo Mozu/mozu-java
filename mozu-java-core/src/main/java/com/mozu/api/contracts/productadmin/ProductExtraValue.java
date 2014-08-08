@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -94,6 +95,14 @@ public class ProductExtraValue implements Serializable
 
 	public void setDeltaPrice(ProductExtraValueDeltaPrice deltaPrice) {
 		this.deltaPrice = deltaPrice;
+	}
+
+	protected List<ProductExtraValueDeltaPrice> localizedDeltaPrice;
+	public List<ProductExtraValueDeltaPrice> getLocalizedDeltaPrice() {
+		return this.localizedDeltaPrice;
+	}
+	public void setLocalizedDeltaPrice(List<ProductExtraValueDeltaPrice> localizedDeltaPrice) {
+		this.localizedDeltaPrice = localizedDeltaPrice;
 	}
 
 }

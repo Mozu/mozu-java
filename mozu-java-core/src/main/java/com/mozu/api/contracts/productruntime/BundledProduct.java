@@ -88,6 +88,16 @@ public class BundledProduct implements Serializable
 		this.productCode = productCode;
 	}
 
+	protected String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
 	/**
 	 * The quantity of the component product in the product bundle. System-supplied and read only.
 	 */

@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * 
  * </summary>
@@ -25,26 +25,34 @@ public class AttributeLocalizedContentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public AttributeLocalizedContentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public AttributeLocalizedContentResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContents(dataViewMode,  attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContents(_dataViewMode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContents(com.mozu.api.DataViewMode dataViewMode, String attributeFQN) throws Exception
+	public List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContents(String attributeFQN) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.getAttributeLocalizedContentsClient(dataViewMode,  attributeFQN);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.getAttributeLocalizedContentsClient(_dataViewMode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -55,7 +63,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent(dataViewMode,  attributeFQN,  localeCode);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent(_dataViewMode,  attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -63,27 +71,27 @@ public class AttributeLocalizedContentResource {
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent getAttributeLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String localeCode) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent getAttributeLocalizedContent(String attributeFQN, String localeCode) throws Exception
 	{
-		return getAttributeLocalizedContent(dataViewMode,  attributeFQN,  localeCode,  null);
+		return getAttributeLocalizedContent( attributeFQN,  localeCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent(dataViewMode,  attributeFQN,  localeCode,  fields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent(_dataViewMode,  attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent getAttributeLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String localeCode, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent getAttributeLocalizedContent(String attributeFQN, String localeCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.getAttributeLocalizedContentClient(dataViewMode,  attributeFQN,  localeCode,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.getAttributeLocalizedContentClient(_dataViewMode,  attributeFQN,  localeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -94,7 +102,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent(dataViewMode,  localizedContent,  attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent( localizedContent,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
@@ -103,28 +111,28 @@ public class AttributeLocalizedContentResource {
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent addLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent addLocalizedContent(com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN) throws Exception
 	{
-		return addLocalizedContent(dataViewMode,  localizedContent,  attributeFQN,  null);
+		return addLocalizedContent( localizedContent,  attributeFQN,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent(dataViewMode,  localizedContent,  attributeFQN,  fields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent( localizedContent,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param fields 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent addLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent addLocalizedContent(com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.addLocalizedContentClient(dataViewMode,  localizedContent,  attributeFQN,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.addLocalizedContentClient( localizedContent,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -135,7 +143,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContents(dataViewMode,  localizedContent,  attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContents( localizedContent,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
@@ -144,9 +152,9 @@ public class AttributeLocalizedContentResource {
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> updateLocalizedContents(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> localizedContent, String attributeFQN) throws Exception
+	public List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> updateLocalizedContents(List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> localizedContent, String attributeFQN) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.updateLocalizedContentsClient(dataViewMode,  localizedContent,  attributeFQN);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.updateLocalizedContentsClient( localizedContent,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -157,7 +165,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent(dataViewMode,  localizedContent,  attributeFQN,  localeCode);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -167,29 +175,29 @@ public class AttributeLocalizedContentResource {
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent updateLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String localeCode) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent updateLocalizedContent(com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String localeCode) throws Exception
 	{
-		return updateLocalizedContent(dataViewMode,  localizedContent,  attributeFQN,  localeCode,  null);
+		return updateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent(dataViewMode,  localizedContent,  attributeFQN,  localeCode,  fields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent updateLocalizedContent(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String localeCode, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeLocalizedContent updateLocalizedContent(com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String localeCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.updateLocalizedContentClient(dataViewMode,  localizedContent,  attributeFQN,  localeCode,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.updateLocalizedContentClient( localizedContent,  attributeFQN,  localeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -200,16 +208,16 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	attributelocalizedcontent.DeleteLocalizedContent(dataViewMode,  attributeFQN,  localeCode);
+	 *	attributelocalizedcontent.DeleteLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
-	public void deleteLocalizedContent(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String localeCode) throws Exception
+	public void deleteLocalizedContent(String attributeFQN, String localeCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.deleteLocalizedContentClient(dataViewMode,  attributeFQN,  localeCode);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.deleteLocalizedContentClient( attributeFQN,  localeCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

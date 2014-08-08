@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Master Catalog resource to view details of the master catalogs associated with a tenant and to manage the product publishing mode for each master catalog.
  * </summary>
@@ -39,18 +39,18 @@ public class MasterCatalogClient {
 	/**
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> mozuClient=GetMasterCatalogsClient( fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> mozuClient=GetMasterCatalogsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalogCollection masterCatalogCollection = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalogCollection>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> getMasterCatalogsClient(String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> getMasterCatalogsClient(String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.getMasterCatalogsUrl(fields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.getMasterCatalogsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.MasterCatalogCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> mozuClient = new MozuClient(clz);
@@ -80,19 +80,19 @@ public class MasterCatalogClient {
 	/**
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient(dataViewMode,  masterCatalogId,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient(dataViewMode,  masterCatalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.getMasterCatalogUrl(fields, masterCatalogId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.getMasterCatalogUrl(masterCatalogId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.MasterCatalog.class;
 		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient = new MozuClient(clz);
@@ -106,7 +106,7 @@ public class MasterCatalogClient {
 	/**
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient(dataViewMode,  masterCatalog,  masterCatalogId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient( masterCatalog,  masterCatalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
@@ -117,36 +117,35 @@ public class MasterCatalogClient {
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> updateMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> updateMasterCatalogClient(com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId) throws Exception
 	{
-		return updateMasterCatalogClient(dataViewMode,  masterCatalog,  masterCatalogId,  null);
+		return updateMasterCatalogClient( masterCatalog,  masterCatalogId,  null);
 	}
 
 	/**
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient(dataViewMode,  masterCatalog,  masterCatalogId,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=UpdateMasterCatalogClient( masterCatalog,  masterCatalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param masterCatalogId 
+	 * @param responseFields 
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> updateMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> updateMasterCatalogClient(com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.updateMasterCatalogUrl(fields, masterCatalogId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.updateMasterCatalogUrl(masterCatalogId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.MasterCatalog.class;
 		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(masterCatalog);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

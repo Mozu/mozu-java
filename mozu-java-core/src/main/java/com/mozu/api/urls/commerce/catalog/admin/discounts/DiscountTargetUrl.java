@@ -16,28 +16,28 @@ public class DiscountTargetUrl
 	/**
 	 * Get Resource Url for GetDiscountTarget
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
-	 * @param fields 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDiscountTargetUrl(Integer discountId, String fields)
+	public static MozuUrl getDiscountTargetUrl(Integer discountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/target?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/target?responseFields={responseFields}");
 		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateDiscountTarget
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param fields 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateDiscountTargetUrl(Integer discountId, String fields)
+	public static MozuUrl updateDiscountTargetUrl(Integer discountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/target?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/target?responseFields={responseFields}");
 		formatter.formatUrl("discountId", discountId);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

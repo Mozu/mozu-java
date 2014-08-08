@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document lists resource to organize your site's documents into a hierarchy. Document lists can contain documents, folders, and complete hierarchies of folders, which contain documents with unique names.
  * </summary>
@@ -109,7 +109,7 @@ public class DocumentListClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient(dataViewMode,  list);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient( list);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
@@ -119,15 +119,15 @@ public class DocumentListClient {
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentList> createDocumentListClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentList> createDocumentListClient(com.mozu.api.contracts.content.DocumentList list) throws Exception
 	{
-		return createDocumentListClient(dataViewMode,  list,  null);
+		return createDocumentListClient( list,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient(dataViewMode,  list,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient( list,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
@@ -138,7 +138,7 @@ public class DocumentListClient {
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentList> createDocumentListClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentList> createDocumentListClient(com.mozu.api.contracts.content.DocumentList list, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentListUrl.createDocumentListUrl(responseFields);
 		String verb = "POST";
@@ -147,7 +147,6 @@ public class DocumentListClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(list);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -155,7 +154,7 @@ public class DocumentListClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient(dataViewMode,  list,  documentListName);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient( list,  documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
@@ -166,15 +165,15 @@ public class DocumentListClient {
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentList> updateDocumentListClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String documentListName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentList> updateDocumentListClient(com.mozu.api.contracts.content.DocumentList list, String documentListName) throws Exception
 	{
-		return updateDocumentListClient(dataViewMode,  list,  documentListName,  null);
+		return updateDocumentListClient( list,  documentListName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient(dataViewMode,  list,  documentListName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient( list,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
@@ -186,7 +185,7 @@ public class DocumentListClient {
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentList> updateDocumentListClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, String documentListName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentList> updateDocumentListClient(com.mozu.api.contracts.content.DocumentList list, String documentListName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentListUrl.updateDocumentListUrl(documentListName, responseFields);
 		String verb = "PUT";
@@ -195,7 +194,6 @@ public class DocumentListClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(list);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -203,21 +201,20 @@ public class DocumentListClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentListClient(dataViewMode,  documentListName);
+	 * MozuClient mozuClient=DeleteDocumentListClient( documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteDocumentListClient(com.mozu.api.DataViewMode dataViewMode, String documentListName) throws Exception
+	public static MozuClient deleteDocumentListClient(String documentListName) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentListUrl.deleteDocumentListUrl(documentListName);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

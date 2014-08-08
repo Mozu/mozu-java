@@ -16,13 +16,15 @@ public class EventDeliverySummaryUrl
 	/**
 	 * Get Resource Url for GetDeliveryAttemptSummary
 	 * @param id 
+	 * @param responseFields 
 	 * @param subscriptionId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDeliveryAttemptSummaryUrl(Integer id, String subscriptionId)
+	public static MozuUrl getDeliveryAttemptSummaryUrl(Integer id, String responseFields, String subscriptionId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/event/push/subscriptions/{subscriptionId}/deliveryattempts/{id}");
+		UrlFormatter formatter = new UrlFormatter("/api/event/push/subscriptions/{subscriptionId}/deliveryattempts/{id}?responseFields={responseFields}");
 		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("subscriptionId", subscriptionId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -31,16 +33,18 @@ public class EventDeliverySummaryUrl
 	 * Get Resource Url for GetDeliveryAttemptSummaries
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param subscriptionId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDeliveryAttemptSummariesUrl(String filter, Integer pageSize, String sortBy, Integer startIndex, String subscriptionId)
+	public static MozuUrl getDeliveryAttemptSummariesUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex, String subscriptionId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/event/push/subscriptions/{subscriptionId}/deliveryattempts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/event/push/subscriptions/{subscriptionId}/deliveryattempts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		formatter.formatUrl("subscriptionId", subscriptionId);

@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * 
  * </summary>
@@ -160,7 +160,7 @@ public class ViewClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=UpdateDocumentListViewClient(dataViewMode,  documentListName,  viewName);
+	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=UpdateDocumentListViewClient( documentListName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * View view = client.Result();
@@ -170,15 +170,15 @@ public class ViewClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.View>
 	 * @see com.mozu.api.contracts.content.View
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.View> updateDocumentListViewClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String viewName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.View> updateDocumentListViewClient(String documentListName, String viewName) throws Exception
 	{
-		return updateDocumentListViewClient(dataViewMode,  documentListName,  viewName,  null);
+		return updateDocumentListViewClient( documentListName,  viewName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=UpdateDocumentListViewClient(dataViewMode,  documentListName,  viewName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=UpdateDocumentListViewClient( documentListName,  viewName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * View view = client.Result();
@@ -189,7 +189,7 @@ public class ViewClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.View>
 	 * @see com.mozu.api.contracts.content.View
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.View> updateDocumentListViewClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String viewName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.View> updateDocumentListViewClient(String documentListName, String viewName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.ViewUrl.updateDocumentListViewUrl(documentListName, responseFields, viewName);
 		String verb = "PUT";
@@ -197,7 +197,6 @@ public class ViewClient {
 		MozuClient<com.mozu.api.contracts.content.View> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -205,7 +204,7 @@ public class ViewClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=DeleteDocumentListViewClient(dataViewMode,  documentListName,  viewName);
+	 * MozuClient<com.mozu.api.contracts.content.View> mozuClient=DeleteDocumentListViewClient( documentListName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * View view = client.Result();
@@ -215,7 +214,7 @@ public class ViewClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.View>
 	 * @see com.mozu.api.contracts.content.View
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.View> deleteDocumentListViewClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String viewName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.View> deleteDocumentListViewClient(String documentListName, String viewName) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.ViewUrl.deleteDocumentListViewUrl(documentListName, viewName);
 		String verb = "DELETE";
@@ -223,7 +222,6 @@ public class ViewClient {
 		MozuClient<com.mozu.api.contracts.content.View> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

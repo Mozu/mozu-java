@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Document Types resource to view the document types supplied by the Content API.
  * </summary>
@@ -23,7 +22,7 @@ public class DocumentTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentTypeCollection documentTypeCollection = client.Result();
@@ -31,15 +30,15 @@ public class DocumentTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> getDocumentTypesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> getDocumentTypesClient() throws Exception
 	{
-		return getDocumentTypesClient(dataViewMode,  null,  null,  null);
+		return getDocumentTypesClient( null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient( pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentTypeCollection documentTypeCollection = client.Result();
@@ -50,7 +49,7 @@ public class DocumentTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> getDocumentTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> getDocumentTypesClient(Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.getDocumentTypesUrl(pageSize, responseFields, startIndex);
 		String verb = "GET";
@@ -58,7 +57,6 @@ public class DocumentTypeClient {
 		MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -66,7 +64,7 @@ public class DocumentTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient( documentTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -75,15 +73,15 @@ public class DocumentTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> getDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, String documentTypeName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> getDocumentTypeClient(String documentTypeName) throws Exception
 	{
-		return getDocumentTypeClient(dataViewMode,  documentTypeName,  null);
+		return getDocumentTypeClient( documentTypeName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient( documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -93,7 +91,7 @@ public class DocumentTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> getDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, String documentTypeName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> getDocumentTypeClient(String documentTypeName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.getDocumentTypeUrl(documentTypeName, responseFields);
 		String verb = "GET";
@@ -101,7 +99,6 @@ public class DocumentTypeClient {
 		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -109,7 +106,7 @@ public class DocumentTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient( documentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -119,15 +116,15 @@ public class DocumentTypeClient {
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> createDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> createDocumentTypeClient(com.mozu.api.contracts.content.DocumentType documentType) throws Exception
 	{
-		return createDocumentTypeClient(dataViewMode,  documentType,  null);
+		return createDocumentTypeClient( documentType,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient( documentType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -138,7 +135,7 @@ public class DocumentTypeClient {
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> createDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> createDocumentTypeClient(com.mozu.api.contracts.content.DocumentType documentType, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.createDocumentTypeUrl(responseFields);
 		String verb = "POST";
@@ -147,7 +144,6 @@ public class DocumentTypeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentType);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -155,7 +151,7 @@ public class DocumentTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient(dataViewMode,  documentType,  documentTypeName);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -166,15 +162,15 @@ public class DocumentTypeClient {
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> updateDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> updateDocumentTypeClient(com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName) throws Exception
 	{
-		return updateDocumentTypeClient(dataViewMode,  documentType,  documentTypeName,  null);
+		return updateDocumentTypeClient( documentType,  documentTypeName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient(dataViewMode,  documentType,  documentTypeName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
@@ -186,7 +182,7 @@ public class DocumentTypeClient {
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentType> updateDocumentTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentType> updateDocumentTypeClient(com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.updateDocumentTypeUrl(documentTypeName, responseFields);
 		String verb = "PUT";
@@ -195,7 +191,6 @@ public class DocumentTypeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentType);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

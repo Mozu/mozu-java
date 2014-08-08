@@ -21,6 +21,16 @@ public class DocumentList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String documentListType;
+
+	public String getDocumentListType() {
+		return this.documentListType;
+	}
+
+	public void setDocumentListType(String documentListType) {
+		this.documentListType = documentListType;
+	}
+
 	/**
 	 * List of document types associated with this document list.
 	 */
@@ -45,14 +55,14 @@ public class DocumentList implements Serializable
 		this.enablePublishing = enablePublishing;
 	}
 
-	protected Object metaData;
+	protected String listFQN;
 
-	public Object getMetaData() {
-		return this.metaData;
+	public String getListFQN() {
+		return this.listFQN;
 	}
 
-	public void setMetaData(Object metaData) {
-		this.metaData = metaData;
+	public void setListFQN(String listFQN) {
+		this.listFQN = listFQN;
 	}
 
 	/**
@@ -68,14 +78,34 @@ public class DocumentList implements Serializable
 		this.name = name;
 	}
 
-	protected String scope;
+	protected String namespace;
 
-	public String getScope() {
-		return this.scope;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setScope(String scope) {
-		this.scope = scope;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	protected Integer scopeId;
+
+	public Integer getScopeId() {
+		return this.scopeId;
+	}
+
+	public void setScopeId(Integer scopeId) {
+		this.scopeId = scopeId;
+	}
+
+	protected String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
 	}
 
 	protected String security;

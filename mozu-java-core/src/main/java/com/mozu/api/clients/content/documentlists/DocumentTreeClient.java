@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document tree subresource to retrieve documents and manage content within the document hierarchy.
  * </summary>
@@ -94,7 +94,7 @@ public class DocumentTreeClient {
 	/**
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateTreeDocumentContentClient(dataViewMode,  stream,  documentListName,  documentName,  contentType);
+	 * MozuClient mozuClient=UpdateTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -104,7 +104,7 @@ public class DocumentTreeClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
-	public static MozuClient updateTreeDocumentContentClient(com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentName, String  contentType) throws Exception
+	public static MozuClient updateTreeDocumentContentClient(java.io.InputStream stream, String documentListName, String documentName, String  contentType) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.updateTreeDocumentContentUrl(documentListName, documentName);
 		String verb = "PUT";
@@ -112,7 +112,6 @@ public class DocumentTreeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(stream);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		if (!StringUtils.isEmpty(contentType))
 			mozuClient.addHeader(Headers.CONTENT_TYPE, contentType);
 		return mozuClient;
@@ -122,7 +121,7 @@ public class DocumentTreeClient {
 	/**
 	 * Deletes the content associated with a document, such as a product image or PDF specifications file.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteTreeDocumentContentClient(dataViewMode,  stream,  documentListName,  documentName,  contentType);
+	 * MozuClient mozuClient=DeleteTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -132,7 +131,7 @@ public class DocumentTreeClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
-	public static MozuClient deleteTreeDocumentContentClient(com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentName, String  contentType) throws Exception
+	public static MozuClient deleteTreeDocumentContentClient(java.io.InputStream stream, String documentListName, String documentName, String  contentType) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.deleteTreeDocumentContentUrl(documentListName, documentName);
 		String verb = "DELETE";
@@ -140,7 +139,6 @@ public class DocumentTreeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(stream);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		if (!StringUtils.isEmpty(contentType))
 			mozuClient.addHeader(Headers.CONTENT_TYPE, contentType);
 		return mozuClient;

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this resource to manage authentication tickets for your applications.
  * </summary>
@@ -25,15 +24,16 @@ public class AuthTicketResource {
 	///
 	private ApiContext _apiContext;
 
-		public AuthTicketResource() 
-	{
-		_apiContext = null;
+
+	public AuthTicketResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public AuthTicketResource(ApiContext apiContext) 
+public AuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Generate an authentication ticket for an application.

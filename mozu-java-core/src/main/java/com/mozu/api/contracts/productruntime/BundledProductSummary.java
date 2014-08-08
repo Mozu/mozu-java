@@ -21,26 +21,6 @@ public class BundledProductSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
 	/**
 	 * If true, the component product of the bundle should not ship in a package with the rest of the product bundle, and should ship in a package by itself. System-supplied and read only.
 	 */
@@ -113,6 +93,16 @@ public class BundledProductSummary implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
+	protected String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
 	/**
 	 * The quantity of a component product in its product bundle.
 	 */
@@ -124,6 +114,26 @@ public class BundledProductSummary implements Serializable
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+	}
+
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
 	}
 
 	protected ProductInventoryInfo inventoryInfo;

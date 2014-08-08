@@ -21,6 +21,19 @@ public class CreditTransaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The type of transaction to perform for the customer credit. To decrease the balance, set this parameter to "Debit". To increase the balance, set this parameter to "Credit".
+	 */
+	protected String transactionType;
+
+	public String getTransactionType() {
+		return this.transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	/**
 	 * Comments entered for a transaction. Depending on the interface, these comments might be visible to authorized shoppers and users.
 	 */
 	protected String comments;
@@ -57,19 +70,6 @@ public class CreditTransaction implements Serializable
 
 	public void setImpactAmount(Double impactAmount) {
 		this.impactAmount = impactAmount;
-	}
-
-	/**
-	 * The type of transaction to perform for the customer credit. To decrease the balance, set this parameter to "Debit". To increase the balance, set this parameter to "Credit".
-	 */
-	protected String transactionType;
-
-	public String getTransactionType() {
-		return this.transactionType;
-	}
-
-	public void setTransactionType(String transactionType) {
-		this.transactionType = transactionType;
 	}
 
 	/**

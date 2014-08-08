@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the shipments resource to manage shipments of collections of packages for an order.
  * </summary>
@@ -25,11 +24,12 @@ public class ShipmentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ShipmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the order shipment specified in the request.

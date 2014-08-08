@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Applications resource to manage the applications associated with a developer account.
  * </summary>
@@ -25,15 +24,16 @@ public class ApplicationResource {
 	///
 	private ApiContext _apiContext;
 
-		public ApplicationResource() 
-	{
-		_apiContext = null;
+
+	public ApplicationResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public ApplicationResource(ApiContext apiContext) 
+public ApplicationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the list of applications associated with the developer account scoped to the user claim specified in the request.

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Define global site settings such as the site name, shipping and email addresses, and logo images. Block undesirable IP addresses using this resource.
  * </summary>
@@ -25,11 +24,12 @@ public class GeneralSettingsResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public GeneralSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieve a site's general global settings.

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Merchants and customers can create, view, update, and delete a contact for a customer account. A customer account may have multiple contacts for billing and shipping addresses.
  * </summary>
@@ -25,11 +24,12 @@ public class CustomerContactResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerContactResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the specified contact for a customer account such as a billing or shipping contact.

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
@@ -25,15 +24,16 @@ public class ReferenceDataResource {
 	///
 	private ApiContext _apiContext;
 
-		public ReferenceDataResource() 
-	{
-		_apiContext = null;
+
+	public ReferenceDataResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public ReferenceDataResource(ApiContext apiContext) 
+public ReferenceDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.

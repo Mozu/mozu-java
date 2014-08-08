@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -25,43 +25,51 @@ public class CategoryResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public CategoryResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(dataViewMode);
+	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(_dataViewMode);
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 */
-	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories() throws Exception
 	{
-		return getCategories(dataViewMode,  null,  null,  null,  null,  null);
+		return getCategories( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 */
-	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -72,31 +80,31 @@ public class CategoryResource {
 	 * Retrieves the list of subcategories within a category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories(dataViewMode,  categoryId);
+	 *	CategoryCollection categoryCollection = category.GetChildCategories(_dataViewMode,  categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
 	 * @return com.mozu.api.contracts.productadmin.CategoryCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
 	 */
-	public com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
+	public com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(Integer categoryId) throws Exception
 	{
-		return getChildCategories(dataViewMode,  categoryId,  null);
+		return getChildCategories( categoryId,  null);
 	}
 
 	/**
 	 * Retrieves the list of subcategories within a category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories(dataViewMode,  categoryId,  fields);
+	 *	CategoryCollection categoryCollection = category.GetChildCategories(_dataViewMode,  categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
-	 * @param fields 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.CategoryCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
 	 */
-	public com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(Integer categoryId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getChildCategoriesClient(dataViewMode,  categoryId,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getChildCategoriesClient(_dataViewMode,  categoryId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -107,31 +115,31 @@ public class CategoryResource {
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory(dataViewMode,  categoryId);
+	 *	Category category = category.GetCategory(_dataViewMode,  categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category getCategory(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
+	public com.mozu.api.contracts.productadmin.Category getCategory(Integer categoryId) throws Exception
 	{
-		return getCategory(dataViewMode,  categoryId,  null);
+		return getCategory( categoryId,  null);
 	}
 
 	/**
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory(dataViewMode,  categoryId,  fields);
+	 *	Category category = category.GetCategory(_dataViewMode,  categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
-	 * @param fields 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category getCategory(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.Category getCategory(Integer categoryId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient(dataViewMode,  categoryId,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient(_dataViewMode,  categoryId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -142,34 +150,34 @@ public class CategoryResource {
 	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to place the category in the hierarchy. If no ParentCategoryID is specified, the new category is a top-level category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.AddCategory(dataViewMode,  category);
+	 *	Category category = category.AddCategory( category);
 	 * </code></pre></p>
 	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
 	 * @return com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category) throws Exception
+	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.contracts.productadmin.Category category) throws Exception
 	{
-		return addCategory(dataViewMode,  category,  null,  null);
+		return addCategory( category,  null,  null);
 	}
 
 	/**
 	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to place the category in the hierarchy. If no ParentCategoryID is specified, the new category is a top-level category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.AddCategory(dataViewMode,  category,  incrementSequence,  fields);
+	 *	Category category = category.AddCategory( category,  incrementSequence,  responseFields);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param incrementSequence 
+	 * @param responseFields 
 	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
 	 * @return com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient(dataViewMode,  category,  incrementSequence,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient( category,  incrementSequence,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -180,7 +188,7 @@ public class CategoryResource {
 	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.UpdateCategory(dataViewMode,  category,  categoryId);
+	 *	Category category = category.UpdateCategory( category,  categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param category Properties of the category to modify.
@@ -188,28 +196,28 @@ public class CategoryResource {
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category updateCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Integer categoryId) throws Exception
+	public com.mozu.api.contracts.productadmin.Category updateCategory(com.mozu.api.contracts.productadmin.Category category, Integer categoryId) throws Exception
 	{
-		return updateCategory(dataViewMode,  category,  categoryId,  null,  null);
+		return updateCategory( category,  categoryId,  null,  null);
 	}
 
 	/**
 	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.UpdateCategory(dataViewMode,  category,  categoryId,  cascadeVisibility,  fields);
+	 *	Category category = category.UpdateCategory( category,  categoryId,  cascadeVisibility,  responseFields);
 	 * </code></pre></p>
 	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param fields 
+	 * @param responseFields 
 	 * @param category Properties of the category to modify.
 	 * @return com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public com.mozu.api.contracts.productadmin.Category updateCategory(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, Boolean cascadeVisibility, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.Category updateCategory(com.mozu.api.contracts.productadmin.Category category, Integer categoryId, Boolean cascadeVisibility, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.updateCategoryClient(dataViewMode,  category,  categoryId,  cascadeVisibility,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.updateCategoryClient( category,  categoryId,  cascadeVisibility,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -220,29 +228,29 @@ public class CategoryResource {
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	category.DeleteCategoryById(dataViewMode,  categoryId);
+	 *	category.DeleteCategoryById( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to delete.
 	 * @return 
 	 */
-	public void deleteCategoryById(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
+	public void deleteCategoryById(Integer categoryId) throws Exception
 	{
-		deleteCategoryById(dataViewMode,  categoryId,  null);
+		deleteCategoryById( categoryId,  null);
 	}
 
 	/**
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	category.DeleteCategoryById(dataViewMode,  categoryId,  cascadeDelete);
+	 *	category.DeleteCategoryById( categoryId,  cascadeDelete);
 	 * </code></pre></p>
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
 	 * @param categoryId Unique identifier of the category to delete.
 	 * @return 
 	 */
-	public void deleteCategoryById(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean cascadeDelete) throws Exception
+	public void deleteCategoryById(Integer categoryId, Boolean cascadeDelete) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.deleteCategoryByIdClient(dataViewMode,  categoryId,  cascadeDelete);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.deleteCategoryByIdClient( categoryId,  cascadeDelete);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

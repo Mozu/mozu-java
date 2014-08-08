@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Orders resource to manage all components of order processing, payment, and fulfillment.
  * </summary>
@@ -25,11 +24,12 @@ public class OrderResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public OrderResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of orders according to any specified filter criteria and sort options.

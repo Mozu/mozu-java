@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the taxable territories subresource to manage the regional territories for this site that are subejct to sales tax.
  * </summary>
@@ -25,11 +24,12 @@ public class TaxableTerritoryResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public TaxableTerritoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the taxable territories configured for the site.

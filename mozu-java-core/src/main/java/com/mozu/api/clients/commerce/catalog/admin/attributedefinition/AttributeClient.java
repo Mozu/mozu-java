@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Attribute Definition resource to manage the properties, options, and extras that uniquely describe products of a specific type. Attributes can be associated with a product type, assigned values by a client or shopper, and added as faceted search filters for a product category. Options are product attributes that describe unique configurations made by the shopper, such as size or color, and generate a new product variation (or unique SKU). Properties are product attributes that describe aspects of the product that do not represent an option configurable by the shopper, such as screen resolution or brand. Extras are product attributes that describe add-on configurations made by the shopper that do not represent a product variation, such as a monogram.
  * </summary>
@@ -40,23 +40,23 @@ public class AttributeClient {
 	/**
 	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> mozuClient=GetAttributesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> mozuClient=GetAttributesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeCollection attributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeCollection>
 	 * @see com.mozu.api.contracts.productadmin.AttributeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> getAttributesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> getAttributesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributesUrl(fields, filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> mozuClient = new MozuClient(clz);
@@ -88,20 +88,20 @@ public class AttributeClient {
 	/**
 	 * Retrieves the details of the specified product attribute.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=GetAttributeClient(dataViewMode,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=GetAttributeClient(dataViewMode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> getAttributeClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> getAttributeClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, fields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
@@ -115,7 +115,7 @@ public class AttributeClient {
 	/**
 	 * Creates a new attribute to describe one aspect of a product such as color or size, based on its defined product type. The attribute name, attribute type, input type, and data type are required.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=AddAttributeClient(dataViewMode,  attribute);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=AddAttributeClient( attribute);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
@@ -126,36 +126,35 @@ public class AttributeClient {
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> addAttributeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> addAttributeClient(com.mozu.api.contracts.productadmin.Attribute attribute) throws Exception
 	{
-		return addAttributeClient(dataViewMode,  attribute,  null);
+		return addAttributeClient( attribute,  null);
 	}
 
 	/**
 	 * Creates a new attribute to describe one aspect of a product such as color or size, based on its defined product type. The attribute name, attribute type, input type, and data type are required.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=AddAttributeClient(dataViewMode,  attribute,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=AddAttributeClient( attribute,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param attribute Properties of the new product attribute to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> addAttributeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> addAttributeClient(com.mozu.api.contracts.productadmin.Attribute attribute, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.addAttributeUrl(fields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.addAttributeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -163,7 +162,7 @@ public class AttributeClient {
 	/**
 	 * Updates an existing attribute with attribute properties to set.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=UpdateAttributeClient(dataViewMode,  attribute,  attributeFQN);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
@@ -175,37 +174,36 @@ public class AttributeClient {
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> updateAttributeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> updateAttributeClient(com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN) throws Exception
 	{
-		return updateAttributeClient(dataViewMode,  attribute,  attributeFQN,  null);
+		return updateAttributeClient( attribute,  attributeFQN,  null);
 	}
 
 	/**
 	 * Updates an existing attribute with attribute properties to set.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=UpdateAttributeClient(dataViewMode,  attribute,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param attribute Any properties of the attribute that to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> updateAttributeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Attribute> updateAttributeClient(com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.updateAttributeUrl(attributeFQN, fields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.updateAttributeUrl(attributeFQN, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -213,7 +211,7 @@ public class AttributeClient {
 	/**
 	 * Deletes a defined product attribute. You cannot delete an attribute assigned a value for a product.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAttributeClient(dataViewMode,  attributeFQN);
+	 * MozuClient mozuClient=DeleteAttributeClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -221,14 +219,13 @@ public class AttributeClient {
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteAttributeClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN) throws Exception
+	public static MozuClient deleteAttributeClient(String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.deleteAttributeUrl(attributeFQN);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Billing Info subresource to manage the billing information stored for an order.
  * </summary>
@@ -25,11 +24,12 @@ public class BillingInfoResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public BillingInfoResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the billing information associated with an order.

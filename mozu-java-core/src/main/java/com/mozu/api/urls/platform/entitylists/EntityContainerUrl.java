@@ -17,13 +17,15 @@ public class EntityContainerUrl
 	 * Get Resource Url for GetEntityContainer
 	 * @param entityListFullName 
 	 * @param id 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getEntityContainerUrl(String entityListFullName, String id)
+	public static MozuUrl getEntityContainerUrl(String entityListFullName, String id, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}/entityContainers/{id}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}/entityContainers/{id}?responseFields={responseFields}");
 		formatter.formatUrl("entityListFullName", entityListFullName);
 		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -32,16 +34,18 @@ public class EntityContainerUrl
 	 * @param entityListFullName 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getEntityContainersUrl(String entityListFullName, String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getEntityContainersUrl(String entityListFullName, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}/entityContainers?pageSize={pageSize}&startIndex={startIndex}&filter={filter}&sortBy={sortBy}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}/entityContainers?pageSize={pageSize}&startIndex={startIndex}&filter={filter}&sortBy={sortBy}&responseFields={responseFields}");
 		formatter.formatUrl("entityListFullName", entityListFullName);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

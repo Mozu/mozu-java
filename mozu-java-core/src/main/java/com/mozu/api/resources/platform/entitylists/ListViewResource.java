@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,56 +24,18 @@ public class ListViewResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ListViewResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListViewCollection listViewCollection = listview.GetEntityListViews( entityListFullName);
-	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
-	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
-	 */
-	public com.mozu.api.contracts.mzdb.ListViewCollection getEntityListViews(String entityListFullName) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getEntityListViewsClient( entityListFullName);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.GetEntityListView( entityListFullName,  viewName);
-	 * </code></pre></p>
-	 * @param entityListFullName 
-	 * @param viewName 
-	 * @return com.mozu.api.contracts.mzdb.ListView
-	 * @see com.mozu.api.contracts.mzdb.ListView
-	 */
-	public com.mozu.api.contracts.mzdb.ListView getEntityListView(String entityListFullName, String viewName) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getEntityListViewClient( entityListFullName,  viewName);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	ListView listview = new ListView();
-	 *	JObject jObject = listview.GetViewEntity( entityListFullName,  viewName,  entityId);
+	 *	JObject json = listview.GetViewEntity( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -84,7 +45,25 @@ public class ListViewResource {
 	 */
 	public com.fasterxml.jackson.databind.JsonNode getViewEntity(String entityListFullName, String viewName, String entityId) throws Exception
 	{
-		MozuClient<com.fasterxml.jackson.databind.JsonNode> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityClient( entityListFullName,  viewName,  entityId);
+		return getViewEntity( entityListFullName,  viewName,  entityId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	JObject json = listview.GetViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
+	 * </code></pre></p>
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
+	 * @return JObject
+	 * @see JObject
+	 */
+	public com.fasterxml.jackson.databind.JsonNode getViewEntity(String entityListFullName, String viewName, String entityId, String responseFields) throws Exception
+	{
+		MozuClient<com.fasterxml.jackson.databind.JsonNode> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityClient( entityListFullName,  viewName,  entityId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -104,26 +83,27 @@ public class ListViewResource {
 	 */
 	public com.mozu.api.contracts.mzdb.EntityCollection getViewEntities(String entityListFullName, String viewName) throws Exception
 	{
-		return getViewEntities( entityListFullName,  viewName,  null,  null,  null);
+		return getViewEntities( entityListFullName,  viewName,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityCollection entityCollection = listview.GetViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter);
+	 *	EntityCollection entityCollection = listview.GetViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
-	public com.mozu.api.contracts.mzdb.EntityCollection getViewEntities(String entityListFullName, String viewName, Integer pageSize, Integer startIndex, String filter) throws Exception
+	public com.mozu.api.contracts.mzdb.EntityCollection getViewEntities(String entityListFullName, String viewName, Integer pageSize, Integer startIndex, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntitiesClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntitiesClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -144,7 +124,25 @@ public class ListViewResource {
 	 */
 	public com.mozu.api.contracts.mzdb.EntityContainer getViewEntityContainer(String entityListFullName, String viewName, String entityId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityContainerClient( entityListFullName,  viewName,  entityId);
+		return getViewEntityContainer( entityListFullName,  viewName,  entityId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	EntityContainer entityContainer = listview.GetViewEntityContainer( entityListFullName,  viewName,  entityId,  responseFields);
+	 * </code></pre></p>
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
+	 * @return com.mozu.api.contracts.mzdb.EntityContainer
+	 * @see com.mozu.api.contracts.mzdb.EntityContainer
+	 */
+	public com.mozu.api.contracts.mzdb.EntityContainer getViewEntityContainer(String entityListFullName, String viewName, String entityId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityContainerClient( entityListFullName,  viewName,  entityId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -164,26 +162,99 @@ public class ListViewResource {
 	 */
 	public com.mozu.api.contracts.mzdb.EntityContainerCollection getViewEntityContainers(String entityListFullName, String viewName) throws Exception
 	{
-		return getViewEntityContainers( entityListFullName,  viewName,  null,  null,  null);
+		return getViewEntityContainers( entityListFullName,  viewName,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityContainerCollection entityContainerCollection = listview.GetViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter);
+	 *	EntityContainerCollection entityContainerCollection = listview.GetViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
-	public com.mozu.api.contracts.mzdb.EntityContainerCollection getViewEntityContainers(String entityListFullName, String viewName, Integer pageSize, Integer startIndex, String filter) throws Exception
+	public com.mozu.api.contracts.mzdb.EntityContainerCollection getViewEntityContainers(String entityListFullName, String viewName, Integer pageSize, Integer startIndex, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityContainersClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getViewEntityContainersClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListView listView = listview.GetEntityListView( entityListFullName,  viewName);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param viewName 
+	 * @return com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 */
+	public com.mozu.api.contracts.mzdb.ListView getEntityListView(String entityListFullName, String viewName) throws Exception
+	{
+		return getEntityListView( entityListFullName,  viewName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListView listView = listview.GetEntityListView( entityListFullName,  viewName,  responseFields);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
+	 * @return com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 */
+	public com.mozu.api.contracts.mzdb.ListView getEntityListView(String entityListFullName, String viewName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getEntityListViewClient( entityListFullName,  viewName,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListViewCollection listViewCollection = listview.GetEntityListViews( entityListFullName);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
+	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
+	 */
+	public com.mozu.api.contracts.mzdb.ListViewCollection getEntityListViews(String entityListFullName) throws Exception
+	{
+		return getEntityListViews( entityListFullName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListViewCollection listViewCollection = listview.GetEntityListViews( entityListFullName,  responseFields);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
+	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
+	 */
+	public com.mozu.api.contracts.mzdb.ListViewCollection getEntityListViews(String entityListFullName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> client = com.mozu.api.clients.platform.entitylists.ListViewClient.getEntityListViewsClient( entityListFullName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -204,7 +275,25 @@ public class ListViewResource {
 	 */
 	public com.mozu.api.contracts.mzdb.ListView createEntityListView(com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.createEntityListViewClient( listView,  entityListFullName);
+		return createEntityListView( listView,  entityListFullName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListView listView = listview.CreateEntityListView( listView,  entityListFullName,  responseFields);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param listView 
+	 * @return com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 */
+	public com.mozu.api.contracts.mzdb.ListView createEntityListView(com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.createEntityListViewClient( listView,  entityListFullName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -226,7 +315,26 @@ public class ListViewResource {
 	 */
 	public com.mozu.api.contracts.mzdb.ListView updateEntityListView(com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName, String viewName) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.updateEntityListViewClient( listView,  entityListFullName,  viewName);
+		return updateEntityListView( listView,  entityListFullName,  viewName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ListView listview = new ListView();
+	 *	ListView listView = listview.UpdateEntityListView( listView,  entityListFullName,  viewName,  responseFields);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param viewName 
+	 * @param listView 
+	 * @return com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 * @see com.mozu.api.contracts.mzdb.ListView
+	 */
+	public com.mozu.api.contracts.mzdb.ListView updateEntityListView(com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName, String viewName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> client = com.mozu.api.clients.platform.entitylists.ListViewClient.updateEntityListViewClient( listView,  entityListFullName,  viewName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

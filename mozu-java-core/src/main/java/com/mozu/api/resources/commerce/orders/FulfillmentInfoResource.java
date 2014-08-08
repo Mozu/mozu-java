@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Fulfillment Information resource to manage shipping or pickup information for orders.
  * </summary>
@@ -25,11 +24,12 @@ public class FulfillmentInfoResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public FulfillmentInfoResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the fulfillment information for the specified order.

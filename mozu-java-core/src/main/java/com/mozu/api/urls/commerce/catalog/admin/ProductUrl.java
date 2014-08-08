@@ -15,25 +15,25 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProducts
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param noCount If true, the operation does not return the TotalCount number of results.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of product search terms to use in the query when searching across product code and product name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductsUrl(String fields, String filter, Boolean noCount, Integer pageSize, String q, Integer qLimit, String sortBy, Integer startIndex)
+	public static MozuUrl getProductsUrl(String filter, Boolean noCount, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&noCount={noCount}&fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&noCount={noCount}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("noCount", noCount);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -54,56 +54,56 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for GetProductInCatalog
 	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductInCatalogUrl(Integer catalogId, String fields, String productCode)
+	public static MozuUrl getProductInCatalogUrl(Integer catalogId, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs/{catalogId}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs/{catalogId}?responseFields={responseFields}");
 		formatter.formatUrl("catalogId", catalogId);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetProduct
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductUrl(String fields, String productCode)
+	public static MozuUrl getProductUrl(String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddProduct
-	 * @param fields 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addProductUrl(String fields)
+	public static MozuUrl addProductUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddProductInCatalog
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addProductInCatalogUrl(String fields, String productCode)
+	public static MozuUrl addProductInCatalogUrl(String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -122,30 +122,30 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for UpdateProductInCatalog
 	 * @param catalogId The unique identifier of the catalog of products used by a site.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateProductInCatalogUrl(Integer catalogId, String fields, String productCode)
+	public static MozuUrl updateProductInCatalogUrl(Integer catalogId, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs/{catalogId}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/ProductInCatalogs/{catalogId}?responseFields={responseFields}");
 		formatter.formatUrl("catalogId", catalogId);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateProduct
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateProductUrl(String fields, String productCode)
+	public static MozuUrl updateProductUrl(String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

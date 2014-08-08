@@ -46,19 +46,6 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
-	 */
-	protected String imageLabel;
-
-	public String getImageLabel() {
-		return this.imageLabel;
-	}
-
-	public void setImageLabel(String imageLabel) {
-		this.imageLabel = imageLabel;
-	}
-
-	/**
 	 * URL of the product category image.
 	 */
 	protected String imageUrl;
@@ -108,6 +95,19 @@ public class CategoryImage implements Serializable
 
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
+	}
+
+	/**
+	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
+	 */
+	protected String imageLabel;
+
+	public String getImageLabel() {
+		return this.imageLabel;
+	}
+
+	public void setImageLabel(String imageLabel) {
+		this.imageLabel = imageLabel;
 	}
 
 }

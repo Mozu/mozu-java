@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Options resource to configure the option attributes and vocabulary values for an individual product associated with the product type that uses the option attribute. Options are used to generate variations of a product.
  * </summary>
@@ -66,20 +66,20 @@ public class ProductOptionClient {
 	/**
 	 * Retrieves the details of an option attribute configuration for the specified product.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=GetOptionClient(dataViewMode,  productCode,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=GetOptionClient(dataViewMode,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> getOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> getOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.getOptionUrl(attributeFQN, fields, productCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.getOptionUrl(attributeFQN, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductOption.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient = new MozuClient(clz);
@@ -93,7 +93,7 @@ public class ProductOptionClient {
 	/**
 	 * Configures an option attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient(dataViewMode,  productOption,  productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient( productOption,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
@@ -104,36 +104,35 @@ public class ProductOptionClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> addOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> addOptionClient(com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode) throws Exception
 	{
-		return addOptionClient(dataViewMode,  productOption,  productCode,  null);
+		return addOptionClient( productOption,  productCode,  null);
 	}
 
 	/**
 	 * Configures an option attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient(dataViewMode,  productOption,  productCode,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=AddOptionClient( productOption,  productCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> addOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> addOptionClient(com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.addOptionUrl(fields, productCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.addOptionUrl(productCode, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductOption.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productOption);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -141,7 +140,7 @@ public class ProductOptionClient {
 	/**
 	 * Updates one or more properties of an option attribute configured for a product.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient(dataViewMode,  productOption,  productCode,  attributeFQN);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient( productOption,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
@@ -153,37 +152,36 @@ public class ProductOptionClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> updateOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String attributeFQN) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> updateOptionClient(com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String attributeFQN) throws Exception
 	{
-		return updateOptionClient(dataViewMode,  productOption,  productCode,  attributeFQN,  null);
+		return updateOptionClient( productOption,  productCode,  attributeFQN,  null);
 	}
 
 	/**
 	 * Updates one or more properties of an option attribute configured for a product.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient(dataViewMode,  productOption,  productCode,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient=UpdateOptionClient( productOption,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductOption productOption = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductOption>
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> updateOptionClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductOption> updateOptionClient(com.mozu.api.contracts.productadmin.ProductOption productOption, String productCode, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.updateOptionUrl(attributeFQN, fields, productCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.updateOptionUrl(attributeFQN, productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductOption.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductOption> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productOption);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -191,7 +189,7 @@ public class ProductOptionClient {
 	/**
 	 * Deletes the configuration of an option attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteOptionClient(dataViewMode,  productCode,  attributeFQN);
+	 * MozuClient mozuClient=DeleteOptionClient( productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -199,14 +197,13 @@ public class ProductOptionClient {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteOptionClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
+	public static MozuClient deleteOptionClient(String productCode, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductOptionUrl.deleteOptionUrl(attributeFQN, productCode);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

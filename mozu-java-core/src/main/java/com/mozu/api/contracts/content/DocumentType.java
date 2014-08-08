@@ -10,8 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.content.LocalizedString;
-import com.mozu.api.contracts.content.PropertyType;
+import com.mozu.api.contracts.content.Property;
 
 /**
  *	The type of documents used in the CMS such as "web_page" or "template" or "image_url".
@@ -22,17 +21,34 @@ public class DocumentType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies where the document type can be used across the site. If the document type has no scope restrictions, the scope is "Global".
-	 */
-	protected String documentTypeScope;
+	protected String adminName;
 
-	public String getDocumentTypeScope() {
-		return this.documentTypeScope;
+	public String getAdminName() {
+		return this.adminName;
 	}
 
-	public void setDocumentTypeScope(String documentTypeScope) {
-		this.documentTypeScope = documentTypeScope;
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	protected String documentTypeFQN;
+
+	public String getDocumentTypeFQN() {
+		return this.documentTypeFQN;
+	}
+
+	public void setDocumentTypeFQN(String documentTypeFQN) {
+		this.documentTypeFQN = documentTypeFQN;
+	}
+
+	protected String installationPackage;
+
+	public String getInstallationPackage() {
+		return this.installationPackage;
+	}
+
+	public void setInstallationPackage(String installationPackage) {
+		this.installationPackage = installationPackage;
 	}
 
 	/**
@@ -48,76 +64,32 @@ public class DocumentType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * If applicable, the name of the parent document type.
-	 */
-	protected String parentTypeName;
+	protected String namespace;
 
-	public String getParentTypeName() {
-		return this.parentTypeName;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setParentTypeName(String parentTypeName) {
-		this.parentTypeName = parentTypeName;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
-	/**
-	 * User-defined description of the document type.
-	 */
-	protected String description;
+	protected String version;
 
-	public String getDescription() {
-		return this.description;
+	public String getVersion() {
+		return this.version;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
-	/**
-	 * The name that displays for the document type.
-	 */
-	protected String displayName;
-
-	public String getDisplayName() {
-		return this.displayName;
+	protected List<Property> properties;
+	public List<Property> getProperties() {
+		return this.properties;
 	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
-
-	/**
-	 * List of content entity descriptions localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDescriptions;
-	public List<LocalizedString> getLocalizedDescriptions() {
-		return this.localizedDescriptions;
-	}
-	public void setLocalizedDescriptions(List<LocalizedString> localizedDescriptions) {
-		this.localizedDescriptions = localizedDescriptions;
-	}
-
-	/**
-	 * List of content entity display names localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDisplayNames;
-	public List<LocalizedString> getLocalizedDisplayNames() {
-		return this.localizedDisplayNames;
-	}
-	public void setLocalizedDisplayNames(List<LocalizedString> localizedDisplayNames) {
-		this.localizedDisplayNames = localizedDisplayNames;
-	}
-
-	/**
-	 * List of content property types associated with the document type.
-	 */
-	protected List<PropertyType> propertyTypes;
-	public List<PropertyType> getPropertyTypes() {
-		return this.propertyTypes;
-	}
-	public void setPropertyTypes(List<PropertyType> propertyTypes) {
-		this.propertyTypes = propertyTypes;
+	public void setProperties(List<Property> properties) {
+		this.properties = properties;
 	}
 
 }

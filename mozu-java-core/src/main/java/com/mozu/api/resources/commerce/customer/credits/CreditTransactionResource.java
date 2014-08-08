@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Customer Credit Transactions subresource to manage the individual transactions performed using a store credit or gift card.
  * </summary>
@@ -25,11 +24,12 @@ public class CreditTransactionResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CreditTransactionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the transactions performed using a customer credit that update the balance of the credit.

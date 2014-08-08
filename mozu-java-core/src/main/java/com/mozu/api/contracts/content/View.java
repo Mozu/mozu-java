@@ -38,16 +38,6 @@ public class View implements Serializable
 		this.filter = filter;
 	}
 
-	protected Object metadata;
-
-	public Object getMetadata() {
-		return this.metadata;
-	}
-
-	public void setMetadata(Object metadata) {
-		this.metadata = metadata;
-	}
-
 	protected String name;
 
 	public String getName() {

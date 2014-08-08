@@ -21,6 +21,17 @@ public class TopLevelDomainCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * An array list of objects in the returned collection.
+	 */
+	protected List<String> items;
+	public List<String> getItems() {
+		return this.items;
+	}
+	public void setItems(List<String> items) {
+		this.items = items;
+	}
+
+	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
 	protected Long totalCount;
@@ -31,17 +42,6 @@ public class TopLevelDomainCollection implements Serializable
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	/**
-	 * An array list of objects in the returned collection.
-	 */
-	protected List<String> items;
-	public List<String> getItems() {
-		return this.items;
-	}
-	public void setItems(List<String> items) {
-		this.items = items;
 	}
 
 }
