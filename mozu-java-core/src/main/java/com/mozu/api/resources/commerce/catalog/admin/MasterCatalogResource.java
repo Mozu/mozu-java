@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Master Catalog resource to view details of the master catalogs associated with a tenant and to manage the product publishing mode for each master catalog.
  * </summary>
@@ -25,12 +25,20 @@ public class MasterCatalogResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public MasterCatalogResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public MasterCatalogResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
@@ -49,15 +57,15 @@ public class MasterCatalogResource {
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.GetMasterCatalogs( fields);
+	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.GetMasterCatalogs( responseFields);
 	 * </code></pre></p>
-	 * @param fields 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
-	public com.mozu.api.contracts.productadmin.MasterCatalogCollection getMasterCatalogs(String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.MasterCatalogCollection getMasterCatalogs(String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogsClient( fields);
+		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalogCollection> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -68,31 +76,31 @@ public class MasterCatalogResource {
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(dataViewMode,  masterCatalogId);
+	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(_dataViewMode,  masterCatalogId);
 	 * </code></pre></p>
 	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId) throws Exception
+	public com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(Integer masterCatalogId) throws Exception
 	{
-		return getMasterCatalog(dataViewMode,  masterCatalogId,  null);
+		return getMasterCatalog( masterCatalogId,  null);
 	}
 
 	/**
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(dataViewMode,  masterCatalogId,  fields);
+	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(_dataViewMode,  masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(Integer masterCatalogId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogClient(dataViewMode,  masterCatalogId,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogClient(_dataViewMode,  masterCatalogId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -103,7 +111,7 @@ public class MasterCatalogResource {
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog(dataViewMode,  masterCatalog,  masterCatalogId);
+	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog( masterCatalog,  masterCatalogId);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
@@ -111,27 +119,27 @@ public class MasterCatalogResource {
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId) throws Exception
+	public com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId) throws Exception
 	{
-		return updateMasterCatalog(dataViewMode,  masterCatalog,  masterCatalogId,  null);
+		return updateMasterCatalog( masterCatalog,  masterCatalogId,  null);
 	}
 
 	/**
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog(dataViewMode,  masterCatalog,  masterCatalogId,  fields);
+	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param masterCatalogId 
+	 * @param responseFields 
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.updateMasterCatalogClient(dataViewMode,  masterCatalog,  masterCatalogId,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.updateMasterCatalogClient( masterCatalog,  masterCatalogId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

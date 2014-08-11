@@ -17,15 +17,17 @@ public class EntityListUrl
 	 * Get Resource Url for GetEntityLists
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getEntityListsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getEntityListsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/?pageSize={pageSize}&startIndex={startIndex}&filter={filter}&sortBy={sortBy}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/?pageSize={pageSize}&startIndex={startIndex}&filter={filter}&sortBy={sortBy}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -34,34 +36,40 @@ public class EntityListUrl
 	/**
 	 * Get Resource Url for GetEntityList
 	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getEntityListUrl(String entityListFullName)
+	public static MozuUrl getEntityListUrl(String entityListFullName, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}?responseFields={responseFields}");
 		formatter.formatUrl("entityListFullName", entityListFullName);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateEntityList
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createEntityListUrl()
+	public static MozuUrl createEntityListUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateEntityList
 	 * @param entityListFullName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateEntityListUrl(String entityListFullName)
+	public static MozuUrl updateEntityListUrl(String entityListFullName, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}?responseFields={responseFields}");
 		formatter.formatUrl("entityListFullName", entityListFullName);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

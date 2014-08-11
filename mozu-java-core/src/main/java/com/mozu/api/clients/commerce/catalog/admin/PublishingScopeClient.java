@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
  * </summary>
@@ -23,7 +22,7 @@ public class PublishingScopeClient {
 	/**
 	 * Deletes the draft version of product changes for each product code specified in the request.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DiscardDraftsClient(dataViewMode,  publishScope);
+	 * MozuClient mozuClient=DiscardDraftsClient( publishScope);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -32,7 +31,7 @@ public class PublishingScopeClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
-	public static MozuClient discardDraftsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
+	public static MozuClient discardDraftsClient(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PublishingScopeUrl.discardDraftsUrl();
 		String verb = "POST";
@@ -40,7 +39,6 @@ public class PublishingScopeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(publishScope);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -48,7 +46,7 @@ public class PublishingScopeClient {
 	/**
 	 * Publishes the draft version of product changes for each product code specified in the request, and changes the product publish state to "live".
 	 * <p><pre><code>
-	 * MozuClient mozuClient=PublishDraftsClient(dataViewMode,  publishScope);
+	 * MozuClient mozuClient=PublishDraftsClient( publishScope);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -57,7 +55,7 @@ public class PublishingScopeClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
-	public static MozuClient publishDraftsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
+	public static MozuClient publishDraftsClient(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PublishingScopeUrl.publishDraftsUrl();
 		String verb = "POST";
@@ -65,7 +63,6 @@ public class PublishingScopeClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(publishScope);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

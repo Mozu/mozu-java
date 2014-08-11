@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use this subresource to manage documents in a document list.
  * </summary>
@@ -141,7 +141,7 @@ public class DocumentClient {
 	/**
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient( document,  documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -152,15 +152,15 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName) throws Exception
 	{
-		return createDocumentClient(dataViewMode,  document,  documentListName,  null);
+		return createDocumentClient( document,  documentListName,  null);
 	}
 
 	/**
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient( document,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -172,7 +172,7 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.createDocumentUrl(documentListName, responseFields);
 		String verb = "POST";
@@ -181,7 +181,6 @@ public class DocumentClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(document);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -189,7 +188,7 @@ public class DocumentClient {
 	/**
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateDocumentContentClient(dataViewMode,  stream,  documentListName,  documentId,  contentType);
+	 * MozuClient mozuClient=UpdateDocumentContentClient( stream,  documentListName,  documentId,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -199,7 +198,7 @@ public class DocumentClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
-	public static MozuClient updateDocumentContentClient(com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentId, String  contentType) throws Exception
+	public static MozuClient updateDocumentContentClient(java.io.InputStream stream, String documentListName, String documentId, String  contentType) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.updateDocumentContentUrl(documentId, documentListName);
 		String verb = "PUT";
@@ -207,7 +206,6 @@ public class DocumentClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(stream);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		if (!StringUtils.isEmpty(contentType))
 			mozuClient.addHeader(Headers.CONTENT_TYPE, contentType);
 		return mozuClient;
@@ -217,7 +215,7 @@ public class DocumentClient {
 	/**
 	 * Updates a document in a document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient(dataViewMode,  document,  documentListName,  documentId);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient( document,  documentListName,  documentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -229,15 +227,15 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> updateDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String documentId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> updateDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName, String documentId) throws Exception
 	{
-		return updateDocumentClient(dataViewMode,  document,  documentListName,  documentId,  null);
+		return updateDocumentClient( document,  documentListName,  documentId,  null);
 	}
 
 	/**
 	 * Updates a document in a document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient(dataViewMode,  document,  documentListName,  documentId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=UpdateDocumentClient( document,  documentListName,  documentId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -250,7 +248,7 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> updateDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> updateDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName, String documentId, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.updateDocumentUrl(documentId, documentListName, responseFields);
 		String verb = "PUT";
@@ -259,7 +257,6 @@ public class DocumentClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(document);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -267,7 +264,7 @@ public class DocumentClient {
 	/**
 	 * Deletes a specific document based on the specified document ID.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentClient(dataViewMode,  documentListName,  documentId);
+	 * MozuClient mozuClient=DeleteDocumentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -275,14 +272,13 @@ public class DocumentClient {
 	 * @param documentListName The name of the document list associated with the document list being deleted.
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId) throws Exception
+	public static MozuClient deleteDocumentClient(String documentListName, String documentId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.deleteDocumentUrl(documentId, documentListName);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -290,7 +286,7 @@ public class DocumentClient {
 	/**
 	 * Deletes the content associated with a document, such as a product image or PDF specification, by supplying the document ID.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentContentClient(dataViewMode,  documentListName,  documentId);
+	 * MozuClient mozuClient=DeleteDocumentContentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -298,14 +294,13 @@ public class DocumentClient {
 	 * @param documentListName The name of the document list associated with the document.
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteDocumentContentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId) throws Exception
+	public static MozuClient deleteDocumentContentClient(String documentListName, String documentId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.deleteDocumentContentUrl(documentId, documentListName);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

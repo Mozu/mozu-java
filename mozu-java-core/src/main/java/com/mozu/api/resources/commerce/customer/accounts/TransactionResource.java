@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Customer Account Transactions resource to manage the transactions associated with a customer account.
  * </summary>
@@ -25,11 +24,12 @@ public class TransactionResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public TransactionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of transactions associated with the customer account specified in the request.

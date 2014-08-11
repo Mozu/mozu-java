@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Extras subresource to define how a product attribute classified as an "extra" is used for a specific product type. Product attribute defintions are unique for each associated product type.
  * </summary>
@@ -25,26 +25,34 @@ public class ProductTypeExtraResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public ProductTypeExtraResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public ProductTypeExtraResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of extra attributes defined for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtras(dataViewMode,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtras(_dataViewMode,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.productadmin.AttributeInProductType>
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public List<com.mozu.api.contracts.productadmin.AttributeInProductType> getExtras(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId) throws Exception
+	public List<com.mozu.api.contracts.productadmin.AttributeInProductType> getExtras(Integer productTypeId) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeInProductType>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtrasClient(dataViewMode,  productTypeId);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeInProductType>> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtrasClient(_dataViewMode,  productTypeId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -55,7 +63,7 @@ public class ProductTypeExtraResource {
 	 * Retrieves the details of an extra attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(dataViewMode,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(_dataViewMode,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
@@ -63,27 +71,27 @@ public class ProductTypeExtraResource {
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return getExtra(dataViewMode,  productTypeId,  attributeFQN,  null);
+		return getExtra( productTypeId,  attributeFQN,  null);
 	}
 
 	/**
 	 * Retrieves the details of an extra attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(dataViewMode,  productTypeId,  attributeFQN,  fields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(_dataViewMode,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(Integer productTypeId, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtraClient(dataViewMode,  productTypeId,  attributeFQN,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.getExtraClient(_dataViewMode,  productTypeId,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -94,7 +102,7 @@ public class ProductTypeExtraResource {
 	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra(dataViewMode,  attributeInProductType,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra( attributeInProductType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -103,28 +111,28 @@ public class ProductTypeExtraResource {
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId) throws Exception
 	{
-		return addExtra(dataViewMode,  attributeInProductType,  productTypeId,  null);
+		return addExtra( attributeInProductType,  productTypeId,  null);
 	}
 
 	/**
 	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra(dataViewMode,  attributeInProductType,  productTypeId,  fields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.addExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.addExtraClient( attributeInProductType,  productTypeId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -135,7 +143,7 @@ public class ProductTypeExtraResource {
 	 * Update the definition of an extra attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra( attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -145,29 +153,29 @@ public class ProductTypeExtraResource {
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN) throws Exception
 	{
-		return updateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null);
+		return updateExtra( attributeInProductType,  productTypeId,  attributeFQN,  null);
 	}
 
 	/**
 	 * Update the definition of an extra attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
 	 */
-	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String fields) throws Exception
+	public com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.updateExtraClient(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  fields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.updateExtraClient( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -178,16 +186,16 @@ public class ProductTypeExtraResource {
 	 * Removes an extra attribute definition from the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	producttypeextra.DeleteExtra(dataViewMode,  productTypeId,  attributeFQN);
+	 *	producttypeextra.DeleteExtra( productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
-	public void deleteExtra(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN) throws Exception
+	public void deleteExtra(Integer productTypeId, String attributeFQN) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.deleteExtraClient(dataViewMode,  productTypeId,  attributeFQN);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.deleteExtraClient( productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this subresource to retrieve details about items in an active order.
  * </summary>
@@ -25,11 +24,12 @@ public class OrderItemResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public OrderItemResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of a single order item.

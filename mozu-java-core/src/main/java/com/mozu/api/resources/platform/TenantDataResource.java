@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
  * </summary>
@@ -25,11 +24,12 @@ public class TenantDataResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public TenantDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the value of a record in the Mozu database.
@@ -43,7 +43,23 @@ public class TenantDataResource {
 	 */
 	public String getDBValue(String dbEntryQuery) throws Exception
 	{
-		MozuClient<String> client = com.mozu.api.clients.platform.TenantDataClient.getDBValueClient( dbEntryQuery);
+		return getDBValue( dbEntryQuery,  null);
+	}
+
+	/**
+	 * Retrieves the value of a record in the Mozu database.
+	 * <p><pre><code>
+	 *	TenantData tenantdata = new TenantData();
+	 *	string string = tenantdata.GetDBValue( dbEntryQuery,  responseFields);
+	 * </code></pre></p>
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
+	 * @return string
+	 * @see string
+	 */
+	public String getDBValue(String dbEntryQuery, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.TenantDataClient.getDBValueClient( dbEntryQuery,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

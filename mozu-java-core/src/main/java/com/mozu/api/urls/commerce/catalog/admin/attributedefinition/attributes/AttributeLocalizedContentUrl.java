@@ -28,30 +28,30 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributeLocalizedContentUrl(String attributeFQN, String fields, String localeCode)
+	public static MozuUrl getAttributeLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addLocalizedContentUrl(String attributeFQN, String fields)
+	public static MozuUrl addLocalizedContentUrl(String attributeFQN, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -70,16 +70,16 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for UpdateLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateLocalizedContentUrl(String attributeFQN, String fields, String localeCode)
+	public static MozuUrl updateLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

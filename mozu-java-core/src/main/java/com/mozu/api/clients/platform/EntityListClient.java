@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -33,27 +32,28 @@ public class EntityListClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> getEntityListsClient() throws Exception
 	{
-		return getEntityListsClient( null,  null,  null,  null);
+		return getEntityListsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> mozuClient=GetEntityListsClient( pageSize,  startIndex,  filter,  sortBy);
+	 * MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> mozuClient=GetEntityListsClient( pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityListCollection entityListCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityListCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> getEntityListsClient(Integer pageSize, Integer startIndex, String filter, String sortBy) throws Exception
+	public static MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> getEntityListsClient(Integer pageSize, Integer startIndex, String filter, String sortBy, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.getEntityListsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.getEntityListsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityListCollection.class;
 		MozuClient<com.mozu.api.contracts.mzdb.EntityListCollection> mozuClient = new MozuClient(clz);
@@ -77,7 +77,25 @@ public class EntityListClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> getEntityListClient(String entityListFullName) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.getEntityListUrl(entityListFullName);
+		return getEntityListClient( entityListFullName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient=GetEntityListClient( entityListFullName,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * EntityList entityList = client.Result();
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
+	 * @see com.mozu.api.contracts.mzdb.EntityList
+	 */
+	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> getEntityListClient(String entityListFullName, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.getEntityListUrl(entityListFullName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityList.class;
 		MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient = new MozuClient(clz);
@@ -102,7 +120,26 @@ public class EntityListClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> createEntityListClient(com.mozu.api.contracts.mzdb.EntityList entityList) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.createEntityListUrl();
+		return createEntityListClient( entityList,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient=CreateEntityListClient( entityList,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * EntityList entityList = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param entityList 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
+	 * @see com.mozu.api.contracts.mzdb.EntityList
+	 * @see com.mozu.api.contracts.mzdb.EntityList
+	 */
+	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> createEntityListClient(com.mozu.api.contracts.mzdb.EntityList entityList, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.createEntityListUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityList.class;
 		MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient = new MozuClient(clz);
@@ -129,7 +166,27 @@ public class EntityListClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> updateEntityListClient(com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.updateEntityListUrl(entityListFullName);
+		return updateEntityListClient( entityList,  entityListFullName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient=UpdateEntityListClient( entityList,  entityListFullName,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * EntityList entityList = client.Result();
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param responseFields 
+	 * @param entityList 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityList>
+	 * @see com.mozu.api.contracts.mzdb.EntityList
+	 * @see com.mozu.api.contracts.mzdb.EntityList
+	 */
+	public static MozuClient<com.mozu.api.contracts.mzdb.EntityList> updateEntityListClient(com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.updateEntityListUrl(entityListFullName, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityList.class;
 		MozuClient<com.mozu.api.contracts.mzdb.EntityList> mozuClient = new MozuClient(clz);

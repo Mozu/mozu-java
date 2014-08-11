@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
@@ -25,11 +24,12 @@ public class PackageResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.

@@ -28,46 +28,46 @@ public class ProductTypeExtraUrl
 	/**
 	 * Get Resource Url for GetExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getExtraUrl(String attributeFQN, String fields, Integer productTypeId)
+	public static MozuUrl getExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras/{attributeFQN}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddExtra
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addExtraUrl(String fields, Integer productTypeId)
+	public static MozuUrl addExtraUrl(Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras?responseFields={responseFields}");
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateExtraUrl(String attributeFQN, String fields, Integer productTypeId)
+	public static MozuUrl updateExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras/{attributeFQN}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Extras/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

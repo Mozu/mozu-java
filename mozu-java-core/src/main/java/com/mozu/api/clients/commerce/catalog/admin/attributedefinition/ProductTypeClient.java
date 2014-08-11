@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Types resource to manage the types for your product catalog. Product types act as configuration templates, which store a set of attributes common to all products associated with that type. Unlike categories, products can only be associated with a single product type.
  * </summary>
@@ -40,23 +40,23 @@ public class ProductTypeClient {
 	/**
 	 * Retrieves a list of product types according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductTypeCollection productTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductTypeCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> getProductTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> getProductTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypesUrl(fields, filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductTypeCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient = new MozuClient(clz);
@@ -88,20 +88,20 @@ public class ProductTypeClient {
 	/**
 	 * Retrieves the details of the product type specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=GetProductTypeClient(dataViewMode,  productTypeId,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=GetProductTypeClient(dataViewMode,  productTypeId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> getProductTypeClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> getProductTypeClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypeUrl(fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypeUrl(productTypeId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
@@ -115,7 +115,7 @@ public class ProductTypeClient {
 	/**
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient(dataViewMode,  productType);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient( productType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
@@ -126,36 +126,35 @@ public class ProductTypeClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.contracts.productadmin.ProductType productType) throws Exception
 	{
-		return addProductTypeClient(dataViewMode,  productType,  null);
+		return addProductTypeClient( productType,  null);
 	}
 
 	/**
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient(dataViewMode,  productType,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient( productType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param productType Properties of the product type to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.contracts.productadmin.ProductType productType, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.addProductTypeUrl(fields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.addProductTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productType);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -163,7 +162,7 @@ public class ProductTypeClient {
 	/**
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient(dataViewMode,  productType,  productTypeId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient( productType,  productTypeId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
@@ -175,37 +174,36 @@ public class ProductTypeClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId) throws Exception
 	{
-		return updateProductTypeClient(dataViewMode,  productType,  productTypeId,  null);
+		return updateProductTypeClient( productType,  productTypeId,  null);
 	}
 
 	/**
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient(dataViewMode,  productType,  productTypeId,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient( productType,  productTypeId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param productTypeId Identifier of the product type to update.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @param productType The details of the product type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.updateProductTypeUrl(fields, productTypeId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.updateProductTypeUrl(productTypeId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productType);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -213,7 +211,7 @@ public class ProductTypeClient {
 	/**
 	 * Deletes the product type by providing the product type ID.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteProductTypeClient(dataViewMode,  productTypeId);
+	 * MozuClient mozuClient=DeleteProductTypeClient( productTypeId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -221,14 +219,13 @@ public class ProductTypeClient {
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteProductTypeClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId) throws Exception
+	public static MozuClient deleteProductTypeClient(Integer productTypeId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.deleteProductTypeUrl(productTypeId);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

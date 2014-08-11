@@ -42,17 +42,17 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String fields, String localeCode, String value)
+	public static MozuUrl getAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -60,15 +60,15 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
+	 * @param responseFields 
 	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributeVocabularyValueUrl(String attributeFQN, String fields, String value)
+	public static MozuUrl getAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -76,15 +76,15 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String fields, String value)
+	public static MozuUrl addAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/localizedContent?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/localizedContent?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -92,14 +92,14 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAttributeVocabularyValueUrl(String attributeFQN, String fields)
+	public static MozuUrl addAttributeVocabularyValueUrl(String attributeFQN, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -132,17 +132,17 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String fields, String localeCode, String value)
+	public static MozuUrl updateAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -150,15 +150,15 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
+	 * @param responseFields 
 	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAttributeVocabularyValueUrl(String attributeFQN, String fields, String value)
+	public static MozuUrl updateAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/attributes/{attributeFQN}/VocabularyValues/{value}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

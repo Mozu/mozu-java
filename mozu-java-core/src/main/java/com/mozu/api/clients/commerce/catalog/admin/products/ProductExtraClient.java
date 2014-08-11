@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Extras resource to configure an extra product attribute for products associated with the product type that uses the extra attribute.
  * </summary>
@@ -46,6 +46,82 @@ public class ProductExtraClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> mozuClient=GetExtraValueLocalizedDeltaPricesClient(dataViewMode,  productCode,  attributeFQN,  value);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> getExtraValueLocalizedDeltaPricesClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.getExtraValueLocalizedDeltaPricesUrl(attributeFQN, productCode, value);
+		String verb = "GET";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=GetExtraValueLocalizedDeltaPriceClient(dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> getExtraValueLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode) throws Exception
+	{
+		return getExtraValueLocalizedDeltaPriceClient(dataViewMode,  productCode,  attributeFQN,  value,  currencyCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=GetExtraValueLocalizedDeltaPriceClient(dataViewMode,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> getExtraValueLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.getExtraValueLocalizedDeltaPriceUrl(attributeFQN, currencyCode, productCode, responseFields, value);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=GetExtraClient(dataViewMode,  productCode,  attributeFQN);
@@ -66,20 +142,20 @@ public class ProductExtraClient {
 	/**
 	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=GetExtraClient(dataViewMode,  productCode,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=GetExtraClient(dataViewMode,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> getExtraClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> getExtraClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.getExtraUrl(attributeFQN, fields, productCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.getExtraUrl(attributeFQN, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtra.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient = new MozuClient(clz);
@@ -91,49 +167,181 @@ public class ProductExtraClient {
 	}
 
 	/**
-	 * Configure an extra attribute for the product specified in the request.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=AddExtraClient(dataViewMode,  productExtra,  productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=AddExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * ProductExtra productExtra = client.Result();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productExtra Properties of the product extra to configure for the specified product.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
-	 * @see com.mozu.api.contracts.productadmin.ProductExtra
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> addExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> addExtraValueLocalizedDeltaPriceClient(com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value) throws Exception
 	{
-		return addExtraClient(dataViewMode,  productExtra,  productCode,  null);
+		return addExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=AddExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> addExtraValueLocalizedDeltaPriceClient(com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.addExtraValueLocalizedDeltaPriceUrl(attributeFQN, productCode, responseFields, value);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedDeltaPrice);
+		return mozuClient;
+
 	}
 
 	/**
 	 * Configure an extra attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=AddExtraClient(dataViewMode,  productExtra,  productCode,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=AddExtraClient( productExtra,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productExtra Properties of the product extra to configure for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> addExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> addExtraClient(com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.addExtraUrl(fields, productCode);
+		return addExtraClient( productExtra,  productCode,  null);
+	}
+
+	/**
+	 * Configure an extra attribute for the product specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=AddExtraClient( productExtra,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtra productExtra = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param productExtra Properties of the product extra to configure for the specified product.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtra
+	 * @see com.mozu.api.contracts.productadmin.ProductExtra
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> addExtraClient(com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.addExtraUrl(productCode, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtra.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productExtra);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> mozuClient=UpdateExtraValueLocalizedDeltaPricesClient( localizedDeltaPrice,  productCode,  attributeFQN,  value);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> updateExtraValueLocalizedDeltaPricesClient(List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> localizedDeltaPrice, String productCode, String attributeFQN, String value) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.updateExtraValueLocalizedDeltaPricesUrl(attributeFQN, productCode, value);
+		String verb = "PUT";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedDeltaPrice);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=UpdateExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> updateExtraValueLocalizedDeltaPriceClient(com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String currencyCode) throws Exception
+	{
+		return updateExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient=UpdateExtraValueLocalizedDeltaPriceClient( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductExtraValueDeltaPrice productExtraValueDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param value 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> updateExtraValueLocalizedDeltaPriceClient(com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String currencyCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.updateExtraValueLocalizedDeltaPriceUrl(attributeFQN, currencyCode, productCode, responseFields, value);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedDeltaPrice);
 		return mozuClient;
 
 	}
@@ -141,7 +349,7 @@ public class ProductExtraClient {
 	/**
 	 * Updates the configuration of an extra attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=UpdateExtraClient(dataViewMode,  productExtra,  productCode,  attributeFQN);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=UpdateExtraClient( productExtra,  productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
@@ -153,37 +361,36 @@ public class ProductExtraClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> updateExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> updateExtraClient(com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN) throws Exception
 	{
-		return updateExtraClient(dataViewMode,  productExtra,  productCode,  attributeFQN,  null);
+		return updateExtraClient( productExtra,  productCode,  attributeFQN,  null);
 	}
 
 	/**
 	 * Updates the configuration of an extra attribute for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=UpdateExtraClient(dataViewMode,  productExtra,  productCode,  attributeFQN,  fields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient=UpdateExtraClient( productExtra,  productCode,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @param productExtra Properties of the extra attribute to update for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> updateExtraClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, String fields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> updateExtraClient(com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.updateExtraUrl(attributeFQN, fields, productCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.updateExtraUrl(attributeFQN, productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductExtra.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductExtra> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productExtra);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -191,7 +398,7 @@ public class ProductExtraClient {
 	/**
 	 * Delete a product extra configuration for the product specified in the request.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteExtraClient(dataViewMode,  productCode,  attributeFQN);
+	 * MozuClient mozuClient=DeleteExtraClient( productCode,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -199,14 +406,37 @@ public class ProductExtraClient {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteExtraClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
+	public static MozuClient deleteExtraClient(String productCode, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.deleteExtraUrl(attributeFQN, productCode);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteExtraValueLocalizedDeltaPriceClient( productCode,  attributeFQN,  value,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deleteExtraValueLocalizedDeltaPriceClient(String productCode, String attributeFQN, String value, String currencyCode) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductExtraUrl.deleteExtraValueLocalizedDeltaPriceUrl(attributeFQN, currencyCode, productCode, value);
+		String verb = "DELETE";
+				MozuClient mozuClient = new MozuClient();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

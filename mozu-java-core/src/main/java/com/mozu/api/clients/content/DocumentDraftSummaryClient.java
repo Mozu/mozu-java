@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document publishing subresource to manage and publish document drafts in the Content service.
  * </summary>
@@ -67,7 +67,7 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentDraftsClient(dataViewMode,  documentIds);
+	 * MozuClient mozuClient=DeleteDocumentDraftsClient( documentIds);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -75,15 +75,15 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
-	public static MozuClient deleteDocumentDraftsClient(com.mozu.api.DataViewMode dataViewMode, List<String> documentIds) throws Exception
+	public static MozuClient deleteDocumentDraftsClient(List<String> documentIds) throws Exception
 	{
-		return deleteDocumentDraftsClient(dataViewMode,  documentIds,  null);
+		return deleteDocumentDraftsClient( documentIds,  null);
 	}
 
 	/**
 	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteDocumentDraftsClient(dataViewMode,  documentIds,  documentLists);
+	 * MozuClient mozuClient=DeleteDocumentDraftsClient( documentIds,  documentLists);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -92,7 +92,7 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
-	public static MozuClient deleteDocumentDraftsClient(com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, String documentLists) throws Exception
+	public static MozuClient deleteDocumentDraftsClient(List<String> documentIds, String documentLists) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentDraftSummaryUrl.deleteDocumentDraftsUrl(documentLists);
 		String verb = "POST";
@@ -100,7 +100,6 @@ public class DocumentDraftSummaryClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentIds);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -108,7 +107,7 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * Publish one or more document drafts to live content on the site.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=PublishDocumentsClient(dataViewMode,  documentIds);
+	 * MozuClient mozuClient=PublishDocumentsClient( documentIds);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -116,15 +115,15 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
-	public static MozuClient publishDocumentsClient(com.mozu.api.DataViewMode dataViewMode, List<String> documentIds) throws Exception
+	public static MozuClient publishDocumentsClient(List<String> documentIds) throws Exception
 	{
-		return publishDocumentsClient(dataViewMode,  documentIds,  null);
+		return publishDocumentsClient( documentIds,  null);
 	}
 
 	/**
 	 * Publish one or more document drafts to live content on the site.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=PublishDocumentsClient(dataViewMode,  documentIds,  documentLists);
+	 * MozuClient mozuClient=PublishDocumentsClient( documentIds,  documentLists);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -133,7 +132,7 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
-	public static MozuClient publishDocumentsClient(com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, String documentLists) throws Exception
+	public static MozuClient publishDocumentsClient(List<String> documentIds, String documentLists) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentDraftSummaryUrl.publishDocumentsUrl(documentLists);
 		String verb = "PUT";
@@ -141,7 +140,6 @@ public class DocumentDraftSummaryClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentIds);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

@@ -26,6 +26,16 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.attributesWeight = attributesWeight;
 	}
 
+	protected Integer categoryNamesWeight;
+
+	public Integer getCategoryNamesWeight() {
+		return this.categoryNamesWeight;
+	}
+
+	public void setCategoryNamesWeight(Integer categoryNamesWeight) {
+		this.categoryNamesWeight = categoryNamesWeight;
+	}
+
 	protected Integer descriptionWeight;
 
 	public Integer getDescriptionWeight() {

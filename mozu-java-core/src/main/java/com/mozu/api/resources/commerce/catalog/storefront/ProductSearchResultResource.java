@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Product Search resource to provide dynamic search results to shoppers as they browse and search for products on the web storefront, and to suggest possible search terms as the shopper enters text.
  * </summary>
@@ -25,11 +24,12 @@ public class ProductSearchResultResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ProductSearchResultResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.

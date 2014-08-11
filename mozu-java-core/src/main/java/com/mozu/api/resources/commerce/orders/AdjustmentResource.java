@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this subresource to manage ad-hoc order level price adjustments.
  * </summary>
@@ -25,11 +24,12 @@ public class AdjustmentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public AdjustmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Applies a shipping adjustment to the specified order.

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Return Packages subresource to manage physical packages used to ship return replacement items.
  * </summary>
@@ -25,11 +24,12 @@ public class PackageResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the package label image supplied by the carrier for a return replacement.

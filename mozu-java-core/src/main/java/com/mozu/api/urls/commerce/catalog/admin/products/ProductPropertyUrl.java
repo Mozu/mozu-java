@@ -44,19 +44,19 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
 	 * @param productCode 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPropertyValueLocalizedContentUrl(String attributeFQN, String fields, String localeCode, String productCode, String value)
+	public static MozuUrl getPropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -64,48 +64,48 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for GetProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPropertyUrl(String attributeFQN, String fields, String productCode)
+	public static MozuUrl getPropertyUrl(String attributeFQN, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddPropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param productCode 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addPropertyValueLocalizedContentUrl(String attributeFQN, String fields, String productCode, String value)
+	public static MozuUrl addPropertyValueLocalizedContentUrl(String attributeFQN, String productCode, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddProperty
-	 * @param fields 
 	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addPropertyUrl(String fields, String productCode)
+	public static MozuUrl addPropertyUrl(String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties?fields={fields}");
-		formatter.formatUrl("fields", fields);
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -128,19 +128,19 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param fields 
 	 * @param localeCode 
 	 * @param productCode 
+	 * @param responseFields 
 	 * @param value 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updatePropertyValueLocalizedContentUrl(String attributeFQN, String fields, String localeCode, String productCode, String value)
+	public static MozuUrl updatePropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent/{localeCode}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}/values/{value}/LocalizedContent/{localeCode}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("localeCode", localeCode);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -148,16 +148,16 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for UpdateProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param fields 
 	 * @param productCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updatePropertyUrl(String attributeFQN, String fields, String productCode)
+	public static MozuUrl updatePropertyUrl(String attributeFQN, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}?fields={fields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Properties/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
-		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

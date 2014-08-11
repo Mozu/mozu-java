@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the property types subresource to manage content properties.
  * </summary>
@@ -25,31 +24,32 @@ public class PropertyTypeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public PropertyTypeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes(dataViewMode);
+	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.PropertyTypeCollection
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
-	public com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes() throws Exception
 	{
-		return getPropertyTypes(dataViewMode,  null,  null,  null);
+		return getPropertyTypes( null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes(dataViewMode,  pageSize,  startIndex,  responseFields);
+	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize 
 	 * @param responseFields 
@@ -57,9 +57,9 @@ public class PropertyTypeResource {
 	 * @return com.mozu.api.contracts.content.PropertyTypeCollection
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
-	public com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> client = com.mozu.api.clients.content.PropertyTypeClient.getPropertyTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> client = com.mozu.api.clients.content.PropertyTypeClient.getPropertyTypesClient( pageSize,  startIndex,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -70,49 +70,31 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.GetPropertyType(dataViewMode,  propertyTypeName);
+	 *	PropertyType propertyType = propertytype.GetPropertyType( propertyTypeName);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
-	public com.mozu.api.contracts.content.PropertyType getPropertyType(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName) throws Exception
+	public com.mozu.api.contracts.content.PropertyType getPropertyType(String propertyTypeName) throws Exception
 	{
-		return getPropertyType(dataViewMode,  propertyTypeName,  null);
+		return getPropertyType( propertyTypeName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.GetPropertyType(dataViewMode,  propertyTypeName,  responseFields);
+	 *	PropertyType propertyType = propertytype.GetPropertyType( propertyTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
-	public com.mozu.api.contracts.content.PropertyType getPropertyType(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.PropertyType getPropertyType(String propertyTypeName, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.PropertyType> client = com.mozu.api.clients.content.PropertyTypeClient.getPropertyTypeClient(dataViewMode,  propertyTypeName,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves the value types associated with a content property.
-	 * <p><pre><code>
-	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyValueType propertyValueType = propertytype.PropertyValueTypes(dataViewMode);
-	 * </code></pre></p>
-	 * @return List<com.mozu.api.contracts.content.PropertyValueType>
-	 * @see com.mozu.api.contracts.content.PropertyValueType
-	 */
-	public List<com.mozu.api.contracts.content.PropertyValueType> propertyValueTypes(com.mozu.api.DataViewMode dataViewMode) throws Exception
-	{
-		MozuClient<List<com.mozu.api.contracts.content.PropertyValueType>> client = com.mozu.api.clients.content.PropertyTypeClient.propertyValueTypesClient(dataViewMode);
+		MozuClient<com.mozu.api.contracts.content.PropertyType> client = com.mozu.api.clients.content.PropertyTypeClient.getPropertyTypeClient( propertyTypeName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -46,16 +46,6 @@ public class EntityContainer implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected String entityListName;
-
-	public String getEntityListName() {
-		return this.entityListName;
-	}
-
-	public void setEntityListName(String entityListName) {
-		this.entityListName = entityListName;
-	}
-
 	protected String id;
 
 	public String getId() {
@@ -64,6 +54,16 @@ public class EntityContainer implements Serializable
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	protected String listFQN;
+
+	public String getListFQN() {
+		return this.listFQN;
+	}
+
+	public void setListFQN(String listFQN) {
+		this.listFQN = listFQN;
 	}
 
 	protected String localeCode;
@@ -84,16 +84,6 @@ public class EntityContainer implements Serializable
 
 	public void setMasterCatalogId(Integer masterCatalogId) {
 		this.masterCatalogId = masterCatalogId;
-	}
-
-	protected String nameSpace;
-
-	public String getNameSpace() {
-		return this.nameSpace;
-	}
-
-	public void setNameSpace(String nameSpace) {
-		this.nameSpace = nameSpace;
 	}
 
 	protected Integer siteId;
@@ -144,16 +134,6 @@ public class EntityContainer implements Serializable
 
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	protected com.fasterxml.jackson.databind.JsonNode item;
-
-	public com.fasterxml.jackson.databind.JsonNode getItem() {
-		return this.item;
-	}
-
-	public void setItem(com.fasterxml.jackson.databind.JsonNode item) {
-		this.item = item;
 	}
 
 }

@@ -27,19 +27,6 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
-	 */
-	protected Double lossTotal;
-
-	public Double getLossTotal() {
-		return this.lossTotal;
-	}
-
-	public void setLossTotal(Double lossTotal) {
-		this.lossTotal = lossTotal;
-	}
-
-	/**
 	 * The actions a user can perform for the return at this time.
 	 */
 	protected List<String> availableActions;
@@ -334,6 +321,19 @@ public class Return implements Serializable
 
 	public void setWebSessionId(String webSessionId) {
 		this.webSessionId = webSessionId;
+	}
+
+	/**
+	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
+	 */
+	protected Double lossTotal;
+
+	public Double getLossTotal() {
+		return this.lossTotal;
+	}
+
+	public void setLossTotal(Double lossTotal) {
+		this.lossTotal = lossTotal;
 	}
 
 	/**

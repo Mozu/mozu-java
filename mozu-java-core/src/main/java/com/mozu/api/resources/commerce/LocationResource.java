@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Location resource to retrieve details about a location from a Mozu hosted storefront.
  * </summary>
@@ -25,11 +24,12 @@ public class LocationResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public LocationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the location specified in the request.

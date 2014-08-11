@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,11 +24,12 @@ public class EntityContainerResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public EntityContainerResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
@@ -44,7 +44,24 @@ public class EntityContainerResource {
 	 */
 	public com.mozu.api.contracts.mzdb.EntityContainer getEntityContainer(String entityListFullName, String id) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> client = com.mozu.api.clients.platform.entitylists.EntityContainerClient.getEntityContainerClient( entityListFullName,  id);
+		return getEntityContainer( entityListFullName,  id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	EntityContainer entitycontainer = new EntityContainer();
+	 *	EntityContainer entityContainer = entitycontainer.GetEntityContainer( entityListFullName,  id,  responseFields);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @param id 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.mzdb.EntityContainer
+	 * @see com.mozu.api.contracts.mzdb.EntityContainer
+	 */
+	public com.mozu.api.contracts.mzdb.EntityContainer getEntityContainer(String entityListFullName, String id, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> client = com.mozu.api.clients.platform.entitylists.EntityContainerClient.getEntityContainerClient( entityListFullName,  id,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -63,26 +80,27 @@ public class EntityContainerResource {
 	 */
 	public com.mozu.api.contracts.mzdb.EntityContainerCollection getEntityContainers(String entityListFullName) throws Exception
 	{
-		return getEntityContainers( entityListFullName,  null,  null,  null,  null);
+		return getEntityContainers( entityListFullName,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy);
+	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
-	public com.mozu.api.contracts.mzdb.EntityContainerCollection getEntityContainers(String entityListFullName, Integer pageSize, Integer startIndex, String filter, String sortBy) throws Exception
+	public com.mozu.api.contracts.mzdb.EntityContainerCollection getEntityContainers(String entityListFullName, Integer pageSize, Integer startIndex, String filter, String sortBy, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> client = com.mozu.api.clients.platform.entitylists.EntityContainerClient.getEntityContainersClient( entityListFullName,  pageSize,  startIndex,  filter,  sortBy);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> client = com.mozu.api.clients.platform.entitylists.EntityContainerClient.getEntityContainersClient( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Cart Items subresource to manage a collection of items in an active shopping cart.
  * </summary>
@@ -25,11 +24,12 @@ public class CartItemResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CartItemResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a particular cart item by providing the cart item ID.

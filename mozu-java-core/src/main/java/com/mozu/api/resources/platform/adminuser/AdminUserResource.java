@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
  * </summary>
@@ -25,15 +24,16 @@ public class AdminUserResource {
 	///
 	private ApiContext _apiContext;
 
-		public AdminUserResource() 
-	{
-		_apiContext = null;
+
+	public AdminUserResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public AdminUserResource(ApiContext apiContext) 
+public AdminUserResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the specified administrator user account.

@@ -27,6 +27,19 @@ public class Attribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The administrative name of the product attribute as it appears in Mozu Admin.
+	 */
+	protected String adminName;
+
+	public String getAdminName() {
+		return this.adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	/**
 	 * Merchant-defined identifier of the product attribute used to generate the attribute's fully qualified name.
 	 */
 	protected String attributeCode;
@@ -180,19 +193,6 @@ public class Attribute implements Serializable
 
 	public void setValueType(String valueType) {
 		this.valueType = valueType;
-	}
-
-	/**
-	 * The administrative name of the product attribute as it appears in Mozu Admin.
-	 */
-	protected String adminName;
-
-	public String getAdminName() {
-		return this.adminName;
-	}
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
 	}
 
 	/**

@@ -18,6 +18,26 @@ public class Application implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	protected Boolean enabled;
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	protected Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -46,26 +66,6 @@ public class Application implements Serializable
 
 	public void setUiConfigurationUrl(String uiConfigurationUrl) {
 		this.uiConfigurationUrl = uiConfigurationUrl;
-	}
-
-	protected String appId;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-	protected Boolean enabled;
-
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
 	}
 
 	protected List<Capability> capabilities;

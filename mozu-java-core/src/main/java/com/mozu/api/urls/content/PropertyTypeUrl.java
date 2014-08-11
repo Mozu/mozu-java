@@ -43,15 +43,5 @@ public class PropertyTypeUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
-	/**
-	 * Get Resource Url for PropertyValueTypes
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl propertyValueTypesUrl()
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/propertyvaluetypes");
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
 }
 

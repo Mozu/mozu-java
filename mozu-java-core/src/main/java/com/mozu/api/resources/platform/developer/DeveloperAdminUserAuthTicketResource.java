@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this resource to manage authentication tickets for your developer account.
  * </summary>
@@ -25,15 +24,16 @@ public class DeveloperAdminUserAuthTicketResource {
 	///
 	private ApiContext _apiContext;
 
-		public DeveloperAdminUserAuthTicketResource() 
-	{
-		_apiContext = null;
+
+	public DeveloperAdminUserAuthTicketResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public DeveloperAdminUserAuthTicketResource(ApiContext apiContext) 
+public DeveloperAdminUserAuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Generate an authentication ticket for a developer account.

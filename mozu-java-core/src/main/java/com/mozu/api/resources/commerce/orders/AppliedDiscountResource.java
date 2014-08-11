@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this subresource to apply coupons to or remove coupons from an order based on a supplied coupon code.
  * </summary>
@@ -25,11 +24,12 @@ public class AppliedDiscountResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public AppliedDiscountResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Apply a coupon to the order.
