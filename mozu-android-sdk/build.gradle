@@ -32,6 +32,11 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
 
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
 android {
     compileSdkVersion 19
     buildToolsVersion "19.0.0"
