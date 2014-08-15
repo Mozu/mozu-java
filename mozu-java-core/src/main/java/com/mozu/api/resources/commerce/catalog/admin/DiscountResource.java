@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
  * </summary>
@@ -25,25 +24,18 @@ public class DiscountResource {
 	///
 	private ApiContext _apiContext;
 
-	private DataViewMode _dataViewMode;
 
 	public DiscountResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
-		_dataViewMode = DataViewMode.Live;
 	}
 
-	public DiscountResource(ApiContext apiContext, DataViewMode dataViewMode) 
-	{
-		_apiContext = apiContext;
-		_dataViewMode = dataViewMode;
-	}
-		
+	
 	/**
 	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountCollection discountCollection = discount.GetDiscounts(_dataViewMode);
+	 *	DiscountCollection discountCollection = discount.GetDiscounts();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.DiscountCollection
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
@@ -57,7 +49,7 @@ public class DiscountResource {
 	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountCollection discountCollection = discount.GetDiscounts(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	DiscountCollection discountCollection = discount.GetDiscounts( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -69,7 +61,7 @@ public class DiscountResource {
 	 */
 	public com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountsClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,7 +72,7 @@ public class DiscountResource {
 	 * Retrieves the localized content specified for the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent(_dataViewMode,  discountId);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent( discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -95,7 +87,7 @@ public class DiscountResource {
 	 * Retrieves the localized content specified for the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent(_dataViewMode,  discountId,  responseFields);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent( discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -104,7 +96,7 @@ public class DiscountResource {
 	 */
 	public com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(Integer discountId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountContentClient(_dataViewMode,  discountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountContentClient( discountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -115,7 +107,7 @@ public class DiscountResource {
 	 * Retrieves the details of a single discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.GetDiscount(_dataViewMode,  discountId);
+	 *	Discount discount = discount.GetDiscount( discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.Discount
@@ -130,7 +122,7 @@ public class DiscountResource {
 	 * Retrieves the details of a single discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.GetDiscount(_dataViewMode,  discountId,  responseFields);
+	 *	Discount discount = discount.GetDiscount( discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -139,7 +131,7 @@ public class DiscountResource {
 	 */
 	public com.mozu.api.contracts.productadmin.Discount getDiscount(Integer discountId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountClient(_dataViewMode,  discountId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.getDiscountClient( discountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -150,7 +142,7 @@ public class DiscountResource {
 	 * Generates a random code for a coupon.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	string string = discount.GenerateRandomCoupon(_dataViewMode);
+	 *	string string = discount.GenerateRandomCoupon();
 	 * </code></pre></p>
 	 * @return string
 	 * @see string
@@ -164,7 +156,7 @@ public class DiscountResource {
 	 * Generates a random code for a coupon.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	string string = discount.GenerateRandomCoupon(_dataViewMode,  responseFields);
+	 *	string string = discount.GenerateRandomCoupon( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return string
@@ -172,7 +164,7 @@ public class DiscountResource {
 	 */
 	public String generateRandomCoupon(String responseFields) throws Exception
 	{
-		MozuClient<String> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.generateRandomCouponClient(_dataViewMode,  responseFields);
+		MozuClient<String> client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.generateRandomCouponClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

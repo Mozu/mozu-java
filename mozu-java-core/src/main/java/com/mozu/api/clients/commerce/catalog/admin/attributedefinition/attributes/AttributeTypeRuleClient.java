@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Type rules are subresources of product attributes which could be specifications that can be shared across products in a store or assigned to specific products. Attribute type rules provide definitions of how attribute types will appear on the user interface.
  * </summary>
@@ -23,7 +22,7 @@ public class AttributeTypeRuleClient {
 	/**
 	 * Retrieves a list of attribute type rules according to optional filter criteria and sort options. Attribute type rules help drive the behavior of attributes on a storefront page.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient(dataViewMode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeTypeRuleCollection attributeTypeRuleCollection = client.Result();
@@ -32,15 +31,15 @@ public class AttributeTypeRuleClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient() throws Exception
 	{
-		return getAttributeTypeRulesClient(dataViewMode,  null,  null,  null,  null,  null);
+		return getAttributeTypeRulesClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of attribute type rules according to optional filter criteria and sort options. Attribute type rules help drive the behavior of attributes on a storefront page.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient=GetAttributeTypeRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeTypeRuleCollection attributeTypeRuleCollection = client.Result();
@@ -54,7 +53,7 @@ public class AttributeTypeRuleClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> getAttributeTypeRulesClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeTypeRuleUrl.getAttributeTypeRulesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
@@ -62,7 +61,6 @@ public class AttributeTypeRuleClient {
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

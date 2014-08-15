@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document publishing subresource to manage and publish document drafts in the Content service.
  * </summary>
@@ -25,25 +24,18 @@ public class DocumentDraftSummaryResource {
 	///
 	private ApiContext _apiContext;
 
-	private DataViewMode _dataViewMode;
 
 	public DocumentDraftSummaryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
-		_dataViewMode = DataViewMode.Live;
 	}
 
-	public DocumentDraftSummaryResource(ApiContext apiContext, DataViewMode dataViewMode) 
-	{
-		_apiContext = apiContext;
-		_dataViewMode = dataViewMode;
-	}
-		
+	
 	/**
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries(_dataViewMode);
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
@@ -57,7 +49,7 @@ public class DocumentDraftSummaryResource {
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries(_dataViewMode,  pageSize,  startIndex,  documentLists,  responseFields);
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
 	 * </code></pre></p>
 	 * @param documentLists Lists that contain the document drafts.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -68,7 +60,7 @@ public class DocumentDraftSummaryResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(Integer pageSize, Integer startIndex, String documentLists, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.DocumentDraftSummaryClient.listDocumentDraftSummariesClient(_dataViewMode,  pageSize,  startIndex,  documentLists,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.DocumentDraftSummaryClient.listDocumentDraftSummariesClient( pageSize,  startIndex,  documentLists,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -43,7 +43,7 @@ public class ViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	View view = new View();
-	 *	DocumentCollection documentCollection = view.GetViewDocuments(_dataViewMode,  documentListName,  viewName);
+	 *	DocumentCollection documentCollection = view.GetViewDocuments( documentListName,  viewName);
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @param viewName 
@@ -59,7 +59,7 @@ public class ViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	View view = new View();
-	 *	DocumentCollection documentCollection = view.GetViewDocuments(_dataViewMode,  documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+	 *	DocumentCollection documentCollection = view.GetViewDocuments( documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @param filter 
@@ -73,7 +73,7 @@ public class ViewResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentCollection getViewDocuments(String documentListName, String viewName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.ViewClient.getViewDocumentsClient(_dataViewMode,  documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.ViewClient.getViewDocumentsClient( documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -26,6 +26,39 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Short description of the product in the language specified in the locale code for the storefront.
+	 */
+	protected String description;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	protected Boolean discountsRestricted;
+
+	public Boolean getDiscountsRestricted() {
+		return this.discountsRestricted;
+	}
+
+	public void setDiscountsRestricted(Boolean discountsRestricted) {
+		this.discountsRestricted = discountsRestricted;
+	}
+
+	protected DateTime discountsRestrictedEndDate;
+
+	public DateTime getDiscountsRestrictedEndDate() {
+		return this.discountsRestrictedEndDate;
+	}
+
+	public void setDiscountsRestrictedEndDate(DateTime discountsRestrictedEndDate) {
+		this.discountsRestrictedEndDate = discountsRestrictedEndDate;
+	}
+
 	protected DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
@@ -215,39 +248,6 @@ public class Product implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
-	}
-
-	/**
-	 * Short description of the product in the language specified in the locale code for the storefront.
-	 */
-	protected String description;
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	protected Boolean discountsRestricted;
-
-	public Boolean getDiscountsRestricted() {
-		return this.discountsRestricted;
-	}
-
-	public void setDiscountsRestricted(Boolean discountsRestricted) {
-		this.discountsRestricted = discountsRestricted;
-	}
-
-	protected DateTime discountsRestrictedEndDate;
-
-	public DateTime getDiscountsRestrictedEndDate() {
-		return this.discountsRestrictedEndDate;
-	}
-
-	public void setDiscountsRestrictedEndDate(DateTime discountsRestrictedEndDate) {
-		this.discountsRestrictedEndDate = discountsRestrictedEndDate;
 	}
 
 	/**

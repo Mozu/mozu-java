@@ -141,7 +141,7 @@ public class DocumentClient {
 	/**
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient( document,  documentListName);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -152,15 +152,15 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName) throws Exception
 	{
-		return createDocumentClient( document,  documentListName,  null);
+		return createDocumentClient(dataViewMode,  document,  documentListName,  null);
 	}
 
 	/**
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient( document,  documentListName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
@@ -172,7 +172,7 @@ public class DocumentClient {
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.contracts.content.Document document, String documentListName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> createDocumentClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.createDocumentUrl(documentListName, responseFields);
 		String verb = "POST";
@@ -181,6 +181,7 @@ public class DocumentClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(document);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

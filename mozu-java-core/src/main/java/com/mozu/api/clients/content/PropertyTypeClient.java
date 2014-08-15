@@ -13,6 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the property types subresource to manage content properties.
  * </summary>
@@ -22,7 +23,7 @@ public class PropertyTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient();
+	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyTypeCollection propertyTypeCollection = client.Result();
@@ -30,15 +31,15 @@ public class PropertyTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyTypeCollection>
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> getPropertyTypesClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> getPropertyTypesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getPropertyTypesClient( null,  null,  null);
+		return getPropertyTypesClient(dataViewMode,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient( pageSize,  startIndex,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient=GetPropertyTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyTypeCollection propertyTypeCollection = client.Result();
@@ -49,7 +50,7 @@ public class PropertyTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyTypeCollection>
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> getPropertyTypesClient(Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> getPropertyTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.getPropertyTypesUrl(pageSize, responseFields, startIndex);
 		String verb = "GET";
@@ -57,6 +58,7 @@ public class PropertyTypeClient {
 		MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -64,7 +66,7 @@ public class PropertyTypeClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient( propertyTypeName);
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient(dataViewMode,  propertyTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
@@ -73,15 +75,15 @@ public class PropertyTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.PropertyType> getPropertyTypeClient(String propertyTypeName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> getPropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName) throws Exception
 	{
-		return getPropertyTypeClient( propertyTypeName,  null);
+		return getPropertyTypeClient(dataViewMode,  propertyTypeName,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient( propertyTypeName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=GetPropertyTypeClient(dataViewMode,  propertyTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
@@ -91,7 +93,7 @@ public class PropertyTypeClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.PropertyType> getPropertyTypeClient(String propertyTypeName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> getPropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.getPropertyTypeUrl(propertyTypeName, responseFields);
 		String verb = "GET";
@@ -99,6 +101,7 @@ public class PropertyTypeClient {
 		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

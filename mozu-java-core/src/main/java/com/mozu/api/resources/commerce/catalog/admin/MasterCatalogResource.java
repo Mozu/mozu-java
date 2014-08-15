@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Master Catalog resource to view details of the master catalogs associated with a tenant and to manage the product publishing mode for each master catalog.
  * </summary>
@@ -25,20 +24,13 @@ public class MasterCatalogResource {
 	///
 	private ApiContext _apiContext;
 
-	private DataViewMode _dataViewMode;
 
 	public MasterCatalogResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
-		_dataViewMode = DataViewMode.Live;
 	}
 
-	public MasterCatalogResource(ApiContext apiContext, DataViewMode dataViewMode) 
-	{
-		_apiContext = apiContext;
-		_dataViewMode = dataViewMode;
-	}
-		
+	
 	/**
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
@@ -76,7 +68,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(_dataViewMode,  masterCatalogId);
+	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId);
 	 * </code></pre></p>
 	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
@@ -91,7 +83,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog(_dataViewMode,  masterCatalogId,  responseFields);
+	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId,  responseFields);
 	 * </code></pre></p>
 	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
 	 * @param responseFields 
@@ -100,7 +92,7 @@ public class MasterCatalogResource {
 	 */
 	public com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(Integer masterCatalogId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogClient(_dataViewMode,  masterCatalogId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> client = com.mozu.api.clients.commerce.catalog.admin.MasterCatalogClient.getMasterCatalogClient( masterCatalogId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

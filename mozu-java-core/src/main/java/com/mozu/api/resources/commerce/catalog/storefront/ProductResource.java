@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Storefront Products  resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
  * </summary>
@@ -24,18 +25,25 @@ public class ProductResource {
 	///
 	private ApiContext _apiContext;
 
+	private DataViewMode _dataViewMode;
 
 	public ProductResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
 
-	
+	public ProductResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of products that appear on the storefront according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.GetProducts();
+	 *	ProductCollection productCollection = product.GetProducts(_dataViewMode);
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
@@ -49,7 +57,7 @@ public class ProductResource {
 	 * Retrieves a list of products that appear on the storefront according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.GetProducts( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+	 *	ProductCollection productCollection = product.GetProducts(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -61,7 +69,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -72,7 +80,7 @@ public class ProductResource {
 	 * Retrieves the active inventory level information associated with the product or location specified in the request.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventory( productCode);
+	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventory(_dataViewMode,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
@@ -87,7 +95,7 @@ public class ProductResource {
 	 * Retrieves the active inventory level information associated with the product or location specified in the request.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventory( productCode,  locationCodes,  responseFields);
+	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventory(_dataViewMode,  productCode,  locationCodes,  responseFields);
 	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -97,7 +105,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.LocationInventoryCollection getProductInventory(String productCode, String locationCodes, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductInventoryClient( productCode,  locationCodes,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductInventoryClient(_dataViewMode,  productCode,  locationCodes,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -108,7 +116,7 @@ public class ProductResource {
 	 * Retrieves information about a single product given its product code.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.GetProduct( productCode);
+	 *	Product product = product.GetProduct(_dataViewMode,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productruntime.Product
@@ -123,7 +131,7 @@ public class ProductResource {
 	 * Retrieves information about a single product given its product code.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.GetProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  responseFields);
+	 *	Product product = product.GetProduct(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  responseFields);
 	 * </code></pre></p>
 	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -135,7 +143,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -270,7 +278,7 @@ public class ProductResource {
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventories( query);
+	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventories(_dataViewMode,  query);
 	 * </code></pre></p>
 	 * @param query 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
@@ -286,7 +294,7 @@ public class ProductResource {
 	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventories( query,  responseFields);
+	 *	LocationInventoryCollection locationInventoryCollection = product.GetProductInventories(_dataViewMode,  query,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param query 
@@ -296,7 +304,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.LocationInventoryCollection getProductInventories(com.mozu.api.contracts.productruntime.LocationInventoryQuery query, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductInventoriesClient( query,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductInventoriesClient(_dataViewMode,  query,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

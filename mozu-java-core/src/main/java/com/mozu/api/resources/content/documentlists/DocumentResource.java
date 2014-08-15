@@ -139,7 +139,7 @@ public class DocumentResource {
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.CreateDocument( document,  documentListName);
+	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName);
 	 * </code></pre></p>
 	 * @param documentListName The descriptive alphanumeric document list name being created.
 	 * @param document The descriptive name of the newly created document.
@@ -156,7 +156,7 @@ public class DocumentResource {
 	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.CreateDocument( document,  documentListName,  responseFields);
+	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The descriptive alphanumeric document list name being created.
 	 * @param responseFields 
@@ -167,7 +167,7 @@ public class DocumentResource {
 	 */
 	public com.mozu.api.contracts.content.Document createDocument(com.mozu.api.contracts.content.Document document, String documentListName, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.createDocumentClient( document,  documentListName,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.createDocumentClient(_dataViewMode,  document,  documentListName,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

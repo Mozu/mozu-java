@@ -184,7 +184,7 @@ public class ProductClient {
 	/**
 	 * Creates a new product definition in the specified master catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=AddProductClient( product);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=AddProductClient(dataViewMode,  product);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
@@ -194,15 +194,15 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.contracts.productadmin.Product product) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product) throws Exception
 	{
-		return addProductClient( product,  null);
+		return addProductClient(dataViewMode,  product,  null);
 	}
 
 	/**
 	 * Creates a new product definition in the specified master catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=AddProductClient( product,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=AddProductClient(dataViewMode,  product,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
@@ -213,7 +213,7 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.contracts.productadmin.Product product, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductUrl(responseFields);
 		String verb = "POST";
@@ -222,6 +222,7 @@ public class ProductClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(product);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -229,7 +230,7 @@ public class ProductClient {
 	/**
 	 * Associates a new product defined in the master catalog with a specific catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=AddProductInCatalogClient( productInCatalogInfoIn,  productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=AddProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
@@ -240,15 +241,15 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode) throws Exception
 	{
-		return addProductInCatalogClient( productInCatalogInfoIn,  productCode,  null);
+		return addProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  null);
 	}
 
 	/**
 	 * Associates a new product defined in the master catalog with a specific catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=AddProductInCatalogClient( productInCatalogInfoIn,  productCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=AddProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
@@ -260,7 +261,7 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductInCatalogUrl(productCode, responseFields);
 		String verb = "POST";
@@ -269,6 +270,7 @@ public class ProductClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -276,7 +278,7 @@ public class ProductClient {
 	/**
 	 * Updates the properties of a product specific to each catalog associated with the product.
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient=UpdateProductInCatalogsClient( productInCatalogsIn,  productCode);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient=UpdateProductInCatalogsClient(dataViewMode,  productInCatalogsIn,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
@@ -287,7 +289,7 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> updateProductInCatalogsClient(List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> updateProductInCatalogsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogsUrl(productCode);
 		String verb = "PUT";
@@ -296,6 +298,7 @@ public class ProductClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogsIn);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -303,7 +306,7 @@ public class ProductClient {
 	/**
 	 * Updates one or more properties of a product associated with a specific catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=UpdateProductInCatalogClient( productInCatalogInfoIn,  productCode,  catalogId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=UpdateProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
@@ -315,15 +318,15 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId) throws Exception
 	{
-		return updateProductInCatalogClient( productInCatalogInfoIn,  productCode,  catalogId,  null);
+		return updateProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  null);
 	}
 
 	/**
 	 * Updates one or more properties of a product associated with a specific catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=UpdateProductInCatalogClient( productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=UpdateProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
@@ -336,7 +339,7 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogUrl(catalogId, productCode, responseFields);
 		String verb = "PUT";
@@ -345,6 +348,7 @@ public class ProductClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -352,7 +356,7 @@ public class ProductClient {
 	/**
 	 * Updates one or more properties of a product definition in a master catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient( product,  productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient(dataViewMode,  product,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
@@ -363,15 +367,15 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.contracts.productadmin.Product product, String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode) throws Exception
 	{
-		return updateProductClient( product,  productCode,  null);
+		return updateProductClient(dataViewMode,  product,  productCode,  null);
 	}
 
 	/**
 	 * Updates one or more properties of a product definition in a master catalog.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient( product,  productCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient(dataViewMode,  product,  productCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
@@ -383,7 +387,7 @@ public class ProductClient {
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.contracts.productadmin.Product product, String productCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductUrl(productCode, responseFields);
 		String verb = "PUT";
@@ -392,6 +396,7 @@ public class ProductClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(product);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -399,20 +404,21 @@ public class ProductClient {
 	/**
 	 * Deletes the specified product from a master catalog.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteProductClient( productCode);
+	 * MozuClient mozuClient=DeleteProductClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteProductClient(String productCode) throws Exception
+	public static MozuClient deleteProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductUrl(productCode);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -420,7 +426,7 @@ public class ProductClient {
 	/**
 	 * Removes the product association defined for a specific catalog.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteProductInCatalogClient( productCode,  catalogId);
+	 * MozuClient mozuClient=DeleteProductInCatalogClient(dataViewMode,  productCode,  catalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -428,13 +434,14 @@ public class ProductClient {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteProductInCatalogClient(String productCode, Integer catalogId) throws Exception
+	public static MozuClient deleteProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductInCatalogUrl(catalogId, productCode);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
