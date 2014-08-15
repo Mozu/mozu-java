@@ -23,7 +23,7 @@ public class ViewClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetViewDocumentsClient(dataViewMode,  documentListName,  viewName);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetViewDocumentsClient( documentListName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentCollection documentCollection = client.Result();
@@ -33,15 +33,15 @@ public class ViewClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentCollection>
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentCollection> getViewDocumentsClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String viewName) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentCollection> getViewDocumentsClient(String documentListName, String viewName) throws Exception
 	{
-		return getViewDocumentsClient(dataViewMode,  documentListName,  viewName,  null,  null,  null,  null,  null);
+		return getViewDocumentsClient( documentListName,  viewName,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetViewDocumentsClient(dataViewMode,  documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient=GetViewDocumentsClient( documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentCollection documentCollection = client.Result();
@@ -56,7 +56,7 @@ public class ViewClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentCollection>
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentCollection> getViewDocumentsClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String viewName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentCollection> getViewDocumentsClient(String documentListName, String viewName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.ViewUrl.getViewDocumentsUrl(documentListName, filter, pageSize, responseFields, sortBy, startIndex, viewName);
 		String verb = "GET";
@@ -64,7 +64,6 @@ public class ViewClient {
 		MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

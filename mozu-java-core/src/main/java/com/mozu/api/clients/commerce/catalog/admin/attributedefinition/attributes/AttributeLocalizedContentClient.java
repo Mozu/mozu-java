@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * 
  * </summary>
@@ -23,7 +22,7 @@ public class AttributeLocalizedContentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient=GetAttributeLocalizedContentsClient(dataViewMode,  attributeFQN);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient=GetAttributeLocalizedContentsClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
@@ -33,7 +32,7 @@ public class AttributeLocalizedContentClient {
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> getAttributeLocalizedContentsClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> getAttributeLocalizedContentsClient(String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.getAttributeLocalizedContentsUrl(attributeFQN);
 		String verb = "GET";
@@ -41,7 +40,6 @@ public class AttributeLocalizedContentClient {
 		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -49,7 +47,7 @@ public class AttributeLocalizedContentClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient(dataViewMode,  attributeFQN,  localeCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
@@ -60,15 +58,15 @@ public class AttributeLocalizedContentClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String localeCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContentClient(String attributeFQN, String localeCode) throws Exception
 	{
-		return getAttributeLocalizedContentClient(dataViewMode,  attributeFQN,  localeCode,  null);
+		return getAttributeLocalizedContentClient( attributeFQN,  localeCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient(dataViewMode,  attributeFQN,  localeCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
@@ -80,7 +78,7 @@ public class AttributeLocalizedContentClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String localeCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> getAttributeLocalizedContentClient(String attributeFQN, String localeCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.getAttributeLocalizedContentUrl(attributeFQN, localeCode, responseFields);
 		String verb = "GET";
@@ -88,7 +86,6 @@ public class AttributeLocalizedContentClient {
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

@@ -113,7 +113,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList( list);
+	 *	DocumentList documentList = documentlist.CreateDocumentList(_dataViewMode,  list);
 	 * </code></pre></p>
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
@@ -129,7 +129,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList( list,  responseFields);
+	 *	DocumentList documentList = documentlist.CreateDocumentList(_dataViewMode,  list,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param list 
@@ -139,7 +139,7 @@ public class DocumentListResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentList createDocumentList(com.mozu.api.contracts.content.DocumentList list, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.createDocumentListClient( list,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentList> client = com.mozu.api.clients.content.DocumentListClient.createDocumentListClient(_dataViewMode,  list,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

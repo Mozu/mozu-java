@@ -102,7 +102,7 @@ public class ProductTypePropertyResource {
 	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty( attributeInProductType,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty(_dataViewMode,  attributeInProductType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -120,7 +120,7 @@ public class ProductTypePropertyResource {
 	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty( attributeInProductType,  productTypeId,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty(_dataViewMode,  attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param responseFields 
@@ -132,7 +132,7 @@ public class ProductTypePropertyResource {
 	 */
 	public com.mozu.api.contracts.productadmin.AttributeInProductType addProperty(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.addPropertyClient( attributeInProductType,  productTypeId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.addPropertyClient(_dataViewMode,  attributeInProductType,  productTypeId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -143,7 +143,7 @@ public class ProductTypePropertyResource {
 	 * Updates the definition of a property attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty( attributeInProductType,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -162,7 +162,7 @@ public class ProductTypePropertyResource {
 	 * Updates the definition of a property attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -175,7 +175,7 @@ public class ProductTypePropertyResource {
 	 */
 	public com.mozu.api.contracts.productadmin.AttributeInProductType updateProperty(com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.updatePropertyClient( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeInProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.updatePropertyClient(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -186,7 +186,7 @@ public class ProductTypePropertyResource {
 	 * Removes a property attribute previously defined for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	producttypeproperty.DeleteProperty( productTypeId,  attributeFQN);
+	 *	producttypeproperty.DeleteProperty(_dataViewMode,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -195,7 +195,7 @@ public class ProductTypePropertyResource {
 	 */
 	public void deleteProperty(Integer productTypeId, String attributeFQN) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.deletePropertyClient( productTypeId,  attributeFQN);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.deletePropertyClient(_dataViewMode,  productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -25,25 +24,18 @@ public class CategoryResource {
 	///
 	private ApiContext _apiContext;
 
-	private DataViewMode _dataViewMode;
 
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
-		_dataViewMode = DataViewMode.Live;
 	}
 
-	public CategoryResource(ApiContext apiContext, DataViewMode dataViewMode) 
-	{
-		_apiContext = apiContext;
-		_dataViewMode = dataViewMode;
-	}
-		
+	
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(_dataViewMode);
+	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
@@ -57,7 +49,7 @@ public class CategoryResource {
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -69,7 +61,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,7 +72,7 @@ public class CategoryResource {
 	 * Retrieves the list of subcategories within a category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories(_dataViewMode,  categoryId);
+	 *	CategoryCollection categoryCollection = category.GetChildCategories( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
 	 * @return com.mozu.api.contracts.productadmin.CategoryCollection
@@ -95,7 +87,7 @@ public class CategoryResource {
 	 * Retrieves the list of subcategories within a category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories(_dataViewMode,  categoryId,  responseFields);
+	 *	CategoryCollection categoryCollection = category.GetChildCategories( categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
 	 * @param responseFields 
@@ -104,7 +96,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(Integer categoryId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getChildCategoriesClient(_dataViewMode,  categoryId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getChildCategoriesClient( categoryId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -115,7 +107,7 @@ public class CategoryResource {
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory(_dataViewMode,  categoryId);
+	 *	Category category = category.GetCategory( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.Category
@@ -130,7 +122,7 @@ public class CategoryResource {
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory(_dataViewMode,  categoryId,  responseFields);
+	 *	Category category = category.GetCategory( categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @param responseFields 
@@ -139,7 +131,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.Category getCategory(Integer categoryId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient(_dataViewMode,  categoryId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient( categoryId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

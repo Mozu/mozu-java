@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Facets resource to manage the facets shoppers use to filter product display results on a storefront. Facets can include categories, product attributes, or prices, and use either a range of values or discrete values.
  * </summary>
@@ -23,7 +22,7 @@ public class FacetClient {
 	/**
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient(dataViewMode,  facetId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient( facetId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
@@ -32,15 +31,15 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(com.mozu.api.DataViewMode dataViewMode, Integer facetId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(Integer facetId) throws Exception
 	{
-		return getFacetClient(dataViewMode,  facetId,  null,  null);
+		return getFacetClient( facetId,  null,  null);
 	}
 
 	/**
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient(dataViewMode,  facetId,  validate,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient=GetFacetClient( facetId,  validate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
@@ -51,7 +50,7 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(com.mozu.api.DataViewMode dataViewMode, Integer facetId, Boolean validate, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Facet> getFacetClient(Integer facetId, Boolean validate, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetUrl(facetId, responseFields, validate);
 		String verb = "GET";
@@ -59,7 +58,6 @@ public class FacetClient {
 		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -67,7 +65,7 @@ public class FacetClient {
 	/**
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient(dataViewMode,  categoryId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient( categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
@@ -76,15 +74,15 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(Integer categoryId) throws Exception
 	{
-		return getFacetCategoryListClient(dataViewMode,  categoryId,  null,  null,  null);
+		return getFacetCategoryListClient( categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient(dataViewMode,  categoryId,  includeAvailable,  validate,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient=GetFacetCategoryListClient( categoryId,  includeAvailable,  validate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
@@ -96,7 +94,7 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.FacetSet> getFacetCategoryListClient(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryId, includeAvailable, responseFields, validate);
 		String verb = "GET";
@@ -104,7 +102,6 @@ public class FacetClient {
 		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

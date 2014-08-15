@@ -119,7 +119,7 @@ public class ProductTypeResource {
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.AddProductType( productType);
+	 *	ProductType productType = producttype.AddProductType(_dataViewMode,  productType);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productType Properties of the product type to create.
@@ -136,7 +136,7 @@ public class ProductTypeResource {
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.AddProductType( productType,  responseFields);
+	 *	ProductType productType = producttype.AddProductType(_dataViewMode,  productType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
@@ -147,7 +147,7 @@ public class ProductTypeResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductType addProductType(com.mozu.api.contracts.productadmin.ProductType productType, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.addProductTypeClient( productType,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.addProductTypeClient(_dataViewMode,  productType,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -158,7 +158,7 @@ public class ProductTypeResource {
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.UpdateProductType( productType,  productTypeId);
+	 *	ProductType productType = producttype.UpdateProductType(_dataViewMode,  productType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to update.
 	 * @param dataViewMode DataViewMode
@@ -176,7 +176,7 @@ public class ProductTypeResource {
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.UpdateProductType( productType,  productTypeId,  responseFields);
+	 *	ProductType productType = producttype.UpdateProductType(_dataViewMode,  productType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to update.
 	 * @param responseFields 
@@ -188,7 +188,7 @@ public class ProductTypeResource {
 	 */
 	public com.mozu.api.contracts.productadmin.ProductType updateProductType(com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.updateProductTypeClient( productType,  productTypeId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductType> client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.updateProductTypeClient(_dataViewMode,  productType,  productTypeId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -199,7 +199,7 @@ public class ProductTypeResource {
 	 * Deletes the product type by providing the product type ID.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	producttype.DeleteProductType( productTypeId);
+	 *	producttype.DeleteProductType(_dataViewMode,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to delete.
 	 * @param dataViewMode DataViewMode
@@ -207,7 +207,7 @@ public class ProductTypeResource {
 	 */
 	public void deleteProductType(Integer productTypeId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.deleteProductTypeClient( productTypeId);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.deleteProductTypeClient(_dataViewMode,  productTypeId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

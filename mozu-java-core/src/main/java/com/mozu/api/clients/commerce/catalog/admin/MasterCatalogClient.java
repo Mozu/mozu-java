@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Master Catalog resource to view details of the master catalogs associated with a tenant and to manage the product publishing mode for each master catalog.
  * </summary>
@@ -63,7 +62,7 @@ public class MasterCatalogClient {
 	/**
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient(dataViewMode,  masterCatalogId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient( masterCatalogId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
@@ -72,15 +71,15 @@ public class MasterCatalogClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(Integer masterCatalogId) throws Exception
 	{
-		return getMasterCatalogClient(dataViewMode,  masterCatalogId,  null);
+		return getMasterCatalogClient( masterCatalogId,  null);
 	}
 
 	/**
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient(dataViewMode,  masterCatalogId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient=GetMasterCatalogClient( masterCatalogId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
@@ -90,7 +89,7 @@ public class MasterCatalogClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> getMasterCatalogClient(Integer masterCatalogId, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.MasterCatalogUrl.getMasterCatalogUrl(masterCatalogId, responseFields);
 		String verb = "GET";
@@ -98,7 +97,6 @@ public class MasterCatalogClient {
 		MozuClient<com.mozu.api.contracts.productadmin.MasterCatalog> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

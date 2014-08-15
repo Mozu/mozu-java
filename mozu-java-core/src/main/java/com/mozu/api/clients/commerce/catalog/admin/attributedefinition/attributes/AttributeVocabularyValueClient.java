@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Vocabulary values are predefined for an attribute.
  * </summary>
@@ -23,7 +22,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient(dataViewMode,  attributeFQN);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -33,7 +32,7 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> getAttributeVocabularyValuesClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> getAttributeVocabularyValuesClient(String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "GET";
@@ -41,7 +40,6 @@ public class AttributeVocabularyValueClient {
 		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -49,7 +47,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=GetAttributeVocabularyValueLocalizedContentsClient(dataViewMode,  attributeFQN,  value);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=GetAttributeVocabularyValueLocalizedContentsClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
@@ -60,7 +58,7 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> getAttributeVocabularyValueLocalizedContentsClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> getAttributeVocabularyValueLocalizedContentsClient(String attributeFQN, String value) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentsUrl(attributeFQN, value);
 		String verb = "GET";
@@ -68,7 +66,6 @@ public class AttributeVocabularyValueClient {
 		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -76,7 +73,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient(dataViewMode,  attributeFQN,  value,  localeCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
@@ -88,15 +85,15 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value, String localeCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode) throws Exception
 	{
-		return getAttributeVocabularyValueLocalizedContentClient(dataViewMode,  attributeFQN,  value,  localeCode,  null);
+		return getAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient(dataViewMode,  attributeFQN,  value,  localeCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
@@ -109,7 +106,7 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value, String localeCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, responseFields, value);
 		String verb = "GET";
@@ -117,7 +114,6 @@ public class AttributeVocabularyValueClient {
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -125,7 +121,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient(dataViewMode,  attributeFQN,  value);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -136,15 +132,15 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(String attributeFQN, String value) throws Exception
 	{
-		return getAttributeVocabularyValueClient(dataViewMode,  attributeFQN,  value,  null);
+		return getAttributeVocabularyValueClient( attributeFQN,  value,  null);
 	}
 
 	/**
 	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient(dataViewMode,  attributeFQN,  value,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -156,7 +152,7 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(String attributeFQN, String value, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueUrl(attributeFQN, responseFields, value);
 		String verb = "GET";
@@ -164,7 +160,6 @@ public class AttributeVocabularyValueClient {
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

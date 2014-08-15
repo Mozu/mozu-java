@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Facets resource to manage the facets shoppers use to filter product display results on a storefront. Facets can include categories, product attributes, or prices, and use either a range of values or discrete values.
  * </summary>
@@ -25,25 +24,18 @@ public class FacetResource {
 	///
 	private ApiContext _apiContext;
 
-	private DataViewMode _dataViewMode;
 
 	public FacetResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
-		_dataViewMode = DataViewMode.Live;
 	}
 
-	public FacetResource(ApiContext apiContext, DataViewMode dataViewMode) 
-	{
-		_apiContext = apiContext;
-		_dataViewMode = dataViewMode;
-	}
-		
+	
 	/**
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.GetFacet(_dataViewMode,  facetId);
+	 *	Facet facet = facet.GetFacet( facetId);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.Facet
@@ -58,7 +50,7 @@ public class FacetResource {
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.GetFacet(_dataViewMode,  facetId,  validate,  responseFields);
+	 *	Facet facet = facet.GetFacet( facetId,  validate,  responseFields);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @param responseFields 
@@ -68,7 +60,7 @@ public class FacetResource {
 	 */
 	public com.mozu.api.contracts.productadmin.Facet getFacet(Integer facetId, Boolean validate, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Facet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetClient(_dataViewMode,  facetId,  validate,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.Facet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetClient( facetId,  validate,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -79,7 +71,7 @@ public class FacetResource {
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.GetFacetCategoryList(_dataViewMode,  categoryId);
+	 *	FacetSet facetSet = facet.GetFacetCategoryList( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
@@ -94,7 +86,7 @@ public class FacetResource {
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.GetFacetCategoryList(_dataViewMode,  categoryId,  includeAvailable,  validate,  responseFields);
+	 *	FacetSet facetSet = facet.GetFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
@@ -105,7 +97,7 @@ public class FacetResource {
 	 */
 	public com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetCategoryListClient(_dataViewMode,  categoryId,  includeAvailable,  validate,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> client = com.mozu.api.clients.commerce.catalog.admin.FacetClient.getFacetCategoryListClient( categoryId,  includeAvailable,  validate,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

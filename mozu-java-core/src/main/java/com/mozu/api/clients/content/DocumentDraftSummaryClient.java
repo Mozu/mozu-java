@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document publishing subresource to manage and publish document drafts in the Content service.
  * </summary>
@@ -23,7 +22,7 @@ public class DocumentDraftSummaryClient {
 	/**
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=ListDocumentDraftSummariesClient(dataViewMode);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=ListDocumentDraftSummariesClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
@@ -31,15 +30,15 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> listDocumentDraftSummariesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> listDocumentDraftSummariesClient() throws Exception
 	{
-		return listDocumentDraftSummariesClient(dataViewMode,  null,  null,  null,  null);
+		return listDocumentDraftSummariesClient( null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=ListDocumentDraftSummariesClient(dataViewMode,  pageSize,  startIndex,  documentLists,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=ListDocumentDraftSummariesClient( pageSize,  startIndex,  documentLists,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
@@ -51,7 +50,7 @@ public class DocumentDraftSummaryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> listDocumentDraftSummariesClient(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String documentLists, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> listDocumentDraftSummariesClient(Integer pageSize, Integer startIndex, String documentLists, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.DocumentDraftSummaryUrl.listDocumentDraftSummariesUrl(documentLists, pageSize, responseFields, startIndex);
 		String verb = "GET";
@@ -59,7 +58,6 @@ public class DocumentDraftSummaryClient {
 		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

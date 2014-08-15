@@ -119,7 +119,7 @@ public class ProductReservationResource {
 	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations( productReservations);
+	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations Details of the product reservations to add.
@@ -136,7 +136,7 @@ public class ProductReservationResource {
 	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations( productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
@@ -147,7 +147,7 @@ public class ProductReservationResource {
 	 */
 	public List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.addProductReservationsClient( productReservations,  skipInventoryCheck);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.addProductReservationsClient(_dataViewMode,  productReservations,  skipInventoryCheck);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -158,7 +158,7 @@ public class ProductReservationResource {
 	 * Commits a product reservation to decrement the product's inventory by the quantity specified then release the reservation once the order process completed successfully.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.CommitReservations( productReservations);
+	 *	productreservation.CommitReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations List of unique identifiers of the reservations to commit.
@@ -167,7 +167,7 @@ public class ProductReservationResource {
 	 */
 	public void commitReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.commitReservationsClient( productReservations);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.commitReservationsClient(_dataViewMode,  productReservations);
 		client.setContext(_apiContext);
 		client.executeRequest();
 
@@ -177,7 +177,7 @@ public class ProductReservationResource {
 	 * Updates an existing product reservation for a product.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations( productReservations);
+	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations Properties of the product reservations to update.
@@ -194,7 +194,7 @@ public class ProductReservationResource {
 	 * Updates an existing product reservation for a product.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations( productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
 	 * @param dataViewMode DataViewMode
@@ -205,7 +205,7 @@ public class ProductReservationResource {
 	 */
 	public List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.updateProductReservationsClient( productReservations,  skipInventoryCheck);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.updateProductReservationsClient(_dataViewMode,  productReservations,  skipInventoryCheck);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -216,7 +216,7 @@ public class ProductReservationResource {
 	 * Deletes a product reservation. For example, delete a reservation when an order is not processed to return the product quantity back to inventory.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.DeleteProductReservation( productReservationId);
+	 *	productreservation.DeleteProductReservation(_dataViewMode,  productReservationId);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the reservation.
 	 * @param dataViewMode DataViewMode
@@ -224,7 +224,7 @@ public class ProductReservationResource {
 	 */
 	public void deleteProductReservation(Integer productReservationId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.deleteProductReservationClient( productReservationId);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.deleteProductReservationClient(_dataViewMode,  productReservationId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 
