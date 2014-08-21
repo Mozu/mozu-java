@@ -64,7 +64,7 @@ public class Crypto {
                 body).equals(apiContext.getHMACSha256())) {
             isValid = true;
         } else {
-            StringBuilder msg = new StringBuilder ("Order is not authorized.");
+            StringBuilder msg = new StringBuilder ("Request is not authorized.");
             logger.warn(msg.toString());
         }
         
