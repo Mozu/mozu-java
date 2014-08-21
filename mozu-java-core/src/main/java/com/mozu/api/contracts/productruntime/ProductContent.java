@@ -6,11 +6,10 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import java.util.List;
 import java.io.Serializable;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.joda.time.DateTime;
-import com.mozu.api.contracts.productruntime.ProductImage;
 
 /**
  *	Content associated with a product definition that can be localized.

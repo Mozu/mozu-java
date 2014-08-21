@@ -7,8 +7,8 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.joda.time.DateTime;
 
 /**
  *	Properties of an image defined for a product.
