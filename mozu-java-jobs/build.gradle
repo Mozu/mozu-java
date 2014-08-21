@@ -14,7 +14,7 @@ if (hasProperty("teamcity")) {
 	}
 	else {
 // Manually insert the version numbers here when building outside of TeamCity
-	version = '1.1.0-SNAPSHOT'
+	version = '1.0.4-SNAPSHOT'
 }
 
 jar {
