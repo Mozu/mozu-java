@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Fulfillment Information resource to manage shipping or pickup information for orders.
  * </summary>
@@ -25,11 +24,12 @@ public class FulfillmentInfoResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public FulfillmentInfoResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the fulfillment information for the specified order.
@@ -43,23 +43,24 @@ public class FulfillmentInfoResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo getFulfillmentInfo(String orderId) throws Exception
 	{
-		return getFulfillmentInfo( orderId,  null);
+		return getFulfillmentInfo( orderId,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.GetFulfillmentInfo( orderId,  draft);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.GetFulfillmentInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo getFulfillmentInfo(String orderId, Boolean draft) throws Exception
+	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo getFulfillmentInfo(String orderId, Boolean draft, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> client = com.mozu.api.clients.commerce.orders.FulfillmentInfoClient.getFulfillmentInfoClient( orderId,  draft);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> client = com.mozu.api.clients.commerce.orders.FulfillmentInfoClient.getFulfillmentInfoClient( orderId,  draft,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -80,16 +81,17 @@ public class FulfillmentInfoResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo setFulFillmentInfo(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String orderId) throws Exception
 	{
-		return setFulFillmentInfo( fulfillmentInfo,  orderId,  null,  null);
+		return setFulFillmentInfo( fulfillmentInfo,  orderId,  null,  null,  null);
 	}
 
 	/**
 	 * Updates one or more properties of fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.SetFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.SetFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
@@ -97,9 +99,9 @@ public class FulfillmentInfoResource {
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo setFulFillmentInfo(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String orderId, String updateMode, String version) throws Exception
+	public com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo setFulFillmentInfo(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo fulfillmentInfo, String orderId, String updateMode, String version, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> client = com.mozu.api.clients.commerce.orders.FulfillmentInfoClient.setFulFillmentInfoClient( fulfillmentInfo,  orderId,  updateMode,  version);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo> client = com.mozu.api.clients.commerce.orders.FulfillmentInfoClient.setFulFillmentInfoClient( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

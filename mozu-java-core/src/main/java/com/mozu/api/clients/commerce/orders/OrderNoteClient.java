@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Order Notes subresource to manage merchant-level notes associated with an active order.
  * </summary>
@@ -59,7 +58,26 @@ public class OrderNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> getOrderNoteClient(String orderId, String noteId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.getOrderNoteUrl(noteId, orderId);
+		return getOrderNoteClient( orderId,  noteId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a specific order note.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=GetOrderNoteClient( orderId,  noteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OrderNote orderNote = client.Result();
+	 * </code></pre></p>
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> getOrderNoteClient(String orderId, String noteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.getOrderNoteUrl(noteId, orderId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderNote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient = new MozuClient(clz);
@@ -85,7 +103,27 @@ public class OrderNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> createOrderNoteClient(com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.createOrderNoteUrl(orderId);
+		return createOrderNoteClient( orderNote,  orderId,  null);
+	}
+
+	/**
+	 * Creates a new merchant note for the specified order.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=CreateOrderNoteClient( orderNote,  orderId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OrderNote orderNote = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order for which to add a note.
+	 * @param responseFields 
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> createOrderNoteClient(com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.createOrderNoteUrl(orderId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderNote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient = new MozuClient(clz);
@@ -113,7 +151,28 @@ public class OrderNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> updateOrderNoteClient(com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.updateOrderNoteUrl(noteId, orderId);
+		return updateOrderNoteClient( orderNote,  orderId,  noteId,  null);
+	}
+
+	/**
+	 * Updates a specific note for an order.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient=UpdateOrderNoteClient( orderNote,  orderId,  noteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OrderNote orderNote = client.Result();
+	 * </code></pre></p>
+	 * @param noteId Unique identifier of the order note.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> updateOrderNoteClient(com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderNoteUrl.updateOrderNoteUrl(noteId, orderId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderNote.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderNote> mozuClient = new MozuClient(clz);

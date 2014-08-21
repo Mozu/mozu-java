@@ -14,9 +14,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * Provide dynamic search results to shoppers as they browse and search for products on the storefront. Suggest possible search terms as the shopper enters text.
+ * Use the Product Search resource to provide dynamic search results to shoppers as they browse and search for products on the web storefront, and to suggest possible search terms as the shopper enters text.
  * </summary>
  */
 public class ProductSearchResultResource {
@@ -25,11 +24,12 @@ public class ProductSearchResultResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ProductSearchResultResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.
@@ -42,14 +42,14 @@ public class ProductSearchResultResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductSearchResult search() throws Exception
 	{
-		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return search( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	ProductSearchResult productSearchResult = productsearchresult.Search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex);
+	 *	ProductSearchResult productSearchResult = productsearchresult.Search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param facet Individually list the facet fields you want to display in a storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a storefront product search by listing the facet field and the range to display.
@@ -65,14 +65,15 @@ public class ProductSearchResultResource {
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product search results by any of its properties, including product code, type, category, and name. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=categoryId+eq+12"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param query The terms to search on.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productruntime.ProductSearchResult
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductSearchResult search(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.searchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -83,30 +84,32 @@ public class ProductSearchResultResource {
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	SearchSuggestion searchSuggestion = productsearchresult.Suggest();
+	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.Suggest();
 	 * </code></pre></p>
-	 * @return com.mozu.api.contracts.productruntime.SearchSuggestion
-	 * @see com.mozu.api.contracts.productruntime.SearchSuggestion
+	 * @return com.mozu.api.contracts.productruntime.SearchSuggestionResult
+	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult
 	 */
-	public com.mozu.api.contracts.productruntime.SearchSuggestion suggest() throws Exception
+	public com.mozu.api.contracts.productruntime.SearchSuggestionResult suggest() throws Exception
 	{
-		return suggest( null,  null);
+		return suggest( null,  null,  null,  null);
 	}
 
 	/**
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	SearchSuggestion searchSuggestion = productsearchresult.Suggest( q,  pageSize);
+	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.Suggest( query,  groups,  pageSize,  responseFields);
 	 * </code></pre></p>
+	 * @param groups 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q Text that the shopper is currently entering.
-	 * @return com.mozu.api.contracts.productruntime.SearchSuggestion
-	 * @see com.mozu.api.contracts.productruntime.SearchSuggestion
+	 * @param query 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productruntime.SearchSuggestionResult
+	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult
 	 */
-	public com.mozu.api.contracts.productruntime.SearchSuggestion suggest(String q, Integer pageSize) throws Exception
+	public com.mozu.api.contracts.productruntime.SearchSuggestionResult suggest(String query, String groups, Integer pageSize, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestion> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.suggestClient( q,  pageSize);
+		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.suggestClient( query,  groups,  pageSize,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

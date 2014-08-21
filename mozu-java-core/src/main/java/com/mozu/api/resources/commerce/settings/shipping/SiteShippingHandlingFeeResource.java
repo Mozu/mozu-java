@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Order Handling Fee subresource to configure any shipping and handling fees to apply to orders for this site.
  * </summary>
@@ -25,11 +24,12 @@ public class SiteShippingHandlingFeeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public SiteShippingHandlingFeeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the order handling fee configured for the site.

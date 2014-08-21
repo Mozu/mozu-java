@@ -19,17 +19,19 @@ public class OrderUrl
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrdersUrl(String filter, Integer pageSize, String q, Integer qLimit, String sortBy, Integer startIndex)
+	public static MozuUrl getOrdersUrl(String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -49,7 +51,7 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for GetTaxableOrders
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTaxableOrdersUrl(String orderId)
@@ -63,47 +65,55 @@ public class OrderUrl
 	 * Get Resource Url for GetOrder
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order details to get.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrderUrl(Boolean draft, String orderId)
+	public static MozuUrl getOrderUrl(Boolean draft, String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?draft={draft}&responseFields={responseFields}");
 		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("orderId", orderId);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for CreateOrder
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl createOrderUrl()
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateOrderFromCart
 	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createOrderFromCartUrl(String cartId)
+	public static MozuUrl createOrderFromCartUrl(String cartId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?cartId={cartId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?cartId={cartId}&responseFields={responseFields}");
 		formatter.formatUrl("cartId", cartId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for CreateOrder
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createOrderUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for PerformOrderAction
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl performOrderActionUrl(String orderId)
+	public static MozuUrl performOrderActionUrl(String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/actions");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/actions?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -111,15 +121,17 @@ public class OrderUrl
 	 * Get Resource Url for UpdateOrderDiscount
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to modify the discount by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateOrderDiscountUrl(Integer discountId, String orderId, String updateMode, String version)
+	public static MozuUrl updateOrderDiscountUrl(Integer discountId, String orderId, String responseFields, String updateMode, String version)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/discounts/{discountId}?updatemode={updateMode}&version={version}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/discounts/{discountId}?updatemode={updateMode}&version={version}&responseFields={responseFields}");
 		formatter.formatUrl("discountId", discountId);
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("updateMode", updateMode);
 		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -142,26 +154,30 @@ public class OrderUrl
 	/**
 	 * Get Resource Url for ChangeOrderUserId
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl changeOrderUserIdUrl(String orderId)
+	public static MozuUrl changeOrderUserIdUrl(String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/users");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/users?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateOrder
 	 * @param orderId Unique identifier of the order to update.
+	 * @param responseFields 
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateOrderUrl(String orderId, String updateMode, String version)
+	public static MozuUrl updateOrderUrl(String orderId, String responseFields, String updateMode, String version)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?updatemode={updateMode}&version={version}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}?updatemode={updateMode}&version={version}&responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("updateMode", updateMode);
 		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

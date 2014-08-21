@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the tenants resource to manage information about a Mozu tenant.
  * </summary>
@@ -34,7 +33,25 @@ public class TenantClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.tenant.Tenant> getTenantClient(Integer tenantId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.TenantUrl.getTenantUrl(tenantId);
+		return getTenantClient( tenantId,  null);
+	}
+
+	/**
+	 * Retrieve details about a specific tenant by providing the tenant ID.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient=GetTenantClient( tenantId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Tenant tenant = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param tenantId Unique identifier of the Mozu tenant.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.Tenant>
+	 * @see com.mozu.api.contracts.tenant.Tenant
+	 */
+	public static MozuClient<com.mozu.api.contracts.tenant.Tenant> getTenantClient(Integer tenantId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.TenantUrl.getTenantUrl(responseFields, tenantId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.tenant.Tenant.class;
 		MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient = new MozuClient(clz);

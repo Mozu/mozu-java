@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Properties of a type of contact associated with a customer account, such as Billing or Fulfillment.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContactType implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If true, this is the primary contact of this contact type.
+	 */
 	protected Boolean isPrimary;
 
 	public Boolean getIsPrimary() {
@@ -26,6 +32,9 @@ public class ContactType implements Serializable
 		this.isPrimary = isPrimary;
 	}
 
+	/**
+	 * The name of this contact type.
+	 */
 	protected String name;
 
 	public String getName() {

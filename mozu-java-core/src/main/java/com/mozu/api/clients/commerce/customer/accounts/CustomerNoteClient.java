@@ -13,9 +13,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * Merchants can add and view internal notes for a customer account. For example, a merchant can track a customer's interests or complaints. Only merchants can add and view notes. Customers cannot see these notes from their My Account page.
+ * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteClient {
@@ -35,7 +34,26 @@ public class CustomerNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> getAccountNoteClient(Integer accountId, Integer noteId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.getAccountNoteUrl(accountId, noteId);
+		return getAccountNoteClient( accountId,  noteId,  null);
+	}
+
+	/**
+	 * Retrieves the contents of a particular note attached to a specified customer account.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=GetAccountNoteClient( accountId,  noteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerNote customerNote = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
+	 * @see com.mozu.api.contracts.customer.CustomerNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> getAccountNoteClient(Integer accountId, Integer noteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.getAccountNoteUrl(accountId, noteId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerNote.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient = new MozuClient(clz);
@@ -59,13 +77,13 @@ public class CustomerNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> getAccountNotesClient(Integer accountId) throws Exception
 	{
-		return getAccountNotesClient( accountId,  null,  null,  null,  null);
+		return getAccountNotesClient( accountId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> mozuClient=GetAccountNotesClient( accountId,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> mozuClient=GetAccountNotesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerNoteCollection customerNoteCollection = client.Result();
@@ -73,14 +91,15 @@ public class CustomerNoteClient {
 	 * @param accountId Unique identifier of the customer account.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNoteCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerNoteCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> getAccountNotesClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> getAccountNotesClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.getAccountNotesUrl(accountId, filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.getAccountNotesUrl(accountId, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerNoteCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerNoteCollection> mozuClient = new MozuClient(clz);
@@ -106,7 +125,27 @@ public class CustomerNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> addAccountNoteClient(com.mozu.api.contracts.customer.CustomerNote note, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.addAccountNoteUrl(accountId);
+		return addAccountNoteClient( note,  accountId,  null);
+	}
+
+	/**
+	 * Adds a new note to the specified customer account.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=AddAccountNoteClient( note,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerNote customerNote = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param responseFields 
+	 * @param note Properties of the customer account note to create.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
+	 * @see com.mozu.api.contracts.customer.CustomerNote
+	 * @see com.mozu.api.contracts.customer.CustomerNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> addAccountNoteClient(com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.addAccountNoteUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerNote.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient = new MozuClient(clz);
@@ -134,7 +173,28 @@ public class CustomerNoteClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> updateAccountNoteClient(com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.updateAccountNoteUrl(accountId, noteId);
+		return updateAccountNoteClient( note,  accountId,  noteId,  null);
+	}
+
+	/**
+	 * Modifies an existing note for a customer account.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient=UpdateAccountNoteClient( note,  accountId,  noteId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerNote customerNote = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account note to modify.
+	 * @param noteId Unique identifier of the note to update.
+	 * @param responseFields 
+	 * @param note The new content to replace the existing note.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
+	 * @see com.mozu.api.contracts.customer.CustomerNote
+	 * @see com.mozu.api.contracts.customer.CustomerNote
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerNote> updateAccountNoteClient(com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerNoteUrl.updateAccountNoteUrl(accountId, noteId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerNote.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerNote> mozuClient = new MozuClient(clz);

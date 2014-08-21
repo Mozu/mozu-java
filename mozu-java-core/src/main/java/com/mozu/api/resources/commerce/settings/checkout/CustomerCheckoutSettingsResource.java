@@ -14,9 +14,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
+ * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
  * </summary>
  */
 public class CustomerCheckoutSettingsResource {
@@ -25,11 +24,12 @@ public class CustomerCheckoutSettingsResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerCheckoutSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.

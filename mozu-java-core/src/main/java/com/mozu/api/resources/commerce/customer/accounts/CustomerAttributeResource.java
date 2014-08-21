@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Attributes subresource to manage the attributes used to uniquely identify shopper accounts, such as gender or age.
  * </summary>
@@ -25,11 +24,12 @@ public class CustomerAttributeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerAttributeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the contents of an attribute associated with the specified customer account.
@@ -38,13 +38,30 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(Integer accountId, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN);
+		return getAccountAttribute( accountId,  attributeFQN,  null);
+	}
+
+	/**
+	 * Retrieves the contents of an attribute associated with the specified customer account.
+	 * <p><pre><code>
+	 *	CustomerAttribute customerattribute = new CustomerAttribute();
+	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.CustomerAttribute
+	 * @see com.mozu.api.contracts.customer.CustomerAttribute
+	 */
+	public com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(Integer accountId, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributeClient( accountId,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -63,26 +80,27 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId) throws Exception
 	{
-		return getAccountAttributes( accountId,  null,  null,  null,  null);
+		return getAccountAttributes( accountId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves the list of customer account attributes.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.GetAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter);
+	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.GetAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttributeCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.getAccountAttributesClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -103,7 +121,25 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId);
+		return addAccountAttribute( attribute,  accountId,  null);
+	}
+
+	/**
+	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
+	 * <p><pre><code>
+	 *	CustomerAttribute customerattribute = new CustomerAttribute();
+	 *	CustomerAttribute customerAttribute = customerattribute.AddAccountAttribute( attribute,  accountId,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields 
+	 * @param attribute 
+	 * @return com.mozu.api.contracts.customer.CustomerAttribute
+	 * @see com.mozu.api.contracts.customer.CustomerAttribute
+	 * @see com.mozu.api.contracts.customer.CustomerAttribute
+	 */
+	public com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.addAccountAttributeClient( attribute,  accountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -125,7 +161,26 @@ public class CustomerAttributeResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN);
+		return updateAccountAttribute( attribute,  accountId,  attributeFQN,  null);
+	}
+
+	/**
+	 * Updates one or more details of a customer account attribute.
+	 * <p><pre><code>
+	 *	CustomerAttribute customerattribute = new CustomerAttribute();
+	 *	CustomerAttribute customerAttribute = customerattribute.UpdateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
+	 * </code></pre></p>
+	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param attribute 
+	 * @return com.mozu.api.contracts.customer.CustomerAttribute
+	 * @see com.mozu.api.contracts.customer.CustomerAttribute
+	 * @see com.mozu.api.contracts.customer.CustomerAttribute
+	 */
+	public com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAttribute> client = com.mozu.api.clients.commerce.customer.accounts.CustomerAttributeClient.updateAccountAttributeClient( attribute,  accountId,  attributeFQN,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this resource to manage authentication tickets for your applications.
  * </summary>
@@ -25,15 +24,16 @@ public class AuthTicketResource {
 	///
 	private ApiContext _apiContext;
 
-		public AuthTicketResource() 
-	{
-		_apiContext = null;
+
+	public AuthTicketResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public AuthTicketResource(ApiContext apiContext) 
+public AuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Generate an authentication ticket for an application.
@@ -48,7 +48,24 @@ public class AuthTicketResource {
 	 */
 	public com.mozu.api.contracts.appdev.AuthTicket authenticateApp(com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.authenticateAppClient( appAuthInfo);
+		return authenticateApp( appAuthInfo,  null);
+	}
+
+	/**
+	 * Generate an authentication ticket for an application.
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	AuthTicket authTicket = authticket.AuthenticateApp( appAuthInfo,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
+	 * @return com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
+	 */
+	public com.mozu.api.contracts.appdev.AuthTicket authenticateApp(com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.authenticateAppClient( appAuthInfo,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -68,7 +85,24 @@ public class AuthTicketResource {
 	 */
 	public com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.refreshAppAuthTicketClient( authTicketRequest);
+		return refreshAppAuthTicket( authTicketRequest,  null);
+	}
+
+	/**
+	 * Refreshes the application's authentication ticket and generates a new access token by providing the refresh token string.
+	 * <p><pre><code>
+	 *	AuthTicket authticket = new AuthTicket();
+	 *	AuthTicket authTicket = authticket.RefreshAppAuthTicket( authTicketRequest,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
+	 * @return com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AuthTicket
+	 * @see com.mozu.api.contracts.appdev.AuthTicketRequest
+	 */
+	public com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> client = com.mozu.api.clients.platform.applications.AuthTicketClient.refreshAppAuthTicketClient( authTicketRequest,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

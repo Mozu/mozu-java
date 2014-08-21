@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Fulfillment resource to manage shipments or pickups of collections of packages for an order.
  * </summary>
@@ -25,11 +24,12 @@ public class FulfillmentActionResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public FulfillmentActionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
@@ -45,7 +45,25 @@ public class FulfillmentActionResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.FulfillmentActionClient.performFulfillmentActionClient( action,  orderId);
+		return performFulfillmentAction( action,  orderId,  null);
+	}
+
+	/**
+	 * Sets the fulfillment action to "Ship" or "PickUp". To ship an order or prepare it for in-store pickup, the order must have a customer name, the "Open" or "OpenAndProcessing" status. To ship the order, it must also have the full shipping address and shipping method. Shipping all packages or picking up all pickups for an order will complete a paid order.
+	 * <p><pre><code>
+	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
+	 *	Order order = fulfillmentaction.PerformFulfillmentAction( action,  orderId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
+	 * @param responseFields 
+	 * @param action The action to perform for the order fulfillment.
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.FulfillmentActionClient.performFulfillmentActionClient( action,  orderId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

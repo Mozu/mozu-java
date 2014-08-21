@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,11 +24,12 @@ public class EventDeliverySummaryResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public EventDeliverySummaryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
@@ -43,23 +43,24 @@ public class EventDeliverySummaryResource {
 	 */
 	public com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(String subscriptionId) throws Exception
 	{
-		return getDeliveryAttemptSummary( subscriptionId,  null);
+		return getDeliveryAttemptSummary( subscriptionId,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.GetDeliveryAttemptSummary( subscriptionId,  id);
+	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.GetDeliveryAttemptSummary( subscriptionId,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param id 
+	 * @param responseFields 
 	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
-	public com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(String subscriptionId, Integer id) throws Exception
+	public com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(String subscriptionId, Integer id, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.event.EventDeliverySummary> client = com.mozu.api.clients.event.push.subscriptions.EventDeliverySummaryClient.getDeliveryAttemptSummaryClient( subscriptionId,  id);
+		MozuClient<com.mozu.api.contracts.event.EventDeliverySummary> client = com.mozu.api.clients.event.push.subscriptions.EventDeliverySummaryClient.getDeliveryAttemptSummaryClient( subscriptionId,  id,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -78,26 +79,27 @@ public class EventDeliverySummaryResource {
 	 */
 	public com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(String subscriptionId) throws Exception
 	{
-		return getDeliveryAttemptSummaries( subscriptionId,  null,  null,  null,  null);
+		return getDeliveryAttemptSummaries( subscriptionId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.GetDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter);
+	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.GetDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */
-	public com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(String subscriptionId, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(String subscriptionId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> client = com.mozu.api.clients.event.push.subscriptions.EventDeliverySummaryClient.getDeliveryAttemptSummariesClient( subscriptionId,  startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> client = com.mozu.api.clients.event.push.subscriptions.EventDeliverySummaryClient.getDeliveryAttemptSummariesClient( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

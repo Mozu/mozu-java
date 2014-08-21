@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.paymentservice.PreAuthorizeTransactionTypeDataContract;
 
+/**
+ *	Definition of the preauthorization gateway.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PreAuthorizeDefinition implements Serializable
 {
@@ -30,6 +33,9 @@ public class PreAuthorizeDefinition implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The product environment URL associated with the preauthorization gateway.
+	 */
 	protected String preAuthorizeProdUrl;
 
 	public String getPreAuthorizeProdUrl() {
@@ -40,6 +46,9 @@ public class PreAuthorizeDefinition implements Serializable
 		this.preAuthorizeProdUrl = preAuthorizeProdUrl;
 	}
 
+	/**
+	 * The test environment URL associated with the preauthorization gateway.
+	 */
 	protected String preAuthorizeTestUrl;
 
 	public String getPreAuthorizeTestUrl() {
@@ -50,6 +59,9 @@ public class PreAuthorizeDefinition implements Serializable
 		this.preAuthorizeTestUrl = preAuthorizeTestUrl;
 	}
 
+	/**
+	 * The type of preauthorization gateway.
+	 */
 	protected PreAuthorizeTransactionTypeDataContract type;
 
 	public PreAuthorizeTransactionTypeDataContract getType() {

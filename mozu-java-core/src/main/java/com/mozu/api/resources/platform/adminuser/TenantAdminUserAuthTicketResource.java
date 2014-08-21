@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
  * </summary>
@@ -25,15 +24,16 @@ public class TenantAdminUserAuthTicketResource {
 	///
 	private ApiContext _apiContext;
 
-		public TenantAdminUserAuthTicketResource() 
-	{
-		_apiContext = null;
+
+	public TenantAdminUserAuthTicketResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public TenantAdminUserAuthTicketResource(ApiContext apiContext) 
+public TenantAdminUserAuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.

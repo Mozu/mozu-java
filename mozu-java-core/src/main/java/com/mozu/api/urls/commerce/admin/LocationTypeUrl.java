@@ -25,7 +25,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for GetLocationType
-	 * @param locationTypeCode 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationTypeUrl(String locationTypeCode)
@@ -47,7 +47,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationType
-	 * @param locationTypeCode 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationTypeUrl(String locationTypeCode)
@@ -59,7 +59,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode 
+	 * @param locationTypeCode User-defined code used to identify the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

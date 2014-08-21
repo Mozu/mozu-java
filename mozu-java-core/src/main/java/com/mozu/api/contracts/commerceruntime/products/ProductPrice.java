@@ -19,6 +19,16 @@ public class ProductPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
 	protected Double msrp;
 
 	public Double getMsrp() {
@@ -55,6 +65,9 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
+	/**
+	 * The override price defined by the tenant for this cart or order item.
+	 */
 	protected Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {

@@ -13,9 +13,9 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
- * Use this resource to create products, view the attributes associated with existing products, and determine which sites feature a specific product.
+ * Use the Product Administration resource to create new product definitions in the master catalog and determine which catalogs will feature products. You can also assign attribute values for defined products, manage product-level location inventory, and configure the variations of a product.
  * </summary>
  */
 public class ProductClient {
@@ -33,13 +33,13 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getProductsClient(dataViewMode,  null,  null,  null,  null,  null,  null,  null);
+		return getProductsClient(dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of products according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> mozuClient=GetProductsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> mozuClient=GetProductsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductCollection productCollection = client.Result();
@@ -49,42 +49,18 @@ public class ProductClient {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of product search terms to use in the query when searching across product code and product name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean noCount) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> getProductsClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean noCount, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductsUrl(filter, noCount, pageSize, q, qLimit, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductsUrl(filter, noCount, pageSize, q, qLimit, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
-		return mozuClient;
-
-	}
-
-	/**
-	 * Retrieves an existing product.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=GetProductClient(dataViewMode,  productCode);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Product product = client.Result();
-	 * </code></pre></p>
-	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
-	 * @see com.mozu.api.contracts.productadmin.Product
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductUrl(productCode);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -125,17 +101,79 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId 
+	 * @param catalogId The unique identifier of the catalog of products used by a site.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> getProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductInCatalogUrl(catalogId, productCode);
+		return getProductInCatalogClient(dataViewMode,  productCode,  catalogId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a product associated with a specific catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=GetProductInCatalogClient(dataViewMode,  productCode,  catalogId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
+	 * </code></pre></p>
+	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
+	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> getProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductInCatalogUrl(catalogId, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves the details of a product definition.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=GetProductClient(dataViewMode,  productCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
+	{
+		return getProductClient(dataViewMode,  productCode,  null);
+	}
+
+	/**
+	 * Retrieves the details of a product definition.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=GetProductClient(dataViewMode,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductUrl(productCode, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
+		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -158,7 +196,26 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductUrl();
+		return addProductClient(dataViewMode,  product,  null);
+	}
+
+	/**
+	 * Creates a new product definition in the specified master catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=AddProductClient(dataViewMode,  product,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param product Properties of the new product. You must supply values for the product code, product name, and price.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> addProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
@@ -186,41 +243,33 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductInCatalogUrl(productCode);
+		return addProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  null);
+	}
+
+	/**
+	 * Associates a new product defined in the master catalog with a specific catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=AddProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param productInCatalogInfoIn Properties of the product to define for the specific catalog association.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
+	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
+	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> addProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductInCatalogUrl(productCode, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
-		return mozuClient;
-
-	}
-
-	/**
-	 * Updates one or more properties of a product definition in a master catalog.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient(dataViewMode,  product,  productCode);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Product product = client.Result();
-	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param product Properties of the product definition to update in the master catalog.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
-	 * @see com.mozu.api.contracts.productadmin.Product
-	 * @see com.mozu.api.contracts.productadmin.Product
-	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductUrl(productCode);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(product);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
@@ -262,7 +311,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId 
+	 * @param catalogId The unique identifier of the catalog of products used by a site.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
@@ -271,13 +320,82 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogUrl(catalogId, productCode);
+		return updateProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a product associated with a specific catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient=UpdateProductInCatalogClient(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
+	 * </code></pre></p>
+	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
+	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
+	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogUrl(catalogId, productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * Updates one or more properties of a product definition in a master catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient(dataViewMode,  product,  productCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param product Properties of the product definition to update in the master catalog.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode) throws Exception
+	{
+		return updateProductClient(dataViewMode,  product,  productCode,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a product definition in a master catalog.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=UpdateProductClient(dataViewMode,  product,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param product Properties of the product definition to update in the master catalog.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 * @see com.mozu.api.contracts.productadmin.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.Product> updateProductClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductUrl(productCode, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
+		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(product);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
@@ -312,7 +430,7 @@ public class ProductClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param catalogId 
+	 * @param catalogId The unique identifier of the catalog of products used by a site.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient 
 	 */

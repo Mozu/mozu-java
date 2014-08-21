@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the variations resource to preview possible product variations for a specific product type based on the option attributes defined for the product type, such as size or color.
  * </summary>
@@ -23,7 +22,7 @@ public class ProductTypeVariationClient {
 	/**
 	 * Generates the variations possible for a product associated with the product type based on the option values supplied in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient( productOptionsIn,  productTypeId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductVariationPagedCollection productVariationPagedCollection = client.Result();
@@ -35,15 +34,15 @@ public class ProductTypeVariationClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId) throws Exception
 	{
-		return generateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  null,  null,  null,  null,  null);
+		return generateProductVariationsClient( productOptionsIn,  productTypeId,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Generates the variations possible for a product associated with the product type based on the option values supplied in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient(dataViewMode,  productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GenerateProductVariationsClient( productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductVariationPagedCollection productVariationPagedCollection = client.Result();
@@ -52,6 +51,7 @@ public class ProductTypeVariationClient {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode 
 	 * @param productTypeId Unique identifier of the product type.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @param dataViewMode DataViewMode
@@ -60,16 +60,15 @@ public class ProductTypeVariationClient {
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> generateProductVariationsClient(List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeVariationUrl.generateProductVariationsUrl(filter, pageSize, productCode, productTypeId, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeVariationUrl.generateProductVariationsUrl(filter, pageSize, productCode, productTypeId, responseFields, sortBy, startIndex);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationPagedCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productOptionsIn);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

@@ -73,6 +73,9 @@ public class TaxableLineItem implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The name of the product that represents a line item in a taxable order.
+	 */
 	protected String productName;
 
 	public String getProductName() {
@@ -96,6 +99,9 @@ public class TaxableLineItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	/**
+	 * The reason the item is either taxed or returned.
+	 */
 	protected String reason;
 
 	public String getReason() {

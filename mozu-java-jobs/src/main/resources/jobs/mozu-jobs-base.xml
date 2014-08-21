@@ -50,7 +50,7 @@
 
     <beans:bean id="springDataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver" />
+        <beans:property name="driverClassName" value="${jdbc.driverClassName}" />
         <beans:property name="url" value="${db_url}" />
         <beans:property name="username" value="${db_username}" />
         <beans:property name="password" value="${db_password}" />

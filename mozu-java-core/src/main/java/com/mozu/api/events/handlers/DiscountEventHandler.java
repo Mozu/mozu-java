@@ -15,6 +15,7 @@ public interface DiscountEventHandler {
 
 		public EventHandlerStatus created(ApiContext apiContext, Event event);
 		public EventHandlerStatus deleted(ApiContext apiContext, Event event);
+		public EventHandlerStatus expired(ApiContext apiContext, Event event);
 		public EventHandlerStatus updated(ApiContext apiContext, Event event);
 
 }

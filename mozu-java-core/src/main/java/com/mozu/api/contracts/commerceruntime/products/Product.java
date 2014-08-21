@@ -77,6 +77,16 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
 	/**
 	 * The alternate image description defined for the product, in the language specified in the locale code for the storefront.
 	 */
@@ -90,6 +100,9 @@ public class Product implements Serializable
 		this.imageAlternateText = imageAlternateText;
 	}
 
+	/**
+	 * The URL of the image file associated with a product on a storefront.
+	 */
 	protected String imageUrl;
 
 	public String getImageUrl() {
@@ -100,6 +113,9 @@ public class Product implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
+	/**
+	 * If true, this product cannot ship in a package with other items and must ship in a package by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -172,6 +188,9 @@ public class Product implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The unique identifier of the product reservation created for this item in the cart or order.
+	 */
 	protected Integer productReservationId;
 
 	public Integer getProductReservationId() {
@@ -195,6 +214,9 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -228,6 +250,9 @@ public class Product implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
+	/**
+	 * Collection of component products that make up a single product bundle with its own product code, added to a cart or order.
+	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
 		return this.bundledProducts;
@@ -284,6 +309,9 @@ public class Product implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Collection of property attributes defined for the item in the cart or order.
+	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;

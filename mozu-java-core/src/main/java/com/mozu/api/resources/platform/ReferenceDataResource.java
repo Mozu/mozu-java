@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
@@ -25,15 +24,16 @@ public class ReferenceDataResource {
 	///
 	private ApiContext _apiContext;
 
-		public ReferenceDataResource() 
-	{
-		_apiContext = null;
+
+	public ReferenceDataResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public ReferenceDataResource(ApiContext apiContext) 
+public ReferenceDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a specific address schema based on the country code provided. This operation allows the creation of custom shipping and billing address fields.
@@ -87,12 +87,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	Behavior behavior = referencedata.GetBehavior( behaviorId);
 	 * </code></pre></p>
-	 * @param behaviorId ***Always private and should not be published.***
+	 * @param behaviorId Unique identifier of the behavior.
 	 * @return com.mozu.api.contracts.core.Behavior
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -106,7 +106,7 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the list of behavior categories.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategoryCollection behaviorCategoryCollection = referencedata.GetBehaviorCategories();
@@ -124,12 +124,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of the behavior category specified in the request.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.GetBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId ***Always private and should not be published.***
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -143,7 +143,7 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.GetBehaviors();
@@ -157,12 +157,12 @@ public class ReferenceDataResource {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCollection behaviorCollection = referencedata.GetBehaviors( userType);
 	 * </code></pre></p>
-	 * @param userType 
+	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return com.mozu.api.contracts.core.BehaviorCollection
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
 	 */

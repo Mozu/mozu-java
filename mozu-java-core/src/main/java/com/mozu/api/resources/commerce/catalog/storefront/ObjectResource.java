@@ -44,7 +44,24 @@ public class ObjectResource {
 	 */
 	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ObjectClient.getRatesClient( rateRequest);
+		return getRates( rateRequest,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Object object = new Object();
+	 *	RatesResponse ratesResponse = object.GetRates( rateRequest,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param rateRequest 
+	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
+	 */
+	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ObjectClient.getRatesClient( rateRequest,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

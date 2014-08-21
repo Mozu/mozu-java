@@ -9,6 +9,7 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.productadmin.AttributeVocabularyValueDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
 /**
@@ -44,6 +45,16 @@ public class AttributeVocabularyValueInProductType implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+
+	protected AttributeVocabularyValueDisplayInfo displayInfo;
+
+	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 	/**
