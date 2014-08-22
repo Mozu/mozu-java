@@ -25,6 +25,12 @@ public class JobExecutionDaoImpl extends AbstractJdbcBatchMetadataDao implements
             + "JOIN BATCH_JOB_EXECUTION_PARAMS param on param.JOB_EXECUTION_ID = ex.JOB_EXECUTION_ID AND param.KEY_NAME = 'tenantId' and param.LONG_VAL = ? "
             + "JOIN BATCH_JOB_INSTANCE inst on inst.JOB_INSTANCE_ID = ex.JOB_INSTANCE_ID AND inst.JOB_NAME = ? "
             + "ORDER BY ex.JOB_EXECUTION_ID DESC";
+
+    public final String MULTI_JOB_EXECUTION_BY_TENANT = "SELECT TOP 20 ex.JOB_EXECUTION_ID "
+            + "from BATCH_JOB_EXECUTION ex  "
+            + "JOIN BATCH_JOB_EXECUTION_PARAMS param on param.JOB_EXECUTION_ID = ex.JOB_EXECUTION_ID AND param.KEY_NAME = 'tenantId' and param.LONG_VAL = ? "
+            + "JOIN BATCH_JOB_INSTANCE inst on inst.JOB_INSTANCE_ID = ex.JOB_INSTANCE_ID AND inst.JOB_NAME in (%s) "
+            + "ORDER BY ex.JOB_EXECUTION_ID DESC";
     
     public DataSource getDataSource() {
         return dataSource;
@@ -33,6 +39,18 @@ public class JobExecutionDaoImpl extends AbstractJdbcBatchMetadataDao implements
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         setJdbcTemplate(new JdbcTemplate(dataSource));
+    }
+
+    public List<Long> getRecentJobExecutionIds(Long tenantId, List<String>jobNames) {
+        StringBuffer jobStringBuffer = new StringBuffer();
+        for (String jobName : jobNames) {
+            if (jobStringBuffer.length() > 0) {
+                jobStringBuffer.append(",");
+            }
+            jobStringBuffer.append("'").append(jobName).append("'");
+        }
+        String query = String.format(MULTI_JOB_EXECUTION_BY_TENANT, jobStringBuffer.toString());
+        return getJdbcTemplate().queryForList(query, Long.class, tenantId);
     }
 
     public List<Long> getRecentJobExecutionIds(Long tenantId, String jobName) {
