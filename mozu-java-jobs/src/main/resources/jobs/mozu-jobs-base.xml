@@ -40,7 +40,7 @@
         class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
         <beans:property name="dataSource" ref="springDataSource" />
         <beans:property name="transactionManager" ref="transactionManager" />
-        <beans:property name="databaseType" value="sqlserver" />
+        <beans:property name="databaseType" value="${databaseType}" />
     </beans:bean>
 
     <beans:bean id="transactionManager"
