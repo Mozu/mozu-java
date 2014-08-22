@@ -24,7 +24,7 @@ public class MozuClientTest extends SecurityTestBase {
         
         DocumentResource resource = new DocumentResource(apiContext);
         
-        DocumentCollection docs = resource.getDocuments(DataViewMode.Live, "files");
+        DocumentCollection docs = resource.getDocuments("files");
         Document document = null;
         
         if (docs.getTotalCount() > 0) {
@@ -33,7 +33,7 @@ public class MozuClientTest extends SecurityTestBase {
             fail("You must add files to the file manager in Site Builder to get this test to pass.");
         }
 
-        InputStream inputStream = resource.getDocumentContent(DataViewMode.Live, "files", document.getId());
+        InputStream inputStream = resource.getDocumentContent("files", document.getId());
 
         assertNotNull(inputStream);
         
