@@ -24,14 +24,12 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '1.12'
 }
 
 repositories {
     mavenCentral()
-    maven {        
-          url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+    mavenLocal()
 }
 
 configurations.all {

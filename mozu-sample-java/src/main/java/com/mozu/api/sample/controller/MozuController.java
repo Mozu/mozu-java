@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.commerceruntime.orders.OrderCollection;
 import com.mozu.api.contracts.core.UserAuthInfo;
@@ -88,7 +89,8 @@ public class MozuController {
         appAuthInfo.setSharedSecret(authorization.getSharedSecret());
         String baseUrl = environments.get(authorization.getEnvironment());
         try {
-            AppAuthenticator.initialize(appAuthInfo, baseUrl, null);
+            MozuConfig.setBaseUrl(baseUrl);
+            AppAuthenticator.initialize(appAuthInfo, null);
         } catch (ApiException ae){
             model.addAttribute("errorString", "Error Validating Application: " + ae.getMessage());
             setupHomePage (locale, model);

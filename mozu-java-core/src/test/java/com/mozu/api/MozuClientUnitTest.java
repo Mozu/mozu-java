@@ -143,10 +143,9 @@ public final class MozuClientUnitTest {
             { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
             { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { MozuConfig.getBaseUrl(); result=BASE_URL; }
-            { MozuConfig.getBaseUrl(); result=BASE_URL; }
         };
 
+        MozuConfig.setBaseUrl(BASE_URL);
         MozuClient<InputStream> mozuClient = new MozuClient<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
