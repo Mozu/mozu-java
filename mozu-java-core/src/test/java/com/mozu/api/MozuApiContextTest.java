@@ -30,6 +30,9 @@ public class MozuApiContextTest {
     private static final String CORRELATION_ID = "Correlation ID";
     private static final String HMAC_SHA256 = "hmac sha256";
     private static final String HEADER_DATE = "Tue, 31 Dec 2013 06:26:07 GMT";
+    private static final String LOCALE = "en_US";
+    private static final String CURRENCY = "USD";
+
 
     @Mocked Tenant mockTenant;
     @Mocked Site mockSite;
@@ -178,6 +181,8 @@ public class MozuApiContextTest {
             { mockHeaders.get(Headers.X_VOL_MASTER_CATALOG); result=MASTER_CATALOG_ID.toString(); }
             { mockHeaders.get(Headers.X_VOL_CATALOG); result=CATALOG_ID.toString(); }
             { mockHeaders.get(Headers.DATE); result=HEADER_DATE.toString(); }
+            { mockHeaders.get(Headers.X_VOL_LOCALE); result=LOCALE; }
+            { mockHeaders.get(Headers.X_VOL_CURRENCY); result=CURRENCY; }
         };
         
         MozuApiContext context = new MozuApiContext(mockHeaders);
@@ -203,6 +208,8 @@ public class MozuApiContextTest {
             { mockHeaders.get(Headers.X_VOL_CATALOG); result=null; }
             { mockHeaders.get(Headers.DATE); result=null; }
             { mockHeaders.get(Headers.DATE.toLowerCase()); result=null; }
+            { mockHeaders.get(Headers.X_VOL_LOCALE); result=null; }
+            { mockHeaders.get(Headers.X_VOL_CURRENCY); result=null; }
         };
         
         MozuApiContext context = new MozuApiContext(mockHeaders);
@@ -213,6 +220,9 @@ public class MozuApiContextTest {
         assertNull(context.getCatalogId());
         assertNull(context.getTenantUrl());
         assertNull(context.getSiteUrl());
+        assertNull(context.getLocale());
+        assertNull(context.getCurrency());
+
     }
 
     @Test
