@@ -74,6 +74,15 @@ public class MozuClient<TResult> {
             if (apiContext.getCatalogId() != null && apiContext.getCatalogId() > 0) {
                 addHeader(Headers.X_VOL_CATALOG, String.valueOf(apiContext.getCatalogId()));
             }
+            
+            if (apiContext.getLocale() != null) {
+                addHeader(Headers.X_VOL_LOCALE, String.valueOf(apiContext.getLocale()));
+            }
+ 
+            if (apiContext.getCurrency() != null) {
+                addHeader(Headers.X_VOL_CURRENCY, String.valueOf(apiContext.getCurrency()));
+            }
+ 
         }
     }
 
