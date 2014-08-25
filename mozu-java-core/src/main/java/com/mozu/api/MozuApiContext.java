@@ -25,6 +25,8 @@ public class MozuApiContext implements ApiContext {
     private Tenant tenant = null;
     private String headerDate = null;
     private AuthTicket userAuthTicket = null;
+    private String locale = null;
+    private String currency = null;
 
     public MozuApiContext() {
     }
@@ -110,6 +112,10 @@ public class MozuApiContext implements ApiContext {
         if (headerDate==null) {
             headerDate = headers.get(Headers.DATE.toLowerCase());
         }
+        
+        this.locale = headers.get(Headers.X_VOL_LOCALE);
+        this.currency = headers.get(Headers.X_VOL_CURRENCY);
+
     }
 
     public MozuApiContext (HttpRequest request) throws ApiException {
@@ -287,6 +293,26 @@ public class MozuApiContext implements ApiContext {
 
     public void setUserAuthTicket(AuthTicket userAuthTicket) {
         this.userAuthTicket = userAuthTicket;
+    }
+
+    @Override
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    @Override
+    public String getLocale() {
+        return this.locale;
+    }
+
+    @Override
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    @Override
+    public String getCurrency() {
+        return this.currency;
     }
     
     
