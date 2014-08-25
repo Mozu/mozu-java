@@ -60,7 +60,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
     compile group: 'org.springframework', name: 'spring-test', version: springVersion
 
-    compile ("com.mozu:mozu-api-java:1.7.19") {
+    compile ("com.mozu:mozu-api-java:1.9.0-SNAPSHOT") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'

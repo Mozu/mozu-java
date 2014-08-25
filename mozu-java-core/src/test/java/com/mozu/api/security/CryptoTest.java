@@ -1,8 +1,9 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -44,7 +45,7 @@ public class CryptoTest {
         
         new Expectations() {
             {
-                AppAuthenticator.initialize();
+                AppAuthenticator.initialize(mockAppAuthInfo);
                 AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
                 mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
@@ -52,7 +53,7 @@ public class CryptoTest {
         }; 
         
         String body = "This is a test of the crypto validation";
-        AppAuthenticator.initialize();
+        AppAuthenticator.initialize(mockAppAuthInfo);
         
         ApiContext apiContext = new MozuApiContext();
 
@@ -74,7 +75,7 @@ public class CryptoTest {
     public void oldRequestTest() {
         new Expectations() {
             {
-                AppAuthenticator.initialize();
+                AppAuthenticator.initialize(mockAppAuthInfo);
                 AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
                 mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
@@ -82,7 +83,7 @@ public class CryptoTest {
         }; 
         
         String body = "This is a test of the crypto validation";
-        AppAuthenticator.initialize();
+        AppAuthenticator.initialize(mockAppAuthInfo);
         
         ApiContext apiContext = new MozuApiContext();
 

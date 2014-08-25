@@ -158,11 +158,11 @@ public class MozuClient<TResult> {
             AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
             if (appAuthenticator == null) {
                 throw new ApiException("Application has not been authorized to access Mozu.");
-            } else if (StringUtils.isBlank(appAuthenticator.getBaseUrl())) {
+            } else if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
                 throw new ApiException("Authentication.Instance.BaseUrl is missing");
             }
 
-            baseAddress = AppAuthenticator.getInstance().getBaseUrl();
+            baseAddress = MozuConfig.getBaseUrl();
         }
     }
 
