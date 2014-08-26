@@ -70,6 +70,18 @@ public class DocumentListUrl
 	}
 
 	/**
+	 * Get Resource Url for LegacyR4_UpdateDocumentContent
+	 * @param documentId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl legacyR4_UpdateDocumentContentUrl(String documentId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/files/documents/{documentId}/content");
+		formatter.formatUrl("documentId", documentId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteDocumentList
 	 * @param documentListName 
 	 * @return   String Resource Url

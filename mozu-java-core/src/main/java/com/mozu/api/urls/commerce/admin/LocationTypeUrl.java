@@ -25,41 +25,47 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for GetLocationType
-	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationTypeCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationTypeUrl(String locationTypeCode)
+	public static MozuUrl getLocationTypeUrl(String locationTypeCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/{locationTypeCode}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/{locationTypeCode}?responseFields={responseFields}");
 		formatter.formatUrl("locationTypeCode", locationTypeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddLocationType
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addLocationTypeUrl()
+	public static MozuUrl addLocationTypeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateLocationType
-	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationTypeCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateLocationTypeUrl(String locationTypeCode)
+	public static MozuUrl updateLocationTypeUrl(String locationTypeCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/{locationTypeCode}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/admin/locationtypes/{locationTypeCode}?responseFields={responseFields}");
 		formatter.formatUrl("locationTypeCode", locationTypeCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

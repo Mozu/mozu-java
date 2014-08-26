@@ -106,6 +106,121 @@ public class PropertyTypeClient {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PropertyType propertyType = client.Result();
+	 * </code></pre></p>
+	 * @param propertyType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> createPropertyTypeClient(com.mozu.api.contracts.content.PropertyType propertyType) throws Exception
+	{
+		return createPropertyTypeClient( propertyType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PropertyType propertyType = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param propertyType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> createPropertyTypeClient(com.mozu.api.contracts.content.PropertyType propertyType, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.createPropertyTypeUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.content.PropertyType.class;
+		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(propertyType);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PropertyType propertyType = client.Result();
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @param propertyType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> updatePropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName) throws Exception
+	{
+		return updatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PropertyType propertyType = client.Result();
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @param responseFields 
+	 * @param propertyType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.PropertyType> updatePropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.updatePropertyTypeUrl(propertyTypeName, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.content.PropertyType.class;
+		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(propertyType);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeletePropertyTypeClient(dataViewMode,  propertyTypeName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deletePropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.deletePropertyTypeUrl(propertyTypeName);
+		String verb = "DELETE";
+				MozuClient mozuClient = new MozuClient();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
 }
 
 

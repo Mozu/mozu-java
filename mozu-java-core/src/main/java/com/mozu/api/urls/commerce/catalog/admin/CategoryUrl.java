@@ -35,7 +35,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetChildCategories
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category whose subcategories are retrieved.
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -93,7 +93,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for DeleteCategoryById
-	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param cascadeDelete If true, any subcategories of a category are deleted when this category is deleted. Default: False.
 	 * @param categoryId Unique identifier of the category to delete.
 	 * @return   String Resource Url
 	 */

@@ -43,5 +43,43 @@ public class PropertyTypeUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
+	/**
+	 * Get Resource Url for CreatePropertyType
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createPropertyTypeUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdatePropertyType
+	 * @param propertyTypeName 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updatePropertyTypeUrl(String propertyTypeName, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/{propertyTypeName}?responseFields={responseFields}");
+		formatter.formatUrl("propertyTypeName", propertyTypeName);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeletePropertyType
+	 * @param propertyTypeName 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deletePropertyTypeUrl(String propertyTypeName)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/propertytypes/{propertyTypeName}");
+		formatter.formatUrl("propertyTypeName", propertyTypeName);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
 }
 

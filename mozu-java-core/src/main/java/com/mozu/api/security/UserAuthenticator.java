@@ -258,9 +258,9 @@ public class UserAuthenticator {
     private static String getResourceRefreshUrl(AuthTicket authTicket, Integer id) {
         switch (authTicket.getScope()) {
         case Tenant:
-            return TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(id).getUrl();
+            return TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(null, id).getUrl();
         case Developer:
-            return DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(id).getUrl();
+            return DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(id, null).getUrl();
         default:
             throw new NotImplementedException("Invalid User Scope.");
         }
@@ -269,9 +269,9 @@ public class UserAuthenticator {
     private static String getResourceUrl(AuthenticationScope scope, Integer id) {
         switch (scope) {
         case Tenant:
-            return TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(id).getUrl();
+            return TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(null, id).getUrl();
         case Developer:
-            return DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(id).getUrl();
+            return DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(id, null).getUrl();
         default:
             throw new NotImplementedException("Invalid User Scope.");
         }

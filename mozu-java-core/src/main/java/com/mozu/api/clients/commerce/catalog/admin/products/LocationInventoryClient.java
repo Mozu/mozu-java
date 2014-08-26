@@ -75,7 +75,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that identifies the location.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
@@ -93,7 +93,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that identifies the location.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -118,7 +118,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode ProductCodeBase
 	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -138,7 +138,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param performUpserts 
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode ProductCodeBase
 	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -167,7 +167,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
-	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
+	 * @param locationInventoryAdjustments 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment

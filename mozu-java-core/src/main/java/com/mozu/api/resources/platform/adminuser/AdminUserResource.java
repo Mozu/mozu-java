@@ -36,25 +36,6 @@ public AdminUserResource(ApiContext apiContext)
 
 	
 	/**
-	 * Retrieves the details of the specified administrator user account.
-	 * <p><pre><code>
-	 *	AdminUser adminuser = new AdminUser();
-	 *	User user = adminuser.GetUser( userId);
-	 * </code></pre></p>
-	 * @param userId Unique identifier of the administrator account to retrieve.
-	 * @return com.mozu.api.contracts.core.User
-	 * @see com.mozu.api.contracts.core.User
-	 */
-	public com.mozu.api.contracts.core.User getUser(String userId) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserClient( userId);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * Retrieves a list of the Mozu tenants or development stores for which the specified user has an assigned role.
 	 * <p><pre><code>
 	 *	AdminUser adminuser = new AdminUser();
@@ -66,7 +47,58 @@ public AdminUserResource(ApiContext apiContext)
 	 */
 	public com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(String userId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.tenant.TenantCollection> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getTenantScopesForUserClient( userId);
+		return getTenantScopesForUser( userId,  null);
+	}
+
+	/**
+	 * Retrieves a list of the Mozu tenants or development stores for which the specified user has an assigned role.
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	TenantCollection tenantCollection = adminuser.GetTenantScopesForUser( userId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @return com.mozu.api.contracts.tenant.TenantCollection
+	 * @see com.mozu.api.contracts.tenant.TenantCollection
+	 */
+	public com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.tenant.TenantCollection> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getTenantScopesForUserClient( userId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Retrieves the details of the specified administrator user account.
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.GetUser( userId);
+	 * </code></pre></p>
+	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User getUser(String userId) throws Exception
+	{
+		return getUser( userId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the specified administrator user account.
+	 * <p><pre><code>
+	 *	AdminUser adminuser = new AdminUser();
+	 *	User user = adminuser.GetUser( userId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * @return com.mozu.api.contracts.core.User
+	 * @see com.mozu.api.contracts.core.User
+	 */
+	public com.mozu.api.contracts.core.User getUser(String userId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.User> client = com.mozu.api.clients.platform.adminuser.AdminUserClient.getUserClient( userId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

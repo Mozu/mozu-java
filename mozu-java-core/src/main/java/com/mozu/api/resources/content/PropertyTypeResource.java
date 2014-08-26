@@ -109,6 +109,99 @@ public class PropertyTypeResource {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PropertyType propertytype = new PropertyType();
+	 *	PropertyType propertyType = propertytype.CreatePropertyType( propertyType);
+	 * </code></pre></p>
+	 * @param propertyType 
+	 * @return com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public com.mozu.api.contracts.content.PropertyType createPropertyType(com.mozu.api.contracts.content.PropertyType propertyType) throws Exception
+	{
+		return createPropertyType( propertyType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PropertyType propertytype = new PropertyType();
+	 *	PropertyType propertyType = propertytype.CreatePropertyType( propertyType,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param propertyType 
+	 * @return com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public com.mozu.api.contracts.content.PropertyType createPropertyType(com.mozu.api.contracts.content.PropertyType propertyType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.PropertyType> client = com.mozu.api.clients.content.PropertyTypeClient.createPropertyTypeClient( propertyType,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PropertyType propertytype = new PropertyType();
+	 *	PropertyType propertyType = propertytype.UpdatePropertyType(_dataViewMode,  propertyType,  propertyTypeName);
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @param propertyType 
+	 * @return com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public com.mozu.api.contracts.content.PropertyType updatePropertyType(com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName) throws Exception
+	{
+		return updatePropertyType( propertyType,  propertyTypeName,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PropertyType propertytype = new PropertyType();
+	 *	PropertyType propertyType = propertytype.UpdatePropertyType(_dataViewMode,  propertyType,  propertyTypeName,  responseFields);
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @param responseFields 
+	 * @param propertyType 
+	 * @return com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 * @see com.mozu.api.contracts.content.PropertyType
+	 */
+	public com.mozu.api.contracts.content.PropertyType updatePropertyType(com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.content.PropertyType> client = com.mozu.api.clients.content.PropertyTypeClient.updatePropertyTypeClient(_dataViewMode,  propertyType,  propertyTypeName,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PropertyType propertytype = new PropertyType();
+	 *	propertytype.DeletePropertyType(_dataViewMode,  propertyTypeName);
+	 * </code></pre></p>
+	 * @param propertyTypeName 
+	 * @return 
+	 */
+	public void deletePropertyType(String propertyTypeName) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.content.PropertyTypeClient.deletePropertyTypeClient(_dataViewMode,  propertyTypeName);
+		client.setContext(_apiContext);
+		client.executeRequest();
+
+	}
+
 }
 
 

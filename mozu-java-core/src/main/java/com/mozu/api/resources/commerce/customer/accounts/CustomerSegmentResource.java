@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Customer Account Segments subresource to view the customer segments associated with a customer account.
+ * 
  * </summary>
  */
 public class CustomerSegmentResource {
@@ -32,12 +32,12 @@ public class CustomerSegmentResource {
 
 	
 	/**
-	 * Retrieves the list of segments associated with a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
@@ -47,17 +47,17 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Retrieves the list of segments associated with a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param accountId 
+	 * @param filter 
+	 * @param pageSize 
 	 * @param responseFields 
-	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */

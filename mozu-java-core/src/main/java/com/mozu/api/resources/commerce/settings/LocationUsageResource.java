@@ -42,7 +42,22 @@ public class LocationUsageResource {
 	 */
 	public com.mozu.api.contracts.location.LocationUsageCollection getLocationUsages() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationUsageCollection> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.getLocationUsagesClient();
+		return getLocationUsages( null);
+	}
+
+	/**
+	 * Retrieves the configured site location usages for the location usage code specified in the request.
+	 * <p><pre><code>
+	 *	LocationUsage locationusage = new LocationUsage();
+	 *	LocationUsageCollection locationUsageCollection = locationusage.GetLocationUsages( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.LocationUsageCollection
+	 * @see com.mozu.api.contracts.location.LocationUsageCollection
+	 */
+	public com.mozu.api.contracts.location.LocationUsageCollection getLocationUsages(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationUsageCollection> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.getLocationUsagesClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -61,7 +76,23 @@ public class LocationUsageResource {
 	 */
 	public com.mozu.api.contracts.location.LocationUsage getLocationUsage(String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationUsage> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.getLocationUsageClient( code);
+		return getLocationUsage( code,  null);
+	}
+
+	/**
+	 * Retrieves the location usages for the site specified in the request header.
+	 * <p><pre><code>
+	 *	LocationUsage locationusage = new LocationUsage();
+	 *	LocationUsage locationUsage = locationusage.GetLocationUsage( code,  responseFields);
+	 * </code></pre></p>
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.LocationUsage
+	 * @see com.mozu.api.contracts.location.LocationUsage
+	 */
+	public com.mozu.api.contracts.location.LocationUsage getLocationUsage(String code, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationUsage> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.getLocationUsageClient( code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -82,7 +113,25 @@ public class LocationUsageResource {
 	 */
 	public com.mozu.api.contracts.location.LocationUsage updateLocationUsage(com.mozu.api.contracts.location.LocationUsage usage, String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationUsage> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.updateLocationUsageClient( usage,  code);
+		return updateLocationUsage( usage,  code,  null);
+	}
+
+	/**
+	 * Updates the location usage for the site based on the location usage code specified in the request.
+	 * <p><pre><code>
+	 *	LocationUsage locationusage = new LocationUsage();
+	 *	LocationUsage locationUsage = locationusage.UpdateLocationUsage( usage,  code,  responseFields);
+	 * </code></pre></p>
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields 
+	 * @param usage Properties of the location usage type to update.
+	 * @return com.mozu.api.contracts.location.LocationUsage
+	 * @see com.mozu.api.contracts.location.LocationUsage
+	 * @see com.mozu.api.contracts.location.LocationUsage
+	 */
+	public com.mozu.api.contracts.location.LocationUsage updateLocationUsage(com.mozu.api.contracts.location.LocationUsage usage, String code, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationUsage> client = com.mozu.api.clients.commerce.settings.LocationUsageClient.updateLocationUsageClient( usage,  code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -67,7 +67,7 @@ public class MasterCatalogClient {
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -84,7 +84,7 @@ public class MasterCatalogClient {
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog

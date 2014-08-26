@@ -11,18 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSegment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The user-defined code assigned for the customer segment.
-	 */
 	protected String code;
 
 	public String getCode() {
@@ -33,9 +27,6 @@ public class CustomerSegment implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * Description of the customer segment.
-	 */
 	protected String description;
 
 	public String getDescription() {
@@ -46,9 +37,6 @@ public class CustomerSegment implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Unique identifier of the customer segment. System-supplied and read only.
-	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -59,9 +47,6 @@ public class CustomerSegment implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Name of the customer segment.
-	 */
 	protected String name;
 
 	public String getName() {

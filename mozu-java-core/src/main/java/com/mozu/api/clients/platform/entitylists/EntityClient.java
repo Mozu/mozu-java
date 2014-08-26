@@ -25,7 +25,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -43,7 +43,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -115,7 +115,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param item 
@@ -134,7 +134,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -162,7 +162,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -182,7 +182,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 

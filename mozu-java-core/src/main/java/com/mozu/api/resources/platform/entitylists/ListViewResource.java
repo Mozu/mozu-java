@@ -35,7 +35,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject json = listview.GetViewEntity( entityListFullName,  viewName,  entityId);
+	 *	JObject jObject = listview.GetViewEntity( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -52,7 +52,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject json = listview.GetViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
+	 *	JObject jObject = listview.GetViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 

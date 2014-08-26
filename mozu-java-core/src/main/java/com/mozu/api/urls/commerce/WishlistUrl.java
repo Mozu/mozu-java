@@ -53,9 +53,9 @@ public class WishlistUrl
 
 	/**
 	 * Get Resource Url for GetWishlistByName
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param customerAccountId 
 	 * @param responseFields 
-	 * @param wishlistName The name of the wish list to retrieve.
+	 * @param wishlistName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getWishlistByNameUrl(Integer customerAccountId, String responseFields, String wishlistName)

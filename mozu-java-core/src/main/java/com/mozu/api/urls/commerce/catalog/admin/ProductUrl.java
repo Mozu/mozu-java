@@ -53,7 +53,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductInCatalog
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @return   String Resource Url
@@ -69,7 +69,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProduct
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -121,7 +121,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for UpdateProductInCatalog
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @return   String Resource Url
@@ -163,7 +163,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for DeleteProductInCatalog
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */

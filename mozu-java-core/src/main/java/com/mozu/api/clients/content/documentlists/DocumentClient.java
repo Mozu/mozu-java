@@ -47,7 +47,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetDocumentClient(dataViewMode,  documentListName,  documentId);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetDocumentClient(dataViewMode,  documentListName,  documentId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -139,7 +139,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName);
 	 * client.setBaseAddress(url);
@@ -158,7 +158,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=CreateDocumentClient(dataViewMode,  document,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
@@ -195,7 +195,7 @@ public class DocumentClient {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */

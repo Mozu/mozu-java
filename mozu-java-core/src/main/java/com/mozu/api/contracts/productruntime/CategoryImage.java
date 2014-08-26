@@ -32,9 +32,6 @@ public class CategoryImage implements Serializable
 		this.altText = altText;
 	}
 
-	/**
-	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
-	 */
 	protected String cmsId;
 
 	public String getCmsId() {
@@ -43,6 +40,19 @@ public class CategoryImage implements Serializable
 
 	public void setCmsId(String cmsId) {
 		this.cmsId = cmsId;
+	}
+
+	/**
+	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
+	 */
+	protected String imageLabel;
+
+	public String getImageLabel() {
+		return this.imageLabel;
+	}
+
+	public void setImageLabel(String imageLabel) {
+		this.imageLabel = imageLabel;
 	}
 
 	/**
@@ -95,19 +105,6 @@ public class CategoryImage implements Serializable
 
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
-	}
-
-	/**
-	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
-	 */
-	protected String imageLabel;
-
-	public String getImageLabel() {
-		return this.imageLabel;
-	}
-
-	public void setImageLabel(String imageLabel) {
-		this.imageLabel = imageLabel;
 	}
 
 }

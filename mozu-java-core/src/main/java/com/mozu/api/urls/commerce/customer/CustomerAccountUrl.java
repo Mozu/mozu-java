@@ -17,7 +17,7 @@ public class CustomerAccountUrl
 	 * Get Resource Url for GetAccounts
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
+	 * @param isAnonymous 
 	 * @param pageSize 
 	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -43,7 +43,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginState
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -95,7 +95,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddLoginToExistingCustomer
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -109,7 +109,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for RecomputeCustomerLifetimeValue
-	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
+	 * @param accountId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl recomputeCustomerLifetimeValueUrl(Integer accountId)
@@ -121,7 +121,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetLoginLocked
-	 * @param accountId The unique identifier of the customer account.
+	 * @param accountId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setLoginLockedUrl(Integer accountId)
@@ -133,7 +133,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetPasswordChangeRequired
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setPasswordChangeRequiredUrl(Integer accountId)
@@ -169,7 +169,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByEmailAddress
-	 * @param emailAddress The email address associated with the customer account.
+	 * @param emailAddress 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -184,7 +184,7 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for GetLoginStateByUserName
 	 * @param responseFields 
-	 * @param userName The user name associated with the customer account.
+	 * @param userName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLoginStateByUserNameUrl(String responseFields, String userName)

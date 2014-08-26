@@ -38,16 +38,6 @@ public class ListView implements Serializable
 		this.filter = filter;
 	}
 
-	protected Object metaData;
-
-	public Object getMetaData() {
-		return this.metaData;
-	}
-
-	public void setMetaData(Object metaData) {
-		this.metaData = metaData;
-	}
-
 	protected String name;
 
 	public String getName() {
@@ -82,6 +72,16 @@ public class ListView implements Serializable
 	}
 	public void setFields(List<ListViewField> fields) {
 		this.fields = fields;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode metaData;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetaData() {
+		return this.metaData;
+	}
+
+	public void setMetaData(com.fasterxml.jackson.databind.JsonNode metaData) {
+		this.metaData = metaData;
 	}
 
 }

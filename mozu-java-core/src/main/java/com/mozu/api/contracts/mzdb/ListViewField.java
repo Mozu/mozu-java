@@ -16,26 +16,6 @@ public class ListViewField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean isQueryable;
-
-	public Boolean getIsQueryable() {
-		return this.isQueryable;
-	}
-
-	public void setIsQueryable(Boolean isQueryable) {
-		this.isQueryable = isQueryable;
-	}
-
-	protected Boolean isSortable;
-
-	public Boolean getIsSortable() {
-		return this.isSortable;
-	}
-
-	public void setIsSortable(Boolean isSortable) {
-		this.isSortable = isSortable;
-	}
-
 	protected String name;
 
 	public String getName() {

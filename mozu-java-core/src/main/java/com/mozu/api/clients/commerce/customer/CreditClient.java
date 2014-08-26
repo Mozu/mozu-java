@@ -151,14 +151,14 @@ public class CreditClient {
 	}
 
 	/**
-	 * Associates an unclaimed customer credit with the shopper user authenticated in the request header.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.credit.Credit> mozuClient=AssociateCreditToShopperClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -168,14 +168,14 @@ public class CreditClient {
 	}
 
 	/**
-	 * Associates an unclaimed customer credit with the shopper user authenticated in the request header.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.credit.Credit> mozuClient=AssociateCreditToShopperClient( code,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param code 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit

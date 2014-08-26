@@ -60,7 +60,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.GetDocument(_dataViewMode,  documentListName,  documentId);
@@ -76,7 +76,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Retrieves a document within the specified document list.
+	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.GetDocument(_dataViewMode,  documentListName,  documentId,  responseFields);
@@ -136,7 +136,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName);
@@ -153,7 +153,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Creates a new document in an defined document list.
+	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName,  responseFields);
@@ -182,7 +182,7 @@ public class DocumentResource {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return 
 	 * @see Stream
 	 */

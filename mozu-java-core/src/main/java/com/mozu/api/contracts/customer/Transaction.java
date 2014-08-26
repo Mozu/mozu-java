@@ -32,6 +32,16 @@ public class Transaction implements Serializable
 		this.amount = amount;
 	}
 
+	protected String currencyCode;
+
+	public String getCurrencyCode() {
+		return this.currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
 	/**
 	 * The date and time the customer transaction occurred.
 	 */

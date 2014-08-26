@@ -38,7 +38,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 */
@@ -54,7 +54,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute

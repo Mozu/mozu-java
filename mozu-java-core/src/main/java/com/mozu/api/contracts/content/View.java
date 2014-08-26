@@ -74,4 +74,14 @@ public class View implements Serializable
 		this.fields = fields;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
+	}
+
 }

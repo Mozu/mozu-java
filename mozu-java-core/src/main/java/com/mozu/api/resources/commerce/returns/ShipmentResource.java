@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Return Shipments subresource to manage shipments for a return replacement.
+ * Use the return shipments subresource to manage shipments for a return replacement.
  * </summary>
  */
 public class ShipmentResource {

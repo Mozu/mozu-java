@@ -13,6 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Retrieves and modifies the products, categories, and shipping methods eligible for discounts in the form of a fixed dollar amount, percentage off a product price, or free shipping.
  * </summary>
@@ -22,7 +23,7 @@ public class DiscountTargetClient {
 	/**
 	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient( discountId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient(dataViewMode,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
@@ -31,15 +32,15 @@ public class DiscountTargetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> getDiscountTargetClient(Integer discountId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> getDiscountTargetClient(com.mozu.api.DataViewMode dataViewMode, Integer discountId) throws Exception
 	{
-		return getDiscountTargetClient( discountId,  null);
+		return getDiscountTargetClient(dataViewMode,  discountId,  null);
 	}
 
 	/**
 	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient( discountId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient=GetDiscountTargetClient(dataViewMode,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
@@ -49,7 +50,7 @@ public class DiscountTargetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> getDiscountTargetClient(Integer discountId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> getDiscountTargetClient(com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.discounts.DiscountTargetUrl.getDiscountTargetUrl(discountId, responseFields);
 		String verb = "GET";
@@ -57,6 +58,7 @@ public class DiscountTargetClient {
 		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

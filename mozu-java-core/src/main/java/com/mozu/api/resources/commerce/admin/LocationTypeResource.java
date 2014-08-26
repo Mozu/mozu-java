@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Location Types resource to manage the types of locations your tenant maintains, such as warehouses, physical storefronts, and kiosks.
+ * 
  * </summary>
  */
 public class LocationTypeResource {
@@ -32,7 +32,7 @@ public class LocationTypeResource {
 
 	
 	/**
-	 * Retrieve a list of all location types defined for the tenant.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.GetLocationTypes();
@@ -50,18 +50,34 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Retrieves the details of the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.GetLocationType( locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationTypeCode 
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
 	public com.mozu.api.contracts.location.LocationType getLocationType(String locationTypeCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.getLocationTypeClient( locationTypeCode);
+		return getLocationType( locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.GetLocationType( locationTypeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType getLocationType(String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.getLocationTypeClient( locationTypeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -69,19 +85,36 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Creates a new location type based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.AddLocationType( locationType);
 	 * </code></pre></p>
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType 
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
 	public com.mozu.api.contracts.location.LocationType addLocationType(com.mozu.api.contracts.location.LocationType locationType) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.addLocationTypeClient( locationType);
+		return addLocationType( locationType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.AddLocationType( locationType,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType addLocationType(com.mozu.api.contracts.location.LocationType locationType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.addLocationTypeClient( locationType,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -89,20 +122,38 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Updates the name of a defined location type.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.UpdateLocationType( locationType,  locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationTypeCode 
+	 * @param locationType 
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 */
 	public com.mozu.api.contracts.location.LocationType updateLocationType(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.updateLocationTypeClient( locationType,  locationTypeCode);
+		return updateLocationType( locationType,  locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.UpdateLocationType( locationType,  locationTypeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType updateLocationType(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.updateLocationTypeClient( locationType,  locationTypeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -110,12 +161,12 @@ public class LocationTypeResource {
 	}
 
 	/**
-	 * Deletes the location type specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
 	 *	locationtype.DeleteLocationType( locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode 
 	 * @return 
 	 */
 	public void deleteLocationType(String locationTypeCode) throws Exception

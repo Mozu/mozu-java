@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Properties of the conditions that must be met for a discount to apply to a product category.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryDiscountCondition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier of the product category associated with the discount.
-	 */
 	protected Integer categoryId;
 
 	public Integer getCategoryId() {

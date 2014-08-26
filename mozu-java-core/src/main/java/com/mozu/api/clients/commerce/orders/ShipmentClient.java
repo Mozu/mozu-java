@@ -77,7 +77,25 @@ public class ShipmentClient {
 	 */
 	public static MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> getAvailableShipmentMethodsClient(String orderId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.getAvailableShipmentMethodsUrl(orderId);
+		return getAvailableShipmentMethodsClient( orderId,  null);
+	}
+
+	/**
+	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient=GetAvailableShipmentMethodsClient( orderId,  draft);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ShippingRate shippingRate = client.Result();
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> getAvailableShipmentMethodsClient(String orderId, Boolean draft) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.ShipmentUrl.getAvailableShipmentMethodsUrl(draft, orderId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>(){}.getClass();
 		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> mozuClient = new MozuClient(clz);

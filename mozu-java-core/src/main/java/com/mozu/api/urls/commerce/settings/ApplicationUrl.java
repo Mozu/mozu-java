@@ -15,21 +15,25 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for ThirdPartyGetApplication
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl thirdPartyGetApplicationUrl()
+	public static MozuUrl thirdPartyGetApplicationUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/applications/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/applications/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for ThirdPartyUpdateApplication
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl thirdPartyUpdateApplicationUrl()
+	public static MozuUrl thirdPartyUpdateApplicationUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/applications/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/applications/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

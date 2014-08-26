@@ -13,9 +13,6 @@ import com.mozu.api.contracts.productruntime.ProductContent;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 
-/**
- *	Properties of a component product in a product bundle. A product bundle can represent either a collection of multiple products sold as a single entity, or a collection of the same product sold as a package. For example, a 10-pack of socks.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BundledProduct implements Serializable
 {
@@ -42,9 +39,6 @@ public class BundledProduct implements Serializable
 		this.goodsType = goodsType;
 	}
 
-	/**
-	 * If true, the component product of the bundle should not ship in a package with the rest of the product bundle, and should ship in a package by itself. System-supplied and read only.
-	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -75,9 +69,6 @@ public class BundledProduct implements Serializable
 		this.optionValue = optionValue;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -98,9 +89,6 @@ public class BundledProduct implements Serializable
 		this.productType = productType;
 	}
 
-	/**
-	 * The quantity of the component product in the product bundle. System-supplied and read only.
-	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -111,9 +99,6 @@ public class BundledProduct implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Localizable product content defined for the product bundle. System-supplied and read only.
-	 */
 	protected ProductContent content;
 
 	public ProductContent getContent() {
@@ -134,9 +119,6 @@ public class BundledProduct implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {

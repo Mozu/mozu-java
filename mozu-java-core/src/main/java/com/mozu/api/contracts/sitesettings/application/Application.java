@@ -60,9 +60,6 @@ public class Application implements Serializable
 		this.initialized = initialized;
 	}
 
-	/**
-	 * If true, the application type is Extension.
-	 */
 	protected Boolean isExtension;
 
 	public Boolean getIsExtension() {

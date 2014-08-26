@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
+ * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
  * </summary>
  */
 public class CustomerCheckoutSettingsResource {
@@ -42,7 +42,22 @@ public class CustomerCheckoutSettingsResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings getCustomerCheckoutSettings() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> client = com.mozu.api.clients.commerce.settings.checkout.CustomerCheckoutSettingsClient.getCustomerCheckoutSettingsClient();
+		return getCustomerCheckoutSettings( null);
+	}
+
+	/**
+	 * Retrieves all checkout settings defined for the site: Payment settings, such as the payment gateway ID and credentials, supported credit cards, and more; Customer Checkout settings, such as whether login is required, and any custom attributes; and Order Processing settings, such as when payment is authorized and captured, and any custom attributes.
+	 * <p><pre><code>
+	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
+	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.GetCustomerCheckoutSettings( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
+	 */
+	public com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings getCustomerCheckoutSettings(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> client = com.mozu.api.clients.commerce.settings.checkout.CustomerCheckoutSettingsClient.getCustomerCheckoutSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -62,7 +77,24 @@ public class CustomerCheckoutSettingsResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings updateCustomerCheckoutSettings(com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings customerCheckoutSettings) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> client = com.mozu.api.clients.commerce.settings.checkout.CustomerCheckoutSettingsClient.updateCustomerCheckoutSettingsClient( customerCheckoutSettings);
+		return updateCustomerCheckoutSettings( customerCheckoutSettings,  null);
+	}
+
+	/**
+	 * Modifies existing site checkout settings. Modify Payment, Customer Checkout, and Order Processing settings in one PUT.
+	 * <p><pre><code>
+	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
+	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.UpdateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
+	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
+	 */
+	public com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings updateCustomerCheckoutSettings(com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings customerCheckoutSettings, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> client = com.mozu.api.clients.commerce.settings.checkout.CustomerCheckoutSettingsClient.updateCustomerCheckoutSettingsClient( customerCheckoutSettings,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

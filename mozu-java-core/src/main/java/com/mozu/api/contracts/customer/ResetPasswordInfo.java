@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Information required to reset the password for a customer account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResetPasswordInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
 	protected String emailAddress;
 
 	public String getEmailAddress() {
@@ -32,9 +26,6 @@ public class ResetPasswordInfo implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * User name of the user associated with the customer account.
-	 */
 	protected String userName;
 
 	public String getUserName() {

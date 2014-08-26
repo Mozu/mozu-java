@@ -32,7 +32,7 @@ public class AttributeVocabularyValueResource {
 
 	
 	/**
-	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
+	 * Retrieves a list of attribute vocabulary values. To target a query, use one or several valid optional response groups.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValues( attributeFQN);
@@ -114,7 +114,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValue( attributeFQN,  value);
@@ -131,7 +131,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValue( attributeFQN,  value,  responseFields);
@@ -196,7 +196,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.AddAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN);
@@ -214,7 +214,7 @@ public class AttributeVocabularyValueResource {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
 	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.AddAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  responseFields);

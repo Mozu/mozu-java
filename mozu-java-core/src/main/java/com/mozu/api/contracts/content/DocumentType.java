@@ -84,6 +84,16 @@ public class DocumentType implements Serializable
 		this.version = version;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
+	}
+
 	protected List<Property> properties;
 	public List<Property> getProperties() {
 		return this.properties;

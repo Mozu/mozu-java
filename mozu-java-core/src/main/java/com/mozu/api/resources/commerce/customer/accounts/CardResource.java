@@ -32,13 +32,13 @@ public class CardResource {
 
 	
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.GetAccountCard( accountId,  cardId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param accountId 
+	 * @param cardId 
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -48,13 +48,13 @@ public class CardResource {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
 	 *	Card card = card.GetAccountCard( accountId,  cardId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param accountId 
+	 * @param cardId 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -149,7 +149,7 @@ public class CardResource {
 	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -167,7 +167,7 @@ public class CardResource {
 	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param responseFields 
 	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card

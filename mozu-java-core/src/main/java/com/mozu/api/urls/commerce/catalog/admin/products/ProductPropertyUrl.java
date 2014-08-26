@@ -64,7 +64,7 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for GetProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

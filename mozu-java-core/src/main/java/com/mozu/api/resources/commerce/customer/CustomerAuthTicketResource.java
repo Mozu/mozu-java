@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Customer Authentication Tickets resource to generate and refresh authentication tickets for customer accounts.
+ * 
  * </summary>
  */
 public class CustomerAuthTicketResource {
@@ -50,12 +50,12 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Generates a new authentication ticket for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
-	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
+	 * @param userAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
@@ -66,13 +66,13 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Generates a new authentication ticket for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
+	 * @param userAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
@@ -87,12 +87,12 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken);
 	 * </code></pre></p>
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param refreshToken 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
@@ -102,12 +102,12 @@ public class CustomerAuthTicketResource {
 	}
 
 	/**
-	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken,  responseFields);
 	 * </code></pre></p>
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param refreshToken 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket

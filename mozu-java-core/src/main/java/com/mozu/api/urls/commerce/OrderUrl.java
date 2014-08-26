@@ -51,7 +51,7 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for GetTaxableOrders
-	 * @param orderId Unique identifier of the order to retrieve.
+	 * @param orderId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTaxableOrdersUrl(String orderId)

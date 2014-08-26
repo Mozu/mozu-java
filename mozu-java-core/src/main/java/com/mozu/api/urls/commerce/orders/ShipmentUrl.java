@@ -31,12 +31,14 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetAvailableShipmentMethods
+	 * @param draft 
 	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAvailableShipmentMethodsUrl(String orderId)
+	public static MozuUrl getAvailableShipmentMethodsUrl(Boolean draft, String orderId)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/methods");
+		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("orderId", orderId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

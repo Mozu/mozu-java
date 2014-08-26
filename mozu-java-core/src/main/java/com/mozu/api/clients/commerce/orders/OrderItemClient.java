@@ -108,7 +108,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * Adds a new item to an existing order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderItemClient( orderItem,  orderId);
 	 * client.setBaseAddress(url);
@@ -127,7 +127,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Adds a new item to a defined order.
+	 * Adds a new item to an existing order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=CreateOrderItemClient( orderItem,  orderId,  updateMode,  version,  skipInventoryCheck,  responseFields);
 	 * client.setBaseAddress(url);
@@ -136,7 +136,7 @@ public class OrderItemClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add the item.
 	 * @param responseFields 
-	 * @param skipInventoryCheck If true, do not validate the product inventory when adding this item to the order.
+	 * @param skipInventoryCheck 
 	 * @param updateMode Specifies whether to add the item by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param orderItem The properties of the item to create in the existing order.
@@ -211,16 +211,16 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemFulfillmentClient( orderItem,  orderId,  orderItemId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderItemId Unique identifier of the item in the order.
-	 * @param orderItem Properties of the order item to update for fulfillment.
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @param orderItem 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -231,19 +231,19 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Updates the item fulfillment information for the order specified in the request.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemFulfillmentClient( orderItem,  orderId,  orderItemId,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderItemId Unique identifier of the item in the order.
+	 * @param orderId 
+	 * @param orderItemId 
 	 * @param responseFields 
-	 * @param updateMode Specifies whether to apply the coupon by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
-	 * @param orderItem Properties of the order item to update for fulfillment.
+	 * @param updateMode 
+	 * @param version 
+	 * @param orderItem 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
@@ -358,7 +358,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * Removes a previously added item from an existing order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=DeleteOrderItemClient( orderId,  orderItemId);
 	 * client.setBaseAddress(url);
@@ -376,7 +376,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * Removes a previously added item from a defined order.
+	 * Removes a previously added item from an existing order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=DeleteOrderItemClient( orderId,  orderItemId,  updateMode,  version);
 	 * client.setBaseAddress(url);

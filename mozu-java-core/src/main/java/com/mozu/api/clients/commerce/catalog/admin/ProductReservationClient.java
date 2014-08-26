@@ -113,7 +113,7 @@ public class ProductReservationClient {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=AddProductReservationsClient(dataViewMode,  productReservations);
 	 * client.setBaseAddress(url);
@@ -121,7 +121,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -132,16 +132,16 @@ public class ProductReservationClient {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=AddProductReservationsClient(dataViewMode,  productReservations,  skipInventoryCheck);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -161,14 +161,14 @@ public class ProductReservationClient {
 	}
 
 	/**
-	 * Commits a product reservation to decrement the product's inventory by the quantity specified then release the reservation once the order process completed successfully.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CommitReservationsClient(dataViewMode,  productReservations);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations List of unique identifiers of the reservations to commit.
+	 * @param productReservations 
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -186,7 +186,7 @@ public class ProductReservationClient {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=UpdateProductReservationsClient(dataViewMode,  productReservations);
 	 * client.setBaseAddress(url);
@@ -194,7 +194,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -205,16 +205,16 @@ public class ProductReservationClient {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=UpdateProductReservationsClient(dataViewMode,  productReservations,  skipInventoryCheck);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation

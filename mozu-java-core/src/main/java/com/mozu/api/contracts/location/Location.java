@@ -19,7 +19,7 @@ import com.mozu.api.contracts.location.RegularHours;
 import com.mozu.api.contracts.location.ShippingOriginContact;
 
 /**
- *	Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+ *	Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both..
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Location implements Serializable
@@ -200,9 +200,6 @@ public class Location implements Serializable
 		this.regularHours = regularHours;
 	}
 
-	/**
-	 * Properties of a fulfillment contact for the shipping origin address associated with a location.
-	 */
 	protected ShippingOriginContact shippingOriginContact;
 
 	public ShippingOriginContact getShippingOriginContact() {

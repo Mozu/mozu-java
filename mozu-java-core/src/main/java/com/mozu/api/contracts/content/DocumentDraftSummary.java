@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Summary properties of an unpublished document draft.
+ *	A high level description of the document draft.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentDraftSummary implements Serializable

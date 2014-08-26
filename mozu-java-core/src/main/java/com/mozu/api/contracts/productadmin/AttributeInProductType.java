@@ -15,7 +15,7 @@ import com.mozu.api.contracts.productadmin.AttributeInProductTypeDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueInProductType;
 
 /**
- *	Properties of an attribute definition associated with a specific product type. When an attribute is applied to a product type, each product of that type maintains the same set of attributes.
+ *	A product type is like a product template that can be reused in the product admin service. Assign a product type to have certain attributes.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeInProductType implements Serializable

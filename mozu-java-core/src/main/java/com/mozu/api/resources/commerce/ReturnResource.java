@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
+ * Use the returns subresource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
  * </summary>
  */
 public class ReturnResource {
@@ -74,13 +74,85 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	string string = return.GetAvailableReturnActions( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return for which to retrieve available actions.
+	 * @param returnId Retrieves a list of the actions available to perform for the specified return based on its current state.
 	 * @return List<string>
 	 * @see string
 	 */
 	public List<String> getAvailableReturnActions(String returnId) throws Exception
 	{
 		MozuClient<List<String>> client = com.mozu.api.clients.commerce.ReturnClient.getAvailableReturnActionsClient( returnId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReturnItem returnItem = return.GetReturnItem( returnId,  returnItemId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(String returnId, String returnItemId) throws Exception
+	{
+		return getReturnItem( returnId,  returnItemId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReturnItem returnItem = return.GetReturnItem( returnId,  returnItemId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(String returnId, String returnItemId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> client = com.mozu.api.clients.commerce.ReturnClient.getReturnItemClient( returnId,  returnItemId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReturnItemCollection returnItemCollection = return.GetReturnItems( returnId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(String returnId) throws Exception
+	{
+		return getReturnItems( returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReturnItemCollection returnItemCollection = return.GetReturnItems( returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReturnItemsClient( returnId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -252,6 +324,45 @@ public class ReturnResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Return return = return.CreateReturnItem( returnItem,  returnId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItem 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId) throws Exception
+	{
+		return createReturnItem( returnItem,  returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Return return = return.CreateReturnItem( returnItem,  returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItem 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.createReturnItemClient( returnItem,  returnId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Updates a refund payment associated with a customer return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
@@ -332,12 +443,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Updates the return by performing the action specified in the request.
+	 * Updates the return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.PerformReturnActions( action);
 	 * </code></pre></p>
-	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
+	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -348,13 +459,13 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Updates the return by performing the action specified in the request.
+	 * Updates the return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.PerformReturnActions( action,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
+	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -401,6 +512,26 @@ public class ReturnResource {
 	public com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.updateReturnClient( ret,  returnId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Return return = return.DeleteOrderItem( returnId,  returnItemId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(String returnId, String returnItemId) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.deleteOrderItemClient( returnId,  returnItemId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

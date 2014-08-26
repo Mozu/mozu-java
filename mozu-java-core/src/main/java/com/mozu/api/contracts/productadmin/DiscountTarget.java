@@ -13,9 +13,10 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.TargetedCategory;
 import com.mozu.api.contracts.productadmin.TargetedProduct;
 import com.mozu.api.contracts.productadmin.TargetedShippingMethod;
+import com.mozu.api.contracts.productadmin.TargetedShippingZone;
 
 /**
- *	Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+ *	Specifies what to discount such as the type of discount and which products, categories, or shipping methods are eligible for the discount. Discount types can include the percentage off, specific monetary amount, or free shipping. This parameter also specifies the minimum monetary amount that the order must meet for the discount to apply.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountTarget implements Serializable
@@ -24,7 +25,7 @@ public class DiscountTarget implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the target discount applies to all products sold on the site, regardless of product category.
+	 * If true, the target discount applies to all products sold on the storefront.
 	 */
 	protected Boolean includeAllProducts;
 
@@ -47,7 +48,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Properties of the object to which this discount is targeted, which can be Product or Shipping. If the discount type is Product, the target properties describe the product or product categories to which the discount applies. If the discount type is Shipping, the target properties describe the shipping methods eligible for the discount.
+	 * The type of target to which the discount applies, such as a product or shipping.
 	 */
 	protected String type;
 
@@ -60,7 +61,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The product categories to which the discount can apply. When a discount applies to a category, all products in the category are eligible for the discount.
+	 * The product categories to which the discount can apply.
 	 */
 	protected List<TargetedCategory> categories;
 	public List<TargetedCategory> getCategories() {
@@ -93,7 +94,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * List of  product codes that represent the products to which the discount can apply.
+	 * The products to which the discount can apply.
 	 */
 	protected List<TargetedProduct> products;
 	public List<TargetedProduct> getProducts() {
@@ -104,7 +105,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The list of shipping method codes that represents the shipping service types to which the discount can apply.
+	 * The list of shipping method parameters that describe a method including the code, localized content, and audit information.
 	 */
 	protected List<TargetedShippingMethod> shippingMethods;
 	public List<TargetedShippingMethod> getShippingMethods() {
@@ -112,6 +113,14 @@ public class DiscountTarget implements Serializable
 	}
 	public void setShippingMethods(List<TargetedShippingMethod> shippingMethods) {
 		this.shippingMethods = shippingMethods;
+	}
+
+	protected List<TargetedShippingZone> shippingZones;
+	public List<TargetedShippingZone> getShippingZones() {
+		return this.shippingZones;
+	}
+	public void setShippingZones(List<TargetedShippingZone> shippingZones) {
+		this.shippingZones = shippingZones;
 	}
 
 }

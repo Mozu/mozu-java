@@ -27,7 +27,7 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalog
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

@@ -57,9 +57,6 @@ public class Pickup implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
-	/**
-	 * The location code that represents the location where the shopper will fulfill this pickup.
-	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {

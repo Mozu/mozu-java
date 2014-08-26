@@ -35,12 +35,42 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetAvailableReturnActions
-	 * @param returnId Unique identifier of the return for which to retrieve available actions.
+	 * @param returnId Retrieves a list of the actions available to perform for the specified return based on its current state.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableReturnActionsUrl(String returnId)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/actions");
+		formatter.formatUrl("returnId", returnId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetReturnItem
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getReturnItemUrl(String responseFields, String returnId, String returnItemId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/items/{returnItemId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("returnId", returnId);
+		formatter.formatUrl("returnItemId", returnItemId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetReturnItems
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getReturnItemsUrl(String responseFields, String returnId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/items?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("returnId", returnId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -116,6 +146,20 @@ public class ReturnUrl
 	}
 
 	/**
+	 * Get Resource Url for CreateReturnItem
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createReturnItemUrl(String responseFields, String returnId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/items?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("returnId", returnId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for PerformPaymentActionForReturn
 	 * @param paymentId Unique identifier of the return payment to update.
 	 * @param responseFields 
@@ -168,6 +212,20 @@ public class ReturnUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("returnId", returnId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteOrderItem
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteOrderItemUrl(String returnId, String returnItemId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{orderId}/items/{orderItemId}?updatemode={updateMode}&version={version}");
+		formatter.formatUrl("returnId", returnId);
+		formatter.formatUrl("returnItemId", returnItemId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
