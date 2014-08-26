@@ -35,7 +35,7 @@ public class MozuAppAuthenticator {
 			AppAuthInfo appAuthInfo = new AppAuthInfo();
 			appAuthInfo.setApplicationId(BaseAppConfiguration.getApplicationId());
 			appAuthInfo.setSharedSecret(BaseAppConfiguration.getSharedSecret());
-			AppAuthenticator.initialize(appAuthInfo, BaseAppConfiguration.getBaseUrl());
+			AppAuthenticator.initialize(appAuthInfo);
 			logger.info("Auth ticket : "+AppAuthenticator.getInstance().getAppAuthTicket().getAccessToken());
 			logger.info("Application authenticated");
 		} catch(Exception exc) {
