@@ -4,7 +4,7 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 
-archivesBaseName='mozu-api-base'
+archivesBaseName='mozu-api-toolkit'
 group='com.mozu'
 
 // Dynamically insert TeamCity build number if available
@@ -14,7 +14,7 @@ if (hasProperty("teamcity")) {
     }
     else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.9.0-SNAPSHOT'
+    version = '1.0.2'
 }
 
 jar {
@@ -59,7 +59,7 @@ dependencies {
     compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
     compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
 
-    compile ("com.mozu:mozu-api-core:"+version) {
+    compile ("com.mozu:mozu-api-core:1.9.0-SNAPSHOT") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
