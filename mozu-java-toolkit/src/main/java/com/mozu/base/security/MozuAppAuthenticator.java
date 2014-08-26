@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.security.AppAuthenticator;
-import com.mozu.base.models.BaseAppConfiguration;
 
 @Component
 public class MozuAppAuthenticator {
@@ -28,16 +28,13 @@ public class MozuAppAuthenticator {
 		logger.info("Authenticating Application in Mozu...");
 		try {
 			
-			BaseAppConfiguration.setApplicationId(applicationId);
-			BaseAppConfiguration.setSharedSecret(sharerdSecret);
-			BaseAppConfiguration.setBaseUrl(baseAppAuthUrl);
-	
-			AppAuthInfo appAuthInfo = new AppAuthInfo();
-			appAuthInfo.setApplicationId(BaseAppConfiguration.getApplicationId());
-			appAuthInfo.setSharedSecret(BaseAppConfiguration.getSharedSecret());
-			AppAuthenticator.initialize(appAuthInfo);
-			logger.info("Auth ticket : "+AppAuthenticator.getInstance().getAppAuthTicket().getAccessToken());
-			logger.info("Application authenticated");
+            AppAuthInfo appAuthInfo = new AppAuthInfo();
+            appAuthInfo.setApplicationId(applicationId);
+            appAuthInfo.setSharedSecret(sharerdSecret);
+            MozuConfig.setBaseUrl(baseAppAuthUrl);
+            AppAuthenticator.initialize(appAuthInfo);
+            logger.info("Auth ticket : "+AppAuthenticator.getInstance().getAppAuthTicket().getAccessToken());
+            logger.info("Application authenticated");
 		} catch(Exception exc) {
 			logger.error(exc.getMessage(), exc);
 		}
