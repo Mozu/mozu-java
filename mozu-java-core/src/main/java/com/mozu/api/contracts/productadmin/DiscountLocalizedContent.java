@@ -44,7 +44,7 @@ public class DiscountLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The localizable name of the discount.
+	 * Name of the localized content.
 	 */
 	protected String name;
 

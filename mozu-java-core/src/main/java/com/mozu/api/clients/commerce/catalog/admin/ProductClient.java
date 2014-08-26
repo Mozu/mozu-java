@@ -15,7 +15,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Administration resource to create new product definitions in the master catalog and determine which catalogs will feature products. You can also assign attribute values for defined products, manage product-level location inventory, and configure the variations of a product.
+ * Use this resource to create products, view the attributes associated with existing products, and determine which sites feature a specific product.
  * </summary>
  */
 public class ProductClient {
@@ -101,7 +101,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -119,7 +119,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
@@ -139,14 +139,14 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * Retrieves an existing product.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=GetProductClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -156,14 +156,14 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * Retrieves an existing product.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient=GetProductClient(dataViewMode,  productCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Product>
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -311,7 +311,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductInCatalogInfo>
@@ -331,7 +331,7 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductInCatalogInfo productInCatalogInfo = client.Result();
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
@@ -430,7 +430,7 @@ public class ProductClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient 
 	 */

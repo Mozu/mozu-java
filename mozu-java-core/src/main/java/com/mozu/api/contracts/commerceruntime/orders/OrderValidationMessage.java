@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Properties of a message returned by an order validation capability for the order specified in the request.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderValidationMessage implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The body of the message returned by the order validation capability.
-	 */
 	protected String message;
 
 	public String getMessage() {
@@ -32,9 +26,6 @@ public class OrderValidationMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * The type of message returned by the order validation capability, such as "Fraud Score."
-	 */
 	protected String messageType;
 
 	public String getMessageType() {
@@ -45,9 +36,6 @@ public class OrderValidationMessage implements Serializable
 		this.messageType = messageType;
 	}
 
-	/**
-	 * Unique identifier of the order item associated with the validation message.
-	 */
 	protected String orderItemId;
 
 	public String getOrderItemId() {

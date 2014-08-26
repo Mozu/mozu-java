@@ -25,6 +25,69 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean isMultiValued;
+
+	public Boolean getIsMultiValued() {
+		return this.isMultiValued;
+	}
+
+	public void setIsMultiValued(Boolean isMultiValued) {
+		this.isMultiValued = isMultiValued;
+	}
+
+	protected Boolean isRequired;
+
+	public Boolean getIsRequired() {
+		return this.isRequired;
+	}
+
+	public void setIsRequired(Boolean isRequired) {
+		this.isRequired = isRequired;
+	}
+
+	protected Boolean isVisible;
+
+	public Boolean getIsVisible() {
+		return this.isVisible;
+	}
+
+	public void setIsVisible(Boolean isVisible) {
+		this.isVisible = isVisible;
+	}
+
+	/**
+	 * Namespace associated with this extensible attribute.
+	 */
+	protected String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	protected Integer order;
+
+	public Integer getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+
+	protected String valueType;
+
+	public String getValueType() {
+		return this.valueType;
+	}
+
+	public void setValueType(String valueType) {
+		this.valueType = valueType;
+	}
+
 	/**
 	 * Name of this extensible attribute defined in Mozu Admin.
 	 */
@@ -118,69 +181,6 @@ public class Attribute implements Serializable
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
-	}
-
-	protected Boolean isMultiValued;
-
-	public Boolean getIsMultiValued() {
-		return this.isMultiValued;
-	}
-
-	public void setIsMultiValued(Boolean isMultiValued) {
-		this.isMultiValued = isMultiValued;
-	}
-
-	protected Boolean isRequired;
-
-	public Boolean getIsRequired() {
-		return this.isRequired;
-	}
-
-	public void setIsRequired(Boolean isRequired) {
-		this.isRequired = isRequired;
-	}
-
-	protected Boolean isVisible;
-
-	public Boolean getIsVisible() {
-		return this.isVisible;
-	}
-
-	public void setIsVisible(Boolean isVisible) {
-		this.isVisible = isVisible;
-	}
-
-	/**
-	 * Namespace associated with this extensible attribute.
-	 */
-	protected String namespace;
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-	}
-
-	protected Integer order;
-
-	public Integer getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(Integer order) {
-		this.order = order;
-	}
-
-	protected String valueType;
-
-	public String getValueType() {
-		return this.valueType;
-	}
-
-	public void setValueType(String valueType) {
-		this.valueType = valueType;
 	}
 
 	/**

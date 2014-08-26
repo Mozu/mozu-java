@@ -71,7 +71,7 @@ public class OrderResource {
 	}
 
 	/**
-	 * Retrieves the actions available to perform for an order based on its current status.
+	 * Retrieves available order actions which depends on the status of the order. Actions are "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * <p><pre><code>
 	 *	Order order = new Order();
 	 *	string string = order.GetAvailableActions( orderId);
@@ -90,12 +90,12 @@ public class OrderResource {
 	}
 
 	/**
-	 * Retrieves an order for the purpose of splitting it into multiple taxable orders in order to fulfill the order in multiple locations.
+	 * 
 	 * <p><pre><code>
 	 *	Order order = new Order();
 	 *	TaxableOrder taxableOrder = order.GetTaxableOrders( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order to retrieve.
+	 * @param orderId 
 	 * @return List<com.mozu.api.contracts.pricingruntime.TaxableOrder>
 	 * @see com.mozu.api.contracts.pricingruntime.TaxableOrder
 	 */
@@ -185,7 +185,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.CreateOrder( order);
 	 * </code></pre></p>
-	 * @param order Properties of the order to create and submit.
+	 * @param order All properties of the order to place.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -202,7 +202,7 @@ public class OrderResource {
 	 *	Order order = order.CreateOrder( order,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param order Properties of the order to create and submit.
+	 * @param order All properties of the order to place.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -217,13 +217,13 @@ public class OrderResource {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
 	 * <p><pre><code>
 	 *	Order order = new Order();
 	 *	Order order = order.PerformOrderAction( action,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param action The action to perform for the order.
+	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
@@ -234,14 +234,14 @@ public class OrderResource {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
 	 * <p><pre><code>
 	 *	Order order = new Order();
 	 *	Order order = order.PerformOrderAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields 
-	 * @param action The action to perform for the order.
+	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction

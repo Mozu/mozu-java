@@ -197,6 +197,27 @@ public class EntityListClient {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteEntityListClient( entityListFullName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deleteEntityListClient(String entityListFullName) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.EntityListUrl.deleteEntityListUrl(entityListFullName);
+		String verb = "DELETE";
+				MozuClient mozuClient = new MozuClient();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
 }
 
 

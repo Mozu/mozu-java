@@ -19,32 +19,6 @@ public class ProductVariationDeltaPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
-	protected String currencyCode;
-
-	public String getCurrencyCode() {
-		return this.currencyCode;
-	}
-
-	public void setCurrencyCode(String currencyCode) {
-		this.currencyCode = currencyCode;
-	}
-
-	/**
-	 * The manufacturer's suggested retail price, as defined by the supplier.
-	 */
 	protected Double msrp;
 
 	public Double getMsrp() {
@@ -66,6 +40,29 @@ public class ProductVariationDeltaPrice implements Serializable
 
 	public void setValue(Double value) {
 		this.value = value;
+	}
+
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
+	protected String currencyCode;
+
+	public String getCurrencyCode() {
+		return this.currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 }

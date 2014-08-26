@@ -51,7 +51,7 @@ public class OrderItemUrl
 	 * Get Resource Url for CreateOrderItem
 	 * @param orderId Unique identifier of the order for which to add the item.
 	 * @param responseFields 
-	 * @param skipInventoryCheck If true, do not validate the product inventory when adding this item to the order.
+	 * @param skipInventoryCheck 
 	 * @param updateMode Specifies whether to add the item by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return   String Resource Url
@@ -91,11 +91,11 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for UpdateItemFulfillment
-	 * @param orderId Unique identifier of the order.
-	 * @param orderItemId Unique identifier of the item in the order.
+	 * @param orderId 
+	 * @param orderItemId 
 	 * @param responseFields 
-	 * @param updateMode Specifies whether to apply the coupon by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 * @param updateMode 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemFulfillmentUrl(String orderId, String orderItemId, String responseFields, String updateMode, String version)

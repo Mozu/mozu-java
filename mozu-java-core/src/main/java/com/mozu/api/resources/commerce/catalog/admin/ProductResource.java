@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Product Administration resource to create new product definitions in the master catalog and determine which catalogs will feature products. You can also assign attribute values for defined products, manage product-level location inventory, and configure the variations of a product.
+ * Use this resource to create products, view the attributes associated with existing products, and determine which sites feature a specific product.
  * </summary>
  */
 public class ProductResource {
@@ -104,7 +104,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.GetProductInCatalog(_dataViewMode,  productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
 	 * @see com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -120,7 +120,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.GetProductInCatalog(_dataViewMode,  productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -136,12 +136,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * Retrieves an existing product.
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.GetProduct(_dataViewMode,  productCode);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
 	 */
@@ -151,12 +151,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves the details of a product definition.
+	 * Retrieves an existing product.
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.GetProduct(_dataViewMode,  productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode Merchant-created code associated with the product such as a SKU. Max length: 30. Accepts a to z, A to Z, Ãƒâ€¹-ÃƒËœ, 0 to 9, #, semicolon, commas, apostrophes, and Spaces, but no punctuation or other characters.
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.Product
 	 * @see com.mozu.api.contracts.productadmin.Product
@@ -273,7 +273,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.UpdateProductInCatalog(_dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
 	 * @return com.mozu.api.contracts.productadmin.ProductInCatalogInfo
@@ -291,7 +291,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductInCatalogInfo productInCatalogInfo = product.UpdateProductInCatalog(_dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @param productInCatalogInfoIn Properties of the product associated with the catalog specified in the request.
@@ -370,7 +370,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	product.DeleteProductInCatalog(_dataViewMode,  productCode,  catalogId);
 	 * </code></pre></p>
-	 * @param catalogId The unique identifier of the catalog of products used by a site.
+	 * @param catalogId 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return 
 	 */

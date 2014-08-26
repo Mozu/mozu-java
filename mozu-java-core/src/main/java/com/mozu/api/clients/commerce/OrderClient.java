@@ -66,7 +66,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves the actions available to perform for an order based on its current status.
+	 * Retrieves available order actions which depends on the status of the order. Actions are "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailableActionsClient( orderId);
 	 * client.setBaseAddress(url);
@@ -90,14 +90,14 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves an order for the purpose of splitting it into multiple taxable orders in order to fulfill the order in multiple locations.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.pricingruntime.TaxableOrder>> mozuClient=GetTaxableOrdersClient( orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TaxableOrder taxableOrder = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order to retrieve.
+	 * @param orderId 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.pricingruntime.TaxableOrder>>
 	 * @see com.mozu.api.contracts.pricingruntime.TaxableOrder
 	 */
@@ -206,7 +206,7 @@ public class OrderClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param order Properties of the order to create and submit.
+	 * @param order All properties of the order to place.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -225,7 +225,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param order Properties of the order to create and submit.
+	 * @param order All properties of the order to place.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -244,7 +244,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -252,7 +252,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param action The action to perform for the order.
+	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
@@ -263,7 +263,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
+	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -272,7 +272,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields 
-	 * @param action The action to perform for the order.
+	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction

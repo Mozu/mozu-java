@@ -65,9 +65,6 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	/**
-	 * The override price defined by the tenant for this cart or order item.
-	 */
 	protected Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {

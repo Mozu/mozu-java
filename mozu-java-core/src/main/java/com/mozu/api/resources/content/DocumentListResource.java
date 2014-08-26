@@ -189,6 +189,25 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
+	 *	documentlist.LegacyR4_UpdateDocumentContent( stream,  documentId,  contentType);
+	 * </code></pre></p>
+	 * @param documentId 
+	 * @param stream 
+	 * @return 
+	 * @see Stream
+	 */
+	public void legacyR4_UpdateDocumentContent(java.io.InputStream stream, String documentId, String  contentType) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.content.DocumentListClient.legacyR4_UpdateDocumentContentClient( stream,  documentId,  contentType);
+		client.setContext(_apiContext);
+		client.executeRequest();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	DocumentList documentlist = new DocumentList();
 	 *	documentlist.DeleteDocumentList( documentListName);
 	 * </code></pre></p>
 	 * @param documentListName 

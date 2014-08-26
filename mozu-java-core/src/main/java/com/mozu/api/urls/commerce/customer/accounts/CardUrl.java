@@ -15,8 +15,8 @@ public class CardUrl
 
 	/**
 	 * Get Resource Url for GetAccountCard
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param accountId 
+	 * @param cardId 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
@@ -60,7 +60,7 @@ public class CardUrl
 	/**
 	 * Get Resource Url for UpdateAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

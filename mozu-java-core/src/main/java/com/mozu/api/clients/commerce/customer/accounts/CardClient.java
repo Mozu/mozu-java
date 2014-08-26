@@ -20,15 +20,15 @@ import org.apache.commons.lang3.StringUtils;
 public class CardClient {
 	
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Card card = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param accountId 
+	 * @param cardId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -38,15 +38,15 @@ public class CardClient {
 	}
 
 	/**
-	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Card card = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param accountId 
+	 * @param cardId 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -161,7 +161,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -181,7 +181,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the credit card.
+	 * @param cardId 
 	 * @param responseFields 
 	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>

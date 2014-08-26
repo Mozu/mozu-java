@@ -106,13 +106,13 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param wishlistName The name of the wish list to retrieve.
+	 * @param customerAccountId 
+	 * @param wishlistName 
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -122,14 +122,14 @@ public class WishlistResource {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param customerAccountId 
 	 * @param responseFields 
-	 * @param wishlistName The name of the wish list to retrieve.
+	 * @param wishlistName 
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */

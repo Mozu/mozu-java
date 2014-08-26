@@ -104,7 +104,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return 
 	 * @see Stream
 	 */
@@ -124,7 +124,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param stream 
 	 * @return 
 	 * @see Stream
 	 */

@@ -156,4 +156,17 @@ public class Document implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * List of properties for the given property value.
+	 */
+	protected com.fasterxml.jackson.databind.JsonNode properties;
+
+	public com.fasterxml.jackson.databind.JsonNode getProperties() {
+		return this.properties;
+	}
+
+	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
+		this.properties = properties;
+	}
+
 }

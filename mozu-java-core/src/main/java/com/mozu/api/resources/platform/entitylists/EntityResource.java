@@ -35,7 +35,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.GetEntity( entityListFullName,  id);
+	 *	JObject jObject = entity.GetEntity( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -51,7 +51,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.GetEntity( entityListFullName,  id,  responseFields);
+	 *	JObject jObject = entity.GetEntity( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -111,7 +111,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.InsertEntity( item,  entityListFullName);
+	 *	JObject jObject = entity.InsertEntity( item,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param item 
@@ -128,7 +128,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.InsertEntity( item,  entityListFullName,  responseFields);
+	 *	JObject jObject = entity.InsertEntity( item,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.UpdateEntity( item,  entityListFullName,  id);
+	 *	JObject jObject = entity.UpdateEntity( item,  entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -168,7 +168,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject json = entity.UpdateEntity( item,  entityListFullName,  id,  responseFields);
+	 *	JObject jObject = entity.UpdateEntity( item,  entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 

@@ -179,6 +179,23 @@ public class EntityListResource {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	EntityList entitylist = new EntityList();
+	 *	entitylist.DeleteEntityList( entityListFullName);
+	 * </code></pre></p>
+	 * @param entityListFullName 
+	 * @return 
+	 */
+	public void deleteEntityList(String entityListFullName) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.platform.EntityListClient.deleteEntityListClient( entityListFullName);
+		client.setContext(_apiContext);
+		client.executeRequest();
+
+	}
+
 }
 
 

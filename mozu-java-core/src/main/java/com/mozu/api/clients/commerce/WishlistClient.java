@@ -108,15 +108,15 @@ public class WishlistClient {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> mozuClient=GetWishlistByNameClient( customerAccountId,  wishlistName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param wishlistName The name of the wish list to retrieve.
+	 * @param customerAccountId 
+	 * @param wishlistName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -126,16 +126,16 @@ public class WishlistClient {
 	}
 
 	/**
-	 * Retrieves the details of a wish list by supplying the wish list name.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> mozuClient=GetWishlistByNameClient( customerAccountId,  wishlistName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param customerAccountId 
 	 * @param responseFields 
-	 * @param wishlistName The name of the wish list to retrieve.
+	 * @param wishlistName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */

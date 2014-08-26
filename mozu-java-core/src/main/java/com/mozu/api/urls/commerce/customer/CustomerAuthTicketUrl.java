@@ -37,7 +37,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshUserAuthTicket
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param refreshToken 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

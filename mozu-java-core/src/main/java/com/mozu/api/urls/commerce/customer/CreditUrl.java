@@ -61,7 +61,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for AssociateCreditToShopper
-	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param code 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

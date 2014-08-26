@@ -32,7 +32,7 @@ public class DocumentList implements Serializable
 	}
 
 	/**
-	 * List of document types associated with this document list.
+	 * A document type is a template.
 	 */
 	protected List<String> documentTypes;
 	public List<String> getDocumentTypes() {
@@ -137,6 +137,16 @@ public class DocumentList implements Serializable
 	}
 	public void setUsages(List<String> usages) {
 		this.usages = usages;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
 	}
 
 	protected List<View> views;

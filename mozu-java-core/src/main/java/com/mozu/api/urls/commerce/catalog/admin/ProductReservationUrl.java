@@ -49,7 +49,7 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for AddProductReservations
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addProductReservationsUrl(Boolean skipInventoryCheck)
@@ -71,12 +71,12 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for UpdateProductReservations
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductReservationsUrl(Boolean skipInventoryCheck)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/productreservations/?skipInventoryCheck={skipInventoryCheck}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/productreservations/?skipInventoryCheck={skipInventoryCheck}&useUp");
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

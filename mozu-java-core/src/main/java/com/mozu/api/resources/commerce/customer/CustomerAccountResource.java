@@ -53,7 +53,7 @@ public class CustomerAccountResource {
 	 * </code></pre></p>
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
+	 * @param isAnonymous 
 	 * @param pageSize 
 	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
@@ -73,12 +73,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginState( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -88,12 +88,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of the customer account specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginState( accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
@@ -199,13 +199,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param accountId 
+	 * @param customerAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -216,14 +216,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Adds a new user login to a defined customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId 
 	 * @param responseFields 
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -238,12 +238,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Updates the customer lifetime value of the specified customer account in the event of an order import or a lifetime value calculation error.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.RecomputeCustomerLifetimeValue( accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
+	 * @param accountId 
 	 * @return 
 	 */
 	public void recomputeCustomerLifetimeValue(Integer accountId) throws Exception
@@ -255,13 +255,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Lock or unlock a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.SetLoginLocked( isLocked,  accountId);
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account.
-	 * @param isLocked If true, the customer account is locked from logging in.
+	 * @param accountId 
+	 * @param isLocked 
 	 * @return 
 	 * @see bool
 	 */
@@ -274,13 +274,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Requires the password for the customer account to be changed.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.SetPasswordChangeRequired( isPasswordChangeRequired,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param isPasswordChangeRequired If true, the password for the customer account must be changed.
+	 * @param accountId 
+	 * @param isPasswordChangeRequired 
 	 * @return 
 	 * @see bool
 	 */
@@ -293,12 +293,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo);
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -309,13 +309,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates a new customer account and logs the user associated with the customer account into the site.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -330,12 +330,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers);
 	 * </code></pre></p>
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -346,13 +346,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Creates multiple customer accounts based on the information specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -367,12 +367,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress);
 	 * </code></pre></p>
-	 * @param emailAddress The email address associated with the customer account.
+	 * @param emailAddress 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -382,12 +382,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the customer's email address.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress,  responseFields);
 	 * </code></pre></p>
-	 * @param emailAddress The email address associated with the customer account.
+	 * @param emailAddress 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
@@ -402,12 +402,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName);
 	 * </code></pre></p>
-	 * @param userName The user name associated with the customer account.
+	 * @param userName 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -417,13 +417,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param userName The user name associated with the customer account.
+	 * @param userName 
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
@@ -437,12 +437,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Resets the password for a customer account.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.ResetPassword( resetPasswordInfo);
 	 * </code></pre></p>
-	 * @param resetPasswordInfo Information required to reset the password for a customer account.
+	 * @param resetPasswordInfo 
 	 * @return 
 	 * @see com.mozu.api.contracts.customer.ResetPasswordInfo
 	 */

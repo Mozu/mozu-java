@@ -58,9 +58,6 @@ public class Package implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
-	/**
-	 * The location code that represents the location from which this package will ship.
-	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
@@ -69,6 +66,16 @@ public class Package implements Serializable
 
 	public void setFulfillmentLocationCode(String fulfillmentLocationCode) {
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
+	}
+
+	protected Boolean hasLabel;
+
+	public Boolean getHasLabel() {
+		return this.hasLabel;
+	}
+
+	public void setHasLabel(Boolean hasLabel) {
+		this.hasLabel = hasLabel;
 	}
 
 	/**

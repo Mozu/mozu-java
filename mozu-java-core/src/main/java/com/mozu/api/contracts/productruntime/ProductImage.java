@@ -7,8 +7,8 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.joda.time.DateTime;
 
 /**
  *	Properties of an image defined for a product.
@@ -32,9 +32,6 @@ public class ProductImage implements Serializable
 		this.altText = altText;
 	}
 
-	/**
-	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
-	 */
 	protected String cmsId;
 
 	public String getCmsId() {

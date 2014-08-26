@@ -168,7 +168,7 @@ public class LocationInventoryResource {
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
+	 * @param locationInventoryAdjustments 
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment

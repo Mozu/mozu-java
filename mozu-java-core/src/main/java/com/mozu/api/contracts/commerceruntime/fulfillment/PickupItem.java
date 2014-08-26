@@ -29,9 +29,6 @@ public class PickupItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {

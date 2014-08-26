@@ -16,7 +16,7 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for GetAccountAttribute
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param attributeFQN 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */

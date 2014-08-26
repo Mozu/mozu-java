@@ -119,6 +119,14 @@ public class EntityList implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
+	}
+
 	protected Boolean useSystemAssignedId;
 
 	public Boolean getUseSystemAssignedId() {
@@ -177,6 +185,16 @@ public class EntityList implements Serializable
 
 	public void setIndexD(IndexedProperty indexD) {
 		this.indexD = indexD;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
 	}
 
 	protected List<ListView> views;

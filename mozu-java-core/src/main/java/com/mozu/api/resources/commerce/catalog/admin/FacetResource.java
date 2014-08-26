@@ -105,12 +105,12 @@ public class FacetResource {
 	}
 
 	/**
-	 * Creates a new category, price, or attribute facet. Define the category or attribute source to use for the facet values.
+	 * Creates a new category, price, or attribute facet. Supply the category or attribute source to use for the facet values.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.AddFacet( facet);
 	 * </code></pre></p>
-	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
+	 * @param facet Properties of the new facet to create. Required properties: Source, FacetType, IsHidden, and CategoryId.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -121,13 +121,13 @@ public class FacetResource {
 	}
 
 	/**
-	 * Creates a new category, price, or attribute facet. Define the category or attribute source to use for the facet values.
+	 * Creates a new category, price, or attribute facet. Supply the category or attribute source to use for the facet values.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.AddFacet( facet,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
-	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
+	 * @param facet Properties of the new facet to create. Required properties: Source, FacetType, IsHidden, and CategoryId.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -148,7 +148,7 @@ public class FacetResource {
 	 *	Facet facet = facet.UpdateFacet( facet,  facetId);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to modify.
-	 * @param facet Properties of the defined facet to modify.
+	 * @param facet Properties of the defined facet to modify. Required properties: Source, FacetType, IsHidden, and CategoryId.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -166,7 +166,7 @@ public class FacetResource {
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to modify.
 	 * @param responseFields 
-	 * @param facet Properties of the defined facet to modify.
+	 * @param facet Properties of the defined facet to modify. Required properties: Source, FacetType, IsHidden, and CategoryId.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet

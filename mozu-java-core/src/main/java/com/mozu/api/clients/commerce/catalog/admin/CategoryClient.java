@@ -64,14 +64,14 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the list of subcategories within a category.
+	 * Retrieves the subcategories of a category. This is a list of subcategories at the same level (siblings). Use a list of siblings, for example, to display the categories in a horizontal list.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> mozuClient=GetChildCategoriesClient( categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CategoryCollection categoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category whose subcategories are retrieved.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
 	 */
@@ -81,14 +81,14 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Retrieves the list of subcategories within a category.
+	 * Retrieves the subcategories of a category. This is a list of subcategories at the same level (siblings). Use a list of siblings, for example, to display the categories in a horizontal list.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryCollection> mozuClient=GetChildCategoriesClient( categoryId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CategoryCollection categoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category whose subcategories are retrieved.
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
@@ -148,14 +148,14 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to place the category in the hierarchy. If no ParentCategoryID is specified, the new category is a top-level category.
+	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
-	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
+	 * @param category Properties of the new category. Required properties: ParentCategoryID and Content.Name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -166,7 +166,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to place the category in the hierarchy. If no ParentCategoryID is specified, the new category is a top-level category.
+	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category,  incrementSequence,  responseFields);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class CategoryClient {
 	 * </code></pre></p>
 	 * @param incrementSequence 
 	 * @param responseFields 
-	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
+	 * @param category Properties of the new category. Required properties: ParentCategoryID and Content.Name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -194,7 +194,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
+	 * Modifies a category such as moving it to another location in the category tree, or changing whether it is visible on the storefront. This PUT replaces the existing resource, so be sure to include all the information to maintain for the category.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=UpdateCategoryClient( category,  categoryId);
 	 * client.setBaseAddress(url);
@@ -213,7 +213,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Update the properties of a defined category or move it to another location in the category hierarchy. Because this operation replaces the defined resource,include all the information to maintain for the category in the request.
+	 * Modifies a category such as moving it to another location in the category tree, or changing whether it is visible on the storefront. This PUT replaces the existing resource, so be sure to include all the information to maintain for the category.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=UpdateCategoryClient( category,  categoryId,  cascadeVisibility,  responseFields);
 	 * client.setBaseAddress(url);
@@ -263,7 +263,7 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param cascadeDelete If true, any subcategories of a category are deleted when this category is deleted. Default: False.
 	 * @param categoryId Unique identifier of the category to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */

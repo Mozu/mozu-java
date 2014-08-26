@@ -56,14 +56,14 @@ public class EntityContainer implements Serializable
 		this.id = id;
 	}
 
-	protected String listFQN;
+	protected String listFullName;
 
-	public String getListFQN() {
-		return this.listFQN;
+	public String getListFullName() {
+		return this.listFullName;
 	}
 
-	public void setListFQN(String listFQN) {
-		this.listFQN = listFQN;
+	public void setListFullName(String listFullName) {
+		this.listFullName = listFullName;
 	}
 
 	protected String localeCode;
@@ -134,6 +134,16 @@ public class EntityContainer implements Serializable
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode item;
+
+	public com.fasterxml.jackson.databind.JsonNode getItem() {
+		return this.item;
+	}
+
+	public void setItem(com.fasterxml.jackson.databind.JsonNode item) {
+		this.item = item;
 	}
 
 }

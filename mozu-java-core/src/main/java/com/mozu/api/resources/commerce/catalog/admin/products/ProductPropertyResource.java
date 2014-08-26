@@ -127,7 +127,7 @@ public class ProductPropertyResource {
 	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -143,7 +143,7 @@ public class ProductPropertyResource {
 	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty

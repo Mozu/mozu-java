@@ -25,7 +25,7 @@ public class ListViewClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -44,7 +44,7 @@ public class ListViewClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject json = client.Result();
+	 * JObject jObject = client.Result();
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 

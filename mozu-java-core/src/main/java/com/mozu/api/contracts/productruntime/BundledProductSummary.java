@@ -12,18 +12,32 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 
-/**
- *	System-supplied and read only information for component products in a product bundle.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BundledProductSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If true, the component product of the bundle should not ship in a package with the rest of the product bundle, and should ship in a package by itself. System-supplied and read only.
-	 */
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -54,9 +68,6 @@ public class BundledProductSummary implements Serializable
 		this.optionValue = optionValue;
 	}
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -67,9 +78,6 @@ public class BundledProductSummary implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The read-only name of the component in the bundled product.
-	 */
 	protected String productName;
 
 	public String getProductName() {
@@ -80,9 +88,6 @@ public class BundledProductSummary implements Serializable
 		this.productName = productName;
 	}
 
-	/**
-	 * The short description defined for the component in a bundled product. System-supplied and read only.
-	 */
 	protected String productShortDescription;
 
 	public String getProductShortDescription() {
@@ -103,9 +108,6 @@ public class BundledProductSummary implements Serializable
 		this.productType = productType;
 	}
 
-	/**
-	 * The quantity of a component product in its product bundle.
-	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -114,26 +116,6 @@ public class BundledProductSummary implements Serializable
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
 	}
 
 	protected ProductInventoryInfo inventoryInfo;
@@ -146,9 +128,6 @@ public class BundledProductSummary implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * Dimensions of the packaged product.
-	 */
 	protected PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {

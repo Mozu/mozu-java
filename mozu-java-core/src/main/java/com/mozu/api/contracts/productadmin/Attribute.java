@@ -156,9 +156,6 @@ public class Attribute implements Serializable
 		this.isProperty = isProperty;
 	}
 
-	/**
-	 * The unique identifier of the master catalog associated with the entity.
-	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {

@@ -19,9 +19,6 @@ public class TargetedProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {

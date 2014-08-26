@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the Applications resource to update site-specific settings for installed applications.
+ * Use the applications subresource to update site settings for installed applications.
  * </summary>
  */
 public class ApplicationResource {
@@ -42,7 +42,22 @@ public class ApplicationResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient();
+		return thirdPartyGetApplication( null);
+	}
+
+	/**
+	 * Retrieve the settings of a third-party application.
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.ThirdPartyGetApplication( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyGetApplicationClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -62,7 +77,24 @@ public class ApplicationResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application);
+		return thirdPartyUpdateApplication( application,  null);
+	}
+
+	/**
+	 * Initializes an application with the necessary configured settings.
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.ThirdPartyUpdateApplication( application,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param application Properties of the application to update.
+	 * @return com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> client = com.mozu.api.clients.commerce.settings.ApplicationClient.thirdPartyUpdateApplicationClient( application,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

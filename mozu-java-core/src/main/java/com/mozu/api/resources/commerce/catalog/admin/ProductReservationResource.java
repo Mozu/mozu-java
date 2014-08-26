@@ -116,13 +116,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -133,14 +133,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This action places a hold on the product inventory for the quantity specified during the ordering process.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -155,13 +155,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Commits a product reservation to decrement the product's inventory by the quantity specified then release the reservation once the order process completed successfully.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	productreservation.CommitReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations List of unique identifiers of the reservations to commit.
+	 * @param productReservations 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -174,13 +174,13 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -191,14 +191,14 @@ public class ProductReservationResource {
 	}
 
 	/**
-	 * Updates an existing product reservation for a product.
+	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation

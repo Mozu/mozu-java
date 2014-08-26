@@ -73,5 +73,17 @@ public class EntityListUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
+	/**
+	 * Get Resource Url for DeleteEntityList
+	 * @param entityListFullName 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteEntityListUrl(String entityListFullName)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/entitylists/{entityListFullName}");
+		formatter.formatUrl("entityListFullName", entityListFullName);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
 }
 

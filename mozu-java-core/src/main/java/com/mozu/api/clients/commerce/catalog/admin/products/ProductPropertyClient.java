@@ -130,7 +130,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -148,7 +148,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productCode 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty

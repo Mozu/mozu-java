@@ -42,9 +42,6 @@ public class ProductPrice implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
-	/**
-	 * The minimum advertised price a client can charge for the associated product, as determined by the supplier. Client administrators can override the minimum advertised price at the catalog level.
-	 */
 	protected Double map;
 
 	public Double getMap() {
@@ -55,9 +52,6 @@ public class ProductPrice implements Serializable
 		this.map = map;
 	}
 
-	/**
-	 * If the product has a supplier-defined minimum advertised price, the date and time after which the client can sell the product for less than the minimum advertised price.
-	 */
 	protected DateTime mapEndDate;
 
 	public DateTime getMapEndDate() {
@@ -68,9 +62,6 @@ public class ProductPrice implements Serializable
 		this.mapEndDate = mapEndDate;
 	}
 
-	/**
-	 * If the product has a supplier-defined minimum advertised price, the date and time after which the client cannot sell the product for less than the minimum advertised price.
-	 */
 	protected DateTime mapStartDate;
 
 	public DateTime getMapStartDate() {
@@ -81,9 +72,6 @@ public class ProductPrice implements Serializable
 		this.mapStartDate = mapStartDate;
 	}
 
-	/**
-	 * The manufacturer's suggested retail price, as defined by the supplier.
-	 */
 	protected Double msrp;
 
 	public Double getMsrp() {

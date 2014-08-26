@@ -43,7 +43,23 @@ public class ApplicationResource {
 	 */
 	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.getApplicationClient( appId);
+		return getApplication( appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.GetApplication( appId,  responseFields);
+	 * </code></pre></p>
+	 * @param appId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.getApplicationClient( appId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -64,7 +80,25 @@ public class ApplicationResource {
 	 */
 	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.updateApplicationClient( application,  appId);
+		return updateApplication( application,  appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	Application application = application.UpdateApplication( application,  appId,  responseFields);
+	 * </code></pre></p>
+	 * @param appId 
+	 * @param responseFields 
+	 * @param application 
+	 * @return com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.updateApplicationClient( application,  appId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -20,7 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 public class AttributeVocabularyValueClient {
 	
 	/**
-	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
+	 * Retrieves a list of attribute vocabulary values. To target a query, use one or several valid optional response groups.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient( attributeFQN);
 	 * client.setBaseAddress(url);
@@ -119,7 +119,7 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
@@ -138,7 +138,7 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value,  responseFields);
 	 * client.setBaseAddress(url);
@@ -216,7 +216,7 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=AddAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN);
 	 * client.setBaseAddress(url);
@@ -236,7 +236,7 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * Creates a vocabulary value for a defined product attribute.
+	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=AddAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);

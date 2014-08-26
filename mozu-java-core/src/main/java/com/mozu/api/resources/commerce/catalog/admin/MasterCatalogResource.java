@@ -70,7 +70,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId);
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -85,7 +85,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param masterCatalogId 
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
