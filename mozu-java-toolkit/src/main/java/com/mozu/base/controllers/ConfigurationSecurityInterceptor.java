@@ -56,7 +56,7 @@ public class ConfigurationSecurityInterceptor extends HandlerInterceptorAdapter 
         return isValid;
     }
     
-    protected static String encrypt(String data, String sharedSecret) throws Exception {
+    public static String encrypt(String data, String sharedSecret) throws Exception {
         int keyLength = Cipher.getMaxAllowedKeyLength("Blowfish")/8;
         
         String keyString = sharedSecret.substring(sharedSecret.length()-keyLength);
