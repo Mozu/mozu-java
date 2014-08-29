@@ -10,25 +10,15 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.CustomerSegment;
 import com.mozu.api.contracts.productadmin.CategoryDiscountCondition;
 import com.mozu.api.contracts.productadmin.ProductDiscountCondition;
+import com.mozu.api.contracts.productadmin.CustomerSegment;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountCondition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	protected DateTime startDate;
-
-	public DateTime getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(DateTime startDate) {
-		this.startDate = startDate;
-	}
 
 	protected String couponCode;
 
@@ -140,6 +130,32 @@ public class DiscountCondition implements Serializable
 		this.requiresCoupon = requiresCoupon;
 	}
 
+	protected DateTime startDate;
+
+	public DateTime getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(DateTime startDate) {
+		this.startDate = startDate;
+	}
+
+	protected List<CategoryDiscountCondition> includedCategories;
+	public List<CategoryDiscountCondition> getIncludedCategories() {
+		return this.includedCategories;
+	}
+	public void setIncludedCategories(List<CategoryDiscountCondition> includedCategories) {
+		this.includedCategories = includedCategories;
+	}
+
+	protected List<ProductDiscountCondition> includedProducts;
+	public List<ProductDiscountCondition> getIncludedProducts() {
+		return this.includedProducts;
+	}
+	public void setIncludedProducts(List<ProductDiscountCondition> includedProducts) {
+		this.includedProducts = includedProducts;
+	}
+
 	protected List<CustomerSegment> customerSegments;
 	public List<CustomerSegment> getCustomerSegments() {
 		return this.customerSegments;
@@ -162,22 +178,6 @@ public class DiscountCondition implements Serializable
 	}
 	public void setExcludedProducts(List<ProductDiscountCondition> excludedProducts) {
 		this.excludedProducts = excludedProducts;
-	}
-
-	protected List<CategoryDiscountCondition> includedCategories;
-	public List<CategoryDiscountCondition> getIncludedCategories() {
-		return this.includedCategories;
-	}
-	public void setIncludedCategories(List<CategoryDiscountCondition> includedCategories) {
-		this.includedCategories = includedCategories;
-	}
-
-	protected List<ProductDiscountCondition> includedProducts;
-	public List<ProductDiscountCondition> getIncludedProducts() {
-		return this.includedProducts;
-	}
-	public void setIncludedProducts(List<ProductDiscountCondition> includedProducts) {
-		this.includedProducts = includedProducts;
 	}
 
 }

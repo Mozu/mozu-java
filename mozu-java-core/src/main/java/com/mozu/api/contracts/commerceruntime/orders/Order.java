@@ -38,6 +38,19 @@ public class Order implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If true, the order is exempt from applied sales tax.
+	 */
+	protected Boolean isTaxExempt;
+
+	public Boolean getIsTaxExempt() {
+		return this.isTaxExempt;
+	}
+
+	public void setIsTaxExempt(Boolean isTaxExempt) {
+		this.isTaxExempt = isTaxExempt;
+	}
+
 	protected DateTime acceptedDate;
 
 	public DateTime getAcceptedDate() {
@@ -421,19 +434,6 @@ public class Order implements Serializable
 
 	public void setIsImport(Boolean isImport) {
 		this.isImport = isImport;
-	}
-
-	/**
-	 * If true, the order is exempt from applied sales tax.
-	 */
-	protected Boolean isTaxExempt;
-
-	public Boolean getIsTaxExempt() {
-		return this.isTaxExempt;
-	}
-
-	public void setIsTaxExempt(Boolean isTaxExempt) {
-		this.isTaxExempt = isTaxExempt;
 	}
 
 	/**

@@ -19,6 +19,29 @@ public class PaymentGatewayInteraction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String gatewayResponseText;
+
+	public String getGatewayResponseText() {
+		return this.gatewayResponseText;
+	}
+
+	public void setGatewayResponseText(String gatewayResponseText) {
+		this.gatewayResponseText = gatewayResponseText;
+	}
+
+	/**
+	 * Unique identifier of the gateway transaction associated with the payment interaction.
+	 */
+	protected String gatewayTransactionId;
+
+	public String getGatewayTransactionId() {
+		return this.gatewayTransactionId;
+	}
+
+	public void setGatewayTransactionId(String gatewayTransactionId) {
+		this.gatewayTransactionId = gatewayTransactionId;
+	}
+
 	/**
 	 * If required by the payment gateway, the authorization code of the transaction.
 	 */
@@ -82,29 +105,6 @@ public class PaymentGatewayInteraction implements Serializable
 
 	public void setGatewayResponseCode(String gatewayResponseCode) {
 		this.gatewayResponseCode = gatewayResponseCode;
-	}
-
-	protected String gatewayResponseText;
-
-	public String getGatewayResponseText() {
-		return this.gatewayResponseText;
-	}
-
-	public void setGatewayResponseText(String gatewayResponseText) {
-		this.gatewayResponseText = gatewayResponseText;
-	}
-
-	/**
-	 * Unique identifier of the gateway transaction associated with the payment interaction.
-	 */
-	protected String gatewayTransactionId;
-
-	public String getGatewayTransactionId() {
-		return this.gatewayTransactionId;
-	}
-
-	public void setGatewayTransactionId(String gatewayTransactionId) {
-		this.gatewayTransactionId = gatewayTransactionId;
 	}
 
 }
