@@ -20,19 +20,6 @@ public class UserSystemData implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createdOn;
-
-	public DateTime getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(DateTime createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	/**
 	 * The number of failed authentication attempts associated with the user.
 	 */
 	protected Byte failedLoginAttemptCount;
@@ -147,6 +134,19 @@ public class UserSystemData implements Serializable
 
 	public void setUpdatedOn(DateTime updatedOn) {
 		this.updatedOn = updatedOn;
+	}
+
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createdOn;
+
+	public DateTime getCreatedOn() {
+		return this.createdOn;
+	}
+
+	public void setCreatedOn(DateTime createdOn) {
+		this.createdOn = createdOn;
 	}
 
 }

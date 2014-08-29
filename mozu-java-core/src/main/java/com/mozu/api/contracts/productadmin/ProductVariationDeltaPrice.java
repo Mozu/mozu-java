@@ -19,29 +19,6 @@ public class ProductVariationDeltaPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double msrp;
-
-	public Double getMsrp() {
-		return this.msrp;
-	}
-
-	public void setMsrp(Double msrp) {
-		this.msrp = msrp;
-	}
-
-	/**
-	 * Positive or negative decimal value that represents the difference between this variation and the base product.
-	 */
-	protected Double value;
-
-	public Double getValue() {
-		return this.value;
-	}
-
-	public void setValue(Double value) {
-		this.value = value;
-	}
-
 	protected Double creditValue;
 
 	public Double getCreditValue() {
@@ -63,6 +40,29 @@ public class ProductVariationDeltaPrice implements Serializable
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+
+	protected Double msrp;
+
+	public Double getMsrp() {
+		return this.msrp;
+	}
+
+	public void setMsrp(Double msrp) {
+		this.msrp = msrp;
+	}
+
+	/**
+	 * Positive or negative decimal value that represents the difference between this variation and the base product.
+	 */
+	protected Double value;
+
+	public Double getValue() {
+		return this.value;
+	}
+
+	public void setValue(Double value) {
+		this.value = value;
 	}
 
 }
