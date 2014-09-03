@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 sourceCompatibility = 1.7
 
@@ -14,8 +15,10 @@ if (hasProperty("teamcity")) {
     }
     else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.0.2'
+    version = '1.0.2-SNAPSHOT'
 }
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 jar {
     manifest {
@@ -93,7 +96,13 @@ task javadocJar(type: Jar) {
     from javadoc.destinationDir
 }
 
+signing {
+    required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
 artifacts {
+    archives jar
     archives sourcesJar
     archives javadocJar
 }
