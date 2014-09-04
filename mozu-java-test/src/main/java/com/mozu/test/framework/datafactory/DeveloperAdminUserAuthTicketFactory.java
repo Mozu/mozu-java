@@ -22,16 +22,16 @@ public class DeveloperAdminUserAuthTicketFactory
 
 	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, int expectedCode, int successCode) throws Exception
 	{
-		return createDeveloperUserAuthTicket(apiContext,  userAuthInfo,  null, expectedCode, successCode );
+		return createDeveloperUserAuthTicket(apiContext,  userAuthInfo,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket();
 		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.createDeveloperUserAuthTicket( userAuthInfo,  developerAccountId);
+			returnObj = resource.createDeveloperUserAuthTicket( userAuthInfo,  developerAccountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,16 +48,16 @@ public class DeveloperAdminUserAuthTicketFactory
 
 	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, int expectedCode, int successCode) throws Exception
 	{
-		return refreshDeveloperAuthTicket(apiContext,  existingAuthTicket,  null, expectedCode, successCode );
+		return refreshDeveloperAuthTicket(apiContext,  existingAuthTicket,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket();
 		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.refreshDeveloperAuthTicket( existingAuthTicket,  developerAccountId);
+			returnObj = resource.refreshDeveloperAuthTicket( existingAuthTicket,  developerAccountId,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -22,16 +22,16 @@ public class TenantAdminUserAuthTicketFactory
 
 	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, int expectedCode, int successCode) throws Exception
 	{
-		return createUserAuthTicket(apiContext,  userAuthInfo,  null, expectedCode, successCode );
+		return createUserAuthTicket(apiContext,  userAuthInfo,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket();
 		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.createUserAuthTicket( userAuthInfo,  tenantId);
+			returnObj = resource.createUserAuthTicket( userAuthInfo,  tenantId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,16 +48,16 @@ public class TenantAdminUserAuthTicketFactory
 
 	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket refreshAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, int expectedCode, int successCode) throws Exception
 	{
-		return refreshAuthTicket(apiContext,  existingAuthTicket,  null, expectedCode, successCode );
+		return refreshAuthTicket(apiContext,  existingAuthTicket,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket refreshAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, Integer tenantId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket refreshAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, Integer tenantId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket();
 		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.refreshAuthTicket( existingAuthTicket,  tenantId);
+			returnObj = resource.refreshAuthTicket( existingAuthTicket,  tenantId,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -43,11 +43,16 @@ public class TaxableTerritoryFactory
 
 	public static com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, int expectedCode, int successCode) throws Exception
 	{
+		return addTaxableTerritory(apiContext,  taxableTerritory,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.general.TaxableTerritory returnObj = new com.mozu.api.contracts.sitesettings.general.TaxableTerritory();
 		TaxableTerritoryResource resource = new TaxableTerritoryResource(apiContext);
 		try
 		{
-			returnObj = resource.addTaxableTerritory( taxableTerritory);
+			returnObj = resource.addTaxableTerritory( taxableTerritory,  responseFields);
 		}
 		catch (ApiException e)
 		{

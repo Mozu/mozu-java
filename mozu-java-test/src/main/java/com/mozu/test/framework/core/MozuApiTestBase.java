@@ -13,11 +13,13 @@ import org.apache.http.HttpStatus;
 
 
 
+
 import com.mozu.test.framework.core.*;
 import com.mozu.test.framework.datafactory.TenantFactory;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.tenant.*;
@@ -44,9 +46,11 @@ public class MozuApiTestBase {
         String baseUrl = Environment.getConfigValue("BaseAuthAppUrl");
     	String configStr = Environment.getConfigValue("TenantId");
     	tenantId = Integer.parseInt(configStr);
-    	//System.out.println("Tenant id is " + tenantId);
+    	MozuConfig.setBaseUrl(baseUrl);
+        MozuConfig.setProxyHost("localhost");
+        MozuConfig.setProxyPort(8888);
     	ApiContext apiContext = new MozuApiContext();
-        AppAuthenticator.initialize(appAuthInfo, baseUrl, null);
+    	AppAuthenticator.initialize(appAuthInfo, null);
         try {
 			testBaseTenant = TenantFactory.getTenant(apiContext, tenantId, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		} catch (Exception e) {

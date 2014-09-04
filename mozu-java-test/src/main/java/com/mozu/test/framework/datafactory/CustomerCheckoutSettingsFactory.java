@@ -22,11 +22,16 @@ public class CustomerCheckoutSettingsFactory
 
 	public static com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings getCustomerCheckoutSettings(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getCustomerCheckoutSettings(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings getCustomerCheckoutSettings(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings returnObj = new com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings();
 		CustomerCheckoutSettingsResource resource = new CustomerCheckoutSettingsResource(apiContext);
 		try
 		{
-			returnObj = resource.getCustomerCheckoutSettings();
+			returnObj = resource.getCustomerCheckoutSettings( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,11 +48,16 @@ public class CustomerCheckoutSettingsFactory
 
 	public static com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings updateCustomerCheckoutSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings customerCheckoutSettings, int expectedCode, int successCode) throws Exception
 	{
+		return updateCustomerCheckoutSettings(apiContext,  customerCheckoutSettings,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings updateCustomerCheckoutSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings customerCheckoutSettings, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings returnObj = new com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings();
 		CustomerCheckoutSettingsResource resource = new CustomerCheckoutSettingsResource(apiContext);
 		try
 		{
-			returnObj = resource.updateCustomerCheckoutSettings( customerCheckoutSettings);
+			returnObj = resource.updateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -22,10 +22,10 @@ public class PublishingScopeFactory
 
 	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext);
+				PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.discardDrafts(dataViewMode,  publishScope);
+			resource.discardDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{
@@ -39,10 +39,10 @@ public class PublishingScopeFactory
 
 	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext);
+				PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.publishDrafts(dataViewMode,  publishScope);
+			resource.publishDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{

@@ -22,16 +22,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.AddressSchema getAddressSchema(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getAddressSchema(apiContext,  null, expectedCode, successCode );
+		return getAddressSchema(apiContext,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.reference.AddressSchema getAddressSchema(ApiContext apiContext, String countryCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.reference.AddressSchema getAddressSchema(ApiContext apiContext, String countryCode, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.reference.AddressSchema returnObj = new com.mozu.api.contracts.reference.AddressSchema();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getAddressSchema( countryCode);
+			returnObj = resource.getAddressSchema( countryCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.AddressSchemaCollection getAddressSchemas(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getAddressSchemas(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.AddressSchemaCollection getAddressSchemas(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.AddressSchemaCollection returnObj = new com.mozu.api.contracts.reference.AddressSchemaCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getAddressSchemas();
+			returnObj = resource.getAddressSchemas( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,32 +74,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.core.Behavior getBehavior(ApiContext apiContext, Integer behaviorId, int expectedCode, int successCode) throws Exception
 	{
+		return getBehavior(apiContext,  behaviorId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.core.Behavior getBehavior(ApiContext apiContext, Integer behaviorId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.core.Behavior returnObj = new com.mozu.api.contracts.core.Behavior();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getBehavior( behaviorId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.core.BehaviorCategoryCollection getBehaviorCategories(ApiContext apiContext, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.core.BehaviorCategoryCollection returnObj = new com.mozu.api.contracts.core.BehaviorCategoryCollection();
-		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
-		try
-		{
-			returnObj = resource.getBehaviorCategories();
+			returnObj = resource.getBehavior( behaviorId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -111,11 +100,42 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.core.BehaviorCategory getBehaviorCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
+		return getBehaviorCategory(apiContext,  categoryId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.core.BehaviorCategory getBehaviorCategory(ApiContext apiContext, Integer categoryId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.core.BehaviorCategory returnObj = new com.mozu.api.contracts.core.BehaviorCategory();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getBehaviorCategory( categoryId);
+			returnObj = resource.getBehaviorCategory( categoryId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.core.BehaviorCategoryCollection getBehaviorCategories(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	{
+		return getBehaviorCategories(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.core.BehaviorCategoryCollection getBehaviorCategories(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.core.BehaviorCategoryCollection returnObj = new com.mozu.api.contracts.core.BehaviorCategoryCollection();
+		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
+		try
+		{
+			returnObj = resource.getBehaviorCategories( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -132,16 +152,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.core.BehaviorCollection getBehaviors(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getBehaviors(apiContext,  null, expectedCode, successCode );
+		return getBehaviors(apiContext,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.core.BehaviorCollection getBehaviors(ApiContext apiContext, String userType, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.core.BehaviorCollection getBehaviors(ApiContext apiContext, String userType, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.core.BehaviorCollection returnObj = new com.mozu.api.contracts.core.BehaviorCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getBehaviors( userType);
+			returnObj = resource.getBehaviors( userType,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -158,11 +178,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.ContentLocaleCollection getContentLocales(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getContentLocales(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.ContentLocaleCollection getContentLocales(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.ContentLocaleCollection returnObj = new com.mozu.api.contracts.reference.ContentLocaleCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getContentLocales();
+			returnObj = resource.getContentLocales( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -179,11 +204,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.CountryCollection getCountries(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getCountries(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.CountryCollection getCountries(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.CountryCollection returnObj = new com.mozu.api.contracts.reference.CountryCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getCountries();
+			returnObj = resource.getCountries( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -200,11 +230,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.CurrencyCollection getCurrencies(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getCurrencies(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.CurrencyCollection getCurrencies(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.CurrencyCollection returnObj = new com.mozu.api.contracts.reference.CurrencyCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getCurrencies();
+			returnObj = resource.getCurrencies( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -221,11 +256,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.TimeZoneCollection getTimeZones(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getTimeZones(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.TimeZoneCollection getTimeZones(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.TimeZoneCollection returnObj = new com.mozu.api.contracts.reference.TimeZoneCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getTimeZones();
+			returnObj = resource.getTimeZones( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -242,11 +282,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.TopLevelDomainCollection getTopLevelDomains(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getTopLevelDomains(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.TopLevelDomainCollection getTopLevelDomains(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.reference.TopLevelDomainCollection returnObj = new com.mozu.api.contracts.reference.TopLevelDomainCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getTopLevelDomains();
+			returnObj = resource.getTopLevelDomains( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -263,16 +308,16 @@ public class ReferenceDataFactory
 
 	public static com.mozu.api.contracts.reference.UnitOfMeasureCollection getUnitsOfMeasure(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getUnitsOfMeasure(apiContext,  null, expectedCode, successCode );
+		return getUnitsOfMeasure(apiContext,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.reference.UnitOfMeasureCollection getUnitsOfMeasure(ApiContext apiContext, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.reference.UnitOfMeasureCollection getUnitsOfMeasure(ApiContext apiContext, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.reference.UnitOfMeasureCollection returnObj = new com.mozu.api.contracts.reference.UnitOfMeasureCollection();
 		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getUnitsOfMeasure( filter);
+			returnObj = resource.getUnitsOfMeasure( filter,  responseFields);
 		}
 		catch (ApiException e)
 		{

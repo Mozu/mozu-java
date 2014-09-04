@@ -22,11 +22,16 @@ public class TenantFactory
 
 	public static com.mozu.api.contracts.tenant.Tenant getTenant(ApiContext apiContext, Integer tenantId, int expectedCode, int successCode) throws Exception
 	{
+		return getTenant(apiContext,  tenantId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.tenant.Tenant getTenant(ApiContext apiContext, Integer tenantId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.tenant.Tenant returnObj = new com.mozu.api.contracts.tenant.Tenant();
 		TenantResource resource = new TenantResource(apiContext);
 		try
 		{
-			returnObj = resource.getTenant( tenantId);
+			returnObj = resource.getTenant( tenantId,  responseFields);
 		}
 		catch (ApiException e)
 		{

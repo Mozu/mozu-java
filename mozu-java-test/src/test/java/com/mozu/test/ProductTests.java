@@ -66,7 +66,7 @@ public class ProductTests extends MozuApiTestBase {
 		}
 		for (int i = 0; i < attrs.size(); i++)
 		{
-		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, DataViewMode.Live, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
 		}
 	}
 
@@ -83,7 +83,7 @@ public class ProductTests extends MozuApiTestBase {
 	public void creatProductTest1() throws Exception  {
 		//Create attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, DataViewMode.Live, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         attrs.add(createdAttr.getAttributeFQN());
         
         //Create product type
@@ -110,9 +110,9 @@ public class ProductTests extends MozuApiTestBase {
         productTypes.add(createdPT.getId());
 
         Product myProduct = ProductGenerator.generate(createdPT);
-		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, DataViewMode.Live, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Pending");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, DataViewMode.Live, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
         Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         AdminProductFactory.getProduct(apiContext, DataViewMode.Pending, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
@@ -120,14 +120,14 @@ public class ProductTests extends MozuApiTestBase {
         products.add(createdProduct.getProductCode());
         AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Live");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, DataViewMode.Live, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void updateProductTest2() throws Exception  {
 		// Add a new attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "Date", "AdminEntered", "Datetime", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, DataViewMode.Live, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
  
 		
 	    //update product type
@@ -156,7 +156,7 @@ public class ProductTests extends MozuApiTestBase {
         Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         products.add(createdProduct.getProductCode());
 
-	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -176,7 +176,7 @@ public class ProductTests extends MozuApiTestBase {
         
         //get a category        
 		ApiContext localApiContext1 = new MozuApiContext(tenantId, null, masterCatalogId, catalogId);	
-        CategoryPagedCollection cats = CategoryFactory.getCategories(localApiContext1, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        CategoryPagedCollection cats = CategoryFactory.getCategories(localApiContext1, HttpStatus.SC_OK, HttpStatus.SC_OK);
         Category myCat = cats.getItems().get(0);
         List<ProductCategory> list = new ArrayList<ProductCategory>();
         list.add(ProductGenerator.generateProductCategory(myCat.getId()));

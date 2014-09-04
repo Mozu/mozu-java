@@ -138,13 +138,13 @@ public class OrderTests extends MozuApiTestBase {
         Category cat = ProductCategoryGenerator.generate(Generator.randomString(4,  Generator.AlphaChars), true, null);
         
 	    ApiContext cataApiContext = new MozuApiContext(tenantId, null, masterCatalogId, catalogId);	
-        Category createdCat = CategoryFactory.addCategory(cataApiContext, DataViewMode.Live, cat, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Category createdCat = CategoryFactory.addCategory(cataApiContext, cat, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         categories.add(ProductGenerator.generateProductCategory(createdCat.getId()));
         
         ProductInCatalogInfo proInfo = ProductGenerator.generateProductInCatalogInfo(catalogId, categories,
                 Generator.randomString(6, Generator.AlphaChars), Generator.randomDecimal(20., 1000.), true, true, false,true);
         AdminProductFactory.addProductInCatalog(cataApiContext, DataViewMode.Live, proInfo, createdProduct.getProductCode(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        com.mozu.api.contracts.productruntime.Product product = ProductFactory.getProduct(siteApiContext, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        com.mozu.api.contracts.productruntime.Product product = ProductFactory.getProduct(siteApiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         CustomerAccountAndAuthInfo customerAccountAndAuthInfo =  CustomerGenerator.generateCustomerAccountAndAuthInfo();
         CustomerAuthTicket ticket = CustomerAccountFactory.addAccountAndLogin(siteApiContext, customerAccountAndAuthInfo, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);        
         CustomerUserAuthInfo shopperUserAuthInfo = CustomerGenerator.generateUserAuthInfo(customerAccountAndAuthInfo.getAccount().getUserName(), Constants.Password);
@@ -152,7 +152,7 @@ public class OrderTests extends MozuApiTestBase {
         siteApiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
         
         Cart createdCart = CartFactory.getOrCreateCart(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        com.mozu.api.contracts.productruntime.Product storeFrontProduct = ProductFactory.getProduct(siteApiContext, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        com.mozu.api.contracts.productruntime.Product storeFrontProduct = ProductFactory.getProduct(siteApiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         Integer itemQty = 2;
         //This is for bug 22230
         //CartItemFactory.addItemToCart(shopperMsgHandler, CustomerGenerator.generateCartItem(storeFrontProduct, itemQty), shopperAuth.getAuthTicket(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
@@ -181,7 +181,7 @@ public class OrderTests extends MozuApiTestBase {
 //		Product createdProduct = AdminProductFactory.getProduct(apiMsgHandler, DataViewMode.Live, "cvrsk", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
         //add a category        
         Category cat = ProductCategoryGenerator.generate(Generator.randomString(4,  Generator.AlphaChars), true, null);
-        Category createdCat = CategoryFactory.addCategory(cataApiContext, DataViewMode.Live, cat, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Category createdCat = CategoryFactory.addCategory(cataApiContext, cat, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         categories.add(ProductGenerator.generateProductCategory(createdCat.getId()));
         List<ProductCategory> listCat = new ArrayList<ProductCategory>(); 
         listCat.add(ProductGenerator.generateProductCategory(createdCat.getId()));
@@ -189,14 +189,14 @@ public class OrderTests extends MozuApiTestBase {
         ProductInCatalogInfo proInfo = ProductGenerator.generateProductInCatalogInfo(catalogId, listCat,
                 Generator.randomString(6, Generator.AlphaChars), Generator.randomDecimal(20., 1000.), true, true, false,true);
         AdminProductFactory.addProductInCatalog(cataApiContext, DataViewMode.Live, proInfo, createdProduct.getProductCode(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        com.mozu.api.contracts.productruntime.Product product = ProductFactory.getProduct(siteApiContext, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        com.mozu.api.contracts.productruntime.Product product = ProductFactory.getProduct(siteApiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         
         CustomerUserAuthInfo shopperUserAuthInfo = CustomerGenerator.generateUserAuthInfo(null, null);
         CustomerAuthenticationProfile shopperAuth = CustomerAuthenticator.authenticate(shopperUserAuthInfo, tenantId, siteId);
         siteApiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
         
         Cart createdCart = CartFactory.getOrCreateCart(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        com.mozu.api.contracts.productruntime.Product storeFrontProduct = ProductFactory.getProduct(siteApiContext, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        com.mozu.api.contracts.productruntime.Product storeFrontProduct = ProductFactory.getProduct(siteApiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         Integer itemQty = 2;
         CartItemFactory.addItemToCart(siteApiContext, CustomerGenerator.generateCartItem(storeFrontProduct, itemQty), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         Order order = OrderFactory.createOrderFromCart(siteApiContext, createdCart.getId(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
@@ -241,7 +241,7 @@ public class OrderTests extends MozuApiTestBase {
             	pickupLocation.setSupportsInventory(true);
             	LocationFactory.updateLocation(apiContext, pickupLocation, pickupLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
             }
-            ProductCollection productCollection = ProductFactory.getProducts(siteApiContext, null, 0, 13, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            ProductCollection productCollection = ProductFactory.getProducts(siteApiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
 //            if (productCollection.getTotalCount() == 0)
 //            {
 //                productCollection = ProductFactory.getProducts(shopperMsgHandler, null, 0, 13, null, shopperAuth.getAuthTicket(), HttpStatus.SC_OK, HttpStatus.SC_OK);
@@ -377,7 +377,7 @@ public class OrderTests extends MozuApiTestBase {
 	{
 		try
 	    {
-	    	AdminLocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, locationCode, productCode, HttpStatus.SC_OK, HttpStatus.SC_OK);
+	    	AdminLocationInventoryFactory.getLocationInventory(apiContext, locationCode, productCode, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {

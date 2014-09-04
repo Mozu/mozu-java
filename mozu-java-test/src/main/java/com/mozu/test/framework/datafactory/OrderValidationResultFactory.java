@@ -43,11 +43,16 @@ public class OrderValidationResultFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult addValidationResult(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return addValidationResult(apiContext,  validationResult,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult addValidationResult(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult();
 		OrderValidationResultResource resource = new OrderValidationResultResource(apiContext);
 		try
 		{
-			returnObj = resource.addValidationResult( validationResult,  orderId);
+			returnObj = resource.addValidationResult( validationResult,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{

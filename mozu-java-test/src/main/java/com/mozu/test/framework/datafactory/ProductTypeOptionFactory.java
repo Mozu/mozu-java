@@ -23,10 +23,10 @@ public class ProductTypeOptionFactory
 	public static List<com.mozu.api.contracts.productadmin.AttributeInProductType> getOptions(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.AttributeInProductType> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.AttributeInProductType>();
-		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext);
+		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getOptions(dataViewMode,  productTypeId);
+			returnObj = resource.getOptions( productTypeId);
 		}
 		catch (ApiException e)
 		{
@@ -43,11 +43,16 @@ public class ProductTypeOptionFactory
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return getOption(apiContext, dataViewMode,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext);
+		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getOption(dataViewMode,  productTypeId,  attributeFQN);
+			returnObj = resource.getOption( productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +69,16 @@ public class ProductTypeOptionFactory
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
+		return addOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext);
+		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addOption(dataViewMode,  attributeInProductType,  productTypeId);
+			returnObj = resource.addOption( attributeInProductType,  productTypeId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -85,11 +95,16 @@ public class ProductTypeOptionFactory
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return updateOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext);
+		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateOption(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+			returnObj = resource.updateOption( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -106,10 +121,10 @@ public class ProductTypeOptionFactory
 
 	public static void deleteOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext);
+				ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteOption(dataViewMode,  productTypeId,  attributeFQN);
+			resource.deleteOption( productTypeId,  attributeFQN);
 		}
 		catch (ApiException e)
 		{

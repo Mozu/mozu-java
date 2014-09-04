@@ -22,11 +22,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.Location getLocation(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getLocation(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location getLocation(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocation( code);
+			returnObj = resource.getLocation( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,11 +48,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.Location getLocationInUsageType(ApiContext apiContext, String locationUsageType, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getLocationInUsageType(apiContext,  locationUsageType,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location getLocationInUsageType(ApiContext apiContext, String locationUsageType, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationInUsageType( locationUsageType,  code);
+			returnObj = resource.getLocationInUsageType( locationUsageType,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,16 +74,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(ApiContext apiContext, String locationUsageType, int expectedCode, int successCode) throws Exception
 	{
-		return getLocationsInUsageType(apiContext,  locationUsageType,  null,  null,  null,  null, expectedCode, successCode );
+		return getLocationsInUsageType(apiContext,  locationUsageType,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(ApiContext apiContext, String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(ApiContext apiContext, String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationCollection returnObj = new com.mozu.api.contracts.location.LocationCollection();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -90,11 +100,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.Location getDirectShipLocation(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getDirectShipLocation(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location getDirectShipLocation(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getDirectShipLocation();
+			returnObj = resource.getDirectShipLocation( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -111,11 +126,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.Location getInStorePickupLocation(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getInStorePickupLocation(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location getInStorePickupLocation(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStorePickupLocation( code);
+			returnObj = resource.getInStorePickupLocation( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -132,16 +152,16 @@ public class CommerceLocationFactory
 
 	public static com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getInStorePickupLocations(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getInStorePickupLocations(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationCollection returnObj = new com.mozu.api.contracts.location.LocationCollection();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{

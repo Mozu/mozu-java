@@ -22,16 +22,16 @@ public class EventNotificationFactory
 
 	public static com.mozu.api.contracts.event.EventCollection getEvents(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getEvents(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getEvents(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.event.EventCollection getEvents(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.event.EventCollection getEvents(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.event.EventCollection returnObj = new com.mozu.api.contracts.event.EventCollection();
 		EventNotificationResource resource = new EventNotificationResource(apiContext);
 		try
 		{
-			returnObj = resource.getEvents( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getEvents( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,16 @@ public class EventNotificationFactory
 
 	public static com.mozu.api.contracts.event.Event getEvent(ApiContext apiContext, String eventId, int expectedCode, int successCode) throws Exception
 	{
+		return getEvent(apiContext,  eventId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.event.Event getEvent(ApiContext apiContext, String eventId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.event.Event returnObj = new com.mozu.api.contracts.event.Event();
 		EventNotificationResource resource = new EventNotificationResource(apiContext);
 		try
 		{
-			returnObj = resource.getEvent( eventId);
+			returnObj = resource.getEvent( eventId,  responseFields);
 		}
 		catch (ApiException e)
 		{

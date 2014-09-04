@@ -22,16 +22,16 @@ public class ProductSearchResultFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return search(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return search(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductSearchResult returnObj = new com.mozu.api.contracts.productruntime.ProductSearchResult();
 		ProductSearchResultResource resource = new ProductSearchResultResource(apiContext);
 		try
 		{
-			returnObj = resource.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex);
+			returnObj = resource.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -46,18 +46,18 @@ public class ProductSearchResultFactory
 
 	}
 
-	public static com.mozu.api.contracts.productruntime.SearchSuggestion suggest(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.SearchSuggestionResult suggest(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return suggest(apiContext,  null,  null, expectedCode, successCode );
+		return suggest(apiContext,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productruntime.SearchSuggestion suggest(ApiContext apiContext, String q, Integer pageSize, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.SearchSuggestionResult suggest(ApiContext apiContext, String query, String groups, Integer pageSize, String responseFields, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productruntime.SearchSuggestion returnObj = new com.mozu.api.contracts.productruntime.SearchSuggestion();
+		com.mozu.api.contracts.productruntime.SearchSuggestionResult returnObj = new com.mozu.api.contracts.productruntime.SearchSuggestionResult();
 		ProductSearchResultResource resource = new ProductSearchResultResource(apiContext);
 		try
 		{
-			returnObj = resource.suggest( q,  pageSize);
+			returnObj = resource.suggest( query,  groups,  pageSize,  responseFields);
 		}
 		catch (ApiException e)
 		{

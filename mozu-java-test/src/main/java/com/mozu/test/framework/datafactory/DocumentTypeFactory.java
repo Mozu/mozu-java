@@ -22,16 +22,16 @@ public class DocumentTypeFactory
 
 	public static com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
 	{
-		return getDocumentTypes(apiContext, dataViewMode,  null,  null, expectedCode, successCode );
+		return getDocumentTypes(apiContext, dataViewMode,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentTypeCollection getDocumentTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentTypeCollection returnObj = new com.mozu.api.contracts.content.DocumentTypeCollection();
-		DocumentTypeResource resource = new DocumentTypeResource(apiContext);
+		DocumentTypeResource resource = new DocumentTypeResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocumentTypes(dataViewMode,  pageSize,  startIndex);
+			returnObj = resource.getDocumentTypes( pageSize,  startIndex,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,68 @@ public class DocumentTypeFactory
 
 	public static com.mozu.api.contracts.content.DocumentType getDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentTypeName, int expectedCode, int successCode) throws Exception
 	{
+		return getDocumentType(apiContext, dataViewMode,  documentTypeName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.DocumentType getDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentTypeName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.DocumentType returnObj = new com.mozu.api.contracts.content.DocumentType();
+		DocumentTypeResource resource = new DocumentTypeResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getDocumentType( documentTypeName,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.content.DocumentType createDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, int expectedCode, int successCode) throws Exception
+	{
+		return createDocumentType(apiContext, dataViewMode,  documentType,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.DocumentType createDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.DocumentType returnObj = new com.mozu.api.contracts.content.DocumentType();
+		DocumentTypeResource resource = new DocumentTypeResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.createDocumentType( documentType,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.content.DocumentType updateDocumentType(ApiContext apiContext, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, int expectedCode, int successCode) throws Exception
+	{
+		return updateDocumentType(apiContext,  documentType,  documentTypeName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.DocumentType updateDocumentType(ApiContext apiContext, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.content.DocumentType returnObj = new com.mozu.api.contracts.content.DocumentType();
 		DocumentTypeResource resource = new DocumentTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.getDocumentType(dataViewMode,  documentTypeName);
+			returnObj = resource.updateDocumentType( documentType,  documentTypeName,  responseFields);
 		}
 		catch (ApiException e)
 		{

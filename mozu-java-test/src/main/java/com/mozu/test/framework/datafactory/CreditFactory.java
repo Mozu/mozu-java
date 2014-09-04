@@ -22,16 +22,16 @@ public class CreditFactory
 
 	public static com.mozu.api.contracts.customer.credit.CreditCollection getCredits(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getCredits(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getCredits(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.credit.CreditCollection getCredits(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.credit.CreditCollection getCredits(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.credit.CreditCollection returnObj = new com.mozu.api.contracts.customer.credit.CreditCollection();
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			returnObj = resource.getCredits( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getCredits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,16 @@ public class CreditFactory
 
 	public static com.mozu.api.contracts.customer.credit.Credit getCredit(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getCredit(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.credit.Credit getCredit(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			returnObj = resource.getCredit( code);
+			returnObj = resource.getCredit( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,32 +74,16 @@ public class CreditFactory
 
 	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
-		CreditResource resource = new CreditResource(apiContext);
-		try
-		{
-			returnObj = resource.addCredit( credit);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return addCredit(apiContext,  credit,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			returnObj = resource.updateCredit( credit,  code);
+			returnObj = resource.addCredit( credit,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -111,11 +100,42 @@ public class CreditFactory
 
 	public static com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return associateCreditToShopper(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
 		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
-			returnObj = resource.associateCreditToShopper( code);
+			returnObj = resource.associateCreditToShopper( code,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, int expectedCode, int successCode) throws Exception
+	{
+		return updateCredit(apiContext,  credit,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.credit.Credit returnObj = new com.mozu.api.contracts.customer.credit.Credit();
+		CreditResource resource = new CreditResource(apiContext);
+		try
+		{
+			returnObj = resource.updateCredit( credit,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{

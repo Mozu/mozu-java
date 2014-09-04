@@ -43,11 +43,16 @@ public class CustomerAuthTicketFactory
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, int expectedCode, int successCode) throws Exception
 	{
+		return createUserAuthTicket(apiContext,  userAuthInfo,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerAuthTicket returnObj = new com.mozu.api.contracts.customer.CustomerAuthTicket();
 		CustomerAuthTicketResource resource = new CustomerAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.createUserAuthTicket( userAuthInfo);
+			returnObj = resource.createUserAuthTicket( userAuthInfo,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +69,16 @@ public class CustomerAuthTicketFactory
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
 	{
+		return refreshUserAuthTicket(apiContext,  refreshToken,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(ApiContext apiContext, String refreshToken, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerAuthTicket returnObj = new com.mozu.api.contracts.customer.CustomerAuthTicket();
 		CustomerAuthTicketResource resource = new CustomerAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.refreshUserAuthTicket( refreshToken);
+			returnObj = resource.refreshUserAuthTicket( refreshToken,  responseFields);
 		}
 		catch (ApiException e)
 		{

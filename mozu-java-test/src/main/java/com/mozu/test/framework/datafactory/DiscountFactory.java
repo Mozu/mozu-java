@@ -22,37 +22,16 @@ public class DiscountFactory
 
 	public static com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
 	{
-		return getDiscounts(apiContext, dataViewMode,  null,  null,  null,  null, expectedCode, successCode );
+		return getDiscounts(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountCollection getDiscounts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.DiscountCollection returnObj = new com.mozu.api.contracts.productadmin.DiscountCollection();
-		DiscountResource resource = new DiscountResource(apiContext);
+		DiscountResource resource = new DiscountResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDiscounts(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.productadmin.Discount getDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.Discount returnObj = new com.mozu.api.contracts.productadmin.Discount();
-		DiscountResource resource = new DiscountResource(apiContext);
-		try
-		{
-			returnObj = resource.getDiscount(dataViewMode,  discountId);
+			returnObj = resource.getDiscounts( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,11 +48,16 @@ public class DiscountFactory
 
 	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
 	{
+		return getDiscountContent(apiContext, dataViewMode,  discountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.DiscountLocalizedContent returnObj = new com.mozu.api.contracts.productadmin.DiscountLocalizedContent();
-		DiscountResource resource = new DiscountResource(apiContext);
+		DiscountResource resource = new DiscountResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDiscountContent(dataViewMode,  discountId);
+			returnObj = resource.getDiscountContent( discountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -88,13 +72,44 @@ public class DiscountFactory
 
 	}
 
-	public static String generateRandomCoupon(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Discount getDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
+	{
+		return getDiscount(apiContext, dataViewMode,  discountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Discount getDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.Discount returnObj = new com.mozu.api.contracts.productadmin.Discount();
+		DiscountResource resource = new DiscountResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getDiscount( discountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static String generateRandomCoupon(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	{
+		return generateRandomCoupon(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static String generateRandomCoupon(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		String returnObj = new String();
 		DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.generateRandomCoupon(dataViewMode);
+			returnObj = resource.generateRandomCoupon( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -109,13 +124,18 @@ public class DiscountFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Discount createDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Discount createDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, int expectedCode, int successCode) throws Exception
+	{
+		return createDiscount(apiContext,  discount,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Discount createDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Discount returnObj = new com.mozu.api.contracts.productadmin.Discount();
 		DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.createDiscount(dataViewMode,  discount);
+			returnObj = resource.createDiscount( discount,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -130,34 +150,18 @@ public class DiscountFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Discount updateDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.Discount returnObj = new com.mozu.api.contracts.productadmin.Discount();
-		DiscountResource resource = new DiscountResource(apiContext);
-		try
-		{
-			returnObj = resource.updateDiscount(dataViewMode,  discount,  discountId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return updateDiscountContent(apiContext,  content,  discountId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.DiscountLocalizedContent returnObj = new com.mozu.api.contracts.productadmin.DiscountLocalizedContent();
 		DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.updateDiscountContent(dataViewMode,  content,  discountId);
+			returnObj = resource.updateDiscountContent( content,  discountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -172,12 +176,38 @@ public class DiscountFactory
 
 	}
 
-	public static void deleteDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Discount updateDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId, int expectedCode, int successCode) throws Exception
+	{
+		return updateDiscount(apiContext,  discount,  discountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Discount updateDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.Discount returnObj = new com.mozu.api.contracts.productadmin.Discount();
+		DiscountResource resource = new DiscountResource(apiContext);
+		try
+		{
+			returnObj = resource.updateDiscount( discount,  discountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static void deleteDiscount(ApiContext apiContext, Integer discountId, int expectedCode, int successCode) throws Exception
 	{
 				DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
-			resource.deleteDiscount(dataViewMode,  discountId);
+			resource.deleteDiscount( discountId);
 		}
 		catch (ApiException e)
 		{

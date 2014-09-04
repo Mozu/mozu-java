@@ -22,37 +22,16 @@ public class ReturnFactory
 
 	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getReturns(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getReturns(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.getReturns( startIndex,  pageSize,  sortBy,  filter);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
-		ReturnResource resource = new ReturnResource(apiContext);
-		try
-		{
-			returnObj = resource.getReturn( returnId);
+			returnObj = resource.getReturns( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -88,13 +67,18 @@ public class ReturnFactory
 
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.commerceruntime.payments.PaymentCollection returnObj = new com.mozu.api.contracts.commerceruntime.payments.PaymentCollection();
+		return getReturnItem(apiContext,  returnId,  returnItemId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnItem();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.getPayments( returnId);
+			returnObj = resource.getReturnItem( returnId,  returnItemId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -109,13 +93,18 @@ public class ReturnFactory
 
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.commerceruntime.payments.Payment returnObj = new com.mozu.api.contracts.commerceruntime.payments.Payment();
+		return getReturnItems(apiContext,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.getPayment( returnId,  paymentId);
+			returnObj = resource.getReturnItems( returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -151,13 +140,122 @@ public class ReturnFactory
 
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
+	{
+		return getPayment(apiContext,  returnId,  paymentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.payments.Payment returnObj = new com.mozu.api.contracts.commerceruntime.payments.Payment();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.getPayment( returnId,  paymentId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	{
+		return getPayments(apiContext,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.payments.PaymentCollection returnObj = new com.mozu.api.contracts.commerceruntime.payments.PaymentCollection();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.getPayments( returnId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	{
+		return getReturn(apiContext,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.createReturn( ret);
+			returnObj = resource.getReturn( returnId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode, int successCode) throws Exception
+	{
+		return createReturn(apiContext,  ret,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.createReturn( ret,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, int expectedCode, int successCode) throws Exception
+	{
+		return createReturnItem(apiContext,  returnItem,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.createReturnItem( returnItem,  returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -174,11 +272,16 @@ public class ReturnFactory
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
 	{
+		return performPaymentActionForReturn(apiContext,  action,  returnId,  paymentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.performPaymentActionForReturn( action,  returnId,  paymentId);
+			returnObj = resource.performPaymentActionForReturn( action,  returnId,  paymentId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -195,11 +298,16 @@ public class ReturnFactory
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, int expectedCode, int successCode) throws Exception
 	{
+		return createPaymentActionForReturn(apiContext,  action,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.createPaymentActionForReturn( action,  returnId);
+			returnObj = resource.createPaymentActionForReturn( action,  returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -216,11 +324,16 @@ public class ReturnFactory
 
 	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode, int successCode) throws Exception
 	{
+		return performReturnActions(apiContext,  action,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.performReturnActions( action);
+			returnObj = resource.performReturnActions( action,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -237,11 +350,37 @@ public class ReturnFactory
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, int expectedCode, int successCode) throws Exception
 	{
+		return updateReturn(apiContext,  ret,  returnId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.updateReturn( ret,  returnId);
+			returnObj = resource.updateReturn( ret,  returnId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.deleteOrderItem( returnId,  returnItemId);
 		}
 		catch (ApiException e)
 		{

@@ -22,37 +22,16 @@ public class AdminProductFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
 	{
-		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean noCount, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String q, Integer qLimit, Boolean noCount, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductCollection returnObj = new com.mozu.api.contracts.productadmin.ProductCollection();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProducts(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.productadmin.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.Product returnObj = new com.mozu.api.contracts.productadmin.Product();
-		ProductResource resource = new ProductResource(apiContext);
-		try
-		{
-			returnObj = resource.getProduct(dataViewMode,  productCode);
+			returnObj = resource.getProducts( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  noCount,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -70,10 +49,10 @@ public class AdminProductFactory
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> getProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductInCatalogs(dataViewMode,  productCode);
+			returnObj = resource.getProductInCatalogs( productCode);
 		}
 		catch (ApiException e)
 		{
@@ -90,11 +69,42 @@ public class AdminProductFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo getProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
 	{
+		return getProductInCatalog(apiContext, dataViewMode,  productCode,  catalogId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo getProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductInCatalogInfo returnObj = new com.mozu.api.contracts.productadmin.ProductInCatalogInfo();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductInCatalog(dataViewMode,  productCode,  catalogId);
+			returnObj = resource.getProductInCatalog( productCode,  catalogId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.productadmin.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
+	{
+		return getProduct(apiContext, dataViewMode,  productCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.Product returnObj = new com.mozu.api.contracts.productadmin.Product();
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProduct( productCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -111,11 +121,16 @@ public class AdminProductFactory
 
 	public static com.mozu.api.contracts.productadmin.Product addProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, int expectedCode, int successCode) throws Exception
 	{
+		return addProduct(apiContext, dataViewMode,  product,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Product addProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.Product returnObj = new com.mozu.api.contracts.productadmin.Product();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addProduct(dataViewMode,  product);
+			returnObj = resource.addProduct( product,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -132,32 +147,16 @@ public class AdminProductFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo addProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.ProductInCatalogInfo returnObj = new com.mozu.api.contracts.productadmin.ProductInCatalogInfo();
-		ProductResource resource = new ProductResource(apiContext);
-		try
-		{
-			returnObj = resource.addProductInCatalog(dataViewMode,  productInCatalogInfoIn,  productCode);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return addProductInCatalog(apiContext, dataViewMode,  productInCatalogInfoIn,  productCode,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.Product updateProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo addProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.Product returnObj = new com.mozu.api.contracts.productadmin.Product();
-		ProductResource resource = new ProductResource(apiContext);
+		com.mozu.api.contracts.productadmin.ProductInCatalogInfo returnObj = new com.mozu.api.contracts.productadmin.ProductInCatalogInfo();
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProduct(dataViewMode,  product,  productCode);
+			returnObj = resource.addProductInCatalog( productInCatalogInfoIn,  productCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -175,10 +174,10 @@ public class AdminProductFactory
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProductInCatalogs(dataViewMode,  productInCatalogsIn,  productCode);
+			returnObj = resource.updateProductInCatalogs( productInCatalogsIn,  productCode);
 		}
 		catch (ApiException e)
 		{
@@ -195,11 +194,42 @@ public class AdminProductFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo updateProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
 	{
+		return updateProductInCatalog(apiContext, dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo updateProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductInCatalogInfo returnObj = new com.mozu.api.contracts.productadmin.ProductInCatalogInfo();
-		ProductResource resource = new ProductResource(apiContext);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProductInCatalog(dataViewMode,  productInCatalogInfoIn,  productCode,  catalogId);
+			returnObj = resource.updateProductInCatalog( productInCatalogInfoIn,  productCode,  catalogId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+
+	}
+
+	public static com.mozu.api.contracts.productadmin.Product updateProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, int expectedCode, int successCode) throws Exception
+	{
+		return updateProduct(apiContext, dataViewMode,  product,  productCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Product updateProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.Product returnObj = new com.mozu.api.contracts.productadmin.Product();
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateProduct( product,  productCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -216,10 +246,10 @@ public class AdminProductFactory
 
 	public static void deleteProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductResource resource = new ProductResource(apiContext);
+				ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProduct(dataViewMode,  productCode);
+			resource.deleteProduct( productCode);
 		}
 		catch (ApiException e)
 		{
@@ -233,10 +263,10 @@ public class AdminProductFactory
 
 	public static void deleteProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
 	{
-				ProductResource resource = new ProductResource(apiContext);
+				ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductInCatalog(dataViewMode,  productCode,  catalogId);
+			resource.deleteProductInCatalog( productCode,  catalogId);
 		}
 		catch (ApiException e)
 		{

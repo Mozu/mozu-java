@@ -43,11 +43,16 @@ public class TransactionFactory
 
 	public static com.mozu.api.contracts.customer.Transaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addTransaction(apiContext,  transaction,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Transaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.Transaction returnObj = new com.mozu.api.contracts.customer.Transaction();
 		TransactionResource resource = new TransactionResource(apiContext);
 		try
 		{
-			returnObj = resource.addTransaction( transaction,  accountId);
+			returnObj = resource.addTransaction( transaction,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{

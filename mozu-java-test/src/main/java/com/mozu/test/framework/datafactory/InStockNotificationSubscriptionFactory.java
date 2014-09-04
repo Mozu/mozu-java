@@ -22,16 +22,16 @@ public class InStockNotificationSubscriptionFactory
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getInStockNotificationSubscriptions(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getInStockNotificationSubscriptions(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,16 @@ public class InStockNotificationSubscriptionFactory
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
 	{
+		return getInStockNotificationSubscription(apiContext,  id,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(ApiContext apiContext, Integer id, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscription returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscription();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStockNotificationSubscription( id);
+			returnObj = resource.getInStockNotificationSubscription( id,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,11 +74,16 @@ public class InStockNotificationSubscriptionFactory
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(ApiContext apiContext, com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, int expectedCode, int successCode) throws Exception
 	{
+		return addInStockNotificationSubscription(apiContext,  inStockNotificationSubscription,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(ApiContext apiContext, com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscription returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscription();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.addInStockNotificationSubscription( inStockNotificationSubscription);
+			returnObj = resource.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 		}
 		catch (ApiException e)
 		{

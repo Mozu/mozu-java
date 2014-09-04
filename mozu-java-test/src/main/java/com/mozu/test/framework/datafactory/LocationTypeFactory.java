@@ -43,11 +43,16 @@ public class LocationTypeFactory
 
 	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode, int successCode) throws Exception
 	{
+		return getLocationType(apiContext,  locationTypeCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationType( locationTypeCode);
+			returnObj = resource.getLocationType( locationTypeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +69,16 @@ public class LocationTypeFactory
 
 	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, int expectedCode, int successCode) throws Exception
 	{
+		return addLocationType(apiContext,  locationType,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.addLocationType( locationType);
+			returnObj = resource.addLocationType( locationType,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -85,11 +95,16 @@ public class LocationTypeFactory
 
 	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, int expectedCode, int successCode) throws Exception
 	{
+		return updateLocationType(apiContext,  locationType,  locationTypeCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateLocationType( locationType,  locationTypeCode);
+			returnObj = resource.updateLocationType( locationType,  locationTypeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{

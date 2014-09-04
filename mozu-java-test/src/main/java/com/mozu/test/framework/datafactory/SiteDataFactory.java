@@ -22,11 +22,16 @@ public class SiteDataFactory
 
 	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
+		return getDBValue(apiContext,  dbEntryQuery,  null, expectedCode, successCode );
+	}
+
+	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		String returnObj = new String();
 		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getDBValue( dbEntryQuery);
+			returnObj = resource.getDBValue( dbEntryQuery,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -20,18 +20,18 @@ import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.Attribu
 public class AttributedefinitionAttributeFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.AttributeCollection getAttributes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeCollection getAttributes(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getAttributes(apiContext, dataViewMode,  null,  null,  null,  null, expectedCode, successCode );
+		return getAttributes(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeCollection getAttributes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeCollection getAttributes(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.AttributeCollection returnObj = new com.mozu.api.contracts.productadmin.AttributeCollection();
 		AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.getAttributes(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -46,13 +46,18 @@ public class AttributedefinitionAttributeFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Attribute getAttribute(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Attribute getAttribute(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
+	{
+		return getAttribute(apiContext,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Attribute getAttribute(ApiContext apiContext, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Attribute returnObj = new com.mozu.api.contracts.productadmin.Attribute();
 		AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.getAttribute(dataViewMode,  attributeFQN);
+			returnObj = resource.getAttribute( attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -67,13 +72,18 @@ public class AttributedefinitionAttributeFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Attribute addAttribute(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Attribute addAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, int expectedCode, int successCode) throws Exception
+	{
+		return addAttribute(apiContext,  attribute,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Attribute addAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Attribute returnObj = new com.mozu.api.contracts.productadmin.Attribute();
 		AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.addAttribute(dataViewMode,  attribute);
+			returnObj = resource.addAttribute( attribute,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -88,13 +98,18 @@ public class AttributedefinitionAttributeFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, int expectedCode, int successCode) throws Exception
+	{
+		return updateAttribute(apiContext,  attribute,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Attribute returnObj = new com.mozu.api.contracts.productadmin.Attribute();
 		AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAttribute(dataViewMode,  attribute,  attributeFQN);
+			returnObj = resource.updateAttribute( attribute,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -109,12 +124,12 @@ public class AttributedefinitionAttributeFactory
 
 	}
 
-	public static void deleteAttribute(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static void deleteAttribute(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
 				AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
-			resource.deleteAttribute(dataViewMode,  attributeFQN);
+			resource.deleteAttribute( attributeFQN);
 		}
 		catch (ApiException e)
 		{

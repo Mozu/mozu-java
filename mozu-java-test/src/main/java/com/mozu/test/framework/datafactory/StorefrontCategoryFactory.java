@@ -22,16 +22,16 @@ public class StorefrontCategoryFactory
 
 	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getCategories(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getCategories(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, String filter, Integer startIndex, Integer pageSize, String sortBy, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.CategoryPagedCollection returnObj = new com.mozu.api.contracts.productruntime.CategoryPagedCollection();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.getCategories( filter,  startIndex,  pageSize,  sortBy);
+			returnObj = resource.getCategories( filter,  startIndex,  pageSize,  sortBy,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,16 +48,16 @@ public class StorefrontCategoryFactory
 
 	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		return getCategory(apiContext,  categoryId,  null, expectedCode, successCode );
+		return getCategory(apiContext,  categoryId,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, Boolean allowInactive, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, Boolean allowInactive, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.Category returnObj = new com.mozu.api.contracts.productruntime.Category();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.getCategory( categoryId,  allowInactive);
+			returnObj = resource.getCategory( categoryId,  allowInactive,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -74,11 +74,16 @@ public class StorefrontCategoryFactory
 
 	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getCategoryTree(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productruntime.CategoryCollection returnObj = new com.mozu.api.contracts.productruntime.CategoryCollection();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.getCategoryTree();
+			returnObj = resource.getCategoryTree( responseFields);
 		}
 		catch (ApiException e)
 		{

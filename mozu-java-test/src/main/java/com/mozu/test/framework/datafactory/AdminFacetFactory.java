@@ -20,18 +20,18 @@ import com.mozu.api.resources.commerce.catalog.admin.FacetResource;
 public class AdminFacetFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.Facet getFacet(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer facetId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Facet getFacet(ApiContext apiContext, Integer facetId, int expectedCode, int successCode) throws Exception
 	{
-		return getFacet(apiContext, dataViewMode,  facetId,  null, expectedCode, successCode );
+		return getFacet(apiContext,  facetId,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.Facet getFacet(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer facetId, Boolean validate, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Facet getFacet(ApiContext apiContext, Integer facetId, Boolean validate, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Facet returnObj = new com.mozu.api.contracts.productadmin.Facet();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.getFacet(dataViewMode,  facetId,  validate);
+			returnObj = resource.getFacet( facetId,  validate,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -46,18 +46,18 @@ public class AdminFacetFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		return getFacetCategoryList(apiContext, dataViewMode,  categoryId,  null,  null, expectedCode, successCode );
+		return getFacetCategoryList(apiContext,  categoryId,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean includeAvailable, Boolean validate, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, Boolean includeAvailable, Boolean validate, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.FacetSet returnObj = new com.mozu.api.contracts.productadmin.FacetSet();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.getFacetCategoryList(dataViewMode,  categoryId,  includeAvailable,  validate);
+			returnObj = resource.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -72,13 +72,18 @@ public class AdminFacetFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Facet addFacet(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Facet addFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, int expectedCode, int successCode) throws Exception
+	{
+		return addFacet(apiContext,  facet,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Facet addFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Facet returnObj = new com.mozu.api.contracts.productadmin.Facet();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.addFacet(dataViewMode,  facet);
+			returnObj = resource.addFacet( facet,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -93,13 +98,18 @@ public class AdminFacetFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.Facet updateFacet(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Facet updateFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId, int expectedCode, int successCode) throws Exception
+	{
+		return updateFacet(apiContext,  facet,  facetId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.Facet updateFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Facet returnObj = new com.mozu.api.contracts.productadmin.Facet();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.updateFacet(dataViewMode,  facet,  facetId);
+			returnObj = resource.updateFacet( facet,  facetId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -114,12 +124,12 @@ public class AdminFacetFactory
 
 	}
 
-	public static void deleteFacetById(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer facetId, int expectedCode, int successCode) throws Exception
+	public static void deleteFacetById(ApiContext apiContext, Integer facetId, int expectedCode, int successCode) throws Exception
 	{
 				FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			resource.deleteFacetById(dataViewMode,  facetId);
+			resource.deleteFacetById( facetId);
 		}
 		catch (ApiException e)
 		{

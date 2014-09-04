@@ -22,11 +22,16 @@ public class CheckoutSettingsFactory
 
 	public static com.mozu.api.contracts.sitesettings.order.CheckoutSettings getCheckoutSettings(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getCheckoutSettings(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.order.CheckoutSettings getCheckoutSettings(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.order.CheckoutSettings returnObj = new com.mozu.api.contracts.sitesettings.order.CheckoutSettings();
 		CheckoutSettingsResource resource = new CheckoutSettingsResource(apiContext);
 		try
 		{
-			returnObj = resource.getCheckoutSettings();
+			returnObj = resource.getCheckoutSettings( responseFields);
 		}
 		catch (ApiException e)
 		{

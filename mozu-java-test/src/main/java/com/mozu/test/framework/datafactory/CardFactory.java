@@ -20,13 +20,18 @@ import com.mozu.api.resources.commerce.customer.accounts.CardResource;
 public class CardFactory
 {
 
-	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.CardCollection returnObj = new com.mozu.api.contracts.customer.CardCollection();
+		return getAccountCard(apiContext,  accountId,  cardId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountCards( accountId);
+			returnObj = resource.getAccountCard( accountId,  cardId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,13 +46,18 @@ public class CardFactory
 
 	}
 
-	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
+		return getAccountCards(apiContext,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.CardCollection returnObj = new com.mozu.api.contracts.customer.CardCollection();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountCard( accountId,  cardId);
+			returnObj = resource.getAccountCards( accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +74,16 @@ public class CardFactory
 
 	public static com.mozu.api.contracts.customer.Card addAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountCard(apiContext,  card,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card addAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountCard( card,  accountId);
+			returnObj = resource.addAccountCard( card,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -85,11 +100,16 @@ public class CardFactory
 
 	public static com.mozu.api.contracts.customer.Card updateAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountCard(apiContext,  card,  accountId,  cardId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card updateAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountCard( card,  accountId,  cardId);
+			returnObj = resource.updateAccountCard( card,  accountId,  cardId,  responseFields);
 		}
 		catch (ApiException e)
 		{

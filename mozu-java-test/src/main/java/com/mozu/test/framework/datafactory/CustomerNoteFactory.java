@@ -22,11 +22,16 @@ public class CustomerNoteFactory
 
 	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
+		return getAccountNote(apiContext,  accountId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountNote( accountId,  noteId);
+			returnObj = resource.getAccountNote( accountId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,16 +48,16 @@ public class CustomerNoteFactory
 
 	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNoteCollection returnObj = new com.mozu.api.contracts.customer.CustomerNoteCollection();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,11 +74,16 @@ public class CustomerNoteFactory
 
 	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountNote(apiContext,  note,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountNote( note,  accountId);
+			returnObj = resource.addAccountNote( note,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -90,11 +100,16 @@ public class CustomerNoteFactory
 
 	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountNote(apiContext,  note,  accountId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountNote( note,  accountId,  noteId);
+			returnObj = resource.updateAccountNote( note,  accountId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{

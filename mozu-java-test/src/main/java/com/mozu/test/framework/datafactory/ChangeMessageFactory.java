@@ -22,11 +22,16 @@ public class ChangeMessageFactory
 
 	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getMessages(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection returnObj = new com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection();
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
 		{
-			returnObj = resource.getMessages();
+			returnObj = resource.getMessages( responseFields);
 		}
 		catch (ApiException e)
 		{

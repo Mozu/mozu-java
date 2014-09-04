@@ -20,13 +20,18 @@ import com.mozu.api.resources.platform.adminuser.AdminUserResource;
 public class AdminUserFactory
 {
 
-	public static com.mozu.api.contracts.core.User getUser(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.core.User returnObj = new com.mozu.api.contracts.core.User();
+		return getTenantScopesForUser(apiContext,  userId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(ApiContext apiContext, String userId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.tenant.TenantCollection returnObj = new com.mozu.api.contracts.tenant.TenantCollection();
 		AdminUserResource resource = new AdminUserResource(apiContext);
 		try
 		{
-			returnObj = resource.getUser( userId);
+			returnObj = resource.getTenantScopesForUser( userId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,13 +46,18 @@ public class AdminUserFactory
 
 	}
 
-	public static com.mozu.api.contracts.tenant.TenantCollection getTenantScopesForUser(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.core.User getUser(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.tenant.TenantCollection returnObj = new com.mozu.api.contracts.tenant.TenantCollection();
+		return getUser(apiContext,  userId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.core.User getUser(ApiContext apiContext, String userId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.core.User returnObj = new com.mozu.api.contracts.core.User();
 		AdminUserResource resource = new AdminUserResource(apiContext);
 		try
 		{
-			returnObj = resource.getTenantScopesForUser( userId);
+			returnObj = resource.getUser( userId,  responseFields);
 		}
 		catch (ApiException e)
 		{

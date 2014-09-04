@@ -22,11 +22,16 @@ public class LocationUsageFactory
 
 	public static com.mozu.api.contracts.location.LocationUsageCollection getLocationUsages(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getLocationUsages(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationUsageCollection getLocationUsages(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationUsageCollection returnObj = new com.mozu.api.contracts.location.LocationUsageCollection();
 		LocationUsageResource resource = new LocationUsageResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationUsages();
+			returnObj = resource.getLocationUsages( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,11 +48,16 @@ public class LocationUsageFactory
 
 	public static com.mozu.api.contracts.location.LocationUsage getLocationUsage(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getLocationUsage(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationUsage getLocationUsage(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationUsage returnObj = new com.mozu.api.contracts.location.LocationUsage();
 		LocationUsageResource resource = new LocationUsageResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationUsage( code);
+			returnObj = resource.getLocationUsage( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +74,16 @@ public class LocationUsageFactory
 
 	public static com.mozu.api.contracts.location.LocationUsage updateLocationUsage(ApiContext apiContext, com.mozu.api.contracts.location.LocationUsage usage, String code, int expectedCode, int successCode) throws Exception
 	{
+		return updateLocationUsage(apiContext,  usage,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationUsage updateLocationUsage(ApiContext apiContext, com.mozu.api.contracts.location.LocationUsage usage, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationUsage returnObj = new com.mozu.api.contracts.location.LocationUsage();
 		LocationUsageResource resource = new LocationUsageResource(apiContext);
 		try
 		{
-			returnObj = resource.updateLocationUsage( usage,  code);
+			returnObj = resource.updateLocationUsage( usage,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{

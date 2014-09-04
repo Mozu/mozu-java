@@ -20,13 +20,13 @@ import com.mozu.api.resources.content.documentlists.DocumentResource;
 public class DocumentFactory
 {
 
-	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
+	public static java.io.InputStream getDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
-		DocumentResource resource = new DocumentResource(apiContext);
+		java.io.InputStream returnObj;
+		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocument(dataViewMode,  documentListName,  documentId);
+			returnObj = resource.getDocumentContent( documentListName,  documentId);
 		}
 		catch (ApiException e)
 		{
@@ -41,13 +41,18 @@ public class DocumentFactory
 
 	}
 
-	public static java.io.InputStream getDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
-		java.io.InputStream returnObj;
-		DocumentResource resource = new DocumentResource(apiContext);
+		return getDocument(apiContext, dataViewMode,  documentListName,  documentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
+		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocumentContent(dataViewMode,  documentListName,  documentId);
+			returnObj = resource.getDocument( documentListName,  documentId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,16 +69,16 @@ public class DocumentFactory
 
 	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, int expectedCode, int successCode) throws Exception
 	{
-		return getDocuments(apiContext, dataViewMode,  documentListName,  null,  null,  null,  null, expectedCode, successCode );
+		return getDocuments(apiContext, dataViewMode,  documentListName,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentCollection returnObj = new com.mozu.api.contracts.content.DocumentCollection();
-		DocumentResource resource = new DocumentResource(apiContext);
+		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocuments(dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex);
+			returnObj = resource.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -90,11 +95,16 @@ public class DocumentFactory
 
 	public static com.mozu.api.contracts.content.Document createDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, int expectedCode, int successCode) throws Exception
 	{
+		return createDocument(apiContext, dataViewMode,  document,  documentListName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.Document createDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
-		DocumentResource resource = new DocumentResource(apiContext);
+		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.createDocument(dataViewMode,  document,  documentListName);
+			returnObj = resource.createDocument( document,  documentListName,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -109,13 +119,35 @@ public class DocumentFactory
 
 	}
 
-	public static com.mozu.api.contracts.content.Document updateDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
+	public static void updateDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentId, String  contentType, int expectedCode, int successCode) throws Exception
+	{
+				DocumentResource resource = new DocumentResource(apiContext);
+		try
+		{
+			resource.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		}
+		if(expectedCode != successCode)
+			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+
+	}
+
+	public static com.mozu.api.contracts.content.Document updateDocument(ApiContext apiContext, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
+	{
+		return updateDocument(apiContext,  document,  documentListName,  documentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.Document updateDocument(ApiContext apiContext, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
 		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			returnObj = resource.updateDocument(dataViewMode,  document,  documentListName,  documentId);
+			returnObj = resource.updateDocument( document,  documentListName,  documentId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -130,12 +162,12 @@ public class DocumentFactory
 
 	}
 
-	public static void updateDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentId, String  contentType, int expectedCode, int successCode) throws Exception
+	public static void deleteDocument(ApiContext apiContext, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
 				DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			resource.updateDocumentContent(dataViewMode,  stream,  documentListName,  documentId,  contentType);
+			resource.deleteDocument( documentListName,  documentId);
 		}
 		catch (ApiException e)
 		{
@@ -147,29 +179,12 @@ public class DocumentFactory
 
 	}
 
-	public static void deleteDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
+	public static void deleteDocumentContent(ApiContext apiContext, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
 				DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
-			resource.deleteDocument(dataViewMode,  documentListName,  documentId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
-	}
-
-	public static void deleteDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
-	{
-				DocumentResource resource = new DocumentResource(apiContext);
-		try
-		{
-			resource.deleteDocumentContent(dataViewMode,  documentListName,  documentId);
+			resource.deleteDocumentContent( documentListName,  documentId);
 		}
 		catch (ApiException e)
 		{

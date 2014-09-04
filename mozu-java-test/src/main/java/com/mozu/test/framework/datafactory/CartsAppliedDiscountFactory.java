@@ -22,11 +22,16 @@ public class CartsAppliedDiscountFactory
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(ApiContext apiContext, String cartId, String couponCode, int expectedCode, int successCode) throws Exception
 	{
+		return applyCoupon(apiContext,  cartId,  couponCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(ApiContext apiContext, String cartId, String couponCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		AppliedDiscountResource resource = new AppliedDiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.applyCoupon( cartId,  couponCode);
+			returnObj = resource.applyCoupon( cartId,  couponCode,  responseFields);
 		}
 		catch (ApiException e)
 		{

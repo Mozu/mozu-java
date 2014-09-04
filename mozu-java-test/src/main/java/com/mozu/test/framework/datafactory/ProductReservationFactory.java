@@ -22,16 +22,16 @@ public class ProductReservationFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
 	{
-		return getProductReservations(apiContext, dataViewMode,  null,  null,  null,  null, expectedCode, successCode );
+		return getProductReservations(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductReservationCollection returnObj = new com.mozu.api.contracts.productadmin.ProductReservationCollection();
-		ProductReservationResource resource = new ProductReservationResource(apiContext);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductReservations(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getProductReservations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,11 +48,16 @@ public class ProductReservationFactory
 
 	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
 	{
+		return getProductReservation(apiContext, dataViewMode,  productReservationId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductReservation returnObj = new com.mozu.api.contracts.productadmin.ProductReservation();
-		ProductReservationResource resource = new ProductReservationResource(apiContext);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductReservation(dataViewMode,  productReservationId);
+			returnObj = resource.getProductReservation( productReservationId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -75,10 +80,10 @@ public class ProductReservationFactory
 	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductReservation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductReservation>();
-		ProductReservationResource resource = new ProductReservationResource(apiContext);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addProductReservations(dataViewMode,  productReservations,  skipInventoryCheck);
+			returnObj = resource.addProductReservations( productReservations,  skipInventoryCheck);
 		}
 		catch (ApiException e)
 		{
@@ -95,10 +100,10 @@ public class ProductReservationFactory
 
 	public static void commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
 	{
-				ProductReservationResource resource = new ProductReservationResource(apiContext);
+				ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.commitReservations(dataViewMode,  productReservations);
+			resource.commitReservations( productReservations);
 		}
 		catch (ApiException e)
 		{
@@ -118,10 +123,10 @@ public class ProductReservationFactory
 	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductReservation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductReservation>();
-		ProductReservationResource resource = new ProductReservationResource(apiContext);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProductReservations(dataViewMode,  productReservations,  skipInventoryCheck);
+			returnObj = resource.updateProductReservations( productReservations,  skipInventoryCheck);
 		}
 		catch (ApiException e)
 		{
@@ -138,10 +143,10 @@ public class ProductReservationFactory
 
 	public static void deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
 	{
-				ProductReservationResource resource = new ProductReservationResource(apiContext);
+				ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductReservation(dataViewMode,  productReservationId);
+			resource.deleteProductReservation( productReservationId);
 		}
 		catch (ApiException e)
 		{

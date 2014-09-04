@@ -22,11 +22,16 @@ public class DiscountTargetFactory
 
 	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
 	{
+		return getDiscountTarget(apiContext, dataViewMode,  discountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.DiscountTarget returnObj = new com.mozu.api.contracts.productadmin.DiscountTarget();
-		DiscountTargetResource resource = new DiscountTargetResource(apiContext);
+		DiscountTargetResource resource = new DiscountTargetResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDiscountTarget(dataViewMode,  discountId);
+			returnObj = resource.getDiscountTarget( discountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,13 +46,18 @@ public class DiscountTargetFactory
 
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, int expectedCode, int successCode) throws Exception
+	{
+		return updateDiscountTarget(apiContext,  discountTarget,  discountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.DiscountTarget returnObj = new com.mozu.api.contracts.productadmin.DiscountTarget();
 		DiscountTargetResource resource = new DiscountTargetResource(apiContext);
 		try
 		{
-			returnObj = resource.updateDiscountTarget(dataViewMode,  discountTarget,  discountId);
+			returnObj = resource.updateDiscountTarget( discountTarget,  discountId,  responseFields);
 		}
 		catch (ApiException e)
 		{

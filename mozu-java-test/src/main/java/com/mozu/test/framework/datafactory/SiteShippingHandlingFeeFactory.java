@@ -22,11 +22,16 @@ public class SiteShippingHandlingFeeFactory
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getOrderHandlingFee(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
 		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrderHandlingFee();
+			returnObj = resource.getOrderHandlingFee( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -43,11 +48,16 @@ public class SiteShippingHandlingFeeFactory
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
 	{
+		return createOrderHandlingFee(apiContext,  orderHandlingFee,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
 		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
 		try
 		{
-			returnObj = resource.createOrderHandlingFee( orderHandlingFee);
+			returnObj = resource.createOrderHandlingFee( orderHandlingFee,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -64,11 +74,16 @@ public class SiteShippingHandlingFeeFactory
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
 	{
+		return updateOrderHandlingFee(apiContext,  orderHandlingFee,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
 		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateOrderHandlingFee( orderHandlingFee);
+			returnObj = resource.updateOrderHandlingFee( orderHandlingFee,  responseFields);
 		}
 		catch (ApiException e)
 		{

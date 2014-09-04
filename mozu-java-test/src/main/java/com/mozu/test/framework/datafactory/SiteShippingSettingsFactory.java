@@ -22,11 +22,16 @@ public class SiteShippingSettingsFactory
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings getSiteShippingSettings(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getSiteShippingSettings(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings getSiteShippingSettings(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings();
 		SiteShippingSettingsResource resource = new SiteShippingSettingsResource(apiContext);
 		try
 		{
-			returnObj = resource.getSiteShippingSettings();
+			returnObj = resource.getSiteShippingSettings( responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -22,11 +22,16 @@ public class ShipmentFactory
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(ApiContext apiContext, String returnId, String shipmentId, int expectedCode, int successCode) throws Exception
 	{
+		return getShipment(apiContext,  returnId,  shipmentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(ApiContext apiContext, String returnId, String shipmentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Shipment returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Shipment();
 		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
-			returnObj = resource.getShipment( returnId,  shipmentId);
+			returnObj = resource.getShipment( returnId,  shipmentId,  responseFields);
 		}
 		catch (ApiException e)
 		{

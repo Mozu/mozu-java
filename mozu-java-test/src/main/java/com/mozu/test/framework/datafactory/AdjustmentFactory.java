@@ -22,16 +22,16 @@ public class AdjustmentFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode, int successCode) throws Exception
 	{
-		return applyShippingAdjustment(apiContext,  adjustment,  orderId,  null,  null, expectedCode, successCode );
+		return applyShippingAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
 		try
 		{
-			returnObj = resource.applyShippingAdjustment( adjustment,  orderId,  updateMode,  version);
+			returnObj = resource.applyShippingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -48,16 +48,16 @@ public class AdjustmentFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode, int successCode) throws Exception
 	{
-		return applyAdjustment(apiContext,  adjustment,  orderId,  null,  null, expectedCode, successCode );
+		return applyAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
 		try
 		{
-			returnObj = resource.applyAdjustment( adjustment,  orderId,  updateMode,  version);
+			returnObj = resource.applyAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 		}
 		catch (ApiException e)
 		{
