@@ -35,7 +35,7 @@ public class ApplicationResource {
 	 * Retrieve the settings of a third-party application.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.ThirdPartyGetApplication();
+	 *	Application application = application.thirdPartyGetApplication();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -49,7 +49,7 @@ public class ApplicationResource {
 	 * Retrieve the settings of a third-party application.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.ThirdPartyGetApplication( responseFields);
+	 *	Application application = application.thirdPartyGetApplication( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
@@ -68,7 +68,7 @@ public class ApplicationResource {
 	 * Initializes an application with the necessary configured settings.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.ThirdPartyUpdateApplication( application);
+	 *	Application application = application.thirdPartyUpdateApplication( application);
 	 * </code></pre></p>
 	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
@@ -84,7 +84,7 @@ public class ApplicationResource {
 	 * Initializes an application with the necessary configured settings.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.ThirdPartyUpdateApplication( application,  responseFields);
+	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param application Properties of the application to update.

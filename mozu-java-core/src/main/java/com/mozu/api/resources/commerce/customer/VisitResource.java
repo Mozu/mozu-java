@@ -35,7 +35,7 @@ public class VisitResource {
 	 * Retrieves a list of customer visits according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	VisitCollection visitCollection = visit.GetVisits();
+	 *	VisitCollection visitCollection = visit.getVisits();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.VisitCollection
 	 * @see com.mozu.api.contracts.customer.VisitCollection
@@ -49,7 +49,7 @@ public class VisitResource {
 	 * Retrieves a list of customer visits according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	VisitCollection visitCollection = visit.GetVisits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	VisitCollection visitCollection = visit.getVisits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class VisitResource {
 	 * Retrieves the details of the customer visit specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.GetVisit( visitId);
+	 *	Visit visit = visit.getVisit( visitId);
 	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to retrieve.
 	 * @return com.mozu.api.contracts.customer.Visit
@@ -87,7 +87,7 @@ public class VisitResource {
 	 * Retrieves the details of the customer visit specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.GetVisit( visitId,  responseFields);
+	 *	Visit visit = visit.getVisit( visitId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param visitId Unique identifier of the customer visit to retrieve.
@@ -107,7 +107,7 @@ public class VisitResource {
 	 * Creates a new visit for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.AddVisit( visit);
+	 *	Visit visit = visit.addVisit( visit);
 	 * </code></pre></p>
 	 * @param visit Properties of the visit to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.Visit
@@ -123,7 +123,7 @@ public class VisitResource {
 	 * Creates a new visit for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.AddVisit( visit,  responseFields);
+	 *	Visit visit = visit.addVisit( visit,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param visit Properties of the visit to add to the customer account.
@@ -144,7 +144,7 @@ public class VisitResource {
 	 * Updates one or more properties of a defined customer visit.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.UpdateVisit( visit,  visitId);
+	 *	Visit visit = visit.updateVisit( visit,  visitId);
 	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to update.
 	 * @param visit Properties of the customer visit to update.
@@ -161,7 +161,7 @@ public class VisitResource {
 	 * Updates one or more properties of a defined customer visit.
 	 * <p><pre><code>
 	 *	Visit visit = new Visit();
-	 *	Visit visit = visit.UpdateVisit( visit,  visitId,  responseFields);
+	 *	Visit visit = visit.updateVisit( visit,  visitId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param visitId Unique identifier of the customer visit to update.

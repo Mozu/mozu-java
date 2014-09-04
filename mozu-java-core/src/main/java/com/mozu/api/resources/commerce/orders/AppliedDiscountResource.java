@@ -35,7 +35,7 @@ public class AppliedDiscountResource {
 	 * Apply a coupon to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.ApplyCoupon( orderId,  couponCode);
+	 *	Order order = applieddiscount.applyCoupon( orderId,  couponCode);
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 * @param orderId Unique identifier of the order to associate the coupon. System-supplied and read-only.
@@ -51,7 +51,7 @@ public class AppliedDiscountResource {
 	 * Apply a coupon to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.ApplyCoupon( orderId,  couponCode,  updateMode,  version,  responseFields);
+	 *	Order order = applieddiscount.applyCoupon( orderId,  couponCode,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 * @param orderId Unique identifier of the order to associate the coupon. System-supplied and read-only.
@@ -74,7 +74,7 @@ public class AppliedDiscountResource {
 	 * Removes a coupon previously applied to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.RemoveCoupon( orderId,  couponCode);
+	 *	Order order = applieddiscount.removeCoupon( orderId,  couponCode);
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 * @param orderId Unique identifier of the order with the coupon to remove.
@@ -90,7 +90,7 @@ public class AppliedDiscountResource {
 	 * Removes a coupon previously applied to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.RemoveCoupon( orderId,  couponCode,  updateMode,  version);
+	 *	Order order = applieddiscount.removeCoupon( orderId,  couponCode,  updateMode,  version);
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 * @param orderId Unique identifier of the order with the coupon to remove.
@@ -112,7 +112,7 @@ public class AppliedDiscountResource {
 	 * Removes all coupons previously applied to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.RemoveCoupons( orderId);
+	 *	Order order = applieddiscount.removeCoupons( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the coupons to remove.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -127,7 +127,7 @@ public class AppliedDiscountResource {
 	 * Removes all coupons previously applied to the order.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Order order = applieddiscount.RemoveCoupons( orderId,  updateMode,  version);
+	 *	Order order = applieddiscount.removeCoupons( orderId,  updateMode,  version);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the coupons to remove.
 	 * @param updateMode Specifies whether to remove coupons by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."

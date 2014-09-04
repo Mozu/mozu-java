@@ -35,7 +35,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject jObject = listview.GetViewEntity( entityListFullName,  viewName,  entityId);
+	 *	JObject jObject = listview.getViewEntity( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -52,7 +52,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject jObject = listview.GetViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
+	 *	JObject jObject = listview.getViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -74,7 +74,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityCollection entityCollection = listview.GetViewEntities( entityListFullName,  viewName);
+	 *	EntityCollection entityCollection = listview.getViewEntities( entityListFullName,  viewName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param viewName 
@@ -90,7 +90,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityCollection entityCollection = listview.GetViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
+	 *	EntityCollection entityCollection = listview.getViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
@@ -114,7 +114,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityContainer entityContainer = listview.GetViewEntityContainer( entityListFullName,  viewName,  entityId);
+	 *	EntityContainer entityContainer = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -131,7 +131,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityContainer entityContainer = listview.GetViewEntityContainer( entityListFullName,  viewName,  entityId,  responseFields);
+	 *	EntityContainer entityContainer = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -153,7 +153,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityContainerCollection entityContainerCollection = listview.GetViewEntityContainers( entityListFullName,  viewName);
+	 *	EntityContainerCollection entityContainerCollection = listview.getViewEntityContainers( entityListFullName,  viewName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param viewName 
@@ -169,7 +169,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	EntityContainerCollection entityContainerCollection = listview.GetViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
+	 *	EntityContainerCollection entityContainerCollection = listview.getViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
@@ -193,7 +193,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.GetEntityListView( entityListFullName,  viewName);
+	 *	ListView listView = listview.getEntityListView( entityListFullName,  viewName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param viewName 
@@ -209,7 +209,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.GetEntityListView( entityListFullName,  viewName,  responseFields);
+	 *	ListView listView = listview.getEntityListView( entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -230,7 +230,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListViewCollection listViewCollection = listview.GetEntityListViews( entityListFullName);
+	 *	ListViewCollection listViewCollection = listview.getEntityListViews( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
@@ -245,7 +245,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListViewCollection listViewCollection = listview.GetEntityListViews( entityListFullName,  responseFields);
+	 *	ListViewCollection listViewCollection = listview.getEntityListViews( entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -265,7 +265,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.CreateEntityListView( listView,  entityListFullName);
+	 *	ListView listView = listview.createEntityListView( listView,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param listView 
@@ -282,7 +282,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.CreateEntityListView( listView,  entityListFullName,  responseFields);
+	 *	ListView listView = listview.createEntityListView( listView,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -304,7 +304,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.UpdateEntityListView( listView,  entityListFullName,  viewName);
+	 *	ListView listView = listview.updateEntityListView( listView,  entityListFullName,  viewName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param viewName 
@@ -322,7 +322,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	ListView listView = listview.UpdateEntityListView( listView,  entityListFullName,  viewName,  responseFields);
+	 *	ListView listView = listview.updateEntityListView( listView,  entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -345,7 +345,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	listview.DeleteEntityListView( entityListFullName,  viewName);
+	 *	listview.deleteEntityListView( entityListFullName,  viewName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param viewName 

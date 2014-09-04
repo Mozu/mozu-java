@@ -35,7 +35,7 @@ public class CreditResource {
 	 * Retrieves a list of store credits applied to customer accounts, according any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	CreditCollection creditCollection = credit.GetCredits();
+	 *	CreditCollection creditCollection = credit.getCredits();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.credit.CreditCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditCollection
@@ -49,7 +49,7 @@ public class CreditResource {
 	 * Retrieves a list of store credits applied to customer accounts, according any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	CreditCollection creditCollection = credit.GetCredits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CreditCollection creditCollection = credit.getCredits( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class CreditResource {
 	 * Retrieves the details of a store credit applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.GetCredit( code);
+	 *	Credit credit = credit.getCredit( code);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
@@ -87,7 +87,7 @@ public class CreditResource {
 	 * Retrieves the details of a store credit applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.GetCredit( code,  responseFields);
+	 *	Credit credit = credit.getCredit( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class CreditResource {
 	 * Creates a new store credit for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AddCredit( credit);
+	 *	Credit credit = credit.addCredit( credit);
 	 * </code></pre></p>
 	 * @param credit Properties of the store credit to create.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
@@ -123,7 +123,7 @@ public class CreditResource {
 	 * Creates a new store credit for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AddCredit( credit,  responseFields);
+	 *	Credit credit = credit.addCredit( credit,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param credit Properties of the store credit to create.
@@ -144,7 +144,7 @@ public class CreditResource {
 	 * 
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AssociateCreditToShopper( code);
+	 *	Credit credit = credit.associateCreditToShopper( code);
 	 * </code></pre></p>
 	 * @param code 
 	 * @return com.mozu.api.contracts.customer.credit.Credit
@@ -159,7 +159,7 @@ public class CreditResource {
 	 * 
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.AssociateCreditToShopper( code,  responseFields);
+	 *	Credit credit = credit.associateCreditToShopper( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
@@ -179,7 +179,7 @@ public class CreditResource {
 	 * Updates one or more properties of a defined store credit applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.UpdateCredit( credit,  code);
+	 *	Credit credit = credit.updateCredit( credit,  code);
 	 * </code></pre></p>
 	 * @param code User-defined code of the store credit to update.
 	 * @param credit Properties of the store credit to update.
@@ -196,7 +196,7 @@ public class CreditResource {
 	 * Updates one or more properties of a defined store credit applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	Credit credit = credit.UpdateCredit( credit,  code,  responseFields);
+	 *	Credit credit = credit.updateCredit( credit,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code of the store credit to update.
 	 * @param responseFields 
@@ -218,7 +218,7 @@ public class CreditResource {
 	 * Deletes a store credit previously applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
-	 *	credit.DeleteCredit( code);
+	 *	credit.deleteCredit( code);
 	 * </code></pre></p>
 	 * @param code User-defined code of the store credit to delete.
 	 * @return 

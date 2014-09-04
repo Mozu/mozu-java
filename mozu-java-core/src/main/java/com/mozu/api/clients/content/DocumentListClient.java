@@ -202,32 +202,6 @@ public class DocumentListClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=LegacyR4_UpdateDocumentContentClient( stream,  documentId,  contentType);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * </code></pre></p>
-	 * @param documentId 
-	 * @param stream 
-	 * @return Mozu.Api.MozuClient 
-	 * @see Stream
-	 */
-	public static MozuClient legacyR4_UpdateDocumentContentClient(java.io.InputStream stream, String documentId, String  contentType) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.content.DocumentListUrl.legacyR4_UpdateDocumentContentUrl(documentId);
-		String verb = "PUT";
-				MozuClient mozuClient = new MozuClient();
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(stream);
-		if (!StringUtils.isEmpty(contentType))
-			mozuClient.addHeader(Headers.CONTENT_TYPE, contentType);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDocumentListClient( documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

@@ -35,7 +35,7 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.GetSettings();
+	 *	SearchSettings searchSettings = search.getSettings();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -49,7 +49,7 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.GetSettings( responseFields);
+	 *	SearchSettings searchSettings = search.getSettings( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
@@ -68,7 +68,7 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.UpdateSettings( settings);
+	 *	SearchSettings searchSettings = search.updateSettings( settings);
 	 * </code></pre></p>
 	 * @param settings 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
@@ -84,7 +84,7 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchSettings searchSettings = search.UpdateSettings( settings,  responseFields);
+	 *	SearchSettings searchSettings = search.updateSettings( settings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param settings 

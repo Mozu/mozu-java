@@ -43,7 +43,7 @@ public class DocumentTreeResource {
 	 * Retrieve the content associated with the document, such as a product image or PDF specifications file.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
-	 *	Stream stream = documenttree.GetTreeDocumentContent(_dataViewMode,  documentListName,  documentName);
+	 *	Stream stream = documenttree.getTreeDocumentContent( documentListName,  documentName);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
@@ -63,7 +63,7 @@ public class DocumentTreeResource {
 	 * Retrieves a document based on its document list and folder path in the document hierarchy.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
-	 *	Document document = documenttree.GetTreeDocument(_dataViewMode,  documentListName,  documentName);
+	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
@@ -79,7 +79,7 @@ public class DocumentTreeResource {
 	 * Retrieves a document based on its document list and folder path in the document hierarchy.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
-	 *	Document document = documenttree.GetTreeDocument(_dataViewMode,  documentListName,  documentName,  responseFields);
+	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
@@ -100,7 +100,7 @@ public class DocumentTreeResource {
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
-	 *	documenttree.UpdateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
+	 *	documenttree.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
@@ -120,7 +120,7 @@ public class DocumentTreeResource {
 	 * Deletes the content associated with a document, such as a product image or PDF specifications file.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
-	 *	documenttree.DeleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
+	 *	documenttree.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.

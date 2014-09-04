@@ -43,7 +43,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentTypeCollection documentTypeCollection = documenttype.GetDocumentTypes(_dataViewMode);
+	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.DocumentTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
@@ -57,7 +57,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentTypeCollection documentTypeCollection = documenttype.GetDocumentTypes(_dataViewMode,  pageSize,  startIndex,  responseFields);
+	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize 
 	 * @param responseFields 
@@ -78,7 +78,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.GetDocumentType(_dataViewMode,  documentTypeName);
+	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName);
 	 * </code></pre></p>
 	 * @param documentTypeName 
 	 * @return com.mozu.api.contracts.content.DocumentType
@@ -93,7 +93,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.GetDocumentType(_dataViewMode,  documentTypeName,  responseFields);
+	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentTypeName 
 	 * @param responseFields 
@@ -113,7 +113,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.CreateDocumentType(_dataViewMode,  documentType);
+	 *	DocumentType documentType = documenttype.createDocumentType( documentType);
 	 * </code></pre></p>
 	 * @param documentType 
 	 * @return com.mozu.api.contracts.content.DocumentType
@@ -129,7 +129,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.CreateDocumentType(_dataViewMode,  documentType,  responseFields);
+	 *	DocumentType documentType = documenttype.createDocumentType( documentType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param documentType 
@@ -150,7 +150,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.UpdateDocumentType( documentType,  documentTypeName);
+	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName);
 	 * </code></pre></p>
 	 * @param documentTypeName 
 	 * @param documentType 
@@ -167,7 +167,7 @@ public class DocumentTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
-	 *	DocumentType documentType = documenttype.UpdateDocumentType( documentType,  documentTypeName,  responseFields);
+	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentTypeName 
 	 * @param responseFields 

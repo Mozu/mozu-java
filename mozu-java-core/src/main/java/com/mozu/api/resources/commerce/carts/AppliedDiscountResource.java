@@ -35,7 +35,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.ApplyCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @param couponCode 
@@ -51,7 +51,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.ApplyCoupon( cartId,  couponCode,  responseFields);
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode,  responseFields);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @param couponCode 
@@ -72,7 +72,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupons( cartId);
+	 *	Cart cart = applieddiscount.removeCoupons( cartId);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -91,7 +91,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.removeCoupon( cartId,  couponCode);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @param couponCode 

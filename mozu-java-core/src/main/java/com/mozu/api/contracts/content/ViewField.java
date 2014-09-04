@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ViewFields implements Serializable
+public class ViewField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;

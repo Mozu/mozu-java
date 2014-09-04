@@ -35,7 +35,7 @@ public class SiteShippingSettingsResource {
 	 * Retrieves a list of the shipping settings configured for a site.
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
-	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.GetSiteShippingSettings();
+	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.getSiteShippingSettings();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
@@ -49,7 +49,7 @@ public class SiteShippingSettingsResource {
 	 * Retrieves a list of the shipping settings configured for a site.
 	 * <p><pre><code>
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
-	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.GetSiteShippingSettings( responseFields);
+	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.getSiteShippingSettings( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings

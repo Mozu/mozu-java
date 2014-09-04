@@ -35,7 +35,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	string string = digitalpackage.GetAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId);
+	 *	string string = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 
@@ -55,7 +55,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.GetDigitalPackage( orderId,  digitalPackageId);
+	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 
@@ -71,7 +71,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.GetDigitalPackage( orderId,  digitalPackageId,  responseFields);
+	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 
@@ -92,7 +92,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.CreateDigitalPackage( digitalPackage,  orderId);
+	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param digitalPackage 
@@ -109,7 +109,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.CreateDigitalPackage( digitalPackage,  orderId,  responseFields);
+	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param responseFields 
@@ -131,7 +131,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.UpdateDigitalPackage( digitalPackage,  orderId,  digitalPackageId);
+	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 
@@ -149,7 +149,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	DigitalPackage digitalPackage = digitalpackage.UpdateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields);
+	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 
@@ -172,7 +172,7 @@ public class DigitalPackageResource {
 	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
-	 *	digitalpackage.DeleteDigitalPackage( orderId,  digitalPackageId);
+	 *	digitalpackage.deleteDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId 
 	 * @param orderId 

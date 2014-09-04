@@ -35,7 +35,7 @@ public class WishlistResource {
 	 * Retrieves a list of shopper wish lists according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	WishlistCollection wishlistCollection = wishlist.GetWishlists();
+	 *	WishlistCollection wishlistCollection = wishlist.getWishlists();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
@@ -49,7 +49,7 @@ public class WishlistResource {
 	 * Retrieves a list of shopper wish lists according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	WishlistCollection wishlistCollection = wishlist.GetWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
+	 *	WishlistCollection wishlistCollection = wishlist.getWishlists( startIndex,  pageSize,  sortBy,  filter,  q,  qLimit,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -74,7 +74,7 @@ public class WishlistResource {
 	 * Retrieves the details of the shopper wish list specified in the request.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.GetWishlist( wishlistId);
+	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -89,7 +89,7 @@ public class WishlistResource {
 	 * Retrieves the details of the shopper wish list specified in the request.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.GetWishlist( wishlistId,  responseFields);
+	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
@@ -109,7 +109,7 @@ public class WishlistResource {
 	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName);
+	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
 	 * @param customerAccountId 
 	 * @param wishlistName 
@@ -125,7 +125,7 @@ public class WishlistResource {
 	 * 
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.GetWishlistByName( customerAccountId,  wishlistName,  responseFields);
+	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId 
 	 * @param responseFields 
@@ -146,7 +146,7 @@ public class WishlistResource {
 	 * Creates a new shopper wish list for the associated customer account. Although customer accounts are maintained at the tenant level, the system stores wish lists at the site level. Newly created wish lists do not have any items.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.CreateWishlist( wishlist);
+	 *	Wishlist wishlist = wishlist.createWishlist( wishlist);
 	 * </code></pre></p>
 	 * @param wishlist Properties of the wish list to create.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -162,7 +162,7 @@ public class WishlistResource {
 	 * Creates a new shopper wish list for the associated customer account. Although customer accounts are maintained at the tenant level, the system stores wish lists at the site level. Newly created wish lists do not have any items.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.CreateWishlist( wishlist,  responseFields);
+	 *	Wishlist wishlist = wishlist.createWishlist( wishlist,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlist Properties of the wish list to create.
@@ -183,7 +183,7 @@ public class WishlistResource {
 	 * Updates one or more properties of a shopper wish list defined for a customer account.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.UpdateWishlist( wishlist,  wishlistId);
+	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the shopper wish list to update.
 	 * @param wishlist Properties of the shopper wish list to update.
@@ -200,7 +200,7 @@ public class WishlistResource {
 	 * Updates one or more properties of a shopper wish list defined for a customer account.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	Wishlist wishlist = wishlist.UpdateWishlist( wishlist,  wishlistId,  responseFields);
+	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlistId Unique identifier of the shopper wish list to update.
@@ -222,7 +222,7 @@ public class WishlistResource {
 	 * Deletes the shopper wish list specified in the request and all items associated with it.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
-	 *	wishlist.DeleteWishlist( wishlistId);
+	 *	wishlist.deleteWishlist( wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list to delete.
 	 * @return 

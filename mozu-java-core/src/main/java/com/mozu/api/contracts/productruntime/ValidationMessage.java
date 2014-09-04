@@ -71,4 +71,14 @@ public class ValidationMessage implements Serializable
 		this.sourceId = sourceId;
 	}
 
+	protected String validationType;
+
+	public String getValidationType() {
+		return this.validationType;
+	}
+
+	public void setValidationType(String validationType) {
+		this.validationType = validationType;
+	}
+
 }

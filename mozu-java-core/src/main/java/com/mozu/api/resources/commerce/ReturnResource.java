@@ -35,7 +35,7 @@ public class ReturnResource {
 	 * Retrieves a list of all returns according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnCollection returnCollection = return.GetReturns();
+	 *	ReturnCollection returnCollection = return.getReturns();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
@@ -49,7 +49,7 @@ public class ReturnResource {
 	 * Retrieves a list of all returns according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnCollection returnCollection = return.GetReturns( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ReturnCollection returnCollection = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class ReturnResource {
 	 * Retrieves a list of the actions available to perform for the specified return based on its current state.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	string string = return.GetAvailableReturnActions( returnId);
+	 *	string string = return.getAvailableReturnActions( returnId);
 	 * </code></pre></p>
 	 * @param returnId Retrieves a list of the actions available to perform for the specified return based on its current state.
 	 * @return List<string>
@@ -91,7 +91,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnItem returnItem = return.GetReturnItem( returnId,  returnItemId);
+	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId);
 	 * </code></pre></p>
 	 * @param returnId 
 	 * @param returnItemId 
@@ -107,7 +107,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnItem returnItem = return.GetReturnItem( returnId,  returnItemId,  responseFields);
+	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId 
@@ -128,7 +128,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnItemCollection returnItemCollection = return.GetReturnItems( returnId);
+	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId);
 	 * </code></pre></p>
 	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
@@ -143,7 +143,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnItemCollection returnItemCollection = return.GetReturnItems( returnId,  responseFields);
+	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId 
@@ -163,7 +163,7 @@ public class ReturnResource {
 	 * Retrieves a list of the payment actions available to perform for the specified return when a return results in a refund to the customer.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	string string = return.GetAvailablePaymentActionsForReturn( returnId,  paymentId);
+	 *	string string = return.getAvailablePaymentActionsForReturn( returnId,  paymentId);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
 	 * @param returnId Unique identifier of the return associated with the payment.
@@ -183,7 +183,7 @@ public class ReturnResource {
 	 * Retrieves the details of a payment submitted as part of a refund associated with a customer return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Payment payment = return.GetPayment( returnId,  paymentId);
+	 *	Payment payment = return.getPayment( returnId,  paymentId);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to retrieve.
 	 * @param returnId Unique identifier of the return associated with the payment.
@@ -199,7 +199,7 @@ public class ReturnResource {
 	 * Retrieves the details of a payment submitted as part of a refund associated with a customer return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Payment payment = return.GetPayment( returnId,  paymentId,  responseFields);
+	 *	Payment payment = return.getPayment( returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to retrieve.
 	 * @param responseFields 
@@ -220,7 +220,7 @@ public class ReturnResource {
 	 * Retrieves a list of all payments submitted as part of a refund associated with a customer return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	PaymentCollection paymentCollection = return.GetPayments( returnId);
+	 *	PaymentCollection paymentCollection = return.getPayments( returnId);
 	 * </code></pre></p>
 	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
@@ -235,7 +235,7 @@ public class ReturnResource {
 	 * Retrieves a list of all payments submitted as part of a refund associated with a customer return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	PaymentCollection paymentCollection = return.GetPayments( returnId,  responseFields);
+	 *	PaymentCollection paymentCollection = return.getPayments( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
@@ -255,7 +255,7 @@ public class ReturnResource {
 	 * Retrieves a list of properties for the specified return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.GetReturn( returnId);
+	 *	Return return = return.getReturn( returnId);
 	 * </code></pre></p>
 	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
@@ -270,7 +270,7 @@ public class ReturnResource {
 	 * Retrieves a list of properties for the specified return.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.GetReturn( returnId,  responseFields);
+	 *	Return return = return.getReturn( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
@@ -290,7 +290,7 @@ public class ReturnResource {
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreateReturn( ret);
+	 *	Return return = return.createReturn( ret);
 	 * </code></pre></p>
 	 * @param ret Wrapper for the properties of the return to create.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
@@ -306,7 +306,7 @@ public class ReturnResource {
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreateReturn( ret,  responseFields);
+	 *	Return return = return.createReturn( ret,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param ret Wrapper for the properties of the return to create.
@@ -327,7 +327,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreateReturnItem( returnItem,  returnId);
+	 *	Return return = return.createReturnItem( returnItem,  returnId);
 	 * </code></pre></p>
 	 * @param returnId 
 	 * @param returnItem 
@@ -344,7 +344,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreateReturnItem( returnItem,  returnId,  responseFields);
+	 *	Return return = return.createReturnItem( returnItem,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId 
@@ -366,7 +366,7 @@ public class ReturnResource {
 	 * Updates a refund payment associated with a customer return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.PerformPaymentActionForReturn( action,  returnId,  paymentId);
+	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to update.
 	 * @param returnId Unique identifier of the return associated with the refund payment.
@@ -384,7 +384,7 @@ public class ReturnResource {
 	 * Updates a refund payment associated with a customer return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.PerformPaymentActionForReturn( action,  returnId,  paymentId,  responseFields);
+	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to update.
 	 * @param responseFields 
@@ -407,7 +407,7 @@ public class ReturnResource {
 	 * Creates a new payment for a return that results in a refund to the customer.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreatePaymentActionForReturn( action,  returnId);
+	 *	Return return = return.createPaymentActionForReturn( action,  returnId);
 	 * </code></pre></p>
 	 * @param returnId Unique identifier of the return associated with the payment action.
 	 * @param action The payment action to perform for the customer return.
@@ -424,7 +424,7 @@ public class ReturnResource {
 	 * Creates a new payment for a return that results in a refund to the customer.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.CreatePaymentActionForReturn( action,  returnId,  responseFields);
+	 *	Return return = return.createPaymentActionForReturn( action,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId Unique identifier of the return associated with the payment action.
@@ -446,7 +446,7 @@ public class ReturnResource {
 	 * Updates the return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnCollection returnCollection = return.PerformReturnActions( action);
+	 *	ReturnCollection returnCollection = return.performReturnActions( action);
 	 * </code></pre></p>
 	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
@@ -462,7 +462,7 @@ public class ReturnResource {
 	 * Updates the return by performing the specified action.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnCollection returnCollection = return.PerformReturnActions( action,  responseFields);
+	 *	ReturnCollection returnCollection = return.performReturnActions( action,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
@@ -483,7 +483,7 @@ public class ReturnResource {
 	 * Updates one or more properties of a return for items previously shipped in a completed order.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.UpdateReturn( ret,  returnId);
+	 *	Return return = return.updateReturn( ret,  returnId);
 	 * </code></pre></p>
 	 * @param returnId Unique identifier of the return.
 	 * @param ret Wrapper for the array of properties to update for the return.
@@ -500,7 +500,7 @@ public class ReturnResource {
 	 * Updates one or more properties of a return for items previously shipped in a completed order.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.UpdateReturn( ret,  returnId,  responseFields);
+	 *	Return return = return.updateReturn( ret,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId Unique identifier of the return.
@@ -522,7 +522,7 @@ public class ReturnResource {
 	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Return return = return.DeleteOrderItem( returnId,  returnItemId);
+	 *	Return return = return.deleteOrderItem( returnId,  returnItemId);
 	 * </code></pre></p>
 	 * @param returnId 
 	 * @param returnItemId 
@@ -542,7 +542,7 @@ public class ReturnResource {
 	 * Deletes the return specified in the request.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	return.DeleteReturn( returnId);
+	 *	return.deleteReturn( returnId);
 	 * </code></pre></p>
 	 * @param returnId Unique identifier of the return to delete.
 	 * @return 

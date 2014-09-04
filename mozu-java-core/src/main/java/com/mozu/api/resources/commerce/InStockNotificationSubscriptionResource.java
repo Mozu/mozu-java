@@ -35,7 +35,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.GetInStockNotificationSubscriptions();
+	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.getInStockNotificationSubscriptions();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
@@ -49,7 +49,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.GetInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
@@ -72,7 +72,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.GetInStockNotificationSubscription( id);
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -87,7 +87,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.GetInStockNotificationSubscription( id,  responseFields);
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.AddInStockNotificationSubscription( inStockNotificationSubscription);
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription);
 	 * </code></pre></p>
 	 * @param inStockNotificationSubscription 
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -123,7 +123,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.AddInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param inStockNotificationSubscription 
@@ -144,7 +144,7 @@ public class InStockNotificationSubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	instocknotificationsubscription.DeleteInStockNotificationSubscription( id);
+	 *	instocknotificationsubscription.deleteInStockNotificationSubscription( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return 

@@ -43,7 +43,7 @@ public class ProductExtraResource {
 	 * Retrieves a list of extras configured for the product according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.GetExtras(_dataViewMode,  productCode);
+	 *	ProductExtra productExtra = productextra.getExtras( productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtra>
@@ -62,7 +62,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.GetExtraValueLocalizedDeltaPrices(_dataViewMode,  productCode,  attributeFQN,  value);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrices( productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -83,7 +83,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.GetExtraValueLocalizedDeltaPrice(_dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param currencyCode 
@@ -101,7 +101,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.GetExtraValueLocalizedDeltaPrice(_dataViewMode,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param currencyCode 
@@ -124,7 +124,7 @@ public class ProductExtraResource {
 	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.GetExtra(_dataViewMode,  productCode,  attributeFQN);
+	 *	ProductExtra productExtra = productextra.getExtra( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -140,7 +140,7 @@ public class ProductExtraResource {
 	 * Retrieves the details of an extra attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.GetExtra(_dataViewMode,  productCode,  attributeFQN,  responseFields);
+	 *	ProductExtra productExtra = productextra.getExtra( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -161,7 +161,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.AddExtraValueLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -180,7 +180,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.AddExtraValueLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -204,7 +204,7 @@ public class ProductExtraResource {
 	 * Configure an extra attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.AddExtra(_dataViewMode,  productExtra,  productCode);
+	 *	ProductExtra productExtra = productextra.addExtra( productExtra,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productExtra Properties of the product extra to configure for the specified product.
@@ -221,7 +221,7 @@ public class ProductExtraResource {
 	 * Configure an extra attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.AddExtra(_dataViewMode,  productExtra,  productCode,  responseFields);
+	 *	ProductExtra productExtra = productextra.addExtra( productExtra,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
@@ -243,7 +243,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.UpdateExtraValueLocalizedDeltaPrices(_dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -266,7 +266,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.UpdateExtraValueLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param currencyCode 
@@ -286,7 +286,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.UpdateExtraValueLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param currencyCode 
@@ -311,7 +311,7 @@ public class ProductExtraResource {
 	 * Updates the configuration of an extra attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.UpdateExtra(_dataViewMode,  productExtra,  productCode,  attributeFQN);
+	 *	ProductExtra productExtra = productextra.updateExtra( productExtra,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -329,7 +329,7 @@ public class ProductExtraResource {
 	 * Updates the configuration of an extra attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	ProductExtra productExtra = productextra.UpdateExtra(_dataViewMode,  productExtra,  productCode,  attributeFQN,  responseFields);
+	 *	ProductExtra productExtra = productextra.updateExtra( productExtra,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -352,7 +352,7 @@ public class ProductExtraResource {
 	 * Delete a product extra configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	productextra.DeleteExtra(_dataViewMode,  productCode,  attributeFQN);
+	 *	productextra.deleteExtra( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -370,7 +370,7 @@ public class ProductExtraResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductExtra productextra = new ProductExtra();
-	 *	productextra.DeleteExtraValueLocalizedDeltaPrice(_dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
+	 *	productextra.deleteExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param currencyCode 

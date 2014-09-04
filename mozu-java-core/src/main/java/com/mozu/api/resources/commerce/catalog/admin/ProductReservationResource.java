@@ -43,7 +43,7 @@ public class ProductReservationResource {
 	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservationCollection productReservationCollection = productreservation.GetProductReservations(_dataViewMode);
+	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservationCollection
@@ -58,7 +58,7 @@ public class ProductReservationResource {
 	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservationCollection productReservationCollection = productreservation.GetProductReservations(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -82,7 +82,7 @@ public class ProductReservationResource {
 	 * Retrieves the details of a product reservation.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.GetProductReservation(_dataViewMode,  productReservationId);
+	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
 	 * @param dataViewMode DataViewMode
@@ -98,7 +98,7 @@ public class ProductReservationResource {
 	 * Retrieves the details of a product reservation.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.GetProductReservation(_dataViewMode,  productReservationId,  responseFields);
+	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId,  responseFields);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
 	 * @param responseFields 
@@ -119,7 +119,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations);
+	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
@@ -136,7 +136,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
@@ -158,7 +158,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.CommitReservations(_dataViewMode,  productReservations);
+	 *	productreservation.commitReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
@@ -177,7 +177,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations);
+	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
@@ -194,7 +194,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(_dataViewMode,  productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
@@ -216,7 +216,7 @@ public class ProductReservationResource {
 	 * Deletes a product reservation. For example, delete a reservation when an order is not processed to return the product quantity back to inventory.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.DeleteProductReservation(_dataViewMode,  productReservationId);
+	 *	productreservation.deleteProductReservation( productReservationId);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the reservation.
 	 * @param dataViewMode DataViewMode

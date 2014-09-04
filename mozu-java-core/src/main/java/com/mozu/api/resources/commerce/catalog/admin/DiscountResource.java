@@ -43,7 +43,7 @@ public class DiscountResource {
 	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountCollection discountCollection = discount.GetDiscounts(_dataViewMode);
+	 *	DiscountCollection discountCollection = discount.getDiscounts();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.DiscountCollection
 	 * @see com.mozu.api.contracts.productadmin.DiscountCollection
@@ -57,7 +57,7 @@ public class DiscountResource {
 	 * Retrieves a list of discounts according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountCollection discountCollection = discount.GetDiscounts(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	DiscountCollection discountCollection = discount.getDiscounts( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -80,7 +80,7 @@ public class DiscountResource {
 	 * Retrieves the localized content specified for the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent(_dataViewMode,  discountId);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -95,7 +95,7 @@ public class DiscountResource {
 	 * Retrieves the localized content specified for the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.GetDiscountContent(_dataViewMode,  discountId,  responseFields);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -115,7 +115,7 @@ public class DiscountResource {
 	 * Retrieves the details of a single discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.GetDiscount(_dataViewMode,  discountId);
+	 *	Discount discount = discount.getDiscount( discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.Discount
@@ -130,7 +130,7 @@ public class DiscountResource {
 	 * Retrieves the details of a single discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.GetDiscount(_dataViewMode,  discountId,  responseFields);
+	 *	Discount discount = discount.getDiscount( discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class DiscountResource {
 	 * Generates a random code for a coupon.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	string string = discount.GenerateRandomCoupon();
+	 *	string string = discount.generateRandomCoupon();
 	 * </code></pre></p>
 	 * @return string
 	 * @see string
@@ -164,7 +164,7 @@ public class DiscountResource {
 	 * Generates a random code for a coupon.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	string string = discount.GenerateRandomCoupon( responseFields);
+	 *	string string = discount.generateRandomCoupon( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return string
@@ -183,7 +183,7 @@ public class DiscountResource {
 	 * Creates a discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.CreateDiscount( discount);
+	 *	Discount discount = discount.createDiscount( discount);
 	 * </code></pre></p>
 	 * @param discount Properties of the discount to create. Required properties: Content.Name, AmountType, StartDate, and Target.Type.
 	 * @return com.mozu.api.contracts.productadmin.Discount
@@ -199,7 +199,7 @@ public class DiscountResource {
 	 * Creates a discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.CreateDiscount( discount,  responseFields);
+	 *	Discount discount = discount.createDiscount( discount,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param discount Properties of the discount to create. Required properties: Content.Name, AmountType, StartDate, and Target.Type.
@@ -220,7 +220,7 @@ public class DiscountResource {
 	 * Modifies the localized content for the specified discount. Rename the discount without modifying any other discount properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.UpdateDiscountContent( content,  discountId);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param content New Name and/or LocaleCode. Properties of the content to update. Required property: Name.
@@ -237,7 +237,7 @@ public class DiscountResource {
 	 * Modifies the localized content for the specified discount. Rename the discount without modifying any other discount properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	DiscountLocalizedContent discountLocalizedContent = discount.UpdateDiscountContent( content,  discountId,  responseFields);
+	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -259,7 +259,7 @@ public class DiscountResource {
 	 * Modifies a discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.UpdateDiscount( discount,  discountId);
+	 *	Discount discount = discount.updateDiscount( discount,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param discount Properties of the discount to update. Required properties: Content.Name, AmountType, StartDate, and Target.Type. Any unspecified properties are set to null and boolean variables are set to false.
@@ -276,7 +276,7 @@ public class DiscountResource {
 	 * Modifies a discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	Discount discount = discount.UpdateDiscount( discount,  discountId,  responseFields);
+	 *	Discount discount = discount.updateDiscount( discount,  discountId,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields 
@@ -298,7 +298,7 @@ public class DiscountResource {
 	 * Deletes a discount specified by its discount ID.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
-	 *	discount.DeleteDiscount( discountId);
+	 *	discount.deleteDiscount( discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return 

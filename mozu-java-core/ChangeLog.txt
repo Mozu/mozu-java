@@ -1282,486 +1282,485 @@ Operation Params
 1195.    Added - content.documentlists.R4Legacy_CreateDocument- Param : document
 1196.    Added - content.documentlists.R4Legacy_UpdateDocument- Param : document
 1197.    Added - content.documentlists.LegacyR4_UpdateDocumentContent- Param : documentId
-1198.    Added - content.documentlists.R4Legacy_DeleteDocumentContent- Param : documentId
-1199.    Added - content.documentlists.R4Legacy_GetDocumentContent- Param : documentId
-1200.    Added - content.documentlists.R4Legacy_UpdateDocument- Param : documentId
-1201.    Added - content.documentlists.DeleteDocumentList- Param : documentListName
-1202.    Added - content.documentlists.GetDocumentList- Param : documentListName
-1203.    Added - content.documentlists.UpdateDocumentList- Param : documentListName
-1204.    Added - content.documentlists.R4Legacy_GetTreeDocument- Param : documentName
-1205.    Added - content.documentlists.R4Legacy_GetTreeDocumentContent- Param : documentName
-1206.    Added - content.documentlists.documents.PatchDocument- Param : document
-1207.    Added - content.documentlists.documents.UpdateDocument- Param : document
-1208.    Added - content.documentlists.documents.CreateDocument- Param : document
-1209.    Added - content.documentlists.documents.DeleteDocumentContent- Param : documentId
-1210.    Added - content.documentlists.documents.GetDocumentContent- Param : documentId
-1211.    Added - content.documentlists.documents.GetDocumentContentHead- Param : documentId
-1212.    Added - content.documentlists.documents.PatchDocument- Param : documentId
-1213.    Added - content.documentlists.documents.UpdateDocumentContent- Param : documentId
-1214.    Added - content.documentlists.documents.DeleteDocument- Param : documentId
-1215.    Added - content.documentlists.documents.GetDocument- Param : documentId
-1216.    Added - content.documentlists.documents.UpdateDocument- Param : documentId
-1217.    Added - content.documentlists.documents.DeleteDocumentContent- Param : documentListName
-1218.    Added - content.documentlists.documents.GetDocumentContent- Param : documentListName
-1219.    Added - content.documentlists.documents.GetDocumentContentHead- Param : documentListName
-1220.    Added - content.documentlists.documents.PatchDocument- Param : documentListName
-1221.    Added - content.documentlists.documents.UpdateDocumentContent- Param : documentListName
-1222.    Added - content.documentlists.documents.CreateDocument- Param : documentListName
-1223.    Added - content.documentlists.documents.DeleteDocument- Param : documentListName
-1224.    Added - content.documentlists.documents.GetDocument- Param : documentListName
-1225.    Added - content.documentlists.documents.UpdateDocument- Param : documentListName
-1226.    Added - content.documentlists.documents.GetDocuments- Param : documentListName
-1227.    Added - content.documentlists.documents.GetDocuments- Param : filter
-1228.    Added - content.documentlists.documents.GetDocuments- Param : pageSize
-1229.    Added - content.documentlists.documents.CreateDocument- Param : responseFields
-1230.    Added - content.documentlists.documents.GetDocument- Param : responseFields
-1231.    Added - content.documentlists.documents.PatchDocument- Param : responseFields
-1232.    Added - content.documentlists.documents.UpdateDocument- Param : responseFields
-1233.    Added - content.documentlists.documents.GetDocuments- Param : responseFields
-1234.    Added - content.documentlists.documents.GetDocuments- Param : sortBy
-1235.    Added - content.documentlists.documents.GetDocuments- Param : startIndex
-1236.    Added - content.documentlists.documents.UpdateDocumentContent- Param : stream
-1237.    Added - content.documentlists.documentTree.GetTreeDocumentContentHead- Param : documentListName
-1238.    Added - content.documentlists.documentTree.GetTreeDocument- Param : documentListName
-1239.    Added - content.documentlists.documentTree.GetTreeDocumentContent- Param : documentListName
-1240.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : documentListName
-1241.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : documentListName
-1242.    Added - content.documentlists.documentTree.GetTreeDocumentContentHead- Param : documentName
-1243.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : documentName
-1244.    Added - content.documentlists.documentTree.GetTreeDocument- Param : documentName
-1245.    Added - content.documentlists.documentTree.GetTreeDocumentContent- Param : documentName
-1246.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : documentName
-1247.    Added - content.documentlists.documentTree.GetTreeDocument- Param : responseFields
-1248.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : stream
-1249.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : stream
-1250.    Added - content.documentlists.facets.GetFacets- Param : documentListName
-1251.    Added - content.documentlists.facets.GetFacets- Param : propertyName
-1252.    Added - content.documentlists.R4Legacy_GetDocuments- Param : filter
-1253.    Added - content.documentlists.folders.CreateFolder- Param : documentListName
-1254.    Added - content.documentlists.folders.DeleteFolder- Param : documentListName
-1255.    Added - content.documentlists.folders.GetFolder- Param : documentListName
-1256.    Added - content.documentlists.folders.GetFolders- Param : documentListName
-1257.    Added - content.documentlists.folders.UpdateFolder- Param : documentListName
-1258.    Added - content.documentlists.folders.GetFolders- Param : filter
-1259.    Added - content.documentlists.folders.CreateFolder- Param : folder
-1260.    Added - content.documentlists.folders.UpdateFolder- Param : folder
-1261.    Added - content.documentlists.folders.GetFolder- Param : folderId
-1262.    Added - content.documentlists.folders.DeleteFolder- Param : folderId
-1263.    Added - content.documentlists.folders.UpdateFolder- Param : folderId
-1264.    Added - content.documentlists.folders.GetFolders- Param : pageSize
-1265.    Added - content.documentlists.folders.CreateFolder- Param : responseFields
-1266.    Added - content.documentlists.folders.GetFolder- Param : responseFields
-1267.    Added - content.documentlists.folders.UpdateFolder- Param : responseFields
-1268.    Added - content.documentlists.folders.GetFolders- Param : responseFields
-1269.    Added - content.documentlists.folders.GetFolders- Param : sort
-1270.    Added - content.documentlists.folders.GetFolders- Param : startIndex
-1271.    Added - content.documentlists.foldertree.GetFolderTree- Param : documentListName
-1272.    Added - content.documentlists.foldertree.GetFolderTree- Param : levels
-1273.    Added - content.documentlists.foldertree.GetFolderTree- Param : responseFields
-1274.    Added - content.documentlists.foldertree.GetFolderTree- Param : rootFolderId
-1275.    Added - content.documentlists.foldertree.GetFolderTree- Param : rootFolderPath
-1276.    Added - content.documentlists.UpdateDocumentList- Param : list
-1277.    Added - content.documentlists.CreateDocumentList- Param : list
-1278.    Added - content.documentlists.R4Legacy_GetDocuments- Param : pageSize
-1279.    Added - content.documentlists.GetDocumentLists- Param : pageSize
-1280.    Added - content.documentlists.CreateDocumentList- Param : responseFields
-1281.    Added - content.documentlists.GetDocumentList- Param : responseFields
-1282.    Added - content.documentlists.R4Legacy_CreateDocument- Param : responseFields
-1283.    Added - content.documentlists.R4Legacy_GetTreeDocument- Param : responseFields
-1284.    Added - content.documentlists.GetDocumentLists- Param : responseFields
-1285.    Added - content.documentlists.R4Legacy_UpdateDocument- Param : responseFields
-1286.    Added - content.documentlists.UpdateDocumentList- Param : responseFields
-1287.    Added - content.documentlists.R4Legacy_GetDocuments- Param : responseFields
-1288.    Added - content.documentlists.R4Legacy_GetDocuments- Param : sortBy
-1289.    Added - content.documentlists.R4Legacy_GetDocuments- Param : startIndex
-1290.    Added - content.documentlists.GetDocumentLists- Param : startIndex
-1291.    Added - content.documentlists.LegacyR4_UpdateDocumentContent- Param : stream
-1292.    Added - content.documentlists.views.DeleteDocumentListView- Param : documentListName
-1293.    Added - content.documentlists.views.GetDocumentListView- Param : documentListName
-1294.    Added - content.documentlists.views.GetDocumentListViews- Param : documentListName
-1295.    Added - content.documentlists.views.GetViewDocuments- Param : documentListName
-1296.    Added - content.documentlists.views.UpdateDocumentListView- Param : documentListName
-1297.    Added - content.documentlists.views.GetViewDocuments- Param : filter
-1298.    Added - content.documentlists.views.GetViewDocuments- Param : pageSize
-1299.    Added - content.documentlists.views.GetDocumentListViews- Param : responseFields
-1300.    Added - content.documentlists.views.GetDocumentListView- Param : responseFields
-1301.    Added - content.documentlists.views.UpdateDocumentListView- Param : responseFields
-1302.    Added - content.documentlists.views.GetViewDocuments- Param : responseFields
-1303.    Added - content.documentlists.views.GetViewDocuments- Param : sortBy
-1304.    Added - content.documentlists.views.GetViewDocuments- Param : startIndex
-1305.    Added - content.documentlists.views.DeleteDocumentListView- Param : viewName
-1306.    Added - content.documentlists.views.GetDocumentListView- Param : viewName
+1198.    Added - content.documentlists.R4Legacy_DeleteDocument- Param : documentId
+1199.    Added - content.documentlists.R4Legacy_DeleteDocumentContent- Param : documentId
+1200.    Added - content.documentlists.R4Legacy_GetDocument- Param : documentId
+1201.    Added - content.documentlists.R4Legacy_GetDocumentContent- Param : documentId
+1202.    Added - content.documentlists.R4Legacy_GetDocumentContentHead- Param : documentId
+1203.    Added - content.documentlists.R4Legacy_UpdateDocument- Param : documentId
+1204.    Added - content.documentlists.DeleteDocumentList- Param : documentListName
+1205.    Added - content.documentlists.GetDocumentList- Param : documentListName
+1206.    Added - content.documentlists.UpdateDocumentList- Param : documentListName
+1207.    Added - content.documentlists.LegacyR4_DeleteTreeDocumentContent- Param : documentName
+1208.    Added - content.documentlists.LegacyR4_UpdateTreeDocumentContent- Param : documentName
+1209.    Added - content.documentlists.R4Legacy_GetTreeDocument- Param : documentName
+1210.    Added - content.documentlists.R4Legacy_GetTreeDocumentContent- Param : documentName
+1211.    Added - content.documentlists.R4Legacy_GetTreeDocumentContentHead- Param : documentName
+1212.    Added - content.documentlists.documents.PatchDocument- Param : document
+1213.    Added - content.documentlists.documents.UpdateDocument- Param : document
+1214.    Added - content.documentlists.documents.CreateDocument- Param : document
+1215.    Added - content.documentlists.documents.DeleteDocumentContent- Param : documentId
+1216.    Added - content.documentlists.documents.GetDocumentContent- Param : documentId
+1217.    Added - content.documentlists.documents.GetDocumentContentHead- Param : documentId
+1218.    Added - content.documentlists.documents.PatchDocument- Param : documentId
+1219.    Added - content.documentlists.documents.UpdateDocumentContent- Param : documentId
+1220.    Added - content.documentlists.documents.DeleteDocument- Param : documentId
+1221.    Added - content.documentlists.documents.GetDocument- Param : documentId
+1222.    Added - content.documentlists.documents.UpdateDocument- Param : documentId
+1223.    Added - content.documentlists.documents.DeleteDocumentContent- Param : documentListName
+1224.    Added - content.documentlists.documents.GetDocumentContent- Param : documentListName
+1225.    Added - content.documentlists.documents.GetDocumentContentHead- Param : documentListName
+1226.    Added - content.documentlists.documents.PatchDocument- Param : documentListName
+1227.    Added - content.documentlists.documents.UpdateDocumentContent- Param : documentListName
+1228.    Added - content.documentlists.documents.CreateDocument- Param : documentListName
+1229.    Added - content.documentlists.documents.DeleteDocument- Param : documentListName
+1230.    Added - content.documentlists.documents.GetDocument- Param : documentListName
+1231.    Added - content.documentlists.documents.UpdateDocument- Param : documentListName
+1232.    Added - content.documentlists.documents.GetDocuments- Param : documentListName
+1233.    Added - content.documentlists.documents.GetDocuments- Param : filter
+1234.    Added - content.documentlists.documents.GetDocuments- Param : pageSize
+1235.    Added - content.documentlists.documents.CreateDocument- Param : responseFields
+1236.    Added - content.documentlists.documents.GetDocument- Param : responseFields
+1237.    Added - content.documentlists.documents.PatchDocument- Param : responseFields
+1238.    Added - content.documentlists.documents.UpdateDocument- Param : responseFields
+1239.    Added - content.documentlists.documents.GetDocuments- Param : responseFields
+1240.    Added - content.documentlists.documents.GetDocuments- Param : sortBy
+1241.    Added - content.documentlists.documents.GetDocuments- Param : startIndex
+1242.    Added - content.documentlists.documents.UpdateDocumentContent- Param : stream
+1243.    Added - content.documentlists.documentTree.GetTreeDocumentContentHead- Param : documentListName
+1244.    Added - content.documentlists.documentTree.GetTreeDocument- Param : documentListName
+1245.    Added - content.documentlists.documentTree.GetTreeDocumentContent- Param : documentListName
+1246.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : documentListName
+1247.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : documentListName
+1248.    Added - content.documentlists.documentTree.GetTreeDocumentContentHead- Param : documentName
+1249.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : documentName
+1250.    Added - content.documentlists.documentTree.GetTreeDocument- Param : documentName
+1251.    Added - content.documentlists.documentTree.GetTreeDocumentContent- Param : documentName
+1252.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : documentName
+1253.    Added - content.documentlists.documentTree.GetTreeDocument- Param : responseFields
+1254.    Added - content.documentlists.documentTree.DeleteTreeDocumentContent- Param : stream
+1255.    Added - content.documentlists.documentTree.UpdateTreeDocumentContent- Param : stream
+1256.    Added - content.documentlists.facets.GetFacets- Param : documentListName
+1257.    Added - content.documentlists.facets.GetFacets- Param : propertyName
+1258.    Added - content.documentlists.R4Legacy_GetDocuments- Param : filter
+1259.    Added - content.documentlists.folders.CreateFolder- Param : documentListName
+1260.    Added - content.documentlists.folders.DeleteFolder- Param : documentListName
+1261.    Added - content.documentlists.folders.GetFolder- Param : documentListName
+1262.    Added - content.documentlists.folders.GetFolders- Param : documentListName
+1263.    Added - content.documentlists.folders.UpdateFolder- Param : documentListName
+1264.    Added - content.documentlists.folders.GetFolders- Param : filter
+1265.    Added - content.documentlists.folders.CreateFolder- Param : folder
+1266.    Added - content.documentlists.folders.UpdateFolder- Param : folder
+1267.    Added - content.documentlists.folders.GetFolder- Param : folderId
+1268.    Added - content.documentlists.folders.DeleteFolder- Param : folderId
+1269.    Added - content.documentlists.folders.UpdateFolder- Param : folderId
+1270.    Added - content.documentlists.folders.GetFolders- Param : pageSize
+1271.    Added - content.documentlists.folders.CreateFolder- Param : responseFields
+1272.    Added - content.documentlists.folders.GetFolder- Param : responseFields
+1273.    Added - content.documentlists.folders.UpdateFolder- Param : responseFields
+1274.    Added - content.documentlists.folders.GetFolders- Param : responseFields
+1275.    Added - content.documentlists.folders.GetFolders- Param : sort
+1276.    Added - content.documentlists.folders.GetFolders- Param : startIndex
+1277.    Added - content.documentlists.foldertree.GetFolderTree- Param : documentListName
+1278.    Added - content.documentlists.foldertree.GetFolderTree- Param : levels
+1279.    Added - content.documentlists.foldertree.GetFolderTree- Param : responseFields
+1280.    Added - content.documentlists.foldertree.GetFolderTree- Param : rootFolderId
+1281.    Added - content.documentlists.foldertree.GetFolderTree- Param : rootFolderPath
+1282.    Added - content.documentlists.UpdateDocumentList- Param : list
+1283.    Added - content.documentlists.CreateDocumentList- Param : list
+1284.    Added - content.documentlists.R4Legacy_GetDocuments- Param : pageSize
+1285.    Added - content.documentlists.GetDocumentLists- Param : pageSize
+1286.    Added - content.documentlists.CreateDocumentList- Param : responseFields
+1287.    Added - content.documentlists.GetDocumentList- Param : responseFields
+1288.    Added - content.documentlists.R4Legacy_CreateDocument- Param : responseFields
+1289.    Added - content.documentlists.R4Legacy_GetDocument- Param : responseFields
+1290.    Added - content.documentlists.R4Legacy_GetTreeDocument- Param : responseFields
+1291.    Added - content.documentlists.GetDocumentLists- Param : responseFields
+1292.    Added - content.documentlists.R4Legacy_UpdateDocument- Param : responseFields
+1293.    Added - content.documentlists.UpdateDocumentList- Param : responseFields
+1294.    Added - content.documentlists.R4Legacy_GetDocuments- Param : responseFields
+1295.    Added - content.documentlists.R4Legacy_GetDocuments- Param : sortBy
+1296.    Added - content.documentlists.R4Legacy_GetDocuments- Param : startIndex
+1297.    Added - content.documentlists.GetDocumentLists- Param : startIndex
+1298.    Added - content.documentlists.LegacyR4_DeleteTreeDocumentContent- Param : stream
+1299.    Added - content.documentlists.LegacyR4_UpdateDocumentContent- Param : stream
+1300.    Added - content.documentlists.LegacyR4_UpdateTreeDocumentContent- Param : stream
+1301.    Added - content.documentlists.views.GetViewDocuments- Param : documentListName
+1302.    Added - content.documentlists.views.GetViewDocuments- Param : filter
+1303.    Added - content.documentlists.views.GetViewDocuments- Param : pageSize
+1304.    Added - content.documentlists.views.GetViewDocuments- Param : responseFields
+1305.    Added - content.documentlists.views.GetViewDocuments- Param : sortBy
+1306.    Added - content.documentlists.views.GetViewDocuments- Param : startIndex
 1307.    Added - content.documentlists.views.GetViewDocuments- Param : viewName
-1308.    Added - content.documentlists.views.UpdateDocumentListView- Param : viewName
-1309.    Added - content.documentlistTypes.UpdateDocumentListType- Param : documentListTypeFQN
-1310.    Added - content.documentlistTypes.CreateDocumentListType- Param : list
-1311.    Added - content.documentlistTypes.UpdateDocumentListType- Param : list
-1312.    Added - content.documentlistTypes.CreateDocumentListType- Param : responseFields
-1313.    Added - content.documentlistTypes.UpdateDocumentListType- Param : responseFields
-1314.    Added - content.documentpublishing.DeleteDocumentDrafts- Param : documentIds
-1315.    Added - content.documentpublishing.PublishDocuments- Param : documentIds
-1316.    Added - content.documentpublishing.DeleteDocumentDrafts- Param : documentLists
-1317.    Added - content.documentpublishing.PublishDocuments- Param : documentLists
-1318.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : documentLists
-1319.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : pageSize
-1320.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : responseFields
-1321.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : startIndex
-1322.    Added - content.documenttypes.CreateDocumentType- Param : documentType
-1323.    Added - content.documenttypes.UpdateDocumentType- Param : documentType
-1324.    Added - content.documenttypes.DeleteDocumentType- Param : documentTypeName
-1325.    Added - content.documenttypes.GetDocumentType- Param : documentTypeName
-1326.    Added - content.documenttypes.UpdateDocumentType- Param : documentTypeName
-1327.    Added - content.documenttypes.GetDocumentTypes- Param : pageSize
-1328.    Added - content.documenttypes.CreateDocumentType- Param : responseFields
-1329.    Added - content.documenttypes.GetDocumentType- Param : responseFields
-1330.    Added - content.documenttypes.GetDocumentTypes- Param : responseFields
-1331.    Added - content.documenttypes.UpdateDocumentType- Param : responseFields
-1332.    Added - content.documenttypes.GetDocumentTypes- Param : startIndex
-1333.    Added - content.propertytypes.GetPropertyTypes- Param : pageSize
-1334.    Added - content.propertytypes.UpdatePropertyType- Param : propertyType
-1335.    Added - content.propertytypes.CreatePropertyType- Param : propertyType
-1336.    Added - content.propertytypes.DeletePropertyType- Param : propertyTypeName
-1337.    Added - content.propertytypes.GetPropertyType- Param : propertyTypeName
-1338.    Added - content.propertytypes.UpdatePropertyType- Param : propertyTypeName
-1339.    Added - content.propertytypes.CreatePropertyType- Param : responseFields
-1340.    Added - content.propertytypes.GetPropertyType- Param : responseFields
-1341.    Added - content.propertytypes.GetPropertyTypes- Param : responseFields
-1342.    Added - content.propertytypes.UpdatePropertyType- Param : responseFields
-1343.    Added - content.propertytypes.GetPropertyTypes- Param : startIndex
-1344.    Added - event.pull.DeleteEvent- Param : eventId
-1345.    Added - event.pull.GetEvent- Param : eventId
-1346.    Added - event.pull.CreateEvent- Param : eventItem
-1347.    Added - event.pull.GetEvents- Param : filter
-1348.    Added - event.pull.GetEvents- Param : pageSize
-1349.    Added - event.pull.CreateEvent- Param : responseFields
-1350.    Added - event.pull.GetEvent- Param : responseFields
-1351.    Added - event.pull.GetEvents- Param : responseFields
-1352.    Added - event.pull.GetEvents- Param : sortBy
-1353.    Added - event.pull.GetEvents- Param : startIndex
-1354.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : action
-1355.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : filter
-1356.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions- Param : id
-1357.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : id
-1358.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : id
-1359.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : pageSize
-1360.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : responseFields
-1361.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : responseFields
-1362.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : responseFields
-1363.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : sortBy
-1364.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : startIndex
-1365.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions- Param : subscriptionId
-1366.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : subscriptionId
-1367.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : subscriptionId
-1368.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : subscriptionId
-1369.    Added - event.push.subscriptions.GetSubscriptions- Param : filter
-1370.    Added - event.push.subscriptions.GetSubscriptions- Param : pageSize
-1371.    Added - event.push.subscriptions.CreateSubscription- Param : responseFields
-1372.    Added - event.push.subscriptions.GetSubscription- Param : responseFields
-1373.    Added - event.push.subscriptions.UpdateSubscription- Param : responseFields
-1374.    Added - event.push.subscriptions.GetSubscriptions- Param : responseFields
-1375.    Added - event.push.subscriptions.GetSubscriptions- Param : sortBy
-1376.    Added - event.push.subscriptions.GetSubscriptions- Param : startIndex
-1377.    Added - event.push.subscriptions.CreateSubscription- Param : subscription
-1378.    Added - event.push.subscriptions.UpdateSubscription- Param : subscription
-1379.    Added - event.push.subscriptions.DeleteSubscription- Param : subscriptionId
-1380.    Added - event.push.subscriptions.GetSubscription- Param : subscriptionId
-1381.    Added - event.push.subscriptions.UpdateSubscription- Param : subscriptionId
-1382.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : filter
-1383.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : filter
-1384.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : pageSize
-1385.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : pageSize
-1386.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : responseFields
-1387.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : responseFields
-1388.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : responseFields
-1389.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : responseFields
-1390.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : responseFields
-1391.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : responseFields
-1392.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : responseFields
-1393.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : responseFields
-1394.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : siteId
-1395.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : siteId
-1396.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : sortBy
-1397.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : sortBy
-1398.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : startIndex
-1399.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : startIndex
-1400.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : subscribingSite
-1401.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : subscribingSite
-1402.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : subscribingTenant
-1403.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : subscribingTenant
-1404.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : subscriptionId
-1405.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : subscriptionId
-1406.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : subscriptionId
-1407.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant- Param : subscriptionId
-1408.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : subscriptionId
-1409.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : subscriptionId
-1410.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : subscriptionId
-1411.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : subscriptionId
-1412.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : subscriptionId
-1413.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : subscriptionId
-1414.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : tenantId
-1415.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : tenantId
-1416.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant- Param : tenantId
-1417.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : tenantId
-1418.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : tenantId
-1419.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : tenantId
-1420.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : tenantId
-1421.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : responseFields
-1422.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : subscriptionId
-1423.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : tokenReplacementRequest
-1424.    Added - ordervalidationcapability.ValidateOrder- Param : order
-1425.    Added - ordervalidationcapability.ValidateOrder- Param : responseFields
-1426.    Added - platform.adminuser.accounts.GetTenantScopesForUser- Param : responseFields
-1427.    Added - platform.adminuser.accounts.GetUser- Param : responseFields
-1428.    Added - platform.adminuser.accounts.GetTenantScopesForUser- Param : userId
-1429.    Added - platform.adminuser.accounts.GetUser- Param : userId
-1430.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : existingAuthTicket
-1431.    Added - platform.adminuser.authtickets.DeleteUserAuthTicket- Param : refreshToken
-1432.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : responseFields
-1433.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : responseFields
-1434.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : tenantId
-1435.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : tenantId
-1436.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : userAuthInfo
-1437.    Added - platform.applications.GetApplication- Param : appId
-1438.    Added - platform.applications.UpdateApplication- Param : appId
-1439.    Added - platform.applications.UpdateApplication- Param : application
-1440.    Added - platform.applications.authtickets.AuthenticateApp- Param : appAuthInfo
-1441.    Added - platform.applications.authtickets.RefreshAppAuthTicket- Param : authTicketRequest
-1442.    Added - platform.applications.authtickets.DeleteAppAuthTicket- Param : refreshToken
-1443.    Added - platform.applications.authtickets.AuthenticateApp- Param : responseFields
-1444.    Added - platform.applications.authtickets.RefreshAppAuthTicket- Param : responseFields
-1445.    Added - platform.applications.GetApplication- Param : responseFields
-1446.    Added - platform.applications.UpdateApplication- Param : responseFields
-1447.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : developerAccountId
-1448.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : developerAccountId
-1449.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : existingAuthTicket
-1450.    Added - platform.developer.authtickets.DeleteUserAuthTicket- Param : refreshToken
-1451.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : responseFields
-1452.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : responseFields
-1453.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : userAuthInfo
-1454.    Added - platform.entitylists.Entities.DeleteEntity- Param : entityListFullName
-1455.    Added - platform.entitylists.Entities.GetEntities- Param : entityListFullName
-1456.    Added - platform.entitylists.Entities.GetEntity- Param : entityListFullName
-1457.    Added - platform.entitylists.Entities.InsertEntity- Param : entityListFullName
-1458.    Added - platform.entitylists.Entities.UpdateEntity- Param : entityListFullName
-1459.    Added - platform.entitylists.Entities.GetEntities- Param : filter
-1460.    Added - platform.entitylists.Entities.DeleteEntity- Param : id
-1461.    Added - platform.entitylists.Entities.GetEntity- Param : id
-1462.    Added - platform.entitylists.Entities.UpdateEntity- Param : id
-1463.    Added - platform.entitylists.Entities.InsertEntity- Param : item
-1464.    Added - platform.entitylists.Entities.UpdateEntity- Param : item
-1465.    Added - platform.entitylists.Entities.GetEntities- Param : pageSize
-1466.    Added - platform.entitylists.Entities.GetEntity- Param : responseFields
-1467.    Added - platform.entitylists.Entities.InsertEntity- Param : responseFields
-1468.    Added - platform.entitylists.Entities.UpdateEntity- Param : responseFields
-1469.    Added - platform.entitylists.Entities.GetEntities- Param : responseFields
-1470.    Added - platform.entitylists.Entities.GetEntities- Param : sortBy
-1471.    Added - platform.entitylists.Entities.GetEntities- Param : startIndex
-1472.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : entityListFullName
-1473.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : entityListFullName
-1474.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : filter
-1475.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : id
-1476.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : pageSize
-1477.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : responseFields
-1478.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : responseFields
-1479.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : sortBy
-1480.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : startIndex
-1481.    Added - platform.entitylists.CreateEntityList- Param : entityList
-1482.    Added - platform.entitylists.UpdateEntityList- Param : entityList
-1483.    Added - platform.entitylists.DeleteEntityList- Param : entityListFullName
-1484.    Added - platform.entitylists.GetEntityList- Param : entityListFullName
-1485.    Added - platform.entitylists.UpdateEntityList- Param : entityListFullName
-1486.    Added - platform.entitylists.GetEntityLists- Param : filter
-1487.    Added - platform.entitylists.ListViews.GetViewEntity- Param : entityId
-1488.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : entityId
-1489.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : entityListFullName
-1490.    Added - platform.entitylists.ListViews.DeleteEntityListView- Param : entityListFullName
-1491.    Added - platform.entitylists.ListViews.GetEntityListView- Param : entityListFullName
-1492.    Added - platform.entitylists.ListViews.GetEntityListViews- Param : entityListFullName
-1493.    Added - platform.entitylists.ListViews.GetViewEntities- Param : entityListFullName
-1494.    Added - platform.entitylists.ListViews.GetViewEntity- Param : entityListFullName
-1495.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : entityListFullName
-1496.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : entityListFullName
-1497.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : entityListFullName
-1498.    Added - platform.entitylists.ListViews.GetViewEntities- Param : filter
-1499.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : filter
-1500.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : listView
-1501.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : listView
-1502.    Added - platform.entitylists.ListViews.GetViewEntities- Param : pageSize
-1503.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : pageSize
-1504.    Added - platform.entitylists.ListViews.GetEntityListViews- Param : responseFields
-1505.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : responseFields
-1506.    Added - platform.entitylists.ListViews.GetEntityListView- Param : responseFields
-1507.    Added - platform.entitylists.ListViews.GetViewEntity- Param : responseFields
-1508.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : responseFields
-1509.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : responseFields
-1510.    Added - platform.entitylists.ListViews.GetViewEntities- Param : responseFields
-1511.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : responseFields
-1512.    Added - platform.entitylists.ListViews.GetViewEntities- Param : startIndex
-1513.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : startIndex
-1514.    Added - platform.entitylists.ListViews.GetEntityListView- Param : viewName
-1515.    Added - platform.entitylists.ListViews.GetViewEntities- Param : viewName
-1516.    Added - platform.entitylists.ListViews.GetViewEntity- Param : viewName
-1517.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : viewName
-1518.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : viewName
-1519.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : viewName
-1520.    Added - platform.entitylists.ListViews.DeleteEntityListView- Param : viewName
-1521.    Added - platform.entitylists.GetEntityLists- Param : pageSize
-1522.    Added - platform.entitylists.CreateEntityList- Param : responseFields
-1523.    Added - platform.entitylists.GetEntityList- Param : responseFields
-1524.    Added - platform.entitylists.UpdateEntityList- Param : responseFields
-1525.    Added - platform.entitylists.GetEntityLists- Param : responseFields
-1526.    Added - platform.entitylists.GetEntityLists- Param : sortBy
-1527.    Added - platform.entitylists.GetEntityLists- Param : startIndex
-1528.    Added - platform.reference.GetBehavior- Param : behaviorId
-1529.    Added - platform.reference.GetBehaviorInternal- Param : behaviorId
-1530.    Added - platform.reference.GetBehaviorCategory- Param : categoryId
-1531.    Added - platform.reference.GetAddressSchema- Param : countryCode
-1532.    Added - platform.reference.GetUnitsOfMeasure- Param : filter
-1533.    Added - platform.reference.GetAddressSchemas- Param : responseFields
-1534.    Added - platform.reference.GetBehaviorCategories- Param : responseFields
-1535.    Added - platform.reference.GetCarriers- Param : responseFields
-1536.    Added - platform.reference.GetContentLocales- Param : responseFields
-1537.    Added - platform.reference.GetCountries- Param : responseFields
-1538.    Added - platform.reference.GetCreditTypes- Param : responseFields
-1539.    Added - platform.reference.GetCurrencies- Param : responseFields
-1540.    Added - platform.reference.GetInternationalTaxRates- Param : responseFields
-1541.    Added - platform.reference.GetTimeZones- Param : responseFields
-1542.    Added - platform.reference.GetTopLevelDomains- Param : responseFields
-1543.    Added - platform.reference.GetAddressSchema- Param : responseFields
-1544.    Added - platform.reference.GetBehavior- Param : responseFields
-1545.    Added - platform.reference.GetBehaviorCategory- Param : responseFields
-1546.    Added - platform.reference.GetBehaviorInternal- Param : responseFields
-1547.    Added - platform.reference.GetBehaviors- Param : responseFields
-1548.    Added - platform.reference.GetBehaviorsInternal- Param : responseFields
-1549.    Added - platform.reference.GetUnitsOfMeasure- Param : responseFields
-1550.    Added - platform.reference.GetBehaviors- Param : userType
-1551.    Added - platform.reference.GetBehaviorsInternal- Param : userType
-1552.    Added - platform.sitedata.DeleteDBValue- Param : dbEntryQuery
-1553.    Added - platform.sitedata.GetDBValue- Param : dbEntryQuery
-1554.    Added - platform.sitedata.CreateDBValue- Param : dbEntryQuery
-1555.    Added - platform.sitedata.UpdateDBValue- Param : dbEntryQuery
-1556.    Added - platform.sitedata.UpdateAllDbEntries- Param : entries
-1557.    Added - platform.sitedata.GetAllDbEntries- Param : pageSize
-1558.    Added - platform.sitedata.GetDBValue- Param : responseFields
-1559.    Added - platform.sitedata.GetAllDbEntries- Param : responseFields
-1560.    Added - platform.sitedata.GetAllDbEntries- Param : startIndex
-1561.    Added - platform.sitedata.CreateDBValue- Param : value
-1562.    Added - platform.sitedata.UpdateDBValue- Param : value
-1563.    Added - platform.tenantdata.DeleteDBValue- Param : dbEntryQuery
-1564.    Added - platform.tenantdata.GetDBValue- Param : dbEntryQuery
-1565.    Added - platform.tenantdata.CreateDBValue- Param : dbEntryQuery
-1566.    Added - platform.tenantdata.UpdateDBValue- Param : dbEntryQuery
-1567.    Added - platform.tenantdata.UpdateAllDbEntries- Param : entries
-1568.    Added - platform.tenantdata.GetAllDbEntries- Param : pageSize
-1569.    Added - platform.tenantdata.GetDBValue- Param : responseFields
-1570.    Added - platform.tenantdata.GetAllDbEntries- Param : responseFields
-1571.    Added - platform.tenantdata.GetAllDbEntries- Param : startIndex
-1572.    Added - platform.tenantdata.CreateDBValue- Param : value
-1573.    Added - platform.tenantdata.UpdateDBValue- Param : value
-1574.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : appId
-1575.    Added - platform.tenants.AddCatalog- Param : catalog
-1576.    Added - platform.tenants.UpdateCatalog- Param : catalogId
-1577.    Added - platform.tenants.DeleteCatalog- Param : catalogId
-1578.    Added - platform.tenants.LookupByDomain- Param : domain
-1579.    Added - platform.tenants.AddTenantEntitlement- Param : entitlement
-1580.    Added - platform.tenants.UpdateTenantEntitlement- Param : entitlement
-1581.    Added - platform.tenants.GetTenantEntitlement- Param : entitlementId
-1582.    Added - platform.tenants.UpdateTenantEntitlement- Param : entitlementId
-1583.    Added - platform.tenants.GetTenants- Param : filter
-1584.    Added - platform.tenants.GetTenantInternal- Param : includeInactiveChildren
-1585.    Added - platform.tenants.GetTenants- Param : includeInactiveChildren
-1586.    Added - platform.tenants.GetTenantInternal- Param : includeSoftDeletes
-1587.    Added - platform.tenants.GetTenants- Param : includeSoftDeletes
-1588.    Added - platform.tenants.AddMasterCatalog- Param : masterCatalog
-1589.    Added - platform.tenants.DeleteMasterCatalog- Param : masterCatalogId
-1590.    Added - platform.tenants.UpdateMasterCatalog- Param : masterCatalogId
-1591.    Added - platform.tenants.GetTenants- Param : pageSize
-1592.    Added - platform.tenants.GetTenant- Param : responseFields
-1593.    Added - platform.tenants.GetTenantAppEntitlements- Param : responseFields
-1594.    Added - platform.tenants.GetTenantEntitlements- Param : responseFields
-1595.    Added - platform.tenants.LookupByDomain- Param : responseFields
-1596.    Added - platform.tenants.AddCatalog- Param : responseFields
-1597.    Added - platform.tenants.AddMasterCatalog- Param : responseFields
-1598.    Added - platform.tenants.AddTenantEntitlement- Param : responseFields
-1599.    Added - platform.tenants.GetTenantEntitlement- Param : responseFields
-1600.    Added - platform.tenants.UpdateTenant- Param : responseFields
-1601.    Added - platform.tenants.GetTenantInternal- Param : responseFields
-1602.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : responseFields
-1603.    Added - platform.tenants.UpdateCatalog- Param : responseFields
-1604.    Added - platform.tenants.UpdateMasterCatalog- Param : responseFields
-1605.    Added - platform.tenants.UpdateTenantEntitlement- Param : responseFields
-1606.    Added - platform.tenants.GetTenants- Param : responseFields
-1607.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : siteId
-1608.    Added - platform.tenants.sites.AddDomainToSite- Param : domain
-1609.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : domainName
-1610.    Added - platform.tenants.sites.AddSiteEntitlement- Param : entitlement
-1611.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : entitlement
-1612.    Added - platform.tenants.sites.GetSiteEntitlement- Param : entitlementId
-1613.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : entitlementId
-1614.    Added - platform.tenants.sites.GetSite- Param : includeSoftDeletes
-1615.    Added - platform.tenants.sites.AddSite- Param : responseFields
-1616.    Added - platform.tenants.sites.GetSiteEntitlements- Param : responseFields
-1617.    Added - platform.tenants.sites.AddDomainToSite- Param : responseFields
-1618.    Added - platform.tenants.sites.AddSiteEntitlement- Param : responseFields
-1619.    Added - platform.tenants.sites.GetSite- Param : responseFields
-1620.    Added - platform.tenants.sites.GetSiteEntitlement- Param : responseFields
-1621.    Added - platform.tenants.sites.UpdateSite- Param : responseFields
-1622.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : responseFields
-1623.    Added - platform.tenants.sites.UpdateSite- Param : site
-1624.    Added - platform.tenants.sites.AddSite- Param : site
-1625.    Added - platform.tenants.sites.AddDomainToSite- Param : siteId
-1626.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : siteId
-1627.    Added - platform.tenants.sites.AddSiteEntitlement- Param : siteId
-1628.    Added - platform.tenants.sites.DeleteSite- Param : siteId
-1629.    Added - platform.tenants.sites.GetSiteEntitlement- Param : siteId
-1630.    Added - platform.tenants.sites.GetSiteEntitlements- Param : siteId
-1631.    Added - platform.tenants.sites.UpdateSite- Param : siteId
-1632.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : siteId
-1633.    Added - platform.tenants.sites.GetSite- Param : siteId
-1634.    Added - platform.tenants.sites.AddDomainToSite- Param : tenantId
-1635.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : tenantId
-1636.    Added - platform.tenants.sites.AddSiteEntitlement- Param : tenantId
-1637.    Added - platform.tenants.sites.DeleteSite- Param : tenantId
-1638.    Added - platform.tenants.sites.GetSiteEntitlement- Param : tenantId
-1639.    Added - platform.tenants.sites.GetSiteEntitlements- Param : tenantId
-1640.    Added - platform.tenants.sites.UpdateSite- Param : tenantId
-1641.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : tenantId
-1642.    Added - platform.tenants.sites.AddSite- Param : tenantId
-1643.    Added - platform.tenants.sites.GetSite- Param : tenantId
-1644.    Added - platform.tenants.GetTenants- Param : sortBy
-1645.    Added - platform.tenants.GetTenants- Param : startIndex
-1646.    Added - platform.tenants.UpdateTenant- Param : tenant
-1647.    Added - platform.tenants.UpdateCatalog- Param : tenantId
-1648.    Added - platform.tenants.UpdateMasterCatalog- Param : tenantId
-1649.    Added - platform.tenants.AddCatalog- Param : tenantId
-1650.    Added - platform.tenants.AddMasterCatalog- Param : tenantId
-1651.    Added - platform.tenants.AddTenantEntitlement- Param : tenantId
-1652.    Added - platform.tenants.DeleteCatalog- Param : tenantId
-1653.    Added - platform.tenants.DeleteMasterCatalog- Param : tenantId
-1654.    Added - platform.tenants.GetTenant- Param : tenantId
-1655.    Added - platform.tenants.GetTenantAppEntitlements- Param : tenantId
-1656.    Added - platform.tenants.GetTenantEntitlement- Param : tenantId
-1657.    Added - platform.tenants.GetTenantEntitlements- Param : tenantId
-1658.    Added - platform.tenants.GetTenantInternal- Param : tenantId
-1659.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : tenantId
-1660.    Added - platform.tenants.UpdateTenantEntitlement- Param : tenantId
-1661.    Added - platform.tenants.UpdateTenant- Param : tenantId
-1662.    Added - platform.tenants.DeleteTenant- Param : tenantId
-1663.    Added - platform.tenants.UpdateCatalog- Param : updated
-1664.    Added - platform.tenants.UpdateMasterCatalog- Param : updated
-1665.    Added - platform.userdata.DeleteDBValue- Param : dbEntryQuery
-1666.    Added - platform.userdata.GetDBValue- Param : dbEntryQuery
-1667.    Added - platform.userdata.CreateDBValue- Param : dbEntryQuery
-1668.    Added - platform.userdata.UpdateDBValue- Param : dbEntryQuery
-1669.    Added - platform.userdata.UpdateAllDbEntries- Param : entries
-1670.    Added - platform.userdata.GetAllDbEntries- Param : pageSize
-1671.    Added - platform.userdata.GetDBValue- Param : responseFields
-1672.    Added - platform.userdata.GetAllDbEntries- Param : responseFields
-1673.    Added - platform.userdata.GetAllDbEntries- Param : startIndex
-1674.    Added - platform.userdata.CreateDBValue- Param : value
-1675.    Added - platform.userdata.UpdateDBValue- Param : value
-1676.    Added - tax.GetTax- Param : order
-1677.    Added - tax.GetTax- Param : responseFields
+1308.    Added - content.documentlistTypes.UpdateDocumentListType- Param : documentListTypeFQN
+1309.    Added - content.documentlistTypes.CreateDocumentListType- Param : list
+1310.    Added - content.documentlistTypes.UpdateDocumentListType- Param : list
+1311.    Added - content.documentlistTypes.CreateDocumentListType- Param : responseFields
+1312.    Added - content.documentlistTypes.UpdateDocumentListType- Param : responseFields
+1313.    Added - content.documentpublishing.DeleteDocumentDrafts- Param : documentIds
+1314.    Added - content.documentpublishing.PublishDocuments- Param : documentIds
+1315.    Added - content.documentpublishing.DeleteDocumentDrafts- Param : documentLists
+1316.    Added - content.documentpublishing.PublishDocuments- Param : documentLists
+1317.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : documentLists
+1318.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : pageSize
+1319.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : responseFields
+1320.    Added - content.documentpublishing.ListDocumentDraftSummaries- Param : startIndex
+1321.    Added - content.documenttypes.CreateDocumentType- Param : documentType
+1322.    Added - content.documenttypes.UpdateDocumentType- Param : documentType
+1323.    Added - content.documenttypes.DeleteDocumentType- Param : documentTypeName
+1324.    Added - content.documenttypes.GetDocumentType- Param : documentTypeName
+1325.    Added - content.documenttypes.UpdateDocumentType- Param : documentTypeName
+1326.    Added - content.documenttypes.GetDocumentTypes- Param : pageSize
+1327.    Added - content.documenttypes.CreateDocumentType- Param : responseFields
+1328.    Added - content.documenttypes.GetDocumentType- Param : responseFields
+1329.    Added - content.documenttypes.GetDocumentTypes- Param : responseFields
+1330.    Added - content.documenttypes.UpdateDocumentType- Param : responseFields
+1331.    Added - content.documenttypes.GetDocumentTypes- Param : startIndex
+1332.    Added - content.propertytypes.GetPropertyTypes- Param : pageSize
+1333.    Added - content.propertytypes.UpdatePropertyType- Param : propertyType
+1334.    Added - content.propertytypes.CreatePropertyType- Param : propertyType
+1335.    Added - content.propertytypes.DeletePropertyType- Param : propertyTypeName
+1336.    Added - content.propertytypes.GetPropertyType- Param : propertyTypeName
+1337.    Added - content.propertytypes.UpdatePropertyType- Param : propertyTypeName
+1338.    Added - content.propertytypes.CreatePropertyType- Param : responseFields
+1339.    Added - content.propertytypes.GetPropertyType- Param : responseFields
+1340.    Added - content.propertytypes.GetPropertyTypes- Param : responseFields
+1341.    Added - content.propertytypes.UpdatePropertyType- Param : responseFields
+1342.    Added - content.propertytypes.GetPropertyTypes- Param : startIndex
+1343.    Added - event.pull.DeleteEvent- Param : eventId
+1344.    Added - event.pull.GetEvent- Param : eventId
+1345.    Added - event.pull.CreateEvent- Param : eventItem
+1346.    Added - event.pull.GetEvents- Param : filter
+1347.    Added - event.pull.GetEvents- Param : pageSize
+1348.    Added - event.pull.CreateEvent- Param : responseFields
+1349.    Added - event.pull.GetEvent- Param : responseFields
+1350.    Added - event.pull.GetEvents- Param : responseFields
+1351.    Added - event.pull.GetEvents- Param : sortBy
+1352.    Added - event.pull.GetEvents- Param : startIndex
+1353.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : action
+1354.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : filter
+1355.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions- Param : id
+1356.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : id
+1357.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : id
+1358.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : pageSize
+1359.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : responseFields
+1360.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : responseFields
+1361.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : responseFields
+1362.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : sortBy
+1363.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : startIndex
+1364.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions- Param : subscriptionId
+1365.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary- Param : subscriptionId
+1366.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction- Param : subscriptionId
+1367.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries- Param : subscriptionId
+1368.    Added - event.push.subscriptions.GetSubscriptions- Param : filter
+1369.    Added - event.push.subscriptions.GetSubscriptions- Param : pageSize
+1370.    Added - event.push.subscriptions.CreateSubscription- Param : responseFields
+1371.    Added - event.push.subscriptions.GetSubscription- Param : responseFields
+1372.    Added - event.push.subscriptions.UpdateSubscription- Param : responseFields
+1373.    Added - event.push.subscriptions.GetSubscriptions- Param : responseFields
+1374.    Added - event.push.subscriptions.GetSubscriptions- Param : sortBy
+1375.    Added - event.push.subscriptions.GetSubscriptions- Param : startIndex
+1376.    Added - event.push.subscriptions.CreateSubscription- Param : subscription
+1377.    Added - event.push.subscriptions.UpdateSubscription- Param : subscription
+1378.    Added - event.push.subscriptions.DeleteSubscription- Param : subscriptionId
+1379.    Added - event.push.subscriptions.GetSubscription- Param : subscriptionId
+1380.    Added - event.push.subscriptions.UpdateSubscription- Param : subscriptionId
+1381.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : filter
+1382.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : filter
+1383.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : pageSize
+1384.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : pageSize
+1385.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : responseFields
+1386.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : responseFields
+1387.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : responseFields
+1388.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : responseFields
+1389.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : responseFields
+1390.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : responseFields
+1391.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : responseFields
+1392.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : responseFields
+1393.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : siteId
+1394.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : siteId
+1395.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : sortBy
+1396.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : sortBy
+1397.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : startIndex
+1398.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : startIndex
+1399.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : subscribingSite
+1400.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : subscribingSite
+1401.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : subscribingTenant
+1402.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : subscribingTenant
+1403.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : subscriptionId
+1404.    Added - event.push.subscriptions.tenants.AddSubscribingTenant- Param : subscriptionId
+1405.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : subscriptionId
+1406.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant- Param : subscriptionId
+1407.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : subscriptionId
+1408.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : subscriptionId
+1409.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : subscriptionId
+1410.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant- Param : subscriptionId
+1411.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : subscriptionId
+1412.    Added - event.push.subscriptions.tenants.GetSubscribingTenants- Param : subscriptionId
+1413.    Added - event.push.subscriptions.tenants.AddSubscribingSite- Param : tenantId
+1414.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite- Param : tenantId
+1415.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant- Param : tenantId
+1416.    Added - event.push.subscriptions.tenants.GetSubscribingSite- Param : tenantId
+1417.    Added - event.push.subscriptions.tenants.GetSubscribingTenant- Param : tenantId
+1418.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite- Param : tenantId
+1419.    Added - event.push.subscriptions.tenants.GetSubscribingSites- Param : tenantId
+1420.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : responseFields
+1421.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : subscriptionId
+1422.    Added - event.push.subscriptions.tokens.PerformTokenReplacement- Param : tokenReplacementRequest
+1423.    Added - ordervalidationcapability.ValidateOrder- Param : order
+1424.    Added - ordervalidationcapability.ValidateOrder- Param : responseFields
+1425.    Added - platform.adminuser.accounts.GetTenantScopesForUser- Param : responseFields
+1426.    Added - platform.adminuser.accounts.GetUser- Param : responseFields
+1427.    Added - platform.adminuser.accounts.GetTenantScopesForUser- Param : userId
+1428.    Added - platform.adminuser.accounts.GetUser- Param : userId
+1429.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : existingAuthTicket
+1430.    Added - platform.adminuser.authtickets.DeleteUserAuthTicket- Param : refreshToken
+1431.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : responseFields
+1432.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : responseFields
+1433.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : tenantId
+1434.    Added - platform.adminuser.authtickets.RefreshAuthTicket- Param : tenantId
+1435.    Added - platform.adminuser.authtickets.CreateUserAuthTicket- Param : userAuthInfo
+1436.    Added - platform.applications.GetApplication- Param : appId
+1437.    Added - platform.applications.UpdateApplication- Param : appId
+1438.    Added - platform.applications.UpdateApplication- Param : application
+1439.    Added - platform.applications.authtickets.AuthenticateApp- Param : appAuthInfo
+1440.    Added - platform.applications.authtickets.RefreshAppAuthTicket- Param : authTicketRequest
+1441.    Added - platform.applications.authtickets.DeleteAppAuthTicket- Param : refreshToken
+1442.    Added - platform.applications.authtickets.AuthenticateApp- Param : responseFields
+1443.    Added - platform.applications.authtickets.RefreshAppAuthTicket- Param : responseFields
+1444.    Added - platform.applications.GetApplication- Param : responseFields
+1445.    Added - platform.applications.UpdateApplication- Param : responseFields
+1446.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : developerAccountId
+1447.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : developerAccountId
+1448.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : existingAuthTicket
+1449.    Added - platform.developer.authtickets.DeleteUserAuthTicket- Param : refreshToken
+1450.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : responseFields
+1451.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket- Param : responseFields
+1452.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket- Param : userAuthInfo
+1453.    Added - platform.entitylists.Entities.DeleteEntity- Param : entityListFullName
+1454.    Added - platform.entitylists.Entities.GetEntities- Param : entityListFullName
+1455.    Added - platform.entitylists.Entities.GetEntity- Param : entityListFullName
+1456.    Added - platform.entitylists.Entities.InsertEntity- Param : entityListFullName
+1457.    Added - platform.entitylists.Entities.UpdateEntity- Param : entityListFullName
+1458.    Added - platform.entitylists.Entities.GetEntities- Param : filter
+1459.    Added - platform.entitylists.Entities.DeleteEntity- Param : id
+1460.    Added - platform.entitylists.Entities.GetEntity- Param : id
+1461.    Added - platform.entitylists.Entities.UpdateEntity- Param : id
+1462.    Added - platform.entitylists.Entities.InsertEntity- Param : item
+1463.    Added - platform.entitylists.Entities.UpdateEntity- Param : item
+1464.    Added - platform.entitylists.Entities.GetEntities- Param : pageSize
+1465.    Added - platform.entitylists.Entities.GetEntity- Param : responseFields
+1466.    Added - platform.entitylists.Entities.InsertEntity- Param : responseFields
+1467.    Added - platform.entitylists.Entities.UpdateEntity- Param : responseFields
+1468.    Added - platform.entitylists.Entities.GetEntities- Param : responseFields
+1469.    Added - platform.entitylists.Entities.GetEntities- Param : sortBy
+1470.    Added - platform.entitylists.Entities.GetEntities- Param : startIndex
+1471.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : entityListFullName
+1472.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : entityListFullName
+1473.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : filter
+1474.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : id
+1475.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : pageSize
+1476.    Added - platform.entitylists.EntityContainers.GetEntityContainer- Param : responseFields
+1477.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : responseFields
+1478.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : sortBy
+1479.    Added - platform.entitylists.EntityContainers.GetEntityContainers- Param : startIndex
+1480.    Added - platform.entitylists.CreateEntityList- Param : entityList
+1481.    Added - platform.entitylists.UpdateEntityList- Param : entityList
+1482.    Added - platform.entitylists.DeleteEntityList- Param : entityListFullName
+1483.    Added - platform.entitylists.GetEntityList- Param : entityListFullName
+1484.    Added - platform.entitylists.UpdateEntityList- Param : entityListFullName
+1485.    Added - platform.entitylists.GetEntityLists- Param : filter
+1486.    Added - platform.entitylists.ListViews.GetViewEntity- Param : entityId
+1487.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : entityId
+1488.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : entityListFullName
+1489.    Added - platform.entitylists.ListViews.DeleteEntityListView- Param : entityListFullName
+1490.    Added - platform.entitylists.ListViews.GetEntityListView- Param : entityListFullName
+1491.    Added - platform.entitylists.ListViews.GetEntityListViews- Param : entityListFullName
+1492.    Added - platform.entitylists.ListViews.GetViewEntities- Param : entityListFullName
+1493.    Added - platform.entitylists.ListViews.GetViewEntity- Param : entityListFullName
+1494.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : entityListFullName
+1495.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : entityListFullName
+1496.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : entityListFullName
+1497.    Added - platform.entitylists.ListViews.GetViewEntities- Param : filter
+1498.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : filter
+1499.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : listView
+1500.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : listView
+1501.    Added - platform.entitylists.ListViews.GetViewEntities- Param : pageSize
+1502.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : pageSize
+1503.    Added - platform.entitylists.ListViews.GetEntityListViews- Param : responseFields
+1504.    Added - platform.entitylists.ListViews.CreateEntityListView- Param : responseFields
+1505.    Added - platform.entitylists.ListViews.GetEntityListView- Param : responseFields
+1506.    Added - platform.entitylists.ListViews.GetViewEntity- Param : responseFields
+1507.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : responseFields
+1508.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : responseFields
+1509.    Added - platform.entitylists.ListViews.GetViewEntities- Param : responseFields
+1510.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : responseFields
+1511.    Added - platform.entitylists.ListViews.GetViewEntities- Param : startIndex
+1512.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : startIndex
+1513.    Added - platform.entitylists.ListViews.GetEntityListView- Param : viewName
+1514.    Added - platform.entitylists.ListViews.GetViewEntities- Param : viewName
+1515.    Added - platform.entitylists.ListViews.GetViewEntity- Param : viewName
+1516.    Added - platform.entitylists.ListViews.GetViewEntityContainer- Param : viewName
+1517.    Added - platform.entitylists.ListViews.GetViewEntityContainers- Param : viewName
+1518.    Added - platform.entitylists.ListViews.UpdateEntityListView- Param : viewName
+1519.    Added - platform.entitylists.ListViews.DeleteEntityListView- Param : viewName
+1520.    Added - platform.entitylists.GetEntityLists- Param : pageSize
+1521.    Added - platform.entitylists.CreateEntityList- Param : responseFields
+1522.    Added - platform.entitylists.GetEntityList- Param : responseFields
+1523.    Added - platform.entitylists.UpdateEntityList- Param : responseFields
+1524.    Added - platform.entitylists.GetEntityLists- Param : responseFields
+1525.    Added - platform.entitylists.GetEntityLists- Param : sortBy
+1526.    Added - platform.entitylists.GetEntityLists- Param : startIndex
+1527.    Added - platform.reference.GetBehavior- Param : behaviorId
+1528.    Added - platform.reference.GetBehaviorInternal- Param : behaviorId
+1529.    Added - platform.reference.GetBehaviorCategory- Param : categoryId
+1530.    Added - platform.reference.GetAddressSchema- Param : countryCode
+1531.    Added - platform.reference.GetUnitsOfMeasure- Param : filter
+1532.    Added - platform.reference.GetAddressSchemas- Param : responseFields
+1533.    Added - platform.reference.GetBehaviorCategories- Param : responseFields
+1534.    Added - platform.reference.GetCarriers- Param : responseFields
+1535.    Added - platform.reference.GetContentLocales- Param : responseFields
+1536.    Added - platform.reference.GetCountries- Param : responseFields
+1537.    Added - platform.reference.GetCreditTypes- Param : responseFields
+1538.    Added - platform.reference.GetCurrencies- Param : responseFields
+1539.    Added - platform.reference.GetInternationalTaxRates- Param : responseFields
+1540.    Added - platform.reference.GetTimeZones- Param : responseFields
+1541.    Added - platform.reference.GetTopLevelDomains- Param : responseFields
+1542.    Added - platform.reference.GetAddressSchema- Param : responseFields
+1543.    Added - platform.reference.GetBehavior- Param : responseFields
+1544.    Added - platform.reference.GetBehaviorCategory- Param : responseFields
+1545.    Added - platform.reference.GetBehaviorInternal- Param : responseFields
+1546.    Added - platform.reference.GetBehaviors- Param : responseFields
+1547.    Added - platform.reference.GetBehaviorsInternal- Param : responseFields
+1548.    Added - platform.reference.GetUnitsOfMeasure- Param : responseFields
+1549.    Added - platform.reference.GetBehaviors- Param : userType
+1550.    Added - platform.reference.GetBehaviorsInternal- Param : userType
+1551.    Added - platform.sitedata.DeleteDBValue- Param : dbEntryQuery
+1552.    Added - platform.sitedata.GetDBValue- Param : dbEntryQuery
+1553.    Added - platform.sitedata.CreateDBValue- Param : dbEntryQuery
+1554.    Added - platform.sitedata.UpdateDBValue- Param : dbEntryQuery
+1555.    Added - platform.sitedata.UpdateAllDbEntries- Param : entries
+1556.    Added - platform.sitedata.GetAllDbEntries- Param : pageSize
+1557.    Added - platform.sitedata.GetDBValue- Param : responseFields
+1558.    Added - platform.sitedata.GetAllDbEntries- Param : responseFields
+1559.    Added - platform.sitedata.GetAllDbEntries- Param : startIndex
+1560.    Added - platform.sitedata.CreateDBValue- Param : value
+1561.    Added - platform.sitedata.UpdateDBValue- Param : value
+1562.    Added - platform.tenantdata.DeleteDBValue- Param : dbEntryQuery
+1563.    Added - platform.tenantdata.GetDBValue- Param : dbEntryQuery
+1564.    Added - platform.tenantdata.CreateDBValue- Param : dbEntryQuery
+1565.    Added - platform.tenantdata.UpdateDBValue- Param : dbEntryQuery
+1566.    Added - platform.tenantdata.UpdateAllDbEntries- Param : entries
+1567.    Added - platform.tenantdata.GetAllDbEntries- Param : pageSize
+1568.    Added - platform.tenantdata.GetDBValue- Param : responseFields
+1569.    Added - platform.tenantdata.GetAllDbEntries- Param : responseFields
+1570.    Added - platform.tenantdata.GetAllDbEntries- Param : startIndex
+1571.    Added - platform.tenantdata.CreateDBValue- Param : value
+1572.    Added - platform.tenantdata.UpdateDBValue- Param : value
+1573.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : appId
+1574.    Added - platform.tenants.AddCatalog- Param : catalog
+1575.    Added - platform.tenants.UpdateCatalog- Param : catalogId
+1576.    Added - platform.tenants.DeleteCatalog- Param : catalogId
+1577.    Added - platform.tenants.LookupByDomain- Param : domain
+1578.    Added - platform.tenants.AddTenantEntitlement- Param : entitlement
+1579.    Added - platform.tenants.UpdateTenantEntitlement- Param : entitlement
+1580.    Added - platform.tenants.GetTenantEntitlement- Param : entitlementId
+1581.    Added - platform.tenants.UpdateTenantEntitlement- Param : entitlementId
+1582.    Added - platform.tenants.GetTenants- Param : filter
+1583.    Added - platform.tenants.GetTenantInternal- Param : includeInactiveChildren
+1584.    Added - platform.tenants.GetTenants- Param : includeInactiveChildren
+1585.    Added - platform.tenants.GetTenantInternal- Param : includeSoftDeletes
+1586.    Added - platform.tenants.GetTenants- Param : includeSoftDeletes
+1587.    Added - platform.tenants.AddMasterCatalog- Param : masterCatalog
+1588.    Added - platform.tenants.DeleteMasterCatalog- Param : masterCatalogId
+1589.    Added - platform.tenants.UpdateMasterCatalog- Param : masterCatalogId
+1590.    Added - platform.tenants.GetTenants- Param : pageSize
+1591.    Added - platform.tenants.GetTenant- Param : responseFields
+1592.    Added - platform.tenants.GetTenantAppEntitlements- Param : responseFields
+1593.    Added - platform.tenants.GetTenantEntitlements- Param : responseFields
+1594.    Added - platform.tenants.LookupByDomain- Param : responseFields
+1595.    Added - platform.tenants.AddCatalog- Param : responseFields
+1596.    Added - platform.tenants.AddMasterCatalog- Param : responseFields
+1597.    Added - platform.tenants.AddTenantEntitlement- Param : responseFields
+1598.    Added - platform.tenants.GetTenantEntitlement- Param : responseFields
+1599.    Added - platform.tenants.UpdateTenant- Param : responseFields
+1600.    Added - platform.tenants.GetTenantInternal- Param : responseFields
+1601.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : responseFields
+1602.    Added - platform.tenants.UpdateCatalog- Param : responseFields
+1603.    Added - platform.tenants.UpdateMasterCatalog- Param : responseFields
+1604.    Added - platform.tenants.UpdateTenantEntitlement- Param : responseFields
+1605.    Added - platform.tenants.GetTenants- Param : responseFields
+1606.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : siteId
+1607.    Added - platform.tenants.sites.AddDomainToSite- Param : domain
+1608.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : domainName
+1609.    Added - platform.tenants.sites.AddSiteEntitlement- Param : entitlement
+1610.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : entitlement
+1611.    Added - platform.tenants.sites.GetSiteEntitlement- Param : entitlementId
+1612.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : entitlementId
+1613.    Added - platform.tenants.sites.GetSite- Param : includeSoftDeletes
+1614.    Added - platform.tenants.sites.AddSite- Param : responseFields
+1615.    Added - platform.tenants.sites.GetSiteEntitlements- Param : responseFields
+1616.    Added - platform.tenants.sites.AddDomainToSite- Param : responseFields
+1617.    Added - platform.tenants.sites.AddSiteEntitlement- Param : responseFields
+1618.    Added - platform.tenants.sites.GetSite- Param : responseFields
+1619.    Added - platform.tenants.sites.GetSiteEntitlement- Param : responseFields
+1620.    Added - platform.tenants.sites.UpdateSite- Param : responseFields
+1621.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : responseFields
+1622.    Added - platform.tenants.sites.UpdateSite- Param : site
+1623.    Added - platform.tenants.sites.AddSite- Param : site
+1624.    Added - platform.tenants.sites.AddDomainToSite- Param : siteId
+1625.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : siteId
+1626.    Added - platform.tenants.sites.AddSiteEntitlement- Param : siteId
+1627.    Added - platform.tenants.sites.DeleteSite- Param : siteId
+1628.    Added - platform.tenants.sites.GetSiteEntitlement- Param : siteId
+1629.    Added - platform.tenants.sites.GetSiteEntitlements- Param : siteId
+1630.    Added - platform.tenants.sites.UpdateSite- Param : siteId
+1631.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : siteId
+1632.    Added - platform.tenants.sites.GetSite- Param : siteId
+1633.    Added - platform.tenants.sites.AddDomainToSite- Param : tenantId
+1634.    Added - platform.tenants.sites.RemoveDomainFromSite- Param : tenantId
+1635.    Added - platform.tenants.sites.AddSiteEntitlement- Param : tenantId
+1636.    Added - platform.tenants.sites.DeleteSite- Param : tenantId
+1637.    Added - platform.tenants.sites.GetSiteEntitlement- Param : tenantId
+1638.    Added - platform.tenants.sites.GetSiteEntitlements- Param : tenantId
+1639.    Added - platform.tenants.sites.UpdateSite- Param : tenantId
+1640.    Added - platform.tenants.sites.UpdateSiteEntitlement- Param : tenantId
+1641.    Added - platform.tenants.sites.AddSite- Param : tenantId
+1642.    Added - platform.tenants.sites.GetSite- Param : tenantId
+1643.    Added - platform.tenants.GetTenants- Param : sortBy
+1644.    Added - platform.tenants.GetTenants- Param : startIndex
+1645.    Added - platform.tenants.UpdateTenant- Param : tenant
+1646.    Added - platform.tenants.UpdateCatalog- Param : tenantId
+1647.    Added - platform.tenants.UpdateMasterCatalog- Param : tenantId
+1648.    Added - platform.tenants.AddCatalog- Param : tenantId
+1649.    Added - platform.tenants.AddMasterCatalog- Param : tenantId
+1650.    Added - platform.tenants.AddTenantEntitlement- Param : tenantId
+1651.    Added - platform.tenants.DeleteCatalog- Param : tenantId
+1652.    Added - platform.tenants.DeleteMasterCatalog- Param : tenantId
+1653.    Added - platform.tenants.GetTenant- Param : tenantId
+1654.    Added - platform.tenants.GetTenantAppEntitlements- Param : tenantId
+1655.    Added - platform.tenants.GetTenantEntitlement- Param : tenantId
+1656.    Added - platform.tenants.GetTenantEntitlements- Param : tenantId
+1657.    Added - platform.tenants.GetTenantInternal- Param : tenantId
+1658.    Added - platform.tenants.GetTenantSiteAppEntitlement- Param : tenantId
+1659.    Added - platform.tenants.UpdateTenantEntitlement- Param : tenantId
+1660.    Added - platform.tenants.UpdateTenant- Param : tenantId
+1661.    Added - platform.tenants.DeleteTenant- Param : tenantId
+1662.    Added - platform.tenants.UpdateCatalog- Param : updated
+1663.    Added - platform.tenants.UpdateMasterCatalog- Param : updated
+1664.    Added - platform.userdata.DeleteDBValue- Param : dbEntryQuery
+1665.    Added - platform.userdata.GetDBValue- Param : dbEntryQuery
+1666.    Added - platform.userdata.CreateDBValue- Param : dbEntryQuery
+1667.    Added - platform.userdata.UpdateDBValue- Param : dbEntryQuery
+1668.    Added - platform.userdata.UpdateAllDbEntries- Param : entries
+1669.    Added - platform.userdata.GetAllDbEntries- Param : pageSize
+1670.    Added - platform.userdata.GetDBValue- Param : responseFields
+1671.    Added - platform.userdata.GetAllDbEntries- Param : responseFields
+1672.    Added - platform.userdata.GetAllDbEntries- Param : startIndex
+1673.    Added - platform.userdata.CreateDBValue- Param : value
+1674.    Added - platform.userdata.UpdateDBValue- Param : value
+1675.    Added - tax.GetTax- Param : order
+1676.    Added - tax.GetTax- Param : responseFields
 
 Operations
 0.    Added - addressvalidationcapability.ValidateAddress - POST
@@ -2231,158 +2230,160 @@ Operations
 464.    Added - content.documentlists.foldertree.GetFolderTree - GET
 465.    Added - content.documentlists.GetDocumentList - GET
 466.    Added - content.documentlists.GetDocumentLists - GET
-467.    Added - content.documentlists.LegacyR4_UpdateDocumentContent - PUT
-468.    Added - content.documentlists.R4Legacy_CreateDocument - POST
-469.    Added - content.documentlists.R4Legacy_DeleteDocumentContent - DELETE
-470.    Added - content.documentlists.R4Legacy_GetDocumentContent - GET
-471.    Added - content.documentlists.R4Legacy_GetDocuments - GET
-472.    Added - content.documentlists.R4Legacy_GetTreeDocument - GET
-473.    Added - content.documentlists.R4Legacy_GetTreeDocumentContent - GET
-474.    Added - content.documentlists.R4Legacy_UpdateDocument - PUT
-475.    Added - content.documentlists.UpdateDocumentList - PUT
-476.    Added - content.documentlists.views.DeleteDocumentListView - DELETE
-477.    Added - content.documentlists.views.GetDocumentListView - GET
-478.    Added - content.documentlists.views.GetDocumentListViews - GET
-479.    Added - content.documentlists.views.GetViewDocuments - GET
-480.    Added - content.documentlists.views.UpdateDocumentListView - PUT
-481.    Added - content.documentlistTypes.CreateDocumentListType - POST
-482.    Added - content.documentlistTypes.UpdateDocumentListType - PUT
-483.    Added - content.documentpublishing.DeleteDocumentDrafts - POST
-484.    Added - content.documentpublishing.ListDocumentDraftSummaries - GET
-485.    Added - content.documentpublishing.PublishDocuments - PUT
-486.    Added - content.documenttypes.CreateDocumentType - POST
-487.    Added - content.documenttypes.DeleteDocumentType - DELETE
-488.    Added - content.documenttypes.GetDocumentType - GET
-489.    Added - content.documenttypes.GetDocumentTypes - GET
-490.    Added - content.documenttypes.UpdateDocumentType - PUT
-491.    Added - content.propertytypes.CreatePropertyType - POST
-492.    Added - content.propertytypes.DeletePropertyType - DELETE
-493.    Added - content.propertytypes.GetPropertyType - GET
-494.    Added - content.propertytypes.GetPropertyTypes - GET
-495.    Added - content.propertytypes.UpdatePropertyType - PUT
-496.    Added - event.pull.CreateEvent - POST
-497.    Added - event.pull.DeleteEvent - DELETE
-498.    Added - event.pull.GetEvent - GET
-499.    Added - event.pull.GetEvents - GET
-500.    Added - event.push.subscriptions.CreateSubscription - POST
-501.    Added - event.push.subscriptions.DeleteSubscription - DELETE
-502.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions - GET
-503.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries - GET
-504.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary - GET
-505.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction - POST
-506.    Added - event.push.subscriptions.GetSubscription - GET
-507.    Added - event.push.subscriptions.GetSubscriptions - GET
-508.    Added - event.push.subscriptions.tenants.AddSubscribingSite - POST
-509.    Added - event.push.subscriptions.tenants.AddSubscribingTenant - POST
-510.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite - DELETE
-511.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant - DELETE
-512.    Added - event.push.subscriptions.tenants.GetSubscribingSite - GET
-513.    Added - event.push.subscriptions.tenants.GetSubscribingSites - GET
-514.    Added - event.push.subscriptions.tenants.GetSubscribingTenant - GET
-515.    Added - event.push.subscriptions.tenants.GetSubscribingTenants - GET
-516.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite - PUT
-517.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant - PUT
-518.    Added - event.push.subscriptions.tokens.PerformTokenReplacement - POST
-519.    Added - event.push.subscriptions.UpdateSubscription - PUT
-520.    Added - ordervalidationcapability.ValidateOrder - POST
-521.    Added - platform.adminuser.accounts.GetTenantScopesForUser - GET
-522.    Added - platform.adminuser.accounts.GetUser - GET
-523.    Added - platform.adminuser.authtickets.CreateUserAuthTicket - POST
-524.    Added - platform.adminuser.authtickets.DeleteUserAuthTicket - DELETE
-525.    Added - platform.adminuser.authtickets.RefreshAuthTicket - PUT
-526.    Added - platform.applications.authtickets.AuthenticateApp - POST
-527.    Added - platform.applications.authtickets.DeleteAppAuthTicket - DELETE
-528.    Added - platform.applications.authtickets.RefreshAppAuthTicket - PUT
-529.    Added - platform.applications.GetApplication - GET
-530.    Added - platform.applications.UpdateApplication - PUT
-531.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket - POST
-532.    Added - platform.developer.authtickets.DeleteUserAuthTicket - DELETE
-533.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket - PUT
-534.    Added - platform.entitylists.CreateEntityList - POST
-535.    Added - platform.entitylists.DeleteEntityList - DELETE
-536.    Added - platform.entitylists.Entities.DeleteEntity - DELETE
-537.    Added - platform.entitylists.Entities.GetEntities - GET
-538.    Added - platform.entitylists.Entities.GetEntity - GET
-539.    Added - platform.entitylists.Entities.InsertEntity - POST
-540.    Added - platform.entitylists.Entities.UpdateEntity - PUT
-541.    Added - platform.entitylists.EntityContainers.GetEntityContainer - GET
-542.    Added - platform.entitylists.EntityContainers.GetEntityContainers - GET
-543.    Added - platform.entitylists.GetEntityList - GET
-544.    Added - platform.entitylists.GetEntityLists - GET
-545.    Added - platform.entitylists.ListViews.CreateEntityListView - POST
-546.    Added - platform.entitylists.ListViews.DeleteEntityListView - DELETE
-547.    Added - platform.entitylists.ListViews.GetEntityListView - GET
-548.    Added - platform.entitylists.ListViews.GetEntityListViews - GET
-549.    Added - platform.entitylists.ListViews.GetViewEntities - GET
-550.    Added - platform.entitylists.ListViews.GetViewEntity - GET
-551.    Added - platform.entitylists.ListViews.GetViewEntityContainer - GET
-552.    Added - platform.entitylists.ListViews.GetViewEntityContainers - GET
-553.    Added - platform.entitylists.ListViews.UpdateEntityListView - PUT
-554.    Added - platform.entitylists.UpdateEntityList - PUT
-555.    Added - platform.reference.GetAddressSchema - GET
-556.    Added - platform.reference.GetAddressSchemas - GET
-557.    Added - platform.reference.GetBehavior - GET
-558.    Added - platform.reference.GetBehaviorCategories - GET
-559.    Added - platform.reference.GetBehaviorCategory - GET
-560.    Added - platform.reference.GetBehaviorInternal - GET
-561.    Added - platform.reference.GetBehaviors - GET
-562.    Added - platform.reference.GetBehaviorsInternal - GET
-563.    Added - platform.reference.GetCarriers - GET
-564.    Added - platform.reference.GetContentLocales - GET
-565.    Added - platform.reference.GetCountries - GET
-566.    Added - platform.reference.GetCreditTypes - GET
-567.    Added - platform.reference.GetCurrencies - GET
-568.    Added - platform.reference.GetInternationalTaxRates - GET
-569.    Added - platform.reference.GetTimeZones - GET
-570.    Added - platform.reference.GetTopLevelDomains - GET
-571.    Added - platform.reference.GetUnitsOfMeasure - GET
-572.    Added - platform.sitedata.CreateDBValue - POST
-573.    Added - platform.sitedata.DeleteDBValue - DELETE
-574.    Added - platform.sitedata.GetAllDbEntries - GET
-575.    Added - platform.sitedata.GetDBValue - GET
-576.    Added - platform.sitedata.UpdateAllDbEntries - PUT
-577.    Added - platform.sitedata.UpdateDBValue - PUT
-578.    Added - platform.tenantdata.CreateDBValue - POST
-579.    Added - platform.tenantdata.DeleteDBValue - DELETE
-580.    Added - platform.tenantdata.GetAllDbEntries - GET
-581.    Added - platform.tenantdata.GetDBValue - GET
-582.    Added - platform.tenantdata.UpdateAllDbEntries - PUT
-583.    Added - platform.tenantdata.UpdateDBValue - PUT
-584.    Added - platform.tenants.AddCatalog - POST
-585.    Added - platform.tenants.AddMasterCatalog - POST
-586.    Added - platform.tenants.AddTenantEntitlement - POST
-587.    Added - platform.tenants.DeleteCatalog - DELETE
-588.    Added - platform.tenants.DeleteMasterCatalog - DELETE
-589.    Added - platform.tenants.DeleteTenant - DELETE
-590.    Added - platform.tenants.GetTenant - GET
-591.    Added - platform.tenants.GetTenantAppEntitlements - GET
-592.    Added - platform.tenants.GetTenantEntitlement - GET
-593.    Added - platform.tenants.GetTenantEntitlements - GET
-594.    Added - platform.tenants.GetTenantInternal - GET
-595.    Added - platform.tenants.GetTenants - GET
-596.    Added - platform.tenants.GetTenantSiteAppEntitlement - GET
-597.    Added - platform.tenants.LookupByDomain - POST
-598.    Added - platform.tenants.sites.AddDomainToSite - POST
-599.    Added - platform.tenants.sites.AddSite - POST
-600.    Added - platform.tenants.sites.AddSiteEntitlement - POST
-601.    Added - platform.tenants.sites.DeleteSite - DELETE
-602.    Added - platform.tenants.sites.GetSite - GET
-603.    Added - platform.tenants.sites.GetSiteEntitlement - GET
-604.    Added - platform.tenants.sites.GetSiteEntitlements - GET
-605.    Added - platform.tenants.sites.RemoveDomainFromSite - DELETE
-606.    Added - platform.tenants.sites.UpdateSite - PUT
-607.    Added - platform.tenants.sites.UpdateSiteEntitlement - PUT
-608.    Added - platform.tenants.UpdateCatalog - PUT
-609.    Added - platform.tenants.UpdateMasterCatalog - PUT
-610.    Added - platform.tenants.UpdateTenant - PUT
-611.    Added - platform.tenants.UpdateTenantEntitlement - PUT
-612.    Added - platform.userdata.CreateDBValue - POST
-613.    Added - platform.userdata.DeleteDBValue - DELETE
-614.    Added - platform.userdata.GetAllDbEntries - GET
-615.    Added - platform.userdata.GetDBValue - GET
-616.    Added - platform.userdata.UpdateAllDbEntries - PUT
-617.    Added - platform.userdata.UpdateDBValue - PUT
-618.    Added - tax.GetTax - POST
+467.    Added - content.documentlists.LegacyR4_DeleteTreeDocumentContent - DELETE
+468.    Added - content.documentlists.LegacyR4_UpdateDocumentContent - PUT
+469.    Added - content.documentlists.LegacyR4_UpdateTreeDocumentContent - PUT
+470.    Added - content.documentlists.R4Legacy_CreateDocument - POST
+471.    Added - content.documentlists.R4Legacy_DeleteDocument - DELETE
+472.    Added - content.documentlists.R4Legacy_DeleteDocumentContent - DELETE
+473.    Added - content.documentlists.R4Legacy_GetDocument - GET
+474.    Added - content.documentlists.R4Legacy_GetDocumentContent - GET
+475.    Added - content.documentlists.R4Legacy_GetDocumentContentHead - HEAD
+476.    Added - content.documentlists.R4Legacy_GetDocuments - GET
+477.    Added - content.documentlists.R4Legacy_GetTreeDocument - GET
+478.    Added - content.documentlists.R4Legacy_GetTreeDocumentContent - GET
+479.    Added - content.documentlists.R4Legacy_GetTreeDocumentContentHead - HEAD
+480.    Added - content.documentlists.R4Legacy_UpdateDocument - PUT
+481.    Added - content.documentlists.UpdateDocumentList - PUT
+482.    Added - content.documentlists.views.GetViewDocuments - GET
+483.    Added - content.documentlistTypes.CreateDocumentListType - POST
+484.    Added - content.documentlistTypes.UpdateDocumentListType - PUT
+485.    Added - content.documentpublishing.DeleteDocumentDrafts - POST
+486.    Added - content.documentpublishing.ListDocumentDraftSummaries - GET
+487.    Added - content.documentpublishing.PublishDocuments - PUT
+488.    Added - content.documenttypes.CreateDocumentType - POST
+489.    Added - content.documenttypes.DeleteDocumentType - DELETE
+490.    Added - content.documenttypes.GetDocumentType - GET
+491.    Added - content.documenttypes.GetDocumentTypes - GET
+492.    Added - content.documenttypes.UpdateDocumentType - PUT
+493.    Added - content.propertytypes.CreatePropertyType - POST
+494.    Added - content.propertytypes.DeletePropertyType - DELETE
+495.    Added - content.propertytypes.GetPropertyType - GET
+496.    Added - content.propertytypes.GetPropertyTypes - GET
+497.    Added - content.propertytypes.UpdatePropertyType - PUT
+498.    Added - event.pull.CreateEvent - POST
+499.    Added - event.pull.DeleteEvent - DELETE
+500.    Added - event.pull.GetEvent - GET
+501.    Added - event.pull.GetEvents - GET
+502.    Added - event.push.subscriptions.CreateSubscription - POST
+503.    Added - event.push.subscriptions.DeleteSubscription - DELETE
+504.    Added - event.push.subscriptions.deliveryattempts.GetAvailableEventDeliveryActions - GET
+505.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummaries - GET
+506.    Added - event.push.subscriptions.deliveryattempts.GetDeliveryAttemptSummary - GET
+507.    Added - event.push.subscriptions.deliveryattempts.PerformEventDeliveryAction - POST
+508.    Added - event.push.subscriptions.GetSubscription - GET
+509.    Added - event.push.subscriptions.GetSubscriptions - GET
+510.    Added - event.push.subscriptions.tenants.AddSubscribingSite - POST
+511.    Added - event.push.subscriptions.tenants.AddSubscribingTenant - POST
+512.    Added - event.push.subscriptions.tenants.DeleteSubscribingSite - DELETE
+513.    Added - event.push.subscriptions.tenants.DeleteSubscribingTenant - DELETE
+514.    Added - event.push.subscriptions.tenants.GetSubscribingSite - GET
+515.    Added - event.push.subscriptions.tenants.GetSubscribingSites - GET
+516.    Added - event.push.subscriptions.tenants.GetSubscribingTenant - GET
+517.    Added - event.push.subscriptions.tenants.GetSubscribingTenants - GET
+518.    Added - event.push.subscriptions.tenants.UpdateSubscribingSite - PUT
+519.    Added - event.push.subscriptions.tenants.UpdateSubscribingTenant - PUT
+520.    Added - event.push.subscriptions.tokens.PerformTokenReplacement - POST
+521.    Added - event.push.subscriptions.UpdateSubscription - PUT
+522.    Added - ordervalidationcapability.ValidateOrder - POST
+523.    Added - platform.adminuser.accounts.GetTenantScopesForUser - GET
+524.    Added - platform.adminuser.accounts.GetUser - GET
+525.    Added - platform.adminuser.authtickets.CreateUserAuthTicket - POST
+526.    Added - platform.adminuser.authtickets.DeleteUserAuthTicket - DELETE
+527.    Added - platform.adminuser.authtickets.RefreshAuthTicket - PUT
+528.    Added - platform.applications.authtickets.AuthenticateApp - POST
+529.    Added - platform.applications.authtickets.DeleteAppAuthTicket - DELETE
+530.    Added - platform.applications.authtickets.RefreshAppAuthTicket - PUT
+531.    Added - platform.applications.GetApplication - GET
+532.    Added - platform.applications.UpdateApplication - PUT
+533.    Added - platform.developer.authtickets.CreateDeveloperUserAuthTicket - POST
+534.    Added - platform.developer.authtickets.DeleteUserAuthTicket - DELETE
+535.    Added - platform.developer.authtickets.RefreshDeveloperAuthTicket - PUT
+536.    Added - platform.entitylists.CreateEntityList - POST
+537.    Added - platform.entitylists.DeleteEntityList - DELETE
+538.    Added - platform.entitylists.Entities.DeleteEntity - DELETE
+539.    Added - platform.entitylists.Entities.GetEntities - GET
+540.    Added - platform.entitylists.Entities.GetEntity - GET
+541.    Added - platform.entitylists.Entities.InsertEntity - POST
+542.    Added - platform.entitylists.Entities.UpdateEntity - PUT
+543.    Added - platform.entitylists.EntityContainers.GetEntityContainer - GET
+544.    Added - platform.entitylists.EntityContainers.GetEntityContainers - GET
+545.    Added - platform.entitylists.GetEntityList - GET
+546.    Added - platform.entitylists.GetEntityLists - GET
+547.    Added - platform.entitylists.ListViews.CreateEntityListView - POST
+548.    Added - platform.entitylists.ListViews.DeleteEntityListView - DELETE
+549.    Added - platform.entitylists.ListViews.GetEntityListView - GET
+550.    Added - platform.entitylists.ListViews.GetEntityListViews - GET
+551.    Added - platform.entitylists.ListViews.GetViewEntities - GET
+552.    Added - platform.entitylists.ListViews.GetViewEntity - GET
+553.    Added - platform.entitylists.ListViews.GetViewEntityContainer - GET
+554.    Added - platform.entitylists.ListViews.GetViewEntityContainers - GET
+555.    Added - platform.entitylists.ListViews.UpdateEntityListView - PUT
+556.    Added - platform.entitylists.UpdateEntityList - PUT
+557.    Added - platform.reference.GetAddressSchema - GET
+558.    Added - platform.reference.GetAddressSchemas - GET
+559.    Added - platform.reference.GetBehavior - GET
+560.    Added - platform.reference.GetBehaviorCategories - GET
+561.    Added - platform.reference.GetBehaviorCategory - GET
+562.    Added - platform.reference.GetBehaviorInternal - GET
+563.    Added - platform.reference.GetBehaviors - GET
+564.    Added - platform.reference.GetBehaviorsInternal - GET
+565.    Added - platform.reference.GetCarriers - GET
+566.    Added - platform.reference.GetContentLocales - GET
+567.    Added - platform.reference.GetCountries - GET
+568.    Added - platform.reference.GetCreditTypes - GET
+569.    Added - platform.reference.GetCurrencies - GET
+570.    Added - platform.reference.GetInternationalTaxRates - GET
+571.    Added - platform.reference.GetTimeZones - GET
+572.    Added - platform.reference.GetTopLevelDomains - GET
+573.    Added - platform.reference.GetUnitsOfMeasure - GET
+574.    Added - platform.sitedata.CreateDBValue - POST
+575.    Added - platform.sitedata.DeleteDBValue - DELETE
+576.    Added - platform.sitedata.GetAllDbEntries - GET
+577.    Added - platform.sitedata.GetDBValue - GET
+578.    Added - platform.sitedata.UpdateAllDbEntries - PUT
+579.    Added - platform.sitedata.UpdateDBValue - PUT
+580.    Added - platform.tenantdata.CreateDBValue - POST
+581.    Added - platform.tenantdata.DeleteDBValue - DELETE
+582.    Added - platform.tenantdata.GetAllDbEntries - GET
+583.    Added - platform.tenantdata.GetDBValue - GET
+584.    Added - platform.tenantdata.UpdateAllDbEntries - PUT
+585.    Added - platform.tenantdata.UpdateDBValue - PUT
+586.    Added - platform.tenants.AddCatalog - POST
+587.    Added - platform.tenants.AddMasterCatalog - POST
+588.    Added - platform.tenants.AddTenantEntitlement - POST
+589.    Added - platform.tenants.DeleteCatalog - DELETE
+590.    Added - platform.tenants.DeleteMasterCatalog - DELETE
+591.    Added - platform.tenants.DeleteTenant - DELETE
+592.    Added - platform.tenants.GetTenant - GET
+593.    Added - platform.tenants.GetTenantAppEntitlements - GET
+594.    Added - platform.tenants.GetTenantEntitlement - GET
+595.    Added - platform.tenants.GetTenantEntitlements - GET
+596.    Added - platform.tenants.GetTenantInternal - GET
+597.    Added - platform.tenants.GetTenants - GET
+598.    Added - platform.tenants.GetTenantSiteAppEntitlement - GET
+599.    Added - platform.tenants.LookupByDomain - POST
+600.    Added - platform.tenants.sites.AddDomainToSite - POST
+601.    Added - platform.tenants.sites.AddSite - POST
+602.    Added - platform.tenants.sites.AddSiteEntitlement - POST
+603.    Added - platform.tenants.sites.DeleteSite - DELETE
+604.    Added - platform.tenants.sites.GetSite - GET
+605.    Added - platform.tenants.sites.GetSiteEntitlement - GET
+606.    Added - platform.tenants.sites.GetSiteEntitlements - GET
+607.    Added - platform.tenants.sites.RemoveDomainFromSite - DELETE
+608.    Added - platform.tenants.sites.UpdateSite - PUT
+609.    Added - platform.tenants.sites.UpdateSiteEntitlement - PUT
+610.    Added - platform.tenants.UpdateCatalog - PUT
+611.    Added - platform.tenants.UpdateMasterCatalog - PUT
+612.    Added - platform.tenants.UpdateTenant - PUT
+613.    Added - platform.tenants.UpdateTenantEntitlement - PUT
+614.    Added - platform.userdata.CreateDBValue - POST
+615.    Added - platform.userdata.DeleteDBValue - DELETE
+616.    Added - platform.userdata.GetAllDbEntries - GET
+617.    Added - platform.userdata.GetDBValue - GET
+618.    Added - platform.userdata.UpdateAllDbEntries - PUT
+619.    Added - platform.userdata.UpdateDBValue - PUT
+620.    Added - tax.GetTax - POST
 
 Resources
 0.    Added - addressvalidationcapability | addressvalidationcapability

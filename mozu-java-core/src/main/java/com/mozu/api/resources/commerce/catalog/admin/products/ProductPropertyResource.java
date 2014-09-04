@@ -43,7 +43,7 @@ public class ProductPropertyResource {
 	 * Retrieves a list of the property attributes configured for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperties(_dataViewMode,  productCode);
+	 *	ProductProperty productProperty = productproperty.getProperties( productCode);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductProperty>
@@ -62,7 +62,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContents(_dataViewMode,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContents( productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -83,7 +83,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -101,7 +101,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -124,7 +124,7 @@ public class ProductPropertyResource {
 	 * Retrieves the details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN);
+	 *	ProductProperty productProperty = productproperty.getProperty( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -140,7 +140,7 @@ public class ProductPropertyResource {
 	 * Retrieves the details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN,  responseFields);
+	 *	ProductProperty productProperty = productproperty.getProperty( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -161,7 +161,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.addPropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -180,7 +180,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.addPropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -204,7 +204,7 @@ public class ProductPropertyResource {
 	 * Configures a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.AddProperty(_dataViewMode,  productProperty,  productCode);
+	 *	ProductProperty productProperty = productproperty.addProperty( productProperty,  productCode);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param productProperty Properties of the property attribute to configure for a product.
@@ -221,7 +221,7 @@ public class ProductPropertyResource {
 	 * Configures a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.AddProperty(_dataViewMode,  productProperty,  productCode,  responseFields);
+	 *	ProductProperty productProperty = productproperty.addProperty( productProperty,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param responseFields 
@@ -243,7 +243,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContents(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContents( localizedContent,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -266,7 +266,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -286,7 +286,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -311,7 +311,7 @@ public class ProductPropertyResource {
 	 * Update one or more details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.UpdateProperty(_dataViewMode,  productProperty,  productCode,  attributeFQN);
+	 *	ProductProperty productProperty = productproperty.updateProperty( productProperty,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -329,7 +329,7 @@ public class ProductPropertyResource {
 	 * Update one or more details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.UpdateProperty(_dataViewMode,  productProperty,  productCode,  attributeFQN,  responseFields);
+	 *	ProductProperty productProperty = productproperty.updateProperty( productProperty,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -352,7 +352,7 @@ public class ProductPropertyResource {
 	 * Deletes the configuration of a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	productproperty.DeleteProperty(_dataViewMode,  productCode,  attributeFQN);
+	 *	productproperty.deleteProperty( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -370,7 +370,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	productproperty.DeletePropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 *	productproperty.deletePropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 

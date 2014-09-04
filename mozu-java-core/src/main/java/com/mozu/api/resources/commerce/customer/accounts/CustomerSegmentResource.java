@@ -35,7 +35,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getAccountSegments( accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
@@ -50,7 +50,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param filter 

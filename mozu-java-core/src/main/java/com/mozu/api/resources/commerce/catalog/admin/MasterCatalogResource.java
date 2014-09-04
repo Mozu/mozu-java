@@ -35,7 +35,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.GetMasterCatalogs();
+	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.getMasterCatalogs();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
@@ -49,7 +49,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of all master catalog associated with a tenant.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.GetMasterCatalogs( responseFields);
+	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.getMasterCatalogs( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
@@ -68,7 +68,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId);
+	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
@@ -83,7 +83,7 @@ public class MasterCatalogResource {
 	 * Retrieve the details of the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.GetMasterCatalog( masterCatalogId,  responseFields);
+	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId,  responseFields);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
 	 * @param responseFields 
@@ -103,7 +103,7 @@ public class MasterCatalogResource {
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog( masterCatalog,  masterCatalogId);
+	 *	MasterCatalog masterCatalog = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
@@ -120,7 +120,7 @@ public class MasterCatalogResource {
 	 * Updates the product publishing mode for the master catalog specified in the request.
 	 * <p><pre><code>
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
-	 *	MasterCatalog masterCatalog = mastercatalog.UpdateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
+	 *	MasterCatalog masterCatalog = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
 	 * @param responseFields 

@@ -35,7 +35,7 @@ public class ShipmentResource {
 	 * Retrieves the details of the order shipment specified in the request.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	Shipment shipment = shipment.GetShipment( orderId,  shipmentId);
+	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
@@ -51,7 +51,7 @@ public class ShipmentResource {
 	 * Retrieves the details of the order shipment specified in the request.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	Shipment shipment = shipment.GetShipment( orderId,  shipmentId,  responseFields);
+	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param responseFields 
@@ -72,7 +72,7 @@ public class ShipmentResource {
 	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	ShippingRate shippingRate = shipment.GetAvailableShipmentMethods( orderId);
+	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
@@ -87,7 +87,7 @@ public class ShipmentResource {
 	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	ShippingRate shippingRate = shipment.GetAvailableShipmentMethods( orderId,  draft);
+	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId,  draft);
 	 * </code></pre></p>
 	 * @param draft 
 	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
@@ -107,7 +107,7 @@ public class ShipmentResource {
 	 * Creates a shipment from one or more package associated with an order and assign a label and tracking number to an order shipment.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	Package package = shipment.CreatePackageShipments( packageIds,  orderId);
+	 *	Package package = shipment.createPackageShipments( packageIds,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for this shipment.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
@@ -128,7 +128,7 @@ public class ShipmentResource {
 	 * Deletes the shipment specified in the request.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	shipment.DeleteShipment( orderId,  shipmentId);
+	 *	shipment.deleteShipment( orderId,  shipmentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order to cancel shipment.
 	 * @param shipmentId Unique identifier of the shipment to cancel.

@@ -35,7 +35,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityListCollection entityListCollection = entitylist.GetEntityLists();
+	 *	EntityListCollection entityListCollection = entitylist.getEntityLists();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.mzdb.EntityListCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
@@ -49,7 +49,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityListCollection entityListCollection = entitylist.GetEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields);
+	 *	EntityListCollection entityListCollection = entitylist.getEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
@@ -72,7 +72,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.GetEntityList( entityListFullName);
+	 *	EntityList entityList = entitylist.getEntityList( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
@@ -87,7 +87,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.GetEntityList( entityListFullName,  responseFields);
+	 *	EntityList entityList = entitylist.getEntityList( entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.CreateEntityList( entityList);
+	 *	EntityList entityList = entitylist.createEntityList( entityList);
 	 * </code></pre></p>
 	 * @param entityList 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
@@ -123,7 +123,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.CreateEntityList( entityList,  responseFields);
+	 *	EntityList entityList = entitylist.createEntityList( entityList,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param entityList 
@@ -144,7 +144,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.UpdateEntityList( entityList,  entityListFullName);
+	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param entityList 
@@ -161,7 +161,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.UpdateEntityList( entityList,  entityListFullName,  responseFields);
+	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -183,7 +183,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	entitylist.DeleteEntityList( entityListFullName);
+	 *	entitylist.deleteEntityList( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return 

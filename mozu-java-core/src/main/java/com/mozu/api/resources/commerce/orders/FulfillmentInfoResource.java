@@ -35,7 +35,7 @@ public class FulfillmentInfoResource {
 	 * Retrieves a list of the fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.GetFulfillmentInfo( orderId);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.getFulfillmentInfo( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -50,7 +50,7 @@ public class FulfillmentInfoResource {
 	 * Retrieves a list of the fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.GetFulfillmentInfo( orderId,  draft,  responseFields);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.getFulfillmentInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
@@ -71,7 +71,7 @@ public class FulfillmentInfoResource {
 	 * Updates one or more properties of fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.SetFulFillmentInfo( fulfillmentInfo,  orderId);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
@@ -88,7 +88,7 @@ public class FulfillmentInfoResource {
 	 * Updates one or more properties of fulfillment information for the specified order.
 	 * <p><pre><code>
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
-	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.SetFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
+	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields 

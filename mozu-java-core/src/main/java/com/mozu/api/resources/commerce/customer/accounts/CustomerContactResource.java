@@ -35,7 +35,7 @@ public class CustomerContactResource {
 	 * Retrieves the specified contact for a customer account such as a billing or shipping contact.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.GetAccountContact( accountId,  contactId);
+	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
 	 * @param contactId Unique identifier of the customer account contact to retrieve.
@@ -51,7 +51,7 @@ public class CustomerContactResource {
 	 * Retrieves the specified contact for a customer account such as a billing or shipping contact.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.GetAccountContact( accountId,  contactId,  responseFields);
+	 *	CustomerContact customerContact = customercontact.getAccountContact( accountId,  contactId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account whose contact information is being retrieved.
 	 * @param contactId Unique identifier of the customer account contact to retrieve.
@@ -72,7 +72,7 @@ public class CustomerContactResource {
 	 * Retrieves a list of contacts for a customer according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContactCollection customerContactCollection = customercontact.GetAccountContacts( accountId);
+	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerContactCollection
@@ -87,7 +87,7 @@ public class CustomerContactResource {
 	 * Retrieves a list of contacts for a customer according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContactCollection customerContactCollection = customercontact.GetAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerContactCollection customerContactCollection = customercontact.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account associated with the contact information to retrieve.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
@@ -111,7 +111,7 @@ public class CustomerContactResource {
 	 * Creates a new contact for a customer account such as a new shipping address.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.AddAccountContact( contact,  accountId);
+	 *	CustomerContact customerContact = customercontact.addAccountContact( contact,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account containing the new contact.
 	 * @param contact Properties of the new contact. Required properties: Contact.Email, ContactType.
@@ -128,7 +128,7 @@ public class CustomerContactResource {
 	 * Creates a new contact for a customer account such as a new shipping address.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.AddAccountContact( contact,  accountId,  responseFields);
+	 *	CustomerContact customerContact = customercontact.addAccountContact( contact,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account containing the new contact.
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class CustomerContactResource {
 	 * Updates a contact for a specified customer account such as to update addresses or change which contact is the primary contact for billing.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.UpdateAccountContact( contact,  accountId,  contactId);
+	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
 	 * @param contactId Unique identifer of the customer account contact being updated.
@@ -168,7 +168,7 @@ public class CustomerContactResource {
 	 * Updates a contact for a specified customer account such as to update addresses or change which contact is the primary contact for billing.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	CustomerContact customerContact = customercontact.UpdateAccountContact( contact,  accountId,  contactId,  responseFields);
+	 *	CustomerContact customerContact = customercontact.updateAccountContact( contact,  accountId,  contactId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account whose contact information is being updated.
 	 * @param contactId Unique identifer of the customer account contact being updated.
@@ -191,7 +191,7 @@ public class CustomerContactResource {
 	 * Deletes a contact for the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerContact customercontact = new CustomerContact();
-	 *	customercontact.DeleteAccountContact( accountId,  contactId);
+	 *	customercontact.deleteAccountContact( accountId,  contactId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param contactId Unique identifier of the customer account contact to delete.

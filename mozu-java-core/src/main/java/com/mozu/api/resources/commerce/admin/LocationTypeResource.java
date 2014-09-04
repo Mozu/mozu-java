@@ -35,7 +35,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.GetLocationTypes();
+	 *	LocationType locationType = locationtype.getLocationTypes();
 	 * </code></pre></p>
 	 * @return List<com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -53,7 +53,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.GetLocationType( locationTypeCode);
+	 *	LocationType locationType = locationtype.getLocationType( locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode 
 	 * @return com.mozu.api.contracts.location.LocationType
@@ -68,7 +68,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.GetLocationType( locationTypeCode,  responseFields);
+	 *	LocationType locationType = locationtype.getLocationType( locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode 
 	 * @param responseFields 
@@ -88,7 +88,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.AddLocationType( locationType);
+	 *	LocationType locationType = locationtype.addLocationType( locationType);
 	 * </code></pre></p>
 	 * @param locationType 
 	 * @return com.mozu.api.contracts.location.LocationType
@@ -104,7 +104,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.AddLocationType( locationType,  responseFields);
+	 *	LocationType locationType = locationtype.addLocationType( locationType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param locationType 
@@ -125,7 +125,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.UpdateLocationType( locationType,  locationTypeCode);
+	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode 
 	 * @param locationType 
@@ -142,7 +142,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	LocationType locationType = locationtype.UpdateLocationType( locationType,  locationTypeCode,  responseFields);
+	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationTypeCode 
 	 * @param responseFields 
@@ -164,7 +164,7 @@ public class LocationTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	LocationType locationtype = new LocationType();
-	 *	locationtype.DeleteLocationType( locationTypeCode);
+	 *	locationtype.deleteLocationType( locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode 
 	 * @return 

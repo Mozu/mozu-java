@@ -43,7 +43,7 @@ public class DocumentResource {
 	 * Retrieve the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Stream stream = document.GetDocumentContent(_dataViewMode,  documentListName,  documentId);
+	 *	Stream stream = document.getDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.
@@ -63,7 +63,7 @@ public class DocumentResource {
 	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.GetDocument(_dataViewMode,  documentListName,  documentId);
+	 *	Document document = document.getDocument( documentListName,  documentId);
 	 * </code></pre></p>
 	 * @param documentId Identifier of the document being retrieved.
 	 * @param documentListName The name of the document list associated with the document to retrieve.
@@ -79,7 +79,7 @@ public class DocumentResource {
 	 * Retrieves a specific document within the specified document list by providing the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.GetDocument(_dataViewMode,  documentListName,  documentId,  responseFields);
+	 *	Document document = document.getDocument( documentListName,  documentId,  responseFields);
 	 * </code></pre></p>
 	 * @param documentId Identifier of the document being retrieved.
 	 * @param documentListName The name of the document list associated with the document to retrieve.
@@ -100,7 +100,7 @@ public class DocumentResource {
 	 * Retrieves a collection of documents according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	DocumentCollection documentCollection = document.GetDocuments(_dataViewMode,  documentListName);
+	 *	DocumentCollection documentCollection = document.getDocuments( documentListName);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
 	 * @return com.mozu.api.contracts.content.DocumentCollection
@@ -115,7 +115,7 @@ public class DocumentResource {
 	 * Retrieves a collection of documents according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	DocumentCollection documentCollection = document.GetDocuments(_dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+	 *	DocumentCollection documentCollection = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
@@ -139,7 +139,7 @@ public class DocumentResource {
 	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName);
+	 *	Document document = document.createDocument( document,  documentListName);
 	 * </code></pre></p>
 	 * @param documentListName The descriptive alphanumeric document list name being created.
 	 * @param document The descriptive name of the newly created document.
@@ -156,7 +156,7 @@ public class DocumentResource {
 	 * Creates a new document in an existing list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.CreateDocument(_dataViewMode,  document,  documentListName,  responseFields);
+	 *	Document document = document.createDocument( document,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The descriptive alphanumeric document list name being created.
 	 * @param responseFields 
@@ -178,7 +178,7 @@ public class DocumentResource {
 	 * Updates the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	document.UpdateDocumentContent( stream,  documentListName,  documentId,  contentType);
+	 *	document.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.
@@ -198,7 +198,7 @@ public class DocumentResource {
 	 * Updates a document in a document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.UpdateDocument( document,  documentListName,  documentId);
+	 *	Document document = document.updateDocument( document,  documentListName,  documentId);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document to update.
 	 * @param documentListName Name of the document list associated with the document.
@@ -216,7 +216,7 @@ public class DocumentResource {
 	 * Updates a document in a document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.UpdateDocument( document,  documentListName,  documentId,  responseFields);
+	 *	Document document = document.updateDocument( document,  documentListName,  documentId,  responseFields);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document to update.
 	 * @param documentListName Name of the document list associated with the document.
@@ -239,7 +239,7 @@ public class DocumentResource {
 	 * Deletes a specific document based on the specified document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	document.DeleteDocument( documentListName,  documentId);
+	 *	document.deleteDocument( documentListName,  documentId);
 	 * </code></pre></p>
 	 * @param documentId Identifier of the document being deleted.
 	 * @param documentListName The name of the document list associated with the document list being deleted.
@@ -257,7 +257,7 @@ public class DocumentResource {
 	 * Deletes the content associated with a document, such as a product image or PDF specification, by supplying the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	document.DeleteDocumentContent( documentListName,  documentId);
+	 *	document.deleteDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.

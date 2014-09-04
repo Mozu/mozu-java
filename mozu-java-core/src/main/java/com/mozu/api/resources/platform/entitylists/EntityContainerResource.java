@@ -35,7 +35,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainer entityContainer = entitycontainer.GetEntityContainer( entityListFullName,  id);
+	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -51,7 +51,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainer entityContainer = entitycontainer.GetEntityContainer( entityListFullName,  id,  responseFields);
+	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -72,7 +72,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName);
+	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -87,7 +87,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
+	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 

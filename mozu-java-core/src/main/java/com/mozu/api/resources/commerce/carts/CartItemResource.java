@@ -35,7 +35,7 @@ public class CartItemResource {
 	 * Retrieves a particular cart item by providing the cart item ID.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.GetCartItem( cartItemId);
+	 *	CartItem cartItem = cartitem.getCartItem( cartItemId);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -50,7 +50,7 @@ public class CartItemResource {
 	 * Retrieves a particular cart item by providing the cart item ID.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.GetCartItem( cartItemId,  responseFields);
+	 *	CartItem cartItem = cartitem.getCartItem( cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to retrieve.
 	 * @param responseFields 
@@ -70,7 +70,7 @@ public class CartItemResource {
 	 * Retrieves a list of cart items including the total number of items in the cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItemCollection cartItemCollection = cartitem.GetCartItems();
+	 *	CartItemCollection cartItemCollection = cartitem.getCartItems();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
@@ -84,7 +84,7 @@ public class CartItemResource {
 	 * Retrieves a list of cart items including the total number of items in the cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItemCollection cartItemCollection = cartitem.GetCartItems( responseFields);
+	 *	CartItemCollection cartItemCollection = cartitem.getCartItems( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
@@ -103,7 +103,7 @@ public class CartItemResource {
 	 * Adds a product to the current shopper's cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.AddItemToCart( cartItem);
+	 *	CartItem cartItem = cartitem.addItemToCart( cartItem);
 	 * </code></pre></p>
 	 * @param cartItem All properties of the new cart item. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -119,7 +119,7 @@ public class CartItemResource {
 	 * Adds a product to the current shopper's cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.AddItemToCart( cartItem,  responseFields);
+	 *	CartItem cartItem = cartitem.addItemToCart( cartItem,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param cartItem All properties of the new cart item. The product code is required.
@@ -140,7 +140,7 @@ public class CartItemResource {
 	 * Update the quantity of an individual cart item in the cart of the current shopper.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItemQuantity( cartItemId,  quantity);
+	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -156,7 +156,7 @@ public class CartItemResource {
 	 * Update the quantity of an individual cart item in the cart of the current shopper.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItemQuantity( cartItemId,  quantity,  responseFields);
+	 *	CartItem cartItem = cartitem.updateCartItemQuantity( cartItemId,  quantity,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -177,7 +177,7 @@ public class CartItemResource {
 	 * Update the product or product quantity of an item in the current shopper's cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItem( cartItem,  cartItemId);
+	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update.
 	 * @param cartItem The properties of the cart item to update.
@@ -194,7 +194,7 @@ public class CartItemResource {
 	 * Update the product or product quantity of an item in the current shopper's cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	CartItem cartItem = cartitem.UpdateCartItem( cartItem,  cartItemId,  responseFields);
+	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update.
 	 * @param responseFields 
@@ -216,7 +216,7 @@ public class CartItemResource {
 	 * Removes all items in the current shopper's active cart.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	Cart cart = cartitem.RemoveAllCartItems();
+	 *	Cart cart = cartitem.removeAllCartItems();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -234,7 +234,7 @@ public class CartItemResource {
 	 * Deletes a specific cart item by providing the cart item ID.
 	 * <p><pre><code>
 	 *	CartItem cartitem = new CartItem();
-	 *	cartitem.DeleteCartItem( cartItemId);
+	 *	cartitem.deleteCartItem( cartItemId);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to delete.
 	 * @return 

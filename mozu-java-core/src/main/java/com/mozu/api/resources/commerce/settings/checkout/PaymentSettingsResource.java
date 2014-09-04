@@ -35,7 +35,7 @@ public class PaymentSettingsResource {
 	 * Retrieves the details of the third-party payment service workflows configured for the site.
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
-	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.GetThirdPartyPaymentWorkflows();
+	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflows();
 	 * </code></pre></p>
 	 * @return List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
