@@ -73,6 +73,15 @@ public class MozuClient<TResult> {
             if (apiContext.getCatalogId() != null && apiContext.getCatalogId() > 0) {
                 addHeader(Headers.X_VOL_CATALOG, String.valueOf(apiContext.getCatalogId()));
             }
+            
+            if (apiContext.getLocale() != null) {
+                addHeader(Headers.X_VOL_LOCALE, String.valueOf(apiContext.getLocale()));
+            }
+ 
+            if (apiContext.getCurrency() != null) {
+                addHeader(Headers.X_VOL_CURRENCY, String.valueOf(apiContext.getCurrency()));
+            }
+ 
         }
     }
 
@@ -149,11 +158,11 @@ public class MozuClient<TResult> {
             AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
             if (appAuthenticator == null) {
                 throw new ApiException("Application has not been authorized to access Mozu.");
-            } else if (StringUtils.isBlank(appAuthenticator.getBaseUrl())) {
+            } else if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
                 throw new ApiException("Authentication.Instance.BaseUrl is missing");
             }
 
-            baseAddress = AppAuthenticator.getInstance().getBaseUrl();
+            baseAddress = MozuConfig.getBaseUrl();
         }
     }
 

@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the returns subresource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
  * </summary>
@@ -33,54 +32,31 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> getReturnsClient() throws Exception
 	{
-		return getReturnsClient( null,  null,  null,  null);
+		return getReturnsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of all returns according to any filter and sort criteria.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient=GetReturnsClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient=GetReturnsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> getReturnsClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> getReturnsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.ReturnCollection.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * Retrieves a list of properties for the specified return.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=GetReturnClient( returnId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Return return = client.Result();
-	 * </code></pre></p>
-	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
-	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> getReturnClient(String returnId) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnUrl(returnId);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -112,23 +88,43 @@ public class ReturnClient {
 	}
 
 	/**
-	 * Retrieves a list of all payments submitted as part of a refund associated with a customer return.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient=GetPaymentsClient( returnId);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> mozuClient=GetReturnItemClient( returnId,  returnItemId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * PaymentCollection paymentCollection = client.Result();
+	 * ReturnItem returnItem = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
-	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItem>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> getPaymentsClient(String returnId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> getReturnItemClient(String returnId, String returnItemId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getPaymentsUrl(returnId);
+		return getReturnItemClient( returnId,  returnItemId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> mozuClient=GetReturnItemClient( returnId,  returnItemId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ReturnItem returnItem = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItem>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> getReturnItemClient(String returnId, String returnItemId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnItemUrl(responseFields, returnId, returnItemId);
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.PaymentCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient = new MozuClient(clz);
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.ReturnItem.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItem> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -136,24 +132,41 @@ public class ReturnClient {
 	}
 
 	/**
-	 * Retrieves the details of a payment submitted as part of a refund associated with a customer return.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient=GetPaymentClient( returnId,  paymentId);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> mozuClient=GetReturnItemsClient( returnId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Payment payment = client.Result();
+	 * ReturnItemCollection returnItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the return payment to retrieve.
-	 * @param returnId Unique identifier of the return associated with the payment.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
-	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
+	 * @param returnId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> getPaymentClient(String returnId, String paymentId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> getReturnItemsClient(String returnId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getPaymentUrl(paymentId, returnId);
+		return getReturnItemsClient( returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> mozuClient=GetReturnItemsClient( returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ReturnItemCollection returnItemCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> getReturnItemsClient(String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnItemsUrl(responseFields, returnId);
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.Payment.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient = new MozuClient(clz);
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -186,6 +199,134 @@ public class ReturnClient {
 	}
 
 	/**
+	 * Retrieves the details of a payment submitted as part of a refund associated with a customer return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient=GetPaymentClient( returnId,  paymentId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Payment payment = client.Result();
+	 * </code></pre></p>
+	 * @param paymentId Unique identifier of the return payment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the payment.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
+	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> getPaymentClient(String returnId, String paymentId) throws Exception
+	{
+		return getPaymentClient( returnId,  paymentId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a payment submitted as part of a refund associated with a customer return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient=GetPaymentClient( returnId,  paymentId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Payment payment = client.Result();
+	 * </code></pre></p>
+	 * @param paymentId Unique identifier of the return payment to retrieve.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the payment.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
+	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> getPaymentClient(String returnId, String paymentId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getPaymentUrl(paymentId, responseFields, returnId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.Payment.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves a list of all payments submitted as part of a refund associated with a customer return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient=GetPaymentsClient( returnId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PaymentCollection paymentCollection = client.Result();
+	 * </code></pre></p>
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> getPaymentsClient(String returnId) throws Exception
+	{
+		return getPaymentsClient( returnId,  null);
+	}
+
+	/**
+	 * Retrieves a list of all payments submitted as part of a refund associated with a customer return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient=GetPaymentsClient( returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PaymentCollection paymentCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> getPaymentsClient(String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getPaymentsUrl(responseFields, returnId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.PaymentCollection.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves a list of properties for the specified return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=GetReturnClient( returnId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> getReturnClient(String returnId) throws Exception
+	{
+		return getReturnClient( returnId,  null);
+	}
+
+	/**
+	 * Retrieves a list of properties for the specified return.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=GetReturnClient( returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> getReturnClient(String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReturnUrl(responseFields, returnId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreateReturnClient( ret);
@@ -200,13 +341,79 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createReturnClient(com.mozu.api.contracts.commerceruntime.returns.Return ret) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.createReturnUrl();
+		return createReturnClient( ret,  null);
+	}
+
+	/**
+	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreateReturnClient( ret,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param ret Wrapper for the properties of the return to create.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createReturnClient(com.mozu.api.contracts.commerceruntime.returns.Return ret, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.createReturnUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(ret);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreateReturnItemClient( returnItem,  returnId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItem 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createReturnItemClient(com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId) throws Exception
+	{
+		return createReturnItemClient( returnItem,  returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreateReturnItemClient( returnItem,  returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param returnItem 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createReturnItemClient(com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.createReturnItemUrl(responseFields, returnId);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(returnItem);
 		return mozuClient;
 
 	}
@@ -228,7 +435,28 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> performPaymentActionForReturnClient(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.performPaymentActionForReturnUrl(paymentId, returnId);
+		return performPaymentActionForReturnClient( action,  returnId,  paymentId,  null);
+	}
+
+	/**
+	 * Updates a refund payment associated with a customer return by performing the specified action.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=PerformPaymentActionForReturnClient( action,  returnId,  paymentId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param paymentId Unique identifier of the return payment to update.
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the refund payment.
+	 * @param action The payment action to perform for the refund payment.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> performPaymentActionForReturnClient(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.performPaymentActionForReturnUrl(paymentId, responseFields, returnId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
@@ -255,7 +483,27 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createPaymentActionForReturnClient(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.createPaymentActionForReturnUrl(returnId);
+		return createPaymentActionForReturnClient( action,  returnId,  null);
+	}
+
+	/**
+	 * Creates a new payment for a return that results in a refund to the customer.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreatePaymentActionForReturnClient( action,  returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return associated with the payment action.
+	 * @param action The payment action to perform for the customer return.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> createPaymentActionForReturnClient(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.createPaymentActionForReturnUrl(responseFields, returnId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
@@ -281,7 +529,26 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> performReturnActionsClient(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.performReturnActionsUrl();
+		return performReturnActionsClient( action,  null);
+	}
+
+	/**
+	 * Updates the return by performing the specified action.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient=PerformReturnActionsClient( action,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ReturnCollection returnCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> performReturnActionsClient(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.performReturnActionsUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.ReturnCollection.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient = new MozuClient(clz);
@@ -308,13 +575,58 @@ public class ReturnClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> updateReturnClient(com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.updateReturnUrl(returnId);
+		return updateReturnClient( ret,  returnId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a return for items previously shipped in a completed order.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=UpdateReturnClient( ret,  returnId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId Unique identifier of the return.
+	 * @param ret Wrapper for the array of properties to update for the return.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> updateReturnClient(com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.updateReturnUrl(responseFields, returnId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(ret);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=DeleteOrderItemClient( returnId,  returnItemId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Return return = client.Result();
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @param returnItemId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> deleteOrderItemClient(String returnId, String returnItemId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.deleteOrderItemUrl(returnId, returnItemId);
+		String verb = "DELETE";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.Return.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

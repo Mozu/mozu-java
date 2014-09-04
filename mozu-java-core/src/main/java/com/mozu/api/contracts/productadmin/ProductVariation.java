@@ -132,6 +132,14 @@ public class ProductVariation implements Serializable
 		this.deltaPrice = deltaPrice;
 	}
 
+	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
+	public List<ProductVariationDeltaPrice> getLocalizedDeltaPrice() {
+		return this.localizedDeltaPrice;
+	}
+	public void setLocalizedDeltaPrice(List<ProductVariationDeltaPrice> localizedDeltaPrice) {
+		this.localizedDeltaPrice = localizedDeltaPrice;
+	}
+
 	/**
 	 * Wrapper for the list of option attributes configured for the product variation.
 	 */

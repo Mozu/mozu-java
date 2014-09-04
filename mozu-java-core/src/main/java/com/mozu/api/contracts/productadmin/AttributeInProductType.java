@@ -11,6 +11,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.Attribute;
+import com.mozu.api.contracts.productadmin.AttributeInProductTypeDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueInProductType;
 
 /**
@@ -111,6 +112,16 @@ public class AttributeInProductType implements Serializable
 
 	public void setAttributeDetail(Attribute attributeDetail) {
 		this.attributeDetail = attributeDetail;
+	}
+
+	protected AttributeInProductTypeDisplayInfo displayInfo;
+
+	public AttributeInProductTypeDisplayInfo getDisplayInfo() {
+		return this.displayInfo;
+	}
+
+	public void setDisplayInfo(AttributeInProductTypeDisplayInfo displayInfo) {
+		this.displayInfo = displayInfo;
 	}
 
 	/**

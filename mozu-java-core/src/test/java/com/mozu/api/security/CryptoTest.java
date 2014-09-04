@@ -1,6 +1,8 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,17 +25,17 @@ public class CryptoTest {
 	@Mocked AppAuthenticator mockAppAuthenticator;
 	
     @Test
-    public void testCryptoHash () {
-        String body = "This is the body...blah, blah, blah";
-        String secretKey = "b832b3a6127741be8dd4a26c010941b1";
-        String dateString = "Mon, 17 Feb 2014 21:18:57 GMT";
+    public void testCryptoHash () throws Exception {
+        String body = "x-vol-tenant-domain=t419.sandbox.mozu-qa.com&x-vol-return-url=https://t419.sandbox.mozu-qa.com/Admin/s-1223/capability/edit/7d7fadf25e9f454eb6cc87df888395ea/#configure";
+        String secretKey = "b2dc973d5dec4bd6aa325fa906a64aee";
+        String dateString = "Mon, 18 Aug 2014 21:07:21 GMT";
         // Test that values going through the crypto work...
         String hash1 = Crypto.getHash(secretKey, dateString, body);
         String hash2 = Crypto.getHash(secretKey, dateString, body);
         
         assertEquals(hash1, hash2);
     
-        assertEquals("57mAocXhERgKyC32XJgkYvBJJ6IDzt1b0QxWkfxfMJY=", hash1);
+        assertEquals("yJ+gMQm3FZzKfgySi+1jGYcUcSADVjr3x19BwKyFj9w=", hash1);
     }
     
     @Mocked AppAuthInfo mockAppAuthInfo;
@@ -43,7 +45,7 @@ public class CryptoTest {
         
         new Expectations() {
             {
-                AppAuthenticator.initialize();
+                AppAuthenticator.initialize(mockAppAuthInfo);
                 AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
                 mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
@@ -51,7 +53,7 @@ public class CryptoTest {
         }; 
         
         String body = "This is a test of the crypto validation";
-        AppAuthenticator.initialize();
+        AppAuthenticator.initialize(mockAppAuthInfo);
         
         ApiContext apiContext = new MozuApiContext();
 
@@ -73,7 +75,7 @@ public class CryptoTest {
     public void oldRequestTest() {
         new Expectations() {
             {
-                AppAuthenticator.initialize();
+                AppAuthenticator.initialize(mockAppAuthInfo);
                 AppAuthenticator.getInstance(); returns(mockAppAuthenticator);
                 mockAppAuthenticator.getAppAuthInfo(); returns(mockAppAuthInfo);
             }
@@ -81,7 +83,7 @@ public class CryptoTest {
         }; 
         
         String body = "This is a test of the crypto validation";
-        AppAuthenticator.initialize();
+        AppAuthenticator.initialize(mockAppAuthInfo);
         
         ApiContext apiContext = new MozuApiContext();
 

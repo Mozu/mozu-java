@@ -17,15 +17,17 @@ public class ChannelGroupUrl
 	 * Get Resource Url for GetChannelGroups
 	 * @param filter FilterSetAll
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getChannelGroupsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getChannelGroupsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -34,34 +36,40 @@ public class ChannelGroupUrl
 	/**
 	 * Get Resource Url for GetChannelGroup
 	 * @param code The code that uniquely identifies the channel group.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getChannelGroupUrl(String code)
+	public static MozuUrl getChannelGroupUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateChannelGroup
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createChannelGroupUrl()
+	public static MozuUrl createChannelGroupUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateChannelGroup
 	 * @param code Code that identifies the channel group.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateChannelGroupUrl(String code)
+	public static MozuUrl updateChannelGroupUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/channelgroups/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

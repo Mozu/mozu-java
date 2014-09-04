@@ -77,6 +77,14 @@ public class Behavior implements Serializable
 		this.requiresBehaviorIds = requiresBehaviorIds;
 	}
 
+	protected List<String> systemRoles;
+	public List<String> getSystemRoles() {
+		return this.systemRoles;
+	}
+	public void setSystemRoles(List<String> systemRoles) {
+		this.systemRoles = systemRoles;
+	}
+
 	protected List<String> validUserTypes;
 	public List<String> getValidUserTypes() {
 		return this.validUserTypes;

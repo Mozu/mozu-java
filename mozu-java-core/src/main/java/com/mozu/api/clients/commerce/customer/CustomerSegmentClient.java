@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -33,27 +32,28 @@ public class CustomerSegmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getSegmentsClient() throws Exception
 	{
-		return getSegmentsClient( null,  null,  null,  null);
+		return getSegmentsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetSegmentsClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetSegmentsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerSegmentCollection customerSegmentCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegmentCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getSegmentsClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getSegmentsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegmentCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient = new MozuClient(clz);
@@ -77,7 +77,25 @@ public class CustomerSegmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> getSegmentClient(Integer id) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentUrl(id);
+		return getSegmentClient( id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=GetSegmentClient( id,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerSegment customerSegment = client.Result();
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> getSegmentClient(Integer id, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentUrl(id, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);
@@ -102,7 +120,26 @@ public class CustomerSegmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> addSegmentClient(com.mozu.api.contracts.customer.CustomerSegment segment) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentUrl();
+		return addSegmentClient( segment,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=AddSegmentClient( segment,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerSegment customerSegment = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param segment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> addSegmentClient(com.mozu.api.contracts.customer.CustomerSegment segment, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);
@@ -153,7 +190,27 @@ public class CustomerSegmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> updateSegmentClient(com.mozu.api.contracts.customer.CustomerSegment segment, Integer id) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.updateSegmentUrl(id);
+		return updateSegmentClient( segment,  id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient=UpdateSegmentClient( segment,  id,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerSegment customerSegment = client.Result();
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @param segment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegment> updateSegmentClient(com.mozu.api.contracts.customer.CustomerSegment segment, Integer id, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.updateSegmentUrl(id, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);

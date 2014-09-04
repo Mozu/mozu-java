@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Define global site settings such as the site name, shipping and email addresses, and logo images. Block undesirable IP addresses using this resource.
  * </summary>
@@ -33,7 +32,24 @@ public class GeneralSettingsClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> getGeneralSettingsClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.GeneralSettingsUrl.getGeneralSettingsUrl();
+		return getGeneralSettingsClient( null);
+	}
+
+	/**
+	 * Retrieve a site's general global settings.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=GetGeneralSettingsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * GeneralSettings generalSettings = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
+	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> getGeneralSettingsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.GeneralSettingsUrl.getGeneralSettingsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.general.GeneralSettings.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient = new MozuClient(clz);
@@ -58,7 +74,26 @@ public class GeneralSettingsClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> updateGeneralSettingsClient(com.mozu.api.contracts.sitesettings.general.GeneralSettings generalSettings) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.GeneralSettingsUrl.updateGeneralSettingsUrl();
+		return updateGeneralSettingsClient( generalSettings,  null);
+	}
+
+	/**
+	 * Updates a site's general global settings.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient=UpdateGeneralSettingsClient( generalSettings,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * GeneralSettings generalSettings = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param generalSettings The properties of the site's general settings to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
+	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
+	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> updateGeneralSettingsClient(com.mozu.api.contracts.sitesettings.general.GeneralSettings generalSettings, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.GeneralSettingsUrl.updateGeneralSettingsUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.general.GeneralSettings.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.general.GeneralSettings> mozuClient = new MozuClient(clz);

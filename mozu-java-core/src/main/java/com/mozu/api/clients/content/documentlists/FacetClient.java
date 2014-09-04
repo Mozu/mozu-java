@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the facets subresource to allow a merchant to add information for product indexing and searching.
  * </summary>
@@ -23,7 +22,7 @@ public class FacetClient {
 	/**
 	 * Retrieves the properties of facets that aid in indexing and searching.
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient=GetFacetsClient(dataViewMode,  documentListName,  propertyName);
+	 * MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient=GetFacetsClient( documentListName,  propertyName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
@@ -33,7 +32,7 @@ public class FacetClient {
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.content.Facet>>
 	 * @see com.mozu.api.contracts.content.Facet
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.content.Facet>> getFacetsClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String propertyName) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.content.Facet>> getFacetsClient(String documentListName, String propertyName) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.FacetUrl.getFacetsUrl(documentListName, propertyName);
 		String verb = "GET";
@@ -41,7 +40,6 @@ public class FacetClient {
 		MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

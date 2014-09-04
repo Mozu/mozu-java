@@ -16,12 +16,14 @@ public class LocationUrl
 	/**
 	 * Get Resource Url for GetLocation
 	 * @param code 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationUrl(String code)
+	public static MozuUrl getLocationUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locations/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locations/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -29,13 +31,15 @@ public class LocationUrl
 	 * Get Resource Url for GetLocationInUsageType
 	 * @param code 
 	 * @param locationUsageType 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationInUsageTypeUrl(String code, String locationUsageType)
+	public static MozuUrl getLocationInUsageTypeUrl(String code, String locationUsageType, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/{locationUsageType}/locations/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/{locationUsageType}/locations/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
 		formatter.formatUrl("locationUsageType", locationUsageType);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -44,16 +48,18 @@ public class LocationUrl
 	 * @param filter 
 	 * @param locationUsageType 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationsInUsageTypeUrl(String filter, String locationUsageType, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getLocationsInUsageTypeUrl(String filter, String locationUsageType, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/{locationUsageType}/locations?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/{locationUsageType}/locations?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("locationUsageType", locationUsageType);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -61,23 +67,27 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetDirectShipLocation
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDirectShipLocationUrl()
+	public static MozuUrl getDirectShipLocationUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/DS/location");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/DS/location?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetInStorePickupLocation
 	 * @param code 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getInStorePickupLocationUrl(String code)
+	public static MozuUrl getInStorePickupLocationUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/SP/locations/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/SP/locations/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -85,15 +95,17 @@ public class LocationUrl
 	 * Get Resource Url for GetInStorePickupLocations
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getInStorePickupLocationsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getInStorePickupLocationsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/SP/locations?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/SP/locations?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

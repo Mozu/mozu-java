@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -58,7 +57,26 @@ public class CustomerAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> createUserAuthTicketClient(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createUserAuthTicketUrl();
+		return createUserAuthTicketClient( userAuthInfo,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerAuthTicket customerAuthTicket = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userAuthInfo 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> createUserAuthTicketClient(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createUserAuthTicketUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);
@@ -83,7 +101,25 @@ public class CustomerAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> refreshUserAuthTicketClient(String refreshToken) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.refreshUserAuthTicketUrl(refreshToken);
+		return refreshUserAuthTicketClient( refreshToken,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=RefreshUserAuthTicketClient( refreshToken,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerAuthTicket customerAuthTicket = client.Result();
+	 * </code></pre></p>
+	 * @param refreshToken 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> refreshUserAuthTicketClient(String refreshToken, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.refreshUserAuthTicketUrl(refreshToken, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);

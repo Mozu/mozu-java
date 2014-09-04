@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Temporarily hold a product from inventory while a shopper is filling out payment information. Create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
  * </summary>
@@ -34,28 +34,29 @@ public class ProductReservationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> getProductReservationsClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getProductReservationsClient(dataViewMode,  null,  null,  null,  null);
+		return getProductReservationsClient(dataViewMode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> mozuClient=GetProductReservationsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> mozuClient=GetProductReservationsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductReservationCollection productReservationCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductReservationCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> getProductReservationsClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> getProductReservationsClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductReservationUrl.getProductReservationsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductReservationUrl.getProductReservationsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductReservationCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> mozuClient = new MozuClient(clz);
@@ -81,7 +82,26 @@ public class ProductReservationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> getProductReservationClient(com.mozu.api.DataViewMode dataViewMode, Integer productReservationId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductReservationUrl.getProductReservationUrl(productReservationId);
+		return getProductReservationClient(dataViewMode,  productReservationId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a product reservation.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> mozuClient=GetProductReservationClient(dataViewMode,  productReservationId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductReservation productReservation = client.Result();
+	 * </code></pre></p>
+	 * @param productReservationId Unique identifier of the product reservation.
+	 * @param responseFields 
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductReservation>
+	 * @see com.mozu.api.contracts.productadmin.ProductReservation
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> getProductReservationClient(com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductReservationUrl.getProductReservationUrl(productReservationId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductReservation.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> mozuClient = new MozuClient(clz);

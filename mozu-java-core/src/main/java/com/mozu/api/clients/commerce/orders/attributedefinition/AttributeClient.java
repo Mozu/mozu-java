@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Order Attribute Definition resource to manage the attributes that uniquely describe orders, such as the associated shopping season or "How did you hear about us?". Merchants can display order attributes on the order summary, the order confirmation page, invoices, or packing slips.
  * </summary>
@@ -33,54 +32,31 @@ public class AttributeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient() throws Exception
 	{
-		return getAttributesClient( null,  null,  null,  null);
+		return getAttributesClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of order attributes according to any filter criteria or sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeCollection attributeCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.AttributeCollection>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.extensible.AttributeCollection.class;
 		MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * Retrieves the details of the order attribute specified in the request.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Attribute attribute = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
-	 * @see com.mozu.api.contracts.core.extensible.Attribute
-	 */
-	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
-		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -105,6 +81,48 @@ public class AttributeClient {
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>(){}.getClass();
 		MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves the details of the order attribute specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN) throws Exception
+	{
+		return getAttributeClient( attributeFQN,  null);
+	}
+
+	/**
+	 * Retrieves the details of the order attribute specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

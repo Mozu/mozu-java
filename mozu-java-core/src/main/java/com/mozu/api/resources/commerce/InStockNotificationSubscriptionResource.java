@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,11 +24,12 @@ public class InStockNotificationSubscriptionResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public InStockNotificationSubscriptionResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
@@ -42,25 +42,26 @@ public class InStockNotificationSubscriptionResource {
 	 */
 	public com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions() throws Exception
 	{
-		return getInStockNotificationSubscriptions( null,  null,  null,  null);
+		return getInStockNotificationSubscriptions( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
-	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.GetInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter);
+	 *	InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = instocknotificationsubscription.GetInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 */
-	public com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.getInStockNotificationSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.getInStockNotificationSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -79,7 +80,23 @@ public class InStockNotificationSubscriptionResource {
 	 */
 	public com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(Integer id) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.getInStockNotificationSubscriptionClient( id);
+		return getInStockNotificationSubscription( id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.GetInStockNotificationSubscription( id,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 */
+	public com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(Integer id, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.getInStockNotificationSubscriptionClient( id,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -99,7 +116,24 @@ public class InStockNotificationSubscriptionResource {
 	 */
 	public com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.addInStockNotificationSubscriptionClient( inStockNotificationSubscription);
+		return addInStockNotificationSubscription( inStockNotificationSubscription,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
+	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.AddInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param inStockNotificationSubscription 
+	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 */
+	public com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> client = com.mozu.api.clients.commerce.InStockNotificationSubscriptionClient.addInStockNotificationSubscriptionClient( inStockNotificationSubscription,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

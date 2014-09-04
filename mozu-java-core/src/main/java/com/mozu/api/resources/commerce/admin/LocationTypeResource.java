@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,11 +24,12 @@ public class LocationTypeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public LocationTypeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
@@ -61,7 +61,23 @@ public class LocationTypeResource {
 	 */
 	public com.mozu.api.contracts.location.LocationType getLocationType(String locationTypeCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.getLocationTypeClient( locationTypeCode);
+		return getLocationType( locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.GetLocationType( locationTypeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType getLocationType(String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.getLocationTypeClient( locationTypeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -81,7 +97,24 @@ public class LocationTypeResource {
 	 */
 	public com.mozu.api.contracts.location.LocationType addLocationType(com.mozu.api.contracts.location.LocationType locationType) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.addLocationTypeClient( locationType);
+		return addLocationType( locationType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.AddLocationType( locationType,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType addLocationType(com.mozu.api.contracts.location.LocationType locationType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.addLocationTypeClient( locationType,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -102,7 +135,25 @@ public class LocationTypeResource {
 	 */
 	public com.mozu.api.contracts.location.LocationType updateLocationType(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.updateLocationTypeClient( locationType,  locationTypeCode);
+		return updateLocationType( locationType,  locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	LocationType locationtype = new LocationType();
+	 *	LocationType locationType = locationtype.UpdateLocationType( locationType,  locationTypeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public com.mozu.api.contracts.location.LocationType updateLocationType(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.LocationType> client = com.mozu.api.clients.commerce.admin.LocationTypeClient.updateLocationTypeClient( locationType,  locationTypeCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

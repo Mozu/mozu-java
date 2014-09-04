@@ -17,15 +17,17 @@ public class CustomerSegmentUrl
 	 * Get Resource Url for GetSegments
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getSegmentsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getSegmentsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -34,22 +36,26 @@ public class CustomerSegmentUrl
 	/**
 	 * Get Resource Url for GetSegment
 	 * @param id 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getSegmentUrl(Integer id)
+	public static MozuUrl getSegmentUrl(Integer id, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}?responseFields={responseFields}");
 		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddSegment
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addSegmentUrl()
+	public static MozuUrl addSegmentUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -68,12 +74,14 @@ public class CustomerSegmentUrl
 	/**
 	 * Get Resource Url for UpdateSegment
 	 * @param id 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateSegmentUrl(Integer id)
+	public static MozuUrl updateSegmentUrl(Integer id, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}?responseFields={responseFields}");
 		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

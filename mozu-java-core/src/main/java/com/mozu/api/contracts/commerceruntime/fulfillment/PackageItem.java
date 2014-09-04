@@ -19,6 +19,16 @@ public class PackageItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String fulfillmentItemType;
+
+	public String getFulfillmentItemType() {
+		return this.fulfillmentItemType;
+	}
+
+	public void setFulfillmentItemType(String fulfillmentItemType) {
+		this.fulfillmentItemType = fulfillmentItemType;
+	}
+
 	protected String productCode;
 
 	public String getProductCode() {

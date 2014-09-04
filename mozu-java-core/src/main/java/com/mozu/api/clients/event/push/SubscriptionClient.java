@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -33,27 +32,28 @@ public class SubscriptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> getSubscriptionsClient() throws Exception
 	{
-		return getSubscriptionsClient( null,  null,  null,  null);
+		return getSubscriptionsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> mozuClient=GetSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> mozuClient=GetSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SubscriptionCollection subscriptionCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.SubscriptionCollection>
 	 * @see com.mozu.api.contracts.event.SubscriptionCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> getSubscriptionsClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> getSubscriptionsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.event.push.SubscriptionUrl.getSubscriptionsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.event.push.SubscriptionUrl.getSubscriptionsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.event.SubscriptionCollection.class;
 		MozuClient<com.mozu.api.contracts.event.SubscriptionCollection> mozuClient = new MozuClient(clz);
