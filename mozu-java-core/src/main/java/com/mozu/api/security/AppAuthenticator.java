@@ -26,12 +26,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.appdev.AuthTicketRequest;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.urls.platform.applications.AuthTicketUrl;
-import com.mozu.api.utils.ConfigProperties;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
 
@@ -53,17 +53,12 @@ public class AppAuthenticator {
 
     private RefreshInterval refreshInterval = null;
 
-    private String baseUrl;
-    
-
-    private AppAuthenticator(AppAuthInfo appAuthInfo, String baseUrl) {
-        this(appAuthInfo, baseUrl, null);
+    private AppAuthenticator(AppAuthInfo appAuthInfo) {
+        this(appAuthInfo, null);
     }
 
-    private AppAuthenticator(AppAuthInfo appAuthInfo, String baseUrl,
-            RefreshInterval refreshInterval) {
+    private AppAuthenticator(AppAuthInfo appAuthInfo, RefreshInterval refreshInterval) {
         this.appAuthInfo = appAuthInfo;
-        this.baseUrl = baseUrl;
         this.refreshInterval = refreshInterval;
     }
 
@@ -76,31 +71,30 @@ public class AppAuthenticator {
      * 
      * @throws ApiException
      */
-    public static void initialize() {
-        AppAuthInfo appAuthInfo = new AppAuthInfo();
-        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
-        appAuthInfo.setSharedSecret(ConfigProperties
-                .getStringProperty(ConfigProperties.SHARED_SECRET));
+//    public static void initialize() {
+//        AppAuthInfo appAuthInfo = new AppAuthInfo();
+//        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
+//        appAuthInfo.setSharedSecret(ConfigProperties
+//                .getStringProperty(ConfigProperties.SHARED_SECRET));
+//
+//        initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL),
+//                null);
+//    }
 
-        initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL),
-                null);
+    public static void initialize(AppAuthInfo appAuthInfo) {
+        initialize(appAuthInfo, null);
     }
 
-    public static void initialize(AppAuthInfo appAuthInfo, String baseAppAuthUrl) {
-        initialize(appAuthInfo, baseAppAuthUrl, null);
-    }
-
-    public static void initialize(AppAuthInfo appAuthInfo, String baseAppAuthUrl,
-            RefreshInterval refreshInterval) {
+    public static void initialize(AppAuthInfo appAuthInfo, RefreshInterval refreshInterval) {
         if (auth == null) {
             synchronized (lockObj) {
                 if (auth == null) {
                     try {
-                        auth = new AppAuthenticator(appAuthInfo, baseAppAuthUrl, refreshInterval);
+                        auth = new AppAuthenticator(appAuthInfo, refreshInterval);
                         auth.authenticateApp();
-                        if (StringUtils.isNotBlank(baseAppAuthUrl)) {
+                        if (StringUtils.isNotBlank(MozuConfig.getBaseUrl())) {
                             try {
-                                URL url = new URL(baseAppAuthUrl);
+                                URL url = new URL(MozuConfig.getBaseUrl());
                                 AppAuthenticator.useSSL = url.getProtocol().toLowerCase().equals("https");
                             } catch (MalformedURLException mue){
                                 StringBuilder msgBuilder = new StringBuilder("Base URL is malformed. ");
@@ -129,9 +123,9 @@ public class AppAuthenticator {
     }
 
     public void authenticateApp() {
-        String resourceUrl = getBaseUrl() + AuthTicketUrl.authenticateAppUrl().getUrl();
+        StringBuilder resourceUrl = new StringBuilder(MozuConfig.getBaseUrl()).append(AuthTicketUrl.authenticateAppUrl(null).getUrl());
         
-        executeRequest( this.appAuthInfo, new HttpPost(resourceUrl) );
+        executeRequest( this.appAuthInfo, new HttpPost(resourceUrl.toString()) );
 
         setRefreshIntervals(true);
     }
@@ -141,12 +135,12 @@ public class AppAuthenticator {
      */
     public void refreshAppAuthTicket() {
 
-        String resourceUrl = getBaseUrl() + AuthTicketUrl.refreshAppAuthTicketUrl().getUrl();
+        StringBuilder resourceUrl = new StringBuilder(MozuConfig.getBaseUrl()).append(AuthTicketUrl.refreshAppAuthTicketUrl(null).getUrl());
 
         AuthTicketRequest authTicketRequest = new AuthTicketRequest();
         authTicketRequest.setRefreshToken(appAuthTicket.getRefreshToken());
         
-        executeRequest(authTicketRequest, new HttpPut(resourceUrl));
+        executeRequest(authTicketRequest, new HttpPut(resourceUrl.toString()));
 
         logger.info("Setting app token refresh intervals");
         setRefreshIntervals(false);
@@ -245,10 +239,6 @@ public class AppAuthenticator {
 
     public AppAuthInfo getAppAuthInfo() {
         return appAuthInfo;
-    }
-
-    public String getBaseUrl() {
-        return baseUrl;
     }
 
     public void addProxyHttpHost(HttpClient client) {

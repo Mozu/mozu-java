@@ -77,6 +77,16 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
 	/**
 	 * The alternate image description defined for the product, in the language specified in the locale code for the storefront.
 	 */

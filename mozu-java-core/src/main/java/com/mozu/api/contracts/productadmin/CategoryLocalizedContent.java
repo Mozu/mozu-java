@@ -22,58 +22,6 @@ public class CategoryLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Description of the product category in the language specified by the locale code.
-	 */
-	protected String description;
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
-	protected String localeCode;
-
-	public String getLocaleCode() {
-		return this.localeCode;
-	}
-
-	public void setLocaleCode(String localeCode) {
-		this.localeCode = localeCode;
-	}
-
-	/**
-	 * Description defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
-	 */
-	protected String metaTagDescription;
-
-	public String getMetaTagDescription() {
-		return this.metaTagDescription;
-	}
-
-	public void setMetaTagDescription(String metaTagDescription) {
-		this.metaTagDescription = metaTagDescription;
-	}
-
-	/**
-	 * Keywords defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
-	 */
-	protected String metaTagKeywords;
-
-	public String getMetaTagKeywords() {
-		return this.metaTagKeywords;
-	}
-
-	public void setMetaTagKeywords(String metaTagKeywords) {
-		this.metaTagKeywords = metaTagKeywords;
-	}
-
-	/**
 	 * Title defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
 	 */
 	protected String metaTagTitle;
@@ -123,6 +71,58 @@ public class CategoryLocalizedContent implements Serializable
 
 	public void setSlug(String slug) {
 		this.slug = slug;
+	}
+
+	/**
+	 * Description of the product category in the language specified by the locale code.
+	 */
+	protected String description;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * Language used for the entity. Currently, only "en-US" is supported.
+	 */
+	protected String localeCode;
+
+	public String getLocaleCode() {
+		return this.localeCode;
+	}
+
+	public void setLocaleCode(String localeCode) {
+		this.localeCode = localeCode;
+	}
+
+	/**
+	 * Description defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
+	 */
+	protected String metaTagDescription;
+
+	public String getMetaTagDescription() {
+		return this.metaTagDescription;
+	}
+
+	public void setMetaTagDescription(String metaTagDescription) {
+		this.metaTagDescription = metaTagDescription;
+	}
+
+	/**
+	 * Keywords defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
+	 */
+	protected String metaTagKeywords;
+
+	public String getMetaTagKeywords() {
+		return this.metaTagKeywords;
+	}
+
+	public void setMetaTagKeywords(String metaTagKeywords) {
+		this.metaTagKeywords = metaTagKeywords;
 	}
 
 	/**

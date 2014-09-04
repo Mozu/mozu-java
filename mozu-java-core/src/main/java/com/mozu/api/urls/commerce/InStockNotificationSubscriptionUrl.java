@@ -17,15 +17,17 @@ public class InStockNotificationSubscriptionUrl
 	 * Get Resource Url for GetInStockNotificationSubscriptions
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getInStockNotificationSubscriptionsUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getInStockNotificationSubscriptionsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -34,22 +36,26 @@ public class InStockNotificationSubscriptionUrl
 	/**
 	 * Get Resource Url for GetInStockNotificationSubscription
 	 * @param id 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getInStockNotificationSubscriptionUrl(Integer id)
+	public static MozuUrl getInStockNotificationSubscriptionUrl(Integer id, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/{id}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/{id}?responseFields={responseFields}");
 		formatter.formatUrl("id", id);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddInStockNotificationSubscription
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addInStockNotificationSubscriptionUrl()
+	public static MozuUrl addInStockNotificationSubscriptionUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/instocknotifications/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the shipping subresource to manage settings for the site shipping information, such as origin address information, carrier shipping methods, shipping rate providers, and regions available for shipping.
  * </summary>
@@ -25,11 +24,12 @@ public class SiteShippingSettingsResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public SiteShippingSettingsResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the shipping settings configured for a site.
@@ -42,7 +42,22 @@ public class SiteShippingSettingsResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings getSiteShippingSettings() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> client = com.mozu.api.clients.commerce.settings.SiteShippingSettingsClient.getSiteShippingSettingsClient();
+		return getSiteShippingSettings( null);
+	}
+
+	/**
+	 * Retrieves a list of the shipping settings configured for a site.
+	 * <p><pre><code>
+	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
+	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.GetSiteShippingSettings( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
+	 */
+	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings getSiteShippingSettings(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> client = com.mozu.api.clients.commerce.settings.SiteShippingSettingsClient.getSiteShippingSettingsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

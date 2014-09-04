@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Retrieves and modifies the products, categories, and shipping methods eligible for discounts in the form of a fixed dollar amount, percentage off a product price, or free shipping.
  * </summary>
@@ -25,25 +25,49 @@ public class DiscountTargetResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public DiscountTargetResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public DiscountTargetResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
-	 *	DiscountTarget discountTarget = discounttarget.GetDiscountTarget(dataViewMode,  discountId);
+	 *	DiscountTarget discountTarget = discounttarget.GetDiscountTarget(_dataViewMode,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
-	public com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(com.mozu.api.DataViewMode dataViewMode, Integer discountId) throws Exception
+	public com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(Integer discountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> client = com.mozu.api.clients.commerce.catalog.admin.discounts.DiscountTargetClient.getDiscountTargetClient(dataViewMode,  discountId);
+		return getDiscountTarget( discountId,  null);
+	}
+
+	/**
+	 * Retrieves the discount target, that is which products, categories, or shipping methods are eligible for the discount.
+	 * <p><pre><code>
+	 *	DiscountTarget discounttarget = new DiscountTarget();
+	 *	DiscountTarget discountTarget = discounttarget.GetDiscountTarget(_dataViewMode,  discountId,  responseFields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
+	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
+	 */
+	public com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(Integer discountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> client = com.mozu.api.clients.commerce.catalog.admin.discounts.DiscountTargetClient.getDiscountTargetClient(_dataViewMode,  discountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -54,7 +78,7 @@ public class DiscountTargetResource {
 	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
 	 * <p><pre><code>
 	 *	DiscountTarget discounttarget = new DiscountTarget();
-	 *	DiscountTarget discountTarget = discounttarget.UpdateDiscountTarget(dataViewMode,  discountTarget,  discountId);
+	 *	DiscountTarget discountTarget = discounttarget.UpdateDiscountTarget( discountTarget,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
@@ -62,9 +86,27 @@ public class DiscountTargetResource {
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
-	public com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId) throws Exception
+	public com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> client = com.mozu.api.clients.commerce.catalog.admin.discounts.DiscountTargetClient.updateDiscountTargetClient(dataViewMode,  discountTarget,  discountId);
+		return updateDiscountTarget( discountTarget,  discountId,  null);
+	}
+
+	/**
+	 * Modifies properties of the discount target, for example, the dollar amount, or precentage off the price.
+	 * <p><pre><code>
+	 *	DiscountTarget discounttarget = new DiscountTarget();
+	 *	DiscountTarget discountTarget = discounttarget.UpdateDiscountTarget( discountTarget,  discountId,  responseFields);
+	 * </code></pre></p>
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param responseFields 
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
+	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
+	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
+	 */
+	public com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> client = com.mozu.api.clients.commerce.catalog.admin.discounts.DiscountTargetClient.updateDiscountTargetClient( discountTarget,  discountId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

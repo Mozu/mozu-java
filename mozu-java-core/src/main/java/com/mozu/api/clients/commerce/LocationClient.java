@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -34,7 +33,25 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationClient(String code) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationUrl(code);
+		return getLocationClient( code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationClient( code,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @param code 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationClient(String code, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationUrl(code, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.Location.class;
 		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = new MozuClient(clz);
@@ -59,7 +76,26 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationInUsageTypeClient(String locationUsageType, String code) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationInUsageTypeUrl(code, locationUsageType);
+		return getLocationInUsageTypeClient( locationUsageType,  code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationInUsageTypeClient( locationUsageType,  code,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @param code 
+	 * @param locationUsageType 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationInUsageTypeClient(String locationUsageType, String code, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationInUsageTypeUrl(code, locationUsageType, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.Location.class;
 		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = new MozuClient(clz);
@@ -83,13 +119,13 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getLocationsInUsageTypeClient(String locationUsageType) throws Exception
 	{
-		return getLocationsInUsageTypeClient( locationUsageType,  null,  null,  null,  null);
+		return getLocationsInUsageTypeClient( locationUsageType,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetLocationsInUsageTypeClient( locationUsageType,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetLocationsInUsageTypeClient( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationCollection locationCollection = client.Result();
@@ -97,14 +133,15 @@ public class LocationClient {
 	 * @param filter 
 	 * @param locationUsageType 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationCollection>
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getLocationsInUsageTypeClient(String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getLocationsInUsageTypeClient(String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationsInUsageTypeUrl(filter, locationUsageType, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationsInUsageTypeUrl(filter, locationUsageType, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationCollection.class;
 		MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient = new MozuClient(clz);
@@ -127,7 +164,24 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.Location> getDirectShipLocationClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getDirectShipLocationUrl();
+		return getDirectShipLocationClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetDirectShipLocationClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getDirectShipLocationClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getDirectShipLocationUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.Location.class;
 		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = new MozuClient(clz);
@@ -151,7 +205,25 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.Location> getInStorePickupLocationClient(String code) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getInStorePickupLocationUrl(code);
+		return getInStorePickupLocationClient( code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetInStorePickupLocationClient( code,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Location location = client.Result();
+	 * </code></pre></p>
+	 * @param code 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.Location> getInStorePickupLocationClient(String code, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getInStorePickupLocationUrl(code, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.Location.class;
 		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = new MozuClient(clz);
@@ -174,27 +246,28 @@ public class LocationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getInStorePickupLocationsClient() throws Exception
 	{
-		return getInStorePickupLocationsClient( null,  null,  null,  null);
+		return getInStorePickupLocationsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetInStorePickupLocationsClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetInStorePickupLocationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationCollection locationCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationCollection>
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getInStorePickupLocationsClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.location.LocationCollection> getInStorePickupLocationsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getInStorePickupLocationsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getInStorePickupLocationsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationCollection.class;
 		MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient = new MozuClient(clz);

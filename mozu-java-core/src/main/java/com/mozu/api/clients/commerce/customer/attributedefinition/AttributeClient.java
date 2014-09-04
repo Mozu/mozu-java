@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -33,54 +32,31 @@ public class AttributeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient() throws Exception
 	{
-		return getAttributesClient( null,  null,  null,  null);
+		return getAttributesClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient=GetAttributesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeCollection attributeCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.AttributeCollection>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> getAttributesClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.extensible.AttributeCollection.class;
 		MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Attribute attribute = client.Result();
-	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
-	 * @see com.mozu.api.contracts.core.extensible.Attribute
-	 */
-	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
-		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -105,6 +81,48 @@ public class AttributeClient {
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>(){}.getClass();
 		MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN) throws Exception
+	{
+		return getAttributeClient( attributeFQN,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=GetAttributeClient( attributeFQN,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> getAttributeClient(String attributeFQN, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,11 +24,12 @@ public class LocationResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public LocationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
@@ -43,7 +43,23 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location getLocation(String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getLocationClient( code);
+		return getLocation( code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.GetLocation( code,  responseFields);
+	 * </code></pre></p>
+	 * @param code 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getLocation(String code, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getLocationClient( code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -63,7 +79,24 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location getLocationInUsageType(String locationUsageType, String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getLocationInUsageTypeClient( locationUsageType,  code);
+		return getLocationInUsageType( locationUsageType,  code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.GetLocationInUsageType( locationUsageType,  code,  responseFields);
+	 * </code></pre></p>
+	 * @param code 
+	 * @param locationUsageType 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getLocationInUsageType(String locationUsageType, String code, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getLocationInUsageTypeClient( locationUsageType,  code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -82,26 +115,27 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(String locationUsageType) throws Exception
 	{
-		return getLocationsInUsageType( locationUsageType,  null,  null,  null,  null);
+		return getLocationsInUsageType( locationUsageType,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter);
+	 *	LocationCollection locationCollection = location.GetLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param locationUsageType 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
-	public com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(String locationUsageType, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.LocationClient.getLocationsInUsageTypeClient( locationUsageType,  startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.LocationClient.getLocationsInUsageTypeClient( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -119,7 +153,22 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location getDirectShipLocation() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getDirectShipLocationClient();
+		return getDirectShipLocation( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.GetDirectShipLocation( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getDirectShipLocation(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getDirectShipLocationClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -138,7 +187,23 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location getInStorePickupLocation(String code) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getInStorePickupLocationClient( code);
+		return getInStorePickupLocation( code,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.GetInStorePickupLocation( code,  responseFields);
+	 * </code></pre></p>
+	 * @param code 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getInStorePickupLocation(String code, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getInStorePickupLocationClient( code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -156,25 +221,26 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations() throws Exception
 	{
-		return getInStorePickupLocations( null,  null,  null,  null);
+		return getInStorePickupLocations( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter);
+	 *	LocationCollection locationCollection = location.GetInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
-	public com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.LocationClient.getInStorePickupLocationsClient( startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.LocationClient.getInStorePickupLocationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -33,27 +32,28 @@ public class InStockNotificationSubscriptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> getInStockNotificationSubscriptionsClient() throws Exception
 	{
-		return getInStockNotificationSubscriptionsClient( null,  null,  null,  null);
+		return getInStockNotificationSubscriptionsClient( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> mozuClient=GetInStockNotificationSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> mozuClient=GetInStockNotificationSubscriptionsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * InStockNotificationSubscriptionCollection inStockNotificationSubscriptionCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection>
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> getInStockNotificationSubscriptionsClient(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> getInStockNotificationSubscriptionsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionsUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> mozuClient = new MozuClient(clz);
@@ -77,7 +77,25 @@ public class InStockNotificationSubscriptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> getInStockNotificationSubscriptionClient(Integer id) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionUrl(id);
+		return getInStockNotificationSubscriptionClient( id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient=GetInStockNotificationSubscriptionClient( id,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> getInStockNotificationSubscriptionClient(Integer id, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionUrl(id, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscription.class;
 		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = new MozuClient(clz);
@@ -102,7 +120,26 @@ public class InStockNotificationSubscriptionClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> addInStockNotificationSubscriptionClient(com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.addInStockNotificationSubscriptionUrl();
+		return addInStockNotificationSubscriptionClient( inStockNotificationSubscription,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient=AddInStockNotificationSubscriptionClient( inStockNotificationSubscription,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param inStockNotificationSubscription 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> addInStockNotificationSubscriptionClient(com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.addInStockNotificationSubscriptionUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscription.class;
 		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = new MozuClient(clz);

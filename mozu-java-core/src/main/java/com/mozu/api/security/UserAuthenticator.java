@@ -22,6 +22,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.adminuser.DeveloperAccount;
 import com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket;
 import com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket;
@@ -56,7 +57,7 @@ public class UserAuthenticator {
     public static AuthenticationProfile refreshUserAuthTicket(AuthTicket authTicket, Integer id)
             throws ApiException {
 
-        String resourceUrl = AppAuthenticator.getInstance().getBaseUrl()
+        String resourceUrl = MozuConfig.getBaseUrl()
                 + getResourceRefreshUrl(authTicket, id); // AuthTicketUrl.AuthenticateAppUrl();
 
         HttpClient client = new DefaultHttpClient();
@@ -103,7 +104,7 @@ public class UserAuthenticator {
     }
     
     public static AuthenticationProfile authenticate(UserAuthInfo userAuthInfo, AuthenticationScope scope, Integer id, Integer siteId) {
-        String resourceUrl = AppAuthenticator.getInstance().getBaseUrl()
+        String resourceUrl = MozuConfig.getBaseUrl()
                 + getResourceUrl(scope, id); // AuthTicketUrl.AuthenticateAppUrl();
 
         HttpClient client = new DefaultHttpClient();
@@ -144,7 +145,7 @@ public class UserAuthenticator {
     }
     
     public static void logout(AuthTicket authTicket) {
-        String resourceUrl = AppAuthenticator.getInstance().getBaseUrl()
+        String resourceUrl = MozuConfig.getBaseUrl()
                 + getLogoutUrl(authTicket);
         
         HttpClient client = new DefaultHttpClient();
@@ -257,9 +258,9 @@ public class UserAuthenticator {
     private static String getResourceRefreshUrl(AuthTicket authTicket, Integer id) {
         switch (authTicket.getScope()) {
         case Tenant:
-            return TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(id).getUrl();
+            return TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(null, id).getUrl();
         case Developer:
-            return DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(id).getUrl();
+            return DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(id, null).getUrl();
         default:
             throw new NotImplementedException("Invalid User Scope.");
         }
@@ -268,9 +269,9 @@ public class UserAuthenticator {
     private static String getResourceUrl(AuthenticationScope scope, Integer id) {
         switch (scope) {
         case Tenant:
-            return TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(id).getUrl();
+            return TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(null, id).getUrl();
         case Developer:
-            return DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(id).getUrl();
+            return DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(id, null).getUrl();
         default:
             throw new NotImplementedException("Invalid User Scope.");
         }

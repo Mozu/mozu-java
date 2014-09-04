@@ -17,29 +17,19 @@ public class AttributeUrl
 	 * Get Resource Url for GetAttributes
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAttributesUrl(String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getAttributesUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for GetAttribute
-	 * @param attributeFQN 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getAttributeUrl(String attributeFQN)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/{attributeFQN}");
-		formatter.formatUrl("attributeFQN", attributeFQN);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -52,6 +42,20 @@ public class AttributeUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/{attributeFQN}/VocabularyValues");
 		formatter.formatUrl("attributeFQN", attributeFQN);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetAttribute
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getAttributeUrl(String attributeFQN, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/attributedefinition/attributes/{attributeFQN}?responseFields={responseFields}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

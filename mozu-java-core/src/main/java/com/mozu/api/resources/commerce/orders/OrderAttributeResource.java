@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Order Attributes resource to define how an order attribute definition applies to a specific order.
  * </summary>
@@ -25,11 +24,12 @@ public class OrderAttributeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public OrderAttributeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the attributes defined for the order specified in the request.

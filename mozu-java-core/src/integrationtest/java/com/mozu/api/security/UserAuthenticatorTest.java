@@ -1,6 +1,7 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
 import org.junit.Test;
@@ -17,37 +18,45 @@ public class UserAuthenticatorTest extends SecurityTestBase {
 
     @Test
     public void testAuthenticateDeveloperUser() throws Exception {
-        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET), URL);
+        String appId = configProps.getString(APP_ID);
+        String sharedSecret = configProps.getString(SHARED_SECRET);
+
+        AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret));
         
         // Authorize user and get tenants
         UserAuthInfo userAuth = new UserAuthInfo();
-        userAuth.setEmailAddress(USER_DEVELOPER);
-        userAuth.setPassword(PASSWORD);
+        String userName = configProps.getString(DEV_USERNAME);
+        userAuth.setEmailAddress(userName);
+        userAuth.setPassword(configProps.getString(PASSWORD));
         // Authorize user
         AuthenticationProfile authProfile = UserAuthenticator.authenticate(userAuth, AuthenticationScope.Developer);
         
         assertNotNull(authProfile);
         this.authTicket = authProfile.getAuthTicket();
         assertNotNull(authProfile.getUserProfile());
-        assertEquals(authProfile.getUserProfile().getUserName(), USER_DEVELOPER);
+        assertEquals(authProfile.getUserProfile().getUserName(), userName);
         UserAuthenticator.logout(authTicket);
     }
    
     @Test
     public void testAuthenticateTenantUser() throws Exception {
-        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET), URL);
+        String appId = configProps.getString(APP_ID);
+        String sharedSecret = configProps.getString(SHARED_SECRET);
+
+        AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret));
         
         // Authorize user and get tenants
+        String userName = configProps.getString(TENANT_USERNAME);
         UserAuthInfo userAuth = new UserAuthInfo();
-        userAuth.setEmailAddress(USER_TENANT);
+        userAuth.setEmailAddress(userName);
         userAuth.setPassword(PASSWORD);
         // Authorize user
-        AuthenticationProfile authProfile = UserAuthenticator.authenticate(userAuth, AuthenticationScope.Tenant);
-        
+        AuthenticationProfile authProfile = authenticateUser(AuthenticationScope.Tenant, configProps.getString(TENANT_USERNAME));
+
         assertNotNull(authProfile);
         this.authTicket = authProfile.getAuthTicket();
         assertNotNull(authProfile.getUserProfile());
-        assertEquals(authProfile.getUserProfile().getUserName(), USER_TENANT);
+        assertEquals(authProfile.getUserProfile().getUserName(), userName);
         UserAuthenticator.logout(authTicket);
     }
 

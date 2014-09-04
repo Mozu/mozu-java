@@ -7,8 +7,8 @@ import static org.junit.Assert.fail;
 import org.junit.After;
 import org.junit.Test;
 
-import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
 
@@ -20,12 +20,13 @@ public class AppAuthenticatorTest extends SecurityTestBase {
 
 	@Test
 	public void testBadLoginApi() throws Exception {
-		String url = URL;
+		String url = MozuConfig.getBaseUrl();
 		String appId = "NON_EXISTANT";
 		String sharedSecret = "BAD_SHARED_SECRET";
 		
 		try {
-			AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), url, null);
+		    MozuConfig.setBaseUrl(url);
+			AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), null);
 
 			fail("Should have failed login");
 		} catch (ApiException ae) {
@@ -39,40 +40,34 @@ public class AppAuthenticatorTest extends SecurityTestBase {
 
 	@Test
 	public void testLoginApi() throws Exception {
-		String url = URL;
-		String appId = APP_ID;
-		String sharedSecret = SHARED_SECRET;
+		String url = MozuConfig.getBaseUrl();
+		String appId = configProps.getString(APP_ID);
+		String sharedSecret = configProps.getString(SHARED_SECRET);
 
-		AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), url, null);
+        MozuConfig.setBaseUrl(url);
+		AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), null);
 		
 		TenantResource tenantsApi = new TenantResource();
-		Tenant tenant = tenantsApi.getTenant(TENANT_ID);
+		Tenant tenant = tenantsApi.getTenant(configProps.getInt(TENANT_ID));
 		assertNotNull(tenant);
 
 	}
 
-	@Test
-	public void testLoadConfigProperties() throws Exception {
-		AppAuthenticator.initialize();
-
-		TenantResource tenantsApi = new TenantResource();
-		Tenant tenant = tenantsApi.getTenant(TENANT_ID);
-		assertNotNull(tenant);
-
-	}
 	
     @Test
     public void testRefreshInterval() throws Exception {
-        String url = URL;
-        String appId = APP_ID;
-        String sharedSecret = SHARED_SECRET;
+        String url = MozuConfig.getBaseUrl();
+        String appId = configProps.getString(APP_ID);
+        String sharedSecret = configProps.getString(SHARED_SECRET);
 
         RefreshInterval refreshInterval = new RefreshInterval(1000, 200000);
-        AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), url, refreshInterval);
+        MozuConfig.setBaseUrl(url);
+
+        AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret), refreshInterval);
         // wait so we have to refresh
         Thread.sleep(2000);
         TenantResource tenantsApi = new TenantResource();
-        Tenant tenant = tenantsApi.getTenant(TENANT_ID);
+        Tenant tenant = tenantsApi.getTenant(configProps.getInt(TENANT_ID));
         assertNotNull(tenant);
 
     }

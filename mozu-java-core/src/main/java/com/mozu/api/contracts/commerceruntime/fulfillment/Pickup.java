@@ -34,6 +34,16 @@ public class Pickup implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	/**
 	 * The date and time the customer picked up the order items.
 	 */

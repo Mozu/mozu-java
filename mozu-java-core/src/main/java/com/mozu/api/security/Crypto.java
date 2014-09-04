@@ -8,8 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -18,30 +16,24 @@ import org.slf4j.LoggerFactory;
 
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
+import com.mozu.api.MozuConfig;
 
 public class Crypto {
     private static final Logger logger = LoggerFactory.getLogger(Crypto.class);
-    private static final String ENCODER_ALGORITHM = "SHA-256";
-    private static final String CHARSET = "UTF-8";
-    private static final String CONFIG_PROPERTIES_FILENAME = "security.properties";
-    private static final int DEFAULT_REQUEST_TIMEOUT = 180;
-    private static final String REQUEST_VALID_TIME = "request_valid_time";
     
-    private static PropertiesConfiguration configuration = null;
-            
     public static String getHash(String secretKey, String date, String body) {
         String hash = null;
         try {
-            MessageDigest digest = MessageDigest.getInstance(ENCODER_ALGORITHM);
+            MessageDigest digest = MessageDigest.getInstance(MozuConfig.getEncodeAlgorithm());
             String doubleSecretKey = secretKey.concat(secretKey);
-            String hashedSecret = Base64.encodeBase64String(digest.digest(doubleSecretKey.getBytes(CHARSET)));
+            String hashedSecret = Base64.encodeBase64String(digest.digest(doubleSecretKey.getBytes(MozuConfig.getCharSet())));
             
             String payload = hashedSecret.concat(date).concat(body);
-            hash = Base64.encodeBase64String(digest.digest(payload.getBytes(CHARSET)));
+            hash = Base64.encodeBase64String(digest.digest(payload.getBytes(MozuConfig.getCharSet())));
         } catch (NoSuchAlgorithmException nae) {
-            logger.error("Bad encoding algorithm " + ENCODER_ALGORITHM + ": " + nae.getMessage() );
+            logger.error("Bad encoding algorithm " + MozuConfig.getEncodeAlgorithm() + ": " + nae.getMessage() );
         } catch (UnsupportedEncodingException uee) {
-            logger.error("Unsupported character set: " + CHARSET + ": " + uee.getMessage() );
+            logger.error("Unsupported character set: " + MozuConfig.getCharSet() + ": " + uee.getMessage() );
         }
         return hash;
     }
@@ -64,20 +56,13 @@ public class Crypto {
                 body).equals(apiContext.getHMACSha256())) {
             isValid = true;
         } else {
-            StringBuilder msg = new StringBuilder ("Order is not authorized.");
+            StringBuilder msg = new StringBuilder ("Request is not authorized.");
             logger.warn(msg.toString());
         }
         
         // Check if date has expired
-        int requestValidTimeSeconds = DEFAULT_REQUEST_TIMEOUT;
-        if (configuration==null) {
-            try {
-                configuration = new PropertiesConfiguration(CONFIG_PROPERTIES_FILENAME);
-                requestValidTimeSeconds = configuration.getInt(REQUEST_VALID_TIME);
-            } catch (ConfigurationException e) {
-                logger.warn("Security properties not found, using default request timeout");
-            }
-        }
+        int requestValidTimeSeconds = MozuConfig.getDefaultEventRequestTimeout();
+
         String dateString = apiContext.getHeaderDate();
         DateTimeFormatter dtf = DateTimeFormat.forPattern("E, dd MMM yyyy HH:mm:ss zzz");
         DateTime dTime = dtf.parseDateTime(dateString);

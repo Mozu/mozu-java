@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -17,6 +18,14 @@ public class BundledProduct implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
 
 	protected String productCode;
 

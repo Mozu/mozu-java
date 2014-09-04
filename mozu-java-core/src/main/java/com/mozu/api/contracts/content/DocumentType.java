@@ -10,8 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.content.LocalizedString;
-import com.mozu.api.contracts.content.PropertyType;
+import com.mozu.api.contracts.content.Property;
 
 /**
  *	The type of documents used in the CMS such as "web_page" or "template" or "image_url".
@@ -22,43 +21,34 @@ public class DocumentType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * User-defined description of the document type.
-	 */
-	protected String description;
+	protected String adminName;
 
-	public String getDescription() {
-		return this.description;
+	public String getAdminName() {
+		return this.adminName;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 
-	/**
-	 * The name that displays for the document type.
-	 */
-	protected String displayName;
+	protected String documentTypeFQN;
 
-	public String getDisplayName() {
-		return this.displayName;
+	public String getDocumentTypeFQN() {
+		return this.documentTypeFQN;
 	}
 
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
+	public void setDocumentTypeFQN(String documentTypeFQN) {
+		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * The document type scope specifies where the the template can be used such as "Global".
-	 */
-	protected String documentTypeScope;
+	protected String installationPackage;
 
-	public String getDocumentTypeScope() {
-		return this.documentTypeScope;
+	public String getInstallationPackage() {
+		return this.installationPackage;
 	}
 
-	public void setDocumentTypeScope(String documentTypeScope) {
-		this.documentTypeScope = documentTypeScope;
+	public void setInstallationPackage(String installationPackage) {
+		this.installationPackage = installationPackage;
 	}
 
 	/**
@@ -74,50 +64,42 @@ public class DocumentType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * If applicable, the name of the parent document type.
-	 */
-	protected String parentTypeName;
+	protected String namespace;
 
-	public String getParentTypeName() {
-		return this.parentTypeName;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setParentTypeName(String parentTypeName) {
-		this.parentTypeName = parentTypeName;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
-	/**
-	 * List of content entity descriptions localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDescriptions;
-	public List<LocalizedString> getLocalizedDescriptions() {
-		return this.localizedDescriptions;
-	}
-	public void setLocalizedDescriptions(List<LocalizedString> localizedDescriptions) {
-		this.localizedDescriptions = localizedDescriptions;
+	protected String version;
+
+	public String getVersion() {
+		return this.version;
 	}
 
-	/**
-	 * List of content entity display names localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDisplayNames;
-	public List<LocalizedString> getLocalizedDisplayNames() {
-		return this.localizedDisplayNames;
-	}
-	public void setLocalizedDisplayNames(List<LocalizedString> localizedDisplayNames) {
-		this.localizedDisplayNames = localizedDisplayNames;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
-	/**
-	 * List of content property types associated with the document type.
-	 */
-	protected List<PropertyType> propertyTypes;
-	public List<PropertyType> getPropertyTypes() {
-		return this.propertyTypes;
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
 	}
-	public void setPropertyTypes(List<PropertyType> propertyTypes) {
-		this.propertyTypes = propertyTypes;
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
+	}
+
+	protected List<Property> properties;
+	public List<Property> getProperties() {
+		return this.properties;
+	}
+	public void setProperties(List<Property> properties) {
+		this.properties = properties;
 	}
 
 }

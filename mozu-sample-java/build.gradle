@@ -12,8 +12,8 @@ if (hasProperty("teamcity")) {
         println "TeamCity build number passed into gradle is " + version
    } else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.19'
-   }
+    version = '1.11.0'
+  }
 group='wars'
 httpPort = 8001 
 
@@ -24,7 +24,7 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '1.12'
 }
 
 repositories {

@@ -13,6 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.TargetedCategory;
 import com.mozu.api.contracts.productadmin.TargetedProduct;
 import com.mozu.api.contracts.productadmin.TargetedShippingMethod;
+import com.mozu.api.contracts.productadmin.TargetedShippingZone;
 
 /**
  *	Specifies what to discount such as the type of discount and which products, categories, or shipping methods are eligible for the discount. Discount types can include the percentage off, specific monetary amount, or free shipping. This parameter also specifies the minimum monetary amount that the order must meet for the discount to apply.
@@ -34,6 +35,16 @@ public class DiscountTarget implements Serializable
 
 	public void setIncludeAllProducts(Boolean includeAllProducts) {
 		this.includeAllProducts = includeAllProducts;
+	}
+
+	protected Integer maximumQuantityPerRedemption;
+
+	public Integer getMaximumQuantityPerRedemption() {
+		return this.maximumQuantityPerRedemption;
+	}
+
+	public void setMaximumQuantityPerRedemption(Integer maximumQuantityPerRedemption) {
+		this.maximumQuantityPerRedemption = maximumQuantityPerRedemption;
 	}
 
 	/**
@@ -102,6 +113,14 @@ public class DiscountTarget implements Serializable
 	}
 	public void setShippingMethods(List<TargetedShippingMethod> shippingMethods) {
 		this.shippingMethods = shippingMethods;
+	}
+
+	protected List<TargetedShippingZone> shippingZones;
+	public List<TargetedShippingZone> getShippingZones() {
+		return this.shippingZones;
+	}
+	public void setShippingZones(List<TargetedShippingZone> shippingZones) {
+		this.shippingZones = shippingZones;
 	}
 
 }
