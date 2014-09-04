@@ -35,7 +35,7 @@ public class AdjustmentResource {
 	 * Applies a shipping adjustment to the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.ApplyShippingAdjustment( adjustment,  orderId);
+	 *	Order order = adjustment.applyShippingAdjustment( adjustment,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipping adjustment.
 	 * @param adjustment Properties of the shipping adjustment to apply to the order.
@@ -52,7 +52,7 @@ public class AdjustmentResource {
 	 * Applies a shipping adjustment to the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.ApplyShippingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
+	 *	Order order = adjustment.applyShippingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipping adjustment.
 	 * @param responseFields 
@@ -76,7 +76,7 @@ public class AdjustmentResource {
 	 * Applies a price adjustment to the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.ApplyAdjustment( adjustment,  orderId);
+	 *	Order order = adjustment.applyAdjustment( adjustment,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the adjustment.
 	 * @param adjustment Properties of the price adjustment to apply to the order.
@@ -93,7 +93,7 @@ public class AdjustmentResource {
 	 * Applies a price adjustment to the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.ApplyAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
+	 *	Order order = adjustment.applyAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the adjustment.
 	 * @param responseFields 
@@ -117,7 +117,7 @@ public class AdjustmentResource {
 	 * Removes a shipping adjustment previously applied to an order or draft.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.RemoveShippingAdjustment( orderId);
+	 *	Order order = adjustment.removeShippingAdjustment( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the applied shipping adjustment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -132,7 +132,7 @@ public class AdjustmentResource {
 	 * Removes a shipping adjustment previously applied to an order or draft.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.RemoveShippingAdjustment( orderId,  updateMode,  version);
+	 *	Order order = adjustment.removeShippingAdjustment( orderId,  updateMode,  version);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the applied shipping adjustment.
 	 * @param updateMode Specifies whether to remove the shipping adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
@@ -153,7 +153,7 @@ public class AdjustmentResource {
 	 * Removes a price adjustment from the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.RemoveAdjustment( orderId);
+	 *	Order order = adjustment.removeAdjustment( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to delete the adjustment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -168,7 +168,7 @@ public class AdjustmentResource {
 	 * Removes a price adjustment from the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
-	 *	Order order = adjustment.RemoveAdjustment( orderId,  updateMode,  version);
+	 *	Order order = adjustment.removeAdjustment( orderId,  updateMode,  version);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to delete the adjustment.
 	 * @param updateMode Specifies whether to remove the adjustment by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."

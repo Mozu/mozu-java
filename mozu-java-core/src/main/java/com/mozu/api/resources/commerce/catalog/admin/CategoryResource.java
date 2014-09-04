@@ -35,7 +35,7 @@ public class CategoryResource {
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories();
+	 *	CategoryPagedCollection categoryPagedCollection = category.getCategories();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
@@ -49,7 +49,7 @@ public class CategoryResource {
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryPagedCollection categoryPagedCollection = category.GetCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CategoryPagedCollection categoryPagedCollection = category.getCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class CategoryResource {
 	 * Retrieves the subcategories of a category. This is a list of subcategories at the same level (siblings). Use a list of siblings, for example, to display the categories in a horizontal list.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories( categoryId);
+	 *	CategoryCollection categoryCollection = category.getChildCategories( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category whose subcategories are retrieved.
 	 * @return com.mozu.api.contracts.productadmin.CategoryCollection
@@ -87,7 +87,7 @@ public class CategoryResource {
 	 * Retrieves the subcategories of a category. This is a list of subcategories at the same level (siblings). Use a list of siblings, for example, to display the categories in a horizontal list.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	CategoryCollection categoryCollection = category.GetChildCategories( categoryId,  responseFields);
+	 *	CategoryCollection categoryCollection = category.getChildCategories( categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category whose subcategories are retrieved.
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class CategoryResource {
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory( categoryId);
+	 *	Category category = category.getCategory( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.Category
@@ -122,7 +122,7 @@ public class CategoryResource {
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.GetCategory( categoryId,  responseFields);
+	 *	Category category = category.getCategory( categoryId,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @param responseFields 
@@ -142,7 +142,7 @@ public class CategoryResource {
 	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.AddCategory( category);
+	 *	Category category = category.addCategory( category);
 	 * </code></pre></p>
 	 * @param category Properties of the new category. Required properties: ParentCategoryID and Content.Name.
 	 * @return com.mozu.api.contracts.productadmin.Category
@@ -158,7 +158,7 @@ public class CategoryResource {
 	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to locate the category in the hierarchy. If a ParentCategoryID is not specified, the new category becomes a top-level category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.AddCategory( category,  incrementSequence,  responseFields);
+	 *	Category category = category.addCategory( category,  incrementSequence,  responseFields);
 	 * </code></pre></p>
 	 * @param incrementSequence 
 	 * @param responseFields 
@@ -180,7 +180,7 @@ public class CategoryResource {
 	 * Modifies a category such as moving it to another location in the category tree, or changing whether it is visible on the storefront. This PUT replaces the existing resource, so be sure to include all the information to maintain for the category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.UpdateCategory( category,  categoryId);
+	 *	Category category = category.updateCategory( category,  categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param category Properties of the category to modify.
@@ -197,7 +197,7 @@ public class CategoryResource {
 	 * Modifies a category such as moving it to another location in the category tree, or changing whether it is visible on the storefront. This PUT replaces the existing resource, so be sure to include all the information to maintain for the category.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	Category category = category.UpdateCategory( category,  categoryId,  cascadeVisibility,  responseFields);
+	 *	Category category = category.updateCategory( category,  categoryId,  cascadeVisibility,  responseFields);
 	 * </code></pre></p>
 	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
 	 * @param categoryId Unique identifier of the category to modify.
@@ -220,7 +220,7 @@ public class CategoryResource {
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	category.DeleteCategoryById( categoryId);
+	 *	category.deleteCategoryById( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to delete.
 	 * @return 
@@ -234,7 +234,7 @@ public class CategoryResource {
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	category.DeleteCategoryById( categoryId,  cascadeDelete);
+	 *	category.deleteCategoryById( categoryId,  cascadeDelete);
 	 * </code></pre></p>
 	 * @param cascadeDelete If true, any subcategories of a category are deleted when this category is deleted. Default: False.
 	 * @param categoryId Unique identifier of the category to delete.

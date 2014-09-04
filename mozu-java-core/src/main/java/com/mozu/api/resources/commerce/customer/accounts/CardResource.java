@@ -35,7 +35,7 @@ public class CardResource {
 	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId);
+	 *	Card card = card.getAccountCard( accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param cardId 
@@ -51,7 +51,7 @@ public class CardResource {
 	 * 
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId,  responseFields);
+	 *	Card card = card.getAccountCard( accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param cardId 
@@ -72,7 +72,7 @@ public class CardResource {
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	CardCollection cardCollection = card.GetAccountCards( accountId);
+	 *	CardCollection cardCollection = card.getAccountCards( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CardCollection
@@ -87,7 +87,7 @@ public class CardResource {
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	CardCollection cardCollection = card.GetAccountCards( accountId,  responseFields);
+	 *	CardCollection cardCollection = card.getAccountCards( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class CardResource {
 	 * Creates a new credit card record and stores it for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.AddAccountCard( card,  accountId);
+	 *	Card card = card.addAccountCard( card,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param card Properties of the customer credit card to add to the account.
@@ -124,7 +124,7 @@ public class CardResource {
 	 * Creates a new credit card record and stores it for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.AddAccountCard( card,  accountId,  responseFields);
+	 *	Card card = card.addAccountCard( card,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields 
@@ -146,7 +146,7 @@ public class CardResource {
 	 * Update one or more properties of a credit card defined for a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId);
+	 *	Card card = card.updateAccountCard( card,  accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId 
@@ -164,7 +164,7 @@ public class CardResource {
 	 * Update one or more properties of a credit card defined for a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId,  responseFields);
+	 *	Card card = card.updateAccountCard( card,  accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId 
@@ -187,7 +187,7 @@ public class CardResource {
 	 * Removes a stored credit card from a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	card.DeleteAccountCard( accountId,  cardId);
+	 *	card.deleteAccountCard( accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the credit card to delete.

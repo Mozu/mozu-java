@@ -35,7 +35,7 @@ public class ShippingResource {
 	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
-	 *	RatesResponse ratesResponse = shipping.GetRates( rateRequest);
+	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
 	 * </code></pre></p>
 	 * @param rateRequest 
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
@@ -51,7 +51,7 @@ public class ShippingResource {
 	 * 
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
-	 *	RatesResponse ratesResponse = shipping.GetRates( rateRequest,  responseFields);
+	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param rateRequest 

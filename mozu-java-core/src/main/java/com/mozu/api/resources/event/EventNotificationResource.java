@@ -39,7 +39,7 @@ public EventNotificationResource(ApiContext apiContext)
 	 * Retrieves a list of events.
 	 * <p><pre><code>
 	 *	EventNotification eventnotification = new EventNotification();
-	 *	EventCollection eventCollection = eventnotification.GetEvents();
+	 *	EventCollection eventCollection = eventnotification.getEvents();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.event.EventCollection
 	 * @see com.mozu.api.contracts.event.EventCollection
@@ -53,7 +53,7 @@ public EventNotificationResource(ApiContext apiContext)
 	 * Retrieves a list of events.
 	 * <p><pre><code>
 	 *	EventNotification eventnotification = new EventNotification();
-	 *	EventCollection eventCollection = eventnotification.GetEvents( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	EventCollection eventCollection = eventnotification.getEvents( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -76,7 +76,7 @@ public EventNotificationResource(ApiContext apiContext)
 	 * Retrieves an event by providing the event ID.
 	 * <p><pre><code>
 	 *	EventNotification eventnotification = new EventNotification();
-	 *	Event event = eventnotification.GetEvent( eventId);
+	 *	Event event = eventnotification.getEvent( eventId);
 	 * </code></pre></p>
 	 * @param eventId The unique identifier of the event being retrieved. An event is a notification about a create, read, update, or delete on an order, product, discount or category.
 	 * @return com.mozu.api.contracts.event.Event
@@ -91,7 +91,7 @@ public EventNotificationResource(ApiContext apiContext)
 	 * Retrieves an event by providing the event ID.
 	 * <p><pre><code>
 	 *	EventNotification eventnotification = new EventNotification();
-	 *	Event event = eventnotification.GetEvent( eventId,  responseFields);
+	 *	Event event = eventnotification.getEvent( eventId,  responseFields);
 	 * </code></pre></p>
 	 * @param eventId The unique identifier of the event being retrieved. An event is a notification about a create, read, update, or delete on an order, product, discount or category.
 	 * @param responseFields 

@@ -35,7 +35,7 @@ public class PackageResource {
 	 * Retrieves the package label image supplied by the carrier for a return replacement.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Stream stream = package.GetPackageLabel( returnId,  packageId);
+	 *	Stream stream = package.getPackageLabel( returnId,  packageId);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
 	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
@@ -55,7 +55,7 @@ public class PackageResource {
 	 * Retrieves the details of a package of return replacement items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.GetPackage( returnId,  packageId);
+	 *	Package package = package.getPackage( returnId,  packageId);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to retrieve.
 	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
@@ -71,7 +71,7 @@ public class PackageResource {
 	 * Retrieves the details of a package of return replacement items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.GetPackage( returnId,  packageId,  responseFields);
+	 *	Package package = package.getPackage( returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to retrieve.
 	 * @param responseFields 
@@ -92,7 +92,7 @@ public class PackageResource {
 	 * Creates a new physical package of return replacement items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.CreatePackage( pkg,  returnId);
+	 *	Package package = package.createPackage( pkg,  returnId);
 	 * </code></pre></p>
 	 * @param returnId Unique identifier of the return for which to create a replacement package.
 	 * @param package Properties of the physical package for a return replacement.
@@ -109,7 +109,7 @@ public class PackageResource {
 	 * Creates a new physical package of return replacement items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.CreatePackage( pkg,  returnId,  responseFields);
+	 *	Package package = package.createPackage( pkg,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param returnId Unique identifier of the return for which to create a replacement package.
@@ -131,7 +131,7 @@ public class PackageResource {
 	 * Updates one or more properties of a package associated with a return replacement.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.UpdatePackage( pkg,  returnId,  packageId);
+	 *	Package package = package.updatePackage( pkg,  returnId,  packageId);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to update.
 	 * @param returnId Unique identifier of the return associated with the replacement package to update.
@@ -149,7 +149,7 @@ public class PackageResource {
 	 * Updates one or more properties of a package associated with a return replacement.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.UpdatePackage( pkg,  returnId,  packageId,  responseFields);
+	 *	Package package = package.updatePackage( pkg,  returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to update.
 	 * @param responseFields 
@@ -172,7 +172,7 @@ public class PackageResource {
 	 * Deletes a package associated with a return replacement.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	package.DeletePackage( returnId,  packageId);
+	 *	package.deletePackage( returnId,  packageId);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to delete.
 	 * @param returnId Unique identifier of the return associated with the replacement package to delete.

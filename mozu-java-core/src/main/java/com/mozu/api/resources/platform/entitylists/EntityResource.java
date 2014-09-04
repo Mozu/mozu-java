@@ -35,7 +35,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.GetEntity( entityListFullName,  id);
+	 *	JObject jObject = entity.getEntity( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -51,7 +51,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.GetEntity( entityListFullName,  id,  responseFields);
+	 *	JObject jObject = entity.getEntity( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -72,7 +72,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	EntityCollection entityCollection = entity.GetEntities( entityListFullName);
+	 *	EntityCollection entityCollection = entity.getEntities( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
@@ -87,7 +87,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	EntityCollection entityCollection = entity.GetEntities( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
+	 *	EntityCollection entityCollection = entity.getEntities( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param filter 
@@ -111,7 +111,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.InsertEntity( item,  entityListFullName);
+	 *	JObject jObject = entity.insertEntity( item,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param item 
@@ -128,7 +128,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.InsertEntity( item,  entityListFullName,  responseFields);
+	 *	JObject jObject = entity.insertEntity( item,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.UpdateEntity( item,  entityListFullName,  id);
+	 *	JObject jObject = entity.updateEntity( item,  entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -168,7 +168,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.UpdateEntity( item,  entityListFullName,  id,  responseFields);
+	 *	JObject jObject = entity.updateEntity( item,  entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -191,7 +191,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	entity.DeleteEntity( entityListFullName,  id);
+	 *	entity.deleteEntity( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 

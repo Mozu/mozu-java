@@ -35,7 +35,7 @@ public class WishlistItemResource {
 	 * Retrieves the details of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.GetWishlistItem( wishlistId,  wishlistItemId);
+	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list item to retrieve.
 	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
@@ -51,7 +51,7 @@ public class WishlistItemResource {
 	 * Retrieves the details of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.GetWishlistItem( wishlistId,  wishlistItemId,  responseFields);
+	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlistId Unique identifier of the wish list item to retrieve.
@@ -72,7 +72,7 @@ public class WishlistItemResource {
 	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.GetWishlistItems( wishlistId);
+	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
@@ -87,7 +87,7 @@ public class WishlistItemResource {
 	 * Retrieves a list of items in a shopper wish list according to any specified filter and sort criteria.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.GetWishlistItems( wishlistId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -111,7 +111,7 @@ public class WishlistItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.GetWishlistItemsByWishlistName( customerAccountId,  wishlistName);
+	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
 	 * @param customerAccountId 
 	 * @param wishlistName 
@@ -127,7 +127,7 @@ public class WishlistItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.GetWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param customerAccountId 
 	 * @param filter 
@@ -152,7 +152,7 @@ public class WishlistItemResource {
 	 * Adds a product in a site's catalog as an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.AddItemToWishlist( wishlistItem,  wishlistId);
+	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
 	 * @param wishlistItem Properties of the item to add to the wish list.
@@ -169,7 +169,7 @@ public class WishlistItemResource {
 	 * Adds a product in a site's catalog as an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.AddItemToWishlist( wishlistItem,  wishlistId,  responseFields);
+	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
@@ -191,7 +191,7 @@ public class WishlistItemResource {
 	 * Updates the quantity of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.UpdateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity);
+	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity);
 	 * </code></pre></p>
 	 * @param quantity The quantity of the item in the wish list.
 	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
@@ -208,7 +208,7 @@ public class WishlistItemResource {
 	 * Updates the quantity of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.UpdateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
+	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
 	 * </code></pre></p>
 	 * @param quantity The quantity of the item in the wish list.
 	 * @param responseFields 
@@ -230,7 +230,7 @@ public class WishlistItemResource {
 	 * Updates the details of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.UpdateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId);
+	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
 	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
@@ -248,7 +248,7 @@ public class WishlistItemResource {
 	 * Updates the details of an item in a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	WishlistItem wishlistItem = wishlistitem.UpdateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
+	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
@@ -271,7 +271,7 @@ public class WishlistItemResource {
 	 * Removes all items associated with a shopper wish list.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	Wishlist wishlist = wishlistitem.RemoveAllWishlistItems( wishlistId);
+	 *	Wishlist wishlist = wishlistitem.removeAllWishlistItems( wishlistId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list associated with the items to remove.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -290,7 +290,7 @@ public class WishlistItemResource {
 	 * Removes an item from the wish list specified in the request.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
-	 *	wishlistitem.DeleteWishlistItem( wishlistId,  wishlistItemId);
+	 *	wishlistitem.deleteWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
 	 * @param wishlistId Unique identifier of the wish list associated with the item to remove.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.

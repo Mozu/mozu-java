@@ -35,7 +35,7 @@ public class AttributeResource {
 	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes();
+	 *	AttributeCollection attributeCollection = attribute.getAttributes();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeCollection
@@ -50,7 +50,7 @@ public class AttributeResource {
 	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -74,7 +74,7 @@ public class AttributeResource {
 	 * Retrieves the details of the specified product attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
@@ -90,7 +90,7 @@ public class AttributeResource {
 	 * Retrieves the details of the specified product attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN,  responseFields);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields 
@@ -111,7 +111,7 @@ public class AttributeResource {
 	 * Creates a new attribute to describe one aspect of a product such as color or size, based on its defined product type. The attribute name, attribute type, input type, and data type are required.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.AddAttribute( attribute);
+	 *	Attribute attribute = attribute.addAttribute( attribute);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param attribute Properties of the new product attribute to create.
@@ -128,7 +128,7 @@ public class AttributeResource {
 	 * Creates a new attribute to describe one aspect of a product such as color or size, based on its defined product type. The attribute name, attribute type, input type, and data type are required.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.AddAttribute( attribute,  responseFields);
+	 *	Attribute attribute = attribute.addAttribute( attribute,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
@@ -150,7 +150,7 @@ public class AttributeResource {
 	 * Updates an existing attribute with attribute properties to set.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.UpdateAttribute( attribute,  attributeFQN);
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
@@ -168,7 +168,7 @@ public class AttributeResource {
 	 * Updates an existing attribute with attribute properties to set.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.UpdateAttribute( attribute,  attributeFQN,  responseFields);
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields 
@@ -191,7 +191,7 @@ public class AttributeResource {
 	 * Deletes a defined product attribute. You cannot delete an attribute assigned a value for a product.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	attribute.DeleteAttribute( attributeFQN);
+	 *	attribute.deleteAttribute( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode

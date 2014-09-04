@@ -35,7 +35,7 @@ public class EventDeliverySummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.GetDeliveryAttemptSummary( subscriptionId);
+	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId);
 	 * </code></pre></p>
 	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
@@ -50,7 +50,7 @@ public class EventDeliverySummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.GetDeliveryAttemptSummary( subscriptionId,  id,  responseFields);
+	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param responseFields 
@@ -71,7 +71,7 @@ public class EventDeliverySummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.GetDeliveryAttemptSummaries( subscriptionId);
+	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId);
 	 * </code></pre></p>
 	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
@@ -86,7 +86,7 @@ public class EventDeliverySummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
-	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.GetDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 

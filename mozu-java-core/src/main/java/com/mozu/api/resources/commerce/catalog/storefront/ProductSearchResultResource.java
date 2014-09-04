@@ -35,7 +35,7 @@ public class ProductSearchResultResource {
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	ProductSearchResult productSearchResult = productsearchresult.Search();
+	 *	ProductSearchResult productSearchResult = productsearchresult.search();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productruntime.ProductSearchResult
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
@@ -49,7 +49,7 @@ public class ProductSearchResultResource {
 	 * Searches the categories displayed on the storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	ProductSearchResult productSearchResult = productsearchresult.Search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
+	 *	ProductSearchResult productSearchResult = productsearchresult.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param facet Individually list the facet fields you want to display in a storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a storefront product search by listing the facet field and the range to display.
@@ -84,7 +84,7 @@ public class ProductSearchResultResource {
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.Suggest();
+	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.suggest();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.productruntime.SearchSuggestionResult
 	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult
@@ -98,7 +98,7 @@ public class ProductSearchResultResource {
 	 * Suggests possible search terms as the shopper enters search text.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
-	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.Suggest( query,  groups,  pageSize,  responseFields);
+	 *	SearchSuggestionResult searchSuggestionResult = productsearchresult.suggest( query,  groups,  pageSize,  responseFields);
 	 * </code></pre></p>
 	 * @param groups 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.

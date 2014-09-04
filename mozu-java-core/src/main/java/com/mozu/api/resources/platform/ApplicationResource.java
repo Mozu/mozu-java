@@ -35,7 +35,7 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.GetApplication( appId);
+	 *	Application application = application.getApplication( appId);
 	 * </code></pre></p>
 	 * @param appId 
 	 * @return com.mozu.api.contracts.installedapplications.Application
@@ -50,7 +50,7 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.GetApplication( appId,  responseFields);
+	 *	Application application = application.getApplication( appId,  responseFields);
 	 * </code></pre></p>
 	 * @param appId 
 	 * @param responseFields 
@@ -70,7 +70,7 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.UpdateApplication( application,  appId);
+	 *	Application application = application.updateApplication( application,  appId);
 	 * </code></pre></p>
 	 * @param appId 
 	 * @param application 
@@ -87,7 +87,7 @@ public class ApplicationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.UpdateApplication( application,  appId,  responseFields);
+	 *	Application application = application.updateApplication( application,  appId,  responseFields);
 	 * </code></pre></p>
 	 * @param appId 
 	 * @param responseFields 

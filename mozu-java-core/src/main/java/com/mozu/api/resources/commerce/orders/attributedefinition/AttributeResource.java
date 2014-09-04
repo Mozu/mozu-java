@@ -35,7 +35,7 @@ public class AttributeResource {
 	 * Retrieves a list of order attributes according to any filter criteria or sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes();
+	 *	AttributeCollection attributeCollection = attribute.getAttributes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
@@ -49,7 +49,7 @@ public class AttributeResource {
 	 * Retrieves a list of order attributes according to any filter criteria or sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.GetAttributeVocabularyValues( attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
@@ -91,7 +91,7 @@ public class AttributeResource {
 	 * Retrieves the details of the order attribute specified in the request.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
@@ -106,7 +106,7 @@ public class AttributeResource {
 	 * Retrieves the details of the order attribute specified in the request.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN,  responseFields);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param responseFields 

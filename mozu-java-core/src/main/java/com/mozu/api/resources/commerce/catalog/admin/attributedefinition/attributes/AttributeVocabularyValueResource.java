@@ -35,7 +35,7 @@ public class AttributeVocabularyValueResource {
 	 * Retrieves a list of attribute vocabulary values. To target a query, use one or several valid optional response groups.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValues( attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
@@ -55,7 +55,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.GetAttributeVocabularyValueLocalizedContents( attributeFQN,  value);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContents( attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param value 
@@ -76,7 +76,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.GetAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -94,7 +94,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.GetAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode,  responseFields);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.getAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -117,7 +117,7 @@ public class AttributeVocabularyValueResource {
 	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValue( attributeFQN,  value);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
@@ -134,7 +134,7 @@ public class AttributeVocabularyValueResource {
 	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.GetAttributeVocabularyValue( attributeFQN,  value,  responseFields);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.getAttributeVocabularyValue( attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields 
@@ -156,7 +156,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.AddAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param value 
@@ -175,7 +175,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.AddAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  responseFields);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.addAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param responseFields 
@@ -199,7 +199,7 @@ public class AttributeVocabularyValueResource {
 	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.AddAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
@@ -217,7 +217,7 @@ public class AttributeVocabularyValueResource {
 	 * Adds a new attribute vocabulary value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.AddAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  responseFields);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.addAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields 
@@ -240,7 +240,7 @@ public class AttributeVocabularyValueResource {
 	 * Update existing vocabulary values for an attribute.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.UpdateAttributeVocabularyValues( vocabularyValues,  attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValues( vocabularyValues,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
@@ -262,7 +262,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.UpdateAttributeVocabularyValueLocalizedContents( localizedContent,  attributeFQN,  value);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContents( localizedContent,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param value 
@@ -285,7 +285,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.UpdateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -305,7 +305,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.UpdateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode,  responseFields);
+	 *	AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = attributevocabularyvalue.updateAttributeVocabularyValueLocalizedContent( localizedContent,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -330,7 +330,7 @@ public class AttributeVocabularyValueResource {
 	 * Updates existing attribute vocabulary values.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.UpdateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
@@ -349,7 +349,7 @@ public class AttributeVocabularyValueResource {
 	 * Updates existing attribute vocabulary values.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.UpdateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value,  responseFields);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attributevocabularyvalue.updateAttributeVocabularyValue( attributeVocabularyValue,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields 
@@ -373,7 +373,7 @@ public class AttributeVocabularyValueResource {
 	 * Deletes an attribute's vocabulary value.
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	attributevocabularyvalue.DeleteAttributeVocabularyValue( attributeFQN,  value);
+	 *	attributevocabularyvalue.deleteAttributeVocabularyValue( attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param value The actual unique value of the attribute vocabulary to delete. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
@@ -392,7 +392,7 @@ public class AttributeVocabularyValueResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeVocabularyValue attributevocabularyvalue = new AttributeVocabularyValue();
-	 *	attributevocabularyvalue.DeleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
+	 *	attributevocabularyvalue.deleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 

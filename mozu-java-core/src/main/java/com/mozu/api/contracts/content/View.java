@@ -10,7 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.content.ViewFields;
+import com.mozu.api.contracts.content.ViewField;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class View implements Serializable
@@ -76,11 +76,11 @@ public class View implements Serializable
 		this.metadata = metadata;
 	}
 
-	protected List<ViewFields> fields;
-	public List<ViewFields> getFields() {
+	protected List<ViewField> fields;
+	public List<ViewField> getFields() {
 		return this.fields;
 	}
-	public void setFields(List<ViewFields> fields) {
+	public void setFields(List<ViewField> fields) {
 		this.fields = fields;
 	}
 

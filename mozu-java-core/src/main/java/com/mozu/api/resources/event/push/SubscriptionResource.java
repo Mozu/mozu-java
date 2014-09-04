@@ -35,7 +35,7 @@ public class SubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
-	 *	SubscriptionCollection subscriptionCollection = subscription.GetSubscriptions();
+	 *	SubscriptionCollection subscriptionCollection = subscription.getSubscriptions();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.event.SubscriptionCollection
 	 * @see com.mozu.api.contracts.event.SubscriptionCollection
@@ -49,7 +49,7 @@ public class SubscriptionResource {
 	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
-	 *	SubscriptionCollection subscriptionCollection = subscription.GetSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	SubscriptionCollection subscriptionCollection = subscription.getSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 

@@ -35,7 +35,7 @@ public class FacetResource {
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.GetFacet( facetId);
+	 *	Facet facet = facet.getFacet( facetId);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.Facet
@@ -50,7 +50,7 @@ public class FacetResource {
 	 * Retrieves a facet specified by its unique identifier and displays its properties.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.GetFacet( facetId,  validate,  responseFields);
+	 *	Facet facet = facet.getFacet( facetId,  validate,  responseFields);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @param responseFields 
@@ -71,7 +71,7 @@ public class FacetResource {
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.GetFacetCategoryList( categoryId);
+	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
@@ -86,7 +86,7 @@ public class FacetResource {
 	 * Retrieves a list of the facets defined for the specified category.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	FacetSet facetSet = facet.GetFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
+	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
@@ -108,7 +108,7 @@ public class FacetResource {
 	 * Creates a new category, price, or attribute facet. Supply the category or attribute source to use for the facet values.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.AddFacet( facet);
+	 *	Facet facet = facet.addFacet( facet);
 	 * </code></pre></p>
 	 * @param facet Properties of the new facet to create. Required properties: Source, FacetType, IsHidden, and CategoryId.
 	 * @return com.mozu.api.contracts.productadmin.Facet
@@ -124,7 +124,7 @@ public class FacetResource {
 	 * Creates a new category, price, or attribute facet. Supply the category or attribute source to use for the facet values.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.AddFacet( facet,  responseFields);
+	 *	Facet facet = facet.addFacet( facet,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param facet Properties of the new facet to create. Required properties: Source, FacetType, IsHidden, and CategoryId.
@@ -145,7 +145,7 @@ public class FacetResource {
 	 * Modifies one or more properties of a defined facet.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.UpdateFacet( facet,  facetId);
+	 *	Facet facet = facet.updateFacet( facet,  facetId);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to modify.
 	 * @param facet Properties of the defined facet to modify. Required properties: Source, FacetType, IsHidden, and CategoryId.
@@ -162,7 +162,7 @@ public class FacetResource {
 	 * Modifies one or more properties of a defined facet.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	Facet facet = facet.UpdateFacet( facet,  facetId,  responseFields);
+	 *	Facet facet = facet.updateFacet( facet,  facetId,  responseFields);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to modify.
 	 * @param responseFields 
@@ -184,7 +184,7 @@ public class FacetResource {
 	 * Deletes the facet specified by its unique identifier.
 	 * <p><pre><code>
 	 *	Facet facet = new Facet();
-	 *	facet.DeleteFacetById( facetId);
+	 *	facet.deleteFacetById( facetId);
 	 * </code></pre></p>
 	 * @param facetId Unique identifier of the facet to delete.
 	 * @return 

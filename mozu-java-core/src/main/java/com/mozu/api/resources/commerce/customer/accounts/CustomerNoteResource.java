@@ -35,7 +35,7 @@ public class CustomerNoteResource {
 	 * Retrieves the contents of a particular note attached to a specified customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.GetAccountNote( accountId,  noteId);
+	 *	CustomerNote customerNote = customernote.getAccountNote( accountId,  noteId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
 	 * @param noteId Unique identifier of a particular note to retrieve.
@@ -51,7 +51,7 @@ public class CustomerNoteResource {
 	 * Retrieves the contents of a particular note attached to a specified customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.GetAccountNote( accountId,  noteId,  responseFields);
+	 *	CustomerNote customerNote = customernote.getAccountNote( accountId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
 	 * @param noteId Unique identifier of a particular note to retrieve.
@@ -72,7 +72,7 @@ public class CustomerNoteResource {
 	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNoteCollection customerNoteCollection = customernote.GetAccountNotes( accountId);
+	 *	CustomerNoteCollection customerNoteCollection = customernote.getAccountNotes( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerNoteCollection
@@ -87,7 +87,7 @@ public class CustomerNoteResource {
 	 * Retrieves a list of notes added to a customer account according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNoteCollection customerNoteCollection = customernote.GetAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerNoteCollection customerNoteCollection = customernote.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
@@ -111,7 +111,7 @@ public class CustomerNoteResource {
 	 * Adds a new note to the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.AddAccountNote( note,  accountId);
+	 *	CustomerNote customerNote = customernote.addAccountNote( note,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account for which to create the note.
 	 * @param note Properties of the customer account note to create.
@@ -128,7 +128,7 @@ public class CustomerNoteResource {
 	 * Adds a new note to the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.AddAccountNote( note,  accountId,  responseFields);
+	 *	CustomerNote customerNote = customernote.addAccountNote( note,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account for which to create the note.
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class CustomerNoteResource {
 	 * Modifies an existing note for a customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.UpdateAccountNote( note,  accountId,  noteId);
+	 *	CustomerNote customerNote = customernote.updateAccountNote( note,  accountId,  noteId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account note to modify.
 	 * @param noteId Unique identifier of the note to update.
@@ -168,7 +168,7 @@ public class CustomerNoteResource {
 	 * Modifies an existing note for a customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	CustomerNote customerNote = customernote.UpdateAccountNote( note,  accountId,  noteId,  responseFields);
+	 *	CustomerNote customerNote = customernote.updateAccountNote( note,  accountId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account note to modify.
 	 * @param noteId Unique identifier of the note to update.
@@ -191,7 +191,7 @@ public class CustomerNoteResource {
 	 * Removes a note from the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerNote customernote = new CustomerNote();
-	 *	customernote.DeleteAccountNote( accountId,  noteId);
+	 *	customernote.deleteAccountNote( accountId,  noteId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
 	 * @param noteId Unique identifier of the customer account note being deleted.

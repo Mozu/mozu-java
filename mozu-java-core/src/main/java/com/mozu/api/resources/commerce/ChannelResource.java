@@ -35,7 +35,7 @@ public class ChannelResource {
 	 * Retrieves a list of channels defined for a tenant according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	ChannelCollection channelCollection = channel.GetChannels();
+	 *	ChannelCollection channelCollection = channel.getChannels();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelCollection
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelCollection
@@ -49,7 +49,7 @@ public class ChannelResource {
 	 * Retrieves a list of channels defined for a tenant according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	ChannelCollection channelCollection = channel.GetChannels( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ChannelCollection channelCollection = channel.getChannels( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -72,7 +72,7 @@ public class ChannelResource {
 	 * Retrieves the details of the channel specified in the request.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.GetChannel( code);
+	 *	Channel channel = channel.getChannel( code);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -87,7 +87,7 @@ public class ChannelResource {
 	 * Retrieves the details of the channel specified in the request.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.GetChannel( code,  responseFields);
+	 *	Channel channel = channel.getChannel( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class ChannelResource {
 	 * Creates a new channel that defines a new logical business division to use for financial reporting.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.CreateChannel( channel);
+	 *	Channel channel = channel.createChannel( channel);
 	 * </code></pre></p>
 	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -123,7 +123,7 @@ public class ChannelResource {
 	 * Creates a new channel that defines a new logical business division to use for financial reporting.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.CreateChannel( channel,  responseFields);
+	 *	Channel channel = channel.createChannel( channel,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param channel Properties of the channel to create.
@@ -144,7 +144,7 @@ public class ChannelResource {
 	 * Updates one or more details of a defined channel, including the associated sites.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.UpdateChannel( channel,  code);
+	 *	Channel channel = channel.updateChannel( channel,  code);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the channel to update.
 	 * @param channel Properties of a the channel to update.
@@ -161,7 +161,7 @@ public class ChannelResource {
 	 * Updates one or more details of a defined channel, including the associated sites.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	Channel channel = channel.UpdateChannel( channel,  code,  responseFields);
+	 *	Channel channel = channel.updateChannel( channel,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the channel to update.
 	 * @param responseFields 
@@ -183,7 +183,7 @@ public class ChannelResource {
 	 * Deletes a defined channel for the tenant and removes the defined site associations. After deleting this channel, assign its associated sites to another channel.
 	 * <p><pre><code>
 	 *	Channel channel = new Channel();
-	 *	channel.DeleteChannel( code);
+	 *	channel.deleteChannel( code);
 	 * </code></pre></p>
 	 * @param code User-defined code that identifies the channel to delete.
 	 * @return 

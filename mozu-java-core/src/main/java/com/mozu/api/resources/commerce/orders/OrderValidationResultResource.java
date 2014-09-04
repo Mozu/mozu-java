@@ -35,7 +35,7 @@ public class OrderValidationResultResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
-	 *	OrderValidationResult orderValidationResult = ordervalidationresult.GetValidationResults( orderId);
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.getValidationResults( orderId);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
@@ -54,7 +54,7 @@ public class OrderValidationResultResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
-	 *	OrderValidationResult orderValidationResult = ordervalidationresult.AddValidationResult( validationResult,  orderId);
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param validationResult 
@@ -71,7 +71,7 @@ public class OrderValidationResultResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
-	 *	OrderValidationResult orderValidationResult = ordervalidationresult.AddValidationResult( validationResult,  orderId,  responseFields);
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param responseFields 

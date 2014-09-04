@@ -35,7 +35,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes();
+	 *	AttributeCollection attributeCollection = attribute.getAttributes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
@@ -49,7 +49,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
@@ -72,7 +72,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.GetAttributeVocabularyValues( attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
@@ -91,7 +91,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
@@ -106,7 +106,7 @@ public class AttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN,  responseFields);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param responseFields 

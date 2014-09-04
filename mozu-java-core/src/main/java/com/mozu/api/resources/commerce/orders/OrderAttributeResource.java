@@ -35,7 +35,7 @@ public class OrderAttributeResource {
 	 * Retrieves a list of the attributes defined for the order specified in the request.
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
-	 *	OrderAttribute orderAttribute = orderattribute.GetOrderAttributes( orderId);
+	 *	OrderAttribute orderAttribute = orderattribute.getOrderAttributes( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to retrieve a list of defined attributes.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>
@@ -54,7 +54,7 @@ public class OrderAttributeResource {
 	 * Applies a list of attributes to the order specified in the request and defines a value for each attribute in the request body.
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
-	 *	OrderAttribute orderAttribute = orderattribute.CreateOrderAttributes( orderAttributes,  orderId);
+	 *	OrderAttribute orderAttribute = orderattribute.createOrderAttributes( orderAttributes,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to assign the attributes.
 	 * @param orderAttributes The list of attributes to associate with the order, and the properties of each attribute to define for the order.
@@ -75,7 +75,7 @@ public class OrderAttributeResource {
 	 * Updates one or more properties of an attribute defined for the order specified in the request.
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
-	 *	OrderAttribute orderAttribute = orderattribute.UpdateOrderAttributes( orderAttributes,  orderId);
+	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Identifier of the order for which to update attributes.
 	 * @param orderAttributes List of order attributes to update, including the properties of each defined attribute in the list.
@@ -92,7 +92,7 @@ public class OrderAttributeResource {
 	 * Updates one or more properties of an attribute defined for the order specified in the request.
 	 * <p><pre><code>
 	 *	OrderAttribute orderattribute = new OrderAttribute();
-	 *	OrderAttribute orderAttribute = orderattribute.UpdateOrderAttributes( orderAttributes,  orderId,  removeMissing);
+	 *	OrderAttribute orderAttribute = orderattribute.updateOrderAttributes( orderAttributes,  orderId,  removeMissing);
 	 * </code></pre></p>
 	 * @param orderId Identifier of the order for which to update attributes.
 	 * @param removeMissing If true, the operation removes missing properties so that the updated order attributes will not show properties with a null value.

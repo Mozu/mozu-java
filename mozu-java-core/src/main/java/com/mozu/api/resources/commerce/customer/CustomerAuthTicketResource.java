@@ -35,7 +35,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	Stream stream = customerauthticket.CreateAnonymousShopperAuthTicket();
+	 *	Stream stream = customerauthticket.createAnonymousShopperAuthTicket();
 	 * </code></pre></p>
 	 * @return Stream
 	 * @see Stream
@@ -53,7 +53,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
 	 * @param userAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
@@ -69,7 +69,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo,  responseFields);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createUserAuthTicket( userAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param userAuthInfo 
@@ -90,7 +90,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.refreshUserAuthTicket( refreshToken);
 	 * </code></pre></p>
 	 * @param refreshToken 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
@@ -105,7 +105,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken,  responseFields);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.refreshUserAuthTicket( refreshToken,  responseFields);
 	 * </code></pre></p>
 	 * @param refreshToken 
 	 * @param responseFields 

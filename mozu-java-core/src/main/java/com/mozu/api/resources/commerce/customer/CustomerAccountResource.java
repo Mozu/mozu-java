@@ -35,7 +35,7 @@ public class CustomerAccountResource {
 	 * Retrieves a list of customer accounts.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.GetAccounts();
+	 *	CustomerAccountCollection customerAccountCollection = customeraccount.getAccounts();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
@@ -49,7 +49,7 @@ public class CustomerAccountResource {
 	 * Retrieves a list of customer accounts.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.GetAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields);
+	 *	CustomerAccountCollection customerAccountCollection = customeraccount.getAccounts( startIndex,  pageSize,  sortBy,  filter,  fields,  q,  qLimit,  isAnonymous,  responseFields);
 	 * </code></pre></p>
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
@@ -76,7 +76,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginState( accountId);
+	 *	LoginState loginState = customeraccount.getLoginState( accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -91,7 +91,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginState( accountId,  responseFields);
+	 *	LoginState loginState = customeraccount.getLoginState( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param responseFields 
@@ -111,7 +111,7 @@ public class CustomerAccountResource {
 	 * Retrieve details of a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.GetAccount( accountId);
+	 *	CustomerAccount customerAccount = customeraccount.getAccount( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
@@ -126,7 +126,7 @@ public class CustomerAccountResource {
 	 * Retrieve details of a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.GetAccount( accountId,  responseFields);
+	 *	CustomerAccount customerAccount = customeraccount.getAccount( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account to retrieve.
 	 * @param responseFields 
@@ -146,7 +146,7 @@ public class CustomerAccountResource {
 	 * Creates a new customer account based on the information specified in the request.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.AddAccount( account);
+	 *	CustomerAccount customerAccount = customeraccount.addAccount( account);
 	 * </code></pre></p>
 	 * @param account Properties of the customer account to update.
 	 * @return com.mozu.api.contracts.customer.CustomerAccount
@@ -162,7 +162,7 @@ public class CustomerAccountResource {
 	 * Creates a new customer account based on the information specified in the request.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.AddAccount( account,  responseFields);
+	 *	CustomerAccount customerAccount = customeraccount.addAccount( account,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param account Properties of the customer account to update.
@@ -183,7 +183,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.ChangePassword( passwordInfo,  accountId);
+	 *	customeraccount.changePassword( passwordInfo,  accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param passwordInfo 
@@ -202,7 +202,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId);
+	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param customerAuthInfo 
@@ -219,7 +219,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields);
+	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addLoginToExistingCustomer( customerAuthInfo,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param responseFields 
@@ -241,7 +241,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.RecomputeCustomerLifetimeValue( accountId);
+	 *	customeraccount.recomputeCustomerLifetimeValue( accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @return 
@@ -258,7 +258,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.SetLoginLocked( isLocked,  accountId);
+	 *	customeraccount.setLoginLocked( isLocked,  accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param isLocked 
@@ -277,7 +277,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.SetPasswordChangeRequired( isPasswordChangeRequired,  accountId);
+	 *	customeraccount.setPasswordChangeRequired( isPasswordChangeRequired,  accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param isPasswordChangeRequired 
@@ -296,7 +296,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo);
+	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo);
 	 * </code></pre></p>
 	 * @param accountAndAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
@@ -312,7 +312,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAuthTicket customerAuthTicket = customeraccount.AddAccountAndLogin( accountAndAuthInfo,  responseFields);
+	 *	CustomerAuthTicket customerAuthTicket = customeraccount.addAccountAndLogin( accountAndAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param accountAndAuthInfo 
@@ -333,7 +333,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers);
+	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers);
 	 * </code></pre></p>
 	 * @param customers 
 	 * @return com.mozu.api.contracts.customer.CustomerAccountCollection
@@ -349,7 +349,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccountCollection customerAccountCollection = customeraccount.AddAccounts( customers,  responseFields);
+	 *	CustomerAccountCollection customerAccountCollection = customeraccount.addAccounts( customers,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param customers 
@@ -370,7 +370,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress);
+	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress);
 	 * </code></pre></p>
 	 * @param emailAddress 
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -385,7 +385,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByEmailAddress( emailAddress,  responseFields);
+	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress,  responseFields);
 	 * </code></pre></p>
 	 * @param emailAddress 
 	 * @param responseFields 
@@ -405,7 +405,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName);
+	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName);
 	 * </code></pre></p>
 	 * @param userName 
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -420,7 +420,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.GetLoginStateByUserName( userName,  responseFields);
+	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param userName 
@@ -440,7 +440,7 @@ public class CustomerAccountResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.ResetPassword( resetPasswordInfo);
+	 *	customeraccount.resetPassword( resetPasswordInfo);
 	 * </code></pre></p>
 	 * @param resetPasswordInfo 
 	 * @return 
@@ -458,7 +458,7 @@ public class CustomerAccountResource {
 	 * Updates a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.UpdateAccount( account,  accountId);
+	 *	CustomerAccount customerAccount = customeraccount.updateAccount( account,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param account Properties of the customer account to update.
@@ -475,7 +475,7 @@ public class CustomerAccountResource {
 	 * Updates a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CustomerAccount customerAccount = customeraccount.UpdateAccount( account,  accountId,  responseFields);
+	 *	CustomerAccount customerAccount = customeraccount.updateAccount( account,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields 
@@ -497,7 +497,7 @@ public class CustomerAccountResource {
 	 * Deletes a customer account. A customer account cannot be deleted if any orders exist, past or present.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	customeraccount.DeleteAccount( accountId);
+	 *	customeraccount.deleteAccount( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account to delete.
 	 * @return 

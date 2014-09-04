@@ -35,7 +35,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContents( attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContents( attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
@@ -55,7 +55,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent( attributeFQN,  localeCode);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -72,7 +72,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.GetAttributeLocalizedContent( attributeFQN,  localeCode,  responseFields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -94,7 +94,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent( localizedContent,  attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
@@ -112,7 +112,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.AddLocalizedContent( localizedContent,  attributeFQN,  responseFields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param responseFields 
@@ -135,7 +135,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContents( localizedContent,  attributeFQN);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContents( localizedContent,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
@@ -157,7 +157,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -176,7 +176,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.UpdateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);
+	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 
@@ -200,7 +200,7 @@ public class AttributeLocalizedContentResource {
 	 * 
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
-	 *	attributelocalizedcontent.DeleteLocalizedContent( attributeFQN,  localeCode);
+	 *	attributelocalizedcontent.deleteLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param localeCode 

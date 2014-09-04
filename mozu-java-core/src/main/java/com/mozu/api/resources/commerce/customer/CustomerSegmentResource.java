@@ -35,7 +35,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetSegments();
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
@@ -49,7 +49,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetSegments( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
@@ -72,7 +72,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.GetSegment( id);
+	 *	CustomerSegment customerSegment = customersegment.getSegment( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -87,7 +87,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.GetSegment( id,  responseFields);
+	 *	CustomerSegment customerSegment = customersegment.getSegment( id,  responseFields);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.AddSegment( segment);
+	 *	CustomerSegment customerSegment = customersegment.addSegment( segment);
 	 * </code></pre></p>
 	 * @param segment 
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -123,7 +123,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.AddSegment( segment,  responseFields);
+	 *	CustomerSegment customerSegment = customersegment.addSegment( segment,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param segment 
@@ -144,7 +144,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.AddSegmentAccounts( accountIds,  id);
+	 *	customersegment.addSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param accountIds 
@@ -163,7 +163,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.UpdateSegment( segment,  id);
+	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param segment 
@@ -180,7 +180,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.UpdateSegment( segment,  id,  responseFields);
+	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param responseFields 
@@ -202,7 +202,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.DeleteSegment( id);
+	 *	customersegment.deleteSegment( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return 
@@ -219,7 +219,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.DeleteSegmentAccounts( accountIds,  id);
+	 *	customersegment.deleteSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param accountIds 

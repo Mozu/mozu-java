@@ -35,7 +35,7 @@ public class OrderItemResource {
 	 * Retrieves the details of a single order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.GetOrderItem( orderId,  orderItemId);
+	 *	OrderItem orderItem = orderitem.getOrderItem( orderId,  orderItemId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order item to retrieve.
 	 * @param orderItemId Unique identifier of the order item details to retrieve.
@@ -51,7 +51,7 @@ public class OrderItemResource {
 	 * Retrieves the details of a single order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItem orderItem = orderitem.GetOrderItem( orderId,  orderItemId,  draft,  responseFields);
+	 *	OrderItem orderItem = orderitem.getOrderItem( orderId,  orderItemId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of this order item, which might include uncommitted changes to the order item, the order, or other order components.
 	 * @param orderId Unique identifier of the order item to retrieve.
@@ -73,7 +73,7 @@ public class OrderItemResource {
 	 * Retrieves the details of all items in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItemCollection orderItemCollection = orderitem.GetOrderItems( orderId);
+	 *	OrderItemCollection orderItemCollection = orderitem.getOrderItems( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order items to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection
@@ -88,7 +88,7 @@ public class OrderItemResource {
 	 * Retrieves the details of all items in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	OrderItemCollection orderItemCollection = orderitem.GetOrderItems( orderId,  draft,  responseFields);
+	 *	OrderItemCollection orderItemCollection = orderitem.getOrderItems( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order's items, which might include uncommitted changes to one or more order items, the order itself, or other order components.
 	 * @param orderId Unique identifier of the order items to retrieve.
@@ -109,7 +109,7 @@ public class OrderItemResource {
 	 * Adds a new item to an existing order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.CreateOrderItem( orderItem,  orderId);
+	 *	Order order = orderitem.createOrderItem( orderItem,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add the item.
 	 * @param orderItem The properties of the item to create in the existing order.
@@ -126,7 +126,7 @@ public class OrderItemResource {
 	 * Adds a new item to an existing order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.CreateOrderItem( orderItem,  orderId,  updateMode,  version,  skipInventoryCheck,  responseFields);
+	 *	Order order = orderitem.createOrderItem( orderItem,  orderId,  updateMode,  version,  skipInventoryCheck,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add the item.
 	 * @param responseFields 
@@ -151,7 +151,7 @@ public class OrderItemResource {
 	 * Update the discount applied to an item in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId);
+	 *	Order order = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param orderId Unique identifier of the order associated with the item discount.
@@ -170,7 +170,7 @@ public class OrderItemResource {
 	 * Update the discount applied to an item in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId,  updateMode,  version,  responseFields);
+	 *	Order order = orderitem.updateOrderItemDiscount( discount,  orderId,  orderItemId,  discountId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param orderId Unique identifier of the order associated with the item discount.
@@ -196,7 +196,7 @@ public class OrderItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemFulfillment( orderItem,  orderId,  orderItemId);
+	 *	Order order = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param orderItemId 
@@ -214,7 +214,7 @@ public class OrderItemResource {
 	 * 
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemFulfillment( orderItem,  orderId,  orderItemId,  updateMode,  version,  responseFields);
+	 *	Order order = orderitem.updateItemFulfillment( orderItem,  orderId,  orderItemId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId 
 	 * @param orderItemId 
@@ -239,7 +239,7 @@ public class OrderItemResource {
 	 * Override the price of an individual product on a line item in the specified order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemProductPrice( orderId,  orderItemId,  price);
+	 *	Order order = orderitem.updateItemProductPrice( orderId,  orderItemId,  price);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order containing the item to price override.
 	 * @param orderItemId Unique identifier of the item in the order to price override.
@@ -256,7 +256,7 @@ public class OrderItemResource {
 	 * Override the price of an individual product on a line item in the specified order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemProductPrice( orderId,  orderItemId,  price,  updateMode,  version,  responseFields);
+	 *	Order order = orderitem.updateItemProductPrice( orderId,  orderItemId,  price,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order containing the item to price override.
 	 * @param orderItemId Unique identifier of the item in the order to price override.
@@ -280,7 +280,7 @@ public class OrderItemResource {
 	 * Update the quantity of an item in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemQuantity( orderId,  orderItemId,  quantity);
+	 *	Order order = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order containing the item to update quantity.
 	 * @param orderItemId Unique identifier of the item in the order to update quantity.
@@ -297,7 +297,7 @@ public class OrderItemResource {
 	 * Update the quantity of an item in an order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.UpdateItemQuantity( orderId,  orderItemId,  quantity,  updateMode,  version,  responseFields);
+	 *	Order order = orderitem.updateItemQuantity( orderId,  orderItemId,  quantity,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order containing the item to update quantity.
 	 * @param orderItemId Unique identifier of the item in the order to update quantity.
@@ -321,7 +321,7 @@ public class OrderItemResource {
 	 * Removes a previously added item from an existing order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.DeleteOrderItem( orderId,  orderItemId);
+	 *	Order order = orderitem.deleteOrderItem( orderId,  orderItemId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the item to remove.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
@@ -337,7 +337,7 @@ public class OrderItemResource {
 	 * Removes a previously added item from an existing order.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
-	 *	Order order = orderitem.DeleteOrderItem( orderId,  orderItemId,  updateMode,  version);
+	 *	Order order = orderitem.deleteOrderItem( orderId,  orderItemId,  updateMode,  version);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order with the item to remove.
 	 * @param orderItemId Unique identifier of the item to remove from the order.

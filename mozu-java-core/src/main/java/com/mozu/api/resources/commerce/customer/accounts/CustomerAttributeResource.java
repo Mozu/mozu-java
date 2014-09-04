@@ -35,7 +35,7 @@ public class CustomerAttributeResource {
 	 * Retrieves the contents of an attribute associated with the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN);
+	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN 
@@ -51,7 +51,7 @@ public class CustomerAttributeResource {
 	 * Retrieves the contents of an attribute associated with the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.GetAccountAttribute( accountId,  attributeFQN,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN 
@@ -72,7 +72,7 @@ public class CustomerAttributeResource {
 	 * Retrieves the list of customer account attributes.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.GetAccountAttributes( accountId);
+	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
@@ -87,7 +87,7 @@ public class CustomerAttributeResource {
 	 * Retrieves the list of customer account attributes.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.GetAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
@@ -111,7 +111,7 @@ public class CustomerAttributeResource {
 	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.AddAccountAttribute( attribute,  accountId);
+	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param attribute 
@@ -128,7 +128,7 @@ public class CustomerAttributeResource {
 	 * Applies a defined attribute to the customer account specified in the request and assigns a value to the customer attribute.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.AddAccountAttribute( attribute,  accountId,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields 
@@ -150,7 +150,7 @@ public class CustomerAttributeResource {
 	 * Updates one or more details of a customer account attribute.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.UpdateAccountAttribute( attribute,  accountId,  attributeFQN);
+	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN 
@@ -168,7 +168,7 @@ public class CustomerAttributeResource {
 	 * Updates one or more details of a customer account attribute.
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	CustomerAttribute customerAttribute = customerattribute.UpdateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
+	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN 
@@ -191,7 +191,7 @@ public class CustomerAttributeResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
-	 *	customerattribute.DeleteAccountAttribute( accountId,  attributeFQN);
+	 *	customerattribute.deleteAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param attributeFQN 

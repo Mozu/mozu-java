@@ -43,7 +43,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes(_dataViewMode);
+	 *	PropertyTypeCollection propertyTypeCollection = propertytype.getPropertyTypes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.PropertyTypeCollection
 	 * @see com.mozu.api.contracts.content.PropertyTypeCollection
@@ -57,7 +57,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyTypeCollection propertyTypeCollection = propertytype.GetPropertyTypes(_dataViewMode,  pageSize,  startIndex,  responseFields);
+	 *	PropertyTypeCollection propertyTypeCollection = propertytype.getPropertyTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize 
 	 * @param responseFields 
@@ -78,7 +78,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.GetPropertyType(_dataViewMode,  propertyTypeName);
+	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @return com.mozu.api.contracts.content.PropertyType
@@ -93,7 +93,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.GetPropertyType(_dataViewMode,  propertyTypeName,  responseFields);
+	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @param responseFields 
@@ -113,7 +113,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.CreatePropertyType( propertyType);
+	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType);
 	 * </code></pre></p>
 	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
@@ -129,7 +129,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.CreatePropertyType( propertyType,  responseFields);
+	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param propertyType 
@@ -150,7 +150,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.UpdatePropertyType(_dataViewMode,  propertyType,  propertyTypeName);
+	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @param propertyType 
@@ -167,7 +167,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	PropertyType propertyType = propertytype.UpdatePropertyType(_dataViewMode,  propertyType,  propertyTypeName,  responseFields);
+	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @param responseFields 
@@ -189,7 +189,7 @@ public class PropertyTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
-	 *	propertytype.DeletePropertyType(_dataViewMode,  propertyTypeName);
+	 *	propertytype.deletePropertyType( propertyTypeName);
 	 * </code></pre></p>
 	 * @param propertyTypeName 
 	 * @return 

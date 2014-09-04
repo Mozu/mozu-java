@@ -35,7 +35,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocations();
+	 *	LocationCollection locationCollection = location.getLocations();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
@@ -49,7 +49,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationCollection locationCollection = location.getLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
@@ -72,7 +72,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocation( locationCode);
+	 *	Location location = location.getLocation( locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @return com.mozu.api.contracts.location.Location
@@ -87,7 +87,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocation( locationCode,  responseFields);
+	 *	Location location = location.getLocation( locationCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @param responseFields 
@@ -107,7 +107,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.AddLocation( location);
+	 *	Location location = location.addLocation( location);
 	 * </code></pre></p>
 	 * @param location 
 	 * @return com.mozu.api.contracts.location.Location
@@ -123,7 +123,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.AddLocation( location,  responseFields);
+	 *	Location location = location.addLocation( location,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param location 
@@ -144,7 +144,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.UpdateLocation( location,  locationCode);
+	 *	Location location = location.updateLocation( location,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @param location 
@@ -161,7 +161,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.UpdateLocation( location,  locationCode,  responseFields);
+	 *	Location location = location.updateLocation( location,  locationCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @param responseFields 
@@ -183,7 +183,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	location.DeleteLocation( locationCode);
+	 *	location.deleteLocation( locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @return 

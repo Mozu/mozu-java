@@ -35,7 +35,7 @@ public class DocumentDraftSummaryResource {
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries();
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.listDocumentDraftSummaries();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
@@ -49,7 +49,7 @@ public class DocumentDraftSummaryResource {
 	 * Retrieves a list of the documents currently in draft state, according to any defined filter and sort criteria.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.ListDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.listDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
 	 * </code></pre></p>
 	 * @param documentLists Lists that contain the document drafts.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
@@ -71,7 +71,7 @@ public class DocumentDraftSummaryResource {
 	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	documentdraftsummary.DeleteDocumentDrafts( documentIds);
+	 *	documentdraftsummary.deleteDocumentDrafts( documentIds);
 	 * </code></pre></p>
 	 * @param documentIds Unique identifiers of the documents to delete.
 	 * @return 
@@ -86,7 +86,7 @@ public class DocumentDraftSummaryResource {
 	 * Deletes the drafts of the specified documents. Published documents cannot be deleted.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	documentdraftsummary.DeleteDocumentDrafts( documentIds,  documentLists);
+	 *	documentdraftsummary.deleteDocumentDrafts( documentIds,  documentLists);
 	 * </code></pre></p>
 	 * @param documentLists List of document lists that contain documents to delete.
 	 * @param documentIds Unique identifiers of the documents to delete.
@@ -105,7 +105,7 @@ public class DocumentDraftSummaryResource {
 	 * Publish one or more document drafts to live content on the site.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	documentdraftsummary.PublishDocuments( documentIds);
+	 *	documentdraftsummary.publishDocuments( documentIds);
 	 * </code></pre></p>
 	 * @param documentIds List of unique identifiers of the document drafts to publish.
 	 * @return 
@@ -120,7 +120,7 @@ public class DocumentDraftSummaryResource {
 	 * Publish one or more document drafts to live content on the site.
 	 * <p><pre><code>
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
-	 *	documentdraftsummary.PublishDocuments( documentIds,  documentLists);
+	 *	documentdraftsummary.publishDocuments( documentIds,  documentLists);
 	 * </code></pre></p>
 	 * @param documentLists List of document lists that contain documents to publish.
 	 * @param documentIds List of unique identifiers of the document drafts to publish.

@@ -35,7 +35,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocation( code);
+	 *	Location location = location.getLocation( code);
 	 * </code></pre></p>
 	 * @param code 
 	 * @return com.mozu.api.contracts.location.Location
@@ -50,7 +50,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocation( code,  responseFields);
+	 *	Location location = location.getLocation( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
@@ -70,7 +70,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocationInUsageType( locationUsageType,  code);
+	 *	Location location = location.getLocationInUsageType( locationUsageType,  code);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param locationUsageType 
@@ -86,7 +86,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocationInUsageType( locationUsageType,  code,  responseFields);
+	 *	Location location = location.getLocationInUsageType( locationUsageType,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param locationUsageType 
@@ -107,7 +107,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocationsInUsageType( locationUsageType);
+	 *	LocationCollection locationCollection = location.getLocationsInUsageType( locationUsageType);
 	 * </code></pre></p>
 	 * @param locationUsageType 
 	 * @return com.mozu.api.contracts.location.LocationCollection
@@ -122,7 +122,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationCollection locationCollection = location.getLocationsInUsageType( locationUsageType,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param locationUsageType 
@@ -146,7 +146,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetDirectShipLocation();
+	 *	Location location = location.getDirectShipLocation();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -160,7 +160,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetDirectShipLocation( responseFields);
+	 *	Location location = location.getDirectShipLocation( responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @return com.mozu.api.contracts.location.Location
@@ -179,7 +179,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetInStorePickupLocation( code);
+	 *	Location location = location.getInStorePickupLocation( code);
 	 * </code></pre></p>
 	 * @param code 
 	 * @return com.mozu.api.contracts.location.Location
@@ -194,7 +194,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetInStorePickupLocation( code,  responseFields);
+	 *	Location location = location.getInStorePickupLocation( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
@@ -214,7 +214,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetInStorePickupLocations();
+	 *	LocationCollection locationCollection = location.getInStorePickupLocations();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
@@ -228,7 +228,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationCollection locationCollection = location.getInStorePickupLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 

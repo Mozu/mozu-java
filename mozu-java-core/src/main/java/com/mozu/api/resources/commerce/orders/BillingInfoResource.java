@@ -35,7 +35,7 @@ public class BillingInfoResource {
 	 * Retrieves the billing information associated with an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.GetBillingInfo( orderId);
+	 *	BillingInfo billingInfo = billinginfo.getBillingInfo( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
@@ -50,7 +50,7 @@ public class BillingInfoResource {
 	 * Retrieves the billing information associated with an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.GetBillingInfo( orderId,  draft,  responseFields);
+	 *	BillingInfo billingInfo = billinginfo.getBillingInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order billing information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
@@ -71,7 +71,7 @@ public class BillingInfoResource {
 	 * Updates the billing information supplied for an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.SetBillingInfo( billingInfo,  orderId);
+	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param billingInfo The properties of the order billing information to update.
@@ -88,7 +88,7 @@ public class BillingInfoResource {
 	 * Updates the billing information supplied for an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.SetBillingInfo( billingInfo,  orderId,  updateMode,  version,  responseFields);
+	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields 

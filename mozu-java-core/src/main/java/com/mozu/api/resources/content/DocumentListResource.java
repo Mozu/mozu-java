@@ -43,7 +43,7 @@ public class DocumentListResource {
 	 * Retrieves a collection of document lists.
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentListCollection documentListCollection = documentlist.GetDocumentLists(_dataViewMode);
+	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.content.DocumentListCollection
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
@@ -57,7 +57,7 @@ public class DocumentListResource {
 	 * Retrieves a collection of document lists.
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentListCollection documentListCollection = documentlist.GetDocumentLists(_dataViewMode,  pageSize,  startIndex,  responseFields);
+	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields 
@@ -78,7 +78,7 @@ public class DocumentListResource {
 	 * Retrieve the details of a document list by providing the list name.
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.GetDocumentList(_dataViewMode,  documentListName);
+	 *	DocumentList documentList = documentlist.getDocumentList( documentListName);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
 	 * @return com.mozu.api.contracts.content.DocumentList
@@ -93,7 +93,7 @@ public class DocumentListResource {
 	 * Retrieve the details of a document list by providing the list name.
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.GetDocumentList(_dataViewMode,  documentListName,  responseFields);
+	 *	DocumentList documentList = documentlist.getDocumentList( documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
 	 * @param responseFields 
@@ -113,7 +113,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList(_dataViewMode,  list);
+	 *	DocumentList documentList = documentlist.createDocumentList( list);
 	 * </code></pre></p>
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
@@ -129,7 +129,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.CreateDocumentList(_dataViewMode,  list,  responseFields);
+	 *	DocumentList documentList = documentlist.createDocumentList( list,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param list 
@@ -150,7 +150,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.UpdateDocumentList( list,  documentListName);
+	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName);
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @param list 
@@ -167,7 +167,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	DocumentList documentList = documentlist.UpdateDocumentList( list,  documentListName,  responseFields);
+	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @param responseFields 
@@ -189,26 +189,7 @@ public class DocumentListResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
-	 *	documentlist.LegacyR4_UpdateDocumentContent( stream,  documentId,  contentType);
-	 * </code></pre></p>
-	 * @param documentId 
-	 * @param stream 
-	 * @return 
-	 * @see Stream
-	 */
-	public void legacyR4_UpdateDocumentContent(java.io.InputStream stream, String documentId, String  contentType) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.content.DocumentListClient.legacyR4_UpdateDocumentContentClient( stream,  documentId,  contentType);
-		client.setContext(_apiContext);
-		client.executeRequest();
-
-	}
-
-	/**
-	 * 
-	 * <p><pre><code>
-	 *	DocumentList documentlist = new DocumentList();
-	 *	documentlist.DeleteDocumentList( documentListName);
+	 *	documentlist.deleteDocumentList( documentListName);
 	 * </code></pre></p>
 	 * @param documentListName 
 	 * @return 

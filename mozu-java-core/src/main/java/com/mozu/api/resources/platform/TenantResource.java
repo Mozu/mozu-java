@@ -39,7 +39,7 @@ public TenantResource(ApiContext apiContext)
 	 * Retrieve details about a specific tenant by providing the tenant ID.
 	 * <p><pre><code>
 	 *	Tenant tenant = new Tenant();
-	 *	Tenant tenant = tenant.GetTenant( tenantId);
+	 *	Tenant tenant = tenant.getTenant( tenantId);
 	 * </code></pre></p>
 	 * @param tenantId Unique identifier of the Mozu tenant.
 	 * @return com.mozu.api.contracts.tenant.Tenant
@@ -54,7 +54,7 @@ public TenantResource(ApiContext apiContext)
 	 * Retrieve details about a specific tenant by providing the tenant ID.
 	 * <p><pre><code>
 	 *	Tenant tenant = new Tenant();
-	 *	Tenant tenant = tenant.GetTenant( tenantId,  responseFields);
+	 *	Tenant tenant = tenant.getTenant( tenantId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param tenantId Unique identifier of the Mozu tenant.

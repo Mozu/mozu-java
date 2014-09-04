@@ -35,7 +35,7 @@ public class CreditAuditEntryResource {
 	 * Retrieves the list of audit entries for the credit, according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
-	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.GetAuditEntries( code);
+	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code);
 	 * </code></pre></p>
 	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @return com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
@@ -50,7 +50,7 @@ public class CreditAuditEntryResource {
 	 * Retrieves the list of audit entries for the credit, according to any filter or sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
-	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.GetAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"

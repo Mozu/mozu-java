@@ -35,7 +35,7 @@ public class TaxableTerritoryResource {
 	 * Retrieves a list of the taxable territories configured for the site.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.GetTaxableTerritories();
+	 *	TaxableTerritory taxableTerritory = taxableterritory.getTaxableTerritories();
 	 * </code></pre></p>
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -53,7 +53,7 @@ public class TaxableTerritoryResource {
 	 * Creates a new territory for which to calculate sales tax.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.AddTaxableTerritory( taxableTerritory);
+	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
 	 * </code></pre></p>
 	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -69,7 +69,7 @@ public class TaxableTerritoryResource {
 	 * Creates a new territory for which to calculate sales tax.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.AddTaxableTerritory( taxableTerritory,  responseFields);
+	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields 
 	 * @param taxableTerritory Properties of the taxable territory to create.
@@ -90,7 +90,7 @@ public class TaxableTerritoryResource {
 	 * Updates one or more taxable territories configured for a site.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.UpdateTaxableTerritories( taxableterritories);
+	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);
 	 * </code></pre></p>
 	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
