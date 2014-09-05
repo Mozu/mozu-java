@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * 
+ * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
  * </summary>
  */
 public class PlatformApplicationFactory

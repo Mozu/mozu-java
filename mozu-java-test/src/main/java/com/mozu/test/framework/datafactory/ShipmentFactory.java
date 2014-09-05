@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.returns.ShipmentResource;
 
 /** <summary>
- * Use the return shipments subresource to manage shipments for a return replacement.
+ * Use the Return Shipments subresource to manage shipments for a return replacement.
  * </summary>
  */
 public class ShipmentFactory

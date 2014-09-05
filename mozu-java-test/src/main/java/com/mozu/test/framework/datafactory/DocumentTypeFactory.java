@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.content.DocumentTypeResource;
 
 /** <summary>
- * The DocumentTypes resource is a part of the Content Service.
+ * Use the Document Types resource to view the document types supplied by the Content API.
  * </summary>
  */
 public class DocumentTypeFactory

@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.CheckoutSettingsResource;
 
 /** <summary>
- * Specify sitewide settings to determine how checkout and order processing behaves. This service includes payment settings, customer checkout settings, and order processing settings.
+ * Use the Checkout Settings resource to specify the site-wide settings that define checkout and order processing behavior. This resource includes subresources for payment settings, customer checkout settings, and order processing settings.
  * </summary>
  */
 public class CheckoutSettingsFactory

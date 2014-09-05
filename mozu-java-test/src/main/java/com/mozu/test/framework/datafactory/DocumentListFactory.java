@@ -124,23 +124,6 @@ public class DocumentListFactory
 
 	}
 
-	public static void legacyR4_UpdateDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentId, String  contentType, int expectedCode, int successCode) throws Exception
-	{
-				DocumentListResource resource = new DocumentListResource(apiContext);
-		try
-		{
-			resource.legacyR4_UpdateDocumentContent( stream,  documentId,  contentType);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
-	}
-
 	public static void deleteDocumentList(ApiContext apiContext, String documentListName, int expectedCode, int successCode) throws Exception
 	{
 				DocumentListResource resource = new DocumentListResource(apiContext);

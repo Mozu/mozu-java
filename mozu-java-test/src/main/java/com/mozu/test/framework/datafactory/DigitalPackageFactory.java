@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.DigitalPackageResource;
 
 /** <summary>
- * 
+ * A digital package is a package in a digital format.
  * </summary>
  */
 public class DigitalPackageFactory

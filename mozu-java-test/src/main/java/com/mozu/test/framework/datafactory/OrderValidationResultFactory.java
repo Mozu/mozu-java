@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.OrderValidationResultResource;
 
 /** <summary>
- * 
+ * Manage the results of order validation.
  * </summary>
  */
 public class OrderValidationResultFactory

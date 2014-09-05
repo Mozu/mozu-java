@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerSegmentResource;
 
 /** <summary>
- * 
+ * Use the Customer Account Segments subresource to view the customer segments associated with a customer account.
  * </summary>
  */
 public class CustomerSegmentFactory

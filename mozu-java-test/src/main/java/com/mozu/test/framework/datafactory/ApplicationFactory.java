@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.ApplicationResource;
 
 /** <summary>
- * Use the applications subresource to update site settings for installed applications.
+ * Use the Applications resource to update site-specific settings for installed applications.
  * </summary>
  */
 public class ApplicationFactory

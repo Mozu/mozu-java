@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.ProductResource;
 
 /** <summary>
- * Use this resource to create products, view the attributes associated with existing products, and determine which sites feature a specific product.
+ * Use the Product Administration resource to create new product definitions in the master catalog and determine which catalogs will feature products. You can also assign attribute values for defined products, manage product-level location inventory, and configure the variations of a product.
  * </summary>
  */
 public class AdminProductFactory

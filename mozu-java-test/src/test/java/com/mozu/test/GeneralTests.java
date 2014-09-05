@@ -176,7 +176,8 @@ public class GeneralTests extends MozuApiTestBase {
         CustomerAccountAndAuthInfo customerAccountAndAuthInfo =  CustomerGenerator.generateCustomerAccountAndAuthInfo(true, "98-02565-0000");
     	CustomerAccountFactory.addAccountAndLogin(apiContext, customerAccountAndAuthInfo, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         CustomerUserAuthInfo shopperUserAuthInfo = CustomerGenerator.generateUserAuthInfo(customerAccountAndAuthInfo.getAccount().getUserName(), customerAccountAndAuthInfo.getPassword());
-        apiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
+        shopperAuth = CustomerAuthenticator.authenticate(shopperUserAuthInfo, tenantId, siteId);
+        shopperApiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
 
 	}
 

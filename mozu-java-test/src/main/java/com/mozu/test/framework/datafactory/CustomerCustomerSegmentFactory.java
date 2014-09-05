@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.CustomerSegmentResource;
 
 /** <summary>
- * 
+ * Use the Customer Segments resource to manage the segments that enable a client to manage groups of customers and target discounts for these segments. After a customer segment is defined, you can associate any number of customer accounts with it.
  * </summary>
  */
 public class CustomerCustomerSegmentFactory

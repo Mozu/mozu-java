@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.ShippingResource;
 
 /** <summary>
- * 
+ * Use the Storefront Shipping resource to retrieve shipping rate information from the website.
  * </summary>
  */
 public class ShippingFactory

@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.storefront.ProductSearchResultResource;
 
 /** <summary>
- * Provide dynamic search results to shoppers as they browse and search for products on the storefront. Suggest possible search terms as the shopper enters text.
+ * Use the Product Search resource to provide dynamic search results to shoppers as they browse and search for products on the web storefront, and to suggest possible search terms as the shopper enters text.
  * </summary>
  */
 public class ProductSearchResultFactory

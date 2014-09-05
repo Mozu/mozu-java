@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerNoteResource;
 
 /** <summary>
- * Merchants can add and view internal notes for a customer account. For example, a merchant can track a customer's interests or complaints. Only merchants can add and view notes. Customers cannot see these notes from their My Account page.
+ * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteFactory

@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.checkout.CustomerCheckoutSettingsResource;
 
 /** <summary>
- * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
+ * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
  * </summary>
  */
 public class CustomerCheckoutSettingsFactory

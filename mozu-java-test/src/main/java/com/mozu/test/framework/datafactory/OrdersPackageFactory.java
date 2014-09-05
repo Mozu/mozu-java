@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.PackageResource;
 
 /** <summary>
- * Use the packages subresource to manage the physical packages to ship for an order.
+ * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
  */
 public class OrdersPackageFactory

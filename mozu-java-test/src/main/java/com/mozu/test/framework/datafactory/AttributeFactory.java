@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.attributedefinition.AttributeResource;
 
 /** <summary>
- * 
+ * Use the Customer Attribute Definition resource to manage the attributes to define for your shoppers.
  * </summary>
  */
 public class AttributeFactory

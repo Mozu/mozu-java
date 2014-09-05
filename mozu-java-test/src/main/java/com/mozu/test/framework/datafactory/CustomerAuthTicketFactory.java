@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.CustomerAuthTicketResource;
 
 /** <summary>
- * 
+ * Use the Customer Authentication Tickets resource to generate and refresh authentication tickets for customer accounts.
  * </summary>
  */
 public class CustomerAuthTicketFactory

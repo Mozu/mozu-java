@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.carts.CartItemResource;
 
 /** <summary>
- * Use the cart items subresource to manage a collection of items in an active shopping cart.
+ * Use the Cart Items subresource to manage a collection of items in an active shopping cart.
  * </summary>
  */
 public class CartItemFactory

@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.admin.LocationTypeResource;
 
 /** <summary>
- * 
+ * Use the Location Types resource to manage the types of locations your tenant maintains, such as warehouses, physical storefronts, and kiosks.
  * </summary>
  */
 public class LocationTypeFactory

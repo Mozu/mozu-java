@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.checkout.PaymentSettingsResource;
 
 /** <summary>
- * Specify settings when creating payments for order checkout on the site.
+ * Use the Payment Settings resource to specify settings when creating payments for order checkout on the site.
  * </summary>
  */
 public class PaymentSettingsFactory

@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.returns.PackageResource;
 
 /** <summary>
- * Use the return packages subresource to manage physical packages used to ship return replacement items.
+ * Use the Return Packages subresource to manage physical packages used to ship return replacement items.
  * </summary>
  */
 public class PackageFactory
