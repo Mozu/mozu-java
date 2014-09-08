@@ -206,8 +206,8 @@ public class GeneralTests extends MozuApiTestBase {
         Facet facet = new Facet();
         AdminFacetFactory.deleteFacetById(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_NO_CONTENT);
         AdminFacetFactory.getFacetCategoryList(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        AdminFacetFactory.updateFacet(apiContext, facet, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
         AdminFacetFactory.addFacet(apiContext, facet, HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        AdminFacetFactory.updateFacet(apiContext, facet, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
