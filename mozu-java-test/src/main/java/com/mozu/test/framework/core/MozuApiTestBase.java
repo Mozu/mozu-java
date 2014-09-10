@@ -44,9 +44,16 @@ public class MozuApiTestBase {
         appAuthInfo.setApplicationId(Environment.getConfigValue("AppId"));
         appAuthInfo.setSharedSecret(Environment.getConfigValue("SharedSecret"));
         String baseUrl = Environment.getConfigValue("BaseAuthAppUrl");
+    	MozuConfig.setBaseUrl(baseUrl);
+        try {
+            AppAuthenticator.initialize(appAuthInfo, null);
+        } catch (ApiException ae){
+        	throw new ApiException("Unable to authenticate application.\n" + ae.getMessage());
+        }
+
+    	new CacheManagerImpl<>().startCache();
     	String configStr = Environment.getConfigValue("TenantId");
     	tenantId = Integer.parseInt(configStr);
-    	MozuConfig.setBaseUrl(baseUrl);
         MozuConfig.setProxyHost("localhost");
         MozuConfig.setProxyPort(8888);
     	ApiContext apiContext = new MozuApiContext();
