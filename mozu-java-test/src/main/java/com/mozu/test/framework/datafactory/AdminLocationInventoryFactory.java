@@ -43,7 +43,6 @@ public class AdminLocationInventoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class AdminLocationInventoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String locationCode, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class AdminLocationInventoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.LocationInventory> updateLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventoryAdjustment> locationInventoryAdjustments, String locationCode, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class AdminLocationInventoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, String productCode, int expectedCode, int successCode) throws Exception
 	{
-				LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
+		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteLocationInventory( locationCode,  productCode);
@@ -135,7 +131,6 @@ public class AdminLocationInventoryFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

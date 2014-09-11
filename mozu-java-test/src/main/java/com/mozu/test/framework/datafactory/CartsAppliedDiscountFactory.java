@@ -43,7 +43,6 @@ public class CartsAppliedDiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart removeCoupons(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class CartsAppliedDiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart removeCoupon(ApiContext apiContext, String cartId, String couponCode, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class CartsAppliedDiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

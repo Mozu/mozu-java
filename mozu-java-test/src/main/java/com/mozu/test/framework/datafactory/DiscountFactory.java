@@ -43,7 +43,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent getDiscountContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Discount getDiscount(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static String generateRandomCoupon(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Discount createDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Discount updateDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.Discount discount, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -199,12 +193,11 @@ public class DiscountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteDiscount(ApiContext apiContext, Integer discountId, int expectedCode, int successCode) throws Exception
 	{
-				DiscountResource resource = new DiscountResource(apiContext);
+		DiscountResource resource = new DiscountResource(apiContext);
 		try
 		{
 			resource.deleteDiscount( discountId);
@@ -218,7 +211,6 @@ public class DiscountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

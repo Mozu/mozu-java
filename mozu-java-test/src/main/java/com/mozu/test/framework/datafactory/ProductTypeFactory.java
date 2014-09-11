@@ -43,7 +43,6 @@ public class ProductTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductType getProductType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ProductTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductType addProductType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ProductTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductType updateProductType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class ProductTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProductType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
-				ProductTypeResource resource = new ProductTypeResource(apiContext, dataViewMode);
+		ProductTypeResource resource = new ProductTypeResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProductType( productTypeId);
@@ -140,7 +136,6 @@ public class ProductTypeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

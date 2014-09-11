@@ -43,7 +43,6 @@ public class ChannelGroupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup getChannelGroup(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ChannelGroupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup createChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ChannelGroupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup updateChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String code, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class ChannelGroupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteChannelGroup(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-				ChannelGroupResource resource = new ChannelGroupResource(apiContext);
+		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
 			resource.deleteChannelGroup( code);
@@ -140,7 +136,6 @@ public class ChannelGroupFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

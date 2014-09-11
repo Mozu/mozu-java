@@ -43,7 +43,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.LoginState getLoginState(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAccount getAccount(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAccount addAccount(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAccount account, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.changePassword( passwordInfo,  accountId);
@@ -140,7 +136,6 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket addLoginToExistingCustomer(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerLoginInfo customerAuthInfo, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -166,12 +161,11 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void recomputeCustomerLifetimeValue(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.recomputeCustomerLifetimeValue( accountId);
@@ -185,12 +179,11 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void setLoginLocked(ApiContext apiContext, Boolean isLocked, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.setLoginLocked( isLocked,  accountId);
@@ -204,12 +197,11 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void setPasswordChangeRequired(ApiContext apiContext, Boolean isPasswordChangeRequired, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.setPasswordChangeRequired( isPasswordChangeRequired,  accountId);
@@ -223,7 +215,6 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket addAccountAndLogin(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo accountAndAuthInfo, int expectedCode, int successCode) throws Exception
@@ -249,7 +240,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAccountCollection addAccounts(ApiContext apiContext, List<com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo> customers, int expectedCode, int successCode) throws Exception
@@ -275,7 +265,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(ApiContext apiContext, String emailAddress, int expectedCode, int successCode) throws Exception
@@ -301,7 +290,6 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(ApiContext apiContext, String userName, int expectedCode, int successCode) throws Exception
@@ -327,12 +315,11 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void resetPassword(ApiContext apiContext, com.mozu.api.contracts.customer.ResetPasswordInfo resetPasswordInfo, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.resetPassword( resetPasswordInfo);
@@ -346,7 +333,6 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAccount updateAccount(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAccount account, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -372,12 +358,11 @@ public class CustomerAccountFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccount(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
 			resource.deleteAccount( accountId);
@@ -391,7 +376,6 @@ public class CustomerAccountFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

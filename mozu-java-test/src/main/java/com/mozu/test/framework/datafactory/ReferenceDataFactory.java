@@ -43,7 +43,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.AddressSchemaCollection getAddressSchemas(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.core.Behavior getBehavior(ApiContext apiContext, Integer behaviorId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.core.BehaviorCategory getBehaviorCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.core.BehaviorCategoryCollection getBehaviorCategories(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.core.BehaviorCollection getBehaviors(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.ContentLocaleCollection getContentLocales(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -199,7 +193,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.CountryCollection getCountries(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -225,7 +218,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.CurrencyCollection getCurrencies(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -251,7 +243,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.TimeZoneCollection getTimeZones(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -277,7 +268,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.TopLevelDomainCollection getTopLevelDomains(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -303,7 +293,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.reference.UnitOfMeasureCollection getUnitsOfMeasure(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -329,7 +318,6 @@ public class ReferenceDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

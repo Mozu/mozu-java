@@ -38,7 +38,6 @@ public class ProductTypeExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class ProductTypeExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class ProductTypeExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class ProductTypeExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteExtra( productTypeId,  attributeFQN);
@@ -135,7 +131,6 @@ public class ProductTypeExtraFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

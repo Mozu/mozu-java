@@ -38,7 +38,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice getProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
@@ -116,7 +113,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice addProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
@@ -142,7 +138,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> updateProductVariationLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> localizedDeltaPrice, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice updateProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
@@ -189,7 +183,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariation updateProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
@@ -215,7 +208,6 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, int expectedCode, int successCode) throws Exception
@@ -241,12 +233,11 @@ public class ProductVariationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
 	{
-				ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProductVariation( productCode,  variationKey);
@@ -260,12 +251,11 @@ public class ProductVariationFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
@@ -279,7 +269,6 @@ public class ProductVariationFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

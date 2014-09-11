@@ -43,7 +43,6 @@ public class CreditFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.credit.Credit getCredit(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CreditFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.credit.Credit addCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CreditFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.credit.Credit associateCreditToShopper(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class CreditFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, int expectedCode, int successCode) throws Exception
@@ -147,12 +143,11 @@ public class CreditFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteCredit(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-				CreditResource resource = new CreditResource(apiContext);
+		CreditResource resource = new CreditResource(apiContext);
 		try
 		{
 			resource.deleteCredit( code);
@@ -166,7 +161,6 @@ public class CreditFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

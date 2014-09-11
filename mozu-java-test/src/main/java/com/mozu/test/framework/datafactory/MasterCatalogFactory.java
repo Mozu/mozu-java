@@ -43,7 +43,6 @@ public class MasterCatalogFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(ApiContext apiContext, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class MasterCatalogFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(ApiContext apiContext, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class MasterCatalogFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

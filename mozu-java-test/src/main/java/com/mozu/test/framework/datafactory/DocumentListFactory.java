@@ -43,7 +43,6 @@ public class DocumentListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentList getDocumentList(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class DocumentListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentList createDocumentList(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentList list, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class DocumentListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentList updateDocumentList(ApiContext apiContext, com.mozu.api.contracts.content.DocumentList list, String documentListName, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class DocumentListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteDocumentList(ApiContext apiContext, String documentListName, int expectedCode, int successCode) throws Exception
 	{
-				DocumentListResource resource = new DocumentListResource(apiContext);
+		DocumentListResource resource = new DocumentListResource(apiContext);
 		try
 		{
 			resource.deleteDocumentList( documentListName);
@@ -140,7 +136,6 @@ public class DocumentListFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

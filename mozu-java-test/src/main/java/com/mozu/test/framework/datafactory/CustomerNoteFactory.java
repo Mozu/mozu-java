@@ -43,7 +43,6 @@ public class CustomerNoteFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CustomerNoteFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CustomerNoteFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class CustomerNoteFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerNoteResource resource = new CustomerNoteResource(apiContext);
+		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
 			resource.deleteAccountNote( accountId,  noteId);
@@ -140,7 +136,6 @@ public class CustomerNoteFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

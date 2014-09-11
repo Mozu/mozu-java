@@ -43,7 +43,6 @@ public class EntityListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityList getEntityList(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class EntityListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityList createEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class EntityListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityList updateEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class EntityListFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteEntityList(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
 	{
-				EntityListResource resource = new EntityListResource(apiContext);
+		EntityListResource resource = new EntityListResource(apiContext);
 		try
 		{
 			resource.deleteEntityList( entityListFullName);
@@ -140,7 +136,6 @@ public class EntityListFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

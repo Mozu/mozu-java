@@ -38,7 +38,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> getPropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -59,7 +58,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductProperty getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -137,7 +133,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductProperty addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> updatePropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> localizedContent, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -184,7 +178,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
@@ -210,7 +203,6 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductProperty updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -236,12 +228,11 @@ public class ProductPropertyFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
+		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProperty( productCode,  attributeFQN);
@@ -255,12 +246,11 @@ public class ProductPropertyFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deletePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
+		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deletePropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode);
@@ -274,7 +264,6 @@ public class ProductPropertyFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

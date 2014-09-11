@@ -43,7 +43,6 @@ public class PropertyTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.PropertyType getPropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class PropertyTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.PropertyType createPropertyType(ApiContext apiContext, com.mozu.api.contracts.content.PropertyType propertyType, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class PropertyTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.PropertyType updatePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class PropertyTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode, int successCode) throws Exception
 	{
-				PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
+		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deletePropertyType( propertyTypeName);
@@ -140,7 +136,6 @@ public class PropertyTypeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

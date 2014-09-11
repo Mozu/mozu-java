@@ -43,7 +43,6 @@ public class ShipmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.Package> createPackageShipments(ApiContext apiContext, List<String> packageIds, String returnId, int expectedCode, int successCode) throws Exception
@@ -64,12 +63,11 @@ public class ShipmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteShipment(ApiContext apiContext, String returnId, String shipmentId, int expectedCode, int successCode) throws Exception
 	{
-				ShipmentResource resource = new ShipmentResource(apiContext);
+		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
 			resource.deleteShipment( returnId,  shipmentId);
@@ -83,7 +81,6 @@ public class ShipmentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

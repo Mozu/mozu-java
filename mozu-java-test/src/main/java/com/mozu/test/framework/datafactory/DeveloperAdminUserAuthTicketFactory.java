@@ -43,7 +43,6 @@ public class DeveloperAdminUserAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, int expectedCode, int successCode) throws Exception
@@ -69,12 +68,11 @@ public class DeveloperAdminUserAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
 	{
-				DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
+		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
 		try
 		{
 			resource.deleteUserAuthTicket( refreshToken);
@@ -88,7 +86,6 @@ public class DeveloperAdminUserAuthTicketFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

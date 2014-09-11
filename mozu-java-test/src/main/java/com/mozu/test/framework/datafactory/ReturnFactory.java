@@ -43,7 +43,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<String> getAvailableReturnActions(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
@@ -116,7 +113,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<String> getAvailablePaymentActionsForReturn(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -137,7 +133,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
@@ -189,7 +183,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
@@ -215,7 +208,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode, int successCode) throws Exception
@@ -241,7 +233,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, int expectedCode, int successCode) throws Exception
@@ -267,7 +258,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -293,7 +283,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, int expectedCode, int successCode) throws Exception
@@ -319,7 +308,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode, int successCode) throws Exception
@@ -345,7 +333,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, int expectedCode, int successCode) throws Exception
@@ -371,7 +358,6 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
@@ -392,12 +378,11 @@ public class ReturnFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
 	{
-				ReturnResource resource = new ReturnResource(apiContext);
+		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
 			resource.deleteReturn( returnId);
@@ -411,7 +396,6 @@ public class ReturnFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

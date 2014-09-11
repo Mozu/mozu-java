@@ -38,7 +38,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> getExtraValueLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -59,7 +58,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice getExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice addExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -137,7 +133,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> updateExtraValueLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> localizedDeltaPrice, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -184,7 +178,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice updateExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
@@ -210,7 +203,6 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -236,12 +228,11 @@ public class ProductExtraFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteExtra( productCode,  attributeFQN);
@@ -255,12 +246,11 @@ public class ProductExtraFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
@@ -274,7 +264,6 @@ public class ProductExtraFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

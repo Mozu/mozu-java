@@ -38,7 +38,6 @@ public class CustomerAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class CustomerAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class CustomerAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

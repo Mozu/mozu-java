@@ -43,7 +43,6 @@ public class LocationUsageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationUsage getLocationUsage(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class LocationUsageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationUsage updateLocationUsage(ApiContext apiContext, com.mozu.api.contracts.location.LocationUsage usage, String code, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class LocationUsageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

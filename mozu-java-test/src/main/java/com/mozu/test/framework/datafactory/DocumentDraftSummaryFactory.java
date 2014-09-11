@@ -43,7 +43,6 @@ public class DocumentDraftSummaryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
@@ -53,7 +52,7 @@ public class DocumentDraftSummaryFactory
 
 	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
 	{
-				DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
+		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
 			resource.deleteDocumentDrafts( documentIds,  documentLists);
@@ -67,7 +66,6 @@ public class DocumentDraftSummaryFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
@@ -77,7 +75,7 @@ public class DocumentDraftSummaryFactory
 
 	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
 	{
-				DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
+		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
 			resource.publishDocuments( documentIds,  documentLists);
@@ -91,7 +89,6 @@ public class DocumentDraftSummaryFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

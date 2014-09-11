@@ -43,7 +43,6 @@ public class DocumentListTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentListType updateDocumentListType(ApiContext apiContext, com.mozu.api.contracts.content.DocumentListType list, String documentListTypeFQN, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class DocumentListTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

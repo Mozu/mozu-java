@@ -38,7 +38,6 @@ public class PackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(ApiContext apiContext, String returnId, String packageId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class PackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class PackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String returnId, String packageId, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class PackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePackage(ApiContext apiContext, String returnId, String packageId, int expectedCode, int successCode) throws Exception
 	{
-				PackageResource resource = new PackageResource(apiContext);
+		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
 			resource.deletePackage( returnId,  packageId);
@@ -135,7 +131,6 @@ public class PackageFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

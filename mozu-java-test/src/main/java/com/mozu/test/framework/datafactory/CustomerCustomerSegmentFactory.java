@@ -43,7 +43,6 @@ public class CustomerCustomerSegmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerSegment getSegment(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CustomerCustomerSegmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerSegment addSegment(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerSegment segment, int expectedCode, int successCode) throws Exception
@@ -95,12 +93,11 @@ public class CustomerCustomerSegmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void addSegmentAccounts(ApiContext apiContext, List<Integer> accountIds, Integer id, int expectedCode, int successCode) throws Exception
 	{
-				CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
+		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
 			resource.addSegmentAccounts( accountIds,  id);
@@ -114,7 +111,6 @@ public class CustomerCustomerSegmentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerSegment updateSegment(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerSegment segment, Integer id, int expectedCode, int successCode) throws Exception
@@ -140,12 +136,11 @@ public class CustomerCustomerSegmentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteSegment(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
 	{
-				CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
+		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
 			resource.deleteSegment( id);
@@ -159,12 +154,11 @@ public class CustomerCustomerSegmentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteSegmentAccounts(ApiContext apiContext, List<Integer> accountIds, Integer id, int expectedCode, int successCode) throws Exception
 	{
-				CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
+		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
 			resource.deleteSegmentAccounts( accountIds,  id);
@@ -178,7 +172,6 @@ public class CustomerCustomerSegmentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

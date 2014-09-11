@@ -43,7 +43,6 @@ public class PlatformApplicationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.installedapplications.Application updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class PlatformApplicationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

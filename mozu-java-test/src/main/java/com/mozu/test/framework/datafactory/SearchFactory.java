@@ -43,7 +43,6 @@ public class SearchFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.SearchSettings updateSettings(ApiContext apiContext, com.mozu.api.contracts.productadmin.SearchSettings settings, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class SearchFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

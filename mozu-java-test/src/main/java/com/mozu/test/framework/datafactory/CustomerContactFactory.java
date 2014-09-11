@@ -43,7 +43,6 @@ public class CustomerContactFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CustomerContactFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CustomerContactFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class CustomerContactFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerContactResource resource = new CustomerContactResource(apiContext);
+		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
 			resource.deleteAccountContact( accountId,  contactId);
@@ -140,7 +136,6 @@ public class CustomerContactFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

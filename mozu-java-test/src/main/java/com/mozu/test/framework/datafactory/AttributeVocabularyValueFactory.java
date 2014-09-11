@@ -38,7 +38,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContents(ApiContext apiContext, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -59,7 +58,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent getAttributeVocabularyValueLocalizedContent(ApiContext apiContext, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValue getAttributeVocabularyValue(ApiContext apiContext, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent addAttributeVocabularyValueLocalizedContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -137,7 +133,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValue addAttributeVocabularyValue(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> updateAttributeVocabularyValues(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> vocabularyValues, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -184,7 +178,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> updateAttributeVocabularyValueLocalizedContents(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> localizedContent, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -205,7 +198,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent updateAttributeVocabularyValueLocalizedContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
@@ -231,7 +223,6 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeVocabularyValue updateAttributeVocabularyValue(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
@@ -257,12 +248,11 @@ public class AttributeVocabularyValueFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAttributeVocabularyValue(ApiContext apiContext, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
 	{
-				AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
+		AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
 		try
 		{
 			resource.deleteAttributeVocabularyValue( attributeFQN,  value);
@@ -276,12 +266,11 @@ public class AttributeVocabularyValueFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteAttributeVocabularyValueLocalizedContent(ApiContext apiContext, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
 	{
-				AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
+		AttributeVocabularyValueResource resource = new AttributeVocabularyValueResource(apiContext);
 		try
 		{
 			resource.deleteAttributeVocabularyValueLocalizedContent( attributeFQN,  value,  localeCode);
@@ -295,7 +284,6 @@ public class AttributeVocabularyValueFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

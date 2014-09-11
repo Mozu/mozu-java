@@ -38,7 +38,6 @@ public class TransactionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Transaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -64,12 +63,11 @@ public class TransactionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void removeTransaction(ApiContext apiContext, Integer accountId, String transactionId, int expectedCode, int successCode) throws Exception
 	{
-				TransactionResource resource = new TransactionResource(apiContext);
+		TransactionResource resource = new TransactionResource(apiContext);
 		try
 		{
 			resource.removeTransaction( accountId,  transactionId);
@@ -83,7 +81,6 @@ public class TransactionFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

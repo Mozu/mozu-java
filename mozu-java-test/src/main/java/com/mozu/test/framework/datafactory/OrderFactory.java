@@ -43,7 +43,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<String> getAvailableActions(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.pricingruntime.TaxableOrder> getTaxableOrders(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order getOrder(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrderFromCart(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
@@ -137,7 +133,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, int expectedCode, int successCode) throws Exception
@@ -163,7 +158,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order performOrderAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId, int expectedCode, int successCode) throws Exception
@@ -189,7 +183,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateOrderDiscount(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount discount, String orderId, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -215,7 +208,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteOrderDraft(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -225,7 +217,7 @@ public class OrderFactory
 
 	public static void deleteOrderDraft(ApiContext apiContext, String orderId, String version, int expectedCode, int successCode) throws Exception
 	{
-				OrderResource resource = new OrderResource(apiContext);
+		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
 			resource.deleteOrderDraft( orderId,  version);
@@ -239,7 +231,6 @@ public class OrderFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order changeOrderUserId(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -265,7 +256,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateOrder(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.Order order, String orderId, int expectedCode, int successCode) throws Exception
@@ -291,7 +281,6 @@ public class OrderFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

@@ -43,7 +43,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderItemCollection getOrderItems(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createOrderItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderItem orderItem, String orderId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateOrderItemDiscount(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount discount, String orderId, String orderItemId, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateItemFulfillment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderItem orderItem, String orderId, String orderItemId, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateItemProductPrice(ApiContext apiContext, String orderId, String orderItemId, Double price, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order updateItemQuantity(ApiContext apiContext, String orderId, String orderItemId, Integer quantity, int expectedCode, int successCode) throws Exception
@@ -199,7 +193,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order deleteOrderItem(ApiContext apiContext, String orderId, String orderItemId, int expectedCode, int successCode) throws Exception
@@ -225,7 +218,6 @@ public class OrderItemFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

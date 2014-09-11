@@ -38,7 +38,6 @@ public class DocumentTreeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
@@ -64,12 +63,11 @@ public class DocumentTreeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void updateTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
 	{
-				DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
 		try
 		{
 			resource.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
@@ -83,12 +81,11 @@ public class DocumentTreeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
 	{
-				DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
 		try
 		{
 			resource.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
@@ -102,7 +99,6 @@ public class DocumentTreeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

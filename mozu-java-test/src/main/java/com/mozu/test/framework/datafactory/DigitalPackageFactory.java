@@ -38,7 +38,6 @@ public class DigitalPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage getDigitalPackage(ApiContext apiContext, String orderId, String digitalPackageId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class DigitalPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage createDigitalPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage digitalPackage, String orderId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class DigitalPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage updateDigitalPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage digitalPackage, String orderId, String digitalPackageId, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class DigitalPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteDigitalPackage(ApiContext apiContext, String orderId, String digitalPackageId, int expectedCode, int successCode) throws Exception
 	{
-				DigitalPackageResource resource = new DigitalPackageResource(apiContext);
+		DigitalPackageResource resource = new DigitalPackageResource(apiContext);
 		try
 		{
 			resource.deleteDigitalPackage( orderId,  digitalPackageId);
@@ -135,7 +131,6 @@ public class DigitalPackageFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

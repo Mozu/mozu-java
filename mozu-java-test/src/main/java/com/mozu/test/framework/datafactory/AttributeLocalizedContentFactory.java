@@ -38,7 +38,6 @@ public class AttributeLocalizedContentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeLocalizedContent getAttributeLocalizedContent(ApiContext apiContext, String attributeFQN, String localeCode, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class AttributeLocalizedContentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeLocalizedContent addLocalizedContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class AttributeLocalizedContentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> updateLocalizedContents(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> localizedContent, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class AttributeLocalizedContentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeLocalizedContent updateLocalizedContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.AttributeLocalizedContent localizedContent, String attributeFQN, String localeCode, int expectedCode, int successCode) throws Exception
@@ -137,12 +133,11 @@ public class AttributeLocalizedContentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteLocalizedContent(ApiContext apiContext, String attributeFQN, String localeCode, int expectedCode, int successCode) throws Exception
 	{
-				AttributeLocalizedContentResource resource = new AttributeLocalizedContentResource(apiContext);
+		AttributeLocalizedContentResource resource = new AttributeLocalizedContentResource(apiContext);
 		try
 		{
 			resource.deleteLocalizedContent( attributeFQN,  localeCode);
@@ -156,7 +151,6 @@ public class AttributeLocalizedContentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

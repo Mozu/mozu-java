@@ -43,7 +43,6 @@ public class DocumentTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentType getDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentTypeName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class DocumentTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentType createDocumentType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.DocumentType documentType, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class DocumentTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentType updateDocumentType(ApiContext apiContext, com.mozu.api.contracts.content.DocumentType documentType, String documentTypeName, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class DocumentTypeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

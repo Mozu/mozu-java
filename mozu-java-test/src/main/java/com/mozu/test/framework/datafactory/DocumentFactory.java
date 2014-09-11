@@ -38,7 +38,6 @@ public class DocumentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class DocumentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class DocumentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.Document createDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.Document document, String documentListName, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class DocumentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void updateDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentId, String  contentType, int expectedCode, int successCode) throws Exception
 	{
-				DocumentResource resource = new DocumentResource(apiContext);
+		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
 			resource.updateDocumentContent( stream,  documentListName,  documentId,  contentType);
@@ -135,7 +131,6 @@ public class DocumentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static com.mozu.api.contracts.content.Document updateDocument(ApiContext apiContext, com.mozu.api.contracts.content.Document document, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
@@ -161,12 +156,11 @@ public class DocumentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteDocument(ApiContext apiContext, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
-				DocumentResource resource = new DocumentResource(apiContext);
+		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
 			resource.deleteDocument( documentListName,  documentId);
@@ -180,12 +174,11 @@ public class DocumentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteDocumentContent(ApiContext apiContext, String documentListName, String documentId, int expectedCode, int successCode) throws Exception
 	{
-				DocumentResource resource = new DocumentResource(apiContext);
+		DocumentResource resource = new DocumentResource(apiContext);
 		try
 		{
 			resource.deleteDocumentContent( documentListName,  documentId);
@@ -199,7 +192,6 @@ public class DocumentFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

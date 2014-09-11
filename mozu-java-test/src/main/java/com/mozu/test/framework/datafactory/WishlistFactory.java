@@ -43,7 +43,6 @@ public class WishlistFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlist(ApiContext apiContext, String wishlistId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class WishlistFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist getWishlistByName(ApiContext apiContext, Integer customerAccountId, String wishlistName, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class WishlistFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist createWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class WishlistFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist updateWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.Wishlist wishlist, String wishlistId, int expectedCode, int successCode) throws Exception
@@ -147,12 +143,11 @@ public class WishlistFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteWishlist(ApiContext apiContext, String wishlistId, int expectedCode, int successCode) throws Exception
 	{
-				WishlistResource resource = new WishlistResource(apiContext);
+		WishlistResource resource = new WishlistResource(apiContext);
 		try
 		{
 			resource.deleteWishlist( wishlistId);
@@ -166,7 +161,6 @@ public class WishlistFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

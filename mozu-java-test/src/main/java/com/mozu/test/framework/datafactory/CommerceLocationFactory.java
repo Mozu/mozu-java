@@ -43,7 +43,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location getLocationInUsageType(ApiContext apiContext, String locationUsageType, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(ApiContext apiContext, String locationUsageType, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location getDirectShipLocation(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location getInStorePickupLocation(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationCollection getInStorePickupLocations(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class CommerceLocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

@@ -43,12 +43,11 @@ public class ChangeMessageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void removeAllMessages(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-				ChangeMessageResource resource = new ChangeMessageResource(apiContext);
+		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
 		{
 			resource.removeAllMessages();
@@ -62,12 +61,11 @@ public class ChangeMessageFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void removeMessage(ApiContext apiContext, String messageId, int expectedCode, int successCode) throws Exception
 	{
-				ChangeMessageResource resource = new ChangeMessageResource(apiContext);
+		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
 		{
 			resource.removeMessage( messageId);
@@ -81,7 +79,6 @@ public class ChangeMessageFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

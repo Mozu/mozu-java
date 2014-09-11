@@ -43,7 +43,6 @@ public class CreditTransactionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.credit.CreditTransaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.credit.CreditTransaction creditTransaction, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CreditTransactionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

@@ -38,7 +38,6 @@ public class PickupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class PickupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup createPickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class PickupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup updatePickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
@@ -116,12 +113,11 @@ public class PickupFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePickup(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
 	{
-				PickupResource resource = new PickupResource(apiContext);
+		PickupResource resource = new PickupResource(apiContext);
 		try
 		{
 			resource.deletePickup( orderId,  pickupId);
@@ -135,7 +131,6 @@ public class PickupFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

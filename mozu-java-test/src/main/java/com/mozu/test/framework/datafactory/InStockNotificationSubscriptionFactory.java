@@ -43,7 +43,6 @@ public class InStockNotificationSubscriptionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class InStockNotificationSubscriptionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(ApiContext apiContext, com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, int expectedCode, int successCode) throws Exception
@@ -95,12 +93,11 @@ public class InStockNotificationSubscriptionFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteInStockNotificationSubscription(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
 	{
-				InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
+		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
 			resource.deleteInStockNotificationSubscription( id);
@@ -114,7 +111,6 @@ public class InStockNotificationSubscriptionFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

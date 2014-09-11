@@ -43,7 +43,6 @@ public class CategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class CategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class CategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -157,7 +152,7 @@ public class CategoryFactory
 
 	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, int expectedCode, int successCode) throws Exception
 	{
-				CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
 			resource.deleteCategoryById( categoryId,  cascadeDelete);
@@ -171,7 +166,6 @@ public class CategoryFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

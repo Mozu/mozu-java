@@ -43,7 +43,6 @@ public class EventNotificationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.event.Event getEvent(ApiContext apiContext, String eventId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class EventNotificationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

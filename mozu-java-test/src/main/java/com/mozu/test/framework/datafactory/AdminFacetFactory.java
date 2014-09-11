@@ -43,7 +43,6 @@ public class AdminFacetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.FacetSet getFacetCategoryList(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class AdminFacetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Facet addFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class AdminFacetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Facet updateFacet(ApiContext apiContext, com.mozu.api.contracts.productadmin.Facet facet, Integer facetId, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class AdminFacetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteFacetById(ApiContext apiContext, Integer facetId, int expectedCode, int successCode) throws Exception
 	{
-				FacetResource resource = new FacetResource(apiContext);
+		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
 			resource.deleteFacetById( facetId);
@@ -140,7 +136,6 @@ public class AdminFacetFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

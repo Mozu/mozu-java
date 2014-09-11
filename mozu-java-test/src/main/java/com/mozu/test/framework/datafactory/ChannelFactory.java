@@ -43,7 +43,6 @@ public class ChannelFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel getChannel(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ChannelFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel createChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ChannelFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel updateChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, String code, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class ChannelFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteChannel(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-				ChannelResource resource = new ChannelResource(apiContext);
+		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
 			resource.deleteChannel( code);
@@ -140,7 +136,6 @@ public class ChannelFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

@@ -43,7 +43,6 @@ public class PaymentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<String> getAvailablePaymentActions(ApiContext apiContext, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class PaymentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class PaymentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order performPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -116,7 +113,6 @@ public class PaymentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, int expectedCode, int successCode) throws Exception
@@ -142,7 +138,6 @@ public class PaymentFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

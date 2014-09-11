@@ -43,7 +43,6 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, int expectedCode, int successCode) throws Exception
@@ -173,12 +168,11 @@ public class CartFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteCart(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
 	{
-				CartResource resource = new CartResource(apiContext);
+		CartResource resource = new CartResource(apiContext);
 		try
 		{
 			resource.deleteCart( cartId);
@@ -192,12 +186,11 @@ public class CartFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteCurrentCart(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-				CartResource resource = new CartResource(apiContext);
+		CartResource resource = new CartResource(apiContext);
 		try
 		{
 			resource.deleteCurrentCart();
@@ -211,7 +204,6 @@ public class CartFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

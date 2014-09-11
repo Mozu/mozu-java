@@ -43,7 +43,6 @@ public class SiteShippingHandlingFeeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class SiteShippingHandlingFeeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class SiteShippingHandlingFeeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

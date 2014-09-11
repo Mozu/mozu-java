@@ -43,7 +43,6 @@ public class AttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue> getAttributeVocabularyValues(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class AttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.core.extensible.Attribute getAttribute(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class AttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

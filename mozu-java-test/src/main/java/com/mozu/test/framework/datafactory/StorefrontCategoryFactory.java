@@ -43,7 +43,6 @@ public class StorefrontCategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class StorefrontCategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class StorefrontCategoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

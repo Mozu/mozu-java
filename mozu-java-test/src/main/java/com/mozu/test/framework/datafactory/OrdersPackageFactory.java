@@ -38,7 +38,6 @@ public class OrdersPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static java.io.InputStream getPackageLabel(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
@@ -59,7 +58,6 @@ public class OrdersPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class OrdersPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, int expectedCode, int successCode) throws Exception
@@ -111,7 +108,6 @@ public class OrdersPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String packageId, int expectedCode, int successCode) throws Exception
@@ -137,12 +133,11 @@ public class OrdersPackageFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePackage(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
 	{
-				PackageResource resource = new PackageResource(apiContext);
+		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
 			resource.deletePackage( orderId,  packageId);
@@ -156,7 +151,6 @@ public class OrdersPackageFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

@@ -43,7 +43,6 @@ public class EntityFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityCollection getEntities(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class EntityFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.fasterxml.jackson.databind.JsonNode insertEntity(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode item, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class EntityFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.fasterxml.jackson.databind.JsonNode updateEntity(ApiContext apiContext, com.fasterxml.jackson.databind.JsonNode item, String entityListFullName, String id, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class EntityFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteEntity(ApiContext apiContext, String entityListFullName, String id, int expectedCode, int successCode) throws Exception
 	{
-				EntityResource resource = new EntityResource(apiContext);
+		EntityResource resource = new EntityResource(apiContext);
 		try
 		{
 			resource.deleteEntity( entityListFullName,  id);
@@ -140,7 +136,6 @@ public class EntityFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

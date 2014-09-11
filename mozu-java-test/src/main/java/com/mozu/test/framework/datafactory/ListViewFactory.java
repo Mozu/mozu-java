@@ -43,7 +43,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityCollection getViewEntities(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityContainer getViewEntityContainer(ApiContext apiContext, String entityListFullName, String viewName, String entityId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.EntityContainerCollection getViewEntityContainers(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.ListView getEntityListView(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.ListViewCollection getEntityListViews(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.ListView createEntityListView(ApiContext apiContext, com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName, int expectedCode, int successCode) throws Exception
@@ -199,7 +193,6 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.mzdb.ListView updateEntityListView(ApiContext apiContext, com.mozu.api.contracts.mzdb.ListView listView, String entityListFullName, String viewName, int expectedCode, int successCode) throws Exception
@@ -225,12 +218,11 @@ public class ListViewFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteEntityListView(ApiContext apiContext, String entityListFullName, String viewName, int expectedCode, int successCode) throws Exception
 	{
-				ListViewResource resource = new ListViewResource(apiContext);
+		ListViewResource resource = new ListViewResource(apiContext);
 		try
 		{
 			resource.deleteEntityListView( entityListFullName,  viewName);
@@ -244,7 +236,6 @@ public class ListViewFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

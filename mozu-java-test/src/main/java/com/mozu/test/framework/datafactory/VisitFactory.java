@@ -43,7 +43,6 @@ public class VisitFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Visit getVisit(ApiContext apiContext, String visitId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class VisitFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Visit addVisit(ApiContext apiContext, com.mozu.api.contracts.customer.Visit visit, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class VisitFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Visit updateVisit(ApiContext apiContext, com.mozu.api.contracts.customer.Visit visit, String visitId, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class VisitFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

@@ -43,7 +43,6 @@ public class AttributedefinitionAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Attribute getAttribute(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class AttributedefinitionAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Attribute addAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class AttributedefinitionAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Attribute updateAttribute(ApiContext apiContext, com.mozu.api.contracts.productadmin.Attribute attribute, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class AttributedefinitionAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAttribute(ApiContext apiContext, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				AttributeResource resource = new AttributeResource(apiContext);
+		AttributeResource resource = new AttributeResource(apiContext);
 		try
 		{
 			resource.deleteAttribute( attributeFQN);
@@ -140,7 +136,6 @@ public class AttributedefinitionAttributeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

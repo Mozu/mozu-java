@@ -43,7 +43,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> getProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo getProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
@@ -90,7 +88,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
@@ -116,7 +113,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Product addProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, int expectedCode, int successCode) throws Exception
@@ -142,7 +138,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo addProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, int expectedCode, int successCode) throws Exception
@@ -168,7 +163,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode, int expectedCode, int successCode) throws Exception
@@ -189,7 +183,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductInCatalogInfo updateProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductInCatalogInfo productInCatalogInfoIn, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
@@ -215,7 +208,6 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.Product updateProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Product product, String productCode, int expectedCode, int successCode) throws Exception
@@ -241,12 +233,11 @@ public class AdminProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProduct( productCode);
@@ -260,12 +251,11 @@ public class AdminProductFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteProductInCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer catalogId, int expectedCode, int successCode) throws Exception
 	{
-				ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProductInCatalog( productCode,  catalogId);
@@ -279,7 +269,6 @@ public class AdminProductFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

@@ -43,7 +43,6 @@ public class CardFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CardFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Card addAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CardFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Card updateAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class CardFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
 	{
-				CardResource resource = new CardResource(apiContext);
+		CardResource resource = new CardResource(apiContext);
 		try
 		{
 			resource.deleteAccountCard( accountId,  cardId);
@@ -140,7 +136,6 @@ public class CardFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

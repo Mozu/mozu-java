@@ -38,7 +38,6 @@ public class TaxableTerritoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, int expectedCode, int successCode) throws Exception
@@ -64,7 +63,6 @@ public class TaxableTerritoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> updateTaxableTerritories(ApiContext apiContext, List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> taxableterritories, int expectedCode, int successCode) throws Exception
@@ -85,7 +83,6 @@ public class TaxableTerritoryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

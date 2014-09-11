@@ -43,7 +43,6 @@ public class CustomerAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class CustomerAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class CustomerAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class CustomerAttributeFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
+		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
 			resource.deleteAccountAttribute( accountId,  attributeFQN);
@@ -140,7 +136,6 @@ public class CustomerAttributeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

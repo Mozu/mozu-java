@@ -43,7 +43,6 @@ public class EventDeliverySummaryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(ApiContext apiContext, String subscriptionId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class EventDeliverySummaryFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

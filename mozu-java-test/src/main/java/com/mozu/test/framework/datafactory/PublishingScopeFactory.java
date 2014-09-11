@@ -22,7 +22,7 @@ public class PublishingScopeFactory
 
 	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
+		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
 			resource.discardDrafts( publishScope);
@@ -36,12 +36,11 @@ public class PublishingScopeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
+		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
 			resource.publishDrafts( publishScope);
@@ -55,7 +54,6 @@ public class PublishingScopeFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

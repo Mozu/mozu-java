@@ -43,7 +43,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.LocationInventoryCollection getProductInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.ConfiguredProduct configuredProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, int expectedCode, int successCode) throws Exception
@@ -121,7 +118,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, int expectedCode, int successCode) throws Exception
@@ -147,7 +143,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.DiscountValidationSummary validateDiscounts(ApiContext apiContext, com.mozu.api.contracts.productruntime.DiscountSelections discountSelections, String productCode, int expectedCode, int successCode) throws Exception
@@ -173,7 +168,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productruntime.LocationInventoryCollection getProductInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productruntime.LocationInventoryQuery query, int expectedCode, int successCode) throws Exception
@@ -199,7 +193,6 @@ public class ProductFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

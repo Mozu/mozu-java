@@ -43,7 +43,6 @@ public class TenantAdminUserAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket refreshAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, int expectedCode, int successCode) throws Exception
@@ -69,12 +68,11 @@ public class TenantAdminUserAuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
 	{
-				TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
+		TenantAdminUserAuthTicketResource resource = new TenantAdminUserAuthTicketResource(apiContext);
 		try
 		{
 			resource.deleteUserAuthTicket( refreshToken);
@@ -88,7 +86,6 @@ public class TenantAdminUserAuthTicketFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

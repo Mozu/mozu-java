@@ -43,7 +43,6 @@ public class AuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(ApiContext apiContext, com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest, int expectedCode, int successCode) throws Exception
@@ -69,12 +68,11 @@ public class AuthTicketFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAppAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
 	{
-				AuthTicketResource resource = new AuthTicketResource(apiContext);
+		AuthTicketResource resource = new AuthTicketResource(apiContext);
 		try
 		{
 			resource.deleteAppAuthTicket( refreshToken);
@@ -88,7 +86,6 @@ public class AuthTicketFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

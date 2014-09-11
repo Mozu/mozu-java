@@ -43,12 +43,11 @@ public class TenantDataFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				TenantDataResource resource = new TenantDataResource(apiContext);
+		TenantDataResource resource = new TenantDataResource(apiContext);
 		try
 		{
 			resource.createDBValue( value,  dbEntryQuery);
@@ -62,12 +61,11 @@ public class TenantDataFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				TenantDataResource resource = new TenantDataResource(apiContext);
+		TenantDataResource resource = new TenantDataResource(apiContext);
 		try
 		{
 			resource.updateDBValue( value,  dbEntryQuery);
@@ -81,12 +79,11 @@ public class TenantDataFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static void deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				TenantDataResource resource = new TenantDataResource(apiContext);
+		TenantDataResource resource = new TenantDataResource(apiContext);
 		try
 		{
 			resource.deleteDBValue( dbEntryQuery);
@@ -100,7 +97,6 @@ public class TenantDataFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

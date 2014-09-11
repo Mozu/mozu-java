@@ -43,7 +43,6 @@ public class ProductReservationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class ProductReservationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
@@ -95,12 +93,11 @@ public class ProductReservationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
 	{
-				ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
 			resource.commitReservations( productReservations);
@@ -114,7 +111,6 @@ public class ProductReservationFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
@@ -140,12 +136,11 @@ public class ProductReservationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
 	{
-				ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
+		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
 		{
 			resource.deleteProductReservation( productReservationId);
@@ -159,7 +154,6 @@ public class ProductReservationFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }

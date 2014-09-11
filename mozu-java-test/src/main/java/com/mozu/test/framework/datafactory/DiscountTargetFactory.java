@@ -43,7 +43,6 @@ public class DiscountTargetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class DiscountTargetFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

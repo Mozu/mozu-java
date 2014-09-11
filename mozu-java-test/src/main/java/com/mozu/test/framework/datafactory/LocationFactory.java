@@ -43,7 +43,6 @@ public class LocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location getLocation(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
@@ -69,7 +68,6 @@ public class LocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location addLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, int expectedCode, int successCode) throws Exception
@@ -95,7 +93,6 @@ public class LocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location updateLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, String locationCode, int expectedCode, int successCode) throws Exception
@@ -121,12 +118,11 @@ public class LocationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteLocation(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
 	{
-				LocationResource resource = new LocationResource(apiContext);
+		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
 			resource.deleteLocation( locationCode);
@@ -140,7 +136,6 @@ public class LocationFactory
 		}
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
 	}
 
 }
