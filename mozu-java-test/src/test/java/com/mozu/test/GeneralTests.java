@@ -356,7 +356,6 @@ public class GeneralTests extends MozuApiTestBase {
 	
 	@Test
 	public void DigitalPackageTests() throws Exception {
-		DigitalPackageFactory.createDigitalPackage(apiContext, new DigitalPackage(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 		DigitalPackageFactory.deleteDigitalPackage(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_NO_CONTENT);
 		DigitalPackageFactory.getAvailableDigitalPackageFulfillmentActions(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 		DigitalPackageFactory.updateDigitalPackage(apiContext, new DigitalPackage(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
@@ -407,7 +406,7 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void DocumentListTypeTests() throws Exception {
-		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, new DocumentListType(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+/*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, new DocumentListType(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 	}
 	
@@ -426,17 +425,16 @@ public class GeneralTests extends MozuApiTestBase {
 		
 	@Test
 	public void EntityContainerTests() throws Exception {
-		EntityContainerFactory.getEntityContainer(apiContext, Generator.randomString(15, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		EntityContainerFactory.getEntityContainers(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		EntityContainerFactory.getEntityContainer(apiContext, Generator.randomString(15, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		EntityContainerFactory.getEntityContainers(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void EntityFactoryTests() throws Exception {
-		EntityFactory.deleteEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		EntityFactory.getEntities(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		EntityFactory.getEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		EntityFactory.insertEntity(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		EntityFactory.updateEntity(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		EntityFactory.deleteEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		EntityFactory.getEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		EntityFactory.insertEntity(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		EntityFactory.updateEntity(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -495,12 +493,12 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void ListViewTests() throws Exception {
 		ListViewFactory.createEntityListView(apiContext, new ListView(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-		ListViewFactory.getEntityListView(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		ListViewFactory.getViewEntities(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		ListViewFactory.getViewEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		ListViewFactory.getViewEntityContainer(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		ListViewFactory.getViewEntityContainers(apiContext,  Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		ListViewFactory.updateEntityListView(apiContext, new ListView(),  Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		ListViewFactory.getEntityListView(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ListViewFactory.getViewEntities(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ListViewFactory.getViewEntity(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ListViewFactory.getViewEntityContainer(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ListViewFactory.getViewEntityContainers(apiContext,  Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ListViewFactory.updateEntityListView(apiContext, new ListView(),  Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
