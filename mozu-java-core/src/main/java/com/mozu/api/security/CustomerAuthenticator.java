@@ -10,7 +10,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -25,6 +24,7 @@ import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class CustomerAuthenticator {
     private static ObjectMapper mapper = JsonUtils.initObjectMapper();
@@ -49,7 +49,7 @@ public class CustomerAuthenticator {
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.refreshUserAuthTicketUrl(authTicket.getRefreshToken(), null).getUrl();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         HttpPut put = new HttpPut(resourceUrl);
         try {
             String body = mapper.writeValueAsString(authTicket);
@@ -89,7 +89,7 @@ public class CustomerAuthenticator {
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.createUserAuthTicketUrl(null).getUrl(); // AuthTicketUrl.AuthenticateAppUrl();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         HttpPost post = new HttpPost(resourceUrl);
         
         try {

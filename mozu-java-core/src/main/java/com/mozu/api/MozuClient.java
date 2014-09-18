@@ -16,7 +16,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,6 +29,7 @@ import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
@@ -169,7 +169,7 @@ public class MozuClient<TResult> {
     public void executeRequest() throws Exception {
         validateContext();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         BasicHttpEntityEnclosingRequest request = buildRequest();
         URL url = new URL(baseAddress);
         String hostNm = url.getHost();
