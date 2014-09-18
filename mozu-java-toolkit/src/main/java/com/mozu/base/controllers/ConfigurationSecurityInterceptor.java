@@ -72,7 +72,6 @@ public class ConfigurationSecurityInterceptor extends HandlerInterceptorAdapter 
         int keyLength = Cipher.getMaxAllowedKeyLength("Blowfish")/8;
         
         String keyString = sharedSecret.substring(sharedSecret.length()-keyLength);
-        System.out.println("Key: " + keyString);
         
         SecretKeySpec key = new SecretKeySpec(keyString.getBytes(), "Blowfish");
         Cipher cipher = Cipher.getInstance("Blowfish");

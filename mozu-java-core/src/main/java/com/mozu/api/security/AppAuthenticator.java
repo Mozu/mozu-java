@@ -17,7 +17,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +33,7 @@ import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.urls.platform.applications.AuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class AppAuthenticator {
     private static final Logger logger = LoggerFactory.getLogger(AppAuthenticator.class);
@@ -149,7 +149,7 @@ public class AppAuthenticator {
 
     private void executeRequest(Object bodyObject, HttpEntityEnclosingRequestBase request) {
         HttpResponse response = null;
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
 
         try {
             String body = mapper.writeValueAsString(bodyObject);
