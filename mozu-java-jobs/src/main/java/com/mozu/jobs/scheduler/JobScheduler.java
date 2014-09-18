@@ -72,12 +72,6 @@ public class JobScheduler {
     private static final String QRTZ_INSTANCE_ID =          "org.quartz.scheduler.instanceId";
     private static final String QRTZ_IS_CLUSTERED =         "org.quartz.jobStore.isClustered"; 
 
-//    @Value("${org.quartz.scheduler.instanceId}")
-//    String qrtz_instanceId;
-//
-//    @Value("${org.quartz.jobStore.isClustered}")
-//    Boolean qrtz_isClustered;
-//
     @Value("${org.quartz.scheduler.instanceName}")
     String qrtz_instanceName;
 
