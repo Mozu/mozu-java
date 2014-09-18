@@ -5,8 +5,6 @@
 package com.mozu.jobs.scheduler;
 
 import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Properties;
 import java.util.TimeZone;
 
@@ -17,10 +15,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;
 import org.quartz.DateBuilder;
-import org.quartz.Job;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -73,7 +69,15 @@ public class JobScheduler {
     private static final String QRTZ_USER_PROP =            "org.quartz.dataSource.mozu.user";
     private static final String QRTZ_PASSWORD_PROP =        "org.quartz.dataSource.mozu.password";
     private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.mozu.maxConnections";
+    private static final String QRTZ_INSTANCE_ID =          "org.quartz.scheduler.instanceId";
+    private static final String QRTZ_IS_CLUSTERED =         "org.quartz.jobStore.isClustered"; 
 
+//    @Value("${org.quartz.scheduler.instanceId}")
+//    String qrtz_instanceId;
+//
+//    @Value("${org.quartz.jobStore.isClustered}")
+//    Boolean qrtz_isClustered;
+//
     @Value("${org.quartz.scheduler.instanceName}")
     String qrtz_instanceName;
 
@@ -134,6 +138,11 @@ public class JobScheduler {
         qrtzProperties.put(QRTZ_USER_PROP, qrtz_user);
         qrtzProperties.put(QRTZ_PASSWORD_PROP, qrtz_password);
         qrtzProperties.put(QRTZ_MAX_CONNECTIONS_PROP, qrtz_maxConnections);
+        
+        // Force these values, all instances must have these set or it
+        // may cause data corruption
+        qrtzProperties.put(QRTZ_INSTANCE_ID, "Auto");
+        qrtzProperties.put(QRTZ_IS_CLUSTERED, new Boolean(true));
         
         // start the scheduler
         StdSchedulerFactory schedulerFactory = new StdSchedulerFactory();
