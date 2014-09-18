@@ -28,7 +28,7 @@
         	<beans:map>
         		<beans:entry key="Production" value="https://home.mozu.com" />
         		<beans:entry key="CI" value="http://home.mozu-ci.volusion.com" />
-                <beans:entry key="QA" value="http://home.mozu-qa.com" />
+                <beans:entry key="QA" value="https://home.mozu-qa.com" />
 				<beans:entry key="Dev" value="http://mozu-dev.com" />
 			</beans:map>
 		</beans:constructor-arg>

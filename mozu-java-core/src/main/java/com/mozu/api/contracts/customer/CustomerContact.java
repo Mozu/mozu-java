@@ -99,6 +99,16 @@ public class CustomerContact implements Serializable
 		this.id = id;
 	}
 
+	protected String label;
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
 	/**
 	 * The last name or surname of the contact. The maximum character length is 200.
 	 */

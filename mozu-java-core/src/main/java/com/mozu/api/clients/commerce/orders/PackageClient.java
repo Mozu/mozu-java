@@ -13,38 +13,12 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the packages subresource to manage the physical packages to ship for an order.
  * </summary>
  */
 public class PackageClient {
 	
-	/**
-	 * Retrieves the details of a package of order items.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( orderId,  packageId);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Package package = client.Result();
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
-	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> getPackageClient(String orderId, String packageId) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.getPackageUrl(orderId, packageId);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Package.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
 	/**
 	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.
 	 * <p><pre><code>
@@ -96,6 +70,50 @@ public class PackageClient {
 	}
 
 	/**
+	 * Retrieves the details of a package of order items.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( orderId,  packageId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Package package = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the package to retrieve.
+	 * @param packageId Unique identifier of the package to retrieve.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> getPackageClient(String orderId, String packageId) throws Exception
+	{
+		return getPackageClient( orderId,  packageId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a package of order items.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=GetPackageClient( orderId,  packageId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Package package = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the package to retrieve.
+	 * @param packageId Unique identifier of the package to retrieve.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> getPackageClient(String orderId, String packageId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.getPackageUrl(orderId, packageId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Package.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a new physical package of order items.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  orderId);
@@ -111,7 +129,27 @@ public class PackageClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> createPackageClient(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.createPackageUrl(orderId);
+		return createPackageClient( pkg,  orderId,  null);
+	}
+
+	/**
+	 * Creates a new physical package of order items.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=CreatePackageClient( pkg,  orderId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Package package = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with this package.
+	 * @param responseFields 
+	 * @param package Properties of the physical package of order items.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> createPackageClient(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.createPackageUrl(orderId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Package.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient = new MozuClient(clz);
@@ -139,7 +177,28 @@ public class PackageClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> updatePackageClient(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String packageId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.updatePackageUrl(orderId, packageId);
+		return updatePackageClient( pkg,  orderId,  packageId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a physical package of order items.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient=UpdatePackageClient( pkg,  orderId,  packageId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Package package = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the package to update.
+	 * @param packageId Unique identifier of the package of order items to update.
+	 * @param responseFields 
+	 * @param package Wrapper of properties for the package of order items to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> updatePackageClient(com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String packageId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.PackageUrl.updatePackageUrl(orderId, packageId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Package.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Package> mozuClient = new MozuClient(clz);

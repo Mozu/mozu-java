@@ -16,7 +16,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,6 +29,7 @@ import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
@@ -73,6 +73,15 @@ public class MozuClient<TResult> {
             if (apiContext.getCatalogId() != null && apiContext.getCatalogId() > 0) {
                 addHeader(Headers.X_VOL_CATALOG, String.valueOf(apiContext.getCatalogId()));
             }
+            
+            if (apiContext.getLocale() != null) {
+                addHeader(Headers.X_VOL_LOCALE, String.valueOf(apiContext.getLocale()));
+            }
+ 
+            if (apiContext.getCurrency() != null) {
+                addHeader(Headers.X_VOL_CURRENCY, String.valueOf(apiContext.getCurrency()));
+            }
+ 
         }
     }
 
@@ -149,18 +158,18 @@ public class MozuClient<TResult> {
             AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
             if (appAuthenticator == null) {
                 throw new ApiException("Application has not been authorized to access Mozu.");
-            } else if (StringUtils.isBlank(appAuthenticator.getBaseUrl())) {
+            } else if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
                 throw new ApiException("Authentication.Instance.BaseUrl is missing");
             }
 
-            baseAddress = AppAuthenticator.getInstance().getBaseUrl();
+            baseAddress = MozuConfig.getBaseUrl();
         }
     }
 
     public void executeRequest() throws Exception {
         validateContext();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         BasicHttpEntityEnclosingRequest request = buildRequest();
         URL url = new URL(baseAddress);
         String hostNm = url.getHost();

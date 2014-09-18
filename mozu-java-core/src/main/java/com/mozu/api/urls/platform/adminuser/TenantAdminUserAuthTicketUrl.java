@@ -15,24 +15,28 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateUserAuthTicket
+	 * @param responseFields 
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createUserAuthTicketUrl(Integer tenantId)
+	public static MozuUrl createUserAuthTicketUrl(String responseFields, Integer tenantId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/tenants?tenantId={tenantId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/tenants?tenantId={tenantId}&responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("tenantId", tenantId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RefreshAuthTicket
+	 * @param responseFields 
 	 * @param tenantId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl refreshAuthTicketUrl(Integer tenantId)
+	public static MozuUrl refreshAuthTicketUrl(String responseFields, Integer tenantId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/tenants?tenantId={tenantId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/authtickets/tenants?tenantId={tenantId}&responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("tenantId", tenantId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}

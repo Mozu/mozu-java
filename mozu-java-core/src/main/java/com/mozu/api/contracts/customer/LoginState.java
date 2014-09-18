@@ -26,13 +26,13 @@ public class LoginState implements Serializable
 		this.createdOn = createdOn;
 	}
 
-	protected Integer failedLoginAttemptCount;
+	protected Byte failedLoginAttemptCount;
 
-	public Integer getFailedLoginAttemptCount() {
+	public Byte getFailedLoginAttemptCount() {
 		return this.failedLoginAttemptCount;
 	}
 
-	public void setFailedLoginAttemptCount(Integer failedLoginAttemptCount) {
+	public void setFailedLoginAttemptCount(Byte failedLoginAttemptCount) {
 		this.failedLoginAttemptCount = failedLoginAttemptCount;
 	}
 

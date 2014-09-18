@@ -13,13 +13,86 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the product variations sub-resource to manage the variations of a product based on its attributes. For example, a t-shirt product could be offered in six variations: Small Black, Medium Black, Large Black, Small White, Medium White, and Large White.
  * </summary>
  */
 public class ProductVariationClient {
 	
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient=GetProductVariationLocalizedDeltaPricesClient(dataViewMode,  productCode,  variationKey);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @param variationKey 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> getProductVariationLocalizedDeltaPricesClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationLocalizedDeltaPricesUrl(productCode, variationKey);
+		String verb = "GET";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=GetProductVariationLocalizedDeltaPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> getProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		return getProductVariationLocalizedDeltaPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=GetProductVariationLocalizedDeltaPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> getProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, responseFields, variationKey);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
 	/**
 	 * Retrieves the details of a product variation based on the supplied product code and variation key.
 	 * <p><pre><code>
@@ -35,7 +108,26 @@ public class ProductVariationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> getProductVariationClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationUrl(productCode, variationKey);
+		return getProductVariationClient(dataViewMode,  productCode,  variationKey,  null);
+	}
+
+	/**
+	 * Retrieves the details of a product variation based on the supplied product code and variation key.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient=GetProductVariationClient(dataViewMode,  productCode,  variationKey,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariation productVariation = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariation>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariation
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> getProductVariationClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationUrl(productCode, responseFields, variationKey);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariation.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = new MozuClient(clz);
@@ -60,13 +152,13 @@ public class ProductVariationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> getProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getProductVariationsClient(dataViewMode,  productCode,  null,  null,  null,  null);
+		return getProductVariationsClient(dataViewMode,  productCode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of the product variations configured for the specified product code.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GetProductVariationsClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient=GetProductVariationsClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductVariationPagedCollection productVariationPagedCollection = client.Result();
@@ -74,14 +166,15 @@ public class ProductVariationClient {
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationPagedCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> getProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> getProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationsUrl(filter, pageSize, productCode, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationsUrl(filter, pageSize, productCode, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationPagedCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient = new MozuClient(clz);
@@ -93,28 +186,131 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient=UpdateProductVariationsClient(dataViewMode,  productVariations,  productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=AddProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * ProductVariationCollection productVariationCollection = client.Result();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
 	 * </code></pre></p>
-	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationCollection>
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
-	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> updateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> addProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationsUrl(productCode);
-		String verb = "PUT";
-		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient = new MozuClient(clz);
+		return addProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=AddProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> addProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.addProductVariationLocalizedDeltaPriceUrl(productCode, responseFields, variationKey);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(productVariations);
+		mozuClient.setBody(localizedDeltaPrice);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient=UpdateProductVariationLocalizedDeltaPricesClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> updateProductVariationLocalizedDeltaPricesClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> localizedDeltaPrice, String productCode, String variationKey) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationLocalizedDeltaPricesUrl(productCode, variationKey);
+		String verb = "PUT";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedDeltaPrice);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=UpdateProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> updateProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		return updateProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient=UpdateProductVariationLocalizedDeltaPriceClient(dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationDeltaPrice productVariationDeltaPrice = client.Result();
+	 * </code></pre></p>
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> updateProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, responseFields, variationKey);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedDeltaPrice);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
@@ -137,13 +333,82 @@ public class ProductVariationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> updateProductVariationClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationUrl(productCode, variationKey);
+		return updateProductVariationClient(dataViewMode,  productVariation,  productCode,  variationKey,  null);
+	}
+
+	/**
+	 * Modifies the details of a variation, based on the supplied variation key, for the specified product code.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient=UpdateProductVariationClient(dataViewMode,  productVariation,  productCode,  variationKey,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariation productVariation = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param productVariation Wrapper for the properties of the specified product variation.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariation>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariation
+	 * @see com.mozu.api.contracts.productadmin.ProductVariation
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> updateProductVariationClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationUrl(productCode, responseFields, variationKey);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariation.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productVariation);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient=UpdateProductVariationsClient(dataViewMode,  productVariations,  productCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationCollection productVariationCollection = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationCollection>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> updateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode) throws Exception
+	{
+		return updateProductVariationsClient(dataViewMode,  productVariations,  productCode,  null);
+	}
+
+	/**
+	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient=UpdateProductVariationsClient(dataViewMode,  productVariations,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductVariationCollection productVariationCollection = client.Result();
+	 * </code></pre></p>
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields 
+	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationCollection>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> updateProductVariationsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationsUrl(productCode, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(productVariations);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
@@ -163,6 +428,30 @@ public class ProductVariationClient {
 	public static MozuClient deleteProductVariationClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.deleteProductVariationUrl(productCode, variationKey);
+		String verb = "DELETE";
+				MozuClient mozuClient = new MozuClient();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteProductVariationLocalizedDeltaPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deleteProductVariationLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.deleteProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, variationKey);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);

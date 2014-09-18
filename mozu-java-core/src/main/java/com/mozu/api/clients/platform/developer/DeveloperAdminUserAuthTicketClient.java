@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use this resource to manage authentication tickets for your developer account.
  * </summary>
@@ -35,26 +34,27 @@ public class DeveloperAdminUserAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> createDeveloperUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo) throws Exception
 	{
-		return createDeveloperUserAuthTicketClient( userAuthInfo,  null);
+		return createDeveloperUserAuthTicketClient( userAuthInfo,  null,  null);
 	}
 
 	/**
 	 * Generate an authentication ticket for a developer account.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient=CreateDeveloperUserAuthTicketClient( userAuthInfo,  developerAccountId);
+	 * MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient=CreateDeveloperUserAuthTicketClient( userAuthInfo,  developerAccountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
+	 * @param responseFields 
 	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> createDeveloperUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> createDeveloperUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(developerAccountId);
+		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(developerAccountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = new MozuClient(clz);
@@ -80,26 +80,27 @@ public class DeveloperAdminUserAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> refreshDeveloperAuthTicketClient(com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket) throws Exception
 	{
-		return refreshDeveloperAuthTicketClient( existingAuthTicket,  null);
+		return refreshDeveloperAuthTicketClient( existingAuthTicket,  null,  null);
 	}
 
 	/**
 	 * Generates a new developer account authentication ticket for the specified tenant by supplying the defined refresh token information.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient=RefreshDeveloperAuthTicketClient( existingAuthTicket,  developerAccountId);
+	 * MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient=RefreshDeveloperAuthTicketClient( existingAuthTicket,  developerAccountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
+	 * @param responseFields 
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 */
-	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> refreshDeveloperAuthTicketClient(com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> refreshDeveloperAuthTicketClient(com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(developerAccountId);
+		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(developerAccountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = new MozuClient(clz);

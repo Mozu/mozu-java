@@ -15,11 +15,12 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
-import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
@@ -36,6 +37,19 @@ public class Order implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * If true, the order is exempt from applied sales tax.
+	 */
+	protected Boolean isTaxExempt;
+
+	public Boolean getIsTaxExempt() {
+		return this.isTaxExempt;
+	}
+
+	public void setIsTaxExempt(Boolean isTaxExempt) {
+		this.isTaxExempt = isTaxExempt;
+	}
 
 	protected DateTime acceptedDate;
 
@@ -304,6 +318,16 @@ public class Order implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
+	protected Double handlingSubTotal;
+
+	public Double getHandlingSubTotal() {
+		return this.handlingSubTotal;
+	}
+
+	public void setHandlingSubTotal(Double handlingSubTotal) {
+		this.handlingSubTotal = handlingSubTotal;
+	}
+
 	/**
 	 * If the handling fee for the order is subject to sales tax, the total tax amount.
 	 */
@@ -410,19 +434,6 @@ public class Order implements Serializable
 
 	public void setIsImport(Boolean isImport) {
 		this.isImport = isImport;
-	}
-
-	/**
-	 * If true, the order is exempt from applied sales tax.
-	 */
-	protected Boolean isTaxExempt;
-
-	public Boolean getIsTaxExempt() {
-		return this.isTaxExempt;
-	}
-
-	public void setIsTaxExempt(Boolean isTaxExempt) {
-		this.isTaxExempt = isTaxExempt;
 	}
 
 	/**
@@ -685,6 +696,16 @@ public class Order implements Serializable
 		this.totalCollected = totalCollected;
 	}
 
+	protected String type;
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	/**
 	 * The current version number of the order.
 	 */
@@ -785,6 +806,14 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	protected List<DigitalPackage> digitalPackages;
+	public List<DigitalPackage> getDigitalPackages() {
+		return this.digitalPackages;
+	}
+	public void setDigitalPackages(List<DigitalPackage> digitalPackages) {
+		this.digitalPackages = digitalPackages;
+	}
+
 	/**
 	 * Properties of the item fulfillment information associated with the order. Shoppers can fulfill order items using in-store pickup or direct shipping.
 	 */
@@ -796,6 +825,14 @@ public class Order implements Serializable
 
 	public void setFulfillmentInfo(FulfillmentInfo fulfillmentInfo) {
 		this.fulfillmentInfo = fulfillmentInfo;
+	}
+
+	protected List<AppliedDiscount> handlingDiscounts;
+	public List<AppliedDiscount> getHandlingDiscounts() {
+		return this.handlingDiscounts;
+	}
+	public void setHandlingDiscounts(List<AppliedDiscount> handlingDiscounts) {
+		this.handlingDiscounts = handlingDiscounts;
 	}
 
 	protected List<InvalidCoupon> invalidCoupons;

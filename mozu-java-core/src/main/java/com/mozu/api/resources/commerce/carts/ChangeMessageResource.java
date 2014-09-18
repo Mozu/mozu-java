@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Cart Messages resource to retrieve messages for live carts that the system logs when a product's price or inventory level changes.
  * </summary>
@@ -25,24 +24,40 @@ public class ChangeMessageResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ChangeMessageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the messages associated with the current shopper's cart.
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.GetMessages();
+	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.getMessagesClient();
+		return getMessages( null);
+	}
+
+	/**
+	 * Retrieves the messages associated with the current shopper's cart.
+	 * <p><pre><code>
+	 *	ChangeMessage changemessage = new ChangeMessage();
+	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.getMessagesClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -53,7 +68,7 @@ public class ChangeMessageResource {
 	 * Deletes all messages associated with the cart of the current shopper.
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	changemessage.RemoveAllMessages();
+	 *	changemessage.removeAllMessages();
 	 * </code></pre></p>
 	 * @return 
 	 */
@@ -69,7 +84,7 @@ public class ChangeMessageResource {
 	 * Removes a single message associated with the cart of the current shopper.
 	 * <p><pre><code>
 	 *	ChangeMessage changemessage = new ChangeMessage();
-	 *	changemessage.RemoveMessage( messageId);
+	 *	changemessage.removeMessage( messageId);
 	 * </code></pre></p>
 	 * @param messageId Identifier of the message to remove from the cart.
 	 * @return 

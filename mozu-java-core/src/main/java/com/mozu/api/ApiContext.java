@@ -154,4 +154,27 @@ public interface ApiContext {
      * @param authTicket
      */
     void setUserAuthTicket (AuthTicket authTicket);
+    
+    /**
+     *  Set the locale to be used by the call
+     * @param locale ISO Locale string.
+     */
+    void setLocale (String locale);
+    
+    /** 
+     * Get the locale to use
+     * @return a string with the ISO Locale string
+     */
+    String getLocale ();
+    
+    /**
+     * 
+     * @param currency
+     */
+    void setCurrency (String currency);
+    
+    /**
+     * get the ISO currency to use in Mozu
+     */
+    String getCurrency ();
 }

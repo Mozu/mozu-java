@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,42 +24,44 @@ public class CustomerSegmentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerSegmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetSegments();
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
 	public com.mozu.api.contracts.customer.CustomerSegmentCollection getSegments() throws Exception
 	{
-		return getSegments( null,  null,  null,  null);
+		return getSegments( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetSegments( startIndex,  pageSize,  sortBy,  filter);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getSegments( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerSegmentCollection getSegments(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.customer.CustomerSegmentCollection getSegments(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.getSegmentsClient( startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.getSegmentsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -71,7 +72,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.GetSegment( id);
+	 *	CustomerSegment customerSegment = customersegment.getSegment( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -79,7 +80,23 @@ public class CustomerSegmentResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerSegment getSegment(Integer id) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.getSegmentClient( id);
+		return getSegment( id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerSegment customersegment = new CustomerSegment();
+	 *	CustomerSegment customerSegment = customersegment.getSegment( id,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public com.mozu.api.contracts.customer.CustomerSegment getSegment(Integer id, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.getSegmentClient( id,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -90,7 +107,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.AddSegment( segment);
+	 *	CustomerSegment customerSegment = customersegment.addSegment( segment);
 	 * </code></pre></p>
 	 * @param segment 
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
@@ -99,7 +116,24 @@ public class CustomerSegmentResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerSegment addSegment(com.mozu.api.contracts.customer.CustomerSegment segment) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.addSegmentClient( segment);
+		return addSegment( segment,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerSegment customersegment = new CustomerSegment();
+	 *	CustomerSegment customerSegment = customersegment.addSegment( segment,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param segment 
+	 * @return com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public com.mozu.api.contracts.customer.CustomerSegment addSegment(com.mozu.api.contracts.customer.CustomerSegment segment, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.addSegmentClient( segment,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -110,7 +144,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.AddSegmentAccounts( accountIds,  id);
+	 *	customersegment.addSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param accountIds 
@@ -129,7 +163,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegment customerSegment = customersegment.UpdateSegment( segment,  id);
+	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param segment 
@@ -139,7 +173,25 @@ public class CustomerSegmentResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerSegment updateSegment(com.mozu.api.contracts.customer.CustomerSegment segment, Integer id) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.updateSegmentClient( segment,  id);
+		return updateSegment( segment,  id,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerSegment customersegment = new CustomerSegment();
+	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id,  responseFields);
+	 * </code></pre></p>
+	 * @param id 
+	 * @param responseFields 
+	 * @param segment 
+	 * @return com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 * @see com.mozu.api.contracts.customer.CustomerSegment
+	 */
+	public com.mozu.api.contracts.customer.CustomerSegment updateSegment(com.mozu.api.contracts.customer.CustomerSegment segment, Integer id, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.updateSegmentClient( segment,  id,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -150,7 +202,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.DeleteSegment( id);
+	 *	customersegment.deleteSegment( id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @return 
@@ -167,7 +219,7 @@ public class CustomerSegmentResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.DeleteSegmentAccounts( accountIds,  id);
+	 *	customersegment.deleteSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
 	 * @param id 
 	 * @param accountIds 

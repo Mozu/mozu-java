@@ -25,11 +25,13 @@ public class TaxableTerritoryUrl
 
 	/**
 	 * Get Resource Url for AddTaxableTerritory
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addTaxableTerritoryUrl()
+	public static MozuUrl addTaxableTerritoryUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/taxableterritories");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/taxableterritories?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -24,6 +24,16 @@ public class ReturnItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	/**
 	 * Unique identifier of the item in the original completed order. All return items should be associated with a corresponding order item.
 	 */

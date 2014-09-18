@@ -14,20 +14,6 @@ public class PickupUrl
 {
 
 	/**
-	 * Get Resource Url for GetPickup
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getPickupUrl(String orderId, String pickupId)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups/{pickupId}");
-		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("pickupId", pickupId);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for GetAvailablePickupFulfillmentActions
 	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
@@ -42,14 +28,32 @@ public class PickupUrl
 	}
 
 	/**
-	 * Get Resource Url for CreatePickup
-	 * @param orderId Unique identifier of the order.
+	 * Get Resource Url for GetPickup
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createPickupUrl(String orderId)
+	public static MozuUrl getPickupUrl(String orderId, String pickupId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups/{pickupId}?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("pickupId", pickupId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for CreatePickup
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createPickupUrl(String orderId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups?responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -57,13 +61,15 @@ public class PickupUrl
 	 * Get Resource Url for UpdatePickup
 	 * @param orderId Unique identifier of the order associated with the in-store pickup.
 	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updatePickupUrl(String orderId, String pickupId)
+	public static MozuUrl updatePickupUrl(String orderId, String pickupId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups/{pickupId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/pickups/{pickupId}?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("pickupId", pickupId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

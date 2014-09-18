@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,17 +24,18 @@ public class CustomerAuthTicketResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerAuthTicketResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	Stream stream = customerauthticket.CreateAnonymousShopperAuthTicket();
+	 *	Stream stream = customerauthticket.createAnonymousShopperAuthTicket();
 	 * </code></pre></p>
 	 * @return Stream
 	 * @see Stream
@@ -53,7 +53,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.CreateUserAuthTicket( userAuthInfo);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
 	 * @param userAuthInfo 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
@@ -62,7 +62,24 @@ public class CustomerAuthTicketResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createUserAuthTicketClient( userAuthInfo);
+		return createUserAuthTicket( userAuthInfo,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createUserAuthTicket( userAuthInfo,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param userAuthInfo 
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
+	 */
+	public com.mozu.api.contracts.customer.CustomerAuthTicket createUserAuthTicket(com.mozu.api.contracts.customer.CustomerUserAuthInfo userAuthInfo, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createUserAuthTicketClient( userAuthInfo,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -73,7 +90,7 @@ public class CustomerAuthTicketResource {
 	 * 
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.RefreshUserAuthTicket( refreshToken);
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.refreshUserAuthTicket( refreshToken);
 	 * </code></pre></p>
 	 * @param refreshToken 
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
@@ -81,7 +98,23 @@ public class CustomerAuthTicketResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(String refreshToken) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.refreshUserAuthTicketClient( refreshToken);
+		return refreshUserAuthTicket( refreshToken,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.refreshUserAuthTicket( refreshToken,  responseFields);
+	 * </code></pre></p>
+	 * @param refreshToken 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 */
+	public com.mozu.api.contracts.customer.CustomerAuthTicket refreshUserAuthTicket(String refreshToken, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.refreshUserAuthTicketClient( refreshToken,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,42 +24,44 @@ public class LocationResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public LocationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocations();
+	 *	LocationCollection locationCollection = location.getLocations();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
 	public com.mozu.api.contracts.location.LocationCollection getLocations() throws Exception
 	{
-		return getLocations( null,  null,  null,  null);
+		return getLocations( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	LocationCollection locationCollection = location.GetLocations( startIndex,  pageSize,  sortBy,  filter);
+	 *	LocationCollection locationCollection = location.getLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.location.LocationCollection
 	 * @see com.mozu.api.contracts.location.LocationCollection
 	 */
-	public com.mozu.api.contracts.location.LocationCollection getLocations(Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.location.LocationCollection getLocations(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.admin.LocationClient.getLocationsClient( startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.location.LocationCollection> client = com.mozu.api.clients.commerce.admin.LocationClient.getLocationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -71,7 +72,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.GetLocation( locationCode);
+	 *	Location location = location.getLocation( locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @return com.mozu.api.contracts.location.Location
@@ -79,7 +80,23 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location getLocation(String locationCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.getLocationClient( locationCode);
+		return getLocation( locationCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.getLocation( locationCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location getLocation(String locationCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.getLocationClient( locationCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -90,7 +107,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.AddLocation( location);
+	 *	Location location = location.addLocation( location);
 	 * </code></pre></p>
 	 * @param location 
 	 * @return com.mozu.api.contracts.location.Location
@@ -99,7 +116,24 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location addLocation(com.mozu.api.contracts.location.Location location) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.addLocationClient( location);
+		return addLocation( location,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.addLocation( location,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param location 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location addLocation(com.mozu.api.contracts.location.Location location, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.addLocationClient( location,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -110,7 +144,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	Location location = location.UpdateLocation( location,  locationCode);
+	 *	Location location = location.updateLocation( location,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @param location 
@@ -120,7 +154,25 @@ public class LocationResource {
 	 */
 	public com.mozu.api.contracts.location.Location updateLocation(com.mozu.api.contracts.location.Location location, String locationCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.updateLocationClient( location,  locationCode);
+		return updateLocation( location,  locationCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Location location = new Location();
+	 *	Location location = location.updateLocation( location,  locationCode,  responseFields);
+	 * </code></pre></p>
+	 * @param locationCode 
+	 * @param responseFields 
+	 * @param location 
+	 * @return com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 * @see com.mozu.api.contracts.location.Location
+	 */
+	public com.mozu.api.contracts.location.Location updateLocation(com.mozu.api.contracts.location.Location location, String locationCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.admin.LocationClient.updateLocationClient( location,  locationCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -131,7 +183,7 @@ public class LocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	Location location = new Location();
-	 *	location.DeleteLocation( locationCode);
+	 *	location.deleteLocation( locationCode);
 	 * </code></pre></p>
 	 * @param locationCode 
 	 * @return 

@@ -35,6 +35,16 @@ public class Package implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	/**
 	 * The date and time the package shipped to the customer.
 	 */
@@ -56,6 +66,16 @@ public class Package implements Serializable
 
 	public void setFulfillmentLocationCode(String fulfillmentLocationCode) {
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
+	}
+
+	protected Boolean hasLabel;
+
+	public Boolean getHasLabel() {
+		return this.hasLabel;
+	}
+
+	public void setHasLabel(Boolean hasLabel) {
+		this.hasLabel = hasLabel;
 	}
 
 	/**

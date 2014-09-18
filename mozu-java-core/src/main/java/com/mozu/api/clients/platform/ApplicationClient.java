@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -34,7 +33,25 @@ public class ApplicationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.installedapplications.Application> getApplicationClient(String appId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.ApplicationUrl.getApplicationUrl(appId);
+		return getApplicationClient( appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=GetApplicationClient( appId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param appId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.installedapplications.Application> getApplicationClient(String appId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.ApplicationUrl.getApplicationUrl(appId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.installedapplications.Application.class;
 		MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient = new MozuClient(clz);
@@ -60,7 +77,27 @@ public class ApplicationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.installedapplications.Application> updateApplicationClient(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.ApplicationUrl.updateApplicationUrl(appId);
+		return updateApplicationClient( application,  appId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=UpdateApplicationClient( application,  appId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param appId 
+	 * @param responseFields 
+	 * @param application 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @see com.mozu.api.contracts.installedapplications.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.installedapplications.Application> updateApplicationClient(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.ApplicationUrl.updateApplicationUrl(appId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.installedapplications.Application.class;
 		MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient = new MozuClient(clz);

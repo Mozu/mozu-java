@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
  * </summary>
@@ -34,7 +33,25 @@ public class UserDataClient {
 	 */
 	public static MozuClient<String> getDBValueClient(String dbEntryQuery) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.UserDataUrl.getDBValueUrl(dbEntryQuery);
+		return getDBValueClient( dbEntryQuery,  null);
+	}
+
+	/**
+	 * Retrieves the value of a record in the Mozu database.
+	 * <p><pre><code>
+	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * string string = client.Result();
+	 * </code></pre></p>
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <string>
+	 * @see string
+	 */
+	public static MozuClient<String> getDBValueClient(String dbEntryQuery, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.UserDataUrl.getDBValueUrl(dbEntryQuery, responseFields);
 		String verb = "GET";
 		Class<?> clz = String.class;
 		MozuClient<String> mozuClient = new MozuClient(clz);

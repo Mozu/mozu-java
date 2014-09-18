@@ -1,11 +1,9 @@
 package com.mozu.api;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
 import java.io.InputStream;
-import java.util.Map;
 
 import mockit.Expectations;
 import mockit.Mocked;
@@ -16,7 +14,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
-import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,6 +37,8 @@ public final class MozuClientUnitTest {
     protected static final String AUTH_ACCESS_TOKEN = "AuthAccessToken";
     private static final String BODY_STRING = "{\"body\": [{\"key1\":\"value1\"}, {\"key2\":\"value2\"}]}";
     private static final String TENANT_DOMAIN = "TenantDomain";
+    private static final String LOCALE = "en_US";
+    private static final String CURRENCY = "USD";
     
     @Mocked ApiContext mockApiContext;
     @Mocked MozuUrl mockResourceUrl;
@@ -117,6 +116,8 @@ public final class MozuClientUnitTest {
             { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
             { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
             { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
+            { mockApiContext.getLocale(); result=LOCALE; times=2;}
+            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
             { mockApiContext.getTenantId(); result=new Integer(0); }
         };
@@ -144,13 +145,13 @@ public final class MozuClientUnitTest {
             { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
             { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
             { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
+            { mockApiContext.getLocale(); result=LOCALE; times=2;}
+            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
             { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockAppAuthenticator.getBaseUrl(); result=BASE_URL; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockAppAuthenticator.getBaseUrl(); result=BASE_URL; }
         };
 
+        MozuConfig.setBaseUrl(BASE_URL);
         MozuClient<InputStream> mozuClient = new MozuClient<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
@@ -170,11 +171,14 @@ public final class MozuClientUnitTest {
             { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
             { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
             { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
+            { mockApiContext.getLocale(); result=LOCALE; times=2;}
+            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
             { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockAppAuthenticator.getBaseUrl(); result=""; }
+            { MozuConfig.getBaseUrl(); result=""; }
         };
 
+        MozuConfig.setBaseUrl("");
         MozuClient<InputStream> mozuClient = new MozuClient<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);

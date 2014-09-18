@@ -37,6 +37,16 @@ public class ProductValidationSummary implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -107,6 +117,16 @@ public class ProductValidationSummary implements Serializable
 
 	public void setProductShortDescription(String productShortDescription) {
 		this.productShortDescription = productShortDescription;
+	}
+
+	protected String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 
 	protected String productUsage;

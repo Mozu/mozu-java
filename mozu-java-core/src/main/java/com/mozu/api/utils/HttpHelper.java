@@ -13,6 +13,7 @@ import com.mozu.api.ApiError;
 import com.mozu.api.ApiError.Item;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.security.AppAuthenticator;
 
 public class HttpHelper {
@@ -58,9 +59,9 @@ public class HttpHelper {
 
     static public HttpHost getProxyHost () {;
         HttpHost proxyHttpHost = null;
-       String proxyHost = ConfigProperties.getStringProperty(ConfigProperties.PROXY_HOST);
+       String proxyHost = MozuConfig.getProxyHost();
        if (StringUtils.isNotBlank(proxyHost)) {
-           int proxyPort = ConfigProperties.getIntProperty(ConfigProperties.PROXY_PORT);
+           int proxyPort = MozuConfig.getProxyPort();
             proxyHttpHost = new HttpHost(proxyHost, proxyPort);
        }
          return proxyHttpHost;
@@ -88,8 +89,5 @@ public class HttpHelper {
         else
             return null;
     }
-
-
-    
 
 }

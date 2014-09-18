@@ -7,6 +7,7 @@ apply plugin: 'signing'
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.9.+'
@@ -21,7 +22,7 @@ if (hasProperty("teamcity")) {
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.18'
+    version = '1.11.0'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")

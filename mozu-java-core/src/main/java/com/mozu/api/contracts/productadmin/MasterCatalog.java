@@ -29,6 +29,16 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
+	protected Boolean isDeleted;
+
+	public Boolean getIsDeleted() {
+		return this.isDeleted;
+	}
+
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+
 	/**
 	 * The name of the master catalog.
 	 */

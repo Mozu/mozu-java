@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -57,7 +56,25 @@ public class LocationTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.LocationType> getLocationTypeClient(String locationTypeCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.getLocationTypeUrl(locationTypeCode);
+		return getLocationTypeClient( locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=GetLocationTypeClient( locationTypeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LocationType locationType = client.Result();
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.LocationType> getLocationTypeClient(String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.getLocationTypeUrl(locationTypeCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
 		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);
@@ -82,7 +99,26 @@ public class LocationTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.LocationType> addLocationTypeClient(com.mozu.api.contracts.location.LocationType locationType) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.addLocationTypeUrl();
+		return addLocationTypeClient( locationType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=AddLocationTypeClient( locationType,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LocationType locationType = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.LocationType> addLocationTypeClient(com.mozu.api.contracts.location.LocationType locationType, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.addLocationTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
 		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);
@@ -109,7 +145,27 @@ public class LocationTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.location.LocationType> updateLocationTypeClient(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.updateLocationTypeUrl(locationTypeCode);
+		return updateLocationTypeClient( locationType,  locationTypeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient=UpdateLocationTypeClient( locationType,  locationTypeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * LocationType locationType = client.Result();
+	 * </code></pre></p>
+	 * @param locationTypeCode 
+	 * @param responseFields 
+	 * @param locationType 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
+	 * @see com.mozu.api.contracts.location.LocationType
+	 * @see com.mozu.api.contracts.location.LocationType
+	 */
+	public static MozuClient<com.mozu.api.contracts.location.LocationType> updateLocationTypeClient(com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.updateLocationTypeUrl(locationTypeCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
 		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);

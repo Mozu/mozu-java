@@ -14,7 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Temporarily hold a product from inventory while a shopper is filling out payment information. Create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
  * </summary>
@@ -25,44 +25,53 @@ public class ProductReservationResource {
 	///
 	private ApiContext _apiContext;
 
-	
+	private DataViewMode _dataViewMode;
+
 	public ProductReservationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
-	
+
+	public ProductReservationResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservationCollection productReservationCollection = productreservation.GetProductReservations(dataViewMode);
+	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 */
-	public com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	public com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations() throws Exception
 	{
-		return getProductReservations(dataViewMode,  null,  null,  null,  null);
+		return getProductReservations( null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of product reservations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservationCollection productReservationCollection = productreservation.GetProductReservations(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+	 *	ProductReservationCollection productReservationCollection = productreservation.getProductReservations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductReservationCollection
 	 */
-	public com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.getProductReservationsClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductReservationCollection> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.getProductReservationsClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -73,16 +82,33 @@ public class ProductReservationResource {
 	 * Retrieves the details of a product reservation.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.GetProductReservation(dataViewMode,  productReservationId);
+	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the product reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(com.mozu.api.DataViewMode dataViewMode, Integer productReservationId) throws Exception
+	public com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(Integer productReservationId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.getProductReservationClient(dataViewMode,  productReservationId);
+		return getProductReservation( productReservationId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a product reservation.
+	 * <p><pre><code>
+	 *	ProductReservation productreservation = new ProductReservation();
+	 *	ProductReservation productReservation = productreservation.getProductReservation( productReservationId,  responseFields);
+	 * </code></pre></p>
+	 * @param productReservationId Unique identifier of the product reservation.
+	 * @param responseFields 
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.ProductReservation
+	 * @see com.mozu.api.contracts.productadmin.ProductReservation
+	 */
+	public com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(Integer productReservationId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductReservation> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.getProductReservationClient(_dataViewMode,  productReservationId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -93,7 +119,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations(dataViewMode,  productReservations);
+	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
@@ -101,16 +127,16 @@ public class ProductReservationResource {
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
+	public List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
 	{
-		return addProductReservations(dataViewMode,  productReservations,  null);
+		return addProductReservations( productReservations,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.AddProductReservations(dataViewMode,  productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
@@ -119,9 +145,9 @@ public class ProductReservationResource {
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
+	public List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.addProductReservationsClient(dataViewMode,  productReservations,  skipInventoryCheck);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.addProductReservationsClient(_dataViewMode,  productReservations,  skipInventoryCheck);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -132,16 +158,16 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.CommitReservations(dataViewMode,  productReservations);
+	 *	productreservation.commitReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public void commitReservations(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
+	public void commitReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.commitReservationsClient(dataViewMode,  productReservations);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.commitReservationsClient(_dataViewMode,  productReservations);
 		client.setContext(_apiContext);
 		client.executeRequest();
 
@@ -151,7 +177,7 @@ public class ProductReservationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(dataViewMode,  productReservations);
+	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productReservations 
@@ -159,16 +185,16 @@ public class ProductReservationResource {
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
+	public List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations) throws Exception
 	{
-		return updateProductReservations(dataViewMode,  productReservations,  null);
+		return updateProductReservations( productReservations,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	ProductReservation productReservation = productreservation.UpdateProductReservations(dataViewMode,  productReservations,  skipInventoryCheck);
+	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
 	 * @param skipInventoryCheck 
 	 * @param dataViewMode DataViewMode
@@ -177,9 +203,9 @@ public class ProductReservationResource {
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
-	public List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
+	public List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.updateProductReservationsClient(dataViewMode,  productReservations,  skipInventoryCheck);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.updateProductReservationsClient(_dataViewMode,  productReservations,  skipInventoryCheck);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -190,15 +216,15 @@ public class ProductReservationResource {
 	 * Deletes a product reservation. For example, delete a reservation when an order is not processed to return the product quantity back to inventory.
 	 * <p><pre><code>
 	 *	ProductReservation productreservation = new ProductReservation();
-	 *	productreservation.DeleteProductReservation(dataViewMode,  productReservationId);
+	 *	productreservation.deleteProductReservation( productReservationId);
 	 * </code></pre></p>
 	 * @param productReservationId Unique identifier of the reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
-	public void deleteProductReservation(com.mozu.api.DataViewMode dataViewMode, Integer productReservationId) throws Exception
+	public void deleteProductReservation(Integer productReservationId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.deleteProductReservationClient(dataViewMode,  productReservationId);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductReservationClient.deleteProductReservationClient(_dataViewMode,  productReservationId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 

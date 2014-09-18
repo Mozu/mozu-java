@@ -17,6 +17,16 @@ public class BundledProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
 	protected String description;
 
 	public String getDescription() {
@@ -25,6 +35,16 @@ public class BundledProduct implements Serializable
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
 	}
 
 	protected Boolean isPackagedStandAlone;
@@ -45,6 +65,26 @@ public class BundledProduct implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	protected String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
+	protected Object optionValue;
+
+	public Object getOptionValue() {
+		return this.optionValue;
+	}
+
+	public void setOptionValue(Object optionValue) {
+		this.optionValue = optionValue;
 	}
 
 	protected String productCode;

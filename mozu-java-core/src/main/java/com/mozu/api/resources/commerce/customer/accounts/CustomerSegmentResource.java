@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,17 +24,18 @@ public class CustomerSegmentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public CustomerSegmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getAccountSegments( accountId);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
@@ -43,26 +43,27 @@ public class CustomerSegmentResource {
 	 */
 	public com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(Integer accountId) throws Exception
 	{
-		return getAccountSegments( accountId,  null,  null,  null,  null);
+		return getAccountSegments( accountId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.GetAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter);
+	 *	CustomerSegmentCollection customerSegmentCollection = customersegment.getAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
-	public com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerSegmentClient.getAccountSegmentsClient( accountId,  startIndex,  pageSize,  sortBy,  filter);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerSegmentClient.getAccountSegmentsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

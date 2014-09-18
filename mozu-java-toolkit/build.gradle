@@ -1,0 +1,163 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+sourceCompatibility = 1.7
+
+archivesBaseName='mozu-api-toolkit'
+group='com.mozu'
+
+// Dynamically insert TeamCity build number if available
+if (hasProperty("teamcity")) {
+    version = teamcity["build.number"]
+        println "TeamCity build number passed into gradle is " + version
+    }
+    else {
+// Manually insert the version numbers here when building outside of TeamCity
+    version = '1.0.2-SNAPSHOT'
+}
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Mozu SDK Base Add-on', 'Implementation-Version': version
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+
+    ext {
+        springVersion='3.2.4.RELEASE'
+    }   
+    compile("javax.servlet:servlet-api:2.5")
+    compile("javax.servlet:jstl:1.2")
+
+    compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-expression', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-test', version: springVersion
+    compile group: 'org.springframework', name: 'spring-oxm', version: springVersion
+    compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    
+    compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
+    compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
+
+    compile ("com.mozu:mozu-api-core:1.11.1") {
+        exclude group: 'mysql'
+        exclude group: 'xerces'
+        exclude group: 'berkeleydb'
+        exclude group: 'hsqldb'
+        exclude group: 'tomcat'
+        
+        changing = true
+    }
+
+    compile "org.apache.commons:commons-lang3:3.2.1"
+    compile ("org.slf4j:slf4j-api:1.7.5")
+    compile ("org.slf4j:slf4j-log4j12:1.7.5")
+    compile ('log4j:log4j:1.2.17')
+    compile ('org.quartz-scheduler:quartz:2.2.1')
+
+    testCompile 'com.googlecode.jmockit:jmockit:0.999.11'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+signing {
+    required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+artifacts {
+    archives jar
+    archives sourcesJar
+    archives javadocJar
+}
+
+if (hasProperty("sonatypeUsername")) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+     
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                  authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
+
+                snapshotRepository (url: "https://oss.sonatype.org/content/repositories/snapshots") {
+                  authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
+
+                pom.project {
+                   name 'mozu-java-toolkit'
+                   packaging 'jar'
+                   description 'Mozu Java Toolkit is an add=on library to simplify development of your Java applications that integrate with the Mozu platform'
+                   url 'https://github.com/Mozu/mozu-java.git'
+     
+                   scm {
+                       url 'scm:git@github.com:Mozu/mozu-java.git'
+                       connection 'scm:git@github.com:Mozu/mozu-java.git'
+                       developerConnection 'scm:git@github.com:Mozu/mozu-java.git'
+                   }
+     
+                   licenses {
+                       license {
+                           name 'The MIT License (MIT)'
+                           url 'http://http://opensource.org/licenses/MIT'
+                           distribution 'repo'
+                       }
+                   }
+     
+                   developers {
+                       developer {
+                           id 'bob_hewett'
+                           name 'Bob Hewett'
+                       }
+                       developer {
+                           id 'john_gatti'
+                           name 'John Gatti'
+                       }
+                       developer {
+                           id 'sanjay_mandadi'
+                           name 'Sanjay Mandadi'
+                       }
+                       
+                   }
+               }
+            }
+        }
+    }
+}

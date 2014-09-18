@@ -10,6 +10,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.ProductContent;
+import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,6 +18,26 @@ public class BundledProduct implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
 
 	protected Boolean isPackagedStandAlone;
 
@@ -28,6 +49,26 @@ public class BundledProduct implements Serializable
 		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
+	protected String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
+	protected Object optionValue;
+
+	public Object getOptionValue() {
+		return this.optionValue;
+	}
+
+	public void setOptionValue(Object optionValue) {
+		this.optionValue = optionValue;
+	}
+
 	protected String productCode;
 
 	public String getProductCode() {
@@ -36,6 +77,16 @@ public class BundledProduct implements Serializable
 
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
+	}
+
+	protected String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 
 	protected Integer quantity;
@@ -56,6 +107,16 @@ public class BundledProduct implements Serializable
 
 	public void setContent(ProductContent content) {
 		this.content = content;
+	}
+
+	protected ProductInventoryInfo inventoryInfo;
+
+	public ProductInventoryInfo getInventoryInfo() {
+		return this.inventoryInfo;
+	}
+
+	public void setInventoryInfo(ProductInventoryInfo inventoryInfo) {
+		this.inventoryInfo = inventoryInfo;
 	}
 
 	protected PackageMeasurements measurements;

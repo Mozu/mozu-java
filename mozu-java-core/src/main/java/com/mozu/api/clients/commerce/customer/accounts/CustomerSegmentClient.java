@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -34,13 +33,13 @@ public class CustomerSegmentClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getAccountSegmentsClient(Integer accountId) throws Exception
 	{
-		return getAccountSegmentsClient( accountId,  null,  null,  null,  null);
+		return getAccountSegmentsClient( accountId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetAccountSegmentsClient( accountId,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient=GetAccountSegmentsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerSegmentCollection customerSegmentCollection = client.Result();
@@ -48,14 +47,15 @@ public class CustomerSegmentClient {
 	 * @param accountId 
 	 * @param filter 
 	 * @param pageSize 
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegmentCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerSegmentCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getAccountSegmentsClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> getAccountSegmentsClient(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerSegmentUrl.getAccountSegmentsUrl(accountId, filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CustomerSegmentUrl.getAccountSegmentsUrl(accountId, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegmentCollection.class;
 		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient = new MozuClient(clz);

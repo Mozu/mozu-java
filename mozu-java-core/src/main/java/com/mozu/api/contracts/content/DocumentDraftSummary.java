@@ -29,17 +29,14 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
-	/**
-	 * Name of the document list associated with the draft.
-	 */
-	protected String documentListName;
+	protected String documentTypeFQN;
 
-	public String getDocumentListName() {
-		return this.documentListName;
+	public String getDocumentTypeFQN() {
+		return this.documentTypeFQN;
 	}
 
-	public void setDocumentListName(String documentListName) {
-		this.documentListName = documentListName;
+	public void setDocumentTypeFQN(String documentTypeFQN) {
+		this.documentTypeFQN = documentTypeFQN;
 	}
 
 	protected DateTime draftUpdateDate;
@@ -63,6 +60,16 @@ public class DocumentDraftSummary implements Serializable
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	protected String listFQN;
+
+	public String getListFQN() {
+		return this.listFQN;
+	}
+
+	public void setListFQN(String listFQN) {
+		this.listFQN = listFQN;
 	}
 
 	/**

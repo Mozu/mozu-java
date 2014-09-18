@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * 
  * </summary>
@@ -25,17 +24,18 @@ public class AppliedDiscountResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public AppliedDiscountResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.ApplyCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @param couponCode 
@@ -44,7 +44,24 @@ public class AppliedDiscountResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode);
+		return applyCoupon( cartId,  couponCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId 
+	 * @param couponCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -55,7 +72,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupons( cartId);
+	 *	Cart cart = applieddiscount.removeCoupons( cartId);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -74,7 +91,7 @@ public class AppliedDiscountResource {
 	 * 
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.removeCoupon( cartId,  couponCode);
 	 * </code></pre></p>
 	 * @param cartId 
 	 * @param couponCode 

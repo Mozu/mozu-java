@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.commerceruntime.carts;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,43 +21,22 @@ public class CartChangeMessageCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The number of commerce runtime cart change messages transactions that can exist in a collection.
-	 */
-	protected Integer capacity;
+	protected Integer totalCount;
 
-	public Integer getCapacity() {
-		return this.capacity;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCapacity(Integer capacity) {
-		this.capacity = capacity;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	/**
-	 * The number of messages in the collection.
-	 */
-	protected Integer count;
-
-	public Integer getCount() {
-		return this.count;
+	protected List<ChangeMessage> items;
+	public List<ChangeMessage> getItems() {
+		return this.items;
 	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	/**
-	 * Container for an item in a collection.
-	 */
-	protected ChangeMessage item;
-
-	public ChangeMessage getItem() {
-		return this.item;
-	}
-
-	public void setItem(ChangeMessage item) {
-		this.item = item;
+	public void setItems(List<ChangeMessage> items) {
+		this.items = items;
 	}
 
 }

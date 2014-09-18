@@ -10,10 +10,9 @@ archivesBaseName='mozu-api-core'
 if (hasProperty("teamcity")) {
     version = teamcity["build.number"]
         println "TeamCity build number passed into gradle is " + version
-   }
-   else {
-// Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.18'
+} else {
+    // Manually insert the version numbers here when building outside of TeamCity
+    version = '1.11.1'
 }
 
 group='com.mozu'

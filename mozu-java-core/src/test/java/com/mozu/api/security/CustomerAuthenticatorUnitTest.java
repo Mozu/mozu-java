@@ -87,7 +87,7 @@ public class CustomerAuthenticatorUnitTest {
                 result=TENANT_DOMAIN; 
             }
             {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN); 
+                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
                 result=mockMozuUrl;
             }
             {
@@ -133,7 +133,7 @@ public class CustomerAuthenticatorUnitTest {
                 result=TENANT_DOMAIN; 
             }
             {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN); 
+                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
                 result=mockMozuUrl;
             }
             {
@@ -179,7 +179,7 @@ public class CustomerAuthenticatorUnitTest {
                 result=TENANT_DOMAIN; 
             }
             {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN); 
+                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
                 result=mockMozuUrl;
             }
             {
@@ -227,7 +227,7 @@ public class CustomerAuthenticatorUnitTest {
                 result=TENANT_DOMAIN; 
             }
             {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN); 
+                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
                 result=mockMozuUrl;
             }
             {
@@ -275,7 +275,7 @@ public class CustomerAuthenticatorUnitTest {
                 result=TENANT_DOMAIN; 
             }
             {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN); 
+                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
                 result=mockMozuUrl;
             }
             {

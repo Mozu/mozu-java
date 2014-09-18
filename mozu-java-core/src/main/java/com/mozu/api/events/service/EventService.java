@@ -47,7 +47,7 @@ public class EventService {
                 return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_UNAUTHORIZED));
             }
         } catch (IOException exception) {
-            StringBuilder msg = new StringBuilder ("Unable to read product update event: ").append(exception.getMessage());
+            StringBuilder msg = new StringBuilder ("Unable to read event: ").append(exception.getMessage());
             logger.error(msg.toString());
             return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_INTERNAL_SERVER_ERROR));
         }
@@ -55,7 +55,7 @@ public class EventService {
         try {
             invokeHandler(event, apiContext);
         } catch (Exception exception) {
-            StringBuilder msg = new StringBuilder ("Unable to process product update event: ").append(exception.getMessage());
+            StringBuilder msg = new StringBuilder ("Unable to process event with correlation id ").append(event.getCorrelationId()).append(". Message: ").append(exception.getMessage());
             logger.error(msg.toString());
             return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_INTERNAL_SERVER_ERROR));
         }

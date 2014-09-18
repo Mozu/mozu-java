@@ -40,6 +40,16 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	protected Integer maximumRedemptionsPerOrder;
+
+	public Integer getMaximumRedemptionsPerOrder() {
+		return this.maximumRedemptionsPerOrder;
+	}
+
+	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
+		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
+	}
+
 	protected Integer maxRedemptionCount;
 
 	public Integer getMaxRedemptionCount() {
@@ -48,6 +58,16 @@ public class DiscountCondition implements Serializable
 
 	public void setMaxRedemptionCount(Integer maxRedemptionCount) {
 		this.maxRedemptionCount = maxRedemptionCount;
+	}
+
+	protected Double minimumCategorySubtotalBeforeDiscounts;
+
+	public Double getMinimumCategorySubtotalBeforeDiscounts() {
+		return this.minimumCategorySubtotalBeforeDiscounts;
+	}
+
+	public void setMinimumCategorySubtotalBeforeDiscounts(Double minimumCategorySubtotalBeforeDiscounts) {
+		this.minimumCategorySubtotalBeforeDiscounts = minimumCategorySubtotalBeforeDiscounts;
 	}
 
 	protected Double minimumLifetimeValueAmount;
@@ -68,6 +88,26 @@ public class DiscountCondition implements Serializable
 
 	public void setMinimumOrderAmount(Double minimumOrderAmount) {
 		this.minimumOrderAmount = minimumOrderAmount;
+	}
+
+	protected Integer minimumQuantityProductsRequiredInCategories;
+
+	public Integer getMinimumQuantityProductsRequiredInCategories() {
+		return this.minimumQuantityProductsRequiredInCategories;
+	}
+
+	public void setMinimumQuantityProductsRequiredInCategories(Integer minimumQuantityProductsRequiredInCategories) {
+		this.minimumQuantityProductsRequiredInCategories = minimumQuantityProductsRequiredInCategories;
+	}
+
+	protected Integer minimumQuantityRequiredProducts;
+
+	public Integer getMinimumQuantityRequiredProducts() {
+		return this.minimumQuantityRequiredProducts;
+	}
+
+	public void setMinimumQuantityRequiredProducts(Integer minimumQuantityRequiredProducts) {
+		this.minimumQuantityRequiredProducts = minimumQuantityRequiredProducts;
 	}
 
 	protected Boolean requiresAuthenticatedUser;
