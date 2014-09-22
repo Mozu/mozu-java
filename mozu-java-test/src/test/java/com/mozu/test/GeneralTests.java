@@ -596,7 +596,7 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void PlatformApplicationTests() throws Exception {
-		PlatformApplicationFactory.getApplication(apiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		PlatformApplicationFactory.getApplication(apiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_UNAUTHORIZED, HttpStatus.SC_OK);
 		PlatformApplicationFactory.getApplication(apiContext, Generator.randomString(12, Generator.AlphaChars), HttpStatus.SC_UNAUTHORIZED, HttpStatus.SC_OK);
 		PlatformApplicationFactory.updateApplication(apiContext, null, Generator.randomString(12, Generator.AlphaChars), HttpStatus.SC_UNAUTHORIZED, HttpStatus.SC_OK);
 			

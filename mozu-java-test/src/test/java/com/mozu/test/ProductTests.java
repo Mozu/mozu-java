@@ -80,7 +80,7 @@ public class ProductTests extends MozuApiTestBase {
 	}
 
 	@Test
-	public void creatProductTest1() throws Exception  {
+	public void createProductTest1() throws Exception  {
 		//Create attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  false, true);
         Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
@@ -157,55 +157,5 @@ public class ProductTests extends MozuApiTestBase {
         products.add(createdProduct.getProductCode());
 
 	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
-	}
-	
-	@Test
-	public void inventoryTest1() throws Exception {
-		ApiContext localApiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);	
-       	String directShipLocationCode = CommerceLocationFactory.getDirectShipLocation(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK).getCode();
-        
-        LocationCollection PickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        String pickupLocationCode = PickupLocationCodes.getItems().get(0).getCode();
-
-	    //Get product type
-        ProductTypeCollection productTypes = ProductTypeFactory.getProductTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        ProductType myPT = productTypes.getItems().get(1);
-
-		Product myProduct = ProductGenerator.generate(myPT);
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        
-        //get a category        
-		ApiContext localApiContext1 = new MozuApiContext(tenantId, null, masterCatalogId, catalogId);	
-        CategoryPagedCollection cats = CategoryFactory.getCategories(localApiContext1, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        Category myCat = cats.getItems().get(0);
-        List<ProductCategory> list = new ArrayList<ProductCategory>();
-        list.add(ProductGenerator.generateProductCategory(myCat.getId()));
-        
-        ProductInCatalogInfo proInfo = ProductGenerator.generateProductInCatalogInfo(catalogId, list,
-                Generator.randomString(6, Generator.AlphaChars), Generator.randomDecimal(20., 1000.), true, true, false,true);
-        AdminProductFactory.addProductInCatalog(localApiContext1, DataViewMode.Live, proInfo, createdProduct.getProductCode(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        Product product = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-
-        Location directShipLocation = CommerceLocationFactory.getDirectShipLocation(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        if(!directShipLocation.getSupportsInventory())
-        {
-        	directShipLocation.setSupportsInventory(true);
-        	LocationFactory.updateLocation(apiContext, directShipLocation, directShipLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        }
-        LocationCollection pickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        Location pickupLocation = PickupLocationCodes.getItems().get(0);
-        if(!pickupLocation.getSupportsInventory())
-        {
-        	pickupLocation.setSupportsInventory(true);
-        	LocationFactory.updateLocation(apiContext, pickupLocation, pickupLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        }
-        if(!product.getInventoryInfo().getManageStock())
-        {
-        	product.getInventoryInfo().setManageStock(true);
-        	AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, product, product.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        }
-        OrderTests.updateInventory(localApiContext, directShipLocation.getCode(), product.getProductCode(), 100);            
-        OrderTests.updateInventory(localApiContext, pickupLocation.getCode(), product.getProductCode(), 50);
-			
-	}
+	}	
 }
