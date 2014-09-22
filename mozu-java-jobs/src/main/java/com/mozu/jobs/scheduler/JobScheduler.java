@@ -71,7 +71,6 @@ public class JobScheduler {
     private static final String QRTZ_MAX_CONNECTIONS_PROP = "org.quartz.dataSource.mozu.maxConnections";
     private static final String QRTZ_INSTANCE_ID =          "org.quartz.scheduler.instanceId";
     private static final String QRTZ_IS_CLUSTERED =         "org.quartz.jobStore.isClustered"; 
-    private static final String QRTZ_USER_TRANSACTION =     "org.quartz.scheduler.wrapJobExecutionInUserTransaction";
     private static final String QRTZ_AQUIRE_TRIGGERS_IN_LOCK = "org.quartz.jobStore.acquireTriggersWithinLock";
     private static final String QRTZ_ISOLATION_SERIALIZABLE = "org.quartz.jobStore.acquireTriggersWithinLock";
 
@@ -140,7 +139,6 @@ public class JobScheduler {
         // may cause data corruption
         qrtzProperties.put(QRTZ_INSTANCE_ID, "Auto");
         qrtzProperties.put(QRTZ_IS_CLUSTERED, new Boolean(true));
-        qrtzProperties.put(QRTZ_USER_TRANSACTION, new Boolean(true));
         qrtzProperties.put(QRTZ_AQUIRE_TRIGGERS_IN_LOCK, new Boolean(true));
         qrtzProperties.put(QRTZ_ISOLATION_SERIALIZABLE, new Boolean(true));
         
