@@ -72,7 +72,8 @@ public class JobScheduler {
     private static final String QRTZ_INSTANCE_ID =          "org.quartz.scheduler.instanceId";
     private static final String QRTZ_IS_CLUSTERED =         "org.quartz.jobStore.isClustered"; 
     private static final String QRTZ_AQUIRE_TRIGGERS_IN_LOCK = "org.quartz.jobStore.acquireTriggersWithinLock";
-    private static final String QRTZ_ISOLATION_SERIALIZABLE = "org.quartz.jobStore.acquireTriggersWithinLock";
+    private static final String QRTZ_ISOLATION_SERIALIZABLE = "org.quartz.jobStore.txIsolationLevelSerializable";
+    private static final String QRTZ_LOCK_CLASS =           "org.quartz.jobStore.lockHandler.class";
 
     @Value("${org.quartz.scheduler.instanceName}")
     String qrtz_instanceName;
@@ -106,6 +107,9 @@ public class JobScheduler {
 
     @Value("${org.quartz.dataSource.mozu.maxConnections}")
     String qrtz_maxConnections;
+    
+    @Value("${org.quartz.jobStore.lockHandler.class}")
+    String qrtz_lockHandlerClass;
 
     @Autowired
     JobHandler jobHandler;
@@ -134,6 +138,7 @@ public class JobScheduler {
         qrtzProperties.put(QRTZ_USER_PROP, qrtz_user);
         qrtzProperties.put(QRTZ_PASSWORD_PROP, qrtz_password);
         qrtzProperties.put(QRTZ_MAX_CONNECTIONS_PROP, qrtz_maxConnections);
+        qrtzProperties.put(QRTZ_LOCK_CLASS, qrtz_lockHandlerClass);
         
         // Force these values, all instances must have these set or it
         // may cause data corruption
