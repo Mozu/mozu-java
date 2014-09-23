@@ -183,14 +183,15 @@ public class ProductTests extends MozuApiTestBase {
 		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		
 		int count = products.getTotalCount();
+		int variationCount = 0;
 		int startIndex = 0;
-		int pageSize = 50;
+		int pageSize = 200;
 		int file_number =  Generator.randomInt(1,  1000);
 		PrintWriter writer1 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
 		PrintWriter writer2 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
         while (true)
         {            
-        	ProductCollection prods = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, startIndex, pageSize, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        	ProductCollection prods = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, startIndex, pageSize, "productCode", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
             for (com.mozu.api.contracts.productruntime.Product pro : prods.getItems())
             {
             	writer1.println(pro.getProductCode());
@@ -200,13 +201,13 @@ public class ProductTests extends MozuApiTestBase {
             	}
             	try
             	{
-            		ProductVariationPagedCollection varies = ProductVariationFactory.getProductVariations(apiContext, DataViewMode.Live, pro.getProductCode(), 0, pageSize, null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            		ProductVariationPagedCollection varies = ProductVariationFactory.getProductVariations(apiContext, DataViewMode.Live, pro.getProductCode(), 0, pageSize, "variationProductCode", "isActive eq true and variationExists eq true", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
             		for (ProductVariation vari: varies.getItems())
             		{
             			if (vari.getIsActive() && vari.getVariationExists())
             			{
             				writer2.println(vari.getVariationProductCode());
-                    		count ++;
+            				variationCount ++;
             			}
             		}
             	}
@@ -224,6 +225,7 @@ public class ProductTests extends MozuApiTestBase {
         writer1.close();
         writer2.close();
         System.out.print("Total products expected in xml is: " + count);
+        System.out.print("Total products expected in xml is: " + variationCount);
     }
 		
 }
