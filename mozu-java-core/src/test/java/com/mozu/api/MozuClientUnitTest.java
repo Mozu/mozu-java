@@ -10,8 +10,9 @@ import mockit.Mocked;
 import mockit.NonStrictExpectations;
 
 import org.apache.http.HttpHost;
-import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 import org.junit.After;
@@ -46,11 +47,11 @@ public final class MozuClientUnitTest {
     @Mocked AuthTicket mockAuthTicket;
     @Mocked AuthenticationProfile mockAuthenticationProfile;
     @Mocked InputStream mockInStream;
-    @Mocked HttpResponse mockHttpResponse;
+    @Mocked CloseableHttpResponse mockHttpResponse;
     @Mocked TenantResource mockTenantResource;
     @Mocked Tenant mockTenant;
     @Mocked BasicHttpEntityEnclosingRequest mockHttpRequest;
-    @Mocked DefaultHttpClient mockHttpClient;
+    @Mocked CloseableHttpClient mockHttpClient;
     @Mocked HttpHelper mockHttpelper;
     @Mocked UserAuthenticator mockUserAuthenticator;
 

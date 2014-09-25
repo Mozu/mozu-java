@@ -163,7 +163,7 @@ public class AppAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
         }
 
-        addProxyHttpHost(client);
+        //addProxyHttpHost(client);
             
         try {
             response = client.execute(request);

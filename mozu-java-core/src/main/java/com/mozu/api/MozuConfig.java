@@ -1,8 +1,5 @@
 package com.mozu.api;
 
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.params.HttpParams;
-
 public class MozuConfig {
 
     private static String baseUrl = "https://home.mozu.com";
@@ -14,8 +11,6 @@ public class MozuConfig {
     private static Integer defaultHttpClientMaxPerRoute = 20;
     private static Integer maxHttpClientConnections = 200;
     private static Integer httpClientTimeoutMillis = 60000;
-    private static ClientConnectionManager clientConnectionManager = null;
-    private static HttpParams httpParams = null;
 
     /**
      * Get the proxy port if one is set.
@@ -133,39 +128,6 @@ public class MozuConfig {
      */
     public static void setHttpClientTimeoutMillis(Integer httpClientTimeoutMillis) {
         MozuConfig.httpClientTimeoutMillis = httpClientTimeoutMillis;
-    }
-
-    /**
-     * Get the client Connection Manager used by the HttpClient.  
-     * If this has not been overridden, then a PoolingClientConnectionManager is used.
-     * @return the client manager used by the HttpClient class
-     */
-    public static ClientConnectionManager getClientConnectionManager() {
-        return clientConnectionManager;
-    }
-
-    /**
-     * Set the HttpClient Connection Manager used by the HttpClient.  This overrides the PoolingClientConnectionManager that is used by default.  
-     * @param clientConnectionManager the client manager used by the HttpClient class
-     */
-    public static void setClientConnectionManager(ClientConnectionManager clientConnectionManager) {
-        MozuConfig.clientConnectionManager = clientConnectionManager;
-    }
-
-    /** 
-     * Get the HttpParams needed by the HttpClient.
-     * @return
-     */
-    public static HttpParams getHttpParams() {
-        return httpParams;
-    }
-
-    /**
-     * Override the HttpParams needed by the HttpClient.
-     * @param httpParams
-     */
-    public static void setHttpParams(HttpParams httpParams) {
-        MozuConfig.httpParams = httpParams;
     }
 
 }

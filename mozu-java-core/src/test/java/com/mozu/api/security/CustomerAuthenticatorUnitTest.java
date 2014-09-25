@@ -1,6 +1,9 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -10,8 +13,10 @@ import mockit.NonStrictExpectations;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -22,7 +27,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuUrl;
-import com.mozu.api.contracts.core.UserAuthInfo;
 import com.mozu.api.contracts.customer.CustomerAuthTicket;
 import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.tenant.Tenant;
@@ -47,10 +51,10 @@ public class CustomerAuthenticatorUnitTest {
     @Mocked Tenant mockTenant;
     @Mocked MozuUrl mockMozuUrl;
     @Mocked TenantResource mockTenantResource;
-    @Mocked DefaultHttpClient mockDefaultHttpClient;
+    @Mocked CloseableHttpClient mockDefaultHttpClient;
     @Mocked HttpPut mockHttpPut;
     @Mocked HttpPost mockHttpPost;
-    @Mocked HttpResponse mockHttpResponse;
+    @Mocked CloseableHttpResponse mockHttpResponse;
     @Mocked HttpEntity mockHttpEntity;
     @Mocked AppAuthenticator mockAppAuthenticator;
     @Mocked HttpHelper mockHttpHelper;
