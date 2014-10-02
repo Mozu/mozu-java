@@ -175,11 +175,6 @@ public class ProductTests extends MozuApiTestBase {
 	@Test
 	public void getProductsTest1() throws Exception {
 		ApiContext localapiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
-        CustomerAccountAndAuthInfo customerAccountAndAuthInfo =  CustomerGenerator.generateCustomerAccountAndAuthInfo(true, "98-02565-0000");
-    	CustomerAccountFactory.addAccountAndLogin(localapiContext, customerAccountAndAuthInfo, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        CustomerUserAuthInfo shopperUserAuthInfo = CustomerGenerator.generateUserAuthInfo(customerAccountAndAuthInfo.getAccount().getUserName(), customerAccountAndAuthInfo.getPassword());
-        CustomerAuthenticationProfile shopperAuth = CustomerAuthenticator.authenticate(shopperUserAuthInfo, tenantId, siteId);
-        localapiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
 		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		
 		int count = products.getTotalCount();
@@ -187,26 +182,26 @@ public class ProductTests extends MozuApiTestBase {
 		int startIndex = 0;
 		int pageSize = 200;
 		int file_number =  Generator.randomInt(1,  1000);
-		PrintWriter writer1 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
-		PrintWriter writer2 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
+//		PrintWriter writer1 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
+//		PrintWriter writer2 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
         while (true)
         {            
         	ProductCollection prods = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, startIndex, pageSize, "productCode", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
             for (com.mozu.api.contracts.productruntime.Product pro : prods.getItems())
             {
-            	writer1.println(pro.getProductCode());
+//            	writer1.println(pro.getProductCode());
             	if (pro.getOptions() == null)
             	{
             		continue;
             	}
             	try
             	{
-            		ProductVariationPagedCollection varies = ProductVariationFactory.getProductVariations(apiContext, DataViewMode.Live, pro.getProductCode(), 0, pageSize, "variationProductCode", "isActive eq true and variationExists eq true", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            		ProductVariationPagedCollection varies = ProductVariationFactory.getProductVariations(apiContext, DataViewMode.Live, pro.getProductCode(), 0, pageSize, "variationProductCode", null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
             		for (ProductVariation vari: varies.getItems())
             		{
             			if (vari.getIsActive() && vari.getVariationExists())
             			{
-            				writer2.println(vari.getVariationProductCode());
+//            				writer2.println(vari.getVariationProductCode());
             				variationCount ++;
             			}
             		}
@@ -222,10 +217,10 @@ public class ProductTests extends MozuApiTestBase {
                 break;
             }
         }
-        writer1.close();
-        writer2.close();
-        System.out.print("Total products expected in xml is: " + count);
-        System.out.print("Total products expected in xml is: " + variationCount);
+//        writer1.close();
+//        writer2.close();
+        System.out.println("Total products expected in xml is: " + count);
+        System.out.println("Total variations expected in xml is: " + variationCount);
     }
 		
 }

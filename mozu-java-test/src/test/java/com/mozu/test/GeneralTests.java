@@ -918,7 +918,7 @@ public class GeneralTests extends MozuApiTestBase {
         WishlistItemFactory.removeAllWishlistItems(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
         WishlistItemFactory.deleteWishlistItem(shopperApiContext, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
         WishlistItemFactory.getWishlistItem(shopperApiContext, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-        WishlistItemFactory.updateWishlistItem(shopperApiContext, null, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_CONFLICT);
+        WishlistItemFactory.updateWishlistItem(shopperApiContext, null, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
         WishlistItemFactory.updateWishlistItemQuantity(shopperApiContext, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), 5, HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
         WishlistItemFactory.getWishlistItemsByWishlistName(shopperApiContext, shopperAuth.getCustomerAccount().getId(), Generator.randomString(5, Generator.AlphaChars), null, null, null, null, null, HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
