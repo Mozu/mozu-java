@@ -4,14 +4,14 @@ import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.contracts.mzdb.IndexedProperty;
 
 public class EntityGenerator {
-	public static EntityList generateEntityList(String nameSpace)
+	public static EntityList generateEntityList(String nameSpace, String name1, String name2)
 	{
         EntityList entityList = new EntityList();
         entityList.setContextLevel("tenant");
         entityList.setName("Test" + Generator.randomString(5, Generator.AlphaChars));
         entityList.setNameSpace(nameSpace);
-        entityList.setIdProperty(generateIndexedProperty(Generator.randomString(5, Generator.AlphaChars), "date"));
-        entityList.setIndexA(generateIndexedProperty(Generator.randomString(5, Generator.AlphaChars), "date"));
+        entityList.setIdProperty(generateIndexedProperty(name1, "date"));
+        entityList.setIndexA(generateIndexedProperty(name2, "date"));
         entityList.setIsVisibleInStorefront(false);
         entityList.setIsLocaleSpecific(false);
         entityList.setIsSandboxDataCloningSupported(true);
