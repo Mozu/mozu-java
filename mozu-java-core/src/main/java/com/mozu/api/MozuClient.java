@@ -35,8 +35,6 @@ import com.mozu.api.utils.MozuHttpClientPool;
 public class MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
 
-    static private HttpHost proxyHttpHost = HttpHelper.getProxyHost();
-
     private ApiContext apiContext = null;
     private String baseAddress = null;
     private CloseableHttpResponse httpResponseMessage = null;
@@ -183,10 +181,6 @@ public class MozuClient<TResult> {
         int port = url.getPort();
         String sche = url.getProtocol();
         HttpHost httpHost = new HttpHost(hostNm, port, sche);
-
-//        if (proxyHttpHost != null && StringUtils.isNotBlank(proxyHttpHost.getHostName())) {
-//            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-//        }
 
         httpResponseMessage = client.execute(httpHost, request);
         try {

@@ -6,13 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
 import org.joda.time.DateTime;
 
@@ -35,8 +33,6 @@ import com.mozu.api.utils.MozuHttpClientPool;
 
 public class UserAuthenticator {
     private static ObjectMapper mapper = JsonUtils.initObjectMapper();
-
-    private static HttpHost proxyHttpHost = HttpHelper.getProxyHost();
 
     public static AuthenticationProfile setActiveScope(AuthTicket authTicket, Scope scope) {
         return refreshUserAuthTicket(authTicket, scope.getId());
@@ -74,10 +70,6 @@ public class UserAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
         } catch (UnsupportedEncodingException uee) {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
-        }
-
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
         }
 
         AppAuthenticator.addAuthHeader(put);
@@ -125,10 +117,6 @@ public class UserAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
         }
 
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
-        
         AppAuthenticator.addAuthHeader(post);
 
         HttpResponse response = null;
@@ -152,10 +140,6 @@ public class UserAuthenticator {
         HttpDelete delete = new HttpDelete(resourceUrl);
         delete.setHeader("Accept", "application/json");
         delete.setHeader("Content-type", "application/json");
-
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
 
         AppAuthenticator.addAuthHeader(delete);
 

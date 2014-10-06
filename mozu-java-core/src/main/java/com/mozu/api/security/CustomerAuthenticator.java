@@ -3,12 +3,10 @@ package com.mozu.api.security;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
 import org.joda.time.DateTime;
 
@@ -29,8 +27,6 @@ import com.mozu.api.utils.MozuHttpClientPool;
 public class CustomerAuthenticator {
     private static ObjectMapper mapper = JsonUtils.initObjectMapper();
     
-    private static HttpHost proxyHttpHost = HttpHelper.getProxyHost();
-
     public static AuthTicket ensureAuthTicket(AuthTicket authTicket) {
         DateTime accessTokenDateTime = new DateTime(authTicket.getAccessTokenExpiration()).minus(180000);
         if (accessTokenDateTime.isBeforeNow())
@@ -62,10 +58,6 @@ public class CustomerAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
         } catch (UnsupportedEncodingException uee) {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
-        }
-
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
         }
 
         AppAuthenticator.addAuthHeader(put);
@@ -108,10 +100,6 @@ public class CustomerAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
         }
 
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
-        
         AppAuthenticator.addAuthHeader(post);
 
         HttpResponse response = null;
