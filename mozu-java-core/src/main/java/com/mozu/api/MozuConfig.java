@@ -13,10 +13,21 @@ public class MozuConfig {
     private static Integer httpClientTimeoutMillis = 60000;
 
     /**
-     * Get the proxy port if one is set.
+     * Get the proxy port if one is set. This is deprecated and no longer sets
+     * the proxy port in Mozu Client. Set the system variables using command
+     * line: <code>Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8888</code>
+     * <code>Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8888</code>
+     * 
+     * or this code: <code>
+     * System.setProperty("http.proxyHost", "127.0.0.1");
+     * System.setProperty("https.proxyHost", "127.0.0.1");
+     * System.setProperty("http.proxyPort", "8888");
+     * System.setProperty("https.proxyPort", "8888");
+     * </code>
      * 
      * @return the proxy Port
      */
+    @Deprecated
     public static Integer getProxyPort() {
         return proxyPort;
     }
@@ -26,14 +37,32 @@ public class MozuConfig {
      * 
      * @param proxyPort
      */
+    @Deprecated
     public static void setProxyPort(Integer proxyPort) {
         MozuConfig.proxyPort = proxyPort;
     }
 
+    /**
+     * This is deprecated and no longer sets the proxy port in Mozu Client. Set
+     * the system variables using command line:
+     * <code>Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8888</code>
+     * <code>Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8888</code>
+     * 
+     * or this code: <code>
+     * System.setProperty("http.proxyHost", "127.0.0.1");
+     * System.setProperty("https.proxyHost", "127.0.0.1");
+     * System.setProperty("http.proxyPort", "8888");
+     * System.setProperty("https.proxyPort", "8888");
+     * </code>
+     * 
+     * @return
+     */
+    @Deprecated
     public static String getProxyHost() {
         return proxyHost;
     }
 
+    @Deprecated
     public static void setProxyHost(String proxyHost) {
         MozuConfig.proxyHost = proxyHost;
     }
@@ -123,8 +152,10 @@ public class MozuConfig {
     /**
      * Set the Http timeout wait time in milli seconds. This is the amount of
      * time the Http client waits before timing out the connection and failing.
-     *
-     * @param httpClientTimeoutMillis the client timeout wait time for Http Client connections in milliseconds.
+     * 
+     * @param httpClientTimeoutMillis
+     *            the client timeout wait time for Http Client connections in
+     *            milliseconds.
      */
     public static void setHttpClientTimeoutMillis(Integer httpClientTimeoutMillis) {
         MozuConfig.httpClientTimeoutMillis = httpClientTimeoutMillis;

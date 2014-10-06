@@ -7,7 +7,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -15,7 +14,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
@@ -47,8 +45,6 @@ public class AppAuthenticator {
 
     private AppAuthInfo appAuthInfo = null;
 
-    private HttpHost proxyHttpHost = HttpHelper.getProxyHost();
-
     private AuthTicket appAuthTicket = null;
 
     private RefreshInterval refreshInterval = null;
@@ -65,21 +61,6 @@ public class AppAuthenticator {
     public static AppAuthenticator getInstance() {
         return auth;
     }
-
-    /**
-     * Initialize from mozu_config.properties file
-     * 
-     * @throws ApiException
-     */
-//    public static void initialize() {
-//        AppAuthInfo appAuthInfo = new AppAuthInfo();
-//        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
-//        appAuthInfo.setSharedSecret(ConfigProperties
-//                .getStringProperty(ConfigProperties.SHARED_SECRET));
-//
-//        initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL),
-//                null);
-//    }
 
     public static void initialize(AppAuthInfo appAuthInfo) {
         initialize(appAuthInfo, null);
@@ -241,16 +222,6 @@ public class AppAuthenticator {
         return appAuthInfo;
     }
 
-    public void addProxyHttpHost(HttpClient client) {
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
-    }
-
-    public void setProxyHttpHost(HttpHost proxyHttpHost) {
-        this.proxyHttpHost = proxyHttpHost;
-    }
-    
     public static boolean isUseSSL() {
         return useSSL;
     }

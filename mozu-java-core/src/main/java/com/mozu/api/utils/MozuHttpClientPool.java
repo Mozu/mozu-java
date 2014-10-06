@@ -29,7 +29,7 @@ public class MozuHttpClientPool {
         cm.setDefaultMaxPerRoute(MozuConfig.getDefaultHttpClientMaxPerRoute());
         // Build the client.
         threadSafeClient = HttpClients.custom()
-                .setConnectionManager(cm)
+                .setConnectionManager(cm).useSystemProperties()
                 .build();
 
         monitor = new IdleConnectionMonitorThread(cm);

@@ -57,6 +57,7 @@ public class HttpHelper {
         return errorMessage.toString();
     }
 
+    @Deprecated
     static public HttpHost getProxyHost () {;
         HttpHost proxyHttpHost = null;
        String proxyHost = MozuConfig.getProxyHost();
