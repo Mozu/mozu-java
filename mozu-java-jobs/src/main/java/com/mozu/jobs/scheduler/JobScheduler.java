@@ -13,7 +13,6 @@ import javax.annotation.PreDestroy;
 
 import org.apache.commons.lang3.StringUtils;
 import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
 import org.quartz.DateBuilder;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
@@ -21,7 +20,6 @@ import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SimpleScheduleBuilder;
-import org.quartz.SimpleTrigger;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
@@ -215,6 +213,48 @@ public class JobScheduler {
     }
 
     /**
+     * Add a job to be scheduled. The job is scheduled at a repeatable frequency in minutes
+     * with start time/offset immediately.
+     * 
+     * @param tenantId Id of the tenant for this job. Used in the trigger and job keys
+     * @param siteId Id of the site on this tenant (optional)
+     * @param schedFrequencyMinutes repeat interval in minutes.
+     * @param identity A name used to identify the trigger group
+     * @param jobClass Class to be invoked when the schedule fires. This class must
+     *  implement org.qrtz.Job
+     */
+    public void addJob(Integer tenantId, Integer siteId, Integer schedFrequencyMinutes, String identity, Class jobClass) {
+
+        if (scheduler==null)
+            throw new IllegalStateException("Scheduler not initialized");
+        
+        if (tenantId==null || schedFrequencyMinutes==null || identity==null || jobClass==null)
+            throw new IllegalArgumentException();
+        
+        if (schedFrequencyMinutes<=0) {
+            String errMsg = "Atttempt to schedule sync at an invalid frequency ";
+            logger.warn(errMsg);
+            throw new IllegalArgumentException(errMsg);
+        }
+        
+        String tenantIdString = tenantId.toString() + 
+                ((siteId!=null)?"_" + siteId.toString():"");
+        
+        JobDetail job = JobBuilder.newJob(jobClass)
+                .withIdentity(identity+JOB, tenantIdString)
+                .build();
+
+        Trigger trigger = createTrigger(schedFrequencyMinutes, tenantId, siteId, identity);
+        
+        try {
+            scheduler.scheduleJob(job, trigger);
+            logger.debug("Scheduled job for tenant " + tenantIdString);
+        } catch (SchedulerException e) {
+            logger.info("Qrtz job schedule job failure for tenant " + tenantIdString + " Error is: " + e.getMessage());
+        }
+    }
+
+    /**
      * Add a job to be scheduled. Jobs are scheduled at 15 minutes past the hour
      * at the hour frequency specified. If the hour frequency is 24 hours, schedule
      * once per day at 11:15 pm.
@@ -281,9 +321,50 @@ public class JobScheduler {
     }
 
     /**
-     * Update an existing scheduled job's repeat interval if the interval has changed. The
-     * action defaults to not update. If there is not an existing schedule, the app has not
-     * been enabled yet and therefore a trigger/job is not defined.
+     * Update an existing scheduled job's repeat interval.
+     * 
+     * Update consists of deleting the old schedule and adding it again with the new trigger
+     * 
+     * @param tenantId Id of the tenant for this job. Used in the trigger and job keys
+     * @param siteId Id of the site on this tenant
+     * @param schedFrequencyHours repeat interval in hours.
+     * @param offset Number of minutes after the our that the scedhule should be offset
+     * @param identity A name used to identify the trigger group
+     * @param jobClass Class to be invoked when the schedule fires. This class must
+     *  implement org.qrtz.Job
+     */
+    public void updateJob(Integer tenantId, Integer siteId, Integer schedFrequencyMinutes, String identity, Class jobClass ) {
+
+        if (scheduler==null)
+            throw new IllegalStateException("Scheduler not initialized");
+        
+        if (tenantId==null || schedFrequencyMinutes==null || identity==null || jobClass==null)
+            throw new IllegalArgumentException();
+        
+        if (schedFrequencyMinutes<=0) {
+            String errMsg = "Atttempt to schedule sync at an invalid frequency ";
+            logger.warn(errMsg);
+            throw new IllegalArgumentException(errMsg);
+        }
+
+        String tenantIdString = tenantId.toString() + 
+                ((siteId!=null)?"_" + siteId.toString():"");
+        
+        // read the old job trigger
+        try {
+            Trigger trigger = scheduler.getTrigger(new TriggerKey(identity+TRIGGER, tenantIdString));
+            if (trigger != null) {
+                delJob(tenantId, siteId, identity);
+            }
+        } catch (SchedulerException e) {
+            logger.info("Previous trigger not found for " + tenantId);
+        }
+        
+        addJob(tenantId, siteId, schedFrequencyMinutes, identity, jobClass);
+    }
+    
+    /**
+     * Update an existing scheduled job's repeat interval and offset.
      * 
      * Update consists of deleting the old schedule and adding it again with the new trigger
      * 
@@ -311,31 +392,18 @@ public class JobScheduler {
 
         String tenantIdString = tenantId.toString() + 
                 ((siteId!=null)?"_" + siteId.toString():"");
-        // default to not updating the schedule
-        boolean update = false;
         
         // read the old job trigger
         try {
             Trigger trigger = scheduler.getTrigger(new TriggerKey(identity+TRIGGER, tenantIdString));
             if (trigger != null) {
-                // an existing trigger was found
-                if (trigger instanceof SimpleTrigger) {
-                    // convert from milliseconds to hours
-                    if (((SimpleTrigger)trigger).getRepeatInterval()/ (60 * 60 * 1000) != schedFrequencyHours.intValue())
-                        update=true;
-                } else if (trigger instanceof CronTrigger) {
-                    update=true;
-                }
+                delJob(tenantId, siteId, identity);
             }
         } catch (SchedulerException e) {
             logger.info("Previous trigger not found for " + tenantId);
         }
         
-        // if the interval has changed delete the old schedule and add it again
-        if (update) {
-            delJob(tenantId, siteId, identity);
-            addJob(tenantId, siteId, schedFrequencyHours, offset, identity, jobClass);
-        }
+        addJob(tenantId, siteId, schedFrequencyHours, offset, identity, jobClass);
     }
     
     /**
@@ -450,6 +518,25 @@ public class JobScheduler {
                     .usingJobData(JOB_NAME, identity)
                     .build();
         }
+        return trigger;
+    }
+    
+    private Trigger createTrigger(Integer schedFrequencyMinutes, Integer tenantId, Integer siteId, String identity) {
+        String tenantIdString = tenantId.toString() + 
+                ((siteId!=null)?"_" + siteId.toString():"");
+        
+        Trigger trigger = null;
+        trigger = TriggerBuilder.newTrigger()
+                .withIdentity(identity+TRIGGER, tenantIdString)
+                .withSchedule(
+                        SimpleScheduleBuilder.repeatMinutelyForever(schedFrequencyMinutes)
+                        )
+                .startAt(DateBuilder.newDate()
+                        .build())
+                .usingJobData(TENANT_ID_KEY, tenantId)
+                .usingJobData(SITE_ID_KEY, siteId)
+                .usingJobData(JOB_NAME, identity)
+                .build();
         return trigger;
     }
 
