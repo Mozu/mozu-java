@@ -15,8 +15,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetApplication
-	 * @param appId 
-	 * @param responseFields 
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getApplicationUrl(String appId, String responseFields)
@@ -29,8 +29,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for UpdateApplication
-	 * @param appId 
-	 * @param responseFields 
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateApplicationUrl(String appId, String responseFields)

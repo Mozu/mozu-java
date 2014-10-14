@@ -55,6 +55,7 @@ public class PublishingScopeResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.discardDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -74,6 +75,7 @@ public class PublishingScopeResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

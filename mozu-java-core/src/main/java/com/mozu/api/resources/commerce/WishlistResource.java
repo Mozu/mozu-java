@@ -55,7 +55,7 @@ public class WishlistResource {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistCollection
@@ -91,7 +91,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -106,13 +106,13 @@ public class WishlistResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a wish list by supplying the wish list name.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -122,14 +122,14 @@ public class WishlistResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a wish list by supplying the wish list name.
 	 * <p><pre><code>
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlistByName( customerAccountId,  wishlistName,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param responseFields 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -164,7 +164,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlist Properties of the wish list to create.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -202,7 +202,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the shopper wish list to update.
 	 * @param wishlist Properties of the shopper wish list to update.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -232,6 +232,7 @@ public class WishlistResource {
 		MozuClient client = com.mozu.api.clients.commerce.WishlistClient.deleteWishlistClient( wishlistId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

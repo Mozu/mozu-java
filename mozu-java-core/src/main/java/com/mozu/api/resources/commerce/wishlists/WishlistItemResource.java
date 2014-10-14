@@ -53,7 +53,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the wish list item to retrieve.
 	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -91,7 +91,7 @@ public class WishlistItemResource {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
@@ -108,13 +108,13 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * 
+	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
+	 * @param wishlistName The name of the wish list that contains the items to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -124,18 +124,18 @@ public class WishlistItemResource {
 	}
 
 	/**
-	 * 
+	 * Retrieve a list of items in a customer wish list by supplying the wish list name.
 	 * <p><pre><code>
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId 
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 * @param wishlistName The name of the wish list that contains the items to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -171,7 +171,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
 	 * @param wishlistItem Properties of the item to add to the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -211,7 +211,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
 	 * </code></pre></p>
 	 * @param quantity The quantity of the item in the wish list.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
 	 * @param wishlistItemId Unique identifier of the item in the wish list to update quantity.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -250,7 +250,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
 	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
 	 * @param wishlistItem Properties of the shopper wish list item to update.
@@ -301,6 +301,7 @@ public class WishlistItemResource {
 		MozuClient client = com.mozu.api.clients.commerce.wishlists.WishlistItemClient.deleteWishlistItemClient( wishlistId,  wishlistItemId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

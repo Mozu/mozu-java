@@ -99,6 +99,9 @@ public class EntityList implements Serializable
 		this.nameSpace = nameSpace;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {

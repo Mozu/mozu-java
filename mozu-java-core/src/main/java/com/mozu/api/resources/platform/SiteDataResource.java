@@ -53,7 +53,7 @@ public class SiteDataResource {
 	 *	string string = sitedata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return string
 	 * @see string
 	 */
@@ -82,6 +82,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.createDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -101,6 +102,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.updateDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -118,6 +120,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.deleteDBValueClient( dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

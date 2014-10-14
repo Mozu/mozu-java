@@ -15,7 +15,7 @@ public class SiteShippingSettingsUrl
 
 	/**
 	 * Get Resource Url for GetSiteShippingSettings
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getSiteShippingSettingsUrl(String responseFields)

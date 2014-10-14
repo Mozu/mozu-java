@@ -17,6 +17,9 @@ public class SubscribingSite implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This specifies if the subscription is active at the site level.
+	 */
 	protected Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -37,6 +40,9 @@ public class SubscribingSite implements Serializable
 		this.siteId = siteId;
 	}
 
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

@@ -106,6 +106,9 @@ public class MasterCatalog implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The current status of the master catalog.
+	 */
 	protected String status;
 
 	public String getStatus() {
@@ -116,6 +119,9 @@ public class MasterCatalog implements Serializable
 		this.status = status;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {

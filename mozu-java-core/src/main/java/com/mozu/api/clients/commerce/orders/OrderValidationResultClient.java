@@ -14,20 +14,20 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Manage the results of order validation.
  * </summary>
  */
 public class OrderValidationResultClient {
 	
 	/**
-	 * 
+	 * Retrieves a list of the validation results associated with the order.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>> mozuClient=GetValidationResultsClient( orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderValidationResult orderValidationResult = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 */
@@ -44,15 +44,15 @@ public class OrderValidationResultClient {
 	}
 
 	/**
-	 * 
+	 * Add a new order validation result to a submitted order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient=AddValidationResultClient( validationResult,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderValidationResult orderValidationResult = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param validationResult 
+	 * @param orderId Unique identifier of the order.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
@@ -63,16 +63,16 @@ public class OrderValidationResultClient {
 	}
 
 	/**
-	 * 
+	 * Add a new order validation result to a submitted order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient=AddValidationResultClient( validationResult,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderValidationResult orderValidationResult = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param validationResult 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult

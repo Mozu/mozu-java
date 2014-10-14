@@ -53,7 +53,7 @@ public class CartResource {
 	 *	Cart cart = cart.getCart( cartId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -86,7 +86,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getOrCreateCart( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -119,7 +119,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getCartSummary( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -153,7 +153,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getUserCartSummary( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -188,7 +188,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getUserCart( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -224,7 +224,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.updateCart( cart,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -253,6 +253,7 @@ public class CartResource {
 		MozuClient client = com.mozu.api.clients.commerce.CartClient.deleteCartClient( cartId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -269,6 +270,7 @@ public class CartResource {
 		MozuClient client = com.mozu.api.clients.commerce.CartClient.deleteCurrentCartClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

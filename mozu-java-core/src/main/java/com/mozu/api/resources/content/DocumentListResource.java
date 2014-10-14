@@ -60,7 +60,7 @@ public class DocumentListResource {
 	 *	DocumentListCollection documentListCollection = documentlist.getDocumentLists( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentListCollection
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
@@ -96,7 +96,7 @@ public class DocumentListResource {
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -131,7 +131,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -170,7 +170,7 @@ public class DocumentListResource {
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -199,6 +199,7 @@ public class DocumentListResource {
 		MozuClient client = com.mozu.api.clients.content.DocumentListClient.deleteDocumentListClient( documentListName);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

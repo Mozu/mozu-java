@@ -43,7 +43,7 @@ public class MasterCatalogClient {
 	 * client.executeRequest();
 	 * MasterCatalogCollection masterCatalogCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalogCollection>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
@@ -67,7 +67,7 @@ public class MasterCatalogClient {
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -84,8 +84,8 @@ public class MasterCatalogClient {
 	 * client.executeRequest();
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -129,7 +129,7 @@ public class MasterCatalogClient {
 	 * MasterCatalog masterCatalog = client.Result();
 	 * </code></pre></p>
 	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.MasterCatalog>
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog

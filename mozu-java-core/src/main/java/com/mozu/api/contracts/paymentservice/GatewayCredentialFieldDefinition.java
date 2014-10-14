@@ -58,6 +58,9 @@ public class GatewayCredentialFieldDefinition implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The name of the Volusion store.
+	 */
 	protected String volusionStoreName;
 
 	public String getVolusionStoreName() {

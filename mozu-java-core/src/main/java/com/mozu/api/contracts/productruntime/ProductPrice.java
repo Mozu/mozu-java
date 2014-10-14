@@ -20,6 +20,9 @@ public class ProductPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The list price of the product in the catalog.
+	 */
 	protected Double catalogListPrice;
 
 	public Double getCatalogListPrice() {
@@ -30,6 +33,9 @@ public class ProductPrice implements Serializable
 		this.catalogListPrice = catalogListPrice;
 	}
 
+	/**
+	 * The sale price defined for the product in the catalog.
+	 */
 	protected Double catalogSalePrice;
 
 	public Double getCatalogSalePrice() {
@@ -50,6 +56,9 @@ public class ProductPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
+	/**
+	 * The manufacturer's suggested retail price for the product.
+	 */
 	protected Double msrp;
 
 	public Double getMsrp() {
@@ -73,6 +82,9 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * The price type that displays on the storefront website for the Price field, which is List, MAP, or CatalogSalePrice
+	 */
 	protected String priceType;
 
 	public String getPriceType() {
@@ -96,6 +108,9 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
+	/**
+	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
+	 */
 	protected String salePriceType;
 
 	public String getSalePriceType() {

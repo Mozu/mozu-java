@@ -103,7 +103,7 @@ public class ProductExtraClient {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -149,7 +149,7 @@ public class ProductExtraClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -197,7 +197,7 @@ public class ProductExtraClient {
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
@@ -246,7 +246,7 @@ public class ProductExtraClient {
 	 * ProductExtra productExtra = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productExtra Properties of the product extra to configure for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -329,7 +329,7 @@ public class ProductExtraClient {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedDeltaPrice 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
@@ -380,7 +380,7 @@ public class ProductExtraClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productExtra Properties of the extra attribute to update for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductExtra>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -433,7 +433,7 @@ public class ProductExtraClient {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param value 
+	 * @param value Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteExtraValueLocalizedDeltaPriceClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode) throws Exception

@@ -25,8 +25,8 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for GetLocationType
-	 * @param locationTypeCode 
-	 * @param responseFields 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationTypeUrl(String locationTypeCode, String responseFields)
@@ -39,7 +39,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for AddLocationType
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationTypeUrl(String responseFields)
@@ -51,8 +51,8 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationType
-	 * @param locationTypeCode 
-	 * @param responseFields 
+	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationTypeUrl(String locationTypeCode, String responseFields)
@@ -65,7 +65,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode 
+	 * @param locationTypeCode User-defined code used to identify the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

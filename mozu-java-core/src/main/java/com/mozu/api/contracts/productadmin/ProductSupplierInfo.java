@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.ProductCost;
 
+/**
+ *	Supplier-defined properties assigned for the product.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSupplierInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The distributor part number associated with this product, defined by the product distributor.
+	 */
 	protected String distPartNumber;
 
 	public String getDistPartNumber() {
@@ -27,6 +33,9 @@ public class ProductSupplierInfo implements Serializable
 		this.distPartNumber = distPartNumber;
 	}
 
+	/**
+	 * The manufacturer part number associated with this product, defined by the product manufacturer.
+	 */
 	protected String mfgPartNumber;
 
 	public String getMfgPartNumber() {
@@ -37,6 +46,9 @@ public class ProductSupplierInfo implements Serializable
 		this.mfgPartNumber = mfgPartNumber;
 	}
 
+	/**
+	 * The amount the client pays the supplier to stock this product in its catalogs.
+	 */
 	protected ProductCost cost;
 
 	public ProductCost getCost() {

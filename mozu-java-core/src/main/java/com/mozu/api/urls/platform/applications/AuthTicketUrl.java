@@ -15,7 +15,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for AuthenticateApp
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl authenticateAppUrl(String responseFields)
@@ -27,7 +27,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshAppAuthTicket
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshAppAuthTicketUrl(String responseFields)

@@ -28,6 +28,9 @@ public class View implements Serializable
 		this.defaultSort = defaultSort;
 	}
 
+	/**
+	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 */
 	protected String filter;
 
 	public String getFilter() {
@@ -66,6 +69,14 @@ public class View implements Serializable
 		this.usages = usages;
 	}
 
+	protected List<ViewField> fields;
+	public List<ViewField> getFields() {
+		return this.fields;
+	}
+	public void setFields(List<ViewField> fields) {
+		this.fields = fields;
+	}
+
 	protected com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
@@ -74,14 +85,6 @@ public class View implements Serializable
 
 	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
 		this.metadata = metadata;
-	}
-
-	protected List<ViewField> fields;
-	public List<ViewField> getFields() {
-		return this.fields;
-	}
-	public void setFields(List<ViewField> fields) {
-		this.fields = fields;
 	}
 
 }

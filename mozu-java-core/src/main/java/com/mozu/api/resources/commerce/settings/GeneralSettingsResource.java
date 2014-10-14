@@ -51,7 +51,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -86,7 +86,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

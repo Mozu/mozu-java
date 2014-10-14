@@ -31,7 +31,7 @@ public class DocumentTreeUrl
 	 * Get Resource Url for GetTreeDocument
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTreeDocumentUrl(String documentListName, String documentName, String responseFields)

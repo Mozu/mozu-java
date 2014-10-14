@@ -47,7 +47,7 @@ public class OrderClient {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of order search terms to use in the query when searching across order number and the name or email of the billing contact. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderCollection>
@@ -66,7 +66,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Retrieves available order actions which depends on the status of the order. Actions are "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
+	 * Retrieves the actions available to perform for an order based on its current status.
 	 * <p><pre><code>
 	 * MozuClient<List<String>> mozuClient=GetAvailableActionsClient( orderId);
 	 * client.setBaseAddress(url);
@@ -90,14 +90,14 @@ public class OrderClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves an order for the purpose of splitting it into multiple taxable orders in order to fulfill the order in multiple locations.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.pricingruntime.TaxableOrder>> mozuClient=GetTaxableOrdersClient( orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TaxableOrder taxableOrder = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order to retrieve.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.pricingruntime.TaxableOrder>>
 	 * @see com.mozu.api.contracts.pricingruntime.TaxableOrder
 	 */
@@ -140,7 +140,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order details to get.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -182,7 +182,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param cartId Unique identifier of the cart. This is the original cart ID expressed as a GUID.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -206,7 +206,7 @@ public class OrderClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param order All properties of the order to place.
+	 * @param order Properties of the order to create and submit.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -224,8 +224,8 @@ public class OrderClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param order All properties of the order to place.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param order Properties of the order to create and submit.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -244,7 +244,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
+	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -252,7 +252,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
+	 * @param action The action to perform for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
@@ -263,7 +263,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * Perform the specified action for an order. Available actions depend on the current status of the order. When in doubt, first get a list of available order actions.
+	 * Perform the specified action for an order. The actions you can perform depend on the current status of the order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=PerformOrderActionClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -271,8 +271,8 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
-	 * @param action Action to perform, which can be "CreateOrder," "SubmitOrder," "SetOrderAsProcessing," "CloseOrder," or "CancelOrder."
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param action The action to perform for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
@@ -320,7 +320,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param orderId Unique identifier of the order discount. System-supplied and read only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to modify the discount by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param discount Properties of the order discount to update.
@@ -404,7 +404,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -448,7 +448,7 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param order The properties of the order to update.

@@ -13,6 +13,9 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.search.SearchSynonymSettings;
 import com.mozu.api.contracts.productadmin.SiteSearchSettings;
 
+/**
+ *	The settings to control product search and indexing behavior.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSettings implements Serializable
 {

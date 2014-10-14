@@ -156,6 +156,9 @@ public class Subscription implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * This is a tenant that is associated with a subscription.
+	 */
 	protected List<SubscribingTenant> subscribingTenants;
 	public List<SubscribingTenant> getSubscribingTenants() {
 		return this.subscribingTenants;

@@ -15,7 +15,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for GetOrderHandlingFee
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderHandlingFeeUrl(String responseFields)
@@ -27,7 +27,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for CreateOrderHandlingFee
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createOrderHandlingFeeUrl(String responseFields)
@@ -39,7 +39,7 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for UpdateOrderHandlingFee
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOrderHandlingFeeUrl(String responseFields)

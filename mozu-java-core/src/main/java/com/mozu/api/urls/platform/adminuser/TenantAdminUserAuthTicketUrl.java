@@ -15,7 +15,7 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateUserAuthTicket
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @return   String Resource Url
 	 */
@@ -29,7 +29,7 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshAuthTicket
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId 
 	 * @return   String Resource Url
 	 */

@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the return shipments subresource to manage shipments for a return replacement.
+ * Use the Return Shipments subresource to manage shipments for a return replacement.
  * </summary>
  */
 public class ShipmentResource {
@@ -53,7 +53,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( returnId,  shipmentId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
 	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -104,6 +104,7 @@ public class ShipmentResource {
 		MozuClient client = com.mozu.api.clients.commerce.returns.ShipmentClient.deleteShipmentClient( returnId,  shipmentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

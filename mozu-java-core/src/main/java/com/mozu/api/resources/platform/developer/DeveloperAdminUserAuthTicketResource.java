@@ -58,7 +58,7 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.createDeveloperUserAuthTicket( userAuthInfo,  developerAccountId,  responseFields);
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -96,7 +96,7 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = developeradminuserauthticket.refreshDeveloperAuthTicket( existingAuthTicket,  developerAccountId,  responseFields);
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -125,6 +125,7 @@ public DeveloperAdminUserAuthTicketResource(ApiContext apiContext)
 		MozuClient client = com.mozu.api.clients.platform.developer.DeveloperAdminUserAuthTicketClient.deleteUserAuthTicketClient( refreshToken);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

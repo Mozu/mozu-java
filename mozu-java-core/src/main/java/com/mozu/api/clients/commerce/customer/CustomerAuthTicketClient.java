@@ -14,13 +14,13 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Use the Customer Authentication Tickets resource to generate and refresh authentication tickets for customer accounts.
  * </summary>
  */
 public class CustomerAuthTicketClient {
 	
 	/**
-	 * 
+	 * Creates an authentication ticket for an anonymous shopper user.
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=CreateAnonymousShopperAuthTicketClient();
 	 * client.setBaseAddress(url);
@@ -43,14 +43,14 @@ public class CustomerAuthTicketClient {
 	}
 
 	/**
-	 * 
+	 * Generates a new authentication ticket for a customer account.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param userAuthInfo 
+	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
@@ -61,15 +61,15 @@ public class CustomerAuthTicketClient {
 	}
 
 	/**
-	 * 
+	 * Generates a new authentication ticket for a customer account.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userAuthInfo 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userAuthInfo The authentication information required to generate an authetication ticket for a user, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerUserAuthInfo
@@ -88,14 +88,14 @@ public class CustomerAuthTicketClient {
 	}
 
 	/**
-	 * 
+	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=RefreshUserAuthTicketClient( refreshToken);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param refreshToken 
+	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
@@ -105,15 +105,15 @@ public class CustomerAuthTicketClient {
 	}
 
 	/**
-	 * 
+	 * Refreshes an existing authentication ticket for a customer account by providing the refresh token string.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=RefreshUserAuthTicketClient( refreshToken,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param refreshToken 
-	 * @param responseFields 
+	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */

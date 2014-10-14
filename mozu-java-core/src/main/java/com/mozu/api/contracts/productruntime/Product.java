@@ -32,6 +32,35 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Product code that represents the product variation selected based on the option values the shopper entered.
+	 */
+	protected String variationProductCode;
+
+	public String getVariationProductCode() {
+		return this.variationProductCode;
+	}
+
+	public void setVariationProductCode(String variationProductCode) {
+		this.variationProductCode = variationProductCode;
+	}
+
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
+	 * The list of fulfillment types the product supports.
+	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
@@ -63,6 +92,9 @@ public class Product implements Serializable
 		this.isActive = isActive;
 	}
 
+	/**
+	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -99,6 +131,9 @@ public class Product implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
+	/**
+	 * The manufacturer part number defined for the product.
+	 */
 	protected String mfgPartNumber;
 
 	public String getMfgPartNumber() {
@@ -109,6 +144,9 @@ public class Product implements Serializable
 		this.mfgPartNumber = mfgPartNumber;
 	}
 
+	/**
+	 * The list of manufacturer part numbers defined for the product.
+	 */
 	protected List<String> mfgPartNumbers;
 	public List<String> getMfgPartNumbers() {
 		return this.mfgPartNumbers;
@@ -156,6 +194,9 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -180,7 +221,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC code) of the product.
+	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
 	protected String upc;
 
@@ -192,38 +233,15 @@ public class Product implements Serializable
 		this.upc = upc;
 	}
 
+	/**
+	 * The list of universal product codes defined for the product.
+	 */
 	protected List<String> upCs;
 	public List<String> getUpCs() {
 		return this.upCs;
 	}
 	public void setUpCs(List<String> upCs) {
 		this.upCs = upCs;
-	}
-
-	/**
-	 * Product code that represents the product variation selected based on the option values the shopper entered.
-	 */
-	protected String variationProductCode;
-
-	public String getVariationProductCode() {
-		return this.variationProductCode;
-	}
-
-	public void setVariationProductCode(String variationProductCode) {
-		this.variationProductCode = variationProductCode;
-	}
-
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
 	}
 
 	/**
@@ -237,6 +255,9 @@ public class Product implements Serializable
 		this.availableShippingDiscounts = availableShippingDiscounts;
 	}
 
+	/**
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
 		return this.bundledProducts;
@@ -307,7 +328,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
+	 * Unit price that the tenant intends to sell the product if no sale price is set.
 	 */
 	protected ProductPrice price;
 
@@ -332,6 +353,9 @@ public class Product implements Serializable
 		this.priceRange = priceRange;
 	}
 
+	/**
+	 * Describes the behavior the system uses when determining the price of the product.
+	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {
@@ -343,7 +367,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of product properties set up in product admin.
+	 * The list of product property attributes defined for the product.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {

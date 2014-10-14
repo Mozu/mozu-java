@@ -16,7 +16,7 @@ public class ShipmentUrl
 	/**
 	 * Get Resource Url for GetShipment
 	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return   String Resource Url
 	 */

@@ -15,7 +15,7 @@ public class TenantUrl
 
 	/**
 	 * Get Resource Url for GetTenant
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the Mozu tenant.
 	 * @return   String Resource Url
 	 */

@@ -55,7 +55,7 @@ public class FulfillmentActionResource {
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields 
+	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
 	 * @param action The action to perform for the order fulfillment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

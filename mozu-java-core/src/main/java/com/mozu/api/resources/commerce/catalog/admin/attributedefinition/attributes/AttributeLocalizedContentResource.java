@@ -58,7 +58,7 @@ public class AttributeLocalizedContentResource {
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -75,8 +75,8 @@ public class AttributeLocalizedContentResource {
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -115,7 +115,7 @@ public class AttributeLocalizedContentResource {
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -160,7 +160,7 @@ public class AttributeLocalizedContentResource {
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -179,8 +179,8 @@ public class AttributeLocalizedContentResource {
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -203,7 +203,7 @@ public class AttributeLocalizedContentResource {
 	 *	attributelocalizedcontent.deleteLocalizedContent( attributeFQN,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
@@ -212,6 +212,7 @@ public class AttributeLocalizedContentResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentClient.deleteLocalizedContentClient( attributeFQN,  localeCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

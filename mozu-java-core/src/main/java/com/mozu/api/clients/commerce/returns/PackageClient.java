@@ -14,7 +14,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the return packages subresource to manage physical packages used to ship return replacement items.
+ * Use the Return Packages subresource to manage physical packages used to ship return replacement items.
  * </summary>
  */
 public class PackageClient {
@@ -71,7 +71,7 @@ public class PackageClient {
 	 * Package package = client.Result();
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -115,7 +115,7 @@ public class PackageClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return for which to create a replacement package.
 	 * @param package Properties of the physical package for a return replacement.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
@@ -164,7 +164,7 @@ public class PackageClient {
 	 * Package package = client.Result();
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to update.
 	 * @param package Properties of the return replacement package to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>

@@ -19,6 +19,9 @@ public class ChangeMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The order or item amount changed, if applicable.
+	 */
 	protected Double amount;
 
 	public Double getAmount() {
@@ -133,6 +136,9 @@ public class ChangeMessage implements Serializable
 		this.subjectType = subjectType;
 	}
 
+	/**
+	 * If true, the change associated with the message executed successfully.
+	 */
 	protected Boolean success;
 
 	public Boolean getSuccess() {
@@ -143,6 +149,9 @@ public class ChangeMessage implements Serializable
 		this.success = success;
 	}
 
+	/**
+	 * The unique identifier of the user who initiated the change.
+	 */
 	protected String userId;
 
 	public String getUserId() {

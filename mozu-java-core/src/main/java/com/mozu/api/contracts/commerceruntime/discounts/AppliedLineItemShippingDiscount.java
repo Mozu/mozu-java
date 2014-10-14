@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 
+/**
+ *	The value of the shipping discount for each line item.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppliedLineItemShippingDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The number of the line item that is used for this particular discount.
+	 */
 	protected Integer discountQuantity;
 
 	public Integer getDiscountQuantity() {
@@ -27,6 +33,9 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.discountQuantity = discountQuantity;
 	}
 
+	/**
+	 * The impact of this discount for each discount quantity.
+	 */
 	protected Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
@@ -47,6 +56,9 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.methodCode = methodCode;
 	}
 
+	/**
+	 * This describes shipping discounts that apply to a line item in the order, if any.
+	 */
 	protected AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {

@@ -4,32 +4,36 @@
  *     Changes to this file may cause incorrect behavior and will be lost if
  *     the code is regenerated.
  */
-package com.mozu.api.contracts.productadmin;
+package com.mozu.api.contracts.event;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Properties of a customer segment used to group sets of customers for targeted reporting and discounts.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CustomerSegment implements Serializable
+public class EventExtendedProperty implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the customer segment.
-	 */
-	protected Integer id;
+	protected String key;
 
-	public Integer getId() {
-		return this.id;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	protected Object value;
+
+	public Object getValue() {
+		return this.value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 
 }

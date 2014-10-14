@@ -17,7 +17,7 @@ public class DiscountUrl
 	 * Get Resource Url for GetDiscounts
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -36,7 +36,7 @@ public class DiscountUrl
 	/**
 	 * Get Resource Url for GetDiscountContent
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountContentUrl(Integer discountId, String responseFields)
@@ -50,7 +50,7 @@ public class DiscountUrl
 	/**
 	 * Get Resource Url for GetDiscount
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDiscountUrl(Integer discountId, String responseFields)
@@ -63,7 +63,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GenerateRandomCoupon
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl generateRandomCouponUrl(String responseFields)
@@ -75,7 +75,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for CreateDiscount
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDiscountUrl(String responseFields)
@@ -88,7 +88,7 @@ public class DiscountUrl
 	/**
 	 * Get Resource Url for UpdateDiscountContent
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountContentUrl(Integer discountId, String responseFields)
@@ -101,8 +101,8 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscount
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDiscountUrl(Integer discountId, String responseFields)

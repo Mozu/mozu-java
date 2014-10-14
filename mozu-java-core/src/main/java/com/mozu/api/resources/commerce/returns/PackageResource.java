@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the return packages subresource to manage physical packages used to ship return replacement items.
+ * Use the Return Packages subresource to manage physical packages used to ship return replacement items.
  * </summary>
  */
 public class PackageResource {
@@ -74,7 +74,7 @@ public class PackageResource {
 	 *	Package package = package.getPackage( returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -111,7 +111,7 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return for which to create a replacement package.
 	 * @param package Properties of the physical package for a return replacement.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -152,7 +152,7 @@ public class PackageResource {
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to update.
 	 * @param package Properties of the return replacement package to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -183,6 +183,7 @@ public class PackageResource {
 		MozuClient client = com.mozu.api.clients.commerce.returns.PackageClient.deletePackageClient( returnId,  packageId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

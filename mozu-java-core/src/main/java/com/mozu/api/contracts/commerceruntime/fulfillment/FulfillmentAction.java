@@ -33,6 +33,9 @@ public class FulfillmentAction implements Serializable
 		this.actionName = actionName;
 	}
 
+	/**
+	 * The digital package ID identifies the package to update on the order.
+	 */
 	protected List<String> digitalPackageIds;
 	public List<String> getDigitalPackageIds() {
 		return this.digitalPackageIds;

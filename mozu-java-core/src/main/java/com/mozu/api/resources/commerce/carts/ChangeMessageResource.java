@@ -51,7 +51,7 @@ public class ChangeMessageResource {
 	 *	ChangeMessage changemessage = new ChangeMessage();
 	 *	CartChangeMessageCollection cartChangeMessageCollection = changemessage.getMessages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */
@@ -77,6 +77,7 @@ public class ChangeMessageResource {
 		MozuClient client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeAllMessagesClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -94,6 +95,7 @@ public class ChangeMessageResource {
 		MozuClient client = com.mozu.api.clients.commerce.carts.ChangeMessageClient.removeMessageClient( messageId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

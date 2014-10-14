@@ -20,19 +20,6 @@ public class ShippingRateLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Language used for the entity. Currently, only "en-US" is supported.
-	 */
-	protected String localeCode;
-
-	public String getLocaleCode() {
-		return this.localeCode;
-	}
-
-	public void setLocaleCode(String localeCode) {
-		this.localeCode = localeCode;
-	}
-
-	/**
 	 * The name of the shipping rate in the language specified by the defined locale code.
 	 */
 	protected String name;
@@ -43,6 +30,19 @@ public class ShippingRateLocalizedContent implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * Language used for the entity. Currently, only "en-US" is supported.
+	 */
+	protected String localeCode;
+
+	public String getLocaleCode() {
+		return this.localeCode;
+	}
+
+	public void setLocaleCode(String localeCode) {
+		this.localeCode = localeCode;
 	}
 
 }

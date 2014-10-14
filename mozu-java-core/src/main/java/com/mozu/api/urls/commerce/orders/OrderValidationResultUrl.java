@@ -15,7 +15,7 @@ public class OrderValidationResultUrl
 
 	/**
 	 * Get Resource Url for GetValidationResults
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getValidationResultsUrl(String orderId)
@@ -27,8 +27,8 @@ public class OrderValidationResultUrl
 
 	/**
 	 * Get Resource Url for AddValidationResult
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addValidationResultUrl(String orderId, String responseFields)

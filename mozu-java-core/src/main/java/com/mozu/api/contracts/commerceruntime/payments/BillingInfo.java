@@ -23,7 +23,7 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the system overrides the customer's billing address information with the supplied fulfillment information. 
+	 * If true, the system overrides the customer's billing address information with the supplied fulfillment information.
 	 */
 	protected Boolean isSameBillingShippingAddress;
 
@@ -48,6 +48,9 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
+	/**
+	 * The code that identifies the store credit to apply to the order.
+	 */
 	protected String storeCreditCode;
 
 	public String getStoreCreditCode() {

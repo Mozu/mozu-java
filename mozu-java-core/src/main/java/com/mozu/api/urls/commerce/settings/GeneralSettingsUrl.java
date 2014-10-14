@@ -15,7 +15,7 @@ public class GeneralSettingsUrl
 
 	/**
 	 * Get Resource Url for GetGeneralSettings
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getGeneralSettingsUrl(String responseFields)
@@ -27,7 +27,7 @@ public class GeneralSettingsUrl
 
 	/**
 	 * Get Resource Url for UpdateGeneralSettings
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateGeneralSettingsUrl(String responseFields)

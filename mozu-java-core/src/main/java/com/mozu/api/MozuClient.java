@@ -129,8 +129,7 @@ public class MozuClient<TResult> {
                 }
             }
         } finally {
-            EntityUtils.consume(httpResponseMessage.getEntity());
-            httpResponseMessage.close();
+            cleanupHttpConnection();
         }
         return tResult;
     }
@@ -181,18 +180,23 @@ public class MozuClient<TResult> {
         int port = url.getPort();
         String sche = url.getProtocol();
         HttpHost httpHost = new HttpHost(hostNm, port, sche);
-
-        httpResponseMessage = client.execute(httpHost, request);
         try {
+            httpResponseMessage = client.execute(httpHost, request);
             HttpHelper.ensureSuccess(httpResponseMessage, mapper);
         } catch (Exception e) {
-            // make sure on exception that that reponse is closed
-            EntityUtils.consume(httpResponseMessage.getEntity());
-            httpResponseMessage.close();
+            cleanupHttpConnection();
+            // make sure on exception that that response is closed
             throw e;
         }
     }
 
+    public void cleanupHttpConnection () throws Exception {
+        if (httpResponseMessage != null) {
+            EntityUtils.consume(httpResponseMessage.getEntity());
+            httpResponseMessage.close();
+        }
+    }
+    
     private TResult deserialize(String jsonString, Class<TResult> cls) throws Exception {
         return mapper.readValue(jsonString, cls);
     }

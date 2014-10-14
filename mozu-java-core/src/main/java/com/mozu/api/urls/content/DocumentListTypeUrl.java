@@ -15,7 +15,7 @@ public class DocumentListTypeUrl
 
 	/**
 	 * Get Resource Url for CreateDocumentListType
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDocumentListTypeUrl(String responseFields)
@@ -28,7 +28,7 @@ public class DocumentListTypeUrl
 	/**
 	 * Get Resource Url for UpdateDocumentListType
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentListTypeUrl(String documentListTypeFQN, String responseFields)

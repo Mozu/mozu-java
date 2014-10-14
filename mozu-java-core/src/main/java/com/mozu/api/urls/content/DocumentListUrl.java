@@ -16,7 +16,7 @@ public class DocumentListUrl
 	/**
 	 * Get Resource Url for GetDocumentLists
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
@@ -32,7 +32,7 @@ public class DocumentListUrl
 	/**
 	 * Get Resource Url for GetDocumentList
 	 * @param documentListName The name of the document list.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDocumentListUrl(String documentListName, String responseFields)
@@ -45,7 +45,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for CreateDocumentList
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDocumentListUrl(String responseFields)
@@ -58,7 +58,7 @@ public class DocumentListUrl
 	/**
 	 * Get Resource Url for UpdateDocumentList
 	 * @param documentListName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentListUrl(String documentListName, String responseFields)

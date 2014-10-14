@@ -51,7 +51,7 @@ public class SiteShippingSettingsResource {
 	 *	SiteShippingSettings siteshippingsettings = new SiteShippingSettings();
 	 *	SiteShippingSettings siteShippingSettings = siteshippingsettings.getSiteShippingSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
 	 */

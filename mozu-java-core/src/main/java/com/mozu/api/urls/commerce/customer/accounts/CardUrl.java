@@ -15,9 +15,9 @@ public class CardUrl
 
 	/**
 	 * Get Resource Url for GetAccountCard
-	 * @param accountId 
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountCardUrl(Integer accountId, String cardId, String responseFields)
@@ -32,7 +32,7 @@ public class CardUrl
 	/**
 	 * Get Resource Url for GetAccountCards
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountCardsUrl(Integer accountId, String responseFields)
@@ -46,7 +46,7 @@ public class CardUrl
 	/**
 	 * Get Resource Url for AddAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountCardUrl(Integer accountId, String responseFields)
@@ -60,8 +60,8 @@ public class CardUrl
 	/**
 	 * Get Resource Url for UpdateAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the credit card.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountCardUrl(Integer accountId, String cardId, String responseFields)

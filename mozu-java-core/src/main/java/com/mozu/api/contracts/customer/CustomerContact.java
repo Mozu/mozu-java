@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.customer.ContactType;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Phone;
-import com.mozu.api.contracts.customer.ContactType;
 
 /**
  *	Contact information, including the contact's name, address, phone numbers, email addresses, and company (if supplied). Also indicates whether this is a billing, shipping, or billing and shipping contact.
@@ -63,6 +63,9 @@ public class CustomerContact implements Serializable
 		this.email = email;
 	}
 
+	/**
+	 * The fax number associated with the customer account.
+	 */
 	protected String faxNumber;
 
 	public String getFaxNumber() {
@@ -136,6 +139,17 @@ public class CustomerContact implements Serializable
 	}
 
 	/**
+	 * List of the types associated with a customer contact, such as Billing or Fulfillment.
+	 */
+	protected List<ContactType> types;
+	public List<ContactType> getTypes() {
+		return this.types;
+	}
+	public void setTypes(List<ContactType> types) {
+		this.types = types;
+	}
+
+	/**
 	 * Address associated with the customer account contact.
 	 */
 	protected Address address;
@@ -172,14 +186,6 @@ public class CustomerContact implements Serializable
 
 	public void setPhoneNumbers(Phone phoneNumbers) {
 		this.phoneNumbers = phoneNumbers;
-	}
-
-	protected List<ContactType> types;
-	public List<ContactType> getTypes() {
-		return this.types;
-	}
-	public void setTypes(List<ContactType> types) {
-		this.types = types;
 	}
 
 }

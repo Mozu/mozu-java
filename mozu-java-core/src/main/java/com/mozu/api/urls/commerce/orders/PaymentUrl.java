@@ -16,7 +16,7 @@ public class PaymentUrl
 	/**
 	 * Get Resource Url for GetPayments
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentsUrl(String orderId, String responseFields)
@@ -45,7 +45,7 @@ public class PaymentUrl
 	 * Get Resource Url for GetPayment
 	 * @param orderId Unique identifier of the order associated with the payment transaction.
 	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentUrl(String orderId, String paymentId, String responseFields)
@@ -61,7 +61,7 @@ public class PaymentUrl
 	 * Get Resource Url for PerformPaymentAction
 	 * @param orderId Unique identifier of the order associated with the payment.
 	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performPaymentActionUrl(String orderId, String paymentId, String responseFields)
@@ -76,7 +76,7 @@ public class PaymentUrl
 	/**
 	 * Get Resource Url for CreatePaymentAction
 	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPaymentActionUrl(String orderId, String responseFields)

@@ -61,7 +61,7 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -100,7 +100,7 @@ public class DocumentListTypeResource {
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

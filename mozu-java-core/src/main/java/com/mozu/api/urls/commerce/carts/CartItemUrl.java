@@ -16,7 +16,7 @@ public class CartItemUrl
 	/**
 	 * Get Resource Url for GetCartItem
 	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartItemUrl(String cartItemId, String responseFields)
@@ -29,7 +29,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for GetCartItems
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartItemsUrl(String responseFields)
@@ -41,7 +41,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for AddItemToCart
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addItemToCartUrl(String responseFields)
@@ -55,7 +55,7 @@ public class CartItemUrl
 	 * Get Resource Url for UpdateCartItemQuantity
 	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCartItemQuantityUrl(String cartItemId, Integer quantity, String responseFields)
@@ -70,7 +70,7 @@ public class CartItemUrl
 	/**
 	 * Get Resource Url for UpdateCartItem
 	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCartItemUrl(String cartItemId, String responseFields)

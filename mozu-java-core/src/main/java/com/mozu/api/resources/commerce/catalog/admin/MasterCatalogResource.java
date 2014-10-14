@@ -51,7 +51,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalogCollection masterCatalogCollection = mastercatalog.getMasterCatalogs( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalogCollection
 	 */
@@ -70,7 +70,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
+	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -85,8 +85,8 @@ public class MasterCatalogResource {
 	 *	MasterCatalog mastercatalog = new MasterCatalog();
 	 *	MasterCatalog masterCatalog = mastercatalog.getMasterCatalog( masterCatalogId,  responseFields);
 	 * </code></pre></p>
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
 	 */
@@ -123,7 +123,7 @@ public class MasterCatalogResource {
 	 *	MasterCatalog masterCatalog = mastercatalog.updateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
 	 * </code></pre></p>
 	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param masterCatalog Properties of the master catalog to update, which consists of the product publishing mode. Possible values are "Pending" which saves product updates in draft mode until they are published, and "Live" which publishes all product changes immediately.
 	 * @return com.mozu.api.contracts.productadmin.MasterCatalog
 	 * @see com.mozu.api.contracts.productadmin.MasterCatalog
