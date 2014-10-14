@@ -45,7 +45,7 @@ public class DocumentListClient {
 	 * DocumentListCollection documentListCollection = client.Result();
 	 * </code></pre></p>
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListCollection>
 	 * @see com.mozu.api.contracts.content.DocumentListCollection
@@ -89,7 +89,7 @@ public class DocumentListClient {
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -132,7 +132,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -180,7 +180,7 @@ public class DocumentListClient {
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
 	 * @param documentListName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList

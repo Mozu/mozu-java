@@ -22,58 +22,6 @@ public class CategoryLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Title defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
-	 */
-	protected String metaTagTitle;
-
-	public String getMetaTagTitle() {
-		return this.metaTagTitle;
-	}
-
-	public void setMetaTagTitle(String metaTagTitle) {
-		this.metaTagTitle = metaTagTitle;
-	}
-
-	/**
-	 * The name of the product category in the language specified by the locale code.
-	 */
-	protected String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * Title that appears on new product category pages, in the language specified by the locale code.
-	 */
-	protected String pageTitle;
-
-	public String getPageTitle() {
-		return this.pageTitle;
-	}
-
-	public void setPageTitle(String pageTitle) {
-		this.pageTitle = pageTitle;
-	}
-
-	/**
-	 * Human-readable identifier to assign to the category to generate user-friendly URLs.
-	 */
-	protected String slug;
-
-	public String getSlug() {
-		return this.slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
-	}
-
-	/**
 	 * Description of the product category in the language specified by the locale code.
 	 */
 	protected String description;
@@ -123,6 +71,58 @@ public class CategoryLocalizedContent implements Serializable
 
 	public void setMetaTagKeywords(String metaTagKeywords) {
 		this.metaTagKeywords = metaTagKeywords;
+	}
+
+	/**
+	 * Title defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
+	 */
+	protected String metaTagTitle;
+
+	public String getMetaTagTitle() {
+		return this.metaTagTitle;
+	}
+
+	public void setMetaTagTitle(String metaTagTitle) {
+		this.metaTagTitle = metaTagTitle;
+	}
+
+	/**
+	 * The name of the product category in the language specified by the locale code.
+	 */
+	protected String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * Title that appears on new product category pages, in the language specified by the locale code.
+	 */
+	protected String pageTitle;
+
+	public String getPageTitle() {
+		return this.pageTitle;
+	}
+
+	public void setPageTitle(String pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	/**
+	 * Human-readable identifier to assign to the category to generate user-friendly URLs.
+	 */
+	protected String slug;
+
+	public String getSlug() {
+		return this.slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
 	}
 
 	/**

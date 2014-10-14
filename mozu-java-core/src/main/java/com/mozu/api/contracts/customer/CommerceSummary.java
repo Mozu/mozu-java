@@ -46,6 +46,9 @@ public class CommerceSummary implements Serializable
 		this.orderCount = orderCount;
 	}
 
+	/**
+	 * The number of visits to a site associated with a customer account.
+	 */
 	protected Integer visitsCount;
 
 	public Integer getVisitsCount() {

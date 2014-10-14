@@ -46,7 +46,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -92,7 +92,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket

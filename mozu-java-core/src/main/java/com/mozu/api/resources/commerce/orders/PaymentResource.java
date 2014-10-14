@@ -53,7 +53,7 @@ public class PaymentResource {
 	 *	PaymentCollection paymentCollection = payment.getPayments( orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -110,7 +110,7 @@ public class PaymentResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment transaction.
 	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -149,7 +149,7 @@ public class PaymentResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment.
 	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -188,7 +188,7 @@ public class PaymentResource {
 	 *	Order order = payment.createPaymentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

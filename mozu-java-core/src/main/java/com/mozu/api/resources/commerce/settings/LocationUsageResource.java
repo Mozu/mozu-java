@@ -51,7 +51,7 @@ public class LocationUsageResource {
 	 *	LocationUsage locationusage = new LocationUsage();
 	 *	LocationUsageCollection locationUsageCollection = locationusage.getLocationUsages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.LocationUsageCollection
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
 	 */
@@ -86,7 +86,7 @@ public class LocationUsageResource {
 	 *	LocationUsage locationUsage = locationusage.getLocationUsage( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -123,7 +123,7 @@ public class LocationUsageResource {
 	 *	LocationUsage locationUsage = locationusage.updateLocationUsage( usage,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param usage Properties of the location usage type to update.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage

@@ -15,7 +15,7 @@ public class CheckoutSettingsUrl
 
 	/**
 	 * Get Resource Url for GetCheckoutSettings
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCheckoutSettingsUrl(String responseFields)

@@ -72,7 +72,7 @@ public class PickupClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -116,7 +116,7 @@ public class PickupClient {
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param pickup Properties of the in-store pickup to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -165,7 +165,7 @@ public class PickupClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the in-store pickup.
 	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param pickup Properties of the in-store pickup to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup

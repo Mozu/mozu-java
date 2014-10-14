@@ -56,7 +56,7 @@ public TenantResource(ApiContext apiContext)
 	 *	Tenant tenant = new Tenant();
 	 *	Tenant tenant = tenant.getTenant( tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the Mozu tenant.
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant

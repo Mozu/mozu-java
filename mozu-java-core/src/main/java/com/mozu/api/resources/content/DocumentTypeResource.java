@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
- * The DocumentTypes resource is a part of the Content Service.
+ * Use the Document Types resource to view the document types supplied by the Content API.
  * </summary>
  */
 public class DocumentTypeResource {
@@ -40,7 +40,7 @@ public class DocumentTypeResource {
 	}
 		
 	/**
-	 * 
+	 * Retrieves a paged list of the system-defined document types.
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes();
@@ -54,14 +54,14 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a paged list of the system-defined document types.
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentTypeCollection documentTypeCollection = documenttype.getDocumentTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.content.DocumentTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
@@ -75,12 +75,12 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a system-defined document type.
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName);
 	 * </code></pre></p>
-	 * @param documentTypeName 
+	 * @param documentTypeName The name of the document type to retrieve.
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -90,13 +90,13 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a system-defined document type.
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.getDocumentType( documentTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentTypeName 
-	 * @param responseFields 
+	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -131,7 +131,7 @@ public class DocumentTypeResource {
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.createDocumentType( documentType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param documentType 
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -170,7 +170,7 @@ public class DocumentTypeResource {
 	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentTypeName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param documentType 
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType

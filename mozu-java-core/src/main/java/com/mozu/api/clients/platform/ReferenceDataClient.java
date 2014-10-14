@@ -44,7 +44,7 @@ public class ReferenceDataClient {
 	 * AddressSchema addressSchema = client.Result();
 	 * </code></pre></p>
 	 * @param countryCode The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.AddressSchema>
 	 * @see com.mozu.api.contracts.reference.AddressSchema
 	 */
@@ -84,7 +84,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * AddressSchemaCollection addressSchemaCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.AddressSchemaCollection>
 	 * @see com.mozu.api.contracts.reference.AddressSchemaCollection
 	 */
@@ -101,14 +101,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.Behavior> mozuClient=GetBehaviorClient( behaviorId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Behavior behavior = client.Result();
 	 * </code></pre></p>
-	 * @param behaviorId ***Always private and should not be published.***
+	 * @param behaviorId Unique identifier of the behavior.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.Behavior>
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -118,15 +118,15 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of a behavior based on the behavior ID specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.Behavior> mozuClient=GetBehaviorClient( behaviorId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Behavior behavior = client.Result();
 	 * </code></pre></p>
-	 * @param behaviorId ***Always private and should not be published.***
-	 * @param responseFields 
+	 * @param behaviorId Unique identifier of the behavior.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.Behavior>
 	 * @see com.mozu.api.contracts.core.Behavior
 	 */
@@ -143,14 +143,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of the behavior category specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategory> mozuClient=GetBehaviorCategoryClient( categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId ***Always private and should not be published.***
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -160,15 +160,15 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the details of the behavior category specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategory> mozuClient=GetBehaviorCategoryClient( categoryId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId ***Always private and should not be published.***
-	 * @param responseFields 
+	 * @param categoryId Unique identifier of the behavior category.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -185,7 +185,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the list of behavior categories.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> mozuClient=GetBehaviorCategoriesClient();
 	 * client.setBaseAddress(url);
@@ -201,14 +201,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves the list of behavior categories.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> mozuClient=GetBehaviorCategoriesClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCategoryCollection behaviorCategoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategoryCollection>
 	 * @see com.mozu.api.contracts.core.BehaviorCategoryCollection
 	 */
@@ -225,7 +225,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient=GetBehaviorsClient();
 	 * client.setBaseAddress(url);
@@ -241,15 +241,15 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * ***Always private and should not be published.***
+	 * Retrieves a list of application behaviors.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient=GetBehaviorsClient( userType,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * BehaviorCollection behaviorCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param userType 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCollection>
 	 * @see com.mozu.api.contracts.core.BehaviorCollection
 	 */
@@ -289,7 +289,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * ContentLocaleCollection contentLocaleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.ContentLocaleCollection>
 	 * @see com.mozu.api.contracts.reference.ContentLocaleCollection
 	 */
@@ -329,7 +329,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * CountryCollection countryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryCollection>
 	 * @see com.mozu.api.contracts.reference.CountryCollection
 	 */
@@ -369,7 +369,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * CurrencyCollection currencyCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CurrencyCollection>
 	 * @see com.mozu.api.contracts.reference.CurrencyCollection
 	 */
@@ -409,7 +409,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * TimeZoneCollection timeZoneCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.TimeZoneCollection>
 	 * @see com.mozu.api.contracts.reference.TimeZoneCollection
 	 */
@@ -449,7 +449,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * TopLevelDomainCollection topLevelDomainCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.TopLevelDomainCollection>
 	 * @see com.mozu.api.contracts.reference.TopLevelDomainCollection
 	 */
@@ -490,7 +490,7 @@ public class ReferenceDataClient {
 	 * UnitOfMeasureCollection unitOfMeasureCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.UnitOfMeasureCollection>
 	 * @see com.mozu.api.contracts.reference.UnitOfMeasureCollection
 	 */

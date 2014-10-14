@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Properties of a fulfillment contact for the shipping origin address associated with a location.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingOriginContact implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
+	 */
 	protected String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
@@ -26,6 +32,9 @@ public class ShippingOriginContact implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * The email address of the specified user or the email address associated with the specified entity.
+	 */
 	protected String email;
 
 	public String getEmail() {
@@ -36,6 +45,9 @@ public class ShippingOriginContact implements Serializable
 		this.email = email;
 	}
 
+	/**
+	 * The first name of the shipping origin contact.
+	 */
 	protected String firstName;
 
 	public String getFirstName() {
@@ -46,6 +58,9 @@ public class ShippingOriginContact implements Serializable
 		this.firstName = firstName;
 	}
 
+	/**
+	 * The last name of the shipping origin contact.
+	 */
 	protected String lastNameOrSurname;
 
 	public String getLastNameOrSurname() {
@@ -56,6 +71,9 @@ public class ShippingOriginContact implements Serializable
 		this.lastNameOrSurname = lastNameOrSurname;
 	}
 
+	/**
+	 * The middle name or middle initial of the shipping origin contact.
+	 */
 	protected String middleNameOrInitial;
 
 	public String getMiddleNameOrInitial() {
@@ -66,6 +84,9 @@ public class ShippingOriginContact implements Serializable
 		this.middleNameOrInitial = middleNameOrInitial;
 	}
 
+	/**
+	 * Collection of phone numbers associated with the shipping origin contact.
+	 */
 	protected String phoneNumber;
 
 	public String getPhoneNumber() {

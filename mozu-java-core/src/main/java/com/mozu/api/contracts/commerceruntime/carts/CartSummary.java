@@ -71,6 +71,9 @@ public class CartSummary implements Serializable
 		this.total = total;
 	}
 
+	/**
+	 * The combined total quantity across all items in the cart.
+	 */
 	protected Integer totalQuantity;
 
 	public Integer getTotalQuantity() {

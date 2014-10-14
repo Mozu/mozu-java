@@ -25,7 +25,7 @@ public class ListViewClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -44,11 +44,11 @@ public class ListViewClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
@@ -92,9 +92,9 @@ public class ListViewClient {
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
@@ -141,7 +141,7 @@ public class ListViewClient {
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -185,9 +185,9 @@ public class ListViewClient {
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
@@ -232,7 +232,7 @@ public class ListViewClient {
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -275,7 +275,7 @@ public class ListViewClient {
 	 * ListViewCollection listViewCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListViewCollection>
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -319,7 +319,7 @@ public class ListViewClient {
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -367,7 +367,7 @@ public class ListViewClient {
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>

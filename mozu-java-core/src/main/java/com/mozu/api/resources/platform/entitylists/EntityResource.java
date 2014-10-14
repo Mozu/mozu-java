@@ -35,7 +35,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.getEntity( entityListFullName,  id);
+	 *	JObject json = entity.getEntity( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -51,11 +51,11 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.getEntity( entityListFullName,  id,  responseFields);
+	 *	JObject json = entity.getEntity( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -90,9 +90,9 @@ public class EntityResource {
 	 *	EntityCollection entityCollection = entity.getEntities( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
@@ -111,7 +111,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.insertEntity( item,  entityListFullName);
+	 *	JObject json = entity.insertEntity( item,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param item 
@@ -128,10 +128,10 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.insertEntity( item,  entityListFullName,  responseFields);
+	 *	JObject json = entity.insertEntity( item,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param item 
 	 * @return JObject
 	 * @see JObject
@@ -150,7 +150,7 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.updateEntity( item,  entityListFullName,  id);
+	 *	JObject json = entity.updateEntity( item,  entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -168,11 +168,11 @@ public class EntityResource {
 	 * 
 	 * <p><pre><code>
 	 *	Entity entity = new Entity();
-	 *	JObject jObject = entity.updateEntity( item,  entityListFullName,  id,  responseFields);
+	 *	JObject json = entity.updateEntity( item,  entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param item 
 	 * @return JObject
 	 * @see JObject
@@ -202,6 +202,7 @@ public class EntityResource {
 		MozuClient client = com.mozu.api.clients.platform.entitylists.EntityClient.deleteEntityClient( entityListFullName,  id);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

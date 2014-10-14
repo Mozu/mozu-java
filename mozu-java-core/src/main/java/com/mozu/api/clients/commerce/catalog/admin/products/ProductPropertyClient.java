@@ -81,7 +81,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
@@ -101,9 +101,9 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -130,7 +130,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -148,8 +148,8 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -177,7 +177,7 @@ public class ProductPropertyClient {
 	 * @param attributeFQN 
 	 * @param productCode 
 	 * @param value 
-	 * @param localizedContent 
+	 * @param localizedContent Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -197,9 +197,9 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
-	 * @param localizedContent 
+	 * @param localizedContent Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -246,7 +246,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Properties of the property attribute to configure for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -305,7 +305,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @param localizedContent 
@@ -327,9 +327,9 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
@@ -380,7 +380,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Details of the property attribute to update for the product configuration.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -431,7 +431,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @return Mozu.Api.MozuClient 

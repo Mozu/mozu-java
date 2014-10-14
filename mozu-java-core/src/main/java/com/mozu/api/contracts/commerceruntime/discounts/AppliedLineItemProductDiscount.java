@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.discounts.Discount;
 
+/**
+ *	Discount applied to the order, which is a negative number, which is to be subtracted from the original price to get the final price for a particular line item. If multiple discounts for the order exist, this is the value most advantageous to the shopper.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppliedLineItemProductDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Determines if the discount applies to the sale price of the order.
+	 */
 	protected Boolean appliesToSalePrice;
 
 	public Boolean getAppliesToSalePrice() {
@@ -27,6 +33,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.appliesToSalePrice = appliesToSalePrice;
 	}
 
+	/**
+	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
+	 */
 	protected String couponCode;
 
 	public String getCouponCode() {
@@ -37,6 +46,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.couponCode = couponCode;
 	}
 
+	/**
+	 * The number of the line items that are used for this particular discount.
+	 */
 	protected Integer discountQuantity;
 
 	public Integer getDiscountQuantity() {
@@ -57,6 +69,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.excluded = excluded;
 	}
 
+	/**
+	 * The value of the applied discount. This is a negative number, which is subtracted from the original price to get the final price.
+	 */
 	protected Double impact;
 
 	public Double getImpact() {
@@ -67,6 +82,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.impact = impact;
 	}
 
+	/**
+	 * The impact of this discount for each discount quantity.
+	 */
 	protected Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
@@ -87,6 +105,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.productQuantity = productQuantity;
 	}
 
+	/**
+	 * This describes discounts that apply to the order, if any. For example, when the subtotal of the order exceeds a certain amount, or a discount for free shipping.
+	 */
 	protected Discount discount;
 
 	public Discount getDiscount() {

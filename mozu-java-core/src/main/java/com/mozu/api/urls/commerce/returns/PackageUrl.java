@@ -30,7 +30,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for GetPackage
 	 * @param packageId Unique identifier of the return replacement package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -45,7 +45,7 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for CreatePackage
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return for which to create a replacement package.
 	 * @return   String Resource Url
 	 */
@@ -60,7 +60,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for UpdatePackage
 	 * @param packageId Unique identifier of the return replacement package to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the replacement package to update.
 	 * @return   String Resource Url
 	 */

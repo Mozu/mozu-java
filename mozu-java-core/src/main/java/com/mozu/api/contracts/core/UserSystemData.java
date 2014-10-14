@@ -98,7 +98,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 *  When the user last logged into the store. System-supplied and read-only.
+	 * When the user last logged into the store. System-supplied and read-only.
 	 */
 	protected DateTime lastLoginOn;
 
@@ -111,7 +111,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 *  When the password was last modified. System-supplied and read-only.
+	 * When the password was last modified. System-supplied and read-only.
 	 */
 	protected DateTime lastPasswordChangeOn;
 

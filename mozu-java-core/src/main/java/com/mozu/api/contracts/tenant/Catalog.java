@@ -19,29 +19,6 @@ public class Catalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The date and time the catalog was deleted.
-	 */
-	protected DateTime deleteDate;
-
-	public DateTime getDeleteDate() {
-		return this.deleteDate;
-	}
-
-	public void setDeleteDate(DateTime deleteDate) {
-		this.deleteDate = deleteDate;
-	}
-
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	protected DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -76,6 +53,29 @@ public class Catalog implements Serializable
 
 	public void setDefaultLocaleCode(String defaultLocaleCode) {
 		this.defaultLocaleCode = defaultLocaleCode;
+	}
+
+	/**
+	 * The date and time the catalog was deleted.
+	 */
+	protected DateTime deleteDate;
+
+	public DateTime getDeleteDate() {
+		return this.deleteDate;
+	}
+
+	public void setDeleteDate(DateTime deleteDate) {
+		this.deleteDate = deleteDate;
+	}
+
+	protected Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	/**
@@ -114,6 +114,9 @@ public class Catalog implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The current status of the product catalog.
+	 */
 	protected String status;
 
 	public String getStatus() {
@@ -124,6 +127,9 @@ public class Catalog implements Serializable
 		this.status = status;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {

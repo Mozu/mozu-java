@@ -45,7 +45,7 @@ public class TenantAdminUserAuthTicketClient {
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
@@ -91,7 +91,7 @@ public class TenantAdminUserAuthTicketClient {
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId 
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>

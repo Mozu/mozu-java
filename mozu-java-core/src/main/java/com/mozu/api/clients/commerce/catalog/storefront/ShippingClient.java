@@ -14,20 +14,20 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Use the Storefront Shipping resource to retrieve shipping rate information from the website.
  * </summary>
  */
 public class ShippingClient {
 	
 	/**
-	 * 
+	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param rateRequest 
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -38,15 +38,15 @@ public class ShippingClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param rateRequest 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

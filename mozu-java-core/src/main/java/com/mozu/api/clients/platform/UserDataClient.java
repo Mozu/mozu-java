@@ -45,7 +45,7 @@ public class UserDataClient {
 	 * string string = client.Result();
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */

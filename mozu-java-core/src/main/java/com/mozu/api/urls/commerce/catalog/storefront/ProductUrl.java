@@ -54,7 +54,7 @@ public class ProductUrl
 	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
-	 * @param skipInventoryCheck 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -74,7 +74,7 @@ public class ProductUrl
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
-	 * @param skipInventoryCheck 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String responseFields, Boolean skipInventoryCheck)
@@ -90,8 +90,8 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for ValidateProduct
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
-	 * @param skipInventoryCheck 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateProductUrl(String productCode, String responseFields, Boolean skipInventoryCheck)
@@ -105,12 +105,12 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for ValidateDiscounts
-	 * @param allowInactive 
-	 * @param customerAccountId 
-	 * @param productCode 
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
-	 * @param skipInventoryCheck 
-	 * @param variationProductCode 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
+	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateDiscountsUrl(Boolean allowInactive, Integer customerAccountId, String productCode, String responseFields, Boolean skipInventoryCheck, String variationProductCode)

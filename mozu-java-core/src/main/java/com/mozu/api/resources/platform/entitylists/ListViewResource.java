@@ -35,7 +35,7 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject jObject = listview.getViewEntity( entityListFullName,  viewName,  entityId);
+	 *	JObject json = listview.getViewEntity( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
@@ -52,11 +52,11 @@ public class ListViewResource {
 	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
-	 *	JObject jObject = listview.getViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
+	 *	JObject json = listview.getViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return JObject
 	 * @see JObject
@@ -93,9 +93,9 @@ public class ListViewResource {
 	 *	EntityCollection entityCollection = listview.getViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
@@ -135,7 +135,7 @@ public class ListViewResource {
 	 * </code></pre></p>
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -172,9 +172,9 @@ public class ListViewResource {
 	 *	EntityContainerCollection entityContainerCollection = listview.getViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -212,7 +212,7 @@ public class ListViewResource {
 	 *	ListView listView = listview.getEntityListView( entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -248,7 +248,7 @@ public class ListViewResource {
 	 *	ListViewCollection listViewCollection = listview.getEntityListViews( entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -285,7 +285,7 @@ public class ListViewResource {
 	 *	ListView listView = listview.createEntityListView( listView,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -325,7 +325,7 @@ public class ListViewResource {
 	 *	ListView listView = listview.updateEntityListView( listView,  entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
@@ -356,6 +356,7 @@ public class ListViewResource {
 		MozuClient client = com.mozu.api.clients.platform.entitylists.ListViewClient.deleteEntityListViewClient( entityListFullName,  viewName);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

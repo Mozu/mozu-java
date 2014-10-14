@@ -53,7 +53,7 @@ public class AddressValidationRequestResource {
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
 	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse

@@ -74,7 +74,7 @@ public class TransactionResource {
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -104,6 +104,7 @@ public class TransactionResource {
 		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.removeTransactionClient( accountId,  transactionId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

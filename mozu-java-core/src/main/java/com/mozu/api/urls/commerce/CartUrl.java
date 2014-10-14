@@ -16,7 +16,7 @@ public class CartUrl
 	/**
 	 * Get Resource Url for GetCart
 	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartUrl(String cartId, String responseFields)
@@ -29,7 +29,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for GetOrCreateCart
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrCreateCartUrl(String responseFields)
@@ -41,7 +41,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for GetCartSummary
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCartSummaryUrl(String responseFields)
@@ -53,7 +53,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for GetUserCartSummary
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -67,7 +67,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for GetUserCart
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return   String Resource Url
 	 */
@@ -81,7 +81,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for UpdateCart
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCartUrl(String responseFields)

@@ -83,7 +83,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -104,7 +104,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream 
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */
@@ -113,6 +113,7 @@ public class DocumentTreeResource {
 		MozuClient client = com.mozu.api.clients.content.documentlists.DocumentTreeClient.updateTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -124,7 +125,7 @@ public class DocumentTreeResource {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream 
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */
@@ -133,6 +134,7 @@ public class DocumentTreeResource {
 		MozuClient client = com.mozu.api.clients.content.documentlists.DocumentTreeClient.deleteTreeDocumentContentClient( stream,  documentListName,  documentName,  contentType);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

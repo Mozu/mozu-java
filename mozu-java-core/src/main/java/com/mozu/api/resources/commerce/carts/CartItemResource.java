@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the cart items subresource to manage a collection of items in an active shopping cart.
+ * Use the Cart Items subresource to manage a collection of items in an active shopping cart.
  * </summary>
  */
 public class CartItemResource {
@@ -53,7 +53,7 @@ public class CartItemResource {
 	 *	CartItem cartItem = cartitem.getCartItem( cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -86,7 +86,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItemCollection cartItemCollection = cartitem.getCartItems( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItemCollection
 	 */
@@ -121,7 +121,7 @@ public class CartItemResource {
 	 *	CartItem cartitem = new CartItem();
 	 *	CartItem cartItem = cartitem.addItemToCart( cartItem,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param cartItem All properties of the new cart item. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -160,7 +160,7 @@ public class CartItemResource {
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -197,7 +197,7 @@ public class CartItemResource {
 	 *	CartItem cartItem = cartitem.updateCartItem( cartItem,  cartItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartItemId Identifier of the cart item to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param cartItem The properties of the cart item to update.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -244,6 +244,7 @@ public class CartItemResource {
 		MozuClient client = com.mozu.api.clients.commerce.carts.CartItemClient.deleteCartItemClient( cartItemId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

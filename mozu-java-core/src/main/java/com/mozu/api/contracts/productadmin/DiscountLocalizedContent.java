@@ -20,6 +20,9 @@ public class DiscountLocalizedContent implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The localizable, shopper-facing description defined for the discount.
+	 */
 	protected String friendlyDescription;
 
 	public String getFriendlyDescription() {
@@ -44,7 +47,7 @@ public class DiscountLocalizedContent implements Serializable
 	}
 
 	/**
-	 * Name of the localized content.
+	 * The localizable name of the discount.
 	 */
 	protected String name;
 

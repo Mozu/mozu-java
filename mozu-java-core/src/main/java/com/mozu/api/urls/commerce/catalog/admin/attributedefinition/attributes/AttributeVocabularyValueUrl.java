@@ -42,8 +42,8 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -60,7 +60,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
@@ -76,7 +76,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -92,7 +92,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAttributeVocabularyValueUrl(String attributeFQN, String responseFields)
@@ -133,7 +133,7 @@ public class AttributeVocabularyValueUrl
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
 	 * @param localeCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -150,7 +150,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
@@ -180,7 +180,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param value 
 	 * @return   String Resource Url
 	 */

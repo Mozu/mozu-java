@@ -15,7 +15,7 @@ public class AddressValidationRequestUrl
 
 	/**
 	 * Get Resource Url for ValidateAddress
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateAddressUrl(String responseFields)

@@ -56,7 +56,7 @@ public AdminUserResource(ApiContext apiContext)
 	 *	AdminUser adminuser = new AdminUser();
 	 *	TenantCollection tenantCollection = adminuser.getTenantScopesForUser( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return com.mozu.api.contracts.tenant.TenantCollection
 	 * @see com.mozu.api.contracts.tenant.TenantCollection
@@ -91,7 +91,7 @@ public AdminUserResource(ApiContext apiContext)
 	 *	AdminUser adminuser = new AdminUser();
 	 *	User user = adminuser.getUser( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return com.mozu.api.contracts.core.User
 	 * @see com.mozu.api.contracts.core.User

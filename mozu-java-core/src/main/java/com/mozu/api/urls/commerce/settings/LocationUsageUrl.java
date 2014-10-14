@@ -15,7 +15,7 @@ public class LocationUsageUrl
 
 	/**
 	 * Get Resource Url for GetLocationUsages
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUsagesUrl(String responseFields)
@@ -28,7 +28,7 @@ public class LocationUsageUrl
 	/**
 	 * Get Resource Url for GetLocationUsage
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUsageUrl(String code, String responseFields)
@@ -42,7 +42,7 @@ public class LocationUsageUrl
 	/**
 	 * Get Resource Url for UpdateLocationUsage
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationUsageUrl(String code, String responseFields)

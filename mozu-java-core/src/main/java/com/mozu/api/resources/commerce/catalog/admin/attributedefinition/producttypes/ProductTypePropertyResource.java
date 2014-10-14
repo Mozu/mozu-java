@@ -84,7 +84,7 @@ public class ProductTypePropertyResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -123,7 +123,7 @@ public class ProductTypePropertyResource {
 	 *	AttributeInProductType attributeInProductType = producttypeproperty.addProperty( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of the property attribute to define for the specified product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -166,7 +166,7 @@ public class ProductTypePropertyResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of the property attribute to define for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -198,6 +198,7 @@ public class ProductTypePropertyResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.deletePropertyClient(_dataViewMode,  productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

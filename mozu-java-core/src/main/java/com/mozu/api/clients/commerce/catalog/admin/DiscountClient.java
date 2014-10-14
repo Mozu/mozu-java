@@ -46,7 +46,7 @@ public class DiscountClient {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountCollection>
@@ -91,7 +91,7 @@ public class DiscountClient {
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -134,7 +134,7 @@ public class DiscountClient {
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -175,7 +175,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -192,14 +192,14 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Creates a discount.
+	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=CreateDiscountClient( discount);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discount Properties of the discount to create. Required properties: Content.Name, AmountType, StartDate, and Target.Type.
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -210,15 +210,15 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Creates a discount.
+	 * Creates a new discount or coupon to apply to a product, category, order, or shipping.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=CreateDiscountClient( discount,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param discount Properties of the discount to create. Required properties: Content.Name, AmountType, StartDate, and Target.Type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -237,7 +237,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Modifies the localized content for the specified discount. Rename the discount without modifying any other discount properties.
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=UpdateDiscountContentClient( content,  discountId);
 	 * client.setBaseAddress(url);
@@ -245,7 +245,7 @@ public class DiscountClient {
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param content New Name and/or LocaleCode. Properties of the content to update. Required property: Name.
+	 * @param content The discount content to update, including the discount name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -256,7 +256,7 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Modifies the localized content for the specified discount. Rename the discount without modifying any other discount properties.
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=UpdateDiscountContentClient( content,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -264,8 +264,8 @@ public class DiscountClient {
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
-	 * @param content New Name and/or LocaleCode. Properties of the content to update. Required property: Name.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param content The discount content to update, including the discount name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -284,15 +284,15 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Modifies a discount.
+	 * Updates one or more properties of a defined discount.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=UpdateDiscountClient( discount,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param discount Properties of the discount to update. Required properties: Content.Name, AmountType, StartDate, and Target.Type. Any unspecified properties are set to null and boolean variables are set to false.
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param discount Properties of the discount to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -303,16 +303,16 @@ public class DiscountClient {
 	}
 
 	/**
-	 * Modifies a discount.
+	 * Updates one or more properties of a defined discount.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient=UpdateDiscountClient( discount,  discountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param responseFields 
-	 * @param discount Properties of the discount to update. Required properties: Content.Name, AmountType, StartDate, and Target.Type. Any unspecified properties are set to null and boolean variables are set to false.
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param discount Properties of the discount to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount

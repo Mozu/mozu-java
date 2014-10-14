@@ -35,6 +35,9 @@ public class Category implements Serializable
 		this.categoryId = categoryId;
 	}
 
+	/**
+	 * If true, the category is displayed on the website storefront.
+	 */
 	protected Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {

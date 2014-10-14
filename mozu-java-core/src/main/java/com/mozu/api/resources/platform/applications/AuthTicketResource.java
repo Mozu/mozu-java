@@ -57,7 +57,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -94,7 +94,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.refreshAppAuthTicket( authTicketRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -123,6 +123,7 @@ public AuthTicketResource(ApiContext apiContext)
 		MozuClient client = com.mozu.api.clients.platform.applications.AuthTicketClient.deleteAppAuthTicketClient( refreshToken);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

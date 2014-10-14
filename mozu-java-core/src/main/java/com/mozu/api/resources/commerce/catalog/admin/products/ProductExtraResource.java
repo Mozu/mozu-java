@@ -106,7 +106,7 @@ public class ProductExtraResource {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -144,7 +144,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
 	 */
@@ -184,7 +184,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -224,7 +224,7 @@ public class ProductExtraResource {
 	 *	ProductExtra productExtra = productextra.addExtra( productExtra,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productExtra Properties of the product extra to configure for the specified product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -291,7 +291,7 @@ public class ProductExtraResource {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -333,7 +333,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productExtra Properties of the extra attribute to update for the specified product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtra
 	 * @see com.mozu.api.contracts.productadmin.ProductExtra
@@ -363,6 +363,7 @@ public class ProductExtraResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.deleteExtraClient(_dataViewMode,  productCode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -375,7 +376,7 @@ public class ProductExtraResource {
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param value 
+	 * @param value Use this field to include those fields which are not included by default.
 	 * @return 
 	 */
 	public void deleteExtraValueLocalizedDeltaPrice(String productCode, String attributeFQN, String value, String currencyCode) throws Exception
@@ -383,6 +384,7 @@ public class ProductExtraResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductExtraClient.deleteExtraValueLocalizedDeltaPriceClient(_dataViewMode,  productCode,  attributeFQN,  value,  currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

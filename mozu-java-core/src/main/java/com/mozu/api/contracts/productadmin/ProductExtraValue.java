@@ -48,6 +48,9 @@ public class ProductExtraValue implements Serializable
 		this.isDefaulted = isDefaulted;
 	}
 
+	/**
+	 * When setting up the extra on a parent product, you can specify a quantity. You can have an extra that is a quantity > 1 of another product.
+	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {

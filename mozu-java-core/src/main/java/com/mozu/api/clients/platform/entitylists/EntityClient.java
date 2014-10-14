@@ -25,7 +25,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -43,11 +43,11 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetEntityClient( entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -89,9 +89,9 @@ public class EntityClient {
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
@@ -115,7 +115,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param item 
@@ -134,10 +134,10 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=InsertEntityClient( item,  entityListFullName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param item 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
@@ -162,7 +162,7 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -182,11 +182,11 @@ public class EntityClient {
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=UpdateEntityClient( item,  entityListFullName,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * JObject jObject = client.Result();
+	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param item 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject

@@ -25,7 +25,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateUserAuthTicket
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createUserAuthTicketUrl(String responseFields)
@@ -37,8 +37,8 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshUserAuthTicket
-	 * @param refreshToken 
-	 * @param responseFields 
+	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshUserAuthTicketUrl(String refreshToken, String responseFields)

@@ -31,7 +31,7 @@ public class DocumentUrl
 	 * Get Resource Url for GetDocument
 	 * @param documentId Identifier of the document being retrieved.
 	 * @param documentListName The name of the document list associated with the document to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDocumentUrl(String documentId, String documentListName, String responseFields)
@@ -48,7 +48,7 @@ public class DocumentUrl
 	 * @param documentListName The name of the document list.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
@@ -68,7 +68,7 @@ public class DocumentUrl
 	/**
 	 * Get Resource Url for CreateDocument
 	 * @param documentListName The descriptive alphanumeric document list name being created.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDocumentUrl(String documentListName, String responseFields)
@@ -97,7 +97,7 @@ public class DocumentUrl
 	 * Get Resource Url for UpdateDocument
 	 * @param documentId Unique identifier of the document to update.
 	 * @param documentListName Name of the document list associated with the document.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentUrl(String documentId, String documentListName, String responseFields)

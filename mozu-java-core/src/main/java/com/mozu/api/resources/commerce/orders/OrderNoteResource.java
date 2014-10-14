@@ -74,7 +74,7 @@ public class OrderNoteResource {
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note to retrieve.
 	 * @param orderId Unique identifier of the order associated with the note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -111,7 +111,7 @@ public class OrderNoteResource {
 	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add a note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -152,7 +152,7 @@ public class OrderNoteResource {
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -182,6 +182,7 @@ public class OrderNoteResource {
 		MozuClient client = com.mozu.api.clients.commerce.orders.OrderNoteClient.deleteOrderNoteClient( orderId,  noteId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

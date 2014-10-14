@@ -16,7 +16,7 @@ public class DeveloperAdminUserAuthTicketUrl
 	/**
 	 * Get Resource Url for CreateDeveloperUserAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDeveloperUserAuthTicketUrl(Integer developerAccountId, String responseFields)
@@ -30,7 +30,7 @@ public class DeveloperAdminUserAuthTicketUrl
 	/**
 	 * Get Resource Url for RefreshDeveloperAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl refreshDeveloperAuthTicketUrl(Integer developerAccountId, String responseFields)

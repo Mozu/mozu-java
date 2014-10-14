@@ -60,7 +60,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Retrieves a specific document within the specified document list by providing the document ID.
+	 * Retrieves a document within the specified document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.getDocument( documentListName,  documentId);
@@ -76,14 +76,14 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Retrieves a specific document within the specified document list by providing the document ID.
+	 * Retrieves a document within the specified document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.getDocument( documentListName,  documentId,  responseFields);
 	 * </code></pre></p>
 	 * @param documentId Identifier of the document being retrieved.
 	 * @param documentListName The name of the document list associated with the document to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -120,7 +120,7 @@ public class DocumentResource {
 	 * @param documentListName The name of the document list.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.content.DocumentCollection
@@ -136,7 +136,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Creates a new document in an existing list.
+	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.createDocument( document,  documentListName);
@@ -153,13 +153,13 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Creates a new document in an existing list.
+	 * Creates a new document in an defined document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Document document = document.createDocument( document,  documentListName,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName The descriptive alphanumeric document list name being created.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param document The descriptive name of the newly created document.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -182,7 +182,7 @@ public class DocumentResource {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document.
 	 * @param documentListName The name of the document list associated with the document.
-	 * @param stream 
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */
@@ -191,6 +191,7 @@ public class DocumentResource {
 		MozuClient client = com.mozu.api.clients.content.documentlists.DocumentClient.updateDocumentContentClient( stream,  documentListName,  documentId,  contentType);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -220,7 +221,7 @@ public class DocumentResource {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier of the document to update.
 	 * @param documentListName Name of the document list associated with the document.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param document Properties of the document to update.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -250,6 +251,7 @@ public class DocumentResource {
 		MozuClient client = com.mozu.api.clients.content.documentlists.DocumentClient.deleteDocumentClient( documentListName,  documentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -268,6 +270,7 @@ public class DocumentResource {
 		MozuClient client = com.mozu.api.clients.content.documentlists.DocumentClient.deleteDocumentContentClient( documentListName,  documentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

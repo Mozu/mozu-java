@@ -60,6 +60,9 @@ public class LocationInventoryCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
+	/**
+	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
+	 */
 	protected Integer totalCount;
 
 	public Integer getTotalCount() {
