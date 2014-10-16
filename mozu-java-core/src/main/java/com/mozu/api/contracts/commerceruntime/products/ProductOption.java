@@ -20,19 +20,6 @@ public class ProductOption implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If the value if an object, the value selected.
-	 */
-	protected Object value;
-
-	public Object getValue() {
-		return this.value;
-	}
-
-	public void setValue(Object value) {
-		this.value = value;
-	}
-
-	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
 	protected String attributeFQN;
@@ -95,6 +82,19 @@ public class ProductOption implements Serializable
 
 	public void setStringValue(String stringValue) {
 		this.stringValue = stringValue;
+	}
+
+	/**
+	 * If the value if an object, the value selected.
+	 */
+	protected Object value;
+
+	public Object getValue() {
+		return this.value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 
 }

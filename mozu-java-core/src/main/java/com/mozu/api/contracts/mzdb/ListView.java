@@ -18,6 +18,16 @@ public class ListView implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String defaultSort;
+
+	public String getDefaultSort() {
+		return this.defaultSort;
+	}
+
+	public void setDefaultSort(String defaultSort) {
+		this.defaultSort = defaultSort;
+	}
+
 	/**
 	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 */
@@ -57,16 +67,6 @@ public class ListView implements Serializable
 	}
 	public void setUsages(List<String> usages) {
 		this.usages = usages;
-	}
-
-	protected String defaultSort;
-
-	public String getDefaultSort() {
-		return this.defaultSort;
-	}
-
-	public void setDefaultSort(String defaultSort) {
-		this.defaultSort = defaultSort;
 	}
 
 	protected List<ListViewField> fields;
