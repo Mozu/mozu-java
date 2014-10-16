@@ -525,16 +525,6 @@ public class Order implements Serializable
 		this.originalCartId = originalCartId;
 	}
 
-	protected String parentOrderId;
-
-	public String getParentOrderId() {
-		return this.parentOrderId;
-	}
-
-	public void setParentOrderId(String parentOrderId) {
-		this.parentOrderId = parentOrderId;
-	}
-
 	/**
 	 * If this order was created to fulfill an item replacement as part of a return merchandise authorization (RMA), the unique identifier of the return.
 	 */
