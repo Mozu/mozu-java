@@ -14,25 +14,29 @@ public class AdminUserUrl
 {
 
 	/**
-	 * Get Resource Url for GetUser
-	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * Get Resource Url for GetTenantScopesForUser
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getUserUrl(String userId)
+	public static MozuUrl getTenantScopesForUserUrl(String responseFields, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/accounts/{userId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/accounts/{userId}/tenants?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetTenantScopesForUser
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * Get Resource Url for GetUser
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getTenantScopesForUserUrl(String userId)
+	public static MozuUrl getUserUrl(String responseFields, String userId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/accounts/{userId}/tenants");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/adminuser/accounts/{userId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("userId", userId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}

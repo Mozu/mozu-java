@@ -14,9 +14,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * 
+ * Manage the results of order validation.
  * </summary>
  */
 public class OrderValidationResultResource {
@@ -25,19 +24,20 @@ public class OrderValidationResultResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public OrderValidationResultResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
-	 * 
+	 * Retrieves a list of the validation results associated with the order.
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
-	 *	OrderValidationResult orderValidationResult = ordervalidationresult.GetValidationResults( orderId);
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.getValidationResults( orderId);
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 */
@@ -51,20 +51,38 @@ public class OrderValidationResultResource {
 	}
 
 	/**
-	 * 
+	 * Add a new order validation result to a submitted order.
 	 * <p><pre><code>
 	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
-	 *	OrderValidationResult orderValidationResult = ordervalidationresult.AddValidationResult( validationResult,  orderId);
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param validationResult 
+	 * @param orderId Unique identifier of the order.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 */
 	public com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult addValidationResult(com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> client = com.mozu.api.clients.commerce.orders.OrderValidationResultClient.addValidationResultClient( validationResult,  orderId);
+		return addValidationResult( validationResult,  orderId,  null);
+	}
+
+	/**
+	 * Add a new order validation result to a submitted order.
+	 * <p><pre><code>
+	 *	OrderValidationResult ordervalidationresult = new OrderValidationResult();
+	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param validationResult Properties of the validation result to add for the order.
+	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult addValidationResult(com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult validationResult, String orderId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> client = com.mozu.api.clients.commerce.orders.OrderValidationResultClient.addValidationResultClient( validationResult,  orderId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -1,31 +1,44 @@
 package com.mozu.api.security;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.lang.StringUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.core.UserAuthInfo;
-import com.mozu.api.utils.ConfigProperties;
 
 public class SecurityTestBase {
-    static public final String URL = ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL);
-    static public final String APP_ID = ConfigProperties.getStringProperty(ConfigProperties.APP_ID);
-    static public final String SHARED_SECRET = ConfigProperties.getStringProperty(ConfigProperties.SHARED_SECRET);
-    
-    static public final int TENANT_ID = ConfigProperties.getIntProperty("tenant.id");
-    
-    static public final String USER_DEVELOPER = ConfigProperties.getStringProperty("username.developer");
-    static public final String USER_TENANT = ConfigProperties.getStringProperty("username.tenant");
-    static public final String PASSWORD = ConfigProperties.getStringProperty("password");
+    protected final static String CONFIG_PROPERTIES_FILENAME = "mozu_config.properties";
+    // the following are defined properties for the SDK
+    public final static String MOZU_BASE_URL = "base.url";
+    public final static String SHARED_SECRET = "shared.secret";
+    public final static String APP_ID = "app.id";
+    public final static String PROXY_HOST = "proxy.host";
+    public final static String PROXY_PORT = "proxy.port";
+    public final static String DEV_USERNAME = "username.developer";
+    public final static String TENANT_USERNAME = "username.tenant";
+    public final static String TENANT_ID = "tenant.id";
+    public final static String PASSWORD = "password"; 
+
+    protected static PropertiesConfiguration configProps = null;
 
     @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    static public void setUpBeforeClass() throws Exception {
+        configProps = new PropertiesConfiguration(CONFIG_PROPERTIES_FILENAME);
+        MozuConfig.setBaseUrl(configProps.getString(MOZU_BASE_URL));
+        MozuConfig.setProxyHost(configProps.getString(PROXY_HOST));
+        String proxyPortString = configProps.getString(PROXY_PORT); 
+        if (StringUtils.isNotBlank(proxyPortString)) {
+            MozuConfig.setProxyPort (Integer.valueOf(proxyPortString));
+        }
     }
 
     @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    static public void tearDownAfterClass() throws Exception {
     }
 
     @Before
@@ -36,29 +49,28 @@ public class SecurityTestBase {
     public void tearDown() throws Exception {
         AppAuthenticator.invalidateAuth();
     }
-    
-    
+
     protected AppAuthInfo createAppAuthInfo(String appId, String sharedSecret) {
         AppAuthInfo appAuthInfo = new AppAuthInfo();
         appAuthInfo.setApplicationId(appId);
         appAuthInfo.setSharedSecret(sharedSecret);
-        
+
         return appAuthInfo;
     }
-    
-    protected AuthenticationProfile authenticateUser (AuthenticationScope scope, String userName) {
-        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET), URL);
-        
+
+    protected AuthenticationProfile authenticateUser(AuthenticationScope scope, String userName) {
+        String appId = configProps.getString(APP_ID);
+        String sharedSecret = configProps.getString(SHARED_SECRET);
+
+        AppAuthenticator.initialize(createAppAuthInfo(appId, sharedSecret));
+
         // Authorize user and get tenants
         UserAuthInfo userAuth = new UserAuthInfo();
         userAuth.setEmailAddress(userName);
-        userAuth.setPassword(PASSWORD);
+        userAuth.setPassword(configProps.getString(PASSWORD));
 
         // Authorize user
-        return  UserAuthenticator.authenticate(userAuth, scope);
+        return UserAuthenticator.authenticate(userAuth, scope);
     }
-    
-    
-
 
 }

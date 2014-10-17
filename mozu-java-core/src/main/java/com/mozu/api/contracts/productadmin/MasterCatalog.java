@@ -19,6 +19,9 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the master catalog associated with the entity.
+	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -27,6 +30,16 @@ public class MasterCatalog implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	protected Boolean isDeleted;
+
+	public Boolean getIsDeleted() {
+		return this.isDeleted;
+	}
+
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	/**

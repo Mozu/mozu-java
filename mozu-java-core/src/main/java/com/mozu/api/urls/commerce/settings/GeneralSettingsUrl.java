@@ -15,21 +15,25 @@ public class GeneralSettingsUrl
 
 	/**
 	 * Get Resource Url for GetGeneralSettings
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getGeneralSettingsUrl()
+	public static MozuUrl getGeneralSettingsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateGeneralSettings
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateGeneralSettingsUrl()
+	public static MozuUrl updateGeneralSettingsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/general/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

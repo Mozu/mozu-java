@@ -35,6 +35,19 @@ public class Pickup implements Serializable
 	}
 
 	/**
+	 * The specific code that represents pickup.
+	 */
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
 	 * The date and time the customer picked up the order items.
 	 */
 	protected DateTime fulfillmentDate;
@@ -47,6 +60,9 @@ public class Pickup implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
+	/**
+	 * The location code that represents the location where the shopper will fulfill this pickup.
+	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
@@ -96,6 +112,9 @@ public class Pickup implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of change messages associated with the pickup.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

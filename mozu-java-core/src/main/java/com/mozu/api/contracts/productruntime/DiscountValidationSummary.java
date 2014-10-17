@@ -12,12 +12,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.Discount;
 
+/**
+ *	List of discounts the shopper can redeem for a product in its current state.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountValidationSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * List of discount IDs the shopper can redeem for a product in its current state.
+	 */
 	protected List<Discount> applicableDiscounts;
 	public List<Discount> getApplicableDiscounts() {
 		return this.applicableDiscounts;

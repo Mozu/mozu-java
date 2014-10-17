@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	***Always private and should not be published.***
+ *	Properties of an application behavior.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Behavior implements Serializable
@@ -21,7 +21,7 @@ public class Behavior implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier for the storefront container used to organize products.
+	 * Unique identifier of the behavior category.
 	 */
 	protected Integer categoryId;
 
@@ -34,7 +34,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * Identifier of the entity.
+	 * Unique identifier of the behavior.
 	 */
 	protected Integer id;
 
@@ -46,6 +46,9 @@ public class Behavior implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If true, this application behavior is not part of the public Mozu API.
+	 */
 	protected Boolean isPrivate;
 
 	public Boolean getIsPrivate() {
@@ -56,6 +59,9 @@ public class Behavior implements Serializable
 		this.isPrivate = isPrivate;
 	}
 
+	/**
+	 * The name of the behavior.
+	 */
 	protected String name;
 
 	public String getName() {
@@ -67,7 +73,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * For validation purposes, the integer value must be a list of behavior Id's.
+	 * For validation purposes, the integer value must be a list of behavior IDs.
 	 */
 	protected List<Integer> requiresBehaviorIds;
 	public List<Integer> getRequiresBehaviorIds() {
@@ -77,6 +83,20 @@ public class Behavior implements Serializable
 		this.requiresBehaviorIds = requiresBehaviorIds;
 	}
 
+	/**
+	 * Provides a list of system roles for a specified behavior.
+	 */
+	protected List<String> systemRoles;
+	public List<String> getSystemRoles() {
+		return this.systemRoles;
+	}
+	public void setSystemRoles(List<String> systemRoles) {
+		this.systemRoles = systemRoles;
+	}
+
+	/**
+	 * The user types that are valid for this behavior.
+	 */
 	protected List<String> validUserTypes;
 	public List<String> getValidUserTypes() {
 		return this.validUserTypes;

@@ -14,9 +14,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * 
+ * Use the Cart Coupons resource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
  * </summary>
  */
 public class AppliedDiscountResource {
@@ -25,26 +24,44 @@ public class AppliedDiscountResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public AppliedDiscountResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
-	 * 
+	 * Applies a defined coupon to the cart specified in the request.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.ApplyCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode);
 	 * </code></pre></p>
-	 * @param cartId 
-	 * @param couponCode 
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
 	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode);
+		return applyCoupon( cartId,  couponCode,  null);
+	}
+
+	/**
+	 * Applies a defined coupon to the cart specified in the request.
+	 * <p><pre><code>
+	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
+	 *	Cart cart = applieddiscount.applyCoupon( cartId,  couponCode,  responseFields);
+	 * </code></pre></p>
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
+	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
+	 */
+	public com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(String cartId, String couponCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> client = com.mozu.api.clients.commerce.carts.AppliedDiscountClient.applyCouponClient( cartId,  couponCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -52,12 +69,12 @@ public class AppliedDiscountResource {
 	}
 
 	/**
-	 * 
+	 * Removes one or more applied coupons from the cart specified in the request.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupons( cartId);
+	 *	Cart cart = applieddiscount.removeCoupons( cartId);
 	 * </code></pre></p>
-	 * @param cartId 
+	 * @param cartId Unique identifier of the cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -71,13 +88,13 @@ public class AppliedDiscountResource {
 	}
 
 	/**
-	 * 
+	 * Removes an applied coupon from the cart specified in the request.
 	 * <p><pre><code>
 	 *	AppliedDiscount applieddiscount = new AppliedDiscount();
-	 *	Cart cart = applieddiscount.RemoveCoupon( cartId,  couponCode);
+	 *	Cart cart = applieddiscount.removeCoupon( cartId,  couponCode);
 	 * </code></pre></p>
-	 * @param cartId 
-	 * @param couponCode 
+	 * @param cartId Unique identifier of the cart.
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */

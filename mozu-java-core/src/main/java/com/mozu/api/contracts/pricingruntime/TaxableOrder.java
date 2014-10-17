@@ -61,6 +61,9 @@ public class TaxableOrder implements Serializable
 		this.orderDate = orderDate;
 	}
 
+	/**
+	 * The unique identifier of the original order, used to track order changes for tax purposes.
+	 */
 	protected String originalDocumentCode;
 
 	public String getOriginalDocumentCode() {
@@ -71,6 +74,9 @@ public class TaxableOrder implements Serializable
 		this.originalDocumentCode = originalDocumentCode;
 	}
 
+	/**
+	 * The date and time the original order was placed.
+	 */
 	protected DateTime originalOrderDate;
 
 	public DateTime getOriginalOrderDate() {
@@ -94,6 +100,9 @@ public class TaxableOrder implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
+	/**
+	 * The type of request for which to tax this entity, which is "Order" or "Return."
+	 */
 	protected String taxRequestType;
 
 	public String getTaxRequestType() {

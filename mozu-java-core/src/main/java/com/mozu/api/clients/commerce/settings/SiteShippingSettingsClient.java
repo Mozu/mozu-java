@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the shipping subresource to manage settings for the site shipping information, such as origin address information, carrier shipping methods, shipping rate providers, and regions available for shipping.
  * </summary>
@@ -33,7 +32,24 @@ public class SiteShippingSettingsClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> getSiteShippingSettingsClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.SiteShippingSettingsUrl.getSiteShippingSettingsUrl();
+		return getSiteShippingSettingsClient( null);
+	}
+
+	/**
+	 * Retrieves a list of the shipping settings configured for a site.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> mozuClient=GetSiteShippingSettingsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SiteShippingSettings siteShippingSettings = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings>
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> getSiteShippingSettingsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.SiteShippingSettingsUrl.getSiteShippingSettingsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> mozuClient = new MozuClient(clz);

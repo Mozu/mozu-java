@@ -13,9 +13,8 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
- * Use the applications subresource to update site settings for installed applications.
+ * Use the Applications resource to update site-specific settings for installed applications.
  * </summary>
  */
 public class ApplicationClient {
@@ -33,7 +32,24 @@ public class ApplicationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl();
+		return thirdPartyGetApplicationClient( null);
+	}
+
+	/**
+	 * Retrieve the settings of a third-party application.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyGetApplicationClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyGetApplicationClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = new MozuClient(clz);
@@ -58,7 +74,26 @@ public class ApplicationClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl();
+		return thirdPartyUpdateApplicationClient( application,  null);
+	}
+
+	/**
+	 * Initializes an application with the necessary configured settings.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient=ThirdPartyUpdateApplicationClient( application,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Application application = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param application Properties of the application to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 * @see com.mozu.api.contracts.sitesettings.application.Application
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.application.Application> thirdPartyUpdateApplicationClient(com.mozu.api.contracts.sitesettings.application.Application application, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = new MozuClient(clz);

@@ -10,6 +10,9 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Properties of an invalid coupon code a shopper attempts to enter for a cart or order.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InvalidCoupon implements Serializable
 {
@@ -26,6 +29,9 @@ public class InvalidCoupon implements Serializable
 		this.couponCode = couponCode;
 	}
 
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
 	protected DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -36,6 +42,19 @@ public class InvalidCoupon implements Serializable
 		this.createDate = createDate;
 	}
 
+	protected Integer discountId;
+
+	public Integer getDiscountId() {
+		return this.discountId;
+	}
+
+	public void setDiscountId(Integer discountId) {
+		this.discountId = discountId;
+	}
+
+	/**
+	 * The reason the coupon was determined to be invalid.
+	 */
 	protected String reason;
 
 	public String getReason() {
@@ -46,6 +65,9 @@ public class InvalidCoupon implements Serializable
 		this.reason = reason;
 	}
 
+	/**
+	 * The code that identifies the reason the coupon code is invalid.
+	 */
 	protected Integer reasonCode;
 
 	public Integer getReasonCode() {

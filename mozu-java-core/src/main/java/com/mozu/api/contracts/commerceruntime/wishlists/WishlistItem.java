@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.products.Product;
-import com.mozu.api.contracts.commerceruntime.discounts.AppliedProductDiscount;
-import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.commerce.CommerceUnitPrice;
 
 /**
@@ -52,7 +52,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to the item in the wish list, which is system-supplied and read-only.                      This property value is not calculated at this time and is reserved for future functionality.
+	 * Estimated amount of discounts applied to the item in the wish list, which is system-supplied and read-only.  This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double discountTotal;
 
@@ -88,6 +88,16 @@ public class WishlistItem implements Serializable
 
 	public void setFeeTotal(Double feeTotal) {
 		this.feeTotal = feeTotal;
+	}
+
+	protected Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
 	}
 
 	/**
@@ -286,24 +296,37 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
+	 * List of product discounts that apply to the item in the wishlist.
+	 */
+	protected AppliedLineItemProductDiscount productDiscount;
+
+	public AppliedLineItemProductDiscount getProductDiscount() {
+		return this.productDiscount;
+	}
+
+	public void setProductDiscount(AppliedLineItemProductDiscount productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
+	/**
 	 * Array of product discounts applicable to an item in a wish list. This property is not used at this time and is reserved for future functionality.
 	 */
-	protected List<AppliedProductDiscount> productDiscounts;
-	public List<AppliedProductDiscount> getProductDiscounts() {
+	protected List<AppliedLineItemProductDiscount> productDiscounts;
+	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
 		return this.productDiscounts;
 	}
-	public void setProductDiscounts(List<AppliedProductDiscount> productDiscounts) {
+	public void setProductDiscounts(List<AppliedLineItemProductDiscount> productDiscounts) {
 		this.productDiscounts = productDiscounts;
 	}
 
 	/**
 	 * Array of shipping discounts applicable for an item in a wish list. This property is not used at this time and is reserved for future functionality.
 	 */
-	protected List<ShippingDiscount> shippingDiscounts;
-	public List<ShippingDiscount> getShippingDiscounts() {
+	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
+	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;
 	}
-	public void setShippingDiscounts(List<ShippingDiscount> shippingDiscounts) {
+	public void setShippingDiscounts(List<AppliedLineItemShippingDiscount> shippingDiscounts) {
 		this.shippingDiscounts = shippingDiscounts;
 	}
 

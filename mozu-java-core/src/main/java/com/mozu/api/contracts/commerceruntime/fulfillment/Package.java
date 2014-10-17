@@ -36,6 +36,19 @@ public class Package implements Serializable
 	}
 
 	/**
+	 * The code of the product to be fulfilled.
+	 */
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
 	 * The date and time the package shipped to the customer.
 	 */
 	protected DateTime fulfillmentDate;
@@ -48,6 +61,9 @@ public class Package implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
+	/**
+	 * The location code that represents the location from which this package will ship.
+	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
@@ -56,6 +72,16 @@ public class Package implements Serializable
 
 	public void setFulfillmentLocationCode(String fulfillmentLocationCode) {
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
+	}
+
+	protected Boolean hasLabel;
+
+	public Boolean getHasLabel() {
+		return this.hasLabel;
+	}
+
+	public void setHasLabel(Boolean hasLabel) {
+		this.hasLabel = hasLabel;
 	}
 
 	/**
@@ -162,6 +188,9 @@ public class Package implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of change messages associated with the package.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

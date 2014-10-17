@@ -114,6 +114,22 @@ public class Catalog implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The current status of the product catalog.
+	 */
+	protected String status;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {
@@ -132,16 +148,6 @@ public class Catalog implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
-	}
-
-	protected String status;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 }

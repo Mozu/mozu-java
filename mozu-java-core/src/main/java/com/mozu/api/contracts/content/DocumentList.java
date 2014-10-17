@@ -10,6 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.content.View;
 
 /**
  *	The list of document types and related properties that define content used by the content management system (CMS).
@@ -20,8 +21,18 @@ public class DocumentList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String documentListType;
+
+	public String getDocumentListType() {
+		return this.documentListType;
+	}
+
+	public void setDocumentListType(String documentListType) {
+		this.documentListType = documentListType;
+	}
+
 	/**
-	 * A document type is a template.
+	 * List of document types associated with this document list.
 	 */
 	protected List<String> documentTypes;
 	public List<String> getDocumentTypes() {
@@ -44,6 +55,16 @@ public class DocumentList implements Serializable
 		this.enablePublishing = enablePublishing;
 	}
 
+	protected String listFQN;
+
+	public String getListFQN() {
+		return this.listFQN;
+	}
+
+	public void setListFQN(String listFQN) {
+		this.listFQN = listFQN;
+	}
+
 	/**
 	 * The name of the document list.
 	 */
@@ -57,6 +78,46 @@ public class DocumentList implements Serializable
 		this.name = name;
 	}
 
+	protected String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	protected Integer scopeId;
+
+	public Integer getScopeId() {
+		return this.scopeId;
+	}
+
+	public void setScopeId(Integer scopeId) {
+		this.scopeId = scopeId;
+	}
+
+	protected String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
+	protected String security;
+
+	public String getSecurity() {
+		return this.security;
+	}
+
+	public void setSecurity(String security) {
+		this.security = security;
+	}
+
 	/**
 	 * If true, changes documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
@@ -68,6 +129,32 @@ public class DocumentList implements Serializable
 
 	public void setSupportsPublishing(Boolean supportsPublishing) {
 		this.supportsPublishing = supportsPublishing;
+	}
+
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode metadata;
+
+	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
+		this.metadata = metadata;
+	}
+
+	protected List<View> views;
+	public List<View> getViews() {
+		return this.views;
+	}
+	public void setViews(List<View> views) {
+		this.views = views;
 	}
 
 }

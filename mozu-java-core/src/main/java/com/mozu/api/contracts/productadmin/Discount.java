@@ -50,7 +50,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The most recent number of redeemed discounts.
+	 * The number of times this discount has been redeemed.
 	 */
 	protected Integer currentRedemptionCount;
 
@@ -62,6 +62,9 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
+	/**
+	 * If true, this discount does not apply to a line item product with a defined sale price. The default is false, which applies the discount to products with and without defined sale prices.
+	 */
 	protected Boolean doesNotApplyToSalePrice;
 
 	public Boolean getDoesNotApplyToSalePrice() {
@@ -85,6 +88,9 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The maximum number of times an individual shopper can redeem the discount.
+	 */
 	protected Integer maximumUsesPerUser;
 
 	public Integer getMaximumUsesPerUser() {
@@ -134,6 +140,9 @@ public class Discount implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of conditions that must be met for the discount to apply.
+	 */
 	protected DiscountCondition conditions;
 
 	public DiscountCondition getConditions() {

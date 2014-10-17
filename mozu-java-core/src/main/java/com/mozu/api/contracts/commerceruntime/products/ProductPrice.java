@@ -19,6 +19,22 @@ public class ProductPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The credit value when the product happens to be a gift card or similar product.
+	 */
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
+	}
+
+	/**
+	 * The manufacturer's suggested retail price for the product.
+	 */
 	protected Double msrp;
 
 	public Double getMsrp() {
@@ -55,6 +71,9 @@ public class ProductPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
+	/**
+	 * The override price defined by the tenant for this cart or order item.
+	 */
 	protected Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {

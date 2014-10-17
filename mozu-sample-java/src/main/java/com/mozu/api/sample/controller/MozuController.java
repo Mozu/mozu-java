@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
-import com.mozu.api.DataViewMode;
 import com.mozu.api.MozuApiContext;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.commerceruntime.orders.OrderCollection;
 import com.mozu.api.contracts.core.UserAuthInfo;
@@ -89,7 +89,8 @@ public class MozuController {
         appAuthInfo.setSharedSecret(authorization.getSharedSecret());
         String baseUrl = environments.get(authorization.getEnvironment());
         try {
-            AppAuthenticator.initialize(appAuthInfo, baseUrl, null);
+            MozuConfig.setBaseUrl(baseUrl);
+            AppAuthenticator.initialize(appAuthInfo, null);
         } catch (ApiException ae){
             model.addAttribute("errorString", "Error Validating Application: " + ae.getMessage());
             setupHomePage (locale, model);
@@ -211,7 +212,7 @@ public class MozuController {
         ProductResource prodResource = new ProductResource (apiContext);
 
         try {
-            ProductCollection prodCollection = prodResource.getProducts(DataViewMode.Live, 0, 100, null, null, null, null, false);
+            ProductCollection prodCollection = prodResource.getProducts(0, 100, null, null, null, null, false, null);
             modelMap.addAttribute("products", prodCollection.getItems());
             
             return "products";
@@ -240,7 +241,7 @@ public class MozuController {
         
         OrderResource orderResourceResource = new OrderResource(apiContext);
         try {
-            OrderCollection orderCollection = orderResourceResource.getOrders(0, 100, null, null, null, null);
+            OrderCollection orderCollection = orderResourceResource.getOrders(0, 100, null, null, null, null, null);
     
             model.addAttribute("orders", orderCollection.getItems());
         

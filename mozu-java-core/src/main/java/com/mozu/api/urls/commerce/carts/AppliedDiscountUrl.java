@@ -15,21 +15,23 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for ApplyCoupon
-	 * @param cartId 
-	 * @param couponCode 
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl applyCouponUrl(String cartId, String couponCode)
+	public static MozuUrl applyCouponUrl(String cartId, String couponCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/coupons/{couponCode}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/carts/{cartId}/coupons/{couponCode}?responseFields={responseFields}");
 		formatter.formatUrl("cartId", cartId);
 		formatter.formatUrl("couponCode", couponCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RemoveCoupons
-	 * @param cartId 
+	 * @param cartId Unique identifier of the cart.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeCouponsUrl(String cartId)
@@ -41,8 +43,8 @@ public class AppliedDiscountUrl
 
 	/**
 	 * Get Resource Url for RemoveCoupon
-	 * @param cartId 
-	 * @param couponCode 
+	 * @param cartId Unique identifier of the cart.
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeCouponUrl(String cartId, String couponCode)

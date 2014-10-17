@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the shipments resource to manage shipments of collections of packages for an order.
  * </summary>
@@ -25,17 +24,18 @@ public class ShipmentResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public ShipmentResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the order shipment specified in the request.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	Shipment shipment = shipment.GetShipment( orderId,  shipmentId);
+	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
@@ -44,7 +44,24 @@ public class ShipmentResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String orderId, String shipmentId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getShipmentClient( orderId,  shipmentId);
+		return getShipment( orderId,  shipmentId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the order shipment specified in the request.
+	 * <p><pre><code>
+	 *	Shipment shipment = new Shipment();
+	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(String orderId, String shipmentId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getShipmentClient( orderId,  shipmentId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -55,7 +72,7 @@ public class ShipmentResource {
 	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	ShippingRate shippingRate = shipment.GetAvailableShipmentMethods( orderId);
+	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
@@ -63,7 +80,23 @@ public class ShipmentResource {
 	 */
 	public List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShipmentMethods(String orderId) throws Exception
 	{
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getAvailableShipmentMethodsClient( orderId);
+		return getAvailableShipmentMethods( orderId,  null);
+	}
+
+	/**
+	 * Retrieves the available shipping methods applicable to the order. Typically used to display available shipping method options on the checkout page.
+	 * <p><pre><code>
+	 *	Shipment shipment = new Shipment();
+	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId,  draft);
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
+	 */
+	public List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShipmentMethods(String orderId, Boolean draft) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>> client = com.mozu.api.clients.commerce.orders.ShipmentClient.getAvailableShipmentMethodsClient( orderId,  draft);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -74,7 +107,7 @@ public class ShipmentResource {
 	 * Creates a shipment from one or more package associated with an order and assign a label and tracking number to an order shipment.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	Package package = shipment.CreatePackageShipments( packageIds,  orderId);
+	 *	Package package = shipment.createPackageShipments( packageIds,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for this shipment.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
@@ -95,7 +128,7 @@ public class ShipmentResource {
 	 * Deletes the shipment specified in the request.
 	 * <p><pre><code>
 	 *	Shipment shipment = new Shipment();
-	 *	shipment.DeleteShipment( orderId,  shipmentId);
+	 *	shipment.deleteShipment( orderId,  shipmentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order to cancel shipment.
 	 * @param shipmentId Unique identifier of the shipment to cancel.
@@ -106,6 +139,7 @@ public class ShipmentResource {
 		MozuClient client = com.mozu.api.clients.commerce.orders.ShipmentClient.deleteShipmentClient( orderId,  shipmentId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

@@ -21,6 +21,19 @@ public class OrderProcessingSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Abandoned order threshold in minutes indicates the number of minutes until a pending order is considered abandoned.
+	 */
+	protected Integer abandonedOrderThresholdInMinutes;
+
+	public Integer getAbandonedOrderThresholdInMinutes() {
+		return this.abandonedOrderThresholdInMinutes;
+	}
+
+	public void setAbandonedOrderThresholdInMinutes(Integer abandonedOrderThresholdInMinutes) {
+		this.abandonedOrderThresholdInMinutes = abandonedOrderThresholdInMinutes;
+	}
+
+	/**
 	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
 	 */
 	protected String paymentProcessingFlowType;

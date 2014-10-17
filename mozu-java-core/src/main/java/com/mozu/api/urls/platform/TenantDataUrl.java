@@ -16,12 +16,14 @@ public class TenantDataUrl
 	/**
 	 * Get Resource Url for GetDBValue
 	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDBValueUrl(String dbEntryQuery)
+	public static MozuUrl getDBValueUrl(String dbEntryQuery, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/tenantdata/{*dbEntryQuery}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/tenantdata/{*dbEntryQuery}?responseFields={responseFields}");
 		formatter.formatUrl("dbEntryQuery", dbEntryQuery);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

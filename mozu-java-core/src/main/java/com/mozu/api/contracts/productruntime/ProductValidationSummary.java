@@ -29,6 +29,9 @@ public class ProductValidationSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * List of fulfillment types that the product supports.
+	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
@@ -37,6 +40,19 @@ public class ProductValidationSummary implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * If true, this product should not be packaged with other items and should ship by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -60,6 +76,9 @@ public class ProductValidationSummary implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
+	/**
+	 * The manufacturer's part number for the product.
+	 */
 	protected String mfgPartNumber;
 
 	public String getMfgPartNumber() {
@@ -109,6 +128,19 @@ public class ProductValidationSummary implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
+	protected String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	/**
+	 * The usage type of this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -119,6 +151,9 @@ public class ProductValidationSummary implements Serializable
 		this.productUsage = productUsage;
 	}
 
+	/**
+	 * The universal product code defined for the product.
+	 */
 	protected String upc;
 
 	public String getUpc() {
@@ -142,6 +177,9 @@ public class ProductValidationSummary implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
+	/**
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 */
 	protected List<BundledProductSummary> bundledProducts;
 	public List<BundledProductSummary> getBundledProducts() {
 		return this.bundledProducts;
@@ -213,6 +251,9 @@ public class ProductValidationSummary implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Properties that describe the behavior the system uses when determining the price of the product.
+	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {

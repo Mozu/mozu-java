@@ -12,12 +12,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.installedapplications.Capability;
 
+/**
+ *	Properties of an application installed in a tenant.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Application implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the application in Mozu Dev Center.
+	 */
 	protected String appId;
 
 	public String getAppId() {
@@ -28,6 +34,9 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	/**
+	 * If true, the application is enabled for the tenant. System-supplied and read-only.
+	 */
 	protected Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -38,6 +47,9 @@ public class Application implements Serializable
 		this.enabled = enabled;
 	}
 
+	/**
+	 * If true, the third party application settings have been configured and the application is initialized.
+	 */
 	protected Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -48,6 +60,9 @@ public class Application implements Serializable
 		this.initialized = initialized;
 	}
 
+	/**
+	 * If true, the application type is Extension.
+	 */
 	protected Boolean isExtension;
 
 	public Boolean getIsExtension() {
@@ -58,6 +73,9 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
+	/**
+	 * The URL defined for the application that represents the configuration website for the capability.
+	 */
 	protected String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
@@ -68,6 +86,9 @@ public class Application implements Serializable
 		this.uiConfigurationUrl = uiConfigurationUrl;
 	}
 
+	/**
+	 * List of capabilities installed in a tenant.
+	 */
 	protected List<Capability> capabilities;
 	public List<Capability> getCapabilities() {
 		return this.capabilities;

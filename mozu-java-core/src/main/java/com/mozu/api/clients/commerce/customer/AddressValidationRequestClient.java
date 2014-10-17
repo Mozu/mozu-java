@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Address Validation resource to validate addresses associated with a customer account contact.
  * </summary>
@@ -35,7 +34,26 @@ public class AddressValidationRequestClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> validateAddressClient(com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.AddressValidationRequestUrl.validateAddressUrl();
+		return validateAddressClient( addressValidationRequest,  null);
+	}
+
+	/**
+	 * Validates the customer address supplied in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> mozuClient=ValidateAddressClient( addressValidationRequest,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AddressValidationResponse addressValidationResponse = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param addressValidationRequest Properties of the address to validate.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.AddressValidationResponse>
+	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
+	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> validateAddressClient(com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.AddressValidationRequestUrl.validateAddressUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.AddressValidationResponse.class;
 		MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> mozuClient = new MozuClient(clz);

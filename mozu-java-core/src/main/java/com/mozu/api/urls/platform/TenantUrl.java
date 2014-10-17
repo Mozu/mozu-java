@@ -15,12 +15,14 @@ public class TenantUrl
 
 	/**
 	 * Get Resource Url for GetTenant
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the Mozu tenant.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getTenantUrl(Integer tenantId)
+	public static MozuUrl getTenantUrl(String responseFields, Integer tenantId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/tenants/{tenantId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/tenants/{tenantId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("tenantId", tenantId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}

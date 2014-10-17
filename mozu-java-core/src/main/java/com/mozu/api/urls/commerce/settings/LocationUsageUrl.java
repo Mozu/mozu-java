@@ -15,35 +15,41 @@ public class LocationUsageUrl
 
 	/**
 	 * Get Resource Url for GetLocationUsages
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationUsagesUrl()
+	public static MozuUrl getLocationUsagesUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetLocationUsage
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationUsageUrl(String code)
+	public static MozuUrl getLocationUsageUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateLocationUsage
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateLocationUsageUrl(String code)
+	public static MozuUrl updateLocationUsageUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/{code}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/locationUsages/{code}?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -28,7 +28,7 @@ import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
 
 /**
- *	Properties of the product such as product code, product name, and product price.
+ *	Properties of a product in a master catalog. Product properties include discounts, localizable content, inventory information, attribute configurations, price data, and the catalogs associated with a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product implements Serializable
@@ -37,7 +37,7 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Merchant-generated product code for the product that any variation stems from.
+	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
 	protected String baseProductCode;
 
@@ -49,6 +49,9 @@ public class Product implements Serializable
 		this.baseProductCode = baseProductCode;
 	}
 
+	/**
+	 * Describes the types of fulfillment that are supported for this product. A product can support direct ship, in-store pickup, or both. Supported fulfillment types are defined at the master catalog level. Client administrators cannot override the supported fulfillment types at the catalog level.
+	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
@@ -71,7 +74,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, this product has stand alone options that a shopper can select which can exist without product variations. Stand alone options. System-supplied and read-only.
+	 * If true, this product has standalone options that a shopper can select without configuring a defined product variations. System-supplied and read only.
 	 */
 	protected Boolean hasStandAloneOptions;
 
@@ -110,7 +113,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, the entity is subject to tax based on the relevant tax rate.
+	 * If true, the entity is subject to sales tax based on the relevant tax rate.
 	 */
 	protected Boolean isTaxable;
 
@@ -123,7 +126,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, the entity is valid for the product type provided.
+	 * If true, this product is valid for the assigned product type.
 	 */
 	protected Boolean isValidForProductType;
 
@@ -136,7 +139,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * If true, the product in this request is a product variation of a product that has configurable options. System-supplied and read-only.
+	 * If true, this configured product represents a product variation defined with configurable options. System-supplied and read only.
 	 */
 	protected Boolean isVariation;
 
@@ -148,6 +151,9 @@ public class Product implements Serializable
 		this.isVariation = isVariation;
 	}
 
+	/**
+	 * The unique identifier of the master catalog associated with the entity.
+	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -185,7 +191,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Identifier of the product type.
+	 * Unique identifier of the product type assigned for this product. Tenant administrators can only define one product type per product.
 	 */
 	protected Integer productTypeId;
 
@@ -197,6 +203,9 @@ public class Product implements Serializable
 		this.productTypeId = productTypeId;
 	}
 
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -234,7 +243,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC code) of the product.
+	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
 	protected String upc;
 
@@ -283,6 +292,9 @@ public class Product implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
+	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
 		return this.bundledProducts;
@@ -291,9 +303,6 @@ public class Product implements Serializable
 		this.bundledProducts = bundledProducts;
 	}
 
-	/**
-	 * Product content set in product admin.
-	 */
 	protected ProductLocalizedContent content;
 
 	public ProductLocalizedContent getContent() {
@@ -305,7 +314,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of extras set up in product admin.
+	 * List of extra product attributes defined for this product.
 	 */
 	protected List<ProductExtra> extras;
 	public List<ProductExtra> getExtras() {
@@ -329,7 +338,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of options set up in product admin.
+	 * List of option product attributes defined for this product.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
@@ -391,6 +400,9 @@ public class Product implements Serializable
 		this.packageWidth = packageWidth;
 	}
 
+	/**
+	 * Unit price that the client intends to sell the product if no sale price is set.
+	 */
 	protected ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -401,6 +413,9 @@ public class Product implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Describes the behavior the system uses when determining the price of the product.
+	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {
@@ -423,7 +438,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of product properties to set in product admin.
+	 * List of property product attributes defined for this product.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
@@ -447,7 +462,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * search engine optimized product content.
+	 * The search engine optimized content defined for this product.
 	 */
 	protected ProductLocalizedSEOContent seoContent;
 
@@ -459,6 +474,9 @@ public class Product implements Serializable
 		this.seoContent = seoContent;
 	}
 
+	/**
+	 * Supplier-defined properties assigned for the product.
+	 */
 	protected ProductSupplierInfo supplierInfo;
 
 	public ProductSupplierInfo getSupplierInfo() {
@@ -470,7 +488,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of product variation options that exist in product admin.
+	 * The list of product variation configurations defined for this product based on its available product option attributes.
 	 */
 	protected List<ProductVariationOption> variationOptions;
 	public List<ProductVariationOption> getVariationOptions() {

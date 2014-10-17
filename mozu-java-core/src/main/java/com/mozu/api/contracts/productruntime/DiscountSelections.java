@@ -11,12 +11,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	The discounts to evaluate for a specified product code at the time of purchase.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountSelections implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * List of discount IDs to evaluate for a product code.
+	 */
 	protected List<Integer> discountIds;
 	public List<Integer> getDiscountIds() {
 		return this.discountIds;

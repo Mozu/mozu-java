@@ -32,6 +32,9 @@ public class AttributeLocalizedContent implements Serializable
 		this.localeCode = localeCode;
 	}
 
+	/**
+	 * The localized value defined for the attribute.
+	 */
 	protected String value;
 
 	public String getValue() {

@@ -27,19 +27,6 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
-	protected Integer tenantId;
-
-	public Integer getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Integer tenantId) {
-		this.tenantId = tenantId;
-	}
-
-	/**
 	 * The actions a user can perform for the return at this time.
 	 */
 	protected List<String> availableActions;
@@ -298,6 +285,19 @@ public class Return implements Serializable
 	}
 
 	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
+	protected Integer tenantId;
+
+	public Integer getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	/**
 	 * Unique identifier of the user responsible for the return. Read only and supplied by the original order.
 	 */
 	protected String userId;
@@ -349,6 +349,9 @@ public class Return implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of change messages associated with the return.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

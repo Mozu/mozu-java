@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
  * </summary>
@@ -34,7 +33,25 @@ public class SiteDataClient {
 	 */
 	public static MozuClient<String> getDBValueClient(String dbEntryQuery) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.getDBValueUrl(dbEntryQuery);
+		return getDBValueClient( dbEntryQuery,  null);
+	}
+
+	/**
+	 * Retrieves the value of a record in the Mozu database.
+	 * <p><pre><code>
+	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * string string = client.Result();
+	 * </code></pre></p>
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <string>
+	 * @see string
+	 */
+	public static MozuClient<String> getDBValueClient(String dbEntryQuery, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.getDBValueUrl(dbEntryQuery, responseFields);
 		String verb = "GET";
 		Class<?> clz = String.class;
 		MozuClient<String> mozuClient = new MozuClient(clz);

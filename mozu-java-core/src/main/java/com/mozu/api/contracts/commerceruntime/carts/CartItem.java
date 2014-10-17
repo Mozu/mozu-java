@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.products.Product;
-import com.mozu.api.contracts.commerceruntime.discounts.AppliedProductDiscount;
-import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.commerce.CommerceUnitPrice;
 
 /**
@@ -101,6 +101,16 @@ public class CartItem implements Serializable
 
 	public void setFulfillmentMethod(String fulfillmentMethod) {
 		this.fulfillmentMethod = fulfillmentMethod;
+	}
+
+	protected Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
 	}
 
 	/**
@@ -273,24 +283,37 @@ public class CartItem implements Serializable
 	}
 
 	/**
+	 * Product discounts displays a list of all applicable discount.
+	 */
+	protected AppliedLineItemProductDiscount productDiscount;
+
+	public AppliedLineItemProductDiscount getProductDiscount() {
+		return this.productDiscount;
+	}
+
+	public void setProductDiscount(AppliedLineItemProductDiscount productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
+	/**
 	 * List of product-level discounts projected to apply to the cart item at checkout.
 	 */
-	protected List<AppliedProductDiscount> productDiscounts;
-	public List<AppliedProductDiscount> getProductDiscounts() {
+	protected List<AppliedLineItemProductDiscount> productDiscounts;
+	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
 		return this.productDiscounts;
 	}
-	public void setProductDiscounts(List<AppliedProductDiscount> productDiscounts) {
+	public void setProductDiscounts(List<AppliedLineItemProductDiscount> productDiscounts) {
 		this.productDiscounts = productDiscounts;
 	}
 
 	/**
 	 * List of shipping discounts projected to apply to the cart item at checkout.
 	 */
-	protected List<ShippingDiscount> shippingDiscounts;
-	public List<ShippingDiscount> getShippingDiscounts() {
+	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
+	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
 		return this.shippingDiscounts;
 	}
-	public void setShippingDiscounts(List<ShippingDiscount> shippingDiscounts) {
+	public void setShippingDiscounts(List<AppliedLineItemShippingDiscount> shippingDiscounts) {
 		this.shippingDiscounts = shippingDiscounts;
 	}
 

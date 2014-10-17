@@ -19,17 +19,19 @@ public class WishlistUrl
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getWishlistsUrl(String filter, Integer pageSize, String q, Integer qLimit, String sortBy, Integer startIndex)
+	public static MozuUrl getWishlistsUrl(String filter, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&qLimit={qLimit}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -37,48 +39,56 @@ public class WishlistUrl
 
 	/**
 	 * Get Resource Url for GetWishlist
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getWishlistUrl(String wishlistId)
+	public static MozuUrl getWishlistUrl(String responseFields, String wishlistId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/{wishlistId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/{wishlistId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("wishlistId", wishlistId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetWishlistByName
-	 * @param customerAccountId 
-	 * @param wishlistName 
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getWishlistByNameUrl(Integer customerAccountId, String wishlistName)
+	public static MozuUrl getWishlistByNameUrl(Integer customerAccountId, String responseFields, String wishlistName)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/customers/{customerAccountId}/{wishlistName}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/customers/{customerAccountId}/{wishlistName}?responseFields={responseFields}");
 		formatter.formatUrl("customerAccountId", customerAccountId);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("wishlistName", wishlistName);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateWishlist
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createWishlistUrl()
+	public static MozuUrl createWishlistUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateWishlist
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param wishlistId Unique identifier of the shopper wish list to update.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateWishlistUrl(String wishlistId)
+	public static MozuUrl updateWishlistUrl(String responseFields, String wishlistId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/{wishlistId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/wishlists/{wishlistId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("wishlistId", wishlistId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

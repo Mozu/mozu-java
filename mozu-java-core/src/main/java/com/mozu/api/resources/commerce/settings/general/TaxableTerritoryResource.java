@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the taxable territories subresource to manage the regional territories for this site that are subejct to sales tax.
  * </summary>
@@ -25,17 +24,18 @@ public class TaxableTerritoryResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public TaxableTerritoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves a list of the taxable territories configured for the site.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.GetTaxableTerritories();
+	 *	TaxableTerritory taxableTerritory = taxableterritory.getTaxableTerritories();
 	 * </code></pre></p>
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -53,7 +53,7 @@ public class TaxableTerritoryResource {
 	 * Creates a new territory for which to calculate sales tax.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.AddTaxableTerritory( taxableTerritory);
+	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
 	 * </code></pre></p>
 	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -62,7 +62,24 @@ public class TaxableTerritoryResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> client = com.mozu.api.clients.commerce.settings.general.TaxableTerritoryClient.addTaxableTerritoryClient( taxableTerritory);
+		return addTaxableTerritory( taxableTerritory,  null);
+	}
+
+	/**
+	 * Creates a new territory for which to calculate sales tax.
+	 * <p><pre><code>
+	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
+	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
+	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
+	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
+	 */
+	public com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> client = com.mozu.api.clients.commerce.settings.general.TaxableTerritoryClient.addTaxableTerritoryClient( taxableTerritory,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -73,7 +90,7 @@ public class TaxableTerritoryResource {
 	 * Updates one or more taxable territories configured for a site.
 	 * <p><pre><code>
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
-	 *	TaxableTerritory taxableTerritory = taxableterritory.UpdateTaxableTerritories( taxableterritories);
+	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);
 	 * </code></pre></p>
 	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>

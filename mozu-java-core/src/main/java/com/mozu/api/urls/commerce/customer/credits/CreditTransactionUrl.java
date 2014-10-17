@@ -18,16 +18,18 @@ public class CreditTransactionUrl
 	 * @param code User-defined code that identifies the customer credit.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getTransactionsUrl(String code, String filter, Integer pageSize, String sortBy, Integer startIndex)
+	public static MozuUrl getTransactionsUrl(String code, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/transactions?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/transactions?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("code", code);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -36,12 +38,14 @@ public class CreditTransactionUrl
 	/**
 	 * Get Resource Url for AddTransaction
 	 * @param code User-defined code that identifies the customer credit to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addTransactionUrl(String code)
+	public static MozuUrl addTransactionUrl(String code, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/transactions");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/transactions?responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

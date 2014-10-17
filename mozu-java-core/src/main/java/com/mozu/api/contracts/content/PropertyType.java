@@ -6,12 +6,9 @@
  */
 package com.mozu.api.contracts.content;
 
-import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.content.LocalizedString;
-import com.mozu.api.contracts.content.PropertyValueType;
 
 /**
  *	Property type available for content. Property types are like templates that can be reused.
@@ -22,56 +19,34 @@ public class PropertyType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Description of the content property type.
-	 */
-	protected String description;
+	protected String adminName;
 
-	public String getDescription() {
-		return this.description;
+	public String getAdminName() {
+		return this.adminName;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 
-	/**
-	 * The display name of the content property type.
-	 */
-	protected String displayName;
+	protected String dataType;
 
-	public String getDisplayName() {
-		return this.displayName;
+	public String getDataType() {
+		return this.dataType;
 	}
 
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
 	}
 
-	/**
-	 * The template display details of the property type.
-	 */
-	protected String displayTemplate;
+	protected String installationPackage;
 
-	public String getDisplayTemplate() {
-		return this.displayTemplate;
+	public String getInstallationPackage() {
+		return this.installationPackage;
 	}
 
-	public void setDisplayTemplate(String displayTemplate) {
-		this.displayTemplate = displayTemplate;
-	}
-
-	/**
-	 * The template edit details of the property type.
-	 */
-	protected String editTemplate;
-
-	public String getEditTemplate() {
-		return this.editTemplate;
-	}
-
-	public void setEditTemplate(String editTemplate) {
-		this.editTemplate = editTemplate;
+	public void setInstallationPackage(String installationPackage) {
+		this.installationPackage = installationPackage;
 	}
 
 	/**
@@ -88,19 +63,6 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * If true, the property type has several values. If false, the property type can only have one value.
-	 */
-	protected Boolean isMultiValued;
-
-	public Boolean getIsMultiValued() {
-		return this.isMultiValued;
-	}
-
-	public void setIsMultiValued(Boolean isMultiValued) {
-		this.isMultiValued = isMultiValued;
-	}
-
-	/**
 	 * If true, the entity can be searched. If false, the entity cannot be searched.
 	 */
 	protected Boolean isQueryable;
@@ -111,19 +73,6 @@ public class PropertyType implements Serializable
 
 	public void setIsQueryable(Boolean isQueryable) {
 		this.isQueryable = isQueryable;
-	}
-
-	/**
-	 * If true, the entity is required for the request to return a valid response.
-	 */
-	protected Boolean isRequired;
-
-	public Boolean getIsRequired() {
-		return this.isRequired;
-	}
-
-	public void setIsRequired(Boolean isRequired) {
-		this.isRequired = isRequired;
 	}
 
 	/**
@@ -152,52 +101,34 @@ public class PropertyType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Regular expression used for data validation.
-	 */
-	protected String regex;
+	protected String namespace;
 
-	public String getRegex() {
-		return this.regex;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setRegex(String regex) {
-		this.regex = regex;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
-	/**
-	 * List of content entity descriptions localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDescriptions;
-	public List<LocalizedString> getLocalizedDescriptions() {
-		return this.localizedDescriptions;
-	}
-	public void setLocalizedDescriptions(List<LocalizedString> localizedDescriptions) {
-		this.localizedDescriptions = localizedDescriptions;
+	protected String propertyTypeFQN;
+
+	public String getPropertyTypeFQN() {
+		return this.propertyTypeFQN;
 	}
 
-	/**
-	 * List of content entity display names localized to the site or site group's default language.
-	 */
-	protected List<LocalizedString> localizedDisplayNames;
-	public List<LocalizedString> getLocalizedDisplayNames() {
-		return this.localizedDisplayNames;
-	}
-	public void setLocalizedDisplayNames(List<LocalizedString> localizedDisplayNames) {
-		this.localizedDisplayNames = localizedDisplayNames;
+	public void setPropertyTypeFQN(String propertyTypeFQN) {
+		this.propertyTypeFQN = propertyTypeFQN;
 	}
 
-	/**
-	 * Wrapper for property value type.
-	 */
-	protected PropertyValueType propertyValueType;
+	protected String version;
 
-	public PropertyValueType getPropertyValueType() {
-		return this.propertyValueType;
+	public String getVersion() {
+		return this.version;
 	}
 
-	public void setPropertyValueType(PropertyValueType propertyValueType) {
-		this.propertyValueType = propertyValueType;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 }

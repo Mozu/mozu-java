@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 
 /**
- *	Properties of a created product selection.
+ *	Properties of a product configuration with shopper-selected options.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConfiguredProduct implements Serializable
@@ -27,6 +27,9 @@ public class ConfiguredProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The list of fulfillment types the product supports.
+	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
@@ -35,6 +38,9 @@ public class ConfiguredProduct implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	/**
+	 * The manufacturer part number supplied for the product.
+	 */
 	protected String mfgPartNumber;
 
 	public String getMfgPartNumber() {
@@ -58,6 +64,9 @@ public class ConfiguredProduct implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The universal product code defined for the product.
+	 */
 	protected String upc;
 
 	public String getUpc() {
@@ -92,6 +101,9 @@ public class ConfiguredProduct implements Serializable
 		this.availableShippingDiscounts = availableShippingDiscounts;
 	}
 
+	/**
+	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
+	 */
 	protected ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -127,7 +139,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
+	 * Unit price that the tenant intends to sell the product if no sale price is set.
 	 */
 	protected ProductPrice price;
 

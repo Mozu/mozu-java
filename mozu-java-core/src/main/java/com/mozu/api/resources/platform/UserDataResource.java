@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
  * </summary>
@@ -25,17 +24,18 @@ public class UserDataResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public UserDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the value of a record in the Mozu database.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	string string = userdata.GetDBValue( dbEntryQuery);
+	 *	string string = userdata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return string
@@ -43,7 +43,23 @@ public class UserDataResource {
 	 */
 	public String getDBValue(String dbEntryQuery) throws Exception
 	{
-		MozuClient<String> client = com.mozu.api.clients.platform.UserDataClient.getDBValueClient( dbEntryQuery);
+		return getDBValue( dbEntryQuery,  null);
+	}
+
+	/**
+	 * Retrieves the value of a record in the Mozu database.
+	 * <p><pre><code>
+	 *	UserData userdata = new UserData();
+	 *	string string = userdata.getDBValue( dbEntryQuery,  responseFields);
+	 * </code></pre></p>
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return string
+	 * @see string
+	 */
+	public String getDBValue(String dbEntryQuery, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.UserDataClient.getDBValueClient( dbEntryQuery,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -54,7 +70,7 @@ public class UserDataResource {
 	 * Creates a new record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.CreateDBValue( value,  dbEntryQuery);
+	 *	userdata.createDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
 	 * @param value The value string to create.
@@ -66,6 +82,7 @@ public class UserDataResource {
 		MozuClient client = com.mozu.api.clients.platform.UserDataClient.createDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -73,7 +90,7 @@ public class UserDataResource {
 	 * Updates a record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.UpdateDBValue( value,  dbEntryQuery);
+	 *	userdata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to update the record information.
 	 * @param value The database value to update.
@@ -85,6 +102,7 @@ public class UserDataResource {
 		MozuClient client = com.mozu.api.clients.platform.UserDataClient.updateDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -92,7 +110,7 @@ public class UserDataResource {
 	 * Removes a previously defined record in the Mozu database.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
-	 *	userdata.DeleteDBValue( dbEntryQuery);
+	 *	userdata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to delete.
 	 * @return 
@@ -102,6 +120,7 @@ public class UserDataResource {
 		MozuClient client = com.mozu.api.clients.platform.UserDataClient.deleteDBValueClient( dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

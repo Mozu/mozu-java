@@ -17,27 +17,31 @@ public class FulfillmentInfoUrl
 	 * Get Resource Url for GetFulfillmentInfo
 	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getFulfillmentInfoUrl(Boolean draft, String orderId)
+	public static MozuUrl getFulfillmentInfoUrl(Boolean draft, String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillmentinfo?draft={draft}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillmentinfo?draft={draft}&responseFields={responseFields}");
 		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for SetFulFillmentInfo
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl setFulFillmentInfoUrl(String orderId, String updateMode, String version)
+	public static MozuUrl setFulFillmentInfoUrl(String orderId, String responseFields, String updateMode, String version)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillmentinfo?updatemode={updateMode}&version={version}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillmentinfo?updatemode={updateMode}&version={version}&responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("updateMode", updateMode);
 		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

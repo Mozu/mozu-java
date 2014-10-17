@@ -39,6 +39,9 @@ public class Product implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
+	 */
 	protected Boolean discountsRestricted;
 
 	public Boolean getDiscountsRestricted() {
@@ -49,6 +52,9 @@ public class Product implements Serializable
 		this.discountsRestricted = discountsRestricted;
 	}
 
+	/**
+	 * The date and time on which the discount restriction period ends.
+	 */
 	protected DateTime discountsRestrictedEndDate;
 
 	public DateTime getDiscountsRestrictedEndDate() {
@@ -59,6 +65,9 @@ public class Product implements Serializable
 		this.discountsRestrictedEndDate = discountsRestrictedEndDate;
 	}
 
+	/**
+	 * The date and time on which the discount restriction period starts.
+	 */
 	protected DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
@@ -69,12 +78,28 @@ public class Product implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
+	/**
+	 * List of fulfillment types that the product supports.
+	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
 		return this.fulfillmentTypesSupported;
 	}
 	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	/**
+	 * The type of goods of a product. For example: physical, digital, or digital credit.
+	 */
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
 	}
 
 	/**
@@ -90,6 +115,9 @@ public class Product implements Serializable
 		this.imageAlternateText = imageAlternateText;
 	}
 
+	/**
+	 * The URL of the image file associated with a product on a storefront.
+	 */
 	protected String imageUrl;
 
 	public String getImageUrl() {
@@ -100,6 +128,9 @@ public class Product implements Serializable
 		this.imageUrl = imageUrl;
 	}
 
+	/**
+	 * If true, this product cannot ship in a package with other items and must ship in a package by itself.
+	 */
 	protected Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
@@ -136,6 +167,9 @@ public class Product implements Serializable
 		this.isTaxable = isTaxable;
 	}
 
+	/**
+	 * The manufacturer's part number for the product.
+	 */
 	protected String mfgPartNumber;
 
 	public String getMfgPartNumber() {
@@ -172,6 +206,9 @@ public class Product implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The unique identifier of the product reservation created for this item in the cart or order.
+	 */
 	protected Integer productReservationId;
 
 	public Integer getProductReservationId() {
@@ -195,6 +232,9 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
 	protected String productUsage;
 
 	public String getProductUsage() {
@@ -205,6 +245,9 @@ public class Product implements Serializable
 		this.productUsage = productUsage;
 	}
 
+	/**
+	 * The universal product code defined for the product.
+	 */
 	protected String upc;
 
 	public String getUpc() {
@@ -228,6 +271,9 @@ public class Product implements Serializable
 		this.variationProductCode = variationProductCode;
 	}
 
+	/**
+	 * Collection of component products that make up a single product bundle with its own product code, added to a cart or order.
+	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
 		return this.bundledProducts;
@@ -284,6 +330,9 @@ public class Product implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Collection of property attributes defined for the item in the cart or order.
+	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;

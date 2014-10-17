@@ -19,6 +19,22 @@ public class PickupItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This specifies the type of fulfillment item.
+	 */
+	protected String fulfillmentItemType;
+
+	public String getFulfillmentItemType() {
+		return this.fulfillmentItemType;
+	}
+
+	public void setFulfillmentItemType(String fulfillmentItemType) {
+		this.fulfillmentItemType = fulfillmentItemType;
+	}
+
+	/**
+	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 */
 	protected String productCode;
 
 	public String getProductCode() {

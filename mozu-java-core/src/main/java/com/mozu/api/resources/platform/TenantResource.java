@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the tenants resource to manage information about a Mozu tenant.
  * </summary>
@@ -25,27 +24,44 @@ public class TenantResource {
 	///
 	private ApiContext _apiContext;
 
-		public TenantResource() 
-	{
-		_apiContext = null;
+
+	public TenantResource() 
+		{
+			_apiContext = null;
 	}
-	 
-	public TenantResource(ApiContext apiContext) 
+public TenantResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieve details about a specific tenant by providing the tenant ID.
 	 * <p><pre><code>
 	 *	Tenant tenant = new Tenant();
-	 *	Tenant tenant = tenant.GetTenant( tenantId);
+	 *	Tenant tenant = tenant.getTenant( tenantId);
 	 * </code></pre></p>
 	 * @param tenantId Unique identifier of the Mozu tenant.
 	 * @return com.mozu.api.contracts.tenant.Tenant
 	 * @see com.mozu.api.contracts.tenant.Tenant
 	 */
 	public com.mozu.api.contracts.tenant.Tenant getTenant(Integer tenantId) throws Exception
+	{
+		return getTenant( tenantId,  null);
+	}
+
+	/**
+	 * Retrieve details about a specific tenant by providing the tenant ID.
+	 * <p><pre><code>
+	 *	Tenant tenant = new Tenant();
+	 *	Tenant tenant = tenant.getTenant( tenantId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param tenantId Unique identifier of the Mozu tenant.
+	 * @return com.mozu.api.contracts.tenant.Tenant
+	 * @see com.mozu.api.contracts.tenant.Tenant
+	 */
+	public com.mozu.api.contracts.tenant.Tenant getTenant(Integer tenantId, String responseFields) throws Exception
 	{
 		com.mozu.api.contracts.tenant.Tenant tenant = null;
 		com.mozu.api.cache.CacheManager<com.mozu.api.contracts.tenant.Tenant> cache = 
@@ -55,7 +71,7 @@ public class TenantResource {
 			if (tenant != null )
 				return tenant;
 			}
-		MozuClient<com.mozu.api.contracts.tenant.Tenant> client = com.mozu.api.clients.platform.TenantClient.getTenantClient( tenantId);
+		MozuClient<com.mozu.api.contracts.tenant.Tenant> client = com.mozu.api.clients.platform.TenantClient.getTenantClient( tenantId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		tenant = client.getResult();

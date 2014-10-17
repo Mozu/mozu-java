@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
  * </summary>
@@ -35,26 +34,27 @@ public class TenantAdminUserAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> createUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo) throws Exception
 	{
-		return createUserAuthTicketClient( userAuthInfo,  null);
+		return createUserAuthTicketClient( userAuthInfo,  null,  null);
 	}
 
 	/**
 	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo,  tenantId);
+	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=CreateUserAuthTicketClient( userAuthInfo,  tenantId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
 	 */
-	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> createUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> createUserAuthTicketClient(com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer tenantId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(tenantId);
+		MozuUrl url = com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl.createUserAuthTicketUrl(responseFields, tenantId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient = new MozuClient(clz);
@@ -80,26 +80,27 @@ public class TenantAdminUserAuthTicketClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> refreshAuthTicketClient(com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket) throws Exception
 	{
-		return refreshAuthTicketClient( existingAuthTicket,  null);
+		return refreshAuthTicketClient( existingAuthTicket,  null,  null);
 	}
 
 	/**
 	 * Generates a new user authentication ticket for the specified tenant by supplying the user's existing refresh token information.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=RefreshAuthTicketClient( existingAuthTicket,  tenantId);
+	 * MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient=RefreshAuthTicketClient( existingAuthTicket,  tenantId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantAdminUserAuthTicket tenantAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId 
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 */
-	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> refreshAuthTicketClient(com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, Integer tenantId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> refreshAuthTicketClient(com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket existingAuthTicket, Integer tenantId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(tenantId);
+		MozuUrl url = com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl.refreshAuthTicketUrl(responseFields, tenantId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket.class;
 		MozuClient<com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket> mozuClient = new MozuClient(clz);

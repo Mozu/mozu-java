@@ -13,13 +13,56 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Cards subresource to manage stored credit cards for customer accounts. Mozu stores limited card data in the Customer service for expedited ordering purposes; however, the complete card data is stored in the Payment service.
  * </summary>
  */
 public class CardClient {
 	
+	/**
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Card card = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
+	 * @see com.mozu.api.contracts.customer.Card
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.Card> getAccountCardClient(Integer accountId, String cardId) throws Exception
+	{
+		return getAccountCardClient( accountId,  cardId,  null);
+	}
+
+	/**
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Card card = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
+	 * @see com.mozu.api.contracts.customer.Card
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.Card> getAccountCardClient(Integer accountId, String cardId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardUrl(accountId, cardId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
+		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
 	/**
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
@@ -34,35 +77,28 @@ public class CardClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.CardCollection> getAccountCardsClient(Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardsUrl(accountId);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.customer.CardCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient = new MozuClient(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
+		return getAccountCardsClient( accountId,  null);
 	}
 
 	/**
-	 * 
+	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId);
+	 * MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient=GetAccountCardsClient( accountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Card card = client.Result();
+	 * CardCollection cardCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param cardId 
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
-	 * @see com.mozu.api.contracts.customer.Card
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CardCollection>
+	 * @see com.mozu.api.contracts.customer.CardCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.Card> getAccountCardClient(Integer accountId, String cardId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CardCollection> getAccountCardsClient(Integer accountId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardUrl(accountId, cardId);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardsUrl(accountId, responseFields);
 		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
-		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
+		Class<?> clz = com.mozu.api.contracts.customer.CardCollection.class;
+		MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -85,7 +121,27 @@ public class CardClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.Card> addAccountCardClient(com.mozu.api.contracts.customer.Card card, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.addAccountCardUrl(accountId);
+		return addAccountCardClient( card,  accountId,  null);
+	}
+
+	/**
+	 * Creates a new credit card record and stores it for the customer account.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=AddAccountCardClient( card,  accountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Card card = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param card Properties of the customer credit card to add to the account.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
+	 * @see com.mozu.api.contracts.customer.Card
+	 * @see com.mozu.api.contracts.customer.Card
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.Card> addAccountCardClient(com.mozu.api.contracts.customer.Card card, Integer accountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.addAccountCardUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
 		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
@@ -105,7 +161,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
+	 * @param cardId Unique identifier of the credit card.
 	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -113,7 +169,28 @@ public class CardClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.Card> updateAccountCardClient(com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.updateAccountCardUrl(accountId, cardId);
+		return updateAccountCardClient( card,  accountId,  cardId,  null);
+	}
+
+	/**
+	 * Update one or more properties of a credit card defined for a customer account.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=UpdateAccountCardClient( card,  accountId,  cardId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Card card = client.Result();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the credit card.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param card Properties of the customer account credit card to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
+	 * @see com.mozu.api.contracts.customer.Card
+	 * @see com.mozu.api.contracts.customer.Card
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.Card> updateAccountCardClient(com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.updateAccountCardUrl(accountId, cardId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
 		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);

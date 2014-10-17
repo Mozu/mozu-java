@@ -26,28 +26,122 @@ public class ProductExtraUrl
 	}
 
 	/**
+	 * Get Resource Url for GetExtraValueLocalizedDeltaPrices
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getExtraValueLocalizedDeltaPricesUrl(String attributeFQN, String productCode, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("value", value);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetExtraValueLocalizedDeltaPrice
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String responseFields, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice/{currencyCode}?responseFields={responseFields}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("value", value);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getExtraUrl(String attributeFQN, String productCode)
+	public static MozuUrl getExtraUrl(String attributeFQN, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddExtraValueLocalizedDeltaPrice
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String productCode, String responseFields, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice?responseFields={responseFields}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddExtra
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addExtraUrl(String productCode)
+	public static MozuUrl addExtraUrl(String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrices
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateExtraValueLocalizedDeltaPricesUrl(String attributeFQN, String productCode, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("value", value);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrice
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String responseFields, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice/{currencyCode}?responseFields={responseFields}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -55,13 +149,15 @@ public class ProductExtraUrl
 	 * Get Resource Url for UpdateExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode)
+	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -76,6 +172,24 @@ public class ProductExtraUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
 		formatter.formatUrl("productCode", productCode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteExtraValueLocalizedDeltaPrice
+	 * @param attributeFQN 
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param value Use this field to include those fields which are not included by default.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String value)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/Extras/{attributeFQN}/Values/{value}/localizedDeltaPrice/{currencyCode}");
+		formatter.formatUrl("attributeFQN", attributeFQN);
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("value", value);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

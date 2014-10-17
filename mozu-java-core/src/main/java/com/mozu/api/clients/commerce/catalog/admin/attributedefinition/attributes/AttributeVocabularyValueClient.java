@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Vocabulary values are predefined for an attribute.
  * </summary>
@@ -21,9 +20,9 @@ import org.apache.commons.lang3.StringUtils;
 public class AttributeVocabularyValueClient {
 	
 	/**
-	 * Retrieves a list of attribute vocabulary values. To target a query, use one or several valid optional response groups.
+	 * Retrieves a list of vocabulary values defined for the attribute specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient(dataViewMode,  attributeFQN);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=GetAttributeVocabularyValuesClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -33,7 +32,7 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> getAttributeVocabularyValuesClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> getAttributeVocabularyValuesClient(String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "GET";
@@ -41,15 +40,88 @@ public class AttributeVocabularyValueClient {
 		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
 
 	/**
-	 * Retrieves an attribute vocabulary value by providing the attribute FQN and value.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient(dataViewMode,  attributeFQN,  value);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=GetAttributeVocabularyValueLocalizedContentsClient( attributeFQN,  value);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> getAttributeVocabularyValueLocalizedContentsClient(String attributeFQN, String value) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentsUrl(attributeFQN, value);
+		String verb = "GET";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode) throws Exception
+	{
+		return getAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> getAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, responseFields, value);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -60,23 +132,93 @@ public class AttributeVocabularyValueClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(String attributeFQN, String value) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueUrl(attributeFQN, value);
+		return getAttributeVocabularyValueClient( attributeFQN,  value,  null);
+	}
+
+	/**
+	 * Retrieves the details of a vocabulary value defined for an attribute by providing the attribute's fully qualified name and the value to retrieve.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=GetAttributeVocabularyValueClient( attributeFQN,  value,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> getAttributeVocabularyValueClient(String attributeFQN, String value, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueUrl(attributeFQN, responseFields, value);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
 
 	/**
-	 * Adds a new attribute vocabulary value.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=AddAttributeVocabularyValueClient(dataViewMode,  attributeVocabularyValue,  attributeFQN);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=AddAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @param localizedContent 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> addAttributeVocabularyValueLocalizedContentClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value) throws Exception
+	{
+		return addAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=AddAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @param localizedContent 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> addAttributeVocabularyValueLocalizedContentClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.addAttributeVocabularyValueLocalizedContentUrl(attributeFQN, responseFields, value);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedContent);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Creates a vocabulary value for a defined product attribute.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=AddAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -88,16 +230,36 @@ public class AttributeVocabularyValueClient {
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> addAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> addAttributeVocabularyValueClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.addAttributeVocabularyValueUrl(attributeFQN);
+		return addAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  null);
+	}
+
+	/**
+	 * Creates a vocabulary value for a defined product attribute.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=AddAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param dataViewMode DataViewMode
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> addAttributeVocabularyValueClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.addAttributeVocabularyValueUrl(attributeFQN, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attributeVocabularyValue);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -105,7 +267,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * Update existing vocabulary values for an attribute.
 	 * <p><pre><code>
-	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=UpdateAttributeVocabularyValuesClient(dataViewMode,  vocabularyValues,  attributeFQN);
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient=UpdateAttributeVocabularyValuesClient( vocabularyValues,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -117,7 +279,7 @@ public class AttributeVocabularyValueClient {
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> updateAttributeVocabularyValuesClient(com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> vocabularyValues, String attributeFQN) throws Exception
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> updateAttributeVocabularyValuesClient(List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> vocabularyValues, String attributeFQN) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "PUT";
@@ -126,7 +288,88 @@ public class AttributeVocabularyValueClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(vocabularyValues);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=UpdateAttributeVocabularyValueLocalizedContentsClient( localizedContent,  attributeFQN,  value);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @param localizedContent 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> updateAttributeVocabularyValueLocalizedContentsClient(List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> localizedContent, String attributeFQN, String value) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueLocalizedContentsUrl(attributeFQN, value);
+		String verb = "PUT";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedContent);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=UpdateAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @param localizedContent 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> updateAttributeVocabularyValueLocalizedContentClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value, String localeCode) throws Exception
+	{
+		return updateAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  localeCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=UpdateAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @param localizedContent 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> updateAttributeVocabularyValueLocalizedContentClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent localizedContent, String attributeFQN, String value, String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, responseFields, value);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(localizedContent);
 		return mozuClient;
 
 	}
@@ -134,7 +377,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * Updates existing attribute vocabulary values.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=UpdateAttributeVocabularyValueClient(dataViewMode,  attributeVocabularyValue,  attributeFQN,  value);
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=UpdateAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
@@ -147,16 +390,37 @@ public class AttributeVocabularyValueClient {
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> updateAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, String value) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> updateAttributeVocabularyValueClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, String value) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueUrl(attributeFQN, value);
+		return updateAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  value,  null);
+	}
+
+	/**
+	 * Updates existing attribute vocabulary values.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient=UpdateAttributeVocabularyValueClient( attributeVocabularyValue,  attributeFQN,  value,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param dataViewMode DataViewMode
+	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
+	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> updateAttributeVocabularyValueClient(com.mozu.api.contracts.productadmin.AttributeVocabularyValue attributeVocabularyValue, String attributeFQN, String value, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueUrl(attributeFQN, responseFields, value);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
 		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attributeVocabularyValue);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -164,7 +428,7 @@ public class AttributeVocabularyValueClient {
 	/**
 	 * Deletes an attribute's vocabulary value.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteAttributeVocabularyValueClient(dataViewMode,  attributeFQN,  value);
+	 * MozuClient mozuClient=DeleteAttributeVocabularyValueClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
@@ -173,14 +437,37 @@ public class AttributeVocabularyValueClient {
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteAttributeVocabularyValueClient(com.mozu.api.DataViewMode dataViewMode, String attributeFQN, String value) throws Exception
+	public static MozuClient deleteAttributeVocabularyValueClient(String attributeFQN, String value) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueUrl(attributeFQN, value);
 		String verb = "DELETE";
 				MozuClient mozuClient = new MozuClient();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param attributeFQN 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param value 
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deleteAttributeVocabularyValueLocalizedContentClient(String attributeFQN, String value, String localeCode) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, value);
+		String verb = "DELETE";
+				MozuClient mozuClient = new MozuClient();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

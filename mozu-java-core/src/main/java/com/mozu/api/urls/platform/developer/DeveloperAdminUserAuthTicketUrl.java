@@ -16,24 +16,28 @@ public class DeveloperAdminUserAuthTicketUrl
 	/**
 	 * Get Resource Url for CreateDeveloperUserAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createDeveloperUserAuthTicketUrl(Integer developerAccountId)
+	public static MozuUrl createDeveloperUserAuthTicketUrl(Integer developerAccountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/authtickets/?developerAccountId={developerAccountId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/authtickets/?developerAccountId={developerAccountId}&responseFields={responseFields}");
 		formatter.formatUrl("developerAccountId", developerAccountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RefreshDeveloperAuthTicket
 	 * @param developerAccountId Unique identifier of the developer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl refreshDeveloperAuthTicketUrl(Integer developerAccountId)
+	public static MozuUrl refreshDeveloperAuthTicketUrl(Integer developerAccountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/authtickets/?developerAccountId={developerAccountId}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/authtickets/?developerAccountId={developerAccountId}&responseFields={responseFields}");
 		formatter.formatUrl("developerAccountId", developerAccountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 

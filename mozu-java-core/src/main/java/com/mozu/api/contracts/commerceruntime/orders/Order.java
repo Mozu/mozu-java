@@ -15,11 +15,12 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
+import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
-import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
@@ -37,6 +38,9 @@ public class Order implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The date and time the order was accepted by the tenant.
+	 */
 	protected DateTime acceptedDate;
 
 	public DateTime getAcceptedDate() {
@@ -47,6 +51,9 @@ public class Order implements Serializable
 		this.acceptedDate = acceptedDate;
 	}
 
+	/**
+	 * If true, the customer account associated with the order is opted in to receive marketing materials.
+	 */
 	protected Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -57,6 +64,9 @@ public class Order implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
+	/**
+	 * The amount of the order the shopper can receive in the event of a return. This amount represents the amount captured at the time the order was submitted, not when the order was returned.
+	 */
 	protected Double amountAvailableForRefund;
 
 	public Double getAmountAvailableForRefund() {
@@ -67,6 +77,9 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
+	/**
+	 * The total amount of the order not currently associated with a payment. The shopper must create one or more payments to satisfy this amount before the order can be fully paid.
+	 */
 	protected Double amountRemainingForPayment;
 
 	public Double getAmountRemainingForPayment() {
@@ -165,7 +178,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The type of interaction the shopper used to submit the order. Possibel values are Website, Call, Store, or Unknown.
+	 * The type of interaction the shopper used to submit the order. Possible values are Website, Call, Store, or Unknown.
 	 */
 	protected String customerInteractionType;
 
@@ -255,6 +268,9 @@ public class Order implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * Unique identifier used by an external program to identify a Mozu order.
+	 */
 	protected String externalId;
 
 	public String getExternalId() {
@@ -304,6 +320,16 @@ public class Order implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
+	protected Double handlingSubTotal;
+
+	public Double getHandlingSubTotal() {
+		return this.handlingSubTotal;
+	}
+
+	public void setHandlingSubTotal(Double handlingSubTotal) {
+		this.handlingSubTotal = handlingSubTotal;
+	}
+
 	/**
 	 * If the handling fee for the order is subject to sales tax, the total tax amount.
 	 */
@@ -317,6 +343,9 @@ public class Order implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
+	/**
+	 * This total represents the handling amount value with any applied discounts.
+	 */
 	protected Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -353,6 +382,9 @@ public class Order implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
+	 */
 	protected DateTime importDate;
 
 	public DateTime getImportDate() {
@@ -389,6 +421,9 @@ public class Order implements Serializable
 		this.isDraft = isDraft;
 	}
 
+	/**
+	 * If true, the shopper can return any of the items in this order to the tenant.
+	 */
 	protected Boolean isEligibleForReturns;
 
 	public Boolean getIsEligibleForReturns() {
@@ -595,7 +630,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current status of this order. Possible values are "New", "Open", "Processing", "Closed", or "Cancelled". System-supplied and read-only.
+	 * The current status of this order. Possible values are "Pending", "Submitted", "Processing", "Pending Review", "Closed", or "Cancelled". System-supplied and read-only.
 	 */
 	protected String status;
 
@@ -683,6 +718,19 @@ public class Order implements Serializable
 
 	public void setTotalCollected(Double totalCollected) {
 		this.totalCollected = totalCollected;
+	}
+
+	/**
+	 * This specifies the order type. This means, was this order placed online or offline? Online means shopper created the order at checkout, offline means the order was a phone order.
+	 */
+	protected String type;
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	/**
@@ -786,6 +834,17 @@ public class Order implements Serializable
 	}
 
 	/**
+	 * Specifies the fulfillment of digital packages associated with this order.
+	 */
+	protected List<DigitalPackage> digitalPackages;
+	public List<DigitalPackage> getDigitalPackages() {
+		return this.digitalPackages;
+	}
+	public void setDigitalPackages(List<DigitalPackage> digitalPackages) {
+		this.digitalPackages = digitalPackages;
+	}
+
+	/**
 	 * Properties of the item fulfillment information associated with the order. Shoppers can fulfill order items using in-store pickup or direct shipping.
 	 */
 	protected FulfillmentInfo fulfillmentInfo;
@@ -798,6 +857,17 @@ public class Order implements Serializable
 		this.fulfillmentInfo = fulfillmentInfo;
 	}
 
+	protected List<AppliedDiscount> handlingDiscounts;
+	public List<AppliedDiscount> getHandlingDiscounts() {
+		return this.handlingDiscounts;
+	}
+	public void setHandlingDiscounts(List<AppliedDiscount> handlingDiscounts) {
+		this.handlingDiscounts = handlingDiscounts;
+	}
+
+	/**
+	 * List of invalid coupon codes the shopper entered for the order.
+	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
 		return this.invalidCoupons;
@@ -920,6 +990,9 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
+	/**
+	 * Response returned by an order validation capability application.
+	 */
 	protected List<OrderValidationResult> validationResults;
 	public List<OrderValidationResult> getValidationResults() {
 		return this.validationResults;

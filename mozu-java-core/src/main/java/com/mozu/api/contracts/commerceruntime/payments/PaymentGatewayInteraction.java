@@ -84,6 +84,9 @@ public class PaymentGatewayInteraction implements Serializable
 		this.gatewayResponseCode = gatewayResponseCode;
 	}
 
+	/**
+	 * Textual message returned by the payment gateway.
+	 */
 	protected String gatewayResponseText;
 
 	public String getGatewayResponseText() {

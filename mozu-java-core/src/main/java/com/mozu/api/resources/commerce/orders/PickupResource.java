@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Pickups resource to organize items submitted in an order into pickups that enable the shopper to fulfill the order items using the in-store pickup method.
  * </summary>
@@ -25,37 +24,18 @@ public class PickupResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public PickupResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
-	/**
-	 * Retrieves the details of the in-store pickup specified in the request.
-	 * <p><pre><code>
-	 *	Pickup pickup = new Pickup();
-	 *	Pickup pickup = pickup.GetPickup( orderId,  pickupId);
-	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
-	 */
-	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(String orderId, String pickupId) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.getPickupClient( orderId,  pickupId);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
 	/**
 	 * Retrieves a list of the actions available to perform for the pickup specified in the request.
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
-	 *	string string = pickup.GetAvailablePickupFulfillmentActions( orderId,  pickupId);
+	 *	string string = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
@@ -72,10 +52,47 @@ public class PickupResource {
 	}
 
 	/**
+	 * Retrieves the details of the in-store pickup specified in the request.
+	 * <p><pre><code>
+	 *	Pickup pickup = new Pickup();
+	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(String orderId, String pickupId) throws Exception
+	{
+		return getPickup( orderId,  pickupId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the in-store pickup specified in the request.
+	 * <p><pre><code>
+	 *	Pickup pickup = new Pickup();
+	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(String orderId, String pickupId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.getPickupClient( orderId,  pickupId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Create a new pickup for the order specified in the request for in-store fufillment.
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
-	 *	Pickup pickup = pickup.CreatePickup( pickup,  orderId);
+	 *	Pickup pickup = pickup.createPickup( pickup,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param pickup Properties of the in-store pickup to create.
@@ -85,7 +102,25 @@ public class PickupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup createPickup(com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.createPickupClient( pickup,  orderId);
+		return createPickup( pickup,  orderId,  null);
+	}
+
+	/**
+	 * Create a new pickup for the order specified in the request for in-store fufillment.
+	 * <p><pre><code>
+	 *	Pickup pickup = new Pickup();
+	 *	Pickup pickup = pickup.createPickup( pickup,  orderId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param pickup Properties of the in-store pickup to create.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup createPickup(com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.createPickupClient( pickup,  orderId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -96,7 +131,7 @@ public class PickupResource {
 	 * Updates one or more details of a defined in-store pickup.
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
-	 *	Pickup pickup = pickup.UpdatePickup( pickup,  orderId,  pickupId);
+	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the in-store pickup.
 	 * @param pickupId Unique identifier of the pickup to update.
@@ -107,7 +142,26 @@ public class PickupResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup updatePickup(com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String pickupId) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.updatePickupClient( pickup,  orderId,  pickupId);
+		return updatePickup( pickup,  orderId,  pickupId,  null);
+	}
+
+	/**
+	 * Updates one or more details of a defined in-store pickup.
+	 * <p><pre><code>
+	 *	Pickup pickup = new Pickup();
+	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param pickup Properties of the in-store pickup to update.
+	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
+	 */
+	public com.mozu.api.contracts.commerceruntime.fulfillment.Pickup updatePickup(com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String pickupId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> client = com.mozu.api.clients.commerce.orders.PickupClient.updatePickupClient( pickup,  orderId,  pickupId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -118,7 +172,7 @@ public class PickupResource {
 	 * Removes a pickup previously defined for order item in-store pickup fulfillment.
 	 * <p><pre><code>
 	 *	Pickup pickup = new Pickup();
-	 *	pickup.DeletePickup( orderId,  pickupId);
+	 *	pickup.deletePickup( orderId,  pickupId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to remove.
@@ -129,6 +183,7 @@ public class PickupResource {
 		MozuClient client = com.mozu.api.clients.commerce.orders.PickupClient.deletePickupClient( orderId,  pickupId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

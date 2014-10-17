@@ -59,6 +59,16 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
+	protected String displayIntention;
+
+	public String getDisplayIntention() {
+		return this.displayIntention;
+	}
+
+	public void setDisplayIntention(String displayIntention) {
+		this.displayIntention = displayIntention;
+	}
+
 	/**
 	 * The input type (such as date or text area) accepted for the attribute's data type.
 	 */
@@ -83,6 +93,32 @@ public class AttributeDetail implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
+	 */
+	protected Boolean searchableInStorefront;
+
+	public Boolean getSearchableInStorefront() {
+		return this.searchableInStorefront;
+	}
+
+	public void setSearchableInStorefront(Boolean searchableInStorefront) {
+		this.searchableInStorefront = searchableInStorefront;
+	}
+
+	/**
+	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
+	 */
+	protected Boolean searchDisplayValue;
+
+	public Boolean getSearchDisplayValue() {
+		return this.searchDisplayValue;
+	}
+
+	public void setSearchDisplayValue(Boolean searchDisplayValue) {
+		this.searchDisplayValue = searchDisplayValue;
 	}
 
 	/**

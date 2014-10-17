@@ -13,8 +13,10 @@ import mockit.NonStrictExpectations;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -24,6 +26,7 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
+import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
@@ -40,10 +43,12 @@ import com.mozu.api.utils.JsonUtils;
 public class AppAuthenticatorUnitTest {
 
     private static final String BAD_URL = "BadUrl/";
+    private static final String APP_ID = "12342341234132";
+    private static final String SHARED_SECRET = "12342341234132";
 
     @Mocked HttpPost mockHttpPost;
-    @Mocked DefaultHttpClient mockHttpClient;
-    @Mocked HttpResponse mockHttpResponse;
+    @Mocked CloseableHttpClient mockHttpClient;
+    @Mocked CloseableHttpResponse mockHttpResponse;
     @Mocked HttpEntity mockHttpEntity;
     @Mocked HttpHelper mockHttpHelper;
     
@@ -61,28 +66,6 @@ public class AppAuthenticatorUnitTest {
             @Mock public void deleteAppAuthTicket(String refreshToken) throws Exception {};
         };
         AppAuthenticator.invalidateAuth();
-    }
-
-    /**
-     * Basic initialize with no parameters.
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void baseInitializeTest() throws Exception {
-        
-        final String jsonString = createAuthTicketJson();
-        
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result= IOUtils.toInputStream(jsonString); }
-        };
-        
-        AppAuthenticator.initialize();
     }
 
     /**
@@ -105,9 +88,9 @@ public class AppAuthenticatorUnitTest {
         };
 
         AppAuthInfo appAuthInfo = new AppAuthInfo();
-        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
-        appAuthInfo.setSharedSecret(ConfigProperties.getStringProperty(ConfigProperties.SHARED_SECRET));
-        AppAuthenticator.initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL));
+        appAuthInfo.setApplicationId(APP_ID);
+        appAuthInfo.setSharedSecret(SHARED_SECRET);
+        AppAuthenticator.initialize(appAuthInfo);
     }
     /**
      * Test an error in I/O when making the request
@@ -125,10 +108,10 @@ public class AppAuthenticatorUnitTest {
         };
         
         AppAuthInfo appAuthInfo = new AppAuthInfo();
-        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
-        appAuthInfo.setSharedSecret(ConfigProperties.getStringProperty(ConfigProperties.SHARED_SECRET));
+        appAuthInfo.setApplicationId(APP_ID);
+        appAuthInfo.setSharedSecret(SHARED_SECRET);
         try {
-            AppAuthenticator.initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL));
+            AppAuthenticator.initialize(appAuthInfo);
             fail("API exception expected");
         } catch (ApiException e) {
             //expected
@@ -153,7 +136,8 @@ public class AppAuthenticatorUnitTest {
         
         AppAuthInfo appAuthInfo = new AppAuthInfo();
         try {
-            AppAuthenticator.initialize(appAuthInfo, BAD_URL);
+            MozuConfig.setBaseUrl(BAD_URL);
+            AppAuthenticator.initialize(appAuthInfo);
             fail("404 Not found excpected");
         } catch (ApiException e) {
             //expected
@@ -179,7 +163,7 @@ public class AppAuthenticatorUnitTest {
         };
         
         try {
-            AppAuthenticator.initialize();
+            AppAuthenticator.initialize(new AppAuthInfo());
             fail("JSON Parse error expected");
         } catch (ApiException e) {
             assertTrue( e.getMessage().startsWith("JSON"));
@@ -212,7 +196,7 @@ public class AppAuthenticatorUnitTest {
             { mockHttpEntity.getContent(); result=iStream; }
         };
 
-        AppAuthenticator.initialize();
+        AppAuthenticator.initialize(new AppAuthInfo());
         AppAuthenticator auth = AppAuthenticator.getInstance();
         
         // must reset the stream for the jmockit to re-read

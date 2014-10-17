@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Order Handling Fee subresource to configure any shipping and handling fees to apply to orders for this site.
  * </summary>
@@ -25,24 +24,40 @@ public class SiteShippingHandlingFeeResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public SiteShippingHandlingFeeResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the details of the order handling fee configured for the site.
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
-	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.GetOrderHandlingFee();
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.getOrderHandlingFee();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 */
 	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee() throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.getOrderHandlingFeeClient();
+		return getOrderHandlingFee( null);
+	}
+
+	/**
+	 * Retrieves the details of the order handling fee configured for the site.
+	 * <p><pre><code>
+	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.getOrderHandlingFee( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 */
+	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.getOrderHandlingFeeClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -53,7 +68,7 @@ public class SiteShippingHandlingFeeResource {
 	 * Creates a new order handling fee for the site.
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
-	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.CreateOrderHandlingFee( orderHandlingFee);
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee);
 	 * </code></pre></p>
 	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -62,7 +77,24 @@ public class SiteShippingHandlingFeeResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.createOrderHandlingFeeClient( orderHandlingFee);
+		return createOrderHandlingFee( orderHandlingFee,  null);
+	}
+
+	/**
+	 * Creates a new order handling fee for the site.
+	 * <p><pre><code>
+	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.createOrderHandlingFee( orderHandlingFee,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
+	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 */
+	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.createOrderHandlingFeeClient( orderHandlingFee,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -73,7 +105,7 @@ public class SiteShippingHandlingFeeResource {
 	 * Updates the order handling fee amount for the site.
 	 * <p><pre><code>
 	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
-	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.UpdateOrderHandlingFee( orderHandlingFee);
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee);
 	 * </code></pre></p>
 	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
 	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -82,7 +114,24 @@ public class SiteShippingHandlingFeeResource {
 	 */
 	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.updateOrderHandlingFeeClient( orderHandlingFee);
+		return updateOrderHandlingFee( orderHandlingFee,  null);
+	}
+
+	/**
+	 * Updates the order handling fee amount for the site.
+	 * <p><pre><code>
+	 *	SiteShippingHandlingFee siteshippinghandlingfee = new SiteShippingHandlingFee();
+	 *	SiteShippingHandlingFee siteShippingHandlingFee = siteshippinghandlingfee.updateOrderHandlingFee( orderHandlingFee,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
+	 * @return com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
+	 */
+	public com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> client = com.mozu.api.clients.commerce.settings.shipping.SiteShippingHandlingFeeClient.updateOrderHandlingFeeClient( orderHandlingFee,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

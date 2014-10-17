@@ -15,11 +15,13 @@ public class SiteShippingSettingsUrl
 
 	/**
 	 * Get Resource Url for GetSiteShippingSettings
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getSiteShippingSettingsUrl()
+	public static MozuUrl getSiteShippingSettingsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

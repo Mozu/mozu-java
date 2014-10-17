@@ -50,6 +50,9 @@ public class ShippingRate implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * The number of days the shipment will spend between the origin address and the destination address.
+	 */
 	protected Integer daysInTransit;
 
 	public Integer getDaysInTransit() {

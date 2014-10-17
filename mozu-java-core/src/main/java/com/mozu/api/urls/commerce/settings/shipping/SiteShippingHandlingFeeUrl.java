@@ -15,31 +15,37 @@ public class SiteShippingHandlingFeeUrl
 
 	/**
 	 * Get Resource Url for GetOrderHandlingFee
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOrderHandlingFeeUrl()
+	public static MozuUrl getOrderHandlingFeeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for CreateOrderHandlingFee
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createOrderHandlingFeeUrl()
+	public static MozuUrl createOrderHandlingFeeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateOrderHandlingFee
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateOrderHandlingFeeUrl()
+	public static MozuUrl updateOrderHandlingFeeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/shipping/orderhandlingfee?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

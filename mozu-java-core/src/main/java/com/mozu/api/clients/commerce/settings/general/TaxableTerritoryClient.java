@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the taxable territories subresource to manage the regional territories for this site that are subejct to sales tax.
  * </summary>
@@ -58,7 +57,26 @@ public class TaxableTerritoryClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> addTaxableTerritoryClient(com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.settings.general.TaxableTerritoryUrl.addTaxableTerritoryUrl();
+		return addTaxableTerritoryClient( taxableTerritory,  null);
+	}
+
+	/**
+	 * Creates a new territory for which to calculate sales tax.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient=AddTaxableTerritoryClient( taxableTerritory,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * TaxableTerritory taxableTerritory = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
+	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
+	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
+	 */
+	public static MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> addTaxableTerritoryClient(com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.settings.general.TaxableTerritoryUrl.addTaxableTerritoryUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.general.TaxableTerritory.class;
 		MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient = new MozuClient(clz);

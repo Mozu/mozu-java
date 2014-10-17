@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Billing Info subresource to manage the billing information stored for an order.
  * </summary>
@@ -25,17 +24,18 @@ public class BillingInfoResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public BillingInfoResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the billing information associated with an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.GetBillingInfo( orderId);
+	 *	BillingInfo billingInfo = billinginfo.getBillingInfo( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
@@ -43,23 +43,24 @@ public class BillingInfoResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(String orderId) throws Exception
 	{
-		return getBillingInfo( orderId,  null);
+		return getBillingInfo( orderId,  null,  null);
 	}
 
 	/**
 	 * Retrieves the billing information associated with an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.GetBillingInfo( orderId,  draft);
+	 *	BillingInfo billingInfo = billinginfo.getBillingInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
 	 * @param draft If true, retrieve the draft version of the order billing information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 */
-	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(String orderId, Boolean draft) throws Exception
+	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(String orderId, Boolean draft, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> client = com.mozu.api.clients.commerce.orders.BillingInfoClient.getBillingInfoClient( orderId,  draft);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> client = com.mozu.api.clients.commerce.orders.BillingInfoClient.getBillingInfoClient( orderId,  draft,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -70,7 +71,7 @@ public class BillingInfoResource {
 	 * Updates the billing information supplied for an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.SetBillingInfo( billingInfo,  orderId);
+	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param billingInfo The properties of the order billing information to update.
@@ -80,16 +81,17 @@ public class BillingInfoResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId) throws Exception
 	{
-		return setBillingInfo( billingInfo,  orderId,  null,  null);
+		return setBillingInfo( billingInfo,  orderId,  null,  null,  null);
 	}
 
 	/**
 	 * Updates the billing information supplied for an order.
 	 * <p><pre><code>
 	 *	BillingInfo billinginfo = new BillingInfo();
-	 *	BillingInfo billingInfo = billinginfo.SetBillingInfo( billingInfo,  orderId,  updateMode,  version);
+	 *	BillingInfo billingInfo = billinginfo.setBillingInfo( billingInfo,  orderId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to set the billing information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @param billingInfo The properties of the order billing information to update.
@@ -97,9 +99,9 @@ public class BillingInfoResource {
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 * @see com.mozu.api.contracts.commerceruntime.payments.BillingInfo
 	 */
-	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId, String updateMode, String version) throws Exception
+	public com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId, String updateMode, String version, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> client = com.mozu.api.clients.commerce.orders.BillingInfoClient.setBillingInfoClient( billingInfo,  orderId,  updateMode,  version);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> client = com.mozu.api.clients.commerce.orders.BillingInfoClient.setBillingInfoClient( billingInfo,  orderId,  updateMode,  version,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

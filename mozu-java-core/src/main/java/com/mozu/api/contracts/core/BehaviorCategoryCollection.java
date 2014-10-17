@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.BehaviorCategory;
 
 /**
- *	***Always private and should not be published.***
+ *	List of categories of application behaviors.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BehaviorCategoryCollection implements Serializable

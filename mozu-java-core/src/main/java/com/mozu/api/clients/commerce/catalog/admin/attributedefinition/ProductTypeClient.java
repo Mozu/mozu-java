@@ -13,7 +13,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Types resource to manage the types for your product catalog. Product types act as configuration templates, which store a set of attributes common to all products associated with that type. Unlike categories, products can only be associated with a single product type.
  * </summary>
@@ -34,28 +34,29 @@ public class ProductTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> getProductTypesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getProductTypesClient(dataViewMode,  null,  null,  null,  null);
+		return getProductTypesClient(dataViewMode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of product types according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient=GetProductTypesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductTypeCollection productTypeCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductTypeCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductTypeCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> getProductTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> getProductTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypesUrl(filter, pageSize, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductTypeCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient = new MozuClient(clz);
@@ -81,7 +82,26 @@ public class ProductTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> getProductTypeClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypeUrl(productTypeId);
+		return getProductTypeClient(dataViewMode,  productTypeId,  null);
+	}
+
+	/**
+	 * Retrieves the details of the product type specified in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=GetProductTypeClient(dataViewMode,  productTypeId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductType productType = client.Result();
+	 * </code></pre></p>
+	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param dataViewMode DataViewMode
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
+	 * @see com.mozu.api.contracts.productadmin.ProductType
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> getProductTypeClient(com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypeUrl(productTypeId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
@@ -108,7 +128,27 @@ public class ProductTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.addProductTypeUrl();
+		return addProductTypeClient(dataViewMode,  productType,  null);
+	}
+
+	/**
+	 * Creates a new product type based on the information supplied in the request.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=AddProductTypeClient(dataViewMode,  productType,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductType productType = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param dataViewMode DataViewMode
+	 * @param productType Properties of the product type to create.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
+	 * @see com.mozu.api.contracts.productadmin.ProductType
+	 * @see com.mozu.api.contracts.productadmin.ProductType
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> addProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.addProductTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
@@ -137,7 +177,28 @@ public class ProductTypeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.updateProductTypeUrl(productTypeId);
+		return updateProductTypeClient(dataViewMode,  productType,  productTypeId,  null);
+	}
+
+	/**
+	 * Updates one or more properties of a product type.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient=UpdateProductTypeClient(dataViewMode,  productType,  productTypeId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductType productType = client.Result();
+	 * </code></pre></p>
+	 * @param productTypeId Identifier of the product type to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param dataViewMode DataViewMode
+	 * @param productType The details of the product type to update.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
+	 * @see com.mozu.api.contracts.productadmin.ProductType
+	 * @see com.mozu.api.contracts.productadmin.ProductType
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.ProductType> updateProductTypeClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductType productType, Integer productTypeId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.updateProductTypeUrl(productTypeId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
 		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);

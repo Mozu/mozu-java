@@ -13,7 +13,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the Cart Messages resource to retrieve messages for live carts that the system logs when a product's price or inventory level changes.
  * </summary>
@@ -33,7 +32,24 @@ public class ChangeMessageClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> getMessagesClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.getMessagesUrl();
+		return getMessagesClient( null);
+	}
+
+	/**
+	 * Retrieves the messages associated with the current shopper's cart.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient=GetMessagesClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> getMessagesClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.carts.ChangeMessageUrl.getMessagesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection> mozuClient = new MozuClient(clz);

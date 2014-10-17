@@ -15,21 +15,25 @@ public class CustomerCheckoutSettingsUrl
 
 	/**
 	 * Get Resource Url for GetCustomerCheckoutSettings
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCustomerCheckoutSettingsUrl()
+	public static MozuUrl getCustomerCheckoutSettingsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/customercheckoutsettings");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/customercheckoutsettings?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for UpdateCustomerCheckoutSettings
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateCustomerCheckoutSettingsUrl()
+	public static MozuUrl updateCustomerCheckoutSettingsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/customercheckoutsettings");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/customercheckoutsettings?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

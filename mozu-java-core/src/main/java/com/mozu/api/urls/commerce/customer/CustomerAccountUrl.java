@@ -17,65 +17,73 @@ public class CustomerAccountUrl
 	 * Get Resource Url for GetAccounts
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param isAnonymous 
+	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
 	 * @param pageSize 
 	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountsUrl(String fields, String filter, Boolean isAnonymous, Integer pageSize, String q, Integer qLimit, String sortBy, Integer startIndex)
+	public static MozuUrl getAccountsUrl(String fields, String filter, Boolean isAnonymous, Integer pageSize, String q, Integer qLimit, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&fields={fields}&q={q}&qLimit={qLimit}&isAnonymous={isAnonymous}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&fields={fields}&q={q}&qLimit={qLimit}&isAnonymous={isAnonymous}&responseFields={responseFields}");
 		formatter.formatUrl("fields", fields);
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("isAnonymous", isAnonymous);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("q", q);
 		formatter.formatUrl("qLimit", qLimit);
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetAccount
-	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * Get Resource Url for GetLoginState
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getAccountUrl(Integer accountId)
+	public static MozuUrl getLoginStateUrl(Integer accountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/loginstate?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for GetLoginState
-	 * @param accountId 
+	 * Get Resource Url for GetAccount
+	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateUrl(Integer accountId)
+	public static MozuUrl getAccountUrl(Integer accountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/loginstate");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddAccount
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountUrl()
+	public static MozuUrl addAccountUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for ChangePassword
-	 * @param accountId 
+	 * @param accountId The customer account information required to change the userpassword.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordUrl(Integer accountId)
@@ -87,19 +95,21 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddLoginToExistingCustomer
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addLoginToExistingCustomerUrl(Integer accountId)
+	public static MozuUrl addLoginToExistingCustomerUrl(Integer accountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Create-Login");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Create-Login?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for RecomputeCustomerLifetimeValue
-	 * @param accountId 
+	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl recomputeCustomerLifetimeValueUrl(Integer accountId)
@@ -111,7 +121,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetLoginLocked
-	 * @param accountId 
+	 * @param accountId The unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setLoginLockedUrl(Integer accountId)
@@ -123,7 +133,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetPasswordChangeRequired
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setPasswordChangeRequiredUrl(Integer accountId)
@@ -135,44 +145,52 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddAccountAndLogin
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountAndLoginUrl()
+	public static MozuUrl addAccountAndLoginUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Add-Account-And-Login");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Add-Account-And-Login?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddAccounts
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addAccountsUrl()
+	public static MozuUrl addAccountsUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Bulk");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Bulk?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetLoginStateByEmailAddress
-	 * @param emailAddress 
+	 * @param emailAddress The email address associated with the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateByEmailAddressUrl(String emailAddress)
+	public static MozuUrl getLoginStateByEmailAddressUrl(String emailAddress, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyemailaddress?emailAddress={emailAddress}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyemailaddress?emailAddress={emailAddress}&responseFields={responseFields}");
 		formatter.formatUrl("emailAddress", emailAddress);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for GetLoginStateByUserName
-	 * @param userName 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userName The user name associated with the customer account.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateByUserNameUrl(String userName)
+	public static MozuUrl getLoginStateByUserNameUrl(String responseFields, String userName)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyusername?userName={userName}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyusername?userName={userName}&responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("userName", userName);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -190,12 +208,14 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for UpdateAccount
 	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateAccountUrl(Integer accountId)
+	public static MozuUrl updateAccountUrl(Integer accountId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

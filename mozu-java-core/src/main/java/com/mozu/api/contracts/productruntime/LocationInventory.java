@@ -32,6 +32,16 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
+	protected String productCode;
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
 	/**
 	 * The current level of active product stock available at the specified location.
 	 */

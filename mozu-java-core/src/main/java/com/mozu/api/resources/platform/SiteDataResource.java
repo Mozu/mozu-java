@@ -14,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
-
 /** <summary>
  * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
  * </summary>
@@ -25,17 +24,18 @@ public class SiteDataResource {
 	///
 	private ApiContext _apiContext;
 
-	
+
 	public SiteDataResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
+
 	
 	/**
 	 * Retrieves the value of a record in the Mozu database.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
-	 *	string string = sitedata.GetDBValue( dbEntryQuery);
+	 *	string string = sitedata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return string
@@ -43,7 +43,23 @@ public class SiteDataResource {
 	 */
 	public String getDBValue(String dbEntryQuery) throws Exception
 	{
-		MozuClient<String> client = com.mozu.api.clients.platform.SiteDataClient.getDBValueClient( dbEntryQuery);
+		return getDBValue( dbEntryQuery,  null);
+	}
+
+	/**
+	 * Retrieves the value of a record in the Mozu database.
+	 * <p><pre><code>
+	 *	SiteData sitedata = new SiteData();
+	 *	string string = sitedata.getDBValue( dbEntryQuery,  responseFields);
+	 * </code></pre></p>
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @return string
+	 * @see string
+	 */
+	public String getDBValue(String dbEntryQuery, String responseFields) throws Exception
+	{
+		MozuClient<String> client = com.mozu.api.clients.platform.SiteDataClient.getDBValueClient( dbEntryQuery,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -54,7 +70,7 @@ public class SiteDataResource {
 	 * Creates a new record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
-	 *	sitedata.CreateDBValue( value,  dbEntryQuery);
+	 *	sitedata.createDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to create.
 	 * @param value The value string to create.
@@ -66,6 +82,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.createDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -73,7 +90,7 @@ public class SiteDataResource {
 	 * Updates a record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
-	 *	sitedata.UpdateDBValue( value,  dbEntryQuery);
+	 *	sitedata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry query string used to update the record information.
 	 * @param value The database value to update.
@@ -85,6 +102,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.updateDBValueClient( value,  dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -92,7 +110,7 @@ public class SiteDataResource {
 	 * Removes a previously defined record in the Mozu database.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
-	 *	sitedata.DeleteDBValue( dbEntryQuery);
+	 *	sitedata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
 	 * @param dbEntryQuery The database entry string to delete.
 	 * @return 
@@ -102,6 +120,7 @@ public class SiteDataResource {
 		MozuClient client = com.mozu.api.clients.platform.SiteDataClient.deleteDBValueClient( dbEntryQuery);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

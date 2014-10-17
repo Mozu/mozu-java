@@ -6,18 +6,36 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 
+/**
+ *	Properties of a component product in a product bundle. A product bundle can represent either a collection of multiple products sold as a single entity, or a collection of the same product sold as a package. For example, a 10-pack of socks.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BundledProduct implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates the fulfillment types that the product supports.
+	 */
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	/**
+	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -28,6 +46,9 @@ public class BundledProduct implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * The read-only name of the component in a bundled product.
+	 */
 	protected String productName;
 
 	public String getProductName() {
@@ -38,6 +59,9 @@ public class BundledProduct implements Serializable
 		this.productName = productName;
 	}
 
+	/**
+	 * The quantity of an individual component product in a bundle. For example, if a product bundle represents a 10-pack of socks, the quantity value for the bundled product would be 10.
+	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -48,6 +72,9 @@ public class BundledProduct implements Serializable
 		this.quantity = quantity;
 	}
 
+	/**
+	 * Height of the bundle package in imperial units of feet and inches.
+	 */
 	protected Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
@@ -58,6 +85,9 @@ public class BundledProduct implements Serializable
 		this.packageHeight = packageHeight;
 	}
 
+	/**
+	 * Length of the bundle package in imperial units of feet and inches.
+	 */
 	protected Measurement packageLength;
 
 	public Measurement getPackageLength() {
@@ -68,6 +98,9 @@ public class BundledProduct implements Serializable
 		this.packageLength = packageLength;
 	}
 
+	/**
+	 * Weight of the bundle package in imperial units of pounds and ounces.
+	 */
 	protected Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
@@ -78,6 +111,9 @@ public class BundledProduct implements Serializable
 		this.packageWeight = packageWeight;
 	}
 
+	/**
+	 * Width of the bundle package in imperial units of feet and inches.
+	 */
 	protected Measurement packageWidth;
 
 	public Measurement getPackageWidth() {
@@ -88,6 +124,9 @@ public class BundledProduct implements Serializable
 		this.packageWidth = packageWidth;
 	}
 
+	/**
+	 * The price of the bundled product set for the tenant.
+	 */
 	protected ProductPrice price;
 
 	public ProductPrice getPrice() {

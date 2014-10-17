@@ -29,25 +29,29 @@ public class ProductTypeOptionUrl
 	 * Get Resource Url for GetOption
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId The identifier of the product type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getOptionUrl(String attributeFQN, Integer productTypeId)
+	public static MozuUrl getOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddOption
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addOptionUrl(Integer productTypeId)
+	public static MozuUrl addOptionUrl(Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options?responseFields={responseFields}");
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -55,13 +59,15 @@ public class ProductTypeOptionUrl
 	 * Get Resource Url for UpdateOption
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateOptionUrl(String attributeFQN, Integer productTypeId)
+	public static MozuUrl updateOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options/{attributeFQN}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/attributedefinition/producttypes/{productTypeId}/Options/{attributeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("attributeFQN", attributeFQN);
 		formatter.formatUrl("productTypeId", productTypeId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

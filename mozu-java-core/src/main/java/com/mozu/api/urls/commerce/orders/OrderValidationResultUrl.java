@@ -15,7 +15,7 @@ public class OrderValidationResultUrl
 
 	/**
 	 * Get Resource Url for GetValidationResults
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getValidationResultsUrl(String orderId)
@@ -27,13 +27,15 @@ public class OrderValidationResultUrl
 
 	/**
 	 * Get Resource Url for AddValidationResult
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addValidationResultUrl(String orderId)
+	public static MozuUrl addValidationResultUrl(String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/validationresults");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/validationresults?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

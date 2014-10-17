@@ -13,9 +13,10 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.TargetedCategory;
 import com.mozu.api.contracts.productadmin.TargetedProduct;
 import com.mozu.api.contracts.productadmin.TargetedShippingMethod;
+import com.mozu.api.contracts.productadmin.TargetedShippingZone;
 
 /**
- *	Specifies what to discount such as the type of discount and which products, categories, or shipping methods are eligible for the discount. Discount types can include the percentage off, specific monetary amount, or free shipping. This parameter also specifies the minimum monetary amount that the order must meet for the discount to apply.
+ *	Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscountTarget implements Serializable
@@ -24,7 +25,7 @@ public class DiscountTarget implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the target discount applies to all products sold on the storefront.
+	 * If true, the target discount applies to all products sold on the site, regardless of product category.
 	 */
 	protected Boolean includeAllProducts;
 
@@ -37,7 +38,20 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The type of target to which the discount applies, such as a product or shipping.
+	 * When a condition is specified, this property limits the number of items that are targeted for each discount redemption with an order. If multiple redemptions are allowed for each order then multiples of this value are allowed in multiples of the associated condition. If no condition is specified, then this value is not used. If null and condition exists, then defaults to 1.
+	 */
+	protected Integer maximumQuantityPerRedemption;
+
+	public Integer getMaximumQuantityPerRedemption() {
+		return this.maximumQuantityPerRedemption;
+	}
+
+	public void setMaximumQuantityPerRedemption(Integer maximumQuantityPerRedemption) {
+		this.maximumQuantityPerRedemption = maximumQuantityPerRedemption;
+	}
+
+	/**
+	 * Properties of the object to which this discount is targeted, which can be Product or Shipping. If the discount type is Product, the target properties describe the product or product categories to which the discount applies. If the discount type is Shipping, the target properties describe the shipping methods eligible for the discount.
 	 */
 	protected String type;
 
@@ -50,7 +64,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The product categories to which the discount can apply.
+	 * The product categories to which the discount can apply. When a discount applies to a category, all products in the category are eligible for the discount.
 	 */
 	protected List<TargetedCategory> categories;
 	public List<TargetedCategory> getCategories() {
@@ -83,7 +97,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The products to which the discount can apply.
+	 * List of  product codes that represent the products to which the discount can apply.
 	 */
 	protected List<TargetedProduct> products;
 	public List<TargetedProduct> getProducts() {
@@ -94,7 +108,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The list of shipping method parameters that describe a method including the code, localized content, and audit information.
+	 * The list of shipping method codes that represents the shipping service types to which the discount can apply.
 	 */
 	protected List<TargetedShippingMethod> shippingMethods;
 	public List<TargetedShippingMethod> getShippingMethods() {
@@ -102,6 +116,14 @@ public class DiscountTarget implements Serializable
 	}
 	public void setShippingMethods(List<TargetedShippingMethod> shippingMethods) {
 		this.shippingMethods = shippingMethods;
+	}
+
+	protected List<TargetedShippingZone> shippingZones;
+	public List<TargetedShippingZone> getShippingZones() {
+		return this.shippingZones;
+	}
+	public void setShippingZones(List<TargetedShippingZone> shippingZones) {
+		this.shippingZones = shippingZones;
 	}
 
 }

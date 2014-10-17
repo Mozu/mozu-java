@@ -10,10 +10,9 @@ archivesBaseName='mozu-api-core'
 if (hasProperty("teamcity")) {
     version = teamcity["build.number"]
         println "TeamCity build number passed into gradle is " + version
-   }
-   else {
-// Manually insert the version numbers here when building outside of TeamCity
-    version = '1.7.19'
+} else {
+    // Manually insert the version numbers here when building outside of TeamCity
+    version = '1.11.4'
 }
 
 group='com.mozu'
@@ -38,8 +37,8 @@ dependencies {
 	ext {
 		jacksonVersion='2.2.3'
 	}
-    compile "org.apache.httpcomponents:httpcore:4.2.5"
-    compile "org.apache.httpcomponents:httpclient:4.2.6"
+    compile "org.apache.httpcomponents:httpcore:4.3.2"
+    compile "org.apache.httpcomponents:httpclient:4.3.5"
 	compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion" 
     compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
     compile "commons-configuration:commons-configuration:1.10"
