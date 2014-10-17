@@ -16,6 +16,16 @@ public class LoginState implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected DateTime updatedOn;
+
+	public DateTime getUpdatedOn() {
+		return this.updatedOn;
+	}
+
+	public void setUpdatedOn(DateTime updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
 	protected DateTime createdOn;
 
 	public DateTime getCreatedOn() {
@@ -104,16 +114,6 @@ public class LoginState implements Serializable
 
 	public void setRemainingLoginAttempts(Integer remainingLoginAttempts) {
 		this.remainingLoginAttempts = remainingLoginAttempts;
-	}
-
-	protected DateTime updatedOn;
-
-	public DateTime getUpdatedOn() {
-		return this.updatedOn;
-	}
-
-	public void setUpdatedOn(DateTime updatedOn) {
-		this.updatedOn = updatedOn;
 	}
 
 }

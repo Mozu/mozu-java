@@ -66,14 +66,6 @@ public class View implements Serializable
 		this.usages = usages;
 	}
 
-	protected List<ViewFields> fields;
-	public List<ViewFields> getFields() {
-		return this.fields;
-	}
-	public void setFields(List<ViewFields> fields) {
-		this.fields = fields;
-	}
-
 	protected com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
@@ -82,6 +74,14 @@ public class View implements Serializable
 
 	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
 		this.metadata = metadata;
+	}
+
+	protected List<ViewFields> fields;
+	public List<ViewFields> getFields() {
+		return this.fields;
+	}
+	public void setFields(List<ViewFields> fields) {
+		this.fields = fields;
 	}
 
 }
