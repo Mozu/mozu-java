@@ -8,7 +8,7 @@ sourceCompatibility = 1.6
 
 archivesBaseName='MozuSDK'
 // Manually insert the version numbers here when building outside of TeamCity
-version = '1.7.19'
+version = '1.11.1'
 group='wars'
 httpPort = 8001 
 
@@ -24,9 +24,12 @@ task wrapper(type: Wrapper) {
 
 repositories {
     mavenCentral()
-    maven {        
-          url "https://oss.sonatype.org/content/repositories/snapshots"
+    maven {
+        url "https://oss.sonatype.org/content/groups/staging/"
     }
+    maven {
+          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
+    }  
 }
 
 configurations.all {

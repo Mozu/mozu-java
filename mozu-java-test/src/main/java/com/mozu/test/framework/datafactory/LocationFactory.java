@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.admin.LocationResource;
 
 /** <summary>
- * 
+ * Use the Locations resource to manage each physical location associated with a tenant. Locations enable tenants to associate a physical address with product inventory, provide a store finder for in-store pickup, or both. Locations that support inventory can use both direct ship and in-store pickup fulfillment types.
  * </summary>
  */
 public class LocationFactory
@@ -22,16 +22,16 @@ public class LocationFactory
 
 	public static com.mozu.api.contracts.location.LocationCollection getLocations(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getLocations(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getLocations(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.location.LocationCollection getLocations(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationCollection getLocations(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationCollection returnObj = new com.mozu.api.contracts.location.LocationCollection();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocations( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getLocations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,18 +41,22 @@ public class LocationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location getLocation(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
 	{
+		return getLocation(apiContext,  locationCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location getLocation(ApiContext apiContext, String locationCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocation( locationCode);
+			returnObj = resource.getLocation( locationCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class LocationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location addLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, int expectedCode, int successCode) throws Exception
 	{
+		return addLocation(apiContext,  location,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location addLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.addLocation( location);
+			returnObj = resource.addLocation( location,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class LocationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.Location updateLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, String locationCode, int expectedCode, int successCode) throws Exception
 	{
+		return updateLocation(apiContext,  location,  locationCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.Location updateLocation(ApiContext apiContext, com.mozu.api.contracts.location.Location location, String locationCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
 		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
-			returnObj = resource.updateLocation( location,  locationCode);
+			returnObj = resource.updateLocation( location,  locationCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class LocationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteLocation(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
 	{
-				LocationResource resource = new LocationResource(apiContext);
+		LocationResource resource = new LocationResource(apiContext);
 		try
 		{
 			resource.deleteLocation( locationCode);
@@ -120,10 +131,11 @@ public class LocationFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

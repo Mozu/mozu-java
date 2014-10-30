@@ -125,13 +125,13 @@ public class PopulateCAAttributes extends MozuApiTestBase {
 	    {
 			createdAttr = AttributeFactory.getAttribute(apiContext, name.replaceAll("\\s+",""), HttpStatus.SC_OK, HttpStatus.SC_OK);
 			attr.setAttributeFQN(createdAttr.getAttributeFQN());
-			updatedAttr = AttributedefinitionAttributeFactory.updateAttribute(apiContext, DataViewMode.Live, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+			updatedAttr = AttributedefinitionAttributeFactory.updateAttribute(apiContext, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {
 	    	if (te.actualReturnCode == HttpStatus.SC_NOT_FOUND)
 	    	{
-	    		updatedAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, DataViewMode.Live, attr, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+	    		updatedAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
 	    	}
 	    }
 		

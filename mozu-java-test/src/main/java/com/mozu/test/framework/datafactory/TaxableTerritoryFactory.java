@@ -36,18 +36,22 @@ public class TaxableTerritoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, int expectedCode, int successCode) throws Exception
+	{
+		return addTaxableTerritory(apiContext,  taxableTerritory,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.general.TaxableTerritory addTaxableTerritory(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.TaxableTerritory taxableTerritory, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.sitesettings.general.TaxableTerritory returnObj = new com.mozu.api.contracts.sitesettings.general.TaxableTerritory();
 		TaxableTerritoryResource resource = new TaxableTerritoryResource(apiContext);
 		try
 		{
-			returnObj = resource.addTaxableTerritory( taxableTerritory);
+			returnObj = resource.addTaxableTerritory( taxableTerritory,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,9 +61,8 @@ public class TaxableTerritoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> updateTaxableTerritories(ApiContext apiContext, List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> taxableterritories, int expectedCode, int successCode) throws Exception
@@ -78,9 +81,8 @@ public class TaxableTerritoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

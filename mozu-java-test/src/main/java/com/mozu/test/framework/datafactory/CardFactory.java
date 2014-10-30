@@ -20,13 +20,43 @@ import com.mozu.api.resources.commerce.customer.accounts.CardResource;
 public class CardFactory
 {
 
+	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
+	{
+		return getAccountCard(apiContext,  accountId,  cardId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
+		CardResource resource = new CardResource(apiContext);
+		try
+		{
+			returnObj = resource.getAccountCard( accountId,  cardId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
+	{
+		return getAccountCards(apiContext,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CardCollection getAccountCards(ApiContext apiContext, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CardCollection returnObj = new com.mozu.api.contracts.customer.CardCollection();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountCards( accountId);
+			returnObj = resource.getAccountCards( accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,39 +66,22 @@ public class CardFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.customer.Card getAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
-		CardResource resource = new CardResource(apiContext);
-		try
-		{
-			returnObj = resource.getAccountCard( accountId,  cardId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Card addAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountCard(apiContext,  card,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card addAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountCard( card,  accountId);
+			returnObj = resource.addAccountCard( card,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +91,22 @@ public class CardFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Card updateAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountCard(apiContext,  card,  accountId,  cardId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Card updateAccountCard(ApiContext apiContext, com.mozu.api.contracts.customer.Card card, Integer accountId, String cardId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.Card returnObj = new com.mozu.api.contracts.customer.Card();
 		CardResource resource = new CardResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountCard( card,  accountId,  cardId);
+			returnObj = resource.updateAccountCard( card,  accountId,  cardId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,14 +116,13 @@ public class CardFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountCard(ApiContext apiContext, Integer accountId, String cardId, int expectedCode, int successCode) throws Exception
 	{
-				CardResource resource = new CardResource(apiContext);
+		CardResource resource = new CardResource(apiContext);
 		try
 		{
 			resource.deleteAccountCard( accountId,  cardId);
@@ -115,10 +131,11 @@ public class CardFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

@@ -20,18 +20,18 @@ import com.mozu.api.resources.commerce.catalog.admin.CategoryResource;
 public class CategoryFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getCategories(apiContext, dataViewMode,  null,  null,  null,  null, expectedCode, successCode );
+		return getCategories(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CategoryPagedCollection returnObj = new com.mozu.api.contracts.productadmin.CategoryPagedCollection();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.getCategories(dataViewMode,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,39 +41,22 @@ public class CategoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
-		CategoryResource resource = new CategoryResource(apiContext);
-		try
-		{
-			returnObj = resource.getCategory(dataViewMode,  categoryId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return getChildCategories(apiContext,  categoryId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryCollection getChildCategories(ApiContext apiContext, Integer categoryId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CategoryCollection returnObj = new com.mozu.api.contracts.productadmin.CategoryCollection();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.getChildCategories(dataViewMode,  categoryId);
+			returnObj = resource.getChildCategories( categoryId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,23 +66,22 @@ public class CategoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		return addCategory(apiContext, dataViewMode,  category,  null, expectedCode, successCode );
+		return getCategory(apiContext,  categoryId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, Integer categoryId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.addCategory(dataViewMode,  category,  incrementSequence);
+			returnObj = resource.getCategory( categoryId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -109,23 +91,22 @@ public class CategoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, int expectedCode, int successCode) throws Exception
 	{
-		return updateCategory(apiContext, dataViewMode,  category,  categoryId,  null, expectedCode, successCode );
+		return addCategory(apiContext,  category,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, Boolean cascadeVisibility, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.updateCategory(dataViewMode,  category,  categoryId,  cascadeVisibility);
+			returnObj = resource.addCategory( category,  incrementSequence,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -135,31 +116,56 @@ public class CategoryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static void deleteCategoryById(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		deleteCategoryById(apiContext, dataViewMode,  categoryId,  null, expectedCode, successCode );
+		return updateCategory(apiContext,  category,  categoryId,  null,  null, expectedCode, successCode );
 	}
 
-	public static void deleteCategoryById(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean cascadeDelete, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, Boolean cascadeVisibility, String responseFields, int expectedCode, int successCode) throws Exception
 	{
-				CategoryResource resource = new CategoryResource(apiContext);
+		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
+		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			resource.deleteCategoryById(dataViewMode,  categoryId,  cascadeDelete);
+			returnObj = resource.updateCategory( category,  categoryId,  cascadeVisibility,  responseFields);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
 
+	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
+	{
+		deleteCategoryById(apiContext,  categoryId,  null, expectedCode, successCode );
+	}
+
+	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, int expectedCode, int successCode) throws Exception
+	{
+		CategoryResource resource = new CategoryResource(apiContext);
+		try
+		{
+			resource.deleteCategoryById( categoryId,  cascadeDelete);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

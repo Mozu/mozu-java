@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerNoteResource;
 
 /** <summary>
- * Merchants can add and view internal notes for a customer account. For example, a merchant can track a customer's interests or complaints. Only merchants can add and view notes. Customers cannot see these notes from their My Account page.
+ * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
  */
 public class CustomerNoteFactory
@@ -22,11 +22,16 @@ public class CustomerNoteFactory
 
 	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
+		return getAccountNote(apiContext,  accountId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountNote( accountId,  noteId);
+			returnObj = resource.getAccountNote( accountId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,23 +41,22 @@ public class CustomerNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNoteCollection returnObj = new com.mozu.api.contracts.customer.CustomerNoteCollection();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAccountNotes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class CustomerNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountNote(apiContext,  note,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountNote( note,  accountId);
+			returnObj = resource.addAccountNote( note,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class CustomerNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountNote(apiContext,  note,  accountId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountNote( note,  accountId,  noteId);
+			returnObj = resource.updateAccountNote( note,  accountId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class CustomerNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerNoteResource resource = new CustomerNoteResource(apiContext);
+		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
 		{
 			resource.deleteAccountNote( accountId,  noteId);
@@ -120,10 +131,11 @@ public class CustomerNoteFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }
