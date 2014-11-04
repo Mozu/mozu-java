@@ -35,7 +35,7 @@ public class OrderNoteResource {
 	 * Retrieves a list of all notes for an order.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.GetOrderNotes( orderId);
+	 *	OrderNote orderNote = ordernote.getOrderNotes( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>
@@ -54,7 +54,7 @@ public class OrderNoteResource {
 	 * Retrieves the details of a specific order note.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.GetOrderNote( orderId,  noteId);
+	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note to retrieve.
 	 * @param orderId Unique identifier of the order associated with the note.
@@ -70,11 +70,11 @@ public class OrderNoteResource {
 	 * Retrieves the details of a specific order note.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.GetOrderNote( orderId,  noteId,  responseFields);
+	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note to retrieve.
 	 * @param orderId Unique identifier of the order associated with the note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -91,7 +91,7 @@ public class OrderNoteResource {
 	 * Creates a new merchant note for the specified order.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.CreateOrderNote( orderNote,  orderId);
+	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add a note.
 	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
@@ -108,10 +108,10 @@ public class OrderNoteResource {
 	 * Creates a new merchant note for the specified order.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.CreateOrderNote( orderNote,  orderId,  responseFields);
+	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to add a note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -130,7 +130,7 @@ public class OrderNoteResource {
 	 * Updates a specific note for an order.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.UpdateOrderNote( orderNote,  orderId,  noteId);
+	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
@@ -148,11 +148,11 @@ public class OrderNoteResource {
 	 * Updates a specific note for an order.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	OrderNote orderNote = ordernote.UpdateOrderNote( orderNote,  orderId,  noteId,  responseFields);
+	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId,  responseFields);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -171,7 +171,7 @@ public class OrderNoteResource {
 	 * Deletes the specified order note.
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
-	 *	ordernote.DeleteOrderNote( orderId,  noteId);
+	 *	ordernote.deleteOrderNote( orderId,  noteId);
 	 * </code></pre></p>
 	 * @param noteId Unique identifier of the order note to delete.
 	 * @param orderId Unique identifier of the order associated with the note.
@@ -182,6 +182,7 @@ public class OrderNoteResource {
 		MozuClient client = com.mozu.api.clients.commerce.orders.OrderNoteClient.deleteOrderNoteClient( orderId,  noteId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

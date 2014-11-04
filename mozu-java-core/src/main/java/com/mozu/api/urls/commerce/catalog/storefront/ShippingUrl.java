@@ -15,7 +15,7 @@ public class ShippingUrl
 
 	/**
 	 * Get Resource Url for GetRates
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getRatesUrl(String responseFields)

@@ -45,7 +45,7 @@ public class DocumentDraftSummaryClient {
 	 * </code></pre></p>
 	 * @param documentLists Lists that contain the document drafts.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection

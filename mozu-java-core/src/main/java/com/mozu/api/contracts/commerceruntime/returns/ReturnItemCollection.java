@@ -12,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
 
+/**
+ *	Collection of all return items that appear on the order.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReturnItemCollection implements Serializable
 {
@@ -28,6 +31,9 @@ public class ReturnItemCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
+	/**
+	 * Retrieves the details of all return items in an order.
+	 */
 	protected List<ReturnItem> items;
 	public List<ReturnItem> getItems() {
 		return this.items;

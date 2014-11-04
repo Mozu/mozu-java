@@ -43,7 +43,7 @@ public class ProductTypeResource {
 	 * Retrieves a list of product types according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductTypeCollection productTypeCollection = producttype.GetProductTypes(_dataViewMode);
+	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductTypeCollection
@@ -58,11 +58,11 @@ public class ProductTypeResource {
 	 * Retrieves a list of product types according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductTypeCollection productTypeCollection = producttype.GetProductTypes(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode
@@ -82,7 +82,7 @@ public class ProductTypeResource {
 	 * Retrieves the details of the product type specified in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.GetProductType(_dataViewMode,  productTypeId);
+	 *	ProductType productType = producttype.getProductType( productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param dataViewMode DataViewMode
@@ -98,10 +98,10 @@ public class ProductTypeResource {
 	 * Retrieves the details of the product type specified in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.GetProductType(_dataViewMode,  productTypeId,  responseFields);
+	 *	ProductType productType = producttype.getProductType( productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -119,7 +119,7 @@ public class ProductTypeResource {
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.AddProductType(_dataViewMode,  productType);
+	 *	ProductType productType = producttype.addProductType( productType);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param productType Properties of the product type to create.
@@ -136,9 +136,9 @@ public class ProductTypeResource {
 	 * Creates a new product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.AddProductType(_dataViewMode,  productType,  responseFields);
+	 *	ProductType productType = producttype.addProductType( productType,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param productType Properties of the product type to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -158,7 +158,7 @@ public class ProductTypeResource {
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.UpdateProductType(_dataViewMode,  productType,  productTypeId);
+	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to update.
 	 * @param dataViewMode DataViewMode
@@ -176,10 +176,10 @@ public class ProductTypeResource {
 	 * Updates one or more properties of a product type.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	ProductType productType = producttype.UpdateProductType(_dataViewMode,  productType,  productTypeId,  responseFields);
+	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param productType The details of the product type to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -199,7 +199,7 @@ public class ProductTypeResource {
 	 * Deletes the product type by providing the product type ID.
 	 * <p><pre><code>
 	 *	ProductType producttype = new ProductType();
-	 *	producttype.DeleteProductType(_dataViewMode,  productTypeId);
+	 *	producttype.deleteProductType( productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type to delete.
 	 * @param dataViewMode DataViewMode
@@ -210,6 +210,7 @@ public class ProductTypeResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.ProductTypeClient.deleteProductTypeClient(_dataViewMode,  productTypeId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

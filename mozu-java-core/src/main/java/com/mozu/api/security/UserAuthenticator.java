@@ -6,15 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -32,11 +29,10 @@ import com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl;
 import com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class UserAuthenticator {
     private static ObjectMapper mapper = JsonUtils.initObjectMapper();
-
-    private static HttpHost proxyHttpHost = HttpHelper.getProxyHost();
 
     public static AuthenticationProfile setActiveScope(AuthTicket authTicket, Scope scope) {
         return refreshUserAuthTicket(authTicket, scope.getId());
@@ -60,7 +56,7 @@ public class UserAuthenticator {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getResourceRefreshUrl(authTicket, id); // AuthTicketUrl.AuthenticateAppUrl();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         HttpPut put = new HttpPut(resourceUrl);
         
         try {
@@ -74,10 +70,6 @@ public class UserAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
         } catch (UnsupportedEncodingException uee) {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
-        }
-
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
         }
 
         AppAuthenticator.addAuthHeader(put);
@@ -107,7 +99,7 @@ public class UserAuthenticator {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getResourceUrl(scope, id); // AuthTicketUrl.AuthenticateAppUrl();
 
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         HttpPost post = new HttpPost(resourceUrl);
         try {
             String body = mapper.writeValueAsString(userAuthInfo);
@@ -125,10 +117,6 @@ public class UserAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
         }
 
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
-        
         AppAuthenticator.addAuthHeader(post);
 
         HttpResponse response = null;
@@ -148,14 +136,10 @@ public class UserAuthenticator {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getLogoutUrl(authTicket);
         
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         HttpDelete delete = new HttpDelete(resourceUrl);
         delete.setHeader("Accept", "application/json");
         delete.setHeader("Content-type", "application/json");
-
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
 
         AppAuthenticator.addAuthHeader(delete);
 

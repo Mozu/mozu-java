@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
+/**
+ *	Properties of an authentication ticket generated for a customer account.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAuthTicket implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Access token string that enables authentication for the customer account.
+	 */
 	protected String accessToken;
 
 	public String getAccessToken() {
@@ -27,6 +33,9 @@ public class CustomerAuthTicket implements Serializable
 		this.accessToken = accessToken;
 	}
 
+	/**
+	 * The date and time the access token expires.
+	 */
 	protected DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
@@ -37,6 +46,9 @@ public class CustomerAuthTicket implements Serializable
 		this.accessTokenExpiration = accessTokenExpiration;
 	}
 
+	/**
+	 * Refresh token string used to generate a new access token after expiration for a customer account authentication ticket.
+	 */
 	protected String refreshToken;
 
 	public String getRefreshToken() {
@@ -47,6 +59,9 @@ public class CustomerAuthTicket implements Serializable
 		this.refreshToken = refreshToken;
 	}
 
+	/**
+	 * The date and time the refresh token expires.
+	 */
 	protected DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
@@ -57,6 +72,9 @@ public class CustomerAuthTicket implements Serializable
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
 
+	/**
+	 * User ID associated with the customer account authentication ticket.
+	 */
 	protected String userId;
 
 	public String getUserId() {
@@ -67,6 +85,9 @@ public class CustomerAuthTicket implements Serializable
 		this.userId = userId;
 	}
 
+	/**
+	 * Properties of the customer account associated with the authentication ticket.
+	 */
 	protected CustomerAccount customerAccount;
 
 	public CustomerAccount getCustomerAccount() {

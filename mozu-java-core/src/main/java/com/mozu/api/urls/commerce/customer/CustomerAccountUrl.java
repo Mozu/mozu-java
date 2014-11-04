@@ -17,11 +17,11 @@ public class CustomerAccountUrl
 	 * Get Resource Url for GetAccounts
 	 * @param fields The fields to include in the response.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param isAnonymous 
+	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
 	 * @param pageSize 
 	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -43,8 +43,8 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginState
-	 * @param accountId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLoginStateUrl(Integer accountId, String responseFields)
@@ -58,7 +58,7 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for GetAccount
 	 * @param accountId Unique identifier of the customer account to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountUrl(Integer accountId, String responseFields)
@@ -71,7 +71,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddAccount
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountUrl(String responseFields)
@@ -83,7 +83,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePassword
-	 * @param accountId 
+	 * @param accountId The customer account information required to change the userpassword.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordUrl(Integer accountId)
@@ -95,8 +95,8 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddLoginToExistingCustomer
-	 * @param accountId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLoginToExistingCustomerUrl(Integer accountId, String responseFields)
@@ -109,7 +109,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for RecomputeCustomerLifetimeValue
-	 * @param accountId 
+	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl recomputeCustomerLifetimeValueUrl(Integer accountId)
@@ -121,7 +121,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetLoginLocked
-	 * @param accountId 
+	 * @param accountId The unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setLoginLockedUrl(Integer accountId)
@@ -133,7 +133,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetPasswordChangeRequired
-	 * @param accountId 
+	 * @param accountId Unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setPasswordChangeRequiredUrl(Integer accountId)
@@ -145,7 +145,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddAccountAndLogin
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountAndLoginUrl(String responseFields)
@@ -157,7 +157,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for AddAccounts
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountsUrl(String responseFields)
@@ -169,8 +169,8 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByEmailAddress
-	 * @param emailAddress 
-	 * @param responseFields 
+	 * @param emailAddress The email address associated with the customer account.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLoginStateByEmailAddressUrl(String emailAddress, String responseFields)
@@ -183,8 +183,8 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByUserName
-	 * @param responseFields 
-	 * @param userName 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userName The user name associated with the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLoginStateByUserNameUrl(String responseFields, String userName)
@@ -208,7 +208,7 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for UpdateAccount
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountUrl(Integer accountId, String responseFields)

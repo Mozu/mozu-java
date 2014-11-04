@@ -6,9 +6,11 @@
  */
 package com.mozu.api.contracts.event;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.event.EventExtendedProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventSummary implements Serializable
@@ -86,6 +88,9 @@ public class EventSummary implements Serializable
 		this.siteId = siteId;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {
@@ -104,6 +109,14 @@ public class EventSummary implements Serializable
 
 	public void setTopic(String topic) {
 		this.topic = topic;
+	}
+
+	protected List<EventExtendedProperty> extendedProperties;
+	public List<EventExtendedProperty> getExtendedProperties() {
+		return this.extendedProperties;
+	}
+	public void setExtendedProperties(List<EventExtendedProperty> extendedProperties) {
+		this.extendedProperties = extendedProperties;
 	}
 
 }

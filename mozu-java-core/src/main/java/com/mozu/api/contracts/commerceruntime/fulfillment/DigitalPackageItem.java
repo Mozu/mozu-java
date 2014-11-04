@@ -16,6 +16,9 @@ public class DigitalPackageItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This specifies the fulfillment type of digital package item.
+	 */
 	protected String fulfillmentItemType;
 
 	public String getFulfillmentItemType() {
@@ -26,6 +29,9 @@ public class DigitalPackageItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
+	/**
+	 * Specifies the gift card code for the digital package item.
+	 */
 	protected String giftCardCode;
 
 	public String getGiftCardCode() {
@@ -36,6 +42,9 @@ public class DigitalPackageItem implements Serializable
 		this.giftCardCode = giftCardCode;
 	}
 
+	/**
+	 * The product code is the code of the digital product to be fulfilled.
+	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -46,6 +55,9 @@ public class DigitalPackageItem implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * This specifies the quantity of the digital order item.
+	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {

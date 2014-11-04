@@ -4,37 +4,28 @@
  *     Changes to this file may cause incorrect behavior and will be lost if
  *     the code is regenerated.
  */
-package com.mozu.api.contracts.content;
+package com.mozu.api.contracts.event;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	The actual value for the content property.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PropertyValue implements Serializable
+public class EventExtendedProperty implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * A type of content property value.
-	 */
-	protected String propertyType;
+	protected String key;
 
-	public String getPropertyType() {
-		return this.propertyType;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setPropertyType(String propertyType) {
-		this.propertyType = propertyType;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
-	/**
-	 * The actual value for the content property.
-	 */
 	protected Object value;
 
 	public Object getValue() {

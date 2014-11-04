@@ -16,7 +16,7 @@ public class ReferenceDataUrl
 	/**
 	 * Get Resource Url for GetAddressSchema
 	 * @param countryCode The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAddressSchemaUrl(String countryCode, String responseFields)
@@ -29,7 +29,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetAddressSchemas
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAddressSchemasUrl(String responseFields)
@@ -41,8 +41,8 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehavior
-	 * @param behaviorId ***Always private and should not be published.***
-	 * @param responseFields 
+	 * @param behaviorId Unique identifier of the behavior.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorUrl(Integer behaviorId, String responseFields)
@@ -55,8 +55,8 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategory
-	 * @param categoryId ***Always private and should not be published.***
-	 * @param responseFields 
+	 * @param categoryId Unique identifier of the behavior category.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorCategoryUrl(Integer categoryId, String responseFields)
@@ -69,7 +69,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategories
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorCategoriesUrl(String responseFields)
@@ -81,8 +81,8 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviors
-	 * @param responseFields 
-	 * @param userType 
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param userType The user type associated with the behaviors to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getBehaviorsUrl(String responseFields, String userType)
@@ -95,7 +95,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetContentLocales
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getContentLocalesUrl(String responseFields)
@@ -107,7 +107,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetCountries
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCountriesUrl(String responseFields)
@@ -119,7 +119,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetCurrencies
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCurrenciesUrl(String responseFields)
@@ -131,7 +131,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetTimeZones
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTimeZonesUrl(String responseFields)
@@ -143,7 +143,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetTopLevelDomains
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTopLevelDomainsUrl(String responseFields)
@@ -156,7 +156,7 @@ public class ReferenceDataUrl
 	/**
 	 * Get Resource Url for GetUnitsOfMeasure
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUnitsOfMeasureUrl(String filter, String responseFields)

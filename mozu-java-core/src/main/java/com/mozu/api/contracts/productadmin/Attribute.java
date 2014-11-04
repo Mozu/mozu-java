@@ -156,6 +156,9 @@ public class Attribute implements Serializable
 		this.isProperty = isProperty;
 	}
 
+	/**
+	 * The unique identifier of the master catalog associated with the entity.
+	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -237,6 +240,9 @@ public class Attribute implements Serializable
 		this.localizedContent = localizedContent;
 	}
 
+	/**
+	 * This API type provides the search and indexing settings for the attribute.
+	 */
 	protected AttributeSearchSettings searchSettings;
 
 	public AttributeSearchSettings getSearchSettings() {

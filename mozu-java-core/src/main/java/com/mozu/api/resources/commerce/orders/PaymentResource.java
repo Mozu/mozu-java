@@ -35,7 +35,7 @@ public class PaymentResource {
 	 * Retrieves information about all payment transactions submitted for the specified order.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	PaymentCollection paymentCollection = payment.GetPayments( orderId);
+	 *	PaymentCollection paymentCollection = payment.getPayments( orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
@@ -50,10 +50,10 @@ public class PaymentResource {
 	 * Retrieves information about all payment transactions submitted for the specified order.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	PaymentCollection paymentCollection = payment.GetPayments( orderId,  responseFields);
+	 *	PaymentCollection paymentCollection = payment.getPayments( orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -70,7 +70,7 @@ public class PaymentResource {
 	 * Retrieves the list of all available payment actions dependent on the order payment status by specifying the order ID.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	string string = payment.GetAvailablePaymentActions( orderId,  paymentId);
+	 *	string string = payment.getAvailablePaymentActions( orderId,  paymentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment.
 	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
@@ -90,7 +90,7 @@ public class PaymentResource {
 	 * Retrieves information about a specific payment transaction submitted for the specified order.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Payment payment = payment.GetPayment( orderId,  paymentId);
+	 *	Payment payment = payment.getPayment( orderId,  paymentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment transaction.
 	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
@@ -106,11 +106,11 @@ public class PaymentResource {
 	 * Retrieves information about a specific payment transaction submitted for the specified order.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Payment payment = payment.GetPayment( orderId,  paymentId,  responseFields);
+	 *	Payment payment = payment.getPayment( orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment transaction.
 	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -127,7 +127,7 @@ public class PaymentResource {
 	 * Performs the specified action for an individual order payment transaction.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Order order = payment.PerformPaymentAction( action,  orderId,  paymentId);
+	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment.
 	 * @param paymentId Unique identifer of the payment for which to perform the action.
@@ -145,11 +145,11 @@ public class PaymentResource {
 	 * Performs the specified action for an individual order payment transaction.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Order order = payment.PerformPaymentAction( action,  orderId,  paymentId,  responseFields);
+	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the payment.
 	 * @param paymentId Unique identifer of the payment for which to perform the action.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -168,7 +168,7 @@ public class PaymentResource {
 	 * Creates a new payment transaction for the specified order and performs the specified action.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Order order = payment.CreatePaymentAction( action,  orderId);
+	 *	Order order = payment.createPaymentAction( action,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the payment.
 	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
@@ -185,10 +185,10 @@ public class PaymentResource {
 	 * Creates a new payment transaction for the specified order and performs the specified action.
 	 * <p><pre><code>
 	 *	Payment payment = new Payment();
-	 *	Order order = payment.CreatePaymentAction( action,  orderId,  responseFields);
+	 *	Order order = payment.createPaymentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order for which to apply the payment.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

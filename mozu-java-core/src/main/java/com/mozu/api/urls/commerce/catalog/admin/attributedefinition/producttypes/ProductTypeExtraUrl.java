@@ -29,7 +29,7 @@ public class ProductTypeExtraUrl
 	 * Get Resource Url for GetExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypeExtraUrl
 	/**
 	 * Get Resource Url for AddExtra
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraUrl(Integer productTypeId, String responseFields)
@@ -59,7 +59,7 @@ public class ProductTypeExtraUrl
 	 * Get Resource Url for UpdateExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraUrl(String attributeFQN, Integer productTypeId, String responseFields)

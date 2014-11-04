@@ -43,7 +43,7 @@ public class PublishingScopeResource {
 	 * Deletes the draft version of product changes for each product code specified in the request.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.DiscardDrafts(_dataViewMode,  publishScope);
+	 *	publishingscope.discardDrafts( publishScope);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param publishScope Properties of the pending product changes to include in this operation.
@@ -55,6 +55,7 @@ public class PublishingScopeResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.discardDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -62,7 +63,7 @@ public class PublishingScopeResource {
 	 * Publishes the draft version of product changes for each product code specified in the request, and changes the product publish state to "live".
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
-	 *	publishingscope.PublishDrafts(_dataViewMode,  publishScope);
+	 *	publishingscope.publishDrafts( publishScope);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @param publishScope Properties of the pending product changes to include in this operation.
@@ -74,6 +75,7 @@ public class PublishingScopeResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

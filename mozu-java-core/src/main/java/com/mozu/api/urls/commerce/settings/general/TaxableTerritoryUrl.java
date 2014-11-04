@@ -25,7 +25,7 @@ public class TaxableTerritoryUrl
 
 	/**
 	 * Get Resource Url for AddTaxableTerritory
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addTaxableTerritoryUrl(String responseFields)

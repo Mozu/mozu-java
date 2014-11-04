@@ -44,9 +44,9 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -64,8 +64,8 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for GetProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyUrl(String attributeFQN, String productCode, String responseFields)
@@ -81,7 +81,7 @@ public class ProductPropertyUrl
 	 * Get Resource Url for AddPropertyValueLocalizedContent
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -98,7 +98,7 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for AddProperty
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyUrl(String productCode, String responseFields)
@@ -128,9 +128,9 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -149,7 +149,7 @@ public class ProductPropertyUrl
 	 * Get Resource Url for UpdateProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyUrl(String attributeFQN, String productCode, String responseFields)
@@ -178,7 +178,7 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for DeletePropertyValueLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @return   String Resource Url

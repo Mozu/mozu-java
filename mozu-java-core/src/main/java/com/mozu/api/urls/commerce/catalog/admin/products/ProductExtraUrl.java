@@ -46,7 +46,7 @@ public class ProductExtraUrl
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -65,7 +65,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for GetExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -81,7 +81,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for AddExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -98,7 +98,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for AddExtra
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtraUrl(String productCode, String responseFields)
@@ -130,7 +130,7 @@ public class ProductExtraUrl
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return   String Resource Url
 	 */
@@ -149,7 +149,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for UpdateExtra
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtraUrl(String attributeFQN, String productCode, String responseFields)
@@ -180,7 +180,7 @@ public class ProductExtraUrl
 	 * @param attributeFQN 
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param value 
+	 * @param value Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtraValueLocalizedDeltaPriceUrl(String attributeFQN, String currencyCode, String productCode, String value)

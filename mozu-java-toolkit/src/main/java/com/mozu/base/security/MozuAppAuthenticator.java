@@ -1,6 +1,7 @@
 package com.mozu.base.security;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 @Component
 public class MozuAppAuthenticator {
@@ -41,4 +43,9 @@ public class MozuAppAuthenticator {
 		
 	}
 
+    @PreDestroy
+    public void cleanup () {
+        logger.debug("Shutdown HttpClient connection manager.");
+        MozuHttpClientPool.getInstance().shutdown();
+    }
 }

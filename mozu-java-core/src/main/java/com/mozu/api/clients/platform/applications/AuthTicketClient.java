@@ -45,7 +45,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param appAuthInfo Authentication information required to generate an authentication ticket includes the application id and the shared secret.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
@@ -90,7 +90,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param authTicketRequest The refresh token string required to update the application authentication ticket.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket

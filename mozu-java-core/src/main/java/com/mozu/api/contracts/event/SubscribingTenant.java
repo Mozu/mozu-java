@@ -13,12 +13,18 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.SubscribingSite;
 
+/**
+ *	This specifies if a tenant is associated with a subscription.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubscribingTenant implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This specifies if the subscription is active at the tenant level. If the subscription context is at the tenant level, this property is used over the site level.
+	 */
 	protected Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -29,6 +35,9 @@ public class SubscribingTenant implements Serializable
 		this.isActive = isActive;
 	}
 
+	/**
+	 * This specifies the type of subscribing context, which is derived from the state of the subscription. If any subscribing sites exist; for example, a subscription that is not at the tenant level, then the value will be 'site'.
+	 */
 	protected String subscribingContextLevelType;
 
 	public String getSubscribingContextLevelType() {
@@ -39,6 +48,9 @@ public class SubscribingTenant implements Serializable
 		this.subscribingContextLevelType = subscribingContextLevelType;
 	}
 
+	/**
+	 * This specifies the tenant identifier.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {
@@ -49,6 +61,9 @@ public class SubscribingTenant implements Serializable
 		this.tenantId = tenantId;
 	}
 
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -59,6 +74,9 @@ public class SubscribingTenant implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * This specifies the subscribing sites.
+	 */
 	protected List<SubscribingSite> subscribingSites;
 	public List<SubscribingSite> getSubscribingSites() {
 		return this.subscribingSites;

@@ -20,6 +20,9 @@ public class AttributeVocabularyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If true, the attribute vocabulary value does not appear in the list when defining a value for the attribute.
+	 */
 	protected Boolean isHidden;
 
 	public Boolean getIsHidden() {

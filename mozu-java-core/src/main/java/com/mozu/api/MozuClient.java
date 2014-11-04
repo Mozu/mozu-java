@@ -12,15 +12,14 @@ import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
+import org.apache.http.util.EntityUtils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
@@ -31,15 +30,14 @@ import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
 
-    static private HttpHost proxyHttpHost = HttpHelper.getProxyHost();
-
     private ApiContext apiContext = null;
     private String baseAddress = null;
-    private HttpResponse httpResponseMessage = null;
+    private CloseableHttpResponse httpResponseMessage = null;
     private String httpContent = null;
     private InputStream streamContent = null;
     private String verb = null;
@@ -121,25 +119,22 @@ public class MozuClient<TResult> {
     @SuppressWarnings("unchecked")
     public TResult getResult() throws Exception {
         TResult tResult = null;
-        if (responseType != null) {
-            String className = responseType.getName();
-            if (className.equals(java.io.InputStream.class.getName())) {
-                tResult = (TResult) httpResponseMessage.getEntity().getContent();
-            } else if (className.equals(com.fasterxml.jackson.databind.JsonNode.class.getName())) {
-                tResult = (TResult)deserializeJObject ();
-            } else {
-                tResult = deserialize(getStringResult(), responseType);
+        try {
+            if (responseType != null) {
+                String className = responseType.getName();
+                if (className.equals(java.io.InputStream.class.getName())) {
+                    tResult = (TResult) httpResponseMessage.getEntity().getContent();
+                } else {
+                    tResult = deserialize(getStringResult(), responseType);
+                }
             }
+        } finally {
+            cleanupHttpConnection();
         }
         return tResult;
     }
 
-    private JsonNode deserializeJObject() throws Exception {
-        HttpEntity httpEntity = httpResponseMessage.getEntity();
-        InputStream stream = (InputStream) httpEntity.getContent();
-        return mapper.readTree(stream);
-    }
-
+    @Deprecated
     public HttpResponse getResponse() {
         return httpResponseMessage;
     }
@@ -178,22 +173,30 @@ public class MozuClient<TResult> {
     public void executeRequest() throws Exception {
         validateContext();
 
-        HttpClient client = new DefaultHttpClient();
+        CloseableHttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
         BasicHttpEntityEnclosingRequest request = buildRequest();
         URL url = new URL(baseAddress);
         String hostNm = url.getHost();
         int port = url.getPort();
         String sche = url.getProtocol();
         HttpHost httpHost = new HttpHost(hostNm, port, sche);
-
-        if (proxyHttpHost != null && StringUtils.isNotBlank(proxyHttpHost.getHostName())) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
+        try {
+            httpResponseMessage = client.execute(httpHost, request);
+            HttpHelper.ensureSuccess(httpResponseMessage, mapper);
+        } catch (Exception e) {
+            cleanupHttpConnection();
+            // make sure on exception that that response is closed
+            throw e;
         }
-
-        httpResponseMessage = client.execute(httpHost, request);
-        HttpHelper.ensureSuccess(httpResponseMessage, mapper);
     }
 
+    public void cleanupHttpConnection () throws Exception {
+        if (httpResponseMessage != null) {
+            EntityUtils.consume(httpResponseMessage.getEntity());
+            httpResponseMessage.close();
+        }
+    }
+    
     private TResult deserialize(String jsonString, Class<TResult> cls) throws Exception {
         return mapper.readValue(jsonString, cls);
     }

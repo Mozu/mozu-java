@@ -43,7 +43,7 @@ public class LocationInventoryResource {
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.GetLocationInventories( productCode);
+	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
@@ -58,12 +58,12 @@ public class LocationInventoryResource {
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.GetLocationInventories( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
@@ -82,10 +82,10 @@ public class LocationInventoryResource {
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.GetLocationInventory( productCode,  locationCode);
+	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that identifies the location.
-	 * @param productCode 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
@@ -98,11 +98,11 @@ public class LocationInventoryResource {
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.GetLocationInventory( productCode,  locationCode,  responseFields);
+	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that identifies the location.
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
@@ -119,9 +119,9 @@ public class LocationInventoryResource {
 	 * Creates a new location inventory definition for the product code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.AddLocationInventory(_dataViewMode,  locationInventoryList,  productCode);
+	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  productCode);
 	 * </code></pre></p>
-	 * @param productCode ProductCodeBase
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -136,10 +136,10 @@ public class LocationInventoryResource {
 	 * Creates a new location inventory definition for the product code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.AddLocationInventory(_dataViewMode,  locationInventoryList,  productCode,  performUpserts);
+	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  productCode,  performUpserts);
 	 * </code></pre></p>
-	 * @param performUpserts 
-	 * @param productCode ProductCodeBase
+	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -158,10 +158,10 @@ public class LocationInventoryResource {
 	 * Updates the current level of stock at each location associated with the product code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.UpdateLocationInventory(_dataViewMode,  locationInventoryAdjustments,  productCode);
+	 *	LocationInventory locationInventory = locationinventory.updateLocationInventory( locationInventoryAdjustments,  productCode);
 	 * </code></pre></p>
 	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
-	 * @param locationInventoryAdjustments 
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -179,7 +179,7 @@ public class LocationInventoryResource {
 	 * Deletes the location inventory definition for the product code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	locationinventory.DeleteLocationInventory(_dataViewMode,  productCode,  locationCode);
+	 *	locationinventory.deleteLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode The code that identifies the location for which to delete product inventory.
 	 * @param productCode The product code for which to delete a location's inventory.
@@ -190,6 +190,7 @@ public class LocationInventoryResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.deleteLocationInventoryClient(_dataViewMode,  productCode,  locationCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

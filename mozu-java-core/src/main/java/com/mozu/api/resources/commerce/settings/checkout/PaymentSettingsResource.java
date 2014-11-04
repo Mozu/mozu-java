@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Specify settings when creating payments for order checkout on the site.
+ * Use the Payment Settings resource to specify settings when creating payments for order checkout on the site.
  * </summary>
  */
 public class PaymentSettingsResource {
@@ -35,7 +35,7 @@ public class PaymentSettingsResource {
 	 * Retrieves the details of the third-party payment service workflows configured for the site.
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
-	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.GetThirdPartyPaymentWorkflows();
+	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflows();
 	 * </code></pre></p>
 	 * @return List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition

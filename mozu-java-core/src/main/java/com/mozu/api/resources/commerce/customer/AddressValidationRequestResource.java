@@ -35,7 +35,7 @@ public class AddressValidationRequestResource {
 	 * Validates the customer address supplied in the request.
 	 * <p><pre><code>
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
-	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.ValidateAddress( addressValidationRequest);
+	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest);
 	 * </code></pre></p>
 	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
@@ -51,9 +51,9 @@ public class AddressValidationRequestResource {
 	 * Validates the customer address supplied in the request.
 	 * <p><pre><code>
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
-	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.ValidateAddress( addressValidationRequest,  responseFields);
+	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse

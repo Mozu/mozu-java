@@ -39,6 +39,9 @@ public class Cart implements Serializable
 		this.channelCode = channelCode;
 	}
 
+	/**
+	 * The coupon codes applied to the cart. When the customer proceeds to checkout, the coupons applied to the cart apply to the order.
+	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
 		return this.couponCodes;
@@ -47,6 +50,9 @@ public class Cart implements Serializable
 		this.couponCodes = couponCodes;
 	}
 
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
 	protected String currencyCode;
 
 	public String getCurrencyCode() {
@@ -367,6 +373,9 @@ public class Cart implements Serializable
 		this.fulfillmentInfo = fulfillmentInfo;
 	}
 
+	/**
+	 * The list of invalid coupons the shopper attempted to enter for the cart.
+	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
 		return this.invalidCoupons;

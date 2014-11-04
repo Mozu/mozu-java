@@ -15,7 +15,7 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalogs
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getMasterCatalogsUrl(String responseFields)
@@ -27,8 +27,8 @@ public class MasterCatalogUrl
 
 	/**
 	 * Get Resource Url for GetMasterCatalog
-	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param masterCatalogId The unique identifier of the master catalog associated with the entity.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getMasterCatalogUrl(Integer masterCatalogId, String responseFields)
@@ -42,7 +42,7 @@ public class MasterCatalogUrl
 	/**
 	 * Get Resource Url for UpdateMasterCatalog
 	 * @param masterCatalogId 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateMasterCatalogUrl(Integer masterCatalogId, String responseFields)

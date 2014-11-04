@@ -35,7 +35,7 @@ public class CartResource {
 	 * Retrieves the cart specified in the request.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetCart( cartId);
+	 *	Cart cart = cart.getCart( cartId);
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -50,10 +50,10 @@ public class CartResource {
 	 * Retrieves the cart specified in the request.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetCart( cartId,  responseFields);
+	 *	Cart cart = cart.getCart( cartId,  responseFields);
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -70,7 +70,7 @@ public class CartResource {
 	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetOrCreateCart();
+	 *	Cart cart = cart.getOrCreateCart();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -84,9 +84,9 @@ public class CartResource {
 	 * Retrieves a cart's contents for the current shopper. If the shopper does not have an active cart on the site, the service creates one.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetOrCreateCart( responseFields);
+	 *	Cart cart = cart.getOrCreateCart( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -103,7 +103,7 @@ public class CartResource {
 	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetCartSummary();
+	 *	CartSummary cartSummary = cart.getCartSummary();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -117,9 +117,9 @@ public class CartResource {
 	 * Retrieves summary information associated with the cart of the current shopper, including the number of items, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetCartSummary( responseFields);
+	 *	CartSummary cartSummary = cart.getCartSummary( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -136,7 +136,7 @@ public class CartResource {
 	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetUserCartSummary( userId);
+	 *	CartSummary cartSummary = cart.getUserCartSummary( userId);
 	 * </code></pre></p>
 	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -151,9 +151,9 @@ public class CartResource {
 	 * Retrieves summary information associated with the cart of user specified in the request, including the number of items in the cart, the current total, and whether the cart has expired. All anonymous idle carts that do not proceed to checkout expire after 14 days.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	CartSummary cartSummary = cart.GetUserCartSummary( userId,  responseFields);
+	 *	CartSummary cartSummary = cart.getUserCartSummary( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -171,7 +171,7 @@ public class CartResource {
 	 * Retrieves the cart of the user specified in the request.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetUserCart( userId);
+	 *	Cart cart = cart.getUserCart( userId);
 	 * </code></pre></p>
 	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -186,9 +186,9 @@ public class CartResource {
 	 * Retrieves the cart of the user specified in the request.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.GetUserCart( userId,  responseFields);
+	 *	Cart cart = cart.getUserCart( userId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -206,7 +206,7 @@ public class CartResource {
 	 * Update the current shopper's cart.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.UpdateCart( cart);
+	 *	Cart cart = cart.updateCart( cart);
 	 * </code></pre></p>
 	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -222,9 +222,9 @@ public class CartResource {
 	 * Update the current shopper's cart.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	Cart cart = cart.UpdateCart( cart,  responseFields);
+	 *	Cart cart = cart.updateCart( cart,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -243,7 +243,7 @@ public class CartResource {
 	 * Deletes the cart specified in the request.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	cart.DeleteCart( cartId);
+	 *	cart.deleteCart( cartId);
 	 * </code></pre></p>
 	 * @param cartId Identifier of the cart to delete.
 	 * @return 
@@ -253,6 +253,7 @@ public class CartResource {
 		MozuClient client = com.mozu.api.clients.commerce.CartClient.deleteCartClient( cartId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -260,7 +261,7 @@ public class CartResource {
 	 * Deletes the cart of the currently active shopper.
 	 * <p><pre><code>
 	 *	Cart cart = new Cart();
-	 *	cart.DeleteCurrentCart();
+	 *	cart.deleteCurrentCart();
 	 * </code></pre></p>
 	 * @return 
 	 */
@@ -269,6 +270,7 @@ public class CartResource {
 		MozuClient client = com.mozu.api.clients.commerce.CartClient.deleteCurrentCartClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

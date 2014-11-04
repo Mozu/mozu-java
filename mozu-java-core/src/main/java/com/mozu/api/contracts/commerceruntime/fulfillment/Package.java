@@ -35,6 +35,9 @@ public class Package implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	/**
+	 * The code of the product to be fulfilled.
+	 */
 	protected String code;
 
 	public String getCode() {
@@ -58,6 +61,9 @@ public class Package implements Serializable
 		this.fulfillmentDate = fulfillmentDate;
 	}
 
+	/**
+	 * The location code that represents the location from which this package will ship.
+	 */
 	protected String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
@@ -182,6 +188,9 @@ public class Package implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of change messages associated with the package.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

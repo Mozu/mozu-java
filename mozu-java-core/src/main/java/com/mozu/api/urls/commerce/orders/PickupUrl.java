@@ -31,7 +31,7 @@ public class PickupUrl
 	 * Get Resource Url for GetPickup
 	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPickupUrl(String orderId, String pickupId, String responseFields)
@@ -46,7 +46,7 @@ public class PickupUrl
 	/**
 	 * Get Resource Url for CreatePickup
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPickupUrl(String orderId, String responseFields)
@@ -61,7 +61,7 @@ public class PickupUrl
 	 * Get Resource Url for UpdatePickup
 	 * @param orderId Unique identifier of the order associated with the in-store pickup.
 	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePickupUrl(String orderId, String pickupId, String responseFields)

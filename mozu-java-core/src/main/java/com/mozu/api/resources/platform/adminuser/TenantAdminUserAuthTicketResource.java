@@ -39,7 +39,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
-	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.CreateUserAuthTicket( userAuthInfo);
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo);
 	 * </code></pre></p>
 	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -55,9 +55,9 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * Creates an authentication ticket for the supplied user to specify in API requests associated with the supplied tenant.
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
-	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.CreateUserAuthTicket( userAuthInfo,  tenantId,  responseFields);
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.createUserAuthTicket( userAuthInfo,  tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId Unique identifier of the development or production tenant for which to generate the user authentication ticket.
 	 * @param userAuthInfo The user authentication information required to generate the user authentication ticket, which consists of a user name and password.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -77,7 +77,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * Generates a new user authentication ticket for the specified tenant by supplying the user's existing refresh token information.
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
-	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.RefreshAuthTicket( existingAuthTicket);
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket);
 	 * </code></pre></p>
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -93,9 +93,9 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * Generates a new user authentication ticket for the specified tenant by supplying the user's existing refresh token information.
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
-	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.RefreshAuthTicket( existingAuthTicket,  tenantId,  responseFields);
+	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket,  tenantId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId 
 	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -115,7 +115,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * Deletes the authentication ticket for the user by supplying the refresh token.
 	 * <p><pre><code>
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
-	 *	tenantadminuserauthticket.DeleteUserAuthTicket( refreshToken);
+	 *	tenantadminuserauthticket.deleteUserAuthTicket( refreshToken);
 	 * </code></pre></p>
 	 * @param refreshToken Refresh token string associated with the user authentication ticket.
 	 * @return 
@@ -125,6 +125,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 		MozuClient client = com.mozu.api.clients.platform.adminuser.TenantAdminUserAuthTicketClient.deleteUserAuthTicketClient( refreshToken);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

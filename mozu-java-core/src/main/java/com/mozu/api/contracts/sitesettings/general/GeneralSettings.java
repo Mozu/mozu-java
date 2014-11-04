@@ -166,7 +166,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * The mobile theme is the storefront name for the theme.
+	 * The name of the theme to use when viewing this website on a mobile device.
 	 */
 	protected String mobileTheme;
 
@@ -230,6 +230,9 @@ public class GeneralSettings implements Serializable
 		this.siteTimeZone = siteTimeZone;
 	}
 
+	/**
+	 * The name of the theme to use when viewing the website on a mobile device.
+	 */
 	protected String tabletTheme;
 
 	public String getTabletTheme() {

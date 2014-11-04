@@ -43,7 +43,7 @@ public class LocationInventoryResource {
 	 * Retrieves the details of a product's active inventory at the location specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.GetLocationInventory( locationCode,  productCode);
+	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( locationCode,  productCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -60,11 +60,11 @@ public class LocationInventoryResource {
 	 * Retrieves the details of a product's active inventory at the location specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.GetLocationInventory( locationCode,  productCode,  responseFields);
+	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( locationCode,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -82,7 +82,7 @@ public class LocationInventoryResource {
 	 * Retrieves a list of all product inventory definitions for the location code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.GetLocationInventories( locationCode);
+	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( locationCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
@@ -98,12 +98,12 @@ public class LocationInventoryResource {
 	 * Retrieves a list of all product inventory definitions for the location code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.GetLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @param dataViewMode DataViewMode
@@ -123,7 +123,7 @@ public class LocationInventoryResource {
 	 * Creates an array of product inventory definitions for the location specified in the request. When adding a new inventory definition, you must specify the productCode and stockOnHand value in each array you define. All other properties are system-supplied and read only.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.AddLocationInventory(_dataViewMode,  locationInventoryList,  locationCode);
+	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
@@ -141,7 +141,7 @@ public class LocationInventoryResource {
 	 * Creates an array of product inventory definitions for the location specified in the request. When adding a new inventory definition, you must specify the productCode and stockOnHand value in each array you define. All other properties are system-supplied and read only.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.AddLocationInventory(_dataViewMode,  locationInventoryList,  locationCode,  performUpserts);
+	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  locationCode,  performUpserts);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param performUpserts 
@@ -164,11 +164,11 @@ public class LocationInventoryResource {
 	 * Updates the active stock on hand inventory of products for the location code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventory locationInventory = locationinventory.UpdateLocationInventory(_dataViewMode,  locationInventoryAdjustments,  locationCode);
+	 *	LocationInventory locationInventory = locationinventory.updateLocationInventory( locationInventoryAdjustments,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param dataViewMode DataViewMode
-	 * @param locationInventoryAdjustments 
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -186,7 +186,7 @@ public class LocationInventoryResource {
 	 * Deletes the product code inventory definition for the location specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	locationinventory.DeleteLocationInventory(_dataViewMode,  locationCode,  productCode);
+	 *	locationinventory.deleteLocationInventory( locationCode,  productCode);
 	 * </code></pre></p>
 	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -198,6 +198,7 @@ public class LocationInventoryResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.deleteLocationInventoryClient(_dataViewMode,  locationCode,  productCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

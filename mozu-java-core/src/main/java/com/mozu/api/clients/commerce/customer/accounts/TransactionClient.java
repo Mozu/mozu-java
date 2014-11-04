@@ -71,7 +71,7 @@ public class TransactionClient {
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction

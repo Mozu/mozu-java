@@ -43,7 +43,7 @@ public class ProductTypeExtraResource {
 	 * Retrieves a list of extra attributes defined for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtras(_dataViewMode,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.getExtras( productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -63,7 +63,7 @@ public class ProductTypeExtraResource {
 	 * Retrieves the details of an extra attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(_dataViewMode,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.getExtra( productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
@@ -80,11 +80,11 @@ public class ProductTypeExtraResource {
 	 * Retrieves the details of an extra attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.GetExtra(_dataViewMode,  productTypeId,  attributeFQN,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.getExtra( productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type whose extra is being retrieved.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -102,7 +102,7 @@ public class ProductTypeExtraResource {
 	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra(_dataViewMode,  attributeInProductType,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.addExtra( attributeInProductType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -120,10 +120,10 @@ public class ProductTypeExtraResource {
 	 * Assigns a defined extra attribute to the product type based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.AddExtra(_dataViewMode,  attributeInProductType,  productTypeId,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.addExtra( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType The properties of the extra attribute definition for this product type assignment.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -143,7 +143,7 @@ public class ProductTypeExtraResource {
 	 * Update the definition of an extra attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.updateExtra( attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -162,11 +162,11 @@ public class ProductTypeExtraResource {
 	 * Update the definition of an extra attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	AttributeInProductType attributeInProductType = producttypeextra.UpdateExtra(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeextra.updateExtra( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType The properties of the extra attribute definition to update for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -186,7 +186,7 @@ public class ProductTypeExtraResource {
 	 * Removes an extra attribute definition from the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeExtra producttypeextra = new ProductTypeExtra();
-	 *	producttypeextra.DeleteExtra(_dataViewMode,  productTypeId,  attributeFQN);
+	 *	producttypeextra.deleteExtra( productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -198,6 +198,7 @@ public class ProductTypeExtraResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypeExtraClient.deleteExtraClient(_dataViewMode,  productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

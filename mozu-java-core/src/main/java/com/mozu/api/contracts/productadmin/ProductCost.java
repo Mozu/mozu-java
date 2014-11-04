@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	The cost a client pays the supplier to stock the product.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCost implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The amount paid by the client to stock the product.
+	 */
 	protected Double cost;
 
 	public Double getCost() {
@@ -26,6 +32,9 @@ public class ProductCost implements Serializable
 		this.cost = cost;
 	}
 
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
 	protected String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {

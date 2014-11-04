@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	The information required to modify a shopper account password.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PasswordInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The new account password value.
+	 */
 	protected String newPassword;
 
 	public String getNewPassword() {
@@ -26,6 +32,9 @@ public class PasswordInfo implements Serializable
 		this.newPassword = newPassword;
 	}
 
+	/**
+	 * The previous shopper account password value.
+	 */
 	protected String oldPassword;
 
 	public String getOldPassword() {

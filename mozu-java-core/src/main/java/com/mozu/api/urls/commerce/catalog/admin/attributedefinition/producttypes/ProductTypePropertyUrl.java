@@ -29,7 +29,7 @@ public class ProductTypePropertyUrl
 	 * Get Resource Url for GetProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypePropertyUrl
 	/**
 	 * Get Resource Url for AddProperty
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyUrl(Integer productTypeId, String responseFields)
@@ -59,7 +59,7 @@ public class ProductTypePropertyUrl
 	 * Get Resource Url for UpdateProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyUrl(String attributeFQN, Integer productTypeId, String responseFields)

@@ -63,6 +63,9 @@ public class CustomerContact implements Serializable
 		this.email = email;
 	}
 
+	/**
+	 * The fax number associated with the customer account.
+	 */
 	protected String faxNumber;
 
 	public String getFaxNumber() {
@@ -135,6 +138,9 @@ public class CustomerContact implements Serializable
 		this.middleNameOrInitial = middleNameOrInitial;
 	}
 
+	/**
+	 * List of the types associated with a customer contact, such as Billing or Fulfillment.
+	 */
 	protected List<ContactType> types;
 	public List<ContactType> getTypes() {
 		return this.types;

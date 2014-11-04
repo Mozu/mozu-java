@@ -44,7 +44,7 @@ public class AdminUserClient {
 	 * client.executeRequest();
 	 * TenantCollection tenantCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.tenant.TenantCollection>
 	 * @see com.mozu.api.contracts.tenant.TenantCollection
@@ -86,7 +86,7 @@ public class AdminUserClient {
 	 * client.executeRequest();
 	 * User user = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.User>
 	 * @see com.mozu.api.contracts.core.User

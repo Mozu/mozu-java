@@ -15,9 +15,9 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for GetPropertyTypes
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyTypesUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -31,8 +31,8 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for GetPropertyType
-	 * @param propertyTypeName 
-	 * @param responseFields 
+	 * @param propertyTypeName The name of the content property type.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyTypeUrl(String propertyTypeName, String responseFields)
@@ -45,7 +45,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for CreatePropertyType
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPropertyTypeUrl(String responseFields)
@@ -58,7 +58,7 @@ public class PropertyTypeUrl
 	/**
 	 * Get Resource Url for UpdatePropertyType
 	 * @param propertyTypeName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyTypeUrl(String propertyTypeName, String responseFields)

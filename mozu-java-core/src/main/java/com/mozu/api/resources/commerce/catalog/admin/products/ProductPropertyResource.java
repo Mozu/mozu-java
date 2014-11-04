@@ -43,7 +43,7 @@ public class ProductPropertyResource {
 	 * Retrieves a list of the property attributes configured for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperties(_dataViewMode,  productCode);
+	 *	ProductProperty productProperty = productproperty.getProperties( productCode);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductProperty>
@@ -62,7 +62,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContents(_dataViewMode,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContents( productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -83,10 +83,10 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -101,12 +101,12 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.GetPropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.getPropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -124,10 +124,10 @@ public class ProductPropertyResource {
 	 * Retrieves the details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN);
+	 *	ProductProperty productProperty = productproperty.getProperty( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -140,11 +140,11 @@ public class ProductPropertyResource {
 	 * Retrieves the details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.GetProperty(_dataViewMode,  productCode,  attributeFQN,  responseFields);
+	 *	ProductProperty productProperty = productproperty.getProperty( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -161,12 +161,12 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.addPropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
 	 * @param value 
-	 * @param localizedContent 
+	 * @param localizedContent Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -180,13 +180,13 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.AddPropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.addPropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
-	 * @param localizedContent 
+	 * @param localizedContent Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -204,7 +204,7 @@ public class ProductPropertyResource {
 	 * Configures a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.AddProperty(_dataViewMode,  productProperty,  productCode);
+	 *	ProductProperty productProperty = productproperty.addProperty( productProperty,  productCode);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param productProperty Properties of the property attribute to configure for a product.
@@ -221,10 +221,10 @@ public class ProductPropertyResource {
 	 * Configures a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.AddProperty(_dataViewMode,  productProperty,  productCode,  responseFields);
+	 *	ProductProperty productProperty = productproperty.addProperty( productProperty,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Properties of the property attribute to configure for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -243,7 +243,7 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContents(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContents( localizedContent,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN 
 	 * @param productCode 
@@ -266,10 +266,10 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @param localizedContent 
@@ -286,12 +286,12 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.UpdatePropertyValueLocalizedContent(_dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
+	 *	ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = productproperty.updatePropertyValueLocalizedContent( localizedContent,  productCode,  attributeFQN,  value,  localeCode,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value 
 	 * @param localizedContent 
 	 * @return com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -311,7 +311,7 @@ public class ProductPropertyResource {
 	 * Update one or more details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.UpdateProperty(_dataViewMode,  productProperty,  productCode,  attributeFQN);
+	 *	ProductProperty productProperty = productproperty.updateProperty( productProperty,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -329,11 +329,11 @@ public class ProductPropertyResource {
 	 * Update one or more details of a property attribute configuration for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	ProductProperty productProperty = productproperty.UpdateProperty(_dataViewMode,  productProperty,  productCode,  attributeFQN,  responseFields);
+	 *	ProductProperty productProperty = productproperty.updateProperty( productProperty,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Details of the property attribute to update for the product configuration.
 	 * @return com.mozu.api.contracts.productadmin.ProductProperty
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -352,7 +352,7 @@ public class ProductPropertyResource {
 	 * Deletes the configuration of a property attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	productproperty.DeleteProperty(_dataViewMode,  productCode,  attributeFQN);
+	 *	productproperty.deleteProperty( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode 
@@ -363,6 +363,7 @@ public class ProductPropertyResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.deletePropertyClient(_dataViewMode,  productCode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -370,10 +371,10 @@ public class ProductPropertyResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductProperty productproperty = new ProductProperty();
-	 *	productproperty.DeletePropertyValueLocalizedContent(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
+	 *	productproperty.deletePropertyValueLocalizedContent( productCode,  attributeFQN,  value,  localeCode);
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param productCode 
 	 * @param value 
 	 * @return 
@@ -383,6 +384,7 @@ public class ProductPropertyResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductPropertyClient.deletePropertyValueLocalizedContentClient(_dataViewMode,  productCode,  attributeFQN,  value,  localeCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

@@ -74,7 +74,7 @@ public class DocumentTreeClient {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -100,7 +100,7 @@ public class DocumentTreeClient {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream 
+	 * @param stream Input output stream that delivers information.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
@@ -127,7 +127,7 @@ public class DocumentTreeClient {
 	 * </code></pre></p>
 	 * @param documentListName The name of the document list associated with the document.
 	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream 
+	 * @param stream Input output stream that delivers information.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */

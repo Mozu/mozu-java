@@ -35,7 +35,7 @@ public class AttributeTypeRuleResource {
 	 * Retrieves a list of attribute type rules according to optional filter criteria and sort options. Attribute type rules help drive the behavior of attributes on a storefront page.
 	 * <p><pre><code>
 	 *	AttributeTypeRule attributetyperule = new AttributeTypeRule();
-	 *	AttributeTypeRuleCollection attributeTypeRuleCollection = attributetyperule.GetAttributeTypeRules();
+	 *	AttributeTypeRuleCollection attributeTypeRuleCollection = attributetyperule.getAttributeTypeRules();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection
@@ -50,11 +50,11 @@ public class AttributeTypeRuleResource {
 	 * Retrieves a list of attribute type rules according to optional filter criteria and sort options. Attribute type rules help drive the behavior of attributes on a storefront page.
 	 * <p><pre><code>
 	 *	AttributeTypeRule attributetyperule = new AttributeTypeRule();
-	 *	AttributeTypeRuleCollection attributeTypeRuleCollection = attributetyperule.GetAttributeTypeRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	AttributeTypeRuleCollection attributeTypeRuleCollection = attributetyperule.getAttributeTypeRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param dataViewMode DataViewMode

@@ -43,7 +43,7 @@ public class DocumentListTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
-	 *	DocumentListType documentListType = documentlisttype.CreateDocumentListType(_dataViewMode,  list);
+	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
 	 * </code></pre></p>
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
@@ -59,9 +59,9 @@ public class DocumentListTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
-	 *	DocumentListType documentListType = documentlisttype.CreateDocumentListType(_dataViewMode,  list,  responseFields);
+	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -80,7 +80,7 @@ public class DocumentListTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
-	 *	DocumentListType documentListType = documentlisttype.UpdateDocumentListType( list,  documentListTypeFQN);
+	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param list 
@@ -97,10 +97,10 @@ public class DocumentListTypeResource {
 	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
-	 *	DocumentListType documentListType = documentlisttype.UpdateDocumentListType( list,  documentListTypeFQN,  responseFields);
+	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

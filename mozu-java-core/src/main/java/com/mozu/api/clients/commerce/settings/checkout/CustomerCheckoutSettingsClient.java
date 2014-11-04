@@ -14,7 +14,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
+ * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
  * </summary>
  */
 public class CustomerCheckoutSettingsClient {
@@ -43,7 +43,7 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 */
@@ -85,7 +85,7 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

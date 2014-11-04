@@ -13,8 +13,10 @@ import mockit.NonStrictExpectations;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -45,8 +47,8 @@ public class AppAuthenticatorUnitTest {
     private static final String SHARED_SECRET = "12342341234132";
 
     @Mocked HttpPost mockHttpPost;
-    @Mocked DefaultHttpClient mockHttpClient;
-    @Mocked HttpResponse mockHttpResponse;
+    @Mocked CloseableHttpClient mockHttpClient;
+    @Mocked CloseableHttpResponse mockHttpResponse;
     @Mocked HttpEntity mockHttpEntity;
     @Mocked HttpHelper mockHttpHelper;
     

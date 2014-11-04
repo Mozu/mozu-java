@@ -23,6 +23,9 @@ public class RateRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * List of shipping carriers for which to retrieve shipping rate information.
+	 */
 	protected List<String> carrierIds;
 	public List<String> getCarrierIds() {
 		return this.carrierIds;
@@ -31,6 +34,9 @@ public class RateRequest implements Serializable
 		this.carrierIds = carrierIds;
 	}
 
+	/**
+	 * The date and time the shipment will be shipped to the shopper.
+	 */
 	protected DateTime estimatedShipmentDate;
 
 	public DateTime getEstimatedShipmentDate() {
@@ -41,6 +47,9 @@ public class RateRequest implements Serializable
 		this.estimatedShipmentDate = estimatedShipmentDate;
 	}
 
+	/**
+	 * If true, the destination address associated with the shipping rate request is a commercial address.
+	 */
 	protected Boolean isDestinationAddressCommercial;
 
 	public Boolean getIsDestinationAddressCommercial() {
@@ -51,6 +60,9 @@ public class RateRequest implements Serializable
 		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
 	}
 
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
 	protected String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -61,6 +73,9 @@ public class RateRequest implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
+	/**
+	 * The total amount of the order used to calculate the shipping rate estimate.
+	 */
 	protected Double orderTotal;
 
 	public Double getOrderTotal() {
@@ -71,6 +86,9 @@ public class RateRequest implements Serializable
 		this.orderTotal = orderTotal;
 	}
 
+	/**
+	 * The shipping methods associated with this request.
+	 */
 	protected List<String> shippingServiceTypes;
 	public List<String> getShippingServiceTypes() {
 		return this.shippingServiceTypes;
@@ -79,6 +97,9 @@ public class RateRequest implements Serializable
 		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
+	/**
+	 * List of key-value pairs that represent custom attributes associated with the request.
+	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
 		return this.customAttributes;
@@ -87,6 +108,9 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * The physical address to which the shipment will ship.
+	 */
 	protected Address destinationAddress;
 
 	public Address getDestinationAddress() {
@@ -97,6 +121,9 @@ public class RateRequest implements Serializable
 		this.destinationAddress = destinationAddress;
 	}
 
+	/**
+	 * List of items to include in the shipping rate request.
+	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
 		return this.items;
@@ -105,6 +132,9 @@ public class RateRequest implements Serializable
 		this.items = items;
 	}
 
+	/**
+	 * The physical address from which the shipment will ship.
+	 */
 	protected Address originAddress;
 
 	public Address getOriginAddress() {

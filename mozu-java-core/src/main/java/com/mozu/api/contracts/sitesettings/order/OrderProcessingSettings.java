@@ -20,6 +20,9 @@ public class OrderProcessingSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Abandoned order threshold in minutes indicates the number of minutes until a pending order is considered abandoned.
+	 */
 	protected Integer abandonedOrderThresholdInMinutes;
 
 	public Integer getAbandonedOrderThresholdInMinutes() {

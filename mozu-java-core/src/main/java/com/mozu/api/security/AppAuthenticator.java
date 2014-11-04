@@ -7,7 +7,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -15,9 +14,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +31,7 @@ import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.urls.platform.applications.AuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class AppAuthenticator {
     private static final Logger logger = LoggerFactory.getLogger(AppAuthenticator.class);
@@ -46,8 +44,6 @@ public class AppAuthenticator {
     static private boolean useSSL = false;
 
     private AppAuthInfo appAuthInfo = null;
-
-    private HttpHost proxyHttpHost = HttpHelper.getProxyHost();
 
     private AuthTicket appAuthTicket = null;
 
@@ -65,21 +61,6 @@ public class AppAuthenticator {
     public static AppAuthenticator getInstance() {
         return auth;
     }
-
-    /**
-     * Initialize from mozu_config.properties file
-     * 
-     * @throws ApiException
-     */
-//    public static void initialize() {
-//        AppAuthInfo appAuthInfo = new AppAuthInfo();
-//        appAuthInfo.setApplicationId(ConfigProperties.getStringProperty(ConfigProperties.APP_ID));
-//        appAuthInfo.setSharedSecret(ConfigProperties
-//                .getStringProperty(ConfigProperties.SHARED_SECRET));
-//
-//        initialize(appAuthInfo, ConfigProperties.getStringProperty(ConfigProperties.MOZU_BASE_URL),
-//                null);
-//    }
 
     public static void initialize(AppAuthInfo appAuthInfo) {
         initialize(appAuthInfo, null);
@@ -149,7 +130,7 @@ public class AppAuthenticator {
 
     private void executeRequest(Object bodyObject, HttpEntityEnclosingRequestBase request) {
         HttpResponse response = null;
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
 
         try {
             String body = mapper.writeValueAsString(bodyObject);
@@ -163,7 +144,7 @@ public class AppAuthenticator {
             throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
         }
 
-        addProxyHttpHost(client);
+        //addProxyHttpHost(client);
             
         try {
             response = client.execute(request);
@@ -241,16 +222,6 @@ public class AppAuthenticator {
         return appAuthInfo;
     }
 
-    public void addProxyHttpHost(HttpClient client) {
-        if (proxyHttpHost != null) {
-            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxyHttpHost);
-        }
-    }
-
-    public void setProxyHttpHost(HttpHost proxyHttpHost) {
-        this.proxyHttpHost = proxyHttpHost;
-    }
-    
     public static boolean isUseSSL() {
         return useSSL;
     }

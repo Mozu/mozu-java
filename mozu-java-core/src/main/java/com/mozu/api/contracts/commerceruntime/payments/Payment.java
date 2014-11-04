@@ -50,6 +50,9 @@ public class Payment implements Serializable
 		this.amountCredited = amountCredited;
 	}
 
+	/**
+	 * The total amount originally requested for this payment.
+	 */
 	protected Double amountRequested;
 
 	public Double getAmountRequested() {
@@ -175,6 +178,9 @@ public class Payment implements Serializable
 		this.billingInfo = billingInfo;
 	}
 
+	/**
+	 * List of change messages associated with the payment.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

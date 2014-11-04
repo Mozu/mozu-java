@@ -20,15 +20,15 @@ import org.apache.commons.lang3.StringUtils;
 public class CardClient {
 	
 	/**
-	 * 
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Card card = client.Result();
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param cardId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -38,16 +38,16 @@ public class CardClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.Card> mozuClient=GetAccountCardClient( accountId,  cardId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Card card = client.Result();
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -89,7 +89,7 @@ public class CardClient {
 	 * CardCollection cardCollection = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CardCollection>
 	 * @see com.mozu.api.contracts.customer.CardCollection
 	 */
@@ -133,7 +133,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param card Properties of the customer credit card to add to the account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -161,7 +161,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
+	 * @param cardId Unique identifier of the credit card.
 	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
@@ -181,8 +181,8 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the credit card.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
