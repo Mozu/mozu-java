@@ -65,7 +65,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The interaction type the shopper uses to create the wish list, wich is Website, Store, Call, or Unknown. This property is not used at this time and is reserved for future functionality.
+	 * The interaction type the shopper uses to create the wish list, which is Website, Store, Call, or Unknown. This property is not used at this time and is reserved for future functionality.
 	 */
 	protected String customerInteractionType;
 
@@ -104,7 +104,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to all items in the wish list, which is system-supplied and read-only.                                This property value is not calculated at this time and is reserved for future functionality.
+	 * Estimated amount of discounts applied to all items in the wish list, which is system-supplied and read-only.   This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double discountTotal;
 
@@ -129,6 +129,9 @@ public class Wishlist implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * The identifier an external program uses to identify the Mozu wish list.
+	 */
 	protected String externalId;
 
 	public String getExternalId() {
@@ -178,6 +181,9 @@ public class Wishlist implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If this wish list was imported from an external program, the date and time the wish list was imported.
+	 */
 	protected DateTime importDate;
 
 	public DateTime getImportDate() {
@@ -188,6 +194,9 @@ public class Wishlist implements Serializable
 		this.importDate = importDate;
 	}
 
+	/**
+	 * If true, this wish list was imported from an external program.
+	 */
 	protected Boolean isImport;
 
 	public Boolean getIsImport() {

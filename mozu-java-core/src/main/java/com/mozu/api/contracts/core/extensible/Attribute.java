@@ -74,6 +74,9 @@ public class Attribute implements Serializable
 		this.dataType = dataType;
 	}
 
+	/**
+	 * Whether the customer or order attribute appears in Mozu Admin only, or in both Mozu Admin and the website storefront. Possible values are Admin and AdminAndStorefront.
+	 */
 	protected String displayGroup;
 
 	public String getDisplayGroup() {
@@ -120,6 +123,9 @@ public class Attribute implements Serializable
 		this.isActive = isActive;
 	}
 
+	/**
+	 * If true, the attribute can have more than one value.
+	 */
 	protected Boolean isMultiValued;
 
 	public Boolean getIsMultiValued() {
@@ -130,6 +136,9 @@ public class Attribute implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
+	/**
+	 * If true, the attribute must have a defined value.
+	 */
 	protected Boolean isRequired;
 
 	public Boolean getIsRequired() {
@@ -140,6 +149,9 @@ public class Attribute implements Serializable
 		this.isRequired = isRequired;
 	}
 
+	/**
+	 * If true, the attribute is visible in its defined display group.
+	 */
 	protected Boolean isVisible;
 
 	public Boolean getIsVisible() {
@@ -163,6 +175,9 @@ public class Attribute implements Serializable
 		this.namespace = namespace;
 	}
 
+	/**
+	 * Integer that represents the sequence of the attribute.
+	 */
 	protected Integer order;
 
 	public Integer getOrder() {
@@ -173,6 +188,9 @@ public class Attribute implements Serializable
 		this.order = order;
 	}
 
+	/**
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 */
 	protected String valueType;
 
 	public String getValueType() {

@@ -282,6 +282,9 @@ public class CartItem implements Serializable
 		this.product = product;
 	}
 
+	/**
+	 * Product discounts displays a list of all applicable discount.
+	 */
 	protected AppliedLineItemProductDiscount productDiscount;
 
 	public AppliedLineItemProductDiscount getProductDiscount() {

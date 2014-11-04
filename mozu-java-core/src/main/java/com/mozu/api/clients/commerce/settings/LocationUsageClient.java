@@ -43,7 +43,7 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsageCollection locationUsageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsageCollection>
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
 	 */
@@ -85,7 +85,7 @@ public class LocationUsageClient {
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -129,7 +129,7 @@ public class LocationUsageClient {
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param usage Properties of the location usage type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage

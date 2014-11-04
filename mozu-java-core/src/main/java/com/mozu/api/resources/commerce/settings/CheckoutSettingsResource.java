@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Specify sitewide settings to determine how checkout and order processing behaves. This service includes payment settings, customer checkout settings, and order processing settings.
+ * Use the Checkout Settings resource to specify the site-wide settings that define checkout and order processing behavior. This resource includes subresources for payment settings, customer checkout settings, and order processing settings.
  * </summary>
  */
 public class CheckoutSettingsResource {
@@ -35,7 +35,7 @@ public class CheckoutSettingsResource {
 	 * Retrieves all checkout settings defined for the site including payment settings (payment gateway ID and credentials), shopper checkout settings (login requirement or guest mode and custom attributes), and order processing settings (when payment is authorized and captured plus any custom attributes).
 	 * <p><pre><code>
 	 *	CheckoutSettings checkoutsettings = new CheckoutSettings();
-	 *	CheckoutSettings checkoutSettings = checkoutsettings.GetCheckoutSettings();
+	 *	CheckoutSettings checkoutSettings = checkoutsettings.getCheckoutSettings();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.sitesettings.order.CheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CheckoutSettings
@@ -49,9 +49,9 @@ public class CheckoutSettingsResource {
 	 * Retrieves all checkout settings defined for the site including payment settings (payment gateway ID and credentials), shopper checkout settings (login requirement or guest mode and custom attributes), and order processing settings (when payment is authorized and captured plus any custom attributes).
 	 * <p><pre><code>
 	 *	CheckoutSettings checkoutsettings = new CheckoutSettings();
-	 *	CheckoutSettings checkoutSettings = checkoutsettings.GetCheckoutSettings( responseFields);
+	 *	CheckoutSettings checkoutSettings = checkoutsettings.getCheckoutSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.sitesettings.order.CheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CheckoutSettings
 	 */

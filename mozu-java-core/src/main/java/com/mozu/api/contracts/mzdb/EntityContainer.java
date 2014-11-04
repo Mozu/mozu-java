@@ -66,6 +66,9 @@ public class EntityContainer implements Serializable
 		this.listFullName = listFullName;
 	}
 
+	/**
+	 * Language used for the entity. Currently, only "en-US" is supported.
+	 */
 	protected String localeCode;
 
 	public String getLocaleCode() {
@@ -96,6 +99,9 @@ public class EntityContainer implements Serializable
 		this.siteId = siteId;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {

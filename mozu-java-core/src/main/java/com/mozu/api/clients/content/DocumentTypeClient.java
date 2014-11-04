@@ -15,13 +15,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
- * The DocumentTypes resource is a part of the Content Service.
+ * Use the Document Types resource to view the document types supplied by the Content API.
  * </summary>
  */
 public class DocumentTypeClient {
 	
 	/**
-	 * 
+	 * Retrieves a paged list of the system-defined document types.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -37,16 +37,16 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a paged list of the system-defined document types.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient=GetDocumentTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentTypeCollection documentTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentTypeCollection>
 	 * @see com.mozu.api.contracts.content.DocumentTypeCollection
 	 */
@@ -64,14 +64,14 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a system-defined document type.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName 
+	 * @param documentTypeName The name of the document type to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -81,15 +81,15 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a system-defined document type.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=GetDocumentTypeClient(dataViewMode,  documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName 
-	 * @param responseFields 
+	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 */
@@ -132,7 +132,7 @@ public class DocumentTypeClient {
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -180,7 +180,7 @@ public class DocumentTypeClient {
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
 	 * @param documentTypeName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType

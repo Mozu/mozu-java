@@ -95,6 +95,9 @@ public class AttributeDetail implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
+	 */
 	protected Boolean searchableInStorefront;
 
 	public Boolean getSearchableInStorefront() {
@@ -105,6 +108,9 @@ public class AttributeDetail implements Serializable
 		this.searchableInStorefront = searchableInStorefront;
 	}
 
+	/**
+	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
+	 */
 	protected Boolean searchDisplayValue;
 
 	public Boolean getSearchDisplayValue() {

@@ -15,12 +15,18 @@ import com.mozu.api.contracts.core.thirdparty.OperationUrl;
 import com.mozu.api.contracts.core.thirdparty.InitializablePropertyValue;
 import com.mozu.api.contracts.core.thirdparty.InitializableShippingCountryPropertyValue;
 
+/**
+ *	The enablement mode of the capability.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Capability implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Array list of credit types active for the capability.
+	 */
 	protected List<String> activeCreditTypes;
 	public List<String> getActiveCreditTypes() {
 		return this.activeCreditTypes;
@@ -29,6 +35,9 @@ public class Capability implements Serializable
 		this.activeCreditTypes = activeCreditTypes;
 	}
 
+	/**
+	 * Array list of the countries for which this capability can actively shop.
+	 */
 	protected List<String> activeShoppingCountries;
 	public List<String> getActiveShoppingCountries() {
 		return this.activeShoppingCountries;
@@ -37,6 +46,9 @@ public class Capability implements Serializable
 		this.activeShoppingCountries = activeShoppingCountries;
 	}
 
+	/**
+	 * The enablement mode of the capability.
+	 */
 	protected String capabilityMode;
 
 	public String getCapabilityMode() {
@@ -47,6 +59,9 @@ public class Capability implements Serializable
 		this.capabilityMode = capabilityMode;
 	}
 
+	/**
+	 * The capability type installed in the tenant.
+	 */
 	protected String capabilityType;
 
 	public String getCapabilityType() {
@@ -57,6 +72,9 @@ public class Capability implements Serializable
 		this.capabilityType = capabilityType;
 	}
 
+	/**
+	 * If true, the capability is enabled in the installed tenant.
+	 */
 	protected Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -67,6 +85,9 @@ public class Capability implements Serializable
 		this.enabled = enabled;
 	}
 
+	/**
+	 * Unique identifier of the capability.
+	 */
 	protected String id;
 
 	public String getId() {
@@ -77,6 +98,9 @@ public class Capability implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If true, the application is initialized with the defined settings.
+	 */
 	protected Boolean initialized;
 
 	public Boolean getInitialized() {
@@ -87,6 +111,9 @@ public class Capability implements Serializable
 		this.initialized = initialized;
 	}
 
+	/**
+	 * Unique identifier of the developer account or tenant associated for which the capability is entitled.
+	 */
 	protected Integer scopeId;
 
 	public Integer getScopeId() {
@@ -97,6 +124,9 @@ public class Capability implements Serializable
 		this.scopeId = scopeId;
 	}
 
+	/**
+	 * The type of scope for which the tenant is entitled, which is developer or tenant.
+	 */
 	protected String scopeType;
 
 	public String getScopeType() {
@@ -107,6 +137,9 @@ public class Capability implements Serializable
 		this.scopeType = scopeType;
 	}
 
+	/**
+	 * Array list of the countries to which this capability can actively ship.
+	 */
 	protected List<ActiveShippingCountry> activeShippingCountries;
 	public List<ActiveShippingCountry> getActiveShippingCountries() {
 		return this.activeShippingCountries;
@@ -115,6 +148,9 @@ public class Capability implements Serializable
 		this.activeShippingCountries = activeShippingCountries;
 	}
 
+	/**
+	 * Array list of URL endpoints for the operations associated with this capability.
+	 */
 	protected List<OperationUrl> operationUrls;
 	public List<OperationUrl> getOperationUrls() {
 		return this.operationUrls;
@@ -123,6 +159,9 @@ public class Capability implements Serializable
 		this.operationUrls = operationUrls;
 	}
 
+	/**
+	 * List of credit types this capability supports.
+	 */
 	protected List<InitializablePropertyValue> supportedCreditTypes;
 	public List<InitializablePropertyValue> getSupportedCreditTypes() {
 		return this.supportedCreditTypes;
@@ -131,6 +170,9 @@ public class Capability implements Serializable
 		this.supportedCreditTypes = supportedCreditTypes;
 	}
 
+	/**
+	 * Array list of countries this capability supports for shipping.
+	 */
 	protected List<InitializableShippingCountryPropertyValue> supportedShippingCountries;
 	public List<InitializableShippingCountryPropertyValue> getSupportedShippingCountries() {
 		return this.supportedShippingCountries;
@@ -139,6 +181,9 @@ public class Capability implements Serializable
 		this.supportedShippingCountries = supportedShippingCountries;
 	}
 
+	/**
+	 * List of countries this capability supports for shopping.
+	 */
 	protected List<InitializablePropertyValue> supportedShoppingCountries;
 	public List<InitializablePropertyValue> getSupportedShoppingCountries() {
 		return this.supportedShoppingCountries;

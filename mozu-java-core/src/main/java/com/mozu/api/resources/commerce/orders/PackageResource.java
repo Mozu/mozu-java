@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the packages subresource to manage the physical packages to ship for an order.
+ * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
  */
 public class PackageResource {
@@ -35,7 +35,7 @@ public class PackageResource {
 	 * Retrieves a list of the actions available to perform for a package associated with order fulfillment.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	string string = package.GetAvailablePackageFulfillmentActions( orderId,  packageId);
+	 *	string string = package.getAvailablePackageFulfillmentActions( orderId,  packageId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package fulfillment.
 	 * @param packageId Unique identifier of the package associated with the fulfillment actions to retrieve.
@@ -55,7 +55,7 @@ public class PackageResource {
 	 * Retrieves the package label image supplied by the carrier.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Stream stream = package.GetPackageLabel( orderId,  packageId);
+	 *	Stream stream = package.getPackageLabel( orderId,  packageId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package label to retrieve.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
@@ -75,7 +75,7 @@ public class PackageResource {
 	 * Retrieves the details of a package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.GetPackage( orderId,  packageId);
+	 *	Package package = package.getPackage( orderId,  packageId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to retrieve.
 	 * @param packageId Unique identifier of the package to retrieve.
@@ -91,11 +91,11 @@ public class PackageResource {
 	 * Retrieves the details of a package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.GetPackage( orderId,  packageId,  responseFields);
+	 *	Package package = package.getPackage( orderId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to retrieve.
 	 * @param packageId Unique identifier of the package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -112,7 +112,7 @@ public class PackageResource {
 	 * Creates a new physical package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.CreatePackage( pkg,  orderId);
+	 *	Package package = package.createPackage( pkg,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with this package.
 	 * @param package Properties of the physical package of order items.
@@ -129,10 +129,10 @@ public class PackageResource {
 	 * Creates a new physical package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.CreatePackage( pkg,  orderId,  responseFields);
+	 *	Package package = package.createPackage( pkg,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param package Properties of the physical package of order items.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -151,7 +151,7 @@ public class PackageResource {
 	 * Updates one or more properties of a physical package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.UpdatePackage( pkg,  orderId,  packageId);
+	 *	Package package = package.updatePackage( pkg,  orderId,  packageId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to update.
 	 * @param packageId Unique identifier of the package of order items to update.
@@ -169,11 +169,11 @@ public class PackageResource {
 	 * Updates one or more properties of a physical package of order items.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Package package = package.UpdatePackage( pkg,  orderId,  packageId,  responseFields);
+	 *	Package package = package.updatePackage( pkg,  orderId,  packageId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to update.
 	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param package Wrapper of properties for the package of order items to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -192,7 +192,7 @@ public class PackageResource {
 	 * Removes a physical package of items from the specified order.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	package.DeletePackage( orderId,  packageId);
+	 *	package.deletePackage( orderId,  packageId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to delete.
 	 * @param packageId Unique identifier of the package to delete.
@@ -203,6 +203,7 @@ public class PackageResource {
 		MozuClient client = com.mozu.api.clients.commerce.orders.PackageClient.deletePackageClient( orderId,  packageId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

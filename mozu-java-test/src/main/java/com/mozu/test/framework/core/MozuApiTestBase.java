@@ -54,8 +54,8 @@ public class MozuApiTestBase {
     	new CacheManagerImpl<>().startCache();
     	String configStr = Environment.getConfigValue("TenantId");
     	tenantId = Integer.parseInt(configStr);
-        MozuConfig.setProxyHost("localhost");
-        MozuConfig.setProxyPort(8888);
+//        MozuConfig.setProxyHost("localhost");
+//        MozuConfig.setProxyPort(8888);
     	ApiContext apiContext = new MozuApiContext();
     	AppAuthenticator.initialize(appAuthInfo, null);
         try {

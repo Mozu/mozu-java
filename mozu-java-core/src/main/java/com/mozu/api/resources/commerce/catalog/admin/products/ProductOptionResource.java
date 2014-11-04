@@ -43,7 +43,7 @@ public class ProductOptionResource {
 	 * Retrieves a list of all option attributes configured for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.GetOptions(_dataViewMode,  productCode);
+	 *	ProductOption productOption = productoption.getOptions( productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductOption>
@@ -62,7 +62,7 @@ public class ProductOptionResource {
 	 * Retrieves the details of an option attribute configuration for the specified product.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.GetOption(_dataViewMode,  productCode,  attributeFQN);
+	 *	ProductOption productOption = productoption.getOption( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -78,11 +78,11 @@ public class ProductOptionResource {
 	 * Retrieves the details of an option attribute configuration for the specified product.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.GetOption(_dataViewMode,  productCode,  attributeFQN,  responseFields);
+	 *	ProductOption productOption = productoption.getOption( productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 */
@@ -99,7 +99,7 @@ public class ProductOptionResource {
 	 * Configures an option attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.AddOption(_dataViewMode,  productOption,  productCode);
+	 *	ProductOption productOption = productoption.addOption( productOption,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productOption Properties of the option attribute to define for the product.
@@ -116,10 +116,10 @@ public class ProductOptionResource {
 	 * Configures an option attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.AddOption(_dataViewMode,  productOption,  productCode,  responseFields);
+	 *	ProductOption productOption = productoption.addOption( productOption,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -138,7 +138,7 @@ public class ProductOptionResource {
 	 * Updates one or more properties of an option attribute configured for a product.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.UpdateOption(_dataViewMode,  productOption,  productCode,  attributeFQN);
+	 *	ProductOption productOption = productoption.updateOption( productOption,  productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -156,11 +156,11 @@ public class ProductOptionResource {
 	 * Updates one or more properties of an option attribute configured for a product.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	ProductOption productOption = productoption.UpdateOption(_dataViewMode,  productOption,  productCode,  attributeFQN,  responseFields);
+	 *	ProductOption productOption = productoption.updateOption( productOption,  productCode,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -179,7 +179,7 @@ public class ProductOptionResource {
 	 * Deletes the configuration of an option attribute for the product specified in the request.
 	 * <p><pre><code>
 	 *	ProductOption productoption = new ProductOption();
-	 *	productoption.DeleteOption(_dataViewMode,  productCode,  attributeFQN);
+	 *	productoption.deleteOption( productCode,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
@@ -190,6 +190,7 @@ public class ProductOptionResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductOptionClient.deleteOptionClient(_dataViewMode,  productCode,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

@@ -91,7 +91,7 @@ public class OrderItem implements Serializable
 	}
 
 	/**
-	 * The method used to fulfill the item in the order, which is "PickUp" or "Ship".
+	 * The method used to fulfill the item in the order, which is "PickUp" or "Ship". The fulfillment method for the order depends on the supported fulfillment types defined for the product.
 	 */
 	protected String fulfillmentMethod;
 
@@ -295,6 +295,9 @@ public class OrderItem implements Serializable
 		this.product = product;
 	}
 
+	/**
+	 * The discount that applies to the product.
+	 */
 	protected AppliedLineItemProductDiscount productDiscount;
 
 	public AppliedLineItemProductDiscount getProductDiscount() {

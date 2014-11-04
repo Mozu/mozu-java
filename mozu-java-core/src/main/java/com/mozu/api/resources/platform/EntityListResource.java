@@ -35,7 +35,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityListCollection entityListCollection = entitylist.GetEntityLists();
+	 *	EntityListCollection entityListCollection = entitylist.getEntityLists();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.mzdb.EntityListCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityListCollection
@@ -49,11 +49,11 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityListCollection entityListCollection = entitylist.GetEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields);
+	 *	EntityListCollection entityListCollection = entitylist.getEntityLists( pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.mzdb.EntityListCollection
@@ -72,7 +72,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.GetEntityList( entityListFullName);
+	 *	EntityList entityList = entitylist.getEntityList( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
@@ -87,10 +87,10 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.GetEntityList( entityListFullName,  responseFields);
+	 *	EntityList entityList = entitylist.getEntityList( entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
 	 */
@@ -107,7 +107,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.CreateEntityList( entityList);
+	 *	EntityList entityList = entitylist.createEntityList( entityList);
 	 * </code></pre></p>
 	 * @param entityList 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
@@ -123,9 +123,9 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.CreateEntityList( entityList,  responseFields);
+	 *	EntityList entityList = entitylist.createEntityList( entityList,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param entityList 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -144,7 +144,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.UpdateEntityList( entityList,  entityListFullName);
+	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param entityList 
@@ -161,10 +161,10 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	EntityList entityList = entitylist.UpdateEntityList( entityList,  entityListFullName,  responseFields);
+	 *	EntityList entityList = entitylist.updateEntityList( entityList,  entityListFullName,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param entityList 
 	 * @return com.mozu.api.contracts.mzdb.EntityList
 	 * @see com.mozu.api.contracts.mzdb.EntityList
@@ -183,7 +183,7 @@ public class EntityListResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityList entitylist = new EntityList();
-	 *	entitylist.DeleteEntityList( entityListFullName);
+	 *	entitylist.deleteEntityList( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return 
@@ -193,6 +193,7 @@ public class EntityListResource {
 		MozuClient client = com.mozu.api.clients.platform.EntityListClient.deleteEntityListClient( entityListFullName);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

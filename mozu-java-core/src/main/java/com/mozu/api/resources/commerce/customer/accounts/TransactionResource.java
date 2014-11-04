@@ -35,7 +35,7 @@ public class TransactionResource {
 	 * Retrieves a list of transactions associated with the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
-	 *	Transaction transaction = transaction.GetTransactions( accountId);
+	 *	Transaction transaction = transaction.getTransactions( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return List<com.mozu.api.contracts.customer.Transaction>
@@ -54,7 +54,7 @@ public class TransactionResource {
 	 * Creates a new transaction for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
-	 *	Transaction transaction = transaction.AddTransaction( transaction,  accountId);
+	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param transaction Properties of the transaction to create for the customer account.
@@ -71,10 +71,10 @@ public class TransactionResource {
 	 * Creates a new transaction for the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
-	 *	Transaction transaction = transaction.AddTransaction( transaction,  accountId,  responseFields);
+	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -93,7 +93,7 @@ public class TransactionResource {
 	 * Deletes a transaction from the customer account specified in the request.
 	 * <p><pre><code>
 	 *	Transaction transaction = new Transaction();
-	 *	transaction.RemoveTransaction( accountId,  transactionId);
+	 *	transaction.removeTransaction( accountId,  transactionId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
@@ -104,6 +104,7 @@ public class TransactionResource {
 		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.TransactionClient.removeTransactionClient( accountId,  transactionId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

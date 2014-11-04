@@ -43,7 +43,7 @@ public class ProductTypePropertyResource {
 	 * Retrieves a list of product property attributes defined for a product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.GetProperties(_dataViewMode,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperties( productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -63,7 +63,7 @@ public class ProductTypePropertyResource {
 	 * Retrieves a product property attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.GetProperty(_dataViewMode,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperty( productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -80,11 +80,11 @@ public class ProductTypePropertyResource {
 	 * Retrieves a product property attribute definition for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.GetProperty(_dataViewMode,  productTypeId,  attributeFQN,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.getProperty( productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
 	 * @see com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -102,7 +102,7 @@ public class ProductTypePropertyResource {
 	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty(_dataViewMode,  attributeInProductType,  productTypeId);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.addProperty( attributeInProductType,  productTypeId);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
 	 * @param dataViewMode DataViewMode
@@ -120,10 +120,10 @@ public class ProductTypePropertyResource {
 	 * Assigns a property attribute to the specified product type, according to the information defined in the request.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.AddProperty(_dataViewMode,  attributeInProductType,  productTypeId,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.addProperty( attributeInProductType,  productTypeId,  responseFields);
 	 * </code></pre></p>
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of the property attribute to define for the specified product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -143,7 +143,7 @@ public class ProductTypePropertyResource {
 	 * Updates the definition of a property attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.updateProperty( attributeInProductType,  productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -162,11 +162,11 @@ public class ProductTypePropertyResource {
 	 * Updates the definition of a property attribute for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	AttributeInProductType attributeInProductType = producttypeproperty.UpdateProperty(_dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
+	 *	AttributeInProductType attributeInProductType = producttypeproperty.updateProperty( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param attributeInProductType Properties of the property attribute to define for the product type.
 	 * @return com.mozu.api.contracts.productadmin.AttributeInProductType
@@ -186,7 +186,7 @@ public class ProductTypePropertyResource {
 	 * Removes a property attribute previously defined for the specified product type.
 	 * <p><pre><code>
 	 *	ProductTypeProperty producttypeproperty = new ProductTypeProperty();
-	 *	producttypeproperty.DeleteProperty(_dataViewMode,  productTypeId,  attributeFQN);
+	 *	producttypeproperty.deleteProperty( productTypeId,  attributeFQN);
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
@@ -198,6 +198,7 @@ public class ProductTypePropertyResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.attributedefinition.producttypes.ProductTypePropertyClient.deletePropertyClient(_dataViewMode,  productTypeId,  attributeFQN);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

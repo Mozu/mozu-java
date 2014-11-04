@@ -17,7 +17,7 @@ public class ReturnUrl
 	 * Get Resource Url for GetReturns
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
@@ -35,7 +35,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetAvailableReturnActions
-	 * @param returnId Retrieves a list of the actions available to perform for the specified return based on its current state.
+	 * @param returnId Unique identifier of the return for which to retrieve available actions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableReturnActionsUrl(String returnId)
@@ -47,7 +47,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturnItem
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @param returnItemId 
 	 * @return   String Resource Url
@@ -63,7 +63,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturnItems
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @return   String Resource Url
 	 */
@@ -92,7 +92,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetPayment
 	 * @param paymentId Unique identifier of the return payment to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return   String Resource Url
 	 */
@@ -107,7 +107,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetPayments
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return   String Resource Url
 	 */
@@ -121,7 +121,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReturn
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return   String Resource Url
 	 */
@@ -135,7 +135,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreateReturn
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createReturnUrl(String responseFields)
@@ -147,7 +147,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreateReturnItem
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @return   String Resource Url
 	 */
@@ -162,7 +162,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for PerformPaymentActionForReturn
 	 * @param paymentId Unique identifier of the return payment to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the refund payment.
 	 * @return   String Resource Url
 	 */
@@ -177,7 +177,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for CreatePaymentActionForReturn
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the payment action.
 	 * @return   String Resource Url
 	 */
@@ -191,7 +191,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for PerformReturnActions
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performReturnActionsUrl(String responseFields)
@@ -203,7 +203,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for UpdateReturn
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return.
 	 * @return   String Resource Url
 	 */

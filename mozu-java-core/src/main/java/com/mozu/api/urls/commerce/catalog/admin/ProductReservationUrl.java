@@ -17,7 +17,7 @@ public class ProductReservationUrl
 	 * Get Resource Url for GetProductReservations
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -36,7 +36,7 @@ public class ProductReservationUrl
 	/**
 	 * Get Resource Url for GetProductReservation
 	 * @param productReservationId Unique identifier of the product reservation.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductReservationUrl(Integer productReservationId, String responseFields)
@@ -49,7 +49,7 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for AddProductReservations
-	 * @param skipInventoryCheck 
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addProductReservationsUrl(Boolean skipInventoryCheck)
@@ -71,12 +71,12 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for UpdateProductReservations
-	 * @param skipInventoryCheck 
+	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductReservationsUrl(Boolean skipInventoryCheck)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/productreservations/?skipInventoryCheck={skipInventoryCheck}&useUp");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/productreservations/?skipInventoryCheck={skipInventoryCheck}");
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

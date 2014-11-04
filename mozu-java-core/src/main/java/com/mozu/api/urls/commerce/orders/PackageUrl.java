@@ -45,7 +45,7 @@ public class PackageUrl
 	 * Get Resource Url for GetPackage
 	 * @param orderId Unique identifier of the order associated with the package to retrieve.
 	 * @param packageId Unique identifier of the package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageUrl(String orderId, String packageId, String responseFields)
@@ -60,7 +60,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for CreatePackage
 	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageUrl(String orderId, String responseFields)
@@ -75,7 +75,7 @@ public class PackageUrl
 	 * Get Resource Url for UpdatePackage
 	 * @param orderId Unique identifier of the order associated with the package to update.
 	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePackageUrl(String orderId, String packageId, String responseFields)

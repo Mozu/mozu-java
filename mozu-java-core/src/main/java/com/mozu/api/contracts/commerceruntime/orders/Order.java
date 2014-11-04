@@ -39,18 +39,8 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the order is exempt from applied sales tax.
+	 * The date and time the order was accepted by the tenant.
 	 */
-	protected Boolean isTaxExempt;
-
-	public Boolean getIsTaxExempt() {
-		return this.isTaxExempt;
-	}
-
-	public void setIsTaxExempt(Boolean isTaxExempt) {
-		this.isTaxExempt = isTaxExempt;
-	}
-
 	protected DateTime acceptedDate;
 
 	public DateTime getAcceptedDate() {
@@ -61,6 +51,9 @@ public class Order implements Serializable
 		this.acceptedDate = acceptedDate;
 	}
 
+	/**
+	 * If true, the customer account associated with the order is opted in to receive marketing materials.
+	 */
 	protected Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
@@ -71,6 +64,9 @@ public class Order implements Serializable
 		this.acceptsMarketing = acceptsMarketing;
 	}
 
+	/**
+	 * The amount of the order the shopper can receive in the event of a return. This amount represents the amount captured at the time the order was submitted, not when the order was returned.
+	 */
 	protected Double amountAvailableForRefund;
 
 	public Double getAmountAvailableForRefund() {
@@ -81,6 +77,9 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
+	/**
+	 * The total amount of the order not currently associated with a payment. The shopper must create one or more payments to satisfy this amount before the order can be fully paid.
+	 */
 	protected Double amountRemainingForPayment;
 
 	public Double getAmountRemainingForPayment() {
@@ -179,7 +178,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The type of interaction the shopper used to submit the order. Possibel values are Website, Call, Store, or Unknown.
+	 * The type of interaction the shopper used to submit the order. Possible values are Website, Call, Store, or Unknown.
 	 */
 	protected String customerInteractionType;
 
@@ -269,6 +268,9 @@ public class Order implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * Unique identifier used by an external program to identify a Mozu order.
+	 */
 	protected String externalId;
 
 	public String getExternalId() {
@@ -341,6 +343,9 @@ public class Order implements Serializable
 		this.handlingTaxTotal = handlingTaxTotal;
 	}
 
+	/**
+	 * This total represents the handling amount value with any applied discounts.
+	 */
 	protected Double handlingTotal;
 
 	public Double getHandlingTotal() {
@@ -377,6 +382,9 @@ public class Order implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
+	 */
 	protected DateTime importDate;
 
 	public DateTime getImportDate() {
@@ -413,6 +421,9 @@ public class Order implements Serializable
 		this.isDraft = isDraft;
 	}
 
+	/**
+	 * If true, the shopper can return any of the items in this order to the tenant.
+	 */
 	protected Boolean isEligibleForReturns;
 
 	public Boolean getIsEligibleForReturns() {
@@ -434,6 +445,19 @@ public class Order implements Serializable
 
 	public void setIsImport(Boolean isImport) {
 		this.isImport = isImport;
+	}
+
+	/**
+	 * If true, the order is exempt from applied sales tax.
+	 */
+	protected Boolean isTaxExempt;
+
+	public Boolean getIsTaxExempt() {
+		return this.isTaxExempt;
+	}
+
+	public void setIsTaxExempt(Boolean isTaxExempt) {
+		this.isTaxExempt = isTaxExempt;
 	}
 
 	/**
@@ -606,7 +630,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current status of this order. Possible values are "New", "Open", "Processing", "Closed", or "Cancelled". System-supplied and read-only.
+	 * The current status of this order. Possible values are "Pending", "Submitted", "Processing", "Pending Review", "Closed", or "Cancelled". System-supplied and read-only.
 	 */
 	protected String status;
 
@@ -696,6 +720,9 @@ public class Order implements Serializable
 		this.totalCollected = totalCollected;
 	}
 
+	/**
+	 * This specifies the order type. This means, was this order placed online or offline? Online means shopper created the order at checkout, offline means the order was a phone order.
+	 */
 	protected String type;
 
 	public String getType() {
@@ -806,6 +833,9 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Specifies the fulfillment of digital packages associated with this order.
+	 */
 	protected List<DigitalPackage> digitalPackages;
 	public List<DigitalPackage> getDigitalPackages() {
 		return this.digitalPackages;
@@ -835,6 +865,9 @@ public class Order implements Serializable
 		this.handlingDiscounts = handlingDiscounts;
 	}
 
+	/**
+	 * List of invalid coupon codes the shopper entered for the order.
+	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
 		return this.invalidCoupons;
@@ -957,6 +990,9 @@ public class Order implements Serializable
 		this.shopperNotes = shopperNotes;
 	}
 
+	/**
+	 * Response returned by an order validation capability application.
+	 */
 	protected List<OrderValidationResult> validationResults;
 	public List<OrderValidationResult> getValidationResults() {
 		return this.validationResults;

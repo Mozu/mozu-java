@@ -28,7 +28,7 @@ public class TransactionUrl
 	/**
 	 * Get Resource Url for AddTransaction
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addTransactionUrl(Integer accountId, String responseFields)

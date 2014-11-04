@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
  * </summary>
  */
 public class ApplicationResource {
@@ -32,12 +32,12 @@ public class ApplicationResource {
 
 	
 	/**
-	 * 
+	 * Retrieves the details of the installed application specified in the request.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.GetApplication( appId);
+	 *	Application application = application.getApplication( appId);
 	 * </code></pre></p>
-	 * @param appId 
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -47,13 +47,13 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of the installed application specified in the request.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.GetApplication( appId,  responseFields);
+	 *	Application application = application.getApplication( appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param responseFields 
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -67,13 +67,13 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * 
+	 * Updates one or more properties of the application specified in the request.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.UpdateApplication( application,  appId);
+	 *	Application application = application.updateApplication( application,  appId);
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param application 
+	 * @param appId The application ID that represents the application to update.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -84,14 +84,14 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * 
+	 * Updates one or more properties of the application specified in the request.
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.UpdateApplication( application,  appId,  responseFields);
+	 *	Application application = application.updateApplication( application,  appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param responseFields 
-	 * @param application 
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application

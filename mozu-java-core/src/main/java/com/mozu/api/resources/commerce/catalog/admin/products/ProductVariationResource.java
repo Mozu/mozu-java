@@ -43,7 +43,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.GetProductVariationLocalizedDeltaPrices(_dataViewMode,  productCode,  variationKey);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrices( productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param variationKey 
@@ -63,7 +63,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.GetProductVariationLocalizedDeltaPrice(_dataViewMode,  productCode,  variationKey,  currencyCode);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode 
 	 * @param productCode 
@@ -80,11 +80,11 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.GetProductVariationLocalizedDeltaPrice(_dataViewMode,  productCode,  variationKey,  currencyCode,  responseFields);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -102,7 +102,7 @@ public class ProductVariationResource {
 	 * Retrieves the details of a product variation based on the supplied product code and variation key.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.GetProductVariation(_dataViewMode,  productCode,  variationKey);
+	 *	ProductVariation productVariation = productvariation.getProductVariation( productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
@@ -118,10 +118,10 @@ public class ProductVariationResource {
 	 * Retrieves the details of a product variation based on the supplied product code and variation key.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.GetProductVariation(_dataViewMode,  productCode,  variationKey,  responseFields);
+	 *	ProductVariation productVariation = productvariation.getProductVariation( productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -139,7 +139,7 @@ public class ProductVariationResource {
 	 * Retrieves a list of the product variations configured for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.GetProductVariations(_dataViewMode,  productCode);
+	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.getProductVariations( productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
@@ -154,12 +154,12 @@ public class ProductVariationResource {
 	 * Retrieves a list of the product variations configured for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.GetProductVariations(_dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ProductVariationPagedCollection productVariationPagedCollection = productvariation.getProductVariations( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationPagedCollection
@@ -178,7 +178,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.AddProductVariationLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param variationKey 
@@ -196,10 +196,10 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.AddProductVariationLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  responseFields);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey 
 	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -219,7 +219,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.UpdateProductVariationLocalizedDeltaPrices(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode 
 	 * @param variationKey 
@@ -241,7 +241,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.UpdateProductVariationLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode 
 	 * @param productCode 
@@ -260,11 +260,11 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.UpdateProductVariationLocalizedDeltaPrice(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
 	 * @param currencyCode 
 	 * @param productCode 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey 
 	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -284,7 +284,7 @@ public class ProductVariationResource {
 	 * Modifies the details of a variation, based on the supplied variation key, for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.UpdateProductVariation(_dataViewMode,  productVariation,  productCode,  variationKey);
+	 *	ProductVariation productVariation = productvariation.updateProductVariation( productVariation,  productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
@@ -302,10 +302,10 @@ public class ProductVariationResource {
 	 * Modifies the details of a variation, based on the supplied variation key, for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariation productVariation = productvariation.UpdateProductVariation(_dataViewMode,  productVariation,  productCode,  variationKey,  responseFields);
+	 *	ProductVariation productVariation = productvariation.updateProductVariation( productVariation,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param productVariation Wrapper for the properties of the specified product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
@@ -325,7 +325,7 @@ public class ProductVariationResource {
 	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationCollection productVariationCollection = productvariation.UpdateProductVariations(_dataViewMode,  productVariations,  productCode);
+	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
@@ -342,7 +342,7 @@ public class ProductVariationResource {
 	 * Modifies the collection of variations for the specified product code. Because this PUT replaces the existing resource, supply all information necessary to maintain for the product variation.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	ProductVariationCollection productVariationCollection = productvariation.UpdateProductVariations(_dataViewMode,  productVariations,  productCode,  responseFields);
+	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
@@ -364,7 +364,7 @@ public class ProductVariationResource {
 	 * Deletes a variation, based on the supplied variation key, for the specified product code.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	productvariation.DeleteProductVariation(_dataViewMode,  productCode,  variationKey);
+	 *	productvariation.deleteProductVariation( productCode,  variationKey);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
@@ -375,6 +375,7 @@ public class ProductVariationResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.deleteProductVariationClient(_dataViewMode,  productCode,  variationKey);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 
@@ -382,7 +383,7 @@ public class ProductVariationResource {
 	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
-	 *	productvariation.DeleteProductVariationLocalizedDeltaPrice(_dataViewMode,  productCode,  variationKey,  currencyCode);
+	 *	productvariation.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode 
 	 * @param productCode 
@@ -394,6 +395,7 @@ public class ProductVariationResource {
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.deleteProductVariationLocalizedDeltaPriceClient(_dataViewMode,  productCode,  variationKey,  currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

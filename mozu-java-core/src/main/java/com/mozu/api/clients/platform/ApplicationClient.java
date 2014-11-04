@@ -14,20 +14,20 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
  * </summary>
  */
 public class ApplicationClient {
 	
 	/**
-	 * 
+	 * Retrieves the details of the installed application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=GetApplicationClient( appId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId 
+	 * @param appId The application ID that represents the application to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -37,15 +37,15 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of the installed application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=GetApplicationClient( appId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param responseFields 
+	 * @param appId The application ID that represents the application to retrieve.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -62,15 +62,15 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * Updates one or more properties of the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=UpdateApplicationClient( application,  appId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param application 
+	 * @param appId The application ID that represents the application to update.
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -81,16 +81,16 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * Updates one or more properties of the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.Application> mozuClient=UpdateApplicationClient( application,  appId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param appId 
-	 * @param responseFields 
-	 * @param application 
+	 * @param appId The application ID that represents the application to update.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.Application>
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application

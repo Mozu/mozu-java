@@ -22,32 +22,6 @@ public class Visit implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the customer account associated with the visit.
-	 */
-	protected Integer accountId;
-
-	public Integer getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(Integer accountId) {
-		this.accountId = accountId;
-	}
-
-	/**
-	 * If the customer visit is made online, the location code associated with the website visited.
-	 */
-	protected String browserLocationCode;
-
-	public String getBrowserLocationCode() {
-		return this.browserLocationCode;
-	}
-
-	public void setBrowserLocationCode(String browserLocationCode) {
-		this.browserLocationCode = browserLocationCode;
-	}
-
-	/**
 	 * The date and time of the customer visit.
 	 */
 	protected DateTime date;
@@ -162,6 +136,32 @@ public class Visit implements Serializable
 
 	public void setWebUserAgent(String webUserAgent) {
 		this.webUserAgent = webUserAgent;
+	}
+
+	/**
+	 * Unique identifier of the customer account associated with the visit.
+	 */
+	protected Integer accountId;
+
+	public Integer getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+
+	/**
+	 * If the customer visit is made online, the location code associated with the website visited.
+	 */
+	protected String browserLocationCode;
+
+	public String getBrowserLocationCode() {
+		return this.browserLocationCode;
+	}
+
+	public void setBrowserLocationCode(String browserLocationCode) {
+		this.browserLocationCode = browserLocationCode;
 	}
 
 	/**

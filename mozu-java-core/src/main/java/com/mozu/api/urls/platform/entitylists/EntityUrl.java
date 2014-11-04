@@ -17,7 +17,7 @@ public class EntityUrl
 	 * Get Resource Url for GetEntity
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityUrl(String entityListFullName, String id, String responseFields)
@@ -32,9 +32,9 @@ public class EntityUrl
 	/**
 	 * Get Resource Url for GetEntities
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -54,7 +54,7 @@ public class EntityUrl
 	/**
 	 * Get Resource Url for InsertEntity
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl insertEntityUrl(String entityListFullName, String responseFields)
@@ -69,7 +69,7 @@ public class EntityUrl
 	 * Get Resource Url for UpdateEntity
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateEntityUrl(String entityListFullName, String id, String responseFields)

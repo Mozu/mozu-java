@@ -6,10 +6,12 @@
  */
 package com.mozu.api.contracts.event;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.event.EventExtendedProperty;
 
 /**
  *	Properties of an event the system creates each time a create, read, update, or delete operation is performed.
@@ -20,6 +22,9 @@ public class Event implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The unique identifier of the catalog of products used by a site.
+	 */
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -30,6 +35,9 @@ public class Event implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
+	 */
 	protected String correlationId;
 
 	public String getCorrelationId() {
@@ -79,6 +87,9 @@ public class Event implements Serializable
 		this.isTest = isTest;
 	}
 
+	/**
+	 * The unique identifier of the master catalog associated with the entity.
+	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -136,6 +147,14 @@ public class Event implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected List<EventExtendedProperty> extendedProperties;
+	public List<EventExtendedProperty> getExtendedProperties() {
+		return this.extendedProperties;
+	}
+	public void setExtendedProperties(List<EventExtendedProperty> extendedProperties) {
+		this.extendedProperties = extendedProperties;
 	}
 
 }

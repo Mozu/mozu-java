@@ -32,13 +32,13 @@ public class CardResource {
 
 	
 	/**
-	 * 
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId);
+	 *	Card card = card.getAccountCard( accountId,  cardId);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param cardId 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -48,14 +48,14 @@ public class CardResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a credit card stored with a customer account billing contact.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.GetAccountCard( accountId,  cardId,  responseFields);
+	 *	Card card = card.getAccountCard( accountId,  cardId,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId 
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 */
@@ -72,7 +72,7 @@ public class CardResource {
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	CardCollection cardCollection = card.GetAccountCards( accountId);
+	 *	CardCollection cardCollection = card.getAccountCards( accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @return com.mozu.api.contracts.customer.CardCollection
@@ -87,10 +87,10 @@ public class CardResource {
 	 * Retrieves all stored credit cards for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	CardCollection cardCollection = card.GetAccountCards( accountId,  responseFields);
+	 *	CardCollection cardCollection = card.getAccountCards( accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.CardCollection
 	 * @see com.mozu.api.contracts.customer.CardCollection
 	 */
@@ -107,7 +107,7 @@ public class CardResource {
 	 * Creates a new credit card record and stores it for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.AddAccountCard( card,  accountId);
+	 *	Card card = card.addAccountCard( card,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param card Properties of the customer credit card to add to the account.
@@ -124,10 +124,10 @@ public class CardResource {
 	 * Creates a new credit card record and stores it for the customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.AddAccountCard( card,  accountId,  responseFields);
+	 *	Card card = card.addAccountCard( card,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param card Properties of the customer credit card to add to the account.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -146,10 +146,10 @@ public class CardResource {
 	 * Update one or more properties of a credit card defined for a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId);
+	 *	Card card = card.updateAccountCard( card,  accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
+	 * @param cardId Unique identifier of the credit card.
 	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -164,11 +164,11 @@ public class CardResource {
 	 * Update one or more properties of a credit card defined for a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	Card card = card.UpdateAccountCard( card,  accountId,  cardId,  responseFields);
+	 *	Card card = card.updateAccountCard( card,  accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId 
-	 * @param responseFields 
+	 * @param cardId Unique identifier of the credit card.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -187,7 +187,7 @@ public class CardResource {
 	 * Removes a stored credit card from a customer account.
 	 * <p><pre><code>
 	 *	Card card = new Card();
-	 *	card.DeleteAccountCard( accountId,  cardId);
+	 *	card.deleteAccountCard( accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param cardId Unique identifier of the credit card to delete.
@@ -198,6 +198,7 @@ public class CardResource {
 		MozuClient client = com.mozu.api.clients.commerce.customer.accounts.CardClient.deleteAccountCardClient( accountId,  cardId);
 		client.setContext(_apiContext);
 		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

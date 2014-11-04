@@ -28,8 +28,8 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
@@ -44,7 +44,7 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for AddLocalizedContent
 	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocalizedContentUrl(String attributeFQN, String responseFields)
@@ -70,8 +70,8 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for UpdateLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields)
@@ -86,7 +86,7 @@ public class AttributeLocalizedContentUrl
 	/**
 	 * Get Resource Url for DeleteLocalizedContent
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocalizedContentUrl(String attributeFQN, String localeCode)

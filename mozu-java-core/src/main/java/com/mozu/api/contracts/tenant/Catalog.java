@@ -114,6 +114,9 @@ public class Catalog implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The current status of the product catalog.
+	 */
 	protected String status;
 
 	public String getStatus() {
@@ -124,6 +127,9 @@ public class Catalog implements Serializable
 		this.status = status;
 	}
 
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
 	protected Integer tenantId;
 
 	public Integer getTenantId() {

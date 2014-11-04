@@ -35,7 +35,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainer entityContainer = entitycontainer.GetEntityContainer( entityListFullName,  id);
+	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
@@ -51,11 +51,11 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainer entityContainer = entitycontainer.GetEntityContainer( entityListFullName,  id,  responseFields);
+	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @param id 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -72,7 +72,7 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName);
+	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName);
 	 * </code></pre></p>
 	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -87,12 +87,12 @@ public class EntityContainerResource {
 	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
-	 *	EntityContainerCollection entityContainerCollection = entitycontainer.GetEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
+	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection

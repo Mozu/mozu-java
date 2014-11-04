@@ -43,7 +43,7 @@ public class ChangeMessageClient {
 	 * client.executeRequest();
 	 * CartChangeMessageCollection cartChangeMessageCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection
 	 */

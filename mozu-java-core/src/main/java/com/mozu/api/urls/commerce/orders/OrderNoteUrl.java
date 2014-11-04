@@ -29,7 +29,7 @@ public class OrderNoteUrl
 	 * Get Resource Url for GetOrderNote
 	 * @param noteId Unique identifier of the order note to retrieve.
 	 * @param orderId Unique identifier of the order associated with the note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderNoteUrl(String noteId, String orderId, String responseFields)
@@ -44,7 +44,7 @@ public class OrderNoteUrl
 	/**
 	 * Get Resource Url for CreateOrderNote
 	 * @param orderId Unique identifier of the order for which to add a note.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createOrderNoteUrl(String orderId, String responseFields)
@@ -59,7 +59,7 @@ public class OrderNoteUrl
 	 * Get Resource Url for UpdateOrderNote
 	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOrderNoteUrl(String noteId, String orderId, String responseFields)

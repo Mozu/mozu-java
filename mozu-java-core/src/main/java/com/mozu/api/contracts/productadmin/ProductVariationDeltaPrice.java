@@ -19,6 +19,9 @@ public class ProductVariationDeltaPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The credit amount for the product.
+	 */
 	protected Double creditValue;
 
 	public Double getCreditValue() {
@@ -42,6 +45,9 @@ public class ProductVariationDeltaPrice implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * The manufacturer's suggested retail price, as defined by the supplier.
+	 */
 	protected Double msrp;
 
 	public Double getMsrp() {

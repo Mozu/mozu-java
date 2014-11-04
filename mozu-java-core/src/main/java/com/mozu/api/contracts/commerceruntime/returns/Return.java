@@ -349,6 +349,9 @@ public class Return implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * List of change messages associated with the return.
+	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
 		return this.changeMessages;

@@ -46,7 +46,7 @@ public class DocumentListTypeClient {
 	 * client.executeRequest();
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -94,7 +94,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType

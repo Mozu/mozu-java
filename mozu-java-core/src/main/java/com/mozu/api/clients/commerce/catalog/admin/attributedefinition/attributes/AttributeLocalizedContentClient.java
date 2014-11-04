@@ -53,7 +53,7 @@ public class AttributeLocalizedContentClient {
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -72,8 +72,8 @@ public class AttributeLocalizedContentClient {
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -119,7 +119,7 @@ public class AttributeLocalizedContentClient {
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
@@ -176,7 +176,7 @@ public class AttributeLocalizedContentClient {
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
@@ -197,8 +197,8 @@ public class AttributeLocalizedContentClient {
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param responseFields 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
@@ -226,7 +226,7 @@ public class AttributeLocalizedContentClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

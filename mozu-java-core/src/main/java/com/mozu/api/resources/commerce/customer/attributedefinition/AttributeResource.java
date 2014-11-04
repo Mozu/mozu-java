@@ -15,7 +15,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * 
+ * Use the Customer Attribute Definition resource to manage the attributes to define for your shoppers.
  * </summary>
  */
 public class AttributeResource {
@@ -32,10 +32,10 @@ public class AttributeResource {
 
 	
 	/**
-	 * 
+	 * Retrieves a list of customer attributes according to any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes();
+	 *	AttributeCollection attributeCollection = attribute.getAttributes();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
@@ -46,16 +46,16 @@ public class AttributeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of customer attributes according to any filter and sort criteria specified in the request.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeCollection attributeCollection = attribute.GetAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.core.extensible.AttributeCollection
 	 * @see com.mozu.api.contracts.core.extensible.AttributeCollection
 	 */
@@ -69,12 +69,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieve a list of the vocabulary values defined for the customer attribute specified in the request.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.GetAttributeVocabularyValues( attributeFQN);
+	 *	AttributeVocabularyValue attributeVocabularyValue = attribute.getAttributeVocabularyValues( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.core.extensible.AttributeVocabularyValue
 	 */
@@ -88,12 +88,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieve a customer attribute definition by supplying its fully qualified name.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */
@@ -103,13 +103,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieve a customer attribute definition by supplying its fully qualified name.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
-	 *	Attribute attribute = attribute.GetAttribute( attributeFQN,  responseFields);
+	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 */

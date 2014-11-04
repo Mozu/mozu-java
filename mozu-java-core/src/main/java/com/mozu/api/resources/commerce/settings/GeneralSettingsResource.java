@@ -35,7 +35,7 @@ public class GeneralSettingsResource {
 	 * Retrieve a site's general global settings.
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
-	 *	GeneralSettings generalSettings = generalsettings.GetGeneralSettings();
+	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -49,9 +49,9 @@ public class GeneralSettingsResource {
 	 * Retrieve a site's general global settings.
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
-	 *	GeneralSettings generalSettings = generalsettings.GetGeneralSettings( responseFields);
+	 *	GeneralSettings generalSettings = generalsettings.getGeneralSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 */
@@ -68,7 +68,7 @@ public class GeneralSettingsResource {
 	 * Updates a site's general global settings.
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
-	 *	GeneralSettings generalSettings = generalsettings.UpdateGeneralSettings( generalSettings);
+	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings);
 	 * </code></pre></p>
 	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -84,9 +84,9 @@ public class GeneralSettingsResource {
 	 * Updates a site's general global settings.
 	 * <p><pre><code>
 	 *	GeneralSettings generalsettings = new GeneralSettings();
-	 *	GeneralSettings generalSettings = generalsettings.UpdateGeneralSettings( generalSettings,  responseFields);
+	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

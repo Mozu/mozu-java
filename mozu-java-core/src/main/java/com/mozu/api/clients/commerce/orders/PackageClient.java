@@ -14,7 +14,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the packages subresource to manage the physical packages to ship for an order.
+ * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
  */
 public class PackageClient {
@@ -97,7 +97,7 @@ public class PackageClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to retrieve.
 	 * @param packageId Unique identifier of the package to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -141,7 +141,7 @@ public class PackageClient {
 	 * Package package = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param package Properties of the physical package of order items.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -190,7 +190,7 @@ public class PackageClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order associated with the package to update.
 	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param package Wrapper of properties for the package of order items to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package

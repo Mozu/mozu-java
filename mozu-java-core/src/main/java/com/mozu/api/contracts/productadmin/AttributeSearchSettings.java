@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Attribute search settings are a container for all of the search and indexing settings of an attribute.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeSearchSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates whether the attribute value is searchable in the merchant catalog admin.
+	 */
 	protected Boolean searchableInAdmin;
 
 	public Boolean getSearchableInAdmin() {
@@ -26,6 +32,9 @@ public class AttributeSearchSettings implements Serializable
 		this.searchableInAdmin = searchableInAdmin;
 	}
 
+	/**
+	 * Indicates whether the attribute value is searchable on the public storefront.
+	 */
 	protected Boolean searchableInStorefront;
 
 	public Boolean getSearchableInStorefront() {
@@ -36,6 +45,9 @@ public class AttributeSearchSettings implements Serializable
 		this.searchableInStorefront = searchableInStorefront;
 	}
 
+	/**
+	 * If true, the system indexs the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for for non-string attributes.
+	 */
 	protected Boolean searchDisplayValue;
 
 	public Boolean getSearchDisplayValue() {

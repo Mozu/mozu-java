@@ -1,11 +1,5 @@
 package com.mozu.test;
 
-import static org.junit.Assert.*;
-
-import java.io.Serializable;
-import java.util.Date;
-
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -16,20 +10,15 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.mozu.api.ApiContext;
-import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.mzdb.EntityList;
-import com.mozu.api.resources.platform.EntityListResource;
-import com.mozu.api.resources.platform.entitylists.EntityResource;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.api.utils.MozuHttpClientPool;
 import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.datafactory.EntityFactory;
-import com.mozu.test.framework.helper.EntityGenerator;
-import com.mozu.test.framework.helper.Generator;
+import com.mozu.test.framework.datafactory.EntityListFactory;
 
 public class EntityTests extends MozuApiTestBase {
 	
@@ -40,6 +29,7 @@ public class EntityTests extends MozuApiTestBase {
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		MozuHttpClientPool.getInstance().shutdown();
 	}
 
 	@Before
@@ -52,10 +42,8 @@ public class EntityTests extends MozuApiTestBase {
 	}
 
 	@JsonIgnoreProperties(ignoreUnknown = true)
-	public class MyClass implements Serializable
+	private class MyClass
 	{
-		// Default Serial Version UID
-		private static final long serialVersionUID = 1L;
 		protected DateTime item1;
 		public DateTime getItem1() {
 			return this.item1;
@@ -80,25 +68,19 @@ public class EntityTests extends MozuApiTestBase {
         String appId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();        
 		String mozuNamespace = appId.substring(0, appId.indexOf('.'));
 		EntityList list = com.mozu.test.framework.helper.EntityGenerator.generateEntityList(mozuNamespace, "item1", "item2");
-        EntityListResource entityListResource = new EntityListResource(new MozuApiContext(tenantId));
         EntityList existing = null;        
         String entityListName = list.getName();
         try{
-            existing = entityListResource.getEntityList(entityListName);
-        } catch(ApiException ae) {
-            if (!StringUtils.equals(ae.getApiError().getErrorCode(),"ITEM_NOT_FOUND"))
-                throw ae;
+            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        } 
+        catch(Exception ae) {
         }
-        EntityList createdList;
         if (existing==null)
-        	createdList = entityListResource.createEntityList(list);
+        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         else
-        	createdList = entityListResource.updateEntityList(list, entityListName);
+        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
         
         com.fasterxml.jackson.databind.ObjectMapper  mapper =  new com.fasterxml.jackson.databind.ObjectMapper();
-//        mapper.registerModule(new JodaModule());
-//        mapper.configure(com.fasterxml.jackson.databind.SerializationFeature.
-//        		WRITE_DATES_AS_TIMESTAMPS , false);
         MyClass sampleObject = new MyClass();
         sampleObject.setItem1(DateTime.now().minusDays(2));
         sampleObject.setItem2(DateTime.now());
@@ -112,20 +94,17 @@ public class EntityTests extends MozuApiTestBase {
         String appId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();        
 		String mozuNamespace = appId.substring(0, appId.indexOf('.'));
 		EntityList list = com.mozu.test.framework.helper.EntityGenerator.generateEntityList(mozuNamespace, "item1", "item2");
-        EntityListResource entityListResource = new EntityListResource(new MozuApiContext(tenantId));
         EntityList existing = null;        
         String entityListName = list.getName();
         try{
-            existing = entityListResource.getEntityList(entityListName);
-        } catch(ApiException ae) {
-            if (!StringUtils.equals(ae.getApiError().getErrorCode(),"ITEM_NOT_FOUND"))
-                throw ae;
+            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        } 
+        catch(Exception ae) {
         }
-        EntityList createdList;
         if (existing==null)
-        	createdList = entityListResource.createEntityList(list);
+        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         else
-        	createdList = entityListResource.updateEntityList(list, entityListName);
+        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
         
         com.fasterxml.jackson.databind.ObjectMapper  mapper =  new com.fasterxml.jackson.databind.ObjectMapper();
         mapper.registerModule(new JodaModule());

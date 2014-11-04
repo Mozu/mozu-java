@@ -14,7 +14,7 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang3.StringUtils;
 /** <summary>
- * Use the returns subresource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
+ * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
  * </summary>
  */
 public class ReturnClient {
@@ -45,7 +45,7 @@ public class ReturnClient {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
@@ -71,7 +71,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Retrieves a list of the actions available to perform for the specified return based on its current state.
+	 * @param returnId Unique identifier of the return for which to retrieve available actions.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -113,7 +113,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItem returnItem = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @param returnItemId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItem>
@@ -156,7 +156,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * ReturnItemCollection returnItemCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
@@ -225,7 +225,7 @@ public class ReturnClient {
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to retrieve.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -267,7 +267,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * PaymentCollection paymentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
@@ -309,7 +309,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -352,7 +352,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param ret Wrapper for the properties of the return to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -398,7 +398,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId 
 	 * @param returnItem 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
@@ -447,7 +447,7 @@ public class ReturnClient {
 	 * Return return = client.Result();
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the return payment to update.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the refund payment.
 	 * @param action The payment action to perform for the refund payment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
@@ -494,7 +494,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return associated with the payment action.
 	 * @param action The payment action to perform for the customer return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>
@@ -515,14 +515,14 @@ public class ReturnClient {
 	}
 
 	/**
-	 * Updates the return by performing the specified action.
+	 * Updates the return by performing the action specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient=PerformReturnActionsClient( action);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
-	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -533,15 +533,15 @@ public class ReturnClient {
 	}
 
 	/**
-	 * Updates the return by performing the specified action.
+	 * Updates the return by performing the action specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> mozuClient=PerformReturnActionsClient( action,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ReturnCollection returnCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param action The name of the return action to perform, such as "Refund" or "Replace".
+	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReturnCollection>
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -586,7 +586,7 @@ public class ReturnClient {
 	 * client.executeRequest();
 	 * Return return = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param returnId Unique identifier of the return.
 	 * @param ret Wrapper for the array of properties to update for the return.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.Return>

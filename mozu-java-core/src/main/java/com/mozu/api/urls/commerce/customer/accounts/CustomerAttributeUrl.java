@@ -16,8 +16,8 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for GetAccountAttribute
 	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
@@ -34,7 +34,7 @@ public class CustomerAttributeUrl
 	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -54,7 +54,7 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for AddAccountAttribute
 	 * @param accountId Unique identifier of the customer account.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAccountAttributeUrl(Integer accountId, String responseFields)
@@ -68,8 +68,8 @@ public class CustomerAttributeUrl
 	/**
 	 * Get Resource Url for UpdateAccountAttribute
 	 * @param accountId Identifier of the customer account associated with the attribute.
-	 * @param attributeFQN 
-	 * @param responseFields 
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAccountAttributeUrl(Integer accountId, String attributeFQN, String responseFields)
@@ -83,8 +83,8 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for DeleteAccountAttribute
-	 * @param accountId 
-	 * @param attributeFQN 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountAttributeUrl(Integer accountId, String attributeFQN)

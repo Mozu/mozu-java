@@ -15,7 +15,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for ThirdPartyGetApplication
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl thirdPartyGetApplicationUrl(String responseFields)
@@ -27,7 +27,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for ThirdPartyUpdateApplication
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl thirdPartyUpdateApplicationUrl(String responseFields)

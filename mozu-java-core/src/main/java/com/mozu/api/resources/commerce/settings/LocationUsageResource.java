@@ -35,7 +35,7 @@ public class LocationUsageResource {
 	 * Retrieves the configured site location usages for the location usage code specified in the request.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsageCollection locationUsageCollection = locationusage.GetLocationUsages();
+	 *	LocationUsageCollection locationUsageCollection = locationusage.getLocationUsages();
 	 * </code></pre></p>
 	 * @return com.mozu.api.contracts.location.LocationUsageCollection
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
@@ -49,9 +49,9 @@ public class LocationUsageResource {
 	 * Retrieves the configured site location usages for the location usage code specified in the request.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsageCollection locationUsageCollection = locationusage.GetLocationUsages( responseFields);
+	 *	LocationUsageCollection locationUsageCollection = locationusage.getLocationUsages( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.LocationUsageCollection
 	 * @see com.mozu.api.contracts.location.LocationUsageCollection
 	 */
@@ -68,7 +68,7 @@ public class LocationUsageResource {
 	 * Retrieves the location usages for the site specified in the request header.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsage locationUsage = locationusage.GetLocationUsage( code);
+	 *	LocationUsage locationUsage = locationusage.getLocationUsage( code);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
 	 * @return com.mozu.api.contracts.location.LocationUsage
@@ -83,10 +83,10 @@ public class LocationUsageResource {
 	 * Retrieves the location usages for the site specified in the request header.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsage locationUsage = locationusage.GetLocationUsage( code,  responseFields);
+	 *	LocationUsage locationUsage = locationusage.getLocationUsage( code,  responseFields);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -103,7 +103,7 @@ public class LocationUsageResource {
 	 * Updates the location usage for the site based on the location usage code specified in the request.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsage locationUsage = locationusage.UpdateLocationUsage( usage,  code);
+	 *	LocationUsage locationUsage = locationusage.updateLocationUsage( usage,  code);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
 	 * @param usage Properties of the location usage type to update.
@@ -120,10 +120,10 @@ public class LocationUsageResource {
 	 * Updates the location usage for the site based on the location usage code specified in the request.
 	 * <p><pre><code>
 	 *	LocationUsage locationusage = new LocationUsage();
-	 *	LocationUsage locationUsage = locationusage.UpdateLocationUsage( usage,  code,  responseFields);
+	 *	LocationUsage locationUsage = locationusage.updateLocationUsage( usage,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param usage Properties of the location usage type to update.
 	 * @return com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage

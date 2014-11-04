@@ -17,7 +17,7 @@ public class ListViewUrl
 	 * Get Resource Url for GetViewEntity
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return   String Resource Url
 	 */
@@ -34,9 +34,9 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for GetViewEntities
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return   String Resource Url
@@ -57,7 +57,7 @@ public class ListViewUrl
 	 * Get Resource Url for GetViewEntityContainer
 	 * @param entityId 
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return   String Resource Url
 	 */
@@ -74,9 +74,9 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for GetViewEntityContainers
 	 * @param entityListFullName 
-	 * @param filter 
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex 
 	 * @param viewName 
 	 * @return   String Resource Url
@@ -96,7 +96,7 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for GetEntityListView
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return   String Resource Url
 	 */
@@ -112,7 +112,7 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for GetEntityListViews
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListViewsUrl(String entityListFullName, String responseFields)
@@ -126,7 +126,7 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for CreateEntityListView
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createEntityListViewUrl(String entityListFullName, String responseFields)
@@ -140,7 +140,7 @@ public class ListViewUrl
 	/**
 	 * Get Resource Url for UpdateEntityListView
 	 * @param entityListFullName 
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param viewName 
 	 * @return   String Resource Url
 	 */

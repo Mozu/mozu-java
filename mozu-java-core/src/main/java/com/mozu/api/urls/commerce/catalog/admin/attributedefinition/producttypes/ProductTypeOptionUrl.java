@@ -29,7 +29,7 @@ public class ProductTypeOptionUrl
 	 * Get Resource Url for GetOption
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId The identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
@@ -44,7 +44,7 @@ public class ProductTypeOptionUrl
 	/**
 	 * Get Resource Url for AddOption
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addOptionUrl(Integer productTypeId, String responseFields)
@@ -59,7 +59,7 @@ public class ProductTypeOptionUrl
 	 * Get Resource Url for UpdateOption
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productTypeId Identifier of the product type.
-	 * @param responseFields 
+	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateOptionUrl(String attributeFQN, Integer productTypeId, String responseFields)
