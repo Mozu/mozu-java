@@ -22,11 +22,16 @@ public class MasterCatalogFactory
 
 	public static com.mozu.api.contracts.productadmin.MasterCatalogCollection getMasterCatalogs(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getMasterCatalogs(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.MasterCatalogCollection getMasterCatalogs(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.MasterCatalogCollection returnObj = new com.mozu.api.contracts.productadmin.MasterCatalogCollection();
 		MasterCatalogResource resource = new MasterCatalogResource(apiContext);
 		try
 		{
-			returnObj = resource.getMasterCatalogs();
+			returnObj = resource.getMasterCatalogs( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +41,22 @@ public class MasterCatalogFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(ApiContext apiContext, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
+	{
+		return getMasterCatalog(apiContext,  masterCatalogId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.MasterCatalog getMasterCatalog(ApiContext apiContext, Integer masterCatalogId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.MasterCatalog returnObj = new com.mozu.api.contracts.productadmin.MasterCatalog();
 		MasterCatalogResource resource = new MasterCatalogResource(apiContext);
 		try
 		{
-			returnObj = resource.getMasterCatalog(dataViewMode,  masterCatalogId);
+			returnObj = resource.getMasterCatalog( masterCatalogId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +66,22 @@ public class MasterCatalogFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(ApiContext apiContext, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, int expectedCode, int successCode) throws Exception
+	{
+		return updateMasterCatalog(apiContext,  masterCatalog,  masterCatalogId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.MasterCatalog updateMasterCatalog(ApiContext apiContext, com.mozu.api.contracts.productadmin.MasterCatalog masterCatalog, Integer masterCatalogId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.MasterCatalog returnObj = new com.mozu.api.contracts.productadmin.MasterCatalog();
 		MasterCatalogResource resource = new MasterCatalogResource(apiContext);
 		try
 		{
-			returnObj = resource.updateMasterCatalog(dataViewMode,  masterCatalog,  masterCatalogId);
+			returnObj = resource.updateMasterCatalog( masterCatalog,  masterCatalogId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,9 +91,8 @@ public class MasterCatalogFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

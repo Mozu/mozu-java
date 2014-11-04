@@ -58,7 +58,7 @@ public class LocationTests extends MozuApiTestBase  {
 		LocationType addLocationType = LocationTypeFactory.addLocationType(apiContext, typeObj, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
 		List<LocationType> types = new ArrayList<LocationType>();
 		types.add(addLocationType);
-		Location addLocation = LocationFactory.addLocation(apiContext, LocationGenerator.generate(types), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+/*bug 35404*/		Location addLocation = LocationFactory.addLocation(apiContext, LocationGenerator.generate(types), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
 		Location getLocation = LocationFactory.getLocation(apiContext, addLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 		LocationFactory.deleteLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);
         LocationFactory.getLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);

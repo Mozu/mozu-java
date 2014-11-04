@@ -2,6 +2,7 @@ package com.mozu.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import org.junit.Test;
 import com.mozu.api.ApiContext;
 import com.mozu.api.DataViewMode;
 import com.mozu.api.MozuApiContext;
+import com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo;
+import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationCollection;
 import com.mozu.api.contracts.productadmin.Attribute;
@@ -28,16 +31,26 @@ import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 import com.mozu.api.contracts.productadmin.ProductType;
 import com.mozu.api.contracts.productadmin.ProductTypeCollection;
+import com.mozu.api.contracts.productadmin.ProductVariation;
+import com.mozu.api.contracts.productadmin.ProductVariationPagedCollection;
+import com.mozu.api.contracts.productruntime.ProductCollection;
+import com.mozu.api.security.CustomerAuthenticationProfile;
+import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.test.framework.core.MozuApiTestBase;
+import com.mozu.test.framework.core.TestFailException;
 import com.mozu.test.framework.datafactory.AdminProductFactory;
 import com.mozu.test.framework.datafactory.AttributeFactory;
 import com.mozu.test.framework.datafactory.AttributedefinitionAttributeFactory;
 import com.mozu.test.framework.datafactory.CategoryFactory;
 import com.mozu.test.framework.datafactory.CommerceLocationFactory;
+import com.mozu.test.framework.datafactory.CustomerAccountFactory;
 import com.mozu.test.framework.datafactory.LocationFactory;
 import com.mozu.test.framework.datafactory.MasterCatalogFactory;
+import com.mozu.test.framework.datafactory.ProductFactory;
 import com.mozu.test.framework.datafactory.ProductTypeFactory;
+import com.mozu.test.framework.datafactory.ProductVariationFactory;
 import com.mozu.test.framework.datafactory.PublishingScopeFactory;
+import com.mozu.test.framework.helper.CustomerGenerator;
 import com.mozu.test.framework.helper.Generator;
 import com.mozu.test.framework.helper.ProductAttributeGenerator;
 import com.mozu.test.framework.helper.ProductGenerator;
@@ -66,7 +79,7 @@ public class ProductTests extends MozuApiTestBase {
 		}
 		for (int i = 0; i < attrs.size(); i++)
 		{
-		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, DataViewMode.Live, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
 		}
 	}
 
@@ -80,10 +93,10 @@ public class ProductTests extends MozuApiTestBase {
 	}
 
 	@Test
-	public void creatProductTest1() throws Exception  {
+	public void createProductTest1() throws Exception  {
 		//Create attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, DataViewMode.Live, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         attrs.add(createdAttr.getAttributeFQN());
         
         //Create product type
@@ -110,9 +123,9 @@ public class ProductTests extends MozuApiTestBase {
         productTypes.add(createdPT.getId());
 
         Product myProduct = ProductGenerator.generate(createdPT);
-		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, DataViewMode.Live, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Pending");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, DataViewMode.Live, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
         Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         AdminProductFactory.getProduct(apiContext, DataViewMode.Pending, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
@@ -120,14 +133,14 @@ public class ProductTests extends MozuApiTestBase {
         products.add(createdProduct.getProductCode());
         AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Live");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, DataViewMode.Live, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void updateProductTest2() throws Exception  {
 		// Add a new attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "Date", "AdminEntered", "Datetime", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, DataViewMode.Live, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
  
 		
 	    //update product type
@@ -156,56 +169,58 @@ public class ProductTests extends MozuApiTestBase {
         Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         products.add(createdProduct.getProductCode());
 
-	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 	@Test
-	public void inventoryTest1() throws Exception {
-		ApiContext localApiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);	
-       	String directShipLocationCode = CommerceLocationFactory.getDirectShipLocation(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK).getCode();
-        
-        LocationCollection PickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        String pickupLocationCode = PickupLocationCodes.getItems().get(0).getCode();
-
-	    //Get product type
-        ProductTypeCollection productTypes = ProductTypeFactory.getProductTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        ProductType myPT = productTypes.getItems().get(1);
-
-		Product myProduct = ProductGenerator.generate(myPT);
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        
-        //get a category        
-		ApiContext localApiContext1 = new MozuApiContext(tenantId, null, masterCatalogId, catalogId);	
-        CategoryPagedCollection cats = CategoryFactory.getCategories(localApiContext1, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        Category myCat = cats.getItems().get(0);
-        List<ProductCategory> list = new ArrayList<ProductCategory>();
-        list.add(ProductGenerator.generateProductCategory(myCat.getId()));
-        
-        ProductInCatalogInfo proInfo = ProductGenerator.generateProductInCatalogInfo(catalogId, list,
-                Generator.randomString(6, Generator.AlphaChars), Generator.randomDecimal(20., 1000.), true, true, false,true);
-        AdminProductFactory.addProductInCatalog(localApiContext1, DataViewMode.Live, proInfo, createdProduct.getProductCode(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        Product product = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-
-        Location directShipLocation = CommerceLocationFactory.getDirectShipLocation(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        if(!directShipLocation.getSupportsInventory())
-        {
-        	directShipLocation.setSupportsInventory(true);
-        	LocationFactory.updateLocation(apiContext, directShipLocation, directShipLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+	public void getProductsTest1() throws Exception {
+		ApiContext localapiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
+		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		int count = products.getTotalCount();
+		int variationCount = 0;
+		int startIndex = 0;
+		int pageSize = 200;
+		int file_number =  Generator.randomInt(1,  1000);
+//		PrintWriter writer1 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
+//		PrintWriter writer2 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
+        while (true)
+        {            
+        	ProductCollection prods = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, startIndex, pageSize, "productCode", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            for (com.mozu.api.contracts.productruntime.Product pro : prods.getItems())
+            {
+//            	writer1.println(pro.getProductCode());
+            	if (pro.getOptions() == null)
+            	{
+            		continue;
+            	}
+            	try
+            	{
+            		ProductVariationPagedCollection varies = ProductVariationFactory.getProductVariations(apiContext, DataViewMode.Live, pro.getProductCode(), 0, pageSize, "variationProductCode", null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            		for (ProductVariation vari: varies.getItems())
+            		{
+            			if (vari.getIsActive() && vari.getVariationExists())
+            			{
+//            				writer2.println(vari.getVariationProductCode());
+            				variationCount ++;
+            			}
+            		}
+            	}
+            	catch(TestFailException e)
+            	{
+            		continue;
+            	}
+            }
+            startIndex += pageSize;            	
+            if (prods.getItems().size() < pageSize)
+            {
+                break;
+            }
         }
-        LocationCollection pickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        Location pickupLocation = PickupLocationCodes.getItems().get(0);
-        if(!pickupLocation.getSupportsInventory())
-        {
-        	pickupLocation.setSupportsInventory(true);
-        	LocationFactory.updateLocation(apiContext, pickupLocation, pickupLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        }
-        if(!product.getInventoryInfo().getManageStock())
-        {
-        	product.getInventoryInfo().setManageStock(true);
-        	AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, product, product.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        }
-        OrderTests.updateInventory(localApiContext, directShipLocation.getCode(), product.getProductCode(), 100);            
-        OrderTests.updateInventory(localApiContext, pickupLocation.getCode(), product.getProductCode(), 50);
-			
-	}
+//        writer1.close();
+//        writer2.close();
+        System.out.println("Total products expected in xml is: " + count);
+        System.out.println("Total variations expected in xml is: " + variationCount);
+    }
+		
 }

@@ -22,16 +22,16 @@ public class ChannelFactory
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelCollection getChannels(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getChannels(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getChannels(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.channels.ChannelCollection getChannels(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.channels.ChannelCollection getChannels(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.channels.ChannelCollection returnObj = new com.mozu.api.contracts.commerceruntime.channels.ChannelCollection();
 		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
-			returnObj = resource.getChannels( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getChannels( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,18 +41,22 @@ public class ChannelFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel getChannel(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getChannel(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.Channel getChannel(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.Channel returnObj = new com.mozu.api.contracts.commerceruntime.channels.Channel();
 		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
-			returnObj = resource.getChannel( code);
+			returnObj = resource.getChannel( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class ChannelFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel createChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, int expectedCode, int successCode) throws Exception
 	{
+		return createChannel(apiContext,  channel,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.Channel createChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.Channel returnObj = new com.mozu.api.contracts.commerceruntime.channels.Channel();
 		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
-			returnObj = resource.createChannel( channel);
+			returnObj = resource.createChannel( channel,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class ChannelFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.Channel updateChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, String code, int expectedCode, int successCode) throws Exception
 	{
+		return updateChannel(apiContext,  channel,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.Channel updateChannel(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.Channel channel, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.Channel returnObj = new com.mozu.api.contracts.commerceruntime.channels.Channel();
 		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
-			returnObj = resource.updateChannel( channel,  code);
+			returnObj = resource.updateChannel( channel,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class ChannelFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteChannel(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-				ChannelResource resource = new ChannelResource(apiContext);
+		ChannelResource resource = new ChannelResource(apiContext);
 		try
 		{
 			resource.deleteChannel( code);
@@ -120,10 +131,11 @@ public class ChannelFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

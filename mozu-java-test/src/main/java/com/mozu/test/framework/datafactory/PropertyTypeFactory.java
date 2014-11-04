@@ -22,16 +22,16 @@ public class PropertyTypeFactory
 
 	public static com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
 	{
-		return getPropertyTypes(apiContext, dataViewMode,  null,  null, expectedCode, successCode );
+		return getPropertyTypes(apiContext, dataViewMode,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.PropertyTypeCollection getPropertyTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.PropertyTypeCollection returnObj = new com.mozu.api.contracts.content.PropertyTypeCollection();
-		PropertyTypeResource resource = new PropertyTypeResource(apiContext);
+		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getPropertyTypes(dataViewMode,  pageSize,  startIndex);
+			returnObj = resource.getPropertyTypes( pageSize,  startIndex,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,18 +41,47 @@ public class PropertyTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.content.PropertyType getPropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode, int successCode) throws Exception
+	{
+		return getPropertyType(apiContext, dataViewMode,  propertyTypeName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.PropertyType getPropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.PropertyType returnObj = new com.mozu.api.contracts.content.PropertyType();
+		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getPropertyType( propertyTypeName,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.content.PropertyType createPropertyType(ApiContext apiContext, com.mozu.api.contracts.content.PropertyType propertyType, int expectedCode, int successCode) throws Exception
+	{
+		return createPropertyType(apiContext,  propertyType,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.PropertyType createPropertyType(ApiContext apiContext, com.mozu.api.contracts.content.PropertyType propertyType, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.PropertyType returnObj = new com.mozu.api.contracts.content.PropertyType();
 		PropertyTypeResource resource = new PropertyTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.getPropertyType(dataViewMode,  propertyTypeName);
+			returnObj = resource.createPropertyType( propertyType,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +91,22 @@ public class PropertyTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static List<com.mozu.api.contracts.content.PropertyValueType> propertyValueTypes(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.PropertyType updatePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName, int expectedCode, int successCode) throws Exception
 	{
-		List<com.mozu.api.contracts.content.PropertyValueType> returnObj = new ArrayList<com.mozu.api.contracts.content.PropertyValueType>();
-		PropertyTypeResource resource = new PropertyTypeResource(apiContext);
+		return updatePropertyType(apiContext, dataViewMode,  propertyType,  propertyTypeName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.PropertyType updatePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.content.PropertyType propertyType, String propertyTypeName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.PropertyType returnObj = new com.mozu.api.contracts.content.PropertyType();
+		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.propertyValueTypes(dataViewMode);
+			returnObj = resource.updatePropertyType( propertyType,  propertyTypeName,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,9 +116,26 @@ public class PropertyTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static void deletePropertyType(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String propertyTypeName, int expectedCode, int successCode) throws Exception
+	{
+		PropertyTypeResource resource = new PropertyTypeResource(apiContext, dataViewMode);
+		try
+		{
+			resource.deletePropertyType( propertyTypeName);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

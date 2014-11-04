@@ -22,16 +22,16 @@ public class SubscriptionFactory
 
 	public static com.mozu.api.contracts.event.SubscriptionCollection getSubscriptions(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getSubscriptions(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getSubscriptions(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.event.SubscriptionCollection getSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.event.SubscriptionCollection getSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.event.SubscriptionCollection returnObj = new com.mozu.api.contracts.event.SubscriptionCollection();
 		SubscriptionResource resource = new SubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.getSubscriptions( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,9 +41,8 @@ public class SubscriptionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

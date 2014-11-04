@@ -22,16 +22,16 @@ public class AppliedDiscountFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order applyCoupon(ApiContext apiContext, String orderId, String couponCode, int expectedCode, int successCode) throws Exception
 	{
-		return applyCoupon(apiContext,  orderId,  couponCode,  null,  null, expectedCode, successCode );
+		return applyCoupon(apiContext,  orderId,  couponCode,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyCoupon(ApiContext apiContext, String orderId, String couponCode, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyCoupon(ApiContext apiContext, String orderId, String couponCode, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AppliedDiscountResource resource = new AppliedDiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.applyCoupon( orderId,  couponCode,  updateMode,  version);
+			returnObj = resource.applyCoupon( orderId,  couponCode,  updateMode,  version,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,9 +41,8 @@ public class AppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order removeCoupon(ApiContext apiContext, String orderId, String couponCode, int expectedCode, int successCode) throws Exception
@@ -67,9 +66,8 @@ public class AppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order removeCoupons(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
@@ -93,9 +91,8 @@ public class AppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

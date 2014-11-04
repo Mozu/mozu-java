@@ -22,16 +22,16 @@ public class ChannelGroupFactory
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getChannelGroups(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getChannelGroups(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection getChannelGroups(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection returnObj = new com.mozu.api.contracts.commerceruntime.channels.ChannelGroupCollection();
 		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.getChannelGroups( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getChannelGroups( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,18 +41,22 @@ public class ChannelGroupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup getChannelGroup(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
+		return getChannelGroup(apiContext,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup getChannelGroup(ApiContext apiContext, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.ChannelGroup returnObj = new com.mozu.api.contracts.commerceruntime.channels.ChannelGroup();
 		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.getChannelGroup( code);
+			returnObj = resource.getChannelGroup( code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class ChannelGroupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup createChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, int expectedCode, int successCode) throws Exception
 	{
+		return createChannelGroup(apiContext,  channelGroup,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup createChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.ChannelGroup returnObj = new com.mozu.api.contracts.commerceruntime.channels.ChannelGroup();
 		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.createChannelGroup( channelGroup);
+			returnObj = resource.createChannelGroup( channelGroup,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class ChannelGroupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup updateChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String code, int expectedCode, int successCode) throws Exception
 	{
+		return updateChannelGroup(apiContext,  channelGroup,  code,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.channels.ChannelGroup updateChannelGroup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.channels.ChannelGroup channelGroup, String code, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.channels.ChannelGroup returnObj = new com.mozu.api.contracts.commerceruntime.channels.ChannelGroup();
 		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
-			returnObj = resource.updateChannelGroup( channelGroup,  code);
+			returnObj = resource.updateChannelGroup( channelGroup,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class ChannelGroupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteChannelGroup(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-				ChannelGroupResource resource = new ChannelGroupResource(apiContext);
+		ChannelGroupResource resource = new ChannelGroupResource(apiContext);
 		try
 		{
 			resource.deleteChannelGroup( code);
@@ -120,10 +131,11 @@ public class ChannelGroupFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

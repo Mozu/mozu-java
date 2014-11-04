@@ -20,13 +20,13 @@ import com.mozu.api.resources.content.documentlists.FacetResource;
 public class FacetFactory
 {
 
-	public static List<com.mozu.api.contracts.content.Facet> getFacets(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String propertyName, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.content.Facet> getFacets(ApiContext apiContext, String documentListName, String propertyName, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.content.Facet> returnObj = new ArrayList<com.mozu.api.contracts.content.Facet>();
 		FacetResource resource = new FacetResource(apiContext);
 		try
 		{
-			returnObj = resource.getFacets(dataViewMode,  documentListName,  propertyName);
+			returnObj = resource.getFacets( documentListName,  propertyName);
 		}
 		catch (ApiException e)
 		{
@@ -36,9 +36,8 @@ public class FacetFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

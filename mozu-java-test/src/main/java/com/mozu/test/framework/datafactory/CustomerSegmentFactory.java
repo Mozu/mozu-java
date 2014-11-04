@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerSegmentResource;
 
 /** <summary>
- * 
+ * Use the Customer Account Segments subresource to view the customer segments associated with a customer account.
  * </summary>
  */
 public class CustomerSegmentFactory
@@ -22,16 +22,16 @@ public class CustomerSegmentFactory
 
 	public static com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		return getAccountSegments(apiContext,  accountId,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountSegments(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerSegmentCollection getAccountSegments(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerSegmentCollection returnObj = new com.mozu.api.contracts.customer.CustomerSegmentCollection();
 		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAccountSegments( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,9 +41,8 @@ public class CustomerSegmentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }
