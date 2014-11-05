@@ -23,10 +23,10 @@ public class ProductExtraFactory
 	public static List<com.mozu.api.contracts.productadmin.ProductExtra> getExtras(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductExtra> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductExtra>();
-		ProductExtraResource resource = new ProductExtraResource(apiContext);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getExtras(dataViewMode,  productCode);
+			returnObj = resource.getExtras( productCode);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +36,67 @@ public class ProductExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> getExtraValueLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>();
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getExtraValueLocalizedDeltaPrices( productCode,  attributeFQN,  value);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice getExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		return getExtraValueLocalizedDeltaPrice(apiContext, dataViewMode,  productCode,  attributeFQN,  value,  currencyCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice getExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice();
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return getExtra(apiContext, dataViewMode,  productCode,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtra getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductExtra returnObj = new com.mozu.api.contracts.productadmin.ProductExtra();
-		ProductExtraResource resource = new ProductExtraResource(apiContext);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getExtra(dataViewMode,  productCode,  attributeFQN);
+			returnObj = resource.getExtra( productCode,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +106,47 @@ public class ProductExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice addExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	{
+		return addExtraValueLocalizedDeltaPrice(apiContext, dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice addExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice();
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, int expectedCode, int successCode) throws Exception
 	{
+		return addExtra(apiContext, dataViewMode,  productExtra,  productCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtra addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductExtra returnObj = new com.mozu.api.contracts.productadmin.ProductExtra();
-		ProductExtraResource resource = new ProductExtraResource(apiContext);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addExtra(dataViewMode,  productExtra,  productCode);
+			returnObj = resource.addExtra( productExtra,  productCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +156,67 @@ public class ProductExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> updateExtraValueLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> localizedDeltaPrice, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>();
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateExtraValueLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  attributeFQN,  value);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice updateExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		return updateExtraValueLocalizedDeltaPrice(apiContext, dataViewMode,  localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice updateExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice localizedDeltaPrice, String productCode, String attributeFQN, String value, String currencyCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice();
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductExtra updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return updateExtra(apiContext, dataViewMode,  productExtra,  productCode,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductExtra updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductExtra productExtra, String productCode, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductExtra returnObj = new com.mozu.api.contracts.productadmin.ProductExtra();
-		ProductExtraResource resource = new ProductExtraResource(apiContext);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateExtra(dataViewMode,  productExtra,  productCode,  attributeFQN);
+			returnObj = resource.updateExtra( productExtra,  productCode,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,26 +226,44 @@ public class ProductExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductExtraResource resource = new ProductExtraResource(apiContext);
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteExtra(dataViewMode,  productCode,  attributeFQN);
+			resource.deleteExtra( productCode,  attributeFQN);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
 
+	public static void deleteExtraValueLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		ProductExtraResource resource = new ProductExtraResource(apiContext, dataViewMode);
+		try
+		{
+			resource.deleteExtraValueLocalizedDeltaPrice( productCode,  attributeFQN,  value,  currencyCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

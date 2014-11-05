@@ -36,9 +36,8 @@ public class OrderAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> createOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode, int successCode) throws Exception
@@ -57,9 +56,8 @@ public class OrderAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> updateOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode, int successCode) throws Exception
@@ -83,9 +81,8 @@ public class OrderAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

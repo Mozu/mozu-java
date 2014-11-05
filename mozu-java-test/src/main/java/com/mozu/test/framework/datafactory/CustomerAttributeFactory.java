@@ -22,11 +22,16 @@ public class CustomerAttributeFactory
 
 	public static com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return getAccountAttribute(apiContext,  accountId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAttribute getAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerAttribute returnObj = new com.mozu.api.contracts.customer.CustomerAttribute();
 		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountAttribute( accountId,  attributeFQN);
+			returnObj = resource.getAccountAttribute( accountId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,23 +41,22 @@ public class CustomerAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		return getAccountAttributes(apiContext,  accountId,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountAttributes(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAttributeCollection getAccountAttributes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerAttributeCollection returnObj = new com.mozu.api.contracts.customer.CustomerAttributeCollection();
 		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class CustomerAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountAttribute(apiContext,  attribute,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAttribute addAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerAttribute returnObj = new com.mozu.api.contracts.customer.CustomerAttribute();
 		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountAttribute( attribute,  accountId);
+			returnObj = resource.addAccountAttribute( attribute,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class CustomerAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountAttribute(apiContext,  attribute,  accountId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAttribute updateAccountAttribute(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerAttribute attribute, Integer accountId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerAttribute returnObj = new com.mozu.api.contracts.customer.CustomerAttribute();
 		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountAttribute( attribute,  accountId,  attributeFQN);
+			returnObj = resource.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class CustomerAttributeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountAttribute(ApiContext apiContext, Integer accountId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
+		CustomerAttributeResource resource = new CustomerAttributeResource(apiContext);
 		try
 		{
 			resource.deleteAccountAttribute( accountId,  attributeFQN);
@@ -120,10 +131,11 @@ public class CustomerAttributeFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

@@ -22,36 +22,38 @@ public class PublishingScopeFactory
 
 	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext);
+		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.discardDrafts(dataViewMode,  publishScope);
+			resource.discardDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
 	{
-				PublishingScopeResource resource = new PublishingScopeResource(apiContext);
+		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.publishDrafts(dataViewMode,  publishScope);
+			resource.publishDrafts( publishScope);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

@@ -22,11 +22,16 @@ public class PaymentFactory
 
 	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return getPayments(apiContext,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.payments.PaymentCollection returnObj = new com.mozu.api.contracts.commerceruntime.payments.PaymentCollection();
 		PaymentResource resource = new PaymentResource(apiContext);
 		try
 		{
-			returnObj = resource.getPayments( orderId);
+			returnObj = resource.getPayments( orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,30 +41,8 @@ public class PaymentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
-	}
-
-	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.commerceruntime.payments.Payment returnObj = new com.mozu.api.contracts.commerceruntime.payments.Payment();
-		PaymentResource resource = new PaymentResource(apiContext);
-		try
-		{
-			returnObj = resource.getPayment( orderId,  paymentId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
 	}
 
 	public static List<String> getAvailablePaymentActions(ApiContext apiContext, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
@@ -78,39 +61,47 @@ public class PaymentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
+	{
+		return getPayment(apiContext,  orderId,  paymentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String orderId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.payments.Payment returnObj = new com.mozu.api.contracts.commerceruntime.payments.Payment();
+		PaymentResource resource = new PaymentResource(apiContext);
+		try
+		{
+			returnObj = resource.getPayment( orderId,  paymentId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order performPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String paymentId, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
-		PaymentResource resource = new PaymentResource(apiContext);
-		try
-		{
-			returnObj = resource.performPaymentAction( action,  orderId,  paymentId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return performPaymentAction(apiContext,  action,  orderId,  paymentId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order performPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		PaymentResource resource = new PaymentResource(apiContext);
 		try
 		{
-			returnObj = resource.createPaymentAction( action,  orderId);
+			returnObj = resource.performPaymentAction( action,  orderId,  paymentId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -120,9 +111,33 @@ public class PaymentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, int expectedCode, int successCode) throws Exception
+	{
+		return createPaymentAction(apiContext,  action,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createPaymentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		PaymentResource resource = new PaymentResource(apiContext);
+		try
+		{
+			returnObj = resource.createPaymentAction( action,  orderId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 }

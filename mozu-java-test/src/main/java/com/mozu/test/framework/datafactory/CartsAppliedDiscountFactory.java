@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.carts.AppliedDiscountResource;
 
 /** <summary>
- * 
+ * Use the Cart Coupons resource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
  * </summary>
  */
 public class CartsAppliedDiscountFactory
@@ -22,11 +22,16 @@ public class CartsAppliedDiscountFactory
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(ApiContext apiContext, String cartId, String couponCode, int expectedCode, int successCode) throws Exception
 	{
+		return applyCoupon(apiContext,  cartId,  couponCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart applyCoupon(ApiContext apiContext, String cartId, String couponCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		AppliedDiscountResource resource = new AppliedDiscountResource(apiContext);
 		try
 		{
-			returnObj = resource.applyCoupon( cartId,  couponCode);
+			returnObj = resource.applyCoupon( cartId,  couponCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,9 +41,8 @@ public class CartsAppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart removeCoupons(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
@@ -57,9 +61,8 @@ public class CartsAppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.carts.Cart removeCoupon(ApiContext apiContext, String cartId, String couponCode, int expectedCode, int successCode) throws Exception
@@ -78,9 +81,8 @@ public class CartsAppliedDiscountFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

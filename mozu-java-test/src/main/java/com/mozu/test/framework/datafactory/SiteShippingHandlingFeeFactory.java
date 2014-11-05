@@ -22,11 +22,16 @@ public class SiteShippingHandlingFeeFactory
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
+		return getOrderHandlingFee(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee getOrderHandlingFee(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
 		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrderHandlingFee();
+			returnObj = resource.getOrderHandlingFee( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,39 +41,22 @@ public class SiteShippingHandlingFeeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
-		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
-		try
-		{
-			returnObj = resource.createOrderHandlingFee( orderHandlingFee);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return createOrderHandlingFee(apiContext,  orderHandlingFee,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee createOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
 		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateOrderHandlingFee( orderHandlingFee);
+			returnObj = resource.createOrderHandlingFee( orderHandlingFee,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,9 +66,33 @@ public class SiteShippingHandlingFeeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, int expectedCode, int successCode) throws Exception
+	{
+		return updateOrderHandlingFee(apiContext,  orderHandlingFee,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee updateOrderHandlingFee(ApiContext apiContext, com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee orderHandlingFee, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee returnObj = new com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee();
+		SiteShippingHandlingFeeResource resource = new SiteShippingHandlingFeeResource(apiContext);
+		try
+		{
+			returnObj = resource.updateOrderHandlingFee( orderHandlingFee,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 }

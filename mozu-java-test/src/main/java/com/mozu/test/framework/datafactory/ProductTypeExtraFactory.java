@@ -23,10 +23,10 @@ public class ProductTypeExtraFactory
 	public static List<com.mozu.api.contracts.productadmin.AttributeInProductType> getExtras(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.AttributeInProductType> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.AttributeInProductType>();
-		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getExtras(dataViewMode,  productTypeId);
+			returnObj = resource.getExtras( productTypeId);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +36,22 @@ public class ProductTypeExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return getExtra(apiContext, dataViewMode,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType getExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getExtra(dataViewMode,  productTypeId,  attributeFQN);
+			returnObj = resource.getExtra( productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +61,22 @@ public class ProductTypeExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
+		return addExtra(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType addExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addExtra(dataViewMode,  attributeInProductType,  productTypeId);
+			returnObj = resource.addExtra( attributeInProductType,  productTypeId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +86,22 @@ public class ProductTypeExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return updateExtra(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateExtra(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+			returnObj = resource.updateExtra( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,26 +111,26 @@ public class ProductTypeExtraFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteExtra(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext);
+		ProductTypeExtraResource resource = new ProductTypeExtraResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteExtra(dataViewMode,  productTypeId,  attributeFQN);
+			resource.deleteExtra( productTypeId,  attributeFQN);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

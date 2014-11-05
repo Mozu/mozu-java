@@ -23,10 +23,10 @@ public class ProductTypePropertyFactory
 	public static List<com.mozu.api.contracts.productadmin.AttributeInProductType> getProperties(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.AttributeInProductType> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.AttributeInProductType>();
-		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext);
+		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProperties(dataViewMode,  productTypeId);
+			returnObj = resource.getProperties( productTypeId);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +36,22 @@ public class ProductTypePropertyFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return getProperty(apiContext, dataViewMode,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext);
+		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProperty(dataViewMode,  productTypeId,  attributeFQN);
+			returnObj = resource.getProperty( productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +61,22 @@ public class ProductTypePropertyFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
+		return addProperty(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext);
+		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.addProperty(dataViewMode,  attributeInProductType,  productTypeId);
+			returnObj = resource.addProperty( attributeInProductType,  productTypeId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +86,22 @@ public class ProductTypePropertyFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
+		return updateProperty(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
-		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext);
+		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProperty(dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN);
+			returnObj = resource.updateProperty( attributeInProductType,  productTypeId,  attributeFQN,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,26 +111,26 @@ public class ProductTypePropertyFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
 	{
-				ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext);
+		ProductTypePropertyResource resource = new ProductTypePropertyResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProperty(dataViewMode,  productTypeId,  attributeFQN);
+			resource.deleteProperty( productTypeId,  attributeFQN);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

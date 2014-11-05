@@ -22,11 +22,16 @@ public class FulfillmentActionFactory
 
 	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return performFulfillmentAction(apiContext,  action,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		FulfillmentActionResource resource = new FulfillmentActionResource(apiContext);
 		try
 		{
-			returnObj = resource.performFulfillmentAction( action,  orderId);
+			returnObj = resource.performFulfillmentAction( action,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,9 +41,8 @@ public class FulfillmentActionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

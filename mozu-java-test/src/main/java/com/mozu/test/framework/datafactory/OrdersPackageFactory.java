@@ -14,32 +14,11 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.PackageResource;
 
 /** <summary>
- * Use the packages subresource to manage the physical packages to ship for an order.
+ * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
  */
 public class OrdersPackageFactory
 {
-
-	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.commerceruntime.fulfillment.Package returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Package();
-		PackageResource resource = new PackageResource(apiContext);
-		try
-		{
-			returnObj = resource.getPackage( orderId,  packageId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
 
 	public static List<String> getAvailablePackageFulfillmentActions(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
 	{
@@ -57,9 +36,8 @@ public class OrdersPackageFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static java.io.InputStream getPackageLabel(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
@@ -78,18 +56,47 @@ public class OrdersPackageFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
+	{
+		return getPackage(apiContext,  orderId,  packageId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package getPackage(ApiContext apiContext, String orderId, String packageId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.fulfillment.Package returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Package();
+		PackageResource resource = new PackageResource(apiContext);
+		try
+		{
+			returnObj = resource.getPackage( orderId,  packageId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return createPackage(apiContext,  pkg,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package createPackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Package returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Package();
 		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
-			returnObj = resource.createPackage( pkg,  orderId);
+			returnObj = resource.createPackage( pkg,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,18 +106,22 @@ public class OrdersPackageFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String packageId, int expectedCode, int successCode) throws Exception
 	{
+		return updatePackage(apiContext,  pkg,  orderId,  packageId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Package updatePackage(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Package pkg, String orderId, String packageId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Package returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Package();
 		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
-			returnObj = resource.updatePackage( pkg,  orderId,  packageId);
+			returnObj = resource.updatePackage( pkg,  orderId,  packageId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -120,14 +131,13 @@ public class OrdersPackageFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePackage(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
 	{
-				PackageResource resource = new PackageResource(apiContext);
+		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
 			resource.deletePackage( orderId,  packageId);
@@ -136,10 +146,11 @@ public class OrdersPackageFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

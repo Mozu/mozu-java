@@ -22,11 +22,16 @@ public class SiteDataFactory
 
 	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
+		return getDBValue(apiContext,  dbEntryQuery,  null, expectedCode, successCode );
+	}
+
+	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		String returnObj = new String();
 		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
 		{
-			returnObj = resource.getDBValue( dbEntryQuery);
+			returnObj = resource.getDBValue( dbEntryQuery,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,14 +41,13 @@ public class SiteDataFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				SiteDataResource resource = new SiteDataResource(apiContext);
+		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
 		{
 			resource.createDBValue( value,  dbEntryQuery);
@@ -52,15 +56,16 @@ public class SiteDataFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 	public static void updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				SiteDataResource resource = new SiteDataResource(apiContext);
+		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
 		{
 			resource.updateDBValue( value,  dbEntryQuery);
@@ -69,15 +74,16 @@ public class SiteDataFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 	public static void deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
 	{
-				SiteDataResource resource = new SiteDataResource(apiContext);
+		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
 		{
 			resource.deleteDBValue( dbEntryQuery);
@@ -86,10 +92,11 @@ public class SiteDataFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

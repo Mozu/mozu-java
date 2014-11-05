@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.InStockNotificationSubscriptionResource;
 
 /** <summary>
- * 
+ * Use the Customer In-Stock Notification Subscription resource to manage the subscriptions customer accounts use to send product notifications. This resource can send a notification when a product in a catalog returns to a site's active inventory after it is out of stock, or when a new product becomes available for the first time.
  * </summary>
  */
 public class InStockNotificationSubscriptionFactory
@@ -22,16 +22,16 @@ public class InStockNotificationSubscriptionFactory
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return getInStockNotificationSubscriptions(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return getInStockNotificationSubscriptions(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection getInStockNotificationSubscriptions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getInStockNotificationSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,18 +41,22 @@ public class InStockNotificationSubscriptionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
 	{
+		return getInStockNotificationSubscription(apiContext,  id,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscription getInStockNotificationSubscription(ApiContext apiContext, Integer id, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscription returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscription();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.getInStockNotificationSubscription( id);
+			returnObj = resource.getInStockNotificationSubscription( id,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class InStockNotificationSubscriptionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(ApiContext apiContext, com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, int expectedCode, int successCode) throws Exception
 	{
+		return addInStockNotificationSubscription(apiContext,  inStockNotificationSubscription,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.InStockNotificationSubscription addInStockNotificationSubscription(ApiContext apiContext, com.mozu.api.contracts.customer.InStockNotificationSubscription inStockNotificationSubscription, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.InStockNotificationSubscription returnObj = new com.mozu.api.contracts.customer.InStockNotificationSubscription();
 		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
-			returnObj = resource.addInStockNotificationSubscription( inStockNotificationSubscription);
+			returnObj = resource.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,14 +91,13 @@ public class InStockNotificationSubscriptionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteInStockNotificationSubscription(ApiContext apiContext, Integer id, int expectedCode, int successCode) throws Exception
 	{
-				InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
+		InStockNotificationSubscriptionResource resource = new InStockNotificationSubscriptionResource(apiContext);
 		try
 		{
 			resource.deleteInStockNotificationSubscription( id);
@@ -99,10 +106,11 @@ public class InStockNotificationSubscriptionFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }
