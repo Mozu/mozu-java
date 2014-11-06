@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attribut
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -63,7 +64,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentsUrl(attributeFQN, value);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -111,7 +112,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, responseFields, value);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -157,7 +158,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.getAttributeVocabularyValueUrl(attributeFQN, responseFields, value);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -207,7 +208,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.addAttributeVocabularyValueLocalizedContentUrl(attributeFQN, responseFields, value);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -256,7 +257,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.addAttributeVocabularyValueUrl(attributeFQN, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attributeVocabularyValue);
@@ -284,7 +285,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(vocabularyValues);
@@ -313,7 +314,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueLocalizedContentsUrl(attributeFQN, value);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -366,7 +367,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, responseFields, value);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -417,7 +418,7 @@ public class AttributeVocabularyValueClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.updateAttributeVocabularyValueUrl(attributeFQN, responseFields, value);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeVocabularyValue.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attributeVocabularyValue);
@@ -441,7 +442,7 @@ public class AttributeVocabularyValueClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueUrl(attributeFQN, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -465,7 +466,7 @@ public class AttributeVocabularyValueClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeVocabularyValueUrl.deleteAttributeVocabularyValueLocalizedContentUrl(attributeFQN, localeCode, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

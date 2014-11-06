@@ -9,6 +9,7 @@ package com.mozu.api.clients.content.documentlists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -60,7 +61,7 @@ public class ViewClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.ViewUrl.getViewDocumentsUrl(documentListName, filter, pageSize, responseFields, sortBy, startIndex, viewName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentCollection.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -5,7 +5,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.apache.http.HttpStatus;
+import javax.servlet.http.HttpServletResponse;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -78,17 +79,17 @@ public class EventManagerTest {
 
         @Override
         public EventHandlerStatus created(ApiContext apiContext, Event eventPayLoad) {
-            return new EventHandlerStatus(null, HttpStatus.SC_OK);
+            return new EventHandlerStatus(null, HttpServletResponse.SC_OK);
         }
 
         @Override
         public EventHandlerStatus updated(ApiContext apiContext, Event eventPayLoad) {
-            return new EventHandlerStatus(null, HttpStatus.SC_OK);
+            return new EventHandlerStatus(null, HttpServletResponse.SC_OK);
         }
 
         @Override
         public EventHandlerStatus deleted(ApiContext apiContext, Event eventPayLoad) {
-            return new EventHandlerStatus(null, HttpStatus.SC_OK);
+            return new EventHandlerStatus(null, HttpServletResponse.SC_OK);
         }
     }
     

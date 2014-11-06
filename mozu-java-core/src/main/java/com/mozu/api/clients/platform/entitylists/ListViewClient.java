@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform.entitylists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -58,7 +59,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getViewEntityUrl(entityId, entityListFullName, responseFields, viewName);
 		String verb = "GET";
 		Class<?> clz = com.fasterxml.jackson.databind.JsonNode.class;
-		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = new MozuClient(clz);
+		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = (MozuClient<com.fasterxml.jackson.databind.JsonNode>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -105,7 +106,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getViewEntitiesUrl(entityListFullName, filter, pageSize, responseFields, startIndex, viewName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityCollection.class;
-		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.EntityCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -151,7 +152,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getViewEntityContainerUrl(entityId, entityListFullName, responseFields, viewName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityContainer.class;
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.EntityContainer>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -198,7 +199,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getViewEntityContainersUrl(entityListFullName, filter, pageSize, responseFields, startIndex, viewName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityContainerCollection.class;
-		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -242,7 +243,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getEntityListViewUrl(entityListFullName, responseFields, viewName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.ListView.class;
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.ListView>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -284,7 +285,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.getEntityListViewsUrl(entityListFullName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.ListViewCollection.class;
-		MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -330,7 +331,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.createEntityListViewUrl(entityListFullName, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.mzdb.ListView.class;
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.ListView>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(listView);
@@ -379,7 +380,7 @@ public class ListViewClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.updateEntityListViewUrl(entityListFullName, responseFields, viewName);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.mzdb.ListView.class;
-		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.ListView>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(listView);
@@ -402,7 +403,7 @@ public class ListViewClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.ListViewUrl.deleteEntityListViewUrl(entityListFullName, viewName);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

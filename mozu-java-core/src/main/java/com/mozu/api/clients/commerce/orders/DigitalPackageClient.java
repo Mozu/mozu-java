@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class DigitalPackageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.DigitalPackageUrl.getAvailableDigitalPackageFulfillmentActionsUrl(digitalPackageId, orderId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<String>(){}.getClass();
-		MozuClient<List<String>> mozuClient = new MozuClient(clz);
+		MozuClient<List<String>> mozuClient = (MozuClient<List<String>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -81,7 +82,7 @@ public class DigitalPackageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.DigitalPackageUrl.getDigitalPackageUrl(digitalPackageId, orderId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -127,7 +128,7 @@ public class DigitalPackageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.DigitalPackageUrl.createDigitalPackageUrl(orderId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(digitalPackage);
@@ -176,7 +177,7 @@ public class DigitalPackageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.DigitalPackageUrl.updateDigitalPackageUrl(digitalPackageId, orderId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(digitalPackage);
@@ -199,7 +200,7 @@ public class DigitalPackageClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.orders.DigitalPackageUrl.deleteDigitalPackageUrl(digitalPackageId, orderId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

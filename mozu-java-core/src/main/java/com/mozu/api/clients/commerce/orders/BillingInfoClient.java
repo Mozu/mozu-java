@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class BillingInfoClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.BillingInfoUrl.getBillingInfoUrl(draft, orderId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.BillingInfo.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -103,7 +104,7 @@ public class BillingInfoClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.BillingInfoUrl.setBillingInfoUrl(orderId, responseFields, updateMode, version);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.BillingInfo.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.payments.BillingInfo>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(billingInfo);

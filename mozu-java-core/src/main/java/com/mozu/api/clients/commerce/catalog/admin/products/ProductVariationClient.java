@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.products;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -38,7 +39,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationLocalizedDeltaPricesUrl(productCode, variationKey);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -85,7 +86,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, responseFields, variationKey);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -130,7 +131,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationUrl(productCode, responseFields, variationKey);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariation.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariation>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -177,7 +178,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.getProductVariationsUrl(filter, pageSize, productCode, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationPagedCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariationPagedCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -226,7 +227,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.addProductVariationLocalizedDeltaPriceUrl(productCode, responseFields, variationKey);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedDeltaPrice);
@@ -255,7 +256,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationLocalizedDeltaPricesUrl(productCode, variationKey);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedDeltaPrice);
@@ -307,7 +308,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, responseFields, variationKey);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedDeltaPrice);
@@ -357,7 +358,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationUrl(productCode, responseFields, variationKey);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariation.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariation> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariation>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productVariation);
@@ -405,7 +406,7 @@ public class ProductVariationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.updateProductVariationsUrl(productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductVariationCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductVariationCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productVariations);
@@ -429,7 +430,7 @@ public class ProductVariationClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.deleteProductVariationUrl(productCode, variationKey);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -453,7 +454,7 @@ public class ProductVariationClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductVariationUrl.deleteProductVariationLocalizedDeltaPriceUrl(currencyCode, productCode, variationKey);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

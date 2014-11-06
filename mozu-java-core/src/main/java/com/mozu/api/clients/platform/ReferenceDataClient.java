@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -53,7 +54,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getAddressSchemaUrl(countryCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.AddressSchema.class;
-		MozuClient<com.mozu.api.contracts.reference.AddressSchema> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.AddressSchema> mozuClient = (MozuClient<com.mozu.api.contracts.reference.AddressSchema>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -93,7 +94,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getAddressSchemasUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.AddressSchemaCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.AddressSchemaCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.AddressSchemaCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.AddressSchemaCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -135,7 +136,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getBehaviorUrl(behaviorId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.Behavior.class;
-		MozuClient<com.mozu.api.contracts.core.Behavior> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.Behavior> mozuClient = (MozuClient<com.mozu.api.contracts.core.Behavior>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -177,7 +178,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getBehaviorCategoryUrl(categoryId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.BehaviorCategory.class;
-		MozuClient<com.mozu.api.contracts.core.BehaviorCategory> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.BehaviorCategory> mozuClient = (MozuClient<com.mozu.api.contracts.core.BehaviorCategory>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -217,7 +218,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getBehaviorCategoriesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.BehaviorCategoryCollection.class;
-		MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.core.BehaviorCategoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -258,7 +259,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getBehaviorsUrl(responseFields, userType);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.BehaviorCollection.class;
-		MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.BehaviorCollection> mozuClient = (MozuClient<com.mozu.api.contracts.core.BehaviorCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -298,7 +299,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getContentLocalesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.ContentLocaleCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.ContentLocaleCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.ContentLocaleCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.ContentLocaleCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -338,7 +339,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getCountriesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.CountryCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.CountryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.CountryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.CountryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -378,7 +379,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getCurrenciesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.CurrencyCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.CurrencyCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.CurrencyCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.CurrencyCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -418,7 +419,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getTimeZonesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.TimeZoneCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.TimeZoneCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.TimeZoneCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.TimeZoneCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -458,7 +459,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getTopLevelDomainsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.TopLevelDomainCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.TopLevelDomainCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.TopLevelDomainCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.TopLevelDomainCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -499,7 +500,7 @@ public class ReferenceDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getUnitsOfMeasureUrl(filter, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.reference.UnitOfMeasureCollection.class;
-		MozuClient<com.mozu.api.contracts.reference.UnitOfMeasureCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.reference.UnitOfMeasureCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.UnitOfMeasureCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

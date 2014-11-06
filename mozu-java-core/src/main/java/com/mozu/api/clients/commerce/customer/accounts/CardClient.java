@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer.accounts;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class CardClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardUrl(accountId, cardId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
-		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Card>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class CardClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.getAccountCardsUrl(accountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CardCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CardCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CardCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -144,7 +145,7 @@ public class CardClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.addAccountCardUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
-		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Card>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(card);
@@ -193,7 +194,7 @@ public class CardClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.updateAccountCardUrl(accountId, cardId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.Card.class;
-		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Card> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Card>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(card);
@@ -216,7 +217,7 @@ public class CardClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.CardUrl.deleteAccountCardUrl(accountId, cardId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -98,13 +98,15 @@ public class CustomerSegmentUrl
 	}
 
 	/**
-	 * Get Resource Url for DeleteSegmentAccounts
-	 * @param id Unique identifier of the segment from which to remove the customer accounts.
+	 * Get Resource Url for RemoveSegmentAccount
+	 * @param accountId 
+	 * @param id 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteSegmentAccountsUrl(Integer id)
+	public static MozuUrl removeSegmentAccountUrl(Integer accountId, Integer id)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}/accounts");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/segments/{id}/accounts/{accountId}");
+		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("id", id);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

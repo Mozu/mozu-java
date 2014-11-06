@@ -9,6 +9,7 @@ package com.mozu.api.clients.content;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class DocumentTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.getDocumentTypesUrl(pageSize, responseFields, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentTypeCollection.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentTypeCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -98,7 +99,7 @@ public class DocumentTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.getDocumentTypeUrl(documentTypeName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentType.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -143,7 +144,7 @@ public class DocumentTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.createDocumentTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentType.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentType);
@@ -191,7 +192,7 @@ public class DocumentTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.DocumentTypeUrl.updateDocumentTypeUrl(documentTypeName, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentType.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(documentType);

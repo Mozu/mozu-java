@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -60,7 +61,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountsUrl(fields, filter, isAnonymous, pageSize, q, qLimit, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccountCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -102,7 +103,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateUrl(accountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
-		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -144,7 +145,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getAccountUrl(accountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -188,7 +189,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.addAccountUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(account);
@@ -212,7 +213,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordUrl(accountId);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(passwordInfo);
@@ -259,7 +260,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.addLoginToExistingCustomerUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(customerAuthInfo);
@@ -281,7 +282,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.recomputeCustomerLifetimeValueUrl(accountId);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -304,7 +305,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setLoginLockedUrl(accountId);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(isLocked);
@@ -328,7 +329,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.setPasswordChangeRequiredUrl(accountId);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(isPasswordChangeRequired);
@@ -373,7 +374,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.addAccountAndLoginUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(accountAndAuthInfo);
@@ -418,7 +419,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.addAccountsUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccountCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(customers);
@@ -461,7 +462,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByEmailAddressUrl(emailAddress, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
-		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -503,7 +504,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByUserNameUrl(responseFields, userName);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
-		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -525,7 +526,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.resetPasswordUrl();
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(resetPasswordInfo);
@@ -572,7 +573,7 @@ public class CustomerAccountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.updateAccountUrl(accountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAccount.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAccount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(account);
@@ -594,7 +595,7 @@ public class CustomerAccountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.deleteAccountUrl(accountId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class PickupClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PickupUrl.getAvailablePickupFulfillmentActionsUrl(orderId, pickupId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<String>(){}.getClass();
-		MozuClient<List<String>> mozuClient = new MozuClient(clz);
+		MozuClient<List<String>> mozuClient = (MozuClient<List<String>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -81,7 +82,7 @@ public class PickupClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PickupUrl.getPickupUrl(orderId, pickupId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Pickup.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -127,7 +128,7 @@ public class PickupClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PickupUrl.createPickupUrl(orderId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Pickup.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(pickup);
@@ -176,7 +177,7 @@ public class PickupClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PickupUrl.updatePickupUrl(orderId, pickupId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Pickup.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(pickup);
@@ -199,7 +200,7 @@ public class PickupClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PickupUrl.deletePickupUrl(orderId, pickupId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

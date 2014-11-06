@@ -4,8 +4,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.http.HttpRequest;
-
 import com.mozu.api.contracts.tenant.Site;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.security.AuthTicket;
@@ -68,11 +66,10 @@ public class MozuApiContext implements ApiContext {
     }
 
     public MozuApiContext(Site site, Integer masterCatalogId, Integer catalogId) throws ApiException {
-        this.tenantId = site.getTenantId();
-
         if (site != null && site.getId() >= 0) {
             this.siteId = site.getId();
             this.siteUrl = HttpHelper.getUrl(site.getDomain());
+            this.tenantId = site.getTenantId();
         }
         this.masterCatalogId = masterCatalogId;
         this.catalogId = catalogId;
@@ -115,28 +112,6 @@ public class MozuApiContext implements ApiContext {
         
         this.locale = headers.get(Headers.X_VOL_LOCALE);
         this.currency = headers.get(Headers.X_VOL_CURRENCY);
-
-    }
-
-    public MozuApiContext (HttpRequest request) throws ApiException {
-        tenantUrl = HttpHelper.getHeaderValue(Headers.X_VOL_TENANT_DOMAIN, request);
-        siteUrl = HttpHelper.getHeaderValue(Headers.X_VOL_SITE_DOMAIN, request);
-        tenantId = HttpHelper.getHeaderValueInt(Headers.X_VOL_TENANT, request);
-        siteId = HttpHelper.getHeaderValueInt(Headers.X_VOL_SITE, request);
-        correlationId = HttpHelper.getHeaderValue(Headers.X_VOL_CORRELATION, request);
-        hmacSha256 = HttpHelper.getHeaderValue(Headers.X_VOL_HMAC_SHA256, request);
-        masterCatalogId = HttpHelper.getHeaderValueInt(Headers.X_VOL_MASTER_CATALOG, request);
-        catalogId = HttpHelper.getHeaderValueInt(Headers.X_VOL_CATALOG, request);
-
-        this.tenantUrl = HttpHelper.getUrl(tenantUrl);
-
-        siteUrl = HttpHelper.getUrl(siteUrl);
-        
-        headerDate = HttpHelper.getHeaderValue(Headers.DATE, request);
-        // The date could be translated to lower case
-        if (headerDate==null) {
-            headerDate = HttpHelper.getHeaderValue(Headers.DATE.toLowerCase(), request);
-        }
 
     }
 

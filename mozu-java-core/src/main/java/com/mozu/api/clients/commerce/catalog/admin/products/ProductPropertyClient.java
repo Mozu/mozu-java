@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.products;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.getPropertiesUrl(productCode);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductProperty>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductProperty>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductProperty>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductProperty>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -64,7 +65,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.getPropertyValueLocalizedContentsUrl(attributeFQN, productCode, value);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -113,7 +114,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.getPropertyValueLocalizedContentUrl(attributeFQN, localeCode, productCode, responseFields, value);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -158,7 +159,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.getPropertyUrl(attributeFQN, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductProperty.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductProperty>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -209,7 +210,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.addPropertyValueLocalizedContentUrl(attributeFQN, productCode, responseFields, value);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -257,7 +258,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.addPropertyUrl(productCode, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductProperty.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductProperty>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productProperty);
@@ -287,7 +288,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.updatePropertyValueLocalizedContentsUrl(attributeFQN, productCode, value);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -341,7 +342,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.updatePropertyValueLocalizedContentUrl(attributeFQN, localeCode, productCode, responseFields, value);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -391,7 +392,7 @@ public class ProductPropertyClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.updatePropertyUrl(attributeFQN, productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductProperty.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductProperty> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductProperty>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productProperty);
@@ -415,7 +416,7 @@ public class ProductPropertyClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.deletePropertyUrl(attributeFQN, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -440,7 +441,7 @@ public class ProductPropertyClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.ProductPropertyUrl.deletePropertyValueLocalizedContentUrl(attributeFQN, localeCode, productCode, value);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

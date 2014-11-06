@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -54,7 +55,7 @@ public class TenantClient {
 		MozuUrl url = com.mozu.api.urls.platform.TenantUrl.getTenantUrl(responseFields, tenantId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.tenant.Tenant.class;
-		MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.tenant.Tenant> mozuClient = (MozuClient<com.mozu.api.contracts.tenant.Tenant>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform.applications;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class AuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.authenticateAppUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.appdev.AuthTicket.class;
-		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.appdev.AuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(appAuthInfo);
@@ -101,7 +102,7 @@ public class AuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.refreshAppAuthTicketUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.appdev.AuthTicket.class;
-		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.appdev.AuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.appdev.AuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(authTicketRequest);
@@ -123,7 +124,7 @@ public class AuthTicketClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.applications.AuthTicketUrl.deleteAppAuthTicketUrl(refreshToken);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

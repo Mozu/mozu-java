@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -36,7 +37,7 @@ public class OrderAttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderAttributeUrl.getOrderAttributesUrl(orderId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -62,7 +63,7 @@ public class OrderAttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderAttributeUrl.createOrderAttributesUrl(orderId);
 		String verb = "POST";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(orderAttributes);
@@ -109,7 +110,7 @@ public class OrderAttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderAttributeUrl.updateOrderAttributesUrl(orderId, removeMissing);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(orderAttributes);

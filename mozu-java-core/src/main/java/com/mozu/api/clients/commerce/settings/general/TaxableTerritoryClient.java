@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings.general;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -35,7 +36,7 @@ public class TaxableTerritoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.general.TaxableTerritoryUrl.getTaxableTerritoriesUrl();
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient = (MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -79,7 +80,7 @@ public class TaxableTerritoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.general.TaxableTerritoryUrl.addTaxableTerritoryUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.general.TaxableTerritory.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(taxableTerritory);
@@ -105,7 +106,7 @@ public class TaxableTerritoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.general.TaxableTerritoryUrl.updateTaxableTerritoriesUrl();
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>> mozuClient = (MozuClient<List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(taxableterritories);

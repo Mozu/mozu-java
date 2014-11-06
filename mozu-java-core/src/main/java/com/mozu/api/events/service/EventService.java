@@ -5,11 +5,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.http.HttpStatus;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
@@ -44,12 +44,12 @@ public class EventService {
             if (!Crypto.isRequestValid(apiContext, body)) {
                 StringBuilder msg = new StringBuilder ("Event is not authorized.");
                 logger.warn(msg.toString());
-                return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_UNAUTHORIZED));
+                return( new EventHandlerStatus(msg.toString(), HttpServletResponse.SC_UNAUTHORIZED));
             }
         } catch (IOException exception) {
             StringBuilder msg = new StringBuilder ("Unable to read event: ").append(exception.getMessage());
             logger.error(msg.toString());
-            return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_INTERNAL_SERVER_ERROR));
+            return( new EventHandlerStatus(msg.toString(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
 
         try {
@@ -57,9 +57,9 @@ public class EventService {
         } catch (Exception exception) {
             StringBuilder msg = new StringBuilder ("Unable to process event with correlation id ").append(event.getCorrelationId()).append(". Message: ").append(exception.getMessage());
             logger.error(msg.toString());
-            return( new EventHandlerStatus(msg.toString(), HttpStatus.SC_INTERNAL_SERVER_ERROR));
+            return( new EventHandlerStatus(msg.toString(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
-        return( new EventHandlerStatus(null, HttpStatus.SC_OK));
+        return( new EventHandlerStatus(null, HttpServletResponse.SC_OK));
     }
 
     /**

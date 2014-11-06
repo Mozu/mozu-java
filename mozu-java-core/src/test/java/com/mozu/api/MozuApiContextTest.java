@@ -6,8 +6,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.http.Header;
-import org.apache.http.HttpRequest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,8 +35,6 @@ public class MozuApiContextTest {
     @Mocked Tenant mockTenant;
     @Mocked Site mockSite;
     @Mocked Map<String, String> mockHeaders;
-    @Mocked HttpRequest mockRequest;
-    @Mocked Header mockHeader;
     @Mocked HttpServletRequest mockServletRequest;
     @Mocked AppAuthenticator mockAppAuthenticator;
     
@@ -154,10 +150,10 @@ public class MozuApiContextTest {
     @Test
     public void testMozuApiContextObjsNoTenant() {
         new Expectations() {
-            { mockSite.getTenantId(); result=TENANT_ID; }
             { mockSite.getId(); result=SITE_ID; }
             { mockSite.getId(); result=SITE_ID; }
             { mockSite.getDomain(); result=SITE_URL; }
+            { mockSite.getTenantId(); result=TENANT_ID; }
             };
         
         MozuApiContext context = new MozuApiContext(mockSite, MASTER_CATALOG_ID, CATALOG_ID);
@@ -223,82 +219,6 @@ public class MozuApiContextTest {
         assertNull(context.getLocale());
         assertNull(context.getCurrency());
 
-    }
-
-    @Test
-    public void testMozuApiContextHeadersHttpRequest() {
-        new Expectations() {
-            { mockRequest.containsHeader(Headers.X_VOL_TENANT_DOMAIN); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_TENANT_DOMAIN); result=mockHeader; }
-            { mockHeader.getValue(); result=TENANT_URL; }
-            
-            { mockRequest.containsHeader(Headers.X_VOL_SITE_DOMAIN); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_SITE_DOMAIN); result=mockHeader; }
-            { mockHeader.getValue(); result=SITE_URL; }
-
-            { mockRequest.containsHeader(Headers.X_VOL_TENANT); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_TENANT); result=mockHeader; }
-            { mockHeader.getValue(); result=TENANT_ID.toString(); }
-
-            { mockRequest.containsHeader(Headers.X_VOL_SITE); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_SITE); result=mockHeader; }
-            { mockHeader.getValue(); result=SITE_ID.toString(); }
-
-            { mockRequest.containsHeader(Headers.X_VOL_CORRELATION); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_CORRELATION); result=mockHeader; }
-            { mockHeader.getValue(); result=CORRELATION_ID; }
-
-            { mockRequest.containsHeader(Headers.X_VOL_HMAC_SHA256); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_HMAC_SHA256); result=mockHeader; }
-            { mockHeader.getValue(); result=HMAC_SHA256; }
-
-            { mockRequest.containsHeader(Headers.X_VOL_MASTER_CATALOG); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_MASTER_CATALOG); result=mockHeader; }
-            { mockHeader.getValue(); result=MASTER_CATALOG_ID.toString(); }
-
-            { mockRequest.containsHeader(Headers.X_VOL_CATALOG); result=true; }
-            { mockRequest.getFirstHeader(Headers.X_VOL_CATALOG); result=mockHeader; }
-            { mockHeader.getValue(); result=CATALOG_ID.toString(); }
-            
-            { mockRequest.containsHeader(Headers.DATE); result=true; }
-            { mockRequest.getFirstHeader(Headers.DATE); result=mockHeader; }
-            { mockHeader.getValue(); result=HEADER_DATE.toString(); }
-
-        };
-        
-        MozuApiContext context = new MozuApiContext(mockRequest);
-        
-        assertEquals(TENANT_ID, context.getTenantId());
-        assertEquals(SITE_ID, context.getSiteId());
-        assertEquals(MASTER_CATALOG_ID, context.getMasterCatalogId());
-        assertEquals(CATALOG_ID, context.getCatalogId());
-        assertEquals(FULL_TENANT_URL, context.getTenantUrl());
-        assertEquals(FULL_SITE_URL, context.getSiteUrl());
-    }
-
-    @Test
-    public void testMozuApiContextHeadersHttpRequestNull() {
-        new Expectations() {
-            { mockRequest.containsHeader(Headers.X_VOL_TENANT_DOMAIN); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_SITE_DOMAIN); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_TENANT); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_SITE); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_CORRELATION); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_HMAC_SHA256); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_MASTER_CATALOG); result=false; }
-            { mockRequest.containsHeader(Headers.X_VOL_CATALOG); result=false; }
-            { mockRequest.containsHeader(Headers.DATE); result=false; }
-            { mockRequest.containsHeader(Headers.DATE.toLowerCase()); result=false; }
-        };
-        
-        MozuApiContext context = new MozuApiContext(mockRequest);
-        
-        assertNull(context.getTenantId());
-        assertNull(context.getSiteId());
-        assertNull(context.getMasterCatalogId());
-        assertNull(context.getCatalogId());
-        assertNull(context.getTenantUrl());
-        assertNull(context.getSiteUrl());
     }
 
     @Test

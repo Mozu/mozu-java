@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attribut
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -58,7 +59,7 @@ public class AttributeTypeRuleClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeTypeRuleUrl.getAttributeTypeRulesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

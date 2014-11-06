@@ -1,24 +1,17 @@
 package com.mozu.api.security;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
 import org.joda.time.DateTime;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
+import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.contracts.adminuser.DeveloperAccount;
 import com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket;
@@ -27,13 +20,8 @@ import com.mozu.api.contracts.core.UserAuthInfo;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.urls.platform.adminuser.TenantAdminUserAuthTicketUrl;
 import com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl;
-import com.mozu.api.utils.HttpHelper;
-import com.mozu.api.utils.JsonUtils;
-import com.mozu.api.utils.MozuHttpClientPool;
 
 public class UserAuthenticator {
-    private static ObjectMapper mapper = JsonUtils.initObjectMapper();
-
     public static AuthenticationProfile setActiveScope(AuthTicket authTicket, Scope scope) {
         return refreshUserAuthTicket(authTicket, scope.getId());
     }
@@ -50,40 +38,48 @@ public class UserAuthenticator {
         return refreshUserAuthTicket(authTicket, null);
     }
 
+    @SuppressWarnings("unchecked")
     public static AuthenticationProfile refreshUserAuthTicket(AuthTicket authTicket, Integer id)
             throws ApiException {
 
         String resourceUrl = MozuConfig.getBaseUrl()
-                + getResourceRefreshUrl(authTicket, id); // AuthTicketUrl.AuthenticateAppUrl();
-
-        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
-        HttpPut put = new HttpPut(resourceUrl);
+                + getResourceRefreshUrl(authTicket, id);
         
-        try {
-            String body = mapper.writeValueAsString(authTicket);
-
-            StringEntity se = new StringEntity(body);
-            put.setEntity(se);
-            put.setHeader("Accept", "application/json");
-            put.setHeader("Content-type", "application/json");
-        } catch (JsonProcessingException jpe) {
-            throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
-        } catch (UnsupportedEncodingException uee) {
-            throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
+        AuthenticationProfile userProfile = null;
+        Map<String, String> headers = new HashMap<String, String>();
+        
+        switch (authTicket.getScope()) {
+        case Tenant:
+            TenantAdminUserAuthTicket tenantAdminUserAuthTicket = null;
+            MozuClient<TenantAdminUserAuthTicket> tenantClient;
+            try {
+                tenantClient = (MozuClient<TenantAdminUserAuthTicket>) MozuClientFactory.getInstance(TenantAdminUserAuthTicket.class);
+            } catch (Exception ioe) {
+                throw new ApiException("Exception occurred while authenticating application: "
+                        + ioe.getMessage());
+            }
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            tenantAdminUserAuthTicket = tenantClient.executePutRequest(authTicket, resourceUrl.toString(), headers);
+            userProfile = getTenantUserProfile(tenantAdminUserAuthTicket, authTicket.getScope());
+            break;
+        case Developer:
+            DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = null;
+            MozuClient<DeveloperAdminUserAuthTicket> devClient;
+            try {
+                devClient = (MozuClient<DeveloperAdminUserAuthTicket>) MozuClientFactory.getInstance(DeveloperAdminUserAuthTicket.class);
+            } catch (Exception ioe) {
+                throw new ApiException("Exception occurred while authenticating application: "
+                        + ioe.getMessage());
+            }
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            developerAdminUserAuthTicket = devClient.executePutRequest(authTicket, resourceUrl.toString(), headers);
+            userProfile = getDeveloperUserProfile(developerAdminUserAuthTicket, authTicket.getScope());
+            break;
+        default:
+            break;
         }
 
-        AppAuthenticator.addAuthHeader(put);
-        HttpResponse response = null;
-        try {
-            response = client.execute(put);
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating user: "
-                    + ioe.getMessage());
-        }
-
-        HttpHelper.ensureSuccess(response, mapper);
-
-        AuthenticationProfile userInfo = setUserAuth(response, authTicket.getScope(), null);
+        AuthenticationProfile userInfo = setUserAuth(userProfile, authTicket.getScope(), null);
 
         return userInfo;
     }
@@ -95,76 +91,74 @@ public class UserAuthenticator {
         return authenticate(userAuthInfo, scope, id, null);
     }
     
+    @SuppressWarnings("unchecked")
     public static AuthenticationProfile authenticate(UserAuthInfo userAuthInfo, AuthenticationScope scope, Integer id, Integer siteId) {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getResourceUrl(scope, id); // AuthTicketUrl.AuthenticateAppUrl();
 
-        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
-        HttpPost post = new HttpPost(resourceUrl);
-        try {
-            String body = mapper.writeValueAsString(userAuthInfo);
-
-            StringEntity se = new StringEntity(body);
-            post.setEntity(se);
-            post.setHeader("Accept", "application/json");
-            post.setHeader("Content-type", "application/json");
-            if (siteId != null) {
-                post.setHeader(Headers.X_VOL_SITE, siteId.toString());
+        AuthenticationProfile userProfile = null;
+        Map<String, String> headers = new HashMap<String, String>();
+        
+        switch (scope) {
+        case Tenant:
+            TenantAdminUserAuthTicket tenantAdminUserAuthTicket = null;
+            MozuClient<TenantAdminUserAuthTicket> tenantClient;
+            try {
+                tenantClient = (MozuClient<TenantAdminUserAuthTicket>) MozuClientFactory.getInstance(TenantAdminUserAuthTicket.class);
+            } catch (Exception ioe) {
+                throw new ApiException("Exception occurred while authenticating application: "
+                        + ioe.getMessage());
             }
-        } catch (JsonProcessingException jpe) {
-            throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
-        } catch (UnsupportedEncodingException uee) {
-            throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            if (siteId != null) {
+                headers.put(Headers.X_VOL_SITE, siteId.toString());
+            }
+            tenantAdminUserAuthTicket = tenantClient.executePostRequest(userAuthInfo, resourceUrl.toString(), headers);
+            userProfile = getTenantUserProfile(tenantAdminUserAuthTicket, scope);
+            break;
+        case Developer:
+            DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = null;
+            MozuClient<DeveloperAdminUserAuthTicket> devClient;
+            try {
+                devClient = (MozuClient<DeveloperAdminUserAuthTicket>) MozuClientFactory.getInstance(DeveloperAdminUserAuthTicket.class);
+            } catch (Exception ioe) {
+                throw new ApiException("Exception occurred while authenticating application: "
+                        + ioe.getMessage());
+            }
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            if (siteId != null) {
+                headers.put(Headers.X_VOL_SITE, siteId.toString());
+            }
+            developerAdminUserAuthTicket = devClient.executePostRequest(userAuthInfo, resourceUrl.toString(), headers);
+            userProfile = getDeveloperUserProfile(developerAdminUserAuthTicket, scope);
+            break;
+        default:
+            break;
         }
 
-        AppAuthenticator.addAuthHeader(post);
-
-        HttpResponse response = null;
-        try {
-            response = client.execute(post);
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating user: "
-                    + ioe.getMessage());
-        }
-
-        HttpHelper.ensureSuccess(response, mapper);
-
-        return setUserAuth(response, scope, siteId);
+        AuthenticationProfile userInfo = setUserAuth(userProfile, scope, siteId);
+        return userInfo;
     }
     
     public static void logout(AuthTicket authTicket) {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getLogoutUrl(authTicket);
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
         
-        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
-        HttpDelete delete = new HttpDelete(resourceUrl);
-        delete.setHeader("Accept", "application/json");
-        delete.setHeader("Content-type", "application/json");
-
-        AppAuthenticator.addAuthHeader(delete);
-
+        MozuClient<?> client;
         try {
-            client.execute(delete);
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating user: "
+            client = MozuClientFactory.getInstance();
+        } catch (Exception ioe) {
+            throw new ApiException("Exception occurred while authenticating application: "
                     + ioe.getMessage());
         }
+        headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+        client.executeDeleteRequest(resourceUrl, headers);
     }
 
-    private static AuthenticationProfile setUserAuth(HttpResponse response, AuthenticationScope userScope, Integer siteId) {
-        AuthenticationProfile userProfile = null;
+    private static AuthenticationProfile setUserAuth(AuthenticationProfile userProfile, AuthenticationScope userScope, Integer siteId) {
 
-        switch (userScope) {
-        case Tenant:
-            userProfile = getTenantUserProfile(response, userScope);
-            break;
-        case Developer:
-            userProfile = getDeveloperUserProfile(response, userScope);
-            break;
-        default:
-            break;
-        }
-        
         if (userProfile!=null) {
             AuthTicket authTicket = userProfile.getAuthTicket();
             if (authTicket!=null) {
@@ -177,19 +171,7 @@ public class UserAuthenticator {
         return userProfile;
     }
 
-    private static AuthenticationProfile getTenantUserProfile(HttpResponse response, AuthenticationScope userScope) {
-        TenantAdminUserAuthTicket tenantAdminUserAuthTicket = null;
-        try {
-            tenantAdminUserAuthTicket = mapper.readValue(response.getEntity().getContent(),
-                    TenantAdminUserAuthTicket.class);
-        } catch (JsonParseException jpe) {
-            throw new ApiException(
-                    "JSON error while deserializing tenant admin user auth ticket : "
-                            + jpe.getMessage());
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating tenant admin: "
-                    + ioe.getMessage());
-        }
+    private static AuthenticationProfile getTenantUserProfile(TenantAdminUserAuthTicket tenantAdminUserAuthTicket, AuthenticationScope userScope) {
 
         Scope activeScope = null;
         if (tenantAdminUserAuthTicket.getTenant() != null) {
@@ -208,19 +190,7 @@ public class UserAuthenticator {
         return new AuthenticationProfile(authTicket, availableScopes, activeScope, tenantAdminUserAuthTicket.getUser());
     }
 
-    private static AuthenticationProfile getDeveloperUserProfile(HttpResponse response, AuthenticationScope userScope) {
-        DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = null;
-        try {
-            developerAdminUserAuthTicket = mapper.readValue(response.getEntity().getContent(),
-                    DeveloperAdminUserAuthTicket.class);
-        } catch (JsonParseException jpe) {
-            throw new ApiException("JSON error while deserializing Developer Auth ticket : "
-                    + jpe.getMessage());
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating developer: "
-                    + ioe.getMessage());
-        }
-
+    private static AuthenticationProfile getDeveloperUserProfile(DeveloperAdminUserAuthTicket developerAdminUserAuthTicket, AuthenticationScope userScope) {
         Scope activeScope = null;
         if (developerAdminUserAuthTicket.getAccount() != null) {
             activeScope = new Scope(developerAdminUserAuthTicket.getAccount().getId(),

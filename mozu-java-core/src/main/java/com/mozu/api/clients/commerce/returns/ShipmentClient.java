@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.returns;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class ShipmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.returns.ShipmentUrl.getShipmentUrl(responseFields, returnId, shipmentId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.fulfillment.Shipment.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -82,7 +83,7 @@ public class ShipmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.returns.ShipmentUrl.createPackageShipmentsUrl(returnId);
 		String verb = "POST";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.Package>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(packageIds);
@@ -105,7 +106,7 @@ public class ShipmentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.returns.ShipmentUrl.deleteShipmentUrl(returnId, shipmentId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

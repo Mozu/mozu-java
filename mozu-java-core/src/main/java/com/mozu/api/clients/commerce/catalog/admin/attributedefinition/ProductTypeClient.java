@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.attributedefinition;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -59,7 +60,7 @@ public class ProductTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductTypeCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductTypeCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -104,7 +105,7 @@ public class ProductTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.getProductTypeUrl(productTypeId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -151,7 +152,7 @@ public class ProductTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.addProductTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productType);
@@ -201,7 +202,7 @@ public class ProductTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.updateProductTypeUrl(productTypeId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductType.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductType> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productType);
@@ -225,7 +226,7 @@ public class ProductTypeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.ProductTypeUrl.deleteProductTypeUrl(productTypeId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

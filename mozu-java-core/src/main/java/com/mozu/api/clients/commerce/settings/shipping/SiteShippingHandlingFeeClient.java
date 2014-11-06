@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings.shipping;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class SiteShippingHandlingFeeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.shipping.SiteShippingHandlingFeeUrl.getOrderHandlingFeeUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -96,7 +97,7 @@ public class SiteShippingHandlingFeeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.shipping.SiteShippingHandlingFeeUrl.createOrderHandlingFeeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(orderHandlingFee);
@@ -141,7 +142,7 @@ public class SiteShippingHandlingFeeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.shipping.SiteShippingHandlingFeeUrl.updateOrderHandlingFeeUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(orderHandlingFee);

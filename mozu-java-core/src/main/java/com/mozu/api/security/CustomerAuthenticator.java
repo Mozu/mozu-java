@@ -1,31 +1,22 @@
 package com.mozu.api.security;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
 import org.joda.time.DateTime;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
+import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.contracts.customer.CustomerAuthTicket;
 import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
-import com.mozu.api.utils.JsonUtils;
-import com.mozu.api.utils.MozuHttpClientPool;
 
 public class CustomerAuthenticator {
-    private static ObjectMapper mapper = JsonUtils.initObjectMapper();
     
     public static AuthTicket ensureAuthTicket(AuthTicket authTicket) {
         DateTime accessTokenDateTime = new DateTime(authTicket.getAccessTokenExpiration()).minus(180000);
@@ -45,33 +36,19 @@ public class CustomerAuthenticator {
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.refreshUserAuthTicketUrl(authTicket.getRefreshToken(), null).getUrl();
 
-        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
-        HttpPut put = new HttpPut(resourceUrl);
+        CustomerAuthTicket customerAuthTicket;
         try {
-            String body = mapper.writeValueAsString(authTicket);
-
-            StringEntity se = new StringEntity(body);
-            put.setEntity(se);
-            put.setHeader("Accept", "application/json");
-            put.setHeader("Content-type", "application/json");
-        } catch (JsonProcessingException jpe) {
-            throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
-        } catch (UnsupportedEncodingException uee) {
-            throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
-        }
-
-        AppAuthenticator.addAuthHeader(put);
-        HttpResponse response = null;
-        try {
-            response = client.execute(put);
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating application: "
+            @SuppressWarnings("unchecked")
+            MozuClient<CustomerAuthTicket> client = (MozuClient<CustomerAuthTicket>) MozuClientFactory.getInstance(CustomerAuthTicket.class);
+            Map<String, String> headers = new HashMap<String, String>();
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            customerAuthTicket = client.executePutRequest(authTicket, resourceUrl.toString(), headers);
+        } catch (Exception ioe) {
+            throw new ApiException("Exception occurred while authenticating application: "
                     + ioe.getMessage());
         }
 
-        HttpHelper.ensureSuccess(response, mapper);
-
-        CustomerAuthenticationProfile userInfo = setUserAuth(response, null);
+        CustomerAuthenticationProfile userInfo = setUserAuth(customerAuthTicket, null);
 
         return userInfo;
     }
@@ -81,54 +58,24 @@ public class CustomerAuthenticator {
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.createUserAuthTicketUrl(null).getUrl(); // AuthTicketUrl.AuthenticateAppUrl();
 
-        HttpClient client = MozuHttpClientPool.getInstance().getHttpClient();
-        HttpPost post = new HttpPost(resourceUrl);
-        
+        CustomerAuthTicket customerAuthTicket;
         try {
-            String body = mapper.writeValueAsString(userAuthInfo);
-
-            StringEntity se = new StringEntity(body);
-            post.setEntity(se);
-            post.setHeader("Accept", "application/json");
-            post.setHeader("Content-type", "application/json");
-            if (siteId != null) {
-                post.setHeader(Headers.X_VOL_SITE, siteId.toString());
-            }
-        } catch (JsonProcessingException jpe) {
-            throw new ApiException("JSON error proccessing authentication: " + jpe.getMessage());
-        } catch (UnsupportedEncodingException uee) {
-            throw new ApiException("JSON error proccessing authentication: " + uee.getMessage());
-        }
-
-        AppAuthenticator.addAuthHeader(post);
-
-        HttpResponse response = null;
-        try {
-            response = client.execute(post);
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating user: "
+            @SuppressWarnings("unchecked")
+            MozuClient<CustomerAuthTicket> client = (MozuClient<CustomerAuthTicket>) MozuClientFactory.getInstance(CustomerAuthTicket.class);
+            Map<String, String> headers = new HashMap<String, String>();
+            headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            headers.put(Headers.X_VOL_SITE, siteId.toString());
+            customerAuthTicket = client.executePostRequest(userAuthInfo, resourceUrl.toString(), headers);
+        } catch (Exception ioe) {
+            throw new ApiException("Exception occurred while authenticating application: "
                     + ioe.getMessage());
         }
 
-        HttpHelper.ensureSuccess(response, mapper);
-
-        return setUserAuth(response, siteId);
+        return setUserAuth(customerAuthTicket, siteId);
     }
     
-    private static CustomerAuthenticationProfile setUserAuth(HttpResponse response, Integer siteId) {
-        CustomerAuthTicket customerAuthTicket = null;
-        try {
-            customerAuthTicket = mapper.readValue(response.getEntity()
-                    .getContent(), CustomerAuthTicket.class);
-        } catch (JsonParseException jpe) {
-            throw new ApiException("JSON error while deserializing customer user auth ticket : "
-                    + jpe.getMessage());
-        } catch (IOException ioe) {
-            throw new ApiException("IO Exception occurred while authenticating customer: "
-                    + ioe.getMessage());
-        }
-
-        AuthTicket authTicket = new AuthTicket(
+    private static CustomerAuthenticationProfile setUserAuth(CustomerAuthTicket customerAuthTicket, Integer siteId) {
+         AuthTicket authTicket = new AuthTicket(
                 customerAuthTicket.getAccessToken(), customerAuthTicket.getAccessTokenExpiration(),
                 customerAuthTicket.getRefreshToken(), 
                         customerAuthTicket.getRefreshTokenExpiration(),

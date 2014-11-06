@@ -34,7 +34,7 @@ public class EventManager {
         eventHandlers.clear();
     }
     
-    public static final EventManager getInstance() {
+    public static final synchronized EventManager getInstance() {
         if (eventManager==null) {
             eventManager = new EventManager();
         }

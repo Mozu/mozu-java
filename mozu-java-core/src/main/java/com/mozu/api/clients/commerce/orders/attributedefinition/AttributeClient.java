@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders.attributedefinition;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.extensible.AttributeCollection.class;
-		MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.core.extensible.AttributeCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -80,7 +81,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributeVocabularyValuesUrl(attributeFQN);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>> mozuClient = (MozuClient<List<com.mozu.api.contracts.core.extensible.AttributeVocabularyValue>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -122,7 +123,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
-		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.core.extensible.Attribute>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

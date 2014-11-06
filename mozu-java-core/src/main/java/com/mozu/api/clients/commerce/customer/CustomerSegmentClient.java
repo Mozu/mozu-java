@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class CustomerSegmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegmentCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerSegmentCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class CustomerSegmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.getSegmentUrl(id, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerSegment>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -142,7 +143,7 @@ public class CustomerSegmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerSegment>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(segment);
@@ -166,7 +167,7 @@ public class CustomerSegmentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.addSegmentAccountsUrl(id);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(accountIds);
@@ -213,7 +214,7 @@ public class CustomerSegmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.updateSegmentUrl(id, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerSegment.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerSegment> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerSegment>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(segment);
@@ -235,7 +236,7 @@ public class CustomerSegmentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.deleteSegmentUrl(id);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -243,25 +244,23 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Removes the specified customer accounts from a defined customer segment. You must create the request body to perform this operation.
+	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteSegmentAccountsClient( accountIds,  id);
+	 * MozuClient mozuClient=RemoveSegmentAccountClient( id,  accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the segment from which to remove the customer accounts.
-	 * @param accountIds List of customer account identifiers to remove from the specified customer segments.
+	 * @param accountId 
+	 * @param id 
 	 * @return Mozu.Api.MozuClient 
-	 * @see int
 	 */
-	public static MozuClient deleteSegmentAccountsClient(List<Integer> accountIds, Integer id) throws Exception
+	public static MozuClient removeSegmentAccountClient(Integer id, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.deleteSegmentAccountsUrl(id);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerSegmentUrl.removeSegmentAccountUrl(accountId, id);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(accountIds);
 		return mozuClient;
 
 	}

@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -54,7 +55,7 @@ public class SiteDataClient {
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.getDBValueUrl(dbEntryQuery, responseFields);
 		String verb = "GET";
 		Class<?> clz = String.class;
-		MozuClient<String> mozuClient = new MozuClient(clz);
+		MozuClient<String> mozuClient = (MozuClient<String>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -77,7 +78,7 @@ public class SiteDataClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.createDBValueUrl(dbEntryQuery);
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(value);
@@ -101,7 +102,7 @@ public class SiteDataClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.updateDBValueUrl(dbEntryQuery);
 		String verb = "PUT";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(value);
@@ -123,7 +124,7 @@ public class SiteDataClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.SiteDataUrl.deleteDBValueUrl(dbEntryQuery);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

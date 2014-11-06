@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.products;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -59,7 +60,7 @@ public class LocationInventoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoriesUrl(filter, pageSize, productCode, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.LocationInventoryCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -103,7 +104,7 @@ public class LocationInventoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoryUrl(locationCode, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.LocationInventory.class;
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventory>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -149,7 +150,7 @@ public class LocationInventoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.addLocationInventoryUrl(performUpserts, productCode);
 		String verb = "POST";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.LocationInventory>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(locationInventoryList);
@@ -177,7 +178,7 @@ public class LocationInventoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.updateLocationInventoryUrl(productCode);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.LocationInventory>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.LocationInventory>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(locationInventoryAdjustments);
@@ -201,7 +202,7 @@ public class LocationInventoryClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.deleteLocationInventoryUrl(locationCode, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

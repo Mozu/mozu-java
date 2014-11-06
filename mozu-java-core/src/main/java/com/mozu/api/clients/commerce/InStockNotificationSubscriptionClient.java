@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class InStockNotificationSubscriptionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscriptionCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class InStockNotificationSubscriptionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.getInStockNotificationSubscriptionUrl(id, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscription.class;
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = (MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -142,7 +143,7 @@ public class InStockNotificationSubscriptionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.addInStockNotificationSubscriptionUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.InStockNotificationSubscription.class;
-		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription> mozuClient = (MozuClient<com.mozu.api.contracts.customer.InStockNotificationSubscription>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(inStockNotificationSubscription);
@@ -164,7 +165,7 @@ public class InStockNotificationSubscriptionClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.InStockNotificationSubscriptionUrl.deleteInStockNotificationSubscriptionUrl(id);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

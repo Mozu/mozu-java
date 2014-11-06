@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class SearchClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSettingsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.SearchSettings.class;
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -96,7 +97,7 @@ public class SearchClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSettingsUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.SearchSettings.class;
-		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(settings);

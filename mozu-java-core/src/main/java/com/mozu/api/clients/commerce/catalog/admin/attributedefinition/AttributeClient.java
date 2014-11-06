@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.attributedefinition;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -58,7 +59,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -102,7 +103,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.getAttributeUrl(attributeFQN, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Attribute>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -148,7 +149,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.addAttributeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Attribute>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
@@ -197,7 +198,7 @@ public class AttributeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.updateAttributeUrl(attributeFQN, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Attribute.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Attribute>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(attribute);
@@ -220,7 +221,7 @@ public class AttributeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.AttributeUrl.deleteAttributeUrl(attributeFQN);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

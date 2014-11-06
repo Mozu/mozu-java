@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -54,7 +55,7 @@ public class PaymentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PaymentUrl.getPaymentsUrl(orderId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.PaymentCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.payments.PaymentCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -79,7 +80,7 @@ public class PaymentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PaymentUrl.getAvailablePaymentActionsUrl(orderId, paymentId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<String>(){}.getClass();
-		MozuClient<List<String>> mozuClient = new MozuClient(clz);
+		MozuClient<List<String>> mozuClient = (MozuClient<List<String>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -123,7 +124,7 @@ public class PaymentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PaymentUrl.getPaymentUrl(orderId, paymentId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.payments.Payment.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.payments.Payment>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -171,7 +172,7 @@ public class PaymentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PaymentUrl.performPaymentActionUrl(orderId, paymentId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);
@@ -218,7 +219,7 @@ public class PaymentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.PaymentUrl.createPaymentActionUrl(orderId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);

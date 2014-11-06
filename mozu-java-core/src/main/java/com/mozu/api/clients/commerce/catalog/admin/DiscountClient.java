@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -57,7 +58,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.getDiscountsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.DiscountCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DiscountCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -100,7 +101,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.getDiscountContentUrl(discountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.DiscountLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -143,7 +144,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.getDiscountUrl(discountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Discount.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Discount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -184,7 +185,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.generateRandomCouponUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = String.class;
-		MozuClient<String> mozuClient = new MozuClient(clz);
+		MozuClient<String> mozuClient = (MozuClient<String>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -228,7 +229,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.createDiscountUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Discount.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Discount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(discount);
@@ -275,7 +276,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.updateDiscountContentUrl(discountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.DiscountLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(content);
@@ -322,7 +323,7 @@ public class DiscountClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.updateDiscountUrl(discountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Discount.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Discount> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Discount>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(discount);
@@ -344,7 +345,7 @@ public class DiscountClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.deleteDiscountUrl(discountId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

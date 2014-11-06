@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform.entitylists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class EntityClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.EntityUrl.getEntityUrl(entityListFullName, id, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.fasterxml.jackson.databind.JsonNode.class;
-		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = new MozuClient(clz);
+		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = (MozuClient<com.fasterxml.jackson.databind.JsonNode>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -102,7 +103,7 @@ public class EntityClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.EntityUrl.getEntitiesUrl(entityListFullName, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.mzdb.EntityCollection.class;
-		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient = (MozuClient<com.mozu.api.contracts.mzdb.EntityCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -148,7 +149,7 @@ public class EntityClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.EntityUrl.insertEntityUrl(entityListFullName, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.fasterxml.jackson.databind.JsonNode.class;
-		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = new MozuClient(clz);
+		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = (MozuClient<com.fasterxml.jackson.databind.JsonNode>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(item);
@@ -197,7 +198,7 @@ public class EntityClient {
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.EntityUrl.updateEntityUrl(entityListFullName, id, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.fasterxml.jackson.databind.JsonNode.class;
-		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = new MozuClient(clz);
+		MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient = (MozuClient<com.fasterxml.jackson.databind.JsonNode>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(item);
@@ -220,7 +221,7 @@ public class EntityClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.entitylists.EntityUrl.deleteEntityUrl(entityListFullName, id);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

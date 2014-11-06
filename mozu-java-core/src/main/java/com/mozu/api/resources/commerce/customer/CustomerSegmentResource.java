@@ -10,6 +10,7 @@ import com.mozu.api.ApiContext;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -218,19 +219,18 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Removes the specified customer accounts from a defined customer segment. You must create the request body to perform this operation.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
-	 *	customersegment.deleteSegmentAccounts( accountIds,  id);
+	 *	customersegment.removeSegmentAccount( id,  accountId);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the segment from which to remove the customer accounts.
-	 * @param accountIds List of customer account identifiers to remove from the specified customer segments.
+	 * @param accountId 
+	 * @param id 
 	 * @return 
-	 * @see int
 	 */
-	public void deleteSegmentAccounts(List<Integer> accountIds, Integer id) throws Exception
+	public void removeSegmentAccount(Integer id, Integer accountId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.deleteSegmentAccountsClient( accountIds,  id);
+		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerSegmentClient.removeSegmentAccountClient( id,  accountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
