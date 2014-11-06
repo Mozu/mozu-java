@@ -22,11 +22,16 @@ public class AuthTicketFactory
 
 	public static com.mozu.api.contracts.appdev.AuthTicket authenticateApp(ApiContext apiContext, com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo, int expectedCode, int successCode) throws Exception
 	{
+		return authenticateApp(apiContext,  appAuthInfo,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.AuthTicket authenticateApp(ApiContext apiContext, com.mozu.api.contracts.appdev.AppAuthInfo appAuthInfo, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.appdev.AuthTicket returnObj = new com.mozu.api.contracts.appdev.AuthTicket();
 		AuthTicketResource resource = new AuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.authenticateApp( appAuthInfo);
+			returnObj = resource.authenticateApp( appAuthInfo,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +41,22 @@ public class AuthTicketFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(ApiContext apiContext, com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest, int expectedCode, int successCode) throws Exception
 	{
+		return refreshAppAuthTicket(apiContext,  authTicketRequest,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.AuthTicket refreshAppAuthTicket(ApiContext apiContext, com.mozu.api.contracts.appdev.AuthTicketRequest authTicketRequest, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.appdev.AuthTicket returnObj = new com.mozu.api.contracts.appdev.AuthTicket();
 		AuthTicketResource resource = new AuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.refreshAppAuthTicket( authTicketRequest);
+			returnObj = resource.refreshAppAuthTicket( authTicketRequest,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,14 +66,13 @@ public class AuthTicketFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAppAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
 	{
-				AuthTicketResource resource = new AuthTicketResource(apiContext);
+		AuthTicketResource resource = new AuthTicketResource(apiContext);
 		try
 		{
 			resource.deleteAppAuthTicket( refreshToken);
@@ -73,10 +81,11 @@ public class AuthTicketFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

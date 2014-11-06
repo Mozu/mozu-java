@@ -36,18 +36,22 @@ public class TransactionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.Transaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, int expectedCode, int successCode) throws Exception
+	{
+		return addTransaction(apiContext,  transaction,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.Transaction addTransaction(ApiContext apiContext, com.mozu.api.contracts.customer.Transaction transaction, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.Transaction returnObj = new com.mozu.api.contracts.customer.Transaction();
 		TransactionResource resource = new TransactionResource(apiContext);
 		try
 		{
-			returnObj = resource.addTransaction( transaction,  accountId);
+			returnObj = resource.addTransaction( transaction,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,14 +61,13 @@ public class TransactionFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void removeTransaction(ApiContext apiContext, Integer accountId, String transactionId, int expectedCode, int successCode) throws Exception
 	{
-				TransactionResource resource = new TransactionResource(apiContext);
+		TransactionResource resource = new TransactionResource(apiContext);
 		try
 		{
 			resource.removeTransaction( accountId,  transactionId);
@@ -73,10 +76,11 @@ public class TransactionFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

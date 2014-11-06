@@ -20,18 +20,18 @@ import com.mozu.api.resources.content.DocumentDraftSummaryResource;
 public class DocumentDraftSummaryFactory
 {
 
-	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		return listDocumentDraftSummaries(apiContext, dataViewMode,  null,  null,  null, expectedCode, successCode );
+		return listDocumentDraftSummaries(apiContext,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String documentLists, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, Integer pageSize, Integer startIndex, String documentLists, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection returnObj = new com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection();
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
-			returnObj = resource.listDocumentDraftSummaries(dataViewMode,  pageSize,  startIndex,  documentLists);
+			returnObj = resource.listDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,53 +41,54 @@ public class DocumentDraftSummaryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, int expectedCode, int successCode) throws Exception
+	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
 	{
-		deleteDocumentDrafts(apiContext, dataViewMode,  documentIds,  null, expectedCode, successCode );
+		deleteDocumentDrafts(apiContext,  documentIds,  null, expectedCode, successCode );
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
+	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
 	{
-				DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
+		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
-			resource.deleteDocumentDrafts(dataViewMode,  documentIds,  documentLists);
+			resource.deleteDocumentDrafts( documentIds,  documentLists);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
-	public static void publishDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, int expectedCode, int successCode) throws Exception
+	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
 	{
-		publishDocuments(apiContext, dataViewMode,  documentIds,  null, expectedCode, successCode );
+		publishDocuments(apiContext,  documentIds,  null, expectedCode, successCode );
 	}
 
-	public static void publishDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
+	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
 	{
-				DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
+		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
 		{
-			resource.publishDocuments(dataViewMode,  documentIds,  documentLists);
+			resource.publishDocuments( documentIds,  documentLists);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

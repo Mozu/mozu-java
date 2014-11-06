@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.ApplicationResource;
 
 /** <summary>
- * Use the applications subresource to update site settings for installed applications.
+ * Use the Applications resource to update site-specific settings for installed applications.
  * </summary>
  */
 public class ApplicationFactory
@@ -22,32 +22,16 @@ public class ApplicationFactory
 
 	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.application.Application returnObj = new com.mozu.api.contracts.sitesettings.application.Application();
-		ApplicationResource resource = new ApplicationResource(apiContext);
-		try
-		{
-			returnObj = resource.thirdPartyGetApplication();
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return thirdPartyGetApplication(apiContext,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyGetApplication(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.sitesettings.application.Application returnObj = new com.mozu.api.contracts.sitesettings.application.Application();
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.thirdPartyUpdateApplication( application);
+			returnObj = resource.thirdPartyGetApplication( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,9 +41,33 @@ public class ApplicationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, int expectedCode, int successCode) throws Exception
+	{
+		return thirdPartyUpdateApplication(apiContext,  application,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.application.Application thirdPartyUpdateApplication(ApiContext apiContext, com.mozu.api.contracts.sitesettings.application.Application application, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.sitesettings.application.Application returnObj = new com.mozu.api.contracts.sitesettings.application.Application();
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			returnObj = resource.thirdPartyUpdateApplication( application,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 }

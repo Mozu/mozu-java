@@ -22,16 +22,16 @@ public class CreditAuditEntryFactory
 
 	public static com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection getAuditEntries(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
 	{
-		return getAuditEntries(apiContext,  code,  null,  null,  null,  null, expectedCode, successCode );
+		return getAuditEntries(apiContext,  code,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection getAuditEntries(ApiContext apiContext, String code, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection getAuditEntries(ApiContext apiContext, String code, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection returnObj = new com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection();
 		CreditAuditEntryResource resource = new CreditAuditEntryResource(apiContext);
 		try
 		{
-			returnObj = resource.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,9 +41,8 @@ public class CreditAuditEntryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

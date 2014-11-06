@@ -20,27 +20,6 @@ import com.mozu.api.resources.commerce.orders.PickupResource;
 public class PickupFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.commerceruntime.fulfillment.Pickup returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Pickup();
-		PickupResource resource = new PickupResource(apiContext);
-		try
-		{
-			returnObj = resource.getPickup( orderId,  pickupId);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
 	public static List<String> getAvailablePickupFulfillmentActions(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
 	{
 		List<String> returnObj = new ArrayList<String>();
@@ -57,18 +36,47 @@ public class PickupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
+	{
+		return getPickup(apiContext,  orderId,  pickupId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup getPickup(ApiContext apiContext, String orderId, String pickupId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.fulfillment.Pickup returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Pickup();
+		PickupResource resource = new PickupResource(apiContext);
+		try
+		{
+			returnObj = resource.getPickup( orderId,  pickupId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup createPickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return createPickup(apiContext,  pickup,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup createPickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Pickup returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Pickup();
 		PickupResource resource = new PickupResource(apiContext);
 		try
 		{
-			returnObj = resource.createPickup( pickup,  orderId);
+			returnObj = resource.createPickup( pickup,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +86,22 @@ public class PickupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup updatePickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
 	{
+		return updatePickup(apiContext,  pickup,  orderId,  pickupId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Pickup updatePickup(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.Pickup pickup, String orderId, String pickupId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Pickup returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Pickup();
 		PickupResource resource = new PickupResource(apiContext);
 		try
 		{
-			returnObj = resource.updatePickup( pickup,  orderId,  pickupId);
+			returnObj = resource.updatePickup( pickup,  orderId,  pickupId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,14 +111,13 @@ public class PickupFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deletePickup(ApiContext apiContext, String orderId, String pickupId, int expectedCode, int successCode) throws Exception
 	{
-				PickupResource resource = new PickupResource(apiContext);
+		PickupResource resource = new PickupResource(apiContext);
 		try
 		{
 			resource.deletePickup( orderId,  pickupId);
@@ -115,10 +126,11 @@ public class PickupFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

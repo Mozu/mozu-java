@@ -20,34 +20,13 @@ import com.mozu.api.resources.content.documentlists.DocumentTreeResource;
 public class DocumentTreeFactory
 {
 
-	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
-		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
-		try
-		{
-			returnObj = resource.getTreeDocument(dataViewMode,  documentListName,  documentName);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
-	}
-
 	public static java.io.InputStream getTreeDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
 	{
 		java.io.InputStream returnObj;
-		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getTreeDocumentContent(dataViewMode,  documentListName,  documentName);
+			returnObj = resource.getTreeDocumentContent( documentListName,  documentName);
 		}
 		catch (ApiException e)
 		{
@@ -57,43 +36,69 @@ public class DocumentTreeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static void updateTreeDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
 	{
-				DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		return getTreeDocument(apiContext, dataViewMode,  documentListName,  documentName,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext, dataViewMode);
 		try
 		{
-			resource.updateTreeDocumentContent(dataViewMode,  stream,  documentListName,  documentName,  contentType);
+			returnObj = resource.getTreeDocument( documentListName,  documentName,  responseFields);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
-	public static void deleteTreeDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
+	public static void updateTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
 	{
-				DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
 		try
 		{
-			resource.deleteTreeDocumentContent(dataViewMode,  stream,  documentListName,  documentName,  contentType);
+			resource.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
 
+	public static void deleteTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
+	{
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		try
+		{
+			resource.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

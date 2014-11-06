@@ -22,16 +22,16 @@ public class EventDeliverySummaryFactory
 
 	public static com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(ApiContext apiContext, String subscriptionId, int expectedCode, int successCode) throws Exception
 	{
-		return getDeliveryAttemptSummary(apiContext,  subscriptionId,  null, expectedCode, successCode );
+		return getDeliveryAttemptSummary(apiContext,  subscriptionId,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(ApiContext apiContext, String subscriptionId, Integer id, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.event.EventDeliverySummary getDeliveryAttemptSummary(ApiContext apiContext, String subscriptionId, Integer id, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.event.EventDeliverySummary returnObj = new com.mozu.api.contracts.event.EventDeliverySummary();
 		EventDeliverySummaryResource resource = new EventDeliverySummaryResource(apiContext);
 		try
 		{
-			returnObj = resource.getDeliveryAttemptSummary( subscriptionId,  id);
+			returnObj = resource.getDeliveryAttemptSummary( subscriptionId,  id,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,23 +41,22 @@ public class EventDeliverySummaryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(ApiContext apiContext, String subscriptionId, int expectedCode, int successCode) throws Exception
 	{
-		return getDeliveryAttemptSummaries(apiContext,  subscriptionId,  null,  null,  null,  null, expectedCode, successCode );
+		return getDeliveryAttemptSummaries(apiContext,  subscriptionId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(ApiContext apiContext, String subscriptionId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.event.EventDeliverySummaryCollection getDeliveryAttemptSummaries(ApiContext apiContext, String subscriptionId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.event.EventDeliverySummaryCollection returnObj = new com.mozu.api.contracts.event.EventDeliverySummaryCollection();
 		EventDeliverySummaryResource resource = new EventDeliverySummaryResource(apiContext);
 		try
 		{
-			returnObj = resource.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -67,9 +66,8 @@ public class EventDeliverySummaryFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }
