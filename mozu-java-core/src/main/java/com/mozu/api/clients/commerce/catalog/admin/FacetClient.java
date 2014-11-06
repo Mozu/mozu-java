@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class FacetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetUrl(facetId, responseFields, validate);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Facet>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -99,7 +100,7 @@ public class FacetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.getFacetCategoryListUrl(categoryId, includeAvailable, responseFields, validate);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.FacetSet.class;
-		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.FacetSet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.FacetSet>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -143,7 +144,7 @@ public class FacetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.addFacetUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Facet>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(facet);
@@ -190,7 +191,7 @@ public class FacetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.updateFacetUrl(facetId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Facet.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Facet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Facet>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(facet);
@@ -212,7 +213,7 @@ public class FacetClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.FacetUrl.deleteFacetByIdUrl(facetId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

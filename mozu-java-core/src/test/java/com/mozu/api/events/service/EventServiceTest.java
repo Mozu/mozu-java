@@ -4,13 +4,12 @@ import static org.junit.Assert.assertEquals;
 
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.NonStrictExpectations;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpStatus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -109,7 +108,7 @@ public class EventServiceTest {
         EventService eventService = new EventService();
         EventHandlerStatus status = eventService.dispatchEvent(mockHttpServletRequest);
         
-        assertEquals(HttpStatus.SC_OK, status.getStatus());
+        assertEquals(HttpServletResponse.SC_OK, status.getStatus());
     }
     
     @Test
@@ -135,7 +134,7 @@ public class EventServiceTest {
         EventService eventService = new EventService();
         EventHandlerStatus status = eventService.dispatchEvent(mockHttpServletRequest);
         
-        assertEquals(HttpStatus.SC_OK, status.getStatus());
+        assertEquals(HttpServletResponse.SC_OK, status.getStatus());
     }
     
     @Test
@@ -162,7 +161,7 @@ public class EventServiceTest {
         EventService eventService = new EventService();
         EventHandlerStatus status = eventService.dispatchEvent(mockHttpServletRequest);
         
-        assertEquals(HttpStatus.SC_OK, status.getStatus());
+        assertEquals(HttpServletResponse.SC_OK, status.getStatus());
     }
     
     public void unauthorizedEventTest() throws Exception {
@@ -190,7 +189,7 @@ public class EventServiceTest {
         EventService eventService = new EventService();
         EventHandlerStatus status = eventService.dispatchEvent(mockHttpServletRequest);
         
-        assertEquals(HttpStatus.SC_UNAUTHORIZED, status.getStatus());
+        assertEquals(HttpServletResponse.SC_UNAUTHORIZED, status.getStatus());
     }
     
     private String createdEventJson() throws JsonProcessingException {

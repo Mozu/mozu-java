@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.storefront;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class ShippingClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ShippingUrl.getRatesUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.shippingruntime.RatesResponse.class;
-		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient = (MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(rateRequest);

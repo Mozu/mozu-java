@@ -9,6 +9,7 @@ package com.mozu.api.clients.event.push.subscriptions;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class EventDeliverySummaryClient {
 		MozuUrl url = com.mozu.api.urls.event.push.subscriptions.EventDeliverySummaryUrl.getDeliveryAttemptSummaryUrl(id, responseFields, subscriptionId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.event.EventDeliverySummary.class;
-		MozuClient<com.mozu.api.contracts.event.EventDeliverySummary> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.event.EventDeliverySummary> mozuClient = (MozuClient<com.mozu.api.contracts.event.EventDeliverySummary>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -101,7 +102,7 @@ public class EventDeliverySummaryClient {
 		MozuUrl url = com.mozu.api.urls.event.push.subscriptions.EventDeliverySummaryUrl.getDeliveryAttemptSummariesUrl(filter, pageSize, responseFields, sortBy, startIndex, subscriptionId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.event.EventDeliverySummaryCollection.class;
-		MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

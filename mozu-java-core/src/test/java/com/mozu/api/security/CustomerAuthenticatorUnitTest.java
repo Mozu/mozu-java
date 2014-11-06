@@ -1,39 +1,32 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
+import java.util.Map;
 
+import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
 import mockit.Mocked;
-import mockit.NonStrictExpectations;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
+import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
+import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.customer.CustomerAuthTicket;
 import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl;
 import com.mozu.api.utils.HttpHelper;
-import com.mozu.api.utils.JsonUtils;
 
 public class CustomerAuthenticatorUnitTest {
 
@@ -43,7 +36,6 @@ public class CustomerAuthenticatorUnitTest {
     private static final String MOZU_URL = "FakeMozuUrl";
     private static final Integer TENANT_ID = new Integer(11);
     private static final Integer SITE_ID = new Integer(22);
-    private static final String USER_ID = "UserId";
     private static final String USER_NAME = "user_name";
     private static final String USER_PASSWORD = "user_password";
     private static final String MOZU_ERROR_MSG = "Mozu error";
@@ -51,16 +43,35 @@ public class CustomerAuthenticatorUnitTest {
     @Mocked Tenant mockTenant;
     @Mocked MozuUrl mockMozuUrl;
     @Mocked TenantResource mockTenantResource;
-    @Mocked CloseableHttpClient mockDefaultHttpClient;
-    @Mocked HttpPut mockHttpPut;
-    @Mocked HttpPost mockHttpPost;
-    @Mocked CloseableHttpResponse mockHttpResponse;
-    @Mocked HttpEntity mockHttpEntity;
+    @Mocked MozuClient<?> mockMozuClient;
     @Mocked AppAuthenticator mockAppAuthenticator;
     @Mocked HttpHelper mockHttpHelper;
+    @Mocked CustomerAuthTicket mockCustomerAuthTicket;
+    @Mocked CustomerAccount mockCustomerAccount;
 
     @Before
     public void setUp() throws Exception {
+        
+        new MockUp<MozuClientFactory<?>>() {
+            @Mock
+            public MozuClient<?> getInstance(Class<?> clz) throws Exception {
+                return mockMozuClient;
+            }
+        };
+        
+        new MockUp<TenantResource>() {
+            @Mock void $init() {}
+            @Mock Tenant getTenant(Integer tenantId) {
+                return mockTenant;
+            }
+        };
+        
+        new MockUp<AppAuthenticator>() {
+            @Mock String addAuthHeader() {
+                return "authHeader";
+            }
+        };
+
     }
 
     @After
@@ -76,47 +87,24 @@ public class CustomerAuthenticatorUnitTest {
         assertNull(cap);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void customerAuthenticatorRefreshTest() throws Exception {
-        
-        final String custAuthJsonString = createCustomerAuthTicketJson();
+        final AuthTicket ticket = createAuthTicket();
 
-        new NonStrictExpectations() {
-            {
-            mockTenantResource.getTenant(null); 
-            result = mockTenant;
-            }
-            {
-                mockTenant.getDomain(); 
-                result=TENANT_DOMAIN; 
-            }
-            {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
-                result=mockMozuUrl;
-            }
-            {
-                mockMozuUrl.getUrl(); 
-                result=MOZU_URL;
-            }
-            {
-                AppAuthenticator.addAuthHeader(mockHttpPut);
-            }
-            {
-                mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
-            }
-            {
-                HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
-            }
-            {
-                mockHttpResponse.getEntity(); 
-                result = mockHttpEntity;
-            }
-            {
-                mockHttpEntity.getContent(); 
-                result= IOUtils.toInputStream(custAuthJsonString);
-        }};
+        new Expectations() {
+            { mockTenant.getDomain(); result=TENANT_DOMAIN; }
+            { HttpHelper.getUrl(TENANT_DOMAIN); result=""; }
+            { CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); result=mockMozuUrl; }
+            { mockMozuUrl.getUrl(); result=MOZU_URL; }
+            { mockMozuClient.executePutRequest(ticket, MOZU_URL, (Map<String, String>)any ); returns(mockCustomerAuthTicket); }
+            { mockCustomerAuthTicket.getAccessToken(); returns("AccessToken"); }
+            { mockCustomerAuthTicket.getAccessTokenExpiration(); returns(new DateTime()); }
+            { mockCustomerAuthTicket.getRefreshToken(); returns("RefreshToken"); }
+            { mockCustomerAuthTicket.getRefreshTokenExpiration(); returns(new DateTime()); }
+            { mockCustomerAuthTicket.getCustomerAccount(); returns(mockCustomerAccount); }
+        };
         
-        AuthTicket ticket = createAuthTicket();
         CustomerAuthenticationProfile cap = CustomerAuthenticator.refreshUserAuthTicket(ticket, null);
         
         assertTrue(cap.getAuthTicket().getAccessToken().equals(ACCESS_TOKEN));
@@ -124,141 +112,48 @@ public class CustomerAuthenticatorUnitTest {
         assertTrue(cap.getAuthTicket().getScope()==AuthenticationScope.Customer);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
-    public void ioErrorTest() throws Exception {
+    public void apiErrorTest() throws Exception {
+        final AuthTicket ticket = createAuthTicket();
 
-        new NonStrictExpectations() {
-            {
-            mockTenantResource.getTenant(null); 
-            result = mockTenant;
-            }
-            {
-                mockTenant.getDomain(); 
-                result=TENANT_DOMAIN; 
-            }
-            {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
-                result=mockMozuUrl;
-            }
-            {
-                mockMozuUrl.getUrl(); 
-                result=MOZU_URL;
-            }
-            {
-                AppAuthenticator.addAuthHeader(mockHttpPut);
-            }
-            {
-                mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
-            }
-            {
-                HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
-            }
-            {
-                mockHttpResponse.getEntity(); 
-                result = mockHttpEntity;
-            }
-            {
-                mockHttpEntity.getContent(); 
-                result = new IOException("Test message");
-        }};
+        new Expectations() {
+            { mockTenant.getDomain(); result=TENANT_DOMAIN; }
+            { HttpHelper.getUrl(TENANT_DOMAIN); result=""; }
+            { CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); result=mockMozuUrl; }
+            { mockMozuUrl.getUrl(); result=MOZU_URL; }
+            { mockMozuClient.executePutRequest(ticket, MOZU_URL, (Map<String, String>)any ); result=new ApiException("Test IO Exception"); }
+        };
         
-        AuthTicket ticket = createAuthTicket();
         try {
             CustomerAuthenticator.ensureAuthTicket(ticket);
-            fail("I/O Exception expected");
+            fail("Api Exception expected");
         } catch (ApiException e) {
-            assertTrue(e.getMessage().startsWith("IO Exception"));
+            assertTrue(e.getMessage().contains("Test IO Exception"));
         }
     }
 
-    @Test
-    public void badResponseTest() throws Exception {
-        new NonStrictExpectations() {
-            {
-            mockTenantResource.getTenant(null); 
-            result = mockTenant;
-            }
-            {
-                mockTenant.getDomain(); 
-                result=TENANT_DOMAIN; 
-            }
-            {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
-                result=mockMozuUrl;
-            }
-            {
-                mockMozuUrl.getUrl(); 
-                result=MOZU_URL;
-            }
-            {
-                AppAuthenticator.addAuthHeader(mockHttpPut);
-            }
-            {
-                mockDefaultHttpClient.execute((HttpPut)any); returns(mockHttpResponse);
-            }
-            {
-                HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
-            }
-            {
-                mockHttpResponse.getEntity(); 
-                result = mockHttpEntity;
-            }
-            {
-                mockHttpEntity.getContent(); 
-                result= IOUtils.toInputStream("Bad data");
-        }};
-        
-        AuthTicket ticket = createAuthTicket();
-        try {
-            CustomerAuthenticator.ensureAuthTicket(ticket);
-            fail("JSON Parse error expected");
-        } catch (ApiException e) {
-            assertTrue( e.getMessage().startsWith("JSON"));
-        }
-    }
-
+    @SuppressWarnings("unchecked")
     @Test
     public void authenticateTest() throws Exception {
-        final String jsonString = createCustomerAuthTicketJson();
 
-        new NonStrictExpectations() {
-            {
-            mockTenantResource.getTenant(TENANT_ID); 
-            result = mockTenant;
-            }
-            {
-                mockTenant.getDomain(); 
-                result=TENANT_DOMAIN; 
-            }
-            {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
-                result=mockMozuUrl;
-            }
-            {
-                mockMozuUrl.getUrl(); 
-                result=MOZU_URL;
-            }
-            {
-                AppAuthenticator.addAuthHeader(mockHttpPut);
-            }
-            {
-                mockDefaultHttpClient.execute((HttpPost)any); returns(mockHttpResponse);
-            }
-            {
-                HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any );
-            }
-            {
-                mockHttpResponse.getEntity(); 
-                result = mockHttpEntity;
-            }
-            {
-                mockHttpEntity.getContent(); 
-                result= IOUtils.toInputStream(jsonString);
-        }};
-        
-        CustomerUserAuthInfo userAuthInfo = new CustomerUserAuthInfo();
+        final CustomerUserAuthInfo userAuthInfo = new CustomerUserAuthInfo();
         userAuthInfo.setUsername(USER_NAME);
         userAuthInfo.setPassword(USER_PASSWORD);
+
+        new Expectations() {
+            { mockTenant.getDomain(); result=TENANT_DOMAIN; }
+            { HttpHelper.getUrl(TENANT_DOMAIN); result=""; }
+            { CustomerAuthTicketUrl.createUserAuthTicketUrl(null); result=mockMozuUrl; }
+            { mockMozuUrl.getUrl(); result=MOZU_URL; }
+            { mockMozuClient.executePostRequest(userAuthInfo, MOZU_URL, (Map<String, String>)any); returns(mockCustomerAuthTicket); }
+            { mockCustomerAuthTicket.getAccessToken(); returns("AccessToken"); }
+            { mockCustomerAuthTicket.getAccessTokenExpiration(); returns(new DateTime()); }
+            { mockCustomerAuthTicket.getRefreshToken(); returns("RefreshToken"); }
+            { mockCustomerAuthTicket.getRefreshTokenExpiration(); returns(new DateTime()); }
+            { mockCustomerAuthTicket.getCustomerAccount(); returns(mockCustomerAccount); }
+        };
+        
         CustomerAuthenticationProfile cap = CustomerAuthenticator.authenticate(userAuthInfo, TENANT_ID, SITE_ID);
         
         assertTrue(cap.getAuthTicket().getAccessToken().equals(ACCESS_TOKEN));
@@ -266,53 +161,30 @@ public class CustomerAuthenticatorUnitTest {
         assertTrue(cap.getAuthTicket().getScope()==AuthenticationScope.Customer);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void authenticateFailTest() throws Exception {
 
-        new NonStrictExpectations() {
-            {
-            mockTenantResource.getTenant(TENANT_ID); 
-            result = mockTenant;
-            }
-            {
-                mockTenant.getDomain(); 
-                result=TENANT_DOMAIN; 
-            }
-            {
-                CustomerAuthTicketUrl.refreshUserAuthTicketUrl(REFRESH_TOKEN, null); 
-                result=mockMozuUrl;
-            }
-            {
-                mockMozuUrl.getUrl(); 
-                result=MOZU_URL;
-            }
-            {
-                AppAuthenticator.addAuthHeader(mockHttpPut);
-            }
-            {
-                mockDefaultHttpClient.execute((HttpPost)any); returns(mockHttpResponse);
-            }
-            {
-                HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); result=new ApiException(MOZU_ERROR_MSG);
-            }
-        };
-        
-        CustomerUserAuthInfo userAuthInfo = new CustomerUserAuthInfo();
+        final CustomerUserAuthInfo userAuthInfo = new CustomerUserAuthInfo();
         userAuthInfo.setUsername(USER_NAME);
         userAuthInfo.setPassword(USER_PASSWORD);
+
+        new Expectations() {
+            { mockTenant.getDomain(); result=TENANT_DOMAIN; }
+            { HttpHelper.getUrl(TENANT_DOMAIN); result=""; }
+            { CustomerAuthTicketUrl.createUserAuthTicketUrl(null); result=mockMozuUrl; }
+            { mockMozuUrl.getUrl(); result=MOZU_URL; }
+            { mockMozuClient.executePostRequest(userAuthInfo, MOZU_URL, (Map<String, String>)any); result=new ApiException(MOZU_ERROR_MSG); }
+        };
+        
         try {
             CustomerAuthenticator.authenticate(userAuthInfo, TENANT_ID, SITE_ID);
             fail("API Exception expected");
         } catch (ApiException e) {
-            assertEquals(MOZU_ERROR_MSG, e.getMessage());
+            assertTrue(e.getMessage().contains(MOZU_ERROR_MSG));
         }
     }
 
-    private String createCustomerAuthTicketJson() throws JsonProcessingException {
-        ObjectMapper mapper = JsonUtils.initObjectMapper();
-        return mapper.writeValueAsString(createCustomerAuthTicket());
-    }
-    
     private AuthTicket createAuthTicket() {
         AuthTicket ticket = new AuthTicket();
         ticket.setAccessToken(ACCESS_TOKEN);
@@ -322,16 +194,5 @@ public class CustomerAuthenticatorUnitTest {
         ticket.setSiteId(SITE_ID);
         ticket.setScope(AuthenticationScope.Tenant);
         return ticket;
-    }
-    
-    private CustomerAuthTicket createCustomerAuthTicket() {
-        CustomerAuthTicket caTicket = new CustomerAuthTicket();
-        caTicket.setAccessToken(ACCESS_TOKEN);
-        caTicket.setAccessTokenExpiration(new DateTime());
-        caTicket.setCustomerAccount(null);
-        caTicket.setRefreshToken(REFRESH_TOKEN);
-        caTicket.setRefreshTokenExpiration(new DateTime());
-        caTicket.setUserId(USER_ID);
-        return caTicket;
     }
 }

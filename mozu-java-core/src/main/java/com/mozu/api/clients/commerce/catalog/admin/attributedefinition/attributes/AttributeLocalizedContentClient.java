@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.attributedefinition.attribut
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class AttributeLocalizedContentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.getAttributeLocalizedContentsUrl(attributeFQN);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -83,7 +84,7 @@ public class AttributeLocalizedContentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.getAttributeLocalizedContentUrl(attributeFQN, localeCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -131,7 +132,7 @@ public class AttributeLocalizedContentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.addLocalizedContentUrl(attributeFQN, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -159,7 +160,7 @@ public class AttributeLocalizedContentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.updateLocalizedContentsUrl(attributeFQN);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -210,7 +211,7 @@ public class AttributeLocalizedContentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.updateLocalizedContentUrl(attributeFQN, localeCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.AttributeLocalizedContent.class;
-		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(localizedContent);
@@ -234,7 +235,7 @@ public class AttributeLocalizedContentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes.AttributeLocalizedContentUrl.deleteLocalizedContentUrl(attributeFQN, localeCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -60,7 +61,7 @@ public class AdjustmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyShippingAdjustmentUrl(orderId, responseFields, updateMode, version);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(adjustment);
@@ -109,7 +110,7 @@ public class AdjustmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyAdjustmentUrl(orderId, responseFields, updateMode, version);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(adjustment);
@@ -153,7 +154,7 @@ public class AdjustmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.removeShippingAdjustmentUrl(orderId, updateMode, version);
 		String verb = "DELETE";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -196,7 +197,7 @@ public class AdjustmentClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.removeAdjustmentUrl(orderId, updateMode, version);
 		String verb = "DELETE";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

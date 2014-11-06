@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform.developer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -57,7 +58,7 @@ public class DeveloperAdminUserAuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.createDeveloperUserAuthTicketUrl(developerAccountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(userAuthInfo);
@@ -103,7 +104,7 @@ public class DeveloperAdminUserAuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.refreshDeveloperAuthTicketUrl(developerAccountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(existingAuthTicket);
@@ -125,7 +126,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	{
 		MozuUrl url = com.mozu.api.urls.platform.developer.DeveloperAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(refreshToken);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

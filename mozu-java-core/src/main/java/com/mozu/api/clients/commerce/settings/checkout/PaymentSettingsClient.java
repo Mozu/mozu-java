@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings.checkout;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -35,7 +36,7 @@ public class PaymentSettingsClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.checkout.PaymentSettingsUrl.getThirdPartyPaymentWorkflowsUrl();
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>> mozuClient = (MozuClient<List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

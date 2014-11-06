@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.wishlists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.getWishlistItemUrl(responseFields, wishlistId, wishlistItemId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -102,7 +103,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.getWishlistItemsUrl(filter, pageSize, responseFields, sortBy, startIndex, wishlistId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -150,7 +151,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.getWishlistItemsByWishlistNameUrl(customerAccountId, filter, pageSize, responseFields, sortBy, startIndex, wishlistName);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -196,7 +197,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.addItemToWishlistUrl(responseFields, wishlistId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(wishlistItem);
@@ -243,7 +244,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.updateWishlistItemQuantityUrl(quantity, responseFields, wishlistId, wishlistItemId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -291,7 +292,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.updateWishlistItemUrl(responseFields, wishlistId, wishlistItemId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(wishlistItem);
@@ -316,7 +317,7 @@ public class WishlistItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.removeAllWishlistItemsUrl(wishlistId);
 		String verb = "DELETE";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.wishlists.Wishlist.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -338,7 +339,7 @@ public class WishlistItemClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.wishlists.WishlistItemUrl.deleteWishlistItemUrl(wishlistId, wishlistItemId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class LocationUsageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.LocationUsageUrl.getLocationUsagesUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationUsageCollection.class;
-		MozuClient<com.mozu.api.contracts.location.LocationUsageCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationUsageCollection> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationUsageCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -94,7 +95,7 @@ public class LocationUsageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.LocationUsageUrl.getLocationUsageUrl(code, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationUsage.class;
-		MozuClient<com.mozu.api.contracts.location.LocationUsage> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationUsage> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationUsage>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -140,7 +141,7 @@ public class LocationUsageClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.LocationUsageUrl.updateLocationUsageUrl(code, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.location.LocationUsage.class;
-		MozuClient<com.mozu.api.contracts.location.LocationUsage> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationUsage> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationUsage>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(usage);

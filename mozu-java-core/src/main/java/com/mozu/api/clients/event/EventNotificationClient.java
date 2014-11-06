@@ -9,6 +9,7 @@ package com.mozu.api.clients.event;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class EventNotificationClient {
 		MozuUrl url = com.mozu.api.urls.event.EventNotificationUrl.getEventsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.event.EventCollection.class;
-		MozuClient<com.mozu.api.contracts.event.EventCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.event.EventCollection> mozuClient = (MozuClient<com.mozu.api.contracts.event.EventCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class EventNotificationClient {
 		MozuUrl url = com.mozu.api.urls.event.EventNotificationUrl.getEventUrl(eventId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.event.Event.class;
-		MozuClient<com.mozu.api.contracts.event.Event> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.event.Event> mozuClient = (MozuClient<com.mozu.api.contracts.event.Event>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

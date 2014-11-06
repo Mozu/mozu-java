@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.orders;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -36,7 +37,7 @@ public class OrderValidationResultClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderValidationResultUrl.getValidationResultsUrl(orderId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>> mozuClient = (MozuClient<List<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -82,7 +83,7 @@ public class OrderValidationResultClient {
 		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderValidationResultUrl.addValidationResultUrl(orderId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(validationResult);

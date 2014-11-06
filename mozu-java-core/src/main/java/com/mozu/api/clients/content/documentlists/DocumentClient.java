@@ -9,6 +9,7 @@ package com.mozu.api.clients.content.documentlists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -38,7 +39,7 @@ public class DocumentClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.getDocumentContentUrl(documentId, documentListName);
 		String verb = "GET";
 		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = new MozuClient(clz);
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -83,7 +84,7 @@ public class DocumentClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.getDocumentUrl(documentId, documentListName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.Document.class;
-		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = (MozuClient<com.mozu.api.contracts.content.Document>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -130,7 +131,7 @@ public class DocumentClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.getDocumentsUrl(documentListName, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentCollection.class;
-		MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.DocumentCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -177,7 +178,7 @@ public class DocumentClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.createDocumentUrl(documentListName, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.content.Document.class;
-		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = (MozuClient<com.mozu.api.contracts.content.Document>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(document);
@@ -203,7 +204,7 @@ public class DocumentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.updateDocumentContentUrl(documentId, documentListName);
 		String verb = "PUT";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(stream);
@@ -254,7 +255,7 @@ public class DocumentClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.updateDocumentUrl(documentId, documentListName, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.content.Document.class;
-		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = (MozuClient<com.mozu.api.contracts.content.Document>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(document);
@@ -277,7 +278,7 @@ public class DocumentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.deleteDocumentUrl(documentId, documentListName);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -299,7 +300,7 @@ public class DocumentClient {
 	{
 		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentUrl.deleteDocumentContentUrl(documentId, documentListName);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -35,7 +36,7 @@ public class LocationTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.getLocationTypesUrl();
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.location.LocationType>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.location.LocationType>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.location.LocationType>> mozuClient = (MozuClient<List<com.mozu.api.contracts.location.LocationType>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -77,7 +78,7 @@ public class LocationTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.getLocationTypeUrl(locationTypeCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
-		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -121,7 +122,7 @@ public class LocationTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.addLocationTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
-		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(locationType);
@@ -168,7 +169,7 @@ public class LocationTypeClient {
 		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.updateLocationTypeUrl(locationTypeCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.location.LocationType.class;
-		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.location.LocationType> mozuClient = (MozuClient<com.mozu.api.contracts.location.LocationType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(locationType);
@@ -190,7 +191,7 @@ public class LocationTypeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.admin.LocationTypeUrl.deleteLocationTypeUrl(locationTypeCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

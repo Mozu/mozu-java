@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin.discounts;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class DiscountTargetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.discounts.DiscountTargetUrl.getDiscountTargetUrl(discountId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.DiscountTarget.class;
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -102,7 +103,7 @@ public class DiscountTargetClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.discounts.DiscountTargetUrl.updateDiscountTargetUrl(discountId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.DiscountTarget.class;
-		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DiscountTarget>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(discountTarget);

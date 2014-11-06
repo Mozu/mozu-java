@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer.credits;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -58,7 +59,7 @@ public class CreditTransactionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.credits.CreditTransactionUrl.getTransactionsUrl(code, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.credit.CreditTransactionCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.credit.CreditTransactionCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.credit.CreditTransactionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.credit.CreditTransactionCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -104,7 +105,7 @@ public class CreditTransactionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.credits.CreditTransactionUrl.addTransactionUrl(code, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.credit.CreditTransaction.class;
-		MozuClient<com.mozu.api.contracts.customer.credit.CreditTransaction> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.credit.CreditTransaction> mozuClient = (MozuClient<com.mozu.api.contracts.customer.credit.CreditTransaction>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(creditTransaction);

@@ -9,6 +9,7 @@ package com.mozu.api.clients.content;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -55,7 +56,7 @@ public class PropertyTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.getPropertyTypesUrl(pageSize, responseFields, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.PropertyTypeCollection.class;
-		MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.PropertyTypeCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -98,7 +99,7 @@ public class PropertyTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.getPropertyTypeUrl(propertyTypeName, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.PropertyType.class;
-		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = (MozuClient<com.mozu.api.contracts.content.PropertyType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -143,7 +144,7 @@ public class PropertyTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.createPropertyTypeUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.content.PropertyType.class;
-		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = (MozuClient<com.mozu.api.contracts.content.PropertyType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(propertyType);
@@ -190,7 +191,7 @@ public class PropertyTypeClient {
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.updatePropertyTypeUrl(propertyTypeName, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.content.PropertyType.class;
-		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient = (MozuClient<com.mozu.api.contracts.content.PropertyType>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(propertyType);
@@ -213,7 +214,7 @@ public class PropertyTypeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.content.PropertyTypeUrl.deletePropertyTypeUrl(propertyTypeName);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

@@ -10,6 +10,7 @@ import com.mozu.api.ApiContext;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -243,6 +244,25 @@ public class ProductResource {
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	product.renameProductCodes( productCodeRenames);
+	 * </code></pre></p>
+	 * @param productCodeRenames 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.ProductCodeRename
+	 */
+	public void renameProductCodes(List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.ProductClient.renameProductCodesClient( productCodeRenames);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

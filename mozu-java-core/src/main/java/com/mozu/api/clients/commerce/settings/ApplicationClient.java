@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class ApplicationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyGetApplicationUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -96,7 +97,7 @@ public class ApplicationClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.ApplicationUrl.thirdPartyUpdateApplicationUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.application.Application.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.application.Application> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.application.Application>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(application);

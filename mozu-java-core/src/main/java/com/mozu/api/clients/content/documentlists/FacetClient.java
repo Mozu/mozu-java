@@ -9,6 +9,7 @@ package com.mozu.api.clients.content.documentlists;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -37,7 +38,7 @@ public class FacetClient {
 		MozuUrl url = com.mozu.api.urls.content.documentlists.FacetUrl.getFacetsUrl(documentListName, propertyName);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.content.Facet>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.content.Facet>> mozuClient = (MozuClient<List<com.mozu.api.contracts.content.Facet>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

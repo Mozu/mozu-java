@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.storefront;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -68,7 +69,7 @@ public class ProductSearchResultClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetSettings, facetStartIndex, facetTemplate, facetTemplateSubset, facetValueFilter, filter, pageSize, query, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductSearchResult.class;
-		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -111,7 +112,7 @@ public class ProductSearchResultClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.suggestUrl(groups, pageSize, query, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.SearchSuggestionResult.class;
-		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.SearchSuggestionResult>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

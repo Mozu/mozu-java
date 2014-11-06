@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -60,7 +61,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductsUrl(filter, noCount, pageSize, q, qLimit, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductCollection.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -85,7 +86,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductInCatalogsUrl(productCode);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -130,7 +131,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductInCatalogUrl(catalogId, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -173,7 +174,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.getProductUrl(productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Product>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -218,7 +219,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Product>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(product);
@@ -266,11 +267,34 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.addProductInCatalogUrl(productCode, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=RenameProductCodesClient( productCodeRenames);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param productCodeRenames 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.ProductCodeRename
+	 */
+	public static MozuClient renameProductCodesClient(List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.renameProductCodesUrl();
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(productCodeRenames);
 		return mozuClient;
 
 	}
@@ -294,7 +318,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogsUrl(productCode);
 		String verb = "PUT";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogsIn);
@@ -344,7 +368,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductInCatalogUrl(catalogId, productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.ProductInCatalogInfo.class;
-		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productInCatalogInfoIn);
@@ -392,7 +416,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.updateProductUrl(productCode, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Product.class;
-		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productadmin.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Product>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(product);
@@ -415,7 +439,7 @@ public class ProductClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductUrl(productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -438,7 +462,7 @@ public class ProductClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.ProductUrl.deleteProductInCatalogUrl(catalogId, productCode);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.carts;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -54,7 +55,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.getCartItemUrl(cartItemId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -94,7 +95,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.getCartItemsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartItemCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItemCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -138,7 +139,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.addItemToCartUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(cartItem);
@@ -183,7 +184,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.updateCartItemQuantityUrl(cartItemId, quantity, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -229,7 +230,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.updateCartItemUrl(cartItemId, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.CartItem.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.CartItem>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(cartItem);
@@ -253,7 +254,7 @@ public class CartItemClient {
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.removeAllCartItemsUrl();
 		String verb = "DELETE";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.carts.Cart.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -274,7 +275,7 @@ public class CartItemClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.carts.CartItemUrl.deleteCartItemUrl(cartItemId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

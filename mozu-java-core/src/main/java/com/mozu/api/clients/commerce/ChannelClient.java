@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class ChannelClient {
 		MozuUrl url = com.mozu.api.urls.commerce.ChannelUrl.getChannelsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.channels.ChannelCollection.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.channels.ChannelCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class ChannelClient {
 		MozuUrl url = com.mozu.api.urls.commerce.ChannelUrl.getChannelUrl(code, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.channels.Channel.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -142,7 +143,7 @@ public class ChannelClient {
 		MozuUrl url = com.mozu.api.urls.commerce.ChannelUrl.createChannelUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.channels.Channel.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(channel);
@@ -189,7 +190,7 @@ public class ChannelClient {
 		MozuUrl url = com.mozu.api.urls.commerce.ChannelUrl.updateChannelUrl(code, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.channels.Channel.class;
-		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.channels.Channel>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(channel);
@@ -211,7 +212,7 @@ public class ChannelClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.ChannelUrl.deleteChannelUrl(code);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

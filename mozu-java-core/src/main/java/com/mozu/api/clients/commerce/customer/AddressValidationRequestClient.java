@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class AddressValidationRequestClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.AddressValidationRequestUrl.validateAddressUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.AddressValidationResponse.class;
-		MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse> mozuClient = (MozuClient<com.mozu.api.contracts.customer.AddressValidationResponse>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(addressValidationRequest);

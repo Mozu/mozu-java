@@ -1,6 +1,6 @@
 package com.mozu.api.events.service;
 
-import org.apache.http.HttpStatus;
+import javax.servlet.http.HttpServletResponse;
 
 import com.mozu.api.ApiContext;
 import com.mozu.api.contracts.event.Event;
@@ -14,18 +14,18 @@ public class CartEventHandlerTestImpl implements CartEventHandler {
     @Override
     public EventHandlerStatus created(ApiContext apiContext, Event eventPayLoad) {
         System.out.println("Create Event!");
-        return new EventHandlerStatus(HttpStatus.SC_OK);
+        return new EventHandlerStatus(HttpServletResponse.SC_OK);
     }
 
     @Override
     public EventHandlerStatus updated(ApiContext apiContext, Event eventPayLoad) {
         System.out.println("Update Event!");
-        return new EventHandlerStatus(HttpStatus.SC_OK);
+        return new EventHandlerStatus(HttpServletResponse.SC_OK);
     }
 
     @Override
     public EventHandlerStatus deleted(ApiContext apiContext, Event eventPayLoad) {
         System.out.println("Delete Event!");
-        return new EventHandlerStatus(HttpStatus.SC_OK);
+        return new EventHandlerStatus(HttpServletResponse.SC_OK);
     }
 }

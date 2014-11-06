@@ -108,6 +108,16 @@ public class ProductUrl
 	}
 
 	/**
+	 * Get Resource Url for RenameProductCodes
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl renameProductCodesUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/Actions/RenameProductCodes");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateProductInCatalogs
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url

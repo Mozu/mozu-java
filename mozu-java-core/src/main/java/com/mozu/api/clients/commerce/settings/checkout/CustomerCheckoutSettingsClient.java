@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings.checkout;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class CustomerCheckoutSettingsClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.checkout.CustomerCheckoutSettingsUrl.getCustomerCheckoutSettingsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -96,7 +97,7 @@ public class CustomerCheckoutSettingsClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.checkout.CustomerCheckoutSettingsUrl.updateCustomerCheckoutSettingsUrl(responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(customerCheckoutSettings);

@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -35,7 +36,7 @@ public class CustomerAuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createAnonymousShopperAuthTicketUrl();
 		String verb = "GET";
 		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = new MozuClient(clz);
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -79,7 +80,7 @@ public class CustomerAuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createUserAuthTicketUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(userAuthInfo);
@@ -122,7 +123,7 @@ public class CustomerAuthTicketClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.refreshUserAuthTicketUrl(refreshToken, responseFields);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
-		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

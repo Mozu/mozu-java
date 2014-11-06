@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.storefront;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -57,7 +58,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductCollection.class;
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -101,7 +102,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductInventoryUrl(locationCodes, productCode, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.LocationInventoryCollection.class;
-		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -147,7 +148,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductUrl(allowInactive, productCode, responseFields, skipInventoryCheck, variationProductCode);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.Product.class;
-		MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.Product>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
@@ -196,7 +197,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.configuredProductUrl(includeOptionDetails, productCode, responseFields, skipInventoryCheck);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ConfiguredProduct.class;
-		MozuClient<com.mozu.api.contracts.productruntime.ConfiguredProduct> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.ConfiguredProduct> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ConfiguredProduct>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productOptionSelections);
@@ -244,7 +245,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.validateProductUrl(productCode, responseFields, skipInventoryCheck);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductValidationSummary.class;
-		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(productOptionSelections);
@@ -295,7 +296,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.validateDiscountsUrl(allowInactive, customerAccountId, productCode, responseFields, skipInventoryCheck, variationProductCode);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productruntime.DiscountValidationSummary.class;
-		MozuClient<com.mozu.api.contracts.productruntime.DiscountValidationSummary> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.DiscountValidationSummary> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.DiscountValidationSummary>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(discountSelections);
@@ -340,7 +341,7 @@ public class ProductClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductInventoriesUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productruntime.LocationInventoryCollection.class;
-		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(query);

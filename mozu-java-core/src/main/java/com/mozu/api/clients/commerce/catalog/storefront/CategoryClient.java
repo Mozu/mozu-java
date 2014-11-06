@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.storefront;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class CategoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.CategoryUrl.getCategoriesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.CategoryPagedCollection.class;
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -99,7 +100,7 @@ public class CategoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.CategoryUrl.getCategoryUrl(allowInactive, categoryId, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.Category.class;
-		MozuClient<com.mozu.api.contracts.productruntime.Category> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.Category> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.Category>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -139,7 +140,7 @@ public class CategoryClient {
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.CategoryUrl.getCategoryTreeUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.CategoryCollection.class;
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

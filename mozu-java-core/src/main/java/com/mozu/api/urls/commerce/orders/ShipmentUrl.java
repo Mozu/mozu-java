@@ -37,7 +37,7 @@ public class ShipmentUrl
 	 */
 	public static MozuUrl getAvailableShipmentMethodsUrl(Boolean draft, String orderId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/methods");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/shipments/methods?draft={draft}");
 		formatter.formatUrl("draft", draft);
 		formatter.formatUrl("orderId", orderId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

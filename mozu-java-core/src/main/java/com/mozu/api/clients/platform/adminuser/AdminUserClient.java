@@ -9,6 +9,7 @@ package com.mozu.api.clients.platform.adminuser;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -54,7 +55,7 @@ public class AdminUserClient {
 		MozuUrl url = com.mozu.api.urls.platform.adminuser.AdminUserUrl.getTenantScopesForUserUrl(responseFields, userId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.tenant.TenantCollection.class;
-		MozuClient<com.mozu.api.contracts.tenant.TenantCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.tenant.TenantCollection> mozuClient = (MozuClient<com.mozu.api.contracts.tenant.TenantCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -96,7 +97,7 @@ public class AdminUserClient {
 		MozuUrl url = com.mozu.api.urls.platform.adminuser.AdminUserUrl.getUserUrl(responseFields, userId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.core.User.class;
-		MozuClient<com.mozu.api.contracts.core.User> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.core.User> mozuClient = (MozuClient<com.mozu.api.contracts.core.User>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

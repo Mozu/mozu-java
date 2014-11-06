@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.settings;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -52,7 +53,7 @@ public class SiteShippingSettingsClient {
 		MozuUrl url = com.mozu.api.urls.commerce.settings.SiteShippingSettingsUrl.getSiteShippingSettingsUrl(responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings.class;
-		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings> mozuClient = (MozuClient<com.mozu.api.contracts.sitesettings.shipping.SiteShippingSettings>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

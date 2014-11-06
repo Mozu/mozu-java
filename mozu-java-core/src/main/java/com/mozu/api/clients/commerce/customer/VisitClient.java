@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -56,7 +57,7 @@ public class VisitClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.VisitUrl.getVisitsUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.VisitCollection.class;
-		MozuClient<com.mozu.api.contracts.customer.VisitCollection> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.VisitCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.VisitCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -98,7 +99,7 @@ public class VisitClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.VisitUrl.getVisitUrl(responseFields, visitId);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.customer.Visit.class;
-		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Visit>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -142,7 +143,7 @@ public class VisitClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.VisitUrl.addVisitUrl(responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.Visit.class;
-		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Visit>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(visit);
@@ -189,7 +190,7 @@ public class VisitClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.VisitUrl.updateVisitUrl(responseFields, visitId);
 		String verb = "PUT";
 		Class<?> clz = com.mozu.api.contracts.customer.Visit.class;
-		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Visit> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Visit>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(visit);

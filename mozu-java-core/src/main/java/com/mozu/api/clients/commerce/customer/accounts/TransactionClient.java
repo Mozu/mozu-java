@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.customer.accounts;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -36,7 +37,7 @@ public class TransactionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.getTransactionsUrl(accountId);
 		String verb = "GET";
 		Class<?> clz = new ArrayList<com.mozu.api.contracts.customer.Transaction>(){}.getClass();
-		MozuClient<List<com.mozu.api.contracts.customer.Transaction>> mozuClient = new MozuClient(clz);
+		MozuClient<List<com.mozu.api.contracts.customer.Transaction>> mozuClient = (MozuClient<List<com.mozu.api.contracts.customer.Transaction>>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -82,7 +83,7 @@ public class TransactionClient {
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.addTransactionUrl(accountId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.Transaction.class;
-		MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient = new MozuClient(clz);
+		MozuClient<com.mozu.api.contracts.customer.Transaction> mozuClient = (MozuClient<com.mozu.api.contracts.customer.Transaction>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(transaction);
@@ -105,7 +106,7 @@ public class TransactionClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.customer.accounts.TransactionUrl.removeTransactionUrl(accountId, transactionId);
 		String verb = "DELETE";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

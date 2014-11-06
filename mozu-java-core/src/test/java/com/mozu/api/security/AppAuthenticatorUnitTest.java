@@ -3,37 +3,25 @@ package com.mozu.api.security;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.io.InputStream;
 
+import mockit.Expectations;
 import mockit.Mock;
 import mockit.MockUp;
 import mockit.Mocked;
-import mockit.NonStrictExpectations;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiException;
-import com.mozu.api.MozuConfig;
+import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.appdev.AuthTicket;
+import com.mozu.api.contracts.appdev.AuthTicketRequest;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 import com.mozu.api.security.AppAuthenticator;
-import com.mozu.api.utils.ConfigProperties;
-import com.mozu.api.utils.HttpHelper;
-import com.mozu.api.utils.JsonUtils;
 
 /**
  *  This test aims to test the AppAuthenticator by mocking out the
@@ -42,18 +30,25 @@ import com.mozu.api.utils.JsonUtils;
  */
 public class AppAuthenticatorUnitTest {
 
-    private static final String BAD_URL = "BadUrl/";
+    private static final String GOOD_URL = "https://home.mozu.com/api/platform/applications/authtickets";
+    private static final String REFRESH_URL = GOOD_URL + "/refresh-ticket?";
+    
     private static final String APP_ID = "12342341234132";
     private static final String SHARED_SECRET = "12342341234132";
 
-    @Mocked HttpPost mockHttpPost;
-    @Mocked CloseableHttpClient mockHttpClient;
-    @Mocked CloseableHttpResponse mockHttpResponse;
-    @Mocked HttpEntity mockHttpEntity;
-    @Mocked HttpHelper mockHttpHelper;
+    @Mocked MozuClient<?> mockHttpClient;
+    @Mocked AuthTicket mockAuthTicket;
+    @Mocked AuthTicketRequest mockAuthTicketRequest;
     
     @Before
     public void setUp() throws Exception {
+        new MockUp<MozuClientFactory<?>>() {
+            @Mock
+            public MozuClient<?> getInstance(Class<?> clz) throws Exception {
+                return mockHttpClient;
+            }
+        };
+
     }
 
     /**
@@ -76,20 +71,16 @@ public class AppAuthenticatorUnitTest {
     @Test
     public void initializeWithURLTest() throws Exception {
         
-        final String jsonString = createAuthTicketJson();
-
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result= IOUtils.toInputStream(jsonString); }
-        };
-
-        AppAuthInfo appAuthInfo = new AppAuthInfo();
+        final AppAuthInfo appAuthInfo = new AppAuthInfo();
         appAuthInfo.setApplicationId(APP_ID);
         appAuthInfo.setSharedSecret(SHARED_SECRET);
+        
+        new Expectations() {
+            { mockHttpClient.executePostRequest(appAuthInfo, GOOD_URL, null); returns(mockAuthTicket); }
+            { mockAuthTicket.getAccessTokenExpiration(); returns(new DateTime()); }
+            { mockAuthTicket.getRefreshTokenExpiration(); returns(new DateTime()); }
+        };
+
         AppAuthenticator.initialize(appAuthInfo);
     }
     /**
@@ -101,75 +92,23 @@ public class AppAuthenticatorUnitTest {
     @Test
     public void initializeIOExceptionTest() throws Exception {
         
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); result=new IOException("Test IO Exception"); }
-        };
-        
-        AppAuthInfo appAuthInfo = new AppAuthInfo();
+        final AppAuthInfo appAuthInfo = new AppAuthInfo();
         appAuthInfo.setApplicationId(APP_ID);
         appAuthInfo.setSharedSecret(SHARED_SECRET);
+
+        new Expectations() {
+            { mockHttpClient.executePostRequest(appAuthInfo, GOOD_URL, null); result=new IOException("Test IO Exception"); }
+        };
+        
         try {
             AppAuthenticator.initialize(appAuthInfo);
             fail("API exception expected");
         } catch (ApiException e) {
             //expected
-            assertEquals("IO Exception occurred while authenticating application: Test IO Exception", e.getMessage());
+            assertEquals("Exception getting Mozu client: Test IO Exception", e.getMessage());
         }
     }
 
-    /**
-     * Test an error response sent from the server
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void initializeErrorResponseTest() throws Exception {
-        
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); result=new ApiException("Mozu Error: "); }
-        };
-        
-        AppAuthInfo appAuthInfo = new AppAuthInfo();
-        try {
-            MozuConfig.setBaseUrl(BAD_URL);
-            AppAuthenticator.initialize(appAuthInfo);
-            fail("404 Not found excpected");
-        } catch (ApiException e) {
-            //expected
-            assertEquals("Mozu Error: ", e.getMessage());
-        }
-    }
-    
-    /**
-     * Test a response with bad JSON data
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void InitializeBadResponseError() throws Exception {
-        
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result= IOUtils.toInputStream("Bad Data"); }
-        };
-        
-        try {
-            AppAuthenticator.initialize(new AppAuthInfo());
-            fail("JSON Parse error expected");
-        } catch (ApiException e) {
-            assertTrue( e.getMessage().startsWith("JSON"));
-        }
-    }
-    
     /**
      * Initialize, then refresh the app auth ticket.
      * 
@@ -177,45 +116,29 @@ public class AppAuthenticatorUnitTest {
      */
     @Test
     public void refreshAppAuthTest() throws Exception {
-        
-        final String jsonString = createAuthTicketJson();
-        final InputStream iStream = IOUtils.toInputStream(jsonString);;
+        final AppAuthInfo appAuthInfo = new AppAuthInfo();
+        appAuthInfo.setApplicationId(APP_ID);
+        appAuthInfo.setSharedSecret(SHARED_SECRET);
 
-        new NonStrictExpectations() {
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result=iStream; }
-            { mockHttpPost.setHeader("Accept", "application/json"); }
-            { mockHttpPost.setHeader("Content-type", "application/json"); }
-            { mockHttpClient.execute((HttpEntityEnclosingRequestBase)any); returns(mockHttpResponse); }
-            { HttpHelper.ensureSuccess(mockHttpResponse, (ObjectMapper) any ); }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result=iStream; }
+        new MockUp<AuthTicketRequest>() {
+            @Mock
+            public void $init() {}
+
+            @Mock
+            public void setRefreshToken(String refreshToken) {}
         };
 
-        AppAuthenticator.initialize(new AppAuthInfo());
+        new Expectations() {
+            { mockHttpClient.executePostRequest(appAuthInfo, GOOD_URL, null); returns(mockAuthTicket); }
+            { mockAuthTicket.getAccessTokenExpiration(); returns(new DateTime()); }
+            { mockAuthTicket.getRefreshTokenExpiration(); returns(new DateTime()); }
+            { mockAuthTicket.getRefreshToken(); returns("RefreshToken"); }
+            { mockHttpClient.executePutRequest(any, REFRESH_URL, null); returns(mockAuthTicket); }
+        };
+
+        AppAuthenticator.initialize(appAuthInfo);
         AppAuthenticator auth = AppAuthenticator.getInstance();
         
-        // must reset the stream for the jmockit to re-read
-        iStream.reset();
-        
         auth.refreshAppAuthTicket();
-    }
-    
-    private String createAuthTicketJson() throws JsonProcessingException {
-        ObjectMapper mapper = JsonUtils.initObjectMapper();
-        return mapper.writeValueAsString(createAuthTicket());
-    }
-
-    private AuthTicket createAuthTicket() {
-        AuthTicket ticket = new AuthTicket();
-        ticket.setAccessToken("AccessToken");
-        ticket.setAccessTokenExpiration(new DateTime());
-        ticket.setRefreshToken("RefreshToken");
-        ticket.setRefreshTokenExpiration(new DateTime());
-        return ticket;
     }
 }

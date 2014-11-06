@@ -9,6 +9,7 @@ package com.mozu.api.clients.commerce.catalog.admin;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
+import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
@@ -36,7 +37,7 @@ public class PublishingScopeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PublishingScopeUrl.discardDraftsUrl();
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(publishScope);
@@ -61,7 +62,7 @@ public class PublishingScopeClient {
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.PublishingScopeUrl.publishDraftsUrl();
 		String verb = "POST";
-				MozuClient mozuClient = new MozuClient();
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(publishScope);
