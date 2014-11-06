@@ -20,13 +20,13 @@ import com.mozu.api.resources.commerce.catalog.admin.products.ProductVariationRe
 public class ProductVariationFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> getProductVariationLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.ProductVariation returnObj = new com.mozu.api.contracts.productadmin.ProductVariation();
-		ProductVariationResource resource = new ProductVariationResource(apiContext);
+		List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductVariation(dataViewMode,  productCode,  variationKey);
+			returnObj = resource.getProductVariationLocalizedDeltaPrices( productCode,  variationKey);
 		}
 		catch (ApiException e)
 		{
@@ -36,23 +36,72 @@ public class ProductVariationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice getProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		return getProductVariationLocalizedDeltaPrice(apiContext, dataViewMode,  productCode,  variationKey,  currencyCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice getProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
+	{
+		return getProductVariation(apiContext, dataViewMode,  productCode,  variationKey,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariation returnObj = new com.mozu.api.contracts.productadmin.ProductVariation();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductVariation( productCode,  variationKey,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
 	{
-		return getProductVariations(apiContext, dataViewMode,  productCode,  null,  null,  null,  null, expectedCode, successCode );
+		return getProductVariations(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection getProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductVariationPagedCollection returnObj = new com.mozu.api.contracts.productadmin.ProductVariationPagedCollection();
-		ProductVariationResource resource = new ProductVariationResource(apiContext);
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductVariations(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getProductVariations( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +111,22 @@ public class ProductVariationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice addProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.productadmin.ProductVariationCollection returnObj = new com.mozu.api.contracts.productadmin.ProductVariationCollection();
-		ProductVariationResource resource = new ProductVariationResource(apiContext);
+		return addProductVariationLocalizedDeltaPrice(apiContext, dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice addProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProductVariations(dataViewMode,  productVariations,  productCode);
+			returnObj = resource.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +136,67 @@ public class ProductVariationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> updateProductVariationLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> localizedDeltaPrice, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateProductVariationLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  variationKey);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice updateProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		return updateProductVariationLocalizedDeltaPrice(apiContext, dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice updateProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 	public static com.mozu.api.contracts.productadmin.ProductVariation updateProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
 	{
+		return updateProductVariation(apiContext, dataViewMode,  productVariation,  productCode,  variationKey,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariation updateProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariation productVariation, String productCode, String variationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.productadmin.ProductVariation returnObj = new com.mozu.api.contracts.productadmin.ProductVariation();
-		ProductVariationResource resource = new ProductVariationResource(apiContext);
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.updateProductVariation(dataViewMode,  productVariation,  productCode,  variationKey);
+			returnObj = resource.updateProductVariation( productVariation,  productCode,  variationKey,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,26 +206,69 @@ public class ProductVariationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
-	public static void deleteProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, int expectedCode, int successCode) throws Exception
 	{
-				ProductVariationResource resource = new ProductVariationResource(apiContext);
+		return updateProductVariations(apiContext, dataViewMode,  productVariations,  productCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationCollection updateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationCollection productVariations, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationCollection returnObj = new com.mozu.api.contracts.productadmin.ProductVariationCollection();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
 		try
 		{
-			resource.deleteProductVariation(dataViewMode,  productCode,  variationKey);
+			returnObj = resource.updateProductVariations( productVariations,  productCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
 
+	public static void deleteProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode, int successCode) throws Exception
+	{
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			resource.deleteProductVariation( productCode,  variationKey);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
+
+	public static void deleteProductVariationLocalizedDeltaPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode, int successCode) throws Exception
+	{
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			resource.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

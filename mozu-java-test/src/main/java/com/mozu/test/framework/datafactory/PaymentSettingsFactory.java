@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.checkout.PaymentSettingsResource;
 
 /** <summary>
- * Specify settings when creating payments for order checkout on the site.
+ * Use the Payment Settings resource to specify settings when creating payments for order checkout on the site.
  * </summary>
  */
 public class PaymentSettingsFactory
@@ -36,9 +36,8 @@ public class PaymentSettingsFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

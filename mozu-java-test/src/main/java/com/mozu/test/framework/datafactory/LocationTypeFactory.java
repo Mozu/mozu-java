@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.admin.LocationTypeResource;
 
 /** <summary>
- * 
+ * Use the Location Types resource to manage the types of locations your tenant maintains, such as warehouses, physical storefronts, and kiosks.
  * </summary>
  */
 public class LocationTypeFactory
@@ -36,18 +36,22 @@ public class LocationTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode, int successCode) throws Exception
 	{
+		return getLocationType(apiContext,  locationTypeCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.getLocationType( locationTypeCode);
+			returnObj = resource.getLocationType( locationTypeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +61,22 @@ public class LocationTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, int expectedCode, int successCode) throws Exception
 	{
+		return addLocationType(apiContext,  locationType,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.addLocationType( locationType);
+			returnObj = resource.addLocationType( locationType,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +86,22 @@ public class LocationTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, int expectedCode, int successCode) throws Exception
 	{
+		return updateLocationType(apiContext,  locationType,  locationTypeCode,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
-			returnObj = resource.updateLocationType( locationType,  locationTypeCode);
+			returnObj = resource.updateLocationType( locationType,  locationTypeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,14 +111,13 @@ public class LocationTypeFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode, int successCode) throws Exception
 	{
-				LocationTypeResource resource = new LocationTypeResource(apiContext);
+		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
 		{
 			resource.deleteLocationType( locationTypeCode);
@@ -115,10 +126,11 @@ public class LocationTypeFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

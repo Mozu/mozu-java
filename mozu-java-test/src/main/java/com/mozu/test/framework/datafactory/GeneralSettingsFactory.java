@@ -22,32 +22,16 @@ public class GeneralSettingsFactory
 
 	public static com.mozu.api.contracts.sitesettings.general.GeneralSettings getGeneralSettings(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.sitesettings.general.GeneralSettings returnObj = new com.mozu.api.contracts.sitesettings.general.GeneralSettings();
-		GeneralSettingsResource resource = new GeneralSettingsResource(apiContext);
-		try
-		{
-			returnObj = resource.getGeneralSettings();
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-
+		return getGeneralSettings(apiContext,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.sitesettings.general.GeneralSettings updateGeneralSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.GeneralSettings generalSettings, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.sitesettings.general.GeneralSettings getGeneralSettings(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.sitesettings.general.GeneralSettings returnObj = new com.mozu.api.contracts.sitesettings.general.GeneralSettings();
 		GeneralSettingsResource resource = new GeneralSettingsResource(apiContext);
 		try
 		{
-			returnObj = resource.updateGeneralSettings( generalSettings);
+			returnObj = resource.getGeneralSettings( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,9 +41,33 @@ public class GeneralSettingsFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
 
+	public static com.mozu.api.contracts.sitesettings.general.GeneralSettings updateGeneralSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.GeneralSettings generalSettings, int expectedCode, int successCode) throws Exception
+	{
+		return updateGeneralSettings(apiContext,  generalSettings,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.sitesettings.general.GeneralSettings updateGeneralSettings(ApiContext apiContext, com.mozu.api.contracts.sitesettings.general.GeneralSettings generalSettings, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.sitesettings.general.GeneralSettings returnObj = new com.mozu.api.contracts.sitesettings.general.GeneralSettings();
+		GeneralSettingsResource resource = new GeneralSettingsResource(apiContext);
+		try
+		{
+			returnObj = resource.updateGeneralSettings( generalSettings,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
 	}
 
 }

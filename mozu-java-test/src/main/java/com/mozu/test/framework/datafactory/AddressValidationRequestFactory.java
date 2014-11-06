@@ -22,11 +22,16 @@ public class AddressValidationRequestFactory
 
 	public static com.mozu.api.contracts.customer.AddressValidationResponse validateAddress(ApiContext apiContext, com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest, int expectedCode, int successCode) throws Exception
 	{
+		return validateAddress(apiContext,  addressValidationRequest,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.AddressValidationResponse validateAddress(ApiContext apiContext, com.mozu.api.contracts.customer.AddressValidationRequest addressValidationRequest, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.AddressValidationResponse returnObj = new com.mozu.api.contracts.customer.AddressValidationResponse();
 		AddressValidationRequestResource resource = new AddressValidationRequestResource(apiContext);
 		try
 		{
-			returnObj = resource.validateAddress( addressValidationRequest);
+			returnObj = resource.validateAddress( addressValidationRequest,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,9 +41,8 @@ public class AddressValidationRequestFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

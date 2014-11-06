@@ -22,11 +22,16 @@ public class CustomerContactFactory
 
 	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
 	{
+		return getAccountContact(apiContext,  accountId,  contactId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountContact( accountId,  contactId);
+			returnObj = resource.getAccountContact( accountId,  contactId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,23 +41,22 @@ public class CustomerContactFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
-		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContactCollection returnObj = new com.mozu.api.contracts.customer.CustomerContactCollection();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.getAccountContacts( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -62,18 +66,22 @@ public class CustomerContactFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		return addAccountContact(apiContext,  contact,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.addAccountContact( contact,  accountId);
+			returnObj = resource.addAccountContact( contact,  accountId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -83,18 +91,22 @@ public class CustomerContactFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
 	{
+		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
-			returnObj = resource.updateAccountContact( contact,  accountId,  contactId);
+			returnObj = resource.updateAccountContact( contact,  accountId,  contactId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -104,14 +116,13 @@ public class CustomerContactFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
 	{
-				CustomerContactResource resource = new CustomerContactResource(apiContext);
+		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
 		{
 			resource.deleteAccountContact( accountId,  contactId);
@@ -120,10 +131,11 @@ public class CustomerContactFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

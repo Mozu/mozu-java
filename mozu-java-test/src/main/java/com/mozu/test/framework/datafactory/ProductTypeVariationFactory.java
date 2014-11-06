@@ -20,18 +20,18 @@ import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.product
 public class ProductTypeVariationFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection generateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection generateProductVariations(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, int expectedCode, int successCode) throws Exception
 	{
-		return generateProductVariations(apiContext, dataViewMode,  productOptionsIn,  productTypeId,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return generateProductVariations(apiContext,  productOptionsIn,  productTypeId,  null,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection generateProductVariations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductVariationPagedCollection generateProductVariations(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.ProductOption> productOptionsIn, Integer productTypeId, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductVariationPagedCollection returnObj = new com.mozu.api.contracts.productadmin.ProductVariationPagedCollection();
 		ProductTypeVariationResource resource = new ProductTypeVariationResource(apiContext);
 		try
 		{
-			returnObj = resource.generateProductVariations(dataViewMode,  productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter);
+			returnObj = resource.generateProductVariations( productOptionsIn,  productTypeId,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,9 +41,8 @@ public class ProductTypeVariationFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

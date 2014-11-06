@@ -22,16 +22,16 @@ public class BillingInfoFactory
 
 	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
 	{
-		return getBillingInfo(apiContext,  orderId,  null, expectedCode, successCode );
+		return getBillingInfo(apiContext,  orderId,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(ApiContext apiContext, String orderId, Boolean draft, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo getBillingInfo(ApiContext apiContext, String orderId, Boolean draft, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.payments.BillingInfo returnObj = new com.mozu.api.contracts.commerceruntime.payments.BillingInfo();
 		BillingInfoResource resource = new BillingInfoResource(apiContext);
 		try
 		{
-			returnObj = resource.getBillingInfo( orderId,  draft);
+			returnObj = resource.getBillingInfo( orderId,  draft,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -41,23 +41,22 @@ public class BillingInfoFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId, int expectedCode, int successCode) throws Exception
 	{
-		return setBillingInfo(apiContext,  billingInfo,  orderId,  null,  null, expectedCode, successCode );
+		return setBillingInfo(apiContext,  billingInfo,  orderId,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.BillingInfo setBillingInfo(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.BillingInfo billingInfo, String orderId, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.payments.BillingInfo returnObj = new com.mozu.api.contracts.commerceruntime.payments.BillingInfo();
 		BillingInfoResource resource = new BillingInfoResource(apiContext);
 		try
 		{
-			returnObj = resource.setBillingInfo( billingInfo,  orderId,  updateMode,  version);
+			returnObj = resource.setBillingInfo( billingInfo,  orderId,  updateMode,  version,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -67,9 +66,8 @@ public class BillingInfoFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 }

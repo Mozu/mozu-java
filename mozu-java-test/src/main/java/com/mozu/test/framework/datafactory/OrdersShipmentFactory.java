@@ -22,11 +22,16 @@ public class OrdersShipmentFactory
 
 	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(ApiContext apiContext, String orderId, String shipmentId, int expectedCode, int successCode) throws Exception
 	{
+		return getShipment(apiContext,  orderId,  shipmentId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.fulfillment.Shipment getShipment(ApiContext apiContext, String orderId, String shipmentId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.fulfillment.Shipment returnObj = new com.mozu.api.contracts.commerceruntime.fulfillment.Shipment();
 		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
-			returnObj = resource.getShipment( orderId,  shipmentId);
+			returnObj = resource.getShipment( orderId,  shipmentId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -36,18 +41,22 @@ public class OrdersShipmentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShipmentMethods(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	{
+		return getAvailableShipmentMethods(apiContext,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> getAvailableShipmentMethods(ApiContext apiContext, String orderId, Boolean draft, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>();
 		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
-			returnObj = resource.getAvailableShipmentMethods( orderId);
+			returnObj = resource.getAvailableShipmentMethods( orderId,  draft);
 		}
 		catch (ApiException e)
 		{
@@ -57,9 +66,8 @@ public class OrdersShipmentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static List<com.mozu.api.contracts.commerceruntime.fulfillment.Package> createPackageShipments(ApiContext apiContext, List<String> packageIds, String orderId, int expectedCode, int successCode) throws Exception
@@ -78,14 +86,13 @@ public class OrdersShipmentFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteShipment(ApiContext apiContext, String orderId, String shipmentId, int expectedCode, int successCode) throws Exception
 	{
-				ShipmentResource resource = new ShipmentResource(apiContext);
+		ShipmentResource resource = new ShipmentResource(apiContext);
 		try
 		{
 			resource.deleteShipment( orderId,  shipmentId);
@@ -94,10 +101,11 @@ public class OrdersShipmentFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }

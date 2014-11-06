@@ -36,18 +36,22 @@ public class OrderNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getOrderNote(ApiContext apiContext, String orderId, String noteId, int expectedCode, int successCode) throws Exception
 	{
+		return getOrderNote(apiContext,  orderId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getOrderNote(ApiContext apiContext, String orderId, String noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrderNote( orderId,  noteId);
+			returnObj = resource.getOrderNote( orderId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,18 +61,22 @@ public class OrderNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, int expectedCode, int successCode) throws Exception
 	{
+		return createOrderNote(apiContext,  orderNote,  orderId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.createOrderNote( orderNote,  orderId);
+			returnObj = resource.createOrderNote( orderNote,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -78,18 +86,22 @@ public class OrderNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId, int expectedCode, int successCode) throws Exception
 	{
+		return updateOrderNote(apiContext,  orderNote,  orderId,  noteId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.updateOrderNote( orderNote,  orderId,  noteId);
+			returnObj = resource.updateOrderNote( orderNote,  orderId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -99,14 +111,13 @@ public class OrderNoteFactory
 				return null;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
-
 	}
 
 	public static void deleteOrderNote(ApiContext apiContext, String orderId, String noteId, int expectedCode, int successCode) throws Exception
 	{
-				OrderNoteResource resource = new OrderNoteResource(apiContext);
+		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
 			resource.deleteOrderNote( orderId,  noteId);
@@ -115,10 +126,11 @@ public class OrderNoteFactory
 		{
 			if(e.getHttpStatusCode() != expectedCode)
 				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
 		}
 		if(expectedCode != successCode)
-			 throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }
