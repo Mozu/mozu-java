@@ -21,7 +21,7 @@ if (hasProperty("teamcity")) {
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.11.5'
+    version = '1.13.0'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
@@ -142,3 +142,4 @@ if (hasProperty("sonatypeUsername")) {
         }
     }
 }
+
