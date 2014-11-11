@@ -12,7 +12,7 @@ import com.mozu.api.MozuApiContext;
 import com.mozu.api.resources.platform.TenantDataResource;
 import com.mozu.api.utils.JsonUtils;
 import com.mozu.apptest.model.Setting;
-import com.mozu.apptest.utils.ApplicationUtils;
+import com.mozu.base.utils.ApplicationUtils;
 
 /**
  * Manage the Kount configuration setting in the database

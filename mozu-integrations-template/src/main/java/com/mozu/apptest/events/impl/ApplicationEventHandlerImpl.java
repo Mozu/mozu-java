@@ -15,7 +15,7 @@ import com.mozu.api.events.EventManager;
 import com.mozu.api.events.handlers.ApplicationEventHandler;
 import com.mozu.api.events.model.EventHandlerStatus;
 import com.mozu.apptest.handlers.ConfigHandler;
-import com.mozu.apptest.utils.ApplicationUtils;
+import com.mozu.base.utils.ApplicationUtils;
 
 @Component
 public class ApplicationEventHandlerImpl implements ApplicationEventHandler {
