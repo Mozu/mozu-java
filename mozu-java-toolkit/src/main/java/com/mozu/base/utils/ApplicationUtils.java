@@ -10,9 +10,25 @@ import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.sitesettings.application.Capability;
 import com.mozu.api.resources.commerce.settings.ApplicationResource;
+import com.mozu.api.security.AppAuthenticator;
+import com.mozu.base.models.AppInfo;
 
 public class ApplicationUtils {
     private static final Logger logger = LoggerFactory.getLogger(ApplicationUtils.class);
+    
+    public static AppInfo getAppInfo() {
+    	String applicationId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();
+    	 String[] parts = applicationId.split( "\\." );
+
+         if (parts.length < 4) return null;
+
+         AppInfo appInfo = new AppInfo();
+         
+         appInfo.setNameSpace(parts[0]);
+         appInfo.setPackage(parts[parts.length - 1]);
+         
+         return appInfo;
+    }
     
     public static boolean isAppEnabled(int tenantId) {
         boolean isEnabled = false;
