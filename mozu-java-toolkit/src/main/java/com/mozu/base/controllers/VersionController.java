@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 
+import com.mozu.base.models.AppInfo;
+import com.mozu.base.utils.ApplicationUtils;
+
 @Controller
 @RequestMapping("/version")
 public class VersionController implements ServletContextAware {
@@ -25,13 +28,18 @@ public class VersionController implements ServletContextAware {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody String getversion(final HttpServletRequest request ) throws Exception {
+    public @ResponseBody AppInfo getversion(final HttpServletRequest request ) throws Exception {
         InputStream manifestStream = context.getResourceAsStream("/META-INF/MANIFEST.MF");
+        AppInfo appInfo = ApplicationUtils.getAppInfo();
         if (manifestStream== null) {
-            return "Unknown version";
+            appInfo.setBuildVersion("Unknown version");
         }
         Manifest manifest = new Manifest(manifestStream);
         Attributes attributes = manifest.getMainAttributes();
-        return attributes.getValue("Implementation-Version");
+        appInfo.setBuildVersion(attributes.getValue("Implementation-Version"));
+        
+        return appInfo;
     }
+    
+    
 }

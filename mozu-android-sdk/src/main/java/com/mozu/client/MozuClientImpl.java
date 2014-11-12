@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpMessage;
@@ -220,7 +219,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
 
            if (verb.equals("POST") || verb.equals("PUT")) {
                if (StringUtils.isNotBlank(httpContent)) {
-                   StringEntity entity = new StringEntity(httpContent, Consts.UTF_8);
+                   StringEntity entity = new StringEntity(httpContent);
                    request.setEntity(entity);
                } else if (this.streamContent != null) {
                    InputStreamEntity entity = new InputStreamEntity(this.streamContent, -1);
@@ -342,7 +341,6 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
             ensureSuccess(httpResponseMessage, mapper);
         } catch (Exception e) {
             // make sure on exception that that response is closed
-            EntityUtils.consume(httpResponseMessage.getEntity());
             throw e;
         }
     }

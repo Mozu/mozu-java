@@ -26,6 +26,13 @@ jar {
     }
 }
 
+
+processResources{
+    exclude 'mozu_config.properties'
+    exclude 'log4j.xml'
+    exclude 'servlet-context.xml'
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
@@ -62,7 +69,7 @@ dependencies {
     compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
     compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
 
-    compile ("com.mozu:mozu-api-core:1.12.0") {
+    compile ("com.mozu:mozu-api-java:1.12.0") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'
