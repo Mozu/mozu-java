@@ -26,6 +26,13 @@ jar {
     }
 }
 
+
+processResources{
+    exclude 'mozu_config.properties'
+    exclude 'log4j.xml'
+    exclude 'servlet-context.xml'
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }

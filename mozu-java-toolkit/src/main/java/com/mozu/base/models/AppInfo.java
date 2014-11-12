@@ -1,10 +1,10 @@
 package com.mozu.base.models;
 
 public class AppInfo {
-	 String NameSpace;
-     String Version;
-     String Package;
-     String buildVersion;
+	private String NameSpace;
+    private String Version;
+    private String Package;
+    private String buildVersion;
      
 	public String getNameSpace() {
 		return NameSpace;
