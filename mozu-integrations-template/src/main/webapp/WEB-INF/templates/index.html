@@ -3,7 +3,7 @@
 <head>
 <div th:include="header :: header"></div>
 <script src="js/home.js" type="text/javascript"></script>
-<title>[Mozu Title Template - Change Me]</title>
+<title th:text="#{label.html.title}"></title>
 </head>
 <body>
 	<div class="app-container">
@@ -28,17 +28,16 @@
 						<div class="col-md-12">
 							<div class="notification error">
 								<div class="icon" onclick="closeError()"></div>
-								<div id="serverErrorMessage" class="message">An error
-									occurred on the server.</div>
+								<div id="serverErrorMessage" class="message" th:text="#{error.server.general}"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="tabs">
 					<a class="button tab active" data-toggle="tab"
-						data-tab-id="aboutTab" data-hide-save="true">Information</a> 
+						data-tab-id="aboutTab" data-hide-save="true" th:text="#{tab.information}"></a> 
 					<a class="button tab" data-toggle="tab" data-tab-id="templateTab"
-						data-hide-save="true">Template</a>
+						data-hide-save="true" th:text="#{tab.template}"></a>
 				</div>
 				
 				<div class="tab-view">
@@ -53,8 +52,7 @@
 				<div class="footer-actions">
 					<a class="button primary-action" data-bind="click: save"
 						id="saveBtn" style="display: none;">Save</a>
-					<div class="branding-text">Developed by Volusion, Inc. All
-						rights reserved.</div>
+					<div class="branding-text" th:text="#{label.copyright}"></div>
 				</div>
 			</div>
 		</div>
