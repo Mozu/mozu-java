@@ -16,18 +16,21 @@ import com.mozu.base.models.AppInfo;
 public class ApplicationUtils {
     private static final Logger logger = LoggerFactory.getLogger(ApplicationUtils.class);
     
+    private static AppInfo _appInfo = null;
+    
     public static AppInfo getAppInfo() {
-    	String applicationId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();
-    	 String[] parts = applicationId.split( "\\." );
+    	if (_appInfo == null) {
+    		String applicationId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();
+    		String[] parts = applicationId.split( "\\." );
 
-         if (parts.length < 4) return null;
+    		if (parts.length < 4) return null;
 
-         AppInfo appInfo = new AppInfo();
+    		_appInfo = new AppInfo();
          
-         appInfo.setNameSpace(parts[0]);
-         appInfo.setPackage(parts[parts.length - 1]);
-         
-         return appInfo;
+    		_appInfo.setNameSpace(parts[0]);
+    		_appInfo.setPackage(parts[parts.length - 1]);
+    	}
+        return _appInfo;
     }
     
     public static boolean isAppEnabled(int tenantId) {
