@@ -14,10 +14,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.mzdb.EntityList;
@@ -25,6 +27,8 @@ import com.mozu.api.contracts.mzdb.IndexedProperty;
 import com.mozu.api.resources.platform.EntityListResource;
 import com.mozu.base.models.AppInfo;
 import com.mozu.base.models.EntityCollection;
+import com.mozu.base.models.EntityDataTypes;
+import com.mozu.base.models.EntityScope;
 import com.mozu.base.models.ExtensionParent;
 import com.mozu.base.models.Contact;
 import com.mozu.base.utils.ApplicationUtils;
@@ -33,6 +37,9 @@ import com.mozu.base.utils.ApplicationUtils;
 @ContextConfiguration(locations= {"file:src/main/resources/servlet-context.xml" })
 public class EntityHandlerTest {
 
+	@Autowired
+	EntitySchemaHandler entitySchemaHandler;
+	
 	Integer tenantId = 0;
 	
 	private String LISTNAME = "contacts";
@@ -49,11 +56,33 @@ public class EntityHandlerTest {
 	@Before
 	public void setUp() throws Exception {
 		tenantId = 10236;
-		installSchema();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+	}
+	
+	@Test
+	public void installSchemaTest() {
+		
+		EntityList entityList = new EntityList();
+		entityList.setName(LISTNAME);
+		entityList.setIsVisibleInStorefront(Boolean.FALSE);
+		entityList.setIsLocaleSpecific(false);
+		entityList.setIsSandboxDataCloningSupported(Boolean.TRUE);
+		entityList.setIsShopperSpecific(false);
+
+		IndexedProperty idProperty = entitySchemaHandler.getIndexedProperty("id", EntityDataTypes.Integer);
+		List<IndexedProperty> indexedProperties = new ArrayList<IndexedProperty>();
+		indexedProperties.add(entitySchemaHandler.getIndexedProperty("firstName", EntityDataTypes.String));
+		indexedProperties.add(entitySchemaHandler.getIndexedProperty("lastName", EntityDataTypes.String));
+		ApiContext apiContext = new MozuApiContext(tenantId);
+		try {
+			EntityList retrunValue = entitySchemaHandler.installSchema(apiContext, entityList, EntityScope.Tenant, idProperty, indexedProperties);
+			assertEquals(retrunValue.getName(), entityList.getName());
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
 	}
 	
 	@Test
@@ -112,57 +141,6 @@ public class EntityHandlerTest {
 	}
 	
 
-	private void installSchema() throws Exception {
-		AppInfo appInfo = ApplicationUtils.getAppInfo();
-		EntityList entityList = new EntityList();
-		entityList.setNameSpace(appInfo.getNameSpace());
-		entityList.setContextLevel("tenant");
-		entityList.setName(LISTNAME);
-		entityList.setIdProperty(getIndexedProperty("id", "integer"));
-		entityList.setIndexA(getIndexedProperty("firstName", "string")); 
-		entityList.setIndexA(getIndexedProperty("lastName", "string"));
-		entityList.setIsVisibleInStorefront(Boolean.FALSE);
-		entityList.setIsLocaleSpecific(false);
-		entityList.setIsSandboxDataCloningSupported(Boolean.TRUE);
-		entityList.setIsShopperSpecific(false);
-
-		String mapName = LISTNAME+"@"+appInfo.getNameSpace();
-		createOrUpdateEntityList(tenantId, entityList, mapName);
-	}
 	
 	
-	
-	private IndexedProperty getIndexedProperty(String name, String type) {
-		IndexedProperty property = new IndexedProperty();
-		property.setPropertyName(name);
-		property.setDataType(type);
-
-		return property;
-	}
-	/*
-	 * Create or update entity list
-	 */
-	private void createOrUpdateEntityList(Integer tenantId,
-			EntityList entityList, String mapName) throws Exception {
-		EntityList existing = null;
-		EntityListResource entityListResource = new EntityListResource(
-				new MozuApiContext(tenantId));
-		try {
-			existing = entityListResource.getEntityList(mapName);
-		} catch (ApiException ae) {
-			if (ae.getApiError() == null || !StringUtils.equals(ae.getApiError().getErrorCode(),
-					"ITEM_NOT_FOUND"))
-				throw ae;
-		}
-		try {
-			if (existing == null) {
-				entityListResource.createEntityList(entityList);
-			} else {
-				entityListResource.updateEntityList(entityList, mapName);
-			}
-		} catch (ApiException ae) {
-			// TODO: log error and throw
-			ae.printStackTrace();
-		}
-	}
 }
