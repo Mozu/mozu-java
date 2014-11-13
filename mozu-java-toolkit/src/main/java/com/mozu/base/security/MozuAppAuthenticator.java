@@ -3,6 +3,7 @@ package com.mozu.base.security;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,7 +34,8 @@ public class MozuAppAuthenticator {
             AppAuthInfo appAuthInfo = new AppAuthInfo();
             appAuthInfo.setApplicationId(applicationId);
             appAuthInfo.setSharedSecret(sharerdSecret);
-            MozuConfig.setBaseUrl(baseAppAuthUrl);
+            if (!StringUtils.isEmpty(baseAppAuthUrl))
+            	MozuConfig.setBaseUrl(baseAppAuthUrl);
             AppAuthenticator.initialize(appAuthInfo);
             logger.info("Auth ticket : "+AppAuthenticator.getInstance().getAppAuthTicket().getAccessToken());
             logger.info("Application authenticated");

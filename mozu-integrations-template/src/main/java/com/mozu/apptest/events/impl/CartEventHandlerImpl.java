@@ -17,8 +17,6 @@ import com.mozu.api.events.EventManager;
 import com.mozu.api.events.handlers.CartEventHandler;
 import com.mozu.api.events.model.EventHandlerStatus;
 import com.mozu.api.resources.commerce.CartResource;
-import com.mozu.api.security.AppAuthenticator;
-import com.mozu.api.security.AuthTicket;
 
 /**
  * A sample event handler. This handler is only responsible for performing
@@ -82,7 +80,6 @@ public class CartEventHandlerImpl implements CartEventHandler {
      */
     private EventHandlerStatus getCartItems(ApiContext apiContext, Event event) {
         CartResource cartResource = new CartResource(apiContext);
-        AuthTicket authTicket = (AuthTicket) AppAuthenticator.getInstance().getAppAuthTicket();
         try {
             Cart cart = cartResource.getCart(event.getEntityId());
             List<CartItem> items =  cart.getItems();
