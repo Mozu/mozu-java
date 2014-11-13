@@ -43,7 +43,14 @@ public class ApplicationEventHandlerImpl implements ApplicationEventHandler {
     @Override
     public EventHandlerStatus installed(ApiContext apiContext, Event event) {
         logger.debug("Application installed event");
-        return enableApplication(apiContext);
+        EventHandlerStatus status = new EventHandlerStatus(HttpStatus.SC_OK);
+        try {
+        	installSchema(apiContext);
+        } catch (Exception e) {
+        	 status = new EventHandlerStatus(e.getMessage(), HttpStatus.SC_INTERNAL_SERVER_ERROR);
+        }
+        
+        return status;
     }
 
     @Override
@@ -54,7 +61,15 @@ public class ApplicationEventHandlerImpl implements ApplicationEventHandler {
     @Override
     public EventHandlerStatus upgraded(ApiContext apiContext, Event event) {
         logger.debug("Application upgraded event");
-        return enableApplication(apiContext);
+        EventHandlerStatus status = new EventHandlerStatus(HttpStatus.SC_OK);
+        try {
+        	 installSchema(apiContext);
+        	 enableApplication(apiContext);
+        } catch (Exception e) {
+        	status = new EventHandlerStatus(e.getMessage(), HttpStatus.SC_INTERNAL_SERVER_ERROR);
+        }
+        
+        return status;
     }
     
     @PreDestroy
@@ -63,26 +78,18 @@ public class ApplicationEventHandlerImpl implements ApplicationEventHandler {
         logger.debug("Application event handler unregistered");
     }
    
-    private EventHandlerStatus enableApplication(ApiContext apiContext) {
-        EventHandlerStatus status = new EventHandlerStatus(HttpStatus.SC_OK);
+    private void installSchema(ApiContext apiContext) throws Exception {
+    	 logger.debug("Install schema for tenant " + apiContext.getTenantId());
+    	 configHandler.installSchema(apiContext.getTenantId());
+    }
+    
+    private void enableApplication(ApiContext apiContext) throws Exception {
         
         logger.debug("Enable application for tenant " + apiContext.getTenantId());
         
         // Only set initialized if there are valid values in the settings
-        try {
-            if (configHandler.getTenantSetting(apiContext.getTenantId())!=null) {
-                logger.debug("tenant settings retrieved");
-                try {
-                    ApplicationUtils.setApplicationToInitialized(apiContext);
-                    status = new EventHandlerStatus(HttpStatus.SC_OK);
-                } catch (Exception e) {
-                    logger.warn("Exception intializing application: " + e.getMessage());
-                    status = new EventHandlerStatus(e.getMessage(), HttpStatus.SC_INTERNAL_SERVER_ERROR);
-                }
-            }
-        } catch (Exception e) {
-            status = new EventHandlerStatus(e.getMessage(), HttpStatus.SC_INTERNAL_SERVER_ERROR);
+        if (configHandler.getSettings(apiContext.getTenantId())!=null) {
+            ApplicationUtils.setApplicationToInitialized(apiContext);
         }
-        return status;
     }
 }

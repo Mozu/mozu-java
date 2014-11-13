@@ -71,7 +71,7 @@ dependencies {
         changing = true
     }
     
-    compile ("com.mozu:mozu-api-toolkit:1.0.7")
+    compile ("com.mozu:mozu-api-toolkit:1.0.14")
     
 	compile ("org.slf4j:slf4j-api:1.7.5")
 	compile ("org.slf4j:slf4j-log4j12:1.7.5")
