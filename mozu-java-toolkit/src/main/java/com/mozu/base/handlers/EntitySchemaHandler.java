@@ -56,10 +56,12 @@ public class EntitySchemaHandler {
 		if (idProperty == null) entityList.setUseSystemAssignedId(true);
 		else entityList.setIdProperty(idProperty);
 		
-		entityList.setIndexA(indexedProperties != null && indexedProperties.size() >=1 ? indexedProperties.get(0) : null);
-		entityList.setIndexB(indexedProperties != null && indexedProperties.size() >=2 ? indexedProperties.get(1) : null);
-		entityList.setIndexC(indexedProperties != null && indexedProperties.size() >=3 ? indexedProperties.get(2) : null);
-		entityList.setIndexB(indexedProperties != null && indexedProperties.size() >=4 ? indexedProperties.get(3) : null);
+		if (indexedProperties != null) { 
+			entityList.setIndexA(indexedProperties.size() >=1 ? indexedProperties.get(0) : null);
+			entityList.setIndexB(indexedProperties.size() >=2 ? indexedProperties.get(1) : null);
+			entityList.setIndexC(indexedProperties.size() >=3 ? indexedProperties.get(2) : null);
+			entityList.setIndexB(indexedProperties.size() >=4 ? indexedProperties.get(3) : null);
+		}
 		
 		EntityList existing = getEntityList(apiContext, entityList.getName());
 		EntityListResource entityListResource = new EntityListResource(apiContext);
