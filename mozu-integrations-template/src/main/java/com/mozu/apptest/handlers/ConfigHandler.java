@@ -1,21 +1,23 @@
 package com.mozu.apptest.handlers;
 
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mozu.api.ApiError;
-import com.mozu.api.ApiException;
+import com.mozu.api.ApiContext;
 import com.mozu.api.MozuApiContext;
-import com.mozu.api.resources.platform.TenantDataResource;
-import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.contracts.mzdb.EntityList;
+import com.mozu.api.contracts.mzdb.IndexedProperty;
+import com.mozu.apptest.model.Constants;
 import com.mozu.apptest.model.Setting;
-import com.mozu.base.utils.ApplicationUtils;
+import com.mozu.base.handlers.EntityHandler;
+import com.mozu.base.handlers.EntitySchemaHandler;
+import com.mozu.base.models.EntityDataTypes;
+import com.mozu.base.models.EntityScope;
 
 /**
- * Manage the Kount configuration setting in the database
+ * Manage the configuration setting in the Entity API
  * 
  * @author john_gatti
  *
@@ -23,76 +25,37 @@ import com.mozu.base.utils.ApplicationUtils;
 @Component
 public class ConfigHandler {
     private static final Logger logger = LoggerFactory.getLogger(ConfigHandler.class);
-    private ObjectMapper mapper = JsonUtils.initObjectMapper();
-    private final String TENANT_DB_ENTRY = "mozu-kount-settings";
 
+    @Autowired
+    EntitySchemaHandler entitySchemaHandler;
+    
+    EntityHandler<Setting> entityHandler;
+    
     public ConfigHandler() { 
+    	entityHandler = new EntityHandler<Setting>(Setting.class);
     }
 
     /**
-     * Get the Kount settings for the tenant
-     * @param tenantId id of the tenant
-     * @param contextPath context path of the request
-     * @param serverPort port of the server
-     * @param serverName server name
-     * @return settings data
-     * @throws Exception
-     */
-    public Setting getSettings(int tenantId, String serverName, int serverPort, String contextPath) throws Exception {
-        Setting settings = getTenantSetting(tenantId);
-        if (settings==null) {
-            settings = new Setting();
-        }
-        return settings;
-    }
-
-    /**
-     * Get the Kount settings for the tenant
-     * @param tenantId id of the tenant
-     * @param contextPath context path of the request
-     * @param serverPort port of the server
-     * @param serverName server name
-     * @return settings data
-     * @throws Exception
-     */
-    public Setting getSettings(int tenantId) throws Exception {
-        return getTenantSetting(tenantId);
-    }
-
-    /**
-     * Get the Kount setting for the tenant
+     * Get App Settings for the tenant
      * 
-     * @param tenantId tenant id
-     * @return settings data
+     * @param tenantId
+     * @return Setting
      * @throws Exception
      */
-    public Setting getTenantSetting(Integer tenantId) throws Exception {
-        MozuApiContext apiContext = new MozuApiContext(tenantId);
-        TenantDataResource tenantData = new TenantDataResource(apiContext);
-        
-        return getSettings(tenantId, tenantData);
-    }
-
-    private Setting getSettings(Integer tenantId, TenantDataResource tenantData) throws Exception {
+    public Setting getSettings(Integer tenantId) throws Exception {
         Setting setting = null;
-        String settingStr = "";
         try {
-            settingStr = tenantData.getDBValue(TENANT_DB_ENTRY);
-        } catch(ApiException exc) {
-            logger.info("Tenant DB Settings not found for "+tenantId.toString());
-        }
-        
-        logger.debug("Settings: " + settingStr);
-        
-        if (!StringUtils.isBlank(settingStr)) {
-            setting = mapper.readValue(settingStr, Setting.class);
+            setting = entityHandler.getEntity(tenantId, Constants.SETTINGS, tenantId.toString());
+        } catch(Exception exc) {
+            logger.error(exc.getMessage(), exc);
+            throw exc;
         }
         
         return setting;
     }
 
     /**
-     * Save Kount configuration settings for the tenant
+     * Save settings for the tenant
      * 
      * @param tenantId tenant id
      * @param setting the populated settings data
@@ -102,52 +65,36 @@ public class ConfigHandler {
         
         logger.debug("Saving settings into MZDB for "+tenantId);
         MozuApiContext apiContext = new MozuApiContext(tenantId);
-        TenantDataResource tenantData = new TenantDataResource(apiContext);
-
-        Setting currentSetting = getSettings(tenantId, tenantData);
-        
-        // Save merchant id
-        String value = "'"+mapper.writeValueAsString(setting)+"'";
-        logger.debug(value);
-        if (currentSetting != null) {
-            try {
-                tenantData.updateDBValue(value, TENANT_DB_ENTRY);
-            } catch (Exception e) {
-                if (e instanceof ApiException) {
-                    ApiError apiError = ((ApiException)e).getApiError();
-                    logger.warn("Exception updating application settings:" + 
-                            " App name: " + ((apiError.getApplicationName()!=null)?apiError.getApplicationName():"") +
-                            " Correlation ID: " + ((apiError.getCorrelationId()!=null)?apiError.getCorrelationId():"") + 
-                            " Error Code " + apiError.getErrorCode() + 
-                            " Message: " + ((apiError.getExceptionDetail().getMessage()!=null)?
-                            		apiError.getExceptionDetail().getMessage():"")
-                            );
-                }
-                throw e;
-            }
-        } else {
-            try {
-                tenantData.createDBValue(value, TENANT_DB_ENTRY);
-            } catch (Exception e) {
-                if (e instanceof ApiException) {
-                    ApiError apiError = ((ApiException)e).getApiError();
-                    logger.warn("Exception creating application settings:" + 
-                            " App name: " + ((apiError.getApplicationName()!=null)?apiError.getApplicationName():"") +
-                            " Correlation ID: " + ((apiError.getCorrelationId()!=null)?apiError.getCorrelationId():"") + 
-                            " Error Code " + apiError.getErrorCode() + 
-                            " Message: " + ((apiError.getExceptionDetail().getMessage()!=null)?
-                            		apiError.getExceptionDetail().getMessage():"")
-                            );
-                }
-                throw e;
-            }
-        }
        
+        setting.setId(tenantId);
+        
         try {
-            ApplicationUtils.setApplicationToInitialized(apiContext);
+        	entityHandler.upsertEntity(tenantId, Constants.SETTINGS, tenantId.toString(), setting);
         } catch (Exception e) {
-            logger.warn(e.getMessage());
-            throw e;
+        	 logger.error(e.getMessage(), e);
+             throw e;
         }
+
+    }
+
+
+    /**
+     * Install Schema with indexed properties for storing the app settings
+     * @param tenantId
+     * @throws Exception
+     */
+    public void installSchema(Integer tenantId) throws Exception {
+    	EntityList entityList = new EntityList();
+    	entityList.setName(Constants.SETTINGS);
+    	entityList.setIsLocaleSpecific(false);
+    	entityList.setIsSandboxDataCloningSupported(false);
+    	entityList.setIsShopperSpecific(false);
+    	entityList.setIsVisibleInStorefront(false);
+    	
+    	ApiContext apiContext = new MozuApiContext(tenantId);
+    	IndexedProperty idProperty = entitySchemaHandler.getIndexedProperty("id", EntityDataTypes.Integer);
+    	
+    	entitySchemaHandler.installSchema(apiContext, entityList, EntityScope.Tenant, idProperty, null);
+    	
     }
 }
