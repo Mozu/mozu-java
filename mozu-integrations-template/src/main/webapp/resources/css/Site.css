@@ -1,3 +1,23 @@
+table.dataTable, table.dataTable th, table.dataTable td {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	font-size: 11px;
+	font-color: 0r0000;
+}
+
+table.dataTable thead > tr {
+	background-color: #000000;
+}
+
+table.dataTable p {
+		margin-bottom: 8px;
+		color: black;
+		color: #FFFFFF;
+		font-size: 11px;
+		font-weight: bold;
+}
+
 @font-face {
     font-family: 'mozicons';
     src:url('fonts/mozicons.eot');
@@ -41,7 +61,7 @@
 
  .well-info {
     min-height: 20px;
-    padding: 40px;
+    padding: 25px;
     margin-bottom: 20px;
     border: 1px solid rgba(191,191,191,1);
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
@@ -169,17 +189,16 @@ html {
   width: 100%;
 }
 body {
-    background-color: rgba(0, 0, 0, 0.6);
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #333;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    height: 100%;
-    width: 100%;
-    margin: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family:'Source Sans Pro', sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-smoothin: antialiased;
+  height: 100%;
+  width: 100%;
 }
 h1 {
   margin-top: 20px;
@@ -197,13 +216,11 @@ h2 {
   font-weight: 400;
 }
 h3 {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  float: left;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 600;
-
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
 }
 h4 {
   margin-top: 10px;
@@ -229,68 +246,66 @@ h6 {
 p {
   margin-bottom: 5px;
 }
-
-.right {
-    text-align: right;
-}
 .button {
-    display: inline-block;
-    padding: 4px 15px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    box-sizing: border-box;
-    cursor: pointer;
+	display: inline-block;
+	padding: 4px 15px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	box-sizing: border-box;
 }
-    .button.tab {
-        width: 100%;
-        min-height: 20px;
-        border: 1px solid #bfbfbf;
-        border-top-width: 0;
-        background-color: #f2f2f2;
-        color: #333;
-        font-weight: 400;
-        text-align: left;
-        padding: 5px;
-        cursor: pointer;
-    }
-        .button.tab.active {
-            border-top-width: 0px;
-            border-right-width: 1px;
-            border-right-color: white;
-            background-color: white;
-            color: #d2463c;
-        }
-        .button.tab:hover {
-            background-color: #e5e5e5;
-        }
-        .button.tab.active:hover {
-            background-color: inherit;
-        }
-    .button.primary-action {
-        height: 30px;
-        min-width: 70px;
-        float: right;
-        border: 1px solid #b83e35;
-        border-radius: 2px;
-        background-color: #d2463c;
-    }
-
+.button.tab {
+	width: 100%;
+	height: 30px;
+	padding-left: 10px;
+	border: 1px solid #bfbfbf;
+	border-top-width: 0;
+	background-color: #f2f2f2;
+	color: #333;
+	font-weight: 400;
+	text-align: left;
+	line-height: 30px;
+	padding: 0;
+	text-indent: 10px;
+}
+.button.tab.active {
+  border-top-width: 0px;
+  border-right-width: 1px;
+  border-right-color: white;
+  background-color: white;
+  color: #d2463c;
+}
+.button.tab:hover {
+	background-color: #e5e5e5;
+}
+.button.tab.active:hover {
+	background-color: inherit;
+}
+.button.primary-action {
+  height: 30px;
+  min-width: 70px;
+  float: right;
+  border: 1px solid #b83e35;
+  border-radius: 2px;
+  background-color: #d2463c;
+  margin-left:10px;
+  cursor: pointer;
+}
 .button.primary-action:hover {
   background-color: #b83e35;
 }
 .app-container {
-    display: block;
-    background-color: white;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
+	display: block;
+	background-color: white;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
 }
 .app {
-    height: 98%;
-    width: 99%;
-    margin: auto;
+	padding: 1.5%;
+	height: 97%;
+	width: 100%;
 }
 .header-actions {
   width: 100%;
@@ -304,33 +319,70 @@ p {
   float: left;
   height: 87%;
 }
+
+
+.app-ext {
+	padding: 1.5%;
+	height: 100%;
+	width: 100%;
+}
+.tab-container-ext {
+  clear: both;
+  width: 100%;
+  float: left;
+  height: 100%;
+}
+
 .help-icon {
   display: block;
 }
 .tab-view {
-    display: block;
-    width: 85%;
-    height: 100%;
-    padding: 20px;
-    float: left;
-    border: 1px solid #bfbfbf;
-    box-sizing: border-box;
-    overflow: auto;
+	display: block;
+	width: 85%;
+	height: 100%;
+	padding: 20px;
+	float: left;
+	border: 1px solid #bfbfbf;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+
+.tab-view-ext {
+	display: block;
+	width: 100%;
+	height: 95%;
+	padding: 5px 5px 5px 15px;
+	float: left;
+	box-sizing: border-box;
+	overflow: scroll;
 }
 .tab-view.config {
   width: 810px;
   height: 100%;
 }
 .tabs {
-    display: block;
-    width: 15%;
-    height: 100%;
-    float: left;
-    margin-right: -1px;
-    position: relative;
-    z-index: 0;
-    border-top: 1px solid #bfbfbf;
+	display: block;
+	width: 15%;
+	height: 100%;
+	float: left;
+	margin-right: -1px;
+	position: relative;
+	z-index: 0;
+	border-top: 1px solid #bfbfbf;
+	cursor: pointer;
 }
+
+.tabs-ext {
+	display: block;
+	width: 10%;
+	height: 100%;
+	float: left;
+	margin-right: -1px;
+	position: relative;
+	z-index: 0;
+	border-top: 1px solid #bfbfbf;
+}
+
 .help-icon-link {
   width: 16px;
   height: 15px;
@@ -342,7 +394,7 @@ p {
   width: 100%;
   float: left;
   clear: both;
-  height: 5%;
+  height: 10%;
 }
 .branding-text {
   margin-top: 10px;
@@ -361,32 +413,33 @@ p {
   width: 100%;
 }
 .tab-field {
-    width: 300px;
-    height: 25px;
-    margin-bottom: 20px;
-    padding: 0px 10px;
-    border-radius: 2px;
-    border: 1px solid #bfbfbf;
-    font-weight: 400;
-    float: left;
-    clear: both;
-    box-sizing: border-box;
+	width: 300px;
+	height: 25px;
+	margin-bottom: 20px;
+	padding: 0px 10px;
+	border-radius: 2px;
+	border: 1px solid #bfbfbf;
+	font-weight: 400;
+	float: left;
+	clear: both;
+	box-sizing: border-box;
 }
 .tab-field.checkbox-field {
-    margin-bottom: 5px;
-    margin-left: 20px;
+	margin-bottom: 5px;
+	margin-left: 20px;
 }
 .tab-field-label {
-    width: 300px;
-    font-weight: 700;
-    float: left;
-    clear: both;
-    margin-bottom: 5px;
+	width: 300px;
+	font-weight: 700;
+	float: left;
+	clear: both;
+	margin-bottom: 5px;
 }
 .row {
-    width: 100%;
-    min-width: 625px;
-    float: left;
+	width: 100%;
+	min-width: 580px;
+	float: left;
+	margin-left:5px;
 }
 .tab-full-column {
   width: 100%;
@@ -401,56 +454,49 @@ p {
 }
 .tab-second-column {
   min-width: 300px;
-  margin-left: 4%;
+ /* margin-left: 4%;*/
   float: left;
   width: 48%;
 }
+
+.compare {
+	border: solid black 1px;
+  	text-align: center;
+}
+
+.singlecolumn {
+	border: solid black 1px;
+  	text-align: center;
+}
+
 .tab-checkbox-container {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    float: left;
-    clear: both;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	float: left;
+	clear: both;
 }
 .tab-checkbox-container.with-input {
   margin-bottom: 0px;
 }
 .tab-checkbox-label {
   font-weight: 700;
-  padding-left: 5px;    
+  padding-left: 5px;	
 }
 .tab-checkbox-label-p {
-    max-width: 390px;
-    font-size: 12px;
-    line-height: 15px;
-    padding-left: 20px;
-    margin: 0;
-    box-sizing: border-box;
+	max-width: 390px;
+	font-size: 12px;
+	line-height: 15px;
+	padding-left: 20px;
+	margin: 0;
+	box-sizing: border-box;
 }
-
-.tab-p {
-    float: left;
-    margin: 10px 0 20px;
-}
-
 .dropdown {
-    float: left;
-    clear: left;
-    margin: 0 0 20px;
-    height: 30px;
-    min-width: 300px;
+	float: left;
+	clear: left;
+	margin: 0 0 20px;
+	height: 30px;
+	min-width: 300px;
 }
-
-.ko-grid {margin-bottom: 5px; background-color:White;width: 100%;float: left;clear: both }
-.ko-grid thead { background-color: #333; color:#fff;    border: 1px solid #333; border-bottom-width: 0;font-weight: bold; }
-.ko-grid tbody {border: 1px solid #bfbfbf; border-top-width: 0; box-sizing: border-box; }
-.ko-grid tr:nth-child(even) { background-color: #DDD; }
-.ko-grid td { padding: 5px 0px; }
-.ko-grid tbody td { border-bottom: 1px solid #e5e5e5; border-bottom: 1px solid rgba(191,191,191,.2);}
-.ko-link { cursor: pointer; color: skyblue}
-
-.ko-grid-pageLinks { margin-bottom: 1em;float: left; }
-.ko-grid-pageLinks a { padding: 0.5em; }
-.ko-grid-pageLinks a.selected { background-color: Black; color: White; }
 
 
 .mz-button{
@@ -516,4 +562,95 @@ p {
     border: 1px solid rgba(191, 191, 191, 1);
     background-color: rgba(241, 241, 241, 1);
     box-shadow: inset 0 0 0;
+}
+
+.account-info {
+  padding: 20px 20px 0 20px;
+}
+.account-info label {
+  color: #395870;
+  display: block;
+  margin-bottom: 10px;
+}
+.account-info input {
+  background: #fff;
+  border: 1px solid #c6c7cc;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  color: #636466;
+  padding: 6px;
+  margin-top: 6px;
+  width: 50%;
+}
+
+
+hr {
+display: block;
+-webkit-margin-before: 0.5em;
+-webkit-margin-after: 0.5em;
+-webkit-margin-start: auto;
+-webkit-margin-end: auto;
+border-style: inset;
+border-width: 1px;
+}
+
+.border-bottom {
+	border-bottom: solid #CCCCCC 0.2em;
+}
+
+label {
+	font-weight: normal;
+}
+
+.label-bold {
+	font-weight: bold;
+}
+
+
+.right-align {
+    text-align:right;
+    margin-top: 5px;
+    min-width: 150px;
+}
+
+ .link {
+  	font-family: "SourceSansProRegulat", Helvetica, Arial, sans-serif;
+  	font-size: 14px;
+    color: #000;
+  	text-decoration: none;
+  	margin: 0px 10px 0px 0px;
+  	cursor:pointer;
+  }
+  
+  
+  .selected {
+  	font-family: "SourceSansProRegulat", Helvetica, Arial, sans-serif;
+  	font-size: 14px;
+  	color: #d2463c;
+  	border-bottom: 3px solid #d2463c;
+  }
+  
+ .comparecontainer {
+    display:table;
+    border-collapse: collapse;
+    width:100%
+ }
+ 
+ 
+.compareheading {
+     font-weight: bold;
+     display:table-row;
+     background-color:#000000;
+     text-align: center;
+     line-height: 25px;
+     font-size: 14px;
+     color:#ffffff;
+    
+}
+.compare-table-row {  
+     display:table-row;
+     text-align: left;
+}
+.compare-col {
+    display:table-cell;
+    border: 1px solid #CCC;
 }

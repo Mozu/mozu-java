@@ -9,6 +9,8 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	
+	<beans:import resource="classpath*:/mozu-base.xml" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
@@ -22,23 +24,13 @@
     -->
     <context:property-placeholder location="classpath:mozu_config.properties, file:${catalina.home}/conf/Kount/mozu_config.properties" ignore-resource-not-found="true"/>
 
-    <context:component-scan base-package="com.mozu.apptest" />
+    <context:component-scan base-package="com.mozu.apptest;" />
     
-    <beans:bean id="environments" name="environments" class="java.util.HashMap">
-        <beans:constructor-arg>
-            <beans:map>
-                <beans:entry key="Production" value="https://home.mozu.com" />
-                <beans:entry key="CI" value="http://home.mozu-ci.volusion.com" />
-                <beans:entry key="Dev" value="http://mozu-dev.com" />
-            </beans:map>
-        </beans:constructor-arg>
-    </beans:bean>
-	
     <!-- Configures Handler Interceptors -->
     <mvc:interceptors>
          <mvc:interceptor>
             <mvc:mapping path="/api/config/**"/>
-            <beans:bean class="com.mozu.apptest.controllers.ConfigurationSecurityInterceptor" />
+            <beans:bean class="com.mozu.base.controllers.ConfigurationSecurityInterceptor" />
          </mvc:interceptor>
     </mvc:interceptors>
     
