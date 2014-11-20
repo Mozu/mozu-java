@@ -241,7 +241,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
                request.addHeader(header.getKey(), header.getValue());
            }
 
-           AppAuthenticator.addAuthHeader();
+           request.addHeader(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
            request.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION);
 
            return request;
