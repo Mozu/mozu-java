@@ -15,7 +15,7 @@ if (hasProperty("teamcity")) {
     }
     else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.0.8'
+    version = '1.0.15'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
