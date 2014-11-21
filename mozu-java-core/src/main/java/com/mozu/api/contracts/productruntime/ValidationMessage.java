@@ -20,6 +20,19 @@ public class ValidationMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Unique identifier of the entity that triggered the validation.
+	 */
+	protected String sourceId;
+
+	public String getSourceId() {
+		return this.sourceId;
+	}
+
+	public void setSourceId(String sourceId) {
+		this.sourceId = sourceId;
+	}
+
+	/**
 	 * The contents of the message displayed to the user when the product validation failure occurs.
 	 */
 	protected String message;
@@ -56,19 +69,6 @@ public class ValidationMessage implements Serializable
 
 	public void setSource(String source) {
 		this.source = source;
-	}
-
-	/**
-	 * Unique identifier of the entity that triggered the validation.
-	 */
-	protected String sourceId;
-
-	public String getSourceId() {
-		return this.sourceId;
-	}
-
-	public void setSourceId(String sourceId) {
-		this.sourceId = sourceId;
 	}
 
 	protected String validationType;

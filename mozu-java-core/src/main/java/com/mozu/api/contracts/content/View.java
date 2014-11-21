@@ -18,27 +18,14 @@ public class View implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String defaultSort;
+	protected Boolean isVisibleInStorefront;
 
-	public String getDefaultSort() {
-		return this.defaultSort;
+	public Boolean getIsVisibleInStorefront() {
+		return this.isVisibleInStorefront;
 	}
 
-	public void setDefaultSort(String defaultSort) {
-		this.defaultSort = defaultSort;
-	}
-
-	/**
-	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 */
-	protected String filter;
-
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
+	public void setIsVisibleInStorefront(Boolean isVisibleInStorefront) {
+		this.isVisibleInStorefront = isVisibleInStorefront;
 	}
 
 	protected String name;
@@ -49,16 +36,6 @@ public class View implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	protected String security;
-
-	public String getSecurity() {
-		return this.security;
-	}
-
-	public void setSecurity(String security) {
-		this.security = security;
 	}
 
 	protected List<String> usages;

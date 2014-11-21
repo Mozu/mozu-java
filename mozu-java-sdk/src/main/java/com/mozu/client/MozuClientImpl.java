@@ -264,6 +264,8 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         try {
             executeRequest(request);
             result = getResult();
+        } catch (ApiException ae) {
+            throw ae;
         } catch (Exception ioe) {
             throw new ApiException("Exception occurred while authenticating application: "
                     + ioe.getMessage());

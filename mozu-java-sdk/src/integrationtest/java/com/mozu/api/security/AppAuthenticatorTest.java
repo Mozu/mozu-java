@@ -1,8 +1,6 @@
 package com.mozu.api.security;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Test;
@@ -30,7 +28,8 @@ public class AppAuthenticatorTest extends SecurityTestBase {
 
 			fail("Should have failed login");
 		} catch (ApiException ae) {
-			assertEquals("Error Message Wrong in API", "Invalid Credentials: Invalid credentials. ", ae.getApiError().getMessage());
+		    String message = ae.getMessage();
+			assertTrue("Error Message Wrong in API", message.contains("Invalid Credentials: Invalid credentials."));
 			assertNotNull(ae.getApiError());
             assertNotNull(ae.getApiError().getCorrelationId());
 		} catch (Exception e) {

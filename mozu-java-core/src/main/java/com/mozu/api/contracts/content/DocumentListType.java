@@ -57,16 +57,6 @@ public class DocumentListType implements Serializable
 		this.installationPackage = installationPackage;
 	}
 
-	protected String localizationType;
-
-	public String getLocalizationType() {
-		return this.localizationType;
-	}
-
-	public void setLocalizationType(String localizationType) {
-		this.localizationType = localizationType;
-	}
-
 	protected String name;
 
 	public String getName() {
@@ -95,16 +85,6 @@ public class DocumentListType implements Serializable
 
 	public void setScopeType(String scopeType) {
 		this.scopeType = scopeType;
-	}
-
-	protected String security;
-
-	public String getSecurity() {
-		return this.security;
-	}
-
-	public void setSecurity(String security) {
-		this.security = security;
 	}
 
 	protected Boolean supportsPublishing;
