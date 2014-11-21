@@ -35,7 +35,7 @@ import com.mozu.base.utils.ApplicationUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/resources/servlet-context.xml" })
-public class EntityHandlerTest {
+public class EntityHandlerIntegrationTest {
 
 	@Autowired
 	EntitySchemaHandler entitySchemaHandler;

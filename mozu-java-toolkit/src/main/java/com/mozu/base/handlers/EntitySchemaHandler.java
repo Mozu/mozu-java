@@ -1,6 +1,5 @@
 package com.mozu.base.handlers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -53,8 +52,11 @@ public class EntitySchemaHandler {
 		if (StringUtils.isEmpty(entityList.getNameSpace())) entityList.setNameSpace(appInfo.getNameSpace());
 		
 		String entityFqn = getEntityListNameFQN(entityList.getName(), entityList.getNameSpace());
-		if (idProperty == null) entityList.setUseSystemAssignedId(true);
-		else entityList.setIdProperty(idProperty);
+		if (idProperty == null) {
+		    entityList.setUseSystemAssignedId(true);
+		} else {
+		    entityList.setIdProperty(idProperty);
+		}
 		
 		if (indexedProperties != null) { 
 			entityList.setIndexA(indexedProperties.size() >=1 ? indexedProperties.get(0) : null);
