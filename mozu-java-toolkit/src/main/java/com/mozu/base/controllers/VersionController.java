@@ -33,11 +33,11 @@ public class VersionController implements ServletContextAware {
         AppInfo appInfo = ApplicationUtils.getAppInfo();
         if (manifestStream== null) {
             appInfo.setBuildVersion("Unknown version");
+        } else {
+	        Manifest manifest = new Manifest(manifestStream);
+	        Attributes attributes = manifest.getMainAttributes();
+	        appInfo.setBuildVersion(attributes.getValue("Implementation-Version"));
         }
-        Manifest manifest = new Manifest(manifestStream);
-        Attributes attributes = manifest.getMainAttributes();
-        appInfo.setBuildVersion(attributes.getValue("Implementation-Version"));
-        
         return appInfo;
     }
     

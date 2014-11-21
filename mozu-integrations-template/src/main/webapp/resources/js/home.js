@@ -9,9 +9,9 @@
 	    $.ajax({
 	        url: "version",
 	        type: "GET",
-	        dataType: "text",
+	        dataType: "json",
 	        success: function (data) {
-	            self.buildVersion(data)
+	            self.buildVersion(data.buildVersion)
 	        },
 	        error:function () {
 	            $("#content").hide();
