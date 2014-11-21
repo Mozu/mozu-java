@@ -69,7 +69,7 @@ dependencies {
     compile ("org.springframework.batch:spring-batch-core:2.2.3.RELEASE");
     compile ("org.springframework.integration:spring-integration-core:3.0.2.RELEASE");
 
-    compile ("com.mozu:mozu-api-java:1.12.0") {
+    compile ("com.mozu:mozu-api-java:1.13.0") {
         exclude group: 'mysql'
         exclude group: 'xerces'
         exclude group: 'berkeleydb'

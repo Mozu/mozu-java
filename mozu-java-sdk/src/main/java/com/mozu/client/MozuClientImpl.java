@@ -47,6 +47,7 @@ import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();

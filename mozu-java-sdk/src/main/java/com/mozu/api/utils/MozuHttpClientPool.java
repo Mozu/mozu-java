@@ -1,4 +1,4 @@
-package com.mozu.client;
+package com.mozu.api.utils;
 
 import java.io.IOException;
 import java.util.concurrent.ArrayBlockingQueue;
