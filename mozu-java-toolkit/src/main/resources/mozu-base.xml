@@ -20,9 +20,4 @@
          </mvc:interceptor>
     </mvc:interceptors>
 
-	<beans:bean id="cacheManagerImpl" name="cacheManagerImpl"
-		class="com.mozu.api.cache.impl.CacheManagerImpl" init-method="startCache"
-		destroy-method="stopCache" lazy-init="false">
-	</beans:bean>
-
 </beans:beans>

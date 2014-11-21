@@ -20,11 +20,7 @@ public class EncryptDecryptHandler {
      * @return an encrypted String
      */
 	public String encrypt( String value)  {
-		
-		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-		textEncryptor.setPassword(AppAuthenticator.getInstance().getAppAuthInfo().getSharedSecret());
-		
-		return textEncryptor.encrypt(value);
+		return encrypt(null, value);
 	}
 	
 	/**
@@ -34,9 +30,17 @@ public class EncryptDecryptHandler {
 	 * @return an encrypted string.
 	 */
 	public String encrypt(String key, String value)  {
+        if (value==null) {
+            throw new IllegalArgumentException("String to be encrypted required");
+        }
 		
 		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-		textEncryptor.setPassword(AppAuthenticator.getInstance().getAppAuthInfo().getSharedSecret()+key);
+
+		String sharedSecret = AppAuthenticator.getInstance().getAppAuthInfo().getSharedSecret();
+		if (sharedSecret==null && key==null) {
+		    throw new IllegalArgumentException("Password key required");
+		}
+		textEncryptor.setPassword(sharedSecret+key);
 		
 		return textEncryptor.encrypt(value);
 	}
@@ -47,11 +51,7 @@ public class EncryptDecryptHandler {
 	 * @return the decrypted 
 	 */
 	public String decrypt( String encryptedStr)  {
-	
-		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-		textEncryptor.setPassword(AppAuthenticator.getInstance().getAppAuthInfo().getSharedSecret());
-		
-		return textEncryptor.decrypt(encryptedStr);
+	    return decrypt(null, encryptedStr);
 	}
 	
 	/**
@@ -61,6 +61,9 @@ public class EncryptDecryptHandler {
 	 * @return a string in clear text.
 	 */
 	public String decrypt(String key, String encryptedStr)  {
+	    if (encryptedStr==null) {
+	        throw new IllegalArgumentException("String to be decrypted required");
+	    }
 		
 		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
 		textEncryptor.setPassword(AppAuthenticator.getInstance().getAppAuthInfo().getSharedSecret()+key);
