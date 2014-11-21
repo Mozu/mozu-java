@@ -5,9 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.Assert;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,20 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.mozu.api.ApiContext;
-import com.mozu.api.ApiException;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.contracts.mzdb.IndexedProperty;
-import com.mozu.api.resources.platform.EntityListResource;
-import com.mozu.base.models.AppInfo;
 import com.mozu.base.models.EntityCollection;
 import com.mozu.base.models.EntityDataTypes;
 import com.mozu.base.models.EntityScope;
-import com.mozu.base.models.ExtensionParent;
 import com.mozu.base.models.Contact;
-import com.mozu.base.utils.ApplicationUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/resources/servlet-context.xml" })
