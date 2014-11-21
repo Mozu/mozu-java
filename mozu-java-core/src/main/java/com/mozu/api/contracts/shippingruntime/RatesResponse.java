@@ -21,14 +21,22 @@ public class RatesResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String shippingZoneCode;
+	protected String resolvedShippingZoneCode;
 
-	public String getShippingZoneCode() {
-		return this.shippingZoneCode;
+	public String getResolvedShippingZoneCode() {
+		return this.resolvedShippingZoneCode;
 	}
 
-	public void setShippingZoneCode(String shippingZoneCode) {
-		this.shippingZoneCode = shippingZoneCode;
+	public void setResolvedShippingZoneCode(String resolvedShippingZoneCode) {
+		this.resolvedShippingZoneCode = resolvedShippingZoneCode;
+	}
+
+	protected List<String> shippingZoneCodes;
+	public List<String> getShippingZoneCodes() {
+		return this.shippingZoneCodes;
+	}
+	public void setShippingZoneCodes(List<String> shippingZoneCodes) {
+		this.shippingZoneCodes = shippingZoneCodes;
 	}
 
 	/**

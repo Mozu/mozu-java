@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.productruntime.ProductContent;
 import com.mozu.api.contracts.productruntime.Discount;
 import com.mozu.api.contracts.productruntime.BundledProduct;
 import com.mozu.api.contracts.productruntime.Category;
-import com.mozu.api.contracts.productruntime.ProductContent;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 import com.mozu.api.contracts.productruntime.ProductOption;
@@ -31,6 +31,17 @@ public class Product implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The list of universal product codes defined for the product.
+	 */
+	protected List<String> upCs;
+	public List<String> getUpCs() {
+		return this.upCs;
+	}
+	public void setUpCs(List<String> upCs) {
+		this.upCs = upCs;
+	}
 
 	/**
 	 * Product code that represents the product variation selected based on the option values the shopper entered.
@@ -234,14 +245,16 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of universal product codes defined for the product.
+	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected List<String> upCs;
-	public List<String> getUpCs() {
-		return this.upCs;
+	protected ProductContent content;
+
+	public ProductContent getContent() {
+		return this.content;
 	}
-	public void setUpCs(List<String> upCs) {
-		this.upCs = upCs;
+
+	public void setContent(ProductContent content) {
+		this.content = content;
 	}
 
 	/**
@@ -275,19 +288,6 @@ public class Product implements Serializable
 	}
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
-	}
-
-	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
-	protected ProductContent content;
-
-	public ProductContent getContent() {
-		return this.content;
-	}
-
-	public void setContent(ProductContent content) {
-		this.content = content;
 	}
 
 	/**
