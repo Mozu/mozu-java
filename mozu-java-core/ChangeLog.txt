@@ -1,2 +1,9 @@
 Events
-0.    Added - Product.Product Code Renamed
+0.    Added - Location.Location Updated
+1.    Added - Location.Location Usage Created
+2.    Added - Location.Location Usage Updated
+3.    Added - Test Utility.Ping Created
+4.    Removed - Wish List.Ping Created
+
+Operations
+0.    Added - commerce.catalog.admin.categories.FixCategoryTreeSequences - POST

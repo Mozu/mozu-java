@@ -16,26 +16,6 @@ public class ViewField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean isQueryable;
-
-	public Boolean getIsQueryable() {
-		return this.isQueryable;
-	}
-
-	public void setIsQueryable(Boolean isQueryable) {
-		this.isQueryable = isQueryable;
-	}
-
-	protected Boolean isSortable;
-
-	public Boolean getIsSortable() {
-		return this.isSortable;
-	}
-
-	public void setIsSortable(Boolean isSortable) {
-		this.isSortable = isSortable;
-	}
-
 	protected String name;
 
 	public String getName() {
@@ -54,16 +34,6 @@ public class ViewField implements Serializable
 
 	public void setTarget(String target) {
 		this.target = target;
-	}
-
-	protected String type;
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 }

@@ -34,6 +34,16 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	protected String appKey;
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+	}
+
 	/**
 	 * If true, the application is enabled for the tenant. System-supplied and read-only.
 	 */

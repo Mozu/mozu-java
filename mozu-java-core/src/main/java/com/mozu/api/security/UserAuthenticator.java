@@ -238,7 +238,7 @@ public class UserAuthenticator {
             case Tenant:
                 return TenantAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getRefreshToken()).getUrl();
             case Developer:
-                return DeveloperAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getAccessToken()).getUrl();
+                return DeveloperAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getRefreshToken()).getUrl();
             default:
                 throw new NotImplementedException("Invalid User Scope.");
         }
