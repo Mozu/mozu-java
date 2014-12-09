@@ -156,12 +156,12 @@ public class CustomerCustomerSegmentFactory
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
-	public static void deleteSegmentAccounts(ApiContext apiContext, List<Integer> accountIds, Integer id, int expectedCode, int successCode) throws Exception
+	public static void removeSegmentAccount(ApiContext apiContext, Integer id, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
 		CustomerSegmentResource resource = new CustomerSegmentResource(apiContext);
 		try
 		{
-			resource.deleteSegmentAccounts( accountIds,  id);
+			resource.removeSegmentAccount( id,  accountId);
 		}
 		catch (ApiException e)
 		{
