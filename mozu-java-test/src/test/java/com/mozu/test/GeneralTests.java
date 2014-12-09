@@ -449,7 +449,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CustomerCustomerSegmentFactory.getSegments(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.updateSegment(apiContext, new CustomerSegment(), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.deleteSegment(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-		CustomerCustomerSegmentFactory.deleteSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_NO_CONTENT);
+//		CustomerCustomerSegmentFactory.deleteSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_NO_CONTENT);
 		CustomerCustomerSegmentFactory.addSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_CREATED);
 	}
 	

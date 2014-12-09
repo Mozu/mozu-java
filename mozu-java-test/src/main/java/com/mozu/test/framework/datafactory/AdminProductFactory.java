@@ -165,6 +165,24 @@ public class AdminProductFactory
 		return returnObj;
 	}
 
+	public static void renameProductCodes(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.ProductCodeRename> productCodeRenames, int expectedCode, int successCode) throws Exception
+	{
+		ProductResource resource = new ProductResource(apiContext);
+		try
+		{
+			resource.renameProductCodes( productCodeRenames);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
+
 	public static List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> updateProductInCatalogs(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> productInCatalogsIn, String productCode, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductInCatalogInfo> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductInCatalogInfo>();
