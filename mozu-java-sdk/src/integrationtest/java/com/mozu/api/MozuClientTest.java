@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 import org.junit.After;
-import org.junit.Test;
+import org.junit.Test; 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,7 +72,7 @@ public class MozuClientTest extends SecurityTestBase {
                 CONTENT_TYPE);
 
         Document docResponse = docResource.getDocument(MOZU_DOCUMENT_LIST_NAME, docId);
-        
+        System.out.println("Extension: " + docResponse.getExtension());
         assertNotNull(docResponse);
         assertEquals(length, docResponse.getContentLength());
         InputStream getInputStream = docResource.getDocumentContent(MOZU_DOCUMENT_LIST_NAME, docId);
