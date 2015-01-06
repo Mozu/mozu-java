@@ -136,6 +136,16 @@ public class Attribute implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
+	protected Boolean isReadOnly;
+
+	public Boolean getIsReadOnly() {
+		return this.isReadOnly;
+	}
+
+	public void setIsReadOnly(Boolean isReadOnly) {
+		this.isReadOnly = isReadOnly;
+	}
+
 	/**
 	 * If true, the attribute must have a defined value.
 	 */

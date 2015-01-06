@@ -118,6 +118,18 @@ public class ReferenceDataUrl
 	}
 
 	/**
+	 * Get Resource Url for GetCountriesWithStates
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCountriesWithStatesUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/reference/countrieswithstates?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetCurrencies
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url

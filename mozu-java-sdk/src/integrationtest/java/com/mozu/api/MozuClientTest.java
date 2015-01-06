@@ -22,9 +22,9 @@ public class MozuClientTest extends SecurityTestBase {
 
     private static final String MOZU_DOCUMENT_LIST_NAME = "files@mozu";
     private static final String MOZU_DOCUMENT_TYPE_FQN = "image@mozu";
-    private static final String UPLOAD_FILE_NAME = "/snippet.png";
+    private static final String UPLOAD_FILE_NAME = "/9437.jpg";
     
-    private static final String CONTENT_TYPE = "image/png";
+    private static final String CONTENT_TYPE = "image/jpg";
     
     private String docId;
     
@@ -59,7 +59,7 @@ public class MozuClientTest extends SecurityTestBase {
         Document doc = new Document();
         String fileName = file.getName();
         doc.setContentMimeType(CONTENT_TYPE);
-        doc.setExtension("png");
+        doc.setExtension("jpg");
         doc.setName(fileName);
         doc.setDocumentTypeFQN(MOZU_DOCUMENT_TYPE_FQN);
 

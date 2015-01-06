@@ -33,103 +33,6 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The list of universal product codes defined for the product.
-	 */
-	protected List<String> upCs;
-	public List<String> getUpCs() {
-		return this.upCs;
-	}
-	public void setUpCs(List<String> upCs) {
-		this.upCs = upCs;
-	}
-
-	/**
-	 * Product code that represents the product variation selected based on the option values the shopper entered.
-	 */
-	protected String variationProductCode;
-
-	public String getVariationProductCode() {
-		return this.variationProductCode;
-	}
-
-	public void setVariationProductCode(String variationProductCode) {
-		this.variationProductCode = variationProductCode;
-	}
-
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
-	}
-
-	/**
-	 * The list of fulfillment types the product supports.
-	 */
-	protected List<String> fulfillmentTypesSupported;
-	public List<String> getFulfillmentTypesSupported() {
-		return this.fulfillmentTypesSupported;
-	}
-	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
-		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
-	}
-
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
-	/**
-	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
-	 */
-	protected Boolean isActive;
-
-	public Boolean getIsActive() {
-		return this.isActive;
-	}
-
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
-
-	/**
-	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
-	 */
-	protected Boolean isPackagedStandAlone;
-
-	public Boolean getIsPackagedStandAlone() {
-		return this.isPackagedStandAlone;
-	}
-
-	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
-		this.isPackagedStandAlone = isPackagedStandAlone;
-	}
-
-	/**
-	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
-	 */
-	protected Boolean isRecurring;
-
-	public Boolean getIsRecurring() {
-		return this.isRecurring;
-	}
-
-	public void setIsRecurring(Boolean isRecurring) {
-		this.isRecurring = isRecurring;
-	}
-
-	/**
 	 * If true, the entity is subject to tax based on the relevant tax rate.
 	 */
 	protected Boolean isTaxable;
@@ -242,6 +145,103 @@ public class Product implements Serializable
 
 	public void setUpc(String upc) {
 		this.upc = upc;
+	}
+
+	/**
+	 * The list of universal product codes defined for the product.
+	 */
+	protected List<String> upCs;
+	public List<String> getUpCs() {
+		return this.upCs;
+	}
+	public void setUpCs(List<String> upCs) {
+		this.upCs = upCs;
+	}
+
+	/**
+	 * Product code that represents the product variation selected based on the option values the shopper entered.
+	 */
+	protected String variationProductCode;
+
+	public String getVariationProductCode() {
+		return this.variationProductCode;
+	}
+
+	public void setVariationProductCode(String variationProductCode) {
+		this.variationProductCode = variationProductCode;
+	}
+
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
+	 * The list of fulfillment types the product supports.
+	 */
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
+	 */
+	protected Boolean isActive;
+
+	public Boolean getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	/**
+	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
+	 */
+	protected Boolean isPackagedStandAlone;
+
+	public Boolean getIsPackagedStandAlone() {
+		return this.isPackagedStandAlone;
+	}
+
+	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
+		this.isPackagedStandAlone = isPackagedStandAlone;
+	}
+
+	/**
+	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
+	 */
+	protected Boolean isRecurring;
+
+	public Boolean getIsRecurring() {
+		return this.isRecurring;
+	}
+
+	public void setIsRecurring(Boolean isRecurring) {
+		this.isRecurring = isRecurring;
 	}
 
 	/**

@@ -31,6 +31,16 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	protected String categoryCode;
+
+	public String getCategoryCode() {
+		return this.categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+
 	/**
 	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
 	 */

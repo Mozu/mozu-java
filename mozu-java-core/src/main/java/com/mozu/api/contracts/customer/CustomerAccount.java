@@ -104,6 +104,16 @@ public class CustomerAccount implements Serializable
 		this.id = id;
 	}
 
+	protected Boolean isActive;
+
+	public Boolean getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
 	/**
 	 * If true, this customer account represents an anonymous shopper.
 	 */
@@ -115,6 +125,16 @@ public class CustomerAccount implements Serializable
 
 	public void setIsAnonymous(Boolean isAnonymous) {
 		this.isAnonymous = isAnonymous;
+	}
+
+	protected Boolean isLocked;
+
+	public Boolean getIsLocked() {
+		return this.isLocked;
+	}
+
+	public void setIsLocked(Boolean isLocked) {
+		this.isLocked = isLocked;
 	}
 
 	/**

@@ -20,6 +20,45 @@ public class Transaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The unique identifier of the transaction.
+	 */
+	protected String transactionId;
+
+	public String getTransactionId() {
+		return this.transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	/**
+	 * The type of transaction the customer performed, which is "Order," "Return," "OrderPickup," or "Wishlist."
+	 */
+	protected String transactionType;
+
+	public String getTransactionType() {
+		return this.transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	/**
+	 * Unique identifier of the customer visit associated with the transaction. Customers can perform multiple transactions in the same visit.
+	 */
+	protected String visitId;
+
+	public String getVisitId() {
+		return this.visitId;
+	}
+
+	public void setVisitId(String visitId) {
+		this.visitId = visitId;
+	}
+
+	/**
 	 * If applicable, the amount of the transaction.
 	 */
 	protected Double amount;
@@ -66,45 +105,6 @@ public class Transaction implements Serializable
 
 	public void setInteractionType(String interactionType) {
 		this.interactionType = interactionType;
-	}
-
-	/**
-	 * The unique identifier of the transaction.
-	 */
-	protected String transactionId;
-
-	public String getTransactionId() {
-		return this.transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	/**
-	 * The type of transaction the customer performed, which is "Order," "Return," "OrderPickup," or "Wishlist."
-	 */
-	protected String transactionType;
-
-	public String getTransactionType() {
-		return this.transactionType;
-	}
-
-	public void setTransactionType(String transactionType) {
-		this.transactionType = transactionType;
-	}
-
-	/**
-	 * Unique identifier of the customer visit associated with the transaction. Customers can perform multiple transactions in the same visit.
-	 */
-	protected String visitId;
-
-	public String getVisitId() {
-		return this.visitId;
-	}
-
-	public void setVisitId(String visitId) {
-		this.visitId = visitId;
 	}
 
 }
