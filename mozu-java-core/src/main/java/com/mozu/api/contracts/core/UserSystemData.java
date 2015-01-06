@@ -20,32 +20,6 @@ public class UserSystemData implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of login attempts left for the user. The user must login successfully before this value reaches zero otherwise the account will be locked.
-	 */
-	protected Integer remainingLoginAttempts;
-
-	public Integer getRemainingLoginAttempts() {
-		return this.remainingLoginAttempts;
-	}
-
-	public void setRemainingLoginAttempts(Integer remainingLoginAttempts) {
-		this.remainingLoginAttempts = remainingLoginAttempts;
-	}
-
-	/**
-	 * Date and time when the entity was last updated, represented in UTC Date/Time.
-	 */
-	protected DateTime updatedOn;
-
-	public DateTime getUpdatedOn() {
-		return this.updatedOn;
-	}
-
-	public void setUpdatedOn(DateTime updatedOn) {
-		this.updatedOn = updatedOn;
-	}
-
-	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
 	protected DateTime createdOn;
@@ -147,6 +121,32 @@ public class UserSystemData implements Serializable
 
 	public void setLastPasswordChangeOn(DateTime lastPasswordChangeOn) {
 		this.lastPasswordChangeOn = lastPasswordChangeOn;
+	}
+
+	/**
+	 * The number of login attempts left for the user. The user must login successfully before this value reaches zero otherwise the account will be locked.
+	 */
+	protected Integer remainingLoginAttempts;
+
+	public Integer getRemainingLoginAttempts() {
+		return this.remainingLoginAttempts;
+	}
+
+	public void setRemainingLoginAttempts(Integer remainingLoginAttempts) {
+		this.remainingLoginAttempts = remainingLoginAttempts;
+	}
+
+	/**
+	 * Date and time when the entity was last updated, represented in UTC Date/Time.
+	 */
+	protected DateTime updatedOn;
+
+	public DateTime getUpdatedOn() {
+		return this.updatedOn;
+	}
+
+	public void setUpdatedOn(DateTime updatedOn) {
+		this.updatedOn = updatedOn;
 	}
 
 }

@@ -23,17 +23,6 @@ public class ProductType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of product usages that describe how products of this type are used. Products of this type can be Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle). Product type usages cannot be both Bundle and Configurable.
-	 */
-	protected List<String> productUsages;
-	public List<String> getProductUsages() {
-		return this.productUsages;
-	}
-	public void setProductUsages(List<String> productUsages) {
-		this.productUsages = productUsages;
-	}
-
-	/**
 	 * The type of goods for this product.
 	 */
 	protected String goodsType;
@@ -109,6 +98,17 @@ public class ProductType implements Serializable
 
 	public void setProductCount(Integer productCount) {
 		this.productCount = productCount;
+	}
+
+	/**
+	 * List of product usages that describe how products of this type are used. Products of this type can be Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle). Product type usages cannot be both Bundle and Configurable.
+	 */
+	protected List<String> productUsages;
+	public List<String> getProductUsages() {
+		return this.productUsages;
+	}
+	public void setProductUsages(List<String> productUsages) {
+		this.productUsages = productUsages;
 	}
 
 	/**

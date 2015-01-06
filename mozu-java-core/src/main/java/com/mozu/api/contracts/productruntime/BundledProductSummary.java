@@ -35,7 +35,7 @@ public class BundledProductSummary implements Serializable
 	}
 
 	/**
-	 * This is the goods type of the product. Possible values are Physical and DigitalCredit. This comes from the productType of the product. Products are defaulted to a Physical goodsType. Gift cards have a goodsType of DigitalCredit.
+	 * This is the goods type of the product. Possible values are Physical, and DigitalCredit. This comes from the productType of the product. Products are defaulted to a Physical goodsType. Gift cards have a goodsType of DigitalCredit.
 	 */
 	protected String goodsType;
 

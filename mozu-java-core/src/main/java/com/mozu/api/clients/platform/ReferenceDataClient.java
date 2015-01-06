@@ -347,6 +347,46 @@ public class ReferenceDataClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CountryWithStatesCollection countryWithStatesCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryWithStatesCollection>
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> getCountriesWithStatesClient() throws Exception
+	{
+		return getCountriesWithStatesClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CountryWithStatesCollection countryWithStatesCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryWithStatesCollection>
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> getCountriesWithStatesClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.platform.ReferenceDataUrl.getCountriesWithStatesUrl(responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.reference.CountryWithStatesCollection.class;
+		MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient = (MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves the entire list of currencies that the system supports.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.reference.CurrencyCollection> mozuClient=GetCurrenciesClient();

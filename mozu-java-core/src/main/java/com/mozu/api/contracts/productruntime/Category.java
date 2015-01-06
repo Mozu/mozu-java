@@ -22,6 +22,16 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String categoryCode;
+
+	public String getCategoryCode() {
+		return this.categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */

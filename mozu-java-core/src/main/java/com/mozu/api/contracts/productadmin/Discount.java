@@ -88,6 +88,16 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
+	protected Double maximumDiscountValuePerOrder;
+
+	public Double getMaximumDiscountValuePerOrder() {
+		return this.maximumDiscountValuePerOrder;
+	}
+
+	public void setMaximumDiscountValuePerOrder(Double maximumDiscountValuePerOrder) {
+		this.maximumDiscountValuePerOrder = maximumDiscountValuePerOrder;
+	}
+
 	/**
 	 * The maximum number of times an individual shopper can redeem the discount.
 	 */

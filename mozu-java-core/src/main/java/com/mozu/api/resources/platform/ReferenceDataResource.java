@@ -307,6 +307,39 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	ReferenceData referencedata = new ReferenceData();
+	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates() throws Exception
+	{
+		return getCountriesWithStates( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ReferenceData referencedata = new ReferenceData();
+	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getCountriesWithStatesClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieves the entire list of currencies that the system supports.
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
