@@ -1,41 +1,39 @@
 package com.mozu.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
 
 import org.apache.http.HttpStatus;
-import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.mozu.api.ApiContext;
 import com.mozu.api.DataViewMode;
 import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.content.Document;
 import com.mozu.api.contracts.content.DocumentList;
 import com.mozu.api.contracts.content.DocumentType;
-import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.utils.MozuHttpClientPool;
 import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.datafactory.DocumentFactory;
 import com.mozu.test.framework.datafactory.DocumentListFactory;
 import com.mozu.test.framework.datafactory.DocumentTypeFactory;
-import com.mozu.test.framework.datafactory.EntityFactory;
-import com.mozu.test.framework.datafactory.EntityListFactory;
 import com.mozu.test.framework.helper.Generator;
 
 public class DocumentResourceTests extends MozuApiTestBase {
 	
 	private static ApiContext apiContext;
+	private static int CONTENTLENGTH = 200;
+	private static String CONTENTTYPE =  "text/plain";
+	
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -85,7 +83,7 @@ public class DocumentResourceTests extends MozuApiTestBase {
 
         String fileName = Generator.randomString(5, Generator.AlphaChars);
         File file = new File("C:\\tmp\\" + fileName + ".txt");
-        String content = Generator.randomString(200, Generator.AlphaChars);
+        String content = Generator.randomString(CONTENTLENGTH, Generator.AlphaChars);
 		if (file.exists()) {
 			file.delete();
 		}
@@ -94,7 +92,7 @@ public class DocumentResourceTests extends MozuApiTestBase {
 		writer.close();
 		 
 		Document doc = new Document();
-		doc.setContentMimeType("text/plain");
+		doc.setContentMimeType(CONTENTTYPE);
 		doc.setExtension("txt");
 		doc.setName(fileName);
 		doc.setDocumentTypeFQN(type.getDocumentTypeFQN());
@@ -103,10 +101,10 @@ public class DocumentResourceTests extends MozuApiTestBase {
 
 		FileInputStream inputStream = new FileInputStream(file);
 		DocumentFactory.updateDocumentContent(apiContext, inputStream, list.getListFQN(), newDoc.getId(),
-				"text/plain", HttpStatus.SC_OK, HttpStatus.SC_OK);
+				CONTENTTYPE, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		 		 
 		Document docResponse = DocumentFactory.getDocument(apiContext, DataViewMode.Live, list.getListFQN(), newDoc.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		System.out.println("Content length is "+docResponse.getContentLength());
+		assertEquals(CONTENTLENGTH, docResponse.getContentLength().intValue());
 		file.delete();
 	}
 	
