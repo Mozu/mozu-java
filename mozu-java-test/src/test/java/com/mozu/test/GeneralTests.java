@@ -78,6 +78,7 @@ import com.mozu.api.contracts.shippingruntime.RateRequest;
 import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.tenant.TenantCollection;
+import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.AuthenticationScope;
 import com.mozu.api.security.CustomerAuthenticationProfile;
@@ -449,7 +450,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CustomerCustomerSegmentFactory.getSegments(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.updateSegment(apiContext, new CustomerSegment(), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.deleteSegment(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-//		CustomerCustomerSegmentFactory.deleteSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_NO_CONTENT);
+		CustomerCustomerSegmentFactory.removeSegmentAccount(apiContext, Generator.randomInt(100, 200), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT, HttpStatus.SC_NO_CONTENT);
 		CustomerCustomerSegmentFactory.addSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_CREATED);
 	}
 	
@@ -523,8 +524,12 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void DocumentListTypeTests() throws Exception {
-/*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, new DocumentListType(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+        String appId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();        
+		String mozuNamespace = appId.substring(0, appId.indexOf('.'));
+		DocumentListType type = new DocumentListType();
+		type.setNamespace(mozuNamespace);
+/*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, type, HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+/*bug 47694*/		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -537,7 +542,7 @@ public class GeneralTests extends MozuApiTestBase {
 	public void DocumentTreeTests() throws Exception {
 		DocumentTreeFactory.getTreeDocument(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 		DocumentTreeFactory.getTreeDocumentContent(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-		/*bug 35018*/DocumentTreeFactory.updateTreeDocumentContent(apiContext, new ByteArrayInputStream( Generator.randomString(15, Generator.AlphaChars).getBytes( Charset.defaultCharset() )), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		DocumentTreeFactory.updateTreeDocumentContent(apiContext, new ByteArrayInputStream( Generator.randomString(15, Generator.AlphaChars).getBytes( Charset.defaultCharset() )), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 		
 	@Test

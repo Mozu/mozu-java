@@ -14,6 +14,7 @@ import org.apache.http.HttpStatus;
 
 
 
+
 import com.mozu.test.framework.core.*;
 import com.mozu.test.framework.datafactory.TenantFactory;
 import com.mozu.api.ApiContext;
@@ -25,6 +26,7 @@ import com.mozu.api.contracts.appdev.AppAuthInfo;
 import com.mozu.api.contracts.tenant.*;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.api.security.RefreshInterval;
 
 public class MozuApiTestBase {
 	
@@ -47,6 +49,8 @@ public class MozuApiTestBase {
     	MozuConfig.setBaseUrl(baseUrl);
         try {
             AppAuthenticator.initialize(appAuthInfo, null);
+//        	RefreshInterval ri = new RefreshInterval(800, 400);
+//            AppAuthenticator.initialize(appAuthInfo, ri);
         } catch (ApiException ae){
         	throw new ApiException("Unable to authenticate application.\n" + ae.getMessage());
         }
@@ -54,8 +58,6 @@ public class MozuApiTestBase {
     	new CacheManagerImpl<>().startCache();
     	String configStr = Environment.getConfigValue("TenantId");
     	tenantId = Integer.parseInt(configStr);
-//        MozuConfig.setProxyHost("localhost");
-//        MozuConfig.setProxyPort(8888);
     	ApiContext apiContext = new MozuApiContext();
     	AppAuthenticator.initialize(appAuthInfo, null);
         try {
