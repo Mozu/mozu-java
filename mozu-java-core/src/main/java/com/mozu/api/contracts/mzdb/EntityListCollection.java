@@ -18,6 +18,16 @@ public class EntityListCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Integer pageCount;
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
 	protected Integer pageSize;
 
 	public Integer getPageSize() {
@@ -46,16 +56,6 @@ public class EntityListCollection implements Serializable
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	protected Integer pageCount;
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
 	}
 
 	protected List<EntityList> items;
