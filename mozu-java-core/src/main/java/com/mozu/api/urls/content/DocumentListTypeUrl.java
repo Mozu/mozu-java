@@ -33,7 +33,7 @@ public class DocumentListTypeUrl
 	 */
 	public static MozuUrl updateDocumentListTypeUrl(String documentListTypeFQN, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlistTypes/{documentListTypeName}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlistTypes/{documentListTypeFQN}?responseFields={responseFields}");
 		formatter.formatUrl("documentListTypeFQN", documentListTypeFQN);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

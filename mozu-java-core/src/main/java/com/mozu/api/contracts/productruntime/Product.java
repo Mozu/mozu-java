@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productruntime.ProductContent;
 import com.mozu.api.contracts.productruntime.Discount;
 import com.mozu.api.contracts.productruntime.BundledProduct;
 import com.mozu.api.contracts.productruntime.Category;
+import com.mozu.api.contracts.productruntime.ProductContent;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 import com.mozu.api.contracts.productruntime.ProductOption;
@@ -31,32 +31,6 @@ public class Product implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * If true, the entity is subject to tax based on the relevant tax rate.
-	 */
-	protected Boolean isTaxable;
-
-	public Boolean getIsTaxable() {
-		return this.isTaxable;
-	}
-
-	public void setIsTaxable(Boolean isTaxable) {
-		this.isTaxable = isTaxable;
-	}
-
-	/**
-	 * The manufacturer part number defined for the product.
-	 */
-	protected String mfgPartNumber;
-
-	public String getMfgPartNumber() {
-		return this.mfgPartNumber;
-	}
-
-	public void setMfgPartNumber(String mfgPartNumber) {
-		this.mfgPartNumber = mfgPartNumber;
-	}
 
 	/**
 	 * The list of manufacturer part numbers defined for the product.
@@ -245,16 +219,29 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
+	 * If true, the entity is subject to tax based on the relevant tax rate.
 	 */
-	protected ProductContent content;
+	protected Boolean isTaxable;
 
-	public ProductContent getContent() {
-		return this.content;
+	public Boolean getIsTaxable() {
+		return this.isTaxable;
 	}
 
-	public void setContent(ProductContent content) {
-		this.content = content;
+	public void setIsTaxable(Boolean isTaxable) {
+		this.isTaxable = isTaxable;
+	}
+
+	/**
+	 * The manufacturer part number defined for the product.
+	 */
+	protected String mfgPartNumber;
+
+	public String getMfgPartNumber() {
+		return this.mfgPartNumber;
+	}
+
+	public void setMfgPartNumber(String mfgPartNumber) {
+		this.mfgPartNumber = mfgPartNumber;
 	}
 
 	/**
@@ -288,6 +275,19 @@ public class Product implements Serializable
 	}
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+
+	/**
+	 * Complex type that contains content for a language specified by LocaleCode.
+	 */
+	protected ProductContent content;
+
+	public ProductContent getContent() {
+		return this.content;
+	}
+
+	public void setContent(ProductContent content) {
+		this.content = content;
 	}
 
 	/**

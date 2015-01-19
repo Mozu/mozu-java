@@ -55,16 +55,18 @@ public class ProductUrl
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields 
 	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductUrl(Boolean allowInactive, String productCode, String responseFields, Boolean skipInventoryCheck, String variationProductCode)
+	public static MozuUrl getProductUrl(Boolean allowInactive, String productCode, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&responseFields={responseFields}");
 		formatter.formatUrl("allowInactive", allowInactive);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
+		formatter.formatUrl("supressOutOfStock404", supressOutOfStock404);
 		formatter.formatUrl("variationProductCode", variationProductCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
