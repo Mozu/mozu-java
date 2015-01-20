@@ -182,14 +182,14 @@ public class ProductTests extends MozuApiTestBase {
 		int startIndex = 0;
 		int pageSize = 200;
 		int file_number =  Generator.randomInt(1,  1000);
-//		PrintWriter writer1 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
-//		PrintWriter writer2 = new PrintWriter("C:\\Users\\ei\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
+		PrintWriter writer1 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
+		PrintWriter writer2 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\variationfile" + file_number +".txt", "UTF-8");
         while (true)
         {            
         	ProductCollection prods = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, startIndex, pageSize, "productCode", null, HttpStatus.SC_OK, HttpStatus.SC_OK);
             for (com.mozu.api.contracts.productruntime.Product pro : prods.getItems())
             {
-//            	writer1.println(pro.getProductCode());
+            	writer1.println(pro.getProductCode());
             	if (pro.getOptions() == null)
             	{
             		continue;
@@ -201,7 +201,7 @@ public class ProductTests extends MozuApiTestBase {
             		{
             			if (vari.getIsActive() && vari.getVariationExists())
             			{
-//            				writer2.println(vari.getVariationProductCode());
+            				writer2.println(vari.getVariationProductCode());
             				variationCount ++;
             			}
             		}

@@ -3,6 +3,7 @@ package com.mozu.test;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
 import com.mozu.api.contracts.content.Document;
 import com.mozu.api.contracts.content.DocumentList;
 import com.mozu.api.contracts.content.DocumentListType;
+import com.mozu.api.contracts.content.DocumentType;
 import com.mozu.api.contracts.content.PropertyType;
 import com.mozu.api.contracts.core.UserAuthInfo;
 import com.mozu.api.contracts.customer.AddressValidationRequest;
@@ -58,8 +60,10 @@ import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationUsage;
 import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.contracts.mzdb.ListView;
+import com.mozu.api.contracts.productadmin.AttributeInProductType;
 import com.mozu.api.contracts.productadmin.AttributeLocalizedContent;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
+import com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent;
 import com.mozu.api.contracts.productadmin.Category;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 import com.mozu.api.contracts.productadmin.Facet;
@@ -68,16 +72,26 @@ import com.mozu.api.contracts.productadmin.LocationInventoryAdjustment;
 import com.mozu.api.contracts.productadmin.MasterCatalog;
 import com.mozu.api.contracts.productadmin.Product;
 import com.mozu.api.contracts.productadmin.ProductCategory;
+import com.mozu.api.contracts.productadmin.ProductCodeRename;
 import com.mozu.api.contracts.productadmin.ProductExtra;
+import com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice;
 import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
+import com.mozu.api.contracts.productadmin.ProductOption;
+import com.mozu.api.contracts.productadmin.ProductProperty;
+import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 import com.mozu.api.contracts.productadmin.ProductType;
+import com.mozu.api.contracts.productadmin.ProductVariation;
 import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
 import com.mozu.api.contracts.productadmin.PublishingScope;
 import com.mozu.api.contracts.productadmin.SearchSettings;
+import com.mozu.api.contracts.productruntime.DiscountSelections;
+import com.mozu.api.contracts.productruntime.LocationInventoryQuery;
+import com.mozu.api.contracts.productruntime.ProductOptionSelections;
 import com.mozu.api.contracts.shippingruntime.RateRequest;
 import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.tenant.TenantCollection;
+import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.AuthenticationScope;
 import com.mozu.api.security.CustomerAuthenticationProfile;
@@ -88,6 +102,7 @@ import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.core.TestFailException;
 import com.mozu.test.framework.datafactory.*;
 import com.mozu.test.framework.helper.CustomerGenerator;
+import com.mozu.test.framework.helper.DocumentGenerator;
 import com.mozu.test.framework.helper.Generator;
 import com.mozu.test.framework.helper.ProductCategoryGenerator;
 import com.mozu.test.framework.helper.ProductGenerator;
@@ -174,15 +189,17 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void AdminProductTests() throws Exception {
-		ApiContext localApiContext = new MozuApiContext(tenantId, null, null, null);
-		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.getProductInCatalog(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.getProductInCatalogs(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.updateProduct(localApiContext, DataViewMode.Live, new Product(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.updateProductInCatalogs(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.updateProductInCatalog(localApiContext, DataViewMode.Live, null,  Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
-		AdminProductFactory.deleteProductInCatalog(localApiContext, DataViewMode.Live,  Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
+		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.getProductInCatalog(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.getProductInCatalogs(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.updateProduct(localApiContext, DataViewMode.Live, new Product(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.updateProductInCatalogs(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+		AdminProductFactory.updateProductInCatalog(localApiContext, DataViewMode.Live, null,  Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+		AdminProductFactory.deleteProductInCatalog(localApiContext, DataViewMode.Live,  Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AdminProductFactory.getProducts(localApiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		AdminProductFactory.renameProductCodes(localApiContext, new ArrayList<ProductCodeRename>(), HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -255,6 +272,9 @@ public class GeneralTests extends MozuApiTestBase {
         AttributeVocabularyValueFactory.updateAttributeVocabularyValueLocalizedContent(localApiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
         AttributeVocabularyValueFactory.updateAttributeVocabularyValueLocalizedContents(localApiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
         AttributeVocabularyValueFactory.deleteAttributeVocabularyValue(localApiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        AttributeVocabularyValueFactory.addAttributeVocabularyValue(localApiContext, null,  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        AttributeVocabularyValueFactory.deleteAttributeVocabularyValueLocalizedContent(localApiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        AttributeVocabularyValueFactory.addAttributeVocabularyValueLocalizedContent(localApiContext, new AttributeVocabularyValueLocalizedContent(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -449,7 +469,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CustomerCustomerSegmentFactory.getSegments(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.updateSegment(apiContext, new CustomerSegment(), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
 		CustomerCustomerSegmentFactory.deleteSegment(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-//		CustomerCustomerSegmentFactory.deleteSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_NO_CONTENT);
+		CustomerCustomerSegmentFactory.removeSegmentAccount(apiContext, Generator.randomInt(100, 200), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT, HttpStatus.SC_NO_CONTENT);
 		CustomerCustomerSegmentFactory.addSegmentAccounts(apiContext, new ArrayList<Integer>(), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_CREATED);
 	}
 	
@@ -523,21 +543,29 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void DocumentListTypeTests() throws Exception {
-/*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, new DocumentListType(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+        String appId = AppAuthenticator.getInstance().getAppAuthInfo().getApplicationId();        
+		String mozuNamespace = appId.substring(0, appId.indexOf('.'));
+		DocumentListType type = new DocumentListType();
+		type.setNamespace(mozuNamespace);
+/*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, type, HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+/*bug 47694*/		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void DocumentTypeTests() throws Exception {
+		DocumentType type = DocumentGenerator.generateDocumentType(Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars));
+		DocumentTypeFactory.createDocumentType(apiContext, DataViewMode.Live, type, HttpStatus.SC_FORBIDDEN, HttpStatus.SC_OK);
         DocumentTypeFactory.getDocumentTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
         DocumentTypeFactory.getDocumentType(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        DocumentTypeFactory.updateDocumentType(apiContext, new DocumentType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
 	public void DocumentTreeTests() throws Exception {
-		DocumentTreeFactory.getTreeDocument(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 		DocumentTreeFactory.getTreeDocumentContent(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-		/*bug 35018*/DocumentTreeFactory.updateTreeDocumentContent(apiContext, new ByteArrayInputStream( Generator.randomString(15, Generator.AlphaChars).getBytes( Charset.defaultCharset() )), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		DocumentTreeFactory.updateTreeDocumentContent(apiContext, new FileInputStream("C:\\tmp\\NWCRq.txt"), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		DocumentTreeFactory.deleteTreeDocumentContent(apiContext, new ByteArrayInputStream( Generator.randomString(15, Generator.AlphaChars).getBytes( Charset.defaultCharset() )),  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		/*bug 47696*/		DocumentTreeFactory.getTreeDocument(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 		
 	@Test
@@ -664,6 +692,7 @@ public class GeneralTests extends MozuApiTestBase {
 	
 	@Test
 	public void OrderTests() throws Exception {
+		OrderFactory.getOrders(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		OrderFactory.getAvailableActions(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 		OrderFactory.getOrder(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
 		OrderFactory.getTaxableOrders(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
@@ -775,24 +804,48 @@ public class GeneralTests extends MozuApiTestBase {
         ProductExtraFactory.addExtra(localApiContext, DataViewMode.Pending, new ProductExtra(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
         ProductExtraFactory.getExtraValueLocalizedDeltaPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), com.mozu.test.framework.helper.Constants.CountryCode, HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
         ProductExtraFactory.getExtraValueLocalizedDeltaPrices(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), com.mozu.test.framework.helper.Constants.CountryCode, HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductExtraFactory.addExtra(localApiContext, DataViewMode.Live, new ProductExtra(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        List<ProductExtraValueDeltaPrice> list = new ArrayList<ProductExtraValueDeltaPrice>();
+        ProductExtraFactory.updateExtraValueLocalizedDeltaPrices(localApiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductExtraFactory.updateExtra(localApiContext, DataViewMode.Live, new ProductExtra(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductExtraFactory.deleteExtra(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductExtraFactory.deleteExtraValueLocalizedDeltaPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductExtraFactory.addExtraValueLocalizedDeltaPrice(localApiContext, DataViewMode.Live, new  ProductExtraValueDeltaPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
 	public void ProductOptionTests() throws Exception {
-		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
+		ApiContext localApiContext = new MozuApiContext(tenantId, null,  masterCatalogId, null);
         ProductOptionFactory.getOptions(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductOptionFactory.addOption(localApiContext, DataViewMode.Live, new ProductOption(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductOptionFactory.updateOption(localApiContext, DataViewMode.Live, new ProductOption(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductOptionFactory.deleteOption(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
 	public void ProductPropertyTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
         ProductPropertyFactory.getProperties(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.getPropertyValueLocalizedContents(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.getPropertyValueLocalizedContent(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.getProperty(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.addPropertyValueLocalizedContent(localApiContext, DataViewMode.Live, new ProductPropertyValueLocalizedContent(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductPropertyFactory.addProperty(localApiContext, DataViewMode.Live, new ProductProperty(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        List<ProductPropertyValueLocalizedContent> list = new ArrayList<ProductPropertyValueLocalizedContent>();
+        ProductPropertyFactory.updatePropertyValueLocalizedContents(localApiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.updateProperty(localApiContext, DataViewMode.Live, new ProductProperty(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductPropertyFactory.deleteProperty(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductPropertyFactory.deletePropertyValueLocalizedContent(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        
 	}
 
 	@Test
 	public void ProductReservationTests() throws Exception {
         ProductReservationFactory.getProductReservations(apiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
         ProductReservationFactory.addProductReservations(apiContext, DataViewMode.Pending, null, HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductReservationFactory.commitReservations(apiContext, DataViewMode.Live, null, HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductReservationFactory.updateProductReservations(apiContext, DataViewMode.Live, null, HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductReservationFactory.deleteProductReservation(apiContext, DataViewMode.Live, Generator.randomInt(1000, 2000), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
@@ -822,23 +875,52 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 
 	@Test
+	public void ProductTests() throws Exception {
+		ProductFactory.getProducts(shopperApiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		ProductFactory.configuredProduct(shopperApiContext, new ProductOptionSelections(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ProductFactory.validateProduct(shopperApiContext, new ProductOptionSelections(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ProductFactory.validateDiscounts(shopperApiContext, new DiscountSelections(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+		ProductFactory.getProductInventories(apiContext, DataViewMode.Live, new LocationInventoryQuery(), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+		/*bug 49432*/		ProductFactory.getProductInventory(shopperApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+	}
+	
+	@Test
 	public void ProductTypeExtraTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
         ProductTypeExtraFactory.getExtras(localApiContext, DataViewMode.Live, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypeExtraFactory.updateExtra(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(100, 200), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductTypeExtraFactory.deleteExtra(localApiContext, DataViewMode.Live, Generator.randomInt(100, 200), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypeExtraFactory.addExtra(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
 	@Test
 	public void ProductTypeOptionTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
         ProductTypeOptionFactory.getOptions(localApiContext, DataViewMode.Live, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypeOptionFactory.addOption(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(100, 200),  HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypeOptionFactory.updateOption(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(100, 200),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductTypeOptionFactory.deleteOption(localApiContext, DataViewMode.Live, Generator.randomInt(100, 200),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void ProductTypePropertyTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
         ProductTypePropertyFactory.getProperties(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypePropertyFactory.getProperty(localApiContext, DataViewMode.Live,  Generator.randomInt(100, 200),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypePropertyFactory.addProperty(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductTypePropertyFactory.updateProperty(localApiContext, DataViewMode.Live, new AttributeInProductType(), Generator.randomInt(600, 700),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductTypePropertyFactory.deleteProperty(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 
+	@Test
+	public void ProductTypeTests() throws Exception {
+		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
+		ProductTypeFactory.getProductTypes(localApiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		ProductTypeFactory.getProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		ProductTypeFactory.deleteProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+/*bug 49560*/		ProductTypeFactory.updateProductType(localApiContext, DataViewMode.Live, new ProductType(), Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+	}
+	
 	@Test
 	public void ProductTypeVariationTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
@@ -851,6 +933,13 @@ public class GeneralTests extends MozuApiTestBase {
         ProductVariationFactory.getProductVariations(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
         ProductVariationFactory.deleteProductVariation(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
         ProductVariationFactory.addProductVariationLocalizedDeltaPrice(localApiContext,  DataViewMode.Live, new ProductVariationDeltaPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductVariationFactory.getProductVariation(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductVariationFactory.getProductVariationLocalizedDeltaPrices(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductVariationFactory.updateProductVariation(localApiContext, DataViewMode.Live, new ProductVariation(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductVariationFactory.updateProductVariations(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductVariationFactory.updateProductVariationLocalizedDeltaPrice(localApiContext, DataViewMode.Live, new ProductVariationDeltaPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        ProductVariationFactory.updateProductVariationLocalizedDeltaPrices(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
+        ProductVariationFactory.deleteProductVariationLocalizedDeltaPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -891,6 +980,7 @@ public class GeneralTests extends MozuApiTestBase {
         ReferenceDataFactory.getTimeZones(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
         ReferenceDataFactory.getTopLevelDomains(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
         ReferenceDataFactory.getUnitsOfMeasure(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        ReferenceDataFactory.getCountriesWithStates(localApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	}
 	
 
