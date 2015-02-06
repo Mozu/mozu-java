@@ -13,7 +13,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 
 /**
- *	A descriptive container in a storefront hierarchy to organize collections of products.
+ *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -31,6 +31,9 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * External unique identifier of the category.
+	 */
 	protected String categoryCode;
 
 	public String getCategoryCode() {
@@ -55,7 +58,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Identifier of the entity.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -68,7 +71,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * If true, the admin product category is displayed in the store. If true, the category is not displayed.
+	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
 	protected Boolean isDisplayed;
 
@@ -94,7 +97,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The number of products in a list.
+	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
 	 */
 	protected Integer productCount;
 
@@ -107,7 +110,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
+	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
 	protected Integer sequence;
 

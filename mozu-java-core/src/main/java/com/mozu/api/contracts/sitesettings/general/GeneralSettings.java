@@ -204,6 +204,9 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
+	/**
+	 * Email alias used in emails sent to your shoppers.
+	 */
 	protected String senderEmailAlias;
 
 	public String getSenderEmailAlias() {

@@ -12,7 +12,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.AppliedDiscount;
 
 /**
- *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchant intends to sell the product.
+ *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchang intends to sell the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPrice implements Serializable
@@ -46,6 +46,9 @@ public class ProductPrice implements Serializable
 		this.catalogSalePrice = catalogSalePrice;
 	}
 
+	/**
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
+	 */
 	protected Double creditValue;
 
 	public Double getCreditValue() {
@@ -57,7 +60,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product.
+	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
 	 */
 	protected Double msrp;
 
@@ -96,7 +99,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The sale price defined for the product.
+	 * The set sale price for a product consisting of a price with a discount already applied.
 	 */
 	protected Double salePrice;
 
@@ -122,7 +125,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The discount applied to the product price.
+	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
 	protected AppliedDiscount discount;
 

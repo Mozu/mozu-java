@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the facets subresource to allow a merchant to add information for product indexing and searching.
  * </summary>
@@ -38,7 +38,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.getFacets( documentListName,  propertyName);
 	 * </code></pre></p>
-	 * @param documentListName The document list associated with the facets to retrieve.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return List<com.mozu.api.contracts.content.Facet>
 	 * @see com.mozu.api.contracts.content.Facet

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document tree subresource to retrieve documents and manage content within the document hierarchy.
@@ -29,8 +29,8 @@ public class DocumentTreeClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -55,8 +55,8 @@ public class DocumentTreeClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -73,8 +73,8 @@ public class DocumentTreeClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
@@ -99,9 +99,9 @@ public class DocumentTreeClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
@@ -126,9 +126,9 @@ public class DocumentTreeClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */

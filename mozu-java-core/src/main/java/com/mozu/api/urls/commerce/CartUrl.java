@@ -15,7 +15,7 @@ public class CartUrl
 
 	/**
 	 * Get Resource Url for GetCart
-	 * @param cartId Identifier of the cart to retrieve.
+	 * @param cartId Identifier of the cart to delete.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -54,7 +54,7 @@ public class CartUrl
 	/**
 	 * Get Resource Url for GetUserCartSummary
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUserCartSummaryUrl(String responseFields, String userId)
@@ -68,7 +68,7 @@ public class CartUrl
 	/**
 	 * Get Resource Url for GetUserCart
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose cart you want to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUserCartUrl(String responseFields, String userId)

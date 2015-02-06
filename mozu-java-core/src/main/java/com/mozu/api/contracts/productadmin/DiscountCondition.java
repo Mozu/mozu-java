@@ -24,7 +24,7 @@ public class DiscountCondition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If the discount is a coupon, the code required to redeem the coupon.
+	 * Code of a discount coupon. This code can be used by a shopper when a coupon code is required to earn the associated discount on a purchase.
 	 */
 	protected String couponCode;
 
@@ -37,7 +37,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * The date and time on which the discount expires and cannot be redeemed.
+	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
 	 */
 	protected DateTime expirationDate;
 
@@ -202,7 +202,7 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * List of the products that are not eligible for the discount.
+	 * List of products that are not eligible for the discount.
 	 */
 	protected List<ProductDiscountCondition> excludedProducts;
 	public List<ProductDiscountCondition> getExcludedProducts() {

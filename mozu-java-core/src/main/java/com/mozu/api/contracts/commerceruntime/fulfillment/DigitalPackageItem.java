@@ -43,7 +43,7 @@ public class DigitalPackageItem implements Serializable
 	}
 
 	/**
-	 * The product code is the code of the digital product to be fulfilled.
+	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
 	protected String productCode;
 
@@ -56,7 +56,7 @@ public class DigitalPackageItem implements Serializable
 	}
 
 	/**
-	 * This specifies the quantity of the digital order item.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 

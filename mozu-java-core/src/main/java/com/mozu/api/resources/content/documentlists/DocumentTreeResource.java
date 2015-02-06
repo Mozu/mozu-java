@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document tree subresource to retrieve documents and manage content within the document hierarchy.
@@ -46,8 +46,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.getTreeDocumentContent( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -66,8 +66,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -82,8 +82,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -103,9 +103,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return 
 	 * @see Stream
 	 */
@@ -124,9 +124,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
-	 * @param stream Input output stream that delivers information.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return 
 	 * @see Stream
 	 */

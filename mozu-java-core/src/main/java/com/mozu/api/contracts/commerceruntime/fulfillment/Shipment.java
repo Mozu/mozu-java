@@ -49,7 +49,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the shipment.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -62,7 +62,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * Array list of identifiers that represent the packages in this shipment.
+	 * Array list of unique IDs of packages in a shipment planned for or finished a shipping fulfillment action. 
 	 */
 	protected List<String> packageIds;
 	public List<String> getPackageIds() {
@@ -73,7 +73,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * Code that identifies the service type method used to perform the shipment, such as UPS_GROUND.
+	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.
 	 */
 	protected String shippingMethodCode;
 
@@ -99,7 +99,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * The shipping tracking number supplied by the shipping provider to track the shipment.
+	 * Tracking number for the package or shipment, supplied by the shipping carrier to track the shipment until fulfillment completes. The tracking number format may differ between carriers.
 	 */
 	protected String trackingNumber;
 
@@ -125,7 +125,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * The address to which to shipment will ship.
+	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
 	 */
 	protected Contact destinationAddress;
 
@@ -138,7 +138,7 @@ public class Shipment implements Serializable
 	}
 
 	/**
-	 * The address from which the shipment will ship.
+	 * The physical address from which the order or shipment will ship.
 	 */
 	protected Contact originAddress;
 

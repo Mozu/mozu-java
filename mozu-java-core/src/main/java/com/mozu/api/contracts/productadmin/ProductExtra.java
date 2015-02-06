@@ -48,7 +48,7 @@ public class ProductExtra implements Serializable
 	}
 
 	/**
-	 * If true, the shopper must select the product extra and specify a value for it during checkout.
+	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
 	 */
 	protected Boolean isRequired;
 
@@ -61,7 +61,7 @@ public class ProductExtra implements Serializable
 	}
 
 	/**
-	 * The list of predefined values a shopper can select for the product when defining this extra.
+	 * List of value data for objects.
 	 */
 	protected List<ProductExtraValue> values;
 	public List<ProductExtraValue> getValues() {

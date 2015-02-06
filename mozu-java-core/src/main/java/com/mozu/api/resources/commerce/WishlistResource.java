@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Wish Lists resource to manage the shopper wish lists of products associated with a customer account. Although customer accounts are managed at the tenant level, the system stores shopper wish lists at the site level. This enables the same customer to have wish lists for each of a merchant's sites. Use the Wish List Items resource to manage items in a wish list.
  * </summary>
@@ -54,7 +54,7 @@ public class WishlistResource {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -77,7 +77,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -93,7 +93,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = wishlist.getWishlist( wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -149,7 +149,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist);
 	 * </code></pre></p>
-	 * @param wishlist Properties of the wish list to create.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -166,7 +166,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = wishlist.createWishlist( wishlist,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlist Properties of the wish list to create.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -186,8 +186,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -204,8 +204,8 @@ public class WishlistResource {
 	 *	Wishlist wishlist = wishlist.updateWishlist( wishlist,  wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the shopper wish list to update.
-	 * @param wishlist Properties of the shopper wish list to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -225,7 +225,7 @@ public class WishlistResource {
 	 *	Wishlist wishlist = new Wishlist();
 	 *	wishlist.deleteWishlist( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list to delete.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return 
 	 */
 	public void deleteWishlist(String wishlistId) throws Exception

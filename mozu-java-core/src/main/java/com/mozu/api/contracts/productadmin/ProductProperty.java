@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 
 /**
- *	Properties of the product property to create such as attribute detail, fully qualified name, and list of product property values.
+ *	Details of a property defined for a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable
@@ -35,7 +35,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * The actual values that populate a product property to set in the Admin to appear on the Storefront.
+	 * List of value data for objects.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

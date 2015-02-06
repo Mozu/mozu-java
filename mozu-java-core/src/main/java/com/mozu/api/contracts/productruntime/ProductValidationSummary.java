@@ -30,7 +30,7 @@ public class ProductValidationSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of fulfillment types that the product supports.
+	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -40,6 +40,9 @@ public class ProductValidationSummary implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
+	/**
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 */
 	protected String goodsType;
 
 	public String getGoodsType() {
@@ -51,7 +54,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * If true, this product should not be packaged with other items and should ship by itself.
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
 	protected Boolean isPackagedStandAlone;
 
@@ -64,7 +67,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * If true, the entity is subject to tax based on the relevant tax rate.
+	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
 	protected Boolean isTaxable;
 
@@ -103,7 +106,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The descriptive brief product name.
+	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
 	protected String productName;
 
@@ -116,7 +119,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Brief description of the product typically used when the product is displayed in a list or in search results.
+	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
 	 */
 	protected String productShortDescription;
 
@@ -128,6 +131,9 @@ public class ProductValidationSummary implements Serializable
 		this.productShortDescription = productShortDescription;
 	}
 
+	/**
+	 * The product type template associated with the product on the storefront.
+	 */
 	protected String productType;
 
 	public String getProductType() {
@@ -139,7 +145,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The usage type of this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
 	protected String productUsage;
 
@@ -152,7 +158,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The universal product code defined for the product.
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */
 	protected String upc;
 
@@ -178,7 +184,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
 	 */
 	protected List<BundledProductSummary> bundledProducts;
 	public List<BundledProductSummary> getBundledProducts() {
@@ -189,7 +195,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The list of product categories for the storefront.
+	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
 	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
@@ -213,7 +219,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Properties of the active inventory level of the associated product.
+	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
 	 */
 	protected ProductInventoryInfo inventoryInfo;
 
@@ -252,7 +258,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Properties that describe the behavior the system uses when determining the price of the product.
+	 * Properties that describe the behavior the system uses when determining the price of products.
 	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
@@ -265,7 +271,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The list of product properties configured in product admin.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
@@ -276,7 +282,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The current state of the product and whether or not it is available for purchasing. If the product is not eligible for purchase, the validation message is included.
+	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
 	 */
 	protected ProductPurchasableState purchasableState;
 

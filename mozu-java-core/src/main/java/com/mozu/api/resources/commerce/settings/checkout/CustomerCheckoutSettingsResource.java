@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer Checkout Settings resource to define login settings that apply when shoppers proceed to checkout.
  * </summary>
@@ -71,7 +71,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings);
 	 * </code></pre></p>
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -88,7 +88,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
+	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

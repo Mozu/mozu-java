@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Storefront Shipping resource to retrieve shipping rate information from the website.
  * </summary>
@@ -38,7 +38,7 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
 	 * </code></pre></p>
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -55,7 +55,7 @@ public class ShippingResource {
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
+	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

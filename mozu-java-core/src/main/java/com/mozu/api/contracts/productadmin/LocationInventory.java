@@ -21,7 +21,7 @@ public class LocationInventory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * User-defined code that uniquely identifies the location.
+	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
 	protected String locationCode;
 
@@ -47,7 +47,7 @@ public class LocationInventory implements Serializable
 	}
 
 	/**
-	 * The name defined in the product definition. System-supplied and read only.
+	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
 	protected String productName;
 
@@ -60,7 +60,7 @@ public class LocationInventory implements Serializable
 	}
 
 	/**
-	 * The stock level for the associated product currently available at this location, based on the number of pending product reservations. System-supplied and read only.
+	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
 	 */
 	protected Integer stockAvailable;
 

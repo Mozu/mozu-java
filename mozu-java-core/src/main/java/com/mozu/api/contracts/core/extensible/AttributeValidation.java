@@ -46,7 +46,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The maximum length possible for a string value entered for an extensible attribute.
+	 * The maximum character length possible for a string value entered for an extensible attribute.
 	 */
 	protected Integer maxStringLength;
 
@@ -85,7 +85,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The maximum length possible for a string value entered for an extensible attribute.
+	 * The minimum character length possible for a string value entered for an extensible attribute.
 	 */
 	protected Integer minStringLength;
 
@@ -98,7 +98,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * Regular expression used to validate the extensible attribute value.
+	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
 	 */
 	protected String regularExpression;
 
