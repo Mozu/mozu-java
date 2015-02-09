@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer Credit Audit Entries subresource to retrieve entries logged in the audit report of a store credit or gift card applied to a customer account. The system creates a new audit entry when the credit is created, deleted, activated, or deactivated. The system then creates a new audit entry each time the credit is updated or redeemed in a transaction.
  * </summary>
@@ -38,7 +38,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code);
 	 * </code></pre></p>
-	 * @param code User-defined code of the credit for which to retrieve audit entries.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 */
@@ -53,7 +53,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code of the credit for which to retrieve audit entries.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.

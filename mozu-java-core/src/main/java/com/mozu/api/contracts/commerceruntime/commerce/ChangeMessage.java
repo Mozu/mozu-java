@@ -46,7 +46,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the change message. System-supplied and read-only.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -72,7 +72,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * The text of the change message, such as "This product is no longer available". System-supplied and read-only.
+	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
 	protected String message;
 
@@ -150,7 +150,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the user who initiated the change.
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected String userId;
 

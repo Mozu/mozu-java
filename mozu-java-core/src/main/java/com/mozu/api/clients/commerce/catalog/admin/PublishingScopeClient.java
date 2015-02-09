@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
@@ -29,7 +29,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -54,7 +54,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Properties of the pending product changes to include in this operation.
+	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */

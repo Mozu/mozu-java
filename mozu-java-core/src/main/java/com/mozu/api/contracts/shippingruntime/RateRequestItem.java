@@ -23,7 +23,7 @@ public class RateRequestItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the item to ship, for which to calculate a shipping rate.
+	 * Unique identifier of an item used to calculate or request a shipping rate.
 	 */
 	protected String itemId;
 
@@ -36,7 +36,7 @@ public class RateRequestItem implements Serializable
 	}
 
 	/**
-	 * Quantity of the item for which to calculate the shipping rate.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 
@@ -61,6 +61,9 @@ public class RateRequestItem implements Serializable
 		this.shipsByItself = shipsByItself;
 	}
 
+	/**
+	 * If Product Summaries are populated, this information will be utilized in Product Rules (e.g. ProductCode eq "ABC" or (Weight.Unit eq "lbs" and Weight.Value ge 50)
+	 */
 	protected List<ProductSummary> productSummaries;
 	public List<ProductSummary> getProductSummaries() {
 		return this.productSummaries;
@@ -70,7 +73,7 @@ public class RateRequestItem implements Serializable
 	}
 
 	/**
-	 * The measured weight and dimensions of the item to ship.
+	 * Product specific dimensions used for shipping, used by product summary and rate request items.  The dimensions can differ between the two uses as a `RateRequestItem `package may contain one or more products.
 	 */
 	protected ItemMeasurements unitMeasurements;
 

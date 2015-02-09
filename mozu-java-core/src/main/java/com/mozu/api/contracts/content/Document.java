@@ -20,7 +20,7 @@ public class Document implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The character length associated with the document content.
+	 * The character length allowed for the content text.
 	 */
 	protected Long contentLength;
 
@@ -58,6 +58,9 @@ public class Document implements Serializable
 		this.contentUpdateDate = contentUpdateDate;
 	}
 
+	/**
+	 * Fully qualified name of the document type. 
+	 */
 	protected String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -69,7 +72,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * If applicable, the file extension associated with the document content.
+	 * If applicable, the file extension associated with the document content. For example, the extension may be .html for an HTML web page.
 	 */
 	protected String extension;
 
@@ -82,7 +85,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the document.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -95,7 +98,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * When the document was added to the document list. System-supplied and read-only.
+	 * The date and time when a document was added to the document list. System-supplied and read-only.
 	 */
 	protected DateTime insertDate;
 
@@ -107,6 +110,9 @@ public class Document implements Serializable
 		this.insertDate = insertDate;
 	}
 
+	/**
+	 * The fully qualified name of the document list.
+	 */
 	protected String listFQN;
 
 	public String getListFQN() {
@@ -118,7 +124,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * The name of the document, which is unique within its folder.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -131,7 +137,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * The current state of the document, which is Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft.
+	 * The current state of the document or product definition. States for documents include Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft. States for product include New, Draft, or Live.
 	 */
 	protected String publishState;
 
@@ -157,7 +163,7 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * List of properties for the given property value.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
 	 */
 	protected com.fasterxml.jackson.databind.JsonNode properties;
 

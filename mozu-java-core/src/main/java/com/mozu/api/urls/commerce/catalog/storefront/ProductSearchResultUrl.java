@@ -26,9 +26,9 @@ public class ProductSearchResultUrl
 	 * @param facetTemplate The facet template to use on the storefront. A template displays all facets associated with the template on the web storefront product search. Currently, only category-level facet templates are available.
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product search results by any of its properties, including product code, type, category, and name. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=categoryId+eq+12"
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param query The terms to search on.
+	 * @param query A query entered for searches and facet range.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
 	 * @param startIndex 
@@ -61,7 +61,7 @@ public class ProductSearchResultUrl
 	 * Get Resource Url for Suggest
 	 * @param groups 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param query 
+	 * @param query A query entered for searches and facet range.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

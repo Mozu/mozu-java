@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Vocabulary values are predefined for an attribute.
  * </summary>
@@ -46,15 +46,15 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a collection of localized content for vocabulary value attributes based on a `localeCode`. 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=GetAttributeVocabularyValueLocalizedContentsClient( attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -72,16 +72,16 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param value 
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -92,17 +92,17 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the localized content for a vocabulary value attribute based on a `localeCode`. 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=GetAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value 
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -128,7 +128,7 @@ public class AttributeVocabularyValueClient {
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -148,7 +148,7 @@ public class AttributeVocabularyValueClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -166,17 +166,17 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=AddAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent 
+	 * @param localizedContent The localized text for the string value of a product attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -187,18 +187,18 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Creates and saves localized vocabulary value content for an attribute, based on the `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=AddAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value 
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent 
+	 * @param localizedContent The localized text for the string value of a product attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -226,7 +226,7 @@ public class AttributeVocabularyValueClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content.
+	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -247,7 +247,7 @@ public class AttributeVocabularyValueClient {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content.
+	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -275,7 +275,7 @@ public class AttributeVocabularyValueClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
-	 * @param vocabularyValues The actual vocabulary values for the attribute being updated.
+	 * @param vocabularyValues Properties of a vocabulary value defined for an extensible attribute.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValue>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -294,17 +294,17 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Updates a collection of localized vocabulary value content for existing attributes, based on the `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>> mozuClient=UpdateAttributeVocabularyValueLocalizedContentsClient( localizedContent,  attributeFQN,  value);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent 
+	 * @param localizedContent The localized text for the string value of a product attribute.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -323,18 +323,18 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=UpdateAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param localeCode 
-	 * @param value 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent 
+	 * @param localizedContent The localized text for the string value of a product attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -345,19 +345,19 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Updates localized vocabulary value content for an existing attribute, based on the `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent> mozuClient=UpdateAttributeVocabularyValueLocalizedContentClient( localizedContent,  attributeFQN,  value,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeVocabularyValueLocalizedContent attributeVocabularyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN 
-	 * @param localeCode 
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value 
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent 
+	 * @param localizedContent The localized text for the string value of a product attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent
@@ -384,9 +384,9 @@ public class AttributeVocabularyValueClient {
 	 * AttributeVocabularyValue attributeVocabularyValue = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content to update.
+	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -406,9 +406,9 @@ public class AttributeVocabularyValueClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
-	 * @param attributeVocabularyValue The predefined vocabulary value to add to the attribute content to update.
+	 * @param attributeVocabularyValue Properties of a vocabulary value defined for an extensible attribute.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeVocabularyValue>
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
 	 * @see com.mozu.api.contracts.productadmin.AttributeVocabularyValue
@@ -434,7 +434,7 @@ public class AttributeVocabularyValueClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param value The actual unique value of the attribute vocabulary to delete. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
@@ -450,15 +450,15 @@ public class AttributeVocabularyValueClient {
 	}
 
 	/**
-	 * 
+	 * Removes localized content for a vocabulary value attribute. 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteAttributeVocabularyValueLocalizedContentClient( attributeFQN,  value,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param value 
+	 * @param value The value string to create.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

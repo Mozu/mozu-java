@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Tenant administrators can add and view internal notes for a customer account. For example, a client can track a shopper's interests or complaints. Only clients can add and view notes. Shoppers cannot view these notes from the My Account page.
  * </summary>
@@ -28,7 +28,7 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -46,7 +46,7 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
@@ -118,8 +118,8 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
-	 * @param note Properties of the customer account note to create.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -137,9 +137,9 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param note Properties of the customer account note to create.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -165,9 +165,9 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
-	 * @param note The new content to replace the existing note.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -185,10 +185,10 @@ public class CustomerNoteClient {
 	 * client.executeRequest();
 	 * CustomerNote customerNote = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param note The new content to replace the existing note.
+	 * @param note Properties of a note configured for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerNote>
 	 * @see com.mozu.api.contracts.customer.CustomerNote
 	 * @see com.mozu.api.contracts.customer.CustomerNote
@@ -213,8 +213,8 @@ public class CustomerNoteClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
-	 * @param noteId Unique identifier of the customer account note being deleted.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteAccountNoteClient(Integer accountId, Integer noteId) throws Exception

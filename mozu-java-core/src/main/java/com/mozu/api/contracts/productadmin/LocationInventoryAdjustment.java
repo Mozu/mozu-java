@@ -20,7 +20,7 @@ public class LocationInventoryAdjustment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * User-defined code that identifies the location.
+	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
 	protected String locationCode;
 
@@ -59,7 +59,7 @@ public class LocationInventoryAdjustment implements Serializable
 	}
 
 	/**
-	 * Value of the location inventory adjustment, which is an absolute integer or delta. For example, to decrease the current inventory level by 2, set the Type parameter to "Delta" and the Value parameter to "-2". To adjust the inventory to a current level of 12, set the Type parameter to "Absolute" and the Value parameter to "12".
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
 	protected Integer value;
 

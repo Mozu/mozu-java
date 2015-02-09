@@ -33,7 +33,7 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The localized value of the string in the language of the locale code.
+	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
 	 */
 	protected String stringValue;
 

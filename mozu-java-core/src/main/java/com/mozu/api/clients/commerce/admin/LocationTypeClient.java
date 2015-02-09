@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Location Types resource to manage the types of locations your tenant maintains, such as warehouses, physical storefronts, and kiosks.
  * </summary>
@@ -93,7 +93,7 @@ public class LocationTypeClient {
 	 * client.executeRequest();
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -112,7 +112,7 @@ public class LocationTypeClient {
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to create.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -139,7 +139,7 @@ public class LocationTypeClient {
 	 * LocationType locationType = client.Result();
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -159,7 +159,7 @@ public class LocationTypeClient {
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of the location type to update.
+	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationType>
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -184,7 +184,7 @@ public class LocationTypeClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationTypeClient(String locationTypeCode) throws Exception

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer Credit Transactions subresource to manage the individual transactions performed using a store credit or gift card.
  * </summary>
@@ -28,7 +28,7 @@ public class CreditTransactionClient {
 	 * client.executeRequest();
 	 * CreditTransactionCollection creditTransactionCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.CreditTransactionCollection>
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 */
@@ -45,7 +45,7 @@ public class CreditTransactionClient {
 	 * client.executeRequest();
 	 * CreditTransactionCollection creditTransactionCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -74,8 +74,8 @@ public class CreditTransactionClient {
 	 * client.executeRequest();
 	 * CreditTransaction creditTransaction = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.CreditTransaction>
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -93,9 +93,9 @@ public class CreditTransactionClient {
 	 * client.executeRequest();
 	 * CreditTransaction creditTransaction = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the customer credit to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param creditTransaction Properties of the transaction to create for the customer credit.
+	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.CreditTransaction>
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction

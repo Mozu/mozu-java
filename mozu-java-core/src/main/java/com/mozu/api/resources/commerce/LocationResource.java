@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Location resource to retrieve details about a location from a Mozu hosted storefront.
  * </summary>
@@ -38,7 +38,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the location.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -53,7 +53,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the location.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -73,7 +73,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocationInUsageType( locationUsageType,  code);
 	 * </code></pre></p>
-	 * @param code Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -89,7 +89,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocationInUsageType( locationUsageType,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.Location
@@ -182,7 +182,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( code);
 	 * </code></pre></p>
-	 * @param code The user-defined code that identifies the location to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -197,7 +197,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code The user-defined code that identifies the location to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location

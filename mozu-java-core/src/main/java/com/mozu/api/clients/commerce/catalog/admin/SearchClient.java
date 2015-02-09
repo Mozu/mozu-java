@@ -13,15 +13,15 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
- * 
+ * The Search resource manages all settings and options for providing product search on your site.
  * </summary>
  */
 public class SearchClient {
 	
 	/**
-	 * 
+	 * Get site search settings
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient();
 	 * client.setBaseAddress(url);
@@ -37,14 +37,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * Get site search settings
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchSettings searchSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 */
@@ -61,14 +61,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * Adds or Updates (Upsert) the Search Settings for a specific site
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchSettings searchSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings 
+	 * @param settings The settings to control product search and indexing behavior.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -79,15 +79,15 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * Adds or Updates (Upsert) the Search Settings for a specific site
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=UpdateSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchSettings searchSettings = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param settings 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param settings The settings to control product search and indexing behavior.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SearchSettings>
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings

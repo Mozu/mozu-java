@@ -65,7 +65,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode User-defined code used to identify the location type.
+	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

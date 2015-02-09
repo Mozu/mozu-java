@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Properties for the HTTP status for an event.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HttpStatus implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The higher-level integer based HTTP Status Code returned by the remote endpoint
+	 */
 	protected Integer code;
 
 	public Integer getCode() {
@@ -26,6 +32,9 @@ public class HttpStatus implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 */
 	protected String name;
 
 	public String getName() {

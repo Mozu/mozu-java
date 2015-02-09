@@ -15,8 +15,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for GetDocumentContent
-	 * @param documentId Unique identifier of the document.
-	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDocumentContentUrl(String documentId, String documentListName)
@@ -29,8 +29,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for GetDocument
-	 * @param documentId Identifier of the document being retrieved.
-	 * @param documentListName The name of the document list associated with the document to retrieve.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -45,8 +45,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for GetDocuments
-	 * @param documentListName The name of the document list.
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
+	 * @param documentListName Name of content documentListName to delete
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -67,7 +67,7 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for CreateDocument
-	 * @param documentListName The descriptive alphanumeric document list name being created.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -81,8 +81,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for UpdateDocumentContent
-	 * @param documentId Unique identifier of the document.
-	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDocumentContentUrl(String documentId, String documentListName)
@@ -95,8 +95,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for UpdateDocument
-	 * @param documentId Unique identifier of the document to update.
-	 * @param documentListName Name of the document list associated with the document.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -111,8 +111,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for DeleteDocument
-	 * @param documentId Identifier of the document being deleted.
-	 * @param documentListName The name of the document list associated with the document list being deleted.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDocumentUrl(String documentId, String documentListName)
@@ -125,8 +125,8 @@ public class DocumentUrl
 
 	/**
 	 * Get Resource Url for DeleteDocumentContent
-	 * @param documentId Unique identifier of the document.
-	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDocumentContentUrl(String documentId, String documentListName)

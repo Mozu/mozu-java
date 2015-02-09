@@ -15,9 +15,9 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategories
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -37,7 +37,7 @@ public class CategoryUrl
 	 * Get Resource Url for GetCategory
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param categoryId Unique identifier for the storefront container used to organize products.
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCategoryUrl(Boolean allowInactive, Integer categoryId, String responseFields)
@@ -51,7 +51,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategoryTree
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCategoryTreeUrl(String responseFields)

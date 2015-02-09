@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer In-Stock Notification Subscription resource to manage the subscriptions customer accounts use to send product notifications. This resource can send a notification when a product in a catalog returns to a site's active inventory after it is out of stock, or when a new product becomes available for the first time.
  * </summary>
@@ -75,7 +75,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 */
@@ -90,7 +90,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -110,7 +110,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription);
 	 * </code></pre></p>
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -127,7 +127,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
+	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -147,7 +147,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	instocknotificationsubscription.deleteInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer in-stock notification subscription to delete.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return 
 	 */
 	public void deleteInStockNotificationSubscription(Integer id) throws Exception

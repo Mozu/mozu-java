@@ -21,7 +21,7 @@ public class ShippingDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Carrier-supplied code that represents the shipping method service type associated with the shipping discount.
+	 * Carrier-supplied, unique code that represents the shipping method service type associated with the shipping discount.
 	 */
 	protected String methodCode;
 
@@ -34,7 +34,7 @@ public class ShippingDiscount implements Serializable
 	}
 
 	/**
-	 * Properties of the shipping discount.
+	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
 	protected AppliedDiscount discount;
 

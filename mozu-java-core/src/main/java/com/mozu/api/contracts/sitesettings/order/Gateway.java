@@ -36,7 +36,7 @@ public class Gateway implements Serializable
 	}
 
 	/**
-	 * The types of credit cards the merchant supports using this payment gateway.
+	 * The types of credit cards supported by the payment gateway.
 	 */
 	protected List<String> supportedCards;
 	public List<String> getSupportedCards() {

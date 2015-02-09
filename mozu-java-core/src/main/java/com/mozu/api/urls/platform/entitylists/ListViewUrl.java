@@ -15,10 +15,10 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntity
-	 * @param entityId 
-	 * @param entityListFullName 
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName 
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityUrl(String entityId, String entityListFullName, String responseFields, String viewName)
@@ -33,12 +33,12 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntities
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex 
-	 * @param viewName 
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntitiesUrl(String entityListFullName, String filter, Integer pageSize, String responseFields, Integer startIndex, String viewName)
@@ -55,10 +55,10 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntityContainer
-	 * @param entityId 
-	 * @param entityListFullName 
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName 
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityContainerUrl(String entityId, String entityListFullName, String responseFields, String viewName)
@@ -73,12 +73,12 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetViewEntityContainers
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex 
-	 * @param viewName 
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getViewEntityContainersUrl(String entityListFullName, String filter, Integer pageSize, String responseFields, Integer startIndex, String viewName)
@@ -95,9 +95,9 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetEntityListView
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName 
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getEntityListViewUrl(String entityListFullName, String responseFields, String viewName)
@@ -111,7 +111,7 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for GetEntityListViews
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -125,7 +125,7 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for CreateEntityListView
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -139,9 +139,9 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for UpdateEntityListView
-	 * @param entityListFullName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName 
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateEntityListViewUrl(String entityListFullName, String responseFields, String viewName)
@@ -155,8 +155,8 @@ public class ListViewUrl
 
 	/**
 	 * Get Resource Url for DeleteEntityListView
-	 * @param entityListFullName 
-	 * @param viewName 
+	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteEntityListViewUrl(String entityListFullName, String viewName)

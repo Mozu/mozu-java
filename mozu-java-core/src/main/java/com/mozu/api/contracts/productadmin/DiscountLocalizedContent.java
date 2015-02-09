@@ -21,7 +21,7 @@ public class DiscountLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The localizable, shopper-facing description defined for the discount.
+	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
 	 */
 	protected String friendlyDescription;
 
@@ -47,7 +47,7 @@ public class DiscountLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The localizable name of the discount.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

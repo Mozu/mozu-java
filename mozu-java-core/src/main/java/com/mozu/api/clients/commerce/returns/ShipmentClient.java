@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Return Shipments subresource to manage shipments for a return replacement.
  * </summary>
@@ -28,8 +28,8 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
-	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 */
@@ -47,8 +47,8 @@ public class ShipmentClient {
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
-	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 */
@@ -72,8 +72,8 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return for which to create replacement package shipments.
-	 * @param packageIds List of packages in the return replacement shipment.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see string
@@ -98,8 +98,8 @@ public class ShipmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return associated with the replacement shipment to delete.
-	 * @param shipmentId Unique identifier of the return replacement shipment to delete.
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteShipmentClient(String returnId, String shipmentId) throws Exception

@@ -31,7 +31,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for GetDocumentList
-	 * @param documentListName The name of the document list.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -57,7 +57,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for UpdateDocumentList
-	 * @param documentListName 
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -71,7 +71,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for DeleteDocumentList
-	 * @param documentListName 
+	 * @param documentListName Name of content documentListName to delete
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDocumentListUrl(String documentListName)

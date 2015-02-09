@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
  * </summary>
@@ -38,7 +38,7 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.getApplication( appId);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to retrieve.
+	 * @param appId 
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 */
@@ -53,7 +53,7 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.getApplication( appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to retrieve.
+	 * @param appId 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -73,8 +73,8 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.updateApplication( application,  appId);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to update.
-	 * @param application Properties of the application to update.
+	 * @param appId 
+	 * @param application Properties of an app installed in a tenant.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
@@ -90,9 +90,9 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.updateApplication( application,  appId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to update.
+	 * @param appId 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param application Properties of the application to update.
+	 * @param application Properties of an app installed in a tenant.
 	 * @return com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application
 	 * @see com.mozu.api.contracts.installedapplications.Application

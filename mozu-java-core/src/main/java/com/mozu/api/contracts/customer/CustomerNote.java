@@ -21,7 +21,7 @@ public class CustomerNote implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The contents of a customer account note.
+	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
 	 */
 	protected String content;
 
@@ -34,7 +34,7 @@ public class CustomerNote implements Serializable
 	}
 
 	/**
-	 * Identifier of the customer account note.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 

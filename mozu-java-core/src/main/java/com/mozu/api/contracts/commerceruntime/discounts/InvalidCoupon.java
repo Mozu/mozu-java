@@ -42,6 +42,9 @@ public class InvalidCoupon implements Serializable
 		this.createDate = createDate;
 	}
 
+	/**
+	 * Unique identifier for the discount in the storefront.
+	 */
 	protected Integer discountId;
 
 	public Integer getDiscountId() {
@@ -53,7 +56,7 @@ public class InvalidCoupon implements Serializable
 	}
 
 	/**
-	 * The reason the coupon was determined to be invalid.
+	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
 	protected String reason;
 
@@ -66,7 +69,7 @@ public class InvalidCoupon implements Serializable
 	}
 
 	/**
-	 * The code that identifies the reason the coupon code is invalid.
+	 * A code indicating the reason why a facet is invalid.
 	 */
 	protected Integer reasonCode;
 

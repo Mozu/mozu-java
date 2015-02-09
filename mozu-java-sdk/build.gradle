@@ -13,7 +13,7 @@ if (hasProperty("teamcity")) {
    }
    else {
 // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.14.0-SNAPSHOT'
+    version = '1.14.1-SNAPSHOT'
 }
 
 group='com.mozu'
@@ -49,6 +49,7 @@ dependencies {
         changing = true
     }
 
+    compile "org.apache.commons:commons-lang3:3.2.1"
 	compile ("jcs:jcs:1.3") {
         exclude group: 'mysql'
 	}

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Locations resource to manage each physical location associated with a tenant. Locations enable tenants to associate a physical address with product inventory, provide a store finder for in-store pickup, or both. Locations that support inventory can use both direct ship and in-store pickup fulfillment types.
  * </summary>
@@ -72,7 +72,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -89,8 +89,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The merchant-defined code of the location to retrieve.
-	 * @param responseFields 
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -114,7 +114,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param location Properties of the location to create.
+	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -132,8 +132,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param location Properties of the location to create.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -159,8 +159,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The merchant-defined code associated with the location to update.
-	 * @param location Properties of the location to update.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -178,9 +178,9 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The merchant-defined code associated with the location to update.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param location Properties of the location to update.
+	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -205,7 +205,7 @@ public class LocationClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationCode The merchant-defined code of the location to delete.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationClient(String locationCode) throws Exception

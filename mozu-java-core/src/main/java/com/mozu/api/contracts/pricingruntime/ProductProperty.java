@@ -36,7 +36,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * If true, this product property does not appear on the storefront.
+	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
 	protected Boolean isHidden;
 
@@ -49,7 +49,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * If true, the product property has multiple values.
+	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
 	protected Boolean isMultiValue;
 
@@ -62,7 +62,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * Details of a product attribute.
+	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
 	protected ProductAttribute attributeDetail;
 
@@ -75,7 +75,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * List of values predefined for the product property attribute.
+	 * List of value data for objects.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

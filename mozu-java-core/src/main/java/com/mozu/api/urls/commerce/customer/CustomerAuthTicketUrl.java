@@ -37,7 +37,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshUserAuthTicket
-	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
+	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
