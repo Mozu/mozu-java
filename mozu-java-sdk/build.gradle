@@ -49,7 +49,6 @@ dependencies {
         changing = true
     }
 
-    compile "org.apache.commons:commons-lang3:3.2.1"
 	compile ("jcs:jcs:1.3") {
         exclude group: 'mysql'
 	}
