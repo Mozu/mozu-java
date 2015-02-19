@@ -57,7 +57,7 @@ public class DocumentTypeUrl
 
 	/**
 	 * Get Resource Url for UpdateDocumentType
-	 * @param documentTypeName 
+	 * @param documentTypeName The name of the document type to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

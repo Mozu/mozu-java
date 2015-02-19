@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Attributes subresource to manage the attributes used to uniquely identify shopper accounts, such as gender or age.
  * </summary>
@@ -28,7 +28,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -46,7 +46,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
@@ -72,7 +72,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttributeCollection customerAttributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttributeCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -89,7 +89,7 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttributeCollection customerAttributeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param filter 
 	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -119,7 +119,7 @@ public class CustomerAttributeClient {
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attribute The attribute to add to the customer account.
+	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -139,7 +139,7 @@ public class CustomerAttributeClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param attribute The attribute to add to the customer account.
+	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -165,9 +165,9 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param attribute Properties of the customer account attribute to update.
+	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -185,10 +185,10 @@ public class CustomerAttributeClient {
 	 * client.executeRequest();
 	 * CustomerAttribute customerAttribute = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param attribute Properties of the customer account attribute to update.
+	 * @param attribute Properties of an attribute associated with a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAttribute>
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute

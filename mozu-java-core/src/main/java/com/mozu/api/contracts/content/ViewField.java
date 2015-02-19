@@ -10,32 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Field within a view of the content.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean isQueryable;
-
-	public Boolean getIsQueryable() {
-		return this.isQueryable;
-	}
-
-	public void setIsQueryable(Boolean isQueryable) {
-		this.isQueryable = isQueryable;
-	}
-
-	protected Boolean isSortable;
-
-	public Boolean getIsSortable() {
-		return this.isSortable;
-	}
-
-	public void setIsSortable(Boolean isSortable) {
-		this.isSortable = isSortable;
-	}
-
+	/**
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 */
 	protected String name;
 
 	public String getName() {
@@ -46,6 +32,9 @@ public class ViewField implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Targets represent the object, such as an item to apply discounts (products or orders) or a view field for content. When accessing MZDB APIs for Mongo interactions, targets are the dot notation that links to the source document property. For example, firstitem for the direc level or firstitem.seconditem.thirditem for a deeper property.              
+	 */
 	protected String target;
 
 	public String getTarget() {
@@ -54,16 +43,6 @@ public class ViewField implements Serializable
 
 	public void setTarget(String target) {
 		this.target = target;
-	}
-
-	protected String type;
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 }

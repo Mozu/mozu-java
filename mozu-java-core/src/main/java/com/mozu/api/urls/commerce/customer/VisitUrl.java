@@ -36,7 +36,7 @@ public class VisitUrl
 	/**
 	 * Get Resource Url for GetVisit
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visitId Unique identifier of the customer visit to retrieve.
+	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getVisitUrl(String responseFields, String visitId)

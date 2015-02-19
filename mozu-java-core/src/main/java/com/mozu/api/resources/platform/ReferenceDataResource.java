@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
@@ -144,7 +144,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -159,7 +159,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -300,6 +300,39 @@ public ReferenceDataResource(ApiContext apiContext)
 	public com.mozu.api.contracts.reference.CountryCollection getCountries(String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.reference.CountryCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getCountriesClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Retrieves the entire list of countries that the system supports.
+	 * <p><pre><code>
+	 *	ReferenceData referencedata = new ReferenceData();
+	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates() throws Exception
+	{
+		return getCountriesWithStates( null);
+	}
+
+	/**
+	 * Retrieves the entire list of countries that the system supports.
+	 * <p><pre><code>
+	 *	ReferenceData referencedata = new ReferenceData();
+	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
+	 */
+	public com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> client = com.mozu.api.clients.platform.ReferenceDataClient.getCountriesWithStatesClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

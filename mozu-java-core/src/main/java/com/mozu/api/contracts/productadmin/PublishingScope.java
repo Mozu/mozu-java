@@ -34,7 +34,7 @@ public class PublishingScope implements Serializable
 	}
 
 	/**
-	 * List of product codes for each pending product change you want to publish or delete.
+	 * List of product codes of associated products, used for pending product changes to publish or delete and returned in a product inventory location query.
 	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {

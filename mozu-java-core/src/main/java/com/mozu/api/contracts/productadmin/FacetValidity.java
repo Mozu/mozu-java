@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	System-supplied and read only parameter that validates a facet for its associated category.
+ *	Describes whether a facet is currently valid and the reason. 			A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).		
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetValidity implements Serializable
@@ -20,7 +20,7 @@ public class FacetValidity implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the facet source is valid for its associated category.
+	 * Indicates if the facet is currently valid.
 	 */
 	protected Boolean isValid;
 
@@ -33,7 +33,7 @@ public class FacetValidity implements Serializable
 	}
 
 	/**
-	 * Code associated with a reason for facet validation to return false for its associated category.
+	 * A code indicating the reason why a facet is invalid.
 	 */
 	protected String reasonCode;
 

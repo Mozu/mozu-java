@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the shipments resource to manage shipments of collections of packages for an order.
  * </summary>
@@ -28,7 +28,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param orderId Unique identifier of the order.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -46,7 +46,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Shipment shipment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
+	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Shipment>
@@ -72,7 +72,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * ShippingRate shippingRate = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -89,8 +89,8 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * ShippingRate shippingRate = client.Result();
 	 * </code></pre></p>
-	 * @param draft 
-	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -114,7 +114,7 @@ public class ShipmentClient {
 	 * client.executeRequest();
 	 * Package package = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for this shipment.
+	 * @param orderId Unique identifier of the order.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -140,8 +140,8 @@ public class ShipmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order to cancel shipment.
-	 * @param shipmentId Unique identifier of the shipment to cancel.
+	 * @param orderId Unique identifier of the order.
+	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteShipmentClient(String orderId, String shipmentId) throws Exception

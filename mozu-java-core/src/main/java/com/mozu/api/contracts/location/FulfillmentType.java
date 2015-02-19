@@ -33,7 +33,7 @@ public class FulfillmentType implements Serializable
 	}
 
 	/**
-	 * The system-supplied name of the fulfillment type, which is "Direct Ship" or "In Store Pickup".
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

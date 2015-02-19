@@ -41,7 +41,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * User-defined description of this location.
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected String description;
 
@@ -67,7 +67,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * The user-defined name of the location.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -80,7 +80,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * Any tenant-defined notes associated with this location.
+	 * User-entered notation content for an object, used to save information such as payment, return, account, and order notes.
 	 */
 	protected String note;
 
@@ -130,7 +130,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * The physical address properties of the location.
+	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
 	 */
 	protected Address address;
 

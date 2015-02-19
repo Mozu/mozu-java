@@ -19,6 +19,9 @@ public class DocumentDraftSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Detailed information of the date and time for the active update date for the document draft summary. This data is associated to document and content data.
+	 */
 	protected DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
@@ -29,6 +32,9 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
+	/**
+	 * Fully qualified name of the document type. 
+	 */
 	protected String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -39,6 +45,9 @@ public class DocumentDraftSummary implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
+	/**
+	 * Detailed information of the date and time for the draft update date for the document draft summary. This data is associated to document and content data.
+	 */
 	protected DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
@@ -50,7 +59,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Identifier of document draft.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -62,6 +71,9 @@ public class DocumentDraftSummary implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The fully qualified name of the document list.
+	 */
 	protected String listFQN;
 
 	public String getListFQN() {
@@ -73,7 +85,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Name of the document draft.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

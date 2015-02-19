@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer Accounts resource to manage the components of shopper accounts, including attributes, contact information, company notes, and groups associated with the customer account.
  * </summary>
@@ -48,7 +48,7 @@ public class CustomerAccountClient {
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
 	 * @param pageSize 
-	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
+	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -118,7 +118,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 */
@@ -135,7 +135,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -160,7 +160,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -179,7 +179,7 @@ public class CustomerAccountClient {
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -204,8 +204,8 @@ public class CustomerAccountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId The customer account information required to change the userpassword.
-	 * @param passwordInfo The password information required to change the user password.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param passwordInfo The information required to modify a shopper account password.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.customer.PasswordInfo
 	 */
@@ -230,7 +230,7 @@ public class CustomerAccountClient {
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -250,7 +250,7 @@ public class CustomerAccountClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerAuthInfo The authentication information for the customer account.
+	 * @param customerAuthInfo The login information for a customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerLoginInfo
@@ -275,7 +275,7 @@ public class CustomerAccountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient recomputeCustomerLifetimeValueClient(Integer accountId) throws Exception
@@ -296,7 +296,7 @@ public class CustomerAccountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId The unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param isLocked If true, the customer account is locked from logging in.
 	 * @return Mozu.Api.MozuClient 
 	 * @see bool
@@ -345,7 +345,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account. The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -364,7 +364,7 @@ public class CustomerAccountClient {
 	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param accountAndAuthInfo Properties of the customer account to create, including the user authentication information.
+	 * @param accountAndAuthInfo The authentication information associated with a customer account. The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -390,7 +390,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * CustomerAccountCollection customerAccountCollection = client.Result();
 	 * </code></pre></p>
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers The authentication information associated with a customer account. The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccountCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -409,7 +409,7 @@ public class CustomerAccountClient {
 	 * CustomerAccountCollection customerAccountCollection = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customers Properties of the customer accounts to create.
+	 * @param customers The authentication information associated with a customer account. The data includes the account properties such as the name, username, authorization access, and email address, the required password to match, and indicates if the account was imported from a third party resource. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccountCollection>
 	 * @see com.mozu.api.contracts.customer.CustomerAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo
@@ -543,7 +543,7 @@ public class CustomerAccountClient {
 	 * CustomerAccount customerAccount = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -563,7 +563,7 @@ public class CustomerAccountClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param account Properties of the customer account to update.
+	 * @param account Properties of the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAccount>
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
 	 * @see com.mozu.api.contracts.customer.CustomerAccount
@@ -588,7 +588,7 @@ public class CustomerAccountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account to delete.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteAccountClient(Integer accountId) throws Exception

@@ -15,8 +15,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackageLabel
-	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageLabelUrl(String packageId, String returnId)
@@ -29,9 +29,9 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackage
-	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageUrl(String packageId, String responseFields, String returnId)
@@ -46,7 +46,7 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for CreatePackage
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageUrl(String responseFields, String returnId)
@@ -59,9 +59,9 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for UpdatePackage
-	 * @param packageId Unique identifier of the return replacement package to update.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePackageUrl(String packageId, String responseFields, String returnId)
@@ -75,8 +75,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for DeletePackage
-	 * @param packageId Unique identifier of the return replacement package to delete.
-	 * @param returnId Unique identifier of the return associated with the replacement package to delete.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePackageUrl(String packageId, String returnId)

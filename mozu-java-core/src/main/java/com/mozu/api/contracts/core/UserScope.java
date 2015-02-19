@@ -20,7 +20,7 @@ public class UserScope implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Identifier of the scope, which represents a developer account ID or tenant ID.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -33,7 +33,7 @@ public class UserScope implements Serializable
 	}
 
 	/**
-	 * The name of the developer account or tenant.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.Product;
 
 /**
- *	Collection of products and their related properties.
+ *	The container for a set of products.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCollection implements Serializable

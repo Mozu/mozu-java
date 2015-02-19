@@ -21,7 +21,7 @@ public class ProductReservation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Identifier of the entity.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -34,7 +34,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * Code that identifies the location associated with this product reservation.
+	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
 	protected String locationCode;
 
@@ -47,7 +47,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order.
+	 * Unique identifier of the order associated with the payment.
 	 */
 	protected String orderId;
 
@@ -60,7 +60,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the item in the order.
+	 * Unique identifier of the order item associated with a validation message, order, or return.
 	 */
 	protected String orderItemId;
 
@@ -86,7 +86,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * The quantity of items associated with the product reservation.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 

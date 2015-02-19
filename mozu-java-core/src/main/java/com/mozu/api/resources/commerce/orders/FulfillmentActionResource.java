@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Fulfillment resource to manage shipments or pickups of collections of packages for an order.
  * </summary>
@@ -38,8 +38,8 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -55,9 +55,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Location Inventory resource to manage the levels of active product inventory to maintain across defined locations at the product level.
@@ -75,7 +75,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode User-defined code that identifies the location.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -93,7 +93,7 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode User-defined code that identifies the location.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
@@ -120,7 +120,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -138,9 +138,9 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
+	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -167,8 +167,8 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
-	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -194,8 +194,8 @@ public class LocationInventoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationCode The code that identifies the location for which to delete product inventory.
-	 * @param productCode The product code for which to delete a location's inventory.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode) throws Exception

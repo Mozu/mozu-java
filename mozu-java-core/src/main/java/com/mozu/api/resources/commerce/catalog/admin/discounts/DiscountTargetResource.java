@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Retrieves and modifies the products, categories, and shipping methods eligible for discounts in the form of a fixed dollar amount, percentage off a product price, or free shipping.
@@ -81,8 +81,8 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -98,9 +98,9 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
+	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget

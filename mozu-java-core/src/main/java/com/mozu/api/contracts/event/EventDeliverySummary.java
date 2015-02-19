@@ -13,12 +13,18 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.event.EventDeliveryAttempt;
 import com.mozu.api.contracts.event.EventSummary;
 
+/**
+ *	Data for event deliveries. Returned content details a summary of actions, events, and results for a delivery event.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventDeliverySummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The date time in UTC format set when the object was created. 
+	 */
 	protected DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -29,6 +35,9 @@ public class EventDeliverySummary implements Serializable
 		this.createDate = createDate;
 	}
 
+	/**
+	 * Status of the delivery process `EventDeliveryStatusType`. System-supplied and read-only.
+	 */
 	protected String deliveryStatus;
 
 	public String getDeliveryStatus() {
@@ -39,6 +48,9 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryStatus = deliveryStatus;
 	}
 
+	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -49,6 +61,9 @@ public class EventDeliverySummary implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Indicates whether delivery of the event is currently being attempted at this moment in time
+	 */
 	protected Boolean isRunning;
 
 	public Boolean getIsRunning() {
@@ -59,6 +74,9 @@ public class EventDeliverySummary implements Serializable
 		this.isRunning = isRunning;
 	}
 
+	/**
+	 * The date that the delivery was last attempted (either successfully or not)
+	 */
 	protected DateTime lastExecutionDate;
 
 	public DateTime getLastExecutionDate() {
@@ -69,6 +87,9 @@ public class EventDeliverySummary implements Serializable
 		this.lastExecutionDate = lastExecutionDate;
 	}
 
+	/**
+	 * The date that the delivery will next be attempted, if the event has not been successfully delivered yet and there are still retries remaining
+	 */
 	protected DateTime nextExecutionDate;
 
 	public DateTime getNextExecutionDate() {
@@ -79,6 +100,9 @@ public class EventDeliverySummary implements Serializable
 		this.nextExecutionDate = nextExecutionDate;
 	}
 
+	/**
+	 * Number of delivery attempts remaining
+	 */
 	protected Integer retriesRemaining;
 
 	public Integer getRetriesRemaining() {
@@ -89,6 +113,9 @@ public class EventDeliverySummary implements Serializable
 		this.retriesRemaining = retriesRemaining;
 	}
 
+	/**
+	 * The date and time the object was updated most recently. The date is in UTC format.
+	 */
 	protected DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -99,6 +126,9 @@ public class EventDeliverySummary implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * Details about each attempted delivery of the event to the endpoint
+	 */
 	protected List<EventDeliveryAttempt> deliveryAttempts;
 	public List<EventDeliveryAttempt> getDeliveryAttempts() {
 		return this.deliveryAttempts;
@@ -107,6 +137,9 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryAttempts = deliveryAttempts;
 	}
 
+	/**
+	 * Event Summary
+	 */
 	protected EventSummary eventSummary;
 
 	public EventSummary getEventSummary() {

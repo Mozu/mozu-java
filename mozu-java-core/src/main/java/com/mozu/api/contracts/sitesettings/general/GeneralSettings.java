@@ -205,6 +205,19 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
+	 * Email alias used in emails sent to your shoppers.
+	 */
+	protected String senderEmailAlias;
+
+	public String getSenderEmailAlias() {
+		return this.senderEmailAlias;
+	}
+
+	public void setSenderEmailAlias(String senderEmailAlias) {
+		this.senderEmailAlias = senderEmailAlias;
+	}
+
+	/**
 	 * Choose a format to use on the site: 12-hour (hh:mm:ss tt) or 24-hour format (HH:mm:ss).
 	 */
 	protected String siteTimeFormat;

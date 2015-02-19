@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Packages subresource to manage the physical packages to ship for an order.
  * </summary>
@@ -38,8 +38,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	string string = package.getAvailablePackageFulfillmentActions( orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package fulfillment.
-	 * @param packageId Unique identifier of the package associated with the fulfillment actions to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -58,7 +58,7 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package label to retrieve.
+	 * @param orderId Unique identifier of the order.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return Stream
 	 * @see Stream
@@ -78,8 +78,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -94,8 +94,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( orderId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to retrieve.
-	 * @param packageId Unique identifier of the package to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -115,8 +115,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with this package.
-	 * @param package Properties of the physical package of order items.
+	 * @param orderId Unique identifier of the order.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -132,9 +132,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with this package.
+	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param package Properties of the physical package of order items.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -154,9 +154,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to update.
-	 * @param packageId Unique identifier of the package of order items to update.
-	 * @param package Wrapper of properties for the package of order items to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -172,10 +172,10 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  orderId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to update.
-	 * @param packageId Unique identifier of the package of order items to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param package Wrapper of properties for the package of order items to update.
+	 * @param package Properties of a physical package shipped for an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -195,8 +195,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	package.deletePackage( orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the package to delete.
-	 * @param packageId Unique identifier of the package to delete.
+	 * @param orderId Unique identifier of the order.
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return 
 	 */
 	public void deletePackage(String orderId, String packageId) throws Exception

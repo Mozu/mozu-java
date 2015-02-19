@@ -61,7 +61,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for AddSegmentAccounts
-	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSegmentAccountsUrl(Integer id)
@@ -73,7 +73,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for UpdateSegment
-	 * @param id Unique identifier of the customer segment.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -87,7 +87,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for DeleteSegment
-	 * @param id Unique identifier of the customer segment to delete.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteSegmentUrl(Integer id)
@@ -99,8 +99,8 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for RemoveSegmentAccount
-	 * @param accountId 
-	 * @param id 
+	 * @param accountId Unique identifier of the customer account.
+	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeSegmentAccountUrl(Integer accountId, Integer id)

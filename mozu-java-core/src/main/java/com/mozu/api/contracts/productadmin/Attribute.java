@@ -18,7 +18,7 @@ import com.mozu.api.contracts.productadmin.AttributeValidation;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
 /**
- *	Details of an attribute used to describe individual aspects of a product.
+ *	Properties of an attribute used to describe customers or orders.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Attribute implements Serializable
@@ -27,7 +27,7 @@ public class Attribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The administrative name of the product attribute as it appears in Mozu Admin.
+	 * The administrator name associated with the object/data.
 	 */
 	protected String adminName;
 
@@ -40,7 +40,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Merchant-defined identifier of the product attribute used to generate the attribute's fully qualified name.
+	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
 	 */
 	protected String attributeCode;
 
@@ -92,7 +92,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * The data type of the product attribute, which is a Bool, DateTime, Number, or String. The attribute's data type cannot be changed.
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
 	protected String dataType;
 
@@ -105,7 +105,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * The storefront interface input type for the product attribute, which is a Date, DateTime, List, TextArea, TextBox, or YesNo. The attribute's input type cannot be changed.
+	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
 	protected String inputType;
 
@@ -170,7 +170,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * If applicable, the registered namespace associated with the product attribute, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
 	protected String namespace;
 
@@ -183,7 +183,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * The type of value associated with the product attribute, which is ShopperEntered (the shopper selects or enters an attribute value during checkout), Predefined (the merchant sets the attribute value from a list during product attribute definition), or AdminEntered (the merchant selects or enters a value during product definition). The attribute value type cannot be changed.
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected String valueType;
 
@@ -196,7 +196,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * List of key-value pairs that store metadata associated with the product attribute.
+	 * List of metadata key-value pairs defined for an extensible attribute.
 	 */
 	protected List<AttributeMetadataItem> attributeMetadata;
 	public List<AttributeMetadataItem> getAttributeMetadata() {
@@ -232,6 +232,9 @@ public class Attribute implements Serializable
 		this.content = content;
 	}
 
+	/**
+	 * The localized content of an attribute determined by the `localeCode`. This content is always in the default language of the MasterCatalog.
+	 */
 	protected List<AttributeLocalizedContent> localizedContent;
 	public List<AttributeLocalizedContent> getLocalizedContent() {
 		return this.localizedContent;
@@ -254,7 +257,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Properties of the validation of a product attribute, which contains rules that dictate what values are valid entries for product attributes.
+	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
 	 */
 	protected AttributeValidation validation;
 
@@ -267,7 +270,7 @@ public class Attribute implements Serializable
 	}
 
 	/**
-	 * Array list of the defined vocabulary values for the specified product attribute. For example, for a Color attribute, vocabulary values might include black, white, and purple.
+	 * List of valid vocabulary values defined for an attribute.
 	 */
 	protected List<AttributeVocabularyValue> vocabularyValues;
 	public List<AttributeVocabularyValue> getVocabularyValues() {

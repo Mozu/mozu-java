@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpMessage;
@@ -241,7 +241,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
                request.addHeader(header.getKey(), header.getValue());
            }
 
-           AppAuthenticator.addAuthHeader();
+           request.addHeader(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
            request.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION);
 
            return request;

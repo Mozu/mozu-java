@@ -17,7 +17,7 @@ public class ProductUrl
 	 * Get Resource Url for GetProducts
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -37,7 +37,7 @@ public class ProductUrl
 	 * Get Resource Url for GetProductInventory
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoryUrl(String locationCodes, String productCode, String responseFields)
@@ -51,20 +51,22 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProduct
-	 * @param allowInactive If true, returns an inactive product as part of the query.
+	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
-	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductUrl(Boolean allowInactive, String productCode, String responseFields, Boolean skipInventoryCheck, String variationProductCode)
+	public static MozuUrl getProductUrl(Boolean allowInactive, String productCode, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&responseFields={responseFields}");
 		formatter.formatUrl("allowInactive", allowInactive);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("skipInventoryCheck", skipInventoryCheck);
+		formatter.formatUrl("supressOutOfStock404", supressOutOfStock404);
 		formatter.formatUrl("variationProductCode", variationProductCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -73,8 +75,8 @@ public class ProductUrl
 	 * Get Resource Url for ConfiguredProduct
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
-	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, String responseFields, Boolean skipInventoryCheck)
@@ -91,7 +93,7 @@ public class ProductUrl
 	 * Get Resource Url for ValidateProduct
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateProductUrl(String productCode, String responseFields, Boolean skipInventoryCheck)
@@ -105,11 +107,11 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for ValidateDiscounts
-	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
-	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
+	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields 
-	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -127,7 +129,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductInventories
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoriesUrl(String responseFields)

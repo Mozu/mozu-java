@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Channels resource to manage the channels a company uses to create logical commercial business divisions based on region or types of sales, such as "US Online," "Amazon," or "EMEA Retail." All orders include a channel association that enables the company to perform financial reporting for each defined channel. Because channels are managed at the tenant level, you must associate all the tenant's sites with a channel. Sites that do not have a defined channel association cannot successfully submit orders.
  * </summary>
@@ -72,7 +72,7 @@ public class ChannelClient {
 	 * client.executeRequest();
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the channel to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 */
@@ -89,7 +89,7 @@ public class ChannelClient {
 	 * client.executeRequest();
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the channel to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -114,7 +114,7 @@ public class ChannelClient {
 	 * client.executeRequest();
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
-	 * @param channel Properties of the channel to create.
+	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -133,7 +133,7 @@ public class ChannelClient {
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channel Properties of the channel to create.
+	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -159,8 +159,8 @@ public class ChannelClient {
 	 * client.executeRequest();
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the channel to update.
-	 * @param channel Properties of a the channel to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -178,9 +178,9 @@ public class ChannelClient {
 	 * client.executeRequest();
 	 * Channel channel = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the channel to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channel Properties of a the channel to update.
+	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.Channel>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -205,7 +205,7 @@ public class ChannelClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that identifies the channel to delete.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteChannelClient(String code) throws Exception

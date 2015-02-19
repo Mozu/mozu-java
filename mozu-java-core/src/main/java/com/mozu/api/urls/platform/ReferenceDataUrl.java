@@ -55,7 +55,7 @@ public class ReferenceDataUrl
 
 	/**
 	 * Get Resource Url for GetBehaviorCategory
-	 * @param categoryId Unique identifier of the behavior category.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -113,6 +113,18 @@ public class ReferenceDataUrl
 	public static MozuUrl getCountriesUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/platform/reference/countries?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetCountriesWithStates
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCountriesWithStatesUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/reference/countrieswithstates?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}

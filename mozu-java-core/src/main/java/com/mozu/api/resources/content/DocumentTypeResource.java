@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Document Types resource to view the document types supplied by the Content API.
@@ -111,12 +111,12 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Creates a new DocumentType
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.createDocumentType( documentType);
 	 * </code></pre></p>
-	 * @param documentType 
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -127,13 +127,13 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Creates a new DocumentType
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.createDocumentType( documentType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType 
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -148,13 +148,13 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Updates a DocumentType
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName);
 	 * </code></pre></p>
-	 * @param documentTypeName 
-	 * @param documentType 
+	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -165,14 +165,14 @@ public class DocumentTypeResource {
 	}
 
 	/**
-	 * 
+	 * Updates a DocumentType
 	 * <p><pre><code>
 	 *	DocumentType documenttype = new DocumentType();
 	 *	DocumentType documentType = documenttype.updateDocumentType( documentType,  documentTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentTypeName 
+	 * @param documentTypeName The name of the document type to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType 
+	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
 	 * @return com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Applications resource to update site-specific settings for installed applications.
  * </summary>
@@ -68,7 +68,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param application Properties of the application to update.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -87,7 +87,7 @@ public class ApplicationClient {
 	 * Application application = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param application Properties of the application to update.
+	 * @param application Properties of an application installed in a tenant.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

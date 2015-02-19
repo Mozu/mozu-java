@@ -22,7 +22,7 @@ public class PaymentAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the payment action, such as "AuthorizeAndCapture".
+	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
 	 */
 	protected String actionName;
 
@@ -61,7 +61,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * If applicable, the check number associated with the payment action.
+	 * If applicable, the check number associated with the payment action or interaction.
 	 */
 	protected String checkNumber;
 
@@ -87,7 +87,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * Date and time the payment gateway interaction was performed.
+	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
 	 */
 	protected DateTime interactionDate;
 

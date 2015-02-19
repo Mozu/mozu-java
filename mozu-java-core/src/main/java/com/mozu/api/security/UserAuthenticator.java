@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.NotImplementedException;
+import org.apache.commons.lang.NotImplementedException;
 import org.joda.time.DateTime;
 
 import com.mozu.api.ApiException;
@@ -238,7 +238,7 @@ public class UserAuthenticator {
             case Tenant:
                 return TenantAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getRefreshToken()).getUrl();
             case Developer:
-                return DeveloperAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getAccessToken()).getUrl();
+                return DeveloperAdminUserAuthTicketUrl.deleteUserAuthTicketUrl(ticket.getRefreshToken()).getUrl();
             default:
                 throw new NotImplementedException("Invalid User Scope.");
         }

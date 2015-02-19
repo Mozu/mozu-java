@@ -220,6 +220,31 @@ public class ReferenceDataFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	{
+		return getCountriesWithStates(apiContext,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.reference.CountryWithStatesCollection getCountriesWithStates(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.reference.CountryWithStatesCollection returnObj = new com.mozu.api.contracts.reference.CountryWithStatesCollection();
+		ReferenceDataResource resource = new ReferenceDataResource(apiContext);
+		try
+		{
+			returnObj = resource.getCountriesWithStates( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.reference.CurrencyCollection getCurrencies(ApiContext apiContext, int expectedCode, int successCode) throws Exception
 	{
 		return getCurrencies(apiContext,  null, expectedCode, successCode );

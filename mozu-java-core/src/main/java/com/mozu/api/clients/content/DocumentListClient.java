@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the document lists resource to organize your site's documents into a hierarchy. Document lists can contain documents, folders, and complete hierarchies of folders, which contain documents with unique names.
@@ -72,7 +72,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -89,7 +89,7 @@ public class DocumentListClient {
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName The name of the document list.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -108,14 +108,14 @@ public class DocumentListClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new documentList
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient(dataViewMode,  list);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param list 
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -126,7 +126,7 @@ public class DocumentListClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new documentList
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=CreateDocumentListClient(dataViewMode,  list,  responseFields);
 	 * client.setBaseAddress(url);
@@ -134,7 +134,7 @@ public class DocumentListClient {
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list 
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -154,15 +154,15 @@ public class DocumentListClient {
 	}
 
 	/**
-	 * 
+	 * Updates a `DocumentListName`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient( list,  documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param list 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -173,16 +173,16 @@ public class DocumentListClient {
 	}
 
 	/**
-	 * 
+	 * Updates a `DocumentListName`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentList> mozuClient=UpdateDocumentListClient( list,  documentListName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentList documentList = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
+	 * @param documentListName Name of content documentListName to delete
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list 
+	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentList>
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -201,13 +201,13 @@ public class DocumentListClient {
 	}
 
 	/**
-	 * 
+	 * Deletes the specified `DocumentListName`.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDocumentListClient( documentListName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentListName 
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDocumentListClient(String documentListName) throws Exception

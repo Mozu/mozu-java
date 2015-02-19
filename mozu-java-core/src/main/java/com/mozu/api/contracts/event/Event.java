@@ -62,7 +62,7 @@ public class Event implements Serializable
 	}
 
 	/**
-	 * The unique identifier of the event.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -75,7 +75,7 @@ public class Event implements Serializable
 	}
 
 	/**
-	 * If true, the event record was generated as a test request for an application.
+	 * Indicates if the event is a test request or test entity. If true, the generated and captured event record was generated as a test request for an application.
 	 */
 	protected Boolean isTest;
 
@@ -149,6 +149,9 @@ public class Event implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Extended properties. Note: This is purposefully not a CollectionBase type wrapper so consumers start to get used to not having counts returned.
+	 */
 	protected List<EventExtendedProperty> extendedProperties;
 	public List<EventExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;

@@ -15,7 +15,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetApplication
-	 * @param appId The application ID that represents the application to retrieve.
+	 * @param appId 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -29,7 +29,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for UpdateApplication
-	 * @param appId The application ID that represents the application to update.
+	 * @param appId 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

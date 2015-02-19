@@ -1,5 +1,6 @@
 package com.mozu.client;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -9,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -31,13 +32,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiError;
+import com.mozu.api.ApiError.Item;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Version;
-import com.mozu.api.ApiError.Item;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
@@ -47,6 +48,7 @@ import com.mozu.api.security.CustomerAuthenticator;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.HttpHelper;
 import com.mozu.api.utils.JsonUtils;
+import com.mozu.api.utils.MozuHttpClientPool;
 
 public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
@@ -264,6 +266,8 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         try {
             executeRequest(request);
             result = getResult();
+        } catch (ApiException ae) {
+            throw ae;
         } catch (Exception ioe) {
             throw new ApiException("Exception occurred while authenticating application: "
                     + ioe.getMessage());
@@ -296,15 +300,23 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
 
         if (verb.equals("POST") || verb.equals("PUT")) {
             if (StringUtils.isNotBlank(httpContent)) {
+                request.setHeader("Accept", "application/json");
                 StringEntity entity = new StringEntity(httpContent, Consts.UTF_8);
                 request.setEntity(entity);
             } else if (this.streamContent != null) {
-                InputStreamEntity entity = new InputStreamEntity(this.streamContent, -1);
-                request.setEntity(entity);
+                long length = -1;
+                if (streamContent instanceof FileInputStream) {
+                    if (((FileInputStream)streamContent).getChannel() != null) {
+                        length = ((FileInputStream)streamContent).getChannel().size();
+                    }
+                } else {
+                    throw new UnsupportedOperationException ("The InputStream is not supported. It must be an instance of FileInputStream.");
+                }
+                InputStreamEntity entity = new InputStreamEntity(this.streamContent, length);
+                request.setEntity(entity); 
             }
         }
 
-        request.setHeader("Accept", "application/json");
         if (!headers.containsKey(Headers.CONTENT_TYPE)) {
             request.setHeader("Content-type", "application/json; charset=utf-8");
         }

@@ -33,7 +33,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The two-digit month the credit card expires.
+	 * The two-digit month a credit card expires for a payment method.
 	 */
 	protected short expireMonth;
 
@@ -46,7 +46,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The four-digit year the credit card expires.
+	 * The four-digit year the credit card expires for a payment method.
 	 */
 	protected short expireYear;
 
@@ -85,7 +85,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The name printed on the credit card.
+	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
 	 */
 	protected String nameOnCard;
 

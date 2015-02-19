@@ -27,7 +27,7 @@ public class CustomerAccount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the customer prefers to receive marketing material such as newsletters or email offers.
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
 	 */
 	protected Boolean acceptsMarketing;
 
@@ -53,7 +53,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The email address associated with the customer account.
+	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
 	 */
 	protected String emailAddress;
 
@@ -66,7 +66,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier an external system uses to identify this customer account.
+	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
 	 */
 	protected String externalId;
 
@@ -79,7 +79,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The first name associated with the customer account.
+	 * The full first name of a customer or contact name.
 	 */
 	protected String firstName;
 
@@ -92,7 +92,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Identifier of the entity.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -102,6 +102,19 @@ public class CustomerAccount implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 */
+	protected Boolean isActive;
+
+	public Boolean getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
 
 	/**
@@ -118,7 +131,20 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The last name associated with the customer account.
+	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
+	 */
+	protected Boolean isLocked;
+
+	public Boolean getIsLocked() {
+		return this.isLocked;
+	}
+
+	public void setIsLocked(Boolean isLocked) {
+		this.isLocked = isLocked;
+	}
+
+	/**
+	 * The full last name of a customer or contact name.
 	 */
 	protected String lastName;
 
@@ -170,7 +196,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the user associated with the customer account. All customer accounts must have a defined user ID. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected String userId;
 
@@ -183,7 +209,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The user name of the user associated with the customer account.
+	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
 	protected String userName;
 
@@ -196,7 +222,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Collection of customer account attributes.
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
 	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
@@ -244,7 +270,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * List of customer account notes.
+	 * Paged list collection of note content for objects including customers, orders, and returns. 
 	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {

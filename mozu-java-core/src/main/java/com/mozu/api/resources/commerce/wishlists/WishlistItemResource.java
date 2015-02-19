@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Wish List Items subresource to manage items in a shopper wish list. The same product can be defined as an item in any number of wish lists for the customer account. Use the Wish Lists resource to manage shopper wish lists.
  * </summary>
@@ -38,8 +38,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list item to retrieve.
-	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -55,8 +55,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistItem = wishlistitem.getWishlistItem( wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list item to retrieve.
-	 * @param wishlistItemId Unique identifier of the wish list associated with the item to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -75,7 +75,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItems( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -95,7 +95,7 @@ public class WishlistItemResource {
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
-	 * @param wishlistId Unique identifier of the wish list associated with the items to retrieve.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -114,8 +114,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
-	 * @param wishlistName The name of the wish list that contains the items to retrieve.
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -130,13 +130,13 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItemCollection wishlistItemCollection = wishlistitem.getWishlistItemsByWishlistName( customerAccountId,  wishlistName,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account associated with the wish list.
+	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
-	 * @param wishlistName The name of the wish list that contains the items to retrieve.
+	 * @param wishlistName The name of the wish list to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection
 	 */
@@ -155,8 +155,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
-	 * @param wishlistItem Properties of the item to add to the wish list.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -173,8 +173,8 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistItem = wishlistitem.addItemToWishlist( wishlistItem,  wishlistId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list associated with the item to add.
-	 * @param wishlistItem Properties of the item to add to the wish list.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -194,9 +194,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity);
 	 * </code></pre></p>
-	 * @param quantity The quantity of the item in the wish list.
-	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
-	 * @param wishlistItemId Unique identifier of the item in the wish list to update quantity.
+	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -211,10 +211,10 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItemQuantity( wishlistId,  wishlistItemId,  quantity,  responseFields);
 	 * </code></pre></p>
-	 * @param quantity The quantity of the item in the wish list.
+	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list associated with the item quantity to update.
-	 * @param wishlistItemId Unique identifier of the item in the wish list to update quantity.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 */
@@ -233,9 +233,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
-	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
-	 * @param wishlistItem Properties of the shopper wish list item to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -252,9 +252,9 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistItem = wishlistitem.updateWishlistItem( wishlistItem,  wishlistId,  wishlistItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list associated with the item to update.
-	 * @param wishlistItemId Unique identifier of the item in the shopper wish list to update.
-	 * @param wishlistItem Properties of the shopper wish list item to update.
+	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
+	 * @param wishlistItem Properties of an item in a shopper wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem
@@ -274,7 +274,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	Wishlist wishlist = wishlistitem.removeAllWishlistItems( wishlistId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the items to remove.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @return com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -293,7 +293,7 @@ public class WishlistItemResource {
 	 *	WishlistItem wishlistitem = new WishlistItem();
 	 *	wishlistitem.deleteWishlistItem( wishlistId,  wishlistItemId);
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list associated with the item to remove.
+	 * @param wishlistId Unique identifier of the wish list.
 	 * @param wishlistItemId Unique identifier of the item to remove from the shopper wish list.
 	 * @return 
 	 */

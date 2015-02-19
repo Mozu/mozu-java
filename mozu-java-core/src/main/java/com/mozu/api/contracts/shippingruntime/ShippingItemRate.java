@@ -33,7 +33,7 @@ public class ShippingItemRate implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the item for which to calculate a shipping rate.
+	 * Unique identifier of an item used to calculate or request a shipping rate.
 	 */
 	protected String itemId;
 
@@ -46,7 +46,7 @@ public class ShippingItemRate implements Serializable
 	}
 
 	/**
-	 * The quantity of the line item for which to calculate shipping.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 
