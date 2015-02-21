@@ -16,6 +16,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpResponse;
+import org.apache.http.RequestLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
@@ -26,7 +27,11 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
+import org.apache.http.message.BasicHttpRequest;
 import org.apache.http.util.EntityUtils;
+import org.hsqldb.lib.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,6 +44,8 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Version;
+import com.mozu.api.cache.impl.CacheItem;
+import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
@@ -53,6 +60,8 @@ import com.mozu.api.utils.MozuHttpClientPool;
 public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
 
+    
+    private static final Logger logger = LoggerFactory.getLogger(MozuClientImpl.class);
     private ApiContext apiContext = null;
     private String baseAddress = null;
     private CloseableHttpResponse httpResponseMessage = null;
@@ -62,7 +71,9 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private MozuUrl resourceUrl = null;
     private HashMap<String, String> headers = new HashMap<String, String>();
     private final Class<TResult> responseType;
-
+    private CacheItem cacheItem = null;
+    private String cacheKey = null;
+    
     public MozuClientImpl() {
         this.responseType = null;
     }
@@ -138,12 +149,20 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     public TResult getResult() throws Exception {
         TResult tResult = null;
         try {
+        	if (httpResponseMessage.getStatusLine().getStatusCode() == 404)
+        		return null;
+
             if (responseType != null) {
                 String className = responseType.getName();
                 if (className.equals(java.io.InputStream.class.getName())) {
                     tResult = (TResult) httpResponseMessage.getEntity().getContent();
                 } else {
-                    tResult = deserialize(getStringResult(), responseType);
+                	
+                	
+                	if (cacheItem != null)
+                		tResult = deserialize(cacheItem.getContent(), responseType);
+                	else
+                		tResult = deserialize(getStringResult(), responseType);
                 }
             }
         } finally {
@@ -191,9 +210,17 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         String sche = url.getProtocol();
         HttpHost httpHost = new HttpHost(hostNm, port, sche);
 
+        setCacheKey(request);
+        com.mozu.api.cache.CacheManager<CacheItem> cache = (com.mozu.api.cache.CacheManager<CacheItem>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
+        if (cache != null) {
+        	cacheItem = cache.get(cacheKey);
+        	if (cacheItem != null)
+                request.addHeader("If-None-Match", cacheItem.geteTag());
+        }
         httpResponseMessage = client.execute(httpHost, request);
         try {
-            ensureSuccess(httpResponseMessage, mapper);
+            ensureSuccess(httpResponseMessage, request.getRequestLine());
+            setCache();
         } catch (Exception e) {
             // make sure on exception that that response is closed
             EntityUtils.consume(httpResponseMessage.getEntity());
@@ -234,7 +261,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
 
         httpResponseMessage = client.execute(request);
         try {
-            ensureSuccess(httpResponseMessage, mapper);
+            ensureSuccess(httpResponseMessage, request.getRequestLine());
         } catch (Exception e) {
             // make sure on exception that that response is closed
             EntityUtils.consume(httpResponseMessage.getEntity());
@@ -276,7 +303,6 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         return result;
     }
 
-
     public void cleanupHttpConnection () throws Exception {
         if (httpResponseMessage != null) {
             EntityUtils.consume(httpResponseMessage.getEntity());
@@ -284,6 +310,50 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         }
     }
 
+    
+    
+    private void setCacheKey(BasicHttpEntityEnclosingRequest request) {
+    	StringBuilder key = new StringBuilder();
+    	key.append(request.getRequestLine().getUri().toString());
+         if (apiContext != null) {
+        	 if (apiContext.getSiteId() != null)
+        		 key.append(apiContext.getSiteId());
+
+        	 if (!StringUtils.isEmpty(apiContext.getCurrency()))
+        		 key.append(apiContext.getCurrency());
+        	 if (!StringUtils.isEmpty(apiContext.getLocale()))
+        		 key.append(apiContext.getLocale());
+        	 if (apiContext.getMasterCatalogId() != null)
+        		 key.append(apiContext.getMasterCatalogId());
+        	 if (apiContext.getCatalogId() != null)
+        		 key.append(apiContext.getCatalogId());
+        	 
+         	String dataViewMode = getHeaderValue(Headers.X_VOL_DATAVIEW_MODE, request);
+         	if (!StringUtils.isEmpty(dataViewMode))
+         		key.append(dataViewMode);
+         }
+         cacheKey =  key.toString();
+    }
+    
+    private void setCache() throws Exception {
+    	String eTag = getHeaderValue("ETag", httpResponseMessage);
+        if (cacheItem != null && httpResponseMessage.getStatusLine().getStatusCode() == 304)
+        {
+        	//Do nothing
+            //httpResponseMessage = (CloseableHttpResponse) cacheItem.getItem();
+        }
+        else if (StringUtils.isNotEmpty(eTag))
+        {
+            cacheItem = new CacheItem();
+            cacheItem.seteTag(eTag);
+            cacheItem.setKey(cacheKey);
+            cacheItem.setContent(stringContent());
+            com.mozu.api.cache.CacheManager<CacheItem> cache = (com.mozu.api.cache.CacheManager<CacheItem>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
+            if (cache != null) 
+            	cache.put(cacheKey, cacheItem);
+        }
+    }
+    
     private TResult deserialize(String jsonString, Class<TResult> cls) throws Exception {
         return mapper.readValue(jsonString, cls);
     }
@@ -333,6 +403,8 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         request.addHeader(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
         request.addHeader(Headers.X_VOL_VERSION, Version.API_VERSION);
 
+        
+        
         return request;
     }
 
@@ -355,22 +427,35 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         return headers;
     }
 
-    protected void ensureSuccess(HttpResponse response, ObjectMapper mapper) throws ApiException {
+    protected void ensureSuccess(HttpResponse response, RequestLine requestLine ) throws ApiException {
         int statusCode = response.getStatusLine().getStatusCode();
-
-        if (statusCode < 200 || statusCode > 300) {
-            try {
-                ApiError apiError = mapper.readValue(response.getEntity().getContent(), ApiError.class);
-                apiError.setCorrelationId(getHeaderValue(Headers.X_VOL_CORRELATION, response));
-                throw new ApiException(getMozuErrorMessage(apiError), apiError, statusCode);
-            } catch (JsonProcessingException jpe) {
+        String correlationId = getHeaderValue(Headers.X_VOL_CORRELATION, response);
+        if (statusCode == 304 || statusCode >= 200 && statusCode <= 300) return;
+        
+        
+    	ApiError apiError = new ApiError();
+    	apiError.setCorrelationId(correlationId);
+    	
+    	if (statusCode == 404 && StringUtils.isEmpty(correlationId))
+    		apiError.setMessage(requestLine.getUri().toString() +" not found");
+    	else if (!StringUtils.isEmpty(correlationId)) {
+    		try {
+    			apiError = mapper.readValue(stringContent(), ApiError.class);
+    			if (apiError.getErrorCode().equals("ITEM_NOT_FOUND") && statusCode == 404) return;
+    		} catch (JsonProcessingException jpe) {
                 throw new ApiException("An error has occurred. Status Code: " + statusCode   
                         + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
             } catch (IOException ioe) {
                 throw new ApiException("An error occurred. Status Code: " + statusCode   
                         + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
-            }
-        }
+            } catch (Exception e) {
+				// TODO Auto-generated catch block
+            	throw new ApiException("An error occurred. Status Code: " + statusCode   
+                        + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
+			}
+    	} else
+    		apiError.setMessage("Unknow Error");
+        throw new ApiException(getMozuErrorMessage(apiError), apiError, statusCode);
     }
     
     private static String getMozuErrorMessage(ApiError apiError) {
