@@ -18,4 +18,5 @@ public class Headers {
     public static final String X_VOL_CURRENCY = "x-vol-currency"; 
     public static final String DATE = "Date";
     public static final String CONTENT_TYPE = "Content-Type";
+    public static final String ETAG = "ETag";
 }
