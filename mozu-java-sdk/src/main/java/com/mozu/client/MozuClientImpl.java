@@ -27,9 +27,7 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
-import org.apache.http.message.BasicHttpRequest;
 import org.apache.http.util.EntityUtils;
-import org.hsqldb.lib.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +43,6 @@ import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Version;
 import com.mozu.api.cache.impl.CacheItem;
-import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
@@ -60,8 +57,6 @@ import com.mozu.api.utils.MozuHttpClientPool;
 public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private static final ObjectMapper mapper = JsonUtils.initObjectMapper();
 
-    
-    private static final Logger logger = LoggerFactory.getLogger(MozuClientImpl.class);
     private ApiContext apiContext = null;
     private String baseAddress = null;
     private CloseableHttpResponse httpResponseMessage = null;
