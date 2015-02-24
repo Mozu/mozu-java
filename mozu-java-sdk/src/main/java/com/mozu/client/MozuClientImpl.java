@@ -449,7 +449,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
                         + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);
 			}
     	} else
-    		apiError.setMessage("Unknow Error");
+    		apiError.setMessage("Unknown Error");
         throw new ApiException(getMozuErrorMessage(apiError), apiError, statusCode);
     }
     
