@@ -64,21 +64,11 @@ public TenantResource(ApiContext apiContext)
 	 */
 	public com.mozu.api.contracts.tenant.Tenant getTenant(Integer tenantId, String responseFields) throws Exception
 	{
-		com.mozu.api.contracts.tenant.Tenant tenant = null;
-		com.mozu.api.cache.CacheManager<com.mozu.api.contracts.tenant.Tenant> cache = 
-			(com.mozu.api.cache.CacheManager<com.mozu.api.contracts.tenant.Tenant>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
-		if (cache!=null) {
-			tenant = cache.get("Tenant_"+ tenantId);
-			if (tenant != null )
-				return tenant;
-			}
+		
 		MozuClient<com.mozu.api.contracts.tenant.Tenant> client = com.mozu.api.clients.platform.TenantClient.getTenantClient( tenantId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		tenant = client.getResult();
-		if (cache!=null)
-			cache.put("Tenant_"+tenant.getId(), tenant);
-		return tenant;
+		return client.getResult();
 
 	}
 
