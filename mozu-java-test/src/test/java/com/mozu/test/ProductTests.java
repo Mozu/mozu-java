@@ -22,12 +22,16 @@ import com.mozu.api.contracts.customer.CustomerUserAuthInfo;
 import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationCollection;
 import com.mozu.api.contracts.productadmin.Attribute;
+import com.mozu.api.contracts.productadmin.AttributeInProductType;
 import com.mozu.api.contracts.productadmin.Category;
 import com.mozu.api.contracts.productadmin.CategoryPagedCollection;
+import com.mozu.api.contracts.productadmin.LocationInventory;
 import com.mozu.api.contracts.productadmin.MasterCatalog;
 import com.mozu.api.contracts.productadmin.Product;
 import com.mozu.api.contracts.productadmin.ProductCategory;
 import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
+import com.mozu.api.contracts.productadmin.ProductInventoryInfo;
+import com.mozu.api.contracts.productadmin.ProductProperty;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 import com.mozu.api.contracts.productadmin.ProductType;
 import com.mozu.api.contracts.productadmin.ProductTypeCollection;
@@ -45,6 +49,7 @@ import com.mozu.test.framework.datafactory.CategoryFactory;
 import com.mozu.test.framework.datafactory.CommerceLocationFactory;
 import com.mozu.test.framework.datafactory.CustomerAccountFactory;
 import com.mozu.test.framework.datafactory.LocationFactory;
+import com.mozu.test.framework.datafactory.LocationInventoryFactory;
 import com.mozu.test.framework.datafactory.MasterCatalogFactory;
 import com.mozu.test.framework.datafactory.ProductFactory;
 import com.mozu.test.framework.datafactory.ProductTypeFactory;
@@ -176,10 +181,25 @@ public class ProductTests extends MozuApiTestBase {
 	public void getProductsTest1() throws Exception {
 		ApiContext localapiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
 		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		System.out.println("Total products expected is: " + products.getTotalCount());
+		int pagesize = 10;
+		int page;
+		ProductCollection productPerPage;
+		for (page=0; page<=products.getPageCount(); page++)
+		{
+		    productPerPage = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, page*pagesize, pagesize, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+/*			if (productPerPage.getItems().size() < 10)
+			{
+				System.out.println("Wrong Page" + page + " :" + products.getItems().size());
+				break;
+			}
+*/			System.out.println("Page" + page + " :" + productPerPage.getItems().size());
+		}	
+		    
 		
-		int count = products.getTotalCount();
-		int variationCount = 0;
-		int startIndex = 0;
+	//	int count = products.getTotalCount();
+	//	int variationCount = 0;
+/*		int startIndex = 0;
 		int pageSize = 200;
 		int file_number =  Generator.randomInt(1,  1000);
 		PrintWriter writer1 = new PrintWriter("C:\\Users\\eileen_zhuang\\Documents\\tmp\\file" + file_number +".txt", "UTF-8");
@@ -221,6 +241,53 @@ public class ProductTests extends MozuApiTestBase {
 //        writer2.close();
         System.out.println("Total products expected in xml is: " + count);
         System.out.println("Total variations expected in xml is: " + variationCount);
-    }
-		
+*/    }
+	@Test
+	public void populateProductTest1() throws Exception  {
+	    //Create product type
+        ProductType myPT = ProductTypeFactory.getProductType(apiContext, DataViewMode.Live, 2, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        for (int i = 0; i<300; i++)
+        {
+ /*           Product myProduct = ProductGenerator.generate(myPT);
+            myProduct.setProductCode("shoes" + i);
+            myProduct.getContent().setProductName("shoes " + i);
+            Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+*/
+        	Product myProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, "shoes" + i, HttpStatus.SC_OK, HttpStatus.SC_OK);
+/*        	List<ProductInCatalogInfo> productInCatalogs = new ArrayList<ProductInCatalogInfo>();
+        	ProductInCatalogInfo info = new ProductInCatalogInfo();
+        	info.setCatalogId(1);
+        	productInCatalogs.add(info);
+			myProduct.setProductInCatalogs(productInCatalogs );
+			List<ProductProperty> properties = new ArrayList<ProductProperty>();
+			ProductProperty pp = new ProductProperty();
+			pp.setAttributeFQN("com.mozu.bvconversations~bazaarvoice-category");
+			List<ProductPropertyValue> values = new ArrayList<ProductPropertyValue>();
+			ProductPropertyValue value = new ProductPropertyValue();
+			value.setValue("1-Cate1");
+			values.add(value);
+			pp.setValues(values );
+			properties.add(pp);
+			myProduct.setProperties(properties);
+*/			myProduct.getProductInCatalogs().get(0).setIsActive(true);
+			AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, myProduct, myProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        
+/*        	Product myProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, "shoes" + i, HttpStatus.SC_OK, HttpStatus.SC_OK);
+    
+        	
+            ProductInventoryInfo inventoryInfo = new ProductInventoryInfo();
+            inventoryInfo.setManageStock(true);
+            inventoryInfo.setOutOfStockBehavior("HideProduct");
+			myProduct.setInventoryInfo(inventoryInfo);	
+        	AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, myProduct, myProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        
+            List<LocationInventory> locationInventoryList = new ArrayList<LocationInventory>();
+            LocationInventory li = new LocationInventory();
+            li.setLocationCode("andersonmillwarehouse");
+            li.setProductCode(myProduct.getProductCode());
+            li.setStockOnHand(Generator.randomInt(50, 500));
+            locationInventoryList.add(li);
+        	LocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, locationInventoryList, myProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+*/        }
+	}
 }

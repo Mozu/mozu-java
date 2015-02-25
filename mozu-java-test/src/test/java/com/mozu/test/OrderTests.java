@@ -26,6 +26,7 @@ import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
 import com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate;
 import com.mozu.api.contracts.commerceruntime.orders.Order;
+import com.mozu.api.contracts.commerceruntime.orders.OrderAction;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentAction;
 import com.mozu.api.contracts.commerceruntime.returns.Return;
@@ -59,6 +60,7 @@ import com.mozu.test.framework.datafactory.CartItemFactory;
 import com.mozu.test.framework.datafactory.CategoryFactory;
 import com.mozu.test.framework.datafactory.CommerceLocationFactory;
 import com.mozu.test.framework.datafactory.FulfillmentActionFactory;
+import com.mozu.test.framework.datafactory.FulfillmentInfoFactory;
 import com.mozu.test.framework.datafactory.LocationFactory;
 import com.mozu.test.framework.datafactory.LocationInventoryFactory;
 import com.mozu.test.framework.datafactory.LocationTypeFactory;
@@ -118,8 +120,75 @@ public class OrderTests extends MozuApiTestBase {
 
 	// Log in shopper
 	@Test
-	public void createOrderTest1() throws Exception {		
-	    ApiContext siteApiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);	
+	public void createOrderTest1() throws Exception {
+		//get shopper api context
+		ApiContext siteApiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
+        CustomerAccountAndAuthInfo customerAccountAndAuthInfo =  CustomerGenerator.generateCustomerAccountAndAuthInfo();
+        CustomerAuthTicket ticket = CustomerAccountFactory.addAccountAndLogin(siteApiContext, customerAccountAndAuthInfo, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);        
+        CustomerUserAuthInfo shopperUserAuthInfo = CustomerGenerator.generateUserAuthInfo(customerAccountAndAuthInfo.getAccount().getUserName(), Constants.Password);
+        CustomerAuthenticationProfile shopperAuth = CustomerAuthenticator.authenticate(shopperUserAuthInfo, tenantId, siteId);
+        siteApiContext.setUserAuthTicket(shopperAuth.getAuthTicket());
+				
+		//get product
+		com.mozu.api.contracts.productruntime.Product testProduct = ProductFactory.getProduct(siteApiContext, DataViewMode.Live, Constants.TESTPRODUCTCODE_STANDARD, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		//add to cart
+		Cart testCart = CartFactory.getOrCreateCart(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		CartItem cartItem = new CartItem();
+		com.mozu.api.contracts.commerceruntime.products.Product productInCart = new com.mozu.api.contracts.commerceruntime.products.Product();
+		productInCart.setProductCode(testProduct.getProductCode());
+		cartItem.setProduct(productInCart);
+		cartItem.setQuantity(1);
+		cartItem.setFulfillmentMethod("ship");
+		CartItemFactory.addItemToCart(siteApiContext, cartItem, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		testCart = CartFactory.getOrCreateCart(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		//create order
+		Order testOrder = OrderFactory.createOrderFromCart(siteApiContext, testCart.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		//set billing info
+		Contact billingContact = new Contact();
+		billingContact.setFirstName(customerAccountAndAuthInfo.getAccount().getFirstName());
+		billingContact.setLastNameOrSurname(customerAccountAndAuthInfo.getAccount().getLastName());
+		billingContact.setEmail(customerAccountAndAuthInfo.getAccount().getEmailAddress());
+		billingContact.setAddress(customerAccountAndAuthInfo.getAccount().getContacts().get(0).getAddress());
+		billingContact.setPhoneNumbers(customerAccountAndAuthInfo.getAccount().getContacts().get(0).getPhoneNumbers());
+		
+		BillingInfo billingInfo = new BillingInfo();
+		billingInfo.setPaymentType("Check");
+		billingInfo.setIsSameBillingShippingAddress(false);
+		billingInfo.setBillingContact(billingContact);
+
+		BillingInfoFactory.setBillingInfo(siteApiContext, billingInfo, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+
+		// set fulfillment info
+		FulfillmentInfo fulfillmentInfo = new FulfillmentInfo();
+		fulfillmentInfo.setIsDestinationCommercial(false);
+		Contact shippingContact = new Contact();
+		shippingContact.setFirstName(Generator.randomString(5, Generator.AlphaChars));
+		shippingContact.setLastNameOrSurname(Generator.randomString(5, Generator.AlphaChars));
+		shippingContact.setEmail(Generator.randomEmailAddress());
+		shippingContact.setAddress(customerAccountAndAuthInfo.getAccount().getContacts().get(0).getAddress());
+		shippingContact.setPhoneNumbers(customerAccountAndAuthInfo.getAccount().getContacts().get(0).getPhoneNumbers());
+		fulfillmentInfo.setFulfillmentContact(shippingContact);
+		FulfillmentInfoFactory.setFulFillmentInfo(siteApiContext, fulfillmentInfo, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		List<ShippingRate> availableShippingMethods = OrdersShipmentFactory.getAvailableShipmentMethods(siteApiContext, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		fulfillmentInfo.setShippingMethodCode(availableShippingMethods.get(0).getShippingMethodCode());
+		fulfillmentInfo.setShippingMethodCode(availableShippingMethods.get(0).getShippingMethodName());
+		FulfillmentInfoFactory.setFulFillmentInfo(siteApiContext, fulfillmentInfo, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+		//submit order
+		OrderAction orderAction = new OrderAction();
+		orderAction.setActionName("SubmitOrder");
+		testOrder = OrderFactory.getOrder(siteApiContext, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+//		testOrder.getBillingInfo().getBillingContact().setEmail(null);
+//		testOrder.setEmail(null);
+//		testOrder.getFulfillmentInfo().getFulfillmentContact().setEmail(null);
+		OrderFactory.updateOrder(siteApiContext, testOrder, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		OrderFactory.performOrderAction(siteApiContext, orderAction, testOrder.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		
+/*	    ApiContext siteApiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);	
 	    String directShipLocationCode = CommerceLocationFactory.getDirectShipLocation(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK).getCode();
         
         LocationCollection PickupLocationCodes = CommerceLocationFactory.getInStorePickupLocations(siteApiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
@@ -159,7 +228,7 @@ public class OrderTests extends MozuApiTestBase {
         CartItemFactory.addItemToCart(siteApiContext, CustomerGenerator.generateCartItem(storeFrontProduct, itemQty, pickupLocationCode, "PickUp"), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         Order order = OrderFactory.createOrderFromCart(siteApiContext, createdCart.getId(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
         assertEquals(order.getItems().get(0).getQuantity(), itemQty);
-	}
+*/	}
 
 	//Anonymous shopper
 	@Test
