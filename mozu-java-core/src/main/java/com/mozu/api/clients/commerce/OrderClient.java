@@ -380,6 +380,30 @@ public class OrderClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=ResendOrderConfirmationEmailClient( action,  orderId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param action 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
+	 */
+	public static MozuClient resendOrderConfirmationEmailClient(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.resendOrderConfirmationEmailUrl(orderId);
+		String verb = "PUT";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(action);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Updates the user ID of the shopper who placed the order to the current user.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderUserIdClient( orderId);

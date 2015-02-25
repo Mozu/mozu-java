@@ -194,6 +194,27 @@ public class CreditClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=ResendCreditCreatedEmailClient( code);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param code 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient resendCreditCreatedEmailClient(String code) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CreditUrl.resendCreditCreatedEmailUrl(code);
+		String verb = "PUT";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Updates one or more properties of a defined store credit applied to a customer account.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.credit.Credit> mozuClient=UpdateCreditClient( credit,  code);

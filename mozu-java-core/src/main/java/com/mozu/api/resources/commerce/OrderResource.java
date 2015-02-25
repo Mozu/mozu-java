@@ -333,6 +333,26 @@ public class OrderResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	order.resendOrderConfirmationEmail( action,  orderId);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param action 
+	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
+	 */
+	public void resendOrderConfirmationEmail(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.OrderClient.resendOrderConfirmationEmailClient( action,  orderId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
 	 * Updates the user ID of the shopper who placed the order to the current user.
 	 * <p><pre><code>
 	 *	Order order = new Order();

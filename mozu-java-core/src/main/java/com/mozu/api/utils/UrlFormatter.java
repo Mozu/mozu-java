@@ -26,6 +26,7 @@ public class UrlFormatter {
         
         if (resourceUrl.endsWith(removeString + "&")) 
         	resourceUrl= resourceUrl.replace(removeString+"&", "");
+        
  	}
 	
 	public void formatUrl(String paramName, Object value)

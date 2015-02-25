@@ -24,6 +24,7 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
+import com.mozu.api.contracts.commerceruntime.refunds.Refund;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Shipment;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
@@ -75,6 +76,16 @@ public class Order implements Serializable
 
 	public void setAmountAvailableForRefund(Double amountAvailableForRefund) {
 		this.amountAvailableForRefund = amountAvailableForRefund;
+	}
+
+	protected Double amountRefunded;
+
+	public Double getAmountRefunded() {
+		return this.amountRefunded;
+	}
+
+	public void setAmountRefunded(Double amountRefunded) {
+		this.amountRefunded = amountRefunded;
 	}
 
 	/**
@@ -959,6 +970,14 @@ public class Order implements Serializable
 	}
 	public void setPickups(List<Pickup> pickups) {
 		this.pickups = pickups;
+	}
+
+	protected List<Refund> refunds;
+	public List<Refund> getRefunds() {
+		return this.refunds;
+	}
+	public void setRefunds(List<Refund> refunds) {
+		this.refunds = refunds;
 	}
 
 	/**

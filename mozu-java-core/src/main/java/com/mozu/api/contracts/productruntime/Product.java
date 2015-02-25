@@ -33,6 +33,95 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 */
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	/**
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 */
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 */
+	protected Boolean isActive;
+
+	public Boolean getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	/**
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 */
+	protected Boolean isPackagedStandAlone;
+
+	public Boolean getIsPackagedStandAlone() {
+		return this.isPackagedStandAlone;
+	}
+
+	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
+		this.isPackagedStandAlone = isPackagedStandAlone;
+	}
+
+	/**
+	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 */
+	protected Boolean isRecurring;
+
+	public Boolean getIsRecurring() {
+		return this.isRecurring;
+	}
+
+	public void setIsRecurring(Boolean isRecurring) {
+		this.isRecurring = isRecurring;
+	}
+
+	/**
+	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 */
+	protected Boolean isTaxable;
+
+	public Boolean getIsTaxable() {
+		return this.isTaxable;
+	}
+
+	public void setIsTaxable(Boolean isTaxable) {
+		this.isTaxable = isTaxable;
+	}
+
+	/**
+	 * The manufacturer's part number for the product.
+	 */
+	protected String mfgPartNumber;
+
+	public String getMfgPartNumber() {
+		return this.mfgPartNumber;
+	}
+
+	public void setMfgPartNumber(String mfgPartNumber) {
+		this.mfgPartNumber = mfgPartNumber;
+	}
+
+	/**
 	 * The list of manufacturer part numbers defined for the product.
 	 */
 	protected List<String> mfgPartNumbers;
@@ -156,95 +245,6 @@ public class Product implements Serializable
 
 	public void setCreateDate(DateTime createDate) {
 		this.createDate = createDate;
-	}
-
-	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
-	 */
-	protected List<String> fulfillmentTypesSupported;
-	public List<String> getFulfillmentTypesSupported() {
-		return this.fulfillmentTypesSupported;
-	}
-	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
-		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
-	}
-
-	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
-	 */
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
-	protected Boolean isActive;
-
-	public Boolean getIsActive() {
-		return this.isActive;
-	}
-
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
-
-	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
-	 */
-	protected Boolean isPackagedStandAlone;
-
-	public Boolean getIsPackagedStandAlone() {
-		return this.isPackagedStandAlone;
-	}
-
-	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
-		this.isPackagedStandAlone = isPackagedStandAlone;
-	}
-
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
-	protected Boolean isRecurring;
-
-	public Boolean getIsRecurring() {
-		return this.isRecurring;
-	}
-
-	public void setIsRecurring(Boolean isRecurring) {
-		this.isRecurring = isRecurring;
-	}
-
-	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
-	 */
-	protected Boolean isTaxable;
-
-	public Boolean getIsTaxable() {
-		return this.isTaxable;
-	}
-
-	public void setIsTaxable(Boolean isTaxable) {
-		this.isTaxable = isTaxable;
-	}
-
-	/**
-	 * The manufacturer's part number for the product.
-	 */
-	protected String mfgPartNumber;
-
-	public String getMfgPartNumber() {
-		return this.mfgPartNumber;
-	}
-
-	public void setMfgPartNumber(String mfgPartNumber) {
-		this.mfgPartNumber = mfgPartNumber;
 	}
 
 	/**

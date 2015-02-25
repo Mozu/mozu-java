@@ -177,6 +177,24 @@ public class CreditResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Credit credit = new Credit();
+	 *	credit.resendCreditCreatedEmail( code);
+	 * </code></pre></p>
+	 * @param code 
+	 * @return 
+	 */
+	public void resendCreditCreatedEmail(String code) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.customer.CreditClient.resendCreditCreatedEmailClient( code);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
 	 * Updates one or more properties of a defined store credit applied to a customer account.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();

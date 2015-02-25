@@ -74,6 +74,18 @@ public class CreditUrl
 	}
 
 	/**
+	 * Get Resource Url for ResendCreditCreatedEmail
+	 * @param code 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendCreditCreatedEmailUrl(String code)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/Resend-Email");
+		formatter.formatUrl("code", code);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCredit
 	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
