@@ -360,6 +360,24 @@ public class ReturnFactory
 		return returnObj;
 	}
 
+	public static void resendReturnEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode, int successCode) throws Exception
+	{
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			resource.resendReturnEmail( action);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
