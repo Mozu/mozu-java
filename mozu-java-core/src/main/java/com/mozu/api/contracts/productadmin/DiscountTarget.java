@@ -24,6 +24,26 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean excludeItemsWithExistingProductDiscounts;
+
+	public Boolean getExcludeItemsWithExistingProductDiscounts() {
+		return this.excludeItemsWithExistingProductDiscounts;
+	}
+
+	public void setExcludeItemsWithExistingProductDiscounts(Boolean excludeItemsWithExistingProductDiscounts) {
+		this.excludeItemsWithExistingProductDiscounts = excludeItemsWithExistingProductDiscounts;
+	}
+
+	protected Boolean excludeItemsWithExistingShippingDiscounts;
+
+	public Boolean getExcludeItemsWithExistingShippingDiscounts() {
+		return this.excludeItemsWithExistingShippingDiscounts;
+	}
+
+	public void setExcludeItemsWithExistingShippingDiscounts(Boolean excludeItemsWithExistingShippingDiscounts) {
+		this.excludeItemsWithExistingShippingDiscounts = excludeItemsWithExistingShippingDiscounts;
+	}
+
 	/**
 	 * If true, the target discount applies to all products sold on the site, regardless of product category.
 	 */

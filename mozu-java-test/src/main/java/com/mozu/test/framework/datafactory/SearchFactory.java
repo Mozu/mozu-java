@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.SearchResource;
 
 /** <summary>
- * 
+ * The Search resource manages all settings and options for providing product search on your site.
  * </summary>
  */
 public class SearchFactory

@@ -27,5 +27,19 @@ public class FulfillmentActionUrl
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
+	/**
+	 * Get Resource Url for ResendPackageFulfillmentEmail
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendPackageFulfillmentEmailUrl(String orderId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/email/resend?responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
 }
 

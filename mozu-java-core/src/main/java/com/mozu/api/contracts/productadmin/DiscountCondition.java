@@ -50,19 +50,6 @@ public class DiscountCondition implements Serializable
 	}
 
 	/**
-	 * Specifies maximum number of redemptions allowed for each order. If null, it defaults to unlimited.
-	 */
-	protected Integer maximumRedemptionsPerOrder;
-
-	public Integer getMaximumRedemptionsPerOrder() {
-		return this.maximumRedemptionsPerOrder;
-	}
-
-	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
-		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
-	}
-
-	/**
 	 * The maximum number of times the discount can be redeemed.
 	 */
 	protected Integer maxRedemptionCount;

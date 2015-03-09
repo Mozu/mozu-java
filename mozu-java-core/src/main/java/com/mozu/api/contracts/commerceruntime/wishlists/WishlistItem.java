@@ -26,84 +26,6 @@ public class WishlistItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
-	 */
-	protected String comments;
-
-	public String getComments() {
-		return this.comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-
-	/**
-	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
-	 */
-	protected Double discountedTotal;
-
-	public Double getDiscountedTotal() {
-		return this.discountedTotal;
-	}
-
-	public void setDiscountedTotal(Double discountedTotal) {
-		this.discountedTotal = discountedTotal;
-	}
-
-	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
-	 */
-	protected Double discountTotal;
-
-	public Double getDiscountTotal() {
-		return this.discountTotal;
-	}
-
-	public void setDiscountTotal(Double discountTotal) {
-		this.discountTotal = discountTotal;
-	}
-
-	/**
-	 * Represents the total price of the cart item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount. This value is not calculated for wish lists at this time.
-	 */
-	protected Double extendedTotal;
-
-	public Double getExtendedTotal() {
-		return this.extendedTotal;
-	}
-
-	public void setExtendedTotal(Double extendedTotal) {
-		this.extendedTotal = extendedTotal;
-	}
-
-	/**
-	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
-	 */
-	protected Double feeTotal;
-
-	public Double getFeeTotal() {
-		return this.feeTotal;
-	}
-
-	public void setFeeTotal(Double feeTotal) {
-		this.feeTotal = feeTotal;
-	}
-
-	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
-	 */
-	protected Double handlingAmount;
-
-	public Double getHandlingAmount() {
-		return this.handlingAmount;
-	}
-
-	public void setHandlingAmount(Double handlingAmount) {
-		this.handlingAmount = handlingAmount;
-	}
-
-	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
@@ -270,6 +192,84 @@ public class WishlistItem implements Serializable
 
 	public void setTotal(Double total) {
 		this.total = total;
+	}
+
+	/**
+	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
+	 */
+	protected String comments;
+
+	public String getComments() {
+		return this.comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	/**
+	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
+	 */
+	protected Double discountedTotal;
+
+	public Double getDiscountedTotal() {
+		return this.discountedTotal;
+	}
+
+	public void setDiscountedTotal(Double discountedTotal) {
+		this.discountedTotal = discountedTotal;
+	}
+
+	/**
+	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 */
+	protected Double discountTotal;
+
+	public Double getDiscountTotal() {
+		return this.discountTotal;
+	}
+
+	public void setDiscountTotal(Double discountTotal) {
+		this.discountTotal = discountTotal;
+	}
+
+	/**
+	 * Represents the total price of the cart item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount. This value is not calculated for wish lists at this time.
+	 */
+	protected Double extendedTotal;
+
+	public Double getExtendedTotal() {
+		return this.extendedTotal;
+	}
+
+	public void setExtendedTotal(Double extendedTotal) {
+		this.extendedTotal = extendedTotal;
+	}
+
+	/**
+	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 */
+	protected Double feeTotal;
+
+	public Double getFeeTotal() {
+		return this.feeTotal;
+	}
+
+	public void setFeeTotal(Double feeTotal) {
+		this.feeTotal = feeTotal;
+	}
+
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 */
+	protected Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
 	}
 
 	/**

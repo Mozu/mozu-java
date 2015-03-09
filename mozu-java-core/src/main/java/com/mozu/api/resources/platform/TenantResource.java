@@ -64,7 +64,6 @@ public TenantResource(ApiContext apiContext)
 	 */
 	public com.mozu.api.contracts.tenant.Tenant getTenant(Integer tenantId, String responseFields) throws Exception
 	{
-		
 		MozuClient<com.mozu.api.contracts.tenant.Tenant> client = com.mozu.api.clients.platform.TenantClient.getTenantClient( tenantId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();

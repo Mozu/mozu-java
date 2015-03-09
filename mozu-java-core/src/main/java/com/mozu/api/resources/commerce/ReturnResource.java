@@ -520,6 +520,25 @@ public class ReturnResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	return.resendReturnEmail( action);
+	 * </code></pre></p>
+	 * @param action 
+	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
+	 */
+	public void resendReturnEmail(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.ReturnClient.resendReturnEmailClient( action);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
 	 * Removes a particular order item from the order of the current shopper.
 	 * <p><pre><code>
 	 *	Return return = new Return();

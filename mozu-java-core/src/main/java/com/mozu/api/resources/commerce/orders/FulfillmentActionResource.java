@@ -71,6 +71,45 @@ public class FulfillmentActionResource {
 
 	}
 
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
+	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param action 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId) throws Exception
+	{
+		return resendPackageFulfillmentEmail( action,  orderId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
+	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param action 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.FulfillmentActionClient.resendPackageFulfillmentEmailClient( action,  orderId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
 }
 
 

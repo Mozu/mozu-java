@@ -88,17 +88,24 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single order.
-	 */
-	protected Double maximumDiscountValuePerOrder;
+	protected Double maximumDiscountImpactPerOrder;
 
-	public Double getMaximumDiscountValuePerOrder() {
-		return this.maximumDiscountValuePerOrder;
+	public Double getMaximumDiscountImpactPerOrder() {
+		return this.maximumDiscountImpactPerOrder;
 	}
 
-	public void setMaximumDiscountValuePerOrder(Double maximumDiscountValuePerOrder) {
-		this.maximumDiscountValuePerOrder = maximumDiscountValuePerOrder;
+	public void setMaximumDiscountImpactPerOrder(Double maximumDiscountImpactPerOrder) {
+		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
+	}
+
+	protected Integer maximumRedemptionsPerOrder;
+
+	public Integer getMaximumRedemptionsPerOrder() {
+		return this.maximumRedemptionsPerOrder;
+	}
+
+	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
+		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
 	}
 
 	/**

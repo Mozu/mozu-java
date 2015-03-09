@@ -152,6 +152,18 @@ public class OrderUrl
 	}
 
 	/**
+	 * Get Resource Url for ResendOrderConfirmationEmail
+	 * @param orderId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendOrderConfirmationEmailUrl(String orderId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/email/resend");
+		formatter.formatUrl("orderId", orderId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for ChangeOrderUserId
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.

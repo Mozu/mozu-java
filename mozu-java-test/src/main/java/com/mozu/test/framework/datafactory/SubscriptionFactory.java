@@ -14,7 +14,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.event.push.SubscriptionResource;
 
 /** <summary>
- * 
+ * The Subscriptions resource triggers a push service to sent immediate notifications to the subscribed tenants and applications when triggers. The resource sends messages regarding a subscription event tha occurs in the tenant or site.
  * </summary>
  */
 public class SubscriptionFactory

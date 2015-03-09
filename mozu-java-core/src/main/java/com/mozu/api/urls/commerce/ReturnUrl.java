@@ -216,6 +216,16 @@ public class ReturnUrl
 	}
 
 	/**
+	 * Get Resource Url for ResendReturnEmail
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendReturnEmailUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/email/resend");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteOrderItem
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @param returnItemId Unique identifier of the return item whose details you want to get.

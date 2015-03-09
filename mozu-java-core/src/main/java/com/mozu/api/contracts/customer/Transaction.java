@@ -20,6 +20,45 @@ public class Transaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The unique identifier of the transaction.
+	 */
+	protected String transactionId;
+
+	public String getTransactionId() {
+		return this.transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	/**
+	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
+	 */
+	protected String transactionType;
+
+	public String getTransactionType() {
+		return this.transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	/**
+	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 */
+	protected String visitId;
+
+	public String getVisitId() {
+		return this.visitId;
+	}
+
+	public void setVisitId(String visitId) {
+		this.visitId = visitId;
+	}
+
+	/**
 	 * If applicable, the amount of the transaction.
 	 */
 	protected Double amount;
@@ -69,45 +108,6 @@ public class Transaction implements Serializable
 
 	public void setInteractionType(String interactionType) {
 		this.interactionType = interactionType;
-	}
-
-	/**
-	 * The unique identifier of the transaction.
-	 */
-	protected String transactionId;
-
-	public String getTransactionId() {
-		return this.transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	/**
-	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
-	 */
-	protected String transactionType;
-
-	public String getTransactionType() {
-		return this.transactionType;
-	}
-
-	public void setTransactionType(String transactionType) {
-		this.transactionType = transactionType;
-	}
-
-	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
-	 */
-	protected String visitId;
-
-	public String getVisitId() {
-		return this.visitId;
-	}
-
-	public void setVisitId(String visitId) {
-		this.visitId = visitId;
 	}
 
 }

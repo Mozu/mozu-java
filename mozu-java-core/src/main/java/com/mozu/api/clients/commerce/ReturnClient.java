@@ -608,6 +608,29 @@ public class ReturnClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=ResendReturnEmailClient( action);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param action 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
+	 */
+	public static MozuClient resendReturnEmailClient(com.mozu.api.contracts.commerceruntime.returns.ReturnAction action) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.resendReturnEmailUrl();
+		String verb = "PUT";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(action);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Removes a particular order item from the order of the current shopper.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=DeleteOrderItemClient( returnId,  returnItemId);
