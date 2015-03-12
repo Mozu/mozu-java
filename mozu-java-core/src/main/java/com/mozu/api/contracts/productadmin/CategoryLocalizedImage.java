@@ -20,6 +20,19 @@ public class CategoryLocalizedImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
+	 */
+	protected String altText;
+
+	public String getAltText() {
+		return this.altText;
+	}
+
+	public void setAltText(String altText) {
+		this.altText = altText;
+	}
+
+	/**
 	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected String cmsId;
@@ -121,19 +134,6 @@ public class CategoryLocalizedImage implements Serializable
 
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
-	}
-
-	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
-	 */
-	protected String altText;
-
-	public String getAltText() {
-		return this.altText;
-	}
-
-	public void setAltText(String altText) {
-		this.altText = altText;
 	}
 
 }

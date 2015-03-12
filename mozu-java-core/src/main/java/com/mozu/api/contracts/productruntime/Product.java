@@ -33,6 +33,19 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
 	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
 	 */
 	protected List<String> fulfillmentTypesSupported;
@@ -232,19 +245,6 @@ public class Product implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
-	}
-
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
 	}
 
 	/**

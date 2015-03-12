@@ -178,8 +178,8 @@ public class GeneralTests extends MozuApiTestBase {
         list.add(new LocationInventory());
 /*bug 35021*/   AdminLocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
         AdminLocationInventoryFactory.deleteLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-        AdminLocationInventoryFactory.getLocationInventory(apiContext, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-        AdminLocationInventoryFactory.getLocationInventories(apiContext, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        AdminLocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        AdminLocationInventoryFactory.getLocationInventories(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
         List<LocationInventoryAdjustment> list1 = new ArrayList<LocationInventoryAdjustment>();
         LocationInventoryAdjustment adjust = new LocationInventoryAdjustment();
         adjust.setProductCode(Generator.randomString(5, Generator.AlphaChars));
@@ -660,12 +660,12 @@ public class GeneralTests extends MozuApiTestBase {
 	
 	@Test
 	public void LocationInventoryTests() throws Exception {
-        LocationInventoryFactory.getLocationInventories(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        LocationInventoryFactory.getLocationInventories(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
         List<LocationInventory> list = new ArrayList<LocationInventory>();
         list.add(new LocationInventory());
         /*bug 35021*/LocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR, HttpStatus.SC_OK);
         LocationInventoryFactory.deleteLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-        LocationInventoryFactory.getLocationInventory(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        LocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
         LocationInventoryFactory.updateLocationInventory(apiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);
 	}
 	
