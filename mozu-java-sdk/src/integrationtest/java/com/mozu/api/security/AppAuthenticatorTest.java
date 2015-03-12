@@ -31,7 +31,7 @@ public class AppAuthenticatorTest extends SecurityTestBase {
 		    String message = ae.getMessage();
 			assertTrue("Error Message Wrong in API", message.contains("Invalid Credentials: Invalid credentials."));
 			assertNotNull(ae.getApiError());
-            assertNotNull(ae.getApiError().getCorrelationId());
+            assertEquals("INVALID_CREDENTIALS", ae.getApiError().getErrorCode());
 		} catch (Exception e) {
 			fail ("wrong exception");
 		}
