@@ -153,7 +153,7 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for ResendOrderConfirmationEmail
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendOrderConfirmationEmailUrl(String orderId)

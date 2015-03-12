@@ -608,13 +608,13 @@ public class ReturnClient {
 	}
 
 	/**
-	 * 
+	 * commerce-returns Put ResendReturnEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendReturnEmailClient( action);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param action 
+	 * @param action Properties of an action a user can perform for a return.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
 	 */

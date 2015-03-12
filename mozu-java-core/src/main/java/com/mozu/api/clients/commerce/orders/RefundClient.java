@@ -15,21 +15,21 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 /** <summary>
- * 
+ * commerce/orders/orderrefunds related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class RefundClient {
 	
 	/**
-	 * 
+	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param refund 
+	 * @param orderId Unique identifier of the order.
+	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -40,16 +40,16 @@ public class RefundClient {
 	}
 
 	/**
-	 * 
+	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param refund 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -68,13 +68,13 @@ public class RefundClient {
 	}
 
 	/**
-	 * 
+	 * orders-orderrefunds Put ResendRefundEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @param refundId 
 	 * @return Mozu.Api.MozuClient 
 	 */
