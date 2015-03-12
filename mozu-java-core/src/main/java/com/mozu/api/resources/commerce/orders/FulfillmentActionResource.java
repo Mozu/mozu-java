@@ -72,13 +72,13 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * 
+	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -89,14 +89,14 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * 
+	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction

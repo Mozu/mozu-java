@@ -78,6 +78,9 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
+	/**
+	 * A counter for how much money has been issued in refunds. This calculated field does NOT include refunds issued in returns.
+	 */
 	protected Double amountRefunded;
 
 	public Double getAmountRefunded() {
@@ -972,6 +975,9 @@ public class Order implements Serializable
 		this.pickups = pickups;
 	}
 
+	/**
+	 * Refunds associated with this order. A refund is a single exchange of money from merchant to customer that either encapsulates a refund to a credit card or an issuance of a store credit. Refunds does not reduce the 'amount collected' on an order and it is possible for refunds to exceed the total order amount.
+	 */
 	protected List<Refund> refunds;
 	public List<Refund> getRefunds() {
 		return this.refunds;

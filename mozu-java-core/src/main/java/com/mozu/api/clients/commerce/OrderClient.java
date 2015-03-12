@@ -380,14 +380,14 @@ public class OrderClient {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ResendOrderConfirmationEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendOrderConfirmationEmailClient( action,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param action The action to perform for the order.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
 	 */
