@@ -40,6 +40,8 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Version;
+import com.mozu.api.cache.CacheManager;
+import com.mozu.api.cache.CacheManagerFactory;
 import com.mozu.api.cache.impl.CacheItem;
 import com.mozu.api.contracts.appdev.AuthTicket;
 import com.mozu.api.contracts.tenant.Tenant;
@@ -204,7 +206,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         HttpHost httpHost = new HttpHost(hostNm, port, sche);
 
         setCacheKey(request);
-        com.mozu.api.cache.CacheManager<CacheItem> cache = (com.mozu.api.cache.CacheManager<CacheItem>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
+        CacheManager<CacheItem> cache = (CacheManager<CacheItem>) CacheManagerFactory.getCacheManager();
         if (cache != null) {
         	cacheItem = cache.get(cacheKey);
         	if (cacheItem != null)
