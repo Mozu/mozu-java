@@ -72,7 +72,7 @@ public class LocationInventoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.getLocationInventoriesClient( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.getLocationInventoriesClient(_dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -109,7 +109,7 @@ public class LocationInventoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(String productCode, String locationCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.getLocationInventoryClient( productCode,  locationCode,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> client = com.mozu.api.clients.commerce.catalog.admin.products.LocationInventoryClient.getLocationInventoryClient(_dataViewMode,  productCode,  locationCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
