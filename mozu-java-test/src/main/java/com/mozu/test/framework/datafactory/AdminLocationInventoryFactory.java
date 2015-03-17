@@ -20,15 +20,15 @@ import com.mozu.api.resources.commerce.catalog.admin.LocationInventoryResource;
 public class AdminLocationInventoryFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, String locationCode, String productCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, String productCode, int expectedCode, int successCode) throws Exception
 	{
-		return getLocationInventory(apiContext,  locationCode,  productCode,  null, expectedCode, successCode );
+		return getLocationInventory(apiContext, dataViewMode,  locationCode,  productCode,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, String locationCode, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.LocationInventory returnObj = new com.mozu.api.contracts.productadmin.LocationInventory();
-		LocationInventoryResource resource = new LocationInventoryResource(apiContext);
+		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getLocationInventory( locationCode,  productCode,  responseFields);
@@ -45,15 +45,15 @@ public class AdminLocationInventoryFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, String locationCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, int expectedCode, int successCode) throws Exception
 	{
-		return getLocationInventories(apiContext,  locationCode,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getLocationInventories(apiContext, dataViewMode,  locationCode,  null,  null,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.LocationInventoryCollection returnObj = new com.mozu.api.contracts.productadmin.LocationInventoryCollection();
-		LocationInventoryResource resource = new LocationInventoryResource(apiContext);
+		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);

@@ -24,7 +24,7 @@ public class LocationInventoryClient {
 	/**
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient( productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
@@ -33,15 +33,15 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getLocationInventoriesClient( productCode,  null,  null,  null,  null,  null);
+		return getLocationInventoriesClient(dataViewMode,  productCode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
@@ -55,7 +55,7 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoriesUrl(filter, pageSize, productCode, responseFields, sortBy, startIndex);
 		String verb = "GET";
@@ -63,6 +63,7 @@ public class LocationInventoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -70,7 +71,7 @@ public class LocationInventoryClient {
 	/**
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient( productCode,  locationCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient(dataViewMode,  productCode,  locationCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
@@ -80,15 +81,15 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(String productCode, String locationCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode) throws Exception
 	{
-		return getLocationInventoryClient( productCode,  locationCode,  null);
+		return getLocationInventoryClient(dataViewMode,  productCode,  locationCode,  null);
 	}
 
 	/**
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient( productCode,  locationCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient(dataViewMode,  productCode,  locationCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
@@ -99,7 +100,7 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(String productCode, String locationCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoryUrl(locationCode, productCode, responseFields);
 		String verb = "GET";
@@ -107,6 +108,7 @@ public class LocationInventoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventory>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

@@ -333,13 +333,13 @@ public class OrderResource {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ResendOrderConfirmationEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Order order = new Order();
 	 *	order.resendOrderConfirmationEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId 
-	 * @param action 
+	 * @param orderId Unique identifier of the order.
+	 * @param action The action to perform for the order.
 	 * @return 
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
 	 */
