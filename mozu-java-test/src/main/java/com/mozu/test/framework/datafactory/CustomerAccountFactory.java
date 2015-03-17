@@ -122,10 +122,15 @@ public class CustomerAccountFactory
 
 	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, int expectedCode, int successCode) throws Exception
 	{
+		changePassword(apiContext,  passwordInfo,  accountId,  null, expectedCode, successCode );
+	}
+
+	public static void changePassword(ApiContext apiContext, com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount, int expectedCode, int successCode) throws Exception
+	{
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			resource.changePassword( passwordInfo,  accountId);
+			resource.changePassword( passwordInfo,  accountId,  unlockAccount);
 		}
 		catch (ApiException e)
 		{
@@ -254,6 +259,31 @@ public class CustomerAccountFactory
 		try
 		{
 			returnObj = resource.addAccounts( customers,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.customer.ChangePasswordResultCollection changePasswords(ApiContext apiContext, com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos, int expectedCode, int successCode) throws Exception
+	{
+		return changePasswords(apiContext,  accountPasswordInfos,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.customer.ChangePasswordResultCollection changePasswords(ApiContext apiContext, com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.ChangePasswordResultCollection returnObj = new com.mozu.api.contracts.customer.ChangePasswordResultCollection();
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.changePasswords( accountPasswordInfos,  responseFields);
 		}
 		catch (ApiException e)
 		{

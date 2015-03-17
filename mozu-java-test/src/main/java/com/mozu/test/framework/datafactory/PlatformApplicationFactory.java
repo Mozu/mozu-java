@@ -14,24 +14,24 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
+ * 
  * </summary>
  */
 public class PlatformApplicationFactory
 {
 
-	public static com.mozu.api.contracts.installedapplications.Application getApplication(ApiContext apiContext, String appId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, int expectedCode, int successCode) throws Exception
 	{
-		return getApplication(apiContext,  appId,  null, expectedCode, successCode );
+		return getAppPackageNames(apiContext,  applicationKey,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.installedapplications.Application getApplication(ApiContext apiContext, String appId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.installedapplications.Application returnObj = new com.mozu.api.contracts.installedapplications.Application();
+		com.mozu.api.contracts.appdev.PackageNamesCollection returnObj = new com.mozu.api.contracts.appdev.PackageNamesCollection();
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.getApplication( appId,  responseFields);
+			returnObj = resource.getAppPackageNames( applicationKey,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -45,18 +45,18 @@ public class PlatformApplicationFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.installedapplications.Application updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, int expectedCode, int successCode) throws Exception
 	{
-		return updateApplication(apiContext,  application,  appId,  null, expectedCode, successCode );
+		return getAppVersions(apiContext,  nsAndAppId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.installedapplications.Application updateApplication(ApiContext apiContext, com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
-		com.mozu.api.contracts.installedapplications.Application returnObj = new com.mozu.api.contracts.installedapplications.Application();
+		com.mozu.api.contracts.appdev.ApplicationVersionsCollection returnObj = new com.mozu.api.contracts.appdev.ApplicationVersionsCollection();
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
 		{
-			returnObj = resource.updateApplication( application,  appId,  responseFields);
+			returnObj = resource.getAppVersions( nsAndAppId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -68,6 +68,124 @@ public class PlatformApplicationFactory
 		if(expectedCode != successCode)
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, int expectedCode, int successCode) throws Exception
+	{
+		return getPackageFileMetadata(apiContext,  applicationKey,  filepath,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			returnObj = resource.getPackageFileMetadata( applicationKey,  filepath,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, int expectedCode, int successCode) throws Exception
+	{
+		return getPackageMetadata(apiContext,  applicationKey,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.appdev.FolderMetadata returnObj = new com.mozu.api.contracts.appdev.FolderMetadata();
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			returnObj = resource.getPackageMetadata( applicationKey,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String  contentType, int expectedCode, int successCode) throws Exception
+	{
+		return upsertPackageFile(apiContext,  stream,  applicationKey,  filepath,  null,  null,  contentType, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String lastModifiedTime, String responseFields, String  contentType, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			returnObj = resource.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, int expectedCode, int successCode) throws Exception
+	{
+		return renamePackageFile(apiContext,  renameInfo,  applicationKey,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			returnObj = resource.renamePackageFile( renameInfo,  applicationKey,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
+	public static void deletePackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode, int successCode) throws Exception
+	{
+		ApplicationResource resource = new ApplicationResource(apiContext);
+		try
+		{
+			resource.deletePackageFile( applicationKey,  filepath);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
 }
