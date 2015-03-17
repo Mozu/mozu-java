@@ -75,7 +75,7 @@ public class MozuApiTestBase {
     	if (StringUtils.isNotBlank(configStr))
     		catalogId = Integer.parseInt(configStr);
     	else
-    		catalogId = testBaseTenant.getMasterCatalogs().get(masterCatalogId-1).getCatalogs().get(0).getId();
+    		catalogId = testBaseTenant.getMasterCatalogs().get(0).getCatalogs().get(0).getId();
     	configStr = Environment.getConfigValue("SiteId");
     	if (StringUtils.isNotBlank(configStr))
     		siteId = Integer.parseInt(configStr);
