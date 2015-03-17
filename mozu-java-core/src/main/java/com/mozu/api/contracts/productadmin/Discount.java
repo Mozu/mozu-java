@@ -49,6 +49,16 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
 	/**
 	 * The number of times this discount has been redeemed.
 	 */
@@ -88,9 +98,6 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single order. Must be either null or greater than zero.
-	 */
 	protected Double maximumDiscountImpactPerOrder;
 
 	public Double getMaximumDiscountImpactPerOrder() {
@@ -101,9 +108,16 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
 	}
 
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
+	protected Double maximumDiscountImpactPerRedemption;
+
+	public Double getMaximumDiscountImpactPerRedemption() {
+		return this.maximumDiscountImpactPerRedemption;
+	}
+
+	public void setMaximumDiscountImpactPerRedemption(Double maximumDiscountImpactPerRedemption) {
+		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
+	}
+
 	protected Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {

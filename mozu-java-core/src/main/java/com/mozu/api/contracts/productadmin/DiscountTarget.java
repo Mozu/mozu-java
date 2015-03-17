@@ -24,9 +24,6 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Prevents order scoped discounts from layering over items that already have a product discount with the same type.
-	 */
 	protected Boolean excludeItemsWithExistingProductDiscounts;
 
 	public Boolean getExcludeItemsWithExistingProductDiscounts() {
@@ -37,9 +34,6 @@ public class DiscountTarget implements Serializable
 		this.excludeItemsWithExistingProductDiscounts = excludeItemsWithExistingProductDiscounts;
 	}
 
-	/**
-	 * Prevents order scoped discounts from layering over items that already have a shipping discount with the same type.
-	 */
 	protected Boolean excludeItemsWithExistingShippingDiscounts;
 
 	public Boolean getExcludeItemsWithExistingShippingDiscounts() {

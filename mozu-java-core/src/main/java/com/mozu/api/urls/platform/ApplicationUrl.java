@@ -14,31 +14,107 @@ public class ApplicationUrl
 {
 
 	/**
-	 * Get Resource Url for GetApplication
-	 * @param appId 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * Get Resource Url for GetAppPackageNames
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getApplicationUrl(String appId, String responseFields)
+	public static MozuUrl getAppPackageNamesUrl(String applicationKey, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
-		formatter.formatUrl("appId", appId);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/applications/{applicationKey}/packagenames?responseFields={responseFields}");
+		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for UpdateApplication
-	 * @param appId 
-	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * Get Resource Url for GetAppVersions
+	 * @param nsAndAppId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateApplicationUrl(String appId, String responseFields)
+	public static MozuUrl getAppVersionsUrl(String nsAndAppId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/applications/{appId}?responseFields={responseFields}");
-		formatter.formatUrl("appId", appId);
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/applications/versions/{nsAndAppId}?responseFields={responseFields}");
+		formatter.formatUrl("nsAndAppId", nsAndAppId);
 		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetPackageFileMetadata
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getPackageFileMetadataUrl(String applicationKey, String filepath, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/filemetadata/{filepath}?responseFields={responseFields}");
+		formatter.formatUrl("applicationKey", applicationKey);
+		formatter.formatUrl("filepath", filepath);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetPackageMetadata
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getPackageMetadataUrl(String applicationKey, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/metadata?responseFields={responseFields}");
+		formatter.formatUrl("applicationKey", applicationKey);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpsertPackageFile
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param lastModifiedTime 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl upsertPackageFileUrl(String applicationKey, String filepath, String lastModifiedTime, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}?lastModifiedTime={lastModifiedTime}&responseFields={responseFields}");
+		formatter.formatUrl("applicationKey", applicationKey);
+		formatter.formatUrl("filepath", filepath);
+		formatter.formatUrl("lastModifiedTime", lastModifiedTime);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RenamePackageFile
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl renamePackageFileUrl(String applicationKey, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files_rename?responseFields={responseFields}");
+		formatter.formatUrl("applicationKey", applicationKey);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeletePackageFile
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deletePackageFileUrl(String applicationKey, String filepath)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}");
+		formatter.formatUrl("applicationKey", applicationKey);
+		formatter.formatUrl("filepath", filepath);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 }

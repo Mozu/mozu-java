@@ -75,7 +75,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for ResendCreditCreatedEmail
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendCreditCreatedEmailUrl(String code)

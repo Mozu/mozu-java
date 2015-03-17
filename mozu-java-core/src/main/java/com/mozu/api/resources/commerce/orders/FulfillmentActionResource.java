@@ -72,38 +72,36 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
-	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
+	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( orderId,  packageId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param packageId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(String orderId, String packageId) throws Exception
 	{
-		return resendPackageFulfillmentEmail( action,  orderId,  null);
+		return resendPackageFulfillmentEmail( orderId,  packageId,  null);
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
-	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
+	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( orderId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param packageId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(String orderId, String packageId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.FulfillmentActionClient.resendPackageFulfillmentEmailClient( action,  orderId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.FulfillmentActionClient.resendPackageFulfillmentEmailClient( orderId,  packageId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

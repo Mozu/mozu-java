@@ -26,6 +26,26 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected DateTime allocationExpiration;
+
+	public DateTime getAllocationExpiration() {
+		return this.allocationExpiration;
+	}
+
+	public void setAllocationExpiration(DateTime allocationExpiration) {
+		this.allocationExpiration = allocationExpiration;
+	}
+
+	protected Integer allocationId;
+
+	public Integer getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(Integer allocationId) {
+		this.allocationId = allocationId;
+	}
+
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
@@ -90,7 +110,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include Physical and DigitalCredit. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
 

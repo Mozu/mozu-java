@@ -194,13 +194,13 @@ public class CreditClient {
 	}
 
 	/**
-	 * customer-credits Put ResendCreditCreatedEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendCreditCreatedEmailClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendCreditCreatedEmailClient(String code) throws Exception

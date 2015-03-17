@@ -22,6 +22,7 @@ import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPricingBehaviorInfo;
 import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
+import com.mozu.api.contracts.productruntime.VariationSummary;
 
 /**
  *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
@@ -57,7 +58,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include Physical and DigitalCredit. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
 
@@ -391,6 +392,14 @@ public class Product implements Serializable
 
 	public void setPurchasableState(ProductPurchasableState purchasableState) {
 		this.purchasableState = purchasableState;
+	}
+
+	protected List<VariationSummary> variations;
+	public List<VariationSummary> getVariations() {
+		return this.variations;
+	}
+	public void setVariations(List<VariationSummary> variations) {
+		this.variations = variations;
 	}
 
 }

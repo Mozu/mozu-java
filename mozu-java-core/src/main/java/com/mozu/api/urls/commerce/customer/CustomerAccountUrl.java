@@ -84,12 +84,14 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for ChangePassword
 	 * @param accountId Unique identifier of the customer account.
+	 * @param unlockAccount 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl changePasswordUrl(Integer accountId)
+	public static MozuUrl changePasswordUrl(Integer accountId, Boolean unlockAccount)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Change-Password");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/Change-Password?unlockAccount={unlockAccount}");
 		formatter.formatUrl("accountId", accountId);
+		formatter.formatUrl("unlockAccount", unlockAccount);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -163,6 +165,18 @@ public class CustomerAccountUrl
 	public static MozuUrl addAccountsUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Bulk?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for ChangePasswords
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl changePasswordsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Change-Passwords?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

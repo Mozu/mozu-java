@@ -68,48 +68,45 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( orderId,  packageId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param packageId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(String orderId, String packageId) throws Exception
 	{
-		return resendPackageFulfillmentEmailClient( action,  orderId,  null);
+		return resendPackageFulfillmentEmailClient( orderId,  packageId,  null);
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( orderId,  packageId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param packageId 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
-	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
 	 */
-	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(String orderId, String packageId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.orders.FulfillmentActionUrl.resendPackageFulfillmentEmailUrl(orderId, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.orders.FulfillmentActionUrl.resendPackageFulfillmentEmailUrl(orderId, packageId, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(action);
 		return mozuClient;
 
 	}

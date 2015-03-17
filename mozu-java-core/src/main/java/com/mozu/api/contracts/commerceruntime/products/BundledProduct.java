@@ -20,6 +20,26 @@ public class BundledProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected DateTime allocationExpiration;
+
+	public DateTime getAllocationExpiration() {
+		return this.allocationExpiration;
+	}
+
+	public void setAllocationExpiration(DateTime allocationExpiration) {
+		this.allocationExpiration = allocationExpiration;
+	}
+
+	protected Integer allocationId;
+
+	public Integer getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(Integer allocationId) {
+		this.allocationId = allocationId;
+	}
+
 	/**
 	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
@@ -47,7 +67,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include Physical and DigitalCredit. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
 

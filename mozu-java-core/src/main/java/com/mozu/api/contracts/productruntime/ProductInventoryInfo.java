@@ -45,6 +45,16 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
+	protected Integer onlineSoftStockAvailable;
+
+	public Integer getOnlineSoftStockAvailable() {
+		return this.onlineSoftStockAvailable;
+	}
+
+	public void setOnlineSoftStockAvailable(Integer onlineSoftStockAvailable) {
+		this.onlineSoftStockAvailable = onlineSoftStockAvailable;
+	}
+
 	/**
 	 * The current number of products that are available for purchase.
 	 */
