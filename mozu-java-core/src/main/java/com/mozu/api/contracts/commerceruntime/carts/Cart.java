@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
+import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
 import com.mozu.api.contracts.commerceruntime.carts.CartItem;
@@ -358,6 +360,22 @@ public class Cart implements Serializable
 	}
 	public void setChangeMessages(List<ChangeMessage> changeMessages) {
 		this.changeMessages = changeMessages;
+	}
+
+	protected List<KeyValue> data;
+	public List<KeyValue> getData() {
+		return this.data;
+	}
+	public void setData(List<KeyValue> data) {
+		this.data = data;
+	}
+
+	protected List<ExtendedProperty> extendedProperties;
+	public List<ExtendedProperty> getExtendedProperties() {
+		return this.extendedProperties;
+	}
+	public void setExtendedProperties(List<ExtendedProperty> extendedProperties) {
+		this.extendedProperties = extendedProperties;
 	}
 
 	/**

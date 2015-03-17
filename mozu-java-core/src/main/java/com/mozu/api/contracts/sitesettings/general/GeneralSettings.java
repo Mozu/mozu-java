@@ -11,7 +11,9 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
+import com.mozu.api.contracts.sitesettings.general.general.ViewAuthorizations;
 
 /**
  *	General settings used on the storefront site.
@@ -308,6 +310,16 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	protected EmailTransactionSettings supressedEmailTransactions;
+
+	public EmailTransactionSettings getSupressedEmailTransactions() {
+		return this.supressedEmailTransactions;
+	}
+
+	public void setSupressedEmailTransactions(EmailTransactionSettings supressedEmailTransactions) {
+		this.supressedEmailTransactions = supressedEmailTransactions;
+	}
+
 	/**
 	 * The territories configured for the site that are subject to sales tax.
 	 */
@@ -317,6 +329,16 @@ public class GeneralSettings implements Serializable
 	}
 	public void setTaxableTerritories(List<TaxableTerritory> taxableTerritories) {
 		this.taxableTerritories = taxableTerritories;
+	}
+
+	protected ViewAuthorizations viewAuthorizations;
+
+	public ViewAuthorizations getViewAuthorizations() {
+		return this.viewAuthorizations;
+	}
+
+	public void setViewAuthorizations(ViewAuthorizations viewAuthorizations) {
+		this.viewAuthorizations = viewAuthorizations;
 	}
 
 }

@@ -221,7 +221,7 @@ public class ReturnUrl
 	 */
 	public static MozuUrl resendReturnEmailUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/email/resend");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/Resend-Email");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

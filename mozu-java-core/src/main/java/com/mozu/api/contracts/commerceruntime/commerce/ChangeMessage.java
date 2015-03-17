@@ -32,6 +32,46 @@ public class ChangeMessage implements Serializable
 		this.amount = amount;
 	}
 
+	protected String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	protected String appKey;
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+	}
+
+	protected String appName;
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+
+	protected String correlationId;
+
+	public String getCorrelationId() {
+		return this.correlationId;
+	}
+
+	public void setCorrelationId(String correlationId) {
+		this.correlationId = correlationId;
+	}
+
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
@@ -82,6 +122,16 @@ public class ChangeMessage implements Serializable
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	protected Object metadata;
+
+	public Object getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(Object metadata) {
+		this.metadata = metadata;
 	}
 
 	/**
@@ -149,6 +199,16 @@ public class ChangeMessage implements Serializable
 		this.success = success;
 	}
 
+	protected String userFirstName;
+
+	public String getUserFirstName() {
+		return this.userFirstName;
+	}
+
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
+	}
+
 	/**
 	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
@@ -160,6 +220,26 @@ public class ChangeMessage implements Serializable
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	protected String userLastName;
+
+	public String getUserLastName() {
+		return this.userLastName;
+	}
+
+	public void setUserLastName(String userLastName) {
+		this.userLastName = userLastName;
+	}
+
+	protected String userScopeType;
+
+	public String getUserScopeType() {
+		return this.userScopeType;
+	}
+
+	public void setUserScopeType(String userScopeType) {
+		this.userScopeType = userScopeType;
 	}
 
 	/**

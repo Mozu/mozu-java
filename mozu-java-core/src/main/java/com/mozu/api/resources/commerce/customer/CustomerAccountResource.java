@@ -193,7 +193,24 @@ public class CustomerAccountResource {
 	 */
 	public void changePassword(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.changePasswordClient( passwordInfo,  accountId);
+		changePassword( passwordInfo,  accountId,  null);
+	}
+
+	/**
+	 * Modify the password associated with a customer account.
+	 * <p><pre><code>
+	 *	CustomerAccount customeraccount = new CustomerAccount();
+	 *	customeraccount.changePassword( passwordInfo,  accountId,  unlockAccount);
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param unlockAccount 
+	 * @param passwordInfo The information required to modify a shopper account password.
+	 * @return 
+	 * @see com.mozu.api.contracts.customer.PasswordInfo
+	 */
+	public void changePassword(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.changePasswordClient( passwordInfo,  accountId,  unlockAccount);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
@@ -365,6 +382,43 @@ public class CustomerAccountResource {
 	public com.mozu.api.contracts.customer.CustomerAccountCollection addAccounts(List<com.mozu.api.contracts.customer.CustomerAccountAndAuthInfo> customers, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.customer.CustomerAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.addAccountsClient( customers,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAccount customeraccount = new CustomerAccount();
+	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos);
+	 * </code></pre></p>
+	 * @param accountPasswordInfos 
+	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
+	 */
+	public com.mozu.api.contracts.customer.ChangePasswordResultCollection changePasswords(com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos) throws Exception
+	{
+		return changePasswords( accountPasswordInfos,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAccount customeraccount = new CustomerAccount();
+	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param accountPasswordInfos 
+	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
+	 */
+	public com.mozu.api.contracts.customer.ChangePasswordResultCollection changePasswords(com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.changePasswordsClient( accountPasswordInfos,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

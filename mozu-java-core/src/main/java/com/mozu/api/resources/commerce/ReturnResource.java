@@ -520,12 +520,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * commerce-returns Put ResendReturnEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	return.resendReturnEmail( action);
 	 * </code></pre></p>
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param action 
 	 * @return 
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
 	 */

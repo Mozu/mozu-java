@@ -11,6 +11,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
@@ -283,6 +284,14 @@ public class OrderItem implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected List<KeyValue> data;
+	public List<KeyValue> getData() {
+		return this.data;
+	}
+	public void setData(List<KeyValue> data) {
+		this.data = data;
 	}
 
 	/**

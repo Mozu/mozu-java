@@ -211,7 +211,25 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient changePasswordClient(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordUrl(accountId);
+		return changePasswordClient( passwordInfo,  accountId,  null);
+	}
+
+	/**
+	 * Modify the password associated with a customer account.
+	 * <p><pre><code>
+	 * MozuClient mozuClient=ChangePasswordClient( passwordInfo,  accountId,  unlockAccount);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param accountId Unique identifier of the customer account.
+	 * @param unlockAccount 
+	 * @param passwordInfo The information required to modify a shopper account password.
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.customer.PasswordInfo
+	 */
+	public static MozuClient changePasswordClient(com.mozu.api.contracts.customer.PasswordInfo passwordInfo, Integer accountId, Boolean unlockAccount) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordUrl(accountId, unlockAccount);
 		String verb = "POST";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
@@ -423,6 +441,51 @@ public class CustomerAccountClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(customers);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> mozuClient=ChangePasswordsClient( accountPasswordInfos);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ChangePasswordResultCollection changePasswordResultCollection = client.Result();
+	 * </code></pre></p>
+	 * @param accountPasswordInfos 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.ChangePasswordResultCollection>
+	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> changePasswordsClient(com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos) throws Exception
+	{
+		return changePasswordsClient( accountPasswordInfos,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> mozuClient=ChangePasswordsClient( accountPasswordInfos,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ChangePasswordResultCollection changePasswordResultCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param accountPasswordInfos 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.ChangePasswordResultCollection>
+	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
+	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> changePasswordsClient(com.mozu.api.contracts.customer.AccountPasswordInfoCollection accountPasswordInfos, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.changePasswordsUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.ChangePasswordResultCollection.class;
+		MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.ChangePasswordResultCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(accountPasswordInfos);
 		return mozuClient;
 
 	}

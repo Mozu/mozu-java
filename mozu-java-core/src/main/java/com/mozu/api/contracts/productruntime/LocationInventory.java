@@ -45,6 +45,16 @@ public class LocationInventory implements Serializable
 		this.productCode = productCode;
 	}
 
+	protected Integer softStockAvailable;
+
+	public Integer getSoftStockAvailable() {
+		return this.softStockAvailable;
+	}
+
+	public void setSoftStockAvailable(Integer softStockAvailable) {
+		this.softStockAvailable = softStockAvailable;
+	}
+
 	/**
 	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
 	 */

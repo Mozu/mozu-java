@@ -9,8 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
+import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
@@ -123,19 +123,6 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
-	}
-
-	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
 	protected CategoryLocalizedContent content;
@@ -146,6 +133,19 @@ public class Category implements Serializable
 
 	public void setContent(CategoryLocalizedContent content) {
 		this.content = content;
+	}
+
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
 	}
 
 }
