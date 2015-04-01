@@ -21,7 +21,7 @@ public class AttributeVocabularyValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the attribute vocabulary value does not appear in the list when defining a value for the attribute.
+	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
 	protected Boolean isHidden;
 
@@ -34,7 +34,7 @@ public class AttributeVocabularyValue implements Serializable
 	}
 
 	/**
-	 * The numeric order of a vocabulary value defined for an extensible attribute.
+	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
 	protected Integer sequence;
 
@@ -47,7 +47,7 @@ public class AttributeVocabularyValue implements Serializable
 	}
 
 	/**
-	 * Possible value associated with a vocabulary value defined for an extensible attribute.
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
 	protected String value;
 
@@ -60,7 +60,7 @@ public class AttributeVocabularyValue implements Serializable
 	}
 
 	/**
-	 * List of content associated with a vocabulary value defined for an extensible attribute.
+	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
 	 */
 	protected AttributeValueLocalizedContent content;
 

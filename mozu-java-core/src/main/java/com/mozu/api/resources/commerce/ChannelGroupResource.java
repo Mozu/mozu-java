@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Channel Groups resource to manage groups of channels with common information.
  * </summary>
@@ -75,7 +75,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.getChannelGroup( code);
 	 * </code></pre></p>
-	 * @param code The code that uniquely identifies the channel group.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 */
@@ -90,7 +90,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.getChannelGroup( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code The code that uniquely identifies the channel group.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -110,7 +110,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.createChannelGroup( channelGroup);
 	 * </code></pre></p>
-	 * @param channelGroup Properties of the channel group to create.
+	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -127,7 +127,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelGroup = channelgroup.createChannelGroup( channelGroup,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of the channel group to create.
+	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -147,8 +147,8 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.updateChannelGroup( channelGroup,  code);
 	 * </code></pre></p>
-	 * @param code Code that identifies the channel group.
-	 * @param channelGroup Properties of the channel group to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -164,9 +164,9 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.updateChannelGroup( channelGroup,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code Code that identifies the channel group.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of the channel group to update.
+	 * @param channelGroup Properties of a group of channels that share common information.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup

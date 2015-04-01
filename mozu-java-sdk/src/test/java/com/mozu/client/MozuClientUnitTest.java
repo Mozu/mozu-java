@@ -14,6 +14,7 @@ import mockit.Mocked;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
+import org.apache.http.RequestLine;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -27,6 +28,9 @@ import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
+import com.mozu.api.cache.CacheManager;
+import com.mozu.api.cache.CacheManagerFactory;
+import com.mozu.api.cache.impl.CacheItem;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.security.AppAuthenticator;
@@ -62,6 +66,8 @@ public final class MozuClientUnitTest {
     @Mocked StatusLine mockStatusLine;
     @Mocked HttpEntity mockHttpEntity;
     @Mocked InputStream mockInputStream;
+    @Mocked RequestLine mockRequestLine;
+    @Mocked CacheManager<CacheItem> mockCacheManager;
 
     @Before
     public void setUp() throws Exception {
@@ -253,7 +259,24 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getUrl(); result=TENANT_URL; }
             { mockApiContext.getUserAuthTicket(); result=null; }
             
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+            {mockRequestLine.getUri(); result="SomeString";}
+
+            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
+            {mockApiContext.getCurrency(); result=null;}
+            {mockApiContext.getLocale(); result=null;}
+            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
+            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
+            {mockHttpRequest.containsHeader(anyString); result=false;}
+            
+            {mockCacheManager.get(anyString); result=null;}
+           
             { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
+            { mockStatusLine.getStatusCode(); result=200; }
+            {mockHttpResponse.containsHeader(anyString); result=false;}
+            {mockHttpResponse.containsHeader(anyString); result=false;}
             { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
             { mockStatusLine.getStatusCode(); result=200; }
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
@@ -309,13 +332,26 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getUrl(); result=TENANT_URL; }
             { mockApiContext.getUserAuthTicket(); result=null; }
             
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+            {mockRequestLine.getUri(); result="SomeString";}
+
+            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
+            {mockApiContext.getCurrency(); result=null;}
+            {mockApiContext.getLocale(); result=null;}
+            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
+            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
+            {mockHttpRequest.containsHeader(anyString); result=false;}
+            
+            {mockCacheManager.get(anyString); result=null;}
+           
             { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
             { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
             { mockStatusLine.getStatusCode(); result=404; }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpEntity.getContent(); result=mockInputStream; }
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getReasonPhrase(); result="Test reason"; } 
+            {mockHttpResponse.containsHeader(anyString); result=false;}
+            {mockRequestLine.getUri(); result="SomeString";}
+            
             { mockHttpResponse.getEntity(); result=mockHttpEntity; }
             { mockHttpResponse.close(); }
         };
@@ -331,7 +367,7 @@ public final class MozuClientUnitTest {
             fail("404 Test Exception expected");
         } catch (ApiException ae) {
             // expected
-            assertTrue(ae.getMessage().contains("404"));
+            assertTrue(ae.getMessage().contains("Error returned from Mozu"));
         }
     }
 
@@ -364,9 +400,24 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getUrl(); result=TENANT_URL; }
             { mockApiContext.getUserAuthTicket(); result=null; }
             
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+            {mockRequestLine.getUri(); result="SomeString";}
+
+            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
+            {mockApiContext.getCurrency(); result=null;}
+            {mockApiContext.getLocale(); result=null;}
+            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
+            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
+            {mockHttpRequest.containsHeader(anyString); result=false;}
+            
+            {mockCacheManager.get(anyString); result=null;}
+
             { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
             { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
             { mockStatusLine.getStatusCode(); result=200; }
+            {mockHttpResponse.containsHeader(anyString); result=false;}
+            {mockHttpResponse.containsHeader(anyString); result=false;}
         };
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
@@ -417,13 +468,32 @@ public final class MozuClientUnitTest {
            { mockResourceUrl.getUrl(); result=TENANT_URL; }
            { mockApiContext.getUserAuthTicket(); result=null; }
            
+           {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+           {mockRequestLine.getUri(); result="SomeString";}
+
+           { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
+           {mockApiContext.getCurrency(); result=null;}
+           {mockApiContext.getLocale(); result=null;}
+           { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
+           { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
+           {mockHttpRequest.containsHeader(anyString); result=false;}
+           
+           {mockCacheManager.get(anyString); result=null;}
+          
            { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+           {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+           { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
+           { mockStatusLine.getStatusCode(); result=200; }
+           {mockHttpResponse.containsHeader(anyString); result=false;}
+           {mockHttpResponse.containsHeader(anyString); result=false;}
            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
            { mockStatusLine.getStatusCode(); result=200; }
            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
            { mockHttpResponse.close(); }
        };
 
+       CacheManagerFactory.setCacheManager(mockCacheManager);;
+       
        MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
@@ -463,9 +533,24 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getUrl(); result=TENANT_URL; }
             { mockApiContext.getUserAuthTicket(); result=null; }
             
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
+            {mockRequestLine.getUri(); result="SomeString";}
+
+            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
+            {mockApiContext.getCurrency(); result=null;}
+            {mockApiContext.getLocale(); result=null;}
+            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
+            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
+            {mockHttpRequest.containsHeader(anyString); result=false;}
+            
+            {mockCacheManager.get(anyString); result=null;}
+           
             { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
             { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
             { mockStatusLine.getStatusCode(); result=200; }
+            {mockHttpResponse.containsHeader(anyString); result=false;}
+            {mockHttpResponse.containsHeader(anyString); result=false;}
         };
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();

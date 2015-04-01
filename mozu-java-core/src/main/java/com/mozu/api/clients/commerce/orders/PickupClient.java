@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Pickups resource to organize items submitted in an order into pickups that enable the shopper to fulfill the order items using the in-store pickup method.
  * </summary>
@@ -28,8 +28,8 @@ public class PickupClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -53,8 +53,8 @@ public class PickupClient {
 	 * client.executeRequest();
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -71,8 +71,8 @@ public class PickupClient {
 	 * client.executeRequest();
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
-	 * @param pickupId Unique identifier of the pickup to retrieve.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -98,7 +98,7 @@ public class PickupClient {
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param pickup Properties of the in-store pickup to create.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -118,7 +118,7 @@ public class PickupClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param pickup Properties of the in-store pickup to create.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -144,9 +144,9 @@ public class PickupClient {
 	 * client.executeRequest();
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the in-store pickup.
-	 * @param pickupId Unique identifier of the pickup to update.
-	 * @param pickup Properties of the in-store pickup to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -164,10 +164,10 @@ public class PickupClient {
 	 * client.executeRequest();
 	 * Pickup pickup = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the in-store pickup.
-	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param orderId Unique identifier of the order.
+	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param pickup Properties of the in-store pickup to update.
+	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.fulfillment.Pickup>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -192,7 +192,7 @@ public class PickupClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param orderId Unique identifier of the order.
 	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return Mozu.Api.MozuClient 
 	 */

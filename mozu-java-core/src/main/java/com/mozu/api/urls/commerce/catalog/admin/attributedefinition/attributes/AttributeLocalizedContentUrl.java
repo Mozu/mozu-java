@@ -15,7 +15,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContents
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeLocalizedContentsUrl(String attributeFQN)
@@ -27,7 +27,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContent
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -43,7 +43,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for AddLocalizedContent
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -57,7 +57,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContents
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocalizedContentsUrl(String attributeFQN)
@@ -69,7 +69,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContent
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -85,7 +85,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for DeleteLocalizedContent
-	 * @param attributeFQN 
+	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @return   String Resource Url
 	 */

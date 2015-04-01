@@ -33,7 +33,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * AVS codes supplied by the payment gateway.
+	 * AVS (Address Verification Service) codes supplied by the payment gateway. The codes indicate partial to complete or failed matches against the billing address for the shopper against the financial institute data through the gateway.
 	 */
 	protected String gatewayAVSCodes;
 
@@ -46,7 +46,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * CVV2 codes supplied by the payment gateway.
+	 * CVV2 (Card Verification Value) codes supplied by the payment gateway. The codes indicate a verified or failed match of the encrypted code entered against the financial institution data through the gateway.
 	 */
 	protected String gatewayCVV2Codes;
 
@@ -85,7 +85,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway.
+	 * Textual message returned by the payment gateway for the associated success or failure code.
 	 */
 	protected String gatewayResponseText;
 

@@ -22,15 +22,118 @@ import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPricingBehaviorInfo;
 import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
+import com.mozu.api.contracts.productruntime.VariationSummary;
 
 /**
- *	Properties of the product that appears on a designated storefront.
+ *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
+	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 */
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	/**
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 */
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 */
+	protected Boolean isActive;
+
+	public Boolean getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	/**
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 */
+	protected Boolean isPackagedStandAlone;
+
+	public Boolean getIsPackagedStandAlone() {
+		return this.isPackagedStandAlone;
+	}
+
+	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
+		this.isPackagedStandAlone = isPackagedStandAlone;
+	}
+
+	/**
+	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 */
+	protected Boolean isRecurring;
+
+	public Boolean getIsRecurring() {
+		return this.isRecurring;
+	}
+
+	public void setIsRecurring(Boolean isRecurring) {
+		this.isRecurring = isRecurring;
+	}
+
+	/**
+	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 */
+	protected Boolean isTaxable;
+
+	public Boolean getIsTaxable() {
+		return this.isTaxable;
+	}
+
+	public void setIsTaxable(Boolean isTaxable) {
+		this.isTaxable = isTaxable;
+	}
+
+	/**
+	 * The manufacturer's part number for the product.
+	 */
+	protected String mfgPartNumber;
+
+	public String getMfgPartNumber() {
+		return this.mfgPartNumber;
+	}
+
+	public void setMfgPartNumber(String mfgPartNumber) {
+		this.mfgPartNumber = mfgPartNumber;
+	}
 
 	/**
 	 * The list of manufacturer part numbers defined for the product.
@@ -70,7 +173,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * A product type is like a product template that can be reused.
+	 * The product type template associated with the product on the storefront.
 	 */
 	protected String productType;
 
@@ -96,7 +199,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The publishing state of the product definition in the master catalog, which is "New", "Draft", or "Live".
+	 * The current state of the document or product definition. States for documents include Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft. States for product include New, Draft, or Live.
 	 */
 	protected String publishState;
 
@@ -109,7 +212,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */
 	protected String upc;
 
@@ -133,7 +236,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Product code that represents the product variation selected based on the option values the shopper entered.
+	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
 	protected String variationProductCode;
 
@@ -146,106 +249,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
-	}
-
-	/**
-	 * The list of fulfillment types the product supports.
-	 */
-	protected List<String> fulfillmentTypesSupported;
-	public List<String> getFulfillmentTypesSupported() {
-		return this.fulfillmentTypesSupported;
-	}
-	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
-		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
-	}
-
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
-	/**
-	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
-	 */
-	protected Boolean isActive;
-
-	public Boolean getIsActive() {
-		return this.isActive;
-	}
-
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
-
-	/**
-	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
-	 */
-	protected Boolean isPackagedStandAlone;
-
-	public Boolean getIsPackagedStandAlone() {
-		return this.isPackagedStandAlone;
-	}
-
-	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
-		this.isPackagedStandAlone = isPackagedStandAlone;
-	}
-
-	/**
-	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
-	 */
-	protected Boolean isRecurring;
-
-	public Boolean getIsRecurring() {
-		return this.isRecurring;
-	}
-
-	public void setIsRecurring(Boolean isRecurring) {
-		this.isRecurring = isRecurring;
-	}
-
-	/**
-	 * If true, the entity is subject to tax based on the relevant tax rate.
-	 */
-	protected Boolean isTaxable;
-
-	public Boolean getIsTaxable() {
-		return this.isTaxable;
-	}
-
-	public void setIsTaxable(Boolean isTaxable) {
-		this.isTaxable = isTaxable;
-	}
-
-	/**
-	 * The manufacturer part number defined for the product.
-	 */
-	protected String mfgPartNumber;
-
-	public String getMfgPartNumber() {
-		return this.mfgPartNumber;
-	}
-
-	public void setMfgPartNumber(String mfgPartNumber) {
-		this.mfgPartNumber = mfgPartNumber;
-	}
-
-	/**
-	 * List of shipping discounts that can be applied to the product.
+	 * List of shipping discounts that can be applied to the configured product. These discounts are calculated and updated as shoppers add content to their cart and continue checkout steps to order submission.
 	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
@@ -256,7 +260,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
 	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
@@ -267,7 +271,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of categories associated with the product.
+	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
 	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
@@ -291,7 +295,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Array of active inventory level information associated with the product.
+	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
 	 */
 	protected ProductInventoryInfo inventoryInfo;
 
@@ -317,7 +321,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of options set up in product admin.
+	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
@@ -354,7 +358,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Describes the behavior the system uses when determining the price of the product.
+	 * Properties that describe the behavior the system uses when determining the price of products.
 	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
@@ -367,7 +371,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of product property attributes defined for the product.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
@@ -388,6 +392,14 @@ public class Product implements Serializable
 
 	public void setPurchasableState(ProductPurchasableState purchasableState) {
 		this.purchasableState = purchasableState;
+	}
+
+	protected List<VariationSummary> variations;
+	public List<VariationSummary> getVariations() {
+		return this.variations;
+	}
+	public void setVariations(List<VariationSummary> variations) {
+		this.variations = variations;
 	}
 
 }

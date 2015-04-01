@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
- * Use the Applications resource to update and retrieve details about the applications installed for your tenant.
+ * 
  * </summary>
  */
 public class ApplicationResource {
@@ -26,41 +26,45 @@ public class ApplicationResource {
 	private ApiContext _apiContext;
 
 
-	public ApplicationResource(ApiContext apiContext) 
+	public ApplicationResource() 
+		{
+			_apiContext = null;
+	}
+public ApplicationResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
 
 	
 	/**
-	 * Retrieves the details of the installed application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.getApplication( appId);
+	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to retrieve.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param applicationKey 
+	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
+	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
-	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId) throws Exception
+	public com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(String applicationKey) throws Exception
 	{
-		return getApplication( appId,  null);
+		return getAppPackageNames( applicationKey,  null);
 	}
 
 	/**
-	 * Retrieves the details of the installed application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.getApplication( appId,  responseFields);
+	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to retrieve.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
+	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
-	public com.mozu.api.contracts.installedapplications.Application getApplication(String appId, String responseFields) throws Exception
+	public com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(String applicationKey, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.getApplicationClient( appId,  responseFields);
+		MozuClient<com.mozu.api.contracts.appdev.PackageNamesCollection> client = com.mozu.api.clients.platform.ApplicationClient.getAppPackageNamesClient( applicationKey,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -68,41 +72,209 @@ public class ApplicationResource {
 	}
 
 	/**
-	 * Updates one or more properties of the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.updateApplication( application,  appId);
+	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to update.
-	 * @param application Properties of the application to update.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param nsAndAppId 
+	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
-	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId) throws Exception
+	public com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(String nsAndAppId) throws Exception
 	{
-		return updateApplication( application,  appId,  null);
+		return getAppVersions( nsAndAppId,  null);
 	}
 
 	/**
-	 * Updates one or more properties of the application specified in the request.
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
-	 *	Application application = application.updateApplication( application,  appId,  responseFields);
+	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId,  responseFields);
 	 * </code></pre></p>
-	 * @param appId The application ID that represents the application to update.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param application Properties of the application to update.
-	 * @return com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
-	 * @see com.mozu.api.contracts.installedapplications.Application
+	 * @param nsAndAppId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
+	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
-	public com.mozu.api.contracts.installedapplications.Application updateApplication(com.mozu.api.contracts.installedapplications.Application application, String appId, String responseFields) throws Exception
+	public com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(String nsAndAppId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.installedapplications.Application> client = com.mozu.api.clients.platform.ApplicationClient.updateApplicationClient( application,  appId,  responseFields);
+		MozuClient<com.mozu.api.contracts.appdev.ApplicationVersionsCollection> client = com.mozu.api.clients.platform.ApplicationClient.getAppVersionsClient( nsAndAppId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(String applicationKey, String filepath) throws Exception
+	{
+		return getPackageFileMetadata( applicationKey,  filepath,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(String applicationKey, String filepath, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.ApplicationClient.getPackageFileMetadataClient( applicationKey,  filepath,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @return com.mozu.api.contracts.appdev.FolderMetadata
+	 * @see com.mozu.api.contracts.appdev.FolderMetadata
+	 */
+	public com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(String applicationKey) throws Exception
+	{
+		return getPackageMetadata( applicationKey,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.appdev.FolderMetadata
+	 * @see com.mozu.api.contracts.appdev.FolderMetadata
+	 */
+	public com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(String applicationKey, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> client = com.mozu.api.clients.platform.ApplicationClient.getPackageMetadataClient( applicationKey,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param stream 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 * @see Stream
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(java.io.InputStream stream, String applicationKey, String filepath, String  contentType) throws Exception
+	{
+		return upsertPackageFile( stream,  applicationKey,  filepath,  null,  null,  contentType);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param lastModifiedTime 
+	 * @param responseFields 
+	 * @param stream 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 * @see Stream
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(java.io.InputStream stream, String applicationKey, String filepath, String lastModifiedTime, String responseFields, String  contentType) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.ApplicationClient.upsertPackageFileClient( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param renameInfo 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.RenameInfo
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey) throws Exception
+	{
+		return renamePackageFile( renameInfo,  applicationKey,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey,  responseFields);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @param renameInfo 
+	 * @return com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.FileMetadata
+	 * @see com.mozu.api.contracts.appdev.RenameInfo
+	 */
+	public com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.appdev.FileMetadata> client = com.mozu.api.clients.platform.ApplicationClient.renamePackageFileClient( renameInfo,  applicationKey,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Application application = new Application();
+	 *	application.deletePackageFile( applicationKey,  filepath);
+	 * </code></pre></p>
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @return 
+	 */
+	public void deletePackageFile(String applicationKey, String filepath) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.platform.ApplicationClient.deletePackageFileClient( applicationKey,  filepath);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

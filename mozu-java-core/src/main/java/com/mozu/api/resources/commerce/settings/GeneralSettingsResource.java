@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Define global site settings such as the site name, shipping and email addresses, and logo images. Block undesirable IP addresses using this resource.
  * </summary>
@@ -71,7 +71,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings);
 	 * </code></pre></p>
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -88,7 +88,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings The properties of the site's general settings to update.
+	 * @param generalSettings General settings used on the storefront site.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

@@ -59,7 +59,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The two-digit month the credit card expires.
+	 * The two-digit month a credit card expires for a payment method.
 	 */
 	protected short expireMonth;
 
@@ -72,7 +72,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The four-digit year the credit card expires.
+	 * The four-digit year the credit card expires for a payment method.
 	 */
 	protected short expireYear;
 
@@ -85,7 +85,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * Unique ID of the credit card for the customer account. This identifier is separate from the credit card number.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -98,7 +98,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The name printed on the credit card.
+	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
 	 */
 	protected String nameOnCard;
 

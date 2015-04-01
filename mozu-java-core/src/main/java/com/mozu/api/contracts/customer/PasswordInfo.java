@@ -20,7 +20,7 @@ public class PasswordInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The new account password value.
+	 * The new password entered and saved by the user of the account. 
 	 */
 	protected String newPassword;
 

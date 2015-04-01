@@ -22,7 +22,7 @@ public class Field implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Identifier of the field.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -35,7 +35,7 @@ public class Field implements Serializable
 	}
 
 	/**
-	 * Label for the field.
+	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */
 	protected String label;
 
@@ -48,7 +48,7 @@ public class Field implements Serializable
 	}
 
 	/**
-	 * Sequence of the field.
+	 * Integer that represents the sequence order of the attribute.
 	 */
 	protected Integer order;
 

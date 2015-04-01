@@ -15,14 +15,30 @@ public class FulfillmentActionUrl
 
 	/**
 	 * Get Resource Url for PerformFulfillmentAction
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performFulfillmentActionUrl(String orderId, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/actions/?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for ResendPackageFulfillmentEmail
+	 * @param orderId 
+	 * @param packageId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendPackageFulfillmentEmailUrl(String orderId, String packageId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/package/{packageId}/Resend-Email?responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("packageId", packageId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

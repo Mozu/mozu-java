@@ -56,7 +56,7 @@ public class Site implements Serializable
 	}
 
 	/**
-	 * The domain associated with the site.
+	 * The domain associated with the site and/or tenant.
 	 */
 	protected String domain;
 
@@ -92,7 +92,7 @@ public class Site implements Serializable
 	}
 
 	/**
-	 * The name of the site.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

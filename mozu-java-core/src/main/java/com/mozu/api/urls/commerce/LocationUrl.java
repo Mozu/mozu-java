@@ -15,7 +15,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param code User-defined code that identifies the location.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -29,7 +29,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocationInUsageType
-	 * @param code Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -79,7 +79,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetInStorePickupLocation
-	 * @param code The user-defined code that identifies the location to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

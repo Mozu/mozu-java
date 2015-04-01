@@ -120,6 +120,24 @@ public class CreditFactory
 		return returnObj;
 	}
 
+	public static void resendCreditCreatedEmail(ApiContext apiContext, String code, int expectedCode, int successCode) throws Exception
+	{
+		CreditResource resource = new CreditResource(apiContext);
+		try
+		{
+			resource.resendCreditCreatedEmail( code);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.customer.credit.Credit updateCredit(ApiContext apiContext, com.mozu.api.contracts.customer.credit.Credit credit, String code, int expectedCode, int successCode) throws Exception
 	{
 		return updateCredit(apiContext,  credit,  code,  null, expectedCode, successCode );

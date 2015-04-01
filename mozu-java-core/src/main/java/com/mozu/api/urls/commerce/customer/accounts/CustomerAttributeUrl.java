@@ -15,7 +15,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttribute
-	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -31,7 +31,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttributes
-	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param filter 
 	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -67,7 +67,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for UpdateAccountAttribute
-	 * @param accountId Identifier of the customer account associated with the attribute.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url

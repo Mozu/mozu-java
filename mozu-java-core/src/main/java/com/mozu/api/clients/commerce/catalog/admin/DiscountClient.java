@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
@@ -74,7 +74,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -91,7 +91,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -117,7 +117,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -134,7 +134,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -200,7 +200,7 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -219,7 +219,7 @@ public class DiscountClient {
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -245,8 +245,8 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
-	 * @param content The discount content to update, including the discount name.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -264,9 +264,9 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * DiscountLocalizedContent discountLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param content The discount content to update, including the discount name.
+	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -292,8 +292,8 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
-	 * @param discount Properties of the discount to update.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -311,9 +311,9 @@ public class DiscountClient {
 	 * client.executeRequest();
 	 * Discount discount = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount to update.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discount Properties of the discount to update.
+	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Discount>
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -338,7 +338,7 @@ public class DiscountClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDiscountClient(Integer discountId) throws Exception

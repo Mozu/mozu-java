@@ -71,7 +71,7 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for UpdateProductReservations
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductReservationsUrl(Boolean skipInventoryCheck)
@@ -83,7 +83,7 @@ public class ProductReservationUrl
 
 	/**
 	 * Get Resource Url for DeleteProductReservation
-	 * @param productReservationId Unique identifier of the reservation.
+	 * @param productReservationId Unique identifier of the product reservation.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteProductReservationUrl(Integer productReservationId)

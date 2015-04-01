@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Validates the attribute configured for the product in the storefront against the attribute configured in product admin.
+ *	Validates the attribute configured for the customer in the storefront against the attribute configured in Mozu admin.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable
@@ -20,72 +20,7 @@ public class AttributeValidation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * System-supplied and read-only.
-	 */
-	protected DateTime maxDateValue;
-
-	public DateTime getMaxDateValue() {
-		return this.maxDateValue;
-	}
-
-	public void setMaxDateValue(DateTime maxDateValue) {
-		this.maxDateValue = maxDateValue;
-	}
-
-	/**
-	 * The maximum number of characters for the numeric length.
-	 */
-	protected double maxNumericValue;
-
-	public double getMaxNumericValue() {
-		return this.maxNumericValue;
-	}
-
-	public void setMaxNumericValue(double maxNumericValue) {
-		this.maxNumericValue = maxNumericValue;
-	}
-
-	/**
-	 * The maximum number of characters for the string length.
-	 */
-	protected Integer maxStringLength;
-
-	public Integer getMaxStringLength() {
-		return this.maxStringLength;
-	}
-
-	public void setMaxStringLength(Integer maxStringLength) {
-		this.maxStringLength = maxStringLength;
-	}
-
-	/**
-	 * System-supplied and read-only.
-	 */
-	protected DateTime minDateValue;
-
-	public DateTime getMinDateValue() {
-		return this.minDateValue;
-	}
-
-	public void setMinDateValue(DateTime minDateValue) {
-		this.minDateValue = minDateValue;
-	}
-
-	/**
-	 * The minimum number of characters for the numeric length.
-	 */
-	protected double minNumericValue;
-
-	public double getMinNumericValue() {
-		return this.minNumericValue;
-	}
-
-	public void setMinNumericValue(double minNumericValue) {
-		this.minNumericValue = minNumericValue;
-	}
-
-	/**
-	 * The minimum character length of the string.
+	 * The minimum character length possible for a string value entered for an extensible attribute.
 	 */
 	protected Integer minStringLength;
 
@@ -98,7 +33,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * Regular expression used to process attribute values that require special formatting such as phone numbers.
+	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
 	 */
 	protected String regularExpression;
 
@@ -108,6 +43,71 @@ public class AttributeValidation implements Serializable
 
 	public void setRegularExpression(String regularExpression) {
 		this.regularExpression = regularExpression;
+	}
+
+	/**
+	 * The maximum date allowed including month, day, and year. System-supplied and read-only.
+	 */
+	protected DateTime maxDateValue;
+
+	public DateTime getMaxDateValue() {
+		return this.maxDateValue;
+	}
+
+	public void setMaxDateValue(DateTime maxDateValue) {
+		this.maxDateValue = maxDateValue;
+	}
+
+	/**
+	 * The maximum number that can be entered as a value for an extensible attribute.
+	 */
+	protected double maxNumericValue;
+
+	public double getMaxNumericValue() {
+		return this.maxNumericValue;
+	}
+
+	public void setMaxNumericValue(double maxNumericValue) {
+		this.maxNumericValue = maxNumericValue;
+	}
+
+	/**
+	 * The maximum character length possible for a string value entered for an extensible attribute.
+	 */
+	protected Integer maxStringLength;
+
+	public Integer getMaxStringLength() {
+		return this.maxStringLength;
+	}
+
+	public void setMaxStringLength(Integer maxStringLength) {
+		this.maxStringLength = maxStringLength;
+	}
+
+	/**
+	 * The minimum date allowed including month, day, and year. System-supplied and read-only.
+	 */
+	protected DateTime minDateValue;
+
+	public DateTime getMinDateValue() {
+		return this.minDateValue;
+	}
+
+	public void setMinDateValue(DateTime minDateValue) {
+		this.minDateValue = minDateValue;
+	}
+
+	/**
+	 * The minimum numeric value required to validate an extensible attribute.
+	 */
+	protected double minNumericValue;
+
+	public double getMinNumericValue() {
+		return this.minNumericValue;
+	}
+
+	public void setMinNumericValue(double minNumericValue) {
+		this.minNumericValue = minNumericValue;
 	}
 
 }

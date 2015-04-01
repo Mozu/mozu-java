@@ -14,7 +14,7 @@ import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
 /**
- *	Properties of the user.
+ *	Properties of the user. Users include customers and Mozu users.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
@@ -49,7 +49,7 @@ public class User implements Serializable
 	}
 
 	/**
-	 * Identifier of the user.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -62,7 +62,7 @@ public class User implements Serializable
 	}
 
 	/**
-	 * If true, the user is an active user.
+	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
 	protected Boolean isActive;
 
@@ -101,7 +101,7 @@ public class User implements Serializable
 	}
 
 	/**
-	 * The user password.
+	 * The saved password for the customer account. 
 	 */
 	protected String password;
 

@@ -59,7 +59,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * Identifier of the user.
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected String userId;
 
@@ -72,7 +72,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile.
+	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
 	protected String userName;
 

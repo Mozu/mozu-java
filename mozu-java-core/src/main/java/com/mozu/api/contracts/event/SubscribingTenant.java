@@ -23,7 +23,7 @@ public class SubscribingTenant implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * This specifies if the subscription is active at the tenant level. If the subscription context is at the tenant level, this property is used over the site level.
+	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
 	protected Boolean isActive;
 
@@ -49,7 +49,7 @@ public class SubscribingTenant implements Serializable
 	}
 
 	/**
-	 * This specifies the tenant identifier.
+	 * Unique identifier for the tenant.
 	 */
 	protected Integer tenantId;
 

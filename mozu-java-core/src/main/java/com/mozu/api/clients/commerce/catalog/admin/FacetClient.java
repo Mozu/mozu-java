@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Facets resource to manage the facets shoppers use to filter product display results on a storefront. Facets can include categories, product attributes, or prices, and use either a range of values or discrete values.
  * </summary>
@@ -71,7 +71,7 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.FacetSet>
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
@@ -88,7 +88,7 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * FacetSet facetSet = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
@@ -115,7 +115,7 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
+	 * @param facet Properties of the facet used to retrieve documents.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -134,7 +134,7 @@ public class FacetClient {
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
+	 * @param facet Properties of the facet used to retrieve documents.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -160,8 +160,8 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to modify.
-	 * @param facet Properties of the defined facet to modify.
+	 * @param facetId Unique identifier of the facet to retrieve.
+	 * @param facet Properties of the facet used to retrieve documents.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -179,9 +179,9 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to modify.
+	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param facet Properties of the defined facet to modify.
+	 * @param facet Properties of the facet used to retrieve documents.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Facet>
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -206,7 +206,7 @@ public class FacetClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to delete.
+	 * @param facetId Unique identifier of the facet to retrieve.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteFacetByIdClient(Integer facetId) throws Exception

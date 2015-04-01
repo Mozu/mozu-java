@@ -15,7 +15,7 @@ public class ProductTypeOptionUrl
 
 	/**
 	 * Get Resource Url for GetOptions
-	 * @param productTypeId Identifier of the product type to retrieve.
+	 * @param productTypeId Identifier of the product type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOptionsUrl(Integer productTypeId)
@@ -28,7 +28,7 @@ public class ProductTypeOptionUrl
 	/**
 	 * Get Resource Url for GetOption
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productTypeId The identifier of the product type.
+	 * @param productTypeId Identifier of the product type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

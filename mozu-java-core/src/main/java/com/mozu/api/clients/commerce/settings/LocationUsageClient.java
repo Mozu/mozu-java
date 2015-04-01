@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Location Usages resource to define the locations and location types that interact with the specified site. The system creates three default location usage types for each site after provisioning a new tenant - one for direct ship (DS), one for in-store pickup (SP), and one for store finder (storeFinder). Each site can only use a single location for the direct ship location usage type, and the location must support the direct ship fulfillment type (DS). For the in-store pickup location usage type, each site can use one or more location types. The location service identifies all locations of the specified type that support the in-store pickup fulfillment type (SP). For the store finder location usage type, each site can use one or more location types. The location service identifies all locations of the type. Locations configured for the store finder type do not typically maintain inventory. You cannot create additional location usage types at this time.
  * </summary>
@@ -68,7 +68,7 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 */
@@ -85,7 +85,7 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
@@ -110,8 +110,8 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
-	 * @param usage Properties of the location usage type to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage
@@ -129,9 +129,9 @@ public class LocationUsageClient {
 	 * client.executeRequest();
 	 * LocationUsage locationUsage = client.Result();
 	 * </code></pre></p>
-	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param usage Properties of the location usage type to update.
+	 * @param usage Configuration properties of a location usage type for a specified site. The direct ship location usage type consists of a single location that represents location that supports direct ship (DS) fulfillment. The in-store pickup location usage type consists of a list of location types that represent locations that support in-store pickup (SP) fulfillment. The store finder location usage type consists of a list of location codes, location types, or both.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.LocationUsage>
 	 * @see com.mozu.api.contracts.location.LocationUsage
 	 * @see com.mozu.api.contracts.location.LocationUsage

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Fulfillment resource to manage shipments or pickups of collections of packages for an order.
  * </summary>
@@ -28,8 +28,8 @@ public class FulfillmentActionClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -47,9 +47,9 @@ public class FulfillmentActionClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
-	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
-	 * @param action The action to perform for the order fulfillment.
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -63,6 +63,50 @@ public class FulfillmentActionClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( orderId,  packageId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param packageId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(String orderId, String packageId) throws Exception
+	{
+		return resendPackageFulfillmentEmailClient( orderId,  packageId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( orderId,  packageId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param packageId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> resendPackageFulfillmentEmailClient(String orderId, String packageId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.FulfillmentActionUrl.resendPackageFulfillmentEmailUrl(orderId, packageId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

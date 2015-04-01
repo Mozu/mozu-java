@@ -35,7 +35,7 @@ public class ChannelUrl
 
 	/**
 	 * Get Resource Url for GetChannel
-	 * @param code User-defined code that identifies the channel to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -61,7 +61,7 @@ public class ChannelUrl
 
 	/**
 	 * Get Resource Url for UpdateChannel
-	 * @param code User-defined code that identifies the channel to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -75,7 +75,7 @@ public class ChannelUrl
 
 	/**
 	 * Get Resource Url for DeleteChannel
-	 * @param code User-defined code that identifies the channel to delete.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteChannelUrl(String code)

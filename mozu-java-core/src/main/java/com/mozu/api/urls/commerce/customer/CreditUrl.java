@@ -35,7 +35,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for GetCredit
-	 * @param code User-defined code that identifies the store credit to retrieve.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -61,7 +61,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for AssociateCreditToShopper
-	 * @param code The code that represents the credit to claim for the shopper.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -74,8 +74,20 @@ public class CreditUrl
 	}
 
 	/**
+	 * Get Resource Url for ResendCreditCreatedEmail
+	 * @param code 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl resendCreditCreatedEmailUrl(String code)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/credits/{code}/Resend-Email");
+		formatter.formatUrl("code", code);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCredit
-	 * @param code User-defined code of the store credit to update.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -89,7 +101,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for DeleteCredit
-	 * @param code User-defined code of the store credit to delete.
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCreditUrl(String code)

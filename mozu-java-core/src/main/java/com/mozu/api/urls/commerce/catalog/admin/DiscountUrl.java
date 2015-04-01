@@ -35,7 +35,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscountContent
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -49,7 +49,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for GetDiscount
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -87,7 +87,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountContent
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -101,7 +101,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscount
-	 * @param discountId Unique identifier of the discount to update.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -115,7 +115,7 @@ public class DiscountUrl
 
 	/**
 	 * Get Resource Url for DeleteDiscount
-	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDiscountUrl(Integer discountId)

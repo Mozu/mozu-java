@@ -20,7 +20,7 @@ public class CategoryImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront.
+	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
 	 */
 	protected String altText;
 
@@ -33,7 +33,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected String cmsId;
 
@@ -46,7 +46,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * Image title that appears on the web storefront, set to the language specified by the site's LocaleCode.
+	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
 	 */
 	protected String imageLabel;
 
@@ -59,7 +59,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * URL of the product category image.
+	 * The URL link for the image file associated with a product or category.
 	 */
 	protected String imageUrl;
 
@@ -72,7 +72,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * Type of media specification required to successfully render the image, video, or other category content.
+	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
 	 */
 	protected String mediaType;
 
@@ -85,7 +85,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * Integer that represents the sequential order of the category image in the collection.
+	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
 	protected Integer sequence;
 
@@ -98,7 +98,7 @@ public class CategoryImage implements Serializable
 	}
 
 	/**
-	 * The link or URL of the product category video. The file path name is set in the language specified by the LocaleCode.
+	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
 	 */
 	protected String videoUrl;
 

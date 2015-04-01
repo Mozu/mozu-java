@@ -25,7 +25,7 @@ public class ReturnItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the return whose items you want to get.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -38,7 +38,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the item in the original completed order. All return items should be associated with a corresponding order item.
+	 * Unique identifier of the order item associated with a validation message, order, or return.
 	 */
 	protected String orderItemId;
 
@@ -142,7 +142,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single returned product bundle with its own product code.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
 	 */
 	protected List<ReturnBundle> bundledProducts;
 	public List<ReturnBundle> getBundledProducts() {
@@ -153,7 +153,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * List of merchant-supplied notes associated with the return item.
+	 * Paged list collection of note content for objects including customers, orders, and returns. 
 	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
@@ -164,7 +164,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Properties of the product definition associated with the item in the return.
+	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 */
 	protected Product product;
 

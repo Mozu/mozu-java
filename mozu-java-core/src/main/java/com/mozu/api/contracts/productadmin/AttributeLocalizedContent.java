@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Localized content displayed in the storefront for this attribute.
+ *	The localized name and description of the attribute, displayed in the locale defined for the master catalog.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeLocalizedContent implements Serializable
@@ -20,7 +20,7 @@ public class AttributeLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Localized content for the description of this attribute displayed in the storefront.
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected String description;
 
@@ -46,7 +46,7 @@ public class AttributeLocalizedContent implements Serializable
 	}
 
 	/**
-	 * Localized content for the attribute name displayed in the storefront.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

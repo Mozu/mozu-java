@@ -21,7 +21,7 @@ public class AttributeDetail implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The data type (such as datetime or string) associated with the attribute.
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
 	protected String dataType;
 
@@ -47,7 +47,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Description of the attribute in the language specified by the locale code.
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected String description;
 
@@ -59,6 +59,9 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected String displayIntention;
 
 	public String getDisplayIntention() {
@@ -70,7 +73,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * The input type (such as date or text area) accepted for the attribute's data type.
+	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
 	protected String inputType;
 
@@ -83,7 +86,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Name of the atrribute in the language specified by the locale code.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -96,7 +99,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
+	 * Indicates if the attribute value is searchable on the public storefront.
 	 */
 	protected Boolean searchableInStorefront;
 
@@ -109,7 +112,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
+	 * Indicates what kind of values search queries and returns. If true, the system indexes the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for non-string attributes.
 	 */
 	protected Boolean searchDisplayValue;
 
@@ -135,7 +138,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * The type of value for the attribute, which is either ShopperEntered, AdminEntered, or Predefined.
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected String valueType;
 
@@ -148,7 +151,7 @@ public class AttributeDetail implements Serializable
 	}
 
 	/**
-	 * Validation rules of an attribute that determine which values are valid for ShopperEntered and AdminEntered ValueTypes.
+	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
 	 */
 	protected AttributeValidation validation;
 

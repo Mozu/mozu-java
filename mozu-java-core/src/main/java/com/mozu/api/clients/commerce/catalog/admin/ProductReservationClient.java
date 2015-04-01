@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Temporarily hold a product from inventory while a shopper is filling out payment information. Create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
@@ -122,7 +122,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -142,7 +142,7 @@ public class ProductReservationClient {
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Details of the product reservations to add.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -169,7 +169,7 @@ public class ProductReservationClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations List of unique identifiers of the reservations to commit.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -195,7 +195,7 @@ public class ProductReservationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -213,9 +213,9 @@ public class ProductReservationClient {
 	 * client.executeRequest();
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
+	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations Properties of the product reservations to update.
+	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -241,7 +241,7 @@ public class ProductReservationClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param productReservationId Unique identifier of the reservation.
+	 * @param productReservationId Unique identifier of the product reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

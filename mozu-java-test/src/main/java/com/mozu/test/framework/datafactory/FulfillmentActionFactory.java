@@ -45,6 +45,31 @@ public class FulfillmentActionFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
+	{
+		return resendPackageFulfillmentEmail(apiContext,  orderId,  packageId,  null, expectedCode, successCode );
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, String orderId, String packageId, String responseFields, int expectedCode, int successCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		FulfillmentActionResource resource = new FulfillmentActionResource(apiContext);
+		try
+		{
+			returnObj = resource.resendPackageFulfillmentEmail( orderId,  packageId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
 }
 
 

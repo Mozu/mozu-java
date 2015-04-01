@@ -20,7 +20,7 @@ public class BehaviorCategory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the behavior.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -33,7 +33,7 @@ public class BehaviorCategory implements Serializable
 	}
 
 	/**
-	 * The name of the behavior.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

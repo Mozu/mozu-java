@@ -22,7 +22,7 @@ public class Application implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique identifier of the application in Mozu Dev Center.
+	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
 	 */
 	protected String appId;
 
@@ -34,6 +34,9 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	/**
+	 * denotes the Application Key for the app.
+	 */
 	protected String appKey;
 
 	public String getAppKey() {
@@ -45,7 +48,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * If true, the application is enabled for the tenant. System-supplied and read-only.
+	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
 	protected Boolean enabled;
 
@@ -58,7 +61,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * If true, the third party application settings have been configured and the application is initialized.
+	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
 	 */
 	protected Boolean initialized;
 
@@ -71,7 +74,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * If true, the application type is Extension.
+	 * Indicates if the installed application is of type extension. If true, the application type is Extension.
 	 */
 	protected Boolean isExtension;
 
@@ -84,7 +87,7 @@ public class Application implements Serializable
 	}
 
 	/**
-	 * URL of the application's setting configuration user interface, supplied by the capability developer in Dev Center.
+	 * The URL defined for the application that represents the configuration website for the capability. This value is used by installed applications or the site.
 	 */
 	protected String uiConfigurationUrl;
 

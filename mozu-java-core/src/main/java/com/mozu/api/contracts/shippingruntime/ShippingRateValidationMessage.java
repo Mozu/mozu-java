@@ -33,7 +33,7 @@ public class ShippingRateValidationMessage implements Serializable
 	}
 
 	/**
-	 * Content of the shipping rate validation message.
+	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
 	protected String message;
 
@@ -46,7 +46,7 @@ public class ShippingRateValidationMessage implements Serializable
 	}
 
 	/**
-	 * Severity level of the shipping rate validation failure.
+	 * The severity level of validation failures for shipping rates and products.
 	 */
 	protected String severity;
 

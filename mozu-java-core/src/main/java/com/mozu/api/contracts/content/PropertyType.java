@@ -19,6 +19,9 @@ public class PropertyType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The administrator name associated with the object/data.
+	 */
 	protected String adminName;
 
 	public String getAdminName() {
@@ -29,6 +32,9 @@ public class PropertyType implements Serializable
 		this.adminName = adminName;
 	}
 
+	/**
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 */
 	protected String dataType;
 
 	public String getDataType() {
@@ -39,6 +45,9 @@ public class PropertyType implements Serializable
 		this.dataType = dataType;
 	}
 
+	/**
+	 * The package of document lists and content documents to be installed.
+	 */
 	protected String installationPackage;
 
 	public String getInstallationPackage() {
@@ -63,7 +72,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * If true, the entity can be searched. If false, the entity cannot be searched.
+	 * Indicates if the entity can be located and returned in a search, used for fields and property types. If true, the entity can be searched. 
 	 */
 	protected Boolean isQueryable;
 
@@ -76,7 +85,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
+	 * Indicates if the fields or property types are sortable on the page. If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
 	 */
 	protected Boolean isSortable;
 
@@ -89,7 +98,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * The name of the content property type.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -101,6 +110,9 @@ public class PropertyType implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 */
 	protected String namespace;
 
 	public String getNamespace() {
@@ -111,6 +123,9 @@ public class PropertyType implements Serializable
 		this.namespace = namespace;
 	}
 
+	/**
+	 * The fully qualified name for the property type for content.
+	 */
 	protected String propertyTypeFQN;
 
 	public String getPropertyTypeFQN() {
@@ -121,6 +136,9 @@ public class PropertyType implements Serializable
 		this.propertyTypeFQN = propertyTypeFQN;
 	}
 
+	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
 	protected String version;
 
 	public String getVersion() {

@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Visits resource to manage all visits a customer makes to a tenant's sites and measure the level of transactions a customer performs during a unique visit for customer account analytics. Clients can track customer visits by site (including online and in-person interactions), the transactions a customer performs during the visit, and the device type associated with the visit, if any.
  * </summary>
@@ -72,7 +72,7 @@ public class VisitClient {
 	 * client.executeRequest();
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
-	 * @param visitId Unique identifier of the customer visit to retrieve.
+	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -90,7 +90,7 @@ public class VisitClient {
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visitId Unique identifier of the customer visit to retrieve.
+	 * @param visitId Unique identifier of the customer visit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -114,7 +114,7 @@ public class VisitClient {
 	 * client.executeRequest();
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
-	 * @param visit Properties of the visit to add to the customer account.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -133,7 +133,7 @@ public class VisitClient {
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visit Properties of the visit to add to the customer account.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -160,7 +160,7 @@ public class VisitClient {
 	 * Visit visit = client.Result();
 	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of the customer visit to update.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -180,7 +180,7 @@ public class VisitClient {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of the customer visit to update.
+	 * @param visit Properties of a customer visit to one of a company's sites.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Visit>
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit

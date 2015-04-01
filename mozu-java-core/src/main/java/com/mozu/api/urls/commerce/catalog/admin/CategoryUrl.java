@@ -15,7 +15,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategories
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -35,7 +35,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetChildCategories
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -49,7 +49,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategory
-	 * @param categoryId Unique identifier of the category to retrieve.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -94,7 +94,7 @@ public class CategoryUrl
 	/**
 	 * Get Resource Url for DeleteCategoryById
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
-	 * @param categoryId Unique identifier of the category to delete.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCategoryByIdUrl(Boolean cascadeDelete, Integer categoryId)

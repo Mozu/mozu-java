@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
  * </summary>
@@ -28,7 +28,7 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -45,7 +45,7 @@ public class TenantDataClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
@@ -93,8 +93,8 @@ public class TenantDataClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry query string used to update the record information.
-	 * @param value The database value to update.
+	 * @param dbEntryQuery The database entry string to create.
+	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
@@ -117,7 +117,7 @@ public class TenantDataClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to delete.
+	 * @param dbEntryQuery The database entry string to create.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDBValueClient(String dbEntryQuery) throws Exception

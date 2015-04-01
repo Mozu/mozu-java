@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -44,7 +44,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * CategoryPagedCollection categoryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -72,7 +72,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * CategoryCollection categoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
 	 */
@@ -89,7 +89,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * CategoryCollection categoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryCollection
@@ -114,7 +114,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to retrieve.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
@@ -131,7 +131,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to retrieve.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -156,7 +156,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
-	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
+	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -176,7 +176,7 @@ public class CategoryClient {
 	 * </code></pre></p>
 	 * @param incrementSequence If true, when adding a new product category, set the sequence number of the new category to an increment of one integer greater than the maximum available sequence number across all product categories. If false, set the sequence number to zero.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param category Properties of the new category to create. You must specify a name and parent category if you want to create it as a subcategory.
+	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -203,7 +203,7 @@ public class CategoryClient {
 	 * Category category = client.Result();
 	 * </code></pre></p>
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param category Properties of the category to modify.
+	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -224,7 +224,7 @@ public class CategoryClient {
 	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param category Properties of the category to modify.
+	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
@@ -249,7 +249,7 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to delete.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCategoryByIdClient(Integer categoryId) throws Exception
@@ -265,7 +265,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
-	 * @param categoryId Unique identifier of the category to delete.
+	 * @param categoryId Unique identifier of the category to modify.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCategoryByIdClient(Integer categoryId, Boolean cascadeDelete) throws Exception

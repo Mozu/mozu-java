@@ -59,6 +59,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.discountQuantity = discountQuantity;
 	}
 
+	/**
+	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
+	 */
 	protected Boolean excluded;
 
 	public Boolean getExcluded() {
@@ -70,7 +73,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	}
 
 	/**
-	 * The value of the applied discount. This is a negative number, which is subtracted from the original price to get the final price.
+	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
 	 */
 	protected Double impact;
 
@@ -83,7 +86,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	}
 
 	/**
-	 * The impact of this discount for each discount quantity.
+	 * The impact of a discount for each discount quantity. 
 	 */
 	protected Double impactPerUnit;
 
@@ -95,6 +98,9 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
+	/**
+	 * Quantity of products priced. This is always one unless calculating pricing on the order or cart.
+	 */
 	protected Integer productQuantity;
 
 	public Integer getProductQuantity() {
@@ -106,7 +112,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	}
 
 	/**
-	 * This describes discounts that apply to the order, if any. For example, when the subtotal of the order exceeds a certain amount, or a discount for free shipping.
+	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
 	protected Discount discount;
 

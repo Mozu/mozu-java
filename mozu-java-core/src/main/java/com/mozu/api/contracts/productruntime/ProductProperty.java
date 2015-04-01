@@ -14,7 +14,7 @@ import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductPropertyValue;
 
 /**
- *	Details of a property attribute defined for a product.
+ *	Details of a property defined for a product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable
@@ -36,7 +36,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * If true, the product property does not appear for the product in the storefront.
+	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
 	protected Boolean isHidden;
 
@@ -49,7 +49,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * If true, the product property can have more than one selected value.
+	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
 	protected Boolean isMultiValue;
 
@@ -62,7 +62,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * Details of the attribute defined as a product property.
+	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
 	protected AttributeDetail attributeDetail;
 
@@ -75,7 +75,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * List of values defined for the product property attribute.
+	 * List of value data for objects.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

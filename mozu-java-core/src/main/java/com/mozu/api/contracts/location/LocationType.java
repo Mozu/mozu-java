@@ -34,7 +34,7 @@ public class LocationType implements Serializable
 	}
 
 	/**
-	 * The name of the location type.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 

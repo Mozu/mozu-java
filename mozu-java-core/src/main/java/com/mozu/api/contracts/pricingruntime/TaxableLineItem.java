@@ -22,7 +22,7 @@ public class TaxableLineItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the taxable line item.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -35,7 +35,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * If true, the line item in the order is subject to tax.
+	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
 	protected Boolean isTaxable;
 
@@ -74,7 +74,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order.
+	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
 	protected String productName;
 
@@ -87,7 +87,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The quantity of the line item in the order.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 
@@ -100,7 +100,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The reason the item is either taxed or returned.
+	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
 	protected String reason;
 
@@ -113,7 +113,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The amount of shipping calculated for a line item in an order.
+	 * The calculated monetary amount of shipping for a line items within and an entire order.
 	 */
 	protected Double shippingAmount;
 

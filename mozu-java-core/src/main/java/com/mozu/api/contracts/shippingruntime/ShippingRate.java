@@ -64,7 +64,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Localized content for a shipping rate based on the defined locale code.
+	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
 	 */
 	protected ShippingRateLocalizedContent content;
 
@@ -77,7 +77,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Collection of carrier-specific key-value attribute pairs required to retrieve a shipping rate request.
+	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -88,7 +88,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Array list of success/failure messages associated with the shipping rate validation.
+	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
 	 */
 	protected List<ShippingRateValidationMessage> messages;
 	public List<ShippingRateValidationMessage> getMessages() {

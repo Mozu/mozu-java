@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the Customer Account Transactions resource to manage the transactions associated with a customer account.
  * </summary>
@@ -38,7 +38,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.getTransactions( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
+	 * @param accountId Unique identifier of the customer account.
 	 * @return List<com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 */
@@ -58,7 +58,7 @@ public class TransactionResource {
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param transaction Properties of the transaction to create for the customer account.
+	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -76,7 +76,7 @@ public class TransactionResource {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param transaction Properties of the transaction to create for the customer account.
+	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -96,7 +96,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	transaction.removeTransaction( accountId,  transactionId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param transactionId Unique identifier of the transaction to delete.
 	 * @return 
 	 */

@@ -35,7 +35,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * List of values for the product option. Each value includes an attribute vocabulary value detail and value object.
+	 * List of value data for objects.
 	 */
 	protected List<ProductOptionValue> values;
 	public List<ProductOptionValue> getValues() {

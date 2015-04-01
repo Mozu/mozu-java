@@ -35,7 +35,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The date and time the shipment will be shipped to the shopper.
+	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
 	 */
 	protected DateTime estimatedShipmentDate;
 
@@ -74,7 +74,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The total amount of the order used to calculate the shipping rate estimate.
+	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
 	 */
 	protected Double orderTotal;
 
@@ -98,7 +98,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * List of key-value pairs that represent custom attributes associated with the request.
+	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -109,7 +109,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address to which the shipment will ship.
+	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
 	 */
 	protected Address destinationAddress;
 
@@ -122,7 +122,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * List of items to include in the shipping rate request.
+	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
 	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
@@ -133,7 +133,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address from which the shipment will ship.
+	 * The physical address from which the order or shipment will ship.
 	 */
 	protected Address originAddress;
 

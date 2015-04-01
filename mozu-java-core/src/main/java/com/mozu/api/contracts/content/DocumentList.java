@@ -21,6 +21,9 @@ public class DocumentList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The type of the document list, containing content for a site. For example, a list type could be web pages.
+	 */
 	protected String documentListType;
 
 	public String getDocumentListType() {
@@ -43,7 +46,7 @@ public class DocumentList implements Serializable
 	}
 
 	/**
-	 * If true, publishing of draft documents in this document list is enabled for the site. If false, all document changes are immediately published in live mode.
+	 * Indicates if the document list and document list type are enabled to publish. If true, publishing of draft documents in this document list/document list type is enabled for the site. If false, all document changes are immediately published in live mode.
 	 */
 	protected Boolean enablePublishing;
 
@@ -55,6 +58,9 @@ public class DocumentList implements Serializable
 		this.enablePublishing = enablePublishing;
 	}
 
+	/**
+	 * The fully qualified name of the document list.
+	 */
 	protected String listFQN;
 
 	public String getListFQN() {
@@ -66,7 +72,7 @@ public class DocumentList implements Serializable
 	}
 
 	/**
-	 * The name of the document list.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -78,6 +84,9 @@ public class DocumentList implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 */
 	protected String namespace;
 
 	public String getNamespace() {
@@ -88,6 +97,9 @@ public class DocumentList implements Serializable
 		this.namespace = namespace;
 	}
 
+	/**
+	 * The ID of the specific scope for the object. 
+	 */
 	protected Integer scopeId;
 
 	public Integer getScopeId() {
@@ -98,6 +110,9 @@ public class DocumentList implements Serializable
 		this.scopeId = scopeId;
 	}
 
+	/**
+	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
+	 */
 	protected String scopeType;
 
 	public String getScopeType() {
@@ -108,6 +123,9 @@ public class DocumentList implements Serializable
 		this.scopeType = scopeType;
 	}
 
+	/**
+	 * Indicates the security level for the document content as public, administrator, or owner.
+	 */
 	protected String security;
 
 	public String getSecurity() {
@@ -119,7 +137,7 @@ public class DocumentList implements Serializable
 	}
 
 	/**
-	 * If true, changes documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
+	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
 	protected Boolean supportsPublishing;
 
@@ -131,6 +149,9 @@ public class DocumentList implements Serializable
 		this.supportsPublishing = supportsPublishing;
 	}
 
+	/**
+	 * List description of usages for content within a view and scope.
+	 */
 	protected List<String> usages;
 	public List<String> getUsages() {
 		return this.usages;
@@ -139,6 +160,9 @@ public class DocumentList implements Serializable
 		this.usages = usages;
 	}
 
+	/**
+	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
@@ -149,6 +173,9 @@ public class DocumentList implements Serializable
 		this.metadata = metadata;
 	}
 
+	/**
+	 * The view in the site used by associated entities or document lists/list types.
+	 */
 	protected List<View> views;
 	public List<View> getViews() {
 		return this.views;

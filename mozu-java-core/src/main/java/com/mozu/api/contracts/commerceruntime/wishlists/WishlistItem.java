@@ -11,6 +11,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
@@ -26,7 +27,7 @@ public class WishlistItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Shopper-entered comments for an item in a wish list.
+	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
 	 */
 	protected String comments;
 
@@ -39,7 +40,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The subtotal of the wishlist item including any applied discount calculations. This property value is not calculated at this time and is reserved for future functionality.
+	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
 	 */
 	protected Double discountedTotal;
 
@@ -52,7 +53,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to the item in the wish list, which is system-supplied and read-only.  This property value is not calculated at this time and is reserved for future functionality.
+	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
 	 */
 	protected Double discountTotal;
 
@@ -65,7 +66,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The extended total of an item in a wish list. This property value is not calculated at this time and is reserved for future functionality.
+	 * Represents the total price of the cart item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount. This value is not calculated for wish lists at this time.
 	 */
 	protected Double extendedTotal;
 
@@ -78,7 +79,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The fee total of an item in a wish list. This property value is not calculated at this time and is reserved for future functionality.
+	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
 	 */
 	protected Double feeTotal;
 
@@ -90,6 +91,9 @@ public class WishlistItem implements Serializable
 		this.feeTotal = feeTotal;
 	}
 
+	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 */
 	protected Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -101,7 +105,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of an item in a shopper wish list.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -114,7 +118,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * If true, the item in the wish list is a recurring purchase, such as a subscription. This property is reserved for future use and is system-supplied and read only.
+	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
 	 */
 	protected Boolean isRecurring;
 
@@ -127,7 +131,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * If true, the item in a wish list is subject to sales tax.
+	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
 	protected Boolean isTaxable;
 
@@ -140,7 +144,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The total sales tax of the item in the wish list. This property value is not calculated at this time, and is reserved for future functionality.
+	 * The total amount of calculated tax for items, used by carts, orders, and wish lists.
 	 */
 	protected Double itemTaxTotal;
 
@@ -192,7 +196,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The quantity of an item in a shopper wish list.
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
 	protected Integer quantity;
 
@@ -205,7 +209,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The total amount of tax levied against shipping charges for an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
 	 */
 	protected Double shippingTaxTotal;
 
@@ -218,7 +222,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The total amount of shipping for an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * The calculated total shipping amount estimated for carts or orders, including tax. This amount is not calculated for wish lists at this time.
 	 */
 	protected Double shippingTotal;
 
@@ -231,7 +235,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The subtotal of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
 	 */
 	protected Double subtotal;
 
@@ -244,7 +248,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The taxable total of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * The monetary amount of an item in the cart that is subject to tax. This amount typically represents the line item subtotal before applied discounts for an order.
 	 */
 	protected Double taxableTotal;
 
@@ -257,7 +261,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The total of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
 	 */
 	protected Double total;
 
@@ -282,8 +286,16 @@ public class WishlistItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	protected List<KeyValue> data;
+	public List<KeyValue> getData() {
+		return this.data;
+	}
+	public void setData(List<KeyValue> data) {
+		this.data = data;
+	}
+
 	/**
-	 * The properties of the product associated with an item in a wish list.
+	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 */
 	protected Product product;
 
@@ -296,7 +308,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * List of product discounts that apply to the item in the wishlist.
+	 * The applicable product discount for an associated cart, order, or wish list. 
 	 */
 	protected AppliedLineItemProductDiscount productDiscount;
 
@@ -309,7 +321,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * Array of product discounts applicable to an item in a wish list. This property is not used at this time and is reserved for future functionality.
+	 * List of product-level discounts projected to apply to a cart, order, or wish list.
 	 */
 	protected List<AppliedLineItemProductDiscount> productDiscounts;
 	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
@@ -320,7 +332,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * Array of shipping discounts applicable for an item in a wish list. This property is not used at this time and is reserved for future functionality.
+	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
 	 */
 	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
 	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
@@ -331,7 +343,7 @@ public class WishlistItem implements Serializable
 	}
 
 	/**
-	 * The unit price of an item in a wish list. This property is not calculated at this time and is reserved for future functionality.
+	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
 	 */
 	protected CommerceUnitPrice unitPrice;
 

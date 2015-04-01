@@ -37,7 +37,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the payment gateway definition.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
 
@@ -63,7 +63,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * Name of the payment gateway.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -126,7 +126,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * The types of credit cards supported by this payment gateway.
+	 * The types of credit cards supported by the payment gateway.
 	 */
 	protected List<SupportedCard> supportedCards;
 	public List<SupportedCard> getSupportedCards() {

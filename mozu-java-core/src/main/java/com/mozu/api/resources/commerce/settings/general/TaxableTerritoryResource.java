@@ -14,7 +14,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
  * Use the taxable territories subresource to manage the regional territories for this site that are subejct to sales tax.
  * </summary>
@@ -56,7 +56,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -73,7 +73,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param taxableTerritory Properties of the taxable territory to create.
+	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -93,7 +93,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the taxable territories to update.
+	 * @param taxableterritories Properties of the territory which is subject to sales tax.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

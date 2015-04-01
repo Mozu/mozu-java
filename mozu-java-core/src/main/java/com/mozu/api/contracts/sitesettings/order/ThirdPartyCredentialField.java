@@ -33,7 +33,7 @@ public class ThirdPartyCredentialField implements Serializable
 	}
 
 	/**
-	 * System-supplied name that displays for the third party credential field.
+	 * The name that displays for the payment gateway or third-party credentials field. 
 	 */
 	protected String displayName;
 
@@ -46,7 +46,7 @@ public class ThirdPartyCredentialField implements Serializable
 	}
 
 	/**
-	 * The value supplied for the third party credential.
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
 	protected String value;
 

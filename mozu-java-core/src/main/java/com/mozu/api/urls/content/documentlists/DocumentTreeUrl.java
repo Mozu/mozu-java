@@ -15,8 +15,8 @@ public class DocumentTreeUrl
 
 	/**
 	 * Get Resource Url for GetTreeDocumentContent
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTreeDocumentContentUrl(String documentListName, String documentName)
@@ -29,8 +29,8 @@ public class DocumentTreeUrl
 
 	/**
 	 * Get Resource Url for GetTreeDocument
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -45,8 +45,8 @@ public class DocumentTreeUrl
 
 	/**
 	 * Get Resource Url for UpdateTreeDocumentContent
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateTreeDocumentContentUrl(String documentListName, String documentName)
@@ -59,8 +59,8 @@ public class DocumentTreeUrl
 
 	/**
 	 * Get Resource Url for DeleteTreeDocumentContent
-	 * @param documentListName The name of the document list associated with the document.
-	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteTreeDocumentContentUrl(String documentListName, String documentName)

@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.Category;
 
 /**
- *	Paged collection of categories and related properties.
+ *	The container for paged lists of related site-specific product category properties.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryPagedCollection implements Serializable

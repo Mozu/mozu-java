@@ -467,7 +467,7 @@ public class OrderTests extends MozuApiTestBase {
 	{
 		try
 	    {
-	    	AdminLocationInventoryFactory.getLocationInventory(apiContext, locationCode, productCode, HttpStatus.SC_OK, HttpStatus.SC_OK);
+	    	AdminLocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, locationCode, productCode, HttpStatus.SC_OK, HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {

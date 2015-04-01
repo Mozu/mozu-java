@@ -15,7 +15,7 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for GetAccountNote
-	 * @param accountId Unique identifier of the customer account that contains the note being retrieved.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -53,7 +53,7 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for AddAccountNote
-	 * @param accountId Unique identifier of the customer account for which to create the note.
+	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -67,8 +67,8 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for UpdateAccountNote
-	 * @param accountId Unique identifier of the customer account note to modify.
-	 * @param noteId Unique identifier of the note to update.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -83,8 +83,8 @@ public class CustomerNoteUrl
 
 	/**
 	 * Get Resource Url for DeleteAccountNote
-	 * @param accountId Unique identifier of the customer account that contains the note being deleted.
-	 * @param noteId Unique identifier of the customer account note being deleted.
+	 * @param accountId Unique identifier of the customer account.
+	 * @param noteId Unique identifier of a particular note to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountNoteUrl(Integer accountId, Integer noteId)

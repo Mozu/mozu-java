@@ -35,7 +35,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * The data type of the property attribute, which is Bool, DateTime, Number, or String.
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
 	protected String dataType;
 
@@ -48,7 +48,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * If true, the product property can have more than one value.
+	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
 	protected Boolean isMultiValue;
 
@@ -61,7 +61,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * The name of the product property.
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
 	protected String name;
 
@@ -74,7 +74,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * The list of possible values for the product property.
+	 * List of value data for objects.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

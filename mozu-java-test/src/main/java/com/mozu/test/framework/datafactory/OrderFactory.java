@@ -233,6 +233,24 @@ public class OrderFactory
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
+	public static void resendOrderConfirmationEmail(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	{
+		OrderResource resource = new OrderResource(apiContext);
+		try
+		{
+			resource.resendOrderConfirmationEmail( orderId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.orders.Order changeOrderUserId(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
 	{
 		return changeOrderUserId(apiContext,  orderId,  null, expectedCode, successCode );

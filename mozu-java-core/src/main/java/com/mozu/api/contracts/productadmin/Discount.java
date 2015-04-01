@@ -15,7 +15,7 @@ import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
- *	Discount used to calculate SalePrice. Includes coupon code if applicable, amount of the discount, and discount savings. Discounts can be either an absolute price or a percentage off. The sale price beats any discounts.
+ *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -49,6 +49,16 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
 	/**
 	 * The number of times this discount has been redeemed.
 	 */
@@ -76,7 +86,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the discount.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
 
@@ -88,14 +98,34 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	protected Double maximumDiscountValuePerOrder;
+	protected Double maximumDiscountImpactPerOrder;
 
-	public Double getMaximumDiscountValuePerOrder() {
-		return this.maximumDiscountValuePerOrder;
+	public Double getMaximumDiscountImpactPerOrder() {
+		return this.maximumDiscountImpactPerOrder;
 	}
 
-	public void setMaximumDiscountValuePerOrder(Double maximumDiscountValuePerOrder) {
-		this.maximumDiscountValuePerOrder = maximumDiscountValuePerOrder;
+	public void setMaximumDiscountImpactPerOrder(Double maximumDiscountImpactPerOrder) {
+		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
+	}
+
+	protected Double maximumDiscountImpactPerRedemption;
+
+	public Double getMaximumDiscountImpactPerRedemption() {
+		return this.maximumDiscountImpactPerRedemption;
+	}
+
+	public void setMaximumDiscountImpactPerRedemption(Double maximumDiscountImpactPerRedemption) {
+		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
+	}
+
+	protected Integer maximumRedemptionsPerOrder;
+
+	public Integer getMaximumRedemptionsPerOrder() {
+		return this.maximumRedemptionsPerOrder;
+	}
+
+	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
+		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
 	}
 
 	/**
@@ -125,7 +155,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Current status of the product discount. Possible values are "Active", "Scheduled", or "Expired".
+	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
 	protected String status;
 
@@ -177,7 +207,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Properties of the target object to which the discount applies, such as a product or an order.
+	 * Targets represent the object, such as an item to apply discounts (products or orders) or a view field for content. When accessing MZDB APIs for Mongo interactions, targets are the dot notation that links to the source document property. For example, firstitem for the direc level or firstitem.seconditem.thirditem for a deeper property.              
 	 */
 	protected DiscountTarget target;
 

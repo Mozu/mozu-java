@@ -89,7 +89,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * The sequence of this attribute within its product type.
+	 * Integer that represents the sequence order of the attribute.
 	 */
 	protected Integer order;
 
@@ -102,7 +102,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * The wrapper for the properties of the product attribute to set up or generate from the system in the product admin. Properties include namespace, attribute code, attribute sequence, site group ID, input type, value type, data type, boolean flags, and metadata key value pairs.
+	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
 	protected Attribute attributeDetail;
 
@@ -114,6 +114,9 @@ public class AttributeInProductType implements Serializable
 		this.attributeDetail = attributeDetail;
 	}
 
+	/**
+	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
+	 */
 	protected AttributeInProductTypeDisplayInfo displayInfo;
 
 	public AttributeInProductTypeDisplayInfo getDisplayInfo() {
@@ -125,7 +128,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * The list of vocabulary values available for the attribute associated with the product type.
+	 * List of valid vocabulary values defined for an attribute.
 	 */
 	protected List<AttributeVocabularyValueInProductType> vocabularyValues;
 	public List<AttributeVocabularyValueInProductType> getVocabularyValues() {

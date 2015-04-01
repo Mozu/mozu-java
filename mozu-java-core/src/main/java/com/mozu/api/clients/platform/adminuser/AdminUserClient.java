@@ -13,9 +13,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /** <summary>
- * Displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
+ * The Accounts resource displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
  * </summary>
  */
 public class AdminUserClient {
@@ -70,7 +70,7 @@ public class AdminUserClient {
 	 * client.executeRequest();
 	 * User user = client.Result();
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.User>
 	 * @see com.mozu.api.contracts.core.User
 	 */
@@ -88,7 +88,7 @@ public class AdminUserClient {
 	 * User user = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the administrator account to retrieve.
+	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.User>
 	 * @see com.mozu.api.contracts.core.User
 	 */

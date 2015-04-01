@@ -24,6 +24,26 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean excludeItemsWithExistingProductDiscounts;
+
+	public Boolean getExcludeItemsWithExistingProductDiscounts() {
+		return this.excludeItemsWithExistingProductDiscounts;
+	}
+
+	public void setExcludeItemsWithExistingProductDiscounts(Boolean excludeItemsWithExistingProductDiscounts) {
+		this.excludeItemsWithExistingProductDiscounts = excludeItemsWithExistingProductDiscounts;
+	}
+
+	protected Boolean excludeItemsWithExistingShippingDiscounts;
+
+	public Boolean getExcludeItemsWithExistingShippingDiscounts() {
+		return this.excludeItemsWithExistingShippingDiscounts;
+	}
+
+	public void setExcludeItemsWithExistingShippingDiscounts(Boolean excludeItemsWithExistingShippingDiscounts) {
+		this.excludeItemsWithExistingShippingDiscounts = excludeItemsWithExistingShippingDiscounts;
+	}
+
 	/**
 	 * If true, the target discount applies to all products sold on the site, regardless of product category.
 	 */
@@ -64,7 +84,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * The product categories to which the discount can apply. When a discount applies to a category, all products in the category are eligible for the discount.
+	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
 	 */
 	protected List<TargetedCategory> categories;
 	public List<TargetedCategory> getCategories() {
@@ -75,7 +95,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Array list of categories to exclude for this discount.
+	 * List of the product categories that are not eligible for the discount.
 	 */
 	protected List<TargetedCategory> excludedCategories;
 	public List<TargetedCategory> getExcludedCategories() {
@@ -86,7 +106,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Array list of products to exclude for this discount.
+	 * List of products that are not eligible for the discount.
 	 */
 	protected List<TargetedProduct> excludedProducts;
 	public List<TargetedProduct> getExcludedProducts() {
@@ -118,6 +138,9 @@ public class DiscountTarget implements Serializable
 		this.shippingMethods = shippingMethods;
 	}
 
+	/**
+	 * Shipping Zones that are applicable for this discount
+	 */
 	protected List<TargetedShippingZone> shippingZones;
 	public List<TargetedShippingZone> getShippingZones() {
 		return this.shippingZones;

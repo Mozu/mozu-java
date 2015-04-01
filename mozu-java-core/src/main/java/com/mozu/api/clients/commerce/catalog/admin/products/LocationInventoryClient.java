@@ -13,7 +13,7 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Location Inventory resource to manage the levels of active product inventory to maintain across defined locations at the product level.
@@ -24,7 +24,7 @@ public class LocationInventoryClient {
 	/**
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient( productCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
@@ -33,15 +33,15 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(String productCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getLocationInventoriesClient( productCode,  null,  null,  null,  null,  null);
+		return getLocationInventoriesClient(dataViewMode,  productCode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves all locations for which a product has inventory defined and displays the inventory definition properties of each location.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient( productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient=GetLocationInventoriesClient(dataViewMode,  productCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
@@ -55,7 +55,7 @@ public class LocationInventoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> getLocationInventoriesClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoriesUrl(filter, pageSize, productCode, responseFields, sortBy, startIndex);
 		String verb = "GET";
@@ -63,6 +63,7 @@ public class LocationInventoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -70,36 +71,36 @@ public class LocationInventoryClient {
 	/**
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient( productCode,  locationCode);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient(dataViewMode,  productCode,  locationCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode User-defined code that identifies the location.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(String productCode, String locationCode) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode) throws Exception
 	{
-		return getLocationInventoryClient( productCode,  locationCode,  null);
+		return getLocationInventoryClient(dataViewMode,  productCode,  locationCode,  null);
 	}
 
 	/**
 	 * Retrieves the details of the inventory of the product in the location specified in the request.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient( productCode,  locationCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient=GetLocationInventoryClient(dataViewMode,  productCode,  locationCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode User-defined code that identifies the location.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(String productCode, String locationCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> getLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.products.LocationInventoryUrl.getLocationInventoryUrl(locationCode, productCode, responseFields);
 		String verb = "GET";
@@ -107,6 +108,7 @@ public class LocationInventoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.LocationInventory> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.LocationInventory>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -120,7 +122,7 @@ public class LocationInventoryClient {
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -138,9 +140,9 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
+	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
+	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -167,8 +169,8 @@ public class LocationInventoryClient {
 	 * client.executeRequest();
 	 * LocationInventory locationInventory = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
-	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.LocationInventory>>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -194,8 +196,8 @@ public class LocationInventoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationCode The code that identifies the location for which to delete product inventory.
-	 * @param productCode The product code for which to delete a location's inventory.
+	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationInventoryClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode) throws Exception
