@@ -102,6 +102,19 @@ public class Discount implements Serializable
 	}
 
 	/**
+	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
+	 */
+	protected Double maximumDiscountImpactPerRedemption;
+
+	public Double getMaximumDiscountImpactPerRedemption() {
+		return this.maximumDiscountImpactPerRedemption;
+	}
+
+	public void setMaximumDiscountImpactPerRedemption(Double maximumDiscountImpactPerRedemption) {
+		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
+	}
+
+	/**
 	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
 	 */
 	protected Integer maximumRedemptionsPerOrder;

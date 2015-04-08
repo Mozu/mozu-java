@@ -21,6 +21,19 @@ public class ProductPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
+	 */
+	protected String salePriceType;
+
+	public String getSalePriceType() {
+		return this.salePriceType;
+	}
+
+	public void setSalePriceType(String salePriceType) {
+		this.salePriceType = salePriceType;
+	}
+
+	/**
 	 * The list price of the product in the catalog.
 	 */
 	protected Double catalogListPrice;
@@ -109,19 +122,6 @@ public class ProductPrice implements Serializable
 
 	public void setSalePrice(Double salePrice) {
 		this.salePrice = salePrice;
-	}
-
-	/**
-	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
-	 */
-	protected String salePriceType;
-
-	public String getSalePriceType() {
-		return this.salePriceType;
-	}
-
-	public void setSalePriceType(String salePriceType) {
-		this.salePriceType = salePriceType;
 	}
 
 	/**

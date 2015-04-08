@@ -11,6 +11,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
 
 /**
@@ -306,6 +307,19 @@ public class GeneralSettings implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	/**
+	 * Supressed emails. Setting any of these to 'true' will block Mozu from sending that email and an event will be published instead.
+	 */
+	protected EmailTransactionSettings supressedEmailTransactions;
+
+	public EmailTransactionSettings getSupressedEmailTransactions() {
+		return this.supressedEmailTransactions;
+	}
+
+	public void setSupressedEmailTransactions(EmailTransactionSettings supressedEmailTransactions) {
+		this.supressedEmailTransactions = supressedEmailTransactions;
 	}
 
 	/**
