@@ -21,6 +21,19 @@ public class ProductReservation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
+	protected Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
@@ -83,19 +96,6 @@ public class ProductReservation implements Serializable
 
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
-	}
-
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
-	protected Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
 	}
 
 	/**

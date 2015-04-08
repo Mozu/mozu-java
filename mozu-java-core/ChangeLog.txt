@@ -29,66 +29,67 @@ Events
 27.    Added - Discount.Discount Deleted
 28.    Added - Discount.Discount Expired
 29.    Added - Discount.Discount Updated
-30.    Added - Facet.Facet Created
-31.    Added - Facet.Facet Deleted
-32.    Added - Facet.Facet Updated
-33.    Added - Location.Location Created
-34.    Added - Location.Location Deleted
-35.    Added - Location.Location Type Created
-36.    Added - Location.Location Type Deleted
-37.    Added - Location.Location Type Updated
-38.    Added - Location.Location Updated
-39.    Added - Location.Location Usage Created
-40.    Added - Location.Location Usage Updated
-41.    Added - Master Catalog.Catalog Created
-42.    Added - Master Catalog.Catalog Deleted
-43.    Added - Master Catalog.Catalog Updated
-44.    Added - Master Catalog.Master Catalog Created
-45.    Added - Master Catalog.Master Catalog Deleted
-46.    Added - Master Catalog.Master Catalog Updated
-47.    Added - MZDB.MzdbEntity Created
-48.    Added - MZDB.MzdbEntity Deleted
-49.    Added - MZDB.MzdbEntity Updated
-50.    Added - Order.Order Abandoned
-51.    Added - Order.Order Cancelled
-52.    Added - Order.Order Closed
-53.    Added - Order.Order Fulfilled
-54.    Added - Order.Order Opened
-55.    Added - Order.Order PendingReview
-56.    Added - Order.Order Updated
-57.    Added - Order.Return Cancelled
-58.    Added - Order.Return Closed
-59.    Added - Order.Return Opened
-60.    Added - Order.Return Rejected
-61.    Added - Order.Return Updated
-62.    Added - Order.Shipment Fulfilled
-63.    Added - Product.Product Code Renamed
-64.    Added - Product.Product Created
-65.    Added - Product.Product Deleted
-66.    Added - Product.Product Draft Created
-67.    Added - Product.Product Draft Deleted
-68.    Added - Product.Product Draft Discarded
-69.    Added - Product.Product Draft Published
-70.    Added - Product.Product Draft Updated
-71.    Added - Product.Product Inventory In Stock
-72.    Added - Product.Product Inventory Out Of Stock
-73.    Added - Product.Product Inventory Updated
-74.    Added - Product.Product Updated
-75.    Added - ProductType.ProductType Created
-76.    Added - ProductType.ProductType Deleted
-77.    Added - ProductType.ProductType Updated
-78.    Added - SearchIndex.Search Index Updated
-79.    Added - SearchSettings.SearchSettings Updated
-80.    Added - Site.Site Cloned
-81.    Added - Site.Site Created
-82.    Added - Site.Site Deleted
-83.    Added - Site.Site Updated
-84.    Added - Tenant.Tenant Deleted
-85.    Added - Tenant.Tenant Updated
-86.    Added - Test Utility.Ping Created
-87.    Added - Wish List.Wish List Created
-88.    Added - Wish List.Wish List Deleted
-89.    Added - Wish List.Wish List Updated
+30.    Added - Email.Email Requested
+31.    Added - Facet.Facet Created
+32.    Added - Facet.Facet Deleted
+33.    Added - Facet.Facet Updated
+34.    Added - Location.Location Created
+35.    Added - Location.Location Deleted
+36.    Added - Location.Location Type Created
+37.    Added - Location.Location Type Deleted
+38.    Added - Location.Location Type Updated
+39.    Added - Location.Location Updated
+40.    Added - Location.Location Usage Created
+41.    Added - Location.Location Usage Updated
+42.    Added - Master Catalog.Catalog Created
+43.    Added - Master Catalog.Catalog Deleted
+44.    Added - Master Catalog.Catalog Updated
+45.    Added - Master Catalog.Master Catalog Created
+46.    Added - Master Catalog.Master Catalog Deleted
+47.    Added - Master Catalog.Master Catalog Updated
+48.    Added - MZDB.MzdbEntity Created
+49.    Added - MZDB.MzdbEntity Deleted
+50.    Added - MZDB.MzdbEntity Updated
+51.    Added - Order.Order Abandoned
+52.    Added - Order.Order Cancelled
+53.    Added - Order.Order Closed
+54.    Added - Order.Order Fulfilled
+55.    Added - Order.Order Opened
+56.    Added - Order.Order PendingReview
+57.    Added - Order.Order Updated
+58.    Added - Order.Return Cancelled
+59.    Added - Order.Return Closed
+60.    Added - Order.Return Opened
+61.    Added - Order.Return Rejected
+62.    Added - Order.Return Updated
+63.    Added - Order.Shipment Fulfilled
+64.    Added - Product.Product Code Renamed
+65.    Added - Product.Product Created
+66.    Added - Product.Product Deleted
+67.    Added - Product.Product Draft Created
+68.    Added - Product.Product Draft Deleted
+69.    Added - Product.Product Draft Discarded
+70.    Added - Product.Product Draft Published
+71.    Added - Product.Product Draft Updated
+72.    Added - Product.Product Inventory In Stock
+73.    Added - Product.Product Inventory Out Of Stock
+74.    Added - Product.Product Inventory Updated
+75.    Added - Product.Product Updated
+76.    Added - ProductType.ProductType Created
+77.    Added - ProductType.ProductType Deleted
+78.    Added - ProductType.ProductType Updated
+79.    Added - SearchIndex.Search Index Updated
+80.    Added - SearchSettings.SearchSettings Updated
+81.    Added - Site.Site Cloned
+82.    Added - Site.Site Created
+83.    Added - Site.Site Deleted
+84.    Added - Site.Site Updated
+85.    Added - Tenant.Tenant Deleted
+86.    Added - Tenant.Tenant Updated
+87.    Added - Test Utility.Ping Created
+88.    Added - Wish List.Wish List Created
+89.    Added - Wish List.Wish List Deleted
+90.    Added - Wish List.Wish List Updated
 
 Operation Params
 0.    Added - addressvalidationcapability.ValidateAddress- Param : address
