@@ -168,6 +168,10 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     }
 
     protected void validateContext() throws Exception {
+    	AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
+        if (appAuthenticator == null) {
+           throw new ApiException("Application has not been authorized to access Mozu.");
+        } 
         if (resourceUrl.getLocation() == MozuUrl.UrlLocation.TENANT_POD) {
             if (apiContext == null || apiContext.getTenantId() <= 0)
                 throw new ApiException("TenantId is missing");
@@ -182,15 +186,20 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
             } else {
                 baseAddress = apiContext.getTenantUrl();
             }
-        } else {
-            AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
-            if (appAuthenticator == null) {
-                throw new ApiException("Application has not been authorized to access Mozu.");
-            } else if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
+        }else if (resourceUrl.getLocation() == MozuUrl.UrlLocation.HOME_POD){
+        	if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
                 throw new ApiException("Authentication.Instance.BaseUrl is missing");
-            }
+             }
 
             baseAddress = MozuConfig.getBaseUrl();
+         }else if(resourceUrl.getLocation() == MozuUrl.UrlLocation.PCI_POD){
+        	if(apiContext == null ||apiContext.getTenantId() < 0){
+        		 throw new ApiException("TenantId is missing");
+        	}
+        	if (StringUtils.isBlank(MozuConfig.getBasePciUrl())) {
+                throw new ApiException("Authentication.Instance.BasePciUrl is missing");
+             }
+        	baseAddress = MozuConfig.getBasePciUrl();
         }
     }
 
