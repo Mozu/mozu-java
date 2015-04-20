@@ -2,7 +2,7 @@ package com.mozu.api;
 
 public class MozuUrl {
     public enum UrlLocation {
-        HOME_POD, TENANT_POD
+        HOME_POD, TENANT_POD, PCI_POD
     }
 
     public String url = null;
