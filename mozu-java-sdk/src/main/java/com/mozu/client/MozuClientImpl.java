@@ -203,6 +203,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public void executeRequest() throws Exception {
         validateContext();
 
@@ -339,22 +340,25 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
          cacheKey =  key.toString();
     }
     
+    @SuppressWarnings("unchecked")
     private void setCache() throws Exception {
-    	String eTag = getHeaderValue("ETag", httpResponseMessage);
+        String eTag = getHeaderValue("ETag", httpResponseMessage);
         if (cacheItem != null && httpResponseMessage.getStatusLine().getStatusCode() == 304)
         {
-        	//Do nothing
+            //Do nothing
             //httpResponseMessage = (CloseableHttpResponse) cacheItem.getItem();
         }
-        else if (StringUtils.isNotEmpty(eTag))
+        else if (StringUtils.isNotEmpty(eTag) && httpResponseMessage.getStatusLine().getStatusCode() != 404)
         {
-            cacheItem = new CacheItem();
-            cacheItem.seteTag(eTag);
-            cacheItem.setKey(cacheKey);
-            cacheItem.setContent(stringContent());
             com.mozu.api.cache.CacheManager<CacheItem> cache = (com.mozu.api.cache.CacheManager<CacheItem>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
-            if (cache != null) 
-            	cache.put(cacheKey, cacheItem);
+            if (cache != null) {
+                cacheItem = new CacheItem();
+                cacheItem.seteTag(eTag);
+                cacheItem.setKey(cacheKey);
+                cacheItem.setContent(stringContent());
+                
+                cache.put(cacheKey, cacheItem);
+            }
         }
     }
     
