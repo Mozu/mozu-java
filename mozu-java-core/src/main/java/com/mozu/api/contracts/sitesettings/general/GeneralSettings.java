@@ -310,6 +310,9 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Supressed emails. Setting any of these to 'true' will block Mozu from sending that email and an event will be published instead.
+	 */
 	protected EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {

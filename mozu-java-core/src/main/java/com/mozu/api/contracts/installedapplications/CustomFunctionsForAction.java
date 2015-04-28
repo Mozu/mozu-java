@@ -18,14 +18,14 @@ public class CustomFunctionsForAction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String action;
+	protected String actionId;
 
-	public String getAction() {
-		return this.action;
+	public String getActionId() {
+		return this.actionId;
 	}
 
-	public void setAction(String action) {
-		this.action = action;
+	public void setActionId(String actionId) {
+		this.actionId = actionId;
 	}
 
 	protected List<CustomFunctionsForContext> contexts;

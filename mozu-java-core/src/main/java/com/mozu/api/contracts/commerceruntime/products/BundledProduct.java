@@ -66,6 +66,16 @@ public class BundledProduct implements Serializable
 		this.description = description;
 	}
 
+	protected String fulfillmentStatus;
+
+	public String getFulfillmentStatus() {
+		return this.fulfillmentStatus;
+	}
+
+	public void setFulfillmentStatus(String fulfillmentStatus) {
+		this.fulfillmentStatus = fulfillmentStatus;
+	}
+
 	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */

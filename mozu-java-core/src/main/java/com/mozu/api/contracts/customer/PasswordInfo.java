@@ -19,6 +19,16 @@ public class PasswordInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String externalPassword;
+
+	public String getExternalPassword() {
+		return this.externalPassword;
+	}
+
+	public void setExternalPassword(String externalPassword) {
+		this.externalPassword = externalPassword;
+	}
+
 	/**
 	 * The new password entered and saved by the user of the account. 
 	 */

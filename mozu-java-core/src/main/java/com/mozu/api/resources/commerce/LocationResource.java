@@ -68,43 +68,6 @@ public class LocationResource {
 	}
 
 	/**
-	 * Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
-	 * <p><pre><code>
-	 *	Location location = new Location();
-	 *	Location location = location.getLocationInUsageType( locationUsageType,  code);
-	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
-	 * @return com.mozu.api.contracts.location.Location
-	 * @see com.mozu.api.contracts.location.Location
-	 */
-	public com.mozu.api.contracts.location.Location getLocationInUsageType(String locationUsageType, String code) throws Exception
-	{
-		return getLocationInUsageType( locationUsageType,  code,  null);
-	}
-
-	/**
-	 * Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
-	 * <p><pre><code>
-	 *	Location location = new Location();
-	 *	Location location = location.getLocationInUsageType( locationUsageType,  code,  responseFields);
-	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @return com.mozu.api.contracts.location.Location
-	 * @see com.mozu.api.contracts.location.Location
-	 */
-	public com.mozu.api.contracts.location.Location getLocationInUsageType(String locationUsageType, String code, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.location.Location> client = com.mozu.api.clients.commerce.LocationClient.getLocationInUsageTypeClient( locationUsageType,  code,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * Retrieves a list of the locations configured for a specified location usage type for the specified site, according to any defined filter or sort criteria.
 	 * <p><pre><code>
 	 *	Location location = new Location();

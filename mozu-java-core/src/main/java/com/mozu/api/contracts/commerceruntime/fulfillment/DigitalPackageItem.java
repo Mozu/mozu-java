@@ -42,6 +42,16 @@ public class DigitalPackageItem implements Serializable
 		this.giftCardCode = giftCardCode;
 	}
 
+	protected Integer lineId;
+
+	public Integer getLineId() {
+		return this.lineId;
+	}
+
+	public void setLineId(Integer lineId) {
+		this.lineId = lineId;
+	}
+
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */

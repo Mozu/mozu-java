@@ -19,6 +19,16 @@ public class TenantExtensions implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String defaultLogLevel;
+
+	public String getDefaultLogLevel() {
+		return this.defaultLogLevel;
+	}
+
+	public void setDefaultLogLevel(String defaultLogLevel) {
+		this.defaultLogLevel = defaultLogLevel;
+	}
+
 	protected List<CustomFunctionsForAction> actions;
 	public List<CustomFunctionsForAction> getActions() {
 		return this.actions;

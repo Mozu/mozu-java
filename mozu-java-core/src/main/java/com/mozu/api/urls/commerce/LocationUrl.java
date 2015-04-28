@@ -28,22 +28,6 @@ public class LocationUrl
 	}
 
 	/**
-	 * Get Resource Url for GetLocationInUsageType
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getLocationInUsageTypeUrl(String code, String locationUsageType, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/storefront/locationUsageTypes/{locationUsageType}/locations/{code}?responseFields={responseFields}");
-		formatter.formatUrl("code", code);
-		formatter.formatUrl("locationUsageType", locationUsageType);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for GetLocationsInUsageType
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.

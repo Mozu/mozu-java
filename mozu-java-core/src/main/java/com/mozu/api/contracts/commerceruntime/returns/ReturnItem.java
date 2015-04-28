@@ -50,6 +50,16 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
+	protected Integer orderLineId;
+
+	public Integer getOrderLineId() {
+		return this.orderLineId;
+	}
+
+	public void setOrderLineId(Integer orderLineId) {
+		this.orderLineId = orderLineId;
+	}
+
 	/**
 	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
 	 */

@@ -20,19 +20,6 @@ public class AuditInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Date and time when the entity was last updated, represented in UTC Date/Time.
-	 */
-	protected DateTime updateDate;
-
-	public DateTime getUpdateDate() {
-		return this.updateDate;
-	}
-
-	public void setUpdateDate(DateTime updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	/**
 	 * Unique identifier of the user created the resource entity. This value is system-supplied and read-only.
 	 */
 	protected String createBy;
@@ -69,6 +56,19 @@ public class AuditInfo implements Serializable
 
 	public void setUpdateBy(String updateBy) {
 		this.updateBy = updateBy;
+	}
+
+	/**
+	 * Date and time when the entity was last updated, represented in UTC Date/Time.
+	 */
+	protected DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
 	}
 
 }

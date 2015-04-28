@@ -32,6 +32,16 @@ public class PackageItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
+	protected Integer lineId;
+
+	public Integer getLineId() {
+		return this.lineId;
+	}
+
+	public void setLineId(Integer lineId) {
+		this.lineId = lineId;
+	}
+
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */

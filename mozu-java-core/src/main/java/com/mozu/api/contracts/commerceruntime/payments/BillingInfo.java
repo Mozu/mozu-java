@@ -23,19 +23,6 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The code that identifies the store credit to apply to the order.
-	 */
-	protected String storeCreditCode;
-
-	public String getStoreCreditCode() {
-		return this.storeCreditCode;
-	}
-
-	public void setStoreCreditCode(String storeCreditCode) {
-		this.storeCreditCode = storeCreditCode;
-	}
-
-	/**
 	 * If true, the system overrides the customer's billing address information with the supplied fulfillment information.
 	 */
 	protected Boolean isSameBillingShippingAddress;
@@ -59,6 +46,19 @@ public class BillingInfo implements Serializable
 
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
+	}
+
+	/**
+	 * The code that identifies the store credit to apply to the order.
+	 */
+	protected String storeCreditCode;
+
+	public String getStoreCreditCode() {
+		return this.storeCreditCode;
+	}
+
+	public void setStoreCreditCode(String storeCreditCode) {
+		this.storeCreditCode = storeCreditCode;
 	}
 
 	/**
