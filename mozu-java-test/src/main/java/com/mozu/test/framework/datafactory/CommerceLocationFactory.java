@@ -45,31 +45,6 @@ public class CommerceLocationFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.Location getLocationInUsageType(ApiContext apiContext, String locationUsageType, String code, int expectedCode, int successCode) throws Exception
-	{
-		return getLocationInUsageType(apiContext,  locationUsageType,  code,  null, expectedCode, successCode );
-	}
-
-	public static com.mozu.api.contracts.location.Location getLocationInUsageType(ApiContext apiContext, String locationUsageType, String code, String responseFields, int expectedCode, int successCode) throws Exception
-	{
-		com.mozu.api.contracts.location.Location returnObj = new com.mozu.api.contracts.location.Location();
-		LocationResource resource = new LocationResource(apiContext);
-		try
-		{
-			returnObj = resource.getLocationInUsageType( locationUsageType,  code,  responseFields);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
-		return returnObj;
-	}
-
 	public static com.mozu.api.contracts.location.LocationCollection getLocationsInUsageType(ApiContext apiContext, String locationUsageType, int expectedCode, int successCode) throws Exception
 	{
 		return getLocationsInUsageType(apiContext,  locationUsageType,  null,  null,  null,  null,  null, expectedCode, successCode );

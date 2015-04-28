@@ -233,12 +233,12 @@ public class OrderFactory
 			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
 	}
 
-	public static void resendOrderConfirmationEmail(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	public static void resendOrderConfirmationEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId, int expectedCode, int successCode) throws Exception
 	{
 		OrderResource resource = new OrderResource(apiContext);
 		try
 		{
-			resource.resendOrderConfirmationEmail( orderId);
+			resource.resendOrderConfirmationEmail( action,  orderId);
 		}
 		catch (ApiException e)
 		{

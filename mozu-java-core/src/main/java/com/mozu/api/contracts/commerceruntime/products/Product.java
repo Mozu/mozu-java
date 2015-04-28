@@ -98,6 +98,16 @@ public class Product implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
+	protected String fulfillmentStatus;
+
+	public String getFulfillmentStatus() {
+		return this.fulfillmentStatus;
+	}
+
+	public void setFulfillmentStatus(String fulfillmentStatus) {
+		this.fulfillmentStatus = fulfillmentStatus;
+	}
+
 	/**
 	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
 	 */

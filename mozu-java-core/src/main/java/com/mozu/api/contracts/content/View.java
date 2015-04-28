@@ -22,6 +22,17 @@ public class View implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * List description of usages for content within a view and scope.
+	 */
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
+	}
+
+	/**
 	 * The isVisibleInStorefront field indicates whether documents in the view can be accessed from the Mozu storefront application. If true, the storefront application and storefront client application (javascript tier) can GET documents from the view.
 	 */
 	protected Boolean isVisibleInStorefront;
@@ -45,17 +56,6 @@ public class View implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	/**
-	 * List description of usages for content within a view and scope.
-	 */
-	protected List<String> usages;
-	public List<String> getUsages() {
-		return this.usages;
-	}
-	public void setUsages(List<String> usages) {
-		this.usages = usages;
 	}
 
 	/**

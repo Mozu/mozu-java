@@ -20,6 +20,16 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String baseProductCode;
+
+	public String getBaseProductCode() {
+		return this.baseProductCode;
+	}
+
+	public void setBaseProductCode(String baseProductCode) {
+		this.baseProductCode = baseProductCode;
+	}
+
 	/**
 	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */

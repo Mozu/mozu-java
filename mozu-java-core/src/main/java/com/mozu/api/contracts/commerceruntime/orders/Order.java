@@ -15,7 +15,6 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
-import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
 import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
@@ -26,6 +25,7 @@ import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Pickup;
+import com.mozu.api.contracts.commerceruntime.refunds.Refund;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Shipment;
 import com.mozu.api.contracts.commerceruntime.discounts.ShippingDiscount;
 import com.mozu.api.contracts.commerceruntime.orders.ShopperNotes;
@@ -39,6 +39,16 @@ public class Order implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	protected Double dutyAmount;
+
+	public Double getDutyAmount() {
+		return this.dutyAmount;
+	}
+
+	public void setDutyAmount(Double dutyAmount) {
+		this.dutyAmount = dutyAmount;
+	}
 
 	/**
 	 * The date and time the order was accepted by the tenant.
@@ -77,6 +87,19 @@ public class Order implements Serializable
 
 	public void setAmountAvailableForRefund(Double amountAvailableForRefund) {
 		this.amountAvailableForRefund = amountAvailableForRefund;
+	}
+
+	/**
+	 * A counter for how much money has been issued in refunds. This calculated field does NOT include refunds issued in returns.
+	 */
+	protected Double amountRefunded;
+
+	public Double getAmountRefunded() {
+		return this.amountRefunded;
+	}
+
+	public void setAmountRefunded(Double amountRefunded) {
+		this.amountRefunded = amountRefunded;
 	}
 
 	/**
@@ -242,6 +265,16 @@ public class Order implements Serializable
 
 	public void setDiscountTotal(Double discountTotal) {
 		this.discountTotal = discountTotal;
+	}
+
+	protected Double dutyTotal;
+
+	public Double getDutyTotal() {
+		return this.dutyTotal;
+	}
+
+	public void setDutyTotal(Double dutyTotal) {
+		this.dutyTotal = dutyTotal;
 	}
 
 	/**
@@ -851,11 +884,13 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	protected List<KeyValue> data;
-	public List<KeyValue> getData() {
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
 	}
-	public void setData(List<KeyValue> data) {
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
 	}
 
@@ -977,6 +1012,17 @@ public class Order implements Serializable
 	}
 	public void setPickups(List<Pickup> pickups) {
 		this.pickups = pickups;
+	}
+
+	/**
+	 * Refunds associated with this order. A refund is a single exchange of money from merchant to customer that either encapsulates a refund to a credit card or an issuance of a store credit. Refunds does not reduce the 'amount collected' on an order and it is possible for refunds to exceed the total order amount.
+	 */
+	protected List<Refund> refunds;
+	public List<Refund> getRefunds() {
+		return this.refunds;
+	}
+	public void setRefunds(List<Refund> refunds) {
+		this.refunds = refunds;
 	}
 
 	/**

@@ -36,6 +36,16 @@ public class AttributeInProductType implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
+	protected Boolean isAdminOnlyProperty;
+
+	public Boolean getIsAdminOnlyProperty() {
+		return this.isAdminOnlyProperty;
+	}
+
+	public void setIsAdminOnlyProperty(Boolean isAdminOnlyProperty) {
+		this.isAdminOnlyProperty = isAdminOnlyProperty;
+	}
+
 	/**
 	 * If true, this property is hidden on the storefront. If false, this property is not hidden from the storefront.
 	 */

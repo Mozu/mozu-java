@@ -33,6 +33,44 @@ public class OrderItemResource {
 
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId);
+	 * </code></pre></p>
+	 * @param lineId 
+	 * @param orderId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getOrderItemViaLineId(String orderId, Integer lineId) throws Exception
+	{
+		return getOrderItemViaLineId( orderId,  lineId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId,  draft,  responseFields);
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param lineId 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.OrderItem getOrderItemViaLineId(String orderId, Integer lineId, Boolean draft, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> client = com.mozu.api.clients.commerce.orders.OrderItemClient.getOrderItemViaLineIdClient( orderId,  lineId,  draft,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieves the details of a single order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
@@ -187,6 +225,47 @@ public class OrderItemResource {
 	public com.mozu.api.contracts.commerceruntime.orders.Order updateOrderItemDiscount(com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount discount, String orderId, String orderItemId, Integer discountId, String updateMode, String version, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.OrderItemClient.updateOrderItemDiscountClient( discount,  orderId,  orderItemId,  discountId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount);
+	 * </code></pre></p>
+	 * @param dutyAmount 
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order updateItemDuty(String orderId, String orderItemId, Double dutyAmount) throws Exception
+	{
+		return updateItemDuty( orderId,  orderItemId,  dutyAmount,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	OrderItem orderitem = new OrderItem();
+	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
+	 * </code></pre></p>
+	 * @param dutyAmount 
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order updateItemDuty(String orderId, String orderItemId, Double dutyAmount, String updateMode, String version, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.OrderItemClient.updateItemDutyClient( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

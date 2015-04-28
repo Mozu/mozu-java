@@ -45,18 +45,18 @@ public class FulfillmentActionFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, String orderId, String packageId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode, int successCode) throws Exception
 	{
-		return resendPackageFulfillmentEmail(apiContext,  orderId,  packageId,  null, expectedCode, successCode );
+		return resendPackageFulfillmentEmail(apiContext,  action,  orderId,  null, expectedCode, successCode );
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, String orderId, String packageId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		FulfillmentActionResource resource = new FulfillmentActionResource(apiContext);
 		try
 		{
-			returnObj = resource.resendPackageFulfillmentEmail( orderId,  packageId,  responseFields);
+			returnObj = resource.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
 		}
 		catch (ApiException e)
 		{

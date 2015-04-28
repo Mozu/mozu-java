@@ -27,6 +27,16 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean allowFulfillmentWithNoStock;
+
+	public Boolean getAllowFulfillmentWithNoStock() {
+		return this.allowFulfillmentWithNoStock;
+	}
+
+	public void setAllowFulfillmentWithNoStock(Boolean allowFulfillmentWithNoStock) {
+		this.allowFulfillmentWithNoStock = allowFulfillmentWithNoStock;
+	}
+
 	/**
 	 * User-defined code to assign to this location.
 	 */
@@ -64,6 +74,16 @@ public class Location implements Serializable
 
 	public void setFax(String fax) {
 		this.fax = fax;
+	}
+
+	protected Boolean isDisabled;
+
+	public Boolean getIsDisabled() {
+		return this.isDisabled;
+	}
+
+	public void setIsDisabled(Boolean isDisabled) {
+		this.isDisabled = isDisabled;
 	}
 
 	/**

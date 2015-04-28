@@ -395,7 +395,7 @@ public class GeneralTests extends MozuApiTestBase {
 	public void CommerceLocationTests() throws Exception {
 		CommerceLocationFactory.getDirectShipLocation(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
 		CommerceLocationFactory.getLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-/*bug 36454*/		CommerceLocationFactory.getLocationInUsageType(apiContext, "direct ship", Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		/*bug 36454*/		CommerceLocationFactory.getLocationsInUsageType(apiContext, "direct ship", HttpStatus.SC_OK, HttpStatus.SC_OK);
 		CommerceLocationFactory.getLocationsInUsageType(apiContext, "direct ship", HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 /*bug 36455*/		CommerceLocationFactory.getInStorePickupLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
 		CommerceLocationFactory.getInStorePickupLocations(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);

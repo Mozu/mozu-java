@@ -333,17 +333,19 @@ public class OrderResource {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ResendOrderConfirmationEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Order order = new Order();
-	 *	order.resendOrderConfirmationEmail( orderId);
+	 *	order.resendOrderConfirmationEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
+	 * @param action The action to perform for the order.
 	 * @return 
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
 	 */
-	public void resendOrderConfirmationEmail(String orderId) throws Exception
+	public void resendOrderConfirmationEmail(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.OrderClient.resendOrderConfirmationEmailClient( orderId);
+		MozuClient client = com.mozu.api.clients.commerce.OrderClient.resendOrderConfirmationEmailClient( action,  orderId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

@@ -47,6 +47,16 @@ public class SiteSearchSettings implements Serializable
 		this.isDefault = isDefault;
 	}
 
+	protected Integer minimumMatchPercent;
+
+	public Integer getMinimumMatchPercent() {
+		return this.minimumMatchPercent;
+	}
+
+	public void setMinimumMatchPercent(Integer minimumMatchPercent) {
+		this.minimumMatchPercent = minimumMatchPercent;
+	}
+
 	/**
 	 * The name for the search settings.
 	 */
