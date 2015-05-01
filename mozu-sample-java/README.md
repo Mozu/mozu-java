@@ -28,3 +28,4 @@ Running with Fiddler:
 Fiddler is a tool that Mozu developer use to debug calls going to the Mozu REST service.  It is very helpful for diagnosing any problems sending requests to Mozu.  To enable Fiddler for the Java SDK, you can set the following parameters in  src/main/resources/mozu_config.properties:
 proxy.host=localhost
 proxy.port=8888     
+
