@@ -24,13 +24,10 @@ task wrapper(type: Wrapper) {
 
 repositories {
     mavenCentral()
-    mavenLocal()
     maven {
         url "https://oss.sonatype.org/content/groups/staging/"
     }
-    maven {
-          url "http://aus02bpnexs001.corp.volusion.com:8080/nexus/content/groups/public"
-    }  
+    mavenLocal()
 }
 
 configurations.all {
