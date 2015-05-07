@@ -22,6 +22,19 @@ public class ProductExtra implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 */
+	protected String attributeFQN;
+
+	public String getAttributeFQN() {
+		return this.attributeFQN;
+	}
+
+	public void setAttributeFQN(String attributeFQN) {
+		this.attributeFQN = attributeFQN;
+	}
+
+	/**
 	 * If true, the shopper can select more than one value from a predefined list for this extra.
 	 */
 	protected Boolean isMultiSelect;
@@ -45,19 +58,6 @@ public class ProductExtra implements Serializable
 
 	public void setIsRequired(Boolean isRequired) {
 		this.isRequired = isRequired;
-	}
-
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
-	protected String attributeFQN;
-
-	public String getAttributeFQN() {
-		return this.attributeFQN;
-	}
-
-	public void setAttributeFQN(String attributeFQN) {
-		this.attributeFQN = attributeFQN;
 	}
 
 	/**

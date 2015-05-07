@@ -20,6 +20,19 @@ public class Catalog implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
+	protected Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/**
 	 * The date time in UTC format set when the object was created. 
 	 */
 	protected DateTime createDate;
@@ -69,19 +82,6 @@ public class Catalog implements Serializable
 
 	public void setDeleteDate(DateTime deleteDate) {
 		this.deleteDate = deleteDate;
-	}
-
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	/**

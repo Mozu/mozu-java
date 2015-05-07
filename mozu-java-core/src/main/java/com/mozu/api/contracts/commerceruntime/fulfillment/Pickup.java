@@ -24,17 +24,6 @@ public class Pickup implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
-	 */
-	protected List<String> availableActions;
-	public List<String> getAvailableActions() {
-		return this.availableActions;
-	}
-	public void setAvailableActions(List<String> availableActions) {
-		this.availableActions = availableActions;
-	}
-
-	/**
 	 * The specific code that represents pickup.
 	 */
 	protected String code;
@@ -45,6 +34,17 @@ public class Pickup implements Serializable
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	/**
+	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 */
+	protected List<String> availableActions;
+	public List<String> getAvailableActions() {
+		return this.availableActions;
+	}
+	public void setAvailableActions(List<String> availableActions) {
+		this.availableActions = availableActions;
 	}
 
 	/**

@@ -153,12 +153,12 @@ public class OrderUrl
 
 	/**
 	 * Get Resource Url for ResendOrderConfirmationEmail
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendOrderConfirmationEmailUrl(String orderId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/Resend-Email");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/email/resend");
 		formatter.formatUrl("orderId", orderId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

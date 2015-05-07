@@ -63,50 +63,6 @@ public class LocationClient {
 	}
 
 	/**
-	 * Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationInUsageTypeClient( locationUsageType,  code);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Location location = client.Result();
-	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
-	 * @see com.mozu.api.contracts.location.Location
-	 */
-	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationInUsageTypeClient(String locationUsageType, String code) throws Exception
-	{
-		return getLocationInUsageTypeClient( locationUsageType,  code,  null);
-	}
-
-	/**
-	 * Retrieves the details of a location associated with a defined location usage type for the site specified in the request.
-	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.location.Location> mozuClient=GetLocationInUsageTypeClient( locationUsageType,  code,  responseFields);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * Location location = client.Result();
-	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param locationUsageType System-defined location usage type code, which is DS for direct ship, SP for in-store pickup, or storeFinder.
-	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
-	 * @see com.mozu.api.contracts.location.Location
-	 */
-	public static MozuClient<com.mozu.api.contracts.location.Location> getLocationInUsageTypeClient(String locationUsageType, String code, String responseFields) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.LocationUrl.getLocationInUsageTypeUrl(code, locationUsageType, responseFields);
-		String verb = "GET";
-		Class<?> clz = com.mozu.api.contracts.location.Location.class;
-		MozuClient<com.mozu.api.contracts.location.Location> mozuClient = (MozuClient<com.mozu.api.contracts.location.Location>) MozuClientFactory.getInstance(clz);
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		return mozuClient;
-
-	}
-
-	/**
 	 * Retrieves a list of the locations configured for a specified location usage type for the specified site, according to any defined filter or sort criteria.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.location.LocationCollection> mozuClient=GetLocationsInUsageTypeClient( locationUsageType);

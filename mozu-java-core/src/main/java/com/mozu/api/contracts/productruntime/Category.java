@@ -48,6 +48,16 @@ public class Category implements Serializable
 		this.categoryId = categoryId;
 	}
 
+	protected Integer count;
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
 	/**
 	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */

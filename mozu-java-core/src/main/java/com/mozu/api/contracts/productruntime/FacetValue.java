@@ -60,6 +60,16 @@ public class FacetValue implements Serializable
 		this.isApplied = isApplied;
 	}
 
+	protected Boolean isDisplayed;
+
+	public Boolean getIsDisplayed() {
+		return this.isDisplayed;
+	}
+
+	public void setIsDisplayed(Boolean isDisplayed) {
+		this.isDisplayed = isDisplayed;
+	}
+
 	/**
 	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */

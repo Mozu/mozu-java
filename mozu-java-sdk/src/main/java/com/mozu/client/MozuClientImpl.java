@@ -168,6 +168,10 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     }
 
     protected void validateContext() throws Exception {
+    	AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
+        if (appAuthenticator == null) {
+           throw new ApiException("Application has not been authorized to access Mozu.");
+        } 
         if (resourceUrl.getLocation() == MozuUrl.UrlLocation.TENANT_POD) {
             if (apiContext == null || apiContext.getTenantId() <= 0)
                 throw new ApiException("TenantId is missing");
@@ -182,18 +186,24 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
             } else {
                 baseAddress = apiContext.getTenantUrl();
             }
-        } else {
-            AppAuthenticator appAuthenticator = AppAuthenticator.getInstance();
-            if (appAuthenticator == null) {
-                throw new ApiException("Application has not been authorized to access Mozu.");
-            } else if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
+        }else if (resourceUrl.getLocation() == MozuUrl.UrlLocation.HOME_POD){
+        	if (StringUtils.isBlank(MozuConfig.getBaseUrl())) {
                 throw new ApiException("Authentication.Instance.BaseUrl is missing");
-            }
+             }
 
             baseAddress = MozuConfig.getBaseUrl();
+         }else if(resourceUrl.getLocation() == MozuUrl.UrlLocation.PCI_POD){
+        	if(apiContext == null ||apiContext.getTenantId() < 0){
+        		 throw new ApiException("TenantId is missing");
+        	}
+        	if (StringUtils.isBlank(MozuConfig.getBasePciUrl())) {
+                throw new ApiException("Authentication.Instance.BasePciUrl is missing");
+             }
+        	baseAddress = MozuConfig.getBasePciUrl();
         }
     }
 
+    @SuppressWarnings("unchecked")
     public void executeRequest() throws Exception {
         validateContext();
 
@@ -330,22 +340,25 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
          cacheKey =  key.toString();
     }
     
+    @SuppressWarnings("unchecked")
     private void setCache() throws Exception {
-    	String eTag = getHeaderValue("ETag", httpResponseMessage);
+        String eTag = getHeaderValue("ETag", httpResponseMessage);
         if (cacheItem != null && httpResponseMessage.getStatusLine().getStatusCode() == 304)
         {
-        	//Do nothing
+            //Do nothing
             //httpResponseMessage = (CloseableHttpResponse) cacheItem.getItem();
         }
-        else if (StringUtils.isNotEmpty(eTag))
+        else if (StringUtils.isNotEmpty(eTag) && httpResponseMessage.getStatusLine().getStatusCode() != 404)
         {
-            cacheItem = new CacheItem();
-            cacheItem.seteTag(eTag);
-            cacheItem.setKey(cacheKey);
-            cacheItem.setContent(stringContent());
             com.mozu.api.cache.CacheManager<CacheItem> cache = (com.mozu.api.cache.CacheManager<CacheItem>) com.mozu.api.cache.CacheManagerFactory.getCacheManager();
-            if (cache != null) 
-            	cache.put(cacheKey, cacheItem);
+            if (cache != null) {
+                cacheItem = new CacheItem();
+                cacheItem.seteTag(eTag);
+                cacheItem.setKey(cacheKey);
+                cacheItem.setContent(stringContent());
+                
+                cache.put(cacheKey, cacheItem);
+            }
         }
     }
     
@@ -436,7 +449,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     	else if (!StringUtils.isEmpty(correlationId)) {
     		try {
     			apiError = mapper.readValue(stringContent(), ApiError.class);
-    			if (apiError.getErrorCode().equals("ITEM_NOT_FOUND") && statusCode == 404) return;
+    			if (apiError.getErrorCode().equals("ITEM_NOT_FOUND") && statusCode == 404  && StringUtils.endsWithIgnoreCase("get",requestLine.getMethod())) return;
     		} catch (JsonProcessingException jpe) {
                 throw new ApiException("An error has occurred. Status Code: " + statusCode   
                         + " Status Message: " + response.getStatusLine().getReasonPhrase(), statusCode);

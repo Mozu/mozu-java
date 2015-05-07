@@ -26,16 +26,6 @@ public class CustomFunction implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
-	protected String customFunctionName;
-
-	public String getCustomFunctionName() {
-		return this.customFunctionName;
-	}
-
-	public void setCustomFunctionName(String customFunctionName) {
-		this.customFunctionName = customFunctionName;
-	}
-
 	protected Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -44,6 +34,46 @@ public class CustomFunction implements Serializable
 
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	protected String exceptionBehavior;
+
+	public String getExceptionBehavior() {
+		return this.exceptionBehavior;
+	}
+
+	public void setExceptionBehavior(String exceptionBehavior) {
+		this.exceptionBehavior = exceptionBehavior;
+	}
+
+	protected String functionId;
+
+	public String getFunctionId() {
+		return this.functionId;
+	}
+
+	public void setFunctionId(String functionId) {
+		this.functionId = functionId;
+	}
+
+	protected String logLevel;
+
+	public String getLogLevel() {
+		return this.logLevel;
+	}
+
+	public void setLogLevel(String logLevel) {
+		this.logLevel = logLevel;
+	}
+
+	protected Integer timeoutMilliseconds;
+
+	public Integer getTimeoutMilliseconds() {
+		return this.timeoutMilliseconds;
+	}
+
+	public void setTimeoutMilliseconds(Integer timeoutMilliseconds) {
+		this.timeoutMilliseconds = timeoutMilliseconds;
 	}
 
 	protected com.fasterxml.jackson.databind.JsonNode configuration;

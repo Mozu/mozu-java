@@ -3,6 +3,7 @@ package com.mozu.api;
 public class MozuConfig {
 
     private static String baseUrl = "https://home.mozu.com";
+   	private static String basePciUrl = "https://crds.mozu.com";
     private static String encodeAlgorithm = "SHA-256";
     private static String charSet = "UTF-8";
     private static int defaultEventRequestTimeout = 180;
@@ -74,6 +75,13 @@ public class MozuConfig {
     public static void setBaseUrl(String baseUrl) {
         MozuConfig.baseUrl = baseUrl;
     }
+    public static String getBasePciUrl() {
+		return basePciUrl;
+	}
+
+	public static void setBasePciUrl(String basePciUrl) {
+		MozuConfig.basePciUrl = basePciUrl;
+	}
 
     public static String getEncodeAlgorithm() {
         return encodeAlgorithm;

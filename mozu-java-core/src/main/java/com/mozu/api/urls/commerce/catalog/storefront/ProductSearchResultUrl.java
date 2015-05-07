@@ -30,11 +30,12 @@ public class ProductSearchResultUrl
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param query A query entered for searches and facet range.
 	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param searchSettings 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl searchUrl(String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl searchUrl(String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String searchSettings, String sortBy, Integer startIndex)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/search/?query={query}&filter={filter}&facetTemplate={facetTemplate}&facetTemplateSubset={facetTemplateSubset}&facet={facet}&facetFieldRangeQuery={facetFieldRangeQuery}&facetHierPrefix={facetHierPrefix}&facetHierValue={facetHierValue}&facetHierDepth={facetHierDepth}&facetStartIndex={facetStartIndex}&facetPageSize={facetPageSize}&facetSettings={facetSettings}&facetValueFilter={facetValueFilter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
 		formatter.formatUrl("facet", facet);
@@ -52,6 +53,7 @@ public class ProductSearchResultUrl
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("query", query);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("searchSettings", searchSettings);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

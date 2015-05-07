@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
-import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem;
@@ -454,11 +453,13 @@ public class Wishlist implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	protected List<KeyValue> data;
-	public List<KeyValue> getData() {
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
 	}
-	public void setData(List<KeyValue> data) {
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
 	}
 

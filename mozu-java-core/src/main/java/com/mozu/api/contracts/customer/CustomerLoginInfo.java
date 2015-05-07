@@ -32,6 +32,16 @@ public class CustomerLoginInfo implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
+	protected String externalPassword;
+
+	public String getExternalPassword() {
+		return this.externalPassword;
+	}
+
+	public void setExternalPassword(String externalPassword) {
+		this.externalPassword = externalPassword;
+	}
+
 	/**
 	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
 	 */

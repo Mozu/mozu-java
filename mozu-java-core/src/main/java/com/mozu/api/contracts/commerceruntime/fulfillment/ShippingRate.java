@@ -109,4 +109,14 @@ public class ShippingRate implements Serializable
 		this.shippingZoneCode = shippingZoneCode;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 }

@@ -87,6 +87,16 @@ public class ShippingRate implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 	/**
 	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
 	 */

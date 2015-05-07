@@ -10,34 +10,34 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
 
-public class FulfillmentActionUrl
+public class RefundUrl
 {
 
 	/**
-	 * Get Resource Url for PerformFulfillmentAction
+	 * Get Resource Url for CreateRefund
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl performFulfillmentActionUrl(String orderId, String responseFields)
+	public static MozuUrl createRefundUrl(String orderId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/actions/?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/refunds?responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
-	 * Get Resource Url for ResendPackageFulfillmentEmail
+	 * Get Resource Url for ResendRefundEmail
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param refundId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl resendPackageFulfillmentEmailUrl(String orderId, String responseFields)
+	public static MozuUrl resendRefundEmailUrl(String orderId, String refundId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/fulfillment/email/resend?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/refunds/{refundId}");
 		formatter.formatUrl("orderId", orderId);
-		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("refundId", refundId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

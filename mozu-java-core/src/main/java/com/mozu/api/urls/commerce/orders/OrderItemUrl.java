@@ -14,6 +14,24 @@ public class OrderItemUrl
 {
 
 	/**
+	 * Get Resource Url for GetOrderItemViaLineId
+	 * @param draft 
+	 * @param lineId 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getOrderItemViaLineIdUrl(Boolean draft, Integer lineId, String orderId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/items/{lineId}?draft={draft}&responseFields={responseFields}");
+		formatter.formatUrl("draft", draft);
+		formatter.formatUrl("lineId", lineId);
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetOrderItem
 	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param orderId Unique identifier of the order.
@@ -81,6 +99,28 @@ public class OrderItemUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/items/{orderItemId}/discounts/{discountId}?updatemode={updateMode}&version={version}&responseFields={responseFields}");
 		formatter.formatUrl("discountId", discountId);
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("orderItemId", orderItemId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
+		formatter.formatUrl("version", version);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateItemDuty
+	 * @param dutyAmount 
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateItemDutyUrl(Double dutyAmount, String orderId, String orderItemId, String responseFields, String updateMode, String version)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/items/{orderItemId}/dutyAmount/{dutyAmount}?updatemode={updateMode}&version={version}&responseFields={responseFields}");
+		formatter.formatUrl("dutyAmount", dutyAmount);
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("orderItemId", orderItemId);
 		formatter.formatUrl("responseFields", responseFields);

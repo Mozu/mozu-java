@@ -21,6 +21,51 @@ import org.apache.commons.lang.StringUtils;
 public class OrderItemClient {
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OrderItem orderItem = client.Result();
+	 * </code></pre></p>
+	 * @param lineId 
+	 * @param orderId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getOrderItemViaLineIdClient(String orderId, Integer lineId) throws Exception
+	{
+		return getOrderItemViaLineIdClient( orderId,  lineId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId,  draft,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * OrderItem orderItem = client.Result();
+	 * </code></pre></p>
+	 * @param draft 
+	 * @param lineId 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> getOrderItemViaLineIdClient(String orderId, Integer lineId, Boolean draft, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderItemUrl.getOrderItemViaLineIdUrl(draft, lineId, orderId, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.OrderItem.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves the details of a single order item.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemClient( orderId,  orderItemId);
@@ -207,6 +252,54 @@ public class OrderItemClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(discount);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param dutyAmount 
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> updateItemDutyClient(String orderId, String orderItemId, Double dutyAmount) throws Exception
+	{
+		return updateItemDutyClient( orderId,  orderItemId,  dutyAmount,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param dutyAmount 
+	 * @param orderId 
+	 * @param orderItemId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> updateItemDutyClient(String orderId, String orderItemId, Double dutyAmount, String updateMode, String version, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.OrderItemUrl.updateItemDutyUrl(dutyAmount, orderId, orderItemId, responseFields, updateMode, version);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

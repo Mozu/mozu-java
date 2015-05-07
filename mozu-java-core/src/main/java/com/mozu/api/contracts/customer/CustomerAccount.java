@@ -91,6 +91,16 @@ public class CustomerAccount implements Serializable
 		this.firstName = firstName;
 	}
 
+	protected Boolean hasExternalPassword;
+
+	public Boolean getHasExternalPassword() {
+		return this.hasExternalPassword;
+	}
+
+	public void setHasExternalPassword(Boolean hasExternalPassword) {
+		this.hasExternalPassword = hasExternalPassword;
+	}
+
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */

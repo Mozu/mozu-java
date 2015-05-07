@@ -380,22 +380,25 @@ public class OrderClient {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ResendOrderConfirmationEmail description DOCUMENT_HERE 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=ResendOrderConfirmationEmailClient( orderId);
+	 * MozuClient mozuClient=ResendOrderConfirmationEmailClient( action,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
+	 * @param action The action to perform for the order.
 	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderAction
 	 */
-	public static MozuClient resendOrderConfirmationEmailClient(String orderId) throws Exception
+	public static MozuClient resendOrderConfirmationEmailClient(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.resendOrderConfirmationEmailUrl(orderId);
 		String verb = "PUT";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(action);
 		return mozuClient;
 
 	}

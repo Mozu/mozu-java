@@ -11,7 +11,6 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.commerceruntime.commerce.KeyValue;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemProductDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedLineItemShippingDiscount;
@@ -50,6 +49,16 @@ public class OrderItem implements Serializable
 
 	public void setDiscountTotal(Double discountTotal) {
 		this.discountTotal = discountTotal;
+	}
+
+	protected Double dutyAmount;
+
+	public Double getDutyAmount() {
+		return this.dutyAmount;
+	}
+
+	public void setDutyAmount(Double dutyAmount) {
+		this.dutyAmount = dutyAmount;
 	}
 
 	/**
@@ -169,6 +178,16 @@ public class OrderItem implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
+	protected Integer lineId;
+
+	public Integer getLineId() {
+		return this.lineId;
+	}
+
+	public void setLineId(Integer lineId) {
+		this.lineId = lineId;
+	}
+
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
@@ -286,11 +305,13 @@ public class OrderItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	protected List<KeyValue> data;
-	public List<KeyValue> getData() {
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
 	}
-	public void setData(List<KeyValue> data) {
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
 	}
 
