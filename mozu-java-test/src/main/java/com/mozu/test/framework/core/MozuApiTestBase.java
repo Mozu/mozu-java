@@ -46,7 +46,9 @@ public class MozuApiTestBase {
         appAuthInfo.setApplicationId(Environment.getConfigValue("AppId"));
         appAuthInfo.setSharedSecret(Environment.getConfigValue("SharedSecret"));
         String baseUrl = Environment.getConfigValue("BaseAuthAppUrl");
+        String basePciUrl = Environment.getConfigValue("BasePciUrl");
     	MozuConfig.setBaseUrl(baseUrl);
+    	MozuConfig.setBasePciUrl(basePciUrl);
         try {
             AppAuthenticator.initialize(appAuthInfo, null);
 //        	RefreshInterval ri = new RefreshInterval(800, 400);
@@ -84,7 +86,8 @@ public class MozuApiTestBase {
     	email = Environment.getConfigValue("devOwnerEmail");
     	password = Environment.getConfigValue("devOwnerPassword");
     	configStr = Environment.getConfigValue("devOwnerId");
-    	devOwnerId = Integer.parseInt(configStr);
+    	if (StringUtils.isNotEmpty(configStr))
+    		devOwnerId = Integer.parseInt(configStr);
     }
     
 }

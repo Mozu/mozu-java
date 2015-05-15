@@ -10,6 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.commerce.Adjustment;
 import com.mozu.api.contracts.commerceruntime.orders.OrderAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
@@ -20,7 +21,6 @@ import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 import com.mozu.api.contracts.commerceruntime.discounts.InvalidCoupon;
-import com.mozu.api.contracts.commerceruntime.orders.OrderItem;
 import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
@@ -824,6 +824,17 @@ public class Order implements Serializable
 	}
 
 	/**
+	 * An array list of objects in the returned collection.
+	 */
+	protected List<OrderItem> items;
+	public List<OrderItem> getItems() {
+		return this.items;
+	}
+	public void setItems(List<OrderItem> items) {
+		this.items = items;
+	}
+
+	/**
 	 * Properties of an ad-hoc price adjustment for an order.
 	 */
 	protected Adjustment adjustment;
@@ -946,17 +957,6 @@ public class Order implements Serializable
 	}
 	public void setInvalidCoupons(List<InvalidCoupon> invalidCoupons) {
 		this.invalidCoupons = invalidCoupons;
-	}
-
-	/**
-	 * An array list of objects in the returned collection.
-	 */
-	protected List<OrderItem> items;
-	public List<OrderItem> getItems() {
-		return this.items;
-	}
-	public void setItems(List<OrderItem> items) {
-		this.items = items;
 	}
 
 	/**

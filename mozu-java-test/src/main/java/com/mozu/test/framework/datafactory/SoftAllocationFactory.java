@@ -110,6 +110,26 @@ public class SoftAllocationFactory
 		return returnObj;
 	}
 
+	public static List<com.mozu.api.contracts.productadmin.SoftAllocation> renewSoftAllocations(ApiContext apiContext, com.mozu.api.contracts.productadmin.SoftAllocationRenew softAllocationRenew, int expectedCode, int successCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.SoftAllocation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.SoftAllocation>();
+		SoftAllocationResource resource = new SoftAllocationResource(apiContext);
+		try
+		{
+			returnObj = resource.renewSoftAllocations( softAllocationRenew);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != successCode)
+			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		return returnObj;
+	}
+
 	public static List<com.mozu.api.contracts.productadmin.SoftAllocation> updateSoftAllocations(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.SoftAllocation> softAllocations, int expectedCode, int successCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.SoftAllocation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.SoftAllocation>();

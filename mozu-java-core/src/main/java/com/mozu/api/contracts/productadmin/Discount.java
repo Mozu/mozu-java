@@ -23,16 +23,6 @@ public class Discount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean canBeDeleted;
-
-	public Boolean getCanBeDeleted() {
-		return this.canBeDeleted;
-	}
-
-	public void setCanBeDeleted(Boolean canBeDeleted) {
-		this.canBeDeleted = canBeDeleted;
-	}
-
 	/**
 	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
 	 */
@@ -57,6 +47,16 @@ public class Discount implements Serializable
 
 	public void setAmountType(String amountType) {
 		this.amountType = amountType;
+	}
+
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
 	}
 
 	/**

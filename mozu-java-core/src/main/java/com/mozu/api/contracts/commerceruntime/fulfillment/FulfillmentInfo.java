@@ -73,6 +73,16 @@ public class FulfillmentInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 	/**
 	 * The contact information of the person receiving the shipment or performing the pickup.
 	 */

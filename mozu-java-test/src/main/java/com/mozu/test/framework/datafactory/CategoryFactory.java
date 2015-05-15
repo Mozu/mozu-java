@@ -147,15 +147,15 @@ public class CategoryFactory
 
 	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, int expectedCode, int successCode) throws Exception
 	{
-		deleteCategoryById(apiContext,  categoryId,  null, expectedCode, successCode );
+		deleteCategoryById(apiContext,  categoryId,  null,  null,  null, expectedCode, successCode );
 	}
 
-	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, int expectedCode, int successCode) throws Exception
+	public static void deleteCategoryById(ApiContext apiContext, Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent, int expectedCode, int successCode) throws Exception
 	{
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			resource.deleteCategoryById( categoryId,  cascadeDelete);
+			resource.deleteCategoryById( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 		}
 		catch (ApiException e)
 		{
