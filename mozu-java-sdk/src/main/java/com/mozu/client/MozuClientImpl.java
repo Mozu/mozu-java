@@ -449,6 +449,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     	else if (!StringUtils.isEmpty(correlationId)) {
     		try {
     			apiError = mapper.readValue(stringContent(), ApiError.class);
+    			apiError.setCorrelationId(correlationId);
     			if (apiError.getErrorCode().equals("ITEM_NOT_FOUND") && statusCode == 404  && StringUtils.endsWithIgnoreCase("get",requestLine.getMethod())) return;
     		} catch (JsonProcessingException jpe) {
                 throw new ApiException("An error has occurred. Status Code: " + statusCode   

@@ -154,6 +154,27 @@ public class SoftAllocationResource {
 	 * 
 	 * <p><pre><code>
 	 *	SoftAllocation softallocation = new SoftAllocation();
+	 *	SoftAllocation softAllocation = softallocation.renewSoftAllocations( softAllocationRenew);
+	 * </code></pre></p>
+	 * @param dataViewMode DataViewMode
+	 * @param softAllocationRenew 
+	 * @return List<com.mozu.api.contracts.productadmin.SoftAllocation>
+	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
+	 * @see com.mozu.api.contracts.productadmin.SoftAllocationRenew
+	 */
+	public List<com.mozu.api.contracts.productadmin.SoftAllocation> renewSoftAllocations(com.mozu.api.contracts.productadmin.SoftAllocationRenew softAllocationRenew) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> client = com.mozu.api.clients.commerce.catalog.admin.SoftAllocationClient.renewSoftAllocationsClient( softAllocationRenew);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	SoftAllocation softallocation = new SoftAllocation();
 	 *	SoftAllocation softAllocation = softallocation.updateSoftAllocations( softAllocations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode

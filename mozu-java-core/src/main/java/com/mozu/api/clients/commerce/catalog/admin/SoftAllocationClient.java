@@ -167,6 +167,33 @@ public class SoftAllocationClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=RenewSoftAllocationsClient( softAllocationRenew);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SoftAllocation softAllocation = client.Result();
+	 * </code></pre></p>
+	 * @param dataViewMode DataViewMode
+	 * @param softAllocationRenew 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.SoftAllocation>>
+	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
+	 * @see com.mozu.api.contracts.productadmin.SoftAllocationRenew
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> renewSoftAllocationsClient(com.mozu.api.contracts.productadmin.SoftAllocationRenew softAllocationRenew) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SoftAllocationUrl.renewSoftAllocationsUrl();
+		String verb = "POST";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.productadmin.SoftAllocation>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient = (MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(softAllocationRenew);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=UpdateSoftAllocationsClient( softAllocations);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();

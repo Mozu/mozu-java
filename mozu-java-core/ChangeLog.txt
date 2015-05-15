@@ -8,87 +8,102 @@ Operation Params
 6.    Added - commerce.carts.cartextendedproperties.UpdateExtendedProperty- Param : responseFields
 7.    Added - commerce.carts.cartextendedproperties.UpdateExtendedProperties- Param : upsert
 8.    Added - commerce.carts.cartextendedproperties.UpdateExtendedProperty- Param : upsert
-9.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : filter
-10.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : pageSize
-11.    Added - commerce.catalog.admin.softallocations.GetSoftAllocation- Param : responseFields
-12.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : responseFields
-13.    Added - commerce.catalog.admin.softallocations.DeleteSoftAllocation- Param : softAllocationId
-14.    Added - commerce.catalog.admin.softallocations.GetSoftAllocation- Param : softAllocationId
-15.    Added - commerce.catalog.admin.softallocations.ConvertToProductReservation- Param : softAllocations
-16.    Added - commerce.catalog.admin.softallocations.UpdateSoftAllocations- Param : softAllocations
-17.    Added - commerce.catalog.admin.softallocations.AddSoftAllocations- Param : softAllocationsIn
-18.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : sortBy
-19.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : startIndex
-20.    Added - commerce.catalog.storefront.productsearch.Search- Param : searchSettings
-21.    Added - commerce.customer.accounts.ChangePasswords- Param : accountPasswordInfos
-22.    Added - commerce.customer.accounts.ChangePassword- Param : unlockAccount
-23.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : changeMessageId
-24.    Added - commerce.orders.changemessages.GetChangeMessage- Param : changeMessageId
-25.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : draft
-26.    Added - commerce.orders.changemessages.GetChangeMessage- Param : draft
-27.    Added - commerce.orders.changemessages.GetChangeMessages- Param : filter
-28.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : orderId
-29.    Added - commerce.orders.changemessages.GetChangeMessages- Param : orderId
-30.    Added - commerce.orders.changemessages.GetChangeMessage- Param : orderId
-31.    Added - commerce.orders.changemessages.GetChangeMessages- Param : pageSize
-32.    Added - commerce.orders.changemessages.GetChangeMessage- Param : responseFields
-33.    Added - commerce.orders.changemessages.GetChangeMessages- Param : responseFields
-34.    Added - commerce.orders.changemessages.GetChangeMessages- Param : sortBy
-35.    Added - commerce.orders.changemessages.GetChangeMessages- Param : startIndex
-36.    Added - commerce.orders.extendedproperties.GetExtendedProperties- Param : draft
-37.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : extendedProperties
-38.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : extendedProperties
-39.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : extendedProperty
-40.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : key
-41.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : key
-42.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : keys
-43.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : orderId
-44.    Added - commerce.orders.extendedproperties.GetExtendedProperties- Param : orderId
-45.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : orderId
-46.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : orderId
-47.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : orderId
-48.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : orderId
-49.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : responseFields
-50.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : updateMode
-51.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : updateMode
-52.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : updateMode
-53.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : updateMode
-54.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : updateMode
-55.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : upsert
-56.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : upsert
-57.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : version
-58.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : version
-59.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : version
-60.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : version
-61.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : version
-62.    Added - commerce.orders.orderitems.UpdateItemDuty- Param : dutyAmount
-63.    Added - commerce.orders.orderitems.GetOrderItemViaLineId- Param : lineId
-64.    Added - platform.developer.DeletePackageFile- Param : applicationKey
-65.    Added - platform.developer.GetAppPackageNames- Param : applicationKey
-66.    Added - platform.developer.GetPackageFileMetadata- Param : applicationKey
-67.    Added - platform.developer.GetPackageMetadata- Param : applicationKey
-68.    Added - platform.developer.RenamePackageFile- Param : applicationKey
-69.    Added - platform.developer.UpsertPackageFile- Param : applicationKey
-70.    Added - platform.developer.DeletePackageFile- Param : filepath
-71.    Added - platform.developer.GetPackageFileMetadata- Param : filepath
-72.    Added - platform.developer.UpsertPackageFile- Param : filepath
-73.    Added - platform.developer.UpsertPackageFile- Param : lastModifiedTime
-74.    Added - platform.developer.GetAppVersions- Param : nsAndAppId
-75.    Added - platform.developer.RenamePackageFile- Param : renameInfo
-76.    Added - platform.developer.GetAppPackageNames- Param : responseFields
-77.    Added - platform.developer.GetAppVersions- Param : responseFields
-78.    Added - platform.developer.GetPackageMetadata- Param : responseFields
-79.    Added - platform.developer.GetPackageFileMetadata- Param : responseFields
-80.    Added - platform.developer.RenamePackageFile- Param : responseFields
-81.    Added - platform.developer.UpsertPackageFile- Param : responseFields
-82.    Added - platform.developer.UpsertPackageFile- Param : stream
-83.    Added - platform.extensions.GetAction- Param : actionId
-84.    Added - platform.extensions.UpdateExtensions- Param : extensions
-85.    Added - platform.extensions.GetExtensions- Param : responseFields
-86.    Added - platform.extensions.GetAction- Param : responseFields
-87.    Added - platform.extensions.UpdateExtensions- Param : responseFields
-88.    Added - platform.tenants.DeleteCatalogInternal- Param : allowInactives
-89.    Added - platform.tenants.DeleteMasterCatalogInternal- Param : allowInactives
+9.    Added - commerce.catalog.admin.categories.DeleteCategoryById- Param : forceDelete
+10.    Added - commerce.catalog.admin.categories.DeleteCategoryById- Param : reassignToParent
+11.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : filter
+12.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : pageSize
+13.    Added - commerce.catalog.admin.softallocations.GetSoftAllocation- Param : responseFields
+14.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : responseFields
+15.    Added - commerce.catalog.admin.softallocations.DeleteSoftAllocation- Param : softAllocationId
+16.    Added - commerce.catalog.admin.softallocations.GetSoftAllocation- Param : softAllocationId
+17.    Added - commerce.catalog.admin.softallocations.RenewSoftAllocations- Param : softAllocationRenew
+18.    Added - commerce.catalog.admin.softallocations.ConvertToProductReservation- Param : softAllocations
+19.    Added - commerce.catalog.admin.softallocations.UpdateSoftAllocations- Param : softAllocations
+20.    Added - commerce.catalog.admin.softallocations.AddSoftAllocations- Param : softAllocationsIn
+21.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : sortBy
+22.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations- Param : startIndex
+23.    Added - commerce.catalog.storefront.productsearch.Search- Param : searchSettings
+24.    Added - commerce.customer.accounts.ChangePasswords- Param : accountPasswordInfos
+25.    Added - commerce.customer.accounts.ChangePassword- Param : unlockAccount
+26.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : changeMessageId
+27.    Added - commerce.orders.changemessages.GetChangeMessage- Param : changeMessageId
+28.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : draft
+29.    Added - commerce.orders.changemessages.GetChangeMessage- Param : draft
+30.    Added - commerce.orders.changemessages.GetChangeMessages- Param : filter
+31.    Added - commerce.orders.changemessages.DeleteChangeMessage- Param : orderId
+32.    Added - commerce.orders.changemessages.GetChangeMessages- Param : orderId
+33.    Added - commerce.orders.changemessages.GetChangeMessage- Param : orderId
+34.    Added - commerce.orders.changemessages.GetChangeMessages- Param : pageSize
+35.    Added - commerce.orders.changemessages.GetChangeMessage- Param : responseFields
+36.    Added - commerce.orders.changemessages.GetChangeMessages- Param : responseFields
+37.    Added - commerce.orders.changemessages.GetChangeMessages- Param : sortBy
+38.    Added - commerce.orders.changemessages.GetChangeMessages- Param : startIndex
+39.    Added - commerce.orders.extendedproperties.GetExtendedProperties- Param : draft
+40.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : extendedProperties
+41.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : extendedProperties
+42.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : extendedProperty
+43.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : key
+44.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : key
+45.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : keys
+46.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : orderId
+47.    Added - commerce.orders.extendedproperties.GetExtendedProperties- Param : orderId
+48.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : orderId
+49.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : orderId
+50.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : orderId
+51.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : orderId
+52.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : responseFields
+53.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : updateMode
+54.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : updateMode
+55.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : updateMode
+56.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : updateMode
+57.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : updateMode
+58.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : upsert
+59.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : upsert
+60.    Added - commerce.orders.extendedproperties.AddExtendedProperties- Param : version
+61.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties- Param : version
+62.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty- Param : version
+63.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties- Param : version
+64.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty- Param : version
+65.    Added - commerce.orders.orderitems.UpdateItemDuty- Param : dutyAmount
+66.    Added - commerce.orders.orderitems.GetOrderItemViaLineId- Param : lineId
+67.    Added - commerce.payments.cards.Delete- Param : cardId
+68.    Added - commerce.payments.cards.Update- Param : cardId
+69.    Added - commerce.payments.cards.cardsync.SendCreateMessage- Param : cardId
+70.    Added - commerce.payments.cards.cardsync.SendDeleteMessage- Param : cardId
+71.    Added - commerce.payments.cards.cardsync.SendUpdateMessage- Param : cardId
+72.    Added - commerce.payments.cards.cardsync.SendCreateMessage- Param : createMsg
+73.    Added - commerce.payments.cards.cardsync.SendDeleteMessage- Param : deleteMsg
+74.    Added - commerce.payments.cards.cardsync.SendUpdateMessage- Param : updateMsg
+75.    Added - commerce.payments.cards.Create- Param : request
+76.    Added - commerce.payments.cards.Update- Param : request
+77.    Added - commerce.settings.general.ImportIpBlocks- Param : request
+78.    Added - commerce.settings.general.UpdateIPBlockSettings- Param : settings
+79.    Added - platform.developer.DeletePackageFile- Param : applicationKey
+80.    Added - platform.developer.GetAppPackageNames- Param : applicationKey
+81.    Added - platform.developer.GetPackageFileMetadata- Param : applicationKey
+82.    Added - platform.developer.GetPackageMetadata- Param : applicationKey
+83.    Added - platform.developer.RenamePackageFile- Param : applicationKey
+84.    Added - platform.developer.UpsertPackageFile- Param : applicationKey
+85.    Added - platform.developer.DeletePackageFile- Param : filepath
+86.    Added - platform.developer.GetPackageFileMetadata- Param : filepath
+87.    Added - platform.developer.UpsertPackageFile- Param : filepath
+88.    Added - platform.developer.UpsertPackageFile- Param : lastModifiedTime
+89.    Added - platform.developer.GetAppVersions- Param : nsAndAppId
+90.    Added - platform.developer.RenamePackageFile- Param : renameInfo
+91.    Added - platform.developer.GetAppPackageNames- Param : responseFields
+92.    Added - platform.developer.GetAppVersions- Param : responseFields
+93.    Added - platform.developer.GetPackageMetadata- Param : responseFields
+94.    Added - platform.developer.GetPackageFileMetadata- Param : responseFields
+95.    Added - platform.developer.RenamePackageFile- Param : responseFields
+96.    Added - platform.developer.UpsertPackageFile- Param : responseFields
+97.    Added - platform.developer.UpsertPackageFile- Param : stream
+98.    Added - platform.extensions.GetAction- Param : actionId
+99.    Added - platform.extensions.UpdateExtensions- Param : extensions
+100.    Added - platform.extensions.GetExtensions- Param : responseFields
+101.    Added - platform.extensions.GetAction- Param : responseFields
+102.    Added - platform.extensions.UpdateExtensions- Param : responseFields
+103.    Added - platform.tenants.DeleteCatalogInternal- Param : allowInactives
+104.    Added - platform.tenants.DeleteMasterCatalogInternal- Param : allowInactives
 
 Operations
 0.    Added - commerce.carts.cartextendedproperties.AddExtendedProperties - POST
@@ -104,36 +119,50 @@ Operations
 10.    Added - commerce.catalog.admin.softallocations.DeleteSoftAllocation - DELETE
 11.    Added - commerce.catalog.admin.softallocations.GetSoftAllocation - GET
 12.    Added - commerce.catalog.admin.softallocations.GetSoftAllocations - GET
-13.    Added - commerce.catalog.admin.softallocations.UpdateSoftAllocations - PUT
-14.    Added - commerce.customer.accounts.ChangePasswords - POST
-15.    Added - commerce.orders.changemessages.DeleteChangeMessage - DELETE
-16.    Added - commerce.orders.changemessages.GetChangeMessage - GET
-17.    Added - commerce.orders.changemessages.GetChangeMessages - GET
-18.    Added - commerce.orders.extendedproperties.AddExtendedProperties - POST
-19.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties - DELETE
-20.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty - DELETE
-21.    Added - commerce.orders.extendedproperties.GetExtendedProperties - GET
-22.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties - PUT
-23.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty - PUT
-24.    Added - commerce.orders.orderitems.GetOrderItemViaLineId - GET
-25.    Added - commerce.orders.orderitems.UpdateItemDuty - PUT
-26.    Added - platform.developer.DeletePackageFile - DELETE
-27.    Added - platform.developer.GetAppPackageNames - GET
-28.    Added - platform.developer.GetAppVersions - GET
-29.    Added - platform.developer.GetPackageFileMetadata - GET
-30.    Added - platform.developer.GetPackageMetadata - GET
-31.    Added - platform.developer.RenamePackageFile - POST
-32.    Added - platform.developer.UpsertPackageFile - POST
-33.    Added - platform.extensions.GetAction - GET
-34.    Added - platform.extensions.GetExtensions - GET
-35.    Added - platform.extensions.UpdateExtensions - PUT
-36.    Added - platform.tenants.DeleteCatalogInternal - DELETE
-37.    Added - platform.tenants.DeleteMasterCatalogInternal - DELETE
+13.    Added - commerce.catalog.admin.softallocations.RenewSoftAllocations - POST
+14.    Added - commerce.catalog.admin.softallocations.UpdateSoftAllocations - PUT
+15.    Added - commerce.customer.accounts.ChangePasswords - POST
+16.    Added - commerce.orders.changemessages.DeleteChangeMessage - DELETE
+17.    Added - commerce.orders.changemessages.GetChangeMessage - GET
+18.    Added - commerce.orders.changemessages.GetChangeMessages - GET
+19.    Added - commerce.orders.extendedproperties.AddExtendedProperties - POST
+20.    Added - commerce.orders.extendedproperties.DeleteExtendedProperties - DELETE
+21.    Added - commerce.orders.extendedproperties.DeleteExtendedProperty - DELETE
+22.    Added - commerce.orders.extendedproperties.GetExtendedProperties - GET
+23.    Added - commerce.orders.extendedproperties.UpdateExtendedProperties - PUT
+24.    Added - commerce.orders.extendedproperties.UpdateExtendedProperty - PUT
+25.    Added - commerce.orders.orderitems.GetOrderItemViaLineId - GET
+26.    Added - commerce.orders.orderitems.UpdateItemDuty - PUT
+27.    Added - commerce.payments.cards.cardsync.SendCreateMessage - POST
+28.    Added - commerce.payments.cards.cardsync.SendDeleteMessage - POST
+29.    Added - commerce.payments.cards.cardsync.SendUpdateMessage - POST
+30.    Added - commerce.payments.cards.Create - POST
+31.    Added - commerce.payments.cards.Delete - DELETE
+32.    Added - commerce.payments.cards.Update - PUT
+33.    Added - commerce.settings.general.ExportIpBlocks - GET
+34.    Added - commerce.settings.general.GetIPBlocks - GET
+35.    Added - commerce.settings.general.GetIPBlockSettings - GET
+36.    Added - commerce.settings.general.ImportIpBlocks - POST
+37.    Added - commerce.settings.general.UpdateIPBlockSettings - PUT
+38.    Added - platform.developer.DeletePackageFile - DELETE
+39.    Added - platform.developer.GetAppPackageNames - GET
+40.    Added - platform.developer.GetAppVersions - GET
+41.    Added - platform.developer.GetPackageFileMetadata - GET
+42.    Added - platform.developer.GetPackageMetadata - GET
+43.    Added - platform.developer.RenamePackageFile - POST
+44.    Added - platform.developer.UpsertPackageFile - POST
+45.    Added - platform.extensions.GetAction - GET
+46.    Added - platform.extensions.GetExtensions - GET
+47.    Added - platform.extensions.UpdateExtensions - PUT
+48.    Added - platform.tenants.DeleteCatalogInternal - DELETE
+49.    Added - platform.tenants.DeleteMasterCatalogInternal - DELETE
 
 Resources
 0.    Added - commerce.carts.cartextendedproperties | commerce/carts/cartextendedproperties
 1.    Added - commerce.catalog.admin.softallocations | commerce/catalog/admin/softallocations
 2.    Added - commerce.orders.changemessages | commerce/orders/changemessages
 3.    Added - commerce.orders.extendedproperties | commerce/orders/extendedproperties
-4.    Added - platform.developer | platform/developer
-5.    Added - platform.extensions | platform/extensions
+4.    Added - commerce.payments.cards | commerce/payments/cards
+5.    Added - commerce.payments.cards.cardsync | commerce/payments/cards/cardsync
+6.    Added - platform.developer | platform/developer
+7.    Added - platform.extensions | platform/extensions

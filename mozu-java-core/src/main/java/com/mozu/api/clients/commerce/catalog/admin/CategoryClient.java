@@ -254,23 +254,25 @@ public class CategoryClient {
 	 */
 	public static MozuClient deleteCategoryByIdClient(Integer categoryId) throws Exception
 	{
-		return deleteCategoryByIdClient( categoryId,  null);
+		return deleteCategoryByIdClient( categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteCategoryByIdClient( categoryId,  cascadeDelete);
+	 * MozuClient mozuClient=DeleteCategoryByIdClient( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
 	 * @param categoryId Unique identifier of the category to modify.
+	 * @param forceDelete 
+	 * @param reassignToParent 
 	 * @return Mozu.Api.MozuClient 
 	 */
-	public static MozuClient deleteCategoryByIdClient(Integer categoryId, Boolean cascadeDelete) throws Exception
+	public static MozuClient deleteCategoryByIdClient(Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.deleteCategoryByIdUrl(cascadeDelete, categoryId);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.deleteCategoryByIdUrl(cascadeDelete, categoryId, forceDelete, reassignToParent);
 		String verb = "DELETE";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);

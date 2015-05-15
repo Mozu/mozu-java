@@ -67,24 +67,24 @@ public class SoftAllocation implements Serializable
 		this.quantity = quantity;
 	}
 
-	protected String refrenceId;
+	protected String referenceId;
 
-	public String getRefrenceId() {
-		return this.refrenceId;
+	public String getReferenceId() {
+		return this.referenceId;
 	}
 
-	public void setRefrenceId(String refrenceId) {
-		this.refrenceId = refrenceId;
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
 	}
 
-	protected String refrenceItemId;
+	protected String referenceItemId;
 
-	public String getRefrenceItemId() {
-		return this.refrenceItemId;
+	public String getReferenceItemId() {
+		return this.referenceItemId;
 	}
 
-	public void setRefrenceItemId(String refrenceItemId) {
-		this.refrenceItemId = refrenceItemId;
+	public void setReferenceItemId(String referenceItemId) {
+		this.referenceItemId = referenceItemId;
 	}
 
 	protected AuditInfo auditInfo;
