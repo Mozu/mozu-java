@@ -58,4 +58,14 @@ public class CustomerTests extends MozuApiTestBase {
         CustomerAccount updateAccount = CustomerAccountFactory.updateAccount(apiContext, getAccount, ticket.getCustomerAccount().getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
         assertEquals(updateAccount.getEmailAddress(), getAccount.getEmailAddress());
 	}
+	
+	@Test
+	public void UpdateCustomerTest2() throws Exception {
+		ApiContext apiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
+		//CustomerAccountFactory.getAccounts(apiContext, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        CustomerAccount getAccount = CustomerAccountFactory.getAccount(apiContext, 1384, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        getAccount.setAcceptsMarketing(true);
+        CustomerAccount updateAccount = CustomerAccountFactory.updateAccount(apiContext, getAccount, 1384, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        assert(!updateAccount.getAcceptsMarketing());
+	}
 }
