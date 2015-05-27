@@ -228,22 +228,24 @@ public class CategoryResource {
 	 */
 	public void deleteCategoryById(Integer categoryId) throws Exception
 	{
-		deleteCategoryById( categoryId,  null);
+		deleteCategoryById( categoryId,  null,  null,  null);
 	}
 
 	/**
 	 * Deletes the category specified by its category ID.
 	 * <p><pre><code>
 	 *	Category category = new Category();
-	 *	category.deleteCategoryById( categoryId,  cascadeDelete);
+	 *	category.deleteCategoryById( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 	 * </code></pre></p>
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
 	 * @param categoryId Unique identifier of the category to modify.
+	 * @param forceDelete 
+	 * @param reassignToParent 
 	 * @return 
 	 */
-	public void deleteCategoryById(Integer categoryId, Boolean cascadeDelete) throws Exception
+	public void deleteCategoryById(Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.deleteCategoryByIdClient( categoryId,  cascadeDelete);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.deleteCategoryByIdClient( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

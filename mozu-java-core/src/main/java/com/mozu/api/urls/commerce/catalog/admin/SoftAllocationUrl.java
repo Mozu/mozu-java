@@ -68,6 +68,16 @@ public class SoftAllocationUrl
 	}
 
 	/**
+	 * Get Resource Url for RenewSoftAllocations
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl renewSoftAllocationsUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/softallocations/renew");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateSoftAllocations
 	 * @return   String Resource Url
 	 */

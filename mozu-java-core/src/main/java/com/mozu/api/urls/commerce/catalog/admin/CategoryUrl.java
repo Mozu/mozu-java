@@ -95,13 +95,17 @@ public class CategoryUrl
 	 * Get Resource Url for DeleteCategoryById
 	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
 	 * @param categoryId Unique identifier of the category to modify.
+	 * @param forceDelete 
+	 * @param reassignToParent 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteCategoryByIdUrl(Boolean cascadeDelete, Integer categoryId)
+	public static MozuUrl deleteCategoryByIdUrl(Boolean cascadeDelete, Integer categoryId, Boolean forceDelete, Boolean reassignToParent)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/{categoryId}/?cascadeDelete={cascadeDelete}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/{categoryId}/?cascadeDelete={cascadeDelete}&forceDelete={forceDelete}&reassignToParent={reassignToParent}");
 		formatter.formatUrl("cascadeDelete", cascadeDelete);
 		formatter.formatUrl("categoryId", categoryId);
+		formatter.formatUrl("forceDelete", forceDelete);
+		formatter.formatUrl("reassignToParent", reassignToParent);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
