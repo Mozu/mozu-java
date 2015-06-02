@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.platform.SiteDataResource;
 public class SiteDataFactory
 {
 
-	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
+	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode) throws Exception
 	{
-		return getDBValue(apiContext,  dbEntryQuery,  null, expectedCode, successCode );
+		return getDBValue(apiContext,  dbEntryQuery,  null, expectedCode);
 	}
 
-	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, String responseFields, int expectedCode, int successCode) throws Exception
+	public static String getDBValue(ApiContext apiContext, String dbEntryQuery, String responseFields, int expectedCode) throws Exception
 	{
 		String returnObj = new String();
 		SiteDataResource resource = new SiteDataResource(apiContext);
@@ -36,16 +37,16 @@ public class SiteDataFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
+	public static void createDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
 	{
 		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
@@ -55,15 +56,15 @@ public class SiteDataFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode, int successCode) throws Exception
+	public static void updateDBValue(ApiContext apiContext, String value, String dbEntryQuery, int expectedCode) throws Exception
 	{
 		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
@@ -73,15 +74,15 @@ public class SiteDataFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode, int successCode) throws Exception
+	public static void deleteDBValue(ApiContext apiContext, String dbEntryQuery, int expectedCode) throws Exception
 	{
 		SiteDataResource resource = new SiteDataResource(apiContext);
 		try
@@ -91,12 +92,12 @@ public class SiteDataFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

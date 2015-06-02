@@ -71,14 +71,14 @@ public class EntityTests extends MozuApiTestBase {
         EntityList existing = null;        
         String entityListName = list.getName();
         try{
-            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK);
         } 
         catch(Exception ae) {
         }
         if (existing==null)
-        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED);
         else
-        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK);
         
         com.fasterxml.jackson.databind.ObjectMapper  mapper =  new com.fasterxml.jackson.databind.ObjectMapper();
         MyClass sampleObject = new MyClass();
@@ -86,7 +86,7 @@ public class EntityTests extends MozuApiTestBase {
         sampleObject.setItem2(DateTime.now());
         JsonNode json= mapper.valueToTree(sampleObject);
         String idMapName = entityListName + "@" + mozuNamespace;
-        EntityFactory.insertEntity(apiContext, json, idMapName, HttpStatus.SC_BAD_REQUEST, HttpStatus.SC_OK);
+        EntityFactory.insertEntity(apiContext, json, idMapName, HttpStatus.SC_BAD_REQUEST);
 	}
 	
 	@Test
@@ -97,14 +97,14 @@ public class EntityTests extends MozuApiTestBase {
         EntityList existing = null;        
         String entityListName = list.getName();
         try{
-            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+            existing = EntityListFactory.getEntityList(apiContext, entityListName, HttpStatus.SC_OK);
         } 
         catch(Exception ae) {
         }
         if (existing==null)
-        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        	EntityListFactory.createEntityList(apiContext, list, HttpStatus.SC_CREATED);
         else
-        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        	EntityListFactory.updateEntityList(apiContext, list, entityListName, HttpStatus.SC_OK);
         
         com.fasterxml.jackson.databind.ObjectMapper  mapper =  new com.fasterxml.jackson.databind.ObjectMapper();
         mapper.registerModule(new JodaModule());
@@ -115,7 +115,7 @@ public class EntityTests extends MozuApiTestBase {
         sampleObject.setItem2(DateTime.now());
         JsonNode json= mapper.valueToTree(sampleObject);
         String idMapName = entityListName + "@" + mozuNamespace;
-        EntityFactory.insertEntity(apiContext, json, idMapName, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        EntityFactory.insertEntity(apiContext, json, idMapName, HttpStatus.SC_OK);
 	}
 
 }

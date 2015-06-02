@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.commerce.catalog.admin.products.ProductPropertyRes
 public class ProductPropertyFactory
 {
 
-	public static List<com.mozu.api.contracts.productadmin.ProductProperty> getProperties(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductProperty> getProperties(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductProperty> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductProperty>();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -31,16 +32,16 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> getPropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> getPropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -51,21 +52,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode) throws Exception
 	{
-		return getPropertyValueLocalizedContent(apiContext, dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  null, expectedCode, successCode );
+		return getPropertyValueLocalizedContent(apiContext, dataViewMode,  productCode,  attributeFQN,  value,  localeCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent getPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent returnObj = new com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -76,21 +77,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode) throws Exception
 	{
-		return getProperty(apiContext, dataViewMode,  productCode,  attributeFQN,  null, expectedCode, successCode );
+		return getProperty(apiContext, dataViewMode,  productCode,  attributeFQN,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty getProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductProperty returnObj = new com.mozu.api.contracts.productadmin.ProductProperty();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -101,21 +102,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, int expectedCode) throws Exception
 	{
-		return addPropertyValueLocalizedContent(apiContext, dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  null, expectedCode, successCode );
+		return addPropertyValueLocalizedContent(apiContext, dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent addPropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent returnObj = new com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -126,21 +127,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, int expectedCode) throws Exception
 	{
-		return addProperty(apiContext, dataViewMode,  productProperty,  productCode,  null, expectedCode, successCode );
+		return addProperty(apiContext, dataViewMode,  productProperty,  productCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty addProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductProperty returnObj = new com.mozu.api.contracts.productadmin.ProductProperty();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -151,16 +152,16 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> updatePropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> localizedContent, String productCode, String attributeFQN, String value, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> updatePropertyValueLocalizedContents(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> localizedContent, String productCode, String attributeFQN, String value, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -171,21 +172,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, int expectedCode) throws Exception
 	{
-		return updatePropertyValueLocalizedContent(apiContext, dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  null, expectedCode, successCode );
+		return updatePropertyValueLocalizedContent(apiContext, dataViewMode,  localizedContent,  productCode,  attributeFQN,  value,  localeCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent updatePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent localizedContent, String productCode, String attributeFQN, String value, String localeCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent returnObj = new com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -196,21 +197,21 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, int expectedCode) throws Exception
 	{
-		return updateProperty(apiContext, dataViewMode,  productProperty,  productCode,  attributeFQN,  null, expectedCode, successCode );
+		return updateProperty(apiContext, dataViewMode,  productProperty,  productCode,  attributeFQN,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductProperty updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductProperty updateProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductProperty productProperty, String productCode, String attributeFQN, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductProperty returnObj = new com.mozu.api.contracts.productadmin.ProductProperty();
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
@@ -221,16 +222,16 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static void deleteProperty(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, int expectedCode) throws Exception
 	{
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
 		try
@@ -240,15 +241,15 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void deletePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode, int successCode) throws Exception
+	public static void deletePropertyValueLocalizedContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN, String value, String localeCode, int expectedCode) throws Exception
 	{
 		ProductPropertyResource resource = new ProductPropertyResource(apiContext, dataViewMode);
 		try
@@ -258,12 +259,12 @@ public class ProductPropertyFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

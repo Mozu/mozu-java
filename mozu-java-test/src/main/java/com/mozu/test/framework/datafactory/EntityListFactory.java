@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.platform.EntityListResource;
 public class EntityListFactory
 {
 
-	public static com.mozu.api.contracts.mzdb.EntityListCollection getEntityLists(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityListCollection getEntityLists(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getEntityLists(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getEntityLists(apiContext,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityListCollection getEntityLists(ApiContext apiContext, Integer pageSize, Integer startIndex, String filter, String sortBy, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityListCollection getEntityLists(ApiContext apiContext, Integer pageSize, Integer startIndex, String filter, String sortBy, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.mzdb.EntityListCollection returnObj = new com.mozu.api.contracts.mzdb.EntityListCollection();
 		EntityListResource resource = new EntityListResource(apiContext);
@@ -36,21 +37,21 @@ public class EntityListFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList getEntityList(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList getEntityList(ApiContext apiContext, String entityListFullName, int expectedCode) throws Exception
 	{
-		return getEntityList(apiContext,  entityListFullName,  null, expectedCode, successCode );
+		return getEntityList(apiContext,  entityListFullName,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList getEntityList(ApiContext apiContext, String entityListFullName, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList getEntityList(ApiContext apiContext, String entityListFullName, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.mzdb.EntityList returnObj = new com.mozu.api.contracts.mzdb.EntityList();
 		EntityListResource resource = new EntityListResource(apiContext);
@@ -61,21 +62,21 @@ public class EntityListFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList createEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList createEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, int expectedCode) throws Exception
 	{
-		return createEntityList(apiContext,  entityList,  null, expectedCode, successCode );
+		return createEntityList(apiContext,  entityList,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList createEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList createEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.mzdb.EntityList returnObj = new com.mozu.api.contracts.mzdb.EntityList();
 		EntityListResource resource = new EntityListResource(apiContext);
@@ -86,21 +87,21 @@ public class EntityListFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList updateEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList updateEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, int expectedCode) throws Exception
 	{
-		return updateEntityList(apiContext,  entityList,  entityListFullName,  null, expectedCode, successCode );
+		return updateEntityList(apiContext,  entityList,  entityListFullName,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.mzdb.EntityList updateEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.mzdb.EntityList updateEntityList(ApiContext apiContext, com.mozu.api.contracts.mzdb.EntityList entityList, String entityListFullName, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.mzdb.EntityList returnObj = new com.mozu.api.contracts.mzdb.EntityList();
 		EntityListResource resource = new EntityListResource(apiContext);
@@ -111,16 +112,16 @@ public class EntityListFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteEntityList(ApiContext apiContext, String entityListFullName, int expectedCode, int successCode) throws Exception
+	public static void deleteEntityList(ApiContext apiContext, String entityListFullName, int expectedCode) throws Exception
 	{
 		EntityListResource resource = new EntityListResource(apiContext);
 		try
@@ -130,12 +131,12 @@ public class EntityListFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

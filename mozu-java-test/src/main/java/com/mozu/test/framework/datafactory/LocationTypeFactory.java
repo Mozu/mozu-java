@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.commerce.admin.LocationTypeResource;
 public class LocationTypeFactory
 {
 
-	public static List<com.mozu.api.contracts.location.LocationType> getLocationTypes(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.location.LocationType> getLocationTypes(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.location.LocationType> returnObj = new ArrayList<com.mozu.api.contracts.location.LocationType>();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
@@ -31,21 +32,21 @@ public class LocationTypeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode) throws Exception
 	{
-		return getLocationType(apiContext,  locationTypeCode,  null, expectedCode, successCode );
+		return getLocationType(apiContext,  locationTypeCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType getLocationType(ApiContext apiContext, String locationTypeCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
@@ -56,21 +57,21 @@ public class LocationTypeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, int expectedCode) throws Exception
 	{
-		return addLocationType(apiContext,  locationType,  null, expectedCode, successCode );
+		return addLocationType(apiContext,  locationType,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType addLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
@@ -81,21 +82,21 @@ public class LocationTypeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, int expectedCode) throws Exception
 	{
-		return updateLocationType(apiContext,  locationType,  locationTypeCode,  null, expectedCode, successCode );
+		return updateLocationType(apiContext,  locationType,  locationTypeCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.location.LocationType updateLocationType(ApiContext apiContext, com.mozu.api.contracts.location.LocationType locationType, String locationTypeCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.location.LocationType returnObj = new com.mozu.api.contracts.location.LocationType();
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
@@ -106,16 +107,16 @@ public class LocationTypeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode, int successCode) throws Exception
+	public static void deleteLocationType(ApiContext apiContext, String locationTypeCode, int expectedCode) throws Exception
 	{
 		LocationTypeResource resource = new LocationTypeResource(apiContext);
 		try
@@ -125,12 +126,12 @@ public class LocationTypeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

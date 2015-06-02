@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.commerce.orders.OrderAttributeResource;
 public class OrderAttributeFactory
 {
 
-	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> getOrderAttributes(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> getOrderAttributes(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>();
 		OrderAttributeResource resource = new OrderAttributeResource(apiContext);
@@ -31,16 +32,16 @@ public class OrderAttributeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> createOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> createOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>();
 		OrderAttributeResource resource = new OrderAttributeResource(apiContext);
@@ -51,21 +52,21 @@ public class OrderAttributeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> updateOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> updateOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, int expectedCode) throws Exception
 	{
-		return updateOrderAttributes(apiContext,  orderAttributes,  orderId,  null, expectedCode, successCode );
+		return updateOrderAttributes(apiContext,  orderAttributes,  orderId,  null, expectedCode);
 	}
 
-	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> updateOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, Boolean removeMissing, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> updateOrderAttributes(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> orderAttributes, String orderId, Boolean removeMissing, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderAttribute>();
 		OrderAttributeResource resource = new OrderAttributeResource(apiContext);
@@ -76,12 +77,12 @@ public class OrderAttributeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 

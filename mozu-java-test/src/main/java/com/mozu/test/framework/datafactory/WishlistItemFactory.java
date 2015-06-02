@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.wishlists.WishlistItemResource;
 public class WishlistItemFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem getWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem getWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, int expectedCode) throws Exception
 	{
-		return getWishlistItem(apiContext,  wishlistId,  wishlistItemId,  null, expectedCode, successCode );
+		return getWishlistItem(apiContext,  wishlistId,  wishlistItemId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem getWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem getWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -36,21 +37,21 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItems(ApiContext apiContext, String wishlistId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItems(ApiContext apiContext, String wishlistId, int expectedCode) throws Exception
 	{
-		return getWishlistItems(apiContext,  wishlistId,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getWishlistItems(apiContext,  wishlistId,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItems(ApiContext apiContext, String wishlistId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItems(ApiContext apiContext, String wishlistId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -61,21 +62,21 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItemsByWishlistName(ApiContext apiContext, Integer customerAccountId, String wishlistName, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItemsByWishlistName(ApiContext apiContext, Integer customerAccountId, String wishlistName, int expectedCode) throws Exception
 	{
-		return getWishlistItemsByWishlistName(apiContext,  customerAccountId,  wishlistName,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getWishlistItemsByWishlistName(apiContext,  customerAccountId,  wishlistName,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItemsByWishlistName(ApiContext apiContext, Integer customerAccountId, String wishlistName, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection getWishlistItemsByWishlistName(ApiContext apiContext, Integer customerAccountId, String wishlistName, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItemCollection();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -86,21 +87,21 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem addItemToWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem addItemToWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, int expectedCode) throws Exception
 	{
-		return addItemToWishlist(apiContext,  wishlistItem,  wishlistId,  null, expectedCode, successCode );
+		return addItemToWishlist(apiContext,  wishlistItem,  wishlistId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem addItemToWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem addItemToWishlist(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -111,21 +112,21 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItemQuantity(ApiContext apiContext, String wishlistId, String wishlistItemId, Integer quantity, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItemQuantity(ApiContext apiContext, String wishlistId, String wishlistItemId, Integer quantity, int expectedCode) throws Exception
 	{
-		return updateWishlistItemQuantity(apiContext,  wishlistId,  wishlistItemId,  quantity,  null, expectedCode, successCode );
+		return updateWishlistItemQuantity(apiContext,  wishlistId,  wishlistItemId,  quantity,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItemQuantity(ApiContext apiContext, String wishlistId, String wishlistItemId, Integer quantity, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItemQuantity(ApiContext apiContext, String wishlistId, String wishlistItemId, Integer quantity, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -136,21 +137,21 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String wishlistItemId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String wishlistItemId, int expectedCode) throws Exception
 	{
-		return updateWishlistItem(apiContext,  wishlistItem,  wishlistId,  wishlistItemId,  null, expectedCode, successCode );
+		return updateWishlistItem(apiContext,  wishlistItem,  wishlistId,  wishlistItemId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String wishlistItemId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem updateWishlistItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem wishlistItem, String wishlistId, String wishlistItemId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.WishlistItem();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -161,16 +162,16 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist removeAllWishlistItems(ApiContext apiContext, String wishlistId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.wishlists.Wishlist removeAllWishlistItems(ApiContext apiContext, String wishlistId, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.wishlists.Wishlist returnObj = new com.mozu.api.contracts.commerceruntime.wishlists.Wishlist();
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
@@ -181,16 +182,16 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, int expectedCode, int successCode) throws Exception
+	public static void deleteWishlistItem(ApiContext apiContext, String wishlistId, String wishlistItemId, int expectedCode) throws Exception
 	{
 		WishlistItemResource resource = new WishlistItemResource(apiContext);
 		try
@@ -200,12 +201,12 @@ public class WishlistItemFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

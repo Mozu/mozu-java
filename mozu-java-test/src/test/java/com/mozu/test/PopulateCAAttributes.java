@@ -123,19 +123,19 @@ public class PopulateCAAttributes extends MozuApiTestBase {
         com.mozu.api.contracts.productadmin.Attribute updatedAttr = null;
 		try
 	    {
-			createdAttr = AttributeFactory.getAttribute(apiContext, name.replaceAll("\\s+",""), HttpStatus.SC_OK, HttpStatus.SC_OK);
+			createdAttr = AttributeFactory.getAttribute(apiContext, name.replaceAll("\\s+",""), HttpStatus.SC_OK);
 			attr.setAttributeFQN(createdAttr.getAttributeFQN());
-			updatedAttr = AttributedefinitionAttributeFactory.updateAttribute(apiContext, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+			updatedAttr = AttributedefinitionAttributeFactory.updateAttribute(apiContext, attr, createdAttr.getAttributeFQN(), HttpStatus.SC_OK);
 	    }
 	    catch (TestFailException te)
 	    {
-	    	if (te.actualReturnCode == HttpStatus.SC_NOT_FOUND)
+	    	if (te.getActualReturnCode().equals("" + HttpStatus.SC_NOT_FOUND))
 	    	{
-	    		updatedAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+	    		updatedAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr, HttpStatus.SC_CREATED);
 	    	}
 	    }
 		
-		ProductTypeCollection productTypes = ProductTypeFactory.getProductTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		ProductTypeCollection productTypes = ProductTypeFactory.getProductTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK);
 		ProductType baseProductType = productTypes.getItems().get(0);
 		Boolean found = false;
 		for (AttributeInProductType attrTy : baseProductType.getProperties())
@@ -156,7 +156,7 @@ public class PopulateCAAttributes extends MozuApiTestBase {
 			List<AttributeInProductType> list = baseProductType.getProperties();
 			list.add(attrInType);
 			baseProductType.setProperties(list);
-			ProductTypeFactory.updateProductType(apiContext, DataViewMode.Live, baseProductType, baseProductType.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+			ProductTypeFactory.updateProductType(apiContext, DataViewMode.Live, baseProductType, baseProductType.getId(), HttpStatus.SC_OK);
 		}
 	}
 }

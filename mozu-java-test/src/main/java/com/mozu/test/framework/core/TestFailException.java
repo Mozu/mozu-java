@@ -7,7 +7,7 @@ public class TestFailException extends TestException {
     private static final long serialVersionUID = 1L;
     private Logger logger = LoggerFactory.getLogger(TestFailException.class);
 
-    public TestFailException(int actualCode, String methodName, int expectedCode, String msg) {
+    public TestFailException(String actualCode, String methodName, String expectedCode, String msg) {
     	super(actualCode, methodName, expectedCode, msg);
     }
     
@@ -15,7 +15,7 @@ public class TestFailException extends TestException {
     public String toString()
     {
     	String msg = super.toString();
-        if(super.actualReturnCode == 403)
+        if(super.actualReturnCode.equals("403"))
         {
         	return msg += String.format("\nYou may need to add the proper behavior for %s", super.clientMethodName);
         }

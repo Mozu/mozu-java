@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.customer.accounts.CustomerNoteResource;
 public class CustomerNoteFactory
 {
 
-	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode) throws Exception
 	{
-		return getAccountNote(apiContext,  accountId,  noteId,  null, expectedCode, successCode );
+		return getAccountNote(apiContext,  accountId,  noteId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote getAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
@@ -36,21 +37,21 @@ public class CustomerNoteFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountNotes(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNoteCollection getAccountNotes(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNoteCollection returnObj = new com.mozu.api.contracts.customer.CustomerNoteCollection();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
@@ -61,21 +62,21 @@ public class CustomerNoteFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, int expectedCode) throws Exception
 	{
-		return addAccountNote(apiContext,  note,  accountId,  null, expectedCode, successCode );
+		return addAccountNote(apiContext,  note,  accountId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote addAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
@@ -86,21 +87,21 @@ public class CustomerNoteFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, int expectedCode) throws Exception
 	{
-		return updateAccountNote(apiContext,  note,  accountId,  noteId,  null, expectedCode, successCode );
+		return updateAccountNote(apiContext,  note,  accountId,  noteId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerNote updateAccountNote(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerNote note, Integer accountId, Integer noteId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerNote returnObj = new com.mozu.api.contracts.customer.CustomerNote();
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
@@ -111,16 +112,16 @@ public class CustomerNoteFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode, int successCode) throws Exception
+	public static void deleteAccountNote(ApiContext apiContext, Integer accountId, Integer noteId, int expectedCode) throws Exception
 	{
 		CustomerNoteResource resource = new CustomerNoteResource(apiContext);
 		try
@@ -130,12 +131,12 @@ public class CustomerNoteFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

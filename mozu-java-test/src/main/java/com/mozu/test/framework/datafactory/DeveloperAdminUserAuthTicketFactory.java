@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.platform.developer.DeveloperAdminUserAuthTicketRes
 public class DeveloperAdminUserAuthTicketFactory
 {
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, int expectedCode) throws Exception
 	{
-		return createDeveloperUserAuthTicket(apiContext,  userAuthInfo,  null,  null, expectedCode, successCode );
+		return createDeveloperUserAuthTicket(apiContext,  userAuthInfo,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket createDeveloperUserAuthTicket(ApiContext apiContext, com.mozu.api.contracts.core.UserAuthInfo userAuthInfo, Integer developerAccountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket();
 		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
@@ -36,21 +37,21 @@ public class DeveloperAdminUserAuthTicketFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, int expectedCode) throws Exception
 	{
-		return refreshDeveloperAuthTicket(apiContext,  existingAuthTicket,  null,  null, expectedCode, successCode );
+		return refreshDeveloperAuthTicket(apiContext,  existingAuthTicket,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket refreshDeveloperAuthTicket(ApiContext apiContext, com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket existingAuthTicket, Integer developerAccountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket returnObj = new com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket();
 		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
@@ -61,16 +62,16 @@ public class DeveloperAdminUserAuthTicketFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode, int successCode) throws Exception
+	public static void deleteUserAuthTicket(ApiContext apiContext, String refreshToken, int expectedCode) throws Exception
 	{
 		DeveloperAdminUserAuthTicketResource resource = new DeveloperAdminUserAuthTicketResource(apiContext);
 		try
@@ -80,12 +81,12 @@ public class DeveloperAdminUserAuthTicketFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

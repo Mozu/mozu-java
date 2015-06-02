@@ -8,13 +8,12 @@ public class TestException extends Exception {
     private static final long serialVersionUID = 1L;
     private Logger logger = LoggerFactory.getLogger(TestException.class);
  
-    protected int expectedReturnCode;
+    protected String expectedReturnCode;
     protected String message ;
     protected String clientMethodName;
-
-    public int actualReturnCode;
+    protected String actualReturnCode;
     
-    protected TestException(int actualCode, String methodName, int expectedCode, String msg) {
+    protected TestException(String actualCode, String methodName, String expectedCode, String msg) {
         expectedReturnCode = expectedCode;
         actualReturnCode = actualCode;
         message = msg;
@@ -46,7 +45,12 @@ public class TestException extends Exception {
     @Override
     public String toString()
     {
-        return String.format("[%s:expected %s] but the actual return code is %s. %s", clientMethodName, expectedReturnCode, actualReturnCode, message);
+        return String.format("[%s: expected %s] but the actual return code is %s. %s", clientMethodName, expectedReturnCode, actualReturnCode, message);
+    }
+    
+    public String getActualReturnCode()
+    {
+    	return actualReturnCode;
     }
 }
 

@@ -45,23 +45,23 @@ public class LocationTests extends MozuApiTestBase  {
 	@Test
 	public void locationTypeTest1() throws Exception{
 		LocationType typeObj = LocationGenerator.generateLocationType();
-		LocationTypeFactory.addLocationType(apiContext, typeObj, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-		LocationType type = LocationTypeFactory.getLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		LocationTypeFactory.addLocationType(apiContext, typeObj, HttpStatus.SC_CREATED);
+		LocationType type = LocationTypeFactory.getLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_OK);
 		assertEquals(type.getName(), typeObj.getName());
-        LocationTypeFactory.deleteLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);
-        LocationTypeFactory.getLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+        LocationTypeFactory.deleteLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_NO_CONTENT);
+        LocationTypeFactory.getLocationType(apiContext, typeObj.getCode(), HttpStatus.SC_NOT_FOUND);
 	}
 
 	@Test
 	public void locationTest1() throws Exception{
 		LocationType typeObj = LocationGenerator.generateLocationType();
-		LocationType addLocationType = LocationTypeFactory.addLocationType(apiContext, typeObj, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+		LocationType addLocationType = LocationTypeFactory.addLocationType(apiContext, typeObj, HttpStatus.SC_CREATED);
 		List<LocationType> types = new ArrayList<LocationType>();
 		types.add(addLocationType);
-/*bug 35404*/		Location addLocation = LocationFactory.addLocation(apiContext, LocationGenerator.generate(types), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-		Location getLocation = LocationFactory.getLocation(apiContext, addLocation.getCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-		LocationFactory.deleteLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);
-        LocationFactory.getLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-        LocationTypeFactory.deleteLocationType(apiContext, addLocationType.getCode(), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);
+/*bug 35404*/		Location addLocation = LocationFactory.addLocation(apiContext, LocationGenerator.generate(types), HttpStatus.SC_CREATED);
+		Location getLocation = LocationFactory.getLocation(apiContext, addLocation.getCode(), HttpStatus.SC_OK);
+		LocationFactory.deleteLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NO_CONTENT);
+        LocationFactory.getLocation(apiContext, getLocation.getCode(), HttpStatus.SC_NOT_FOUND);
+        LocationTypeFactory.deleteLocationType(apiContext, addLocationType.getCode(), HttpStatus.SC_NO_CONTENT);
 	}
 }

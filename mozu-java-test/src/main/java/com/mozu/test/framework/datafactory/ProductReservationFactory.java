@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.catalog.admin.ProductReservationResource;
 public class ProductReservationFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getProductReservations(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getProductReservations(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductReservationCollection getProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductReservationCollection returnObj = new com.mozu.api.contracts.productadmin.ProductReservationCollection();
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
@@ -36,21 +37,21 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode) throws Exception
 	{
-		return getProductReservation(apiContext, dataViewMode,  productReservationId,  null, expectedCode, successCode );
+		return getProductReservation(apiContext, dataViewMode,  productReservationId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.ProductReservation getProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.ProductReservation returnObj = new com.mozu.api.contracts.productadmin.ProductReservation();
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
@@ -61,21 +62,21 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
 	{
-		return addProductReservations(apiContext, dataViewMode,  productReservations,  null, expectedCode, successCode );
+		return addProductReservations(apiContext, dataViewMode,  productReservations,  null, expectedCode);
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductReservation> addProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductReservation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductReservation>();
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
@@ -86,16 +87,16 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
+	public static void commitReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
 	{
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
@@ -105,20 +106,20 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, int expectedCode) throws Exception
 	{
-		return updateProductReservations(apiContext, dataViewMode,  productReservations,  null, expectedCode, successCode );
+		return updateProductReservations(apiContext, dataViewMode,  productReservations,  null, expectedCode);
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.ProductReservation> updateProductReservations(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductReservation> productReservations, Boolean skipInventoryCheck, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductReservation> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductReservation>();
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
@@ -129,16 +130,16 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode, int successCode) throws Exception
+	public static void deleteProductReservation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productReservationId, int expectedCode) throws Exception
 	{
 		ProductReservationResource resource = new ProductReservationResource(apiContext, dataViewMode);
 		try
@@ -148,12 +149,12 @@ public class ProductReservationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

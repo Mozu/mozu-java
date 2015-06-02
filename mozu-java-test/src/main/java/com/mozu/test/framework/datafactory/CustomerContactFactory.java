@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.customer.accounts.CustomerContactResource
 public class CustomerContactFactory
 {
 
-	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
-		return getAccountContact(apiContext,  accountId,  contactId,  null, expectedCode, successCode );
+		return getAccountContact(apiContext,  accountId,  contactId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact getAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
@@ -36,21 +37,21 @@ public class CustomerContactFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getAccountContacts(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContactCollection getAccountContacts(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContactCollection returnObj = new com.mozu.api.contracts.customer.CustomerContactCollection();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
@@ -61,21 +62,21 @@ public class CustomerContactFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, int expectedCode) throws Exception
 	{
-		return addAccountContact(apiContext,  contact,  accountId,  null, expectedCode, successCode );
+		return addAccountContact(apiContext,  contact,  accountId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact addAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
@@ -86,21 +87,21 @@ public class CustomerContactFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
-		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null, expectedCode, successCode );
+		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.CustomerContact returnObj = new com.mozu.api.contracts.customer.CustomerContact();
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
@@ -111,16 +112,16 @@ public class CustomerContactFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode, int successCode) throws Exception
+	public static void deleteAccountContact(ApiContext apiContext, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
 		CustomerContactResource resource = new CustomerContactResource(apiContext);
 		try
@@ -130,12 +131,12 @@ public class CustomerContactFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

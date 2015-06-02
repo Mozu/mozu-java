@@ -79,16 +79,16 @@ public class HttpClientConnectionTests extends MozuApiTestBase {
 	public void HttpClientConnectionTest1() throws Exception {
 		try
 		{
-			TenantDataFactory.getDBValue(apiContext, TENANT_DB_ENTRY, null, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);			
+			TenantDataFactory.getDBValue(apiContext, TENANT_DB_ENTRY, null, HttpStatus.SC_CREATED);			
 		}
 		catch(Exception e)
 		{
-			TenantDataFactory.createDBValue(apiContext, generateValue(), TENANT_DB_ENTRY, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);			
+			TenantDataFactory.createDBValue(apiContext, generateValue(), TENANT_DB_ENTRY, HttpStatus.SC_CREATED);			
 			
 		}
 		for (int i = 0; i < CONNECT_TIMES; i++)
 		{
-			TenantDataFactory.updateDBValue(apiContext, generateValue(), TENANT_DB_ENTRY, HttpStatus.SC_OK, HttpStatus.SC_OK);
+			TenantDataFactory.updateDBValue(apiContext, generateValue(), TENANT_DB_ENTRY, HttpStatus.SC_OK);
 		}
 	}
 

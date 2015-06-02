@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.content.documentlists.DocumentTreeResource;
 public class DocumentTreeFactory
 {
 
-	public static java.io.InputStream getTreeDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
+	public static java.io.InputStream getTreeDocumentContent(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode) throws Exception
 	{
 		java.io.InputStream returnObj;
 		DocumentTreeResource resource = new DocumentTreeResource(apiContext, dataViewMode);
@@ -31,21 +32,21 @@ public class DocumentTreeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode) throws Exception
 	{
-		return getTreeDocument(apiContext, dataViewMode,  documentListName,  documentName,  null, expectedCode, successCode );
+		return getTreeDocument(apiContext, dataViewMode,  documentListName,  documentName,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
 		DocumentTreeResource resource = new DocumentTreeResource(apiContext, dataViewMode);
@@ -56,16 +57,16 @@ public class DocumentTreeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void updateTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
+	public static void updateTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode) throws Exception
 	{
 		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
 		try
@@ -75,15 +76,15 @@ public class DocumentTreeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void deleteTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode, int successCode) throws Exception
+	public static void deleteTreeDocumentContent(ApiContext apiContext, java.io.InputStream stream, String documentListName, String documentName, String  contentType, int expectedCode) throws Exception
 	{
 		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
 		try
@@ -93,12 +94,12 @@ public class DocumentTreeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

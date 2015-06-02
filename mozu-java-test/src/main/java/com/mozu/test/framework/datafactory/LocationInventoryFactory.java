@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.catalog.admin.products.LocationInventoryR
 public class LocationInventoryFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
-		return getLocationInventories(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getLocationInventories(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.LocationInventoryCollection returnObj = new com.mozu.api.contracts.productadmin.LocationInventoryCollection();
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
@@ -36,21 +37,21 @@ public class LocationInventoryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode) throws Exception
 	{
-		return getLocationInventory(apiContext, dataViewMode,  productCode,  locationCode,  null, expectedCode, successCode );
+		return getLocationInventory(apiContext, dataViewMode,  productCode,  locationCode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventory getLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.LocationInventory returnObj = new com.mozu.api.contracts.productadmin.LocationInventory();
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
@@ -61,21 +62,21 @@ public class LocationInventoryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, int expectedCode) throws Exception
 	{
-		return addLocationInventory(apiContext, dataViewMode,  locationInventoryList,  productCode,  null, expectedCode, successCode );
+		return addLocationInventory(apiContext, dataViewMode,  locationInventoryList,  productCode,  null, expectedCode);
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, Boolean performUpserts, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.LocationInventory> addLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventory> locationInventoryList, String productCode, Boolean performUpserts, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.LocationInventory> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.LocationInventory>();
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
@@ -86,16 +87,16 @@ public class LocationInventoryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<com.mozu.api.contracts.productadmin.LocationInventory> updateLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventoryAdjustment> locationInventoryAdjustments, String productCode, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.LocationInventory> updateLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.LocationInventoryAdjustment> locationInventoryAdjustments, String productCode, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.LocationInventory> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.LocationInventory>();
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
@@ -106,16 +107,16 @@ public class LocationInventoryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode, int successCode) throws Exception
+	public static void deleteLocationInventory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String locationCode, int expectedCode) throws Exception
 	{
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
@@ -125,12 +126,12 @@ public class LocationInventoryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

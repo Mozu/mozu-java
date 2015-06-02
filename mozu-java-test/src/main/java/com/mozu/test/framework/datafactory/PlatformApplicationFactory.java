@@ -8,24 +8,25 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * 
+ * platform/developer related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PlatformApplicationFactory
 {
 
-	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, int expectedCode) throws Exception
 	{
-		return getAppPackageNames(apiContext,  applicationKey,  null, expectedCode, successCode );
+		return getAppPackageNames(apiContext,  applicationKey,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.PackageNamesCollection getAppPackageNames(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.PackageNamesCollection returnObj = new com.mozu.api.contracts.appdev.PackageNamesCollection();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -36,21 +37,21 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, int expectedCode) throws Exception
 	{
-		return getAppVersions(apiContext,  nsAndAppId,  null, expectedCode, successCode );
+		return getAppVersions(apiContext,  nsAndAppId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.ApplicationVersionsCollection getAppVersions(ApiContext apiContext, String nsAndAppId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.ApplicationVersionsCollection returnObj = new com.mozu.api.contracts.appdev.ApplicationVersionsCollection();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -61,21 +62,21 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, int expectedCode) throws Exception
 	{
-		return getPackageFileMetadata(apiContext,  applicationKey,  filepath,  null, expectedCode, successCode );
+		return getPackageFileMetadata(apiContext,  applicationKey,  filepath,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata getPackageFileMetadata(ApiContext apiContext, String applicationKey, String filepath, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -86,21 +87,21 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, int expectedCode) throws Exception
 	{
-		return getPackageMetadata(apiContext,  applicationKey,  null, expectedCode, successCode );
+		return getPackageMetadata(apiContext,  applicationKey,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FolderMetadata getPackageMetadata(ApiContext apiContext, String applicationKey, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.FolderMetadata returnObj = new com.mozu.api.contracts.appdev.FolderMetadata();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -111,21 +112,21 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String  contentType, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String  contentType, int expectedCode) throws Exception
 	{
-		return upsertPackageFile(apiContext,  stream,  applicationKey,  filepath,  null,  null,  contentType, expectedCode, successCode );
+		return upsertPackageFile(apiContext,  stream,  applicationKey,  filepath,  null,  null,  contentType, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String lastModifiedTime, String responseFields, String  contentType, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata upsertPackageFile(ApiContext apiContext, java.io.InputStream stream, String applicationKey, String filepath, String lastModifiedTime, String responseFields, String  contentType, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -136,21 +137,21 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, int expectedCode) throws Exception
 	{
-		return renamePackageFile(apiContext,  renameInfo,  applicationKey,  null, expectedCode, successCode );
+		return renamePackageFile(apiContext,  renameInfo,  applicationKey,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.appdev.FileMetadata renamePackageFile(ApiContext apiContext, com.mozu.api.contracts.appdev.RenameInfo renameInfo, String applicationKey, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.appdev.FileMetadata returnObj = new com.mozu.api.contracts.appdev.FileMetadata();
 		ApplicationResource resource = new ApplicationResource(apiContext);
@@ -161,16 +162,16 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deletePackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode, int successCode) throws Exception
+	public static void deletePackageFile(ApiContext apiContext, String applicationKey, String filepath, int expectedCode) throws Exception
 	{
 		ApplicationResource resource = new ApplicationResource(apiContext);
 		try
@@ -180,12 +181,12 @@ public class PlatformApplicationFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }
