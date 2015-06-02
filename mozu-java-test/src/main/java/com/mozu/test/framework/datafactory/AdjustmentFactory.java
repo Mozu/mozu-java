@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.orders.AdjustmentResource;
 public class AdjustmentFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode) throws Exception
 	{
-		return applyShippingAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode, successCode );
+		return applyShippingAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyShippingAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
@@ -36,21 +37,21 @@ public class AdjustmentFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, int expectedCode) throws Exception
 	{
-		return applyAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode, successCode );
+		return applyAdjustment(apiContext,  adjustment,  orderId,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order applyAdjustment(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
@@ -61,21 +62,21 @@ public class AdjustmentFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order removeShippingAdjustment(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order removeShippingAdjustment(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
-		return removeShippingAdjustment(apiContext,  orderId,  null,  null, expectedCode, successCode );
+		return removeShippingAdjustment(apiContext,  orderId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order removeShippingAdjustment(ApiContext apiContext, String orderId, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order removeShippingAdjustment(ApiContext apiContext, String orderId, String updateMode, String version, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
@@ -86,21 +87,21 @@ public class AdjustmentFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order removeAdjustment(ApiContext apiContext, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order removeAdjustment(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
-		return removeAdjustment(apiContext,  orderId,  null,  null, expectedCode, successCode );
+		return removeAdjustment(apiContext,  orderId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order removeAdjustment(ApiContext apiContext, String orderId, String updateMode, String version, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order removeAdjustment(ApiContext apiContext, String orderId, String updateMode, String version, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		AdjustmentResource resource = new AdjustmentResource(apiContext);
@@ -111,12 +112,12 @@ public class AdjustmentFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 

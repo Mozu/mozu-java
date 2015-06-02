@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.CartResource;
 public class CartFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getCart(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getCart(ApiContext apiContext, String cartId, int expectedCode) throws Exception
 	{
-		return getCart(apiContext,  cartId,  null, expectedCode, successCode );
+		return getCart(apiContext,  cartId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getCart(ApiContext apiContext, String cartId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getCart(ApiContext apiContext, String cartId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		CartResource resource = new CartResource(apiContext);
@@ -36,21 +37,21 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getOrCreateCart(apiContext,  null, expectedCode, successCode );
+		return getOrCreateCart(apiContext,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getOrCreateCart(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		CartResource resource = new CartResource(apiContext);
@@ -61,21 +62,21 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getCartSummary(apiContext,  null, expectedCode, successCode );
+		return getCartSummary(apiContext,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getCartSummary(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.CartSummary returnObj = new com.mozu.api.contracts.commerceruntime.carts.CartSummary();
 		CartResource resource = new CartResource(apiContext);
@@ -86,21 +87,21 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(ApiContext apiContext, String userId, int expectedCode) throws Exception
 	{
-		return getUserCartSummary(apiContext,  userId,  null, expectedCode, successCode );
+		return getUserCartSummary(apiContext,  userId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(ApiContext apiContext, String userId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartSummary getUserCartSummary(ApiContext apiContext, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.CartSummary returnObj = new com.mozu.api.contracts.commerceruntime.carts.CartSummary();
 		CartResource resource = new CartResource(apiContext);
@@ -111,21 +112,21 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(ApiContext apiContext, String userId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(ApiContext apiContext, String userId, int expectedCode) throws Exception
 	{
-		return getUserCart(apiContext,  userId,  null, expectedCode, successCode );
+		return getUserCart(apiContext,  userId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(ApiContext apiContext, String userId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart getUserCart(ApiContext apiContext, String userId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		CartResource resource = new CartResource(apiContext);
@@ -136,21 +137,21 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, int expectedCode) throws Exception
 	{
-		return updateCart(apiContext,  cart,  null, expectedCode, successCode );
+		return updateCart(apiContext,  cart,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.Cart updateCart(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.carts.Cart cart, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.Cart returnObj = new com.mozu.api.contracts.commerceruntime.carts.Cart();
 		CartResource resource = new CartResource(apiContext);
@@ -161,16 +162,16 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteCart(ApiContext apiContext, String cartId, int expectedCode, int successCode) throws Exception
+	public static void deleteCart(ApiContext apiContext, String cartId, int expectedCode) throws Exception
 	{
 		CartResource resource = new CartResource(apiContext);
 		try
@@ -180,15 +181,15 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void deleteCurrentCart(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static void deleteCurrentCart(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		CartResource resource = new CartResource(apiContext);
 		try
@@ -198,12 +199,12 @@ public class CartFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

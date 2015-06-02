@@ -39,8 +39,8 @@ public class AddressValidateTests extends MozuApiTestBase {
 		ApiContext apiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId); 
         AddressValidationRequest request = new AddressValidationRequest();
         request.setAddress(CustomerGenerator.generateAddress("ca"));
-		AddressValidationRequestFactory.validateAddress(apiContext, request, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		AddressValidationRequestFactory.validateAddress(apiContext, request, HttpStatus.SC_OK);
         request.setAddress(CustomerGenerator.generateInvalidAddress());
-		AddressValidationRequestFactory.validateAddress(apiContext, request, HttpStatus.SC_CONFLICT, HttpStatus.SC_OK);		
+		AddressValidationRequestFactory.validateAddress(apiContext, request, HttpStatus.SC_CONFLICT);		
 	}
 }

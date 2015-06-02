@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.commerce.catalog.admin.PublishingScopeResource;
 public class PublishingScopeFactory
 {
 
-	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
+	public static void discardDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
 	{
 		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
@@ -30,15 +31,15 @@ public class PublishingScopeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode, int successCode) throws Exception
+	public static void publishDrafts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.PublishingScope publishScope, int expectedCode) throws Exception
 	{
 		PublishingScopeResource resource = new PublishingScopeResource(apiContext, dataViewMode);
 		try
@@ -48,12 +49,12 @@ public class PublishingScopeFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

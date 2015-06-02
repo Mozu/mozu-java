@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.content.DocumentDraftSummaryResource;
 public class DocumentDraftSummaryFactory
 {
 
-	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return listDocumentDraftSummaries(apiContext,  null,  null,  null,  null, expectedCode, successCode );
+		return listDocumentDraftSummaries(apiContext,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, Integer pageSize, Integer startIndex, String documentLists, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection listDocumentDraftSummaries(ApiContext apiContext, Integer pageSize, Integer startIndex, String documentLists, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection returnObj = new com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection();
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
@@ -36,21 +37,21 @@ public class DocumentDraftSummaryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
+	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
 	{
-		deleteDocumentDrafts(apiContext,  documentIds,  null, expectedCode, successCode );
+		deleteDocumentDrafts(apiContext,  documentIds,  null, expectedCode);
 	}
 
-	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
+	public static void deleteDocumentDrafts(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
 	{
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
@@ -60,20 +61,20 @@ public class DocumentDraftSummaryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode, int successCode) throws Exception
+	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, int expectedCode) throws Exception
 	{
-		publishDocuments(apiContext,  documentIds,  null, expectedCode, successCode );
+		publishDocuments(apiContext,  documentIds,  null, expectedCode);
 	}
 
-	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode, int successCode) throws Exception
+	public static void publishDocuments(ApiContext apiContext, List<String> documentIds, String documentLists, int expectedCode) throws Exception
 	{
 		DocumentDraftSummaryResource resource = new DocumentDraftSummaryResource(apiContext);
 		try
@@ -83,12 +84,12 @@ public class DocumentDraftSummaryFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

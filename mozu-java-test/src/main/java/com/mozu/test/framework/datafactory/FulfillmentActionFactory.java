@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.orders.FulfillmentActionResource;
 public class FulfillmentActionFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode) throws Exception
 	{
-		return performFulfillmentAction(apiContext,  action,  orderId,  null, expectedCode, successCode );
+		return performFulfillmentAction(apiContext,  action,  orderId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order performFulfillmentAction(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		FulfillmentActionResource resource = new FulfillmentActionResource(apiContext);
@@ -36,21 +37,21 @@ public class FulfillmentActionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, int expectedCode) throws Exception
 	{
-		return resendPackageFulfillmentEmail(apiContext,  action,  orderId,  null, expectedCode, successCode );
+		return resendPackageFulfillmentEmail(apiContext,  action,  orderId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order resendPackageFulfillmentEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction action, String orderId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		FulfillmentActionResource resource = new FulfillmentActionResource(apiContext);
@@ -61,12 +62,12 @@ public class FulfillmentActionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 

@@ -60,24 +60,24 @@ public class DocumentResourceTests extends MozuApiTestBase {
 		DocumentList list = com.mozu.test.framework.helper.DocumentGenerator.generateDocumentList(mozuNamespace, "QA");
         DocumentList existing = null;        
         try{
-            existing = DocumentListFactory.getDocumentList(apiContext, DataViewMode.Live, list.getName()+"@"+list.getNamespace(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+            existing = DocumentListFactory.getDocumentList(apiContext, DataViewMode.Live, list.getName()+"@"+list.getNamespace(), HttpStatus.SC_OK);
         } 
         catch(Exception ae) {
         }
         if (existing == null)
-        	list = DocumentListFactory.createDocumentList(apiContext, DataViewMode.Live, list, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        	list = DocumentListFactory.createDocumentList(apiContext, DataViewMode.Live, list, HttpStatus.SC_CREATED);
         else
         	list = existing;
         
 		DocumentType type = com.mozu.test.framework.helper.DocumentGenerator.generateDocumentType(mozuNamespace, "QAText");
         DocumentType existingType = null;        
         try{
-            existingType = DocumentTypeFactory.getDocumentType(apiContext, DataViewMode.Live, type.getName()+"@"+type.getNamespace(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+            existingType = DocumentTypeFactory.getDocumentType(apiContext, DataViewMode.Live, type.getName()+"@"+type.getNamespace(), HttpStatus.SC_OK);
         } 
         catch(Exception ae) {
         }
         if (existingType == null)
-        	type = DocumentTypeFactory.createDocumentType(apiContext, DataViewMode.Live, type, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        	type = DocumentTypeFactory.createDocumentType(apiContext, DataViewMode.Live, type, HttpStatus.SC_CREATED);
         else
         	type = existingType;
 
@@ -97,13 +97,13 @@ public class DocumentResourceTests extends MozuApiTestBase {
 		doc.setName(fileName);
 		doc.setDocumentTypeFQN(type.getDocumentTypeFQN());
 		
-		Document newDoc = DocumentFactory.createDocument(apiContext, DataViewMode.Live, doc, list.getListFQN(), HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+		Document newDoc = DocumentFactory.createDocument(apiContext, DataViewMode.Live, doc, list.getListFQN(), HttpStatus.SC_CREATED);
 
 		FileInputStream inputStream = new FileInputStream(file);
 		DocumentFactory.updateDocumentContent(apiContext, inputStream, list.getListFQN(), newDoc.getId(),
-				CONTENTTYPE, HttpStatus.SC_OK, HttpStatus.SC_OK);
+				CONTENTTYPE, HttpStatus.SC_OK);
 		 		 
-		Document docResponse = DocumentFactory.getDocument(apiContext, DataViewMode.Live, list.getListFQN(), newDoc.getId(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		Document docResponse = DocumentFactory.getDocument(apiContext, DataViewMode.Live, list.getListFQN(), newDoc.getId(), HttpStatus.SC_OK);
 		assertEquals(CONTENTLENGTH, docResponse.getContentLength().intValue());
 		file.delete();
 	}

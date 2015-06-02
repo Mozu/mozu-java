@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,7 +21,7 @@ import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.product
 public class ProductTypeOptionFactory
 {
 
-	public static List<com.mozu.api.contracts.productadmin.AttributeInProductType> getOptions(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode, int successCode) throws Exception
+	public static List<com.mozu.api.contracts.productadmin.AttributeInProductType> getOptions(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.AttributeInProductType> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.AttributeInProductType>();
 		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
@@ -31,21 +32,21 @@ public class ProductTypeOptionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode) throws Exception
 	{
-		return getOption(apiContext, dataViewMode,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+		return getOption(apiContext, dataViewMode,  productTypeId,  attributeFQN,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType getOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
 		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
@@ -56,21 +57,21 @@ public class ProductTypeOptionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, int expectedCode) throws Exception
 	{
-		return addOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  null, expectedCode, successCode );
+		return addOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType addOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
 		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
@@ -81,21 +82,21 @@ public class ProductTypeOptionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, int expectedCode) throws Exception
 	{
-		return updateOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null, expectedCode, successCode );
+		return updateOption(apiContext, dataViewMode,  attributeInProductType,  productTypeId,  attributeFQN,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeInProductType updateOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.AttributeInProductType attributeInProductType, Integer productTypeId, String attributeFQN, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.AttributeInProductType returnObj = new com.mozu.api.contracts.productadmin.AttributeInProductType();
 		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
@@ -106,16 +107,16 @@ public class ProductTypeOptionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode, int successCode) throws Exception
+	public static void deleteOption(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer productTypeId, String attributeFQN, int expectedCode) throws Exception
 	{
 		ProductTypeOptionResource resource = new ProductTypeOptionResource(apiContext, dataViewMode);
 		try
@@ -125,12 +126,12 @@ public class ProductTypeOptionFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

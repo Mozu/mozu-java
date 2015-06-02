@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.catalog.admin.discounts.DiscountTargetRes
 public class DiscountTargetFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, int expectedCode) throws Exception
 	{
-		return getDiscountTarget(apiContext, dataViewMode,  discountId,  null, expectedCode, successCode );
+		return getDiscountTarget(apiContext, dataViewMode,  discountId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountTarget getDiscountTarget(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer discountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.DiscountTarget returnObj = new com.mozu.api.contracts.productadmin.DiscountTarget();
 		DiscountTargetResource resource = new DiscountTargetResource(apiContext, dataViewMode);
@@ -36,21 +37,21 @@ public class DiscountTargetFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, int expectedCode) throws Exception
 	{
-		return updateDiscountTarget(apiContext,  discountTarget,  discountId,  null, expectedCode, successCode );
+		return updateDiscountTarget(apiContext,  discountTarget,  discountId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.DiscountTarget updateDiscountTarget(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountTarget discountTarget, Integer discountId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.DiscountTarget returnObj = new com.mozu.api.contracts.productadmin.DiscountTarget();
 		DiscountTargetResource resource = new DiscountTargetResource(apiContext);
@@ -61,12 +62,12 @@ public class DiscountTargetFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 

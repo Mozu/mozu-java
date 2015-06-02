@@ -76,15 +76,15 @@ public class ProductTests extends MozuApiTestBase {
 	public static void tearDownAfterClass() throws Exception {
 		for (int i = 0; i < products.size(); i++)
 		{
-			AdminProductFactory.deleteProduct(apiContext, DataViewMode.Live, products.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+			AdminProductFactory.deleteProduct(apiContext, DataViewMode.Live, products.get(i), HttpStatus.SC_NO_CONTENT);			
 		}
 		for (int i = 0; i < productTypes.size(); i++)
 		{
-			ProductTypeFactory.deleteProductType(apiContext, DataViewMode.Live, productTypes.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+			ProductTypeFactory.deleteProductType(apiContext, DataViewMode.Live, productTypes.get(i), HttpStatus.SC_NO_CONTENT);			
 		}
 		for (int i = 0; i < attrs.size(); i++)
 		{
-		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT);			
 		}
 	}
 
@@ -101,21 +101,21 @@ public class ProductTests extends MozuApiTestBase {
 	public void createProductTest1() throws Exception  {
 		//Create attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED);
         attrs.add(createdAttr.getAttributeFQN());
         
         //Create product type
         ProductType myPT = ProductTypeGenerator.generate(createdAttr, Generator.randomString(5, Generator.AlphaChars));
-        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED);
         productTypes.add(createdPT.getId());
         
         //Create product
         Product myProduct = ProductGenerator.generate(createdPT);       
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED);
         products.add(createdProduct.getProductCode());
         
         //Get product
-        Product getProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        Product getProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK);
         assertEquals(createdProduct.getContent().getProductName(), getProduct.getContent().getProductName());
         assertEquals(createdProduct.getPrice().getPrice(), getProduct.getPrice().getPrice());
 	}
@@ -124,33 +124,33 @@ public class ProductTests extends MozuApiTestBase {
 	public void updateProductTest1() throws Exception  {
 	    //Create product type
         ProductType myPT = ProductTypeGenerator.generate(Generator.randomString(5, Generator.AlphaChars));
-        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED);
         productTypes.add(createdPT.getId());
 
         Product myProduct = ProductGenerator.generate(createdPT);
-		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(apiContext, masterCatalogId, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Pending");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
-        AdminProductFactory.getProduct(apiContext, DataViewMode.Pending, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
-        AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
-        PublishingScopeFactory.publishDrafts(apiContext, DataViewMode.Live, ProductGenerator.generatePublishingScope(true, null), HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK);
+        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED);
+        AdminProductFactory.getProduct(apiContext, DataViewMode.Pending, createdProduct.getProductCode(), HttpStatus.SC_OK);
+        AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_NOT_FOUND);
+        PublishingScopeFactory.publishDrafts(apiContext, DataViewMode.Live, ProductGenerator.generatePublishingScope(true, null), HttpStatus.SC_OK);
         products.add(createdProduct.getProductCode());
-        AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        AdminProductFactory.getProduct(apiContext, DataViewMode.Live, createdProduct.getProductCode(), HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Live");
-		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		MasterCatalogFactory.updateMasterCatalog(apiContext, mc, masterCatalogId, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void updateProductTest2() throws Exception  {
 		// Add a new attribute
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "Date", "AdminEntered", "Datetime", false,  false, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED);
  
 		
 	    //update product type
         ProductType myPT = ProductTypeGenerator.generate(createdAttr, Generator.randomString(5, Generator.AlphaChars));
-        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED);
  
         Product myProduct = ProductGenerator.generate(createdPT);
         List<ProductPropertyValue> salePriceDateValue = new ArrayList<ProductPropertyValue>();
@@ -159,35 +159,35 @@ public class ProductTests extends MozuApiTestBase {
         salePriceValue.setValue(date);
         salePriceDateValue.add(salePriceValue);
         myProduct.getProperties().get(myProduct.getProperties().size()-1).setValues(salePriceDateValue);
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED);
 	}
 	
 	@Test
 	public void getProductTest1() throws Exception  {
 	    //Create product type
         ProductType myPT = ProductTypeGenerator.generate(Generator.randomString(5, Generator.AlphaChars));
-        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        ProductType createdPT = ProductTypeFactory.addProductType(apiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED);
         productTypes.add(createdPT.getId());
         
         //Create product
         Product myProduct = ProductGenerator.generate(createdPT);       
-        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED);
         products.add(createdProduct.getProductCode());
 
-	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+	    AdminProductFactory.getProducts(apiContext, DataViewMode.Live, null, null, null, "ProductSequence eq "+ createdProduct.getProductSequence(), null, null, null, null, HttpStatus.SC_OK);
 	}
 	
 	@Test
 	public void getProductsTest1() throws Exception {
 		ApiContext localapiContext = new MozuApiContext(tenantId, siteId, masterCatalogId, catalogId);
-		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		ProductCollection products = ProductFactory.getProducts(localapiContext, DataViewMode.Live, HttpStatus.SC_OK);
 		System.out.println("Total products expected is: " + products.getTotalCount());
 		int pagesize = 10;
 		int page;
 		ProductCollection productPerPage;
 		for (page=0; page<=products.getPageCount(); page++)
 		{
-		    productPerPage = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, page*pagesize, pagesize, null, null, HttpStatus.SC_OK, HttpStatus.SC_OK);
+		    productPerPage = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, page*pagesize, pagesize, null, null, HttpStatus.SC_OK);
 /*			if (productPerPage.getItems().size() < 10)
 			{
 				System.out.println("Wrong Page" + page + " :" + products.getItems().size());
@@ -245,7 +245,7 @@ public class ProductTests extends MozuApiTestBase {
 	@Test
 	public void populateProductTest1() throws Exception  {
 	    //Create product type
-        ProductType myPT = ProductTypeFactory.getProductType(apiContext, DataViewMode.Live, 2, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        ProductType myPT = ProductTypeFactory.getProductType(apiContext, DataViewMode.Live, 2, HttpStatus.SC_OK);
         for (int i = 0; i<300; i++)
         {
  /*           Product myProduct = ProductGenerator.generate(myPT);
@@ -253,7 +253,7 @@ public class ProductTests extends MozuApiTestBase {
             myProduct.getContent().setProductName("shoes " + i);
             Product createdProduct = AdminProductFactory.addProduct(apiContext, DataViewMode.Live, myProduct, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
 */
-        	Product myProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, "shoes" + i, HttpStatus.SC_OK, HttpStatus.SC_OK);
+        	Product myProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, "shoes" + i, HttpStatus.SC_OK);
 /*        	List<ProductInCatalogInfo> productInCatalogs = new ArrayList<ProductInCatalogInfo>();
         	ProductInCatalogInfo info = new ProductInCatalogInfo();
         	info.setCatalogId(1);
@@ -270,7 +270,7 @@ public class ProductTests extends MozuApiTestBase {
 			properties.add(pp);
 			myProduct.setProperties(properties);
 */			myProduct.getProductInCatalogs().get(0).setIsActive(true);
-			AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, myProduct, myProduct.getProductCode(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+			AdminProductFactory.updateProduct(apiContext, DataViewMode.Live, myProduct, myProduct.getProductCode(), HttpStatus.SC_OK);
         
 /*        	Product myProduct = AdminProductFactory.getProduct(apiContext, DataViewMode.Live, "shoes" + i, HttpStatus.SC_OK, HttpStatus.SC_OK);
     

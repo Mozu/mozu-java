@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.carts.ChangeMessageResource;
 public class ChangeMessageFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getMessages(apiContext,  null, expectedCode, successCode );
+		return getMessages(apiContext,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection getMessages(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection returnObj = new com.mozu.api.contracts.commerceruntime.carts.CartChangeMessageCollection();
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
@@ -36,16 +37,16 @@ public class ChangeMessageFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void removeAllMessages(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static void removeAllMessages(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
@@ -55,15 +56,15 @@ public class ChangeMessageFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void removeMessage(ApiContext apiContext, String messageId, int expectedCode, int successCode) throws Exception
+	public static void removeMessage(ApiContext apiContext, String messageId, int expectedCode) throws Exception
 	{
 		ChangeMessageResource resource = new ChangeMessageResource(apiContext);
 		try
@@ -73,12 +74,12 @@ public class ChangeMessageFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

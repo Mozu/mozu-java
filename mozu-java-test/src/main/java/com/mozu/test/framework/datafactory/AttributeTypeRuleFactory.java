@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.catalog.admin.attributedefinition.attribu
 public class AttributeTypeRuleFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection getAttributeTypeRules(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection getAttributeTypeRules(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getAttributeTypeRules(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getAttributeTypeRules(apiContext,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection getAttributeTypeRules(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection getAttributeTypeRules(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection returnObj = new com.mozu.api.contracts.productadmin.AttributeTypeRuleCollection();
 		AttributeTypeRuleResource resource = new AttributeTypeRuleResource(apiContext);
@@ -36,12 +37,12 @@ public class AttributeTypeRuleFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 

@@ -40,7 +40,7 @@ public class ProductAttributeTests extends MozuApiTestBase {
 	public static void tearDownAfterClass() throws Exception {
 		for (int i = 0; i < attrs.size(); i++)
 		{
-		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);			
+		    AttributedefinitionAttributeFactory.deleteAttribute(apiContext, attrs.get(i), HttpStatus.SC_NO_CONTENT);			
 		}
 	}
 
@@ -56,9 +56,9 @@ public class ProductAttributeTests extends MozuApiTestBase {
 	@Test
 	public void addAttributeTest1() throws Exception {
         Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  true, true);
-        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED, HttpStatus.SC_CREATED);
+        Attribute createdAttr = AttributedefinitionAttributeFactory.addAttribute(apiContext, attr1, HttpStatus.SC_CREATED);
         attrs.add(createdAttr.getAttributeFQN());
-        Attribute getAttr = AttributedefinitionAttributeFactory.getAttribute(apiContext, createdAttr.getAttributeFQN(), HttpStatus.SC_OK, HttpStatus.SC_OK);
+        Attribute getAttr = AttributedefinitionAttributeFactory.getAttribute(apiContext, createdAttr.getAttributeFQN(), HttpStatus.SC_OK);
         assertEquals(attr1.getAttributeCode(), getAttr.getAttributeCode());
 	}
 
@@ -66,7 +66,7 @@ public class ProductAttributeTests extends MozuApiTestBase {
 	//negative test
 	public void getAttributeTest1() throws Exception {
 		Attribute attr1 = ProductAttributeGenerator.generate(Generator.randomString(6, Generator.AlphaChars), "List", "Predefined", "String", false,  true, true);
-		AttributedefinitionAttributeFactory.getAttribute(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND, HttpStatus.SC_OK);
+		AttributedefinitionAttributeFactory.getAttribute(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
 }

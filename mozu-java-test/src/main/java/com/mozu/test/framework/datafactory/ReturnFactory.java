@@ -8,6 +8,7 @@ package com.mozu.test.framework.datafactory;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -20,12 +21,12 @@ import com.mozu.api.resources.commerce.ReturnResource;
 public class ReturnFactory
 {
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getReturns(apiContext,  null,  null,  null,  null,  null, expectedCode, successCode );
+		return getReturns(apiContext,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -36,16 +37,16 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<String> getAvailableReturnActions(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static List<String> getAvailableReturnActions(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
 		List<String> returnObj = new ArrayList<String>();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -56,21 +57,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode) throws Exception
 	{
-		return getReturnItem(apiContext,  returnId,  returnItemId,  null, expectedCode, successCode );
+		return getReturnItem(apiContext,  returnId,  returnItemId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItem getReturnItem(ApiContext apiContext, String returnId, String returnItemId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnItem();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -81,21 +82,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
-		return getReturnItems(apiContext,  returnId,  null, expectedCode, successCode );
+		return getReturnItems(apiContext,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection getReturnItems(ApiContext apiContext, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -106,16 +107,16 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static List<String> getAvailablePaymentActionsForReturn(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
+	public static List<String> getAvailablePaymentActionsForReturn(ApiContext apiContext, String returnId, String paymentId, int expectedCode) throws Exception
 	{
 		List<String> returnObj = new ArrayList<String>();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -126,21 +127,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, int expectedCode) throws Exception
 	{
-		return getPayment(apiContext,  returnId,  paymentId,  null, expectedCode, successCode );
+		return getPayment(apiContext,  returnId,  paymentId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.Payment getPayment(ApiContext apiContext, String returnId, String paymentId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.payments.Payment returnObj = new com.mozu.api.contracts.commerceruntime.payments.Payment();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -151,21 +152,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
-		return getPayments(apiContext,  returnId,  null, expectedCode, successCode );
+		return getPayments(apiContext,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.payments.PaymentCollection getPayments(ApiContext apiContext, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.payments.PaymentCollection returnObj = new com.mozu.api.contracts.commerceruntime.payments.PaymentCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -176,21 +177,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
-		return getReturn(apiContext,  returnId,  null, expectedCode, successCode );
+		return getReturn(apiContext,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return getReturn(ApiContext apiContext, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -201,21 +202,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode) throws Exception
 	{
-		return createReturn(apiContext,  ret,  null, expectedCode, successCode );
+		return createReturn(apiContext,  ret,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -226,21 +227,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, int expectedCode) throws Exception
 	{
-		return createReturnItem(apiContext,  returnItem,  returnId,  null, expectedCode, successCode );
+		return createReturnItem(apiContext,  returnItem,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturnItem(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnItem returnItem, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -251,21 +252,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, int expectedCode) throws Exception
 	{
-		return performPaymentActionForReturn(apiContext,  action,  returnId,  paymentId,  null, expectedCode, successCode );
+		return performPaymentActionForReturn(apiContext,  action,  returnId,  paymentId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return performPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String paymentId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -276,21 +277,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, int expectedCode) throws Exception
 	{
-		return createPaymentActionForReturn(apiContext,  action,  returnId,  null, expectedCode, successCode );
+		return createPaymentActionForReturn(apiContext,  action,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return createPaymentActionForReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -301,21 +302,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode) throws Exception
 	{
-		return performReturnActions(apiContext,  action,  null, expectedCode, successCode );
+		return performReturnActions(apiContext,  action,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.ReturnCollection performReturnActions(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.ReturnCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReturnCollection();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -326,21 +327,21 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, int expectedCode) throws Exception
 	{
-		return updateReturn(apiContext,  ret,  returnId,  null, expectedCode, successCode );
+		return updateReturn(apiContext,  ret,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, String responseFields, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return updateReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -351,16 +352,16 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void resendReturnEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode, int successCode) throws Exception
+	public static void resendReturnEmail(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.ReturnAction action, int expectedCode) throws Exception
 	{
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
@@ -370,15 +371,15 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode, int successCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.returns.Return deleteOrderItem(ApiContext apiContext, String returnId, String returnItemId, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.returns.Return returnObj = new com.mozu.api.contracts.commerceruntime.returns.Return();
 		ReturnResource resource = new ReturnResource(apiContext);
@@ -389,16 +390,16 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return null;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
 
-	public static void deleteReturn(ApiContext apiContext, String returnId, int expectedCode, int successCode) throws Exception
+	public static void deleteReturn(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
@@ -408,12 +409,12 @@ public class ReturnFactory
 		catch (ApiException e)
 		{
 			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException(e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 			else
 				return;
 		}
-		if(expectedCode != successCode)
-			throw new TestFailException(successCode, Thread.currentThread().getStackTrace()[2].getMethodName(), expectedCode, "");
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

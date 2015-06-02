@@ -30,6 +30,11 @@ public class Generator {
         return new String(buffer);
     }
 
+    public static String randomIp()
+    {
+    	return(randomInt(10, 100).toString() + "." + randomInt(10, 100).toString() + "." + randomInt(10, 100).toString() + "." + randomInt(10, 100).toString());
+    }
+
     public static Double randomDecimal(Double min, Double max)
     {
     	return rand.nextDouble() * (max - min) + min;

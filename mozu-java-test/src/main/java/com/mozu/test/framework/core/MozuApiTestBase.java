@@ -63,7 +63,7 @@ public class MozuApiTestBase {
     	ApiContext apiContext = new MozuApiContext();
     	AppAuthenticator.initialize(appAuthInfo, null);
         try {
-			testBaseTenant = TenantFactory.getTenant(apiContext, tenantId, HttpStatus.SC_OK, HttpStatus.SC_OK);
+			testBaseTenant = TenantFactory.getTenant(apiContext, tenantId, HttpStatus.SC_OK);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
