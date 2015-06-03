@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.InstalledApplications.Contracts.ExtensionConfiguration ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExtensionConfiguration implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.InstalledApplications.Contracts.ExtensionConfiguration applicationKey ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String applicationKey;
 
 	public String getApplicationKey() {
@@ -26,6 +32,9 @@ public class ExtensionConfiguration implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
+	/**
+	 * Mozu.InstalledApplications.Contracts.ExtensionConfiguration configuration ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {

@@ -25,6 +25,58 @@ public class ReturnItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
+	protected String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * Unique identifier of the order item associated with a validation message, order, or return.
+	 */
+	protected String orderItemId;
+
+	public String getOrderItemId() {
+		return this.orderItemId;
+	}
+
+	public void setOrderItemId(String orderItemId) {
+		this.orderItemId = orderItemId;
+	}
+
+	/**
+	 * The OrderLineId that this ReturnItem is associated with. If order item is present, the orderLineId should be present also.
+	 */
+	protected Integer orderLineId;
+
+	public Integer getOrderLineId() {
+		return this.orderLineId;
+	}
+
+	public void setOrderLineId(Integer orderLineId) {
+		this.orderLineId = orderLineId;
+	}
+
+	/**
+	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
+	 */
+	protected Double productLossAmount;
+
+	public Double getProductLossAmount() {
+		return this.productLossAmount;
+	}
+
+	public void setProductLossAmount(Double productLossAmount) {
+		this.productLossAmount = productLossAmount;
+	}
+
+	/**
 	 * The total tax amount levied on the product loss amount.
 	 */
 	protected Double productLossTaxAmount;
@@ -100,55 +152,6 @@ public class ReturnItem implements Serializable
 
 	public void setShippingLossTaxAmount(Double shippingLossTaxAmount) {
 		this.shippingLossTaxAmount = shippingLossTaxAmount;
-	}
-
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
-	protected String id;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
-	 */
-	protected String orderItemId;
-
-	public String getOrderItemId() {
-		return this.orderItemId;
-	}
-
-	public void setOrderItemId(String orderItemId) {
-		this.orderItemId = orderItemId;
-	}
-
-	protected Integer orderLineId;
-
-	public Integer getOrderLineId() {
-		return this.orderLineId;
-	}
-
-	public void setOrderLineId(Integer orderLineId) {
-		this.orderLineId = orderLineId;
-	}
-
-	/**
-	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
-	 */
-	protected Double productLossAmount;
-
-	public Double getProductLossAmount() {
-		return this.productLossAmount;
-	}
-
-	public void setProductLossAmount(Double productLossAmount) {
-		this.productLossAmount = productLossAmount;
 	}
 
 	/**

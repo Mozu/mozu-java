@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAuthorizations implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Boolean requireAuthForLive;
 
 	public Boolean getRequireAuthForLive() {
@@ -26,6 +32,9 @@ public class ViewAuthorizations implements Serializable
 		this.requireAuthForLive = requireAuthForLive;
 	}
 
+	/**
+	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForPending ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Boolean requireAuthForPending;
 
 	public Boolean getRequireAuthForPending() {

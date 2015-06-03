@@ -51,6 +51,9 @@ public class OrderItem implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
+	/**
+	 * Duty or Tariff for this item
+	 */
 	protected Double dutyAmount;
 
 	public Double getDutyAmount() {
@@ -178,6 +181,9 @@ public class OrderItem implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
+	/**
+	 * The line id assigned to the order item. Visible only in the Admin, this is set from the Admin or in CommerceRuntime when a cart is converted to an order.
+	 */
 	protected Integer lineId;
 
 	public Integer getLineId() {
@@ -305,6 +311,9 @@ public class OrderItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

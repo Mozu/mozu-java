@@ -73,6 +73,9 @@ public class FulfillmentInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Custom data originated by the shipping service.
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

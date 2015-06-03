@@ -15,13 +15,13 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 /** <summary>
- * 
+ * commerce/carts/cartextendedproperties related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class ExtendedPropertyClient {
 	
 	/**
-	 * 
+	 * carts-cartextendedproperties Get GetExtendedProperties description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient();
 	 * client.setBaseAddress(url);
@@ -44,14 +44,14 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Post AddExtendedProperties description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param extendedProperties 
+	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -70,7 +70,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Put UpdateExtendedProperty description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  key);
 	 * client.setBaseAddress(url);
@@ -78,7 +78,7 @@ public class ExtendedPropertyClient {
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
 	 * @param key 
-	 * @param extendedProperty 
+	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -89,7 +89,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Put UpdateExtendedProperty description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  key,  upsert,  responseFields);
 	 * client.setBaseAddress(url);
@@ -97,9 +97,9 @@ public class ExtendedPropertyClient {
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
 	 * @param key 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param upsert 
-	 * @param extendedProperty 
+	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -118,14 +118,14 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Put UpdateExtendedProperties description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
-	 * @param extendedProperties 
+	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -136,7 +136,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Put UpdateExtendedProperties description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  upsert);
 	 * client.setBaseAddress(url);
@@ -144,7 +144,7 @@ public class ExtendedPropertyClient {
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
 	 * @param upsert 
-	 * @param extendedProperties 
+	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -163,7 +163,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Delete DeleteExtendedProperties description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys);
 	 * client.setBaseAddress(url);
@@ -186,7 +186,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * 
+	 * carts-cartextendedproperties Delete DeleteExtendedProperty description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( key);
 	 * client.setBaseAddress(url);

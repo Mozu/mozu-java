@@ -25,6 +25,19 @@ public class Capability implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
+	 */
+	protected String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
+	/**
 	 * Array list of credit types active for the capability.
 	 */
 	protected List<String> activeCreditTypes;
@@ -122,19 +135,6 @@ public class Capability implements Serializable
 
 	public void setScopeId(Integer scopeId) {
 		this.scopeId = scopeId;
-	}
-
-	/**
-	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
-	 */
-	protected String scopeType;
-
-	public String getScopeType() {
-		return this.scopeType;
-	}
-
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
 	}
 
 	/**

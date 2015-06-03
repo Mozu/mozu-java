@@ -27,6 +27,9 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Allow fullfillment with no (or less) stock
+	 */
 	protected Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
@@ -76,6 +79,9 @@ public class Location implements Serializable
 		this.fax = fax;
 	}
 
+	/**
+	 * Locations is disabled (soft delete)
+	 */
 	protected Boolean isDisabled;
 
 	public Boolean getIsDisabled() {

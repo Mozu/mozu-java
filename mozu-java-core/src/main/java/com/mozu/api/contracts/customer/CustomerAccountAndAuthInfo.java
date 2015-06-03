@@ -20,6 +20,9 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.Customer.Contracts.CustomerAccountAndAuthInfo externalPassword ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String externalPassword;
 
 	public String getExternalPassword() {

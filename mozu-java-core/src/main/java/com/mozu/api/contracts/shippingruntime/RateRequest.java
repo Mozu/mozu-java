@@ -108,6 +108,9 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * Mozu.ShippingRuntime.Contracts.RateRequest data ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

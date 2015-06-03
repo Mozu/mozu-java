@@ -42,6 +42,9 @@ public class DigitalPackageItem implements Serializable
 		this.giftCardCode = giftCardCode;
 	}
 
+	/**
+	 * The line id associated with the fulfillment.
+	 */
 	protected Integer lineId;
 
 	public Integer getLineId() {

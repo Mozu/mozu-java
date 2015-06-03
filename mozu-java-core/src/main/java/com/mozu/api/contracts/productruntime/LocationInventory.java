@@ -45,6 +45,9 @@ public class LocationInventory implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.LocationInventory softStockAvailable ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer softStockAvailable;
 
 	public Integer getSoftStockAvailable() {

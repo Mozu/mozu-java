@@ -15,13 +15,13 @@ import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 /** <summary>
- * 
+ * platform/developer related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class ApplicationClient {
 	
 	/**
-	 * 
+	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.PackageNamesCollection> mozuClient=GetAppPackageNamesClient( applicationKey);
 	 * client.setBaseAddress(url);
@@ -38,7 +38,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.PackageNamesCollection> mozuClient=GetAppPackageNamesClient( applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -46,7 +46,7 @@ public class ApplicationClient {
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -63,7 +63,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.ApplicationVersionsCollection> mozuClient=GetAppVersionsClient( nsAndAppId);
 	 * client.setBaseAddress(url);
@@ -80,7 +80,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.ApplicationVersionsCollection> mozuClient=GetAppVersionsClient( nsAndAppId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -88,7 +88,7 @@ public class ApplicationClient {
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
 	 * @param nsAndAppId 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -105,7 +105,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=GetPackageFileMetadataClient( applicationKey,  filepath);
 	 * client.setBaseAddress(url);
@@ -123,7 +123,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=GetPackageFileMetadataClient( applicationKey,  filepath,  responseFields);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class ApplicationClient {
 	 * </code></pre></p>
 	 * @param applicationKey 
 	 * @param filepath 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -149,7 +149,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> mozuClient=GetPackageMetadataClient( applicationKey);
 	 * client.setBaseAddress(url);
@@ -166,7 +166,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> mozuClient=GetPackageMetadataClient( applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -174,7 +174,7 @@ public class ApplicationClient {
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -191,7 +191,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=UpsertPackageFileClient( stream,  applicationKey,  filepath,  contentType);
 	 * client.setBaseAddress(url);
@@ -200,7 +200,7 @@ public class ApplicationClient {
 	 * </code></pre></p>
 	 * @param applicationKey 
 	 * @param filepath 
-	 * @param stream 
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -211,7 +211,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=UpsertPackageFileClient( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
 	 * client.setBaseAddress(url);
@@ -221,8 +221,8 @@ public class ApplicationClient {
 	 * @param applicationKey 
 	 * @param filepath 
 	 * @param lastModifiedTime 
-	 * @param responseFields 
-	 * @param stream 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -243,7 +243,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=RenamePackageFileClient( renameInfo,  applicationKey);
 	 * client.setBaseAddress(url);
@@ -251,7 +251,7 @@ public class ApplicationClient {
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey 
-	 * @param renameInfo 
+	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -262,7 +262,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=RenamePackageFileClient( renameInfo,  applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -270,8 +270,8 @@ public class ApplicationClient {
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey 
-	 * @param responseFields 
-	 * @param renameInfo 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -290,7 +290,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * 
+	 * platform-developer Delete DeletePackageFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePackageFileClient( applicationKey,  filepath);
 	 * client.setBaseAddress(url);

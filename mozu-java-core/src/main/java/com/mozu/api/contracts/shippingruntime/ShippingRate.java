@@ -87,6 +87,9 @@ public class ShippingRate implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
+	/**
+	 * Mozu.ShippingRuntime.Contracts.ShippingRate data ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
