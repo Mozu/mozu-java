@@ -16,6 +16,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.mozu.api.ApiContext;
@@ -34,6 +35,7 @@ import com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
 import com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult;
+import com.mozu.api.contracts.commerceruntime.refunds.Refund;
 import com.mozu.api.contracts.commerceruntime.returns.Return;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
 import com.mozu.api.contracts.content.Document;
@@ -60,6 +62,8 @@ import com.mozu.api.contracts.location.Location;
 import com.mozu.api.contracts.location.LocationUsage;
 import com.mozu.api.contracts.mzdb.EntityList;
 import com.mozu.api.contracts.mzdb.ListView;
+import com.mozu.api.contracts.paymentservice.PublicCard;
+import com.mozu.api.contracts.paymentservice.response.SyncResponse;
 import com.mozu.api.contracts.productadmin.AttributeInProductType;
 import com.mozu.api.contracts.productadmin.AttributeLocalizedContent;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
@@ -92,6 +96,7 @@ import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.tenant.TenantCollection;
 import com.mozu.api.security.AppAuthenticator;
+import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.AuthenticationScope;
 import com.mozu.api.security.CustomerAuthenticationProfile;
@@ -168,15 +173,15 @@ public class GeneralTests extends MozuApiTestBase {
         Facet facet = new Facet();
         AdminFacetFactory.deleteFacetById(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
         AdminFacetFactory.getFacetCategoryList(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_OK);
-/*bug 27015*/        AdminFacetFactory.addFacet(apiContext, facet, HttpStatus.SC_CONFLICT);
-        AdminFacetFactory.updateFacet(apiContext, facet, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
+        AdminFacetFactory.addFacet(apiContext, facet, HttpStatus.SC_CONFLICT);
+        AdminFacetFactory.updateFacet(apiContext, facet, Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT);
 	}
 
 	@Test
 	public void AdminLocationInventoryTests() throws Exception {
         List<LocationInventory> list = new ArrayList<LocationInventory>();
         list.add(new LocationInventory());
-/*bug 35021*/   AdminLocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        AdminLocationInventoryFactory.addLocationInventory(apiContext, DataViewMode.Live, list, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         AdminLocationInventoryFactory.deleteLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         AdminLocationInventoryFactory.getLocationInventory(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         AdminLocationInventoryFactory.getLocationInventories(apiContext, DataViewMode.Live, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_OK);
@@ -332,10 +337,20 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 	
 	@Test
+	public void CartsExtendedPropertyTests() throws Exception {
+		CartsExtendedPropertyFactory.addExtendedProperties(apiContext, null, HttpStatus.SC_CONFLICT);
+		CartsExtendedPropertyFactory.deleteExtendedProperties(apiContext, null, HttpStatus.SC_CONFLICT);
+		CartsExtendedPropertyFactory.deleteExtendedProperty(apiContext, null, HttpStatus.SC_CONFLICT);
+		CartsExtendedPropertyFactory.getExtendedProperties(shopperApiContext, HttpStatus.SC_OK);
+		CartsExtendedPropertyFactory.updateExtendedProperties(apiContext, null, HttpStatus.SC_CONFLICT);
+		CartsExtendedPropertyFactory.updateExtendedProperty(apiContext, null, Generator.randomString(4, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+	}
+
+	@Test
 	public void CategoryTests() throws Exception {
-/*bug 36448*/	CategoryFactory.getChildCategories(apiContext, Generator.randomInt(500, 600), HttpStatus.SC_BAD_REQUEST);
-		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(50, 100), HttpStatus.SC_INTERNAL_SERVER_ERROR);
-		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_CONFLICT);
+		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(500, 600), HttpStatus.SC_NOT_FOUND);
+		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
+		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -383,6 +398,7 @@ public class GeneralTests extends MozuApiTestBase {
         CreditFactory.getCredit(apiContext, Generator.randomString(10, Generator.AlphaNumericChars), HttpStatus.SC_NOT_FOUND);
         CreditFactory.updateCredit(apiContext, null, Generator.randomString(10, Generator.AlphaNumericChars), HttpStatus.SC_CONFLICT);
         CreditFactory.deleteCredit(apiContext, Generator.randomString(10, Generator.AlphaNumericChars), HttpStatus.SC_NOT_FOUND);
+        CreditFactory.resendCreditCreatedEmail(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
 	@Test
@@ -395,9 +411,9 @@ public class GeneralTests extends MozuApiTestBase {
 	public void CommerceLocationTests() throws Exception {
 		CommerceLocationFactory.getDirectShipLocation(apiContext, HttpStatus.SC_OK);
 		CommerceLocationFactory.getLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
-		/*bug 36454*/		CommerceLocationFactory.getLocationsInUsageType(apiContext, "direct ship", HttpStatus.SC_OK);
+		CommerceLocationFactory.getLocationsInUsageType(apiContext, "direct ship", HttpStatus.SC_OK);
 		CommerceLocationFactory.getLocationsInUsageType(apiContext, "direct ship", HttpStatus.SC_NOT_FOUND);
-/*bug 36455*/		CommerceLocationFactory.getInStorePickupLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CommerceLocationFactory.getInStorePickupLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		CommerceLocationFactory.getInStorePickupLocations(apiContext, HttpStatus.SC_OK);
 		
 	}
@@ -411,7 +427,8 @@ public class GeneralTests extends MozuApiTestBase {
 		PasswordInfo pinfo = new PasswordInfo();
 		pinfo.setOldPassword(Generator.randomString(5, Generator.AlphaChars));
 		pinfo.setNewPassword(Generator.randomString(5, Generator.AlphaChars));		
-		CustomerAccountFactory.changePassword(localApiContext, pinfo, shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_BAD_REQUEST);
+		CustomerAccountFactory.changePassword(shopperApiContext, pinfo, shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_FORBIDDEN);
+		CustomerAccountFactory.changePasswords(apiContext, null, HttpStatus.SC_FORBIDDEN);
 		CustomerAccountFactory.addLoginToExistingCustomer(localApiContext, new CustomerLoginInfo(), shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_BAD_REQUEST);
 		CustomerAccountFactory.recomputeCustomerLifetimeValue(apiContext, shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_NO_CONTENT);
 		CustomerAccountFactory.setLoginLocked(localApiContext, true, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
@@ -593,6 +610,16 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 
 	@Test
+	public void ExtendedPropertyTests() throws Exception {
+		ExtendedPropertyFactory.addExtendedProperties(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		ExtendedPropertyFactory.getExtendedProperties(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+		ExtendedPropertyFactory.updateExtendedProperties(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		ExtendedPropertyFactory.updateExtendedProperty(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		ExtendedPropertyFactory.deleteExtendedProperty(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+		ExtendedPropertyFactory.deleteExtendedProperties(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+	}
+
+	@Test
 	public void EventDeliverySummaryTests() throws Exception {
 		EventDeliverySummaryFactory.getDeliveryAttemptSummaries(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		EventDeliverySummaryFactory.getDeliveryAttemptSummary(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
@@ -620,6 +647,7 @@ public class GeneralTests extends MozuApiTestBase {
         FulfillmentAction action = new FulfillmentAction();
         action.setActionName("SP");
         FulfillmentActionFactory.performFulfillmentAction(apiContext, action, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        FulfillmentActionFactory.resendPackageFulfillmentEmail(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 	}
 	
 	@Test
@@ -653,8 +681,8 @@ public class GeneralTests extends MozuApiTestBase {
 	public void LocationTests() throws Exception {
 		LocationFactory.getLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		LocationFactory.getLocations(apiContext, HttpStatus.SC_OK);
-		LocationFactory.addLocation(apiContext, new Location(), HttpStatus.SC_BAD_REQUEST);
-		LocationFactory.updateLocation(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+		LocationFactory.addLocation(apiContext, new Location(), HttpStatus.SC_CONFLICT);
+		LocationFactory.updateLocation(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 /*bug 36475 */		LocationFactory.deleteLocation(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
@@ -702,6 +730,7 @@ public class GeneralTests extends MozuApiTestBase {
 		OrderFactory.updateOrderDiscount(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(100, 200), HttpStatus.SC_CONFLICT);
 		OrderFactory.deleteOrderDraft(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		OrderFactory.performOrderAction(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		OrderFactory.resendOrderConfirmationEmail(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 /*bug 36479*/		OrderFactory.createOrderFromCart(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
@@ -722,6 +751,9 @@ public class GeneralTests extends MozuApiTestBase {
         OrderItemFactory.updateItemProductPrice(apiContext, Generator.randomString(8,  Generator.AlphaChars), Generator.randomString(8,  Generator.AlphaChars), Generator.randomDecimal(50., 100.), HttpStatus.SC_BAD_REQUEST);
         OrderItemFactory.updateItemQuantity(apiContext, Generator.randomString(8,  Generator.AlphaChars), Generator.randomString(8,  Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_BAD_REQUEST);
         OrderItemFactory.updateOrderItemDiscount(apiContext, null, Generator.randomString(8,  Generator.AlphaChars), Generator.randomString(8,  Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_CONFLICT);
+        OrderItemFactory.getOrderItemViaLineId(apiContext, Generator.randomString(8,  Generator.AlphaChars), Generator.randomInt(100, 200), HttpStatus.SC_BAD_REQUEST);
+        OrderItemFactory.updateItemDuty(apiContext, Generator.randomString(8,  Generator.AlphaChars), Generator.randomString(8,  Generator.AlphaChars), Generator.randomDecimal(20., 50.), HttpStatus.SC_BAD_REQUEST);
+        
 	}
 
 	@Test
@@ -782,10 +814,19 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void PlatformApplicationTests() throws Exception {
-		//PlatformApplicationFactory.getApplication(apiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_UNAUTHORIZED);
-		//PlatformApplicationFactory.getApplication(apiContext, Generator.randomString(12, Generator.AlphaChars), HttpStatus.SC_UNAUTHORIZED);
-		//PlatformApplicationFactory.updateApplication(apiContext, null, Generator.randomString(12, Generator.AlphaChars), HttpStatus.SC_UNAUTHORIZED);
-			
+		UserAuthInfo info = new UserAuthInfo();
+		info.setEmailAddress(email);
+		info.setPassword(password);
+		AuthenticationProfile profile = UserAuthenticator.authenticate(info, AuthenticationScope.Developer);
+		ApiContext localApiContext = new MozuApiContext();
+		localApiContext.setUserAuthTicket(profile.getAuthTicket());
+		PlatformApplicationFactory.getAppPackageNames(localApiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_OK);
+		PlatformApplicationFactory.getAppVersions(localApiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_OK);
+		PlatformApplicationFactory.getPackageMetadata(localApiContext, Environment.getConfigValue("AppId"), HttpStatus.SC_OK);
+		PlatformApplicationFactory.getPackageFileMetadata(localApiContext, Environment.getConfigValue("AppId"), null, HttpStatus.SC_NOT_FOUND);
+		PlatformApplicationFactory.upsertPackageFile(localApiContext, new FileInputStream("C:\\tmp\\NWCRq.txt"), Environment.getConfigValue("AppId"), null, "text", HttpStatus.SC_NOT_FOUND);
+		PlatformApplicationFactory.renamePackageFile(localApiContext, null, Environment.getConfigValue("AppId"), HttpStatus.SC_CONFLICT);
+		PlatformApplicationFactory.deletePackageFile(localApiContext, Environment.getConfigValue("AppId"), null, HttpStatus.SC_NOT_FOUND);			
 	}
 	
 	@Test
@@ -918,7 +959,7 @@ public class GeneralTests extends MozuApiTestBase {
 		ProductTypeFactory.getProductTypes(localApiContext, DataViewMode.Live, HttpStatus.SC_OK);
 		ProductTypeFactory.getProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
 		ProductTypeFactory.deleteProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
-/*bug 49560*/		ProductTypeFactory.updateProductType(localApiContext, DataViewMode.Live, new ProductType(), Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
+		ProductTypeFactory.updateProductType(localApiContext, DataViewMode.Live, new ProductType(), Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -967,6 +1008,14 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 
 	@Test
+	public void PublicCardTests() throws Exception {
+		SyncResponse response = PublicCardFactory.create(apiContext, new PublicCard(), HttpStatus.SC_OK);
+		Assert.isTrue(response.getIsSuccessful(), "SyncResponse isSuccessful is false");
+		PublicCardFactory.update(apiContext, new PublicCard(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
+		PublicCardFactory.delete(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);		
+	}
+	
+	@Test
 	public void ReferenceDataTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
         ReferenceDataFactory.getBehaviors(localApiContext, HttpStatus.SC_OK);
@@ -983,6 +1032,12 @@ public class GeneralTests extends MozuApiTestBase {
         ReferenceDataFactory.getCountriesWithStates(localApiContext, HttpStatus.SC_OK);
 	}
 	
+
+	@Test
+	public void RefundTests() throws Exception {
+		RefundFactory.createRefund(apiContext, new Refund(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		RefundFactory.resendRefundEmail(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);		
+	}
 
 	@Test
 	public void ReturnTests() throws Exception {
@@ -1041,6 +1096,17 @@ public class GeneralTests extends MozuApiTestBase {
         SiteShippingSettingsFactory.getSiteShippingSettings(apiContext, HttpStatus.SC_OK);
 	}
 	
+	@Test
+	public void SoftAllocationTests() throws Exception {
+		SoftAllocationFactory.addSoftAllocations(apiContext, null, HttpStatus.SC_CONFLICT);
+		SoftAllocationFactory.convertToProductReservation(apiContext, null, HttpStatus.SC_CONFLICT);
+		SoftAllocationFactory.deleteSoftAllocation(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
+		SoftAllocationFactory.getSoftAllocation(apiContext, Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
+		SoftAllocationFactory.getSoftAllocations(apiContext, HttpStatus.SC_OK);
+		SoftAllocationFactory.renewSoftAllocations(apiContext, null, HttpStatus.SC_CONFLICT);
+		SoftAllocationFactory.updateSoftAllocations(apiContext, null, HttpStatus.SC_CONFLICT);
+	}
+
 	@Test
 	public void StoreFrontCategoryTests() throws Exception {
         StorefrontCategoryFactory.getCategories(shopperApiContext, HttpStatus.SC_OK);

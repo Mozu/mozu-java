@@ -45,7 +45,7 @@ public class TestException extends Exception {
     @Override
     public String toString()
     {
-        return String.format("[%s: expected %s] but the actual return code is %s. %s", clientMethodName, expectedReturnCode, actualReturnCode, message);
+        return String.format("[%s: expected %s] but the actual return code is %s. \n%s", clientMethodName, expectedReturnCode, actualReturnCode, message);
     }
     
     public String getActualReturnCode()

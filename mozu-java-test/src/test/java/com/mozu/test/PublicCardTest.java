@@ -19,6 +19,7 @@ import com.mozu.test.framework.core.MozuApiTestBase;
 import com.mozu.test.framework.datafactory.AdminProductFactory;
 import com.mozu.test.framework.datafactory.AttributedefinitionAttributeFactory;
 import com.mozu.test.framework.datafactory.ProductTypeFactory;
+import com.mozu.test.framework.datafactory.PublicCardFactory;
 
 public class PublicCardTest extends MozuApiTestBase {
 	private String cardId = StringUtils.EMPTY;
@@ -42,18 +43,17 @@ public class PublicCardTest extends MozuApiTestBase {
 	}
 
 	@Test
-	public void createProductTest1() throws Exception  {
+	public void createCardTest1() throws Exception  {
 		PublicCard card = new PublicCard();
-		card.setCardHolderName("test");
-		card.setCardIssueMonth(01);
-		card.setCardIssueYear(2011);
+		card.setCardHolderName("crr wrr");
 		card.setCardNumber("4111111111111111");
-		card.setExpireMonth(01);
+		card.setExpireMonth(1);
 		card.setExpireYear(2020);
-		card.setCardType("VISA");
+		card.setCardType("visa");
+		card.setCvv("123");
 		
-		PublicCardResource resource = new PublicCardResource(apiContext);
-		SyncResponse response = resource.create(card);
-		assertTrue(response.getId() != StringUtils.EMPTY);
+		SyncResponse response = PublicCardFactory.create(apiContext, card, HttpStatus.SC_OK);
+		assertTrue(response.getIsSuccessful());
+		assertTrue(!response.getId().isEmpty());
 	}
 }
