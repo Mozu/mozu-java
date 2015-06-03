@@ -438,7 +438,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CustomerAccountFactory.updateAccount(localApiContext, new CustomerAccount(), Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CustomerAccountFactory.deleteAccount(localApiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CustomerAccountFactory.getLoginStateByUserName(localApiContext, shopperAuth.getCustomerAccount().getUserName(), HttpStatus.SC_OK);
-/*bug 36464*/		CustomerAccountFactory.getLoginStateByEmailAddress(localApiContext, email, HttpStatus.SC_OK);
+		CustomerAccountFactory.getLoginStateByEmailAddress(localApiContext, shopperAuth.getCustomerAccount().getEmailAddress(), HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -498,9 +498,12 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void DeveloperAdminUserAuthTicketTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, null, null);
-		DeveloperAdminUserAuthTicketFactory.createDeveloperUserAuthTicket(localApiContext, new UserAuthInfo(), HttpStatus.SC_UNAUTHORIZED);
-		DeveloperAdminUserAuthTicketFactory.refreshDeveloperAuthTicket(localApiContext, new DeveloperAdminUserAuthTicket(), HttpStatus.SC_UNAUTHORIZED);
-		DeveloperAdminUserAuthTicketFactory.deleteUserAuthTicket(localApiContext, Generator.randomString(10, Generator.AlphaChars), HttpStatus.SC_UNAUTHORIZED);
+		UserAuthInfo info = new UserAuthInfo();
+		info.setEmailAddress(email);
+		info.setPassword(password);
+		DeveloperAdminUserAuthTicketFactory.createDeveloperUserAuthTicket(localApiContext, info, HttpStatus.SC_CREATED);
+		DeveloperAdminUserAuthTicketFactory.refreshDeveloperAuthTicket(localApiContext, new DeveloperAdminUserAuthTicket(), HttpStatus.SC_BAD_REQUEST);
+		DeveloperAdminUserAuthTicketFactory.deleteUserAuthTicket(localApiContext, Generator.randomString(10, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -508,7 +511,7 @@ public class GeneralTests extends MozuApiTestBase {
 		DigitalPackageFactory.deleteDigitalPackage(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		DigitalPackageFactory.getAvailableDigitalPackageFulfillmentActions(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		DigitalPackageFactory.updateDigitalPackage(apiContext, new DigitalPackage(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-		DigitalPackageFactory.createDigitalPackage(apiContext, new DigitalPackage(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		DigitalPackageFactory.createDigitalPackage(apiContext, new DigitalPackage(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		DigitalPackageFactory.getDigitalPackage(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 	
@@ -527,7 +530,7 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void DiscountTargetTests() throws Exception {
 		DiscountTargetFactory.getDiscountTarget(apiContext, DataViewMode.Live, Generator.randomInt(1000, 2000), HttpStatus.SC_NOT_FOUND);
-		DiscountTargetFactory.updateDiscountTarget(apiContext, new DiscountTarget(), Generator.randomInt(1000, 2000), HttpStatus.SC_BAD_REQUEST);
+		DiscountTargetFactory.updateDiscountTarget(apiContext, new DiscountTarget(), Generator.randomInt(1000, 2000), HttpStatus.SC_CONFLICT);
 	}
 	
 	@Test
@@ -539,13 +542,13 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void DocumentTests() throws Exception {
-        DocumentFactory.getDocuments(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        DocumentFactory.getDocuments(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR);
         DocumentFactory.createDocument(apiContext, DataViewMode.Live, new Document(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         DocumentFactory.deleteDocument(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         DocumentFactory.deleteDocumentContent(apiContext,  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         DocumentFactory.getDocument(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         DocumentFactory.getDocumentContent(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-        /*bug 35041*/        DocumentFactory.updateDocument(apiContext, new Document(), Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        DocumentFactory.updateDocument(apiContext, new Document(), Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR);
         DocumentFactory.updateDocumentContent(apiContext, null, Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), null, HttpStatus.SC_BAD_REQUEST);
 	}
 
@@ -555,7 +558,7 @@ public class GeneralTests extends MozuApiTestBase {
         DocumentListFactory.getDocumentLists(apiContext, DataViewMode.Live, HttpStatus.SC_OK);
         DocumentListFactory.getDocumentList(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         DocumentListFactory.updateDocumentList(apiContext, new DocumentList(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
-/*bug 36472*/        DocumentListFactory.deleteDocumentList(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
+        DocumentListFactory.deleteDocumentList(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
 	@Test
@@ -602,11 +605,11 @@ public class GeneralTests extends MozuApiTestBase {
 	
 	@Test
 	public void EntityListTests() throws Exception {
-		EntityListFactory.createEntityList(apiContext, new EntityList(), HttpStatus.SC_BAD_REQUEST);
-		EntityListFactory.deleteEntityList(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
+		EntityListFactory.createEntityList(apiContext, new EntityList(), HttpStatus.SC_FORBIDDEN);
+		EntityListFactory.deleteEntityList(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		EntityListFactory.getEntityList(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
 		EntityListFactory.getEntityLists(apiContext, HttpStatus.SC_OK);
-		EntityListFactory.updateEntityList(apiContext, new EntityList(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
+		EntityListFactory.updateEntityList(apiContext, new EntityList(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
 	@Test
@@ -731,7 +734,7 @@ public class GeneralTests extends MozuApiTestBase {
 		OrderFactory.deleteOrderDraft(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		OrderFactory.performOrderAction(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		OrderFactory.resendOrderConfirmationEmail(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
-/*bug 36479*/		OrderFactory.createOrderFromCart(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		OrderFactory.createOrderFromCart(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 	}
 
 	@Test
@@ -785,7 +788,7 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void OrderValidationResultTests() throws Exception {
-		OrderValidationResultFactory.addValidationResult(apiContext, new OrderValidationResult(), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		OrderValidationResultFactory.addValidationResult(apiContext, new OrderValidationResult(), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 		OrderValidationResultFactory.getValidationResults(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 	
@@ -1055,7 +1058,7 @@ public class GeneralTests extends MozuApiTestBase {
         ReturnFactory.getReturnItems(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.createReturnItem(apiContext, new ReturnItem(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.updateReturn(apiContext, new Return(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-/*bug 35032*/        ReturnFactory.deleteOrderItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+/*bug 62508*/        ReturnFactory.deleteOrderItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 	
 	@Test
@@ -1219,7 +1222,6 @@ public class GeneralTests extends MozuApiTestBase {
 	public void WishlistTests() throws Exception {
         WishlistFactory.createWishlist(shopperApiContext, null, HttpStatus.SC_CONFLICT);
         WishlistFactory.getWishlists(shopperApiContext, null,  null,  null,  null,  null,  null, null, HttpStatus.SC_OK);
-        WishlistFactory.deleteWishlist(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         WishlistFactory.getWishlist(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         WishlistFactory.getWishlistByName(shopperApiContext, shopperAuth.getCustomerAccount().getId(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         WishlistFactory.updateWishlist(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
