@@ -91,6 +91,9 @@ public class CustomerAccount implements Serializable
 		this.firstName = firstName;
 	}
 
+	/**
+	 * Indicates if an external password is set on this account
+	 */
 	protected Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {

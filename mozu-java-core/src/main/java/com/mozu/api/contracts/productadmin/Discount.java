@@ -49,6 +49,9 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
+	/**
+	 * Signifies that the discount is not referenced and can be hard deleted
+	 */
 	protected Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -72,6 +75,9 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
+	/**
+	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
+	 */
 	protected Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {

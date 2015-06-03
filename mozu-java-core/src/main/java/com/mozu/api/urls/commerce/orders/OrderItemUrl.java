@@ -15,10 +15,10 @@ public class OrderItemUrl
 
 	/**
 	 * Get Resource Url for GetOrderItemViaLineId
-	 * @param draft 
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param lineId 
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getOrderItemViaLineIdUrl(Boolean draft, Integer lineId, String orderId, String responseFields)
@@ -110,11 +110,11 @@ public class OrderItemUrl
 	/**
 	 * Get Resource Url for UpdateItemDuty
 	 * @param dutyAmount 
-	 * @param orderId 
-	 * @param orderItemId 
-	 * @param responseFields 
-	 * @param updateMode 
-	 * @param version 
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateItemDutyUrl(Double dutyAmount, String orderId, String orderItemId, String responseFields, String updateMode, String version)

@@ -40,6 +40,9 @@ public class Order implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
+	 */
 	protected Double dutyAmount;
 
 	public Double getDutyAmount() {
@@ -267,6 +270,9 @@ public class Order implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
+	/**
+	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7)
+	 */
 	protected Double dutyTotal;
 
 	public Double getDutyTotal() {
@@ -895,6 +901,9 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -916,6 +925,9 @@ public class Order implements Serializable
 		this.digitalPackages = digitalPackages;
 	}
 
+	/**
+	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
+	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;

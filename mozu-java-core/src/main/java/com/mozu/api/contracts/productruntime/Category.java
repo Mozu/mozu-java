@@ -48,6 +48,9 @@ public class Category implements Serializable
 		this.categoryId = categoryId;
 	}
 
+	/**
+	 * The number of facet results for a product search.
+	 */
 	protected Integer count;
 
 	public Integer getCount() {

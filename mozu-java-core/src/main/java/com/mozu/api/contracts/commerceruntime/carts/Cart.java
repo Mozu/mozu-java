@@ -361,6 +361,9 @@ public class Cart implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -371,6 +374,9 @@ public class Cart implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
+	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;

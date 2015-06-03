@@ -20,6 +20,9 @@ public class LocationInventory implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.LocationInventory baseProductCode ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String baseProductCode;
 
 	public String getBaseProductCode() {

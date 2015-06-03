@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderItemClient {
 	
 	/**
-	 * 
+	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId);
 	 * client.setBaseAddress(url);
@@ -29,7 +29,7 @@ public class OrderItemClient {
 	 * OrderItem orderItem = client.Result();
 	 * </code></pre></p>
 	 * @param lineId 
-	 * @param orderId 
+	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 */
@@ -39,17 +39,17 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * 
+	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId,  draft,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * OrderItem orderItem = client.Result();
 	 * </code></pre></p>
-	 * @param draft 
+	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
 	 * @param lineId 
-	 * @param orderId 
-	 * @param responseFields 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderItem>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderItem
 	 */
@@ -257,7 +257,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * 
+	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount);
 	 * client.setBaseAddress(url);
@@ -265,8 +265,8 @@ public class OrderItemClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param dutyAmount 
-	 * @param orderId 
-	 * @param orderItemId 
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -276,7 +276,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * 
+	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
@@ -284,11 +284,11 @@ public class OrderItemClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param dutyAmount 
-	 * @param orderId 
-	 * @param orderItemId 
-	 * @param responseFields 
-	 * @param updateMode 
-	 * @param version 
+	 * @param orderId Unique identifier of the order.
+	 * @param orderItemId Unique identifier of the item to remove from the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */

@@ -36,7 +36,7 @@ public class ExtendedPropertyUrl
 	/**
 	 * Get Resource Url for UpdateExtendedProperty
 	 * @param key 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param upsert 
 	 * @return   String Resource Url
 	 */

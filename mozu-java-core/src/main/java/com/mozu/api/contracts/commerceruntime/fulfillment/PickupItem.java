@@ -32,6 +32,9 @@ public class PickupItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
+	/**
+	 * The line id associated with the fulfillment.
+	 */
 	protected Integer lineId;
 
 	public Integer getLineId() {
