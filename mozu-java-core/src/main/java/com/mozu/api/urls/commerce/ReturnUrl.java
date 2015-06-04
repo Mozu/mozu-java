@@ -234,8 +234,10 @@ public class ReturnUrl
 	public static MozuUrl deleteOrderItemUrl(String returnId, String returnItemId)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{orderId}/items/{orderItemId}?updatemode={updateMode}&version={version}");
-		formatter.formatUrl("returnId", returnId);
-		formatter.formatUrl("returnItemId", returnItemId);
+		formatter.formatUrl("orderId", returnId);
+		formatter.formatUrl("orderItemId", returnItemId);
+        formatter.formatUrl("updateMode", returnId);
+        formatter.formatUrl("version", returnItemId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
