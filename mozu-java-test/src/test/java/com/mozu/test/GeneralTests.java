@@ -1058,7 +1058,7 @@ public class GeneralTests extends MozuApiTestBase {
         ReturnFactory.getReturnItems(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.createReturnItem(apiContext, new ReturnItem(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.updateReturn(apiContext, new Return(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-/*bug 62508*/        ReturnFactory.deleteOrderItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        ReturnFactory.deleteOrderItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
