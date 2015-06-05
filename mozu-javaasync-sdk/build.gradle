@@ -3,9 +3,9 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.7
 
-archivesBaseName='mozu-api-java'
+archivesBaseName='mozu-api-javaasync'
 // Dynamically insert TeamCity build number if available
 if (hasProperty("teamcity")) {
     version = teamcity["build.number"]
@@ -21,7 +21,7 @@ ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Mozu Java API', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'Mozu Java API (Async)', 'Implementation-Version': version
     }
 }
 
@@ -30,14 +30,15 @@ task wrapper(type: Wrapper) {
 }
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
 
-    compile "org.apache.httpcomponents:httpcore:4.3.2"
-    compile "org.apache.httpcomponents:httpclient:4.3.5"
+    compile "org.apache.httpcomponents:httpcore:4.4.1"
+    compile "org.apache.httpcomponents:httpclient:4.4.1"
+    compile "org.apache.httpcomponents:httpasyncclient:4.1"
 
     compile ("com.mozu:mozu-api-core:"+version) {
         exclude group: 'mysql'
