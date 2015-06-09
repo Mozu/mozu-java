@@ -2,6 +2,8 @@ package com.mozu.api;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -11,13 +13,14 @@ import org.junit.Test;
 
 import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
+import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.customer.CustomerAccountCollection;
 import com.mozu.api.contracts.tenant.Tenant;
+import com.mozu.api.resources.commerce.customer.CustomerAccountResource;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.urls.commerce.customer.CustomerAccountUrl;
 import com.mozu.api.urls.platform.TenantUrl;
-import com.mozu.client.AsyncCallback;
 import com.mozu.client.MozuClientImpl;
 
 public class AsyncClientTest {
@@ -41,7 +44,7 @@ public class AsyncClientTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void clientTest() throws Exception {
         ApiContext apiContext = new MozuApiContext(TENANT_ID);
         
         MozuConfig.setBaseUrl(MOZU_BASE_URL);
@@ -98,6 +101,52 @@ public class AsyncClientTest {
 
         System.out.println("Account Async Operation finished");
     }
+    
+    @Test
+    public void fullAsyncTest() throws Exception {
+        ApiContext apiContext = new MozuApiContext(TENANT_ID);
+        
+        MozuConfig.setBaseUrl(MOZU_BASE_URL);
+        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET));
+
+        //Initalize cache
+        cacheManager = new CacheManagerImpl();
+        cacheManager.startCache();
+        com.mozu.api.cache.CacheManagerFactory.setCacheManager(cacheManager);
+
+        TenantCallbackClass tenantCallback = new TenantCallbackClass();
+        
+        TenantResource tenantResource = new TenantResource(apiContext);
+        CountDownLatch latch1 = tenantResource.getTenantAsync(TENANT_ID, tenantCallback);
+        
+        AccountCallbackClass accountCallback = new AccountCallbackClass();
+
+        CustomerAccountResource car = new CustomerAccountResource(apiContext);
+        latch1 = car.getAccountsAsync(0, 100, null, null, null, null, null, null, null, accountCallback);
+        
+        if (!latch1.await(30, TimeUnit.SECONDS)) {
+            fail("Timeout");
+        } else {
+            assertEquals(TENANT_ID, tenant.getId());
+        }
+        
+        if (!latch1.await(30, TimeUnit.SECONDS)) {
+            fail("Timeout");
+        } else {
+            assertNotNull(accounts);
+        }
+
+        List<CountDownLatch> latches = new ArrayList<CountDownLatch>();
+        AccountReadCallbackClass arc = new AccountReadCallbackClass();
+        for (CustomerAccount acct: accounts.getItems()) {
+        	CountDownLatch latch = car.getAccountAsync(acct.getId(), arc);
+        	latches.add(latch);
+        }
+        
+        for (CountDownLatch l: latches) {
+        	l.await();
+        }
+    }
 
     protected AppAuthInfo createAppAuthInfo(String appId, String sharedSecret) {
         AppAuthInfo appAuthInfo = new AppAuthInfo();
@@ -149,6 +198,26 @@ public class AsyncClientTest {
         @Override
         public void cancelled() {
             System.out.println("Account Cancelled callback called");
+        }
+        
+    }
+
+    public class AccountReadCallbackClass implements AsyncCallback<CustomerAccount> {
+
+        @Override
+        public void success(CustomerAccount result) {
+        	System.out.println("Account " + result.getFirstName() + " " + result.getLastName() + " (id: " + result.getId() + ")");
+        }
+
+        @Override
+        public void failure(Exception exception) {
+            exception.printStackTrace();
+            fail("Account Read Failure callback called");
+        }
+
+        @Override
+        public void cancelled() {
+            System.out.println("Account Read Cancelled callback called");
         }
         
     }

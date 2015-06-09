@@ -37,6 +37,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiError;
 import com.mozu.api.ApiException;
+import com.mozu.api.AsyncCallback;
 import com.mozu.api.Headers;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuConfig;
@@ -260,6 +261,7 @@ public class MozuClientImpl <TResult> implements MozuClient<TResult> {
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public CountDownLatch executeRequest(final AsyncCallback<TResult> callback) throws Exception {
         validateContext();
 
@@ -288,16 +290,19 @@ public class MozuClientImpl <TResult> implements MozuClient<TResult> {
         return latch;
     }
 
+    @Override
     public CountDownLatch executePostRequest(Object bodyObject, String resourceUrl,
             Map<String, String> headers, AsyncCallback<TResult> callback) throws ApiException {
         return executeRequest(bodyObject, new HttpPost(resourceUrl), headers, callback);
     }
 
+    @Override
     public CountDownLatch executePutRequest(Object bodyObject, String resourceUrl,
             Map<String, String> headers, AsyncCallback<TResult> callback) throws ApiException {
         return executeRequest(bodyObject, new HttpPut(resourceUrl), headers, callback);
     }
 
+    @Override
     public CountDownLatch executeDeleteRequest(String resourceUrl,
             Map<String, String> headers, AsyncCallback<TResult> callback) throws ApiException {
         return executeRequest(new HttpDelete(resourceUrl), headers, callback);

@@ -1,4 +1,4 @@
-package com.mozu.client;
+package com.mozu.api;
 
 public interface AsyncCallback<TResult> {
     
