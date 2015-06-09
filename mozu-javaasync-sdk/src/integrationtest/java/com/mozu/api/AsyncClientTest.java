@@ -122,7 +122,7 @@ public class AsyncClientTest {
         AccountCallbackClass accountCallback = new AccountCallbackClass();
 
         CustomerAccountResource car = new CustomerAccountResource(apiContext);
-        latch1 = car.getAccountsAsync(0, 100, null, null, null, null, null, null, null, accountCallback);
+        CountDownLatch latch2 = car.getAccountsAsync(0, 100, null, null, null, null, null, null, null, accountCallback);
         
         if (!latch1.await(30, TimeUnit.SECONDS)) {
             fail("Timeout");
@@ -130,7 +130,7 @@ public class AsyncClientTest {
             assertEquals(TENANT_ID, tenant.getId());
         }
         
-        if (!latch1.await(30, TimeUnit.SECONDS)) {
+        if (!latch2.await(30, TimeUnit.SECONDS)) {
             fail("Timeout");
         } else {
             assertNotNull(accounts);
