@@ -20,7 +20,7 @@ ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Mozu Java Core API (Asunc)', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'Mozu Java Core API (Async)', 'Implementation-Version': version
     }
 }
 
