@@ -2,6 +2,8 @@ package com.mozu.api;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -11,13 +13,19 @@ import org.junit.Test;
 
 import com.mozu.api.cache.impl.CacheManagerImpl;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
+import com.mozu.api.contracts.core.Measurement;
+import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.customer.CustomerAccountCollection;
+import com.mozu.api.contracts.productadmin.Product;
+import com.mozu.api.contracts.productadmin.ProductLocalizedContent;
+import com.mozu.api.contracts.productadmin.ProductPrice;
 import com.mozu.api.contracts.tenant.Tenant;
+import com.mozu.api.resources.commerce.catalog.admin.ProductResource;
+import com.mozu.api.resources.commerce.customer.CustomerAccountResource;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.urls.commerce.customer.CustomerAccountUrl;
 import com.mozu.api.urls.platform.TenantUrl;
-import com.mozu.client.AsyncCallback;
 import com.mozu.client.MozuClientImpl;
 
 public class AsyncClientTest {
@@ -29,6 +37,7 @@ public class AsyncClientTest {
     
     protected Tenant tenant;
     protected CustomerAccountCollection accounts;
+    protected Product addedProduct;
     
     CacheManagerImpl<?> cacheManager;
     
@@ -41,7 +50,7 @@ public class AsyncClientTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void clientTest() throws Exception {
         ApiContext apiContext = new MozuApiContext(TENANT_ID);
         
         MozuConfig.setBaseUrl(MOZU_BASE_URL);
@@ -98,8 +107,115 @@ public class AsyncClientTest {
 
         System.out.println("Account Async Operation finished");
     }
+    
+    @Test
+    public void fullAsyncTest() throws Exception {
+        ApiContext apiContext = new MozuApiContext(TENANT_ID);
+        
+        MozuConfig.setBaseUrl(MOZU_BASE_URL);
+        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET));
 
-    protected AppAuthInfo createAppAuthInfo(String appId, String sharedSecret) {
+        //Initalize cache
+        cacheManager = new CacheManagerImpl();
+        cacheManager.startCache();
+        com.mozu.api.cache.CacheManagerFactory.setCacheManager(cacheManager);
+
+        TenantCallbackClass tenantCallback = new TenantCallbackClass();
+        
+        TenantResource tenantResource = new TenantResource(apiContext);
+        CountDownLatch latch1 = tenantResource.getTenantAsync(TENANT_ID, tenantCallback);
+        
+        AccountCallbackClass accountCallback = new AccountCallbackClass();
+
+        CustomerAccountResource car = new CustomerAccountResource(apiContext);
+        CountDownLatch latch2 = car.getAccountsAsync(0, 100, null, null, null, null, null, null, null, accountCallback);
+        
+        if (!latch1.await(30, TimeUnit.SECONDS)) {
+            fail("Timeout");
+        } else {
+            assertEquals(TENANT_ID, tenant.getId());
+        }
+        
+        if (!latch2.await(30, TimeUnit.SECONDS)) {
+            fail("Timeout");
+        } else {
+            assertNotNull(accounts);
+        }
+
+        List<CountDownLatch> latches = new ArrayList<CountDownLatch>();
+        AccountReadCallbackClass arc = new AccountReadCallbackClass();
+        for (CustomerAccount acct: accounts.getItems()) {
+        	CountDownLatch latch = car.getAccountAsync(acct.getId(), arc);
+        	latches.add(latch);
+        }
+        
+        for (CountDownLatch l: latches) {
+        	l.await(30, TimeUnit.SECONDS);
+        }
+    }
+    
+    @Test
+    public void addDeleteProductTest() throws Exception {
+        ApiContext apiContext = new MozuApiContext(TENANT_ID);
+        apiContext.setCatalogId(1);
+        apiContext.setMasterCatalogId(1);
+        
+        MozuConfig.setBaseUrl(MOZU_BASE_URL);
+        AppAuthenticator.initialize(createAppAuthInfo(APP_ID, SHARED_SECRET));
+
+        //Initalize cache
+        cacheManager = new CacheManagerImpl();
+        cacheManager.startCache();
+        com.mozu.api.cache.CacheManagerFactory.setCacheManager(cacheManager);
+        
+        Product product = createProduct();
+        ProductCallback prodCallback = new ProductCallback();
+        
+        ProductResource prodResource = new ProductResource(apiContext);
+        CountDownLatch addLatch = prodResource.addProductAsync(product, prodCallback);
+        
+        if (!addLatch.await(30, TimeUnit.SECONDS)) {
+            fail("Timeout");
+        } else {
+        	assertNotNull(addedProduct);
+        }
+
+        prodResource.deleteProduct("TestProductCode");
+        
+        Product p = prodResource.getProduct("TestProductCode");
+        assertNull(p);
+    }
+
+    private Product createProduct() {
+		Product prod = new Product();
+		prod.setBaseProductCode("BaseProdCode");
+		prod.setMasterCatalogId(1);
+		prod.setProductCode("TestProductCode");
+		prod.setProductUsage("Standard");
+		prod.setProductTypeId(4);
+		ProductPrice price = new ProductPrice();
+		price.setIsoCurrencyCode("USD");
+		price.setPrice(1.0);
+		prod.setPrice(price);
+		ProductLocalizedContent content = new ProductLocalizedContent();
+		content.setLocaleCode("en-US");
+		content.setProductName("Test Product");
+		prod.setContent(content);
+		Measurement linearMeas = new Measurement();
+		linearMeas.setUnit("ft");
+		linearMeas.setValue(2.0);
+		prod.setPackageHeight(linearMeas);
+		prod.setPackageLength(linearMeas);
+		prod.setPackageWidth(linearMeas);
+		Measurement weightMeas = new Measurement();
+		weightMeas.setUnit("lbs");
+		weightMeas.setValue(4.0);
+		prod.setPackageWeight(weightMeas);
+		
+		return prod;
+	}
+
+	protected AppAuthInfo createAppAuthInfo(String appId, String sharedSecret) {
         AppAuthInfo appAuthInfo = new AppAuthInfo();
         appAuthInfo.setApplicationId(appId);
         appAuthInfo.setSharedSecret(sharedSecret);
@@ -151,5 +267,45 @@ public class AsyncClientTest {
             System.out.println("Account Cancelled callback called");
         }
         
+    }
+
+    public class AccountReadCallbackClass implements AsyncCallback<CustomerAccount> {
+
+        @Override
+        public void success(CustomerAccount result) {
+        	System.out.println("Account " + result.getFirstName() + " " + result.getLastName() + " (id: " + result.getId() + ")");
+        }
+
+        @Override
+        public void failure(Exception exception) {
+            exception.printStackTrace();
+            fail("Account Read Failure callback called");
+        }
+
+        @Override
+        public void cancelled() {
+            System.out.println("Account Read Cancelled callback called");
+        }
+        
+    }
+
+    public class ProductCallback implements AsyncCallback<Product> {
+
+        @Override
+        public void success(Product result) {
+        	addedProduct = result;
+        	System.out.println("Product received " + addedProduct.getProductCode());
+        }
+
+        @Override
+        public void failure(Exception exception) {
+            exception.printStackTrace();
+            fail("Account Read Failure callback called");
+        }
+
+        @Override
+        public void cancelled() {
+            System.out.println("Account Read Cancelled callback called");
+        }
     }
 }

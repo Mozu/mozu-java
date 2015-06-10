@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
@@ -20,14 +19,12 @@ import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.RequestLine;
 import org.apache.http.StatusLine;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.concurrent.FutureCallback;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 import org.apache.http.util.EntityUtils;
@@ -37,12 +34,12 @@ import org.junit.Test;
 
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
+import com.mozu.api.AsyncCallback;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.cache.CacheManager;
 import com.mozu.api.cache.CacheManagerFactory;
 import com.mozu.api.cache.impl.CacheItem;
-import com.mozu.api.contracts.customer.CustomerAccount;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.resources.platform.TenantResource;
 import com.mozu.api.security.AppAuthenticator;
@@ -50,7 +47,6 @@ import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.UserAuthenticator;
 import com.mozu.api.utils.MozuHttpClientPool;
-import com.mozu.client.MozuClientImpl.BaseCallbackHandler;
 
 public final class MozuClientUnitTest {
     private static final Integer TENANT_ID = new Integer(11);
