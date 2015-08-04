@@ -41,18 +41,43 @@ public class DocumentFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode) throws Exception
+	public static java.io.InputStream transformDocumentContent(ApiContext apiContext, String documentListName, String documentId, int expectedCode) throws Exception
 	{
-		return getDocument(apiContext, dataViewMode,  documentListName,  documentId,  null, expectedCode);
+		return transformDocumentContent(apiContext,  documentListName,  documentId,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, String responseFields, int expectedCode) throws Exception
+	public static java.io.InputStream transformDocumentContent(ApiContext apiContext, String documentListName, String documentId, Integer width, Integer height, Integer max, Integer maxWidth, Integer maxHeight, String crop, Integer quality, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		DocumentResource resource = new DocumentResource(apiContext);
+		try
+		{
+			returnObj = resource.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, int expectedCode) throws Exception
+	{
+		return getDocument(apiContext, dataViewMode,  documentListName,  documentId,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.content.Document getDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentId, Boolean includeInactive, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
 		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocument( documentListName,  documentId,  responseFields);
+			returnObj = resource.getDocument( documentListName,  documentId,  includeInactive,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -68,16 +93,16 @@ public class DocumentFactory
 
 	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, int expectedCode) throws Exception
 	{
-		return getDocuments(apiContext, dataViewMode,  documentListName,  null,  null,  null,  null,  null, expectedCode);
+		return getDocuments(apiContext, dataViewMode,  documentListName,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentCollection getDocuments(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, Boolean includeInactive, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentCollection returnObj = new com.mozu.api.contracts.content.DocumentCollection();
 		DocumentResource resource = new DocumentResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+			returnObj = resource.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 		}
 		catch (ApiException e)
 		{

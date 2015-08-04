@@ -28,17 +28,47 @@ public class DocumentUrl
 	}
 
 	/**
+	 * Get Resource Url for TransformDocumentContent
+	 * @param crop 
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl transformDocumentContentUrl(String crop, String documentId, String documentListName, Integer height, Integer max, Integer maxHeight, Integer maxWidth, Integer quality, Integer width)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documents/{documentId}/transform?width={width}&height={height}&maxWidth={maxWidth}&maxHeight={maxHeight}&crop={crop}&quality={quality}");
+		formatter.formatUrl("crop", crop);
+		formatter.formatUrl("documentId", documentId);
+		formatter.formatUrl("documentListName", documentListName);
+		formatter.formatUrl("height", height);
+		formatter.formatUrl("max", max);
+		formatter.formatUrl("maxHeight", maxHeight);
+		formatter.formatUrl("maxWidth", maxWidth);
+		formatter.formatUrl("quality", quality);
+		formatter.formatUrl("width", width);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetDocument
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentUrl(String documentId, String documentListName, String responseFields)
+	public static MozuUrl getDocumentUrl(String documentId, String documentListName, Boolean includeInactive, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documents/{documentId}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documents/{documentId}?includeInactive={includeInactive}&responseFields={responseFields}");
 		formatter.formatUrl("documentId", documentId);
 		formatter.formatUrl("documentListName", documentListName);
+		formatter.formatUrl("includeInactive", includeInactive);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -47,17 +77,19 @@ public class DocumentUrl
 	 * Get Resource Url for GetDocuments
 	 * @param documentListName Name of content documentListName to delete
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param includeInactive 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getDocumentsUrl(String documentListName, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getDocumentsUrl(String documentListName, String filter, Boolean includeInactive, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documents?filter={filter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documents?filter={filter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&includeInactive={includeInactive}&responseFields={responseFields}");
 		formatter.formatUrl("documentListName", documentListName);
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeInactive", includeInactive);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);

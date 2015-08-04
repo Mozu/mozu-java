@@ -11,6 +11,8 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.sitesettings.general.CacheSettings;
+import com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings;
 import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
 import com.mozu.api.contracts.sitesettings.general.general.ViewAuthorizations;
@@ -35,6 +37,16 @@ public class GeneralSettings implements Serializable
 
 	public void setAllowInvalidAddresses(Boolean allowInvalidAddresses) {
 		this.allowInvalidAddresses = allowInvalidAddresses;
+	}
+
+	protected String customCdnHostName;
+
+	public String getCustomCdnHostName() {
+		return this.customCdnHostName;
+	}
+
+	public void setCustomCdnHostName(String customCdnHostName) {
+		this.customCdnHostName = customCdnHostName;
 	}
 
 	/**
@@ -308,6 +320,26 @@ public class GeneralSettings implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected CacheSettings cacheSettings;
+
+	public CacheSettings getCacheSettings() {
+		return this.cacheSettings;
+	}
+
+	public void setCacheSettings(CacheSettings cacheSettings) {
+		this.cacheSettings = cacheSettings;
+	}
+
+	protected CustomRouteSettings customRoutes;
+
+	public CustomRouteSettings getCustomRoutes() {
+		return this.customRoutes;
+	}
+
+	public void setCustomRoutes(CustomRouteSettings customRoutes) {
+		this.customRoutes = customRoutes;
 	}
 
 	/**

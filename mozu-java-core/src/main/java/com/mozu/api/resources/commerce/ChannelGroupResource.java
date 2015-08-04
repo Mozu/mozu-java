@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Channel Groups resource to manage groups of channels with common information.
  * </summary>

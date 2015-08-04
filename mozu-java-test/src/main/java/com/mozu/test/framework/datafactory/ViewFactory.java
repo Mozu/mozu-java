@@ -23,16 +23,16 @@ public class ViewFactory
 
 	public static com.mozu.api.contracts.content.DocumentCollection getViewDocuments(ApiContext apiContext, String documentListName, String viewName, int expectedCode) throws Exception
 	{
-		return getViewDocuments(apiContext,  documentListName,  viewName,  null,  null,  null,  null,  null, expectedCode);
+		return getViewDocuments(apiContext,  documentListName,  viewName,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.DocumentCollection getViewDocuments(ApiContext apiContext, String documentListName, String viewName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentCollection getViewDocuments(ApiContext apiContext, String documentListName, String viewName, String filter, String sortBy, Integer pageSize, Integer startIndex, Boolean includeInactive, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentCollection returnObj = new com.mozu.api.contracts.content.DocumentCollection();
 		ViewResource resource = new ViewResource(apiContext);
 		try
 		{
-			returnObj = resource.getViewDocuments( documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+			returnObj = resource.getViewDocuments( documentListName,  viewName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -146,6 +146,24 @@ public class DiscountFactory
 		return returnObj;
 	}
 
+	public static void associateCouponSet(ApiContext apiContext, List<Integer> couponSetIds, Integer discountId, int expectedCode) throws Exception
+	{
+		DiscountResource resource = new DiscountResource(apiContext);
+		try
+		{
+			resource.associateCouponSet( couponSetIds,  discountId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.productadmin.DiscountLocalizedContent updateDiscountContent(ApiContext apiContext, com.mozu.api.contracts.productadmin.DiscountLocalizedContent content, Integer discountId, int expectedCode) throws Exception
 	{
 		return updateDiscountContent(apiContext,  content,  discountId,  null, expectedCode);
@@ -202,6 +220,24 @@ public class DiscountFactory
 		try
 		{
 			resource.deleteDiscount( discountId);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void disassociateCouponSet(ApiContext apiContext, List<Integer> couponSetIds, Integer discountId, int expectedCode) throws Exception
+	{
+		DiscountResource resource = new DiscountResource(apiContext);
+		try
+		{
+			resource.disassociateCouponSet( couponSetIds,  discountId);
 		}
 		catch (ApiException e)
 		{

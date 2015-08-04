@@ -28,17 +28,47 @@ public class DocumentTreeUrl
 	}
 
 	/**
+	 * Get Resource Url for TransformTreeDocumentContent
+	 * @param crop 
+	 * @param documentListName 
+	 * @param documentName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl transformTreeDocumentContentUrl(String crop, String documentListName, String documentName, Integer height, Integer max, Integer maxHeight, Integer maxWidth, Integer quality, Integer width)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}/transform?width={width}&height={height}&maxWidth={maxWidth}&maxHeight={maxHeight}&crop={crop}&quality={quality}");
+		formatter.formatUrl("crop", crop);
+		formatter.formatUrl("documentListName", documentListName);
+		formatter.formatUrl("documentName", documentName);
+		formatter.formatUrl("height", height);
+		formatter.formatUrl("max", max);
+		formatter.formatUrl("maxHeight", maxHeight);
+		formatter.formatUrl("maxWidth", maxWidth);
+		formatter.formatUrl("quality", quality);
+		formatter.formatUrl("width", width);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetTreeDocument
 	 * @param documentListName Name of content documentListName to delete
 	 * @param documentName The name of the document in the site.
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getTreeDocumentUrl(String documentListName, String documentName, String responseFields)
+	public static MozuUrl getTreeDocumentUrl(String documentListName, String documentName, Boolean includeInactive, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/documentlists/{documentListName}/documentTree/{documentName}?includeInactive={includeInactive}&responseFields={responseFields}");
 		formatter.formatUrl("documentListName", documentListName);
 		formatter.formatUrl("documentName", documentName);
+		formatter.formatUrl("includeInactive", includeInactive);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

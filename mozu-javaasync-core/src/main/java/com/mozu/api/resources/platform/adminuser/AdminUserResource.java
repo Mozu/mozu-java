@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * The Accounts resource displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.

@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Address Validation resource to validate addresses associated with a customer account contact.
  * </summary>

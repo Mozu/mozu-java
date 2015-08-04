@@ -13,9 +13,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * Use the Customer Attribute Definition resource to manage the attributes to define for your shoppers.

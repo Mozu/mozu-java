@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Customer Credit Transactions subresource to manage the individual transactions performed using a store credit or gift card.
  * </summary>

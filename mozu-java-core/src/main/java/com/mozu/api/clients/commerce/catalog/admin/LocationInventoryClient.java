@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Location Inventory resource to manage the level of active product inventory maintained at each defined location, at the location level.

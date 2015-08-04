@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * Use the Channels resource to manage the channels a company uses to create logical commercial business divisions based on region or types of sales, such as "US Online," "Amazon," or "EMEA Retail." All orders include a channel association that enables the company to perform financial reporting for each defined channel. Because channels are managed at the tenant level, you must associate all the tenant's sites with a channel. Sites that do not have a defined channel association cannot successfully submit orders.

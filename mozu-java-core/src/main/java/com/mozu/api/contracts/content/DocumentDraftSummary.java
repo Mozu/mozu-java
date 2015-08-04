@@ -32,6 +32,16 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
+	protected Integer catalogId;
+
+	public Integer getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(Integer catalogId) {
+		this.catalogId = catalogId;
+	}
+
 	/**
 	 * Fully qualified name of the document type. 
 	 */
@@ -84,6 +94,16 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
+	protected Integer masterCatalogId;
+
+	public Integer getMasterCatalogId() {
+		return this.masterCatalogId;
+	}
+
+	public void setMasterCatalogId(Integer masterCatalogId) {
+		this.masterCatalogId = masterCatalogId;
+	}
+
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
@@ -97,6 +117,16 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
+	protected String publishSetCode;
+
+	public String getPublishSetCode() {
+		return this.publishSetCode;
+	}
+
+	public void setPublishSetCode(String publishSetCode) {
+		this.publishSetCode = publishSetCode;
+	}
+
 	/**
 	 * Whether the draft has been published.
 	 */
@@ -108,6 +138,16 @@ public class DocumentDraftSummary implements Serializable
 
 	public void setPublishType(String publishType) {
 		this.publishType = publishType;
+	}
+
+	protected Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
 	}
 
 	/**

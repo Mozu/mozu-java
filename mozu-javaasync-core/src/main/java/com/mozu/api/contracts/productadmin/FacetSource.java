@@ -20,6 +20,32 @@ public class FacetSource implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300. This is only allowed for numeric and date fields. 
+	 */
+	protected Boolean allowsRangeQuery;
+
+	public Boolean getAllowsRangeQuery() {
+		return this.allowsRangeQuery;
+	}
+
+	public void setAllowsRangeQuery(Boolean allowsRangeQuery) {
+		this.allowsRangeQuery = allowsRangeQuery;
+	}
+
+	/**
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 */
+	protected String dataType;
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+
+	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected String id;
@@ -56,32 +82,6 @@ public class FacetSource implements Serializable
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	/**
-	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300. This is only allowed for numeric and date fields. 
-	 */
-	protected Boolean allowsRangeQuery;
-
-	public Boolean getAllowsRangeQuery() {
-		return this.allowsRangeQuery;
-	}
-
-	public void setAllowsRangeQuery(Boolean allowsRangeQuery) {
-		this.allowsRangeQuery = allowsRangeQuery;
-	}
-
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
-	protected String dataType;
-
-	public String getDataType() {
-		return this.dataType;
-	}
-
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
 	}
 
 }

@@ -33,6 +33,26 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected DateTime catalogEndDate;
+
+	public DateTime getCatalogEndDate() {
+		return this.catalogEndDate;
+	}
+
+	public void setCatalogEndDate(DateTime catalogEndDate) {
+		this.catalogEndDate = catalogEndDate;
+	}
+
+	protected DateTime catalogStartDate;
+
+	public DateTime getCatalogStartDate() {
+		return this.catalogStartDate;
+	}
+
+	public void setCatalogStartDate(DateTime catalogStartDate) {
+		this.catalogStartDate = catalogStartDate;
+	}
+
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
@@ -44,6 +64,26 @@ public class Product implements Serializable
 
 	public void setCreateDate(DateTime createDate) {
 		this.createDate = createDate;
+	}
+
+	protected DateTime dateFirstAvailableInCatalog;
+
+	public DateTime getDateFirstAvailableInCatalog() {
+		return this.dateFirstAvailableInCatalog;
+	}
+
+	public void setDateFirstAvailableInCatalog(DateTime dateFirstAvailableInCatalog) {
+		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
+	}
+
+	protected Integer daysAvailableInCatalog;
+
+	public Integer getDaysAvailableInCatalog() {
+		return this.daysAvailableInCatalog;
+	}
+
+	public void setDaysAvailableInCatalog(Integer daysAvailableInCatalog) {
+		this.daysAvailableInCatalog = daysAvailableInCatalog;
 	}
 
 	/**
@@ -58,7 +98,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include Physical and DigitalCredit. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
 
@@ -183,6 +223,16 @@ public class Product implements Serializable
 
 	public void setProductType(String productType) {
 		this.productType = productType;
+	}
+
+	protected Integer productTypeId;
+
+	public Integer getProductTypeId() {
+		return this.productTypeId;
+	}
+
+	public void setProductTypeId(Integer productTypeId) {
+		this.productTypeId = productTypeId;
 	}
 
 	/**

@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Product Publishing resource to publish or discard pending changes to product definitions in the master catalog.
@@ -40,6 +41,78 @@ public class PublishingScopeResource {
 		_dataViewMode = dataViewMode;
 	}
 		
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
+	 * </code></pre></p>
+	 * @param publishSetCode 
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSet getPublishSet(String publishSetCode) throws Exception
+	{
+		return getPublishSet( publishSetCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
+	 * </code></pre></p>
+	 * @param publishSetCode 
+	 * @param responseFields 
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSet getPublishSet(String publishSetCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.PublishSet> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.getPublishSetClient( publishSetCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets();
+	 * </code></pre></p>
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
+	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSetCollection getPublishSets() throws Exception
+	{
+		return getPublishSets( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dataViewMode DataViewMode
+	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
+	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSetCollection getPublishSets(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.getPublishSetsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
 	/**
 	 * Deletes the draft version of product changes for each product code specified in the request.
 	 * <p><pre><code>
@@ -74,6 +147,80 @@ public class PublishingScopeResource {
 	public void publishDrafts(com.mozu.api.contracts.productadmin.PublishingScope publishScope) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.publishDraftsClient(_dataViewMode,  publishScope);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
+	 * </code></pre></p>
+	 * @param dataViewMode DataViewMode
+	 * @param publishSet 
+	 * @return com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSet assignProductsToPublishSet(com.mozu.api.contracts.productadmin.PublishSet publishSet) throws Exception
+	{
+		return assignProductsToPublishSet( publishSet,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dataViewMode DataViewMode
+	 * @param publishSet 
+	 * @return com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 * @see com.mozu.api.contracts.productadmin.PublishSet
+	 */
+	public com.mozu.api.contracts.productadmin.PublishSet assignProductsToPublishSet(com.mozu.api.contracts.productadmin.PublishSet publishSet, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.PublishSet> client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.assignProductsToPublishSetClient( publishSet,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	publishingscope.deletePublishSet( publishSetCode);
+	 * </code></pre></p>
+	 * @param publishSetCode 
+	 * @param dataViewMode DataViewMode
+	 * @return 
+	 */
+	public void deletePublishSet(String publishSetCode) throws Exception
+	{
+		deletePublishSet( publishSetCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublishingScope publishingscope = new PublishingScope();
+	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);
+	 * </code></pre></p>
+	 * @param discardDrafts 
+	 * @param publishSetCode 
+	 * @param dataViewMode DataViewMode
+	 * @return 
+	 */
+	public void deletePublishSet(String publishSetCode, Boolean discardDrafts) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.PublishingScopeClient.deletePublishSetClient( publishSetCode,  discardDrafts);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

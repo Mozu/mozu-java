@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use this subresource to manage ad-hoc order level price adjustments.
  * </summary>

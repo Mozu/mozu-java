@@ -41,16 +41,16 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
+	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
 	 */
-	protected Double dutyAmount;
+	protected Double discountTotal;
 
-	public Double getDutyAmount() {
-		return this.dutyAmount;
+	public Double getDiscountTotal() {
+		return this.discountTotal;
 	}
 
-	public void setDutyAmount(Double dutyAmount) {
-		this.dutyAmount = dutyAmount;
+	public void setDiscountTotal(Double discountTotal) {
+		this.discountTotal = discountTotal;
 	}
 
 	/**
@@ -258,16 +258,16 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
 	 */
-	protected Double discountTotal;
+	protected Double dutyAmount;
 
-	public Double getDiscountTotal() {
-		return this.discountTotal;
+	public Double getDutyAmount() {
+		return this.dutyAmount;
 	}
 
-	public void setDiscountTotal(Double discountTotal) {
-		this.discountTotal = discountTotal;
+	public void setDutyAmount(Double dutyAmount) {
+		this.dutyAmount = dutyAmount;
 	}
 
 	/**

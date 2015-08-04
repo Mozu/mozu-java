@@ -10,12 +10,13 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.customer.CustomerSegment;
 import com.mozu.api.contracts.customer.CustomerAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
 import com.mozu.api.contracts.customer.CustomerContact;
+import com.mozu.api.contracts.customer.CurrencyAmount;
 import com.mozu.api.contracts.customer.CustomerNote;
-import com.mozu.api.contracts.customer.CustomerSegment;
 
 /**
  *	Properties of the customer account.
@@ -25,19 +26,6 @@ public class CustomerAccount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
-	 */
-	protected Boolean acceptsMarketing;
-
-	public Boolean getAcceptsMarketing() {
-		return this.acceptsMarketing;
-	}
-
-	public void setAcceptsMarketing(Boolean acceptsMarketing) {
-		this.acceptsMarketing = acceptsMarketing;
-	}
 
 	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
@@ -50,6 +38,16 @@ public class CustomerAccount implements Serializable
 
 	public void setCompanyOrOrganization(String companyOrOrganization) {
 		this.companyOrOrganization = companyOrOrganization;
+	}
+
+	protected DateTime customerSinceDate;
+
+	public DateTime getCustomerSinceDate() {
+		return this.customerSinceDate;
+	}
+
+	public void setCustomerSinceDate(DateTime customerSinceDate) {
+		this.customerSinceDate = customerSinceDate;
 	}
 
 	/**
@@ -169,6 +167,16 @@ public class CustomerAccount implements Serializable
 		this.lastName = lastName;
 	}
 
+	protected DateTime lifeTimeValueSetDate;
+
+	public DateTime getLifeTimeValueSetDate() {
+		return this.lifeTimeValueSetDate;
+	}
+
+	public void setLifeTimeValueSetDate(DateTime lifeTimeValueSetDate) {
+		this.lifeTimeValueSetDate = lifeTimeValueSetDate;
+	}
+
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
@@ -235,6 +243,30 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
+	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
+	 */
+	protected Boolean acceptsMarketing;
+
+	public Boolean getAcceptsMarketing() {
+		return this.acceptsMarketing;
+	}
+
+	public void setAcceptsMarketing(Boolean acceptsMarketing) {
+		this.acceptsMarketing = acceptsMarketing;
+	}
+
+	/**
+	 * List of customer segments associated with the customer account. Customer accounts can be members of any number of segments.
+	 */
+	protected List<CustomerSegment> segments;
+	public List<CustomerSegment> getSegments() {
+		return this.segments;
+	}
+	public void setSegments(List<CustomerSegment> segments) {
+		this.segments = segments;
+	}
+
+	/**
 	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
 	 */
 	protected List<CustomerAttribute> attributes;
@@ -282,6 +314,16 @@ public class CustomerAccount implements Serializable
 		this.contacts = contacts;
 	}
 
+	protected CurrencyAmount lifetimeValue;
+
+	public CurrencyAmount getLifetimeValue() {
+		return this.lifetimeValue;
+	}
+
+	public void setLifetimeValue(CurrencyAmount lifetimeValue) {
+		this.lifetimeValue = lifetimeValue;
+	}
+
 	/**
 	 * Paged list collection of note content for objects including customers, orders, and returns. 
 	 */
@@ -291,17 +333,6 @@ public class CustomerAccount implements Serializable
 	}
 	public void setNotes(List<CustomerNote> notes) {
 		this.notes = notes;
-	}
-
-	/**
-	 * List of customer segments associated with the customer account. Customer accounts can be members of any number of segments.
-	 */
-	protected List<CustomerSegment> segments;
-	public List<CustomerSegment> getSegments() {
-		return this.segments;
-	}
-	public void setSegments(List<CustomerSegment> segments) {
-		this.segments = segments;
 	}
 
 }

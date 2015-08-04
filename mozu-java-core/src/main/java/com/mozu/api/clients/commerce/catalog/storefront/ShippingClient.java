@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Storefront Shipping resource to retrieve shipping rate information from the website.
  * </summary>

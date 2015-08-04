@@ -14,12 +14,48 @@ public class PaymentSettingsUrl
 {
 
 	/**
+	 * Get Resource Url for GetThirdPartyPaymentWorkflowWithValues
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getThirdPartyPaymentWorkflowWithValuesUrl(String fullyQualifiedName, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/paymentsettings/thirdpartyworkflow/{fullyQualifiedName}?responseFields={responseFields}");
+		formatter.formatUrl("fullyQualifiedName", fullyQualifiedName);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetThirdPartyPaymentWorkflows
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getThirdPartyPaymentWorkflowsUrl()
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/paymentsettings/thirdpartyworkflows");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AddThirdPartyPaymentWorkflow
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addThirdPartyPaymentWorkflowUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/paymentsettings/thirdpartyworkflows");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteThirdPartyPaymentWorkflow
+	 * @param fullyQualifiedName 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteThirdPartyPaymentWorkflowUrl(String fullyQualifiedName)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/settings/checkout/paymentsettings/thirdpartyworkflows/{fullyQualifiedName}");
+		formatter.formatUrl("fullyQualifiedName", fullyQualifiedName);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

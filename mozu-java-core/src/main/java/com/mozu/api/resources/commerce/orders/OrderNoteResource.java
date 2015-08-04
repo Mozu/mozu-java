@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Order Notes subresource to manage merchant-level notes associated with an active order.
  * </summary>

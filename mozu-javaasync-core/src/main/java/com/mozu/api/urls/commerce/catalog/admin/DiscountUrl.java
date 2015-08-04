@@ -86,6 +86,18 @@ public class DiscountUrl
 	}
 
 	/**
+	 * Get Resource Url for AssociateCouponSet
+	 * @param discountId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl associateCouponSetUrl(Integer discountId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/couponsets/");
+		formatter.formatUrl("discountId", discountId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateDiscountContent
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -121,6 +133,18 @@ public class DiscountUrl
 	public static MozuUrl deleteDiscountUrl(Integer discountId)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}");
+		formatter.formatUrl("discountId", discountId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DisassociateCouponSet
+	 * @param discountId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl disassociateCouponSetUrl(Integer discountId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/discounts/{discountId}/couponsets/");
 		formatter.formatUrl("discountId", discountId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

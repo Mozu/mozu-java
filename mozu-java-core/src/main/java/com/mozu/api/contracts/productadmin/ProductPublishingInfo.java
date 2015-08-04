@@ -58,4 +58,14 @@ public class ProductPublishingInfo implements Serializable
 		this.publishedState = publishedState;
 	}
 
+	protected String publishSetCode;
+
+	public String getPublishSetCode() {
+		return this.publishSetCode;
+	}
+
+	public void setPublishSetCode(String publishSetCode) {
+		this.publishSetCode = publishSetCode;
+	}
+
 }

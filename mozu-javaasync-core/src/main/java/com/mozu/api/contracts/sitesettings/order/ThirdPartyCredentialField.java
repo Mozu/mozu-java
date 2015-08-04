@@ -6,9 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.order;
 
+import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.sitesettings.order.VocabularyValue;
 
 /**
  *	The properties of the credentials required to communicate with the external payment processor.
@@ -45,6 +47,26 @@ public class ThirdPartyCredentialField implements Serializable
 		this.displayName = displayName;
 	}
 
+	protected String inputType;
+
+	public String getInputType() {
+		return this.inputType;
+	}
+
+	public void setInputType(String inputType) {
+		this.inputType = inputType;
+	}
+
+	protected Boolean isSensitive;
+
+	public Boolean getIsSensitive() {
+		return this.isSensitive;
+	}
+
+	public void setIsSensitive(Boolean isSensitive) {
+		this.isSensitive = isSensitive;
+	}
+
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
@@ -56,6 +78,14 @@ public class ThirdPartyCredentialField implements Serializable
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	protected List<VocabularyValue> vocabularyValues;
+	public List<VocabularyValue> getVocabularyValues() {
+		return this.vocabularyValues;
+	}
+	public void setVocabularyValues(List<VocabularyValue> vocabularyValues) {
+		this.vocabularyValues = vocabularyValues;
 	}
 
 }

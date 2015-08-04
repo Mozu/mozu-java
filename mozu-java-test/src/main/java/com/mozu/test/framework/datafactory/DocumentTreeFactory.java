@@ -41,18 +41,43 @@ public class DocumentTreeFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode) throws Exception
+	public static java.io.InputStream transformTreeDocumentContent(ApiContext apiContext, String documentListName, String documentName, int expectedCode) throws Exception
 	{
-		return getTreeDocument(apiContext, dataViewMode,  documentListName,  documentName,  null, expectedCode);
+		return transformTreeDocumentContent(apiContext,  documentListName,  documentName,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields, int expectedCode) throws Exception
+	public static java.io.InputStream transformTreeDocumentContent(ApiContext apiContext, String documentListName, String documentName, Integer width, Integer height, Integer max, Integer maxWidth, Integer maxHeight, String crop, Integer quality, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		DocumentTreeResource resource = new DocumentTreeResource(apiContext);
+		try
+		{
+			returnObj = resource.transformTreeDocumentContent( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, int expectedCode) throws Exception
+	{
+		return getTreeDocument(apiContext, dataViewMode,  documentListName,  documentName,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.content.Document getTreeDocument(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, Boolean includeInactive, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.Document returnObj = new com.mozu.api.contracts.content.Document();
 		DocumentTreeResource resource = new DocumentTreeResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getTreeDocument( documentListName,  documentName,  responseFields);
+			returnObj = resource.getTreeDocument( documentListName,  documentName,  includeInactive,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -24,6 +24,16 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String excludedCategoriesOperator;
+
+	public String getExcludedCategoriesOperator() {
+		return this.excludedCategoriesOperator;
+	}
+
+	public void setExcludedCategoriesOperator(String excludedCategoriesOperator) {
+		this.excludedCategoriesOperator = excludedCategoriesOperator;
+	}
+
 	/**
 	 * Prevents order scoped discounts from layering over items that already have a product discount with the same type.
 	 */
@@ -61,6 +71,16 @@ public class DiscountTarget implements Serializable
 
 	public void setIncludeAllProducts(Boolean includeAllProducts) {
 		this.includeAllProducts = includeAllProducts;
+	}
+
+	protected String includedCategoriesOperator;
+
+	public String getIncludedCategoriesOperator() {
+		return this.includedCategoriesOperator;
+	}
+
+	public void setIncludedCategoriesOperator(String includedCategoriesOperator) {
+		this.includedCategoriesOperator = includedCategoriesOperator;
 	}
 
 	/**

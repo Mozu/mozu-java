@@ -121,6 +121,56 @@ public class CategoryFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, int expectedCode) throws Exception
+	{
+		return validateDynamicExpression(apiContext,  dynamicExpressionIn,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.DynamicExpression returnObj = new com.mozu.api.contracts.productadmin.DynamicExpression();
+		CategoryResource resource = new CategoryResource(apiContext);
+		try
+		{
+			returnObj = resource.validateDynamicExpression( dynamicExpressionIn,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, int expectedCode) throws Exception
+	{
+		return validateRealTimeDynamicExpression(apiContext,  dynamicExpressionIn,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.DynamicExpression returnObj = new com.mozu.api.contracts.productadmin.DynamicExpression();
+		CategoryResource resource = new CategoryResource(apiContext);
+		try
+		{
+			returnObj = resource.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.Category updateCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Integer categoryId, int expectedCode) throws Exception
 	{
 		return updateCategory(apiContext,  category,  categoryId,  null,  null, expectedCode);

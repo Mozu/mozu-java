@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
@@ -84,6 +84,93 @@ public class DocumentResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Document document = new Document();
+	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId);
+	 * </code></pre></p>
+	 * @param documentId 
+	 * @param documentListName 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream transformDocumentContent(String documentListName, String documentId) throws Exception
+	{
+		return transformDocumentContent( documentListName,  documentId,  null,  null,  null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Document document = new Document();
+	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch transformDocumentContentAsync(String documentListName, String documentId, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		return transformDocumentContentAsync( documentListName,  documentId,  null,  null,  null,  null,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Document document = new Document();
+	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+	 * </code></pre></p>
+	 * @param crop 
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream transformDocumentContent(String documentListName, String documentId, Integer width, Integer height, Integer max, Integer maxWidth, Integer maxHeight, String crop, Integer quality) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.content.documentlists.DocumentClient.transformDocumentContentClient( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Document document = new Document();
+	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param crop 
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch transformDocumentContentAsync(String documentListName, String documentId, Integer width, Integer height, Integer max, Integer maxWidth, Integer maxHeight, String crop, Integer quality, AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.content.documentlists.DocumentClient.transformDocumentContentClient( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Retrieves a document within the specified document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
@@ -96,7 +183,7 @@ public class DocumentResource {
 	 */
 	public com.mozu.api.contracts.content.Document getDocument(String documentListName, String documentId) throws Exception
 	{
-		return getDocument( documentListName,  documentId,  null);
+		return getDocument( documentListName,  documentId,  null,  null);
 	}
 
 	/**
@@ -113,24 +200,25 @@ public class DocumentResource {
 	 */
 	public CountDownLatch getDocumentAsync(String documentListName, String documentId, AsyncCallback<com.mozu.api.contracts.content.Document> callback) throws Exception
 	{
-		return getDocumentAsync( documentListName,  documentId,  null, callback);
+		return getDocumentAsync( documentListName,  documentId,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves a document within the specified document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	Document document = document.getDocument( documentListName,  documentId,  responseFields);
+	 *	Document document = document.getDocument( documentListName,  documentId,  includeInactive,  responseFields);
 	 * </code></pre></p>
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public com.mozu.api.contracts.content.Document getDocument(String documentListName, String documentId, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.Document getDocument(String documentListName, String documentId, Boolean includeInactive, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentClient(_dataViewMode,  documentListName,  documentId,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentClient(_dataViewMode,  documentListName,  documentId,  includeInactive,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -141,18 +229,19 @@ public class DocumentResource {
 	 * Retrieves a document within the specified document list.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	CountDownLatch latch = document.getDocument( documentListName,  documentId,  responseFields, callback );
+	 *	CountDownLatch latch = document.getDocument( documentListName,  documentId,  includeInactive,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public CountDownLatch getDocumentAsync(String documentListName, String documentId, String responseFields, AsyncCallback<com.mozu.api.contracts.content.Document> callback) throws Exception
+	public CountDownLatch getDocumentAsync(String documentListName, String documentId, Boolean includeInactive, String responseFields, AsyncCallback<com.mozu.api.contracts.content.Document> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentClient(_dataViewMode,  documentListName,  documentId,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.Document> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentClient(_dataViewMode,  documentListName,  documentId,  includeInactive,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -170,7 +259,7 @@ public class DocumentResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentCollection getDocuments(String documentListName) throws Exception
 	{
-		return getDocuments( documentListName,  null,  null,  null,  null,  null);
+		return getDocuments( documentListName,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -186,17 +275,18 @@ public class DocumentResource {
 	 */
 	public CountDownLatch getDocumentsAsync(String documentListName, AsyncCallback<com.mozu.api.contracts.content.DocumentCollection> callback) throws Exception
 	{
-		return getDocumentsAsync( documentListName,  null,  null,  null,  null,  null, callback);
+		return getDocumentsAsync( documentListName,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves a collection of documents according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	DocumentCollection documentCollection = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+	 *	DocumentCollection documentCollection = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param includeInactive 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -204,9 +294,9 @@ public class DocumentResource {
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
-	public com.mozu.api.contracts.content.DocumentCollection getDocuments(String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.DocumentCollection getDocuments(String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, Boolean includeInactive, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentsClient(_dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentsClient(_dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -217,10 +307,11 @@ public class DocumentResource {
 	 * Retrieves a collection of documents according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Document document = new Document();
-	 *	CountDownLatch latch = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields, callback );
+	 *	CountDownLatch latch = document.getDocuments( documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param includeInactive 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -229,9 +320,9 @@ public class DocumentResource {
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
-	public CountDownLatch getDocumentsAsync(String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, String responseFields, AsyncCallback<com.mozu.api.contracts.content.DocumentCollection> callback) throws Exception
+	public CountDownLatch getDocumentsAsync(String documentListName, String filter, String sortBy, Integer pageSize, Integer startIndex, Boolean includeInactive, String responseFields, AsyncCallback<com.mozu.api.contracts.content.DocumentCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentsClient(_dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentCollection> client = com.mozu.api.clients.content.documentlists.DocumentClient.getDocumentsClient(_dataViewMode,  documentListName,  filter,  sortBy,  pageSize,  startIndex,  includeInactive,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

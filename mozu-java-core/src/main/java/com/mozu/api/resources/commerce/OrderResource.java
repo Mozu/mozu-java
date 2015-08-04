@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Orders resource to manage all components of order processing, payment, and fulfillment.
  * </summary>
@@ -250,6 +251,47 @@ public class OrderResource {
 	public com.mozu.api.contracts.commerceruntime.orders.Order performOrderAction(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.performOrderActionClient( action,  orderId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType);
+	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order processDigitalWallet(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType) throws Exception
+	{
+		return processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields);
+	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order processDigitalWallet(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.processDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

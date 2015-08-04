@@ -118,6 +118,22 @@ public class OrderUrl
 	}
 
 	/**
+	 * Get Resource Url for ProcessDigitalWallet
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl processDigitalWalletUrl(String digitalWalletType, String orderId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/digitalWallet/{digitalWalletType}?responseFields={responseFields}");
+		formatter.formatUrl("digitalWalletType", digitalWalletType);
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateOrderDiscount
 	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param orderId Unique identifier of the order.
