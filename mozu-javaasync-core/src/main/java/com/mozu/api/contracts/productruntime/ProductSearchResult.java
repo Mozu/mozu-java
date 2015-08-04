@@ -48,6 +48,16 @@ public class ProductSearchResult implements Serializable
 		this.pageSize = pageSize;
 	}
 
+	protected String searchTuningRuleCode;
+
+	public String getSearchTuningRuleCode() {
+		return this.searchTuningRuleCode;
+	}
+
+	public void setSearchTuningRuleCode(String searchTuningRuleCode) {
+		this.searchTuningRuleCode = searchTuningRuleCode;
+	}
+
 	protected Integer startIndex;
 
 	public Integer getStartIndex() {

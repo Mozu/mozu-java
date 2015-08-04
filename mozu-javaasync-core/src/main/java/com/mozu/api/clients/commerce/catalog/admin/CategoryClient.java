@@ -13,9 +13,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
@@ -193,6 +193,96 @@ public class CategoryClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(category);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DynamicExpression dynamicExpression = client.Result();
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> validateDynamicExpressionClient(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateDynamicExpressionClient( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DynamicExpression dynamicExpression = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> validateDynamicExpressionClient(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.validateDynamicExpressionUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.DynamicExpression.class;
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(dynamicExpressionIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DynamicExpression dynamicExpression = client.Result();
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> validateRealTimeDynamicExpressionClient(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateRealTimeDynamicExpressionClient( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DynamicExpression dynamicExpression = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> validateRealTimeDynamicExpressionClient(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.validateRealTimeDynamicExpressionUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.DynamicExpression.class;
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(dynamicExpressionIn);
 		return mozuClient;
 
 	}

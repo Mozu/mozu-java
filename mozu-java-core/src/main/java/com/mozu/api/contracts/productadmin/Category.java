@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
+import com.mozu.api.contracts.productadmin.DynamicExpression;
 
 /**
  *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
@@ -42,6 +43,16 @@ public class Category implements Serializable
 
 	public void setCategoryCode(String categoryCode) {
 		this.categoryCode = categoryCode;
+	}
+
+	protected String categoryType;
+
+	public String getCategoryType() {
+		return this.categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
 	}
 
 	/**
@@ -146,6 +157,16 @@ public class Category implements Serializable
 
 	public void setContent(CategoryLocalizedContent content) {
 		this.content = content;
+	}
+
+	protected DynamicExpression dynamicExpression;
+
+	public DynamicExpression getDynamicExpression() {
+		return this.dynamicExpression;
+	}
+
+	public void setDynamicExpression(DynamicExpression dynamicExpression) {
+		this.dynamicExpression = dynamicExpression;
 	}
 
 }

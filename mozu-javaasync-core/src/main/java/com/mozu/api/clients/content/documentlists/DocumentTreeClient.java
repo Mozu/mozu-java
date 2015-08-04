@@ -13,9 +13,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
@@ -51,6 +51,56 @@ public class DocumentTreeClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param documentListName 
+	 * @param documentName 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> transformTreeDocumentContentClient(String documentListName, String documentName) throws Exception
+	{
+		return transformTreeDocumentContentClient( documentListName,  documentName,  null,  null,  null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @param crop 
+	 * @param documentListName 
+	 * @param documentName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> transformTreeDocumentContentClient(String documentListName, String documentName, Integer width, Integer height, Integer max, Integer maxWidth, Integer maxHeight, String crop, Integer quality) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.transformTreeDocumentContentUrl(crop, documentListName, documentName, height, max, maxHeight, maxWidth, quality, width);
+		String verb = "GET";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves a document based on its document list and folder path in the document hierarchy.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName);
@@ -65,26 +115,27 @@ public class DocumentTreeClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName) throws Exception
 	{
-		return getTreeDocumentClient(dataViewMode,  documentListName,  documentName,  null);
+		return getTreeDocumentClient(dataViewMode,  documentListName,  documentName,  null,  null);
 	}
 
 	/**
 	 * Retrieves a document based on its document list and folder path in the document hierarchy.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.Document> mozuClient=GetTreeDocumentClient(dataViewMode,  documentListName,  documentName,  includeInactive,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
 	 * @param documentName The name of the document in the site.
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.Document> getTreeDocumentClient(com.mozu.api.DataViewMode dataViewMode, String documentListName, String documentName, Boolean includeInactive, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.getTreeDocumentUrl(documentListName, documentName, responseFields);
+		MozuUrl url = com.mozu.api.urls.content.documentlists.DocumentTreeUrl.getTreeDocumentUrl(documentListName, documentName, includeInactive, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.Document.class;
 		MozuClient<com.mozu.api.contracts.content.Document> mozuClient = (MozuClient<com.mozu.api.contracts.content.Document>) MozuClientFactory.getInstance(clz);

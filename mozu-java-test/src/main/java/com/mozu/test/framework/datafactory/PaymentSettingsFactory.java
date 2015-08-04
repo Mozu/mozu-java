@@ -21,6 +21,31 @@ import com.mozu.api.resources.commerce.settings.checkout.PaymentSettingsResource
 public class PaymentSettingsFactory
 {
 
+	public static com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition getThirdPartyPaymentWorkflowWithValues(ApiContext apiContext, String fullyQualifiedName, int expectedCode) throws Exception
+	{
+		return getThirdPartyPaymentWorkflowWithValues(apiContext,  fullyQualifiedName,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition getThirdPartyPaymentWorkflowWithValues(ApiContext apiContext, String fullyQualifiedName, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition returnObj = new com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition();
+		PaymentSettingsResource resource = new PaymentSettingsResource(apiContext);
+		try
+		{
+			returnObj = resource.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition> getThirdPartyPaymentWorkflows(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition> returnObj = new ArrayList<com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition>();
@@ -39,6 +64,42 @@ public class PaymentSettingsFactory
 		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
+	}
+
+	public static void addThirdPartyPaymentWorkflow(ApiContext apiContext, com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition definition, int expectedCode) throws Exception
+	{
+		PaymentSettingsResource resource = new PaymentSettingsResource(apiContext);
+		try
+		{
+			resource.addThirdPartyPaymentWorkflow( definition);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void deleteThirdPartyPaymentWorkflow(ApiContext apiContext, String fullyQualifiedName, int expectedCode) throws Exception
+	{
+		PaymentSettingsResource resource = new PaymentSettingsResource(apiContext);
+		try
+		{
+			resource.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

@@ -21,6 +21,56 @@ import com.mozu.api.resources.commerce.catalog.admin.SearchResource;
 public class SearchFactory
 {
 
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule getSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
+	{
+		return getSearchTuningRule(apiContext,  searchTuningRuleCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule getSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SearchTuningRule returnObj = new com.mozu.api.contracts.productadmin.search.SearchTuningRule();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSearchTuningRule( searchTuningRuleCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection getSearchTuningRules(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getSearchTuningRules(apiContext,  null,  null,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection getSearchTuningRules(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection returnObj = new com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.SearchSettings getSettings(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		return getSettings(apiContext,  null, expectedCode);
@@ -33,6 +83,56 @@ public class SearchFactory
 		try
 		{
 			returnObj = resource.getSettings( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule addSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, int expectedCode) throws Exception
+	{
+		return addSearchTuningRule(apiContext,  searchTuningRuleIn,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule addSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SearchTuningRule returnObj = new com.mozu.api.contracts.productadmin.search.SearchTuningRule();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.addSearchTuningRule( searchTuningRuleIn,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, int expectedCode) throws Exception
+	{
+		return updateSearchTuningRule(apiContext,  searchTuningRuleIn,  searchTuningRuleCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SearchTuningRule returnObj = new com.mozu.api.contracts.productadmin.search.SearchTuningRule();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -69,6 +169,24 @@ public class SearchFactory
 		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
+	}
+
+	public static void deleteSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
+	{
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			resource.deleteSearchTuningRule( searchTuningRuleCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 }

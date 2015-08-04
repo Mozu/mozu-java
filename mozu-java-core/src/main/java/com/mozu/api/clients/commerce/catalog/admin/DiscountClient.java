@@ -14,6 +14,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
@@ -238,6 +239,30 @@ public class DiscountClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=AssociateCouponSetClient( couponSetIds,  discountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param discountId 
+	 * @param couponSetIds 
+	 * @return Mozu.Api.MozuClient 
+	 * @see int
+	 */
+	public static MozuClient associateCouponSetClient(List<Integer> couponSetIds, Integer discountId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.associateCouponSetUrl(discountId);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(couponSetIds);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DiscountLocalizedContent> mozuClient=UpdateDiscountContentClient( content,  discountId);
@@ -348,6 +373,30 @@ public class DiscountClient {
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DisassociateCouponSetClient( couponSetIds,  discountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param discountId 
+	 * @param couponSetIds 
+	 * @return Mozu.Api.MozuClient 
+	 * @see int
+	 */
+	public static MozuClient disassociateCouponSetClient(List<Integer> couponSetIds, Integer discountId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.DiscountUrl.disassociateCouponSetUrl(discountId);
+		String verb = "DELETE";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(couponSetIds);
 		return mozuClient;
 
 	}

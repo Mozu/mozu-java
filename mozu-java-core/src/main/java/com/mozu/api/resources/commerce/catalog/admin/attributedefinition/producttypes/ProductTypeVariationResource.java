@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the variations resource to preview possible product variations for a specific product type based on the option attributes defined for the product type, such as size or color.
  * </summary>

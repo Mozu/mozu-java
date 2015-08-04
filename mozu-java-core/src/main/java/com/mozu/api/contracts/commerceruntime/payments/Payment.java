@@ -74,6 +74,16 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	protected String externalTransactionId;
+
+	public String getExternalTransactionId() {
+		return this.externalTransactionId;
+	}
+
+	public void setExternalTransactionId(String externalTransactionId) {
+		this.externalTransactionId = externalTransactionId;
+	}
+
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
@@ -137,6 +147,16 @@ public class Payment implements Serializable
 
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
+	}
+
+	protected String paymentWorkflow;
+
+	public String getPaymentWorkflow() {
+		return this.paymentWorkflow;
+	}
+
+	public void setPaymentWorkflow(String paymentWorkflow) {
+		this.paymentWorkflow = paymentWorkflow;
 	}
 
 	/**

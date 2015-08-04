@@ -27,6 +27,19 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
+	 */
+	protected Double refundAmount;
+
+	public Double getRefundAmount() {
+		return this.refundAmount;
+	}
+
+	public void setRefundAmount(Double refundAmount) {
+		this.refundAmount = refundAmount;
+	}
+
+	/**
 	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
 	 */
 	protected List<String> availableActions;
@@ -165,19 +178,6 @@ public class Return implements Serializable
 
 	public void setProductLossTotal(Double productLossTotal) {
 		this.productLossTotal = productLossTotal;
-	}
-
-	/**
-	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
-	 */
-	protected Double refundAmount;
-
-	public Double getRefundAmount() {
-		return this.refundAmount;
-	}
-
-	public void setRefundAmount(Double refundAmount) {
-		this.refundAmount = refundAmount;
 	}
 
 	/**

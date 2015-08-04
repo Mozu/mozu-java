@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -171,6 +172,80 @@ public class CategoryResource {
 	public com.mozu.api.contracts.productadmin.Category addCategory(com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient( category,  incrementSequence,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn);
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateDynamicExpression( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn);
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateRealTimeDynamicExpression( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

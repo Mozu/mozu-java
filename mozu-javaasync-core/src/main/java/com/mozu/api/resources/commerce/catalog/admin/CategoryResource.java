@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
@@ -324,6 +324,156 @@ public class CategoryResource {
 	public CountDownLatch addCategoryAsync(com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.Category> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.addCategoryClient( category,  incrementSequence,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn);
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateDynamicExpression( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	CountDownLatch latch = category.validateDynamicExpression( dynamicExpressionIn, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public CountDownLatch validateDynamicExpressionAsync(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, AsyncCallback<com.mozu.api.contracts.productadmin.DynamicExpression> callback) throws Exception
+	{
+		return validateDynamicExpressionAsync( dynamicExpressionIn,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	CountDownLatch latch = category.validateDynamicExpression( dynamicExpressionIn,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public CountDownLatch validateDynamicExpressionAsync(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.DynamicExpression> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn);
+	 * </code></pre></p>
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn) throws Exception
+	{
+		return validateRealTimeDynamicExpression( dynamicExpressionIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	CountDownLatch latch = category.validateRealTimeDynamicExpression( dynamicExpressionIn, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public CountDownLatch validateRealTimeDynamicExpressionAsync(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, AsyncCallback<com.mozu.api.contracts.productadmin.DynamicExpression> callback) throws Exception
+	{
+		return validateRealTimeDynamicExpressionAsync( dynamicExpressionIn,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public com.mozu.api.contracts.productadmin.DynamicExpression validateRealTimeDynamicExpression(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	CountDownLatch latch = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param dynamicExpressionIn 
+	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
+	 */
+	public CountDownLatch validateRealTimeDynamicExpressionAsync(com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.DynamicExpression> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.validateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

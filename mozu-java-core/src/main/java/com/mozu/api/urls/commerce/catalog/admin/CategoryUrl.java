@@ -76,6 +76,30 @@ public class CategoryUrl
 	}
 
 	/**
+	 * Get Resource Url for ValidateDynamicExpression
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl validateDynamicExpressionUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/ValidateDynamicExpression?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for ValidateRealTimeDynamicExpression
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl validateRealTimeDynamicExpressionUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/ValidateRealTimeDynamicExpression?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCategory
 	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
 	 * @param categoryId Unique identifier of the category to modify.

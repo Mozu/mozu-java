@@ -21,6 +21,16 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String fullyQualifiedName;
+
+	public String getFullyQualifiedName() {
+		return this.fullyQualifiedName;
+	}
+
+	public void setFullyQualifiedName(String fullyQualifiedName) {
+		this.fullyQualifiedName = fullyQualifiedName;
+	}
+
 	/**
 	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
 	 */
@@ -45,6 +55,16 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	protected String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	/**

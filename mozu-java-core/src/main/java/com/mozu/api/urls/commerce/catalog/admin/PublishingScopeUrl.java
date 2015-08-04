@@ -14,6 +14,32 @@ public class PublishingScopeUrl
 {
 
 	/**
+	 * Get Resource Url for GetPublishSet
+	 * @param publishSetCode 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getPublishSetUrl(String publishSetCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/publishing/publishsets/{publishSetCode}?responseFields={responseFields}");
+		formatter.formatUrl("publishSetCode", publishSetCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetPublishSets
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getPublishSetsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/publishing/publishsets?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DiscardDrafts
 	 * @return   String Resource Url
 	 */
@@ -30,6 +56,32 @@ public class PublishingScopeUrl
 	public static MozuUrl publishDraftsUrl()
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/publishing/publishdrafts");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for AssignProductsToPublishSet
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl assignProductsToPublishSetUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/publishing/publishsets?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeletePublishSet
+	 * @param discardDrafts 
+	 * @param publishSetCode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deletePublishSetUrl(Boolean discardDrafts, String publishSetCode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/publishing/publishsets/{publishSetCode}?discardDrafts={discardDrafts}");
+		formatter.formatUrl("discardDrafts", discardDrafts);
+		formatter.formatUrl("publishSetCode", publishSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

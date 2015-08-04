@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 /** <summary>
  * The Search resource manages all settings and options for providing product search on your site.
  * </summary>
@@ -32,6 +33,78 @@ public class SearchResource {
 	}
 
 	
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
+	 * </code></pre></p>
+	 * @param searchTuningRuleCode 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule getSearchTuningRule(String searchTuningRuleCode) throws Exception
+	{
+		return getSearchTuningRule( searchTuningRuleCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule getSearchTuningRule(String searchTuningRuleCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleClient( searchTuningRuleCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection getSearchTuningRules() throws Exception
+	{
+		return getSearchTuningRules( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * </code></pre></p>
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection getSearchTuningRules(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
 	/**
 	 * Get site search settings
 	 * <p><pre><code>
@@ -59,6 +132,82 @@ public class SearchResource {
 	public com.mozu.api.contracts.productadmin.SearchSettings getSettings(String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSettingsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn);
+	 * </code></pre></p>
+	 * @param searchTuningRuleIn 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule addSearchTuningRule(com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn) throws Exception
+	{
+		return addSearchTuningRule( searchTuningRuleIn,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param searchTuningRuleIn 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule addSearchTuningRule(com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.addSearchTuningRuleClient( searchTuningRuleIn,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
+	 * </code></pre></p>
+	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleIn 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode) throws Exception
+	{
+		return updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleIn 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -99,6 +248,24 @@ public class SearchResource {
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	search.deleteSearchTuningRule( searchTuningRuleCode);
+	 * </code></pre></p>
+	 * @param searchTuningRuleCode 
+	 * @return 
+	 */
+	public void deleteSearchTuningRule(String searchTuningRuleCode) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.deleteSearchTuningRuleClient( searchTuningRuleCode);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

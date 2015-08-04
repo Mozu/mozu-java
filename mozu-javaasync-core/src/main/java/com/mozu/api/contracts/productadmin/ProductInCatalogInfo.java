@@ -10,6 +10,7 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.productadmin.ActiveDateRange;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.ProductLocalizedContent;
 import com.mozu.api.contracts.productadmin.ProductPrice;
@@ -36,6 +37,16 @@ public class ProductInCatalogInfo implements Serializable
 
 	public void setCatalogId(Integer catalogId) {
 		this.catalogId = catalogId;
+	}
+
+	protected DateTime dateFirstAvailableInCatalog;
+
+	public DateTime getDateFirstAvailableInCatalog() {
+		return this.dateFirstAvailableInCatalog;
+	}
+
+	public void setDateFirstAvailableInCatalog(DateTime dateFirstAvailableInCatalog) {
+		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
 	/**
@@ -88,6 +99,16 @@ public class ProductInCatalogInfo implements Serializable
 
 	public void setIsseoContentOverridden(Boolean isseoContentOverridden) {
 		this.isseoContentOverridden = isseoContentOverridden;
+	}
+
+	protected ActiveDateRange activeDateRange;
+
+	public ActiveDateRange getActiveDateRange() {
+		return this.activeDateRange;
+	}
+
+	public void setActiveDateRange(ActiveDateRange activeDateRange) {
+		this.activeDateRange = activeDateRange;
 	}
 
 	/**

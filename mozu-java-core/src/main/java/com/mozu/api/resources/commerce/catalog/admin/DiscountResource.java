@@ -15,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
+
 import com.mozu.api.DataViewMode;
 /** <summary>
  * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
@@ -218,6 +219,26 @@ public class DiscountResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	discount.associateCouponSet( couponSetIds,  discountId);
+	 * </code></pre></p>
+	 * @param discountId 
+	 * @param couponSetIds 
+	 * @return 
+	 * @see int
+	 */
+	public void associateCouponSet(List<Integer> couponSetIds, Integer discountId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.associateCouponSetClient( couponSetIds,  discountId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
 	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
@@ -307,6 +328,26 @@ public class DiscountResource {
 	public void deleteDiscount(Integer discountId) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.deleteDiscountClient( discountId);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Discount discount = new Discount();
+	 *	discount.disassociateCouponSet( couponSetIds,  discountId);
+	 * </code></pre></p>
+	 * @param discountId 
+	 * @param couponSetIds 
+	 * @return 
+	 * @see int
+	 */
+	public void disassociateCouponSet(List<Integer> couponSetIds, Integer discountId) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.DiscountClient.disassociateCouponSetClient( couponSetIds,  discountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

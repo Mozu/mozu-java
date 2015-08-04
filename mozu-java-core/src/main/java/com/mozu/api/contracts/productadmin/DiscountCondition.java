@@ -49,6 +49,14 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	protected List<String> includedPaymentWorkflows;
+	public List<String> getIncludedPaymentWorkflows() {
+		return this.includedPaymentWorkflows;
+	}
+	public void setIncludedPaymentWorkflows(List<String> includedPaymentWorkflows) {
+		this.includedPaymentWorkflows = includedPaymentWorkflows;
+	}
+
 	/**
 	 * The maximum number of times the discount can be redeemed.
 	 */

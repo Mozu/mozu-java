@@ -22,14 +22,16 @@ public class View implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List description of usages for content within a view and scope.
+	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 */
-	protected List<String> usages;
-	public List<String> getUsages() {
-		return this.usages;
+	protected String filter;
+
+	public String getFilter() {
+		return this.filter;
 	}
-	public void setUsages(List<String> usages) {
-		this.usages = usages;
+
+	public void setFilter(String filter) {
+		this.filter = filter;
 	}
 
 	/**
@@ -56,6 +58,17 @@ public class View implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * List description of usages for content within a view and scope.
+	 */
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
 	}
 
 	/**

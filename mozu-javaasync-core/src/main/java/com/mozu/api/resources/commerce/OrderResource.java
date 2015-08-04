@@ -14,9 +14,9 @@ import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
-import java.util.concurrent.CountDownLatch;
 
 /** <summary>
  * Use the Orders resource to manage all components of order processing, payment, and fulfillment.
@@ -483,6 +483,89 @@ public class OrderResource {
 	public CountDownLatch performOrderActionAsync(com.mozu.api.contracts.commerceruntime.orders.OrderAction action, String orderId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.performOrderActionClient( action,  orderId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType);
+	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order processDigitalWallet(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType) throws Exception
+	{
+		return processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public CountDownLatch processDigitalWalletAsync(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		return processDigitalWalletAsync( digitalWallet,  orderId,  digitalWalletType,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields);
+	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order processDigitalWallet(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.processDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Order order = new Order();
+	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param digitalWalletType 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param digitalWallet 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
+	 */
+	public CountDownLatch processDigitalWalletAsync(com.mozu.api.contracts.commerceruntime.orders.DigitalWallet digitalWallet, String orderId, String digitalWalletType, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.OrderClient.processDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
