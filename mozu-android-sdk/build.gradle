@@ -9,7 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:1.0.0'
     }
 }
 apply plugin: 'android-library'
@@ -17,18 +17,18 @@ apply plugin: 'android-library'
 sourceCompatibility = 1.6
 archivesBaseName='mozu-api-android'
 if (hasProperty("teamcity")) {
-    version = teamcity["build.number"]
+    version = teamcity["build.number"]git bra
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.13.0'
+    version = '1.17.0'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 group='com.mozu'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '2.2'
 }
 
 repositories {
@@ -37,19 +37,19 @@ repositories {
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 19
+        minSdkVersion 9
+        targetSdkVersion 22
     }
     lintOptions {
           abortOnError false
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFile getDefaultProguardFile('proguard-android.txt')
         }
     }
