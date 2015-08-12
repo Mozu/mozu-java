@@ -9,9 +9,9 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.DiscountCondition;
+import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
@@ -193,19 +193,6 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Complex type that contains content for a language specified by LocaleCode.
-	 */
-	protected DiscountLocalizedContent content;
-
-	public DiscountLocalizedContent getContent() {
-		return this.content;
-	}
-
-	public void setContent(DiscountLocalizedContent content) {
-		this.content = content;
-	}
-
-	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
 	protected AuditInfo auditInfo;
@@ -229,6 +216,19 @@ public class Discount implements Serializable
 
 	public void setConditions(DiscountCondition conditions) {
 		this.conditions = conditions;
+	}
+
+	/**
+	 * Complex type that contains content for a language specified by LocaleCode.
+	 */
+	protected DiscountLocalizedContent content;
+
+	public DiscountLocalizedContent getContent() {
+		return this.content;
+	}
+
+	public void setContent(DiscountLocalizedContent content) {
+		this.content = content;
 	}
 
 	/**

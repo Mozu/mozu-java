@@ -258,53 +258,53 @@ public class PublishSetSummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	object object = publishsetsummary.addPublishSetItems( documentIds,  code);
+	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code);
 	 * </code></pre></p>
 	 * @param code 
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public Object addPublishSetItems(List<String> documentIds, String code) throws Exception
+	public Object addPublishSetItems(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code) throws Exception
 	{
-		return addPublishSetItems( documentIds,  code,  null);
+		return addPublishSetItems( itemsToPublish,  code,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	CountDownLatch latch = publishsetsummary.addPublishSetItems( documentIds,  code, callback );
+	 *	CountDownLatch latch = publishsetsummary.addPublishSetItems( itemsToPublish,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public CountDownLatch addPublishSetItemsAsync(List<String> documentIds, String code, AsyncCallback<Object> callback) throws Exception
+	public CountDownLatch addPublishSetItemsAsync(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, AsyncCallback<Object> callback) throws Exception
 	{
-		return addPublishSetItemsAsync( documentIds,  code,  null, callback);
+		return addPublishSetItemsAsync( itemsToPublish,  code,  null, callback);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	object object = publishsetsummary.addPublishSetItems( documentIds,  code,  responseFields);
+	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public Object addPublishSetItems(List<String> documentIds, String code, String responseFields) throws Exception
+	public Object addPublishSetItems(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, String responseFields) throws Exception
 	{
-		MozuClient<Object> client = com.mozu.api.clients.content.PublishSetSummaryClient.addPublishSetItemsClient( documentIds,  code,  responseFields);
+		MozuClient<Object> client = com.mozu.api.clients.content.PublishSetSummaryClient.addPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -315,19 +315,19 @@ public class PublishSetSummaryResource {
 	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	CountDownLatch latch = publishsetsummary.addPublishSetItems( documentIds,  code,  responseFields, callback );
+	 *	CountDownLatch latch = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public CountDownLatch addPublishSetItemsAsync(List<String> documentIds, String code, String responseFields, AsyncCallback<Object> callback) throws Exception
+	public CountDownLatch addPublishSetItemsAsync(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, String responseFields, AsyncCallback<Object> callback) throws Exception
 	{
-		MozuClient<Object> client = com.mozu.api.clients.content.PublishSetSummaryClient.addPublishSetItemsClient( documentIds,  code,  responseFields);
+		MozuClient<Object> client = com.mozu.api.clients.content.PublishSetSummaryClient.addPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

@@ -22,45 +22,6 @@ public class Subscription implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ApiVersion
-	 */
-	protected String apiVersion;
-
-	public String getApiVersion() {
-		return this.apiVersion;
-	}
-
-	public void setApiVersion(String apiVersion) {
-		this.apiVersion = apiVersion;
-	}
-
-	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
-	 */
-	protected String appId;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-	/**
-	 * A boolean value that indicates if the subscription endpoint has been confirmed
-	 */
-	protected Boolean confirmed;
-
-	public Boolean getConfirmed() {
-		return this.confirmed;
-	}
-
-	public void setConfirmed(Boolean confirmed) {
-		this.confirmed = confirmed;
-	}
-
-	/**
 	 * Content type of the payload that will be delivered.  This is utilized in combination with the notification delivery type.  Example:  A HTTP Post (notification delivery type) is performed with a JSON representation of the event data (content type).
 	 */
 	protected String contentType;
@@ -199,6 +160,45 @@ public class Subscription implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
+	}
+
+	/**
+	 * ApiVersion
+	 */
+	protected String apiVersion;
+
+	public String getApiVersion() {
+		return this.apiVersion;
+	}
+
+	public void setApiVersion(String apiVersion) {
+		this.apiVersion = apiVersion;
+	}
+
+	/**
+	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
+	 */
+	protected String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	/**
+	 * A boolean value that indicates if the subscription endpoint has been confirmed
+	 */
+	protected Boolean confirmed;
+
+	public Boolean getConfirmed() {
+		return this.confirmed;
+	}
+
+	public void setConfirmed(Boolean confirmed) {
+		this.confirmed = confirmed;
 	}
 
 	/**

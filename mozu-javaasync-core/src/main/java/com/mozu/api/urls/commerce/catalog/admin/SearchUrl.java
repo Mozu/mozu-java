@@ -48,6 +48,16 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for GetSearchTuningSortRelevance
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSearchTuningSortRelevanceUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningsortrelevance");
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetSettings
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
@@ -68,6 +78,16 @@ public class SearchUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateSearchTuningSortRelevance
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateSearchTuningSortRelevanceUrl()
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningsortrelevance");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

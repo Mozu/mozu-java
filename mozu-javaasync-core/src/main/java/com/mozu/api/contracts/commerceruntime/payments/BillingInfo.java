@@ -48,6 +48,16 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
+	protected String paymentWorkflow;
+
+	public String getPaymentWorkflow() {
+		return this.paymentWorkflow;
+	}
+
+	public void setPaymentWorkflow(String paymentWorkflow) {
+		this.paymentWorkflow = paymentWorkflow;
+	}
+
 	/**
 	 * The code that identifies the store credit to apply to the order.
 	 */

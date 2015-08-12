@@ -17,76 +17,6 @@ public class CouponSet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer assignedDiscountCount;
-
-	public Integer getAssignedDiscountCount() {
-		return this.assignedDiscountCount;
-	}
-
-	public void setAssignedDiscountCount(Integer assignedDiscountCount) {
-		this.assignedDiscountCount = assignedDiscountCount;
-	}
-
-	protected Boolean canBeDeleted;
-
-	public Boolean getCanBeDeleted() {
-		return this.canBeDeleted;
-	}
-
-	public void setCanBeDeleted(Boolean canBeDeleted) {
-		this.canBeDeleted = canBeDeleted;
-	}
-
-	protected Integer couponCodeCount;
-
-	public Integer getCouponCodeCount() {
-		return this.couponCodeCount;
-	}
-
-	public void setCouponCodeCount(Integer couponCodeCount) {
-		this.couponCodeCount = couponCodeCount;
-	}
-
-	protected String couponCodeType;
-
-	public String getCouponCodeType() {
-		return this.couponCodeType;
-	}
-
-	public void setCouponCodeType(String couponCodeType) {
-		this.couponCodeType = couponCodeType;
-	}
-
-	protected String couponSetCode;
-
-	public String getCouponSetCode() {
-		return this.couponSetCode;
-	}
-
-	public void setCouponSetCode(String couponSetCode) {
-		this.couponSetCode = couponSetCode;
-	}
-
-	protected DateTime endDate;
-
-	public DateTime getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(DateTime endDate) {
-		this.endDate = endDate;
-	}
-
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	protected Integer maxRedemptionsPerCouponCode;
 
 	public Integer getMaxRedemptionsPerCouponCode() {
@@ -155,6 +85,76 @@ public class CouponSet implements Serializable
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	protected Integer assignedDiscountCount;
+
+	public Integer getAssignedDiscountCount() {
+		return this.assignedDiscountCount;
+	}
+
+	public void setAssignedDiscountCount(Integer assignedDiscountCount) {
+		this.assignedDiscountCount = assignedDiscountCount;
+	}
+
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
+	protected Integer couponCodeCount;
+
+	public Integer getCouponCodeCount() {
+		return this.couponCodeCount;
+	}
+
+	public void setCouponCodeCount(Integer couponCodeCount) {
+		this.couponCodeCount = couponCodeCount;
+	}
+
+	protected String couponCodeType;
+
+	public String getCouponCodeType() {
+		return this.couponCodeType;
+	}
+
+	public void setCouponCodeType(String couponCodeType) {
+		this.couponCodeType = couponCodeType;
+	}
+
+	protected String couponSetCode;
+
+	public String getCouponSetCode() {
+		return this.couponSetCode;
+	}
+
+	public void setCouponSetCode(String couponSetCode) {
+		this.couponSetCode = couponSetCode;
+	}
+
+	protected DateTime endDate;
+
+	public DateTime getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(DateTime endDate) {
+		this.endDate = endDate;
+	}
+
+	protected Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	protected AuditInfo auditInfo;

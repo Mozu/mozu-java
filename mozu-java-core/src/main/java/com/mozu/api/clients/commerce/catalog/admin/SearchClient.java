@@ -108,6 +108,29 @@ public class SearchClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningSortRelevanceClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Stream stream = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <Stream>
+	 * @see Stream
+	 */
+	public static MozuClient<java.io.InputStream> getSearchTuningSortRelevanceClient() throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningSortRelevanceUrl();
+		String verb = "GET";
+		Class<?> clz = java.io.InputStream.class;
+		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Get site search settings
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient=GetSettingsClient();
@@ -188,6 +211,29 @@ public class SearchClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(searchTuningRuleIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=UpdateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param searchTuningSortRelevanceIn 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
+	 */
+	public static MozuClient updateSearchTuningSortRelevanceClient(com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchTuningSortRelevanceUrl();
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(searchTuningSortRelevanceIn);
 		return mozuClient;
 
 	}

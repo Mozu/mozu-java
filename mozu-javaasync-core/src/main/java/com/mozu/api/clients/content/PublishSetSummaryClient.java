@@ -155,38 +155,38 @@ public class PublishSetSummaryClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( documentIds,  code);
+	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
 	 * @param code 
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public static MozuClient<Object> addPublishSetItemsClient(List<String> documentIds, String code) throws Exception
+	public static MozuClient<Object> addPublishSetItemsClient(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code) throws Exception
 	{
-		return addPublishSetItemsClient( documentIds,  code,  null);
+		return addPublishSetItemsClient( itemsToPublish,  code,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( documentIds,  code,  responseFields);
+	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
 	 * @param code 
 	 * @param responseFields 
-	 * @param documentIds 
+	 * @param itemsToPublish 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
-	 * @see string
+	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
 	 */
-	public static MozuClient<Object> addPublishSetItemsClient(List<String> documentIds, String code, String responseFields) throws Exception
+	public static MozuClient<Object> addPublishSetItemsClient(List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.content.PublishSetSummaryUrl.addPublishSetItemsUrl(code, responseFields);
 		String verb = "PUT";
@@ -194,7 +194,7 @@ public class PublishSetSummaryClient {
 		MozuClient<Object> mozuClient = (MozuClient<Object>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(documentIds);
+		mozuClient.setBody(itemsToPublish);
 		return mozuClient;
 
 	}

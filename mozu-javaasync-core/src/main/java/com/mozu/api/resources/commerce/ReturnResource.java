@@ -552,6 +552,73 @@ public class ReturnResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReasonCollection reasonCollection = return.getReasons();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons() throws Exception
+	{
+		return getReasons( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.getReasons( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public CountDownLatch getReasonsAsync( AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> callback) throws Exception
+	{
+		return getReasonsAsync( null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReasonCollection reasonCollection = return.getReasons( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReasonsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.getReasons( responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public CountDownLatch getReasonsAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReasonsClient( responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 *	Return return = new Return();

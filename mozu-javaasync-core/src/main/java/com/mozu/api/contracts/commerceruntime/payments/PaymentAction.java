@@ -86,6 +86,16 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	protected String externalTransactionId;
+
+	public String getExternalTransactionId() {
+		return this.externalTransactionId;
+	}
+
+	public void setExternalTransactionId(String externalTransactionId) {
+		this.externalTransactionId = externalTransactionId;
+	}
+
 	/**
 	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
 	 */
