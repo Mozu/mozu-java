@@ -1,7 +1,8 @@
 apply plugin: 'eclipse'
 apply plugin: 'maven'
-apply plugin: 'maven-publish'
 apply plugin: 'signing'
+apply plugin: 'maven-publish'
+
 
 buildscript {
     repositories {
