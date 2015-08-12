@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.core.thirdparty.ActiveShippingCountry;
-import com.mozu.api.contracts.core.thirdparty.OperationUrl;
 import com.mozu.api.contracts.core.thirdparty.InitializablePropertyValue;
 import com.mozu.api.contracts.core.thirdparty.InitializableShippingCountryPropertyValue;
+import com.mozu.api.contracts.core.thirdparty.ActiveShippingCountry;
+import com.mozu.api.contracts.core.thirdparty.OperationUrl;
 
 /**
  *	Properties of a capability application installed in a tenant.
@@ -138,28 +138,6 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Array list of the countries (by country code) to which this capability can actively ship. The entered shipping country is validated against a list of supported shipping countries. Messages return if the country code is not supported or duplicated. Supported carriers are also checked per country code.
-	 */
-	protected List<ActiveShippingCountry> activeShippingCountries;
-	public List<ActiveShippingCountry> getActiveShippingCountries() {
-		return this.activeShippingCountries;
-	}
-	public void setActiveShippingCountries(List<ActiveShippingCountry> activeShippingCountries) {
-		this.activeShippingCountries = activeShippingCountries;
-	}
-
-	/**
-	 * Array list of URL endpoints for the operations associated with this capability.
-	 */
-	protected List<OperationUrl> operationUrls;
-	public List<OperationUrl> getOperationUrls() {
-		return this.operationUrls;
-	}
-	public void setOperationUrls(List<OperationUrl> operationUrls) {
-		this.operationUrls = operationUrls;
-	}
-
-	/**
 	 * List of credit types this capability supports.
 	 */
 	protected List<InitializablePropertyValue> supportedCreditTypes;
@@ -190,6 +168,28 @@ public class Capability implements Serializable
 	}
 	public void setSupportedShoppingCountries(List<InitializablePropertyValue> supportedShoppingCountries) {
 		this.supportedShoppingCountries = supportedShoppingCountries;
+	}
+
+	/**
+	 * Array list of the countries (by country code) to which this capability can actively ship. The entered shipping country is validated against a list of supported shipping countries. Messages return if the country code is not supported or duplicated. Supported carriers are also checked per country code.
+	 */
+	protected List<ActiveShippingCountry> activeShippingCountries;
+	public List<ActiveShippingCountry> getActiveShippingCountries() {
+		return this.activeShippingCountries;
+	}
+	public void setActiveShippingCountries(List<ActiveShippingCountry> activeShippingCountries) {
+		this.activeShippingCountries = activeShippingCountries;
+	}
+
+	/**
+	 * Array list of URL endpoints for the operations associated with this capability.
+	 */
+	protected List<OperationUrl> operationUrls;
+	public List<OperationUrl> getOperationUrls() {
+		return this.operationUrls;
+	}
+	public void setOperationUrls(List<OperationUrl> operationUrls) {
+		this.operationUrls = operationUrls;
 	}
 
 }

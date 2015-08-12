@@ -17,6 +17,16 @@ public class Coupon implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
 	protected String couponCode;
 
 	public String getCouponCode() {

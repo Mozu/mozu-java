@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleExpression;
+import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFunction;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFilter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -30,6 +31,26 @@ public class SearchTuningRule implements Serializable
 		this.active = active;
 	}
 
+	protected DateTime activeEndDate;
+
+	public DateTime getActiveEndDate() {
+		return this.activeEndDate;
+	}
+
+	public void setActiveEndDate(DateTime activeEndDate) {
+		this.activeEndDate = activeEndDate;
+	}
+
+	protected DateTime activeStartDate;
+
+	public DateTime getActiveStartDate() {
+		return this.activeStartDate;
+	}
+
+	public void setActiveStartDate(DateTime activeStartDate) {
+		this.activeStartDate = activeStartDate;
+	}
+
 	protected List<String> blockedProductCodes;
 	public List<String> getBlockedProductCodes() {
 		return this.blockedProductCodes;
@@ -44,26 +65,6 @@ public class SearchTuningRule implements Serializable
 	}
 	public void setBoostedProductCodes(List<String> boostedProductCodes) {
 		this.boostedProductCodes = boostedProductCodes;
-	}
-
-	protected DateTime effectivityEndDate;
-
-	public DateTime getEffectivityEndDate() {
-		return this.effectivityEndDate;
-	}
-
-	public void setEffectivityEndDate(DateTime effectivityEndDate) {
-		this.effectivityEndDate = effectivityEndDate;
-	}
-
-	protected DateTime effectivityStartDate;
-
-	public DateTime getEffectivityStartDate() {
-		return this.effectivityStartDate;
-	}
-
-	public void setEffectivityStartDate(DateTime effectivityStartDate) {
-		this.effectivityStartDate = effectivityStartDate;
 	}
 
 	protected Boolean isDefault;
@@ -120,6 +121,14 @@ public class SearchTuningRule implements Serializable
 	}
 	public void setBoostExpressions(List<SearchTuningRuleExpression> boostExpressions) {
 		this.boostExpressions = boostExpressions;
+	}
+
+	protected List<SearchTuningRuleFunction> boostFunctions;
+	public List<SearchTuningRuleFunction> getBoostFunctions() {
+		return this.boostFunctions;
+	}
+	public void setBoostFunctions(List<SearchTuningRuleFunction> boostFunctions) {
+		this.boostFunctions = boostFunctions;
 	}
 
 	protected List<SearchTuningRuleFilter> filters;

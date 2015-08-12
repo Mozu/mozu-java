@@ -160,14 +160,4 @@ public class Event implements Serializable
 		this.extendedProperties = extendedProperties;
 	}
 
-	protected String eventId;
-
-	public String getEventId() {
-		return this.eventId;
-	}
-
-	public void setEventId(String eventId) {
-		this.eventId = eventId;
-	}
-
 }

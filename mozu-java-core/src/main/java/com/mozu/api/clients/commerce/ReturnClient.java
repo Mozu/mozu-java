@@ -329,6 +329,46 @@ public class ReturnClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> mozuClient=GetReasonsClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ReasonCollection reasonCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReasonCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> getReasonsClient() throws Exception
+	{
+		return getReasonsClient( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> mozuClient=GetReasonsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ReasonCollection reasonCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.returns.ReasonCollection>
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> getReasonsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.ReturnUrl.getReasonsUrl(responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.returns.ReasonCollection.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> mozuClient=CreateReturnClient( ret);

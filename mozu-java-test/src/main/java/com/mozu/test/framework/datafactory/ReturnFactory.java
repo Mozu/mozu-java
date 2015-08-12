@@ -211,6 +211,31 @@ public class ReturnFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getReasons(apiContext,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.returns.ReasonCollection returnObj = new com.mozu.api.contracts.commerceruntime.returns.ReasonCollection();
+		ReturnResource resource = new ReturnResource(apiContext);
+		try
+		{
+			returnObj = resource.getReasons( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.returns.Return createReturn(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.returns.Return ret, int expectedCode) throws Exception
 	{
 		return createReturn(apiContext,  ret,  null, expectedCode);

@@ -289,6 +289,39 @@ public class ReturnResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReasonCollection reasonCollection = return.getReasons();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons() throws Exception
+	{
+		return getReasons( null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	ReasonCollection reasonCollection = return.getReasons( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
+	 */
+	public com.mozu.api.contracts.commerceruntime.returns.ReasonCollection getReasons(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReasonCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReasonsClient( responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Creates a return for previously fulfilled items. Each return must either be associated with an original order or a product definition to represent each returned item.
 	 * <p><pre><code>
 	 *	Return return = new Return();

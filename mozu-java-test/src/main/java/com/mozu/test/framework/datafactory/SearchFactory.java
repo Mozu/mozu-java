@@ -71,6 +71,26 @@ public class SearchFactory
 		return returnObj;
 	}
 
+	public static java.io.InputStream getSearchTuningSortRelevance(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		java.io.InputStream returnObj;
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSearchTuningSortRelevance();
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.SearchSettings getSettings(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		return getSettings(apiContext,  null, expectedCode);
@@ -119,6 +139,24 @@ public class SearchFactory
 		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
+	}
+
+	public static void updateSearchTuningSortRelevance(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn, int expectedCode) throws Exception
+	{
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			resource.updateSearchTuningSortRelevance( searchTuningSortRelevanceIn);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, int expectedCode) throws Exception

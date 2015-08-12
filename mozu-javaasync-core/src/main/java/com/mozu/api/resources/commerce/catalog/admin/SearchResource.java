@@ -182,6 +182,42 @@ public class SearchResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	Stream stream = search.getSearchTuningSortRelevance();
+	 * </code></pre></p>
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream getSearchTuningSortRelevance() throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	CountDownLatch latch = search.getSearchTuningSortRelevance( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return Stream
+	 * @see Stream
+	 */
+	public CountDownLatch getSearchTuningSortRelevanceAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Get site search settings
 	 * <p><pre><code>
 	 *	Search search = new Search();
@@ -320,6 +356,25 @@ public class SearchResource {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.addSearchTuningRuleClient( searchTuningRuleIn,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	search.updateSearchTuningSortRelevance( searchTuningSortRelevanceIn);
+	 * </code></pre></p>
+	 * @param searchTuningSortRelevanceIn 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
+	 */
+	public void updateSearchTuningSortRelevance(com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
 
 	}
 

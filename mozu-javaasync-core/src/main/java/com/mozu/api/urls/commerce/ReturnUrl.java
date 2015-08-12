@@ -134,6 +134,18 @@ public class ReturnUrl
 	}
 
 	/**
+	 * Get Resource Url for GetReasons
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getReasonsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/reasons?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for CreateReturn
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url

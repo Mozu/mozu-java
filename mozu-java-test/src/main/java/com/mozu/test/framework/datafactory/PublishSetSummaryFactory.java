@@ -96,18 +96,18 @@ public class PublishSetSummaryFactory
 		return returnObj;
 	}
 
-	public static Object addPublishSetItems(ApiContext apiContext, List<String> documentIds, String code, int expectedCode) throws Exception
+	public static Object addPublishSetItems(ApiContext apiContext, List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, int expectedCode) throws Exception
 	{
-		return addPublishSetItems(apiContext,  documentIds,  code,  null, expectedCode);
+		return addPublishSetItems(apiContext,  itemsToPublish,  code,  null, expectedCode);
 	}
 
-	public static Object addPublishSetItems(ApiContext apiContext, List<String> documentIds, String code, String responseFields, int expectedCode) throws Exception
+	public static Object addPublishSetItems(ApiContext apiContext, List<com.mozu.api.contracts.content.AddOrDeletePublishItem> itemsToPublish, String code, String responseFields, int expectedCode) throws Exception
 	{
 		Object returnObj = new Object();
 		PublishSetSummaryResource resource = new PublishSetSummaryResource(apiContext);
 		try
 		{
-			returnObj = resource.addPublishSetItems( documentIds,  code,  responseFields);
+			returnObj = resource.addPublishSetItems( itemsToPublish,  code,  responseFields);
 		}
 		catch (ApiException e)
 		{

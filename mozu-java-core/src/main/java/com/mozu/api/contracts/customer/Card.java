@@ -97,6 +97,16 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
+	protected Boolean isDefaultPayMethod;
+
+	public Boolean getIsDefaultPayMethod() {
+		return this.isDefaultPayMethod;
+	}
+
+	public void setIsDefaultPayMethod(Boolean isDefaultPayMethod) {
+		this.isDefaultPayMethod = isDefaultPayMethod;
+	}
+
 	/**
 	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
 	 */

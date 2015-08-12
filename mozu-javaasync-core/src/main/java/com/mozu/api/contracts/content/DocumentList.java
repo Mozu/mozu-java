@@ -45,14 +45,14 @@ public class DocumentList implements Serializable
 		this.documentTypes = documentTypes;
 	}
 
-	protected Boolean enableEffectivityDating;
+	protected Boolean enableActiveDateRanges;
 
-	public Boolean getEnableEffectivityDating() {
-		return this.enableEffectivityDating;
+	public Boolean getEnableActiveDateRanges() {
+		return this.enableActiveDateRanges;
 	}
 
-	public void setEnableEffectivityDating(Boolean enableEffectivityDating) {
-		this.enableEffectivityDating = enableEffectivityDating;
+	public void setEnableActiveDateRanges(Boolean enableActiveDateRanges) {
+		this.enableActiveDateRanges = enableActiveDateRanges;
 	}
 
 	/**
