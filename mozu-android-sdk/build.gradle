@@ -73,7 +73,7 @@ dependencies {
         changing = true
     }
 }
-
+/*
 publishing {
     publications {
          maven(MavenPublication){
@@ -84,6 +84,7 @@ publishing {
     }
  }
 }
+*/
 
 signing {
     required { isReleaseVersion && gradle.taskGraph.hasTask("uploadArchives") }
@@ -94,6 +95,7 @@ if (hasProperty("sonatypeUsername")) {
     uploadArchives {
         repositories {
             mavenDeployer {
+                pom.artifactId = project.archivesBaseName
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
      
                 repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
