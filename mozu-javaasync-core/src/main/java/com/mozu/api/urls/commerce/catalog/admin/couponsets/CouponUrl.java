@@ -102,6 +102,18 @@ public class CouponUrl
 	}
 
 	/**
+	 * Get Resource Url for DeleteCoupons
+	 * @param couponSetCode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteCouponsUrl(String couponSetCode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons/remove");
+		formatter.formatUrl("couponSetCode", couponSetCode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateCouponSet
 	 * @param couponSetCode 
 	 * @param responseFields 
@@ -140,13 +152,15 @@ public class CouponUrl
 	}
 
 	/**
-	 * Get Resource Url for DeleteCoupons
+	 * Get Resource Url for DeleteCoupon
+	 * @param couponCode 
 	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl deleteCouponsUrl(String couponSetCode)
+	public static MozuUrl deleteCouponUrl(String couponCode, String couponSetCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons/{couponCode}");
+		formatter.formatUrl("couponCode", couponCode);
 		formatter.formatUrl("couponSetCode", couponSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

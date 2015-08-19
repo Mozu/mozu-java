@@ -96,6 +96,31 @@ public class ProductFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
+	{
+		return getProductForIndexing(apiContext, dataViewMode,  productCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productruntime.Product returnObj = new com.mozu.api.contracts.productruntime.Product();
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductForIndexing( productCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productruntime.ConfiguredProduct configuredProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, int expectedCode) throws Exception
 	{
 		return configuredProduct(apiContext,  productOptionSelections,  productCode,  null,  null,  null, expectedCode);

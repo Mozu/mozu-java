@@ -154,6 +154,41 @@ public class ProductResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	Product product = product.getProductForIndexing( productCode);
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode) throws Exception
+	{
+		return getProductForIndexing( productCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	Product product = product.getProductForIndexing( productCode,  responseFields);
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Creates a new product configuration each time a shopper selects a product option value. After the shopper defines values for all required product options, the shopper can add the product configuration to a cart.
 	 * <p><pre><code>
 	 *	Product product = new Product();

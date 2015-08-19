@@ -40,7 +40,7 @@ public class CouponSetUrl
 	 */
 	public static MozuUrl getUniqueCouponSetCodeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/uniquecode?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/unique-code?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -64,7 +64,7 @@ public class CouponSetUrl
 	 */
 	public static MozuUrl validateUniqueCouponSetCodeUrl(String code)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/validateuniquecode");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/validate-unique-code");
 		formatter.formatUrl("code", code);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

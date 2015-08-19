@@ -72,6 +72,20 @@ public class ProductUrl
 	}
 
 	/**
+	 * Get Resource Url for GetProductForIndexing
+	 * @param productCode 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getProductForIndexingUrl(String productCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}?responseFields={responseFields}");
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for ConfiguredProduct
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.

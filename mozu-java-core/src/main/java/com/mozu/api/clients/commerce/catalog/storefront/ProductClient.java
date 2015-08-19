@@ -159,6 +159,49 @@ public class ProductClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductForIndexingClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
+	{
+		return getProductForIndexingClient(dataViewMode,  productCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Product product = client.Result();
+	 * </code></pre></p>
+	 * @param productCode 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductForIndexingClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductForIndexingUrl(productCode, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productruntime.Product.class;
+		MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.Product>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a new product configuration each time a shopper selects a product option value. After the shopper defines values for all required product options, the shopper can add the product configuration to a cart.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ConfiguredProduct> mozuClient=ConfiguredProductClient( productOptionSelections,  productCode);

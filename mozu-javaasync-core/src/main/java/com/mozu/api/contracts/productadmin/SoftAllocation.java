@@ -21,19 +21,6 @@ public class SoftAllocation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The UTC DateTime this allocation will expire
-	 */
-	protected DateTime expiresAt;
-
-	public DateTime getExpiresAt() {
-		return this.expiresAt;
-	}
-
-	public void setExpiresAt(DateTime expiresAt) {
-		this.expiresAt = expiresAt;
-	}
-
-	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
@@ -109,6 +96,19 @@ public class SoftAllocation implements Serializable
 
 	public void setReferenceItemId(String referenceItemId) {
 		this.referenceItemId = referenceItemId;
+	}
+
+	/**
+	 * The UTC DateTime this allocation will expire
+	 */
+	protected DateTime expiresAt;
+
+	public DateTime getExpiresAt() {
+		return this.expiresAt;
+	}
+
+	public void setExpiresAt(DateTime expiresAt) {
+		this.expiresAt = expiresAt;
 	}
 
 	/**

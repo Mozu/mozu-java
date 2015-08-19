@@ -207,6 +207,26 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
+	 *	coupon.deleteCoupons( couponCodes,  couponSetCode);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param couponCodes 
+	 * @return 
+	 * @see string
+	 */
+	public void deleteCoupons(List<String> couponCodes, String couponSetCode) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponsClient( couponCodes,  couponSetCode);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Coupon coupon = new Coupon();
 	 *	CouponSet couponSet = coupon.updateCouponSet( couponSet,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode 
@@ -284,16 +304,15 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
-	 *	coupon.deleteCoupons( coupons,  couponSetCode);
+	 *	coupon.deleteCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
+	 * @param couponCode 
 	 * @param couponSetCode 
-	 * @param coupons 
 	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
-	public void deleteCoupons(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
+	public void deleteCoupon(String couponSetCode, String couponCode) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponsClient( coupons,  couponSetCode);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponClient( couponSetCode,  couponCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
