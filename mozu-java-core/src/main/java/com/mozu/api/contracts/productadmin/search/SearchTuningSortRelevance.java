@@ -25,13 +25,13 @@ public class SearchTuningSortRelevance implements Serializable
 		this.sortList = sortList;
 	}
 
-	protected Integer sortType;
+	protected String sortType;
 
-	public Integer getSortType() {
+	public String getSortType() {
 		return this.sortType;
 	}
 
-	public void setSortType(Integer sortType) {
+	public void setSortType(String sortType) {
 		this.sortType = sortType;
 	}
 

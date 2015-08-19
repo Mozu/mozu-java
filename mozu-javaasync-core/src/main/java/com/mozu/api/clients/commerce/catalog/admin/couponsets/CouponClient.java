@@ -230,6 +230,30 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteCouponsClient( couponCodes,  couponSetCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param couponCodes 
+	 * @return Mozu.Api.MozuClient 
+	 * @see string
+	 */
+	public static MozuClient deleteCouponsClient(List<String> couponCodes, String couponSetCode) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.deleteCouponsUrl(couponSetCode);
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(couponCodes);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=UpdateCouponSetClient( couponSet,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
@@ -322,23 +346,21 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=DeleteCouponsClient( coupons,  couponSetCode);
+	 * MozuClient mozuClient=DeleteCouponClient( couponSetCode,  couponCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
+	 * @param couponCode 
 	 * @param couponSetCode 
-	 * @param coupons 
 	 * @return Mozu.Api.MozuClient 
-	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
-	public static MozuClient deleteCouponsClient(List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode) throws Exception
+	public static MozuClient deleteCouponClient(String couponSetCode, String couponCode) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.deleteCouponsUrl(couponSetCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.deleteCouponUrl(couponCode, couponSetCode);
 		String verb = "DELETE";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(coupons);
 		return mozuClient;
 
 	}

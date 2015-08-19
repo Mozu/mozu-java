@@ -22,19 +22,6 @@ public class BundledProductSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
-	 */
-	protected Double creditValue;
-
-	public Double getCreditValue() {
-		return this.creditValue;
-	}
-
-	public void setCreditValue(Double creditValue) {
-		this.creditValue = creditValue;
-	}
-
-	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
@@ -45,6 +32,19 @@ public class BundledProductSummary implements Serializable
 
 	public void setGoodsType(String goodsType) {
 		this.goodsType = goodsType;
+	}
+
+	/**
+	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
+	 */
+	protected Double creditValue;
+
+	public Double getCreditValue() {
+		return this.creditValue;
+	}
+
+	public void setCreditValue(Double creditValue) {
+		this.creditValue = creditValue;
 	}
 
 	/**

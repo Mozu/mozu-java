@@ -23,16 +23,16 @@ public class ProductSearchResultFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return search(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
+		return search(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductSearchResult returnObj = new com.mozu.api.contracts.productruntime.ProductSearchResult();
 		ProductSearchResultResource resource = new ProductSearchResultResource(apiContext);
 		try
 		{
-			returnObj = resource.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  responseFields);
+			returnObj = resource.search( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  responseFields);
 		}
 		catch (ApiException e)
 		{

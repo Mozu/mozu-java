@@ -21,6 +21,45 @@ public class AttributeDetail implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 */
+	protected String dataType;
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+
+	/**
+	 * Unique sequence of the attribute for its data type.
+	 */
+	protected Integer dataTypeSequence;
+
+	public Integer getDataTypeSequence() {
+		return this.dataTypeSequence;
+	}
+
+	public void setDataTypeSequence(Integer dataTypeSequence) {
+		this.dataTypeSequence = dataTypeSequence;
+	}
+
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
+	protected String description;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
 	protected String displayIntention;
@@ -109,45 +148,6 @@ public class AttributeDetail implements Serializable
 
 	public void setValueType(String valueType) {
 		this.valueType = valueType;
-	}
-
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
-	protected String dataType;
-
-	public String getDataType() {
-		return this.dataType;
-	}
-
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
-
-	/**
-	 * Unique sequence of the attribute for its data type.
-	 */
-	protected Integer dataTypeSequence;
-
-	public Integer getDataTypeSequence() {
-		return this.dataTypeSequence;
-	}
-
-	public void setDataTypeSequence(Integer dataTypeSequence) {
-		this.dataTypeSequence = dataTypeSequence;
-	}
-
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
-	protected String description;
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	/**

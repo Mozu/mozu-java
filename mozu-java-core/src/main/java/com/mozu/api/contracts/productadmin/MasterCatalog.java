@@ -19,6 +19,16 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean enableLiveEdit;
+
+	public Boolean getEnableLiveEdit() {
+		return this.enableLiveEdit;
+	}
+
+	public void setEnableLiveEdit(Boolean enableLiveEdit) {
+		this.enableLiveEdit = enableLiveEdit;
+	}
+
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */

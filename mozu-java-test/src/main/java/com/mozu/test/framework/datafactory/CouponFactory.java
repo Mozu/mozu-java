@@ -152,6 +152,24 @@ public class CouponFactory
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
+	public static void deleteCoupons(ApiContext apiContext, List<String> couponCodes, String couponSetCode, int expectedCode) throws Exception
+	{
+		CouponResource resource = new CouponResource(apiContext);
+		try
+		{
+			resource.deleteCoupons( couponCodes,  couponSetCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(ApiContext apiContext, com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, int expectedCode) throws Exception
 	{
 		return updateCouponSet(apiContext,  couponSet,  couponSetCode,  null, expectedCode);
@@ -213,12 +231,12 @@ public class CouponFactory
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void deleteCoupons(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode, int expectedCode) throws Exception
+	public static void deleteCoupon(ApiContext apiContext, String couponSetCode, String couponCode, int expectedCode) throws Exception
 	{
 		CouponResource resource = new CouponResource(apiContext);
 		try
 		{
-			resource.deleteCoupons( coupons,  couponSetCode);
+			resource.deleteCoupon( couponSetCode,  couponCode);
 		}
 		catch (ApiException e)
 		{
