@@ -20,14 +20,14 @@ import org.apache.commons.lang.StringUtils;
  * 
  * </summary>
  */
-public class FraudScreenResponseResource {
+public class FraudScreenResource {
 	///
 	/// <see cref="Mozu.Api.ApiContext"/>
 	///
 	private ApiContext _apiContext;
 
 
-	public FraudScreenResponseResource(ApiContext apiContext) 
+	public FraudScreenResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
@@ -36,17 +36,17 @@ public class FraudScreenResponseResource {
 	/**
 	 * 
 	 * <p><pre><code>
-	 *	FraudScreenResponse fraudscreenresponse = new FraudScreenResponse();
-	 *	FraudScreenResponse fraudScreenResponse = fraudscreenresponse.screen( request);
+	 *	FraudScreen fraudscreen = new FraudScreen();
+	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
 	 * </code></pre></p>
 	 * @param request 
-	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreenResponse
-	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreenResponse
+	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
 	 */
-	public com.mozu.api.contracts.paymentservice.response.FraudScreenResponse screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request) throws Exception
+	public com.mozu.api.contracts.paymentservice.response.FraudScreen screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreenResponse> client = com.mozu.api.clients.commerce.payments.FraudScreenResponseClient.screenClient( request);
+		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

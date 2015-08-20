@@ -12,19 +12,19 @@ import org.apache.http.HttpStatus;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
-import com.mozu.api.resources.commerce.payments.FraudScreenResponseResource;
+import com.mozu.api.resources.commerce.payments.FraudScreenResource;
 
 /** <summary>
  * 
  * </summary>
  */
-public class FraudScreenResponseFactory
+public class FraudScreenFactory
 {
 
-	public static com.mozu.api.contracts.paymentservice.response.FraudScreenResponse screen(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.paymentservice.response.FraudScreen screen(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, int expectedCode) throws Exception
 	{
-		com.mozu.api.contracts.paymentservice.response.FraudScreenResponse returnObj = new com.mozu.api.contracts.paymentservice.response.FraudScreenResponse();
-		FraudScreenResponseResource resource = new FraudScreenResponseResource(apiContext);
+		com.mozu.api.contracts.paymentservice.response.FraudScreen returnObj = new com.mozu.api.contracts.paymentservice.response.FraudScreen();
+		FraudScreenResource resource = new FraudScreenResource(apiContext);
 		try
 		{
 			returnObj = resource.screen( request);

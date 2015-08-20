@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.paymentservice.FraudScreenResponseData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FraudScreenResponse implements Serializable
+public class FraudScreen implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;

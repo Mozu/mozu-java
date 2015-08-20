@@ -24,17 +24,6 @@ public class SiteSearchSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Custom boost value for searches.
-	 */
-	protected List<String> customBoosts;
-	public List<String> getCustomBoosts() {
-		return this.customBoosts;
-	}
-	public void setCustomBoosts(List<String> customBoosts) {
-		this.customBoosts = customBoosts;
-	}
-
-	/**
 	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
 	 */
 	protected Boolean isDefault;
@@ -71,6 +60,17 @@ public class SiteSearchSettings implements Serializable
 
 	public void setSettingsName(String settingsName) {
 		this.settingsName = settingsName;
+	}
+
+	/**
+	 * Custom boost value for searches.
+	 */
+	protected List<String> customBoosts;
+	public List<String> getCustomBoosts() {
+		return this.customBoosts;
+	}
+	public void setCustomBoosts(List<String> customBoosts) {
+		this.customBoosts = customBoosts;
 	}
 
 	/**
