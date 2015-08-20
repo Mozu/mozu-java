@@ -61,6 +61,26 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	protected Integer expireMonth;
+
+	public Integer getExpireMonth() {
+		return this.expireMonth;
+	}
+
+	public void setExpireMonth(Integer expireMonth) {
+		this.expireMonth = expireMonth;
+	}
+
+	protected Integer expireYear;
+
+	public Integer getExpireYear() {
+		return this.expireYear;
+	}
+
+	public void setExpireYear(Integer expireYear) {
+		this.expireYear = expireYear;
+	}
+
 	protected String gatewayAccountId;
 
 	public String getGatewayAccountId() {

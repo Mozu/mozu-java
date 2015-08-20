@@ -20,19 +20,6 @@ public class ProductInventoryInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates is the item's stock is managed. If true, Mozu manages inventory levels for this product.
-	 */
-	protected Boolean manageStock;
-
-	public Boolean getManageStock() {
-		return this.manageStock;
-	}
-
-	public void setManageStock(Boolean manageStock) {
-		this.manageStock = manageStock;
-	}
-
-	/**
 	 * The location code for the direct ship location associated with the available online stock.
 	 */
 	protected String onlineLocationCode;
@@ -82,6 +69,19 @@ public class ProductInventoryInfo implements Serializable
 
 	public void setOutOfStockBehavior(String outOfStockBehavior) {
 		this.outOfStockBehavior = outOfStockBehavior;
+	}
+
+	/**
+	 * Indicates is the item's stock is managed. If true, Mozu manages inventory levels for this product.
+	 */
+	protected Boolean manageStock;
+
+	public Boolean getManageStock() {
+		return this.manageStock;
+	}
+
+	public void setManageStock(Boolean manageStock) {
+		this.manageStock = manageStock;
 	}
 
 }

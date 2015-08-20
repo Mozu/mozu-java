@@ -17,6 +17,16 @@ public class OrderItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Double unitPrice;
+
+	public Double getUnitPrice() {
+		return this.unitPrice;
+	}
+
+	public void setUnitPrice(Double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
 	protected String id;
 
 	public String getId() {
@@ -55,16 +65,6 @@ public class OrderItem implements Serializable
 
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
-	}
-
-	protected Double unitPrice;
-
-	public Double getUnitPrice() {
-		return this.unitPrice;
-	}
-
-	public void setUnitPrice(Double unitPrice) {
-		this.unitPrice = unitPrice;
 	}
 
 	protected Product product;

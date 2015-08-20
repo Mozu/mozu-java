@@ -10,7 +10,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
 
-public class FraudScreenResponseUrl
+public class FraudScreenUrl
 {
 
 	/**
@@ -19,7 +19,7 @@ public class FraudScreenResponseUrl
 	 */
 	public static MozuUrl screenUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen");
+		UrlFormatter formatter = new UrlFormatter("/Mozu.PaymentService.WebApi/commerce/payments/fraudscreen/screen");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 
