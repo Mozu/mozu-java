@@ -70,6 +70,8 @@ import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent;
 import com.mozu.api.contracts.productadmin.Category;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
+import com.mozu.api.contracts.productadmin.DynamicExpression;
+import com.mozu.api.contracts.productadmin.Expression;
 import com.mozu.api.contracts.productadmin.Facet;
 import com.mozu.api.contracts.productadmin.LocationInventory;
 import com.mozu.api.contracts.productadmin.LocationInventoryAdjustment;
@@ -214,6 +216,17 @@ public class GeneralTests extends MozuApiTestBase {
         AdminUserFactory.getUser(apiContext, Generator.randomString(20, Generator.AlphaNumericChars), HttpStatus.SC_NOT_FOUND);
 	}
 
+    @Test
+    public void AppdevPackageTests() throws Exception {
+		UserAuthInfo info = new UserAuthInfo();
+		info.setEmailAddress(email);
+		info.setPassword(password);
+		AuthenticationProfile profile = UserAuthenticator.authenticate(info, AuthenticationScope.Developer);
+		ApiContext localApiContext = new MozuApiContext();
+		localApiContext.setUserAuthTicket(profile.getAuthTicket());
+        AppdevPackageFactory.getFile(localApiContext, Generator.randomString(5,  Generator.AlphaChars), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+    }
+
 	@Test
 	public void ApplicationTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, null, null);
@@ -351,6 +364,11 @@ public class GeneralTests extends MozuApiTestBase {
 		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(500, 600), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
+		DynamicExpression express = new DynamicExpression();
+		express.setText(Generator.randomString(5, Generator.AlphaChars));
+		express.setTree(new Expression());
+		CategoryFactory.validateDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
+		CategoryFactory.validateRealTimeDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
 	}
 	
 	@Test
@@ -385,6 +403,25 @@ public class GeneralTests extends MozuApiTestBase {
         CheckoutSettingsFactory.getCheckoutSettings(apiContext, HttpStatus.SC_OK);
 	}
 
+	@Test
+	public void CouponSetTests() throws Exception {
+		CouponSetFactory.getCouponSets(shopperApiContext, HttpStatus.SC_OK);
+		CouponSetFactory.getUniqueCouponSetCode(shopperApiContext, HttpStatus.SC_OK);
+		CouponSetFactory.addCouponSet(shopperApiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CouponSetFactory.validateUniqueCouponSetCode(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	}
+
+	@Test
+	public void CouponTests() throws Exception {
+		CouponFactory.getAssignedDiscounts(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.getCoupon(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.getCoupons(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.assignDiscount(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		CouponFactory.addCoupons(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.deleteCoupons(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.deleteCoupon(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	}
+	
 	@Test
 	public void CreditAuditEntryTests() throws Exception {
         CreditAuditEntryFactory.getAuditEntries(apiContext, Generator.randomString(10, Generator.AlphaNumericChars), HttpStatus.SC_OK);
@@ -496,6 +533,14 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 	
 	@Test
+	public void CustomRouteSettingsTests() throws Exception {
+		//CustomRouteSettingsFactory.createCustomRouteSettings(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		//CustomRouteSettingsFactory.deleteCustomRouteSettings(apiContext, HttpStatus.SC_NO_CONTENT);
+		CustomRouteSettingsFactory.getCustomRouteSettings(apiContext, HttpStatus.SC_OK);
+		CustomRouteSettingsFactory.updateCustomRouteSettings(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+	}
+
+	@Test
 	public void DeveloperAdminUserAuthTicketTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, null, null);
 		UserAuthInfo info = new UserAuthInfo();
@@ -542,7 +587,7 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void DocumentTests() throws Exception {
-        DocumentFactory.getDocuments(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR);
+        DocumentFactory.getDocuments(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
         DocumentFactory.createDocument(apiContext, DataViewMode.Live, new Document(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         DocumentFactory.deleteDocument(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         DocumentFactory.deleteDocumentContent(apiContext,  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
@@ -550,6 +595,7 @@ public class GeneralTests extends MozuApiTestBase {
         DocumentFactory.getDocumentContent(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         DocumentFactory.updateDocument(apiContext, new Document(), Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR);
         DocumentFactory.updateDocumentContent(apiContext, null, Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), null, HttpStatus.SC_BAD_REQUEST);
+        DocumentFactory.transformDocumentContent(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 
 	@Test
@@ -585,6 +631,7 @@ public class GeneralTests extends MozuApiTestBase {
 		DocumentTreeFactory.getTreeDocumentContent(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		DocumentTreeFactory.updateTreeDocumentContent(apiContext, new FileInputStream("C:\\tmp\\NWCRq.txt"), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		DocumentTreeFactory.deleteTreeDocumentContent(apiContext, new ByteArrayInputStream( Generator.randomString(15, Generator.AlphaChars).getBytes( Charset.defaultCharset() )),  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars),  Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		DocumentTreeFactory.transformTreeDocumentContent(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		/*bug 47696*/		DocumentTreeFactory.getTreeDocument(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 		
@@ -637,6 +684,11 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void FacetTests() throws Exception {
         FacetFactory.getFacets(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	}
+
+	@Test
+	public void FraudScreenTests() throws Exception {
+        FraudScreenFactory.screen(apiContext, null, HttpStatus.SC_CONFLICT);
 	}
 
 	@Test
@@ -735,6 +787,7 @@ public class GeneralTests extends MozuApiTestBase {
 		OrderFactory.performOrderAction(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		OrderFactory.resendOrderConfirmationEmail(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		OrderFactory.createOrderFromCart(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		OrderFactory.processDigitalWallet(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 	}
 
 	@Test
@@ -813,7 +866,11 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void PaymentSettingsTests() throws Exception {
         PaymentSettingsFactory.getThirdPartyPaymentWorkflows(apiContext, HttpStatus.SC_OK);
+        PaymentSettingsFactory.addThirdPartyPaymentWorkflow(apiContext, null, HttpStatus.SC_CONFLICT);
+        PaymentSettingsFactory.deleteThirdPartyPaymentWorkflow(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        PaymentSettingsFactory.getThirdPartyPaymentWorkflowWithValues(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
+	
 
 	@Test
 	public void PlatformApplicationTests() throws Exception {
@@ -925,6 +982,7 @@ public class GeneralTests extends MozuApiTestBase {
 		ProductFactory.validateProduct(shopperApiContext, new ProductOptionSelections(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		ProductFactory.validateDiscounts(shopperApiContext, new DiscountSelections(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		ProductFactory.getProductInventories(apiContext, DataViewMode.Live, new LocationInventoryQuery(), HttpStatus.SC_CONFLICT);
+		ProductFactory.getProductForIndexing(shopperApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		/*bug 49432*/		ProductFactory.getProductInventory(shopperApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
@@ -1001,13 +1059,23 @@ public class GeneralTests extends MozuApiTestBase {
 		MasterCatalog mc = MasterCatalogFactory.getMasterCatalog(localApiContext, masterCatalogId, HttpStatus.SC_OK);
 		mc.setProductPublishingMode("Pending");
 		MasterCatalogFactory.updateMasterCatalog(localApiContext, mc, masterCatalogId, HttpStatus.SC_OK);
-        List<String> list = new ArrayList<String>();
-        list.add(Generator.randomString(5, Generator.AlphaChars));
-        PublishingScope scope = ProductGenerator.generatePublishingScope(false, list);
-        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-		mc.setProductPublishingMode("Live");
-		MasterCatalogFactory.updateMasterCatalog(localApiContext, mc, masterCatalogId, HttpStatus.SC_OK);
+		try
+		{
+	        List<String> list = new ArrayList<String>();
+	        list.add(Generator.randomString(5, Generator.AlphaChars));
+	        PublishingScope scope = ProductGenerator.generatePublishingScope(false, list);
+	        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
+	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
+	        PublishingScopeFactory.getPublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	        PublishingScopeFactory.deletePublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		}catch (TestFailException e)
+		{   //restore publish mode
+			mc.setProductPublishingMode("Live");
+			MasterCatalogFactory.updateMasterCatalog(localApiContext, mc, masterCatalogId, HttpStatus.SC_OK);
+		throw(e);
+		}
 	}
 
 	@Test
