@@ -459,16 +459,15 @@ public class CouponResource {
 	 * 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
-	 *	coupon.unAssignDiscount( assignedDiscount,  couponSetCode);
+	 *	coupon.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param assignedDiscount 
+	 * @param discountId 
 	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
-	public void unAssignDiscount(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
+	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.unAssignDiscountClient( assignedDiscount,  couponSetCode);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.unAssignDiscountClient( couponSetCode,  discountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

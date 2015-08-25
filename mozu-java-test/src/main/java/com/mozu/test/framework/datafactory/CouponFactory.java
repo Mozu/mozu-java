@@ -213,12 +213,12 @@ public class CouponFactory
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
-	public static void unAssignDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode, int expectedCode) throws Exception
+	public static void unAssignDiscount(ApiContext apiContext, String couponSetCode, Integer discountId, int expectedCode) throws Exception
 	{
 		CouponResource resource = new CouponResource(apiContext);
 		try
 		{
-			resource.unAssignDiscount( assignedDiscount,  couponSetCode);
+			resource.unAssignDiscount( couponSetCode,  discountId);
 		}
 		catch (ApiException e)
 		{

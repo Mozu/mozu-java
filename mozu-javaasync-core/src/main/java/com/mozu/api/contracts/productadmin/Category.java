@@ -22,6 +22,32 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
+	 */
+	protected Integer productCount;
+
+	public Integer getProductCount() {
+		return this.productCount;
+	}
+
+	public void setProductCount(Integer productCount) {
+		this.productCount = productCount;
+	}
+
+	/**
+	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 */
+	protected Integer sequence;
+
+	public Integer getSequence() {
+		return this.sequence;
+	}
+
+	public void setSequence(Integer sequence) {
+		this.sequence = sequence;
+	}
+
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -105,32 +131,6 @@ public class Category implements Serializable
 
 	public void setParentCategoryId(Integer parentCategoryId) {
 		this.parentCategoryId = parentCategoryId;
-	}
-
-	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
-	 */
-	protected Integer productCount;
-
-	public Integer getProductCount() {
-		return this.productCount;
-	}
-
-	public void setProductCount(Integer productCount) {
-		this.productCount = productCount;
-	}
-
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
-	protected Integer sequence;
-
-	public Integer getSequence() {
-		return this.sequence;
-	}
-
-	public void setSequence(Integer sequence) {
-		this.sequence = sequence;
 	}
 
 	/**

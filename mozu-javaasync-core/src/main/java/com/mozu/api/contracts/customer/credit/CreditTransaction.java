@@ -21,19 +21,6 @@ public class CreditTransaction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
-	 */
-	protected String comments;
-
-	public String getComments() {
-		return this.comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-
-	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected Integer id;
@@ -70,6 +57,19 @@ public class CreditTransaction implements Serializable
 
 	public void setTransactionType(String transactionType) {
 		this.transactionType = transactionType;
+	}
+
+	/**
+	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
+	 */
+	protected String comments;
+
+	public String getComments() {
+		return this.comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 
 	/**
