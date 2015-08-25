@@ -22,19 +22,6 @@ public class ReturnCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
-	 */
-	protected Integer totalCount;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */
 	protected Integer pageCount;
@@ -71,6 +58,19 @@ public class ReturnCollection implements Serializable
 
 	public void setStartIndex(Integer startIndex) {
 		this.startIndex = startIndex;
+	}
+
+	/**
+	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
+	 */
+	protected Integer totalCount;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	/**

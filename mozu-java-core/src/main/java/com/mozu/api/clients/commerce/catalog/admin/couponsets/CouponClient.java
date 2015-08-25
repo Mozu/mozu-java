@@ -320,23 +320,21 @@ public class CouponClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UnAssignDiscountClient( assignedDiscount,  couponSetCode);
+	 * MozuClient mozuClient=UnAssignDiscountClient( couponSetCode,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param assignedDiscount 
+	 * @param discountId 
 	 * @return Mozu.Api.MozuClient 
-	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
-	public static MozuClient unAssignDiscountClient(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
+	public static MozuClient unAssignDiscountClient(String couponSetCode, Integer discountId) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.unAssignDiscountUrl(couponSetCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.unAssignDiscountUrl(couponSetCode, discountId);
 		String verb = "DELETE";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(assignedDiscount);
 		return mozuClient;
 
 	}

@@ -29,7 +29,11 @@ public class PackageResource {
 	private ApiContext _apiContext;
 
 
-	public PackageResource(ApiContext apiContext) 
+	public PackageResource() 
+		{
+			_apiContext = null;
+	}
+public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}

@@ -142,12 +142,14 @@ public class CouponUrl
 	/**
 	 * Get Resource Url for UnAssignDiscount
 	 * @param couponSetCode 
+	 * @param discountId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl unAssignDiscountUrl(String couponSetCode)
+	public static MozuUrl unAssignDiscountUrl(String couponSetCode, Integer discountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/assigneddiscounts");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/assigneddiscounts/{discountId}");
 		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("discountId", discountId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

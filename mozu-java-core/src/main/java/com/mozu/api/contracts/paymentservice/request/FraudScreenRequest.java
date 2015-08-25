@@ -21,6 +21,16 @@ public class FraudScreenRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String avsCodes;
+
+	public String getAvsCodes() {
+		return this.avsCodes;
+	}
+
+	public void setAvsCodes(String avsCodes) {
+		this.avsCodes = avsCodes;
+	}
+
 	protected String cardId;
 
 	public String getCardId() {
@@ -59,6 +69,16 @@ public class FraudScreenRequest implements Serializable
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+
+	protected String cvV2Codes;
+
+	public String getCvV2Codes() {
+		return this.cvV2Codes;
+	}
+
+	public void setCvV2Codes(String cvV2Codes) {
+		this.cvV2Codes = cvV2Codes;
 	}
 
 	protected Integer expireMonth;
