@@ -220,14 +220,15 @@ public class GeneralTests extends MozuApiTestBase {
 
     @Test
     public void AppdevPackageTests() throws Exception {
-/*		UserAuthInfo info = new UserAuthInfo();
+    	//bug 67250
+		UserAuthInfo info = new UserAuthInfo();
 		info.setEmailAddress(email);
 		info.setPassword(password);
 		AuthenticationProfile profile = UserAuthenticator.authenticate(info, AuthenticationScope.Developer);
 		ApiContext localApiContext = new MozuApiContext();
 		localApiContext.setUserAuthTicket(profile.getAuthTicket());
         AppdevPackageFactory.getFile(localApiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-*/        AppdevPackageFactory.getFile(apiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+//        AppdevPackageFactory.getFile(apiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
     }
 
 	@Test
@@ -958,26 +959,6 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void ProductSearchResultTests() throws Exception {
-		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
-        ProductType myPT = ProductTypeGenerator.generate(Generator.randomString(5, Generator.AlphaChars));
-        ProductType createdPT = ProductTypeFactory.addProductType(localApiContext, DataViewMode.Live, myPT, HttpStatus.SC_CREATED);
-
-		Product myProduct1 = ProductGenerator.generate("ab"+Generator.randomString(5, Generator.AlphaChars), createdPT);
-		Product myProduct2 = ProductGenerator.generate("ab"+Generator.randomString(5, Generator.AlphaChars), createdPT);		
-        Product createdProduct1 = AdminProductFactory.addProduct(localApiContext, DataViewMode.Live, myProduct1, HttpStatus.SC_CREATED);
-        Product createdProduct2 = AdminProductFactory.addProduct(localApiContext, DataViewMode.Live, myProduct2, HttpStatus.SC_CREATED);
-        
-        //add a category        
-        Category cat = ProductCategoryGenerator.generate(Generator.randomString(4,  Generator.AlphaChars), true, null);
-        Category createdCat = CategoryFactory.addCategory(apiContext, cat, HttpStatus.SC_CREATED);
-        List<ProductCategory> categories = new ArrayList<ProductCategory>();
-        categories.add(ProductGenerator.generateProductCategory(createdCat.getId()));
-        
-        ProductInCatalogInfo proInfo = ProductGenerator.generateProductInCatalogInfo(catalogId, categories,
-                Generator.randomString(6, Generator.AlphaChars), Generator.randomDecimal(20., 1000.), true, true, false,true);
-        AdminProductFactory.addProductInCatalog(apiContext, DataViewMode.Live, proInfo, createdProduct1.getProductCode(), HttpStatus.SC_CREATED);
-        AdminProductFactory.addProductInCatalog(apiContext, DataViewMode.Live, proInfo, createdProduct2.getProductCode(), HttpStatus.SC_CREATED);
-        
         ProductSearchResultFactory.suggest(apiContext, "ab", "cd", null, null, HttpStatus.SC_OK);
         ProductSearchResultFactory.search(apiContext, HttpStatus.SC_OK);
 	}
@@ -1056,7 +1037,8 @@ public class GeneralTests extends MozuApiTestBase {
 		PropertyTypeFactory.createPropertyType(apiContext, new PropertyType(), HttpStatus.SC_CONFLICT);
 		PropertyTypeFactory.getPropertyType(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		PropertyTypeFactory.getPropertyTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK);
-/*bug 35033*/		PropertyTypeFactory.updatePropertyType(apiContext, DataViewMode.Live, new PropertyType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		PropertyTypeFactory.updatePropertyType(apiContext, DataViewMode.Live, new PropertyType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		/*bug 35064*/
 		PropertyTypeFactory.deletePropertyType(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 	}
 	
@@ -1064,7 +1046,9 @@ public class GeneralTests extends MozuApiTestBase {
 	public void PublishSetSummaryTests() throws Exception {
 		PublishSetSummaryFactory.getPublishSets(apiContext, HttpStatus.SC_OK);
 		PublishSetSummaryFactory.deletePublishSet(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		/*bug 67289*/
 		PublishSetSummaryFactory.getPublishSetItems(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		/*67290*/
 		PublishSetSummaryFactory.addPublishSetItems(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
@@ -1083,7 +1067,9 @@ public class GeneralTests extends MozuApiTestBase {
 	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
 	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
 	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
+	        /*bug 67281*/
 	        PublishingScopeFactory.getPublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	        /*bug 67283*/
 	        PublishingScopeFactory.deletePublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		}catch (TestFailException e)
 		{   //restore publish mode
@@ -1095,10 +1081,20 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void PublicCardTests() throws Exception {
-		SyncResponse response = PublicCardFactory.create(apiContext, new PublicCard(), HttpStatus.SC_OK);
-		Assert.isTrue(response.getIsSuccessful(), "SyncResponse isSuccessful is false");
-		PublicCardFactory.update(apiContext, new PublicCard(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
-		PublicCardFactory.delete(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);		
+		PublicCard card = new PublicCard();
+		card.setCardHolderName("crr wrr");
+		card.setCardNumber("4111111111111111");
+		card.setExpireMonth(1);
+		card.setExpireYear(2020);
+		card.setCardType("visa");
+		card.setCvv("123");
+		SyncResponse response = PublicCardFactory.create(apiContext, card, HttpStatus.SC_OK);
+		assertTrue(response.getIsSuccessful());
+		assertTrue(!response.getId().isEmpty());
+
+		card.setCvv(Generator.randomString(3, Generator.NumericChars));
+		PublicCardFactory.update(apiContext, card, response.getId(), HttpStatus.SC_OK);
+		PublicCardFactory.delete(apiContext, response.getId(), HttpStatus.SC_OK);		
 	}
 	
 	@Test
@@ -1322,6 +1318,7 @@ public class GeneralTests extends MozuApiTestBase {
         WishlistFactory.getWishlist(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         WishlistFactory.getWishlistByName(shopperApiContext, shopperAuth.getCustomerAccount().getId(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         WishlistFactory.updateWishlist(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+        /*bug 67285*/
         WishlistFactory.deleteWishlist(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 
