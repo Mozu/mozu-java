@@ -60,26 +60,27 @@ public class CouponClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Coupon> getCouponClient(String couponSetCode, String couponCode) throws Exception
 	{
-		return getCouponClient( couponSetCode,  couponCode,  null);
+		return getCouponClient( couponSetCode,  couponCode,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient=GetCouponClient( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Coupon coupon = client.Result();
 	 * </code></pre></p>
 	 * @param couponCode 
 	 * @param couponSetCode 
+	 * @param includeCounts 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Coupon>
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Coupon> getCouponClient(String couponSetCode, String couponCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Coupon> getCouponClient(String couponSetCode, String couponCode, Boolean includeCounts, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponUrl(couponCode, couponSetCode, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponUrl(couponCode, couponSetCode, includeCounts, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Coupon.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Coupon> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Coupon>) MozuClientFactory.getInstance(clz);
@@ -103,19 +104,20 @@ public class CouponClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> getCouponsClient(String couponSetCode) throws Exception
 	{
-		return getCouponsClient( couponSetCode,  null,  null,  null,  null,  null);
+		return getCouponsClient( couponSetCode,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient=GetCouponsClient( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponCollection couponCollection = client.Result();
 	 * </code></pre></p>
 	 * @param couponSetCode 
 	 * @param filter 
+	 * @param includeCounts 
 	 * @param pageSize 
 	 * @param responseFields 
 	 * @param sortBy 
@@ -123,9 +125,9 @@ public class CouponClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> getCouponsClient(String couponSetCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> getCouponsClient(String couponSetCode, Integer startIndex, Integer pageSize, String sortBy, String filter, Boolean includeCounts, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponsUrl(couponSetCode, filter, pageSize, responseFields, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponsUrl(couponSetCode, filter, includeCounts, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.CouponCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.CouponCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.CouponCollection>) MozuClientFactory.getInstance(clz);
@@ -149,25 +151,26 @@ public class CouponClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSet> getCouponSetClient(String couponSetCode) throws Exception
 	{
-		return getCouponSetClient( couponSetCode,  null);
+		return getCouponSetClient( couponSetCode,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
 	 * @param couponSetCode 
+	 * @param includeCounts 
 	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSet> getCouponSetClient(String couponSetCode, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSet> getCouponSetClient(String couponSetCode, Boolean includeCounts, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponSetUrl(couponSetCode, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.couponsets.CouponUrl.getCouponSetUrl(couponSetCode, includeCounts, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.CouponSet.class;
 		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.CouponSet>) MozuClientFactory.getInstance(clz);

@@ -43,16 +43,16 @@ public class CouponFactory
 
 	public static com.mozu.api.contracts.productadmin.Coupon getCoupon(ApiContext apiContext, String couponSetCode, String couponCode, int expectedCode) throws Exception
 	{
-		return getCoupon(apiContext,  couponSetCode,  couponCode,  null, expectedCode);
+		return getCoupon(apiContext,  couponSetCode,  couponCode,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.Coupon getCoupon(ApiContext apiContext, String couponSetCode, String couponCode, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Coupon getCoupon(ApiContext apiContext, String couponSetCode, String couponCode, Boolean includeCounts, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Coupon returnObj = new com.mozu.api.contracts.productadmin.Coupon();
 		CouponResource resource = new CouponResource(apiContext);
 		try
 		{
-			returnObj = resource.getCoupon( couponSetCode,  couponCode,  responseFields);
+			returnObj = resource.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -68,16 +68,16 @@ public class CouponFactory
 
 	public static com.mozu.api.contracts.productadmin.CouponCollection getCoupons(ApiContext apiContext, String couponSetCode, int expectedCode) throws Exception
 	{
-		return getCoupons(apiContext,  couponSetCode,  null,  null,  null,  null,  null, expectedCode);
+		return getCoupons(apiContext,  couponSetCode,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.CouponCollection getCoupons(ApiContext apiContext, String couponSetCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CouponCollection getCoupons(ApiContext apiContext, String couponSetCode, Integer startIndex, Integer pageSize, String sortBy, String filter, Boolean includeCounts, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CouponCollection returnObj = new com.mozu.api.contracts.productadmin.CouponCollection();
 		CouponResource resource = new CouponResource(apiContext);
 		try
 		{
-			returnObj = resource.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+			returnObj = resource.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -93,16 +93,16 @@ public class CouponFactory
 
 	public static com.mozu.api.contracts.productadmin.CouponSet getCouponSet(ApiContext apiContext, String couponSetCode, int expectedCode) throws Exception
 	{
-		return getCouponSet(apiContext,  couponSetCode,  null, expectedCode);
+		return getCouponSet(apiContext,  couponSetCode,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.CouponSet getCouponSet(ApiContext apiContext, String couponSetCode, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CouponSet getCouponSet(ApiContext apiContext, String couponSetCode, Boolean includeCounts, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CouponSet returnObj = new com.mozu.api.contracts.productadmin.CouponSet();
 		CouponResource resource = new CouponResource(apiContext);
 		try
 		{
-			returnObj = resource.getCouponSet( couponSetCode,  responseFields);
+			returnObj = resource.getCouponSet( couponSetCode,  includeCounts,  responseFields);
 		}
 		catch (ApiException e)
 		{

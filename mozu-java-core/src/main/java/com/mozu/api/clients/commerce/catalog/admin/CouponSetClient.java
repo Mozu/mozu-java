@@ -34,18 +34,19 @@ public class CouponSetClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> getCouponSetsClient() throws Exception
 	{
-		return getCouponSetsClient( null,  null,  null,  null,  null);
+		return getCouponSetsClient( null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSetCollection couponSetCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter 
+	 * @param includeCounts 
 	 * @param pageSize 
 	 * @param responseFields 
 	 * @param sortBy 
@@ -53,9 +54,9 @@ public class CouponSetClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSetCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> getCouponSetsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> getCouponSetsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, Boolean includeCounts, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CouponSetUrl.getCouponSetsUrl(filter, pageSize, responseFields, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CouponSetUrl.getCouponSetsUrl(filter, includeCounts, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.CouponSetCollection.class;
 		MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection>) MozuClientFactory.getInstance(clz);

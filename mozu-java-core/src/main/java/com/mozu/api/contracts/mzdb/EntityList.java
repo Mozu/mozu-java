@@ -10,8 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.mzdb.ListView;
 import com.mozu.api.contracts.mzdb.IndexedProperty;
+import com.mozu.api.contracts.mzdb.ListView;
 
 /**
  *	The definition of an MZDB EntityList which describes the characteristics of the EntityList on a per tenant basis. EntityLists are created at the tenant level, but instances of the EntityLists are implicitly created at the appropriate context level as entities are added or removed from the EntityList.
@@ -177,17 +177,6 @@ public class EntityList implements Serializable
 	}
 
 	/**
-	 * The view in the site used by associated entities or document lists/list types.
-	 */
-	protected List<ListView> views;
-	public List<ListView> getViews() {
-		return this.views;
-	}
-	public void setViews(List<ListView> views) {
-		this.views = views;
-	}
-
-	/**
 	 * An IndexedProperty defintion which indicates the property on every entity provided should be used as the unique identifier for the document. Within an EntityList instance each entity must have a unique identifier.
 	 */
 	protected IndexedProperty idProperty;
@@ -263,6 +252,17 @@ public class EntityList implements Serializable
 
 	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
 		this.metadata = metadata;
+	}
+
+	/**
+	 * The view in the site used by associated entities or document lists/list types.
+	 */
+	protected List<ListView> views;
+	public List<ListView> getViews() {
+		return this.views;
+	}
+	public void setViews(List<ListView> views) {
+		this.views = views;
 	}
 
 }

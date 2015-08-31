@@ -16,16 +16,18 @@ public class CouponSetUrl
 	/**
 	 * Get Resource Url for GetCouponSets
 	 * @param filter 
+	 * @param includeCounts 
 	 * @param pageSize 
 	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponSetsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getCouponSetsUrl(String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
