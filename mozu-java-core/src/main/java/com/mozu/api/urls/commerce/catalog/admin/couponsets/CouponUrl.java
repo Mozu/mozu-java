@@ -29,14 +29,16 @@ public class CouponUrl
 	 * Get Resource Url for GetCoupon
 	 * @param couponCode 
 	 * @param couponSetCode 
+	 * @param includeCounts 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponUrl(String couponCode, String couponSetCode, String responseFields)
+	public static MozuUrl getCouponUrl(String couponCode, String couponSetCode, Boolean includeCounts, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons/{couponCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons/{couponCode}?includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("couponCode", couponCode);
 		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -45,17 +47,19 @@ public class CouponUrl
 	 * Get Resource Url for GetCoupons
 	 * @param couponSetCode 
 	 * @param filter 
+	 * @param includeCounts 
 	 * @param pageSize 
 	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("couponSetCode", couponSetCode);
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
@@ -66,13 +70,15 @@ public class CouponUrl
 	/**
 	 * Get Resource Url for GetCouponSet
 	 * @param couponSetCode 
+	 * @param includeCounts 
 	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponSetUrl(String couponSetCode, String responseFields)
+	public static MozuUrl getCouponSetUrl(String couponSetCode, Boolean includeCounts, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

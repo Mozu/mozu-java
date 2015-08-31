@@ -44,16 +44,17 @@ public class CouponSetResource {
 	 */
 	public com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets() throws Exception
 	{
-		return getCouponSets( null,  null,  null,  null,  null);
+		return getCouponSets( null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
-	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
 	 * @param filter 
+	 * @param includeCounts 
 	 * @param pageSize 
 	 * @param responseFields 
 	 * @param sortBy 
@@ -61,9 +62,9 @@ public class CouponSetResource {
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
 	 */
-	public com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets(Integer startIndex, Integer pageSize, String sortBy, String filter, Boolean includeCounts, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.getCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.getCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

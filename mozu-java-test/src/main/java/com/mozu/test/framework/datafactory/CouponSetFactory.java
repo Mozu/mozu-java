@@ -23,16 +23,16 @@ public class CouponSetFactory
 
 	public static com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		return getCouponSets(apiContext,  null,  null,  null,  null,  null, expectedCode);
+		return getCouponSets(apiContext,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CouponSetCollection getCouponSets(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, Boolean includeCounts, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CouponSetCollection returnObj = new com.mozu.api.contracts.productadmin.CouponSetCollection();
 		CouponSetResource resource = new CouponSetResource(apiContext);
 		try
 		{
-			returnObj = resource.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+			returnObj = resource.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 		}
 		catch (ApiException e)
 		{
