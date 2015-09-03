@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.paymentservice.Product;
 
+/**
+ *	Mozu.PaymentService.Contracts.OrderItem ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
 	protected String id;
 
 	public String getId() {
@@ -27,6 +33,9 @@ public class OrderItem implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -37,6 +46,9 @@ public class OrderItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.OrderItem taxAmount ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double taxAmount;
 
 	public Double getTaxAmount() {
@@ -47,6 +59,9 @@ public class OrderItem implements Serializable
 		this.taxAmount = taxAmount;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.OrderItem totalAmount ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double totalAmount;
 
 	public Double getTotalAmount() {
@@ -57,6 +72,9 @@ public class OrderItem implements Serializable
 		this.totalAmount = totalAmount;
 	}
 
+	/**
+	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
+	 */
 	protected Double unitPrice;
 
 	public Double getUnitPrice() {
@@ -67,6 +85,9 @@ public class OrderItem implements Serializable
 		this.unitPrice = unitPrice;
 	}
 
+	/**
+	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 */
 	protected Product product;
 
 	public Product getProduct() {

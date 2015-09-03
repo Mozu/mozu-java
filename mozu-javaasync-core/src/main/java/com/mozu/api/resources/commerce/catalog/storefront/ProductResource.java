@@ -271,12 +271,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode);
 	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -286,12 +286,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductForIndexing( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -302,13 +302,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -322,13 +322,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductForIndexing( productCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode 
-	 * @param responseFields 
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product

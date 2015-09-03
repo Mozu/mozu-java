@@ -19,6 +19,9 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * If the publishingMode is Pending and LiveEditsEnabled = true, DataViewMode live can be passed in the header and live products can be directly edited.
+	 */
 	protected Boolean enableLiveEdit;
 
 	public Boolean getEnableLiveEdit() {

@@ -11,12 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleExpression ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleExpression implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleExpression boostOperation ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String boostOperation;
 
 	public String getBoostOperation() {
@@ -27,6 +33,9 @@ public class SearchTuningRuleExpression implements Serializable
 		this.boostOperation = boostOperation;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleExpression boostScore ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double boostScore;
 
 	public Double getBoostScore() {
@@ -37,6 +46,9 @@ public class SearchTuningRuleExpression implements Serializable
 		this.boostScore = boostScore;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleExpression boostExpression ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DynamicExpression boostExpression;
 
 	public DynamicExpression getBoostExpression() {

@@ -84,13 +84,13 @@ public class DocumentResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId);
 	 * </code></pre></p>
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -100,13 +100,13 @@ public class DocumentResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -117,14 +117,14 @@ public class DocumentResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * </code></pre></p>
 	 * @param crop 
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 
@@ -144,14 +144,14 @@ public class DocumentResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param crop 
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

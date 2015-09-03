@@ -552,7 +552,7 @@ public class ReturnResource {
 	}
 
 	/**
-	 * 
+	 * commerce-returns Get GetReasons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReasonCollection reasonCollection = return.getReasons();
@@ -566,7 +566,7 @@ public class ReturnResource {
 	}
 
 	/**
-	 * 
+	 * commerce-returns Get GetReasons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	CountDownLatch latch = return.getReasons( callback );
@@ -581,12 +581,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * 
+	 * commerce-returns Get GetReasons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReasonCollection reasonCollection = return.getReasons( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 */
@@ -600,12 +600,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * 
+	 * commerce-returns Get GetReasons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	CountDownLatch latch = return.getReasons( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection

@@ -15,12 +15,18 @@ import com.mozu.api.contracts.paymentservice.Contact;
 import com.mozu.api.contracts.paymentservice.CustomData;
 import com.mozu.api.contracts.paymentservice.OrderItem;
 
+/**
+ *	Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FraudScreenRequest implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest avsCodes ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String avsCodes;
 
 	public String getAvsCodes() {
@@ -31,6 +37,9 @@ public class FraudScreenRequest implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String cardId;
 
 	public String getCardId() {
@@ -41,6 +50,9 @@ public class FraudScreenRequest implements Serializable
 		this.cardId = cardId;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cardNumberPart ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String cardNumberPart;
 
 	public String getCardNumberPart() {
@@ -51,6 +63,9 @@ public class FraudScreenRequest implements Serializable
 		this.cardNumberPart = cardNumberPart;
 	}
 
+	/**
+	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
+	 */
 	protected String countryCode;
 
 	public String getCountryCode() {
@@ -61,6 +76,9 @@ public class FraudScreenRequest implements Serializable
 		this.countryCode = countryCode;
 	}
 
+	/**
+	 * The localized currency code for the monetary amount. 
+	 */
 	protected String currencyCode;
 
 	public String getCurrencyCode() {
@@ -71,6 +89,9 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cvV2Codes ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String cvV2Codes;
 
 	public String getCvV2Codes() {
@@ -81,6 +102,9 @@ public class FraudScreenRequest implements Serializable
 		this.cvV2Codes = cvV2Codes;
 	}
 
+	/**
+	 * The two-digit month a credit card expires for a payment method.
+	 */
 	protected Integer expireMonth;
 
 	public Integer getExpireMonth() {
@@ -91,6 +115,9 @@ public class FraudScreenRequest implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
+	/**
+	 * The four-digit year the credit card expires for a payment method.
+	 */
 	protected Integer expireYear;
 
 	public Integer getExpireYear() {
@@ -101,6 +128,9 @@ public class FraudScreenRequest implements Serializable
 		this.expireYear = expireYear;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest gatewayAccountId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String gatewayAccountId;
 
 	public String getGatewayAccountId() {
@@ -111,6 +141,9 @@ public class FraudScreenRequest implements Serializable
 		this.gatewayAccountId = gatewayAccountId;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest merchantTransactionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String merchantTransactionId;
 
 	public String getMerchantTransactionId() {
@@ -121,6 +154,9 @@ public class FraudScreenRequest implements Serializable
 		this.merchantTransactionId = merchantTransactionId;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorIp ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String requestorIp;
 
 	public String getRequestorIp() {
@@ -131,6 +167,9 @@ public class FraudScreenRequest implements Serializable
 		this.requestorIp = requestorIp;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUrl ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String requestorUrl;
 
 	public String getRequestorUrl() {
@@ -141,6 +180,9 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUrl = requestorUrl;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorUserAgent ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String requestorUserAgent;
 
 	public String getRequestorUserAgent() {
@@ -151,6 +193,9 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingAddress ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Address billingAddress;
 
 	public Address getBillingAddress() {
@@ -161,6 +206,9 @@ public class FraudScreenRequest implements Serializable
 		this.billingAddress = billingAddress;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingContact ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Contact billingContact;
 
 	public Contact getBillingContact() {
@@ -171,6 +219,9 @@ public class FraudScreenRequest implements Serializable
 		this.billingContact = billingContact;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest customData ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<CustomData> customData;
 	public List<CustomData> getCustomData() {
 		return this.customData;
@@ -179,6 +230,9 @@ public class FraudScreenRequest implements Serializable
 		this.customData = customData;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderItems ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<OrderItem> orderItems;
 	public List<OrderItem> getOrderItems() {
 		return this.orderItems;
@@ -187,6 +241,9 @@ public class FraudScreenRequest implements Serializable
 		this.orderItems = orderItems;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingAddress ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Address shippingAddress;
 
 	public Address getShippingAddress() {
@@ -197,6 +254,9 @@ public class FraudScreenRequest implements Serializable
 		this.shippingAddress = shippingAddress;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shippingContact ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Contact shippingContact;
 
 	public Contact getShippingContact() {

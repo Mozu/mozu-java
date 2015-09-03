@@ -30,7 +30,8 @@ public class RefundUrl
 	/**
 	 * Get Resource Url for ResendRefundEmail
 	 * @param orderId Unique identifier of the order.
-	 * @param refundId 
+	 * @param refundId Unique ID of the refund.
+        
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendRefundEmailUrl(String orderId, String refundId)

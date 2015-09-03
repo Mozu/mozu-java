@@ -24,7 +24,7 @@ import org.apache.commons.lang.StringUtils;
 public class SearchClient {
 	
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -41,14 +41,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -66,7 +66,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient();
 	 * client.setBaseAddress(url);
@@ -82,18 +82,18 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection> mozuClient=GetSearchTuningRulesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRuleCollection searchTuningRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 */
@@ -110,7 +110,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningSortRelevance description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningSortRelevanceClient();
 	 * client.setBaseAddress(url);
@@ -173,14 +173,14 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -191,15 +191,15 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param searchTuningRuleIn 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -218,13 +218,13 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Post UpdateSearchTuningSortRelevance description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param searchTuningSortRelevanceIn 
+	 * @param searchTuningSortRelevanceIn Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
 	 */
@@ -241,7 +241,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode);
 	 * client.setBaseAddress(url);
@@ -249,7 +249,7 @@ public class SearchClient {
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode 
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -260,16 +260,16 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -333,7 +333,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Delete DeleteSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);

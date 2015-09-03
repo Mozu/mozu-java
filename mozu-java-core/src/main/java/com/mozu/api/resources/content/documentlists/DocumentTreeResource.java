@@ -62,13 +62,13 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documentTree Get TransformTreeDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -78,14 +78,14 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * 
+	 * documentlists-documentTree Get TransformTreeDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * </code></pre></p>
 	 * @param crop 
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

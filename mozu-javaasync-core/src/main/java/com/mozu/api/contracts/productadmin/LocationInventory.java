@@ -21,7 +21,7 @@ public class LocationInventory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.LocationInventory baseProductCode ApiTypeMember DOCUMENT_HERE 
+	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
 	protected String baseProductCode;
 

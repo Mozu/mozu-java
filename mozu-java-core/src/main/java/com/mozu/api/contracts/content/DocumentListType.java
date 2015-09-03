@@ -46,6 +46,16 @@ public class DocumentListType implements Serializable
 		this.documentTypeFQNs = documentTypeFQNs;
 	}
 
+	protected Boolean enableActiveDateRanges;
+
+	public Boolean getEnableActiveDateRanges() {
+		return this.enableActiveDateRanges;
+	}
+
+	public void setEnableActiveDateRanges(Boolean enableActiveDateRanges) {
+		this.enableActiveDateRanges = enableActiveDateRanges;
+	}
+
 	/**
 	 * Indicates if the document list and document list type are enabled to publish. If true, publishing of draft documents in this document list/document list type is enabled for the site. If false, all document changes are immediately published in live mode.
 	 */
@@ -109,6 +119,16 @@ public class DocumentListType implements Serializable
 
 	public void setScopeType(String scopeType) {
 		this.scopeType = scopeType;
+	}
+
+	protected Boolean supportsActiveDateRanges;
+
+	public Boolean getSupportsActiveDateRanges() {
+		return this.supportsActiveDateRanges;
+	}
+
+	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
+		this.supportsActiveDateRanges = supportsActiveDateRanges;
 	}
 
 	/**

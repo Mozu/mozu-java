@@ -30,8 +30,8 @@ public class DocumentTreeUrl
 	/**
 	 * Get Resource Url for TransformTreeDocumentContent
 	 * @param crop 
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

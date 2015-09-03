@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFunction ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleFunction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFunction boostFunction ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String boostFunction;
 
 	public String getBoostFunction() {
@@ -26,6 +32,9 @@ public class SearchTuningRuleFunction implements Serializable
 		this.boostFunction = boostFunction;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFunction boostFunctionCode ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String boostFunctionCode;
 
 	public String getBoostFunctionCode() {
@@ -36,6 +45,9 @@ public class SearchTuningRuleFunction implements Serializable
 		this.boostFunctionCode = boostFunctionCode;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFunction boostScore ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double boostScore;
 
 	public Double getBoostScore() {

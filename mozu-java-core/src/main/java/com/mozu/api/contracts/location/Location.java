@@ -10,12 +10,12 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.location.RegularHours;
+import com.mozu.api.contracts.location.Coordinates;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.FulfillmentType;
-import com.mozu.api.contracts.location.Coordinates;
 import com.mozu.api.contracts.location.LocationType;
+import com.mozu.api.contracts.location.RegularHours;
 import com.mozu.api.contracts.location.ShippingOriginContact;
 
 /**
@@ -156,16 +156,16 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * List of standard operating hours for each day of the week this location is open for shopper business.
+	 * The geographical coordinates associated with this location.
 	 */
-	protected RegularHours regularHours;
+	protected Coordinates geo;
 
-	public RegularHours getRegularHours() {
-		return this.regularHours;
+	public Coordinates getGeo() {
+		return this.geo;
 	}
 
-	public void setRegularHours(RegularHours regularHours) {
-		this.regularHours = regularHours;
+	public void setGeo(Coordinates geo) {
+		this.geo = geo;
 	}
 
 	/**
@@ -203,19 +203,6 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * The geographical coordinates associated with this location.
-	 */
-	protected Coordinates geo;
-
-	public Coordinates getGeo() {
-		return this.geo;
-	}
-
-	public void setGeo(Coordinates geo) {
-		this.geo = geo;
-	}
-
-	/**
 	 * List of location types associated with this location. You can associate individual locations with any number of location types.
 	 */
 	protected List<LocationType> locationTypes;
@@ -224,6 +211,19 @@ public class Location implements Serializable
 	}
 	public void setLocationTypes(List<LocationType> locationTypes) {
 		this.locationTypes = locationTypes;
+	}
+
+	/**
+	 * List of standard operating hours for each day of the week this location is open for shopper business.
+	 */
+	protected RegularHours regularHours;
+
+	public RegularHours getRegularHours() {
+		return this.regularHours;
+	}
+
+	public void setRegularHours(RegularHours regularHours) {
+		this.regularHours = regularHours;
 	}
 
 	/**

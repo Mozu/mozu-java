@@ -20,45 +20,6 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The considered relevancy weight for the attributes.
-	 */
-	protected Integer attributesWeight;
-
-	public Integer getAttributesWeight() {
-		return this.attributesWeight;
-	}
-
-	public void setAttributesWeight(Integer attributesWeight) {
-		this.attributesWeight = attributesWeight;
-	}
-
-	/**
-	 * The considered relevancy weight for category names.
-	 */
-	protected Integer categoryNamesWeight;
-
-	public Integer getCategoryNamesWeight() {
-		return this.categoryNamesWeight;
-	}
-
-	public void setCategoryNamesWeight(Integer categoryNamesWeight) {
-		this.categoryNamesWeight = categoryNamesWeight;
-	}
-
-	/**
-	 * The considered relevancy weight for descriptions.
-	 */
-	protected Integer descriptionWeight;
-
-	public Integer getDescriptionWeight() {
-		return this.descriptionWeight;
-	}
-
-	public void setDescriptionWeight(Integer descriptionWeight) {
-		this.descriptionWeight = descriptionWeight;
-	}
-
-	/**
 	 * The considered relevancy weight for keywords.
 	 */
 	protected Integer keywordsWeight;
@@ -134,6 +95,45 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 
 	public void setUpcWeight(Integer upcWeight) {
 		this.upcWeight = upcWeight;
+	}
+
+	/**
+	 * The considered relevancy weight for the attributes.
+	 */
+	protected Integer attributesWeight;
+
+	public Integer getAttributesWeight() {
+		return this.attributesWeight;
+	}
+
+	public void setAttributesWeight(Integer attributesWeight) {
+		this.attributesWeight = attributesWeight;
+	}
+
+	/**
+	 * The considered relevancy weight for category names.
+	 */
+	protected Integer categoryNamesWeight;
+
+	public Integer getCategoryNamesWeight() {
+		return this.categoryNamesWeight;
+	}
+
+	public void setCategoryNamesWeight(Integer categoryNamesWeight) {
+		this.categoryNamesWeight = categoryNamesWeight;
+	}
+
+	/**
+	 * The considered relevancy weight for descriptions.
+	 */
+	protected Integer descriptionWeight;
+
+	public Integer getDescriptionWeight() {
+		return this.descriptionWeight;
+	}
+
+	public void setDescriptionWeight(Integer descriptionWeight) {
+		this.descriptionWeight = descriptionWeight;
 	}
 
 }

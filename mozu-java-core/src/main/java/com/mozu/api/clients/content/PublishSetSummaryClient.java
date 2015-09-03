@@ -16,13 +16,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * content/publishsets related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PublishSetSummaryClient {
 	
 	/**
-	 * 
+	 * Returns a List of current Publishing sets with counts of drafts in each
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -38,16 +38,16 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Returns a List of current Publishing sets with counts of drafts in each
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient( pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PublishSetSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 */
@@ -64,14 +64,14 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Retrieve a paged collection of publish set Items.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -81,17 +81,17 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Retrieve a paged collection of publish set Items.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -108,14 +108,14 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Adds a set of documents by id to a publish set
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 */
@@ -125,15 +125,15 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Adds a set of documents by id to a publish set
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code,  shouldDiscard,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code 
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param shouldDiscard 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
@@ -151,15 +151,15 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Adds a set of documents by id to a publish set
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code 
-	 * @param itemsToPublish 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
@@ -170,16 +170,16 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * 
+	 * Adds a set of documents by id to a publish set
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code 
-	 * @param responseFields 
-	 * @param itemsToPublish 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem

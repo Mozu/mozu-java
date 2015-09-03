@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class FraudScreenResource {
@@ -34,12 +34,12 @@ public class FraudScreenResource {
 
 	
 	/**
-	 * 
+	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
 	 * </code></pre></p>
-	 * @param request 
+	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest

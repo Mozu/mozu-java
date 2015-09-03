@@ -97,6 +97,9 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Mozu.Customer.Contracts.Card isDefaultPayMethod ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {

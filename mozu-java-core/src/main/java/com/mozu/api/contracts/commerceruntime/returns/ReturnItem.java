@@ -50,6 +50,16 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
+	protected String orderItemOptionAttributeFQN;
+
+	public String getOrderItemOptionAttributeFQN() {
+		return this.orderItemOptionAttributeFQN;
+	}
+
+	public void setOrderItemOptionAttributeFQN(String orderItemOptionAttributeFQN) {
+		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
+	}
+
 	/**
 	 * The OrderLineId that this ReturnItem is associated with. If order item is present, the orderLineId should be present also.
 	 */

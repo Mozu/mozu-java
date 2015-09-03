@@ -39,6 +39,9 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
+	/**
+	 * Custom dns host name for cnd edge caching.
+	 */
 	protected String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -322,6 +325,9 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Set of settings to deal with site caching.
+	 */
 	protected CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -332,6 +338,9 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
+	/**
+	 * Site-level control over request routing for SEO purposes. Not available for update, must use its own subresource.
+	 */
 	protected CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {

@@ -51,7 +51,7 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateExtendedProperties
-	 * @param upsert 
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtendedPropertiesUrl(Boolean upsert)

@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayInteraction;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
+import com.mozu.api.contracts.commerceruntime.payments.RiskData;
 
 /**
  *	Properties of the payment action performed for an order.
@@ -86,6 +87,9 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Mozu.CommerceRuntime.Contracts.Payments.PaymentAction externalTransactionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -159,6 +163,16 @@ public class PaymentAction implements Serializable
 
 	public void setNewBillingInfo(BillingInfo newBillingInfo) {
 		this.newBillingInfo = newBillingInfo;
+	}
+
+	protected RiskData riskData;
+
+	public RiskData getRiskData() {
+		return this.riskData;
+	}
+
+	public void setRiskData(RiskData riskData) {
+		this.riskData = riskData;
 	}
 
 }

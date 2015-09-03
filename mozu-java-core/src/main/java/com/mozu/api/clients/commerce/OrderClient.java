@@ -293,7 +293,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ProcessDigitalWallet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ProcessDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType);
 	 * client.setBaseAddress(url);
@@ -301,8 +301,8 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param digitalWalletType 
-	 * @param orderId 
-	 * @param digitalWallet 
+	 * @param orderId Unique identifier of the order.
+	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet
@@ -313,7 +313,7 @@ public class OrderClient {
 	}
 
 	/**
-	 * 
+	 * commerce-orders Put ProcessDigitalWallet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ProcessDigitalWalletClient( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 	 * client.setBaseAddress(url);
@@ -321,9 +321,9 @@ public class OrderClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param digitalWalletType 
-	 * @param orderId 
-	 * @param responseFields 
-	 * @param digitalWallet 
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.DigitalWallet

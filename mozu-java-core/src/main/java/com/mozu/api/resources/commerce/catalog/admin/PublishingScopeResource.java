@@ -42,7 +42,7 @@ public class PublishingScopeResource {
 	}
 		
 	/**
-	 * 
+	 * Retrieves the details of a single PublishSet.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
@@ -58,13 +58,13 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of a single PublishSet.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
 	 * </code></pre></p>
 	 * @param publishSetCode 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -79,7 +79,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of PublishSets including the product counts.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets();
@@ -94,12 +94,12 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of PublishSets including the product counts.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -154,13 +154,13 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet 
+	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -171,14 +171,14 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet 
+	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -193,7 +193,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode);
@@ -208,7 +208,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * 
+	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);

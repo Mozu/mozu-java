@@ -14,6 +14,7 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentInteraction;
+import com.mozu.api.contracts.commerceruntime.payments.RiskData;
 
 /**
  *	Properties of a payment transaction submitted for an order.
@@ -74,6 +75,9 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
+	/**
+	 * The external/third party transaction Id for this payment. This is used to store the transaction Id from digital wallet like Visa Checkout
+	 */
 	protected String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -149,6 +153,9 @@ public class Payment implements Serializable
 		this.paymentType = paymentType;
 	}
 
+	/**
+	 * The source of data for this payment. By default, this will be set to 'mozu'
+	 */
 	protected String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -218,6 +225,16 @@ public class Payment implements Serializable
 	}
 	public void setInteractions(List<PaymentInteraction> interactions) {
 		this.interactions = interactions;
+	}
+
+	protected RiskData riskData;
+
+	public RiskData getRiskData() {
+		return this.riskData;
+	}
+
+	public void setRiskData(RiskData riskData) {
+		this.riskData = riskData;
 	}
 
 }

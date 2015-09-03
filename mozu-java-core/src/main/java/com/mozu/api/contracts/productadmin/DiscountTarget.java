@@ -24,6 +24,9 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Applies to Included categories Defaults to Any
+	 */
 	protected String excludedCategoriesOperator;
 
 	public String getExcludedCategoriesOperator() {
@@ -73,6 +76,9 @@ public class DiscountTarget implements Serializable
 		this.includeAllProducts = includeAllProducts;
 	}
 
+	/**
+	 * Applies to Included categories Defaults to Any
+	 */
 	protected String includedCategoriesOperator;
 
 	public String getIncludedCategoriesOperator() {
@@ -165,7 +171,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Shipping Zones that are applicable for this discount
+	 * The list of shipping zones that are applicable for this discount.
 	 */
 	protected List<TargetedShippingZone> shippingZones;
 	public List<TargetedShippingZone> getShippingZones() {

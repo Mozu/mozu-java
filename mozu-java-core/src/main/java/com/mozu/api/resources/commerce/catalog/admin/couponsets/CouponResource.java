@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * commerce/catalog/admin/couponsets/coupons related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CouponResource {
@@ -34,7 +34,7 @@ public class CouponResource {
 
 	
 	/**
-	 * 
+	 * couponsets-coupons Get GetAssignedDiscounts description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	AssignedDiscount assignedDiscount = coupon.getAssignedDiscounts( couponSetCode);
@@ -53,12 +53,12 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCoupon description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode 
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param couponSetCode 
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
@@ -69,15 +69,15 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCoupon description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	Coupon coupon = coupon.getCoupon( couponSetCode,  couponCode,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponCode 
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param couponSetCode 
 	 * @param includeCounts 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productadmin.Coupon
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -91,7 +91,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCoupons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode);
@@ -106,18 +106,18 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCoupons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponCollection couponCollection = coupon.getCoupons( couponSetCode,  startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param includeCounts 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return com.mozu.api.contracts.productadmin.CouponCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponCollection
 	 */
@@ -131,7 +131,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponSet couponSet = coupon.getCouponSet( couponSetCode);
@@ -146,14 +146,14 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Get GetCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponSet couponSet = coupon.getCouponSet( couponSetCode,  includeCounts,  responseFields);
 	 * </code></pre></p>
 	 * @param couponSetCode 
 	 * @param includeCounts 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
@@ -167,13 +167,13 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Post AssignDiscount description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param assignedDiscount 
+	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -187,13 +187,13 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Post AddCoupons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.addCoupons( coupons,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param coupons 
+	 * @param coupons Mozu.ProductAdmin.Contracts.Coupon ApiType DOCUMENT_HERE 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.Coupon
 	 */
@@ -207,7 +207,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Post DeleteCoupons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupons( couponCodes,  couponSetCode);
@@ -227,13 +227,13 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Put UpdateCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponSet couponSet = coupon.updateCouponSet( couponSet,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param couponSet 
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -244,14 +244,14 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Put UpdateCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	CouponSet couponSet = coupon.updateCouponSet( couponSet,  couponSetCode,  responseFields);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param responseFields 
-	 * @param couponSet 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -266,7 +266,7 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Delete DeleteCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCouponSet( couponSetCode);
@@ -284,13 +284,13 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Delete UnAssignDiscount description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
 	 * @param couponSetCode 
-	 * @param discountId 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return 
 	 */
 	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception
@@ -303,12 +303,12 @@ public class CouponResource {
 	}
 
 	/**
-	 * 
+	 * couponsets-coupons Delete DeleteCoupon description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
 	 *	coupon.deleteCoupon( couponSetCode,  couponCode);
 	 * </code></pre></p>
-	 * @param couponCode 
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param couponSetCode 
 	 * @return 
 	 */

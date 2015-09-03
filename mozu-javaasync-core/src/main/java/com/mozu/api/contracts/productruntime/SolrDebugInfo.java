@@ -11,12 +11,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.ProductRuntime.Contracts.SolrDebugInfo ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SolrDebugInfo implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo blockedProductCodes ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<String> blockedProductCodes;
 	public List<String> getBlockedProductCodes() {
 		return this.blockedProductCodes;
@@ -25,6 +31,9 @@ public class SolrDebugInfo implements Serializable
 		this.blockedProductCodes = blockedProductCodes;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostedProductCodes ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<String> boostedProductCodes;
 	public List<String> getBoostedProductCodes() {
 		return this.boostedProductCodes;
@@ -33,6 +42,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostedProductCodes = boostedProductCodes;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostFunctions ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<String> boostFunctions;
 	public List<String> getBoostFunctions() {
 		return this.boostFunctions;
@@ -41,6 +53,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostFunctions = boostFunctions;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostQueries ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<String> boostQueries;
 	public List<String> getBoostQueries() {
 		return this.boostQueries;
@@ -49,6 +64,9 @@ public class SolrDebugInfo implements Serializable
 		this.boostQueries = boostQueries;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {

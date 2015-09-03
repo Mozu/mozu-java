@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.ExtendedPropertyResource;
 
 /** <summary>
- * commerce/orders/extendedproperties related resources. DOCUMENT_HERE 
+ * Use the Extended Properties resource to store tracking strings for your orders. Extended properties can help you track affiliate sources.
  * </summary>
  */
 public class ExtendedPropertyFactory

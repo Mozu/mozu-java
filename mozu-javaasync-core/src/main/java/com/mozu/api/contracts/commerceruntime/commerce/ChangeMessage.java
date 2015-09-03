@@ -46,7 +46,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * App Key
+	 * The application's key.
 	 */
 	protected String appKey;
 
@@ -59,7 +59,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * App Name
+	 * The application's name.
 	 */
 	protected String appName;
 
@@ -215,7 +215,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * User First Name
+	 * The user's first name.
 	 */
 	protected String userFirstName;
 
@@ -241,7 +241,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * User Last Name
+	 * The user's last name.
 	 */
 	protected String userLastName;
 
@@ -254,7 +254,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * User Type (e.g. Shopper, Admin, etc.)
+	 * The user type (e.g. Shopper, Admin, etc.).
 	 */
 	protected String userScopeType;
 

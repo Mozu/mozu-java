@@ -12,12 +12,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRule;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection capacity ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer capacity;
 
 	public Integer getCapacity() {
@@ -28,6 +34,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.capacity = capacity;
 	}
 
+	/**
+	 * The number of facet results for a product search.
+	 */
 	protected Integer count;
 
 	public Integer getCount() {
@@ -38,6 +47,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.count = count;
 	}
 
+	/**
+	 * The total number of pages of the results divided per the `pageSize`.
+	 */
 	protected Integer pageCount;
 
 	public Integer getPageCount() {
@@ -48,6 +60,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
+	/**
+	 * The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 */
 	protected Integer pageSize;
 
 	public Integer getPageSize() {
@@ -58,6 +73,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
+	/**
+	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 */
 	protected Integer startIndex;
 
 	public Integer getStartIndex() {
@@ -68,6 +86,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
+	/**
+	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
+	 */
 	protected Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -78,6 +99,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.totalCount = totalCount;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection item ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected SearchTuningRule item;
 
 	public SearchTuningRule getItem() {
@@ -88,6 +112,9 @@ public class SearchTuningRuleCollection implements Serializable
 		this.item = item;
 	}
 
+	/**
+	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 */
 	protected List<SearchTuningRule> items;
 	public List<SearchTuningRule> getItems() {
 		return this.items;
