@@ -48,6 +48,9 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
+	/**
+	 * Mozu.CommerceRuntime.Contracts.Payments.BillingInfo paymentWorkflow ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String paymentWorkflow;
 
 	public String getPaymentWorkflow() {

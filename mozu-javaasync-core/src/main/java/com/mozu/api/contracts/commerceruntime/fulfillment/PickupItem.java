@@ -45,6 +45,16 @@ public class PickupItem implements Serializable
 		this.lineId = lineId;
 	}
 
+	protected String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */

@@ -20,19 +20,6 @@ public class PropertyType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The administrator name associated with the object/data.
-	 */
-	protected String adminName;
-
-	public String getAdminName() {
-		return this.adminName;
-	}
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
-	}
-
-	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
 	protected String dataType;
@@ -147,6 +134,19 @@ public class PropertyType implements Serializable
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	/**
+	 * The administrator name associated with the object/data.
+	 */
+	protected String adminName;
+
+	public String getAdminName() {
+		return this.adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 
 }

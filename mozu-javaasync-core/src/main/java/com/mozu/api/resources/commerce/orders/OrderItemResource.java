@@ -36,7 +36,7 @@ public class OrderItemResource {
 
 	
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId);
@@ -52,7 +52,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItemViaLineId( orderId,  lineId, callback );
@@ -69,7 +69,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	OrderItem orderItem = orderitem.getOrderItemViaLineId( orderId,  lineId,  draft,  responseFields);
@@ -91,7 +91,7 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.getOrderItemViaLineId( orderId,  lineId,  draft,  responseFields, callback );
@@ -439,12 +439,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount);
 	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -456,12 +457,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param  callback callback handler for asynchronous operations
@@ -474,12 +476,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	Order order = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
@@ -498,12 +501,13 @@ public class OrderItemResource {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 *	OrderItem orderitem = new OrderItem();
 	 *	CountDownLatch latch = orderitem.updateItemDuty( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.

@@ -11,12 +11,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningSortRelevance implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance sortList ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<String> sortList;
 	public List<String> getSortList() {
 		return this.sortList;
@@ -25,6 +31,9 @@ public class SearchTuningSortRelevance implements Serializable
 		this.sortList = sortList;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance sortType ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String sortType;
 
 	public String getSortType() {

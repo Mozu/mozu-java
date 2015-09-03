@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.settings.general.CustomRouteSettingsResource;
 
 /** <summary>
- * 
+ * commerce/settings/general/customroutes related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CustomRouteSettingsFactory

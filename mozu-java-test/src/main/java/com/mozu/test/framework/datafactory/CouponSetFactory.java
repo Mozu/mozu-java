@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.CouponSetResource;
 
 /** <summary>
- * 
+ * commerce/catalog/admin/couponsets related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CouponSetFactory

@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * commerce/catalog/admin/couponsets related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CouponSetResource {
@@ -34,7 +34,7 @@ public class CouponSetResource {
 
 	
 	/**
-	 * 
+	 * Returns a paged collection of CouponSets
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets();
@@ -48,17 +48,17 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a paged collection of CouponSets
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param includeCounts 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
 	 */
@@ -72,7 +72,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a random 4 character code that is unique as a coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode();
@@ -86,12 +86,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a random 4 character code that is unique as a coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return string
 	 * @see string
 	 */
@@ -105,12 +105,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Adds a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet);
 	 * </code></pre></p>
-	 * @param couponSet 
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -121,13 +121,13 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Adds a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param couponSet 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -142,12 +142,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Tests code for uniqueness and validity
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.validateUniqueCouponSetCode( code);
 	 * </code></pre></p>
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return 
 	 */
 	public void validateUniqueCouponSetCode(String code) throws Exception

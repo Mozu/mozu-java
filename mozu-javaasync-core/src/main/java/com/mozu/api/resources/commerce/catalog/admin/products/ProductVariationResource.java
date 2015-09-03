@@ -444,7 +444,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updatesthe localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
@@ -463,7 +463,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updatesthe localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode, callback );
@@ -483,7 +483,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updatesthe localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
@@ -507,7 +507,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updatesthe localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	CountDownLatch latch = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields, callback );

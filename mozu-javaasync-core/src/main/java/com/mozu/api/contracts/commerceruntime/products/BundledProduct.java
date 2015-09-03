@@ -21,19 +21,6 @@ public class BundledProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
-	protected String optionAttributeFQN;
-
-	public String getOptionAttributeFQN() {
-		return this.optionAttributeFQN;
-	}
-
-	public void setOptionAttributeFQN(String optionAttributeFQN) {
-		this.optionAttributeFQN = optionAttributeFQN;
-	}
-
-	/**
 	 * Allocation ID associated with this product on this order.
 	 */
 	protected DateTime allocationExpiration;
@@ -135,6 +122,19 @@ public class BundledProduct implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 */
+	protected String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
 	}
 
 	/**

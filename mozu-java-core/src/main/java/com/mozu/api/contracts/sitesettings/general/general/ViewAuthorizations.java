@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations ApiType DOCUMENT_HERE 
+ *	Set whether you require users to be authenticated to preview content or view the live site.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAuthorizations implements Serializable

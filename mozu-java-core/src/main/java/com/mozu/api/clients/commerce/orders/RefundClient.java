@@ -16,13 +16,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/orders/orderrefunds related resources. DOCUMENT_HERE 
+ * Use the refunds resource to create a refund.
  * </summary>
  */
 public class RefundClient {
 	
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
@@ -41,7 +41,7 @@ public class RefundClient {
 	}
 
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -69,14 +69,15 @@ public class RefundClient {
 	}
 
 	/**
-	 * orders-orderrefunds Put ResendRefundEmail description DOCUMENT_HERE 
+	 * Resends the order refund email previously sent to the shopper. 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param refundId 
+	 * @param refundId Unique ID of the refund.
+        
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendRefundEmailClient(String orderId, String refundId) throws Exception

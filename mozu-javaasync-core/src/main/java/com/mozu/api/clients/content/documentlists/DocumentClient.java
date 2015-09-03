@@ -51,15 +51,15 @@ public class DocumentClient {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -69,7 +69,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * 
+	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * client.setBaseAddress(url);
@@ -77,8 +77,8 @@ public class DocumentClient {
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param crop 
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

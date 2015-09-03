@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.Content.Contracts.ActiveDateRange ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The end of the active date range for this document
+	 */
 	protected DateTime endDate;
 
 	public DateTime getEndDate() {
@@ -26,6 +32,9 @@ public class ActiveDateRange implements Serializable
 		this.endDate = endDate;
 	}
 
+	/**
+	 * The beginning of the active date range of this document
+	 */
 	protected DateTime startDate;
 
 	public DateTime getStartDate() {

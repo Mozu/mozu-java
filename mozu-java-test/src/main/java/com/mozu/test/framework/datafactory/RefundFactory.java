@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.orders.RefundResource;
 
 /** <summary>
- * commerce/orders/orderrefunds related resources. DOCUMENT_HERE 
+ * Use the refunds resource to create a refund.
  * </summary>
  */
 public class RefundFactory

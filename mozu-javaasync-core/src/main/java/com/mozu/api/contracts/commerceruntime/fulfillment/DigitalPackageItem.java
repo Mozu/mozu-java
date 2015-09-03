@@ -55,6 +55,16 @@ public class DigitalPackageItem implements Serializable
 		this.lineId = lineId;
 	}
 
+	protected String optionAttributeFQN;
+
+	public String getOptionAttributeFQN() {
+		return this.optionAttributeFQN;
+	}
+
+	public void setOptionAttributeFQN(String optionAttributeFQN) {
+		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */

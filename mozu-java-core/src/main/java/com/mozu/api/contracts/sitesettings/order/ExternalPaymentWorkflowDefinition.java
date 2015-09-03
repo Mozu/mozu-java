@@ -21,6 +21,9 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Fully qualified name of the attribute for the order or customer. 
+	 */
 	protected String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -57,6 +60,9 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 */
 	protected String namespace;
 
 	public String getNamespace() {

@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.AppDev.Contracts.ApplicationCapabilityDomainValue ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityDomainValue implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomainValue applicationCapabilityDomainId1 ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationCapabilityDomainId1;
 
 	public Integer getApplicationCapabilityDomainId1() {
@@ -26,6 +32,9 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainId1 = applicationCapabilityDomainId1;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomainValue applicationCapabilityDomainId2 ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationCapabilityDomainId2;
 
 	public Integer getApplicationCapabilityDomainId2() {
@@ -36,6 +45,9 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainId2 = applicationCapabilityDomainId2;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomainValue applicationCapabilityDomainValueId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationCapabilityDomainValueId;
 
 	public Integer getApplicationCapabilityDomainValueId() {
@@ -46,6 +58,9 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainValueId = applicationCapabilityDomainValueId;
 	}
 
+	/**
+	 * The name that displays for the payment gateway or third-party credentials field. 
+	 */
 	protected String displayName;
 
 	public String getDisplayName() {
@@ -56,6 +71,9 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.displayName = displayName;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomainValue valueName ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String valueName;
 
 	public String getValueName() {

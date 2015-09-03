@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.AppDev.Contracts.ApplicationTransaction ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationTransaction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationEntitlementId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
@@ -26,6 +32,9 @@ public class ApplicationTransaction implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -36,6 +45,9 @@ public class ApplicationTransaction implements Serializable
 		this.applicationId = applicationId;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationTransactionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer applicationTransactionId;
 
 	public Integer getApplicationTransactionId() {
@@ -46,6 +58,9 @@ public class ApplicationTransaction implements Serializable
 		this.applicationTransactionId = applicationTransactionId;
 	}
 
+	/**
+	 * The three character ISO currency code for the monetary amount. For example, USD is used for US Dollars. 
+	 */
 	protected String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
@@ -69,6 +84,9 @@ public class ApplicationTransaction implements Serializable
 		this.localeCode = localeCode;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction orderNumber ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String orderNumber;
 
 	public String getOrderNumber() {
@@ -79,6 +97,9 @@ public class ApplicationTransaction implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
+	/**
+	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {
@@ -102,6 +123,9 @@ public class ApplicationTransaction implements Serializable
 		this.tenantId = tenantId;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionDate ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
@@ -112,6 +136,9 @@ public class ApplicationTransaction implements Serializable
 		this.transactionDate = transactionDate;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionPrice ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double transactionPrice;
 
 	public Double getTransactionPrice() {
@@ -122,6 +149,9 @@ public class ApplicationTransaction implements Serializable
 		this.transactionPrice = transactionPrice;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionTax ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double transactionTax;
 
 	public Double getTransactionTax() {
@@ -132,6 +162,9 @@ public class ApplicationTransaction implements Serializable
 		this.transactionTax = transactionTax;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionTotal ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Double transactionTotal;
 
 	public Double getTransactionTotal() {

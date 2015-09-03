@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition;
 import com.mozu.api.contracts.sitesettings.order.Gateway;
+import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	Properties of the payment settings used at order checkout time for the site.
@@ -37,19 +37,6 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
-	}
-
-	/**
 	 * The external payment workflwo definitions configured for the site's payment settings. At this time, only PayPal Express is supported.
 	 */
 	protected List<ExternalPaymentWorkflowDefinition> externalPaymentWorkflowDefinitions;
@@ -61,7 +48,7 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * List of name and account information for a payment gateway. Additional payment gateway providers will be supported in future releases.
+	 * List of name and account information for a payment gateway.
 	 */
 	protected List<Gateway> gateways;
 	public List<Gateway> getGateways() {
@@ -69,6 +56,19 @@ public class PaymentSettings implements Serializable
 	}
 	public void setGateways(List<Gateway> gateways) {
 		this.gateways = gateways;
+	}
+
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
 	}
 
 }

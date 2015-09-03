@@ -49,6 +49,9 @@ public class DiscountCondition implements Serializable
 		this.expirationDate = expirationDate;
 	}
 
+	/**
+	 * List of payment types that trigger this discount to be valid.
+	 */
 	protected List<String> includedPaymentWorkflows;
 	public List<String> getIncludedPaymentWorkflows() {
 		return this.includedPaymentWorkflows;

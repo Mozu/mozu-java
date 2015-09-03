@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.Content.Contracts.PublishSetSummary ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSetSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The number of facet results for a product search.
+	 */
 	protected Integer count;
 
 	public Integer getCount() {
@@ -26,6 +32,9 @@ public class PublishSetSummary implements Serializable
 		this.count = count;
 	}
 
+	/**
+	 * the code of the associated publish set
+	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {

@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * commerce/settings/general/customroutes related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CustomRouteSettingsResource {
@@ -36,7 +36,7 @@ public class CustomRouteSettingsResource {
 
 	
 	/**
-	 * 
+	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings();
@@ -50,7 +50,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.getCustomRouteSettings( callback );
@@ -65,12 +65,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 */
@@ -84,12 +84,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.getCustomRouteSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -103,12 +103,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings);
 	 * </code></pre></p>
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -119,13 +119,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.createCustomRouteSettings( settings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -136,13 +136,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param settings 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -157,14 +157,14 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.createCustomRouteSettings( settings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -178,12 +178,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings);
 	 * </code></pre></p>
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -194,13 +194,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.updateCustomRouteSettings( settings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -211,13 +211,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param settings 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -232,14 +232,14 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CountDownLatch latch = customroutesettings.updateCustomRouteSettings( settings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings 
+	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -253,7 +253,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * 
+	 * general-customroutes Delete DeleteCustomRouteSettings description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	customroutesettings.deleteCustomRouteSettings();

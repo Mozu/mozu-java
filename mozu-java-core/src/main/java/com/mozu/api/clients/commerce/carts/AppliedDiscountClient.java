@@ -16,7 +16,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Cart Coupons resource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
+ * Use the Cart Coupons subresource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
  * </summary>
  */
 public class AppliedDiscountClient {
@@ -66,7 +66,7 @@ public class AppliedDiscountClient {
 	}
 
 	/**
-	 * Removes one or more applied coupons from the cart specified in the request.
+	 * Removes all coupons from the cart specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RemoveCouponsClient( cartId);
 	 * client.setBaseAddress(url);

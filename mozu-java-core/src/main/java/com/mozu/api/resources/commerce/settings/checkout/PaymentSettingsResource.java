@@ -34,7 +34,7 @@ public class PaymentSettingsResource {
 
 	
 	/**
-	 * 
+	 * checkout-paymentsettings Get GetThirdPartyPaymentWorkflowWithValues description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName);
@@ -49,13 +49,13 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * 
+	 * checkout-paymentsettings Get GetThirdPartyPaymentWorkflowWithValues description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
 	 * </code></pre></p>
 	 * @param fullyQualifiedName 
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -87,12 +87,12 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * 
+	 * checkout-paymentsettings Put AddThirdPartyPaymentWorkflow description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.addThirdPartyPaymentWorkflow( definition);
 	 * </code></pre></p>
-	 * @param definition 
+	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
 	 * @return 
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -106,7 +106,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * 
+	 * checkout-paymentsettings Delete DeleteThirdPartyPaymentWorkflow description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);
