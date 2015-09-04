@@ -22,32 +22,6 @@ public class ProductContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
-	 */
-	protected String metaTagDescription;
-
-	public String getMetaTagDescription() {
-		return this.metaTagDescription;
-	}
-
-	public void setMetaTagDescription(String metaTagDescription) {
-		this.metaTagDescription = metaTagDescription;
-	}
-
-	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
-	 */
-	protected String metaTagKeywords;
-
-	public String getMetaTagKeywords() {
-		return this.metaTagKeywords;
-	}
-
-	public void setMetaTagKeywords(String metaTagKeywords) {
-		this.metaTagKeywords = metaTagKeywords;
-	}
-
-	/**
 	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
 	protected String metaTagTitle;
@@ -110,6 +84,32 @@ public class ProductContent implements Serializable
 
 	public void setSeoFriendlyUrl(String seoFriendlyUrl) {
 		this.seoFriendlyUrl = seoFriendlyUrl;
+	}
+
+	/**
+	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
+	 */
+	protected String metaTagDescription;
+
+	public String getMetaTagDescription() {
+		return this.metaTagDescription;
+	}
+
+	public void setMetaTagDescription(String metaTagDescription) {
+		this.metaTagDescription = metaTagDescription;
+	}
+
+	/**
+	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
+	 */
+	protected String metaTagKeywords;
+
+	public String getMetaTagKeywords() {
+		return this.metaTagKeywords;
+	}
+
+	public void setMetaTagKeywords(String metaTagKeywords) {
+		this.metaTagKeywords = metaTagKeywords;
 	}
 
 	/**

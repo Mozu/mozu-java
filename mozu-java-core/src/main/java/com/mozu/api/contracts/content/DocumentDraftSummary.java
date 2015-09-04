@@ -32,6 +32,9 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.DocumentDraftSummary activeUpdatedBy ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {

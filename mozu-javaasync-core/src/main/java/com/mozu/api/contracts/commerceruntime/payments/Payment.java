@@ -14,7 +14,6 @@ import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentInteraction;
-import com.mozu.api.contracts.commerceruntime.payments.RiskData;
 
 /**
  *	Properties of a payment transaction submitted for an order.
@@ -216,6 +215,16 @@ public class Payment implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 	/**
 	 * Container for the interactions associated with the payment, which includes details for each action performed for the payment.
 	 */
@@ -225,16 +234,6 @@ public class Payment implements Serializable
 	}
 	public void setInteractions(List<PaymentInteraction> interactions) {
 		this.interactions = interactions;
-	}
-
-	protected RiskData riskData;
-
-	public RiskData getRiskData() {
-		return this.riskData;
-	}
-
-	public void setRiskData(RiskData riskData) {
-		this.riskData = riskData;
 	}
 
 }

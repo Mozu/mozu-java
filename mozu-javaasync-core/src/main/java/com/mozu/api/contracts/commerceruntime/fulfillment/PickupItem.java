@@ -45,6 +45,9 @@ public class PickupItem implements Serializable
 		this.lineId = lineId;
 	}
 
+	/**
+	 * Fully qualified name of the selected option's attribute. Bundledproducts result from a static bundle or are dynamically added as a result of the shopper selecting products as extras. When the bundled item is dynamic, it includes the attribute's fully qualified name of the extra that it came from. When `optionAttributeFQN `is null, the bundled item was statically defined. When not null, the item came from an extra selection.
+	 */
 	protected String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {

@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayInteraction;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
-import com.mozu.api.contracts.commerceruntime.payments.RiskData;
 
 /**
  *	Properties of the payment action performed for an order.
@@ -139,6 +138,16 @@ public class PaymentAction implements Serializable
 		this.returnUrl = returnUrl;
 	}
 
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
+	}
+
 	/**
 	 * Properties of a manually performed interaction with the payment gateway.
 	 */
@@ -163,16 +172,6 @@ public class PaymentAction implements Serializable
 
 	public void setNewBillingInfo(BillingInfo newBillingInfo) {
 		this.newBillingInfo = newBillingInfo;
-	}
-
-	protected RiskData riskData;
-
-	public RiskData getRiskData() {
-		return this.riskData;
-	}
-
-	public void setRiskData(RiskData riskData) {
-		this.riskData = riskData;
 	}
 
 }

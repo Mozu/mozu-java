@@ -50,6 +50,9 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
+	/**
+	 * This is the Option attribute FQN for the item being returned .. typically only when the return item is a product bundle item.
+	 */
 	protected String orderItemOptionAttributeFQN;
 
 	public String getOrderItemOptionAttributeFQN() {

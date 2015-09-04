@@ -21,6 +21,9 @@ public class ApplicationEntitlement implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.AppDev.Contracts.ApplicationEntitlement appKey ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String appKey;
 
 	public String getAppKey() {
