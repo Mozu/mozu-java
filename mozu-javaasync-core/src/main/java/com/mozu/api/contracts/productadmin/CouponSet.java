@@ -112,7 +112,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Maximum number of times any code can de used. Must be null, >=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
+	 * Maximum number of times any code can de used. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
 	 */
 	protected Integer maxRedemptionsPerCouponCode;
 
@@ -125,7 +125,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Maximum number of times any single user can redeem any code. Must be null, >=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
+	 * Maximum number of times any single user can redeem any code. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
 	 */
 	protected Integer maxRedemptionsPerUser;
 

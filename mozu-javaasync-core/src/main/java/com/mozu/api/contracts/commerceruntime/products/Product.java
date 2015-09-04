@@ -27,6 +27,19 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 */
+	protected String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
 	 * Allocation ID associated with this product on this order.
 	 */
 	protected DateTime allocationExpiration;
@@ -126,19 +139,6 @@ public class Product implements Serializable
 	}
 	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
-	}
-
-	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
-	 */
-	protected String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
 	}
 
 	/**

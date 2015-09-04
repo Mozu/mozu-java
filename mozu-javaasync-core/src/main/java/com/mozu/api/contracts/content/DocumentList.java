@@ -149,6 +149,9 @@ public class DocumentList implements Serializable
 		this.security = security;
 	}
 
+	/**
+	 * Determines if the documentList will support ranges of dates that documents are considered 'active'. This field defaults to false and cannot be updated. If the documentList is based on a documentListType, then this value will be derived from the documentListType.
+	 */
 	protected Boolean supportsActiveDateRanges;
 
 	public Boolean getSupportsActiveDateRanges() {

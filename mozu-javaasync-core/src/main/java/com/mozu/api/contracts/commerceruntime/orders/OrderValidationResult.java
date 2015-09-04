@@ -22,6 +22,19 @@ public class OrderValidationResult implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected DateTime createdDate;
+
+	public DateTime getCreatedDate() {
+		return this.createdDate;
+	}
+
+	public void setCreatedDate(DateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
 	protected String status;
@@ -71,19 +84,6 @@ public class OrderValidationResult implements Serializable
 
 	public void setValidatorType(String validatorType) {
 		this.validatorType = validatorType;
-	}
-
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected DateTime createdDate;
-
-	public DateTime getCreatedDate() {
-		return this.createdDate;
-	}
-
-	public void setCreatedDate(DateTime createdDate) {
-		this.createdDate = createdDate;
 	}
 
 	/**
