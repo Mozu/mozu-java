@@ -199,7 +199,7 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void AdminProductTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
-		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, "AutoStandard", HttpStatus.SC_NOT_FOUND);
+		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		AdminProductFactory.getProductInCatalog(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		AdminProductFactory.getProductInCatalogs(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		AdminProductFactory.getProduct(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
@@ -209,6 +209,8 @@ public class GeneralTests extends MozuApiTestBase {
 		AdminProductFactory.deleteProductInCatalog(localApiContext, DataViewMode.Live,  Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		AdminProductFactory.getProducts(localApiContext, DataViewMode.Live, HttpStatus.SC_OK);
 		AdminProductFactory.renameProductCodes(localApiContext, new ArrayList<ProductCodeRename>(), HttpStatus.SC_OK);
+		AdminProductFactory.addProduct(apiContext, DataViewMode.Live, new Product(), HttpStatus.SC_CONFLICT);
+		AdminProductFactory.addProductInCatalog(localApiContext, DataViewMode.Live, new ProductInCatalogInfo(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -220,15 +222,13 @@ public class GeneralTests extends MozuApiTestBase {
 
     @Test
     public void AppdevPackageTests() throws Exception {
-    	//bug 67250
 		UserAuthInfo info = new UserAuthInfo();
 		info.setEmailAddress(email);
 		info.setPassword(password);
 		AuthenticationProfile profile = UserAuthenticator.authenticate(info, AuthenticationScope.Developer);
 		ApiContext localApiContext = new MozuApiContext();
 		localApiContext.setUserAuthTicket(profile.getAuthTicket());
-        AppdevPackageFactory.getFile(localApiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-//        AppdevPackageFactory.getFile(apiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        AppdevPackageFactory.getFile(localApiContext, Environment.getConfigValue("AppId"), Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
     }
 
 	@Test
@@ -365,6 +365,7 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void CategoryTests() throws Exception {
+		CategoryFactory.addCategory(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(500, 600), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
@@ -427,7 +428,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CouponFactory.getCouponSet(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		CouponFactory.updateCouponSet(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		CouponFactory.deleteCouponSet(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
-		CouponFactory.unAssignDiscount(shopperApiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		CouponFactory.unAssignDiscount(shopperApiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -1005,6 +1006,7 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void ProductTypeTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
+		ProductTypeFactory.addProductType(localApiContext, DataViewMode.Live, null, HttpStatus.SC_CONFLICT);
 		ProductTypeFactory.getProductTypes(localApiContext, DataViewMode.Live, HttpStatus.SC_OK);
 		ProductTypeFactory.getProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
 		ProductTypeFactory.deleteProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
@@ -1150,8 +1152,9 @@ public class GeneralTests extends MozuApiTestBase {
 		SearchFactory.addSearchTuningRule(apiContext, null, HttpStatus.SC_CONFLICT);
 		SearchFactory.updateSearchTuningRule(apiContext, new SearchTuningRule(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 		SearchFactory.deleteSearchTuningRule(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
-		//SearchFactory.getSearchTuningRule(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-		//SearchFactory.getSearchTuningRules(apiContext, HttpStatus.SC_OK);
+		SearchFactory.updateSearchTuningSortRelevance(apiContext, null, HttpStatus.SC_CONFLICT);
+		SearchFactory.getSearchTuningRule(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		SearchFactory.getSearchTuningRules(apiContext, HttpStatus.SC_OK);
 	}
 	
 	@Test
