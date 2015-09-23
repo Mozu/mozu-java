@@ -34,25 +34,6 @@ public class CouponResource {
 
 	
 	/**
-	 * couponsets-coupons Get GetAssignedDiscounts description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	AssignedDiscount assignedDiscount = coupon.getAssignedDiscounts( couponSetCode);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @return List<com.mozu.api.contracts.productadmin.AssignedDiscount>
-	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
-	 */
-	public List<com.mozu.api.contracts.productadmin.AssignedDiscount> getAssignedDiscounts(String couponSetCode) throws Exception
-	{
-		MozuClient<List<com.mozu.api.contracts.productadmin.AssignedDiscount>> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.getAssignedDiscountsClient( couponSetCode);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
 	 * couponsets-coupons Get GetCoupon description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
@@ -131,62 +112,6 @@ public class CouponResource {
 	}
 
 	/**
-	 * couponsets-coupons Get GetCouponSet description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	CouponSet couponSet = coupon.getCouponSet( couponSetCode);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @return com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 */
-	public com.mozu.api.contracts.productadmin.CouponSet getCouponSet(String couponSetCode) throws Exception
-	{
-		return getCouponSet( couponSetCode,  null,  null);
-	}
-
-	/**
-	 * couponsets-coupons Get GetCouponSet description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	CouponSet couponSet = coupon.getCouponSet( couponSetCode,  includeCounts,  responseFields);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param includeCounts 
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @return com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 */
-	public com.mozu.api.contracts.productadmin.CouponSet getCouponSet(String couponSetCode, Boolean includeCounts, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.getCouponSetClient( couponSetCode,  includeCounts,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * couponsets-coupons Post AssignDiscount description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	coupon.assignDiscount( assignedDiscount,  couponSetCode);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
-	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
-	 */
-	public void assignDiscount(com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.assignDiscountClient( assignedDiscount,  couponSetCode);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		client.cleanupHttpConnection();
-
-	}
-
-	/**
 	 * couponsets-coupons Post AddCoupons description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Coupon coupon = new Coupon();
@@ -220,82 +145,6 @@ public class CouponResource {
 	public void deleteCoupons(List<String> couponCodes, String couponSetCode) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponsClient( couponCodes,  couponSetCode);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		client.cleanupHttpConnection();
-
-	}
-
-	/**
-	 * couponsets-coupons Put UpdateCouponSet description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	CouponSet couponSet = coupon.updateCouponSet( couponSet,  couponSetCode);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
-	 * @return com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 */
-	public com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode) throws Exception
-	{
-		return updateCouponSet( couponSet,  couponSetCode,  null);
-	}
-
-	/**
-	 * couponsets-coupons Put UpdateCouponSet description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	CouponSet couponSet = coupon.updateCouponSet( couponSet,  couponSetCode,  responseFields);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
-	 * @return com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 * @see com.mozu.api.contracts.productadmin.CouponSet
-	 */
-	public com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.updateCouponSetClient( couponSet,  couponSetCode,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * couponsets-coupons Delete DeleteCouponSet description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	coupon.deleteCouponSet( couponSetCode);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @return 
-	 */
-	public void deleteCouponSet(String couponSetCode) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.deleteCouponSetClient( couponSetCode);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		client.cleanupHttpConnection();
-
-	}
-
-	/**
-	 * couponsets-coupons Delete UnAssignDiscount description DOCUMENT_HERE 
-	 * <p><pre><code>
-	 *	Coupon coupon = new Coupon();
-	 *	coupon.unAssignDiscount( couponSetCode,  discountId);
-	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
-	 * @return 
-	 */
-	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.couponsets.CouponClient.unAssignDiscountClient( couponSetCode,  discountId);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
