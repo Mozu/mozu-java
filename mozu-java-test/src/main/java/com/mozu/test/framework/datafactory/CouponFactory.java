@@ -21,26 +21,6 @@ import com.mozu.api.resources.commerce.catalog.admin.couponsets.CouponResource;
 public class CouponFactory
 {
 
-	public static List<com.mozu.api.contracts.productadmin.AssignedDiscount> getAssignedDiscounts(ApiContext apiContext, String couponSetCode, int expectedCode) throws Exception
-	{
-		List<com.mozu.api.contracts.productadmin.AssignedDiscount> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.AssignedDiscount>();
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			returnObj = resource.getAssignedDiscounts( couponSetCode);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-		return returnObj;
-	}
-
 	public static com.mozu.api.contracts.productadmin.Coupon getCoupon(ApiContext apiContext, String couponSetCode, String couponCode, int expectedCode) throws Exception
 	{
 		return getCoupon(apiContext,  couponSetCode,  couponCode,  null,  null, expectedCode);
@@ -91,49 +71,6 @@ public class CouponFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.CouponSet getCouponSet(ApiContext apiContext, String couponSetCode, int expectedCode) throws Exception
-	{
-		return getCouponSet(apiContext,  couponSetCode,  null,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.productadmin.CouponSet getCouponSet(ApiContext apiContext, String couponSetCode, Boolean includeCounts, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.CouponSet returnObj = new com.mozu.api.contracts.productadmin.CouponSet();
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			returnObj = resource.getCouponSet( couponSetCode,  includeCounts,  responseFields);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-		return returnObj;
-	}
-
-	public static void assignDiscount(ApiContext apiContext, com.mozu.api.contracts.productadmin.AssignedDiscount assignedDiscount, String couponSetCode, int expectedCode) throws Exception
-	{
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			resource.assignDiscount( assignedDiscount,  couponSetCode);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-	}
-
 	public static void addCoupons(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.Coupon> coupons, String couponSetCode, int expectedCode) throws Exception
 	{
 		CouponResource resource = new CouponResource(apiContext);
@@ -158,67 +95,6 @@ public class CouponFactory
 		try
 		{
 			resource.deleteCoupons( couponCodes,  couponSetCode);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-	}
-
-	public static com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(ApiContext apiContext, com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, int expectedCode) throws Exception
-	{
-		return updateCouponSet(apiContext,  couponSet,  couponSetCode,  null, expectedCode);
-	}
-
-	public static com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(ApiContext apiContext, com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, String responseFields, int expectedCode) throws Exception
-	{
-		com.mozu.api.contracts.productadmin.CouponSet returnObj = new com.mozu.api.contracts.productadmin.CouponSet();
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			returnObj = resource.updateCouponSet( couponSet,  couponSetCode,  responseFields);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return null;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-		return returnObj;
-	}
-
-	public static void deleteCouponSet(ApiContext apiContext, String couponSetCode, int expectedCode) throws Exception
-	{
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			resource.deleteCouponSet( couponSetCode);
-		}
-		catch (ApiException e)
-		{
-			if(e.getHttpStatusCode() != expectedCode)
-				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-			else
-				return;
-		}
-		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
-			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-	}
-
-	public static void unAssignDiscount(ApiContext apiContext, String couponSetCode, Integer discountId, int expectedCode) throws Exception
-	{
-		CouponResource resource = new CouponResource(apiContext);
-		try
-		{
-			resource.unAssignDiscount( couponSetCode,  discountId);
 		}
 		catch (ApiException e)
 		{

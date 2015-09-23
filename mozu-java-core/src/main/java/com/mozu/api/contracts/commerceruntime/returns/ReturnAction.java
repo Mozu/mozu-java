@@ -21,17 +21,6 @@ public class ReturnAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The list of returns for which to perform the action.
-	 */
-	protected List<String> returnIds;
-	public List<String> getReturnIds() {
-		return this.returnIds;
-	}
-	public void setReturnIds(List<String> returnIds) {
-		this.returnIds = returnIds;
-	}
-
-	/**
 	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
 	 */
 	protected String actionName;
@@ -42,6 +31,17 @@ public class ReturnAction implements Serializable
 
 	public void setActionName(String actionName) {
 		this.actionName = actionName;
+	}
+
+	/**
+	 * The list of returns for which to perform the action.
+	 */
+	protected List<String> returnIds;
+	public List<String> getReturnIds() {
+		return this.returnIds;
+	}
+	public void setReturnIds(List<String> returnIds) {
+		this.returnIds = returnIds;
 	}
 
 }

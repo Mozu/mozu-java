@@ -19,6 +19,16 @@ public class DigitalWallet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected String cartId;
+
+	public String getCartId() {
+		return this.cartId;
+	}
+
+	public void setCartId(String cartId) {
+		this.cartId = cartId;
+	}
+
 	/**
 	 * Digital wallet data. Note: Transform the Json data to a string.
 	 */

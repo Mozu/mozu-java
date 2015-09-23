@@ -21,7 +21,7 @@ public class SearchUrl
 	 */
 	public static MozuUrl getSearchTuningRuleUrl(String responseFields, String searchTuningRuleCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule/{searchTuningRuleCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules/{searchTuningRuleCode}?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("searchTuningRuleCode", searchTuningRuleCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -38,7 +38,7 @@ public class SearchUrl
 	 */
 	public static MozuUrl getSearchTuningRulesUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
@@ -76,7 +76,7 @@ public class SearchUrl
 	 */
 	public static MozuUrl addSearchTuningRuleUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -99,7 +99,7 @@ public class SearchUrl
 	 */
 	public static MozuUrl updateSearchTuningRuleUrl(String responseFields, String searchTuningRuleCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule/{searchTuningRuleCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules/{searchTuningRuleCode}?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("searchTuningRuleCode", searchTuningRuleCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -124,7 +124,7 @@ public class SearchUrl
 	 */
 	public static MozuUrl deleteSearchTuningRuleUrl(String searchTuningRuleCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrule/{searchTuningRuleCode}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules/{searchTuningRuleCode}");
 		formatter.formatUrl("searchTuningRuleCode", searchTuningRuleCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

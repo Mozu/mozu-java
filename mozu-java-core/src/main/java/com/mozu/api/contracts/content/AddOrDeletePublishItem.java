@@ -45,4 +45,24 @@ public class AddOrDeletePublishItem implements Serializable
 		this.documentId = documentId;
 	}
 
+	protected Integer scopeId;
+
+	public Integer getScopeId() {
+		return this.scopeId;
+	}
+
+	public void setScopeId(Integer scopeId) {
+		this.scopeId = scopeId;
+	}
+
+	protected String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
 }

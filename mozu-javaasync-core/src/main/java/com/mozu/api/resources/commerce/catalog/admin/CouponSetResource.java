@@ -113,6 +113,79 @@ public class CouponSetResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public com.mozu.api.contracts.productadmin.CouponSet getCouponSet(String couponSetCode) throws Exception
+	{
+		return getCouponSet( couponSetCode,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public CountDownLatch getCouponSetAsync(String couponSetCode, AsyncCallback<com.mozu.api.contracts.productadmin.CouponSet> callback) throws Exception
+	{
+		return getCouponSetAsync( couponSetCode,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public com.mozu.api.contracts.productadmin.CouponSet getCouponSet(String couponSetCode, Boolean includeCounts, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.getCouponSetClient( couponSetCode,  includeCounts,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public CountDownLatch getCouponSetAsync(String couponSetCode, Boolean includeCounts, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.CouponSet> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.getCouponSetClient( couponSetCode,  includeCounts,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Returns a random 4 character code that is unique as a coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
@@ -266,6 +339,103 @@ public class CouponSetResource {
 	public void validateUniqueCouponSetCode(String code) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.validateUniqueCouponSetCodeClient( code);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param couponSet 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode) throws Exception
+	{
+		return updateCouponSet( couponSet,  couponSetCode,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param couponSet 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public CountDownLatch updateCouponSetAsync(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, AsyncCallback<com.mozu.api.contracts.productadmin.CouponSet> callback) throws Exception
+	{
+		return updateCouponSetAsync( couponSet,  couponSetCode,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param responseFields 
+	 * @param couponSet 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public com.mozu.api.contracts.productadmin.CouponSet updateCouponSet(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.updateCouponSetClient( couponSet,  couponSetCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param couponSet 
+	 * @return com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 * @see com.mozu.api.contracts.productadmin.CouponSet
+	 */
+	public CountDownLatch updateCouponSetAsync(com.mozu.api.contracts.productadmin.CouponSet couponSet, String couponSetCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.CouponSet> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.CouponSet> client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.updateCouponSetClient( couponSet,  couponSetCode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CouponSet couponset = new CouponSet();
+	 *	couponset.deleteCouponSet( couponSetCode);
+	 * </code></pre></p>
+	 * @param couponSetCode 
+	 * @return 
+	 */
+	public void deleteCouponSet(String couponSetCode) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CouponSetClient.deleteCouponSetClient( couponSetCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
