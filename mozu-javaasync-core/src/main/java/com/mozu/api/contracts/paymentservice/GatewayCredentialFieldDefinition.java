@@ -20,19 +20,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the Volusion store.
-	 */
-	protected String volusionStoreName;
-
-	public String getVolusionStoreName() {
-		return this.volusionStoreName;
-	}
-
-	public void setVolusionStoreName(String volusionStoreName) {
-		this.volusionStoreName = volusionStoreName;
-	}
-
-	/**
 	 * The sequential display order of the gateway in Mozu Admin.
 	 */
 	protected Integer adminDisplayOrder;
@@ -69,6 +56,19 @@ public class GatewayCredentialFieldDefinition implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * The name of the Volusion store.
+	 */
+	protected String volusionStoreName;
+
+	public String getVolusionStoreName() {
+		return this.volusionStoreName;
+	}
+
+	public void setVolusionStoreName(String volusionStoreName) {
+		this.volusionStoreName = volusionStoreName;
 	}
 
 }

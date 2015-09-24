@@ -48,12 +48,12 @@ public class SearchUrl
 	}
 
 	/**
-	 * Get Resource Url for GetSearchTuningSortRelevance
+	 * Get Resource Url for GetSearchTuningRuleSortFields
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getSearchTuningSortRelevanceUrl()
+	public static MozuUrl getSearchTuningRuleSortFieldsUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningsortrelevance");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrulesortfields");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -82,12 +82,12 @@ public class SearchUrl
 	}
 
 	/**
-	 * Get Resource Url for UpdateSearchTuningSortRelevance
+	 * Get Resource Url for UpdateSearchTuningRuleSortFields
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateSearchTuningSortRelevanceUrl()
+	public static MozuUrl updateSearchTuningRuleSortFieldsUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningsortrelevance");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrulesortfields");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

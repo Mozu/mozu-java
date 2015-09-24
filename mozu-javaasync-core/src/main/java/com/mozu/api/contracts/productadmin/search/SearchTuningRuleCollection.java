@@ -22,32 +22,6 @@ public class SearchTuningRuleCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection capacity ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Integer capacity;
-
-	public Integer getCapacity() {
-		return this.capacity;
-	}
-
-	public void setCapacity(Integer capacity) {
-		this.capacity = capacity;
-	}
-
-	/**
-	 * The number of facet results for a product search.
-	 */
-	protected Integer count;
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	/**
 	 * The total number of pages of the results divided per the `pageSize`.
 	 */
 	protected Integer pageCount;
@@ -97,19 +71,6 @@ public class SearchTuningRuleCollection implements Serializable
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleCollection item ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected SearchTuningRule item;
-
-	public SearchTuningRule getItem() {
-		return this.item;
-	}
-
-	public void setItem(SearchTuningRule item) {
-		this.item = item;
 	}
 
 	/**

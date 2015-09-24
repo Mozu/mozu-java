@@ -108,9 +108,9 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningSortRelevance description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningSortRelevanceClient();
+	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningRuleSortFieldsClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
@@ -118,9 +118,9 @@ public class SearchClient {
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
-	public static MozuClient<java.io.InputStream> getSearchTuningSortRelevanceClient() throws Exception
+	public static MozuClient<java.io.InputStream> getSearchTuningRuleSortFieldsClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningSortRelevanceUrl();
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningRuleSortFieldsUrl();
 		String verb = "GET";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
@@ -216,24 +216,24 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningSortRelevance description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
+	 * MozuClient mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param searchTuningSortRelevanceIn Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return Mozu.Api.MozuClient 
-	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public static MozuClient updateSearchTuningSortRelevanceClient(com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn) throws Exception
+	public static MozuClient updateSearchTuningRuleSortFieldsClient(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchTuningSortRelevanceUrl();
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchTuningRuleSortFieldsUrl();
 		String verb = "POST";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(searchTuningSortRelevanceIn);
+		mozuClient.setBody(searchTuningRuleSortFieldsIn);
 		return mozuClient;
 
 	}
