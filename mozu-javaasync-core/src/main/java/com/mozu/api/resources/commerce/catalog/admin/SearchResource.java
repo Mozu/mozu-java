@@ -182,17 +182,17 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningSortRelevance description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	Stream stream = search.getSearchTuningSortRelevance();
+	 *	Stream stream = search.getSearchTuningRuleSortFields();
 	 * </code></pre></p>
 	 * @return Stream
 	 * @see Stream
 	 */
-	public java.io.InputStream getSearchTuningSortRelevance() throws Exception
+	public java.io.InputStream getSearchTuningRuleSortFields() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -200,18 +200,18 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningSortRelevance description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSearchTuningSortRelevance( callback );
+	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
 	 */
-	public CountDownLatch getSearchTuningSortRelevanceAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch getSearchTuningRuleSortFieldsAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -360,18 +360,18 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningSortRelevance description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	search.updateSearchTuningSortRelevance( searchTuningSortRelevanceIn);
+	 *	search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
-	 * @param searchTuningSortRelevanceIn Mozu.ProductAdmin.Contracts.Search.SearchTuningSortRelevance ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public void updateSearchTuningSortRelevance(com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn) throws Exception
+	public void updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

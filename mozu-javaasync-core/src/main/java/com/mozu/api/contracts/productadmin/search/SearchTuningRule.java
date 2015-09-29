@@ -11,8 +11,6 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
-import com.mozu.api.contracts.productadmin.search.SearchTuningRuleExpression;
-import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFunction;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFilter;
 
 /**
@@ -146,28 +144,6 @@ public class SearchTuningRule implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule boostExpressions ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected List<SearchTuningRuleExpression> boostExpressions;
-	public List<SearchTuningRuleExpression> getBoostExpressions() {
-		return this.boostExpressions;
-	}
-	public void setBoostExpressions(List<SearchTuningRuleExpression> boostExpressions) {
-		this.boostExpressions = boostExpressions;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule boostFunctions ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected List<SearchTuningRuleFunction> boostFunctions;
-	public List<SearchTuningRuleFunction> getBoostFunctions() {
-		return this.boostFunctions;
-	}
-	public void setBoostFunctions(List<SearchTuningRuleFunction> boostFunctions) {
-		this.boostFunctions = boostFunctions;
 	}
 
 	/**
