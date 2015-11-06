@@ -45,6 +45,9 @@ public class DocumentList implements Serializable
 		this.documentTypes = documentTypes;
 	}
 
+	/**
+	 * If set, documents in this list will only be returned if the date queried for their is within their ActiveDateRange.
+	 */
 	protected Boolean enableActiveDateRanges;
 
 	public Boolean getEnableActiveDateRanges() {
@@ -144,6 +147,19 @@ public class DocumentList implements Serializable
 
 	public void setSecurity(String security) {
 		this.security = security;
+	}
+
+	/**
+	 * Determines if the documentList will support ranges of dates that documents are considered 'active'. This field defaults to false and cannot be updated. If the documentList is based on a documentListType, then this value will be derived from the documentListType.
+	 */
+	protected Boolean supportsActiveDateRanges;
+
+	public Boolean getSupportsActiveDateRanges() {
+		return this.supportsActiveDateRanges;
+	}
+
+	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
+		this.supportsActiveDateRanges = supportsActiveDateRanges;
 	}
 
 	/**

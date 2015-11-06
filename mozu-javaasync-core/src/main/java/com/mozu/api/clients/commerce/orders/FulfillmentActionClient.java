@@ -71,7 +71,7 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId);
 	 * client.setBaseAddress(url);
@@ -90,7 +90,7 @@ public class FulfillmentActionClient {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ResendPackageFulfillmentEmailClient( action,  orderId,  responseFields);
 	 * client.setBaseAddress(url);

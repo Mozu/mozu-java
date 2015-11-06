@@ -11,12 +11,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSet implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The PublishSet unique identifier
+	 */
 	protected String code;
 
 	public String getCode() {
@@ -27,6 +33,9 @@ public class PublishSet implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * List of product codes of associated products, used for pending product changes to publish or delete and returned in a product inventory location query.
+	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
 		return this.productCodes;
@@ -35,6 +44,9 @@ public class PublishSet implements Serializable
 		this.productCodes = productCodes;
 	}
 
+	/**
+	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
+	 */
 	protected Integer productCount;
 
 	public Integer getProductCount() {

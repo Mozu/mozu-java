@@ -33,6 +33,9 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.Product catalogEndDate ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime catalogEndDate;
 
 	public DateTime getCatalogEndDate() {
@@ -43,6 +46,9 @@ public class Product implements Serializable
 		this.catalogEndDate = catalogEndDate;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.Product catalogStartDate ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime catalogStartDate;
 
 	public DateTime getCatalogStartDate() {
@@ -66,6 +72,9 @@ public class Product implements Serializable
 		this.createDate = createDate;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.Product dateFirstAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
@@ -76,6 +85,9 @@ public class Product implements Serializable
 		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.Product daysAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer daysAvailableInCatalog;
 
 	public Integer getDaysAvailableInCatalog() {
@@ -225,6 +237,9 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * Mozu.ProductRuntime.Contracts.Product productTypeId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer productTypeId;
 
 	public Integer getProductTypeId() {
@@ -445,7 +460,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product variations ApiTypeMember DOCUMENT_HERE 
+	 * A summary of all variations that exist for the product.
 	 */
 	protected List<VariationSummary> variations;
 	public List<VariationSummary> getVariations() {

@@ -49,15 +49,15 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * 
+	 * documentlists-documentTree Get TransformTreeDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -67,7 +67,7 @@ public class DocumentTreeClient {
 	}
 
 	/**
-	 * 
+	 * documentlists-documentTree Get TransformTreeDocumentContent description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformTreeDocumentContentClient( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * client.setBaseAddress(url);
@@ -75,8 +75,8 @@ public class DocumentTreeClient {
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param crop 
-	 * @param documentListName 
-	 * @param documentName 
+	 * @param documentListName Name of content documentListName to delete
+	 * @param documentName The name of the document in the site.
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

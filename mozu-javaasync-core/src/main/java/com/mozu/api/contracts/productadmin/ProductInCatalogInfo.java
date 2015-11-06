@@ -39,6 +39,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.catalogId = catalogId;
 	}
 
+	/**
+	 * Date this product was first Available for sale in the catalog. This is utilized in expressions that refrence DaysInCatloag.
+	 */
 	protected DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
@@ -101,6 +104,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.isseoContentOverridden = isseoContentOverridden;
 	}
 
+	/**
+	 * If true, the product is marked as available for sale in the catalog. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
+	 */
 	protected ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {

@@ -41,19 +41,6 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
-	 */
-	protected Double dutyAmount;
-
-	public Double getDutyAmount() {
-		return this.dutyAmount;
-	}
-
-	public void setDutyAmount(Double dutyAmount) {
-		this.dutyAmount = dutyAmount;
-	}
-
-	/**
 	 * The date and time the order was accepted by the tenant.
 	 */
 	protected DateTime acceptedDate;
@@ -268,6 +255,19 @@ public class Order implements Serializable
 
 	public void setDiscountTotal(Double discountTotal) {
 		this.discountTotal = discountTotal;
+	}
+
+	/**
+	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
+	 */
+	protected Double dutyAmount;
+
+	public Double getDutyAmount() {
+		return this.dutyAmount;
+	}
+
+	public void setDutyAmount(Double dutyAmount) {
+		this.dutyAmount = dutyAmount;
 	}
 
 	/**

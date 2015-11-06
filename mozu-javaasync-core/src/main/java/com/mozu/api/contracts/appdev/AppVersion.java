@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.AppDev.Contracts.AppVersion ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppVersion implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer majorVersion;
 
 	public Integer getMajorVersion() {
@@ -26,6 +32,9 @@ public class AppVersion implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer minorVersion;
 
 	public Integer getMinorVersion() {
@@ -36,6 +45,9 @@ public class AppVersion implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
+	/**
+	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer revision;
 
 	public Integer getRevision() {

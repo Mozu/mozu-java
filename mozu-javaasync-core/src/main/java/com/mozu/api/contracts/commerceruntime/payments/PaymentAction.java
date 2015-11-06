@@ -86,6 +86,9 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Mozu.CommerceRuntime.Contracts.Payments.PaymentAction externalTransactionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -133,6 +136,16 @@ public class PaymentAction implements Serializable
 
 	public void setReturnUrl(String returnUrl) {
 		this.returnUrl = returnUrl;
+	}
+
+	protected com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
 	}
 
 	/**

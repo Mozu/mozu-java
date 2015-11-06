@@ -10,12 +10,18 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
+/**
+ *	Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddOrDeletePublishItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.Content.Contracts.AddOrDeletePublishItem docListFQN ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String docListFQN;
 
 	public String getDocListFQN() {
@@ -26,6 +32,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.docListFQN = docListFQN;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.AddOrDeletePublishItem documentId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String documentId;
 
 	public String getDocumentId() {
@@ -34,6 +43,26 @@ public class AddOrDeletePublishItem implements Serializable
 
 	public void setDocumentId(String documentId) {
 		this.documentId = documentId;
+	}
+
+	protected Integer scopeId;
+
+	public Integer getScopeId() {
+		return this.scopeId;
+	}
+
+	public void setScopeId(Integer scopeId) {
+		this.scopeId = scopeId;
+	}
+
+	protected String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
 	}
 
 }

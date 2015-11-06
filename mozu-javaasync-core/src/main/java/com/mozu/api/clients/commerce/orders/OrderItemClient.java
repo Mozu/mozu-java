@@ -24,7 +24,7 @@ import org.apache.commons.lang.StringUtils;
 public class OrderItemClient {
 	
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId);
 	 * client.setBaseAddress(url);
@@ -42,7 +42,7 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * orders-orderitems Get GetOrderItemViaLineId description DOCUMENT_HERE 
+	 * Retrieves an order item with the order line ID.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.OrderItem> mozuClient=GetOrderItemViaLineIdClient( orderId,  lineId,  draft,  responseFields);
 	 * client.setBaseAddress(url);
@@ -260,14 +260,15 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
@@ -279,14 +280,15 @@ public class OrderItemClient {
 	}
 
 	/**
-	 * orders-orderitems Put UpdateItemDuty description DOCUMENT_HERE 
+	 * Update the duty fee information for an order item.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=UpdateItemDutyClient( orderId,  orderItemId,  dutyAmount,  updateMode,  version,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param dutyAmount 
+	 * @param dutyAmount The amount added to the order item for duty fees.
+        
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.

@@ -30,8 +30,8 @@ public class DocumentUrl
 	/**
 	 * Get Resource Url for TransformDocumentContent
 	 * @param crop 
-	 * @param documentId 
-	 * @param documentListName 
+	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
+	 * @param documentListName Name of content documentListName to delete
 	 * @param height 
 	 * @param max 
 	 * @param maxHeight 

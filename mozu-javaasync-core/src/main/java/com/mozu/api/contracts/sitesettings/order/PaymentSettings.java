@@ -61,7 +61,7 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * List of name and account information for a payment gateway. Additional payment gateway providers will be supported in future releases.
+	 * List of name and account information for a payment gateway.
 	 */
 	protected List<Gateway> gateways;
 	public List<Gateway> getGateways() {

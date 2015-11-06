@@ -15,17 +15,19 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for GetCouponSets
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param includeCounts 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponSetsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getCouponSetsUrl(String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
@@ -34,20 +36,36 @@ public class CouponSetUrl
 	}
 
 	/**
-	 * Get Resource Url for GetUniqueCouponSetCode
+	 * Get Resource Url for GetCouponSet
+	 * @param couponSetCode 
+	 * @param includeCounts 
 	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCouponSetUrl(String couponSetCode, Boolean includeCounts, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?includeCounts={includeCounts}&responseFields={responseFields}");
+		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("includeCounts", includeCounts);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetUniqueCouponSetCode
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUniqueCouponSetCodeUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/uniquecode?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/unique-code?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for AddCouponSet
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCouponSetUrl(String responseFields)
@@ -59,13 +77,39 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for ValidateUniqueCouponSetCode
-	 * @param code 
+	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateUniqueCouponSetCodeUrl(String code)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/validateuniquecode");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/validate-unique-code");
 		formatter.formatUrl("code", code);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateCouponSet
+	 * @param couponSetCode 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateCouponSetUrl(String couponSetCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?responseFields={responseFields}");
+		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteCouponSet
+	 * @param couponSetCode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteCouponSetUrl(String couponSetCode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}");
+		formatter.formatUrl("couponSetCode", couponSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

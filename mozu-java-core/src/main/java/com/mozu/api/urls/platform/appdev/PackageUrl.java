@@ -24,7 +24,7 @@ public class PackageUrl
 		UrlFormatter formatter = new UrlFormatter("/api/platform/appdev/filebasedpackage/packages/{applicationKey}?fileName={fileName}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("fileName", fileName);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;
 	}
 
 }

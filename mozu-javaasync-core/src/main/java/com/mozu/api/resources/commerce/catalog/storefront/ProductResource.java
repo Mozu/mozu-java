@@ -271,6 +271,77 @@ public class ProductResource {
 	}
 
 	/**
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	Product product = product.getProductForIndexing( productCode);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode) throws Exception
+	{
+		return getProductForIndexing( productCode,  null);
+	}
+
+	/**
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	CountDownLatch latch = product.getProductForIndexing( productCode, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public CountDownLatch getProductForIndexingAsync(String productCode, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
+	{
+		return getProductForIndexingAsync( productCode,  null, callback);
+	}
+
+	/**
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	Product product = product.getProductForIndexing( productCode,  responseFields);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	CountDownLatch latch = product.getProductForIndexing( productCode,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productruntime.Product
+	 * @see com.mozu.api.contracts.productruntime.Product
+	 */
+	public CountDownLatch getProductForIndexingAsync(String productCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Creates a new product configuration each time a shopper selects a product option value. After the shopper defines values for all required product options, the shopper can add the product configuration to a cart.
 	 * <p><pre><code>
 	 *	Product product = new Product();

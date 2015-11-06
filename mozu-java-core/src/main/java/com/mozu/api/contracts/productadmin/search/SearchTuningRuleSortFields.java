@@ -12,27 +12,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchTuningSortRelevance implements Serializable
+public class SearchTuningRuleSortFields implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected List<String> sortList;
-	public List<String> getSortList() {
-		return this.sortList;
-	}
-	public void setSortList(List<String> sortList) {
-		this.sortList = sortList;
+	protected String inclusionExclusionType;
+
+	public String getInclusionExclusionType() {
+		return this.inclusionExclusionType;
 	}
 
-	protected Integer sortType;
-
-	public Integer getSortType() {
-		return this.sortType;
+	public void setInclusionExclusionType(String inclusionExclusionType) {
+		this.inclusionExclusionType = inclusionExclusionType;
 	}
 
-	public void setSortType(Integer sortType) {
-		this.sortType = sortType;
+	protected List<String> sortFields;
+	public List<String> getSortFields() {
+		return this.sortFields;
+	}
+	public void setSortFields(List<String> sortFields) {
+		this.sortFields = sortFields;
 	}
 
 }

@@ -14,29 +14,19 @@ public class CouponUrl
 {
 
 	/**
-	 * Get Resource Url for GetAssignedDiscounts
-	 * @param couponSetCode 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getAssignedDiscountsUrl(String couponSetCode)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/assigneddiscounts");
-		formatter.formatUrl("couponSetCode", couponSetCode);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for GetCoupon
-	 * @param couponCode 
+	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @param couponSetCode 
-	 * @param responseFields 
+	 * @param includeCounts 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponUrl(String couponCode, String couponSetCode, String responseFields)
+	public static MozuUrl getCouponUrl(String couponCode, String couponSetCode, Boolean includeCounts, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons/{couponCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/couponcodes/{couponCode}?includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("couponCode", couponCode);
 		formatter.formatUrl("couponSetCode", couponSetCode);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -44,48 +34,24 @@ public class CouponUrl
 	/**
 	 * Get Resource Url for GetCoupons
 	 * @param couponSetCode 
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param includeCounts 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/couponcodes?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&includeCounts={includeCounts}&responseFields={responseFields}");
 		formatter.formatUrl("couponSetCode", couponSetCode);
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("includeCounts", includeCounts);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for GetCouponSet
-	 * @param couponSetCode 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getCouponSetUrl(String couponSetCode, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?responseFields={responseFields}");
-		formatter.formatUrl("couponSetCode", couponSetCode);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for AssignDiscount
-	 * @param couponSetCode 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl assignDiscountUrl(String couponSetCode)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/assigneddiscounts");
-		formatter.formatUrl("couponSetCode", couponSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 
@@ -96,45 +62,7 @@ public class CouponUrl
 	 */
 	public static MozuUrl addCouponsUrl(String couponSetCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons");
-		formatter.formatUrl("couponSetCode", couponSetCode);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for UpdateCouponSet
-	 * @param couponSetCode 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl updateCouponSetUrl(String couponSetCode, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}?responseFields={responseFields}");
-		formatter.formatUrl("couponSetCode", couponSetCode);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for DeleteCouponSet
-	 * @param couponSetCode 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl deleteCouponSetUrl(String couponSetCode)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}");
-		formatter.formatUrl("couponSetCode", couponSetCode);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for UnAssignDiscount
-	 * @param couponSetCode 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl unAssignDiscountUrl(String couponSetCode)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/assigneddiscounts");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/couponcodes");
 		formatter.formatUrl("couponSetCode", couponSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -146,7 +74,21 @@ public class CouponUrl
 	 */
 	public static MozuUrl deleteCouponsUrl(String couponSetCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/coupons");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/couponcodes/remove");
+		formatter.formatUrl("couponSetCode", couponSetCode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteCoupon
+	 * @param couponCode Code associated with the coupon to remove from the cart.
+	 * @param couponSetCode 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteCouponUrl(String couponCode, String couponSetCode)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/couponsets/{couponSetCode}/couponcodes/{couponCode}");
+		formatter.formatUrl("couponCode", couponCode);
 		formatter.formatUrl("couponSetCode", couponSetCode);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

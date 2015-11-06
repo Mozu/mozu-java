@@ -36,7 +36,7 @@ public class SearchResource {
 
 	
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
@@ -51,7 +51,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode, callback );
@@ -67,12 +67,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -87,12 +87,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -107,7 +107,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules();
@@ -121,7 +121,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( callback );
@@ -136,16 +136,16 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 */
@@ -159,16 +159,16 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
@@ -185,14 +185,14 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	Stream stream = search.getSearchTuningSortRelevance();
+	 *	Stream stream = search.getSearchTuningRuleSortFields();
 	 * </code></pre></p>
 	 * @return Stream
 	 * @see Stream
 	 */
-	public java.io.InputStream getSearchTuningSortRelevance() throws Exception
+	public java.io.InputStream getSearchTuningRuleSortFields() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -203,15 +203,15 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSearchTuningSortRelevance( callback );
+	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
 	 */
-	public CountDownLatch getSearchTuningSortRelevanceAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch getSearchTuningRuleSortFieldsAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningSortRelevanceClient();
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -285,12 +285,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -301,13 +301,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -318,13 +318,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param searchTuningRuleIn 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -339,14 +339,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -363,15 +363,15 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	search.updateSearchTuningSortRelevance( searchTuningSortRelevanceIn);
+	 *	search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
-	 * @param searchTuningSortRelevanceIn 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public void updateSearchTuningSortRelevance(com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn) throws Exception
+	public void updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningSortRelevanceClient( searchTuningSortRelevanceIn);
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();
@@ -379,13 +379,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
 	 * </code></pre></p>
 	 * @param searchTuningRuleCode 
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -396,14 +396,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -414,14 +414,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -436,15 +436,15 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn 
+	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -533,7 +533,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Delete DeleteSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSearchTuningRule( searchTuningRuleCode);

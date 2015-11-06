@@ -115,7 +115,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
@@ -132,7 +132,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId, callback );
@@ -150,7 +150,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
@@ -172,7 +172,7 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * orders-fulfillment Post ResendPackageFulfillmentEmail description DOCUMENT_HERE 
+	 * Resends an email with details about the package fulfillment to the shopper. 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	CountDownLatch latch = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields, callback );

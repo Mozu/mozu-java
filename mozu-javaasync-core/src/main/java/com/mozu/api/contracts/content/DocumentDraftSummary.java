@@ -32,6 +32,22 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.DocumentDraftSummary activeUpdatedBy ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected String activeUpdatedBy;
+
+	public String getActiveUpdatedBy() {
+		return this.activeUpdatedBy;
+	}
+
+	public void setActiveUpdatedBy(String activeUpdatedBy) {
+		this.activeUpdatedBy = activeUpdatedBy;
+	}
+
+	/**
+	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
+	 */
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -94,6 +110,9 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
+	/**
+	 * Unique identifier for the master catalog. 
+	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -117,6 +136,9 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.DocumentDraftSummary publishSetCode ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -140,6 +162,9 @@ public class DocumentDraftSummary implements Serializable
 		this.publishType = publishType;
 	}
 
+	/**
+	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {

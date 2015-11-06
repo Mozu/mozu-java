@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class PackageResource {
@@ -27,14 +27,18 @@ public class PackageResource {
 	private ApiContext _apiContext;
 
 
-	public PackageResource(ApiContext apiContext) 
+	public PackageResource() 
+		{
+			_apiContext = null;
+	}
+public PackageResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
 	}
 
 	
 	/**
-	 * 
+	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);

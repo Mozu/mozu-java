@@ -10,12 +10,12 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.location.RegularHours;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.FulfillmentType;
 import com.mozu.api.contracts.location.Coordinates;
 import com.mozu.api.contracts.location.LocationType;
+import com.mozu.api.contracts.location.RegularHours;
 import com.mozu.api.contracts.location.ShippingOriginContact;
 
 /**
@@ -156,19 +156,6 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * List of standard operating hours for each day of the week this location is open for shopper business.
-	 */
-	protected RegularHours regularHours;
-
-	public RegularHours getRegularHours() {
-		return this.regularHours;
-	}
-
-	public void setRegularHours(RegularHours regularHours) {
-		this.regularHours = regularHours;
-	}
-
-	/**
 	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
 	 */
 	protected Address address;
@@ -224,6 +211,19 @@ public class Location implements Serializable
 	}
 	public void setLocationTypes(List<LocationType> locationTypes) {
 		this.locationTypes = locationTypes;
+	}
+
+	/**
+	 * List of standard operating hours for each day of the week this location is open for shopper business.
+	 */
+	protected RegularHours regularHours;
+
+	public RegularHours getRegularHours() {
+		return this.regularHours;
+	}
+
+	public void setRegularHours(RegularHours regularHours) {
+		this.regularHours = regularHours;
 	}
 
 	/**

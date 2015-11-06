@@ -45,6 +45,9 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
+	/**
+	 * The Type of Category Static, Dyanmic, DynamicPreComputed
+	 */
 	protected String categoryType;
 
 	public String getCategoryType() {
@@ -159,6 +162,9 @@ public class Category implements Serializable
 		this.content = content;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {

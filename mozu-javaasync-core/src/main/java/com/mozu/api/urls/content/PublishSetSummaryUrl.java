@@ -15,9 +15,9 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSets
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetsUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -31,10 +31,10 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSetItems
-	 * @param code 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param startIndex 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetItemsUrl(String code, Integer pageSize, String responseFields, Integer startIndex)
@@ -49,8 +49,8 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param code 
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param shouldDiscard 
 	 * @return   String Resource Url
 	 */
@@ -65,8 +65,8 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for AddPublishSetItems
-	 * @param code 
-	 * @param responseFields 
+	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPublishSetItemsUrl(String code, String responseFields)

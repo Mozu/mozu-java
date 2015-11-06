@@ -20,84 +20,6 @@ public class EmailTransactionSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnRejected ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Boolean returnRejected;
-
-	public Boolean getReturnRejected() {
-		return this.returnRejected;
-	}
-
-	public void setReturnRejected(Boolean returnRejected) {
-		this.returnRejected = returnRejected;
-	}
-
-	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnUpdated ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Boolean returnUpdated;
-
-	public Boolean getReturnUpdated() {
-		return this.returnUpdated;
-	}
-
-	public void setReturnUpdated(Boolean returnUpdated) {
-		this.returnUpdated = returnUpdated;
-	}
-
-	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperLoginCreated ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Boolean shopperLoginCreated;
-
-	public Boolean getShopperLoginCreated() {
-		return this.shopperLoginCreated;
-	}
-
-	public void setShopperLoginCreated(Boolean shopperLoginCreated) {
-		this.shopperLoginCreated = shopperLoginCreated;
-	}
-
-	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperPasswordReset ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Boolean shopperPasswordReset;
-
-	public Boolean getShopperPasswordReset() {
-		return this.shopperPasswordReset;
-	}
-
-	public void setShopperPasswordReset(Boolean shopperPasswordReset) {
-		this.shopperPasswordReset = shopperPasswordReset;
-	}
-
-	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings storeCreditCreated ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Boolean storeCreditCreated;
-
-	public Boolean getStoreCreditCreated() {
-		return this.storeCreditCreated;
-	}
-
-	public void setStoreCreditCreated(Boolean storeCreditCreated) {
-		this.storeCreditCreated = storeCreditCreated;
-	}
-
-	/**
-	 * The corresponding topic is not currently used by Mozu.
-	 */
-	protected Boolean storeCreditUpdated;
-
-	public Boolean getStoreCreditUpdated() {
-		return this.storeCreditUpdated;
-	}
-
-	public void setStoreCreditUpdated(Boolean storeCreditUpdated) {
-		this.storeCreditUpdated = storeCreditUpdated;
-	}
-
-	/**
 	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings backInStock ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected Boolean backInStock;
@@ -225,6 +147,84 @@ public class EmailTransactionSettings implements Serializable
 
 	public void setReturnCreated(Boolean returnCreated) {
 		this.returnCreated = returnCreated;
+	}
+
+	/**
+	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnRejected ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Boolean returnRejected;
+
+	public Boolean getReturnRejected() {
+		return this.returnRejected;
+	}
+
+	public void setReturnRejected(Boolean returnRejected) {
+		this.returnRejected = returnRejected;
+	}
+
+	/**
+	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnUpdated ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Boolean returnUpdated;
+
+	public Boolean getReturnUpdated() {
+		return this.returnUpdated;
+	}
+
+	public void setReturnUpdated(Boolean returnUpdated) {
+		this.returnUpdated = returnUpdated;
+	}
+
+	/**
+	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperLoginCreated ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Boolean shopperLoginCreated;
+
+	public Boolean getShopperLoginCreated() {
+		return this.shopperLoginCreated;
+	}
+
+	public void setShopperLoginCreated(Boolean shopperLoginCreated) {
+		this.shopperLoginCreated = shopperLoginCreated;
+	}
+
+	/**
+	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperPasswordReset ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Boolean shopperPasswordReset;
+
+	public Boolean getShopperPasswordReset() {
+		return this.shopperPasswordReset;
+	}
+
+	public void setShopperPasswordReset(Boolean shopperPasswordReset) {
+		this.shopperPasswordReset = shopperPasswordReset;
+	}
+
+	/**
+	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings storeCreditCreated ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Boolean storeCreditCreated;
+
+	public Boolean getStoreCreditCreated() {
+		return this.storeCreditCreated;
+	}
+
+	public void setStoreCreditCreated(Boolean storeCreditCreated) {
+		this.storeCreditCreated = storeCreditCreated;
+	}
+
+	/**
+	 * The corresponding topic is not currently used by Mozu.
+	 */
+	protected Boolean storeCreditUpdated;
+
+	public Boolean getStoreCreditUpdated() {
+		return this.storeCreditUpdated;
+	}
+
+	public void setStoreCreditUpdated(Boolean storeCreditUpdated) {
+		this.storeCreditUpdated = storeCreditUpdated;
 	}
 
 }

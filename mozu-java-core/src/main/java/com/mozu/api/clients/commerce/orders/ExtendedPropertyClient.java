@@ -16,13 +16,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/orders/extendedproperties related resources. DOCUMENT_HERE 
+ * Use the Extended Properties resource to store tracking strings for your orders. Extended properties can help you track affiliate sources.
  * </summary>
  */
 public class ExtendedPropertyClient {
 	
 	/**
-	 * orders-extendedproperties Get GetExtendedProperties description DOCUMENT_HERE 
+	 * Retrieves the extended property string associated with the order. 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient( orderId);
 	 * client.setBaseAddress(url);
@@ -39,7 +39,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Get GetExtendedProperties description DOCUMENT_HERE 
+	 * Retrieves the extended property string associated with the order. 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=GetExtendedPropertiesClient( orderId,  draft);
 	 * client.setBaseAddress(url);
@@ -64,7 +64,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Post AddExtendedProperties description DOCUMENT_HERE 
+	 * Create an extended property for the order.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId);
 	 * client.setBaseAddress(url);
@@ -83,7 +83,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Post AddExtendedProperties description DOCUMENT_HERE 
+	 * Create an extended property for the order.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId,  updateMode,  version);
 	 * client.setBaseAddress(url);
@@ -112,7 +112,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Put UpdateExtendedProperty description DOCUMENT_HERE 
+	 * Updates one ore more extended properties.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  orderId,  key);
 	 * client.setBaseAddress(url);
@@ -132,7 +132,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Put UpdateExtendedProperty description DOCUMENT_HERE 
+	 * Updates one ore more extended properties.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty> mozuClient=UpdateExtendedPropertyClient( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields);
 	 * client.setBaseAddress(url);
@@ -143,7 +143,8 @@ public class ExtendedPropertyClient {
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert 
+	 * @param upsert Inserts and updates an extended property.
+        
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
@@ -164,7 +165,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Put UpdateExtendedProperties description DOCUMENT_HERE 
+	 * Updates one or more extended properties.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  orderId);
 	 * client.setBaseAddress(url);
@@ -183,7 +184,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Put UpdateExtendedProperties description DOCUMENT_HERE 
+	 * Updates one or more extended properties.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=UpdateExtendedPropertiesClient( extendedProperties,  orderId,  updateMode,  version,  upsert);
 	 * client.setBaseAddress(url);
@@ -192,7 +193,8 @@ public class ExtendedPropertyClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert 
+	 * @param upsert Inserts and updates the extended property.
+        
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
 	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
@@ -213,7 +215,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Delete DeleteExtendedProperty description DOCUMENT_HERE 
+	 * Deletes one or more extended properties.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( orderId,  key);
 	 * client.setBaseAddress(url);
@@ -229,7 +231,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Delete DeleteExtendedProperty description DOCUMENT_HERE 
+	 * Deletes one or more extended properties.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertyClient( orderId,  key,  updateMode,  version);
 	 * client.setBaseAddress(url);
@@ -253,7 +255,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Delete DeleteExtendedProperties description DOCUMENT_HERE 
+	 * Deletes the extended property associated with the order. 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys,  orderId);
 	 * client.setBaseAddress(url);
@@ -270,7 +272,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * orders-extendedproperties Delete DeleteExtendedProperties description DOCUMENT_HERE 
+	 * Deletes the extended property associated with the order. 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteExtendedPropertiesClient( keys,  orderId,  updateMode,  version);
 	 * client.setBaseAddress(url);

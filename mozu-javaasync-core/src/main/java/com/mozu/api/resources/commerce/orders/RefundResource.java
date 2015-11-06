@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/orders/orderrefunds related resources. DOCUMENT_HERE 
+ * Use the refunds resource to create a refund.
  * </summary>
  */
 public class RefundResource {
@@ -36,7 +36,7 @@ public class RefundResource {
 
 	
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId);
@@ -53,7 +53,7 @@ public class RefundResource {
 	}
 
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	CountDownLatch latch = refund.createRefund( refund,  orderId, callback );
@@ -71,7 +71,7 @@ public class RefundResource {
 	}
 
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId,  responseFields);
@@ -93,7 +93,7 @@ public class RefundResource {
 	}
 
 	/**
-	 * orders-orderrefunds Post CreateRefund description DOCUMENT_HERE 
+	 * Creates a refund based on the information supplied in the request.  
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	CountDownLatch latch = refund.createRefund( refund,  orderId,  responseFields, callback );
@@ -115,13 +115,14 @@ public class RefundResource {
 	}
 
 	/**
-	 * orders-orderrefunds Put ResendRefundEmail description DOCUMENT_HERE 
+	 * Resends the order refund email previously sent to the shopper. 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	refund.resendRefundEmail( orderId,  refundId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param refundId 
+	 * @param refundId Unique ID of the refund.
+        
 	 * @return 
 	 */
 	public void resendRefundEmail(String orderId, String refundId) throws Exception

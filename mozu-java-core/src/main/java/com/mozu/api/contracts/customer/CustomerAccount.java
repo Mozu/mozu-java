@@ -53,6 +53,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
@@ -180,6 +183,9 @@ public class CustomerAccount implements Serializable
 		this.lastName = lastName;
 	}
 
+	/**
+	 * Mozu.Customer.Contracts.CustomerAccount lifeTimeValueSetDate ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected DateTime lifeTimeValueSetDate;
 
 	public DateTime getLifeTimeValueSetDate() {
@@ -303,6 +309,9 @@ public class CustomerAccount implements Serializable
 		this.contacts = contacts;
 	}
 
+	/**
+	 * Mozu.Customer.Contracts.CustomerAccount lifetimeValue ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected CurrencyAmount lifetimeValue;
 
 	public CurrencyAmount getLifetimeValue() {

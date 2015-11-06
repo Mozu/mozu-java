@@ -15,7 +15,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for GetCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCustomRouteSettingsUrl(String responseFields)
@@ -27,7 +27,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for CreateCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createCustomRouteSettingsUrl(String responseFields)
@@ -39,7 +39,7 @@ public class CustomRouteSettingsUrl
 
 	/**
 	 * Get Resource Url for UpdateCustomRouteSettings
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCustomRouteSettingsUrl(String responseFields)

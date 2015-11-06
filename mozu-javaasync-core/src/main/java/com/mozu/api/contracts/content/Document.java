@@ -137,6 +137,9 @@ public class Document implements Serializable
 		this.name = name;
 	}
 
+	/**
+	 * The name of the publish set that this document belongs to, if any.
+	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -173,6 +176,9 @@ public class Document implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	/**
+	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {

@@ -196,14 +196,14 @@ public class CategoryClient {
 	}
 
 	/**
-	 * 
+	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DynamicExpression dynamicExpression = client.Result();
 	 * </code></pre></p>
-	 * @param dynamicExpressionIn 
+	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
@@ -214,15 +214,15 @@ public class CategoryClient {
 	}
 
 	/**
-	 * 
+	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DynamicExpression dynamicExpression = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param dynamicExpressionIn 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
@@ -241,14 +241,14 @@ public class CategoryClient {
 	}
 
 	/**
-	 * 
+	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DynamicExpression dynamicExpression = client.Result();
 	 * </code></pre></p>
-	 * @param dynamicExpressionIn 
+	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
@@ -259,15 +259,15 @@ public class CategoryClient {
 	}
 
 	/**
-	 * 
+	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DynamicExpression dynamicExpression = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param dynamicExpressionIn 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DynamicExpression>
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
@@ -312,7 +312,7 @@ public class CategoryClient {
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
-	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
+	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. The default value is false.
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.

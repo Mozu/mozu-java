@@ -71,13 +71,13 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static java.io.InputStream getSearchTuningSortRelevance(ApiContext apiContext, int expectedCode) throws Exception
+	public static java.io.InputStream getSearchTuningRuleSortFields(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		java.io.InputStream returnObj;
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			returnObj = resource.getSearchTuningSortRelevance();
+			returnObj = resource.getSearchTuningRuleSortFields();
 		}
 		catch (ApiException e)
 		{
@@ -141,12 +141,12 @@ public class SearchFactory
 		return returnObj;
 	}
 
-	public static void updateSearchTuningSortRelevance(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningSortRelevance searchTuningSortRelevanceIn, int expectedCode) throws Exception
+	public static void updateSearchTuningRuleSortFields(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn, int expectedCode) throws Exception
 	{
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			resource.updateSearchTuningSortRelevance( searchTuningSortRelevanceIn);
+			resource.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 		}
 		catch (ApiException e)
 		{
