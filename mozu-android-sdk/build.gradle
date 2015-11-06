@@ -3,7 +3,6 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: 'maven-publish'
 
-
 buildscript {
     repositories {
         mavenLocal()
@@ -22,7 +21,7 @@ if (hasProperty("teamcity")) {
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.17.0'
+    version = '1.18.1-SNAPSHOT'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")

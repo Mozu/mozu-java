@@ -136,4 +136,16 @@ public class TaxableLineItem implements Serializable
 		this.productProperties = productProperties;
 	}
 
+	/**
+	 * Code that uniquely identifies the product variants of a product 
+	 */
+	String variantProductCode;
+
+    public String getVariantProductCode() {
+        return variantProductCode;
+    }
+
+    public void setVariantProductCode(String variantProductCode) {
+        this.variantProductCode = variantProductCode;
+    } 
 }
