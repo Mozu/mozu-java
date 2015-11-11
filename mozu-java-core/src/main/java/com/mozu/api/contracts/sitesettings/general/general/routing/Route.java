@@ -44,6 +44,16 @@ public class Route implements Serializable
 		this.defaults = defaults;
 	}
 
+	protected String functionId;
+
+	public String getFunctionId() {
+		return this.functionId;
+	}
+
+	public void setFunctionId(String functionId) {
+		this.functionId = functionId;
+	}
+
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route internalRoute ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -79,6 +89,16 @@ public class Route implements Serializable
 
 	public void setTemplate(String template) {
 		this.template = template;
+	}
+
+	protected String urlScheme;
+
+	public String getUrlScheme() {
+		return this.urlScheme;
+	}
+
+	public void setUrlScheme(String urlScheme) {
+		this.urlScheme = urlScheme;
 	}
 
 	/**

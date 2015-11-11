@@ -118,7 +118,7 @@ public class PublishSetSummaryResource {
 	 */
 	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(String code) throws Exception
 	{
-		return getPublishSetItems( code,  null,  null,  null);
+		return getPublishSetItems( code,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -134,25 +134,27 @@ public class PublishSetSummaryResource {
 	 */
 	public CountDownLatch getPublishSetItemsAsync(String code, AsyncCallback<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> callback) throws Exception
 	{
-		return getPublishSetItemsAsync( code,  null,  null,  null, callback);
+		return getPublishSetItemsAsync( code,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieve a paged collection of publish set Items.
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  responseFields);
+	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy 
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(String code, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(String code, Integer pageSize, Integer startIndex, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.PublishSetSummaryClient.getPublishSetItemsClient( code,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.PublishSetSummaryClient.getPublishSetItemsClient( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -163,19 +165,21 @@ public class PublishSetSummaryResource {
 	 * Retrieve a paged collection of publish set Items.
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
-	 *	CountDownLatch latch = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  responseFields, callback );
+	 *	CountDownLatch latch = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy 
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public CountDownLatch getPublishSetItemsAsync(String code, Integer pageSize, Integer startIndex, String responseFields, AsyncCallback<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> callback) throws Exception
+	public CountDownLatch getPublishSetItemsAsync(String code, Integer pageSize, Integer startIndex, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.PublishSetSummaryClient.getPublishSetItemsClient( code,  pageSize,  startIndex,  responseFields);
+		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> client = com.mozu.api.clients.content.PublishSetSummaryClient.getPublishSetItemsClient( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
