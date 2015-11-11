@@ -48,16 +48,16 @@ public class PublishSetSummaryFactory
 
 	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(ApiContext apiContext, String code, int expectedCode) throws Exception
 	{
-		return getPublishSetItems(apiContext,  code,  null,  null,  null, expectedCode);
+		return getPublishSetItems(apiContext,  code,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(ApiContext apiContext, String code, Integer pageSize, Integer startIndex, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection getPublishSetItems(ApiContext apiContext, String code, Integer pageSize, Integer startIndex, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection returnObj = new com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection();
 		PublishSetSummaryResource resource = new PublishSetSummaryResource(apiContext);
 		try
 		{
-			returnObj = resource.getPublishSetItems( code,  pageSize,  startIndex,  responseFields);
+			returnObj = resource.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{

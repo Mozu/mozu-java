@@ -21,58 +21,6 @@ public class Credit implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The date and time the store credit or gift card was activated by the shopper. Credits cannot be used until activated. After the credit is activated, this property value is read-only.
-	 */
-	protected DateTime activationDate;
-
-	public DateTime getActivationDate() {
-		return this.activationDate;
-	}
-
-	public void setActivationDate(DateTime activationDate) {
-		this.activationDate = activationDate;
-	}
-
-	/**
-	 * User-defined identifier of the credit, which is unique within the tenant.
-	 */
-	protected String code;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	/**
-	 * The type of customer credit, which is "GiftCard" or "StoreCredit".
-	 */
-	protected String creditType;
-
-	public String getCreditType() {
-		return this.creditType;
-	}
-
-	public void setCreditType(String creditType) {
-		this.creditType = creditType;
-	}
-
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
-	protected String currencyCode;
-
-	public String getCurrencyCode() {
-		return this.currencyCode;
-	}
-
-	public void setCurrencyCode(String currencyCode) {
-		this.currencyCode = currencyCode;
-	}
-
-	/**
 	 * The current remaining balance of the credit applied to the customer account.
 	 */
 	protected Double currentBalance;
@@ -122,6 +70,58 @@ public class Credit implements Serializable
 
 	public void setInitialBalance(Double initialBalance) {
 		this.initialBalance = initialBalance;
+	}
+
+	/**
+	 * The date and time the store credit or gift card was activated by the shopper. Credits cannot be used until activated. After the credit is activated, this property value is read-only.
+	 */
+	protected DateTime activationDate;
+
+	public DateTime getActivationDate() {
+		return this.activationDate;
+	}
+
+	public void setActivationDate(DateTime activationDate) {
+		this.activationDate = activationDate;
+	}
+
+	/**
+	 * User-defined identifier of the credit, which is unique within the tenant.
+	 */
+	protected String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
+	 * The type of customer credit, which is "GiftCard" or "StoreCredit".
+	 */
+	protected String creditType;
+
+	public String getCreditType() {
+		return this.creditType;
+	}
+
+	public void setCreditType(String creditType) {
+		this.creditType = creditType;
+	}
+
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
+	protected String currencyCode;
+
+	public String getCurrencyCode() {
+		return this.currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 	/**

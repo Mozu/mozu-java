@@ -20,19 +20,6 @@ public class OrderValidationMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
-	 */
-	protected String orderItemId;
-
-	public String getOrderItemId() {
-		return this.orderItemId;
-	}
-
-	public void setOrderItemId(String orderItemId) {
-		this.orderItemId = orderItemId;
-	}
-
-	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
 	protected String message;
@@ -56,6 +43,19 @@ public class OrderValidationMessage implements Serializable
 
 	public void setMessageType(String messageType) {
 		this.messageType = messageType;
+	}
+
+	/**
+	 * Unique identifier of the order item associated with a validation message, order, or return.
+	 */
+	protected String orderItemId;
+
+	public String getOrderItemId() {
+		return this.orderItemId;
+	}
+
+	public void setOrderItemId(String orderItemId) {
+		this.orderItemId = orderItemId;
 	}
 
 }

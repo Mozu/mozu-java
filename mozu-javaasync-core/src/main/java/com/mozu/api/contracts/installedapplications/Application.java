@@ -34,6 +34,16 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	protected String appKey;
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+	}
+
 	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
@@ -71,6 +81,16 @@ public class Application implements Serializable
 
 	public void setIsExtension(Boolean isExtension) {
 		this.isExtension = isExtension;
+	}
+
+	protected Boolean isExtensionCertified;
+
+	public Boolean getIsExtensionCertified() {
+		return this.isExtensionCertified;
+	}
+
+	public void setIsExtensionCertified(Boolean isExtensionCertified) {
+		this.isExtensionCertified = isExtensionCertified;
 	}
 
 	/**

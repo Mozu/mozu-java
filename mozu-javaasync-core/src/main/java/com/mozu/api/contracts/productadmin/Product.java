@@ -37,6 +37,45 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * If the product must be packaged separately, the type of standalone package to use.
+	 */
+	protected String standAlonePackageType;
+
+	public String getStandAlonePackageType() {
+		return this.standAlonePackageType;
+	}
+
+	public void setStandAlonePackageType(String standAlonePackageType) {
+		this.standAlonePackageType = standAlonePackageType;
+	}
+
+	/**
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 */
+	protected String upc;
+
+	public String getUpc() {
+		return this.upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+
+	/**
+	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 */
+	protected String variationKey;
+
+	public String getVariationKey() {
+		return this.variationKey;
+	}
+
+	public void setVariationKey(String variationKey) {
+		this.variationKey = variationKey;
+	}
+
+	/**
 	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
 	protected String baseProductCode;
@@ -227,45 +266,6 @@ public class Product implements Serializable
 
 	public void setShippingClassId(Integer shippingClassId) {
 		this.shippingClassId = shippingClassId;
-	}
-
-	/**
-	 * If the product must be packaged separately, the type of standalone package to use.
-	 */
-	protected String standAlonePackageType;
-
-	public String getStandAlonePackageType() {
-		return this.standAlonePackageType;
-	}
-
-	public void setStandAlonePackageType(String standAlonePackageType) {
-		this.standAlonePackageType = standAlonePackageType;
-	}
-
-	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
-	protected String upc;
-
-	public String getUpc() {
-		return this.upc;
-	}
-
-	public void setUpc(String upc) {
-		this.upc = upc;
-	}
-
-	/**
-	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 */
-	protected String variationKey;
-
-	public String getVariationKey() {
-		return this.variationKey;
-	}
-
-	public void setVariationKey(String variationKey) {
-		this.variationKey = variationKey;
 	}
 
 	/**

@@ -24,43 +24,6 @@ public class RateRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of shipping carriers for which to retrieve shipping rate information.
-	 */
-	protected List<String> carrierIds;
-	public List<String> getCarrierIds() {
-		return this.carrierIds;
-	}
-	public void setCarrierIds(List<String> carrierIds) {
-		this.carrierIds = carrierIds;
-	}
-
-	/**
-	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
-	 */
-	protected DateTime estimatedShipmentDate;
-
-	public DateTime getEstimatedShipmentDate() {
-		return this.estimatedShipmentDate;
-	}
-
-	public void setEstimatedShipmentDate(DateTime estimatedShipmentDate) {
-		this.estimatedShipmentDate = estimatedShipmentDate;
-	}
-
-	/**
-	 * If true, the destination address associated with the shipping rate request is a commercial address.
-	 */
-	protected Boolean isDestinationAddressCommercial;
-
-	public Boolean getIsDestinationAddressCommercial() {
-		return this.isDestinationAddressCommercial;
-	}
-
-	public void setIsDestinationAddressCommercial(Boolean isDestinationAddressCommercial) {
-		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
-	}
-
-	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
 	protected String isoCurrencyCode;
@@ -95,6 +58,43 @@ public class RateRequest implements Serializable
 	}
 	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
 		this.shippingServiceTypes = shippingServiceTypes;
+	}
+
+	/**
+	 * List of shipping carriers for which to retrieve shipping rate information.
+	 */
+	protected List<String> carrierIds;
+	public List<String> getCarrierIds() {
+		return this.carrierIds;
+	}
+	public void setCarrierIds(List<String> carrierIds) {
+		this.carrierIds = carrierIds;
+	}
+
+	/**
+	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
+	 */
+	protected DateTime estimatedShipmentDate;
+
+	public DateTime getEstimatedShipmentDate() {
+		return this.estimatedShipmentDate;
+	}
+
+	public void setEstimatedShipmentDate(DateTime estimatedShipmentDate) {
+		this.estimatedShipmentDate = estimatedShipmentDate;
+	}
+
+	/**
+	 * If true, the destination address associated with the shipping rate request is a commercial address.
+	 */
+	protected Boolean isDestinationAddressCommercial;
+
+	public Boolean getIsDestinationAddressCommercial() {
+		return this.isDestinationAddressCommercial;
+	}
+
+	public void setIsDestinationAddressCommercial(Boolean isDestinationAddressCommercial) {
+		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
 	}
 
 	/**
