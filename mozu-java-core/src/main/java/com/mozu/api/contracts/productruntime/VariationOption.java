@@ -20,19 +20,6 @@ public class VariationOption implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.VariationOption valueSequence ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected Integer valueSequence;
-
-	public Integer getValueSequence() {
-		return this.valueSequence;
-	}
-
-	public void setValueSequence(Integer valueSequence) {
-		this.valueSequence = valueSequence;
-	}
-
-	/**
 	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
 	 */
 	protected String attributeFQN;
@@ -56,6 +43,19 @@ public class VariationOption implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+
+	/**
+	 * Mozu.ProductRuntime.Contracts.VariationOption valueSequence ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected Integer valueSequence;
+
+	public Integer getValueSequence() {
+		return this.valueSequence;
+	}
+
+	public void setValueSequence(Integer valueSequence) {
+		this.valueSequence = valueSequence;
 	}
 
 }

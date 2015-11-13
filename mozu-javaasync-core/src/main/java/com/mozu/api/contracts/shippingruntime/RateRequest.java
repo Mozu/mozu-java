@@ -24,43 +24,6 @@ public class RateRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
-	protected String isoCurrencyCode;
-
-	public String getIsoCurrencyCode() {
-		return this.isoCurrencyCode;
-	}
-
-	public void setIsoCurrencyCode(String isoCurrencyCode) {
-		this.isoCurrencyCode = isoCurrencyCode;
-	}
-
-	/**
-	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
-	 */
-	protected Double orderTotal;
-
-	public Double getOrderTotal() {
-		return this.orderTotal;
-	}
-
-	public void setOrderTotal(Double orderTotal) {
-		this.orderTotal = orderTotal;
-	}
-
-	/**
-	 * The shipping methods associated with this request.
-	 */
-	protected List<String> shippingServiceTypes;
-	public List<String> getShippingServiceTypes() {
-		return this.shippingServiceTypes;
-	}
-	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
-		this.shippingServiceTypes = shippingServiceTypes;
-	}
-
-	/**
 	 * List of shipping carriers for which to retrieve shipping rate information.
 	 */
 	protected List<String> carrierIds;
@@ -95,6 +58,43 @@ public class RateRequest implements Serializable
 
 	public void setIsDestinationAddressCommercial(Boolean isDestinationAddressCommercial) {
 		this.isDestinationAddressCommercial = isDestinationAddressCommercial;
+	}
+
+	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
+	protected String isoCurrencyCode;
+
+	public String getIsoCurrencyCode() {
+		return this.isoCurrencyCode;
+	}
+
+	public void setIsoCurrencyCode(String isoCurrencyCode) {
+		this.isoCurrencyCode = isoCurrencyCode;
+	}
+
+	/**
+	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
+	 */
+	protected Double orderTotal;
+
+	public Double getOrderTotal() {
+		return this.orderTotal;
+	}
+
+	public void setOrderTotal(Double orderTotal) {
+		this.orderTotal = orderTotal;
+	}
+
+	/**
+	 * The shipping methods associated with this request.
+	 */
+	protected List<String> shippingServiceTypes;
+	public List<String> getShippingServiceTypes() {
+		return this.shippingServiceTypes;
+	}
+	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
+		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
 	/**

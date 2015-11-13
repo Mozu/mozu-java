@@ -145,5 +145,5 @@ public class TaxableLineItem implements Serializable
 	public void setProductProperties(List<ProductProperty> productProperties) {
 		this.productProperties = productProperties;
 	}
-	
+
 }

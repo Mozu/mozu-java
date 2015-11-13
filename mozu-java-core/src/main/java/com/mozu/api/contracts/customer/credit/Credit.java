@@ -21,58 +21,6 @@ public class Credit implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The current remaining balance of the credit applied to the customer account.
-	 */
-	protected Double currentBalance;
-
-	public Double getCurrentBalance() {
-		return this.currentBalance;
-	}
-
-	public void setCurrentBalance(Double currentBalance) {
-		this.currentBalance = currentBalance;
-	}
-
-	/**
-	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
-	 */
-	protected Integer customerId;
-
-	public Integer getCustomerId() {
-		return this.customerId;
-	}
-
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-	}
-
-	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
-	 */
-	protected DateTime expirationDate;
-
-	public DateTime getExpirationDate() {
-		return this.expirationDate;
-	}
-
-	public void setExpirationDate(DateTime expirationDate) {
-		this.expirationDate = expirationDate;
-	}
-
-	/**
-	 * The initial balance of the credit applied to the customer account. This value cannot be changed after it is set.
-	 */
-	protected Double initialBalance;
-
-	public Double getInitialBalance() {
-		return this.initialBalance;
-	}
-
-	public void setInitialBalance(Double initialBalance) {
-		this.initialBalance = initialBalance;
-	}
-
-	/**
 	 * The date and time the store credit or gift card was activated by the shopper. Credits cannot be used until activated. After the credit is activated, this property value is read-only.
 	 */
 	protected DateTime activationDate;
@@ -122,6 +70,58 @@ public class Credit implements Serializable
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+
+	/**
+	 * The current remaining balance of the credit applied to the customer account.
+	 */
+	protected Double currentBalance;
+
+	public Double getCurrentBalance() {
+		return this.currentBalance;
+	}
+
+	public void setCurrentBalance(Double currentBalance) {
+		this.currentBalance = currentBalance;
+	}
+
+	/**
+	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 */
+	protected Integer customerId;
+
+	public Integer getCustomerId() {
+		return this.customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
+	}
+
+	/**
+	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
+	 */
+	protected DateTime expirationDate;
+
+	public DateTime getExpirationDate() {
+		return this.expirationDate;
+	}
+
+	public void setExpirationDate(DateTime expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	/**
+	 * The initial balance of the credit applied to the customer account. This value cannot be changed after it is set.
+	 */
+	protected Double initialBalance;
+
+	public Double getInitialBalance() {
+		return this.initialBalance;
+	}
+
+	public void setInitialBalance(Double initialBalance) {
+		this.initialBalance = initialBalance;
 	}
 
 	/**
