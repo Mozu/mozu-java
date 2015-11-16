@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.shippingruntime.ShippingRateValidationMessage;
-import com.mozu.api.contracts.shippingruntime.ShippingItemRate;
 import com.mozu.api.contracts.shippingruntime.ShippingRateLocalizedContent;
 import com.mozu.api.contracts.shippingruntime.CustomAttribute;
+import com.mozu.api.contracts.shippingruntime.ShippingRateValidationMessage;
+import com.mozu.api.contracts.shippingruntime.ShippingItemRate;
 
 /**
  *	Properties of a shipping rate calculated for a specified carrier.
@@ -64,6 +64,30 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
+	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
+	 */
+	protected ShippingRateLocalizedContent content;
+
+	public ShippingRateLocalizedContent getContent() {
+		return this.content;
+	}
+
+	public void setContent(ShippingRateLocalizedContent content) {
+		this.content = content;
+	}
+
+	/**
+	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
+	 */
+	protected List<CustomAttribute> customAttributes;
+	public List<CustomAttribute> getCustomAttributes() {
+		return this.customAttributes;
+	}
+	public void setCustomAttributes(List<CustomAttribute> customAttributes) {
+		this.customAttributes = customAttributes;
+	}
+
+	/**
 	 * Mozu.ShippingRuntime.Contracts.ShippingRate data ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
@@ -96,30 +120,6 @@ public class ShippingRate implements Serializable
 	}
 	public void setShippingItemRates(List<ShippingItemRate> shippingItemRates) {
 		this.shippingItemRates = shippingItemRates;
-	}
-
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
-	protected ShippingRateLocalizedContent content;
-
-	public ShippingRateLocalizedContent getContent() {
-		return this.content;
-	}
-
-	public void setContent(ShippingRateLocalizedContent content) {
-		this.content = content;
-	}
-
-	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
-	 */
-	protected List<CustomAttribute> customAttributes;
-	public List<CustomAttribute> getCustomAttributes() {
-		return this.customAttributes;
-	}
-	public void setCustomAttributes(List<CustomAttribute> customAttributes) {
-		this.customAttributes = customAttributes;
 	}
 
 }

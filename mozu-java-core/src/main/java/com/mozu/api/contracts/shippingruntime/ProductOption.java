@@ -20,19 +20,6 @@ public class ProductOption implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
-	 */
-	protected String attributeFQN;
-
-	public String getAttributeFQN() {
-		return this.attributeFQN;
-	}
-
-	public void setAttributeFQN(String attributeFQN) {
-		this.attributeFQN = attributeFQN;
-	}
-
-	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
 	protected String dataType;
@@ -56,6 +43,19 @@ public class ProductOption implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+
+	/**
+	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
+	 */
+	protected String attributeFQN;
+
+	public String getAttributeFQN() {
+		return this.attributeFQN;
+	}
+
+	public void setAttributeFQN(String attributeFQN) {
+		this.attributeFQN = attributeFQN;
 	}
 
 }

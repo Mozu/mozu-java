@@ -86,7 +86,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include 'Physical' and 'DigitalCredit'. This comes from the `productType `of the product. Products are defaulted to a Physical goodsType. Gift cards have a goodsType of DigitalCredit.
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
 	protected String goodsType;
 
