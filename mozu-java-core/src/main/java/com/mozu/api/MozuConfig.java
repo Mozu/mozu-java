@@ -4,6 +4,7 @@ public class MozuConfig {
 
     private static String baseUrl = "https://home.mozu.com";
    	private static String basePciUrl = "https://pmts.mozu.com";
+   	private static String baseDevPciUrl = "https://payments-sb.mozu.com";
     private static String encodeAlgorithm = "SHA-256";
     private static String charSet = "UTF-8";
     private static int defaultEventRequestTimeout = 180;
@@ -81,6 +82,14 @@ public class MozuConfig {
 
 	public static void setBasePciUrl(String basePciUrl) {
 		MozuConfig.basePciUrl = basePciUrl;
+	}
+	
+	public static String getBaseDevPciUrl() {
+		return baseDevPciUrl;
+	}
+
+	public static void setBaseDevPciUrl(String baseDevPciUrl) {
+		MozuConfig.baseDevPciUrl = baseDevPciUrl;
 	}
 
     public static String getEncodeAlgorithm() {
