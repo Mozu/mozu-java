@@ -16,6 +16,7 @@ import org.apache.http.HttpStatus;
 
 
 import com.mozu.test.framework.core.*;
+import com.mozu.test.framework.core.Environment.Environments;
 import com.mozu.test.framework.datafactory.TenantFactory;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
@@ -46,13 +47,15 @@ public class MozuApiTestBase {
         appAuthInfo.setApplicationId(Environment.getConfigValue("AppId"));
         appAuthInfo.setSharedSecret(Environment.getConfigValue("SharedSecret"));
         String baseUrl = Environment.getConfigValue("BaseAuthAppUrl");
-        String basePciUrl = Environment.getConfigValue("BasePciUrl");
     	MozuConfig.setBaseUrl(baseUrl);
-    	MozuConfig.setBasePciUrl(basePciUrl);
+    	if (!Environment.getConfigEnvironment().equals(Environments.Prod))
+    	{
+            String basePciUrl = Environment.getConfigValue("BasePciUrl");
+        	MozuConfig.setBasePciUrl(basePciUrl);    		
+        	MozuConfig.setBaseDevPciUrl(basePciUrl);
+    	}
         try {
             AppAuthenticator.initialize(appAuthInfo, null);
-//        	RefreshInterval ri = new RefreshInterval(800, 400);
-//            AppAuthenticator.initialize(appAuthInfo, ri);
         } catch (ApiException ae){
         	throw new ApiException("Unable to authenticate application.\n" + ae.getMessage());
         }
