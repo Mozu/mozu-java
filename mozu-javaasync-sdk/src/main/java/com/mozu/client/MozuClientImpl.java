@@ -466,8 +466,17 @@ public class MozuClientImpl <TResult> implements MozuClient<TResult> {
             if (StringUtils.isBlank(MozuConfig.getBasePciUrl())) {
                 throw new ApiException("Authentication.Instance.BasePciUrl is missing");
              }
-            baseAddress = MozuConfig.getBasePciUrl();
+            Tenant tenant=getTenant(apiContext.getTenantId());
+        	baseAddress = tenant.getIsDevTenant()?MozuConfig.getBaseDevPciUrl():MozuConfig.getBasePciUrl();
         }
+    }
+    
+    private Tenant getTenant(Integer tenantId) throws Exception{
+    	 TenantResource tenantResource = new TenantResource();
+         Tenant tenant = tenantResource.getTenant(tenantId);
+         if (tenant == null)
+             throw new ApiException("Tenant " + tenantId + " Not found");
+		return tenant;
     }
 
     protected Map<String, String> getHeaders() {
