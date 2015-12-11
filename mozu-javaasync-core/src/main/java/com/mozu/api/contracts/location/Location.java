@@ -10,10 +10,10 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import com.mozu.api.contracts.location.Coordinates;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.FulfillmentType;
-import com.mozu.api.contracts.location.Coordinates;
 import com.mozu.api.contracts.location.LocationType;
 import com.mozu.api.contracts.location.RegularHours;
 import com.mozu.api.contracts.location.ShippingOriginContact;
@@ -156,6 +156,19 @@ public class Location implements Serializable
 	}
 
 	/**
+	 * The geographical coordinates associated with this location.
+	 */
+	protected Coordinates geo;
+
+	public Coordinates getGeo() {
+		return this.geo;
+	}
+
+	public void setGeo(Coordinates geo) {
+		this.geo = geo;
+	}
+
+	/**
 	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
 	 */
 	protected Address address;
@@ -187,19 +200,6 @@ public class Location implements Serializable
 	}
 	public void setFulfillmentTypes(List<FulfillmentType> fulfillmentTypes) {
 		this.fulfillmentTypes = fulfillmentTypes;
-	}
-
-	/**
-	 * The geographical coordinates associated with this location.
-	 */
-	protected Coordinates geo;
-
-	public Coordinates getGeo() {
-		return this.geo;
-	}
-
-	public void setGeo(Coordinates geo) {
-		this.geo = geo;
 	}
 
 	/**

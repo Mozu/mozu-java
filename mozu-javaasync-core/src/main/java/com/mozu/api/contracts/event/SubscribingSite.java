@@ -21,19 +21,6 @@ public class SubscribingSite implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
-	protected Integer siteId;
-
-	public Integer getSiteId() {
-		return this.siteId;
-	}
-
-	public void setSiteId(Integer siteId) {
-		this.siteId = siteId;
-	}
-
-	/**
 	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
 	protected Boolean isActive;
@@ -44,6 +31,19 @@ public class SubscribingSite implements Serializable
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	/**
+	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
+	protected Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
 	}
 
 	/**

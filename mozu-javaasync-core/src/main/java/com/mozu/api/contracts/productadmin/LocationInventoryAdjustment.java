@@ -20,19 +20,6 @@ public class LocationInventoryAdjustment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
-	protected String locationCode;
-
-	public String getLocationCode() {
-		return this.locationCode;
-	}
-
-	public void setLocationCode(String locationCode) {
-		this.locationCode = locationCode;
-	}
-
-	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
 	protected String productCode;
@@ -69,6 +56,19 @@ public class LocationInventoryAdjustment implements Serializable
 
 	public void setValue(Integer value) {
 		this.value = value;
+	}
+
+	/**
+	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 */
+	protected String locationCode;
+
+	public String getLocationCode() {
+		return this.locationCode;
+	}
+
+	public void setLocationCode(String locationCode) {
+		this.locationCode = locationCode;
 	}
 
 }

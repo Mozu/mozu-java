@@ -120,6 +120,16 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
 
+	protected String searchTuningRuleDescription;
+
+	public String getSearchTuningRuleDescription() {
+		return this.searchTuningRuleDescription;
+	}
+
+	public void setSearchTuningRuleDescription(String searchTuningRuleDescription) {
+		this.searchTuningRuleDescription = searchTuningRuleDescription;
+	}
+
 	/**
 	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleName ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -131,6 +141,16 @@ public class SearchTuningRule implements Serializable
 
 	public void setSearchTuningRuleName(String searchTuningRuleName) {
 		this.searchTuningRuleName = searchTuningRuleName;
+	}
+
+	protected Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
 	}
 
 	/**

@@ -86,6 +86,16 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
+	protected Boolean isExtensionCertified;
+
+	public Boolean getIsExtensionCertified() {
+		return this.isExtensionCertified;
+	}
+
+	public void setIsExtensionCertified(Boolean isExtensionCertified) {
+		this.isExtensionCertified = isExtensionCertified;
+	}
+
 	/**
 	 * The URL defined for the application that represents the configuration website for the capability. This value is used by installed applications or the site.
 	 */

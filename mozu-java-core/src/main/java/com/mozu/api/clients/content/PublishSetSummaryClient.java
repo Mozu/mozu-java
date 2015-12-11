@@ -77,27 +77,29 @@ public class PublishSetSummaryClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> getPublishSetItemsClient(String code) throws Exception
 	{
-		return getPublishSetItemsClient( code,  null,  null,  null);
+		return getPublishSetItemsClient( code,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieve a paged collection of publish set Items.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code,  pageSize,  startIndex,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy 
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> getPublishSetItemsClient(String code, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> getPublishSetItemsClient(String code, Integer pageSize, Integer startIndex, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.content.PublishSetSummaryUrl.getPublishSetItemsUrl(code, pageSize, responseFields, startIndex);
+		MozuUrl url = com.mozu.api.urls.content.PublishSetSummaryUrl.getPublishSetItemsUrl(code, filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection.class;
 		MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>) MozuClientFactory.getInstance(clz);

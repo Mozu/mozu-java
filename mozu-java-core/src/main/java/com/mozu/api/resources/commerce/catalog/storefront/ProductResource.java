@@ -165,23 +165,24 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode) throws Exception
 	{
-		return getProductForIndexing( productCode,  null);
+		return getProductForIndexing( productCode,  null,  null);
 	}
 
 	/**
 	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProductForIndexing( productCode,  responseFields);
+	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productVersion 
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, Long productVersion, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

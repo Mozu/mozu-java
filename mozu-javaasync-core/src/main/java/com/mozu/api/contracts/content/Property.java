@@ -21,19 +21,6 @@ public class Property implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
-	protected String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * If true, the attribute can have more than one value.
 	 */
 	protected Boolean isMultiValued;
@@ -57,6 +44,19 @@ public class Property implements Serializable
 
 	public void setIsRequired(Boolean isRequired) {
 		this.isRequired = isRequired;
+	}
+
+	/**
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 */
+	protected String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**

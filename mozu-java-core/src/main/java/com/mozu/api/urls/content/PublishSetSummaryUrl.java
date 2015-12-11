@@ -32,17 +32,21 @@ public class PublishSetSummaryUrl
 	/**
 	 * Get Resource Url for GetPublishSetItems
 	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param filter 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param sortBy 
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPublishSetItemsUrl(String code, Integer pageSize, String responseFields, Integer startIndex)
+	public static MozuUrl getPublishSetItemsUrl(String code, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/content/publishsets/{code}/items?pageSize={pageSize}&startIndex={startIndex}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/content/publishsets/{code}/items?pageSize={pageSize}&startIndex={startIndex}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
 		formatter.formatUrl("code", code);
+		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

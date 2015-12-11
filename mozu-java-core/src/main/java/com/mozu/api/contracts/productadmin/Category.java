@@ -46,19 +46,6 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The Type of Category Static, Dyanmic, DynamicPreComputed
-	 */
-	protected String categoryType;
-
-	public String getCategoryType() {
-		return this.categoryType;
-	}
-
-	public void setCategoryType(String categoryType) {
-		this.categoryType = categoryType;
-	}
-
-	/**
 	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
 	 */
 	protected Integer childCount;
@@ -134,6 +121,19 @@ public class Category implements Serializable
 
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
+	}
+
+	/**
+	 * The Type of Category Static, Dyanmic, DynamicPreComputed
+	 */
+	protected String categoryType;
+
+	public String getCategoryType() {
+		return this.categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
 	}
 
 	/**

@@ -19,6 +19,16 @@ public class AttributeSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean allowFilteringAndSortingInStorefront;
+
+	public Boolean getAllowFilteringAndSortingInStorefront() {
+		return this.allowFilteringAndSortingInStorefront;
+	}
+
+	public void setAllowFilteringAndSortingInStorefront(Boolean allowFilteringAndSortingInStorefront) {
+		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
+	}
+
 	/**
 	 * Indicates whether the attribute value is searchable in the merchant catalog admin.
 	 */

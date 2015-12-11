@@ -27,19 +27,6 @@ public class Package implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.AppDev.Contracts.Package alert ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected String alert;
-
-	public String getAlert() {
-		return this.alert;
-	}
-
-	public void setAlert(String alert) {
-		this.alert = alert;
-	}
-
-	/**
 	 * Mozu.AppDev.Contracts.Package apiVersion ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected String apiVersion;
@@ -141,6 +128,16 @@ public class Package implements Serializable
 
 	public void setApplicationName(String applicationName) {
 		this.applicationName = applicationName;
+	}
+
+	protected Integer applicationOwnerDevAccountId;
+
+	public Integer getApplicationOwnerDevAccountId() {
+		return this.applicationOwnerDevAccountId;
+	}
+
+	public void setApplicationOwnerDevAccountId(Integer applicationOwnerDevAccountId) {
+		this.applicationOwnerDevAccountId = applicationOwnerDevAccountId;
 	}
 
 	/**
@@ -557,6 +554,26 @@ public class Package implements Serializable
 
 	public void setUpdateParentAppKey(String updateParentAppKey) {
 		this.updateParentAppKey = updateParentAppKey;
+	}
+
+	protected String updateParentThemeName;
+
+	public String getUpdateParentThemeName() {
+		return this.updateParentThemeName;
+	}
+
+	public void setUpdateParentThemeName(String updateParentThemeName) {
+		this.updateParentThemeName = updateParentThemeName;
+	}
+
+	protected String updateParentThemeVersion;
+
+	public String getUpdateParentThemeVersion() {
+		return this.updateParentThemeVersion;
+	}
+
+	public void setUpdateParentThemeVersion(String updateParentThemeVersion) {
+		this.updateParentThemeVersion = updateParentThemeVersion;
 	}
 
 	/**

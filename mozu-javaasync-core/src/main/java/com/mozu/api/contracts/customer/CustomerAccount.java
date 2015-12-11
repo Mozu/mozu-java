@@ -14,7 +14,6 @@ import com.mozu.api.contracts.customer.CustomerAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
 import com.mozu.api.contracts.customer.CustomerContact;
-import com.mozu.api.contracts.customer.CurrencyAmount;
 import com.mozu.api.contracts.customer.CustomerNote;
 import com.mozu.api.contracts.customer.CustomerSegment;
 
@@ -184,19 +183,6 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Mozu.Customer.Contracts.CustomerAccount lifeTimeValueSetDate ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected DateTime lifeTimeValueSetDate;
-
-	public DateTime getLifeTimeValueSetDate() {
-		return this.lifeTimeValueSetDate;
-	}
-
-	public void setLifeTimeValueSetDate(DateTime lifeTimeValueSetDate) {
-		this.lifeTimeValueSetDate = lifeTimeValueSetDate;
-	}
-
-	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
 	protected String localeCode;
@@ -307,19 +293,6 @@ public class CustomerAccount implements Serializable
 	}
 	public void setContacts(List<CustomerContact> contacts) {
 		this.contacts = contacts;
-	}
-
-	/**
-	 * Mozu.Customer.Contracts.CustomerAccount lifetimeValue ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected CurrencyAmount lifetimeValue;
-
-	public CurrencyAmount getLifetimeValue() {
-		return this.lifetimeValue;
-	}
-
-	public void setLifetimeValue(CurrencyAmount lifetimeValue) {
-		this.lifetimeValue = lifetimeValue;
 	}
 
 	/**

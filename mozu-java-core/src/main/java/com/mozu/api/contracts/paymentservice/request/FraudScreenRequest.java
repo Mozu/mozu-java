@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.paymentservice.Address;
 import com.mozu.api.contracts.paymentservice.Contact;
+import com.mozu.api.contracts.paymentservice.GatewayCredentialFieldValue;
 import com.mozu.api.contracts.paymentservice.CustomData;
 import com.mozu.api.contracts.paymentservice.OrderItem;
 
@@ -89,6 +90,16 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	protected String customerId;
+
+	public String getCustomerId() {
+		return this.customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
 	/**
 	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest cvV2Codes ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -154,6 +165,36 @@ public class FraudScreenRequest implements Serializable
 		this.merchantTransactionId = merchantTransactionId;
 	}
 
+	protected Integer orderNumber;
+
+	public Integer getOrderNumber() {
+		return this.orderNumber;
+	}
+
+	public void setOrderNumber(Integer orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+
+	protected String paymentTransactionId;
+
+	public String getPaymentTransactionId() {
+		return this.paymentTransactionId;
+	}
+
+	public void setPaymentTransactionId(String paymentTransactionId) {
+		this.paymentTransactionId = paymentTransactionId;
+	}
+
+	protected String paymentType;
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+
 	/**
 	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest requestorIp ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -193,6 +234,16 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
+	protected Double total;
+
+	public Double getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+
 	/**
 	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest billingAddress ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -217,6 +268,14 @@ public class FraudScreenRequest implements Serializable
 
 	public void setBillingContact(Contact billingContact) {
 		this.billingContact = billingContact;
+	}
+
+	protected List<GatewayCredentialFieldValue> credentialFieldsOverride;
+	public List<GatewayCredentialFieldValue> getCredentialFieldsOverride() {
+		return this.credentialFieldsOverride;
+	}
+	public void setCredentialFieldsOverride(List<GatewayCredentialFieldValue> credentialFieldsOverride) {
+		this.credentialFieldsOverride = credentialFieldsOverride;
 	}
 
 	/**
