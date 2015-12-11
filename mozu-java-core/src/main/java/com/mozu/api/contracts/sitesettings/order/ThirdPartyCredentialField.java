@@ -22,19 +22,6 @@ public class ThirdPartyCredentialField implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * System-supplied API name required to communicate with the external payment processor.
-	 */
-	protected String apiName;
-
-	public String getApiName() {
-		return this.apiName;
-	}
-
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-	}
-
-	/**
 	 * The name that displays for the payment gateway or third-party credentials field. 
 	 */
 	protected String displayName;
@@ -84,6 +71,19 @@ public class ThirdPartyCredentialField implements Serializable
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	/**
+	 * System-supplied API name required to communicate with the external payment processor.
+	 */
+	protected String apiName;
+
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
 	}
 
 	/**

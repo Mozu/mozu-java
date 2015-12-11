@@ -6,15 +6,11 @@
  */
 package com.mozu.api.resources.commerce.catalog.admin;
 
+import java.util.stream.Stream;
+
 import com.mozu.api.ApiContext;
-import java.util.List;
-import java.util.ArrayList;
 import com.mozu.api.MozuClient;
-import com.mozu.api.MozuClientFactory;
-import com.mozu.api.MozuUrl;
-import com.mozu.api.Headers;
-import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang.StringUtils;
+import com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields;
 
 /** <summary>
  * The Search resource manages all settings and options for providing product search on your site.
@@ -114,9 +110,9 @@ public class SearchResource {
 	 * @return Stream
 	 * @see Stream
 	 */
-	public java.io.InputStream getSearchTuningRuleSortFields() throws Exception
+	public SearchTuningRuleSortFields getSearchTuningRuleSortFields() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
+		MozuClient<SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -200,8 +196,8 @@ public class SearchResource {
 	 *	search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
 	 * @param searchTuningRuleSortFieldsIn 
-	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see 
 	 */
 	public void updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{

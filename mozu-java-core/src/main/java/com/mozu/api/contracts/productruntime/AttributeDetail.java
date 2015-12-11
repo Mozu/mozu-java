@@ -20,6 +20,16 @@ public class AttributeDetail implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean allowFilteringAndSortingInStorefront;
+
+	public Boolean getAllowFilteringAndSortingInStorefront() {
+		return this.allowFilteringAndSortingInStorefront;
+	}
+
+	public void setAllowFilteringAndSortingInStorefront(Boolean allowFilteringAndSortingInStorefront) {
+		this.allowFilteringAndSortingInStorefront = allowFilteringAndSortingInStorefront;
+	}
+
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */

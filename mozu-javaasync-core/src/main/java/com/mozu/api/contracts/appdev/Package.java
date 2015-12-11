@@ -130,6 +130,16 @@ public class Package implements Serializable
 		this.applicationName = applicationName;
 	}
 
+	protected Integer applicationOwnerDevAccountId;
+
+	public Integer getApplicationOwnerDevAccountId() {
+		return this.applicationOwnerDevAccountId;
+	}
+
+	public void setApplicationOwnerDevAccountId(Integer applicationOwnerDevAccountId) {
+		this.applicationOwnerDevAccountId = applicationOwnerDevAccountId;
+	}
+
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationStatus ApiTypeMember DOCUMENT_HERE 
 	 */

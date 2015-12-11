@@ -88,6 +88,16 @@ public class AttributeInProductType implements Serializable
 		this.isMultiValueProperty = isMultiValueProperty;
 	}
 
+	protected Boolean isProductDetailsOnlyProperty;
+
+	public Boolean getIsProductDetailsOnlyProperty() {
+		return this.isProductDetailsOnlyProperty;
+	}
+
+	public void setIsProductDetailsOnlyProperty(Boolean isProductDetailsOnlyProperty) {
+		this.isProductDetailsOnlyProperty = isProductDetailsOnlyProperty;
+	}
+
 	/**
 	 * If true, the entity is required by the admin. If false, the entity is not required by the admin.
 	 */

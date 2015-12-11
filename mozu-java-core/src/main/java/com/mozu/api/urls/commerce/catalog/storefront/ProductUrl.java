@@ -74,13 +74,15 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for GetProductForIndexing
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productVersion 
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductForIndexingUrl(String productCode, String responseFields)
+	public static MozuUrl getProductForIndexingUrl(String productCode, Long productVersion, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}&productVersion={productVersion}?responseFields={responseFields}");
 		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("productVersion", productVersion);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

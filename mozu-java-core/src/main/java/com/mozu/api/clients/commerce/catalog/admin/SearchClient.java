@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.stream.Stream;
+
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
-import com.mozu.api.Headers;
-import com.mozu.api.security.AuthTicket;
-import org.apache.commons.lang.StringUtils;
+import com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields;
 
 /** <summary>
  * The Search resource manages all settings and options for providing product search on your site.
@@ -118,12 +116,12 @@ public class SearchClient {
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
-	public static MozuClient<java.io.InputStream> getSearchTuningRuleSortFieldsClient() throws Exception
+	public static MozuClient<SearchTuningRuleSortFields> getSearchTuningRuleSortFieldsClient() throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningRuleSortFieldsUrl();
 		String verb = "GET";
 		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		MozuClient<SearchTuningRuleSortFields> mozuClient = (MozuClient<SearchTuningRuleSortFields>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

@@ -112,6 +112,16 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
+	protected Integer devAccountId;
+
+	public Integer getDevAccountId() {
+		return this.devAccountId;
+	}
+
+	public void setDevAccountId(Integer devAccountId) {
+		this.devAccountId = devAccountId;
+	}
+
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement effectiveEndDate ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -149,6 +159,16 @@ public class ApplicationEntitlement implements Serializable
 
 	public void setEntitlementStatus(String entitlementStatus) {
 		this.entitlementStatus = entitlementStatus;
+	}
+
+	protected String installedAppsApplicationId;
+
+	public String getInstalledAppsApplicationId() {
+		return this.installedAppsApplicationId;
+	}
+
+	public void setInstalledAppsApplicationId(String installedAppsApplicationId) {
+		this.installedAppsApplicationId = installedAppsApplicationId;
 	}
 
 	/**

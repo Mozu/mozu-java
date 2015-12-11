@@ -20,32 +20,6 @@ public class PackageItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 */
-	protected String productCode;
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
-	protected Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
-	/**
 	 * This specifies the fulfillment type of digital package item.
 	 */
 	protected String fulfillmentItemType;
@@ -82,6 +56,32 @@ public class PackageItem implements Serializable
 
 	public void setOptionAttributeFQN(String optionAttributeFQN) {
 		this.optionAttributeFQN = optionAttributeFQN;
+	}
+
+	/**
+	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
+	 */
+	protected String productCode;
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
+	protected Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 }

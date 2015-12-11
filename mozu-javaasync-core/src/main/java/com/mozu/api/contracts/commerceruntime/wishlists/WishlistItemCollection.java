@@ -22,19 +22,6 @@ public class WishlistItemCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
-	 */
-	protected Integer startIndex;
-
-	public Integer getStartIndex() {
-		return this.startIndex;
-	}
-
-	public void setStartIndex(Integer startIndex) {
-		this.startIndex = startIndex;
-	}
-
-	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */
 	protected Integer pageCount;
@@ -58,6 +45,19 @@ public class WishlistItemCollection implements Serializable
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	/**
+	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
+	 */
+	protected Integer startIndex;
+
+	public Integer getStartIndex() {
+		return this.startIndex;
+	}
+
+	public void setStartIndex(Integer startIndex) {
+		this.startIndex = startIndex;
 	}
 
 	/**
