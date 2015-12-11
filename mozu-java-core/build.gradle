@@ -12,7 +12,7 @@ if (hasProperty("teamcity")) {
         println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.18.1-SNAPSHOT'
+    version = '1.19.2-SNAPSHOT'
 }
 
 group='com.mozu'
@@ -43,7 +43,7 @@ dependencies {
     compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
     compile "commons-configuration:commons-configuration:1.10"
 	
-	compile "joda-time:joda-time:2.3"
+	compile "joda-time:joda-time:2.9"
 	compile "commons-io:commons-io:2.4"
     compile "commons-lang:commons-lang:2.6"
 	compile "org.slf4j:slf4j-api:1.7.5"

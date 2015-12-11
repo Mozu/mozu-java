@@ -4,13 +4,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiError;
-import com.mozu.api.ApiError.Item;
 import com.mozu.api.ApiException;
 import com.mozu.api.Headers;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuConfig;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Version;
+import com.mozu.api.ApiError.Item;
 import com.mozu.api.cache.db.CacheItem;
 import com.mozu.api.cache.db.CacheManager;
 import com.mozu.api.contracts.tenant.Tenant;
@@ -292,14 +292,14 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
        public void executeRequest() throws Exception {
               validateContext();
               String url = baseAddress + resourceUrl.getUrl();
-              HashMap<String, String> requestHeaders = new HashMap<>(headers);
-              requestHeaders.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
-              requestHeaders.put(Headers.X_VOL_VERSION, Version.API_VERSION);
+
               if (apiContext != null && apiContext.getUserAuthTicket() != null) {
-                     setUserClaims();
+                setUserClaims();
               }
 
-              httpResponseMessage = performRequest(url, requestHeaders);
+              addHeader(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+              addHeader(Headers.X_VOL_VERSION, Version.API_VERSION);
+              httpResponseMessage = performRequest(url, headers);
               ensureSuccess(httpResponseMessage, mapper);
               setCache();
        }

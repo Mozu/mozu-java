@@ -46,6 +46,7 @@ public final class MozuClientUnitTest {
     private static final String TENANT_URL = "http://TenantUrl";
     private static final String BASE_URL = "http://BaseUrl";
     private static final String BASE_PCI_URL = "http://BasePciUrl";
+    private static final String BASE_DEV_PCI_URL = "http://BaseDevPciUrl";
     protected static final String AUTH_ACCESS_TOKEN = "AuthAccessToken";
     private static final String BODY_STRING = "{\"body\": [{\"key1\":\"value1\"}, {\"key2\":\"value2\"}]}";
     private static final String TENANT_DOMAIN = "TenantDomain";
@@ -295,7 +296,12 @@ public final class MozuClientUnitTest {
     
     @Test
     public void setContextBasePciUrlTest() {
-
+    	new MockUp<TenantResource>() {
+            @Mock void $init() {}
+            @Mock Tenant getTenant(Integer tenantId) throws Exception {
+                        return mockTenant;
+            }
+        };
     	new Expectations() {
             { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
             { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
@@ -308,10 +314,49 @@ public final class MozuClientUnitTest {
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
             { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
             { mockApiContext.getTenantId(); result=TENANT_ID; }
+            { mockApiContext.getTenantId(); result=TENANT_ID; }
+            { mockTenant.getIsDevTenant(); result=false;}
             
         };
 
         MozuConfig.setBasePciUrl(BASE_PCI_URL);
+        MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
+        mozuClient.setContext(mockApiContext);
+        mozuClient.setResourceUrl(mockResourceUrl);
+        
+        try {
+            mozuClient.validateContext();
+        } catch (Exception e) {
+            fail("Context failed validation " + e.getMessage());
+        }
+    }
+    
+    @Test
+    public void setContextBaseDevPciUrl() {
+    	new MockUp<TenantResource>() {
+            @Mock void $init() {}
+            @Mock Tenant getTenant(Integer tenantId) throws Exception {
+                        return mockTenant;
+            }
+        };
+    	new Expectations() {
+            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
+            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
+            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
+            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
+            { mockApiContext.getLocale(); result=LOCALE; times=2;}
+            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
+            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
+            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
+            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
+            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
+            { mockApiContext.getTenantId(); result=TENANT_ID; }
+            { mockApiContext.getTenantId(); result=TENANT_ID; }
+            { mockTenant.getIsDevTenant(); result=true;}
+            
+        };
+
+        MozuConfig.setBaseDevPciUrl(BASE_DEV_PCI_URL);
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);

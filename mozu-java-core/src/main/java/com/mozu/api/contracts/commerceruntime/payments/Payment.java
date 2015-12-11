@@ -25,6 +25,32 @@ public class Payment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
+	protected String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 */
+	protected Boolean isRecurring;
+
+	public Boolean getIsRecurring() {
+		return this.isRecurring;
+	}
+
+	public void setIsRecurring(Boolean isRecurring) {
+		this.isRecurring = isRecurring;
+	}
+
+	/**
 	 * The total monetary amount collected in this payment transaction for the order.
 	 */
 	protected Double amountCollected;
@@ -85,32 +111,6 @@ public class Payment implements Serializable
 
 	public void setExternalTransactionId(String externalTransactionId) {
 		this.externalTransactionId = externalTransactionId;
-	}
-
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
-	protected String id;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
-	 */
-	protected Boolean isRecurring;
-
-	public Boolean getIsRecurring() {
-		return this.isRecurring;
-	}
-
-	public void setIsRecurring(Boolean isRecurring) {
-		this.isRecurring = isRecurring;
 	}
 
 	/**
