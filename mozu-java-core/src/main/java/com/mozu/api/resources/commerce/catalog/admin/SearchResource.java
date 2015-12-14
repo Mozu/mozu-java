@@ -6,8 +6,6 @@
  */
 package com.mozu.api.resources.commerce.catalog.admin;
 
-import java.util.stream.Stream;
-
 import com.mozu.api.ApiContext;
 import com.mozu.api.MozuClient;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields;
@@ -105,10 +103,10 @@ public class SearchResource {
 	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	Stream stream = search.getSearchTuningRuleSortFields();
+	 *	SearchTuningRuleSortFields stream = search.getSearchTuningRuleSortFields();
 	 * </code></pre></p>
-	 * @return Stream
-	 * @see Stream
+	 * @return SearchTuningRuleSortFields
+	 * @see SearchTuningRuleSortFields
 	 */
 	public SearchTuningRuleSortFields getSearchTuningRuleSortFields() throws Exception
 	{
