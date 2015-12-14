@@ -6,8 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin;
 
-import java.util.stream.Stream;
-
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
@@ -108,19 +106,18 @@ public class SearchClient {
 	/**
 	 * 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningRuleSortFieldsClient();
+	 * MozuClient<SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * SearchTuningRuleSortFields stream = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <SearchTuningRuleSortFields>
 	 */
 	public static MozuClient<SearchTuningRuleSortFields> getSearchTuningRuleSortFieldsClient() throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningRuleSortFieldsUrl();
 		String verb = "GET";
-		Class<?> clz = java.io.InputStream.class;
+		Class<?> clz = SearchTuningRuleSortFields.class;
 		MozuClient<SearchTuningRuleSortFields> mozuClient = (MozuClient<SearchTuningRuleSortFields>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
