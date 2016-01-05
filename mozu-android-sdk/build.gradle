@@ -22,7 +22,7 @@ if (hasProperty("teamcity")) {
     println "TeamCity build number passed into gradle is " + version
 } else {
     // Manually insert the version numbers here when building outside of TeamCity
-    version = '1.18.1-SNAPSHOT'
+    version = '1.19.3-SNAPSHOT'
 }
 
 ext.isReleaseVersion = !version.endsWith("SNAPSHOT")

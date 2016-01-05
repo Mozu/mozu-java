@@ -83,7 +83,7 @@ public class CustomerAuthenticatorUnitTest {
         AuthTicket ticket = createAuthTicket();
         ticket.setAccessTokenExpiration(new DateTime().plus(190000));
         
-        AuthTicket cap = CustomerAuthenticator.ensureAuthTicket(ticket);
+        AuthTicket cap = CustomerAuthenticator.ensureAuthTicket(ticket, TENANT_ID, SITE_ID);
         assertNull(cap);
     }
 
@@ -105,7 +105,7 @@ public class CustomerAuthenticatorUnitTest {
             { mockCustomerAuthTicket.getCustomerAccount(); returns(mockCustomerAccount); }
         };
         
-        CustomerAuthenticationProfile cap = CustomerAuthenticator.refreshUserAuthTicket(ticket, null);
+        CustomerAuthenticationProfile cap = CustomerAuthenticator.refreshUserAuthTicket(ticket, TENANT_ID, SITE_ID);
         
         assertTrue(cap.getAuthTicket().getAccessToken().equals(ACCESS_TOKEN));
         assertTrue(cap.getAuthTicket().getRefreshToken().equals(REFRESH_TOKEN));
@@ -126,7 +126,7 @@ public class CustomerAuthenticatorUnitTest {
         };
         
         try {
-            CustomerAuthenticator.ensureAuthTicket(ticket);
+            CustomerAuthenticator.ensureAuthTicket(ticket, TENANT_ID, SITE_ID);
             fail("Api Exception expected");
         } catch (ApiException e) {
             assertTrue(e.getMessage().contains("Test IO Exception"));
