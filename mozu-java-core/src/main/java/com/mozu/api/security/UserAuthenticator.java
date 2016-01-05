@@ -144,8 +144,6 @@ public class UserAuthenticator {
         String resourceUrl = MozuConfig.getBaseUrl()
                 + getLogoutUrl(authTicket);
         Map<String, String> headers = new HashMap<String, String>();
-        headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
-        
         MozuClient<?> client;
         try {
             client = MozuClientFactory.getInstance();
@@ -154,6 +152,7 @@ public class UserAuthenticator {
                     + ioe.getMessage());
         }
         headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+        
         client.executeDeleteRequest(resourceUrl, headers);
     }
 

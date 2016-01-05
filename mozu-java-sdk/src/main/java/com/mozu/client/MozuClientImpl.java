@@ -428,7 +428,7 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
     private void setUserClaims() {
         AuthTicket newAuthTicket = null;
         if (apiContext.getUserAuthTicket().getScope() == AuthenticationScope.Customer)
-            newAuthTicket = CustomerAuthenticator.ensureAuthTicket(apiContext.getUserAuthTicket());
+            newAuthTicket = CustomerAuthenticator.ensureAuthTicket(apiContext.getUserAuthTicket(), apiContext.getTenantId(), apiContext.getSiteId());
         else
             newAuthTicket = UserAuthenticator.ensureAuthTicket(apiContext.getUserAuthTicket());
         if (newAuthTicket != null) {

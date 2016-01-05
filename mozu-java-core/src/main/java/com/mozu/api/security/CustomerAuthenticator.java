@@ -18,30 +18,31 @@ import com.mozu.api.utils.HttpHelper;
 
 public class CustomerAuthenticator {
     
-    public static AuthTicket ensureAuthTicket(AuthTicket authTicket) {
+    public static AuthTicket ensureAuthTicket(AuthTicket authTicket, Integer tenantId, Integer siteId) {
         DateTime accessTokenDateTime = new DateTime(authTicket.getAccessTokenExpiration()).minus(180000);
         if (accessTokenDateTime.isBeforeNow())
-            return refreshUserAuthTicket(authTicket).getAuthTicket();
+            return refreshUserAuthTicket(authTicket, tenantId, siteId).getAuthTicket();
 
         return null;
     }
 
-    public static CustomerAuthenticationProfile refreshUserAuthTicket(AuthTicket authTicket) {
-        return refreshUserAuthTicket(authTicket, null);
-    }
-
-    public static CustomerAuthenticationProfile refreshUserAuthTicket(AuthTicket authTicket, Integer tenantId)
+    public static CustomerAuthenticationProfile refreshUserAuthTicket(AuthTicket authTicket, Integer tenantId, Integer siteId)
             throws ApiException {
 
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.refreshUserAuthTicketUrl(authTicket.getRefreshToken(), null).getUrl();
 
         CustomerAuthTicket customerAuthTicket;
+        
+        if (tenantId == null || siteId == null) {
+            throw new ApiException("A tenant ID and site ID must be supplied to refresh a Customer Authentication Token");
+        }
         try {
             @SuppressWarnings("unchecked")
             MozuClient<CustomerAuthTicket> client = (MozuClient<CustomerAuthTicket>) MozuClientFactory.getInstance(CustomerAuthTicket.class);
             Map<String, String> headers = new HashMap<String, String>();
             headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
+            headers.put(Headers.X_VOL_SITE, siteId.toString());
             customerAuthTicket = client.executePutRequest(authTicket, resourceUrl.toString(), headers);
         } catch (Exception ioe) {
             throw new ApiException("Exception occurred while authenticating application: "

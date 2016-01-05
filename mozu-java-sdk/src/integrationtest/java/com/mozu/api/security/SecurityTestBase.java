@@ -22,7 +22,10 @@ public class SecurityTestBase {
     public final static String DEV_USERNAME = "username.developer";
     public final static String TENANT_USERNAME = "username.tenant";
     public final static String TENANT_ID = "tenant.id";
+    public final static String SITE_ID = "site.id";
     public final static String PASSWORD = "password"; 
+    public final static String CUSTOMER_USERNAME = "username.customer";
+    public final static String CUSTOMER_PASSWORD = "customer.password"; 
 
     protected static PropertiesConfiguration configProps = null;
 
