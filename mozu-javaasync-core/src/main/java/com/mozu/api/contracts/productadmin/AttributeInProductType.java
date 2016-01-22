@@ -88,6 +88,9 @@ public class AttributeInProductType implements Serializable
 		this.isMultiValueProperty = isMultiValueProperty;
 	}
 
+	/**
+	 * If True this property will not be returned storefront product listings (Search,GetProduct) it will still be returned on GetProduct, ValidateProduct...)
+	 */
 	protected Boolean isProductDetailsOnlyProperty;
 
 	public Boolean getIsProductDetailsOnlyProperty() {

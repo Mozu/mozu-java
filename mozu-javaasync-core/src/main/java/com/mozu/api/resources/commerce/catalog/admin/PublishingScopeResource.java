@@ -49,7 +49,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -65,7 +65,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -82,7 +82,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -103,7 +103,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -230,7 +230,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
+	 * Assigns a product draft to a specified publish set.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet);
@@ -247,7 +247,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
+	 * Assigns a product draft to a specified publish set.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet, callback );
@@ -265,7 +265,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
+	 * Assigns a product draft to a specified publish set.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
@@ -287,7 +287,7 @@ public class PublishingScopeResource {
 	}
 
 	/**
-	 * admin-publishing Post AssignProductsToPublishSet description DOCUMENT_HERE 
+	 * Assigns a product draft to a specified publish set.
 	 * <p><pre><code>
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet,  responseFields, callback );
@@ -314,7 +314,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode);
 	 * </code></pre></p>
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
@@ -329,8 +329,8 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	publishingscope.deletePublishSet( publishSetCode,  discardDrafts);
 	 * </code></pre></p>
-	 * @param discardDrafts 
-	 * @param publishSetCode 
+	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

@@ -86,6 +86,9 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
+	/**
+	 * denotes if the Application is certified to use extension
+	 */
 	protected Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {

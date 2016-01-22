@@ -232,7 +232,7 @@ public class ProductResource {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 
+	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -256,7 +256,7 @@ public class ProductResource {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 
+	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product

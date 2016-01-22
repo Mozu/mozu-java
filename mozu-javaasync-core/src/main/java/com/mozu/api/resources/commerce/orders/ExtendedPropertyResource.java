@@ -193,7 +193,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key);
 	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -211,7 +211,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
@@ -230,7 +230,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	ExtendedProperty extendedProperty = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields);
 	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
@@ -257,7 +257,7 @@ public class ExtendedPropertyResource {
 	 *	ExtendedProperty extendedproperty = new ExtendedProperty();
 	 *	CountDownLatch latch = extendedproperty.updateExtendedProperty( extendedProperty,  orderId,  key,  updateMode,  version,  upsert,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."

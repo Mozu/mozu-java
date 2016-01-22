@@ -19,6 +19,9 @@ public class AttributeSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Indicates whether the attribute should be able to be used in filters, facets, and sorting on the public storefront.
+	 */
 	protected Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {

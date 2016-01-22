@@ -117,10 +117,10 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for DeleteCategoryById
-	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param cascadeDelete Specifies whether to also delete all subcategories associated with the specified category.If you set this value is false, only the specified category is deleted.The default value is false.
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param forceDelete 
-	 * @param reassignToParent 
+	 * @param forceDelete Specifies whether the category, and any associated subcategories, are deleted even if there are products that reference them. The default value is false.
+	 * @param reassignToParent Specifies whether any subcategories of the specified category are reassigned to the parent of the specified category.This field only applies if the cascadeDelete parameter is false.The default value is false.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCategoryByIdUrl(Boolean cascadeDelete, Integer categoryId, Boolean forceDelete, Boolean reassignToParent)

@@ -125,6 +125,9 @@ public class TaxableLineItem implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
+	/**
+	 * For configurable products, the unique identifier of the product variation that has been selected.
+	 */
 	protected String variantProductCode;
 
 	public String getVariantProductCode() {

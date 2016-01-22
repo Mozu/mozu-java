@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.SecureAppDataResource;
 
 /** <summary>
- * 
+ * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
  * </summary>
  */
 public class SecureAppDataFactory

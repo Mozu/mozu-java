@@ -84,7 +84,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
+	 * Performs transformations on a document. For example, resizing an image.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId);
@@ -100,7 +100,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
+	 * Performs transformations on a document. For example, resizing an image.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId, callback );
@@ -117,20 +117,20 @@ public class DocumentResource {
 	}
 
 	/**
-	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
+	 * Performs transformations on a document. For example, resizing an image.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	Stream stream = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * </code></pre></p>
-	 * @param crop 
+	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
-	 * @param height 
-	 * @param max 
-	 * @param maxHeight 
-	 * @param maxWidth 
-	 * @param quality 
-	 * @param width 
+	 * @param height Specifies an exact height dimension for the image, in pixels.
+	 * @param max Specifies a pixel limitation for the largest side of an image.
+	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
+	 * @param width Specifies an exact width dimension for the image, in pixels.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -144,20 +144,20 @@ public class DocumentResource {
 	}
 
 	/**
-	 * documentlists-documents Get TransformDocumentContent description DOCUMENT_HERE 
+	 * Performs transformations on a document. For example, resizing an image.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	CountDownLatch latch = document.transformDocumentContent( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param crop 
+	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
-	 * @param height 
-	 * @param max 
-	 * @param maxHeight 
-	 * @param maxWidth 
-	 * @param quality 
-	 * @param width 
+	 * @param height Specifies an exact height dimension for the image, in pixels.
+	 * @param max Specifies a pixel limitation for the largest side of an image.
+	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
+	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
+	 * @param width Specifies an exact width dimension for the image, in pixels.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -211,7 +211,7 @@ public class DocumentResource {
 	 * </code></pre></p>
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
-	 * @param includeInactive 
+	 * @param includeInactive Include inactive content.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -233,7 +233,7 @@ public class DocumentResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
 	 * @param documentListName Name of content documentListName to delete
-	 * @param includeInactive 
+	 * @param includeInactive Include inactive content.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.Document
@@ -286,7 +286,7 @@ public class DocumentResource {
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeInactive 
+	 * @param includeInactive Include inactive content.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -311,7 +311,7 @@ public class DocumentResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeInactive 
+	 * @param includeInactive Include inactive content.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"

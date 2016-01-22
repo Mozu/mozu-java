@@ -182,6 +182,16 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
+	protected String missingImageSubstitute;
+
+	public String getMissingImageSubstitute() {
+		return this.missingImageSubstitute;
+	}
+
+	public void setMissingImageSubstitute(String missingImageSubstitute) {
+		this.missingImageSubstitute = missingImageSubstitute;
+	}
+
 	/**
 	 * The name of the theme to use when viewing this website on a mobile device.
 	 */

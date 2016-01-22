@@ -16,13 +16,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/settings/general/customroutes related resources. DOCUMENT_HERE 
+ * Use the Custom Routes resource to manage your custom route settings. Custom routing allows you to display SEO-friendly URLs on your site that map behind-the-scenes to conventional Mozu resources such as a product page or a search results page. With custom routing, you gain advanced control over the URL structures on your site and can more visibly highlight the products or categories your shoppers are interested in purchasing.To learn more about custom routing, refer to the [Mozu Admin Help](https://www.mozu.com/docs/admin/help/Settings/Configure_Custom_Routing.htm).
  * </summary>
  */
 public class CustomRouteSettingsClient {
 	
 	/**
-	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
+	 * Retrieves the custom route settings configured for a site. These are the same settings configured through Mozu Admin in the Custom Routing JSON Editor.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=GetCustomRouteSettingsClient();
 	 * client.setBaseAddress(url);
@@ -38,7 +38,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Get GetCustomRouteSettings description DOCUMENT_HERE 
+	 * Retrieves the custom route settings configured for a site. These are the same settings configured through Mozu Admin in the Custom Routing JSON Editor.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=GetCustomRouteSettingsClient( responseFields);
 	 * client.setBaseAddress(url);
@@ -62,7 +62,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
+	 * Create new custom route settings.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=CreateCustomRouteSettingsClient( settings);
 	 * client.setBaseAddress(url);
@@ -80,7 +80,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Post CreateCustomRouteSettings description DOCUMENT_HERE 
+	 * Create new custom route settings.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=CreateCustomRouteSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -107,7 +107,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
+	 * Updates custom route settings.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=UpdateCustomRouteSettingsClient( settings);
 	 * client.setBaseAddress(url);
@@ -125,7 +125,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Put UpdateCustomRouteSettings description DOCUMENT_HERE 
+	 * Updates custom route settings.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings> mozuClient=UpdateCustomRouteSettingsClient( settings,  responseFields);
 	 * client.setBaseAddress(url);
@@ -152,7 +152,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * general-customroutes Delete DeleteCustomRouteSettings description DOCUMENT_HERE 
+	 * Deletes all the custom route settings for a site, returning all routes to their Mozu defaults.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCustomRouteSettingsClient();
 	 * client.setBaseAddress(url);

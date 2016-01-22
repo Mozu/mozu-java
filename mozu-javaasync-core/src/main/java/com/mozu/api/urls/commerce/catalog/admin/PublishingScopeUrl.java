@@ -15,7 +15,7 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for GetPublishSet
-	 * @param publishSetCode 
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -73,8 +73,8 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param discardDrafts 
-	 * @param publishSetCode 
+	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
+	 * @param publishSetCode The unique identifier of the publish set.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePublishSetUrl(Boolean discardDrafts, String publishSetCode)

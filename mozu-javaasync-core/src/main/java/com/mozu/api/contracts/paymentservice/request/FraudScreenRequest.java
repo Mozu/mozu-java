@@ -90,6 +90,9 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
+	/**
+	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 */
 	protected String customerId;
 
 	public String getCustomerId() {
@@ -165,6 +168,9 @@ public class FraudScreenRequest implements Serializable
 		this.merchantTransactionId = merchantTransactionId;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest orderNumber ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected Integer orderNumber;
 
 	public Integer getOrderNumber() {
@@ -175,6 +181,9 @@ public class FraudScreenRequest implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest paymentTransactionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String paymentTransactionId;
 
 	public String getPaymentTransactionId() {
@@ -185,6 +194,9 @@ public class FraudScreenRequest implements Serializable
 		this.paymentTransactionId = paymentTransactionId;
 	}
 
+	/**
+	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
+	 */
 	protected String paymentType;
 
 	public String getPaymentType() {
@@ -234,6 +246,9 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
+	/**
+	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 */
 	protected Double total;
 
 	public Double getTotal() {
@@ -270,6 +285,9 @@ public class FraudScreenRequest implements Serializable
 		this.billingContact = billingContact;
 	}
 
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest credentialFieldsOverride ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<GatewayCredentialFieldValue> credentialFieldsOverride;
 	public List<GatewayCredentialFieldValue> getCredentialFieldsOverride() {
 		return this.credentialFieldsOverride;

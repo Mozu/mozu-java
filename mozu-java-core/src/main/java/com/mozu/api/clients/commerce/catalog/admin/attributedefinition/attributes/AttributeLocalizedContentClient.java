@@ -47,7 +47,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute  based on a `localeCode`. 
+	 * Retrieves the localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
@@ -66,7 +66,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute  based on a `localeCode`. 
+	 * Retrieves the localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -93,7 +93,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Adds new localized content for an attribute  based on a `localeCode`. 
+	 * Adds new localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=AddLocalizedContentClient( localizedContent,  attributeFQN);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Adds new localized content for an attribute  based on a `localeCode`. 
+	 * Adds new localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=AddLocalizedContentClient( localizedContent,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
@@ -142,7 +142,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for a collection of existing attributes  based on a `localeCode`. 
+	 * Updates the localized content for a collection of existing attributes based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient=UpdateLocalizedContentsClient( localizedContent,  attributeFQN);
 	 * client.setBaseAddress(url);
@@ -170,7 +170,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute  based on a `localeCode`. 
+	 * Updates the localized content for an existing attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=UpdateLocalizedContentClient( localizedContent,  attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
@@ -191,7 +191,7 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute  based on a `localeCode`. 
+	 * Updates the localized content for an existing attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=UpdateLocalizedContentClient( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
