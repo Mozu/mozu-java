@@ -16,8 +16,8 @@ public class CouponUrl
 	/**
 	 * Get Resource Url for GetCoupon
 	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode 
-	 * @param includeCounts 
+	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -33,13 +33,13 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for GetCoupons
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeCounts 
+	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -57,7 +57,7 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for AddCoupons
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCouponsUrl(String couponSetCode)
@@ -69,7 +69,7 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for DeleteCoupons
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCouponsUrl(String couponSetCode)
@@ -82,7 +82,7 @@ public class CouponUrl
 	/**
 	 * Get Resource Url for DeleteCoupon
 	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCouponUrl(String couponCode, String couponSetCode)

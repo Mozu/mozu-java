@@ -494,7 +494,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType);
 	 * </code></pre></p>
-	 * @param digitalWalletType 
+	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
 	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -512,7 +512,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalWalletType 
+	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
@@ -531,7 +531,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalWalletType 
+	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
@@ -554,7 +554,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.processDigitalWallet( digitalWallet,  orderId,  digitalWalletType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalWalletType 
+	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
@@ -577,7 +577,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
@@ -595,7 +595,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrderDiscount( discount,  orderId,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
@@ -614,7 +614,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	Order order = order.updateOrderDiscount( discount,  orderId,  discountId,  updateMode,  version,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
@@ -639,7 +639,7 @@ public class OrderResource {
 	 *	Order order = new Order();
 	 *	CountDownLatch latch = order.updateOrderDiscount( discount,  orderId,  discountId,  updateMode,  version,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."

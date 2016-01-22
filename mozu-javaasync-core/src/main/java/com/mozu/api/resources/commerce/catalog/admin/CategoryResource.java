@@ -330,7 +330,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn);
@@ -346,7 +346,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	CountDownLatch latch = category.validateDynamicExpression( dynamicExpressionIn, callback );
@@ -363,7 +363,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn,  responseFields);
@@ -384,7 +384,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	CountDownLatch latch = category.validateDynamicExpression( dynamicExpressionIn,  responseFields, callback );
@@ -405,7 +405,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn);
@@ -421,7 +421,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	CountDownLatch latch = category.validateRealTimeDynamicExpression( dynamicExpressionIn, callback );
@@ -438,7 +438,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields);
@@ -459,7 +459,7 @@ public class CategoryResource {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();
 	 *	CountDownLatch latch = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields, callback );
@@ -580,10 +580,10 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	category.deleteCategoryById( categoryId,  cascadeDelete,  forceDelete,  reassignToParent);
 	 * </code></pre></p>
-	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param cascadeDelete Specifies whether to also delete all subcategories associated with the specified category.If you set this value is false, only the specified category is deleted.The default value is false.
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param forceDelete 
-	 * @param reassignToParent 
+	 * @param forceDelete Specifies whether the category, and any associated subcategories, are deleted even if there are products that reference them. The default value is false.
+	 * @param reassignToParent Specifies whether any subcategories of the specified category are reassigned to the parent of the specified category.This field only applies if the cascadeDelete parameter is false.The default value is false.
 	 * @return 
 	 */
 	public void deleteCategoryById(Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent) throws Exception

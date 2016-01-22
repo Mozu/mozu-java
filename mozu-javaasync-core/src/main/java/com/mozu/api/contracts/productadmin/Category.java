@@ -22,6 +22,19 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The Type of Category Static, Dyanmic, DynamicPreComputed
+	 */
+	protected String categoryType;
+
+	public String getCategoryType() {
+		return this.categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
+	}
+
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -121,19 +134,6 @@ public class Category implements Serializable
 
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
-	}
-
-	/**
-	 * The Type of Category Static, Dyanmic, DynamicPreComputed
-	 */
-	protected String categoryType;
-
-	public String getCategoryType() {
-		return this.categoryType;
-	}
-
-	public void setCategoryType(String categoryType) {
-		this.categoryType = categoryType;
 	}
 
 	/**

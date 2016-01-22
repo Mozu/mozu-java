@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/catalog/admin/couponsets related resources. DOCUMENT_HERE 
+ * Use the Coupon Sets resource to view and create coupon sets. You can use coupon sets to group multiple coupon codes together and associate them with one or more discounts.
  * </summary>
  */
 public class CouponSetResource {
@@ -36,7 +36,7 @@ public class CouponSetResource {
 
 	
 	/**
-	 * Returns a paged collection of CouponSets
+	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets();
@@ -50,7 +50,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a paged collection of CouponSets
+	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSets( callback );
@@ -65,17 +65,17 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a paged collection of CouponSets
+	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSetCollection couponSetCollection = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeCounts 
+	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
 	 */
@@ -89,17 +89,17 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a paged collection of CouponSets
+	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSets( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeCounts 
+	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponSetCollection
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
@@ -113,12 +113,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
@@ -128,12 +128,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -144,14 +144,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields);
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param includeCounts 
-	 * @param responseFields 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
@@ -165,14 +165,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Returns a single
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getCouponSet( couponSetCode,  includeCounts,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param includeCounts 
-	 * @param responseFields 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -186,7 +186,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random 4 character code that is unique as a coupon set code.
+	 * Returns a random, unique four character coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode();
@@ -200,7 +200,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random 4 character code that is unique as a coupon set code.
+	 * Returns a random, unique four character coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getUniqueCouponSetCode( callback );
@@ -215,7 +215,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random 4 character code that is unique as a coupon set code.
+	 * Returns a random, unique four character coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	string string = couponset.getUniqueCouponSetCode( responseFields);
@@ -234,7 +234,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Returns a random 4 character code that is unique as a coupon set code.
+	 * Returns a random, unique four character coupon set code.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.getUniqueCouponSetCode( responseFields, callback );
@@ -253,7 +253,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single
+	 * Adds a new coupon set.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet);
@@ -269,7 +269,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single
+	 * Adds a new coupon set.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.addCouponSet( couponSet, callback );
@@ -286,7 +286,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single
+	 * Adds a new coupon set.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.addCouponSet( couponSet,  responseFields);
@@ -307,7 +307,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Adds a single
+	 * Adds a new coupon set.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.addCouponSet( couponSet,  responseFields, callback );
@@ -328,7 +328,7 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * Tests code for uniqueness and validity
+	 * Validates the coupon set code and tests it for uniqueness.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.validateUniqueCouponSetCode( code);
@@ -346,13 +346,13 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Update a representation. You can not update the Code or ID once the set is created.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param couponSet 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -363,14 +363,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Update a representation. You can not update the Code or ID once the set is created.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet 
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -381,14 +381,14 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Update a representation. You can not update the Code or ID once the set is created.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CouponSet couponSet = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param responseFields 
-	 * @param couponSet 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -403,15 +403,15 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * Update a representation. You can not update the Code or ID once the set is created.
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	CountDownLatch latch = couponset.updateCouponSet( couponSet,  couponSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param couponSetCode 
-	 * @param responseFields 
+	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param couponSet 
+	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -425,12 +425,12 @@ public class CouponSetResource {
 	}
 
 	/**
-	 * 
+	 * admin-couponsets Delete DeleteCouponSet description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CouponSet couponset = new CouponSet();
 	 *	couponset.deleteCouponSet( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode 
+	 * @param couponSetCode The unique identifier of the coupon set.
 	 * @return 
 	 */
 	public void deleteCouponSet(String couponSetCode) throws Exception

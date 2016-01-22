@@ -32,7 +32,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -49,7 +49,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -75,7 +75,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -94,7 +94,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>

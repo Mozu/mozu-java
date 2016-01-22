@@ -15,7 +15,7 @@ public class DiscountTargetUrl
 
 	/**
 	 * Get Resource Url for GetDiscountTarget
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -29,7 +29,7 @@ public class DiscountTargetUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountTarget
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

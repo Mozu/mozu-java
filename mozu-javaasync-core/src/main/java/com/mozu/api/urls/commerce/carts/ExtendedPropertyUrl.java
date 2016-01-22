@@ -35,9 +35,9 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateExtendedProperty
-	 * @param key 
+	 * @param key Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param upsert 
+	 * @param upsert Any set of key value pairs to be stored in the extended properties of a cart.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtendedPropertyUrl(String key, String responseFields, Boolean upsert)

@@ -7,8 +7,14 @@
 package com.mozu.api.resources.commerce.catalog.admin;
 
 import com.mozu.api.ApiContext;
+import java.util.List;
+import java.util.ArrayList;
 import com.mozu.api.MozuClient;
-import com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields;
+import com.mozu.api.MozuClientFactory;
+import com.mozu.api.MozuUrl;
+import com.mozu.api.Headers;
+import com.mozu.api.security.AuthTicket;
+import org.apache.commons.lang.StringUtils;
 
 /** <summary>
  * The Search resource manages all settings and options for providing product search on your site.
@@ -28,12 +34,12 @@ public class SearchResource {
 
 	
 	/**
-	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
+	 * Retrieves the details of the specified search tuning rule.
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -43,13 +49,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
+	 * Retrieves the details of the specified search tuning rule.
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -86,7 +92,7 @@ public class SearchResource {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 */
@@ -100,17 +106,32 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	SearchTuningRuleSortFields stream = search.getSearchTuningRuleSortFields();
+	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields();
 	 * </code></pre></p>
-	 * @return SearchTuningRuleSortFields
-	 * @see SearchTuningRuleSortFields
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public SearchTuningRuleSortFields getSearchTuningRuleSortFields() throws Exception
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields getSearchTuningRuleSortFields() throws Exception
 	{
-		MozuClient<SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient();
+		return getSearchTuningRuleSortFields( null);
+	}
+
+	/**
+	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields getSearchTuningRuleSortFields(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSearchTuningRuleSortFieldsClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -188,21 +209,39 @@ public class SearchResource {
 	}
 
 	/**
-	 * 
+	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
-	 *	search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
+	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleSortFieldsIn 
+	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
-	 * @see 
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public void updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
+		return updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  null);
+	}
+
+	/**
+	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 */
+	public com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields updateSearchTuningRuleSortFields(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
-		client.cleanupHttpConnection();
+		return client.getResult();
 
 	}
 
@@ -212,7 +251,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -230,7 +269,7 @@ public class SearchResource {
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -283,12 +322,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Delete DeleteSearchTuningRule description DOCUMENT_HERE 
+	 * Deletes the specified search tuning rule.
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSearchTuningRule( searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return 
 	 */
 	public void deleteSearchTuningRule(String searchTuningRuleCode) throws Exception

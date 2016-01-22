@@ -31,7 +31,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -48,7 +48,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
@@ -73,7 +73,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
-	 * @param nsAndAppId 
+	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -90,7 +90,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
-	 * @param nsAndAppId 
+	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
@@ -115,8 +115,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -133,8 +133,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -159,7 +159,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -176,7 +176,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
@@ -201,8 +201,8 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -221,9 +221,9 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
-	 * @param lastModifiedTime 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
@@ -253,7 +253,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -272,7 +272,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
@@ -299,8 +299,8 @@ public class ApplicationClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePackageFileClient(String applicationKey, String filepath) throws Exception
