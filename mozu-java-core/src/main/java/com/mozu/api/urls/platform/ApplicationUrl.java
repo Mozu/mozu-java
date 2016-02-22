@@ -15,7 +15,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetAppPackageNames
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -29,7 +29,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetAppVersions
-	 * @param nsAndAppId 
+	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -43,14 +43,14 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetPackageFileMetadata
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageFileMetadataUrl(String applicationKey, String filepath, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/filemetadata/{*filepath}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/filemetadata/{filepath}?responseFields={responseFields}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		formatter.formatUrl("responseFields", responseFields);
@@ -59,7 +59,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetPackageMetadata
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -73,15 +73,15 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for UpsertPackageFile
-	 * @param applicationKey 
-	 * @param filepath 
-	 * @param lastModifiedTime 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl upsertPackageFileUrl(String applicationKey, String filepath, String lastModifiedTime, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{*filepath}?lastModifiedTime={lastModifiedTime}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}?lastModifiedTime={lastModifiedTime}&responseFields={responseFields}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		formatter.formatUrl("lastModifiedTime", lastModifiedTime);
@@ -91,7 +91,7 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for RenamePackageFile
-	 * @param applicationKey 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
@@ -105,13 +105,13 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for DeletePackageFile
-	 * @param applicationKey 
-	 * @param filepath 
+	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param filepath Represents the file name and location.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePackageFileUrl(String applicationKey, String filepath)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{*filepath}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;

@@ -34,6 +34,9 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
+	/**
+	 * denotes the Application Key for the app.
+	 */
 	protected String appKey;
 
 	public String getAppKey() {
@@ -83,6 +86,9 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
+	/**
+	 * denotes if the Application is certified to use extension
+	 */
 	protected Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {

@@ -198,7 +198,30 @@ public class CategoryClient {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=UpdateCategoryTreeClient( categorySequencies);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param categorySequencies 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
+	 */
+	public static MozuClient updateCategoryTreeClient(com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.updateCategoryTreeUrl();
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(categorySequencies);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
@@ -216,7 +239,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * admin-categories Post ValidateDynamicExpression description DOCUMENT_HERE 
+	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -243,7 +266,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn);
 	 * client.setBaseAddress(url);
@@ -261,7 +284,7 @@ public class CategoryClient {
 	}
 
 	/**
-	 * admin-categories Post ValidateRealTimeDynamicExpression description DOCUMENT_HERE 
+	 * Validates the realtime dynamic expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateRealTimeDynamicExpressionClient( dynamicExpressionIn,  responseFields);
 	 * client.setBaseAddress(url);
@@ -357,10 +380,10 @@ public class CategoryClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param cascadeDelete Specifies whether to also delete all subcategories associated with the specified category.If you set this value is false, only the specified category is deleted.The default value is false.
 	 * @param categoryId Unique identifier of the category to modify.
-	 * @param forceDelete 
-	 * @param reassignToParent 
+	 * @param forceDelete Specifies whether the category, and any associated subcategories, are deleted even if there are products that reference them. The default value is false.
+	 * @param reassignToParent Specifies whether any subcategories of the specified category are reassigned to the parent of the specified category.This field only applies if the cascadeDelete parameter is false.The default value is false.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCategoryByIdClient(Integer categoryId, Boolean cascadeDelete, Boolean forceDelete, Boolean reassignToParent) throws Exception

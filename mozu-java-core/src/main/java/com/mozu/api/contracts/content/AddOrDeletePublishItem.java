@@ -45,6 +45,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.documentId = documentId;
 	}
 
+	/**
+	 * The ID of the specific scope for the object. 
+	 */
 	protected Integer scopeId;
 
 	public Integer getScopeId() {
@@ -55,6 +58,9 @@ public class AddOrDeletePublishItem implements Serializable
 		this.scopeId = scopeId;
 	}
 
+	/**
+	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
+	 */
 	protected String scopeType;
 
 	public String getScopeType() {

@@ -138,6 +138,9 @@ public class PaymentAction implements Serializable
 		this.returnUrl = returnUrl;
 	}
 
+	/**
+	 * Custom data from payment providers
+	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

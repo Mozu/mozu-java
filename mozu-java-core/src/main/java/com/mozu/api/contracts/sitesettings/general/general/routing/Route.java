@@ -44,6 +44,9 @@ public class Route implements Serializable
 		this.defaults = defaults;
 	}
 
+	/**
+	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route functionId ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String functionId;
 
 	public String getFunctionId() {
@@ -91,6 +94,9 @@ public class Route implements Serializable
 		this.template = template;
 	}
 
+	/**
+	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route urlScheme ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String urlScheme;
 
 	public String getUrlScheme() {

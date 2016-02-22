@@ -24,14 +24,14 @@ import org.apache.commons.lang.StringUtils;
 public class SearchClient {
 	
 	/**
-	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
+	 * Retrieves the details of the specified search tuning rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -41,7 +41,7 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRule description DOCUMENT_HERE 
+	 * Retrieves the details of the specified search tuning rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=GetSearchTuningRuleClient( searchTuningRuleCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -49,7 +49,7 @@ public class SearchClient {
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -93,7 +93,7 @@ public class SearchClient {
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 */
@@ -110,22 +110,39 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=GetSearchTuningRuleSortFieldsClient();
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public static MozuClient<java.io.InputStream> getSearchTuningRuleSortFieldsClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> getSearchTuningRuleSortFieldsClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningRuleSortFieldsUrl();
+		return getSearchTuningRuleSortFieldsClient( null);
+	}
+
+	/**
+	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=GetSearchTuningRuleSortFieldsClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> getSearchTuningRuleSortFieldsClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSearchTuningRuleSortFieldsUrl(responseFields);
 		String verb = "GET";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -166,6 +183,48 @@ public class SearchClient {
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productadmin.SearchSettings.class;
 		MozuClient<com.mozu.api.contracts.productadmin.SearchSettings> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.SearchSettings>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getSynonymDefinitionCollectionClient(String localeCode) throws Exception
+	{
+		return getSynonymDefinitionCollectionClient( localeCode,  null);
+	}
+
+	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getSynonymDefinitionCollectionClient(String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSynonymDefinitionCollectionUrl(localeCode, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;
@@ -218,24 +277,93 @@ public class SearchClient {
 	}
 
 	/**
-	 * 
+	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
 	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
+	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleSortFieldsIn 
-	 * @return Mozu.Api.MozuClient 
+	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
-	public static MozuClient updateSearchTuningRuleSortFieldsClient(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> updateSearchTuningRuleSortFieldsClient(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchTuningRuleSortFieldsUrl();
+		return updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  null);
+	}
+
+	/**
+	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient=UpdateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SearchTuningRuleSortFields searchTuningRuleSortFields = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> updateSearchTuningRuleSortFieldsClient(com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields searchTuningRuleSortFieldsIn, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSearchTuningRuleSortFieldsUrl(responseFields);
 		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(searchTuningRuleSortFieldsIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> updateSynonymDefinitionCollectionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode) throws Exception
+	{
+		return updateSynonymDefinitionCollectionClient( collection,  localeCode,  null);
+	}
+
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> updateSynonymDefinitionCollectionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSynonymDefinitionCollectionUrl(localeCode, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(collection);
 		return mozuClient;
 
 	}
@@ -248,7 +376,7 @@ public class SearchClient {
 	 * client.executeRequest();
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -268,7 +396,7 @@ public class SearchClient {
 	 * SearchTuningRule searchTuningRule = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SearchTuningRule>
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -333,13 +461,13 @@ public class SearchClient {
 	}
 
 	/**
-	 * admin-search Delete DeleteSearchTuningRule description DOCUMENT_HERE 
+	 * Deletes the specified search tuning rule.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSearchTuningRuleClient( searchTuningRuleCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteSearchTuningRuleClient(String searchTuningRuleCode) throws Exception

@@ -15,11 +15,13 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateAnonymousShopperAuthTicket
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createAnonymousShopperAuthTicketUrl()
+	public static MozuUrl createAnonymousShopperAuthTicketUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/anonymousshopper");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/authtickets/anonymousshopper?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

@@ -212,7 +212,7 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param discount Properties of all applied discounts for an associated cart, order, or product. 
@@ -233,7 +233,7 @@ public class OrderItemClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param discountId Unique identifier of the discount. System-supplied and read only.
+	 * @param discountId discountId parameter description DOCUMENT_HERE 
 	 * @param orderId Unique identifier of the order.
 	 * @param orderItemId Unique identifier of the item to remove from the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.

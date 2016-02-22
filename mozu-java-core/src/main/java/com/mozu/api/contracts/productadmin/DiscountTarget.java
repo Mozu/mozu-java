@@ -24,6 +24,16 @@ public class DiscountTarget implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Boolean appliesToLeastExpensiveProductsFirst;
+
+	public Boolean getAppliesToLeastExpensiveProductsFirst() {
+		return this.appliesToLeastExpensiveProductsFirst;
+	}
+
+	public void setAppliesToLeastExpensiveProductsFirst(Boolean appliesToLeastExpensiveProductsFirst) {
+		this.appliesToLeastExpensiveProductsFirst = appliesToLeastExpensiveProductsFirst;
+	}
+
 	/**
 	 * Applies to Included categories Defaults to Any
 	 */

@@ -130,6 +130,9 @@ public class Package implements Serializable
 		this.applicationName = applicationName;
 	}
 
+	/**
+	 * This is the DevAccountId that owns the application
+	 */
 	protected Integer applicationOwnerDevAccountId;
 
 	public Integer getApplicationOwnerDevAccountId() {
@@ -556,6 +559,9 @@ public class Package implements Serializable
 		this.updateParentAppKey = updateParentAppKey;
 	}
 
+	/**
+	 * This only applies for themes that inherit from another theme. It shows the name of the most current update available.
+	 */
 	protected String updateParentThemeName;
 
 	public String getUpdateParentThemeName() {
@@ -566,6 +572,9 @@ public class Package implements Serializable
 		this.updateParentThemeName = updateParentThemeName;
 	}
 
+	/**
+	 * This only applies for themes that inherit from another theme. It shows the version of the most current update available.
+	 */
 	protected String updateParentThemeVersion;
 
 	public String getUpdateParentThemeVersion() {

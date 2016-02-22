@@ -21,7 +21,7 @@ public class SiteDataUrl
 	 */
 	public static MozuUrl getDBValueUrl(String dbEntryQuery, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{*dbEntryQuery}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{dbEntryQuery}?responseFields={responseFields}");
 		formatter.formatUrl("dbEntryQuery", dbEntryQuery);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -34,7 +34,7 @@ public class SiteDataUrl
 	 */
 	public static MozuUrl createDBValueUrl(String dbEntryQuery)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{*dbEntryQuery}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{dbEntryQuery}");
 		formatter.formatUrl("dbEntryQuery", dbEntryQuery);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -46,7 +46,7 @@ public class SiteDataUrl
 	 */
 	public static MozuUrl updateDBValueUrl(String dbEntryQuery)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{*dbEntryQuery}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{dbEntryQuery}");
 		formatter.formatUrl("dbEntryQuery", dbEntryQuery);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
@@ -58,7 +58,7 @@ public class SiteDataUrl
 	 */
 	public static MozuUrl deleteDBValueUrl(String dbEntryQuery)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{*dbEntryQuery}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/sitedata/{dbEntryQuery}");
 		formatter.formatUrl("dbEntryQuery", dbEntryQuery);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

@@ -45,7 +45,7 @@ public class ProductSearchResultClient {
 	 * client.executeRequest();
 	 * ProductSearchResult productSearchResult = client.Result();
 	 * </code></pre></p>
-	 * @param enableSearchTuningRules 
+	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
 	 * @param facetHierDepth If filtering using category facets in a hierarchy, the number of category hierarchy levels to return for the facet. This option is only available for category facets.
@@ -55,16 +55,17 @@ public class ProductSearchResultClient {
 	 * @param facetSettings Settings reserved for future facet search functionality on a web storefront product search.
 	 * @param facetStartIndex When paging through multiple facets, the startIndex value for each facet.
 	 * @param facetTemplate The facet template to use on the storefront. A template displays all facets associated with the template on the web storefront product search. Currently, only category-level facet templates are available.
-	 * @param facetTemplateExclude 
+	 * @param facetTemplateExclude A comma-separated list of the facets to exclude from the facetTemplate.
+        
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param query A query entered for searches and facet range.
+	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param searchSettings 
-	 * @param searchTuningRuleCode 
-	 * @param searchTuningRuleContext 
+	 * @param searchSettings The settings to control product search and indexing behavior.
+	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchResult>
@@ -108,7 +109,7 @@ public class ProductSearchResultClient {
 	 * </code></pre></p>
 	 * @param groups 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param query A query entered for searches and facet range.
+	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.SearchSuggestionResult>
 	 * @see com.mozu.api.contracts.productruntime.SearchSuggestionResult

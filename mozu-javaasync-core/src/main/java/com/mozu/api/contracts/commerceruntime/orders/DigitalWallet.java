@@ -19,6 +19,9 @@ public class DigitalWallet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Cart ID Note: This property should only be set if the order is not created and user opted to create the order from cart using digital wallet.
+	 */
 	protected String cartId;
 
 	public String getCartId() {

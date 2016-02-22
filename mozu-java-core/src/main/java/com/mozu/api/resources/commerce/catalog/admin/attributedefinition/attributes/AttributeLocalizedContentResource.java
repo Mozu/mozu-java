@@ -54,7 +54,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute  based on a `localeCode`. 
+	 * Retrieves the localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode);
@@ -71,7 +71,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute  based on a `localeCode`. 
+	 * Retrieves the localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.getAttributeLocalizedContent( attributeFQN,  localeCode,  responseFields);
@@ -93,7 +93,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Adds new localized content for an attribute  based on a `localeCode`. 
+	 * Adds new localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN);
@@ -111,7 +111,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Adds new localized content for an attribute  based on a `localeCode`. 
+	 * Adds new localized content for an attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.addLocalizedContent( localizedContent,  attributeFQN,  responseFields);
@@ -134,7 +134,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for a collection of existing attributes  based on a `localeCode`. 
+	 * Updates the localized content for a collection of existing attributes based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContents( localizedContent,  attributeFQN);
@@ -156,7 +156,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute  based on a `localeCode`. 
+	 * Updates the localized content for an existing attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode);
@@ -175,7 +175,7 @@ public class AttributeLocalizedContentResource {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute  based on a `localeCode`. 
+	 * Updates the localized content for an existing attribute based on a `localeCode`.
 	 * <p><pre><code>
 	 *	AttributeLocalizedContent attributelocalizedcontent = new AttributeLocalizedContent();
 	 *	AttributeLocalizedContent attributeLocalizedContent = attributelocalizedcontent.updateLocalizedContent( localizedContent,  attributeFQN,  localeCode,  responseFields);

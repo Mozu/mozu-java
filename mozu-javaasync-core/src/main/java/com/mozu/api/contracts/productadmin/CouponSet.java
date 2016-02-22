@@ -177,7 +177,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Date and time that the coupon codes becomes active
+	 * The date and time in UTC format that the coupon codes in the coupon set become active.
 	 */
 	protected DateTime startDate;
 

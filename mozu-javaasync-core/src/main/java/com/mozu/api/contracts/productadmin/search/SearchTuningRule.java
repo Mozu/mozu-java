@@ -120,6 +120,9 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
 
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleDescription ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected String searchTuningRuleDescription;
 
 	public String getSearchTuningRuleDescription() {
@@ -143,6 +146,9 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleName = searchTuningRuleName;
 	}
 
+	/**
+	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {
