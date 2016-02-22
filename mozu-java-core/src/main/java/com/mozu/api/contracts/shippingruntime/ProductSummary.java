@@ -24,6 +24,16 @@ public class ProductSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected Double price;
+
+	public Double getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
@@ -37,6 +47,16 @@ public class ProductSummary implements Serializable
 		this.productCode = productCode;
 	}
 
+	protected String productDescription;
+
+	public String getProductDescription() {
+		return this.productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
 	/**
 	 * The product type template associated with the product on the storefront.
 	 */
@@ -48,6 +68,16 @@ public class ProductSummary implements Serializable
 
 	public void setProductType(String productType) {
 		this.productType = productType;
+	}
+
+	protected Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 	/**

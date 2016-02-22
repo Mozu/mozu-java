@@ -21,13 +21,18 @@ import com.mozu.api.resources.commerce.customer.CustomerAuthTicketResource;
 public class CustomerAuthTicketFactory
 {
 
-	public static java.io.InputStream createAnonymousShopperAuthTicket(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.CustomerAuthTicket createAnonymousShopperAuthTicket(ApiContext apiContext, int expectedCode) throws Exception
 	{
-		java.io.InputStream returnObj;
+		return createAnonymousShopperAuthTicket(apiContext,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerAuthTicket createAnonymousShopperAuthTicket(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.CustomerAuthTicket returnObj = new com.mozu.api.contracts.customer.CustomerAuthTicket();
 		CustomerAuthTicketResource resource = new CustomerAuthTicketResource(apiContext);
 		try
 		{
-			returnObj = resource.createAnonymousShopperAuthTicket();
+			returnObj = resource.createAnonymousShopperAuthTicket( responseFields);
 		}
 		catch (ApiException e)
 		{

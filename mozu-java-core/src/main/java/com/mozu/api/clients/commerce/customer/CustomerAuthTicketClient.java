@@ -24,20 +24,37 @@ public class CustomerAuthTicketClient {
 	/**
 	 * Creates an authentication ticket for an anonymous shopper user.
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=CreateAnonymousShopperAuthTicketClient();
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateAnonymousShopperAuthTicketClient();
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
-	 * Stream stream = client.Result();
+	 * CustomerAuthTicket customerAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @return Mozu.Api.MozuClient <Stream>
-	 * @see Stream
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
-	public static MozuClient<java.io.InputStream> createAnonymousShopperAuthTicketClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> createAnonymousShopperAuthTicketClient() throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createAnonymousShopperAuthTicketUrl();
+		return createAnonymousShopperAuthTicketClient( null);
+	}
+
+	/**
+	 * Creates an authentication ticket for an anonymous shopper user.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=CreateAnonymousShopperAuthTicketClient( responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerAuthTicket customerAuthTicket = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerAuthTicket>
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> createAnonymousShopperAuthTicketClient(String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAuthTicketUrl.createAnonymousShopperAuthTicketUrl(responseFields);
 		String verb = "GET";
-		Class<?> clz = java.io.InputStream.class;
-		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);
+		Class<?> clz = com.mozu.api.contracts.customer.CustomerAuthTicket.class;
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

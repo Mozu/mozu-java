@@ -179,6 +179,25 @@ public class CategoryResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Category category = new Category();
+	 *	category.updateCategoryTree( categorySequencies);
+	 * </code></pre></p>
+	 * @param categorySequencies 
+	 * @return 
+	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
+	 */
+	public void updateCategoryTree(com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.updateCategoryTreeClient( categorySequencies);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
 	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();

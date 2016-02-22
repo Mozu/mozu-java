@@ -72,6 +72,20 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for GetSynonymDefinitionCollection
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSynonymDefinitionCollectionUrl(String localeCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonym-definitions/{localeCode}?responseFields={responseFields}");
+		formatter.formatUrl("localeCode", localeCode);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddSearchTuningRule
 	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
@@ -91,6 +105,20 @@ public class SearchUrl
 	public static MozuUrl updateSearchTuningRuleSortFieldsUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrulesortfields?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateSynonymDefinitionCollection
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateSynonymDefinitionCollectionUrl(String localeCode, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonym-definitions/{localeCode}?responseFields={responseFields}");
+		formatter.formatUrl("localeCode", localeCode);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

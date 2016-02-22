@@ -188,6 +188,48 @@ public class SearchClient {
 	}
 
 	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getSynonymDefinitionCollectionClient(String localeCode) throws Exception
+	{
+		return getSynonymDefinitionCollectionClient( localeCode,  null);
+	}
+
+	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=GetSynonymDefinitionCollectionClient( localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> getSynonymDefinitionCollectionClient(String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSynonymDefinitionCollectionUrl(localeCode, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn);
@@ -273,6 +315,53 @@ public class SearchClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(searchTuningRuleSortFieldsIn);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> updateSynonymDefinitionCollectionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode) throws Exception
+	{
+		return updateSynonymDefinitionCollectionClient( collection,  localeCode,  null);
+	}
+
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient=UpdateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionCollection synonymDefinitionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> updateSynonymDefinitionCollectionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSynonymDefinitionCollectionUrl(localeCode, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(collection);
 		return mozuClient;
 
 	}

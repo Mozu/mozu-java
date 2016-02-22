@@ -172,6 +172,41 @@ public class SearchResource {
 	}
 
 	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode);
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(String localeCode) throws Exception
+	{
+		return getSynonymDefinitionCollection( localeCode,  null);
+	}
+
+	/**
+	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(String localeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSynonymDefinitionCollectionClient( localeCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	Search search = new Search();
@@ -242,7 +277,44 @@ public class SearchResource {
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
+	}
 
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode);
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode) throws Exception
+	{
+		return updateSynonymDefinitionCollection( collection,  localeCode,  null);
+	}
+
+	/**
+	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
+	 * <p><pre><code>
+	 *	Search search = new Search();
+	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields);
+	 * </code></pre></p>
+	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param collection Collection of synonym definitions used for determining search results.
+	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
+	 */
+	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
 	}
 
 	/**

@@ -198,6 +198,29 @@ public class CategoryClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=UpdateCategoryTreeClient( categorySequencies);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param categorySequencies 
+	 * @return Mozu.Api.MozuClient 
+	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
+	 */
+	public static MozuClient updateCategoryTreeClient(com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.updateCategoryTreeUrl();
+		String verb = "POST";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(categorySequencies);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);

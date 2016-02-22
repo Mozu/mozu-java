@@ -50,7 +50,7 @@ public class ApplicationUrl
 	 */
 	public static MozuUrl getPackageFileMetadataUrl(String applicationKey, String filepath, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/filemetadata/{*filepath}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/filemetadata/{filepath}?responseFields={responseFields}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		formatter.formatUrl("responseFields", responseFields);
@@ -81,7 +81,7 @@ public class ApplicationUrl
 	 */
 	public static MozuUrl upsertPackageFileUrl(String applicationKey, String filepath, String lastModifiedTime, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{*filepath}?lastModifiedTime={lastModifiedTime}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}?lastModifiedTime={lastModifiedTime}&responseFields={responseFields}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		formatter.formatUrl("lastModifiedTime", lastModifiedTime);
@@ -111,7 +111,7 @@ public class ApplicationUrl
 	 */
 	public static MozuUrl deletePackageFileUrl(String applicationKey, String filepath)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{*filepath}");
+		UrlFormatter formatter = new UrlFormatter("/api/platform/developer/packages/{applicationKey}/files/{filepath}");
 		formatter.formatUrl("applicationKey", applicationKey);
 		formatter.formatUrl("filepath", filepath);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.HOME_POD) ;

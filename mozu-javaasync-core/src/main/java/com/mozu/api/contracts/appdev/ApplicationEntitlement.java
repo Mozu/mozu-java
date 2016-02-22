@@ -112,6 +112,16 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
+	protected Integer appOwnerDevAccountId;
+
+	public Integer getAppOwnerDevAccountId() {
+		return this.appOwnerDevAccountId;
+	}
+
+	public void setAppOwnerDevAccountId(Integer appOwnerDevAccountId) {
+		this.appOwnerDevAccountId = appOwnerDevAccountId;
+	}
+
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement devAccountId ApiTypeMember DOCUMENT_HERE 
 	 */

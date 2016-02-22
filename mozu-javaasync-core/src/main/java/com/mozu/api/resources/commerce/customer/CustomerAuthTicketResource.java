@@ -39,14 +39,44 @@ public class CustomerAuthTicketResource {
 	 * Creates an authentication ticket for an anonymous shopper user.
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	Stream stream = customerauthticket.createAnonymousShopperAuthTicket();
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createAnonymousShopperAuthTicket();
 	 * </code></pre></p>
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
-	public java.io.InputStream createAnonymousShopperAuthTicket() throws Exception
+	public com.mozu.api.contracts.customer.CustomerAuthTicket createAnonymousShopperAuthTicket() throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createAnonymousShopperAuthTicketClient();
+		return createAnonymousShopperAuthTicket( null);
+	}
+
+	/**
+	 * Creates an authentication ticket for an anonymous shopper user.
+	 * <p><pre><code>
+	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
+	 *	CountDownLatch latch = customerauthticket.createAnonymousShopperAuthTicket( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 */
+	public CountDownLatch createAnonymousShopperAuthTicketAsync( AsyncCallback<com.mozu.api.contracts.customer.CustomerAuthTicket> callback) throws Exception
+	{
+		return createAnonymousShopperAuthTicketAsync( null, callback);
+	}
+
+	/**
+	 * Creates an authentication ticket for an anonymous shopper user.
+	 * <p><pre><code>
+	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
+	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createAnonymousShopperAuthTicket( responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
+	 */
+	public com.mozu.api.contracts.customer.CustomerAuthTicket createAnonymousShopperAuthTicket(String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createAnonymousShopperAuthTicketClient( responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -57,15 +87,16 @@ public class CustomerAuthTicketResource {
 	 * Creates an authentication ticket for an anonymous shopper user.
 	 * <p><pre><code>
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
-	 *	CountDownLatch latch = customerauthticket.createAnonymousShopperAuthTicket( callback );
+	 *	CountDownLatch latch = customerauthticket.createAnonymousShopperAuthTicket( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @return Stream
-	 * @see Stream
+	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
+	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
-	public CountDownLatch createAnonymousShopperAuthTicketAsync( AsyncCallback<java.io.InputStream> callback) throws Exception
+	public CountDownLatch createAnonymousShopperAuthTicketAsync(String responseFields, AsyncCallback<com.mozu.api.contracts.customer.CustomerAuthTicket> callback) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createAnonymousShopperAuthTicketClient();
+		MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> client = com.mozu.api.clients.commerce.customer.CustomerAuthTicketClient.createAnonymousShopperAuthTicketClient( responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

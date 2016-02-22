@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
 import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
+import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
 
 /**
  *	Properties of a specific product variation.
@@ -126,30 +126,6 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * The difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".
-	 */
-	protected ProductVariationDeltaPrice deltaPrice;
-
-	public ProductVariationDeltaPrice getDeltaPrice() {
-		return this.deltaPrice;
-	}
-
-	public void setDeltaPrice(ProductVariationDeltaPrice deltaPrice) {
-		this.deltaPrice = deltaPrice;
-	}
-
-	/**
-	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
-	 */
-	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
-	public List<ProductVariationDeltaPrice> getLocalizedDeltaPrice() {
-		return this.localizedDeltaPrice;
-	}
-	public void setLocalizedDeltaPrice(List<ProductVariationDeltaPrice> localizedDeltaPrice) {
-		this.localizedDeltaPrice = localizedDeltaPrice;
-	}
-
-	/**
 	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
 	 */
 	protected List<ProductVariationOption> options;
@@ -171,6 +147,30 @@ public class ProductVariation implements Serializable
 
 	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
 		this.supplierInfo = supplierInfo;
+	}
+
+	/**
+	 * The difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".
+	 */
+	protected ProductVariationDeltaPrice deltaPrice;
+
+	public ProductVariationDeltaPrice getDeltaPrice() {
+		return this.deltaPrice;
+	}
+
+	public void setDeltaPrice(ProductVariationDeltaPrice deltaPrice) {
+		this.deltaPrice = deltaPrice;
+	}
+
+	/**
+	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
+	 */
+	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
+	public List<ProductVariationDeltaPrice> getLocalizedDeltaPrice() {
+		return this.localizedDeltaPrice;
+	}
+	public void setLocalizedDeltaPrice(List<ProductVariationDeltaPrice> localizedDeltaPrice) {
+		this.localizedDeltaPrice = localizedDeltaPrice;
 	}
 
 }
