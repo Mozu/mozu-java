@@ -533,7 +533,6 @@ public class SearchResource {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
-
 	}
 
 	/**
@@ -612,7 +611,6 @@ public class SearchResource {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
-
 	}
 
 	/**

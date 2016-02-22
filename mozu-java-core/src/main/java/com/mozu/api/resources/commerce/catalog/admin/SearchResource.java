@@ -277,7 +277,6 @@ public class SearchResource {
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
-
 	}
 
 	/**
@@ -316,7 +315,6 @@ public class SearchResource {
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
-
 	}
 
 	/**
