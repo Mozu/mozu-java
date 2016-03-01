@@ -24,8 +24,14 @@ public class UrlFormatter {
         if (resourceUrl.endsWith("/"))
             resourceUrl = resourceUrl.substring(0, resourceUrl.length() - 1);
 
+        if (resourceUrl.endsWith("?"))
+            resourceUrl = resourceUrl.substring(0, resourceUrl.length() - 1);
+
         if (resourceUrl.endsWith(removeString + "&"))
             resourceUrl = resourceUrl.replace(removeString + "&", "");
+        
+        if (resourceUrl.contains("?&"))
+            resourceUrl = resourceUrl.replace("?&", "?");
 
     }
 
@@ -39,7 +45,7 @@ public class UrlFormatter {
 
             removeString = new StringBuilder("?").append(paramLowerCase).append("=").toString();
             if (value == null && resourceUrl.contains(removeString)) {
-                resourceUrl = resourceUrl.replace(removeString, "");
+                resourceUrl = resourceUrl.replace(removeString, "?");
             }
             encodedValue = "";
         } else {
