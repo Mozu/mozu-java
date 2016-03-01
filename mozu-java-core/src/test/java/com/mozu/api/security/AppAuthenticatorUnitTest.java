@@ -31,7 +31,7 @@ import com.mozu.api.security.AppAuthenticator;
 public class AppAuthenticatorUnitTest {
 
     private static final String GOOD_URL = "https://home.mozu.com/api/platform/applications/authtickets";
-    private static final String REFRESH_URL = GOOD_URL + "/refresh-ticket?";
+    private static final String REFRESH_URL = GOOD_URL + "/refresh-ticket";
     
     private static final String APP_ID = "12342341234132";
     private static final String SHARED_SECRET = "12342341234132";
