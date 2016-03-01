@@ -34,4 +34,13 @@ public class UrlFormatterTest {
         
         assertEquals ("/api/commerce/catalog/storefront/products/Lowrise%20pants-002/locationinventory?filter=id%20eq%201111&searchfilter=ratings%20%3E%203.5", formatter.getResourceUrl());
     }
+    @Test
+    public void testUrlFormat4 () {
+        UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productId}/locationinventory?filter={filter}&searchFilter={searchFilter}")  ;
+        formatter.formatUrl("productId", "Lowrise pants-002");
+        formatter.formatUrl("filter", null);
+        formatter.formatUrl("searchFilter", "ratings > 3.5");
+        
+        assertEquals ("/api/commerce/catalog/storefront/products/Lowrise%20pants-002/locationinventory?searchfilter=ratings%20%3E%203.5", formatter.getResourceUrl());
+    }
 }
