@@ -3,6 +3,10 @@ package com.mozu.api.utils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
+
 import com.mozu.api.ApiException;
 
 public class UrlFormatter {
@@ -49,9 +53,14 @@ public class UrlFormatter {
             }
             encodedValue = "";
         } else {
-
+            String tempStr = null;
+            if (value instanceof DateTime) {
+                tempStr = ((DateTime) value).toString(ISODateTimeFormat.dateTime());
+            } else {
+                tempStr = value.toString();
+            }
             try {
-                encodedValue = URLEncoder.encode(String.valueOf(value), "UTF-8").replace("+", "%20");
+                encodedValue = URLEncoder.encode(String.valueOf(tempStr), "UTF-8").replace("+", "%20");
             } catch (UnsupportedEncodingException uee) {
                 throw new ApiException("Bad encoding of URL" + uee.getMessage());
             }
