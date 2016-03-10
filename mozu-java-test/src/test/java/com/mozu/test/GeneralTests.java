@@ -375,6 +375,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CategoryFactory.addCategory(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
+		CategoryFactory.updateCategoryTree(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		DynamicExpression express = new DynamicExpression();
 		express.setText(Generator.randomString(5, Generator.AlphaChars));
@@ -1165,6 +1166,8 @@ public class GeneralTests extends MozuApiTestBase {
 		SearchFactory.getSearchTuningRules(apiContext, HttpStatus.SC_OK);
 		SearchFactory.getSearchTuningRuleSortFields(apiContext, HttpStatus.SC_OK);
 		SearchFactory.updateSearchTuningRuleSortFields(apiContext, null, HttpStatus.SC_CONFLICT);
+		SearchFactory.getSynonymDefinitionCollection(apiContext, com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_OK);
+		SearchFactory.updateSynonymDefinitionCollection(apiContext, new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection(), com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_OK);
 	}
 	
 	@Test
