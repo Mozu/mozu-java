@@ -216,7 +216,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
@@ -235,7 +235,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -500,7 +500,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -521,7 +521,7 @@ public class SearchResource {
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -533,6 +533,7 @@ public class SearchResource {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSearchTuningRuleSortFieldsClient( searchTuningRuleSortFieldsIn,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
+
 	}
 
 	/**
@@ -611,6 +612,7 @@ public class SearchResource {
 		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
+
 	}
 
 	/**

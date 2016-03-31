@@ -70,7 +70,7 @@ public class CustomerAuthTicketResource {
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createAnonymousShopperAuthTicket( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */
@@ -89,7 +89,7 @@ public class CustomerAuthTicketResource {
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CountDownLatch latch = customerauthticket.createAnonymousShopperAuthTicket( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket

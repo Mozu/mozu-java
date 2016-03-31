@@ -246,6 +246,16 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
+	protected String shipType;
+
+	public String getShipType() {
+		return this.shipType;
+	}
+
+	public void setShipType(String shipType) {
+		this.shipType = shipType;
+	}
+
 	/**
 	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
 	 */

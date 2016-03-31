@@ -20,7 +20,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The sequential display order of the gateway in Mozu Admin.
+	 * The sequential display order of the gateway in .
 	 */
 	protected Integer adminDisplayOrder;
 

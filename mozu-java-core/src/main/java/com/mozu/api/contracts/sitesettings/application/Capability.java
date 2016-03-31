@@ -25,54 +25,6 @@ public class Capability implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Array list of credit types active for the capability.
-	 */
-	protected List<String> activeCreditTypes;
-	public List<String> getActiveCreditTypes() {
-		return this.activeCreditTypes;
-	}
-	public void setActiveCreditTypes(List<String> activeCreditTypes) {
-		this.activeCreditTypes = activeCreditTypes;
-	}
-
-	/**
-	 * Array list of the countries (by country code) for which this capability can actively shop. All active shopping countries must be in the supported shopping country list. Validation rules determine the supported validity of the entered country against the list.
-	 */
-	protected List<String> activeShoppingCountries;
-	public List<String> getActiveShoppingCountries() {
-		return this.activeShoppingCountries;
-	}
-	public void setActiveShoppingCountries(List<String> activeShoppingCountries) {
-		this.activeShoppingCountries = activeShoppingCountries;
-	}
-
-	/**
-	 * The enablement mode of the capability, typically read only.
-	 */
-	protected String capabilityMode;
-
-	public String getCapabilityMode() {
-		return this.capabilityMode;
-	}
-
-	public void setCapabilityMode(String capabilityMode) {
-		this.capabilityMode = capabilityMode;
-	}
-
-	/**
-	 * The capability type installed in the tenant.
-	 */
-	protected String capabilityType;
-
-	public String getCapabilityType() {
-		return this.capabilityType;
-	}
-
-	public void setCapabilityType(String capabilityType) {
-		this.capabilityType = capabilityType;
-	}
-
-	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
 	protected Boolean enabled;
@@ -135,6 +87,54 @@ public class Capability implements Serializable
 
 	public void setScopeType(String scopeType) {
 		this.scopeType = scopeType;
+	}
+
+	/**
+	 * Array list of credit types active for the capability.
+	 */
+	protected List<String> activeCreditTypes;
+	public List<String> getActiveCreditTypes() {
+		return this.activeCreditTypes;
+	}
+	public void setActiveCreditTypes(List<String> activeCreditTypes) {
+		this.activeCreditTypes = activeCreditTypes;
+	}
+
+	/**
+	 * Array list of the countries (by country code) for which this capability can actively shop. All active shopping countries must be in the supported shopping country list. Validation rules determine the supported validity of the entered country against the list.
+	 */
+	protected List<String> activeShoppingCountries;
+	public List<String> getActiveShoppingCountries() {
+		return this.activeShoppingCountries;
+	}
+	public void setActiveShoppingCountries(List<String> activeShoppingCountries) {
+		this.activeShoppingCountries = activeShoppingCountries;
+	}
+
+	/**
+	 * The enablement mode of the capability, typically read only.
+	 */
+	protected String capabilityMode;
+
+	public String getCapabilityMode() {
+		return this.capabilityMode;
+	}
+
+	public void setCapabilityMode(String capabilityMode) {
+		this.capabilityMode = capabilityMode;
+	}
+
+	/**
+	 * The capability type installed in the tenant.
+	 */
+	protected String capabilityType;
+
+	public String getCapabilityType() {
+		return this.capabilityType;
+	}
+
+	public void setCapabilityType(String capabilityType) {
+		this.capabilityType = capabilityType;
 	}
 
 	/**

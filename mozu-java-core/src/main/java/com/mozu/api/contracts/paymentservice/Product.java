@@ -45,4 +45,14 @@ public class Product implements Serializable
 		this.productName = productName;
 	}
 
+	protected String variantProductCode;
+
+	public String getVariantProductCode() {
+		return this.variantProductCode;
+	}
+
+	public void setVariantProductCode(String variantProductCode) {
+		this.variantProductCode = variantProductCode;
+	}
+
 }

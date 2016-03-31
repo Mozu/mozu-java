@@ -112,6 +112,9 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
+	/**
+	 * Denotes the application owner dev account id
+	 */
 	protected Integer appOwnerDevAccountId;
 
 	public Integer getAppOwnerDevAccountId() {
