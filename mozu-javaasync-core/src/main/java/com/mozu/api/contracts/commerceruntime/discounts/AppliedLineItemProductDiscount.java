@@ -21,45 +21,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Determines if the discount applies to the sale price of the order.
-	 */
-	protected Boolean appliesToSalePrice;
-
-	public Boolean getAppliesToSalePrice() {
-		return this.appliesToSalePrice;
-	}
-
-	public void setAppliesToSalePrice(Boolean appliesToSalePrice) {
-		this.appliesToSalePrice = appliesToSalePrice;
-	}
-
-	/**
-	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 */
-	protected String couponCode;
-
-	public String getCouponCode() {
-		return this.couponCode;
-	}
-
-	public void setCouponCode(String couponCode) {
-		this.couponCode = couponCode;
-	}
-
-	/**
-	 * The number of the line items that are used for this particular discount.
-	 */
-	protected Integer discountQuantity;
-
-	public Integer getDiscountQuantity() {
-		return this.discountQuantity;
-	}
-
-	public void setDiscountQuantity(Integer discountQuantity) {
-		this.discountQuantity = discountQuantity;
-	}
-
-	/**
 	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
 	 */
 	protected Boolean excluded;
@@ -109,6 +70,45 @@ public class AppliedLineItemProductDiscount implements Serializable
 
 	public void setProductQuantity(Integer productQuantity) {
 		this.productQuantity = productQuantity;
+	}
+
+	/**
+	 * Determines if the discount applies to the sale price of the order.
+	 */
+	protected Boolean appliesToSalePrice;
+
+	public Boolean getAppliesToSalePrice() {
+		return this.appliesToSalePrice;
+	}
+
+	public void setAppliesToSalePrice(Boolean appliesToSalePrice) {
+		this.appliesToSalePrice = appliesToSalePrice;
+	}
+
+	/**
+	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
+	 */
+	protected String couponCode;
+
+	public String getCouponCode() {
+		return this.couponCode;
+	}
+
+	public void setCouponCode(String couponCode) {
+		this.couponCode = couponCode;
+	}
+
+	/**
+	 * The number of the line items that are used for this particular discount.
+	 */
+	protected Integer discountQuantity;
+
+	public Integer getDiscountQuantity() {
+		return this.discountQuantity;
+	}
+
+	public void setDiscountQuantity(Integer discountQuantity) {
+		this.discountQuantity = discountQuantity;
 	}
 
 	/**

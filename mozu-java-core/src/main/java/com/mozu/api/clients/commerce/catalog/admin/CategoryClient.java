@@ -196,13 +196,13 @@ public class CategoryClient {
 	}
 
 	/**
-	 * 
+	 * Modifies the sequence and hierarchy of multiple categories in a category tree in one operation. This is better for moving a category to a different location in the tree and adjusting the order of multiple categories than doing individual category updates.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateCategoryTreeClient( categorySequencies);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param categorySequencies 
+	 * @param categorySequencies Mozu.ProductAdmin.Contracts.CategorySequenceCollection ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
 	 */

@@ -27,6 +27,19 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * A merchant-specific identifier used to sequentially order returns.
+	 */
+	protected Integer returnNumber;
+
+	public Integer getReturnNumber() {
+		return this.returnNumber;
+	}
+
+	public void setReturnNumber(Integer returnNumber) {
+		this.returnNumber = returnNumber;
+	}
+
+	/**
 	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
 	 */
 	protected List<String> availableActions;
@@ -178,19 +191,6 @@ public class Return implements Serializable
 
 	public void setRefundAmount(Double refundAmount) {
 		this.refundAmount = refundAmount;
-	}
-
-	/**
-	 * A merchant-specific identifier used to sequentially order returns.
-	 */
-	protected Integer returnNumber;
-
-	public Integer getReturnNumber() {
-		return this.returnNumber;
-	}
-
-	public void setReturnNumber(Integer returnNumber) {
-		this.returnNumber = returnNumber;
 	}
 
 	/**

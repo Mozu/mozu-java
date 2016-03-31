@@ -182,6 +182,9 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
+	/**
+	 * MissingImageSubstitute for 404 image requests. Can be name or id of cmsImage in files@mozu.
+	 */
 	protected String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {

@@ -15,7 +15,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateAnonymousShopperAuthTicket
-	 * @param responseFields 
+	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createAnonymousShopperAuthTicketUrl(String responseFields)

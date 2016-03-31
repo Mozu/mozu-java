@@ -24,6 +24,71 @@ public class Discount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
+	 */
+	protected Double maximumDiscountImpactPerRedemption;
+
+	public Double getMaximumDiscountImpactPerRedemption() {
+		return this.maximumDiscountImpactPerRedemption;
+	}
+
+	public void setMaximumDiscountImpactPerRedemption(Double maximumDiscountImpactPerRedemption) {
+		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
+	}
+
+	/**
+	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
+	 */
+	protected Integer maximumRedemptionsPerOrder;
+
+	public Integer getMaximumRedemptionsPerOrder() {
+		return this.maximumRedemptionsPerOrder;
+	}
+
+	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
+		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
+	}
+
+	/**
+	 * The maximum number of times an individual shopper can redeem the discount.
+	 */
+	protected Integer maximumUsesPerUser;
+
+	public Integer getMaximumUsesPerUser() {
+		return this.maximumUsesPerUser;
+	}
+
+	public void setMaximumUsesPerUser(Integer maximumUsesPerUser) {
+		this.maximumUsesPerUser = maximumUsesPerUser;
+	}
+
+	/**
+	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
+	 */
+	protected String scope;
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
+	/**
+	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 */
+	protected String status;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
 	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
 	 */
 	protected Double amount;
@@ -125,71 +190,6 @@ public class Discount implements Serializable
 
 	public void setMaximumDiscountImpactPerOrder(Double maximumDiscountImpactPerOrder) {
 		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
-	}
-
-	/**
-	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
-	 */
-	protected Double maximumDiscountImpactPerRedemption;
-
-	public Double getMaximumDiscountImpactPerRedemption() {
-		return this.maximumDiscountImpactPerRedemption;
-	}
-
-	public void setMaximumDiscountImpactPerRedemption(Double maximumDiscountImpactPerRedemption) {
-		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
-	}
-
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
-	protected Integer maximumRedemptionsPerOrder;
-
-	public Integer getMaximumRedemptionsPerOrder() {
-		return this.maximumRedemptionsPerOrder;
-	}
-
-	public void setMaximumRedemptionsPerOrder(Integer maximumRedemptionsPerOrder) {
-		this.maximumRedemptionsPerOrder = maximumRedemptionsPerOrder;
-	}
-
-	/**
-	 * The maximum number of times an individual shopper can redeem the discount.
-	 */
-	protected Integer maximumUsesPerUser;
-
-	public Integer getMaximumUsesPerUser() {
-		return this.maximumUsesPerUser;
-	}
-
-	public void setMaximumUsesPerUser(Integer maximumUsesPerUser) {
-		this.maximumUsesPerUser = maximumUsesPerUser;
-	}
-
-	/**
-	 * The scope to which the discount applies, which is "Order" for order discounts or "LineItem" for individual product discounts.
-	 */
-	protected String scope;
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-	}
-
-	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
-	 */
-	protected String status;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	/**

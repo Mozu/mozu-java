@@ -54,7 +54,25 @@ public class CustomerAuthenticator {
         return userInfo;
     }
     
+    /**
+     * 
+     * @param userAuthInfo the user you are authenticating
+     * @param tenantId the tenant ID
+     * @param siteId the site you're logging into
+    */
     public static CustomerAuthenticationProfile authenticate(CustomerUserAuthInfo userAuthInfo,  Integer tenantId, Integer siteId) {
+        return authenticate(userAuthInfo, tenantId, siteId, null);
+    }
+    
+    /**
+     * Authenticate a shopper with an account 
+     * @param userAuthInfo the user you are authenticating
+     * @param tenantId the tenant ID
+     * @param siteId the site you're logging into
+     * @param currentCustomerAuthTicket if you are switching from an anonymous user to a logged in user, send in the current user auth claim.
+     * @return a new user auth claim
+     */
+    public static CustomerAuthenticationProfile authenticate(CustomerUserAuthInfo userAuthInfo,  Integer tenantId, Integer siteId, AuthTicket currentCustomerAuthTicket) {
 
         String resourceUrl = getTenantDomain(tenantId)
                 + CustomerAuthTicketUrl.createUserAuthTicketUrl(null).getUrl(); // AuthTicketUrl.AuthenticateAppUrl();
@@ -66,6 +84,9 @@ public class CustomerAuthenticator {
             Map<String, String> headers = new HashMap<String, String>();
             headers.put(Headers.X_VOL_APP_CLAIMS, AppAuthenticator.addAuthHeader());
             headers.put(Headers.X_VOL_SITE, siteId.toString());
+            if (currentCustomerAuthTicket != null) {
+                headers.put(Headers.X_VOL_USER_CLAIMS, currentCustomerAuthTicket.getAccessToken()); 
+            }
             customerAuthTicket = client.executePostRequest(userAuthInfo, resourceUrl.toString(), headers);
         } catch (Exception ioe) {
             throw new ApiException("Exception occurred while authenticating application: "

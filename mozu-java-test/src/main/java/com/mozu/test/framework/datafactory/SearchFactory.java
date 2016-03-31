@@ -82,7 +82,7 @@ public class SearchFactory
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-            returnObj = resource.getSearchTuningRuleSortFields();
+			returnObj = resource.getSearchTuningRuleSortFields( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -182,7 +182,7 @@ public class SearchFactory
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			resource.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
+			returnObj = resource.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -202,7 +202,7 @@ public class SearchFactory
 	}
 
 	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields, int expectedCode) throws Exception
-	{   
+	{
 		com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection();
 		SearchResource resource = new SearchResource(apiContext);
 		try
