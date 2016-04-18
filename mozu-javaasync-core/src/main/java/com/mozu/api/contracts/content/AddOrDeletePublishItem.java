@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddOrDeletePublishItem implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.Content.Contracts.AddOrDeletePublishItem docListFQN ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String docListFQN;
 
 	public String getDocListFQN() {
@@ -32,9 +26,6 @@ public class AddOrDeletePublishItem implements Serializable
 		this.docListFQN = docListFQN;
 	}
 
-	/**
-	 * Mozu.Content.Contracts.AddOrDeletePublishItem documentId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String documentId;
 
 	public String getDocumentId() {
@@ -45,9 +36,6 @@ public class AddOrDeletePublishItem implements Serializable
 		this.documentId = documentId;
 	}
 
-	/**
-	 * The ID of the specific scope for the object. 
-	 */
 	protected Integer scopeId;
 
 	public Integer getScopeId() {
@@ -58,9 +46,6 @@ public class AddOrDeletePublishItem implements Serializable
 		this.scopeId = scopeId;
 	}
 
-	/**
-	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
-	 */
 	protected String scopeType;
 
 	public String getScopeType() {

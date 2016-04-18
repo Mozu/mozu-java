@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.appdev.Event;
 
-/**
- *	Mozu.AppDev.Contracts.ApplicationSubscription ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationSubscription implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The End Point where the event information will be sent to when the event is fired.
-	 */
 	protected String applicationEndPoint;
 
 	public String getApplicationEndPoint() {
@@ -34,9 +28,6 @@ public class ApplicationSubscription implements Serializable
 		this.applicationEndPoint = applicationEndPoint;
 	}
 
-	/**
-	 * The unique identifier of an ApplicationVersionEvent record.
-	 */
 	protected Integer applicationSubscriptionId;
 
 	public Integer getApplicationSubscriptionId() {
@@ -47,9 +38,6 @@ public class ApplicationSubscription implements Serializable
 		this.applicationSubscriptionId = applicationSubscriptionId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription noCallback ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean noCallback;
 
 	public Boolean getNoCallback() {
@@ -60,9 +48,6 @@ public class ApplicationSubscription implements Serializable
 		this.noCallback = noCallback;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer packageId;
 
 	public Integer getPackageId() {
@@ -73,9 +58,6 @@ public class ApplicationSubscription implements Serializable
 		this.packageId = packageId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSubscription events ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Event> events;
 	public List<Event> getEvents() {
 		return this.events;

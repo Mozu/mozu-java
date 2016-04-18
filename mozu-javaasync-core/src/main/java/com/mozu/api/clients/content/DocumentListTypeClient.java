@@ -19,20 +19,20 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Document List Types resource to manage the types of document lists in your site's document hierarchy. The type denotes a content type for that list of folders, sub-folders, and documents such as `web_pages`.
+ * 
  * </summary>
  */
 public class DocumentListTypeClient {
 	
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -43,7 +43,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list,  responseFields);
 	 * client.setBaseAddress(url);
@@ -51,7 +51,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -71,7 +71,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=UpdateDocumentListTypeClient( list,  documentListTypeFQN);
 	 * client.setBaseAddress(url);
@@ -79,7 +79,7 @@ public class DocumentListTypeClient {
 	 * DocumentListType documentListType = client.Result();
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -90,7 +90,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=UpdateDocumentListTypeClient( list,  documentListTypeFQN,  responseFields);
 	 * client.setBaseAddress(url);
@@ -99,7 +99,7 @@ public class DocumentListTypeClient {
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

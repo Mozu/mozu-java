@@ -29,7 +29,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -46,7 +46,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
@@ -157,7 +157,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -174,7 +174,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
+ *	Properties of a master catalog associated with a tenant.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MasterCatalog implements Serializable
@@ -19,9 +19,6 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If the publishingMode is Pending and LiveEditsEnabled = true, DataViewMode live can be passed in the header and live products can be directly edited.
-	 */
 	protected Boolean enableLiveEdit;
 
 	public Boolean getEnableLiveEdit() {
@@ -45,9 +42,6 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
-	 */
 	protected Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
@@ -59,7 +53,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of the master catalog.
 	 */
 	protected String name;
 

@@ -196,7 +196,7 @@ public class AttributeResource {
 	 *	Attribute attribute = attribute.addAttribute( attribute);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -214,7 +214,7 @@ public class AttributeResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -232,7 +232,7 @@ public class AttributeResource {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -255,7 +255,7 @@ public class AttributeResource {
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -276,7 +276,7 @@ public class AttributeResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -295,7 +295,7 @@ public class AttributeResource {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -314,7 +314,7 @@ public class AttributeResource {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -338,7 +338,7 @@ public class AttributeResource {
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute

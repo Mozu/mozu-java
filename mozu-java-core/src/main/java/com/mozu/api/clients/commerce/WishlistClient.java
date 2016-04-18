@@ -47,7 +47,7 @@ public class WishlistClient {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -75,7 +75,7 @@ public class WishlistClient {
 	 * client.executeRequest();
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -93,7 +93,7 @@ public class WishlistClient {
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 */
@@ -161,7 +161,7 @@ public class WishlistClient {
 	 * client.executeRequest();
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
-	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
+	 * @param wishlist Properties of the wish list to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -180,7 +180,7 @@ public class WishlistClient {
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
+	 * @param wishlist Properties of the wish list to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -206,8 +206,8 @@ public class WishlistClient {
 	 * client.executeRequest();
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list.
-	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
+	 * @param wishlistId Unique identifier of the shopper wish list to update.
+	 * @param wishlist Properties of the shopper wish list to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -226,8 +226,8 @@ public class WishlistClient {
 	 * Wishlist wishlist = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list.
-	 * @param wishlist Properties of a shopper wish list defined for a site, associated with a customer account.
+	 * @param wishlistId Unique identifier of the shopper wish list to update.
+	 * @param wishlist Properties of the shopper wish list to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.wishlists.Wishlist>
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
 	 * @see com.mozu.api.contracts.commerceruntime.wishlists.Wishlist
@@ -252,7 +252,7 @@ public class WishlistClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the wish list to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteWishlistClient(String wishlistId) throws Exception

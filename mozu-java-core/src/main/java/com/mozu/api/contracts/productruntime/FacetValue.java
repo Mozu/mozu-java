@@ -22,7 +22,20 @@ public class FacetValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of facet results for a product search.
+	 * String representation of the facet value selected for the product search.
+	 */
+	protected String value;
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	/**
+	 * The number of facet value selections in a product search result set.
 	 */
 	protected Integer count;
 
@@ -60,9 +73,6 @@ public class FacetValue implements Serializable
 		this.isApplied = isApplied;
 	}
 
-	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
-	 */
 	protected Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
@@ -74,7 +84,7 @@ public class FacetValue implements Serializable
 	}
 
 	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 * The descriptive label of the facet value.
 	 */
 	protected String label;
 
@@ -123,19 +133,6 @@ public class FacetValue implements Serializable
 
 	public void setRangeQueryValueStart(String rangeQueryValueStart) {
 		this.rangeQueryValueStart = rangeQueryValueStart;
-	}
-
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
-	protected String value;
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
 	}
 
 	/**

@@ -39,8 +39,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( returnId,  shipmentId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
+	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 */
@@ -56,8 +56,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = shipment.getShipment( returnId,  shipmentId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
+	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 */
@@ -76,8 +76,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Package package = shipment.createPackageShipments( packageIds,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
+	 * @param returnId Unique identifier of the return for which to create replacement package shipments.
+	 * @param packageIds List of packages in the return replacement shipment.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see string
@@ -97,8 +97,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	shipment.deleteShipment( returnId,  shipmentId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement shipment to delete.
+	 * @param shipmentId Unique identifier of the return replacement shipment to delete.
 	 * @return 
 	 */
 	public void deleteShipment(String returnId, String shipmentId) throws Exception

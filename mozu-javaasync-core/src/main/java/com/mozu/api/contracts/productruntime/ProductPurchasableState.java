@@ -35,7 +35,7 @@ public class ProductPurchasableState implements Serializable
 	}
 
 	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
+	 * List of messages associated with the product if the product is not ready for purchase.
 	 */
 	protected List<ValidationMessage> messages;
 	public List<ValidationMessage> getMessages() {

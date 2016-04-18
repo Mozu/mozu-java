@@ -64,7 +64,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
+	 * Localized content for a shipping rate based on the defined locale code.
 	 */
 	protected ShippingRateLocalizedContent content;
 
@@ -77,7 +77,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
+	 * Collection of carrier-specific key-value attribute pairs required to retrieve a shipping rate request.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -87,9 +87,6 @@ public class ShippingRate implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
-	/**
-	 * Mozu.ShippingRuntime.Contracts.ShippingRate data ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -101,7 +98,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
+	 * Array list of success/failure messages associated with the shipping rate validation.
 	 */
 	protected List<ShippingRateValidationMessage> messages;
 	public List<ShippingRateValidationMessage> getMessages() {

@@ -39,7 +39,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.getFacets( documentListName,  propertyName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The document list associated with the facets to retrieve.
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return List<com.mozu.api.contracts.content.Facet>
 	 * @see com.mozu.api.contracts.content.Facet

@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.ProductRuntime.Contracts.VariationOption ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariationOption implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
-	 */
 	protected String attributeFQN;
 
 	public String getAttributeFQN() {
@@ -32,9 +26,6 @@ public class VariationOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected Object value;
 
 	public Object getValue() {
@@ -45,9 +36,6 @@ public class VariationOption implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.VariationOption valueSequence ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer valueSequence;
 
 	public Integer getValueSequence() {

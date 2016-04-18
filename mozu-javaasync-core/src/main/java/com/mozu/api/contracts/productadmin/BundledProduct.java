@@ -23,7 +23,7 @@ public class BundledProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * Indicates the fulfillment types that the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -47,7 +47,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
+	 * The read-only name of the component in a bundled product.
 	 */
 	protected String productName;
 
@@ -60,7 +60,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The quantity of an individual component product in a bundle. For example, if a product bundle represents a 10-pack of socks, the quantity value for the bundled product would be 10.
 	 */
 	protected Integer quantity;
 
@@ -73,7 +73,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * Height of a package or bundle package in imperial units of feet and inches.
+	 * Height of the bundle package in imperial units of feet and inches.
 	 */
 	protected Measurement packageHeight;
 
@@ -86,7 +86,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * Length of a package or bundle package in imperial units of feet and inches.
+	 * Length of the bundle package in imperial units of feet and inches.
 	 */
 	protected Measurement packageLength;
 
@@ -99,7 +99,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * Weight of a package or bundle package in imperial units of pounds and ounces.
+	 * Weight of the bundle package in imperial units of pounds and ounces.
 	 */
 	protected Measurement packageWeight;
 
@@ -112,7 +112,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * Width of a package or bundle package in imperial units of feet and inches.
+	 * Width of the bundle package in imperial units of feet and inches.
 	 */
 	protected Measurement packageWidth;
 

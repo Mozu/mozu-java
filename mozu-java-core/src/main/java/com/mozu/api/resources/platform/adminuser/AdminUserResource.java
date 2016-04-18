@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Accounts resource displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
+ * Displays the user accounts and account details associated with a developer or Mozu tenant administrator. Email addresses uniquely identify admin user accounts.
  * </summary>
  */
 public class AdminUserResource {
@@ -78,7 +78,7 @@ public AdminUserResource(ApiContext apiContext)
 	 *	AdminUser adminuser = new AdminUser();
 	 *	User user = adminuser.getUser( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return com.mozu.api.contracts.core.User
 	 * @see com.mozu.api.contracts.core.User
 	 */
@@ -94,7 +94,7 @@ public AdminUserResource(ApiContext apiContext)
 	 *	User user = adminuser.getUser( userId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return com.mozu.api.contracts.core.User
 	 * @see com.mozu.api.contracts.core.User
 	 */

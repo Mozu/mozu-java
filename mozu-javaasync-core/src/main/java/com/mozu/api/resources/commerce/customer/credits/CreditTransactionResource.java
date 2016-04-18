@@ -41,7 +41,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransactionCollection creditTransactionCollection = credittransaction.getTransactions( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 */
@@ -56,7 +56,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.getTransactions( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransactionCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransactionCollection
@@ -72,7 +72,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransactionCollection creditTransactionCollection = credittransaction.getTransactions( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -96,7 +96,7 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.getTransactions( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -120,8 +120,8 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransaction creditTransaction = credittransaction.addTransaction( creditTransaction,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
+	 * @param code User-defined code that identifies the customer credit to update.
+	 * @param creditTransaction Properties of the transaction to create for the customer credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -137,9 +137,9 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.addTransaction( creditTransaction,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
+	 * @param creditTransaction Properties of the transaction to create for the customer credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -155,9 +155,9 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CreditTransaction creditTransaction = credittransaction.addTransaction( creditTransaction,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
+	 * @param creditTransaction Properties of the transaction to create for the customer credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
@@ -177,10 +177,10 @@ public class CreditTransactionResource {
 	 *	CreditTransaction credittransaction = new CreditTransaction();
 	 *	CountDownLatch latch = credittransaction.addTransaction( creditTransaction,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the customer credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param creditTransaction Properties of a transaction performed for a customer credit that update the remaining balance of the credit.
+	 * @param creditTransaction Properties of the transaction to create for the customer credit.
 	 * @return com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction
 	 * @see com.mozu.api.contracts.customer.credit.CreditTransaction

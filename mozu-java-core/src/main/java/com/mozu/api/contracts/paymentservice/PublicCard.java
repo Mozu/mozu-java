@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublicCard implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String cardHolderName;
 
 	public String getCardHolderName() {
@@ -32,9 +26,6 @@ public class PublicCard implements Serializable
 		this.cardHolderName = cardHolderName;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer cardIssueMonth;
 
 	public Integer getCardIssueMonth() {
@@ -45,9 +36,6 @@ public class PublicCard implements Serializable
 		this.cardIssueMonth = cardIssueMonth;
 	}
 
-	/**
-	 * For Amex Cards, this is an additional field for verification that is used in conjunction with a CVV
-	 */
 	protected String cardIssueNumber;
 
 	public String getCardIssueNumber() {
@@ -58,9 +46,6 @@ public class PublicCard implements Serializable
 		this.cardIssueNumber = cardIssueNumber;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueYear ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer cardIssueYear;
 
 	public Integer getCardIssueYear() {
@@ -71,9 +56,6 @@ public class PublicCard implements Serializable
 		this.cardIssueYear = cardIssueYear;
 	}
 
-	/**
-	 * This is the full number of the card.
-	 */
 	protected String cardNumber;
 
 	public String getCardNumber() {
@@ -84,9 +66,6 @@ public class PublicCard implements Serializable
 		this.cardNumber = cardNumber;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardType ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String cardType;
 
 	public String getCardType() {
@@ -97,9 +76,6 @@ public class PublicCard implements Serializable
 		this.cardType = cardType;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cvv ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String cvv;
 
 	public String getCvv() {
@@ -110,9 +86,6 @@ public class PublicCard implements Serializable
 		this.cvv = cvv;
 	}
 
-	/**
-	 * The two-digit month a credit card expires for a payment method.
-	 */
 	protected Integer expireMonth;
 
 	public Integer getExpireMonth() {
@@ -123,9 +96,6 @@ public class PublicCard implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	/**
-	 * The four-digit year the credit card expires for a payment method.
-	 */
 	protected Integer expireYear;
 
 	public Integer getExpireYear() {

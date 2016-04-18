@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PackageResource {
@@ -40,12 +40,12 @@ public PackageResource(ApiContext apiContext)
 
 	
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @return Stream
 	 * @see Stream
@@ -60,12 +60,12 @@ public PackageResource(ApiContext apiContext)
 	}
 
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getFile( applicationKey,  fileName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream

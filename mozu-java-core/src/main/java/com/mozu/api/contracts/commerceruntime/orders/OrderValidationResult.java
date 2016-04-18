@@ -35,7 +35,7 @@ public class OrderValidationResult implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * The status returned from the order validation capability for the order specified in the request, which is Pass, Fail, Error, or Review.
 	 */
 	protected String status;
 
@@ -87,7 +87,7 @@ public class OrderValidationResult implements Serializable
 	}
 
 	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
+	 * Collection of messages returned by the order validation capability.
 	 */
 	protected List<OrderValidationMessage> messages;
 	public List<OrderValidationMessage> getMessages() {

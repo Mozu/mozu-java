@@ -108,7 +108,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	CustomerCheckoutSettings customercheckoutsettings = new CustomerCheckoutSettings();
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings);
 	 * </code></pre></p>
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -125,7 +125,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	CountDownLatch latch = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -142,7 +142,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	CustomerCheckoutSettings customerCheckoutSettings = customercheckoutsettings.updateCustomerCheckoutSettings( customerCheckoutSettings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -164,7 +164,7 @@ public class CustomerCheckoutSettingsResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

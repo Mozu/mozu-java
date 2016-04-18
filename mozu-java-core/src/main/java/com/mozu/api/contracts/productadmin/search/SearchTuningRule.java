@@ -13,18 +13,12 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFilter;
 
-/**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRule implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule active ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean active;
 
 	public Boolean getActive() {
@@ -35,9 +29,6 @@ public class SearchTuningRule implements Serializable
 		this.active = active;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule activeEndDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime activeEndDate;
 
 	public DateTime getActiveEndDate() {
@@ -48,9 +39,6 @@ public class SearchTuningRule implements Serializable
 		this.activeEndDate = activeEndDate;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule activeStartDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime activeStartDate;
 
 	public DateTime getActiveStartDate() {
@@ -61,9 +49,6 @@ public class SearchTuningRule implements Serializable
 		this.activeStartDate = activeStartDate;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule blockedProductCodes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> blockedProductCodes;
 	public List<String> getBlockedProductCodes() {
 		return this.blockedProductCodes;
@@ -72,9 +57,6 @@ public class SearchTuningRule implements Serializable
 		this.blockedProductCodes = blockedProductCodes;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule boostedProductCodes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> boostedProductCodes;
 	public List<String> getBoostedProductCodes() {
 		return this.boostedProductCodes;
@@ -83,9 +65,6 @@ public class SearchTuningRule implements Serializable
 		this.boostedProductCodes = boostedProductCodes;
 	}
 
-	/**
-	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
-	 */
 	protected Boolean isDefault;
 
 	public Boolean getIsDefault() {
@@ -96,9 +75,6 @@ public class SearchTuningRule implements Serializable
 		this.isDefault = isDefault;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule keywords ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> keywords;
 	public List<String> getKeywords() {
 		return this.keywords;
@@ -107,9 +83,6 @@ public class SearchTuningRule implements Serializable
 		this.keywords = keywords;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {
@@ -120,9 +93,6 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleDescription ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String searchTuningRuleDescription;
 
 	public String getSearchTuningRuleDescription() {
@@ -133,9 +103,6 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleDescription = searchTuningRuleDescription;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String searchTuningRuleName;
 
 	public String getSearchTuningRuleName() {
@@ -146,9 +113,6 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleName = searchTuningRuleName;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {
@@ -159,9 +123,6 @@ public class SearchTuningRule implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -172,9 +133,6 @@ public class SearchTuningRule implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule filters ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<SearchTuningRuleFilter> filters;
 	public List<SearchTuningRuleFilter> getFilters() {
 		return this.filters;

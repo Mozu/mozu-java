@@ -29,7 +29,7 @@ public class TransactionClient {
 	 * client.executeRequest();
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.customer.Transaction>>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 */
@@ -54,7 +54,7 @@ public class TransactionClient {
 	 * Transaction transaction = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -74,7 +74,7 @@ public class TransactionClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -99,7 +99,7 @@ public class TransactionClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */

@@ -59,7 +59,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The two-digit month a credit card expires for a payment method.
+	 * The two-digit month the credit card expires.
 	 */
 	protected short expireMonth;
 
@@ -72,7 +72,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The four-digit year the credit card expires for a payment method.
+	 * The four-digit year the credit card expires.
 	 */
 	protected short expireYear;
 
@@ -85,7 +85,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique ID of the credit card for the customer account. This identifier is separate from the credit card number.
 	 */
 	protected String id;
 
@@ -97,9 +97,6 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Mozu.Customer.Contracts.Card isDefaultPayMethod ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {
@@ -111,7 +108,7 @@ public class Card implements Serializable
 	}
 
 	/**
-	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
+	 * The name printed on the credit card.
 	 */
 	protected String nameOnCard;
 

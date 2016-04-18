@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.sitesettings.order.LocalizedContent;
 
-/**
- *	Mozu.SiteSettings.Order.Contracts.VocabularyValue ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VocabularyValue implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
-	 */
 	protected String key;
 
 	public String getKey() {
@@ -34,9 +28,6 @@ public class VocabularyValue implements Serializable
 		this.key = key;
 	}
 
-	/**
-	 * Mozu.SiteSettings.Order.Contracts.VocabularyValue contents ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<LocalizedContent> contents;
 	public List<LocalizedContent> getContents() {
 		return this.contents;

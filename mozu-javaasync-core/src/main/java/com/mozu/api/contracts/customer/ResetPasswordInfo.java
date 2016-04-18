@@ -33,7 +33,7 @@ public class ResetPasswordInfo implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * User name of the user associated with the customer account.
 	 */
 	protected String userName;
 

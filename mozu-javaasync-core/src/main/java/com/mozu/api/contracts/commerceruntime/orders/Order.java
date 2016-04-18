@@ -54,7 +54,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
+	 * If true, the customer account associated with the order is opted in to receive marketing materials.
 	 */
 	protected Boolean acceptsMarketing;
 
@@ -79,9 +79,6 @@ public class Order implements Serializable
 		this.amountAvailableForRefund = amountAvailableForRefund;
 	}
 
-	/**
-	 * A counter for how much money has been issued in refunds. This calculated field does NOT include refunds issued in returns.
-	 */
 	protected Double amountRefunded;
 
 	public Double getAmountRefunded() {
@@ -106,7 +103,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * The available order, payment, and shipment actions a user can perform for the order.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -130,7 +127,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 * Code that identifies the channel associated with the site where the order was submitted.
 	 */
 	protected String channelCode;
 
@@ -156,7 +153,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Array list of coupon codes associated with a shopping cart and the associated order. These codes are entered by a shopper when proceeding to checkout. 
+	 * Array list of coupon codes associated with an order submitted using an external system. Mozu populates this list during the order import process.
 	 */
 	protected List<String> couponCodes;
 	public List<String> getCouponCodes() {
@@ -180,7 +177,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
+	 * Numeric identifer of the customer account.
 	 */
 	protected Integer customerAccountId;
 
@@ -193,7 +190,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
+	 * The type of interaction the shopper used to submit the order. Possible values are Website, Call, Store, or Unknown.
 	 */
 	protected String customerInteractionType;
 
@@ -219,7 +216,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The aggregate total for all items in the cart, including costs associated with shopper-defined options or extras and any applied discounts.
+	 * The aggregate total for all line items in the order, including costs associated with shopper-defined options or extras and any applied discounts.
 	 */
 	protected Double discountedSubtotal;
 
@@ -232,7 +229,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
+	 * The subtotal of the order including any applied discount calculations.
 	 */
 	protected Double discountedTotal;
 
@@ -245,7 +242,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 * Estimated amount of discounts applied to all items in the order, which is system-supplied and read-only.
 	 */
 	protected Double discountTotal;
 
@@ -257,9 +254,6 @@ public class Order implements Serializable
 		this.discountTotal = discountTotal;
 	}
 
-	/**
-	 * Order level duty or tariff amount. Does not take into account duties or tariffs specifically on items on the order
-	 */
 	protected Double dutyAmount;
 
 	public Double getDutyAmount() {
@@ -270,9 +264,6 @@ public class Order implements Serializable
 		this.dutyAmount = dutyAmount;
 	}
 
-	/**
-	 * Duties or tariffs for the Order as well as OrderItems (e.g. if the Order has a $5 duty or tariff for any reason and an OrderItem has a $2 duty or tariff then the value in this property would be $7)
-	 */
 	protected Double dutyTotal;
 
 	public Double getDutyTotal() {
@@ -297,7 +288,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
+	 * The date when the order will no longer be active or considered abandoned. For example, if a guest or anonymous shopper has 14 days of inactivity, the order is considered abandoned after that period of inactivity. An order never expires for shoppers who are logged into their account. Date in UTC Date/Time. System-supplied and read-only.
 	 */
 	protected DateTime expirationDate;
 
@@ -310,7 +301,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
+	 * Unique identifier used by an external program to identify a Mozu order.
 	 */
 	protected String externalId;
 
@@ -323,7 +314,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 * The monetary sum of all fees incurred in the order.
 	 */
 	protected Double feeTotal;
 
@@ -349,7 +340,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 * The combined price for all items in the order, including all selected options but excluding any discounts.
 	 */
 	protected Double handlingAmount;
 
@@ -361,9 +352,6 @@ public class Order implements Serializable
 		this.handlingAmount = handlingAmount;
 	}
 
-	/**
-	 * Handling fees for the Order as well as OrderItems (e.g. if the Order has a $5 handling fee and an OrderItem has a $2 handling fee per item quantity then the value in this property would be $9)
-	 */
 	protected Double handlingSubTotal;
 
 	public Double getHandlingSubTotal() {
@@ -375,7 +363,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Calculated total tax amount for handling costs if the cart/order is subject to sales tax. 
+	 * If the handling fee for the order is subject to sales tax, the total tax amount.
 	 */
 	protected Double handlingTaxTotal;
 
@@ -414,7 +402,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the order.
 	 */
 	protected String id;
 
@@ -427,7 +415,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The date and time an order or wish list is imported into Mozu. This is not the date and time it was created in the external application. 
+	 * If the order was imported from an external program, the date and time the order was imported into Mozu.
 	 */
 	protected DateTime importDate;
 
@@ -440,7 +428,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * A captured and stored IP address. IP addresses are stored for the origin location of submitted orders and the tenant domain.
+	 * The IP address from which the order originated.
 	 */
 	protected String ipAddress;
 
@@ -479,7 +467,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
+	 * If true, this order was submitted using an external system, and the order record was imported into Mozu.
 	 */
 	protected Boolean isImport;
 
@@ -505,7 +493,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The total amount of calculated tax for items, used by carts, orders, and wish lists.
+	 * The total amount of tax applied to items in the order.
 	 */
 	protected Double itemTaxTotal;
 
@@ -518,7 +506,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The date in UTC Date/Time when the items in the cart were last validated against the site's product catalog. System-supplied and read-only.
+	 * The date when the order was last validated against the product catalog. Date in UTC Date/Time. System-supplied and read-only.
 	 */
 	protected DateTime lastValidationDate;
 
@@ -531,7 +519,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 * The unique code that identifies the location where the order was submitted.
 	 */
 	protected String locationCode;
 
@@ -569,9 +557,6 @@ public class Order implements Serializable
 		this.originalCartId = originalCartId;
 	}
 
-	/**
-	 * If this Order has a parent Order, the parent Order ID is recorded here.
-	 */
 	protected String parentOrderId;
 
 	public String getParentOrderId() {
@@ -622,7 +607,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The shipping subtotal amount calculated without any applied discounts for line item and entire amounts of carts and orders. This property is not calculated for wish lists at this time.
+	 * The shipping subtotal amount calculated without any applied discounts.
 	 */
 	protected Double shippingSubTotal;
 
@@ -635,7 +620,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
+	 * The total amount of sales tax incurred for shipping charges on the order.
 	 */
 	protected Double shippingTaxTotal;
 
@@ -648,7 +633,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The calculated total shipping amount estimated for carts or orders, including tax. This amount is not calculated for wish lists at this time.
+	 * Amount of the shipping fees for the order.
 	 */
 	protected Double shippingTotal;
 
@@ -687,7 +672,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * The current status of this order. Possible values are "Pending", "Submitted", "Processing", "Pending Review", "Closed", or "Cancelled". System-supplied and read-only.
 	 */
 	protected String status;
 
@@ -713,7 +698,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
+	 * Amount of the order without sales tax, shipping costs, and other fees.
 	 */
 	protected Double subtotal;
 
@@ -726,7 +711,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The total monetary sum of sales tax estimated for a cart or order.
+	 * The total monetary sum of sales tax for the order.
 	 */
 	protected Double taxTotal;
 
@@ -752,7 +737,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 * Amount of the order, including items, sales tax, shipping costs, and other fees.
 	 */
 	protected Double total;
 
@@ -791,7 +776,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current version number of the order, wish list, document list, or document type list.
+	 * The current version number of the order.
 	 */
 	protected String version;
 
@@ -804,7 +789,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 * Unique identifier of the customer visit in which the order was created or last updated.
 	 */
 	protected String visitId;
 
@@ -817,7 +802,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
+	 * Unique identifier of the web session in which the order was created or last updated.
 	 */
 	protected String webSessionId;
 
@@ -843,7 +828,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
+	 * Paged list collection of order attributes.
 	 */
 	protected List<OrderAttribute> attributes;
 	public List<OrderAttribute> getAttributes() {
@@ -867,7 +852,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Properties for the customer's billing information associated with an order or specific payment.
+	 * Container for the customer billing information associated with an order.
 	 */
 	protected BillingInfo billingInfo;
 
@@ -880,7 +865,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * Paged list of notes entered when the order was modified.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -890,9 +875,6 @@ public class Order implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -914,9 +896,6 @@ public class Order implements Serializable
 		this.digitalPackages = digitalPackages;
 	}
 
-	/**
-	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
-	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -926,7 +905,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Properties of the information required to fulfill the cart, order, or wish list. Shoppers can fulfill ordered items by using in-store pickup or direct shipping.
+	 * Properties of the item fulfillment information associated with the order. Shoppers can fulfill order items using in-store pickup or direct shipping.
 	 */
 	protected FulfillmentInfo fulfillmentInfo;
 
@@ -938,9 +917,6 @@ public class Order implements Serializable
 		this.fulfillmentInfo = fulfillmentInfo;
 	}
 
-	/**
-	 * The list of historically-applied handling discounts.  The active one will have IsExcluded == false
-	 */
 	protected List<AppliedDiscount> handlingDiscounts;
 	public List<AppliedDiscount> getHandlingDiscounts() {
 		return this.handlingDiscounts;
@@ -950,7 +926,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The list of invalid coupons the shopper attempted to enter for the cart or order. These coupons may no longer be valid or incorrectly entered.
+	 * List of invalid coupon codes the shopper entered for the order.
 	 */
 	protected List<InvalidCoupon> invalidCoupons;
 	public List<InvalidCoupon> getInvalidCoupons() {
@@ -972,7 +948,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
+	 * Paged list collection of order notes.
 	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
@@ -983,7 +959,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * List of order-level discounts projected to apply to the cart at checkout or order.
+	 * List of order-level discounts that apply to the order.
 	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {
@@ -994,7 +970,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Array list of physical packages shipped for a specified order.
+	 * Array list of physical packages shipped for the specified order.
 	 */
 	protected List<Package> packages;
 	public List<Package> getPackages() {
@@ -1005,7 +981,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Wrapper for a collection of payments associated with an order or return. An order can include a number of payments until the full total is covered. 
+	 * Wrapper for a collection of payments associated with this order. An order can include any number of payments.
 	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {
@@ -1026,9 +1002,6 @@ public class Order implements Serializable
 		this.pickups = pickups;
 	}
 
-	/**
-	 * Refunds associated with this order. A refund is a single exchange of money from merchant to customer that either encapsulates a refund to a credit card or an issuance of a store credit. Refunds does not reduce the 'amount collected' on an order and it is possible for refunds to exceed the total order amount.
-	 */
 	protected List<Refund> refunds;
 	public List<Refund> getRefunds() {
 		return this.refunds;
@@ -1062,7 +1035,7 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
+	 * List of shipping discounts to apply to the order.
 	 */
 	protected List<ShippingDiscount> shippingDiscounts;
 	public List<ShippingDiscount> getShippingDiscounts() {

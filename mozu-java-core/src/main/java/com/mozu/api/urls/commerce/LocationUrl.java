@@ -15,7 +15,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -63,7 +63,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetInStorePickupLocation
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

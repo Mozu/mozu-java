@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Set whether you require users to be authenticated to preview content or view the live site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAuthorizations implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean requireAuthForLive;
 
 	public Boolean getRequireAuthForLive() {
@@ -32,9 +26,6 @@ public class ViewAuthorizations implements Serializable
 		this.requireAuthForLive = requireAuthForLive;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForPending ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean requireAuthForPending;
 
 	public Boolean getRequireAuthForPending() {

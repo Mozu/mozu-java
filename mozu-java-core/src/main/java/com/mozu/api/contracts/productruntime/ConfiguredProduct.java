@@ -28,7 +28,7 @@ public class ConfiguredProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * The list of fulfillment types the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -39,7 +39,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The manufacturer's part number for the product.
+	 * The manufacturer part number supplied for the product.
 	 */
 	protected String mfgPartNumber;
 
@@ -65,7 +65,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code defined for the product.
 	 */
 	protected String upc;
 
@@ -91,7 +91,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * List of shipping discounts that can be applied to the configured product. These discounts are calculated and updated as shoppers add content to their cart and continue checkout steps to order submission.
+	 * List of shipping discounts that can be applied to the configured product.
 	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
@@ -102,7 +102,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
+	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
 	 */
 	protected ProductInventoryInfo inventoryInfo;
 
@@ -128,7 +128,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * The list of options set up in product admin.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {

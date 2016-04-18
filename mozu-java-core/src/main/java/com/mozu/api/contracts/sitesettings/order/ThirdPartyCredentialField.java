@@ -35,7 +35,7 @@ public class ThirdPartyCredentialField implements Serializable
 	}
 
 	/**
-	 * The name that displays for the payment gateway or third-party credentials field. 
+	 * System-supplied name that displays for the third party credential field.
 	 */
 	protected String displayName;
 
@@ -47,9 +47,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.displayName = displayName;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected String inputType;
 
 	public String getInputType() {
@@ -60,9 +57,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * the value holds sensitive information.
-	 */
 	protected Boolean isSensitive;
 
 	public Boolean getIsSensitive() {
@@ -74,7 +68,7 @@ public class ThirdPartyCredentialField implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * The value supplied for the third party credential.
 	 */
 	protected String value;
 
@@ -86,9 +80,6 @@ public class ThirdPartyCredentialField implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected List<VocabularyValue> vocabularyValues;
 	public List<VocabularyValue> getVocabularyValues() {
 		return this.vocabularyValues;

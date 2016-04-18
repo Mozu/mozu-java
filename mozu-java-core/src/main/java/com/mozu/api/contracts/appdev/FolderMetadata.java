@@ -36,7 +36,7 @@ public class FolderMetadata implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of the folder.
 	 */
 	protected String name;
 

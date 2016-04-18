@@ -16,8 +16,8 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for GetDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getDBValueUrl(String appKeyId, String dbEntryQuery, String responseFields)
@@ -32,7 +32,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for CreateDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createDBValueUrl(String appKeyId, String dbEntryQuery)
@@ -46,7 +46,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for UpdateDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateDBValueUrl(String appKeyId, String dbEntryQuery)
@@ -60,7 +60,7 @@ public class SecureAppDataUrl
 	/**
 	 * Get Resource Url for DeleteDBValue
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDBValueUrl(String appKeyId, String dbEntryQuery)

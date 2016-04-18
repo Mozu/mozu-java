@@ -19,9 +19,6 @@ public class DocumentDraftSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Detailed information of the date and time for the active update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
@@ -32,9 +29,6 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
-	/**
-	 * Mozu.Content.Contracts.DocumentDraftSummary activeUpdatedBy ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {
@@ -45,9 +39,6 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdatedBy = activeUpdatedBy;
 	}
 
-	/**
-	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
-	 */
 	protected Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -58,9 +49,6 @@ public class DocumentDraftSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * Fully qualified name of the document type. 
-	 */
 	protected String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -71,9 +59,6 @@ public class DocumentDraftSummary implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * Detailed information of the date and time for the draft update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
@@ -85,7 +70,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of document draft.
 	 */
 	protected String id;
 
@@ -97,9 +82,6 @@ public class DocumentDraftSummary implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The fully qualified name of the document list.
-	 */
 	protected String listFQN;
 
 	public String getListFQN() {
@@ -110,9 +92,6 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
-	/**
-	 * Unique identifier for the master catalog. 
-	 */
 	protected Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -124,7 +103,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * Name of the document draft.
 	 */
 	protected String name;
 
@@ -136,9 +115,6 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Mozu.Content.Contracts.DocumentDraftSummary publishSetCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -162,9 +138,6 @@ public class DocumentDraftSummary implements Serializable
 		this.publishType = publishType;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {

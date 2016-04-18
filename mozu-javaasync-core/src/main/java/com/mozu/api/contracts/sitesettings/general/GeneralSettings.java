@@ -39,9 +39,6 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
-	/**
-	 * Custom dns host name for cnd edge caching.
-	 */
 	protected String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -182,9 +179,6 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
-	/**
-	 * MissingImageSubstitute for 404 image requests. Can be name or id of cmsImage in files@mozu.
-	 */
 	protected String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -234,9 +228,6 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
-	/**
-	 * Email alias used in emails sent to your shoppers.
-	 */
 	protected String senderEmailAlias;
 
 	public String getSenderEmailAlias() {
@@ -338,9 +329,6 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Set of settings to deal with site caching.
-	 */
 	protected CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -351,9 +339,6 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
-	/**
-	 * Site-level control over request routing for SEO purposes. Not available for update, must use its own subresource.
-	 */
 	protected CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {
@@ -364,9 +349,6 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
-	/**
-	 * Supressed emails. Setting any of these to 'true' will block Mozu from sending that email and an event will be published instead.
-	 */
 	protected EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {
@@ -388,9 +370,6 @@ public class GeneralSettings implements Serializable
 		this.taxableTerritories = taxableTerritories;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.GeneralSettings viewAuthorizations ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected ViewAuthorizations viewAuthorizations;
 
 	public ViewAuthorizations getViewAuthorizations() {

@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.content.PublishSetSummaryResource;
 
 /** <summary>
- * content/publishsets related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublishSetSummaryFactory

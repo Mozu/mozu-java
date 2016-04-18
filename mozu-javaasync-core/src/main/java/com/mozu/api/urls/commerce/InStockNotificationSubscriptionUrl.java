@@ -35,7 +35,7 @@ public class InStockNotificationSubscriptionUrl
 
 	/**
 	 * Get Resource Url for GetInStockNotificationSubscription
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -61,7 +61,7 @@ public class InStockNotificationSubscriptionUrl
 
 	/**
 	 * Get Resource Url for DeleteInStockNotificationSubscription
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer in-stock notification subscription to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteInStockNotificationSubscriptionUrl(Integer id)

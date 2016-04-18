@@ -20,7 +20,7 @@ public class PickupItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * This specifies the fulfillment type of digital package item.
+	 * This specifies the type of fulfillment item.
 	 */
 	protected String fulfillmentItemType;
 
@@ -32,9 +32,6 @@ public class PickupItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
-	/**
-	 * The line id associated with the fulfillment.
-	 */
 	protected Integer lineId;
 
 	public Integer getLineId() {
@@ -45,9 +42,6 @@ public class PickupItem implements Serializable
 		this.lineId = lineId;
 	}
 
-	/**
-	 * Fully qualified name of the selected option's attribute. Bundledproducts result from a static bundle or are dynamically added as a result of the shopper selecting products as extras. When the bundled item is dynamic, it includes the attribute's fully qualified name of the extra that it came from. When `optionAttributeFQN `is null, the bundled item was statically defined. When not null, the item came from an extra selection.
-	 */
 	protected String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
@@ -72,7 +66,7 @@ public class PickupItem implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The quantity of the item in the in-store pickup.
 	 */
 	protected Integer quantity;
 

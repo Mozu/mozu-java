@@ -75,7 +75,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @return com.mozu.api.contracts.productadmin.FacetSet
 	 * @see com.mozu.api.contracts.productadmin.FacetSet
 	 */
@@ -90,7 +90,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	FacetSet facetSet = facet.getFacetCategoryList( categoryId,  includeAvailable,  validate,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category associated with the facets to retrieve.
 	 * @param includeAvailable If true, returns a list of the attributes and categories associated with a product type that have not been defined as a facet for the category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param validate Validates that the product category associated with a facet is active. System-supplied and read only.
@@ -112,7 +112,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.addFacet( facet);
 	 * </code></pre></p>
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -129,7 +129,7 @@ public class FacetResource {
 	 *	Facet facet = facet.addFacet( facet,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facet Properties of the new facet to create. You must specify the source, type, and category.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -149,8 +149,8 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.updateFacet( facet,  facetId);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facetId Unique identifier of the facet to modify.
+	 * @param facet Properties of the defined facet to modify.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -166,9 +166,9 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.updateFacet( facet,  facetId,  responseFields);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
+	 * @param facetId Unique identifier of the facet to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param facet Properties of the facet used to retrieve documents.
+	 * @param facet Properties of the defined facet to modify.
 	 * @return com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
 	 * @see com.mozu.api.contracts.productadmin.Facet
@@ -188,7 +188,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	facet.deleteFacetById( facetId);
 	 * </code></pre></p>
-	 * @param facetId Unique identifier of the facet to retrieve.
+	 * @param facetId Unique identifier of the facet to delete.
 	 * @return 
 	 */
 	public void deleteFacetById(Integer facetId) throws Exception

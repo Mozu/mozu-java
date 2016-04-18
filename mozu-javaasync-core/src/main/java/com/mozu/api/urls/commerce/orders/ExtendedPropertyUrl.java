@@ -15,8 +15,8 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for GetExtendedProperties
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtendedPropertiesUrl(Boolean draft, String orderId)
@@ -29,9 +29,9 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for AddExtendedProperties
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addExtendedPropertiesUrl(String orderId, String updateMode, String version)
@@ -45,13 +45,12 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateExtendedProperty
-	 * @param key The extended property key.
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates an extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param key 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtendedPropertyUrl(String key, String orderId, String responseFields, String updateMode, Boolean upsert, String version)
@@ -68,11 +67,10 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdateExtendedProperties
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param upsert Inserts and updates the extended property.
-        
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param upsert 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtendedPropertiesUrl(String orderId, String updateMode, Boolean upsert, String version)
@@ -88,9 +86,9 @@ public class ExtendedPropertyUrl
 	/**
 	 * Get Resource Url for DeleteExtendedProperty
 	 * @param key 
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtendedPropertyUrl(String key, String orderId, String updateMode, String version)
@@ -105,9 +103,9 @@ public class ExtendedPropertyUrl
 
 	/**
 	 * Get Resource Url for DeleteExtendedProperties
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
-	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteExtendedPropertiesUrl(String orderId, String updateMode, String version)

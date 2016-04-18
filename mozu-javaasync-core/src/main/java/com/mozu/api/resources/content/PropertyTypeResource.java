@@ -120,7 +120,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -135,7 +135,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.getPropertyType( propertyTypeName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -151,7 +151,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.getPropertyType( propertyTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -171,7 +171,7 @@ public class PropertyTypeResource {
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.getPropertyType( propertyTypeName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.PropertyType
@@ -186,12 +186,12 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType);
 	 * </code></pre></p>
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -202,13 +202,13 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.createPropertyType( propertyType, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -219,13 +219,13 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.createPropertyType( propertyType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -240,14 +240,14 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.createPropertyType( propertyType,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -261,13 +261,13 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyTypeName 
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -278,14 +278,14 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.updatePropertyType( propertyType,  propertyTypeName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -296,14 +296,14 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	PropertyType propertyType = propertytype.updatePropertyType( propertyType,  propertyTypeName,  responseFields);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -318,15 +318,15 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	CountDownLatch latch = propertytype.updatePropertyType( propertyType,  propertyTypeName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -340,12 +340,12 @@ public class PropertyTypeResource {
 	}
 
 	/**
-	 * Delete a specific
+	 * 
 	 * <p><pre><code>
 	 *	PropertyType propertytype = new PropertyType();
 	 *	propertytype.deletePropertyType( propertyTypeName);
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @return 
 	 */
 	public void deletePropertyType(String propertyTypeName) throws Exception

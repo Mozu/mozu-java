@@ -16,20 +16,20 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Properties of localized content for attributes, based on a `localeCode` at a site/tenant level. This content supports translated text for product, product options, and additional objects. 
+ * 
  * </summary>
  */
 public class AttributeLocalizedContentClient {
 	
 	/**
-	 * Retrieves a collection of localized content for attributes based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient=GetAttributeLocalizedContentsClient( attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -47,14 +47,14 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
@@ -66,14 +66,14 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Retrieves the localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=GetAttributeLocalizedContentClient( attributeFQN,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
@@ -93,16 +93,16 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Adds new localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=AddLocalizedContentClient( localizedContent,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -113,17 +113,17 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Adds new localized content for an attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=AddLocalizedContentClient( localizedContent,  attributeFQN,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -142,16 +142,16 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for a collection of existing attributes based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>> mozuClient=UpdateLocalizedContentsClient( localizedContent,  attributeFQN);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AttributeLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -170,17 +170,17 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=UpdateLocalizedContentClient( localizedContent,  attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -191,18 +191,18 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Updates the localized content for an existing attribute based on a `localeCode`.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.AttributeLocalizedContent> mozuClient=UpdateLocalizedContentClient( localizedContent,  attributeFQN,  localeCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AttributeLocalizedContent attributeLocalizedContent = client.Result();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param localizedContent The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+	 * @param localizedContent 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.AttributeLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.AttributeLocalizedContent
@@ -221,13 +221,13 @@ public class AttributeLocalizedContentClient {
 	}
 
 	/**
-	 * Removes all localized content. Localized content is translated text information and data based on a `localeCode`. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteLocalizedContentClient( attributeFQN,  localeCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 

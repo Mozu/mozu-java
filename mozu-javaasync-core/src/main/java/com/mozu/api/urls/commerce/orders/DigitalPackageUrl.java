@@ -16,7 +16,7 @@ public class DigitalPackageUrl
 	/**
 	 * Get Resource Url for GetAvailableDigitalPackageFulfillmentActions
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId This parameter provides the unique identifier of the order on which to get a list of available actions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableDigitalPackageFulfillmentActionsUrl(String digitalPackageId, String orderId)
@@ -29,8 +29,8 @@ public class DigitalPackageUrl
 
 	/**
 	 * Get Resource Url for GetDigitalPackage
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -45,7 +45,7 @@ public class DigitalPackageUrl
 
 	/**
 	 * Get Resource Url for CreateDigitalPackage
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -59,8 +59,8 @@ public class DigitalPackageUrl
 
 	/**
 	 * Get Resource Url for UpdateDigitalPackage
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -75,8 +75,8 @@ public class DigitalPackageUrl
 
 	/**
 	 * Get Resource Url for DeleteDigitalPackage
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId The digitalPackage ID is unique package ID to update on the order.
+	 * @param orderId The orderId is unique identifier of the order with which to associate the package.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDigitalPackageUrl(String digitalPackageId, String orderId)

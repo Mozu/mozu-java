@@ -15,7 +15,7 @@ import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+ *	Discount used to calculate SalePrice. Includes coupon code if applicable, amount of the discount, and discount savings. Discounts can be either an absolute price or a percentage off. The sale price beats any discounts.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -24,8 +24,100 @@ public class Discount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
+	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
 	 */
+	protected Double amount;
+
+	public Double getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	/**
+	 * The type of discount amount, such as an amount or a percentage.
+	 */
+	protected String amountType;
+
+	public String getAmountType() {
+		return this.amountType;
+	}
+
+	public void setAmountType(String amountType) {
+		this.amountType = amountType;
+	}
+
+	protected Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
+	/**
+	 * The number of times this discount has been redeemed.
+	 */
+	protected Integer currentRedemptionCount;
+
+	public Integer getCurrentRedemptionCount() {
+		return this.currentRedemptionCount;
+	}
+
+	public void setCurrentRedemptionCount(Integer currentRedemptionCount) {
+		this.currentRedemptionCount = currentRedemptionCount;
+	}
+
+	protected Boolean doesNotApplyToProductsWithSalePrice;
+
+	public Boolean getDoesNotApplyToProductsWithSalePrice() {
+		return this.doesNotApplyToProductsWithSalePrice;
+	}
+
+	public void setDoesNotApplyToProductsWithSalePrice(Boolean doesNotApplyToProductsWithSalePrice) {
+		this.doesNotApplyToProductsWithSalePrice = doesNotApplyToProductsWithSalePrice;
+	}
+
+	/**
+	 * If true, this discount does not apply to a line item product with a defined sale price. The default is false, which applies the discount to products with and without defined sale prices.
+	 */
+	protected Boolean doesNotApplyToSalePrice;
+
+	public Boolean getDoesNotApplyToSalePrice() {
+		return this.doesNotApplyToSalePrice;
+	}
+
+	public void setDoesNotApplyToSalePrice(Boolean doesNotApplyToSalePrice) {
+		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
+	}
+
+	/**
+	 * Unique identifier of the discount.
+	 */
+	protected Integer id;
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	protected Double maximumDiscountImpactPerOrder;
+
+	public Double getMaximumDiscountImpactPerOrder() {
+		return this.maximumDiscountImpactPerOrder;
+	}
+
+	public void setMaximumDiscountImpactPerOrder(Double maximumDiscountImpactPerOrder) {
+		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
+	}
+
 	protected Double maximumDiscountImpactPerRedemption;
 
 	public Double getMaximumDiscountImpactPerRedemption() {
@@ -36,9 +128,6 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
 	}
 
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
 	protected Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -76,7 +165,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * Current status of the product discount. Possible values are "Active", "Scheduled", or "Expired".
 	 */
 	protected String status;
 
@@ -86,110 +175,6 @@ public class Discount implements Serializable
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	/**
-	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
-	 */
-	protected Double amount;
-
-	public Double getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
-
-	/**
-	 * The type of discount amount, such as an amount or a percentage.
-	 */
-	protected String amountType;
-
-	public String getAmountType() {
-		return this.amountType;
-	}
-
-	public void setAmountType(String amountType) {
-		this.amountType = amountType;
-	}
-
-	/**
-	 * Signifies that the discount is not referenced and can be hard deleted
-	 */
-	protected Boolean canBeDeleted;
-
-	public Boolean getCanBeDeleted() {
-		return this.canBeDeleted;
-	}
-
-	public void setCanBeDeleted(Boolean canBeDeleted) {
-		this.canBeDeleted = canBeDeleted;
-	}
-
-	/**
-	 * The number of times this discount has been redeemed.
-	 */
-	protected Integer currentRedemptionCount;
-
-	public Integer getCurrentRedemptionCount() {
-		return this.currentRedemptionCount;
-	}
-
-	public void setCurrentRedemptionCount(Integer currentRedemptionCount) {
-		this.currentRedemptionCount = currentRedemptionCount;
-	}
-
-	/**
-	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
-	 */
-	protected Boolean doesNotApplyToProductsWithSalePrice;
-
-	public Boolean getDoesNotApplyToProductsWithSalePrice() {
-		return this.doesNotApplyToProductsWithSalePrice;
-	}
-
-	public void setDoesNotApplyToProductsWithSalePrice(Boolean doesNotApplyToProductsWithSalePrice) {
-		this.doesNotApplyToProductsWithSalePrice = doesNotApplyToProductsWithSalePrice;
-	}
-
-	/**
-	 * If true, this discount does not apply to a line item product with a defined sale price. The default is false, which applies the discount to products with and without defined sale prices.
-	 */
-	protected Boolean doesNotApplyToSalePrice;
-
-	public Boolean getDoesNotApplyToSalePrice() {
-		return this.doesNotApplyToSalePrice;
-	}
-
-	public void setDoesNotApplyToSalePrice(Boolean doesNotApplyToSalePrice) {
-		this.doesNotApplyToSalePrice = doesNotApplyToSalePrice;
-	}
-
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	/**
-	 * Maximum impact this discount can apply on a single order. Must be either null or greater than zero.
-	 */
-	protected Double maximumDiscountImpactPerOrder;
-
-	public Double getMaximumDiscountImpactPerOrder() {
-		return this.maximumDiscountImpactPerOrder;
-	}
-
-	public void setMaximumDiscountImpactPerOrder(Double maximumDiscountImpactPerOrder) {
-		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
 	}
 
 	/**
@@ -232,7 +217,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Targets represent the object, such as an item to apply discounts (products or orders) or a view field for content. When accessing MZDB APIs for Mongo interactions, targets are the dot notation that links to the source document property. For example, firstitem for the direc level or firstitem.seconditem.thirditem for a deeper property.              
+	 * Properties of the target object to which the discount applies, such as a product or an order.
 	 */
 	protected DiscountTarget target;
 

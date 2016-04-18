@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/extensions related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class TenantExtensionsResource {
@@ -34,7 +34,7 @@ public class TenantExtensionsResource {
 
 	
 	/**
-	 * platform-extensions Get GetExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions();
@@ -48,12 +48,12 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * platform-extensions Get GetExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -67,12 +67,12 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * platform-extensions Put UpdateExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions);
 	 * </code></pre></p>
-	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
+	 * @param extensions 
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -83,13 +83,13 @@ public class TenantExtensionsResource {
 	}
 
 	/**
-	 * platform-extensions Put UpdateExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param extensions 
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions

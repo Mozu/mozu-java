@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.mzdb.ListViewField;
 
-/**
- *	Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ListView implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Sets the default sorting for content. Sort does not use AND in determining the order.
-	 */
 	protected String defaultSort;
 
 	public String getDefaultSort() {
@@ -47,9 +41,6 @@ public class ListView implements Serializable
 		this.filter = filter;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -60,9 +51,6 @@ public class ListView implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Indicates the security level for the document content as public, administrator, or owner.
-	 */
 	protected String security;
 
 	public String getSecurity() {
@@ -73,9 +61,6 @@ public class ListView implements Serializable
 		this.security = security;
 	}
 
-	/**
-	 * List description of usages for content within a view and scope.
-	 */
 	protected List<String> usages;
 	public List<String> getUsages() {
 		return this.usages;
@@ -84,9 +69,6 @@ public class ListView implements Serializable
 		this.usages = usages;
 	}
 
-	/**
-	 * The list of fields to display for a view or an associated schema. For example, the address schema would display fields for postal addresses.
-	 */
 	protected List<ListViewField> fields;
 	public List<ListViewField> getFields() {
 		return this.fields;
@@ -95,9 +77,6 @@ public class ListView implements Serializable
 		this.fields = fields;
 	}
 
-	/**
-	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode metaData;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetaData() {

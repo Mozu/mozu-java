@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Refund implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Amount refunded.
-	 */
 	protected Double amount;
 
 	public Double getAmount() {
@@ -34,9 +28,6 @@ public class Refund implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected String id;
 
 	public String getId() {
@@ -47,9 +38,6 @@ public class Refund implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected String orderId;
 
 	public String getOrderId() {
@@ -60,9 +48,6 @@ public class Refund implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
-	 */
 	protected String reason;
 
 	public String getReason() {
@@ -73,9 +58,6 @@ public class Refund implements Serializable
 		this.reason = reason;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -86,9 +68,6 @@ public class Refund implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * The payment associated with this refund (if applicable).
-	 */
 	protected Payment payment;
 
 	public Payment getPayment() {

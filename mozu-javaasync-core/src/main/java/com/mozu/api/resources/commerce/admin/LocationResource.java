@@ -116,7 +116,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to retrieve.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -131,7 +131,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -147,8 +147,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -167,8 +167,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( locationCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -187,7 +187,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.addLocation( location);
 	 * </code></pre></p>
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to create.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -204,7 +204,7 @@ public class LocationResource {
 	 *	CountDownLatch latch = location.addLocation( location, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to create.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -220,8 +220,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.addLocation( location,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param responseFields 
+	 * @param location Properties of the location to create.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -241,9 +241,9 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.addLocation( location,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to create.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -262,8 +262,8 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.updateLocation( location,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param locationCode The merchant-defined code associated with the location to update.
+	 * @param location Properties of the location to update.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -279,9 +279,9 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.updateLocation( location,  locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to update.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -297,9 +297,9 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.updateLocation( location,  locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to update.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -319,10 +319,10 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.updateLocation( location,  locationCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to update.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -341,7 +341,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	location.deleteLocation( locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to delete.
 	 * @return 
 	 */
 	public void deleteLocation(String locationCode) throws Exception

@@ -23,7 +23,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Alphanumeric string used to authenticate the user in API request headers. The token stores an encrypted list of the application's configured behaviors and authenticates the application.
+	 * Alphanumeric string used to authenticate the user in API request headers.
 	 */
 	protected String accessToken;
 
@@ -36,7 +36,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * The date and time the user access token expires. If the token will expire, a new token will need to be generated and assigned to the account to continue and restore access to the store, data, and account.
+	 * The date and time the user access token expires.
 	 */
 	protected DateTime accessTokenExpiration;
 
@@ -62,7 +62,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * Collection of behaviors encrypted in the developer account authentication ticket. Behaviors are granted to users as part of the role assigned for the given developer account.
+	 * Collection of behaviors encrypted in the user authentication ticket. Behaviors are granted to users as part of the role assigned for the given tenant or developer account.
 	 */
 	protected List<Integer> grantedBehaviors;
 	public List<Integer> getGrantedBehaviors() {
@@ -73,7 +73,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * Alphanumeric string used to generate a new user authentication ticket after the access token expires.
 	 */
 	protected String refreshToken;
 
@@ -86,7 +86,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * The date and time the developer account or application refresh token expires.
+	 * The date and time the user refresh token expires.
 	 */
 	protected DateTime refreshTokenExpiration;
 
@@ -110,7 +110,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * Tenant information associated with the user authentication ticket or domain lookup service result.
+	 * Tenant information associated with the user authentication ticket.
 	 */
 	protected Tenant tenant;
 

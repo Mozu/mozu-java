@@ -15,12 +15,12 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for GetCouponSets
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCouponSetsUrl(String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -37,9 +37,9 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for GetCouponSet
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCouponSetUrl(String couponSetCode, Boolean includeCounts, String responseFields)
@@ -53,7 +53,7 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for GetUniqueCouponSetCode
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUniqueCouponSetCodeUrl(String responseFields)
@@ -65,7 +65,7 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for AddCouponSet
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCouponSetUrl(String responseFields)
@@ -77,7 +77,7 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for ValidateUniqueCouponSetCode
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateUniqueCouponSetCodeUrl(String code)
@@ -89,8 +89,8 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for UpdateCouponSet
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param couponSetCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateCouponSetUrl(String couponSetCode, String responseFields)
@@ -103,7 +103,7 @@ public class CouponSetUrl
 
 	/**
 	 * Get Resource Url for DeleteCouponSet
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCouponSetUrl(String couponSetCode)

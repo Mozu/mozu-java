@@ -41,7 +41,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	Facet facet = facet.getFacets( documentListName,  propertyName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The document list associated with the facets to retrieve.
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return List<com.mozu.api.contracts.content.Facet>
 	 * @see com.mozu.api.contracts.content.Facet
@@ -61,7 +61,7 @@ public class FacetResource {
 	 *	Facet facet = new Facet();
 	 *	CountDownLatch latch = facet.getFacets( documentListName,  propertyName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The document list associated with the facets to retrieve.
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.content.Facet>

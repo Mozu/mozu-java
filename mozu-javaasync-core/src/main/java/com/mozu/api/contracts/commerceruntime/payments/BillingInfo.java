@@ -22,9 +22,6 @@ public class BillingInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Transaction Id from third party payment source like Visa Checkout, Amazon
-	 */
 	protected String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -61,9 +58,6 @@ public class BillingInfo implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * Mozu.CommerceRuntime.Contracts.Payments.BillingInfo paymentWorkflow ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -126,9 +120,6 @@ public class BillingInfo implements Serializable
 		this.card = card;
 	}
 
-	/**
-	 * Custom data from payment providers
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

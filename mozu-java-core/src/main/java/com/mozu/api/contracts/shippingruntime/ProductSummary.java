@@ -15,18 +15,12 @@ import com.mozu.api.contracts.shippingruntime.ProductOption;
 import com.mozu.api.contracts.shippingruntime.ProductProperty;
 import com.mozu.api.contracts.shippingruntime.ItemMeasurements;
 
-/**
- *	Properties of summary data for a product, including all data for name, code, categories, options, types, measurements, and more.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Price (unit price * quantity)
-	 */
 	protected Double price;
 
 	public Double getPrice() {
@@ -37,9 +31,6 @@ public class ProductSummary implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -50,9 +41,6 @@ public class ProductSummary implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Product name/description
-	 */
 	protected String productDescription;
 
 	public String getProductDescription() {
@@ -63,9 +51,6 @@ public class ProductSummary implements Serializable
 		this.productDescription = productDescription;
 	}
 
-	/**
-	 * The product type template associated with the product on the storefront.
-	 */
 	protected String productType;
 
 	public String getProductType() {
@@ -76,9 +61,6 @@ public class ProductSummary implements Serializable
 		this.productType = productType;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -89,9 +71,6 @@ public class ProductSummary implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
-	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
 		return this.categories;
@@ -100,9 +79,6 @@ public class ProductSummary implements Serializable
 		this.categories = categories;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
 		return this.options;
@@ -111,9 +87,6 @@ public class ProductSummary implements Serializable
 		this.options = options;
 	}
 
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
-	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
 		return this.properties;
@@ -122,9 +95,6 @@ public class ProductSummary implements Serializable
 		this.properties = properties;
 	}
 
-	/**
-	 * Product specific dimensions used for shipping, used by product summary and rate request items.  The dimensions can differ between the two uses as a `RateRequestItem `package may contain one or more products.
-	 */
 	protected ItemMeasurements unitMeasurements;
 
 	public ItemMeasurements getUnitMeasurements() {

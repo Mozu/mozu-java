@@ -49,8 +49,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.getTreeDocumentContent( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -69,8 +69,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	CountDownLatch latch = documenttree.getTreeDocumentContent( documentListName,  documentName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -84,13 +84,13 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName 
+	 * @param documentName 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -100,13 +100,13 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	CountDownLatch latch = documenttree.transformTreeDocumentContent( documentListName,  documentName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName 
+	 * @param documentName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -117,20 +117,20 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Stream stream = documenttree.transformTreeDocumentContent( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * </code></pre></p>
-	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param height Specifies an exact height dimension for the image, in pixels.
-	 * @param max Specifies a pixel limitation for the largest side of an image.
-	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
-	 * @param width Specifies an exact width dimension for the image, in pixels.
+	 * @param crop 
+	 * @param documentListName 
+	 * @param documentName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -144,20 +144,20 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	CountDownLatch latch = documenttree.transformTreeDocumentContent( documentListName,  documentName,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param height Specifies an exact height dimension for the image, in pixels.
-	 * @param max Specifies a pixel limitation for the largest side of an image.
-	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
-	 * @param width Specifies an exact width dimension for the image, in pixels.
+	 * @param crop 
+	 * @param documentListName 
+	 * @param documentName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream
 	 * @see Stream
@@ -176,8 +176,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -192,8 +192,8 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	CountDownLatch latch = documenttree.getTreeDocument( documentListName,  documentName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -209,9 +209,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	Document document = documenttree.getTreeDocument( documentListName,  documentName,  includeInactive,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param includeInactive Include inactive content.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -231,9 +231,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	CountDownLatch latch = documenttree.getTreeDocument( documentListName,  documentName,  includeInactive,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param includeInactive Include inactive content.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.Document
@@ -253,9 +253,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */
@@ -274,9 +274,9 @@ public class DocumentTreeResource {
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.deleteTreeDocumentContent( stream,  documentListName,  documentName,  contentType);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param documentName The name of the document in the site.
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param documentName The name of the document, which is unique within its folder.
+	 * @param stream Input output stream that delivers information.
 	 * @return 
 	 * @see Stream
 	 */

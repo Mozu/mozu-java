@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage storefront shopping carts as shoppers add and remove items for purchase. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
+ * Use the Carts resource to manage storefront shopping carts as items are added and removed. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
  * </summary>
  */
 public class CartClient {
@@ -31,7 +31,7 @@ public class CartClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -48,7 +48,7 @@ public class CartClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -153,7 +153,7 @@ public class CartClient {
 	 * client.executeRequest();
 	 * CartSummary cartSummary = client.Result();
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartSummary>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -171,7 +171,7 @@ public class CartClient {
 	 * CartSummary cartSummary = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartSummary>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -195,7 +195,7 @@ public class CartClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -213,7 +213,7 @@ public class CartClient {
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -237,7 +237,7 @@ public class CartClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -256,7 +256,7 @@ public class CartClient {
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart

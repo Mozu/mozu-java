@@ -13,18 +13,12 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.VariationOption;
 
-/**
- *	Mozu.ProductRuntime.Contracts.VariationSummary ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariationSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -35,9 +29,6 @@ public class VariationSummary implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
-	 */
 	protected ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
@@ -48,9 +39,6 @@ public class VariationSummary implements Serializable
 		this.inventoryInfo = inventoryInfo;
 	}
 
-	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
-	 */
 	protected List<VariationOption> options;
 	public List<VariationOption> getOptions() {
 		return this.options;

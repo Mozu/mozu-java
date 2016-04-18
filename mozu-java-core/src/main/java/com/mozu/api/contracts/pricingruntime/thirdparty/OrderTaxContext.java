@@ -48,7 +48,7 @@ public class OrderTaxContext implements Serializable
 	}
 
 	/**
-	 * Amount of tax applied to shipping costs for line items in and entire orders.
+	 * Tax amount applied to the shipping costs on the order.
 	 */
 	protected Double shippingTax;
 

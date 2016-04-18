@@ -69,7 +69,7 @@ public class CustomerCheckoutSettingsClient {
 	 * client.executeRequest();
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
@@ -88,7 +88,7 @@ public class CustomerCheckoutSettingsClient {
 	 * CustomerCheckoutSettings customerCheckoutSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param customerCheckoutSettings The properties of the customer checkout settings such as whether shoppers must be logged in.
+	 * @param customerCheckoutSettings All the properties to update in the checkout settings.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings>
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings
 	 * @see com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings

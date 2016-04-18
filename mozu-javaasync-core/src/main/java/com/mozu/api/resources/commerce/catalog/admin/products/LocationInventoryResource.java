@@ -128,7 +128,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -144,7 +144,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.getLocationInventory( productCode,  locationCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
@@ -161,7 +161,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.getLocationInventory( productCode,  locationCode,  responseFields);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.LocationInventory
@@ -182,7 +182,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.getLocationInventory( productCode,  locationCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
@@ -204,7 +204,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -222,7 +222,7 @@ public class LocationInventoryResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -238,9 +238,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.addLocationInventory( locationInventoryList,  productCode,  performUpserts);
 	 * </code></pre></p>
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -260,10 +260,10 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.addLocationInventory( locationInventoryList,  productCode,  performUpserts, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param locationInventoryList Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+	 * @param locationInventoryList Array list of the location inventory definitions associated with the product code specified in the request. For each location, you must define the locationCode value and the stockOnHand value. All other properties in the array are system-supplied and read only.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -282,8 +282,8 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.updateLocationInventory( locationInventoryAdjustments,  productCode);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
+	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -303,9 +303,9 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	CountDownLatch latch = locationinventory.updateLocationInventory( locationInventoryAdjustments,  productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
+	 * @param locationInventoryAdjustments Properties of the inventory adjustments to perform for the specified location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryAdjustment
@@ -324,8 +324,8 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	locationinventory.deleteLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param locationCode The code that identifies the location for which to delete product inventory.
+	 * @param productCode The product code for which to delete a location's inventory.
 	 * @return 
 	 */
 	public void deleteLocationInventory(String productCode, String locationCode) throws Exception

@@ -59,7 +59,7 @@ public class OrderValidationResultResource {
 	 *	OrderValidationResult orderValidationResult = ordervalidationresult.addValidationResult( validationResult,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
@@ -77,7 +77,7 @@ public class OrderValidationResultResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult

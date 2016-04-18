@@ -34,7 +34,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Indicates if the facet is currently valid.
+	 * If true, the estimated shipping rate is valid.
 	 */
 	protected Boolean isValid;
 
@@ -47,7 +47,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
+	 * Array list of validation messages associated with the shipping rate.
 	 */
 	protected List<String> messages;
 	public List<String> getMessages() {
@@ -71,7 +71,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.
+	 * The code that identifies the service type shipping method, such as FED_EX_INTERNATIONAL.
 	 */
 	protected String shippingMethodCode;
 
@@ -84,7 +84,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
+	 * The name of the shipping method associated with the estimated rate, such as "UPS Ground".
 	 */
 	protected String shippingMethodName;
 
@@ -96,9 +96,6 @@ public class ShippingRate implements Serializable
 		this.shippingMethodName = shippingMethodName;
 	}
 
-	/**
-	 * The shipping zone to which this rate applies.
-	 */
 	protected String shippingZoneCode;
 
 	public String getShippingZoneCode() {
@@ -109,9 +106,6 @@ public class ShippingRate implements Serializable
 		this.shippingZoneCode = shippingZoneCode;
 	}
 
-	/**
-	 * Custom data returned by the shipping service.
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

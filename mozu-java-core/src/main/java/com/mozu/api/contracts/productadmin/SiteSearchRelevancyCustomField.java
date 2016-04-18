@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Properties for setting custom field site search keyword relevancy settings. Relevancy determines the calculated matched of entered search strings against keywords. The relevancy weight can determine the order of importance for matching a search term such as categories before or after product names.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteSearchRelevancyCustomField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Name of the field.
-	 */
 	protected String fieldName;
 
 	public String getFieldName() {
@@ -32,9 +26,6 @@ public class SiteSearchRelevancyCustomField implements Serializable
 		this.fieldName = fieldName;
 	}
 
-	/**
-	 * Relative weight of the field for relevancy purposes.
-	 */
 	protected Integer fieldWeight;
 
 	public Integer getFieldWeight() {

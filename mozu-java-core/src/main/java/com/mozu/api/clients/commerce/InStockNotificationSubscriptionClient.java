@@ -73,7 +73,7 @@ public class InStockNotificationSubscriptionClient {
 	 * client.executeRequest();
 	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 */
@@ -90,7 +90,7 @@ public class InStockNotificationSubscriptionClient {
 	 * client.executeRequest();
 	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -115,7 +115,7 @@ public class InStockNotificationSubscriptionClient {
 	 * client.executeRequest();
 	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
 	 * </code></pre></p>
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -134,7 +134,7 @@ public class InStockNotificationSubscriptionClient {
 	 * InStockNotificationSubscription inStockNotificationSubscription = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.InStockNotificationSubscription>
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -159,7 +159,7 @@ public class InStockNotificationSubscriptionClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer in-stock notification subscription to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteInStockNotificationSubscriptionClient(Integer id) throws Exception

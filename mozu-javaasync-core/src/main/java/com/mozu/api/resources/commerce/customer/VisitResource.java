@@ -116,7 +116,7 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.getVisit( visitId);
 	 * </code></pre></p>
-	 * @param visitId Unique identifier of the customer visit to update.
+	 * @param visitId Unique identifier of the customer visit to retrieve.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -131,7 +131,7 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	CountDownLatch latch = visit.getVisit( visitId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param visitId Unique identifier of the customer visit to update.
+	 * @param visitId Unique identifier of the customer visit to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -148,7 +148,7 @@ public class VisitResource {
 	 *	Visit visit = visit.getVisit( visitId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visitId Unique identifier of the customer visit to update.
+	 * @param visitId Unique identifier of the customer visit to retrieve.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 */
@@ -168,7 +168,7 @@ public class VisitResource {
 	 *	CountDownLatch latch = visit.getVisit( visitId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visitId Unique identifier of the customer visit to update.
+	 * @param visitId Unique identifier of the customer visit to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -187,7 +187,7 @@ public class VisitResource {
 	 *	Visit visit = new Visit();
 	 *	Visit visit = visit.addVisit( visit);
 	 * </code></pre></p>
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the visit to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -204,7 +204,7 @@ public class VisitResource {
 	 *	CountDownLatch latch = visit.addVisit( visit, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the visit to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -221,7 +221,7 @@ public class VisitResource {
 	 *	Visit visit = visit.addVisit( visit,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the visit to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -243,7 +243,7 @@ public class VisitResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the visit to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -263,7 +263,7 @@ public class VisitResource {
 	 *	Visit visit = visit.updateVisit( visit,  visitId);
 	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -281,7 +281,7 @@ public class VisitResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param visitId Unique identifier of the customer visit to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -299,7 +299,7 @@ public class VisitResource {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param visitId Unique identifier of the customer visit to update.
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
@@ -322,7 +322,7 @@ public class VisitResource {
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param visitId Unique identifier of the customer visit to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param visit Properties of a customer visit to one of a company's sites.
+	 * @param visit Properties of the customer visit to update.
 	 * @return com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit
 	 * @see com.mozu.api.contracts.customer.Visit

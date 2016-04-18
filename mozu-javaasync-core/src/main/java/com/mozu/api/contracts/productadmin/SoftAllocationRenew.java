@@ -11,18 +11,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocationRenew implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The UTC DateTime these allocations will expire
-	 */
 	protected DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
@@ -33,9 +27,6 @@ public class SoftAllocationRenew implements Serializable
 		this.expiresAt = expiresAt;
 	}
 
-	/**
-	 * The allocation IDs to renew
-	 */
 	protected List<Integer> ids;
 	public List<Integer> getIds() {
 		return this.ids;

@@ -16,22 +16,22 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Provides settings and options for displaying associated content within a context level of site, tenant, catalog, or master catalog. ListViews can be associated with entity lists and entities.
+ * 
  * </summary>
  */
 public class ListViewClient {
 	
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -41,17 +41,17 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetViewEntityClient( entityListFullName,  viewName,  entityId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -68,15 +68,15 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient=GetViewEntitiesClient( entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -86,19 +86,19 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityCollection> mozuClient=GetViewEntitiesClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -115,16 +115,16 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> mozuClient=GetViewEntityContainerClient( entityListFullName,  viewName,  entityId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -134,17 +134,17 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityContainer> mozuClient=GetViewEntityContainerClient( entityListFullName,  viewName,  entityId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -161,15 +161,15 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> mozuClient=GetViewEntityContainersClient( entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -179,19 +179,19 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.EntityContainerCollection> mozuClient=GetViewEntityContainersClient( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -208,15 +208,15 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=GetEntityListViewClient( entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -226,16 +226,16 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=GetEntityListViewClient( entityListFullName,  viewName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -252,14 +252,14 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> mozuClient=GetEntityListViewsClient( entityListFullName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListViewCollection listViewCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListViewCollection>
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -269,14 +269,14 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListViewCollection> mozuClient=GetEntityListViewsClient( entityListFullName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListViewCollection listViewCollection = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListViewCollection>
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
@@ -294,15 +294,15 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=CreateEntityListViewClient( listView,  entityListFullName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -313,16 +313,16 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=CreateEntityListViewClient( listView,  entityListFullName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -341,16 +341,16 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=UpdateEntityListViewClient( listView,  entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param viewName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -361,17 +361,17 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.mzdb.ListView> mozuClient=UpdateEntityListViewClient( listView,  entityListFullName,  viewName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param viewName 
+	 * @param listView 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -390,14 +390,14 @@ public class ListViewClient {
 	}
 
 	/**
-	 * Deletes an entity list view. Any associated entities have the association removed.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteEntityListViewClient( entityListFullName,  viewName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteEntityListViewClient(String entityListFullName, String viewName) throws Exception

@@ -21,58 +21,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
-	 */
-	protected Boolean excluded;
-
-	public Boolean getExcluded() {
-		return this.excluded;
-	}
-
-	public void setExcluded(Boolean excluded) {
-		this.excluded = excluded;
-	}
-
-	/**
-	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
-	 */
-	protected Double impact;
-
-	public Double getImpact() {
-		return this.impact;
-	}
-
-	public void setImpact(Double impact) {
-		this.impact = impact;
-	}
-
-	/**
-	 * The impact of a discount for each discount quantity. 
-	 */
-	protected Double impactPerUnit;
-
-	public Double getImpactPerUnit() {
-		return this.impactPerUnit;
-	}
-
-	public void setImpactPerUnit(Double impactPerUnit) {
-		this.impactPerUnit = impactPerUnit;
-	}
-
-	/**
-	 * Quantity of products priced. This is always one unless calculating pricing on the order or cart.
-	 */
-	protected Integer productQuantity;
-
-	public Integer getProductQuantity() {
-		return this.productQuantity;
-	}
-
-	public void setProductQuantity(Integer productQuantity) {
-		this.productQuantity = productQuantity;
-	}
-
-	/**
 	 * Determines if the discount applies to the sale price of the order.
 	 */
 	protected Boolean appliesToSalePrice;
@@ -111,8 +59,54 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.discountQuantity = discountQuantity;
 	}
 
+	protected Boolean excluded;
+
+	public Boolean getExcluded() {
+		return this.excluded;
+	}
+
+	public void setExcluded(Boolean excluded) {
+		this.excluded = excluded;
+	}
+
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * The value of the applied discount. This is a negative number, which is subtracted from the original price to get the final price.
+	 */
+	protected Double impact;
+
+	public Double getImpact() {
+		return this.impact;
+	}
+
+	public void setImpact(Double impact) {
+		this.impact = impact;
+	}
+
+	/**
+	 * The impact of this discount for each discount quantity.
+	 */
+	protected Double impactPerUnit;
+
+	public Double getImpactPerUnit() {
+		return this.impactPerUnit;
+	}
+
+	public void setImpactPerUnit(Double impactPerUnit) {
+		this.impactPerUnit = impactPerUnit;
+	}
+
+	protected Integer productQuantity;
+
+	public Integer getProductQuantity() {
+		return this.productQuantity;
+	}
+
+	public void setProductQuantity(Integer productQuantity) {
+		this.productQuantity = productQuantity;
+	}
+
+	/**
+	 * This describes discounts that apply to the order, if any. For example, when the subtotal of the order exceeds a certain amount, or a discount for free shipping.
 	 */
 	protected Discount discount;
 

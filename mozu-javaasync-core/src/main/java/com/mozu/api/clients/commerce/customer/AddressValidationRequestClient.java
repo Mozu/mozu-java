@@ -31,7 +31,7 @@ public class AddressValidationRequestClient {
 	 * client.executeRequest();
 	 * AddressValidationResponse addressValidationResponse = client.Result();
 	 * </code></pre></p>
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.AddressValidationResponse>
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
@@ -50,7 +50,7 @@ public class AddressValidationRequestClient {
 	 * AddressValidationResponse addressValidationResponse = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.AddressValidationResponse>
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest

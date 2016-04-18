@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Search resource manages all settings and options for providing product search on your site.
+ * 
  * </summary>
  */
 public class SearchResource {
@@ -36,12 +36,12 @@ public class SearchResource {
 
 	
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param searchTuningRuleCode 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -51,12 +51,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -67,13 +67,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.getSearchTuningRule( searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 */
@@ -87,13 +87,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves the details of the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRule( searchTuningRuleCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -107,7 +107,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules();
@@ -121,7 +121,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( callback );
@@ -136,16 +136,16 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleCollection searchTuningRuleCollection = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 */
@@ -159,16 +159,16 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRules description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRules( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleCollection
@@ -182,7 +182,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields();
@@ -196,7 +196,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( callback );
@@ -211,12 +211,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.getSearchTuningRuleSortFields( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 */
@@ -230,12 +230,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Get GetSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSearchTuningRuleSortFields( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -249,7 +249,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings();
@@ -263,7 +263,7 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSettings( callback );
@@ -278,12 +278,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.getSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 */
@@ -297,12 +297,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Get site search settings
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.getSettings( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -316,83 +316,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode);
-	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(String localeCode) throws Exception
-	{
-		return getSynonymDefinitionCollection( localeCode,  null);
-	}
-
-	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSynonymDefinitionCollection( localeCode, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public CountDownLatch getSynonymDefinitionCollectionAsync(String localeCode, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
-	{
-		return getSynonymDefinitionCollectionAsync( localeCode,  null, callback);
-	}
-
-	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.getSynonymDefinitionCollection( localeCode,  responseFields);
-	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(String localeCode, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSynonymDefinitionCollectionClient( localeCode,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Retrieves a collection of synonyms definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.getSynonymDefinitionCollection( localeCode,  responseFields, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param  callback callback handler for asynchronous operations
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public CountDownLatch getSynonymDefinitionCollectionAsync(String localeCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.getSynonymDefinitionCollectionClient( localeCode,  responseFields);
-		client.setContext(_apiContext);
-		return client.executeRequest(callback);
-
-	}
-
-	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -403,13 +332,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -420,13 +349,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.addSearchTuningRule( searchTuningRuleIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -441,14 +370,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.addSearchTuningRule( searchTuningRuleIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -462,12 +391,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
 	 * </code></pre></p>
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -478,13 +407,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -495,13 +424,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRuleSortFields searchTuningRuleSortFields = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -516,14 +445,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Post UpdateSearchTuningRuleSortFields description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleSortFieldsIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleSortFieldsIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRuleSortFields
@@ -537,92 +466,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode);
-	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param collection Collection of synonym definitions used for determining search results.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode) throws Exception
-	{
-		return updateSynonymDefinitionCollection( collection,  localeCode,  null);
-	}
-
-	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.updateSynonymDefinitionCollection( collection,  localeCode, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param  callback callback handler for asynchronous operations
-	 * @param collection Collection of synonym definitions used for determining search results.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public CountDownLatch updateSynonymDefinitionCollectionAsync(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
-	{
-		return updateSynonymDefinitionCollectionAsync( collection,  localeCode,  null, callback);
-	}
-
-	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	SynonymDefinitionCollection synonymDefinitionCollection = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields);
-	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param collection Collection of synonym definitions used for determining search results.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
-	}
-
-	/**
-	 * Updates synonym definitions for product searches. Synonyms aid with determining matches for entered searches.
-	 * <p><pre><code>
-	 *	Search search = new Search();
-	 *	CountDownLatch latch = search.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields, callback );
-	 *	latch.await()	 * </code></pre></p>
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param  callback callback handler for asynchronous operations
-	 * @param collection Collection of synonym definitions used for determining search results.
-	 * @return com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection
-	 */
-	public CountDownLatch updateSynonymDefinitionCollectionAsync(com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> callback) throws Exception
-	{
-		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection> client = com.mozu.api.clients.commerce.catalog.admin.SearchClient.updateSynonymDefinitionCollectionClient( collection,  localeCode,  responseFields);
-		client.setContext(_apiContext);
-		return client.executeRequest(callback);
-
-	}
-
-	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -633,14 +483,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -651,14 +501,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchTuningRule searchTuningRule = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -673,15 +523,15 @@ public class SearchResource {
 	}
 
 	/**
-	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSearchTuningRule( searchTuningRuleIn,  searchTuningRuleCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param responseFields 
+	 * @param searchTuningRuleCode 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param searchTuningRuleIn Mozu.ProductAdmin.Contracts.Search.SearchTuningRule ApiType DOCUMENT_HERE 
+	 * @param searchTuningRuleIn 
 	 * @return com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
 	 * @see com.mozu.api.contracts.productadmin.search.SearchTuningRule
@@ -695,12 +545,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings);
 	 * </code></pre></p>
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -711,13 +561,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSettings( settings, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -728,13 +578,13 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	SearchSettings searchSettings = search.updateSettings( settings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param responseFields 
+	 * @param settings 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -749,14 +599,14 @@ public class SearchResource {
 	}
 
 	/**
-	 * Adds or Updates (Upsert) the Search Settings for a specific site
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	CountDownLatch latch = search.updateSettings( settings,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param settings The settings to control product search and indexing behavior.
+	 * @param settings 
 	 * @return com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
 	 * @see com.mozu.api.contracts.productadmin.SearchSettings
@@ -770,12 +620,12 @@ public class SearchResource {
 	}
 
 	/**
-	 * Deletes the specified search tuning rule.
+	 * 
 	 * <p><pre><code>
 	 *	Search search = new Search();
 	 *	search.deleteSearchTuningRule( searchTuningRuleCode);
 	 * </code></pre></p>
-	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
+	 * @param searchTuningRuleCode 
 	 * @return 
 	 */
 	public void deleteSearchTuningRule(String searchTuningRuleCode) throws Exception

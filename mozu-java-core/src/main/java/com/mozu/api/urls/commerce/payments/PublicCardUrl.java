@@ -25,7 +25,7 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Update
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateUrl(String cardId)
@@ -37,7 +37,7 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Delete
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteUrl(String cardId)

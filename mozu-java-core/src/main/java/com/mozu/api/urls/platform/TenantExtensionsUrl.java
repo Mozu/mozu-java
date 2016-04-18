@@ -15,7 +15,7 @@ public class TenantExtensionsUrl
 
 	/**
 	 * Get Resource Url for GetExtensions
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getExtensionsUrl(String responseFields)
@@ -27,7 +27,7 @@ public class TenantExtensionsUrl
 
 	/**
 	 * Get Resource Url for UpdateExtensions
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateExtensionsUrl(String responseFields)

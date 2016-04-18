@@ -92,7 +92,7 @@ public class LocationTypeResource {
 	 *	LocationType locationtype = new LocationType();
 	 *	LocationType locationType = locationtype.addLocationType( locationType);
 	 * </code></pre></p>
-	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
+	 * @param locationType Properties of the location type to create.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -109,7 +109,7 @@ public class LocationTypeResource {
 	 *	LocationType locationType = locationtype.addLocationType( locationType,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
+	 * @param locationType Properties of the location type to create.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -130,7 +130,7 @@ public class LocationTypeResource {
 	 *	LocationType locationType = locationtype.updateLocationType( locationType,  locationTypeCode);
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
-	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
+	 * @param locationType Properties of the location type to update.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -148,7 +148,7 @@ public class LocationTypeResource {
 	 * </code></pre></p>
 	 * @param locationTypeCode The user-defined code that identifies the location type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param locationType Properties of a type of physical location, such as warehouse or kiosk. Location types enable tenants to group similar locations for filtering and location usage type definition.
+	 * @param locationType Properties of the location type to update.
 	 * @return com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
 	 * @see com.mozu.api.contracts.location.LocationType
@@ -168,7 +168,7 @@ public class LocationTypeResource {
 	 *	LocationType locationtype = new LocationType();
 	 *	locationtype.deleteLocationType( locationTypeCode);
 	 * </code></pre></p>
-	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationTypeCode User-defined code used to identify the location type.
 	 * @return 
 	 */
 	public void deleteLocationType(String locationTypeCode) throws Exception

@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.LocationInventory;
 
 /**
- *	Array list of inventory definitions that manage the stock level of products at a given location.
+ *	Paged collection of product inventory information by location.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationInventoryCollection implements Serializable

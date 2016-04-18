@@ -9,5 +9,5 @@ package com.mozu.api;
 
 public class Version
 {
-	public final static String API_VERSION = "1.1611.16081.0";
+	public final static String API_VERSION = "1.1613.16109.0";
 }

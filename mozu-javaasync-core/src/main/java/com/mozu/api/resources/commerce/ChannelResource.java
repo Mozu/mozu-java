@@ -116,7 +116,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.getChannel( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 */
@@ -131,7 +131,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	CountDownLatch latch = channel.getChannel( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -147,7 +147,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.getChannel( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -167,7 +167,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	CountDownLatch latch = channel.getChannel( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -187,7 +187,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.createChannel( channel);
 	 * </code></pre></p>
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -204,7 +204,7 @@ public class ChannelResource {
 	 *	CountDownLatch latch = channel.createChannel( channel, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -221,7 +221,7 @@ public class ChannelResource {
 	 *	Channel channel = channel.createChannel( channel,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -243,7 +243,7 @@ public class ChannelResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of the channel to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -262,8 +262,8 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.updateChannel( channel,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param code User-defined code that identifies the channel to update.
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -279,9 +279,9 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	CountDownLatch latch = channel.updateChannel( channel,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -297,9 +297,9 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	Channel channel = channel.updateChannel( channel,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -319,10 +319,10 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	CountDownLatch latch = channel.updateChannel( channel,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channel Properties of a channel used to divide a company into logical business divisions, such as "US Retail," "US Online," or "Amazon." All sites and orders are associated with a channel.
+	 * @param channel Properties of a the channel to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
 	 * @see com.mozu.api.contracts.commerceruntime.channels.Channel
@@ -341,7 +341,7 @@ public class ChannelResource {
 	 *	Channel channel = new Channel();
 	 *	channel.deleteChannel( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the channel to delete.
 	 * @return 
 	 */
 	public void deleteChannel(String code) throws Exception

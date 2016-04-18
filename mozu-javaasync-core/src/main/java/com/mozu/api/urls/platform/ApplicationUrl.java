@@ -15,8 +15,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetAppPackageNames
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAppPackageNamesUrl(String applicationKey, String responseFields)
@@ -29,8 +29,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetAppVersions
-	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param nsAndAppId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAppVersionsUrl(String nsAndAppId, String responseFields)
@@ -43,9 +43,9 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetPackageFileMetadata
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageFileMetadataUrl(String applicationKey, String filepath, String responseFields)
@@ -59,8 +59,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for GetPackageMetadata
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPackageMetadataUrl(String applicationKey, String responseFields)
@@ -73,10 +73,10 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for UpsertPackageFile
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param lastModifiedTime 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl upsertPackageFileUrl(String applicationKey, String filepath, String lastModifiedTime, String responseFields)
@@ -91,8 +91,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for RenamePackageFile
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl renamePackageFileUrl(String applicationKey, String responseFields)
@@ -105,8 +105,8 @@ public class ApplicationUrl
 
 	/**
 	 * Get Resource Url for DeletePackageFile
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
+	 * @param applicationKey 
+	 * @param filepath 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePackageFileUrl(String applicationKey, String filepath)

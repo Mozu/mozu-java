@@ -11,18 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.appdev.AppVersion;
 
-/**
- *	Mozu.AppDev.Contracts.ApplicationSummary ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
-	 */
 	protected String appId;
 
 	public String getAppId() {
@@ -33,9 +27,6 @@ public class ApplicationSummary implements Serializable
 		this.appId = appId;
 	}
 
-	/**
-	 * The AppKey is a runtime type.
-	 */
 	protected String appKey;
 
 	public String getAppKey() {
@@ -46,9 +37,6 @@ public class ApplicationSummary implements Serializable
 		this.appKey = appKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -59,9 +47,6 @@ public class ApplicationSummary implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationNamespace ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String applicationNamespace;
 
 	public String getApplicationNamespace() {
@@ -72,9 +57,6 @@ public class ApplicationSummary implements Serializable
 		this.applicationNamespace = applicationNamespace;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer applicationStatusId;
 
 	public Integer getApplicationStatusId() {
@@ -85,9 +67,6 @@ public class ApplicationSummary implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationStatusName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String applicationStatusName;
 
 	public String getApplicationStatusName() {
@@ -98,9 +77,6 @@ public class ApplicationSummary implements Serializable
 		this.applicationStatusName = applicationStatusName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
@@ -111,9 +87,6 @@ public class ApplicationSummary implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary appSchemeVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Byte appSchemeVersion;
 
 	public Byte getAppSchemeVersion() {
@@ -124,9 +97,6 @@ public class ApplicationSummary implements Serializable
 		this.appSchemeVersion = appSchemeVersion;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary hasVersions ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean hasVersions;
 
 	public Boolean getHasVersions() {
@@ -137,9 +107,6 @@ public class ApplicationSummary implements Serializable
 		this.hasVersions = hasVersions;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -150,9 +117,6 @@ public class ApplicationSummary implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The AppKey is a runtime type. This only applies for themes that inherit from another theme.
-	 */
 	protected String parentAppKey;
 
 	public String getParentAppKey() {
@@ -163,9 +127,6 @@ public class ApplicationSummary implements Serializable
 		this.parentAppKey = parentAppKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary parentName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String parentName;
 
 	public String getParentName() {
@@ -176,9 +137,6 @@ public class ApplicationSummary implements Serializable
 		this.parentName = parentName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer releasePackageId;
 
 	public Integer getReleasePackageId() {
@@ -189,9 +147,6 @@ public class ApplicationSummary implements Serializable
 		this.releasePackageId = releasePackageId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary releasePackageName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String releasePackageName;
 
 	public String getReleasePackageName() {
@@ -202,9 +157,6 @@ public class ApplicationSummary implements Serializable
 		this.releasePackageName = releasePackageName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary updateAvailable ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean updateAvailable;
 
 	public Boolean getUpdateAvailable() {
@@ -215,9 +167,6 @@ public class ApplicationSummary implements Serializable
 		this.updateAvailable = updateAvailable;
 	}
 
-	/**
-	 * The AppKey is a runtime type. This only applies for themes that inherit from another theme. It shows the most current update available.
-	 */
 	protected String updateParentAppKey;
 
 	public String getUpdateParentAppKey() {
@@ -228,9 +177,6 @@ public class ApplicationSummary implements Serializable
 		this.updateParentAppKey = updateParentAppKey;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationSummary applicationVersion ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected AppVersion applicationVersion;
 
 	public AppVersion getApplicationVersion() {

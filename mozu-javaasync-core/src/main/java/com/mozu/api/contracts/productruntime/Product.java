@@ -25,7 +25,7 @@ import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 import com.mozu.api.contracts.productruntime.VariationSummary;
 
 /**
- *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+ *	Properties of the product that appears on a designated storefront.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product implements Serializable
@@ -33,9 +33,6 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogEndDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime catalogEndDate;
 
 	public DateTime getCatalogEndDate() {
@@ -46,9 +43,6 @@ public class Product implements Serializable
 		this.catalogEndDate = catalogEndDate;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogStartDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime catalogStartDate;
 
 	public DateTime getCatalogStartDate() {
@@ -72,9 +66,6 @@ public class Product implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.Product dateFirstAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
@@ -85,9 +76,6 @@ public class Product implements Serializable
 		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.Product daysAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer daysAvailableInCatalog;
 
 	public Integer getDaysAvailableInCatalog() {
@@ -99,7 +87,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * The list of fulfillment types the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -109,9 +97,6 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
-	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
-	 */
 	protected String goodsType;
 
 	public String getGoodsType() {
@@ -123,7 +108,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
 	 */
 	protected Boolean isActive;
 
@@ -136,7 +121,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
 	 */
 	protected Boolean isPackagedStandAlone;
 
@@ -149,7 +134,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
 	protected Boolean isRecurring;
 
@@ -162,7 +147,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 * If true, the entity is subject to tax based on the relevant tax rate.
 	 */
 	protected Boolean isTaxable;
 
@@ -175,7 +160,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The manufacturer's part number for the product.
+	 * The manufacturer part number defined for the product.
 	 */
 	protected String mfgPartNumber;
 
@@ -225,7 +210,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The product type template associated with the product on the storefront.
+	 * A product type is like a product template that can be reused.
 	 */
 	protected String productType;
 
@@ -237,9 +222,6 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.Product productTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer productTypeId;
 
 	public Integer getProductTypeId() {
@@ -264,7 +246,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The current state of the document or product definition. States for documents include Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft. States for product include New, Draft, or Live.
+	 * The publishing state of the product definition in the master catalog, which is "New", "Draft", or "Live".
 	 */
 	protected String publishState;
 
@@ -277,7 +259,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
 	protected String upc;
 
@@ -301,7 +283,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
+	 * Product code that represents the product variation selected based on the option values the shopper entered.
 	 */
 	protected String variationProductCode;
 
@@ -314,7 +296,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of shipping discounts that can be applied to the configured product. These discounts are calculated and updated as shoppers add content to their cart and continue checkout steps to order submission.
+	 * List of shipping discounts that can be applied to the product.
 	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
@@ -325,7 +307,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
+	 * Properties of a collection of component products that make up a single product bundle with its own product code.
 	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
@@ -336,7 +318,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
+	 * List of categories associated with the product.
 	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
@@ -360,7 +342,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
+	 * Array of active inventory level information associated with the product.
 	 */
 	protected ProductInventoryInfo inventoryInfo;
 
@@ -386,7 +368,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * The list of options set up in product admin.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
@@ -423,7 +405,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Properties that describe the behavior the system uses when determining the price of products.
+	 * Describes the behavior the system uses when determining the price of the product.
 	 */
 	protected ProductPricingBehaviorInfo pricingBehavior;
 
@@ -436,7 +418,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * The list of product property attributes defined for the product.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
@@ -459,9 +441,6 @@ public class Product implements Serializable
 		this.purchasableState = purchasableState;
 	}
 
-	/**
-	 * A summary of all variations that exist for the product.
-	 */
 	protected List<VariationSummary> variations;
 	public List<VariationSummary> getVariations() {
 		return this.variations;

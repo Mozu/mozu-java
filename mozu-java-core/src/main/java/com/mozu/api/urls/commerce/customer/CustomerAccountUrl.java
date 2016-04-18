@@ -19,7 +19,7 @@ public class CustomerAccountUrl
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
 	 * @param pageSize 
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -57,7 +57,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetAccount
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -83,7 +83,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePassword
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The customer account information required to change the userpassword.
 	 * @param unlockAccount 
 	 * @return   String Resource Url
 	 */
@@ -111,7 +111,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for RecomputeCustomerLifetimeValue
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl recomputeCustomerLifetimeValueUrl(Integer accountId)
@@ -123,7 +123,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetLoginLocked
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setLoginLockedUrl(Integer accountId)
@@ -171,7 +171,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePasswords
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordsUrl(String responseFields)
@@ -235,7 +235,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for DeleteAccount
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountUrl(Integer accountId)

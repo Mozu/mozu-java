@@ -22,9 +22,6 @@ public class SearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Settings of keys and values for synonyms in search results.
-	 */
 	protected SearchSynonymSettings searchSynonymSettings;
 
 	public SearchSynonymSettings getSearchSynonymSettings() {
@@ -35,9 +32,6 @@ public class SearchSettings implements Serializable
 		this.searchSynonymSettings = searchSynonymSettings;
 	}
 
-	/**
-	 * Settings for searches performed at the site level.
-	 */
 	protected List<SiteSearchSettings> siteSearchSettings;
 	public List<SiteSearchSettings> getSiteSearchSettings() {
 		return this.siteSearchSettings;

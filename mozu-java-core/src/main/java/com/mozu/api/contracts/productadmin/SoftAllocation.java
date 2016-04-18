@@ -11,18 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.SoftAllocation ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocation implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The UTC DateTime this allocation will expire
-	 */
 	protected DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
@@ -33,9 +27,6 @@ public class SoftAllocation implements Serializable
 		this.expiresAt = expiresAt;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -46,9 +37,6 @@ public class SoftAllocation implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
-	 */
 	protected String locationCode;
 
 	public String getLocationCode() {
@@ -59,9 +47,6 @@ public class SoftAllocation implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -72,9 +57,6 @@ public class SoftAllocation implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {
@@ -85,9 +67,6 @@ public class SoftAllocation implements Serializable
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Entity RefrenceID this allocation is linked to.
-	 */
 	protected String referenceId;
 
 	public String getReferenceId() {
@@ -98,9 +77,6 @@ public class SoftAllocation implements Serializable
 		this.referenceId = referenceId;
 	}
 
-	/**
-	 * item Id of the RefrenceID.
-	 */
 	protected String referenceItemId;
 
 	public String getReferenceItemId() {
@@ -111,9 +87,6 @@ public class SoftAllocation implements Serializable
 		this.referenceItemId = referenceItemId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

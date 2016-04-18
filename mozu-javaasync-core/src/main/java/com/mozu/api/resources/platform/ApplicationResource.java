@@ -19,7 +19,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/developer related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class ApplicationResource {
@@ -40,12 +40,12 @@ public ApplicationResource(ApiContext apiContext)
 
 	
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
 	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -55,12 +55,12 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppPackageNames( applicationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
@@ -71,13 +71,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	PackageNamesCollection packageNamesCollection = application.getAppPackageNames( applicationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -91,13 +91,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppPackageNames( applicationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.PackageNamesCollection
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
@@ -111,12 +111,12 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId);
 	 * </code></pre></p>
-	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param nsAndAppId 
 	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -126,12 +126,12 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppVersions( nsAndAppId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param nsAndAppId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
@@ -142,13 +142,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	ApplicationVersionsCollection applicationVersionsCollection = application.getAppVersions( nsAndAppId,  responseFields);
 	 * </code></pre></p>
-	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param nsAndAppId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -162,13 +162,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getAppVersions( nsAndAppId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param nsAndAppId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
@@ -182,13 +182,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
+	 * @param applicationKey 
+	 * @param filepath 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -198,13 +198,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageFileMetadata( applicationKey,  filepath, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
+	 * @param applicationKey 
+	 * @param filepath 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -215,14 +215,14 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -236,14 +236,14 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageFileMetadata( applicationKey,  filepath,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -257,12 +257,12 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
 	 * @return com.mozu.api.contracts.appdev.FolderMetadata
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -272,12 +272,12 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageMetadata( applicationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.FolderMetadata
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
@@ -288,13 +288,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FolderMetadata folderMetadata = application.getPackageMetadata( applicationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.appdev.FolderMetadata
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -308,13 +308,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.getPackageMetadata( applicationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.appdev.FolderMetadata
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
@@ -328,14 +328,14 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param stream 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -346,15 +346,15 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.upsertPackageFile( stream,  applicationKey,  filepath,  contentType, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
+	 * @param filepath 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param stream 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -365,16 +365,16 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param lastModifiedTime 
+	 * @param responseFields 
+	 * @param stream 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -389,17 +389,17 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.upsertPackageFile( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param filepath 
+	 * @param lastModifiedTime 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param stream 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see Stream
@@ -413,13 +413,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
+	 * @param applicationKey 
+	 * @param renameInfo 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -430,14 +430,14 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.renamePackageFile( renameInfo,  applicationKey, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
+	 * @param applicationKey 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
+	 * @param renameInfo 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -448,14 +448,14 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	FileMetadata fileMetadata = application.renamePackageFile( renameInfo,  applicationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
-	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
+	 * @param applicationKey 
+	 * @param responseFields 
+	 * @param renameInfo 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -470,15 +470,15 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	CountDownLatch latch = application.renamePackageFile( renameInfo,  applicationKey,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param applicationKey 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
+	 * @param renameInfo 
 	 * @return com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 * @see com.mozu.api.contracts.appdev.RenameInfo
@@ -492,13 +492,13 @@ public ApplicationResource(ApiContext apiContext)
 	}
 
 	/**
-	 * platform-developer Delete DeletePackageFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Application application = new Application();
 	 *	application.deletePackageFile( applicationKey,  filepath);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param filepath Represents the file name and location.
+	 * @param applicationKey 
+	 * @param filepath 
 	 * @return 
 	 */
 	public void deletePackageFile(String applicationKey, String filepath) throws Exception

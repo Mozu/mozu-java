@@ -33,7 +33,7 @@ public class UserAuthInfo implements Serializable
 	}
 
 	/**
-	 * The saved password for the customer account. 
+	 * Password of the user.
 	 */
 	protected String password;
 

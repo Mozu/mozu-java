@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Validates the attribute configured for the customer in the storefront against the attribute configured in .
+ *	Validates the attribute configured for the product in the storefront against the attribute configured in product admin.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable
@@ -20,7 +20,7 @@ public class AttributeValidation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The maximum date allowed including month, day, and year. System-supplied and read-only.
+	 * System-supplied and read-only.
 	 */
 	protected DateTime maxDateValue;
 
@@ -33,7 +33,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The maximum number that can be entered as a value for an extensible attribute.
+	 * The maximum number of characters for the numeric length.
 	 */
 	protected double maxNumericValue;
 
@@ -46,7 +46,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The maximum character length possible for a string value entered for an extensible attribute.
+	 * The maximum number of characters for the string length.
 	 */
 	protected Integer maxStringLength;
 
@@ -59,7 +59,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The minimum date allowed including month, day, and year. System-supplied and read-only.
+	 * System-supplied and read-only.
 	 */
 	protected DateTime minDateValue;
 
@@ -72,7 +72,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The minimum numeric value required to validate an extensible attribute.
+	 * The minimum number of characters for the numeric length.
 	 */
 	protected double minNumericValue;
 
@@ -85,7 +85,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The minimum character length possible for a string value entered for an extensible attribute.
+	 * The minimum character length of the string.
 	 */
 	protected Integer minStringLength;
 
@@ -98,7 +98,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
+	 * Regular expression used to process attribute values that require special formatting such as phone numbers.
 	 */
 	protected String regularExpression;
 

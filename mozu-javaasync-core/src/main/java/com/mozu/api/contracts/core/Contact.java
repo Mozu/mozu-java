@@ -61,7 +61,7 @@ public class Contact implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the contact.
 	 */
 	protected Integer id;
 
@@ -100,7 +100,7 @@ public class Contact implements Serializable
 	}
 
 	/**
-	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
+	 * Address information for the contact.
 	 */
 	protected Address address;
 
@@ -113,7 +113,7 @@ public class Contact implements Serializable
 	}
 
 	/**
-	 * List of phone numbers associated with the customer account contact. The phone numbers include area codes.
+	 * List of phone numbers associated with the customer account contact.
 	 */
 	protected Phone phoneNumbers;
 

@@ -20,7 +20,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Document List Types resource to manage the types of document lists in your site's document hierarchy. The type denotes a content type for that list of folders, sub-folders, and documents such as `web_pages`.
+ * 
  * </summary>
  */
 public class DocumentListTypeResource {
@@ -44,12 +44,12 @@ public class DocumentListTypeResource {
 	}
 		
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
 	 * </code></pre></p>
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -60,13 +60,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -77,13 +77,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -98,14 +98,14 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.createDocumentListType( list,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -119,13 +119,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -136,14 +136,14 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.updateDocumentListType( list,  documentListTypeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -154,14 +154,14 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -176,7 +176,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	CountDownLatch latch = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields, callback );
@@ -184,7 +184,7 @@ public class DocumentListTypeResource {
 	 * @param documentListTypeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

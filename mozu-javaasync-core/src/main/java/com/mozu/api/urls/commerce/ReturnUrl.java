@@ -35,7 +35,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetAvailableReturnActions
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return for which to retrieve available actions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableReturnActionsUrl(String returnId)
@@ -48,8 +48,8 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetReturnItem
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnItemUrl(String responseFields, String returnId, String returnItemId)
@@ -64,7 +64,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetReturnItems
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnItemsUrl(String responseFields, String returnId)
@@ -78,7 +78,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetAvailablePaymentActionsForReturn
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailablePaymentActionsForReturnUrl(String paymentId, String returnId)
@@ -91,9 +91,9 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetPayment
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param paymentId Unique identifier of the return payment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentUrl(String paymentId, String responseFields, String returnId)
@@ -108,7 +108,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetPayments
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPaymentsUrl(String responseFields, String returnId)
@@ -122,7 +122,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for GetReturn
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReturnUrl(String responseFields, String returnId)
@@ -135,7 +135,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for GetReasons
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getReasonsUrl(String responseFields)
@@ -160,7 +160,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for CreateReturnItem
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createReturnItemUrl(String responseFields, String returnId)
@@ -173,9 +173,9 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for PerformPaymentActionForReturn
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param paymentId Unique identifier of the return payment to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the refund payment.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performPaymentActionForReturnUrl(String paymentId, String responseFields, String returnId)
@@ -190,7 +190,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for CreatePaymentActionForReturn
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment action.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPaymentActionForReturnUrl(String responseFields, String returnId)
@@ -216,7 +216,7 @@ public class ReturnUrl
 	/**
 	 * Get Resource Url for UpdateReturn
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateReturnUrl(String responseFields, String returnId)
@@ -239,8 +239,8 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for DeleteOrderItem
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteOrderItemUrl(String returnId, String returnItemId)
@@ -253,7 +253,7 @@ public class ReturnUrl
 
 	/**
 	 * Get Resource Url for DeleteReturn
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteReturnUrl(String returnId)

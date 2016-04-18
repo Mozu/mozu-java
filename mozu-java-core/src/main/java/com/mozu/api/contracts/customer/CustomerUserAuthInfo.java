@@ -20,7 +20,7 @@ public class CustomerUserAuthInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The saved password for the customer account. 
+	 * The password of the user associated with the customer account.
 	 */
 	protected String password;
 
@@ -33,7 +33,7 @@ public class CustomerUserAuthInfo implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * The user name of the user associated with the customer account.
 	 */
 	protected String username;
 

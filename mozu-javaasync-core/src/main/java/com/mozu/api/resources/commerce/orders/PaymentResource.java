@@ -112,8 +112,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	string string = payment.getAvailablePaymentActions( orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -132,8 +132,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getAvailablePaymentActions( orderId,  paymentId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<string>
 	 * @see string
@@ -152,8 +152,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -168,8 +168,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayment( orderId,  paymentId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -185,8 +185,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Payment payment = payment.getPayment( orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -206,8 +206,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.getPayment( orderId,  paymentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -227,9 +227,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -245,10 +245,10 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.performPaymentAction( action,  orderId,  paymentId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -264,10 +264,10 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -287,11 +287,11 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.performPaymentAction( action,  orderId,  paymentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -310,8 +310,8 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -327,9 +327,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.createPaymentAction( action,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -345,9 +345,9 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	Order order = payment.createPaymentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -367,10 +367,10 @@ public class PaymentResource {
 	 *	Payment payment = new Payment();
 	 *	CountDownLatch latch = payment.createPaymentAction( action,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction

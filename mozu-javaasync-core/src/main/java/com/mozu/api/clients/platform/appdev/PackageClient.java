@@ -18,20 +18,20 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PackageClient {
 	
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetFileClient( applicationKey,  fileName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream

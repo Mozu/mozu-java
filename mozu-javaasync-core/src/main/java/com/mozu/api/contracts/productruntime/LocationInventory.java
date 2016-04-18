@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
+ *	Properties of the active product inventory levels for a specific location.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationInventory implements Serializable
@@ -20,7 +20,7 @@ public class LocationInventory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 * User-defined code that uniquely identifies the location.
 	 */
 	protected String locationCode;
 
@@ -32,9 +32,6 @@ public class LocationInventory implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	/**
-	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
-	 */
 	protected String productCode;
 
 	public String getProductCode() {
@@ -45,9 +42,6 @@ public class LocationInventory implements Serializable
 		this.productCode = productCode;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.LocationInventory softStockAvailable ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer softStockAvailable;
 
 	public Integer getSoftStockAvailable() {
@@ -59,7 +53,7 @@ public class LocationInventory implements Serializable
 	}
 
 	/**
-	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
+	 * The current level of active product stock available at the specified location.
 	 */
 	protected Integer stockAvailable;
 

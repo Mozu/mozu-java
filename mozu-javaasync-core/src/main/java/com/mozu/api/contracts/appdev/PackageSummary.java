@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.AppDev.Contracts.PackageSummary ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Application Name
-	 */
 	protected String applicationName;
 
 	public String getApplicationName() {
@@ -32,9 +26,6 @@ public class PackageSummary implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	/**
-	 * Application Type Id
-	 */
 	protected Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
@@ -45,9 +36,6 @@ public class PackageSummary implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected Integer id;
 
 	public Integer getId() {
@@ -58,9 +46,6 @@ public class PackageSummary implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Application Major Version
-	 */
 	protected Integer majorVersion;
 
 	public Integer getMajorVersion() {
@@ -71,9 +56,6 @@ public class PackageSummary implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	/**
-	 * Application Minor Version
-	 */
 	protected Integer minorVersion;
 
 	public Integer getMinorVersion() {
@@ -84,9 +66,6 @@ public class PackageSummary implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -97,9 +76,6 @@ public class PackageSummary implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Application Revision
-	 */
 	protected Integer revision;
 
 	public Integer getRevision() {

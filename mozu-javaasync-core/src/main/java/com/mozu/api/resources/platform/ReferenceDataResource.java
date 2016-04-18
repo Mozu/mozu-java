@@ -252,7 +252,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -267,7 +267,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -283,7 +283,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -303,7 +303,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
@@ -588,7 +588,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates();
@@ -602,7 +602,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountriesWithStates( callback );
@@ -617,12 +617,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */
@@ -636,12 +636,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountriesWithStates( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection

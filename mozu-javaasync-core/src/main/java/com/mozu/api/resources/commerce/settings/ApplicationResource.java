@@ -108,7 +108,7 @@ public class ApplicationResource {
 	 *	Application application = new Application();
 	 *	Application application = application.thirdPartyUpdateApplication( application);
 	 * </code></pre></p>
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -125,7 +125,7 @@ public class ApplicationResource {
 	 *	CountDownLatch latch = application.thirdPartyUpdateApplication( application, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -142,7 +142,7 @@ public class ApplicationResource {
 	 *	Application application = application.thirdPartyUpdateApplication( application,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -164,7 +164,7 @@ public class ApplicationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

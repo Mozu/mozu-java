@@ -23,14 +23,14 @@ import com.mozu.api.DataViewMode;
 public class PublishingScopeClient {
 	
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -41,15 +41,15 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -67,7 +67,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -84,14 +84,14 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSetCollection publishSetCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSetCollection>
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -116,7 +116,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -141,7 +141,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -159,7 +159,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet);
 	 * client.setBaseAddress(url);
@@ -167,7 +167,7 @@ public class PublishingScopeClient {
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -178,16 +178,16 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -206,13 +206,13 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
@@ -222,14 +222,14 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode,  discardDrafts);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param discardDrafts 
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

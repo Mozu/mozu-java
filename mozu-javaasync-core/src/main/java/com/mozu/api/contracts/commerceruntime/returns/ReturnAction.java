@@ -21,7 +21,7 @@ public class ReturnAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
+	 * The name of the action to perform for the return.
 	 */
 	protected String actionName;
 

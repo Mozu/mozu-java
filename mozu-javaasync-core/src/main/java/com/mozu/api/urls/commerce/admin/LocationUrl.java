@@ -35,8 +35,8 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUrl(String locationCode, String responseFields)
@@ -49,7 +49,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for AddLocation
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationUrl(String responseFields)
@@ -61,7 +61,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for UpdateLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -75,7 +75,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for DeleteLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationUrl(String locationCode)

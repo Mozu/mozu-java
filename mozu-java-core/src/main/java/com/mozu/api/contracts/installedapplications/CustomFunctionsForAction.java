@@ -12,18 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForContext;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CustomFunctionsForAction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunctionsForAction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForAction actionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String actionId;
 
 	public String getActionId() {
@@ -34,9 +28,6 @@ public class CustomFunctionsForAction implements Serializable
 		this.actionId = actionId;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForAction contexts ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<CustomFunctionsForContext> contexts;
 	public List<CustomFunctionsForContext> getContexts() {
 		return this.contexts;

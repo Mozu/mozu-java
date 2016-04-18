@@ -34,7 +34,7 @@ public class ProductSupplierInfo implements Serializable
 	}
 
 	/**
-	 * The manufacturer's part number for the product.
+	 * The manufacturer part number associated with this product, defined by the product manufacturer.
 	 */
 	protected String mfgPartNumber;
 

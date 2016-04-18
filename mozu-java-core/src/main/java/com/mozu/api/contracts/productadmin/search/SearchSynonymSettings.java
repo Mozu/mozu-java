@@ -10,18 +10,12 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Settings for search synonyms for search results.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSynonymSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates if synonyms should be expanded.
-	 */
 	protected Boolean expandSynonyms;
 
 	public Boolean getExpandSynonyms() {
@@ -32,9 +26,6 @@ public class SearchSynonymSettings implements Serializable
 		this.expandSynonyms = expandSynonyms;
 	}
 
-	/**
-	 * Sets the boost for the words actually sent in the query.
-	 */
 	protected Double mainPartBoost;
 
 	public Double getMainPartBoost() {
@@ -45,9 +36,6 @@ public class SearchSynonymSettings implements Serializable
 		this.mainPartBoost = mainPartBoost;
 	}
 
-	/**
-	 * Boosts the synonyms to affect rankings for search results.
-	 */
 	protected Double synonymPartBoost;
 
 	public Double getSynonymPartBoost() {

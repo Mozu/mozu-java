@@ -53,7 +53,7 @@ public class DocumentDraftSummaryResource {
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = documentdraftsummary.listDocumentDraftSummaries( pageSize,  startIndex,  documentLists,  responseFields);
 	 * </code></pre></p>
-	 * @param documentLists List of document lists that contain documents to delete.
+	 * @param documentLists Lists that contain the document drafts.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
@@ -110,7 +110,7 @@ public class DocumentDraftSummaryResource {
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.publishDocuments( documentIds);
 	 * </code></pre></p>
-	 * @param documentIds Unique identifiers of the documents to delete.
+	 * @param documentIds List of unique identifiers of the document drafts to publish.
 	 * @return 
 	 * @see string
 	 */
@@ -125,8 +125,8 @@ public class DocumentDraftSummaryResource {
 	 *	DocumentDraftSummary documentdraftsummary = new DocumentDraftSummary();
 	 *	documentdraftsummary.publishDocuments( documentIds,  documentLists);
 	 * </code></pre></p>
-	 * @param documentLists List of document lists that contain documents to delete.
-	 * @param documentIds Unique identifiers of the documents to delete.
+	 * @param documentLists List of document lists that contain documents to publish.
+	 * @param documentIds List of unique identifiers of the document drafts to publish.
 	 * @return 
 	 * @see string
 	 */

@@ -204,7 +204,7 @@ public class ProductReservationResource {
 	 *	ProductReservation productReservation = productreservation.addProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -222,7 +222,7 @@ public class ProductReservationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -240,7 +240,7 @@ public class ProductReservationResource {
 	 * </code></pre></p>
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -263,7 +263,7 @@ public class ProductReservationResource {
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Details of the product reservations to add.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -283,7 +283,7 @@ public class ProductReservationResource {
 	 *	productreservation.commitReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations List of unique identifiers of the reservations to commit.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 */
@@ -303,7 +303,7 @@ public class ProductReservationResource {
 	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -321,7 +321,7 @@ public class ProductReservationResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -337,9 +337,9 @@ public class ProductReservationResource {
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	ProductReservation productReservation = productreservation.updateProductReservations( productReservations,  skipInventoryCheck);
 	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -359,10 +359,10 @@ public class ProductReservationResource {
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	CountDownLatch latch = productreservation.updateProductReservations( productReservations,  skipInventoryCheck, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck If true, skip the inventory validation process when updating this product reservation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productReservations A hold placed on product inventory for a particular product so that the quantity specified is set aside and available for purchase during the ordering process.
+	 * @param productReservations Properties of the product reservations to update.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductReservation>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
@@ -381,7 +381,7 @@ public class ProductReservationResource {
 	 *	ProductReservation productreservation = new ProductReservation();
 	 *	productreservation.deleteProductReservation( productReservationId);
 	 * </code></pre></p>
-	 * @param productReservationId Unique identifier of the product reservation.
+	 * @param productReservationId Unique identifier of the reservation.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */
