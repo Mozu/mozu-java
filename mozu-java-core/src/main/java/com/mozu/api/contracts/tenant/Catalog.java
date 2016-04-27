@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.tenant;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -18,6 +19,19 @@ public class Catalog implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 */
+	protected String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	/**
 	 * The date time in UTC format set when the object was created. 
@@ -108,19 +122,6 @@ public class Catalog implements Serializable
 
 	public void setMasterCatalogId(Integer masterCatalogId) {
 		this.masterCatalogId = masterCatalogId;
-	}
-
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
-	protected String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	/**

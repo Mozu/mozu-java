@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productruntime;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -60,6 +61,19 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
+	 * The priceList that was applied to this product
+	 */
+	protected String effectivePricelistCode;
+
+	public String getEffectivePricelistCode() {
+		return this.effectivePricelistCode;
+	}
+
+	public void setEffectivePricelistCode(String effectivePricelistCode) {
+		this.effectivePricelistCode = effectivePricelistCode;
+	}
+
+	/**
 	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
 	 */
 	protected Double msrp;
@@ -83,6 +97,32 @@ public class ProductPrice implements Serializable
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	/**
+	 * The specific PriceListCode that was applied (includes inheritence
+	 */
+	protected String priceListEntryCode;
+
+	public String getPriceListEntryCode() {
+		return this.priceListEntryCode;
+	}
+
+	public void setPriceListEntryCode(String priceListEntryCode) {
+		this.priceListEntryCode = priceListEntryCode;
+	}
+
+	/**
+	 * IF a PriceList Entry was applied to this price it will be (simple, bulk...)
+	 */
+	protected String priceListEntryMode;
+
+	public String getPriceListEntryMode() {
+		return this.priceListEntryMode;
+	}
+
+	public void setPriceListEntryMode(String priceListEntryMode) {
+		this.priceListEntryMode = priceListEntryMode;
 	}
 
 	/**

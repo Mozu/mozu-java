@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.pricingruntime;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,19 +22,6 @@ public class TaxableOrder implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
-	 */
-	protected String taxRequestType;
-
-	public String getTaxRequestType() {
-		return this.taxRequestType;
-	}
-
-	public void setTaxRequestType(String taxRequestType) {
-		this.taxRequestType = taxRequestType;
-	}
 
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
@@ -111,6 +99,19 @@ public class TaxableOrder implements Serializable
 
 	public void setShippingAmount(Double shippingAmount) {
 		this.shippingAmount = shippingAmount;
+	}
+
+	/**
+	 * The type of request for which to tax this entity, which is Order or Return.
+	 */
+	protected String taxRequestType;
+
+	public String getTaxRequestType() {
+		return this.taxRequestType;
+	}
+
+	public void setTaxRequestType(String taxRequestType) {
+		this.taxRequestType = taxRequestType;
 	}
 
 	/**

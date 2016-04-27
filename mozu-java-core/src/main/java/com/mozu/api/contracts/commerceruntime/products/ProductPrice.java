@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.commerceruntime.products;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -56,6 +57,32 @@ public class ProductPrice implements Serializable
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	/**
+	 * Pricelist code for the product
+	 */
+	protected String priceListCode;
+
+	public String getPriceListCode() {
+		return this.priceListCode;
+	}
+
+	public void setPriceListCode(String priceListCode) {
+		this.priceListCode = priceListCode;
+	}
+
+	/**
+	 * Pricelist entry mode of the product. Note: possible values are below 1. null : Product doesn't participate in pricelist 2. Bulk : Bulk volume price available(unit price vary based on quantity) 3. Simple:
+	 */
+	protected String priceListEntryMode;
+
+	public String getPriceListEntryMode() {
+		return this.priceListEntryMode;
+	}
+
+	public void setPriceListEntryMode(String priceListEntryMode) {
+		this.priceListEntryMode = priceListEntryMode;
 	}
 
 	/**

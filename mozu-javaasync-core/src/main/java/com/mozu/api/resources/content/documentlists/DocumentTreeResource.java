@@ -7,6 +7,7 @@
 package com.mozu.api.resources.content.documentlists;
 
 import com.mozu.api.ApiContext;
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,6 +16,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -248,7 +250,7 @@ public class DocumentTreeResource {
 	}
 
 	/**
-	 * Updates the content associated with a document, such as a product image or PDF specifications file, based on the document's position in the document hierarchy.
+	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document name.
 	 * <p><pre><code>
 	 *	DocumentTree documenttree = new DocumentTree();
 	 *	documenttree.updateTreeDocumentContent( stream,  documentListName,  documentName,  contentType);

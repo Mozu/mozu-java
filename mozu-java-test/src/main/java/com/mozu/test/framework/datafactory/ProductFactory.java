@@ -73,16 +73,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
-		return getProduct(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null, expectedCode);
+		return getProduct(apiContext, dataViewMode,  productCode,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Product getProduct(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.Product returnObj = new com.mozu.api.contracts.productruntime.Product();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  responseFields);
+			returnObj = resource.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -123,16 +123,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.ConfiguredProduct configuredProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, int expectedCode) throws Exception
 	{
-		return configuredProduct(apiContext,  productOptionSelections,  productCode,  null,  null,  null, expectedCode);
+		return configuredProduct(apiContext,  productOptionSelections,  productCode,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ConfiguredProduct configuredProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean includeOptionDetails, Boolean skipInventoryCheck, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ConfiguredProduct configuredProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean includeOptionDetails, Boolean skipInventoryCheck, Integer quantity, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ConfiguredProduct returnObj = new com.mozu.api.contracts.productruntime.ConfiguredProduct();
 		ProductResource resource = new ProductResource(apiContext);
 		try
 		{
-			returnObj = resource.configuredProduct( productOptionSelections,  productCode,  includeOptionDetails,  skipInventoryCheck,  responseFields);
+			returnObj = resource.configuredProduct( productOptionSelections,  productCode,  includeOptionDetails,  skipInventoryCheck,  quantity,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -148,16 +148,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, int expectedCode) throws Exception
 	{
-		return validateProduct(apiContext,  productOptionSelections,  productCode,  null,  null, expectedCode);
+		return validateProduct(apiContext,  productOptionSelections,  productCode,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(ApiContext apiContext, com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductValidationSummary returnObj = new com.mozu.api.contracts.productruntime.ProductValidationSummary();
 		ProductResource resource = new ProductResource(apiContext);
 		try
 		{
-			returnObj = resource.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  responseFields);
+			returnObj = resource.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields);
 		}
 		catch (ApiException e)
 		{

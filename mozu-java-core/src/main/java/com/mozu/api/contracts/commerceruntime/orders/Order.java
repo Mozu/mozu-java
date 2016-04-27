@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.commerceruntime.orders;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -39,6 +40,19 @@ public class Order implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 */
+	protected String channelCode;
+
+	public String getChannelCode() {
+		return this.channelCode;
+	}
+
+	public void setChannelCode(String channelCode) {
+		this.channelCode = channelCode;
+	}
 
 	/**
 	 * The date and time the order was accepted by the tenant.
@@ -127,19 +141,6 @@ public class Order implements Serializable
 
 	public void setCancelledDate(DateTime cancelledDate) {
 		this.cancelledDate = cancelledDate;
-	}
-
-	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
-	 */
-	protected String channelCode;
-
-	public String getChannelCode() {
-		return this.channelCode;
-	}
-
-	public void setChannelCode(String channelCode) {
-		this.channelCode = channelCode;
 	}
 
 	/**
@@ -606,6 +607,19 @@ public class Order implements Serializable
 
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
+	}
+
+	/**
+	 * Pricelist code for the order
+	 */
+	protected String priceListCode;
+
+	public String getPriceListCode() {
+		return this.priceListCode;
+	}
+
+	public void setPriceListCode(String priceListCode) {
+		this.priceListCode = priceListCode;
 	}
 
 	/**

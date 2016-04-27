@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.core.extensible;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -18,32 +19,6 @@ public class AttributeValidation implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The minimum character length possible for a string value entered for an extensible attribute.
-	 */
-	protected Integer minStringLength;
-
-	public Integer getMinStringLength() {
-		return this.minStringLength;
-	}
-
-	public void setMinStringLength(Integer minStringLength) {
-		this.minStringLength = minStringLength;
-	}
-
-	/**
-	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
-	 */
-	protected String regularExpression;
-
-	public String getRegularExpression() {
-		return this.regularExpression;
-	}
-
-	public void setRegularExpression(String regularExpression) {
-		this.regularExpression = regularExpression;
-	}
 
 	/**
 	 * The latest possible date and time the extensible attribute can be validated.
@@ -108,6 +83,32 @@ public class AttributeValidation implements Serializable
 
 	public void setMinNumericValue(Double minNumericValue) {
 		this.minNumericValue = minNumericValue;
+	}
+
+	/**
+	 * The minimum character length possible for a string value entered for an extensible attribute.
+	 */
+	protected Integer minStringLength;
+
+	public Integer getMinStringLength() {
+		return this.minStringLength;
+	}
+
+	public void setMinStringLength(Integer minStringLength) {
+		this.minStringLength = minStringLength;
+	}
+
+	/**
+	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
+	 */
+	protected String regularExpression;
+
+	public String getRegularExpression() {
+		return this.regularExpression;
+	}
+
+	public void setRegularExpression(String regularExpression) {
+		this.regularExpression = regularExpression;
 	}
 
 }
