@@ -66,6 +66,51 @@ public class ProductVariationFactory
 		return returnObj;
 	}
 
+	public static List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> getProductVariationLocalizedPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductVariationLocalizedPrices( productCode,  variationKey);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice getProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
+	{
+		return getProductVariationLocalizedPrice(apiContext, dataViewMode,  productCode,  variationKey,  currencyCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice getProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationFixedPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationFixedPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.ProductVariation getProductVariation(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, int expectedCode) throws Exception
 	{
 		return getProductVariation(apiContext, dataViewMode,  productCode,  variationKey,  null, expectedCode);
@@ -141,6 +186,31 @@ public class ProductVariationFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice addProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, int expectedCode) throws Exception
+	{
+		return addProductVariationLocalizedPrice(apiContext, dataViewMode,  localizedPrice,  productCode,  variationKey,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice addProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationFixedPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationFixedPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> updateProductVariationLocalizedDeltaPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> localizedDeltaPrice, String productCode, String variationKey, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>();
@@ -173,6 +243,51 @@ public class ProductVariationFactory
 		try
 		{
 			returnObj = resource.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> updateProductVariationLocalizedPrices(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> localizedPrice, String productCode, String variationKey, int expectedCode) throws Exception
+	{
+		List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> returnObj = new ArrayList<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice updateProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
+	{
+		return updateProductVariationLocalizedPrice(apiContext, dataViewMode,  localizedPrice,  productCode,  variationKey,  currencyCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.ProductVariationFixedPrice updateProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String currencyCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.ProductVariationFixedPrice returnObj = new com.mozu.api.contracts.productadmin.ProductVariationFixedPrice();
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -260,6 +375,24 @@ public class ProductVariationFactory
 		try
 		{
 			resource.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void deleteProductVariationLocalizedPrice(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, String variationKey, String currencyCode, int expectedCode) throws Exception
+	{
+		ProductVariationResource resource = new ProductVariationResource(apiContext, dataViewMode);
+		try
+		{
+			resource.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 		}
 		catch (ApiException e)
 		{

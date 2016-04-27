@@ -6,6 +6,8 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.products;
 
+import org.joda.time.DateTime;
+
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -38,6 +40,38 @@ public class ProductVariationUrl
 	public static MozuUrl getProductVariationLocalizedDeltaPriceUrl(String currencyCode, String productCode, String responseFields, String variationKey)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedDeltaPrice/{currencyCode}?responseFields={responseFields}");
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetProductVariationLocalizedPrices
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getProductVariationLocalizedPricesUrl(String productCode, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice");
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetProductVariationLocalizedPrice
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getProductVariationLocalizedPriceUrl(String currencyCode, String productCode, String responseFields, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice/{currencyCode}?responseFields={responseFields}");
 		formatter.formatUrl("currencyCode", currencyCode);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("responseFields", responseFields);
@@ -100,6 +134,22 @@ public class ProductVariationUrl
 	}
 
 	/**
+	 * Get Resource Url for AddProductVariationLocalizedPrice
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addProductVariationLocalizedPriceUrl(String productCode, String responseFields, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice?responseFields={responseFields}");
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateProductVariationLocalizedDeltaPrices
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
@@ -132,6 +182,38 @@ public class ProductVariationUrl
 	}
 
 	/**
+	 * Get Resource Url for UpdateProductVariationLocalizedPrices
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateProductVariationLocalizedPricesUrl(String productCode, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice");
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for UpdateProductVariationLocalizedPrice
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateProductVariationLocalizedPriceUrl(String currencyCode, String productCode, String responseFields, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice/{currencyCode}?responseFields={responseFields}");
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateProductVariation
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -150,7 +232,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for UpdateProductVariations
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductVariationsUrl(String productCode, String responseFields)
@@ -185,6 +267,22 @@ public class ProductVariationUrl
 	public static MozuUrl deleteProductVariationLocalizedDeltaPriceUrl(String currencyCode, String productCode, String variationKey)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedDeltaPrice/{currencyCode}");
+		formatter.formatUrl("currencyCode", currencyCode);
+		formatter.formatUrl("productCode", productCode);
+		formatter.formatUrl("variationKey", variationKey);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteProductVariationLocalizedPrice
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteProductVariationLocalizedPriceUrl(String currencyCode, String productCode, String variationKey)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/products/{productCode}/variations/{variationKey}/localizedPrice/{currencyCode}");
 		formatter.formatUrl("currencyCode", currencyCode);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("variationKey", variationKey);

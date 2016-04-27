@@ -7,10 +7,12 @@
 package com.mozu.api.contracts.commerceruntime.carts;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.carts.CartMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
 import com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo;
@@ -195,6 +197,19 @@ public class Cart implements Serializable
 	}
 
 	/**
+	 * Pricelist code
+	 */
+	protected String priceListCode;
+
+	public String getPriceListCode() {
+		return this.priceListCode;
+	}
+
+	public void setPriceListCode(String priceListCode) {
+		this.priceListCode = priceListCode;
+	}
+
+	/**
 	 * The shipping subtotal amount calculated without any applied discounts for line item and entire amounts of carts and orders. This property is not calculated for wish lists at this time.
 	 */
 	protected Double shippingSubTotal;
@@ -348,6 +363,19 @@ public class Cart implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	/**
+	 * Mozu.CommerceRuntime.Contracts.Carts.Cart cartMessage ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected CartMessage cartMessage;
+
+	public CartMessage getCartMessage() {
+		return this.cartMessage;
+	}
+
+	public void setCartMessage(CartMessage cartMessage) {
+		this.cartMessage = cartMessage;
 	}
 
 	/**

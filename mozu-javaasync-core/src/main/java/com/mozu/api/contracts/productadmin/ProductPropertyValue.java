@@ -7,11 +7,12 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
+import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 
 /**
  *	Properties of a value for a product property.
@@ -33,17 +34,6 @@ public class ProductPropertyValue implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
-	}
-
-	/**
-	 * The localized content of an attribute determined by the `localeCode`. This content is always in the default language of the MasterCatalog.
-	 */
-	protected List<ProductPropertyValueLocalizedContent> localizedContent;
-	public List<ProductPropertyValueLocalizedContent> getLocalizedContent() {
-		return this.localizedContent;
-	}
-	public void setLocalizedContent(List<ProductPropertyValueLocalizedContent> localizedContent) {
-		this.localizedContent = localizedContent;
 	}
 
 	/**
@@ -70,6 +60,17 @@ public class ProductPropertyValue implements Serializable
 
 	public void setContent(ProductPropertyValueLocalizedContent content) {
 		this.content = content;
+	}
+
+	/**
+	 * The localized content of an attribute determined by the `localeCode`. This content is always in the default language of the MasterCatalog.
+	 */
+	protected List<ProductPropertyValueLocalizedContent> localizedContent;
+	public List<ProductPropertyValueLocalizedContent> getLocalizedContent() {
+		return this.localizedContent;
+	}
+	public void setLocalizedContent(List<ProductPropertyValueLocalizedContent> localizedContent) {
+		this.localizedContent = localizedContent;
 	}
 
 }

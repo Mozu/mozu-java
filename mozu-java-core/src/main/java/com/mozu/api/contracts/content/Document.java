@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.content;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -177,19 +178,6 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected ActiveDateRange activeDateRange;
-
-	public ActiveDateRange getActiveDateRange() {
-		return this.activeDateRange;
-	}
-
-	public void setActiveDateRange(ActiveDateRange activeDateRange) {
-		this.activeDateRange = activeDateRange;
-	}
-
-	/**
 	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
 	 */
 	protected com.fasterxml.jackson.databind.JsonNode properties;
@@ -200,6 +188,19 @@ public class Document implements Serializable
 
 	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
 		this.properties = properties;
+	}
+
+	/**
+	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected ActiveDateRange activeDateRange;
+
+	public ActiveDateRange getActiveDateRange() {
+		return this.activeDateRange;
+	}
+
+	public void setActiveDateRange(ActiveDateRange activeDateRange) {
+		this.activeDateRange = activeDateRange;
 	}
 
 }

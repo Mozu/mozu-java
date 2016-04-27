@@ -7,12 +7,14 @@
 package com.mozu.api.resources.commerce.catalog.admin.products;
 
 import com.mozu.api.ApiContext;
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -94,6 +96,65 @@ public class ProductVariationResource {
 	public com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice getProductVariationLocalizedDeltaPrice(String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationLocalizedDeltaPriceClient(_dataViewMode,  productCode,  variationKey,  currencyCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * products-variations Get GetProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrices( productCode,  variationKey);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> getProductVariationLocalizedPrices(String productCode, String variationKey) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationLocalizedPricesClient(_dataViewMode,  productCode,  variationKey);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
+	 * </code></pre></p>
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice getProductVariationLocalizedPrice(String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		return getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  null);
+	}
+
+	/**
+	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields);
+	 * </code></pre></p>
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice getProductVariationLocalizedPrice(String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.getProductVariationLocalizedPriceClient(_dataViewMode,  productCode,  variationKey,  currencyCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -218,6 +279,47 @@ public class ProductVariationResource {
 	}
 
 	/**
+	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice addProductVariationLocalizedPrice(com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey) throws Exception
+	{
+		return addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  null);
+	}
+
+	/**
+	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice addProductVariationLocalizedPrice(com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.addProductVariationLocalizedPriceClient(_dataViewMode,  localizedPrice,  productCode,  variationKey,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Updates all localized delta price values for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
@@ -276,6 +378,71 @@ public class ProductVariationResource {
 	public com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice updateProductVariationLocalizedDeltaPrice(com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice localizedDeltaPrice, String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationLocalizedDeltaPriceClient(_dataViewMode,  localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * products-variations Put UpdateProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey);
+	 * </code></pre></p>
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> updateProductVariationLocalizedPrices(List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> localizedPrice, String productCode, String variationKey) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationLocalizedPricesClient(_dataViewMode,  localizedPrice,  productCode,  variationKey);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode);
+	 * </code></pre></p>
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice updateProductVariationLocalizedPrice(com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		return updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  null);
+	}
+
+	/**
+	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
+	 * </code></pre></p>
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
+	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
+	 */
+	public com.mozu.api.contracts.productadmin.ProductVariationFixedPrice updateProductVariationLocalizedPrice(com.mozu.api.contracts.productadmin.ProductVariationFixedPrice localizedPrice, String productCode, String variationKey, String currencyCode, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.updateProductVariationLocalizedPriceClient(_dataViewMode,  localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -347,7 +514,7 @@ public class ProductVariationResource {
 	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param productVariations Collection of variations configured for a product.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -395,6 +562,26 @@ public class ProductVariationResource {
 	public void deleteProductVariationLocalizedDeltaPrice(String productCode, String variationKey, String currencyCode) throws Exception
 	{
 		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.deleteProductVariationLocalizedDeltaPriceClient(_dataViewMode,  productCode,  variationKey,  currencyCode);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		client.cleanupHttpConnection();
+
+	}
+
+	/**
+	 * products-variations Delete DeleteProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 *	ProductVariation productvariation = new ProductVariation();
+	 *	productvariation.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
+	 * </code></pre></p>
+	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
+	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @return 
+	 */
+	public void deleteProductVariationLocalizedPrice(String productCode, String variationKey, String currencyCode) throws Exception
+	{
+		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.products.ProductVariationClient.deleteProductVariationLocalizedPriceClient(_dataViewMode,  productCode,  variationKey,  currencyCode);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		client.cleanupHttpConnection();

@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -56,6 +57,19 @@ public class ProductPricingBehaviorInfo implements Serializable
 
 	public void setDiscountsRestrictedStartDate(DateTime discountsRestrictedStartDate) {
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
+	}
+
+	/**
+	 * Only used when product is a variation
+	 */
+	protected String variationPricingMethod;
+
+	public String getVariationPricingMethod() {
+		return this.variationPricingMethod;
+	}
+
+	public void setVariationPricingMethod(String variationPricingMethod) {
+		this.variationPricingMethod = variationPricingMethod;
 	}
 
 }

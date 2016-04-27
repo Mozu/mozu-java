@@ -6,6 +6,7 @@
  */
 package com.mozu.api.clients.content;
 
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -14,6 +15,7 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -24,6 +26,92 @@ import com.mozu.api.DataViewMode;
  */
 public class DocumentListTypeClient {
 	
+	/**
+	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DocumentListTypeCollection documentListTypeCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListTypeCollection>
+	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> getDocumentListTypesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
+	{
+		return getDocumentListTypesClient(dataViewMode,  null,  null,  null);
+	}
+
+	/**
+	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DocumentListTypeCollection documentListTypeCollection = client.Result();
+	 * </code></pre></p>
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListTypeCollection>
+	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> getDocumentListTypesClient(com.mozu.api.DataViewMode dataViewMode, Integer pageSize, Integer startIndex, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.DocumentListTypeUrl.getDocumentListTypesUrl(pageSize, responseFields, startIndex);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.content.DocumentListTypeCollection.class;
+		MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
+	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DocumentListType documentListType = client.Result();
+	 * </code></pre></p>
+	 * @param documentListTypeFQN 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
+	 * @see com.mozu.api.contracts.content.DocumentListType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.DocumentListType> getDocumentListTypeClient(com.mozu.api.DataViewMode dataViewMode, String documentListTypeFQN) throws Exception
+	{
+		return getDocumentListTypeClient(dataViewMode,  documentListTypeFQN,  null);
+	}
+
+	/**
+	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * DocumentListType documentListType = client.Result();
+	 * </code></pre></p>
+	 * @param documentListTypeFQN 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentListType>
+	 * @see com.mozu.api.contracts.content.DocumentListType
+	 */
+	public static MozuClient<com.mozu.api.contracts.content.DocumentListType> getDocumentListTypeClient(com.mozu.api.DataViewMode dataViewMode, String documentListTypeFQN, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.content.DocumentListTypeUrl.getDocumentListTypeUrl(documentListTypeFQN, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.content.DocumentListType.class;
+		MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient = (MozuClient<com.mozu.api.contracts.content.DocumentListType>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
 	/**
 	 * Creates a new documentListType
 	 * <p><pre><code>

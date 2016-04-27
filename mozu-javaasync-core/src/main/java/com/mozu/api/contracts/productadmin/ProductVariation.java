@@ -7,10 +7,12 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
+import com.mozu.api.contracts.productadmin.ProductVariationFixedPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
 import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
 
@@ -34,6 +36,19 @@ public class ProductVariation implements Serializable
 
 	public void setDeltaWeight(Double deltaWeight) {
 		this.deltaWeight = deltaWeight;
+	}
+
+	/**
+	 * Fixed weight of the product with this variation.
+	 */
+	protected Double fixedWeight;
+
+	public Double getFixedWeight() {
+		return this.fixedWeight;
+	}
+
+	public void setFixedWeight(Double fixedWeight) {
+		this.fixedWeight = fixedWeight;
 	}
 
 	/**
@@ -139,6 +154,19 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
+	 * Price of the variation using fixed price
+	 */
+	protected ProductVariationFixedPrice fixedPrice;
+
+	public ProductVariationFixedPrice getFixedPrice() {
+		return this.fixedPrice;
+	}
+
+	public void setFixedPrice(ProductVariationFixedPrice fixedPrice) {
+		this.fixedPrice = fixedPrice;
+	}
+
+	/**
 	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
 	 */
 	protected List<ProductVariationDeltaPrice> localizedDeltaPrice;
@@ -147,6 +175,17 @@ public class ProductVariation implements Serializable
 	}
 	public void setLocalizedDeltaPrice(List<ProductVariationDeltaPrice> localizedDeltaPrice) {
 		this.localizedDeltaPrice = localizedDeltaPrice;
+	}
+
+	/**
+	 * Price of the variation using fixed per currency This collection allows for multiple currencies.
+	 */
+	protected List<ProductVariationFixedPrice> localizedFixedPrice;
+	public List<ProductVariationFixedPrice> getLocalizedFixedPrice() {
+		return this.localizedFixedPrice;
+	}
+	public void setLocalizedFixedPrice(List<ProductVariationFixedPrice> localizedFixedPrice) {
+		this.localizedFixedPrice = localizedFixedPrice;
 	}
 
 	/**

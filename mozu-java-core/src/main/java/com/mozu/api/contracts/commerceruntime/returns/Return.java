@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.commerceruntime.returns;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -25,19 +26,6 @@ public class Return implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * A merchant-specific identifier used to sequentially order returns.
-	 */
-	protected Integer returnNumber;
-
-	public Integer getReturnNumber() {
-		return this.returnNumber;
-	}
-
-	public void setReturnNumber(Integer returnNumber) {
-		this.returnNumber = returnNumber;
-	}
 
 	/**
 	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
@@ -191,6 +179,19 @@ public class Return implements Serializable
 
 	public void setRefundAmount(Double refundAmount) {
 		this.refundAmount = refundAmount;
+	}
+
+	/**
+	 * A merchant-specific identifier used to sequentially order returns.
+	 */
+	protected Integer returnNumber;
+
+	public Integer getReturnNumber() {
+		return this.returnNumber;
+	}
+
+	public void setReturnNumber(Integer returnNumber) {
+		this.returnNumber = returnNumber;
 	}
 
 	/**

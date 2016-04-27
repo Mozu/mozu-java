@@ -7,12 +7,14 @@
 package com.mozu.api.resources.content.documentlists;
 
 import com.mozu.api.ApiContext;
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -222,7 +224,7 @@ public class DocumentResource {
 	}
 
 	/**
-	 * Updates the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
+	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
 	 *	Document document = new Document();
 	 *	document.updateDocumentContent( stream,  documentListName,  documentId,  contentType);

@@ -6,6 +6,8 @@
  */
 package com.mozu.api.urls.commerce.settings.checkout;
 
+import org.joda.time.DateTime;
+
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -16,7 +18,7 @@ public class PaymentSettingsUrl
 	/**
 	 * Get Resource Url for GetThirdPartyPaymentWorkflowWithValues
 	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getThirdPartyPaymentWorkflowWithValuesUrl(String fullyQualifiedName, String responseFields)
