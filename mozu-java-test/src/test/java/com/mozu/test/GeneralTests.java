@@ -95,10 +95,26 @@ import com.mozu.api.contracts.productadmin.search.SearchTuningRule;
 import com.mozu.api.contracts.productruntime.DiscountSelections;
 import com.mozu.api.contracts.productruntime.LocationInventoryQuery;
 import com.mozu.api.contracts.productruntime.ProductOptionSelections;
+import com.mozu.api.contracts.shippingadmin.CarrierConfiguration;
+import com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection;
+import com.mozu.api.contracts.shippingadmin.CustomTableRate;
+import com.mozu.api.contracts.shippingadmin.CustomTableRateContent;
+import com.mozu.api.contracts.shippingadmin.ServiceType;
+import com.mozu.api.contracts.shippingadmin.ServiceTypeLocalizedContent;
+import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
+import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection;
+import com.mozu.api.contracts.shippingadmin.profile.ShippingProfile;
+import com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection;
+import com.mozu.api.contracts.shippingadmin.profile.ShippingStates;
+import com.mozu.api.contracts.shippingadmin.profile.State;
 import com.mozu.api.contracts.shippingruntime.RateRequest;
 import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.tenant.TenantCollection;
+import com.mozu.api.resources.commerce.shipping.admin.CarrierConfigurationResource;
+import com.mozu.api.resources.commerce.shipping.admin.ShippingProfileResource;
+import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingInclusionRuleResource;
+import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingStatesResource;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
@@ -332,6 +348,31 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 
 	@Test
+	public void CarrierConfigurationTests() throws Exception {
+		CarrierConfigurationResource resource = new CarrierConfigurationResource(apiContext);
+		CarrierConfigurationCollection configurations = resource.getConfigurations();
+		CarrierConfiguration configuration = resource.getConfiguration(configurations.getItems().get(0).getId());
+		configuration = new CarrierConfiguration();
+		List<CustomTableRate> list = new ArrayList<CustomTableRate>();
+		CustomTableRate rate = new CustomTableRate();
+		rate.setRateType("CUSTOM_FLAT_RATE_PER_ITEM_EXACT_AMOUNT");
+		rate.setValue(10.);
+		CustomTableRateContent content = new CustomTableRateContent();
+		content.setLocaleCode(com.mozu.test.framework.helper.Constants.LocaleCode);
+		content.setName("New Flat Rate - $10");
+		rate.setContent(content);
+		list.add(rate);
+		configuration.setCustomTableRates(list);
+		CarrierConfiguration newConfig = resource.createConfiguration(configuration, "custom");
+		content.setName("New Name");
+		list.get(0).setContent(content);
+		configuration.setCustomTableRates(list);
+		newConfig = resource.updateConfiguration(configuration, newConfig.getId());
+		Assert.hasText("New Name", newConfig.getCustomTableRates().get(0).getContent().getName());
+		resource.deleteConfiguration(newConfig.getId());
+	}
+	
+	@Test
 	public void CartItemTests() throws Exception {
         CartItemFactory.getCartItems(shopperApiContext,  HttpStatus.SC_OK);
         CartItemFactory.addItemToCart(shopperApiContext, new CartItem(), HttpStatus.SC_CONFLICT);
@@ -375,7 +416,6 @@ public class GeneralTests extends MozuApiTestBase {
 		CategoryFactory.addCategory(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
-		CategoryFactory.updateCategoryTree(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
 		DynamicExpression express = new DynamicExpression();
 		express.setText(Generator.randomString(5, Generator.AlphaChars));
@@ -1076,10 +1116,10 @@ public class GeneralTests extends MozuApiTestBase {
 	        List<String> list = new ArrayList<String>();
 	        list.add(Generator.randomString(5, Generator.AlphaChars));
 	        PublishingScope scope = ProductGenerator.generatePublishingScope(false, list);
-	        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
-	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
+//	        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+//	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+//	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
+//	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
 	        /*bug 67281*/
 	        PublishingScopeFactory.getPublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	        /*bug 67283*/
@@ -1166,8 +1206,6 @@ public class GeneralTests extends MozuApiTestBase {
 		SearchFactory.getSearchTuningRules(apiContext, HttpStatus.SC_OK);
 		SearchFactory.getSearchTuningRuleSortFields(apiContext, HttpStatus.SC_OK);
 		SearchFactory.updateSearchTuningRuleSortFields(apiContext, null, HttpStatus.SC_CONFLICT);
-		SearchFactory.getSynonymDefinitionCollection(apiContext, com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_OK);
-		SearchFactory.updateSynonymDefinitionCollection(apiContext, new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection(), com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -1185,6 +1223,58 @@ public class GeneralTests extends MozuApiTestBase {
         ShipmentFactory.getShipment(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ShipmentFactory.createPackageShipments(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
         ShipmentFactory.deleteShipment(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+	}
+
+	@Test
+	public void ShippingInclusionRuleTests() throws Exception {
+		ShippingProfileResource resource1 = new ShippingProfileResource(apiContext);
+		ShippingProfile profile = resource1.getProfiles().getItems().get(0);
+		ShippingInclusionRuleResource resource = new ShippingInclusionRuleResource(apiContext);
+		ShippingInclusionRuleCollection  rules = resource.getShippingInclusionRules(profile.getCode());
+		ShippingInclusionRule rule = resource.getShippingInclusionRule(profile.getCode(), rules.getItems().get(1).getId());
+		
+		ServiceType stype = new ServiceType();
+		stype.setCode(rule.getServiceTypes().get(1).getCode());
+		ServiceTypeLocalizedContent content = new ServiceTypeLocalizedContent();
+		content.setLocaleCode(com.mozu.test.framework.helper.Constants.LocaleCode);
+		content.setName(rule.getServiceTypes().get(1).getContent().getName());
+		stype.setContent(content);
+		
+		rule = new ShippingInclusionRule();
+		List<String> list = new ArrayList<String>();
+		list.add("United States");
+		rule.setProductTargetRuleCodes(list);
+		List<ServiceType> types = new ArrayList<ServiceType>();
+		types.add(stype);
+		rule.setServiceTypes(types);
+		rule = resource.createShippingInclusionRule(rule, profile.getCode());
+	    list.add("HI and AK");
+	    rule.setProductTargetRuleCodes(list);
+	    rule = resource.updateShippingInclusionRule(rule, profile.getCode(), rule.getId());
+	    Assert.isTrue(rule.getShippingTargetRuleCodes().size()== 2);
+	    resource.deleteShippingInclusionRule(profile.getCode(), rule.getId());
+	}
+
+	@Test
+	public void ShippingProfileTests() throws Exception {
+		ShippingProfileResource resource = new ShippingProfileResource(apiContext);
+		ShippingProfileCollection profiles = resource.getProfiles();
+		Assert.isTrue(profiles.getTotalCount() != 0);
+	}
+
+	@Test
+	public void ShippingStatesTests() throws Exception {
+		ShippingProfileResource resource1 = new ShippingProfileResource(apiContext);
+		ShippingProfile profile = resource1.getProfiles().getItems().get(0);
+		ShippingStatesResource resource = new ShippingStatesResource(apiContext);
+		List<ShippingStates> list = resource.getStates(profile.getCode());
+		State state = list.get(0).getStates().get(0);
+		int size = list.get(0).getStates().size();
+		list.get(0).getStates().remove(0);
+		list = resource.updateStates(list, profile.getCode());
+		Assert.isTrue(list.get(0).getStates().size() == size - 1);
+		list.get(0).getStates().add(state);
+		resource.updateStates(list, profile.getCode());
 	}
 
 	@Test
