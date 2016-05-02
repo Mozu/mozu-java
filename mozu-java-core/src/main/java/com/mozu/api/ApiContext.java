@@ -1,5 +1,7 @@
 package com.mozu.api;
 
+import java.util.Map;
+
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.security.AuthTicket;
 
@@ -177,4 +179,15 @@ public interface ApiContext {
      * get the ISO currency to use in Mozu
      */
     String getCurrency ();
+    
+    /**
+     * Get the custom HTTP Header map. 
+     */
+    Map<String, String> getCustomHeaders ();
+    
+    /**
+     * Add a map of http headers 
+     * @param headerMap
+     */
+    void setCustomHeaders(Map<String, String> headerMap);
 }

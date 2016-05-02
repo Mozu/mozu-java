@@ -1,7 +1,9 @@
 package com.mozu.api;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,11 +12,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import mockit.*;
-
 import com.mozu.api.contracts.tenant.Site;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.security.AppAuthenticator;
+
+import mockit.Expectations;
+import mockit.Mocked;
 
 public class MozuApiContextTest {
     private static final Integer TENANT_ID = new Integer(11);
@@ -268,5 +271,20 @@ public class MozuApiContextTest {
         assertNull(context.getCatalogId());
         assertNull(context.getTenantUrl());
         assertNull(context.getSiteUrl());
+    }
+    
+    @Test
+    public void testCustomHeaders () {
+        ApiContext apiContext = new MozuApiContext();
+        assertNull (apiContext.getCustomHeaders());
+        
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put(Headers.X_VOL_NO_CACHE_UPDATE, "true");
+        
+        apiContext.setCustomHeaders(headers);
+        
+        String value = apiContext.getCustomHeaders().get(Headers.X_VOL_NO_CACHE_UPDATE);
+        
+        assertEquals ("true", value);
     }
 }

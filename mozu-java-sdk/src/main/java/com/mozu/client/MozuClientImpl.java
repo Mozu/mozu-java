@@ -104,7 +104,12 @@ public class MozuClientImpl<TResult> implements MozuClient<TResult> {
             if (apiContext.getCurrency() != null) {
                 addHeader(Headers.X_VOL_CURRENCY, String.valueOf(apiContext.getCurrency()));
             }
- 
+            
+            if (apiContext.getCustomHeaders() != null) {
+                for (Map.Entry<String, String> headerEntry : apiContext.getCustomHeaders().entrySet()) {
+                    addHeader(headerEntry.getKey(), headerEntry.getValue());
+                }
+            }
         }
     }
 
