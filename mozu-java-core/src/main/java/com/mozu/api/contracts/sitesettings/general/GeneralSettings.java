@@ -28,6 +28,19 @@ public class GeneralSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The name of the theme used on the storefront.
+	 */
+	protected String theme;
+
+	public String getTheme() {
+		return this.theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
+	/**
 	 * If true, the site allows entry of addresses not verified by an address validation service.
 	 */
 	protected Boolean allowInvalidAddresses;
@@ -298,19 +311,6 @@ public class GeneralSettings implements Serializable
 
 	public void setTemplateSiteId(Integer templateSiteId) {
 		this.templateSiteId = templateSiteId;
-	}
-
-	/**
-	 * The name of the theme used on the storefront.
-	 */
-	protected String theme;
-
-	public String getTheme() {
-		return this.theme;
-	}
-
-	public void setTheme(String theme) {
-		this.theme = theme;
 	}
 
 	/**

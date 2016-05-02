@@ -11,8 +11,8 @@ import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
-import com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
+import com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice;
 
 /**
  *	Properties of a defined value for a product extra attribute.
@@ -76,17 +76,6 @@ public class ProductExtraValue implements Serializable
 	}
 
 	/**
-	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
-	 */
-	protected List<ProductExtraValueDeltaPrice> localizedDeltaPrice;
-	public List<ProductExtraValueDeltaPrice> getLocalizedDeltaPrice() {
-		return this.localizedDeltaPrice;
-	}
-	public void setLocalizedDeltaPrice(List<ProductExtraValueDeltaPrice> localizedDeltaPrice) {
-		this.localizedDeltaPrice = localizedDeltaPrice;
-	}
-
-	/**
 	 * Properties of an individual vocabulary value for an attribute. For example, a "color" attribute might have the following vocabulary values: Red, Blue, Green.
 	 */
 	protected AttributeVocabularyValue attributeVocabularyValueDetail;
@@ -110,6 +99,17 @@ public class ProductExtraValue implements Serializable
 
 	public void setDeltaPrice(ProductExtraValueDeltaPrice deltaPrice) {
 		this.deltaPrice = deltaPrice;
+	}
+
+	/**
+	 * The difference between associated prices for a product, variation option, or extra that is localized per the `localeCode`. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. Depending on the localeCode, the price may be converted such as from USD (US Dollar) to EUR (euro).
+	 */
+	protected List<ProductExtraValueDeltaPrice> localizedDeltaPrice;
+	public List<ProductExtraValueDeltaPrice> getLocalizedDeltaPrice() {
+		return this.localizedDeltaPrice;
+	}
+	public void setLocalizedDeltaPrice(List<ProductExtraValueDeltaPrice> localizedDeltaPrice) {
+		this.localizedDeltaPrice = localizedDeltaPrice;
 	}
 
 }
