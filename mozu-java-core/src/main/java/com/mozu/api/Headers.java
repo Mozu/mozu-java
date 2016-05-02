@@ -19,4 +19,8 @@ public class Headers {
     public static final String DATE = "Date";
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String ETAG = "ETag";
+    public static final String X_VOL_NO_CACHE_UPDATE = "x-vol-no-cache-update";
+    public static final String X_VOL_BYPASS_CACHE = "x-vol-bypass-cache";
+    public static final String X_VOL_PRICELIST = "x-vol-pricelist";
+    public static final String X_VOL_PREVIEW_DATE = "x-vol-preview-date";
 }
