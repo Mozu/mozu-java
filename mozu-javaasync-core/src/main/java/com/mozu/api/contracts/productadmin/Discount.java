@@ -6,6 +6,8 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -112,6 +114,17 @@ public class Discount implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
+	 */
+	protected List<String> includedPriceLists;
+	public List<String> getIncludedPriceLists() {
+		return this.includedPriceLists;
+	}
+	public void setIncludedPriceLists(List<String> includedPriceLists) {
+		this.includedPriceLists = includedPriceLists;
 	}
 
 	/**

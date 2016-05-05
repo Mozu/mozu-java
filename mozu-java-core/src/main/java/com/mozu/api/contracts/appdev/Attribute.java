@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.appdev;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -18,6 +19,19 @@ public class Attribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * List of valid vocabulary values defined for an attribute.
+	 */
+	protected String vocabularyValues;
+
+	public String getVocabularyValues() {
+		return this.vocabularyValues;
+	}
+
+	public void setVocabularyValues(String vocabularyValues) {
+		this.vocabularyValues = vocabularyValues;
+	}
 
 	/**
 	 * The administrator name associated with the object/data.
@@ -147,19 +161,6 @@ public class Attribute implements Serializable
 
 	public void setVocabularyJson(String vocabularyJson) {
 		this.vocabularyJson = vocabularyJson;
-	}
-
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
-	protected String vocabularyValues;
-
-	public String getVocabularyValues() {
-		return this.vocabularyValues;
-	}
-
-	public void setVocabularyValues(String vocabularyValues) {
-		this.vocabularyValues = vocabularyValues;
 	}
 
 }

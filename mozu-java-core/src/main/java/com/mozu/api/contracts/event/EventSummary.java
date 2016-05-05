@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,6 +21,45 @@ public class EventSummary implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
+	 */
+	protected Integer catalogId;
+
+	public Integer getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(Integer catalogId) {
+		this.catalogId = catalogId;
+	}
+
+	/**
+	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
+	 */
+	protected String correlationId;
+
+	public String getCorrelationId() {
+		return this.correlationId;
+	}
+
+	public void setCorrelationId(String correlationId) {
+		this.correlationId = correlationId;
+	}
+
+	/**
+	 * The date time in UTC format set when the object was created. 
+	 */
+	protected DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
 
 	/**
 	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
@@ -97,45 +137,6 @@ public class EventSummary implements Serializable
 
 	public void setTopic(String topic) {
 		this.topic = topic;
-	}
-
-	/**
-	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
-	 */
-	protected Integer catalogId;
-
-	public Integer getCatalogId() {
-		return this.catalogId;
-	}
-
-	public void setCatalogId(Integer catalogId) {
-		this.catalogId = catalogId;
-	}
-
-	/**
-	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
-	 */
-	protected String correlationId;
-
-	public String getCorrelationId() {
-		return this.correlationId;
-	}
-
-	public void setCorrelationId(String correlationId) {
-		this.correlationId = correlationId;
-	}
-
-	/**
-	 * The date time in UTC format set when the object was created. 
-	 */
-	protected DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
 	}
 
 	/**

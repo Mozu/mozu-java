@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -43,6 +44,19 @@ public class Product implements Serializable
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	/**
+	 * Mozu.PaymentService.Contracts.Product variantProductCode ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected String variantProductCode;
+
+	public String getVariantProductCode() {
+		return this.variantProductCode;
+	}
+
+	public void setVariantProductCode(String variantProductCode) {
+		this.variantProductCode = variantProductCode;
 	}
 
 }

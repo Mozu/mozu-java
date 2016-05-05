@@ -36,7 +36,7 @@ public class UserAuthenticatorTest extends SecurityTestBase {
         this.authTicket = authProfile.getAuthTicket();
         assertNotNull(authProfile.getUserProfile());
         assertEquals(authProfile.getUserProfile().getUserName(), userName);
-        UserAuthenticator.logout(authTicket);
+        //UserAuthenticator.logout(authTicket);
     }
    
     @Test
@@ -58,7 +58,7 @@ public class UserAuthenticatorTest extends SecurityTestBase {
         this.authTicket = authProfile.getAuthTicket();
         assertNotNull(authProfile.getUserProfile());
         assertEquals(authProfile.getUserProfile().getUserName(), userName);
-        UserAuthenticator.logout(authTicket);
+        //UserAuthenticator.logout(authTicket);
     }
 
     @Test
@@ -80,6 +80,12 @@ public class UserAuthenticatorTest extends SecurityTestBase {
         // Authorize user
         CustomerAuthenticationProfile authProfile = CustomerAuthenticator.authenticate(userAuth, tenantId, siteId);
 
+        assertNotNull(authProfile);
+        this.authTicket = authProfile.getAuthTicket();
+        assertNotNull(authProfile.getCustomerAccount());
+        assertEquals(authProfile.getCustomerAccount().getUserName(), userName);
+        
+        authProfile = CustomerAuthenticator.authenticate(userAuth, tenantId, siteId, authTicket);
         assertNotNull(authProfile);
         this.authTicket = authProfile.getAuthTicket();
         assertNotNull(authProfile.getCustomerAccount());

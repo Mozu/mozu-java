@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.paymentservice.request;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -244,6 +245,19 @@ public class FraudScreenRequest implements Serializable
 
 	public void setRequestorUserAgent(String requestorUserAgent) {
 		this.requestorUserAgent = requestorUserAgent;
+	}
+
+	/**
+	 * Mozu.PaymentService.Contracts.Request.FraudScreenRequest shipType ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected String shipType;
+
+	public String getShipType() {
+		return this.shipType;
+	}
+
+	public void setShipType(String shipType) {
+		this.shipType = shipType;
 	}
 
 	/**

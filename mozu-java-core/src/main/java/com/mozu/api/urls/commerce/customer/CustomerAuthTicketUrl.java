@@ -6,6 +6,8 @@
  */
 package com.mozu.api.urls.commerce.customer;
 
+import org.joda.time.DateTime;
+
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -15,7 +17,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateAnonymousShopperAuthTicket
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createAnonymousShopperAuthTicketUrl(String responseFields)

@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.sitesettings.general;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -25,6 +26,19 @@ public class GeneralSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The name of the theme used on the storefront.
+	 */
+	protected String theme;
+
+	public String getTheme() {
+		return this.theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
 
 	/**
 	 * If true, the site allows entry of addresses not verified by an address validation service.
@@ -182,6 +196,9 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
+	/**
+	 * MissingImageSubstitute for 404 image requests. Can be name or id of cmsImage in files@mozu.
+	 */
 	protected String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -294,19 +311,6 @@ public class GeneralSettings implements Serializable
 
 	public void setTemplateSiteId(Integer templateSiteId) {
 		this.templateSiteId = templateSiteId;
-	}
-
-	/**
-	 * The name of the theme used on the storefront.
-	 */
-	protected String theme;
-
-	public String getTheme() {
-		return this.theme;
-	}
-
-	public void setTheme(String theme) {
-		this.theme = theme;
 	}
 
 	/**

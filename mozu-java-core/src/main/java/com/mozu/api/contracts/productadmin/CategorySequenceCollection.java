@@ -7,17 +7,24 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.CategorySequence;
 
+/**
+ *	Mozu.ProductAdmin.Contracts.CategorySequenceCollection ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategorySequenceCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 */
 	protected List<CategorySequence> items;
 	public List<CategorySequence> getItems() {
 		return this.items;

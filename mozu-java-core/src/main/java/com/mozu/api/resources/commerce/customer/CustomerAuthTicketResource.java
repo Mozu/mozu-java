@@ -7,12 +7,14 @@
 package com.mozu.api.resources.commerce.customer;
 
 import com.mozu.api.ApiContext;
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -53,7 +55,7 @@ public class CustomerAuthTicketResource {
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createAnonymousShopperAuthTicket( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */

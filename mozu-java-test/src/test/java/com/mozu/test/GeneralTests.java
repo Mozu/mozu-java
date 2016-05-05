@@ -1231,7 +1231,7 @@ public class GeneralTests extends MozuApiTestBase {
 		ShippingProfile profile = resource1.getProfiles().getItems().get(0);
 		ShippingInclusionRuleResource resource = new ShippingInclusionRuleResource(apiContext);
 		ShippingInclusionRuleCollection  rules = resource.getShippingInclusionRules(profile.getCode());
-		ShippingInclusionRule rule = resource.getShippingInclusionRule(profile.getCode(), rules.getItems().get(1).getId());
+		ShippingInclusionRule rule = resource.getShippingInclusionRule(profile.getCode(), rules.getItems().get(0).getId());
 		
 		ServiceType stype = new ServiceType();
 		stype.setCode(rule.getServiceTypes().get(1).getCode());

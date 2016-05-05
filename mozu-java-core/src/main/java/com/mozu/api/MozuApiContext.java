@@ -25,6 +25,7 @@ public class MozuApiContext implements ApiContext {
     private AuthTicket userAuthTicket = null;
     private String locale = null;
     private String currency = null;
+    private Map<String, String> customHeaders = null;
 
     public MozuApiContext() {
     }
@@ -288,6 +289,17 @@ public class MozuApiContext implements ApiContext {
     @Override
     public String getCurrency() {
         return this.currency;
+    }
+
+    @Override
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    @Override
+    public void setCustomHeaders(Map<String, String> headerMap) {
+        this.customHeaders = headerMap;
+        
     }
     
     

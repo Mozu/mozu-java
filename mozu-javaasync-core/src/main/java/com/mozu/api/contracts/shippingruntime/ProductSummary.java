@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -24,6 +25,9 @@ public class ProductSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Price (unit price * quantity)
+	 */
 	protected Double price;
 
 	public Double getPrice() {
@@ -47,6 +51,9 @@ public class ProductSummary implements Serializable
 		this.productCode = productCode;
 	}
 
+	/**
+	 * Product name/description
+	 */
 	protected String productDescription;
 
 	public String getProductDescription() {
@@ -70,6 +77,9 @@ public class ProductSummary implements Serializable
 		this.productType = productType;
 	}
 
+	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
 	protected Integer quantity;
 
 	public Integer getQuantity() {

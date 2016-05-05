@@ -82,7 +82,7 @@ public class SearchFactory
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-            returnObj = resource.getSearchTuningRuleSortFields();
+			returnObj = resource.getSearchTuningRuleSortFields( responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -108,6 +108,31 @@ public class SearchFactory
 		try
 		{
 			returnObj = resource.getSettings( responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(ApiContext apiContext, String localeCode, int expectedCode) throws Exception
+	{
+		return getSynonymDefinitionCollection(apiContext,  localeCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection getSynonymDefinitionCollection(ApiContext apiContext, String localeCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSynonymDefinitionCollection( localeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -157,7 +182,33 @@ public class SearchFactory
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
-			resource.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn);
+			returnObj = resource.updateSearchTuningRuleSortFields( searchTuningRuleSortFieldsIn,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, int expectedCode) throws Exception
+	{
+		return updateSynonymDefinitionCollection(apiContext,  collection,  localeCode,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.updateSynonymDefinitionCollection( collection,  localeCode,  responseFields);
 		}
 		catch (ApiException e)
 		{

@@ -277,6 +277,31 @@ public class OrderFactory
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
+	public static com.mozu.api.contracts.commerceruntime.orders.Order changeOrderPriceList(ApiContext apiContext, String priceListCode, String orderId, int expectedCode) throws Exception
+	{
+		return changeOrderPriceList(apiContext,  priceListCode,  orderId,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.commerceruntime.orders.Order changeOrderPriceList(ApiContext apiContext, String priceListCode, String orderId, String updateMode, String version, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
+		OrderResource resource = new OrderResource(apiContext);
+		try
+		{
+			returnObj = resource.changeOrderPriceList( priceListCode,  orderId,  updateMode,  version,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.commerceruntime.orders.Order changeOrderUserId(ApiContext apiContext, String orderId, int expectedCode) throws Exception
 	{
 		return changeOrderUserId(apiContext,  orderId,  null, expectedCode);

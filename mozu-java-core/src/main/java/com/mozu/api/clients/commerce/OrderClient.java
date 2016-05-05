@@ -6,12 +6,14 @@
  */
 package com.mozu.api.clients.commerce;
 
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -322,7 +324,7 @@ public class OrderClient {
 	 * </code></pre></p>
 	 * @param digitalWalletType The type of digital wallet to be processed.
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields A list or array of fields returned for a call. These fields may be customized and may be used for various types of data calls in Mozu. For example, responseFields are returned for retrieving or updating attributes, carts, and messages in Mozu.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param digitalWallet Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -449,6 +451,55 @@ public class OrderClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(action);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Changes the pricelist associated with an order. The desired price list code should be specified on the ApiContext.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderPriceListClient( priceListCode,  orderId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order.
+	 * @param priceListCode 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> changeOrderPriceListClient(String priceListCode, String orderId) throws Exception
+	{
+		return changeOrderPriceListClient( priceListCode,  orderId,  null,  null,  null);
+	}
+
+	/**
+	 * Changes the pricelist associated with an order. The desired price list code should be specified on the ApiContext.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ChangeOrderPriceListClient( priceListCode,  orderId,  updateMode,  version,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId Unique identifier of the order.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
+	 * @param priceListCode 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see string
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> changeOrderPriceListClient(String priceListCode, String orderId, String updateMode, String version, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.OrderUrl.changeOrderPriceListUrl(orderId, responseFields, updateMode, version);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(priceListCode);
 		return mozuClient;
 
 	}

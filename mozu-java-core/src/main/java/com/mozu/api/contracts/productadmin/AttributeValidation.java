@@ -6,12 +6,13 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Validates the attribute configured for the customer in the storefront against the attribute configured in Mozu admin.
+ *	Validates the attribute configured for the customer in the storefront against the attribute configured in .
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable

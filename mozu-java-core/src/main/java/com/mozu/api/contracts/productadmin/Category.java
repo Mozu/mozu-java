@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.productadmin;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,19 +22,6 @@ public class Category implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The Type of Category Static, Dyanmic, DynamicPreComputed
-	 */
-	protected String categoryType;
-
-	public String getCategoryType() {
-		return this.categoryType;
-	}
-
-	public void setCategoryType(String categoryType) {
-		this.categoryType = categoryType;
-	}
 
 	protected Integer catalogId;
 
@@ -56,6 +44,19 @@ public class Category implements Serializable
 
 	public void setCategoryCode(String categoryCode) {
 		this.categoryCode = categoryCode;
+	}
+
+	/**
+	 * The Type of Category Static, Dyanmic, DynamicPreComputed
+	 */
+	protected String categoryType;
+
+	public String getCategoryType() {
+		return this.categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
 	}
 
 	/**

@@ -6,12 +6,14 @@
  */
 package com.mozu.api.clients.content.documentlists;
 
+import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -241,7 +243,7 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Updates the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
+	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDocumentContentClient( stream,  documentListName,  documentId,  contentType);
 	 * client.setBaseAddress(url);

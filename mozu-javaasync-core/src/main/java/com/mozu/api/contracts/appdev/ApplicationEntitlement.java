@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -112,6 +113,9 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
+	/**
+	 * Denotes the application owner dev account id
+	 */
 	protected Integer appOwnerDevAccountId;
 
 	public Integer getAppOwnerDevAccountId() {

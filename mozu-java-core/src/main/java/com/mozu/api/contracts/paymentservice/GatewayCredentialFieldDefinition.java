@@ -6,6 +6,7 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
+import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,7 +21,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The sequential display order of the gateway in Mozu Admin.
+	 * The sequential display order of the gateway in .
 	 */
 	protected Integer adminDisplayOrder;
 
