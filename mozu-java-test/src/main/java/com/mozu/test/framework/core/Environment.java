@@ -14,24 +14,19 @@ public class Environment {
 	
     public enum Environments
 	{
-    	Dev,
-	    CI,
 	    QA,
 	    Prod,
-	    SI,
-	    Demo
+	    QA2,
+	    MicroDev2,
+	    MicroDev5,
 	}
 
     public enum ScaleUnitId
     {
         None,
-        HP1,
         TP1,
         TP2,
         SB,
-        PC1,
-        PCI,
-        Su1
     }
     
 	/**
@@ -60,19 +55,21 @@ public class Environment {
 	    
         if (StringUtils.isBlank(envir))
         {
-            envir = "SI";
+            envir = "QA";
         }
         
-        if (envir.toUpperCase().equals("CI"))
-        	return Environments.CI;
-        else if(envir.toUpperCase().equals("SI"))
-        	return Environments.SI;
-        else if(envir.toUpperCase().equals("QA"))
+        if(envir.toUpperCase().equals("QA"))
         	return Environments.QA;
         else if(envir.toUpperCase().equals("PROD"))
         	return Environments.Prod;
+        else if(envir.toUpperCase().equals("QA2"))
+        	return Environments.QA2;
+        else if(envir.toUpperCase().equals("MICRODEV2"))
+        	return Environments.MicroDev2;
+        else if(envir.toUpperCase().equals("MICRODEV5"))
+        	return Environments.MicroDev5;
         else
-        	return Environments.SI;
+        	return Environments.QA;
     }
 	
     public static String getConfigValue(String keyPart)
