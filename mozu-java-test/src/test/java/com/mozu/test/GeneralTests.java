@@ -89,6 +89,7 @@ import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 import com.mozu.api.contracts.productadmin.ProductType;
 import com.mozu.api.contracts.productadmin.ProductVariation;
 import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
+import com.mozu.api.contracts.productadmin.ProductVariationFixedPrice;
 import com.mozu.api.contracts.productadmin.PublishingScope;
 import com.mozu.api.contracts.productadmin.SearchSettings;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRule;
@@ -101,6 +102,7 @@ import com.mozu.api.contracts.shippingadmin.CustomTableRate;
 import com.mozu.api.contracts.shippingadmin.CustomTableRateContent;
 import com.mozu.api.contracts.shippingadmin.ServiceType;
 import com.mozu.api.contracts.shippingadmin.ServiceTypeLocalizedContent;
+import com.mozu.api.contracts.shippingadmin.TargetRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingProfile;
@@ -111,10 +113,6 @@ import com.mozu.api.contracts.shippingruntime.RateRequest;
 import com.mozu.api.contracts.sitesettings.application.Application;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.tenant.TenantCollection;
-import com.mozu.api.resources.commerce.shipping.admin.CarrierConfigurationResource;
-import com.mozu.api.resources.commerce.shipping.admin.ShippingProfileResource;
-import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingInclusionRuleResource;
-import com.mozu.api.resources.commerce.shipping.admin.profiles.ShippingStatesResource;
 import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
@@ -212,6 +210,15 @@ public class GeneralTests extends MozuApiTestBase {
         AdminLocationInventoryFactory.updateLocationInventory(apiContext, DataViewMode.Live, list1, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 
+	@Test
+	public void AdminPriceListTests() throws Exception {
+		AdminPriceListFactory.addPriceList(apiContext, null, HttpStatus.SC_CONFLICT);
+		AdminPriceListFactory.getPriceList(apiContext, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		AdminPriceListFactory.getPriceLists(apiContext, HttpStatus.SC_OK);
+		AdminPriceListFactory.updatePriceList(apiContext, null, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		AdminPriceListFactory.deletePriceList(apiContext, Generator.randomString(5,  Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	}
+	
 	@Test
 	public void AdminProductTests() throws Exception {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
@@ -349,9 +356,8 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void CarrierConfigurationTests() throws Exception {
-		CarrierConfigurationResource resource = new CarrierConfigurationResource(apiContext);
-		CarrierConfigurationCollection configurations = resource.getConfigurations();
-		CarrierConfiguration configuration = resource.getConfiguration(configurations.getItems().get(0).getId());
+		CarrierConfigurationCollection configurations = CarrierConfigurationFactory.getConfigurations(apiContext, HttpStatus.SC_OK);
+		CarrierConfiguration configuration = CarrierConfigurationFactory.getConfiguration(apiContext, configurations.getItems().get(0).getId(), HttpStatus.SC_OK);
 		configuration = new CarrierConfiguration();
 		List<CustomTableRate> list = new ArrayList<CustomTableRate>();
 		CustomTableRate rate = new CustomTableRate();
@@ -363,13 +369,13 @@ public class GeneralTests extends MozuApiTestBase {
 		rate.setContent(content);
 		list.add(rate);
 		configuration.setCustomTableRates(list);
-		CarrierConfiguration newConfig = resource.createConfiguration(configuration, "custom");
+		CarrierConfiguration newConfig = CarrierConfigurationFactory.createConfiguration(apiContext, configuration, "custom", HttpStatus.SC_CREATED);
 		content.setName("New Name");
 		list.get(0).setContent(content);
 		configuration.setCustomTableRates(list);
-		newConfig = resource.updateConfiguration(configuration, newConfig.getId());
+		newConfig = CarrierConfigurationFactory.updateConfiguration(apiContext, configuration, newConfig.getId(), HttpStatus.SC_OK);
 		Assert.hasText("New Name", newConfig.getCustomTableRates().get(0).getContent().getName());
-		resource.deleteConfiguration(newConfig.getId());
+		CarrierConfigurationFactory.deleteConfiguration(apiContext,newConfig.getId(), HttpStatus.SC_NO_CONTENT);
 	}
 	
 	@Test
@@ -669,6 +675,8 @@ public class GeneralTests extends MozuApiTestBase {
 		String mozuNamespace = appId.substring(0, appId.indexOf('.'));
 		DocumentListType type = new DocumentListType();
 		type.setNamespace(mozuNamespace);
+		DocumentListTypeFactory.getDocumentListTypes(apiContext, DataViewMode.Live, HttpStatus.SC_OK);
+		DocumentListTypeFactory.getDocumentListType(apiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars),HttpStatus.SC_NOT_FOUND);		
 /*bug 35164*/		DocumentListTypeFactory.createDocumentListType(apiContext, DataViewMode.Live, type, HttpStatus.SC_BAD_REQUEST);
 /*bug 47694*/		DocumentListTypeFactory.updateDocumentListType(apiContext, new DocumentListType(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
@@ -768,6 +776,14 @@ public class GeneralTests extends MozuApiTestBase {
 	}
 	
 	@Test
+	public void HandlingFeeRuleTests() throws Exception {
+		HandlingFeeRuleFactory.createOrderHandlingFeeRule(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		HandlingFeeRuleFactory.getOrderHandlingFeeRules(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
+		HandlingFeeRuleFactory.getOrderHandlingFeeRule(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		HandlingFeeRuleFactory.deleteOrderHandlingFeeRule(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+	}
+	
+	@Test
 	public void InStockNotificationSubscriptionTests() throws Exception {
         InStockNotificationSubscriptionFactory.getInStockNotificationSubscriptions(apiContext, HttpStatus.SC_OK);
         InStockNotificationSubscriptionFactory.addInStockNotificationSubscription(apiContext, new InStockNotificationSubscription(), HttpStatus.SC_CONFLICT);
@@ -844,6 +860,7 @@ public class GeneralTests extends MozuApiTestBase {
 		OrderFactory.resendOrderConfirmationEmail(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		OrderFactory.createOrderFromCart(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		OrderFactory.processDigitalWallet(apiContext, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		OrderFactory.changeOrderPriceList(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 
 	@Test
@@ -952,6 +969,21 @@ public class GeneralTests extends MozuApiTestBase {
         PickupFactory.createPickup(apiContext, null, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
         PickupFactory.deletePickup(apiContext, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         PickupFactory.updatePickup(apiContext, null, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+	}
+	
+	@Test
+	public void PriceListEntryTests() throws Exception {
+		PriceListEntryFactory.addPriceListEntry(apiContext, null, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		PriceListEntryFactory.getPriceListEntries(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		PriceListEntryFactory.getPriceListEntry(apiContext, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), com.mozu.test.framework.helper.Constants.Currency, HttpStatus.SC_NOT_FOUND);
+		PriceListEntryFactory.updatePriceListEntry(apiContext, null, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), com.mozu.test.framework.helper.Constants.Currency, HttpStatus.SC_CONFLICT);
+		PriceListEntryFactory.deletePriceListEntry(apiContext, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), com.mozu.test.framework.helper.Constants.Currency, HttpStatus.SC_NOT_FOUND);
+	}
+	
+	@Test
+	public void PriceListTests() throws Exception {
+		PriceListFactory.getPriceList(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		PriceListFactory.getResolvedPriceList(apiContext, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -1083,6 +1115,12 @@ public class GeneralTests extends MozuApiTestBase {
         ProductVariationFactory.updateProductVariationLocalizedDeltaPrice(localApiContext, DataViewMode.Live, new ProductVariationDeltaPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         ProductVariationFactory.updateProductVariationLocalizedDeltaPrices(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
         ProductVariationFactory.deleteProductVariationLocalizedDeltaPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        ProductVariationFactory.addProductVariationLocalizedPrice(localApiContext, DataViewMode.Live, new ProductVariationFixedPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        ProductVariationFactory.getProductVariationLocalizedPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        ProductVariationFactory.getProductVariationLocalizedPrices(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        ProductVariationFactory.updateProductVariationLocalizedPrice(localApiContext, DataViewMode.Live, new ProductVariationFixedPrice(), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+        ProductVariationFactory.updateProductVariationLocalizedPrices(localApiContext, DataViewMode.Live, null, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+        ProductVariationFactory.deleteProductVariationLocalizedPrice(localApiContext, DataViewMode.Live, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -1116,10 +1154,10 @@ public class GeneralTests extends MozuApiTestBase {
 	        List<String> list = new ArrayList<String>();
 	        list.add(Generator.randomString(5, Generator.AlphaChars));
 	        PublishingScope scope = ProductGenerator.generatePublishingScope(false, list);
-//	        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-//	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
-//	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
-//	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
+	        PublishingScopeFactory.publishDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+	        PublishingScopeFactory.discardDrafts(localApiContext, DataViewMode.Pending, scope, HttpStatus.SC_NOT_FOUND);
+	        PublishingScopeFactory.getPublishSets(localApiContext, HttpStatus.SC_OK);
+	        PublishingScopeFactory.assignProductsToPublishSet(localApiContext, null, HttpStatus.SC_CONFLICT);
 	        /*bug 67281*/
 	        PublishingScopeFactory.getPublishSet(localApiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	        /*bug 67283*/
@@ -1206,6 +1244,8 @@ public class GeneralTests extends MozuApiTestBase {
 		SearchFactory.getSearchTuningRules(apiContext, HttpStatus.SC_OK);
 		SearchFactory.getSearchTuningRuleSortFields(apiContext, HttpStatus.SC_OK);
 		SearchFactory.updateSearchTuningRuleSortFields(apiContext, null, HttpStatus.SC_CONFLICT);
+		SearchFactory.getSynonymDefinitionCollection(apiContext, com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_OK);
+		SearchFactory.updateSynonymDefinitionCollection(apiContext, null, com.mozu.test.framework.helper.Constants.LocaleCode, HttpStatus.SC_CONFLICT);
 	}
 	
 	@Test
@@ -1227,11 +1267,9 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void ShippingInclusionRuleTests() throws Exception {
-		ShippingProfileResource resource1 = new ShippingProfileResource(apiContext);
-		ShippingProfile profile = resource1.getProfiles().getItems().get(0);
-		ShippingInclusionRuleResource resource = new ShippingInclusionRuleResource(apiContext);
-		ShippingInclusionRuleCollection  rules = resource.getShippingInclusionRules(profile.getCode());
-		ShippingInclusionRule rule = resource.getShippingInclusionRule(profile.getCode(), rules.getItems().get(0).getId());
+		ShippingProfile profile = ShippingProfileFactory.getProfiles(apiContext, HttpStatus.SC_OK).getItems().get(0);
+		ShippingInclusionRuleCollection  rules = ShippingInclusionRuleFactory.getShippingInclusionRules(apiContext, profile.getCode(), HttpStatus.SC_OK);
+		ShippingInclusionRule rule = ShippingInclusionRuleFactory.getShippingInclusionRule(apiContext, profile.getCode(), rules.getItems().get(0).getId(), HttpStatus.SC_OK);
 		
 		ServiceType stype = new ServiceType();
 		stype.setCode(rule.getServiceTypes().get(1).getCode());
@@ -1247,34 +1285,31 @@ public class GeneralTests extends MozuApiTestBase {
 		List<ServiceType> types = new ArrayList<ServiceType>();
 		types.add(stype);
 		rule.setServiceTypes(types);
-		rule = resource.createShippingInclusionRule(rule, profile.getCode());
+		rule = ShippingInclusionRuleFactory.createShippingInclusionRule(apiContext, rule, profile.getCode(), HttpStatus.SC_OK);
 	    list.add("HI and AK");
 	    rule.setProductTargetRuleCodes(list);
-	    rule = resource.updateShippingInclusionRule(rule, profile.getCode(), rule.getId());
+	    rule = ShippingInclusionRuleFactory.updateShippingInclusionRule(apiContext, rule, profile.getCode(), rule.getId(), HttpStatus.SC_OK);
 	    Assert.isTrue(rule.getShippingTargetRuleCodes().size()== 2);
-	    resource.deleteShippingInclusionRule(profile.getCode(), rule.getId());
+	    ShippingInclusionRuleFactory.deleteShippingInclusionRule(apiContext, profile.getCode(), rule.getId(), HttpStatus.SC_OK);
 	}
 
 	@Test
 	public void ShippingProfileTests() throws Exception {
-		ShippingProfileResource resource = new ShippingProfileResource(apiContext);
-		ShippingProfileCollection profiles = resource.getProfiles();
+		ShippingProfileCollection profiles = ShippingProfileFactory.getProfiles(apiContext, HttpStatus.SC_OK);
 		Assert.isTrue(profiles.getTotalCount() != 0);
 	}
 
 	@Test
 	public void ShippingStatesTests() throws Exception {
-		ShippingProfileResource resource1 = new ShippingProfileResource(apiContext);
-		ShippingProfile profile = resource1.getProfiles().getItems().get(0);
-		ShippingStatesResource resource = new ShippingStatesResource(apiContext);
-		List<ShippingStates> list = resource.getStates(profile.getCode());
+		ShippingProfile profile = ShippingProfileFactory.getProfiles(apiContext, HttpStatus.SC_OK).getItems().get(0);
+		List<ShippingStates> list = ShippingStatesFactory.getStates(apiContext, profile.getCode(), HttpStatus.SC_OK);
 		State state = list.get(0).getStates().get(0);
 		int size = list.get(0).getStates().size();
 		list.get(0).getStates().remove(0);
-		list = resource.updateStates(list, profile.getCode());
+		list = ShippingStatesFactory.updateStates(apiContext, list, profile.getCode(), HttpStatus.SC_OK);
 		Assert.isTrue(list.get(0).getStates().size() == size - 1);
 		list.get(0).getStates().add(state);
-		resource.updateStates(list, profile.getCode());
+		ShippingStatesFactory.updateStates(apiContext, list, profile.getCode(), HttpStatus.SC_OK);
 	}
 
 	@Test
@@ -1323,6 +1358,15 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void SubscriptionTests() throws Exception {
 		SubscriptionFactory.getSubscriptions(apiContext, HttpStatus.SC_OK);
+	}
+	
+	@Test
+	public void TargetRuleTests() throws Exception {
+		TargetRuleFactory.createTargetRule(apiContext, null, HttpStatus.SC_CONFLICT);
+		TargetRuleFactory.deleteTargetRule(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+		TargetRuleFactory.getTargetRules(apiContext, HttpStatus.SC_OK);
+		TargetRuleFactory.updateTargetRule(apiContext, new TargetRule(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+		TargetRuleFactory.validateTargetRule(apiContext, new TargetRule(), HttpStatus.SC_CONFLICT);
 	}
 	
 	@Test
