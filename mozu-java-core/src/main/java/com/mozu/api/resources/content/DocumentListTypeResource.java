@@ -7,20 +7,18 @@
 package com.mozu.api.resources.content;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Document List Types resource to manage the types of document lists in your site's document hierarchy. The type denotes a content type for that list of folders, sub-folders, and documents such as `web_pages`.
+ * 
  * </summary>
  */
 public class DocumentListTypeResource {
@@ -44,7 +42,7 @@ public class DocumentListTypeResource {
 	}
 		
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes();
@@ -58,14 +56,14 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentListTypeCollection
 	 * @see com.mozu.api.contracts.content.DocumentListTypeCollection
 	 */
@@ -79,7 +77,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN);
@@ -94,13 +92,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 */
@@ -114,12 +112,12 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
 	 * </code></pre></p>
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -130,13 +128,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -151,13 +149,13 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
@@ -168,14 +166,14 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Updates a DocumentListType
+	 * 
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.updateDocumentListType( list,  documentListTypeFQN,  responseFields);
 	 * </code></pre></p>
 	 * @param documentListTypeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list Properties for the document list type. Document lists contain documents with an associated document type, such as web pages.
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType
 	 * @see com.mozu.api.contracts.content.DocumentListType

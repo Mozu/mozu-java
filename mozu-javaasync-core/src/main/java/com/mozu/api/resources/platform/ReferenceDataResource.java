@@ -7,7 +7,6 @@
 package com.mozu.api.resources.platform;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -254,7 +252,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -269,7 +267,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -285,7 +283,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -305,7 +303,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getBehaviorCategory( categoryId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
@@ -590,7 +588,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates();
@@ -604,7 +602,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountriesWithStates( callback );
@@ -619,12 +617,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */
@@ -638,12 +636,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountDownLatch latch = referencedata.getCountriesWithStates( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection

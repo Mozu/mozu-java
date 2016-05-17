@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.catalog.storefront;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to get a price list. This may contain a hierarchy of price lists dependent on setup.
+ * 
  * </summary>
  */
 public class PriceListResource {
@@ -38,7 +36,7 @@ public class PriceListResource {
 
 	
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
@@ -53,7 +51,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getPriceList( priceListCode, callback );
@@ -69,13 +67,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
 	 * </code></pre></p>
 	 * @param priceListCode 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productruntime.PriceList
 	 * @see com.mozu.api.contracts.productruntime.PriceList
 	 */
@@ -89,13 +87,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getPriceList( priceListCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param priceListCode 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.PriceList
 	 * @see com.mozu.api.contracts.productruntime.PriceList
@@ -109,7 +107,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList();
@@ -123,7 +121,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getResolvedPriceList( callback );
@@ -138,13 +136,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList( customerAccountId,  responseFields);
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param customerAccountId 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
 	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
 	 */
@@ -158,13 +156,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getResolvedPriceList( customerAccountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param customerAccountId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.ResolvedPriceList
 	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList

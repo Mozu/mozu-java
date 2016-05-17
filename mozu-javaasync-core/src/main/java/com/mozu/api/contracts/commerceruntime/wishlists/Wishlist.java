@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.wishlists;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -28,7 +27,7 @@ public class Wishlist implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 * Unique identifier of the channel associated with the wish list.
 	 */
 	protected String channelCode;
 
@@ -54,7 +53,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
+	 * Unique identifier of the customer account associated with the wish list.
 	 */
 	protected Integer customerAccountId;
 
@@ -67,7 +66,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
+	 * The interaction type the shopper uses to create the wish list, which is Website, Store, Call, or Unknown. This property is not used at this time and is reserved for future functionality.
 	 */
 	protected String customerInteractionType;
 
@@ -80,7 +79,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The aggregate total for all items in the cart, including costs associated with shopper-defined options or extras and any applied discounts.
+	 * The discounted subtotal of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double discountedSubtotal;
 
@@ -93,7 +92,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
+	 * The subtotal of the cart including any applied discount calculations. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double discountedTotal;
 
@@ -106,7 +105,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 * Estimated amount of discounts applied to all items in the wish list, which is system-supplied and read-only.   This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double discountTotal;
 
@@ -119,7 +118,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
+	 * The date and time this wish list expires. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected DateTime expirationDate;
 
@@ -132,7 +131,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
+	 * The identifier an external program uses to identify the Mozu wish list.
 	 */
 	protected String externalId;
 
@@ -145,7 +144,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 * The fee total of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double feeTotal;
 
@@ -158,7 +157,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Calculated total tax amount for handling costs if the cart/order is subject to sales tax. 
+	 * The tax amount levied against the handling fee for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double handlingTaxTotal;
 
@@ -171,7 +170,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of this shopper wish list. System-supplied and read only.
 	 */
 	protected String id;
 
@@ -184,7 +183,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The date and time an order or wish list is imported into Mozu. This is not the date and time it was created in the external application. 
+	 * If this wish list was imported from an external program, the date and time the wish list was imported.
 	 */
 	protected DateTime importDate;
 
@@ -197,7 +196,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
+	 * If true, this wish list was imported from an external program.
 	 */
 	protected Boolean isImport;
 
@@ -210,7 +209,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The total amount of calculated tax for items, used by carts, orders, and wish lists.
+	 * The total amount of tax for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double itemTaxTotal;
 
@@ -223,7 +222,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The date in UTC Date/Time when the items in the cart were last validated against the site's product catalog. System-supplied and read-only.
+	 * The date and time the wish list was last validated against the product catalog.
 	 */
 	protected DateTime lastValidationDate;
 
@@ -236,7 +235,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user-defined name of the shopper wish list. The name defined for a wish list does not have to be unique.
 	 */
 	protected String name;
 
@@ -262,7 +261,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The shipping subtotal amount calculated without any applied discounts for line item and entire amounts of carts and orders. This property is not calculated for wish lists at this time.
+	 * The subtotaled shipping amount for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double shippingSubTotal;
 
@@ -275,7 +274,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
+	 * The total amount of tax levied against shipping charges for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double shippingTaxTotal;
 
@@ -288,7 +287,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The calculated total shipping amount estimated for carts or orders, including tax. This amount is not calculated for wish lists at this time.
+	 * The total shipping costs for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double shippingTotal;
 
@@ -327,7 +326,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
+	 * The subtotal of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double subtotal;
 
@@ -340,7 +339,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * The total monetary sum of sales tax estimated for a cart or order.
+	 * The total tax amount for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
 	protected Double taxTotal;
 
@@ -366,7 +365,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 * The total amount of items in the wish list. This property value is not calculated at this time and is reserved for future functionality. If a site's structure distinguishes between wish list types, the site uses the value in this property to categorize the wish lists.
 	 */
 	protected Double total;
 
@@ -405,7 +404,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 * Unique identifier of the customer visit in which the wish list was created or last modified. System-supplied and read only.
 	 */
 	protected String visitId;
 
@@ -418,7 +417,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
+	 * Unique identifier of the web session in which the wish list was created or last modified. System-supplied and read only.
 	 */
 	protected String webSessionId;
 
@@ -444,7 +443,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * Collection of change messages logged for each modification to a shopper wish list. System-supplied and read only.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -454,9 +453,6 @@ public class Wishlist implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -467,9 +463,6 @@ public class Wishlist implements Serializable
 		this.data = data;
 	}
 
-	/**
-	 * Extra properties (key-value pairs) that extend the primary object. Think of this as a property bag of string keys and string values.
-	 */
 	protected List<ExtendedProperty> extendedProperties;
 	public List<ExtendedProperty> getExtendedProperties() {
 		return this.extendedProperties;
@@ -479,7 +472,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * Properties of the information required to fulfill the cart, order, or wish list. Shoppers can fulfill ordered items by using in-store pickup or direct shipping.
+	 * Properties that determine how items in the wish list are fulfilled.
 	 */
 	protected FulfillmentInfo fulfillmentInfo;
 
@@ -503,7 +496,7 @@ public class Wishlist implements Serializable
 	}
 
 	/**
-	 * List of order-level discounts projected to apply to the cart at checkout or order.
+	 * Any order discounts that apply to items in the wish list. This property is not used at this time and is reserved for future functionality.
 	 */
 	protected List<AppliedDiscount> orderDiscounts;
 	public List<AppliedDiscount> getOrderDiscounts() {

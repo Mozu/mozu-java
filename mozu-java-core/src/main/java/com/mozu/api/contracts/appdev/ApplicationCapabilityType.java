@@ -7,25 +7,18 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.appdev.ApplicationCapability;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomain;
 
-/**
- *	Mozu.AppDev.Contracts.ApplicationCapabilityType ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityType implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
@@ -36,9 +29,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer applicationId;
 
 	public Integer getApplicationId() {
@@ -49,9 +39,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer capabilityTypeId;
 
 	public Integer getCapabilityTypeId() {
@@ -62,9 +49,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.capabilityTypeId = capabilityTypeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType capabilityTypeName ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String capabilityTypeName;
 
 	public String getCapabilityTypeName() {
@@ -75,9 +59,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.capabilityTypeName = capabilityTypeName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isImplemented ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean isImplemented;
 
 	public Boolean getIsImplemented() {
@@ -88,9 +69,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.isImplemented = isImplemented;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType isInitializedByDefault ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean isInitializedByDefault;
 
 	public Boolean getIsInitializedByDefault() {
@@ -101,9 +79,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.isInitializedByDefault = isInitializedByDefault;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer packageId;
 
 	public Integer getPackageId() {
@@ -114,9 +89,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.packageId = packageId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilities ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapability> applicationCapabilities;
 	public List<ApplicationCapability> getApplicationCapabilities() {
 		return this.applicationCapabilities;
@@ -125,9 +97,6 @@ public class ApplicationCapabilityType implements Serializable
 		this.applicationCapabilities = applicationCapabilities;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationCapabilityType applicationCapabilityDomains ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ApplicationCapabilityDomain> applicationCapabilityDomains;
 	public List<ApplicationCapabilityDomain> getApplicationCapabilityDomains() {
 		return this.applicationCapabilityDomains;

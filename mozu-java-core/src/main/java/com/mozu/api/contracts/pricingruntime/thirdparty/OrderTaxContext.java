@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.pricingruntime.thirdparty;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -49,7 +48,7 @@ public class OrderTaxContext implements Serializable
 	}
 
 	/**
-	 * Amount of tax applied to shipping costs for line items in and entire orders.
+	 * Tax amount applied to the shipping costs on the order.
 	 */
 	protected Double shippingTax;
 

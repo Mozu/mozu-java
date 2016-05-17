@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.storefront;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -18,7 +16,7 @@ public class PriceListUrl
 	/**
 	 * Get Resource Url for GetPriceList
 	 * @param priceListCode 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPriceListUrl(String priceListCode, String responseFields)
@@ -31,8 +29,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetResolvedPriceList
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param customerAccountId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getResolvedPriceListUrl(Integer customerAccountId, String responseFields)

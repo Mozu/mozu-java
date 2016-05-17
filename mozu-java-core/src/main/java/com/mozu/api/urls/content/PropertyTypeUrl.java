@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.content;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -33,7 +31,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for GetPropertyType
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -59,7 +57,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyType
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -73,7 +71,7 @@ public class PropertyTypeUrl
 
 	/**
 	 * Get Resource Url for DeletePropertyType
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyTypeUrl(String propertyTypeName)

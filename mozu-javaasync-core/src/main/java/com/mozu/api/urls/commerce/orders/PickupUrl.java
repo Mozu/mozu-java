@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.orders;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,8 +15,8 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for GetAvailablePickupFulfillmentActions
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailablePickupFulfillmentActionsUrl(String orderId, String pickupId)
@@ -31,8 +29,8 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for GetPickup
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -61,8 +59,8 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for UpdatePickup
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -77,7 +75,7 @@ public class PickupUrl
 
 	/**
 	 * Get Resource Url for DeletePickup
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return   String Resource Url
 	 */

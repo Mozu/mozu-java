@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.couponsets;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for GetAssignedDiscounts
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAssignedDiscountsUrl(String couponSetCode)
@@ -29,7 +27,7 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for AssignDiscount
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl assignDiscountUrl(String couponSetCode)
@@ -41,8 +39,8 @@ public class AssignedDiscountUrl
 
 	/**
 	 * Get Resource Url for UnAssignDiscount
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param discountId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl unAssignDiscountUrl(String couponSetCode, Integer discountId)

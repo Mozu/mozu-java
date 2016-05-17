@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.TenantExtensionsResource;
 
 /** <summary>
- * platform/extensions related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class TenantExtensionsFactory

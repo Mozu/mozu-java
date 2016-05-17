@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.customer;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class AddressValidationRequestResource {
 	 *	AddressValidationRequest addressvalidationrequest = new AddressValidationRequest();
 	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest);
 	 * </code></pre></p>
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
@@ -60,7 +58,7 @@ public class AddressValidationRequestResource {
 	 *	CountDownLatch latch = addressvalidationrequest.validateAddress( addressValidationRequest, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
@@ -77,7 +75,7 @@ public class AddressValidationRequestResource {
 	 *	AddressValidationResponse addressValidationResponse = addressvalidationrequest.validateAddress( addressValidationRequest,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest
@@ -99,7 +97,7 @@ public class AddressValidationRequestResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param addressValidationRequest Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+	 * @param addressValidationRequest Properties of the address to validate.
 	 * @return com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationResponse
 	 * @see com.mozu.api.contracts.customer.AddressValidationRequest

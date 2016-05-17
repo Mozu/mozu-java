@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.admin;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -67,7 +65,7 @@ public class LocationTypeUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationType
-	 * @param locationTypeCode The user-defined code that identifies the location type.
+	 * @param locationTypeCode User-defined code used to identify the location type.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationTypeUrl(String locationTypeCode)

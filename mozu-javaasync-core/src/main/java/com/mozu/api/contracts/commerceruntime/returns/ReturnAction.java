@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.returns;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -22,7 +21,7 @@ public class ReturnAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
+	 * The name of the action to perform for the return.
 	 */
 	protected String actionName;
 

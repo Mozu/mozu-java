@@ -7,13 +7,12 @@
 package com.mozu.api.contracts.core;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Properties of an application's behavior.
+ *	Properties of an application behavior.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Behavior implements Serializable
@@ -22,7 +21,7 @@ public class Behavior implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of a category. 
+	 * Unique identifier of the behavior category.
 	 */
 	protected Integer categoryId;
 
@@ -35,7 +34,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the behavior.
 	 */
 	protected Integer id;
 
@@ -61,7 +60,7 @@ public class Behavior implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of the behavior.
 	 */
 	protected String name;
 

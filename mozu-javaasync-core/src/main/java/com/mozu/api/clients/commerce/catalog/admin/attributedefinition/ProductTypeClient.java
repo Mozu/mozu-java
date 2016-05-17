@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin.attributedefinition;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -51,7 +49,7 @@ public class ProductTypeClient {
 	 * client.executeRequest();
 	 * ProductTypeCollection productTypeCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -81,7 +79,7 @@ public class ProductTypeClient {
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -99,7 +97,7 @@ public class ProductTypeClient {
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
@@ -127,7 +125,7 @@ public class ProductTypeClient {
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -147,7 +145,7 @@ public class ProductTypeClient {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -174,9 +172,9 @@ public class ProductTypeClient {
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -194,10 +192,10 @@ public class ProductTypeClient {
 	 * client.executeRequest();
 	 * ProductType productType = client.Result();
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductType>
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -223,7 +221,7 @@ public class ProductTypeClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to delete.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

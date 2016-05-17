@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.customer;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -49,7 +48,7 @@ public class CustomerAttribute implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * List of values for the attribute.
 	 */
 	protected List<Object> values;
 	public List<Object> getValues() {

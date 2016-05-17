@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -25,7 +24,7 @@ public class DigitalPackage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * Available actions are actions that you can take on this fulfillment unit.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -49,7 +48,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
+	 * The digital fulfillment date is the date of the pickup.
 	 */
 	protected DateTime fulfillmentDate;
 
@@ -62,7 +61,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
+	 * The digital package location code is for the location from which to obtain this item.
 	 */
 	protected String fulfillmentLocationCode;
 
@@ -75,7 +74,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * The digital package ID is the ID of the fulfillment unit.
 	 */
 	protected String id;
 
@@ -88,7 +87,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * This is the status of the fulfillment unit.
 	 */
 	protected String status;
 
@@ -101,7 +100,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 * Audit info contains the basic audit information about the digital item.
 	 */
 	protected AuditInfo auditInfo;
 
@@ -114,7 +113,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * Change messages handle message related to changes with the fulfillment unit.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -125,7 +124,7 @@ public class DigitalPackage implements Serializable
 	}
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * The digital package list is a list of items in the fulfillment unit.
 	 */
 	protected List<DigitalPackageItem> items;
 	public List<DigitalPackageItem> getItems() {

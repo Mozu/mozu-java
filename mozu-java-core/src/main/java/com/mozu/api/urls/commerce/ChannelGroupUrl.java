@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -37,7 +35,7 @@ public class ChannelGroupUrl
 
 	/**
 	 * Get Resource Url for GetChannelGroup
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -63,7 +61,7 @@ public class ChannelGroupUrl
 
 	/**
 	 * Get Resource Url for UpdateChannelGroup
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

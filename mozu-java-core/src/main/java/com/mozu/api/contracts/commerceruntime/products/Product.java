@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.products;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -27,9 +26,6 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Allocation ID associated with this product on this order.
-	 */
 	protected DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
@@ -40,9 +36,6 @@ public class Product implements Serializable
 		this.allocationExpiration = allocationExpiration;
 	}
 
-	/**
-	 * Allocation ID associated with this product on this order.
-	 */
 	protected Integer allocationId;
 
 	public Integer getAllocationId() {
@@ -54,7 +47,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * Short description of the product in the language specified in the locale code for the storefront.
 	 */
 	protected String description;
 
@@ -67,7 +60,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
+	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
 	 */
 	protected Boolean discountsRestricted;
 
@@ -105,9 +98,6 @@ public class Product implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
-	/**
-	 * Fulfillment status of the product.
-	 */
 	protected String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
@@ -119,7 +109,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of fulfillment types that the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -130,7 +120,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods of a product. For example: physical, digital, or digital credit.
 	 */
 	protected String goodsType;
 
@@ -156,7 +146,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The URL link for the image file associated with a product or category.
+	 * The URL of the image file associated with a product on a storefront.
 	 */
 	protected String imageUrl;
 
@@ -169,7 +159,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 * If true, this product cannot ship in a package with other items and must ship in a package by itself.
 	 */
 	protected Boolean isPackagedStandAlone;
 
@@ -182,7 +172,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
 	protected Boolean isRecurring;
 
@@ -195,7 +185,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 * If true, the entity is subject to sales tax based on the relevant tax rate.
 	 */
 	protected Boolean isTaxable;
 
@@ -221,7 +211,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of the product that appears on the storefront.
 	 */
 	protected String name;
 
@@ -247,7 +237,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the product reservation associated with the component product in a product bundle or item in a cart/order. System-supplied and read only.
+	 * The unique identifier of the product reservation created for this item in the cart or order.
 	 */
 	protected Integer productReservationId;
 
@@ -286,7 +276,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code defined for the product.
 	 */
 	protected String upc;
 
@@ -312,7 +302,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
+	 * Collection of component products that make up a single product bundle with its own product code, added to a cart or order.
 	 */
 	protected List<BundledProduct> bundledProducts;
 	public List<BundledProduct> getBundledProducts() {
@@ -323,7 +313,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The list of all categories associated with the product. These categories contain products, can have discounts associated, and define the grouping of products to display on the storefront.
+	 * The list of all categories associated with the product.
 	 */
 	protected List<Category> categories;
 	public List<Category> getCategories() {
@@ -347,7 +337,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * The list of option attributes configured for the product.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
@@ -371,7 +361,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * Collection of property attributes defined for the item in the cart or order.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {

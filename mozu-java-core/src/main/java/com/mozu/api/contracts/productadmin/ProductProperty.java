@@ -7,14 +7,13 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.ProductPropertyValue;
 
 /**
- *	Details of a property defined for a product.
+ *	Properties of the product property to create such as attribute detail, fully qualified name, and list of product property values.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable
@@ -36,7 +35,7 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * The actual values that populate a product property to set in the Admin to appear on the Storefront.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

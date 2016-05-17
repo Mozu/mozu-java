@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeLocalizedContentsUrl(String attributeFQN)
@@ -29,7 +27,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for GetAttributeLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -45,7 +43,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for AddLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -59,7 +57,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocalizedContentsUrl(String attributeFQN)
@@ -71,7 +69,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for UpdateLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -87,7 +85,7 @@ public class AttributeLocalizedContentUrl
 
 	/**
 	 * Get Resource Url for DeleteLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @return   String Resource Url
 	 */

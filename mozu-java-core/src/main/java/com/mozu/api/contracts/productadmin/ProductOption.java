@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -36,7 +35,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * List of values for the product option. Each value includes an attribute vocabulary value detail and value object.
 	 */
 	protected List<ProductOptionValue> values;
 	public List<ProductOptionValue> getValues() {

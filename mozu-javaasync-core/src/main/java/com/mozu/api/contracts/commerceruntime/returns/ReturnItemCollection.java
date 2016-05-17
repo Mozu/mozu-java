@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.returns;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -22,9 +21,6 @@ public class ReturnItemCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
-	 */
 	protected Integer totalCount;
 
 	public Integer getTotalCount() {
@@ -36,7 +32,7 @@ public class ReturnItemCollection implements Serializable
 	}
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * Retrieves the details of all return items in an order.
 	 */
 	protected List<ReturnItem> items;
 	public List<ReturnItem> getItems() {

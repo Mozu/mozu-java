@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.admin;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -77,7 +75,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -94,8 +92,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -119,7 +117,7 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -137,8 +135,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param responseFields 
+	 * @param location Properties of the location to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -164,8 +162,8 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param locationCode The merchant-defined code associated with the location to update.
+	 * @param location Properties of the location to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -183,9 +181,9 @@ public class LocationClient {
 	 * client.executeRequest();
 	 * Location location = client.Result();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param location Properties of a physical location a tenant uses to manage inventory and fulfills orders, provide store finder functionality, or both.
+	 * @param location Properties of the location to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.location.Location>
 	 * @see com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -210,7 +208,7 @@ public class LocationClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteLocationClient(String locationCode) throws Exception

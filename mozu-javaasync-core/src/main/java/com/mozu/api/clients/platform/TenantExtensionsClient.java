@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.platform;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,18 +14,17 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/extensions related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class TenantExtensionsClient {
 	
 	/**
-	 * platform-extensions Get GetExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient();
 	 * client.setBaseAddress(url);
@@ -42,14 +40,14 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * platform-extensions Get GetExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -66,14 +64,14 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * platform-extensions Put UpdateExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -84,15 +82,15 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * platform-extensions Put UpdateExtensions description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions

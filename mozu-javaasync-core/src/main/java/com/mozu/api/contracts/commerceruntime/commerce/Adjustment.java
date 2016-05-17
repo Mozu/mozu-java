@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.commerce;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class Adjustment implements Serializable
 	}
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * The shopper-facing description of the order-level adjustment.
 	 */
 	protected String description;
 

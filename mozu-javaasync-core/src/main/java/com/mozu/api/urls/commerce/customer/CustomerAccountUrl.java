@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -21,7 +19,7 @@ public class CustomerAccountUrl
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param isAnonymous If true, retrieve anonymous shopper accounts in the response.
 	 * @param pageSize 
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param q A list of customer account search terms to use in the query when searching across customer name and email. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -59,7 +57,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetAccount
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -85,7 +83,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePassword
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The customer account information required to change the userpassword.
 	 * @param unlockAccount 
 	 * @return   String Resource Url
 	 */
@@ -113,7 +111,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for RecomputeCustomerLifetimeValue
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The unique identifier of the customer account for which to calculate customer lifetime value.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl recomputeCustomerLifetimeValueUrl(Integer accountId)
@@ -125,7 +123,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for SetLoginLocked
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId The unique identifier of the customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl setLoginLockedUrl(Integer accountId)
@@ -173,7 +171,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePasswords
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordsUrl(String responseFields)
@@ -212,6 +210,24 @@ public class CustomerAccountUrl
 	}
 
 	/**
+	 * Get Resource Url for GetCustomersPurchaseOrderAccounts
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCustomersPurchaseOrderAccountsUrl(Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/purchaseOrderAccounts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
+		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("sortBy", sortBy);
+		formatter.formatUrl("startIndex", startIndex);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for ResetPassword
 	 * @return   String Resource Url
 	 */
@@ -237,7 +253,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for DeleteAccount
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountUrl(Integer accountId)

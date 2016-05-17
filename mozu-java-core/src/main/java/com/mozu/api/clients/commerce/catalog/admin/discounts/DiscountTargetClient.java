@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin.discounts;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -32,7 +30,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -49,7 +47,7 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -75,8 +73,8 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -94,9 +92,9 @@ public class DiscountTargetClient {
 	 * client.executeRequest();
 	 * DiscountTarget discountTarget = client.Result();
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.DiscountTarget>
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget

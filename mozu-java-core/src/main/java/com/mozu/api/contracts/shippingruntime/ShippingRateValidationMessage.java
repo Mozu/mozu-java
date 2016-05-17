@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.shippingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class ShippingRateValidationMessage implements Serializable
 	}
 
 	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
+	 * Content of the shipping rate validation message.
 	 */
 	protected String message;
 
@@ -47,7 +46,7 @@ public class ShippingRateValidationMessage implements Serializable
 	}
 
 	/**
-	 * The severity level of validation failures for shipping rates and products.
+	 * Severity level of the shipping rate validation failure.
 	 */
 	protected String severity;
 

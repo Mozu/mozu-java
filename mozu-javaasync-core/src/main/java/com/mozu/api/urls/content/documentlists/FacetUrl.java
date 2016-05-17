@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.content.documentlists;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class FacetUrl
 
 	/**
 	 * Get Resource Url for GetFacets
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The document list associated with the facets to retrieve.
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return   String Resource Url
 	 */

@@ -7,13 +7,13 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition;
 import com.mozu.api.contracts.sitesettings.order.Gateway;
+import com.mozu.api.contracts.sitesettings.order.PurchaseOrderPaymentDefinition;
 
 /**
  *	Properties of the payment settings used at order checkout time for the site.
@@ -62,7 +62,7 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * List of name and account information for a payment gateway.
+	 * List of name and account information for a payment gateway. Additional payment gateway providers will be supported in future releases.
 	 */
 	protected List<Gateway> gateways;
 	public List<Gateway> getGateways() {
@@ -70,6 +70,16 @@ public class PaymentSettings implements Serializable
 	}
 	public void setGateways(List<Gateway> gateways) {
 		this.gateways = gateways;
+	}
+
+	protected PurchaseOrderPaymentDefinition purchaseOrder;
+
+	public PurchaseOrderPaymentDefinition getPurchaseOrder() {
+		return this.purchaseOrder;
+	}
+
+	public void setPurchaseOrder(PurchaseOrderPaymentDefinition purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
 	}
 
 }

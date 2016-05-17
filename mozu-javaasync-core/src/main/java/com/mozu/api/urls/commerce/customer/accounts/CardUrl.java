@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer.accounts;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -62,7 +60,7 @@ public class CardUrl
 	/**
 	 * Get Resource Url for UpdateAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -78,7 +76,7 @@ public class CardUrl
 	/**
 	 * Get Resource Url for DeleteAccountCard
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAccountCardUrl(Integer accountId, String cardId)

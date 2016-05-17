@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.settings;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -74,7 +72,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalsettings = new GeneralSettings();
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings);
 	 * </code></pre></p>
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -91,7 +89,7 @@ public class GeneralSettingsResource {
 	 *	GeneralSettings generalSettings = generalsettings.updateGeneralSettings( generalSettings,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

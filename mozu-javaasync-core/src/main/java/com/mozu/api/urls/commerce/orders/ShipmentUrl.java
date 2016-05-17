@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.orders;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetShipment
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return   String Resource Url
@@ -33,8 +31,8 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for GetAvailableShipmentMethods
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailableShipmentMethodsUrl(Boolean draft, String orderId)
@@ -47,7 +45,7 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for CreatePackageShipments
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for this shipment.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageShipmentsUrl(String orderId)
@@ -59,8 +57,8 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for DeleteShipment
-	 * @param orderId Unique identifier of the order.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param orderId Unique identifier of the order to cancel shipment.
+	 * @param shipmentId Unique identifier of the shipment to cancel.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteShipmentUrl(String orderId, String shipmentId)

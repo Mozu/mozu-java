@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer.accounts;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -33,7 +31,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for GetAccountAttributes
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -69,7 +67,7 @@ public class CustomerAttributeUrl
 
 	/**
 	 * Get Resource Url for UpdateAccountAttribute
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url

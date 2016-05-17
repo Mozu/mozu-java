@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -112,7 +111,7 @@ public class Address implements Serializable
 	}
 
 	/**
-	 * Indicates if the address has been validated. If true, the address has been verified by an address validation service.
+	 * If true, the address has been verified by an address validation service.
 	 */
 	protected Boolean isValidated;
 

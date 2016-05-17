@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -25,14 +23,14 @@ import com.mozu.api.DataViewMode;
 public class PublishingScopeClient {
 	
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -43,15 +41,15 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves the details of a single PublishSet.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=GetPublishSetClient( publishSetCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -69,7 +67,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -86,14 +84,14 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Retrieves a list of PublishSets including the product counts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSetCollection> mozuClient=GetPublishSetsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSetCollection publishSetCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSetCollection>
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -118,7 +116,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -143,7 +141,7 @@ public class PublishingScopeClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishScope Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
+	 * @param publishScope Properties of the pending product changes to include in this operation.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.PublishingScope
 	 */
@@ -161,7 +159,7 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet);
 	 * client.setBaseAddress(url);
@@ -169,7 +167,7 @@ public class PublishingScopeClient {
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -180,16 +178,16 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Assigns a product draft to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.PublishSet> mozuClient=AssignProductsToPublishSetClient( publishSet,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSet publishSet = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
-	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
+	 * @param publishSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PublishSet>
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -208,13 +206,13 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */
@@ -224,14 +222,14 @@ public class PublishingScopeClient {
 	}
 
 	/**
-	 * Removes all details about a PublishSet from the product service. If the discardDrafts param is true, it also deletes the product drafts.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePublishSetClient( publishSetCode,  discardDrafts);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param discardDrafts 
+	 * @param publishSetCode 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

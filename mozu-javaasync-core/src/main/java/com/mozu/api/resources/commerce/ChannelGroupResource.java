@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -118,7 +116,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.getChannelGroup( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 */
@@ -133,7 +131,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	CountDownLatch latch = channelgroup.getChannelGroup( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -149,7 +147,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.getChannelGroup( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -169,7 +167,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	CountDownLatch latch = channelgroup.getChannelGroup( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -189,7 +187,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.createChannelGroup( channelGroup);
 	 * </code></pre></p>
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -206,7 +204,7 @@ public class ChannelGroupResource {
 	 *	CountDownLatch latch = channelgroup.createChannelGroup( channelGroup, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -223,7 +221,7 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelGroup = channelgroup.createChannelGroup( channelGroup,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -245,7 +243,7 @@ public class ChannelGroupResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -264,8 +262,8 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.updateChannelGroup( channelGroup,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param code Code that identifies the channel group.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -281,9 +279,9 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	CountDownLatch latch = channelgroup.updateChannelGroup( channelGroup,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the channel group.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -299,9 +297,9 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	ChannelGroup channelGroup = channelgroup.updateChannelGroup( channelGroup,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -321,10 +319,10 @@ public class ChannelGroupResource {
 	 *	ChannelGroup channelgroup = new ChannelGroup();
 	 *	CountDownLatch latch = channelgroup.updateChannelGroup( channelGroup,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup

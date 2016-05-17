@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.storefront;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -19,7 +17,7 @@ public class ProductUrl
 	 * Get Resource Url for GetProducts
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
@@ -39,7 +37,7 @@ public class ProductUrl
 	 * Get Resource Url for GetProductInventory
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoryUrl(String locationCodes, String productCode, String responseFields)
@@ -53,12 +51,12 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProduct
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
+	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -77,9 +75,9 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductForIndexing
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param productVersion 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductForIndexingUrl(String productCode, Long productVersion, String responseFields)
@@ -95,9 +93,9 @@ public class ProductUrl
 	 * Get Resource Url for ConfiguredProduct
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl configuredProductUrl(Boolean includeOptionDetails, String productCode, Integer quantity, String responseFields, Boolean skipInventoryCheck)
@@ -114,9 +112,9 @@ public class ProductUrl
 	/**
 	 * Get Resource Url for ValidateProduct
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param quantity 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateProductUrl(String productCode, Integer quantity, String responseFields, Boolean skipInventoryCheck)
@@ -131,11 +129,11 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for ValidateDiscounts
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
@@ -153,7 +151,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductInventories
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductInventoriesUrl(String responseFields)

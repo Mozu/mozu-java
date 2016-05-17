@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.applications.AuthTicketResource;
 
 /** <summary>
- * Use the Authetickets for applications resource to manage authentication tickets for your apps.
+ * Use this resource to manage authentication tickets for your applications.
  * </summary>
  */
 public class AuthTicketFactory

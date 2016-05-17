@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.settings.general;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -79,7 +77,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory);
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -96,7 +94,7 @@ public class TaxableTerritoryResource {
 	 *	CountDownLatch latch = taxableterritory.addTaxableTerritory( taxableTerritory, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -113,7 +111,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableTerritory = taxableterritory.addTaxableTerritory( taxableTerritory,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -135,7 +133,7 @@ public class TaxableTerritoryResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -154,7 +152,7 @@ public class TaxableTerritoryResource {
 	 *	TaxableTerritory taxableterritory = new TaxableTerritory();
 	 *	TaxableTerritory taxableTerritory = taxableterritory.updateTaxableTerritories( taxableterritories);
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -175,7 +173,7 @@ public class TaxableTerritoryResource {
 	 *	CountDownLatch latch = taxableterritory.updateTaxableTerritories( taxableterritories, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class AuthTicket implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Alphanumeric string used to authenticate the user in API request headers. The token stores an encrypted list of the application's configured behaviors and authenticates the application.
+	 * The token that stores an encrypted list of the application's configured behaviors and authenticates the application.
 	 */
 	protected String accessToken;
 
@@ -34,7 +33,7 @@ public class AuthTicket implements Serializable
 	}
 
 	/**
-	 * The date and time the user access token expires. If the token will expire, a new token will need to be generated and assigned to the account to continue and restore access to the store, data, and account.
+	 * Date and time the access token expires. After the access token expires, refresh the authentication ticket using the refresh koken.
 	 */
 	protected DateTime accessTokenExpiration;
 
@@ -47,7 +46,7 @@ public class AuthTicket implements Serializable
 	}
 
 	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * The token that refreshes the application's authentication ticket.
 	 */
 	protected String refreshToken;
 
@@ -60,7 +59,7 @@ public class AuthTicket implements Serializable
 	}
 
 	/**
-	 * The date and time the developer account or application refresh token expires.
+	 * Date and time the refresh token expires. After the refresh token expires, generate a new authentication ticket.
 	 */
 	protected DateTime refreshTokenExpiration;
 

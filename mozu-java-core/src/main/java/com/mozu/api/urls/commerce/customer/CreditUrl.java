@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -37,7 +35,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for GetCredit
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -63,7 +61,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for AssociateCreditToShopper
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -77,7 +75,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for ResendCreditCreatedEmail
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendCreditCreatedEmailUrl(String code)
@@ -89,7 +87,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for UpdateCredit
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -103,7 +101,7 @@ public class CreditUrl
 
 	/**
 	 * Get Resource Url for DeleteCredit
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCreditUrl(String code)

@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.catalog.storefront;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
 	 * </code></pre></p>
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -60,7 +58,7 @@ public class ShippingResource {
 	 *	CountDownLatch latch = shipping.getRates( rateRequest, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -77,7 +75,7 @@ public class ShippingResource {
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -99,7 +97,7 @@ public class ShippingResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

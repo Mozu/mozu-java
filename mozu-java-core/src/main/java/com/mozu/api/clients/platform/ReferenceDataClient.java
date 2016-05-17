@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.platform;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -154,7 +152,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -171,7 +169,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -350,7 +348,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient();
 	 * client.setBaseAddress(url);
@@ -366,14 +364,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CountryWithStatesCollection countryWithStatesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryWithStatesCollection>
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */

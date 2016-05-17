@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.discounts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -22,7 +21,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of the line items that are used for this particular discount.
+	 * The number of the line item that is used for this particular discount.
 	 */
 	protected Integer discountQuantity;
 
@@ -35,7 +34,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	}
 
 	/**
-	 * The impact of a discount for each discount quantity. 
+	 * The impact of this discount for each discount quantity.
 	 */
 	protected Double impactPerUnit;
 
@@ -47,9 +46,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
-	/**
-	 * Carrier-supplied, unique code that represents the shipping method service type associated with the shipping discount.
-	 */
 	protected String methodCode;
 
 	public String getMethodCode() {
@@ -61,7 +57,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * This describes shipping discounts that apply to a line item in the order, if any.
 	 */
 	protected AppliedDiscount discount;
 

@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.returns;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -18,8 +16,8 @@ public class ShipmentUrl
 	/**
 	 * Get Resource Url for GetShipment
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement shipment to retrieve.
+	 * @param shipmentId Unique identifier of the return replacement shipment to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getShipmentUrl(String responseFields, String returnId, String shipmentId)
@@ -33,7 +31,7 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for CreatePackageShipments
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return for which to create replacement package shipments.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createPackageShipmentsUrl(String returnId)
@@ -45,8 +43,8 @@ public class ShipmentUrl
 
 	/**
 	 * Get Resource Url for DeleteShipment
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement shipment to delete.
+	 * @param shipmentId Unique identifier of the return replacement shipment to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteShipmentUrl(String returnId, String shipmentId)

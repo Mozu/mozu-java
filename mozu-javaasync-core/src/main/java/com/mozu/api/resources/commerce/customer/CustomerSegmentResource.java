@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.customer;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -189,7 +187,7 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.addSegment( segment);
 	 * </code></pre></p>
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -206,7 +204,7 @@ public class CustomerSegmentResource {
 	 *	CountDownLatch latch = customersegment.addSegment( segment, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -223,7 +221,7 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customerSegment = customersegment.addSegment( segment,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -245,7 +243,7 @@ public class CustomerSegmentResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -264,7 +262,7 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.addSegmentAccounts( accountIds,  id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
 	 * @param accountIds List of customer account IDs to add to the customer segment specified in the request.
 	 * @return 
 	 * @see int
@@ -284,8 +282,8 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param id Unique identifier of the customer segment.
+	 * @param segment Properties of the customer segment to update.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -301,9 +299,9 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.updateSegment( segment,  id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to update.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -319,9 +317,9 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CustomerSegment customerSegment = customersegment.updateSegment( segment,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to update.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -341,10 +339,10 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	CountDownLatch latch = customersegment.updateSegment( segment,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to update.
 	 * @return com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -363,7 +361,7 @@ public class CustomerSegmentResource {
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.deleteSegment( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment to delete.
 	 * @return 
 	 */
 	public void deleteSegment(Integer id) throws Exception
@@ -376,13 +374,13 @@ public class CustomerSegmentResource {
 	}
 
 	/**
-	 * Removes single account from a segment.
+	 * 
 	 * <p><pre><code>
 	 *	CustomerSegment customersegment = new CustomerSegment();
 	 *	customersegment.removeSegmentAccount( id,  accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param accountId 
+	 * @param id 
 	 * @return 
 	 */
 	public void removeSegmentAccount(Integer id, Integer accountId) throws Exception

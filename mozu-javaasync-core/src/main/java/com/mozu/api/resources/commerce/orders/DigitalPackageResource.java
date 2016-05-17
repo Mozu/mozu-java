@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.orders;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -38,13 +36,13 @@ public class DigitalPackageResource {
 
 	
 	/**
-	 * Retrieves a collection of fulfillment options for digital packages. Options may include emailed files/links or provided links. 
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	string string = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId);
 	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId This parameter provides the unique identifier of the order on which to get a list of available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -58,13 +56,13 @@ public class DigitalPackageResource {
 	}
 
 	/**
-	 * Retrieves a collection of fulfillment options for digital packages. Options may include emailed files/links or provided links. 
+	 * 
 	 * <p><pre><code>
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getAvailableDigitalPackageFulfillmentActions( orderId,  digitalPackageId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId This parameter provides the unique identifier of the order on which to get a list of available actions.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<string>
 	 * @see string
@@ -83,8 +81,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 */
@@ -99,8 +97,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getDigitalPackage( orderId,  digitalPackageId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -116,8 +114,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -137,8 +135,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.getDigitalPackage( orderId,  digitalPackageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter provides the digital package Id.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -158,8 +156,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -175,9 +173,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.createDigitalPackage( digitalPackage,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -193,9 +191,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -215,10 +213,10 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.createDigitalPackage( digitalPackage,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId The orderID is a required paramter for the digitalpackages operation. The orderId is a unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage The digitalPackage parameter is a required parameter for the CreateDigitalPackages operation. The digitalPackage is the digital package to create and add to the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -237,9 +235,9 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -255,10 +253,10 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -274,10 +272,10 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	DigitalPackage digitalPackage = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -297,11 +295,11 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	CountDownLatch latch = digitalpackage.updateDigitalPackage( digitalPackage,  orderId,  digitalPackageId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId This parameter specifies the digital package to update in the order.
+	 * @param orderId This parameter provides the unique identifier of the order with which to associate the digital package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param digitalPackage Lets you manage an order's digital packages, by applying a digital package to the order.
+	 * @param digitalPackage This parameter provides the package content to update in the order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.DigitalPackage
@@ -320,8 +318,8 @@ public class DigitalPackageResource {
 	 *	DigitalPackage digitalpackage = new DigitalPackage();
 	 *	digitalpackage.deleteDigitalPackage( orderId,  digitalPackageId);
 	 * </code></pre></p>
-	 * @param digitalPackageId This parameter supplies package ID to get fulfillment actions for the digital package.
-	 * @param orderId Unique identifier of the order.
+	 * @param digitalPackageId The digitalPackage ID is unique package ID to update on the order.
+	 * @param orderId The orderId is unique identifier of the order with which to associate the package.
 	 * @return 
 	 */
 	public void deleteDigitalPackage(String orderId, String digitalPackageId) throws Exception

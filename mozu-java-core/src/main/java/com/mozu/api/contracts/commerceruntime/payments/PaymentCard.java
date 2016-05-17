@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.payments;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The two-digit month a credit card expires for a payment method.
+	 * The two-digit month the credit card expires.
 	 */
 	protected short expireMonth;
 
@@ -47,7 +46,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The four-digit year the credit card expires for a payment method.
+	 * The four-digit year the credit card expires.
 	 */
 	protected short expireYear;
 
@@ -86,7 +85,7 @@ public class PaymentCard implements Serializable
 	}
 
 	/**
-	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
+	 * The name printed on the credit card.
 	 */
 	protected String nameOnCard;
 

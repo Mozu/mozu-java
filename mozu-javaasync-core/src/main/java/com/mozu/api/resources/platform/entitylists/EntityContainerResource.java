@@ -7,7 +7,6 @@
 package com.mozu.api.resources.platform.entitylists;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Entity containers provide all properties and data for entities within a site/tenant. This data encapsulates all associated IDs including entity lists, entity views, site, tenant, entities, and more.
+ * 
  * </summary>
  */
 public class EntityContainerResource {
@@ -38,13 +36,13 @@ public class EntityContainerResource {
 
 	
 	/**
-	 * Retrieves an entity container, providing all schema and rules and associated IDs for entities.
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param entityListFullName 
+	 * @param id 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -54,13 +52,13 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves an entity container, providing all schema and rules and associated IDs for entities.
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	CountDownLatch latch = entitycontainer.getEntityContainer( entityListFullName,  id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param entityListFullName 
+	 * @param id 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -71,13 +69,13 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves an entity container, providing all schema and rules and associated IDs for entities.
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	EntityContainer entityContainer = entitycontainer.getEntityContainer( entityListFullName,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param entityListFullName 
+	 * @param id 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -92,13 +90,13 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves an entity container, providing all schema and rules and associated IDs for entities.
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	CountDownLatch latch = entitycontainer.getEntityContainer( entityListFullName,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param entityListFullName 
+	 * @param id 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
@@ -113,12 +111,12 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves a collection of entity containers. Each container holds a set of entities per ID. 
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -128,12 +126,12 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves a collection of entity containers. Each container holds a set of entities per ID. 
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	CountDownLatch latch = entitycontainer.getEntityContainers( entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -144,17 +142,17 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves a collection of entity containers. Each container holds a set of entities per ID. 
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	EntityContainerCollection entityContainerCollection = entitycontainer.getEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -168,17 +166,17 @@ public class EntityContainerResource {
 	}
 
 	/**
-	 * Retrieves a collection of entity containers. Each container holds a set of entities per ID. 
+	 * 
 	 * <p><pre><code>
 	 *	EntityContainer entitycontainer = new EntityContainer();
 	 *	CountDownLatch latch = entitycontainer.getEntityContainers( entityListFullName,  pageSize,  startIndex,  filter,  sortBy,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection

@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.carts;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for GetCartItem
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -55,7 +53,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for UpdateCartItemQuantity
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -71,7 +69,7 @@ public class CartItemUrl
 
 	/**
 	 * Get Resource Url for UpdateCartItem
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

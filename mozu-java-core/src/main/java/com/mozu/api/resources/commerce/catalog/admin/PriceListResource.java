@@ -7,19 +7,17 @@
 package com.mozu.api.resources.commerce.catalog.admin;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to create and manage products that you will offer on your storefront. You can create products with options that a shopper configures (such as a T-shirt color and size). You can set discounts and sale prices for your products, manage product inventory, and more.
+ * 
  * </summary>
  */
 public class PriceListResource {
@@ -36,7 +34,7 @@ public class PriceListResource {
 
 	
 	/**
-	 * admin-pricelists Get GetPriceLists description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists();
@@ -50,16 +48,16 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceLists description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productadmin.PriceListCollection
 	 * @see com.mozu.api.contracts.productadmin.PriceListCollection
 	 */
@@ -73,7 +71,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
@@ -88,13 +86,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
 	 * </code></pre></p>
 	 * @param priceListCode 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 */
@@ -108,12 +106,12 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Post AddPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList);
 	 * </code></pre></p>
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -124,13 +122,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Post AddPriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param priceList 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -145,13 +143,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Put UpdatePriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode);
 	 * </code></pre></p>
 	 * @param priceListCode 
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -162,14 +160,14 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Put UpdatePriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode,  responseFields);
 	 * </code></pre></p>
 	 * @param priceListCode 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param priceList 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -184,7 +182,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Delete DeletePriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode);
@@ -198,7 +196,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Delete DeletePriceList description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode,  cascadeDeleteEntries);

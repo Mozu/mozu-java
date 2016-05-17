@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.ProductAdmin.Contracts.PriceListEntryPrice ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListEntryPrice implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPrice ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Double listPrice;
 
 	public Double getListPrice() {
@@ -33,9 +26,6 @@ public class PriceListEntryPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPriceMode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String listPriceMode;
 
 	public String getListPriceMode() {
@@ -46,9 +36,6 @@ public class PriceListEntryPrice implements Serializable
 		this.listPriceMode = listPriceMode;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice minQty ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer minQty;
 
 	public Integer getMinQty() {
@@ -59,9 +46,6 @@ public class PriceListEntryPrice implements Serializable
 		this.minQty = minQty;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
-	 */
 	protected Double salePrice;
 
 	public Double getSalePrice() {
@@ -72,9 +56,6 @@ public class PriceListEntryPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice salePriceMode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String salePriceMode;
 
 	public String getSalePriceMode() {

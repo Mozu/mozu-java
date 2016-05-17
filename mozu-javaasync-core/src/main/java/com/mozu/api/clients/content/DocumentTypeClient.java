@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.content;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -113,14 +111,14 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Creates a new DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -131,7 +129,7 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Creates a new DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=CreateDocumentTypeClient(dataViewMode,  documentType,  responseFields);
 	 * client.setBaseAddress(url);
@@ -139,7 +137,7 @@ public class DocumentTypeClient {
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -159,15 +157,15 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName The name of the document type to retrieve.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentTypeName 
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType
@@ -178,16 +176,16 @@ public class DocumentTypeClient {
 	}
 
 	/**
-	 * Updates a DocumentType
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentType> mozuClient=UpdateDocumentTypeClient( documentType,  documentTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentType documentType = client.Result();
 	 * </code></pre></p>
-	 * @param documentTypeName The name of the document type to retrieve.
+	 * @param documentTypeName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param documentType The type of documents used in the CMS such as "web_page" or "template" or "image_url".
+	 * @param documentType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentType>
 	 * @see com.mozu.api.contracts.content.DocumentType
 	 * @see com.mozu.api.contracts.content.DocumentType

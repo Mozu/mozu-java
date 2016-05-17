@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.attributedefinition.attributes;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -29,8 +27,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueLocalizedContentsUrl(String attributeFQN, String value)
@@ -43,10 +41,10 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for GetAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
@@ -63,7 +61,7 @@ public class AttributeVocabularyValueUrl
 	 * Get Resource Url for GetAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value The actual unique value of the attribute vocabulary to retrieve. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
@@ -77,9 +75,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for AddAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String responseFields, String value)
@@ -119,8 +117,8 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueLocalizedContentsUrl(String attributeFQN, String value)
@@ -133,10 +131,10 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for UpdateAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param localeCode The two character country code that sets the locale, such as US for United States. Sites, tenants, and catalogs use locale codes for localizing content, such as translated product text per supported country.
+	 * @param attributeFQN 
+	 * @param localeCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String responseFields, String value)
@@ -153,7 +151,7 @@ public class AttributeVocabularyValueUrl
 	 * Get Resource Url for UpdateAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value The actual unique value of the attribute vocabulary value to update. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateAttributeVocabularyValueUrl(String attributeFQN, String responseFields, String value)
@@ -168,7 +166,7 @@ public class AttributeVocabularyValueUrl
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValue
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param value The value string to create.
+	 * @param value The actual unique value of the attribute vocabulary to delete. A single attribute must have a unique value and match the attribute's data type. If a string value returns null, the system will generate a value. The actual string content displayed shoud be stored as "Content" and actual content is required for string values.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAttributeVocabularyValueUrl(String attributeFQN, String value)
@@ -181,9 +179,9 @@ public class AttributeVocabularyValueUrl
 
 	/**
 	 * Get Resource Url for DeleteAttributeVocabularyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAttributeVocabularyValueLocalizedContentUrl(String attributeFQN, String localeCode, String value)

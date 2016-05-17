@@ -7,19 +7,17 @@
 package com.mozu.api.resources.commerce.payments;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class FraudScreenResource {
@@ -36,12 +34,12 @@ public class FraudScreenResource {
 
 	
 	/**
-	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest

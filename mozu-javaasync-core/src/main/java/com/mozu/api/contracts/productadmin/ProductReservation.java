@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -22,7 +21,7 @@ public class ProductReservation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the entity.
 	 */
 	protected Integer id;
 
@@ -35,7 +34,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 * Code that identifies the location associated with this product reservation.
 	 */
 	protected String locationCode;
 
@@ -48,7 +47,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order associated with the payment.
+	 * Unique identifier of the order.
 	 */
 	protected String orderId;
 
@@ -61,7 +60,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
+	 * The unique identifier of the item in the order.
 	 */
 	protected String orderItemId;
 
@@ -87,7 +86,7 @@ public class ProductReservation implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The quantity of items associated with the product reservation.
 	 */
 	protected Integer quantity;
 

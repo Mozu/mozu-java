@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.orders;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -59,7 +57,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( orderId,  shipmentId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -76,7 +74,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Shipment shipment = shipment.getShipment( orderId,  shipmentId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Shipment
@@ -97,7 +95,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getShipment( orderId,  shipmentId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the shipment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param shipmentId Unique identifier of the shipment to retrieve.
 	 * @param  callback callback handler for asynchronous operations
@@ -118,7 +116,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -133,7 +131,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getAvailableShipmentMethods( orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
@@ -149,8 +147,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	ShippingRate shippingRate = shipment.getAvailableShipmentMethods( orderId,  draft);
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
 	 */
@@ -169,8 +167,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.getAvailableShipmentMethods( orderId,  draft, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
-	 * @param orderId Unique identifier of the order.
+	 * @param draft 
+	 * @param orderId Unique identifier of the order for the available shipment methods being retrieved.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.ShippingRate
@@ -189,7 +187,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	Package package = shipment.createPackageShipments( packageIds,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for this shipment.
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -210,7 +208,7 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	CountDownLatch latch = shipment.createPackageShipments( packageIds,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for this shipment.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param packageIds List of unique identifiers for each package associated with this shipment. Not all packages must belong to the same shipment.
 	 * @return List<com.mozu.api.contracts.commerceruntime.fulfillment.Package>
@@ -231,8 +229,8 @@ public class ShipmentResource {
 	 *	Shipment shipment = new Shipment();
 	 *	shipment.deleteShipment( orderId,  shipmentId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param shipmentId Unique identifier of the shipment to retrieve.
+	 * @param orderId Unique identifier of the order to cancel shipment.
+	 * @param shipmentId Unique identifier of the shipment to cancel.
 	 * @return 
 	 */
 	public void deleteShipment(String orderId, String shipmentId) throws Exception

@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -37,7 +36,7 @@ public class Gateway implements Serializable
 	}
 
 	/**
-	 * The types of credit cards supported by the payment gateway.
+	 * The types of credit cards the merchant supports using this payment gateway.
 	 */
 	protected List<String> supportedCards;
 	public List<String> getSupportedCards() {

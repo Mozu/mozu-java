@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.paymentservice;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -38,7 +37,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the payment gateway definition.
 	 */
 	protected String id;
 
@@ -64,7 +63,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * Name of the payment gateway.
 	 */
 	protected String name;
 
@@ -127,7 +126,7 @@ public class GatewayDefinition implements Serializable
 	}
 
 	/**
-	 * The types of credit cards supported by the payment gateway.
+	 * The types of credit cards supported by this payment gateway.
 	 */
 	protected List<SupportedCard> supportedCards;
 	public List<SupportedCard> getSupportedCards() {

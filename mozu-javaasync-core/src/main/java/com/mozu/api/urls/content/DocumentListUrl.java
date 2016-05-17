@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.content;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -33,7 +31,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for GetDocumentList
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -59,7 +57,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for UpdateDocumentList
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -73,7 +71,7 @@ public class DocumentListUrl
 
 	/**
 	 * Get Resource Url for DeleteDocumentList
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteDocumentListUrl(String documentListName)

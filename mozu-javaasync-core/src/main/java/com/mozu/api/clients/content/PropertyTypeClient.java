@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.content;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -77,7 +75,7 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 */
@@ -94,7 +92,7 @@ public class PropertyTypeClient {
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName The name of the content property type.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -113,14 +111,14 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -131,7 +129,7 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Creates a new
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=CreatePropertyTypeClient( propertyType,  responseFields);
 	 * client.setBaseAddress(url);
@@ -139,7 +137,7 @@ public class PropertyTypeClient {
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -158,15 +156,15 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyTypeName 
+	 * @param propertyType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -177,16 +175,16 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Updates a
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PropertyType> mozuClient=UpdatePropertyTypeClient(dataViewMode,  propertyType,  propertyTypeName,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PropertyType propertyType = client.Result();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param propertyType Property type available for content. Property types are like templates that can be reused.
+	 * @param propertyType 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PropertyType>
 	 * @see com.mozu.api.contracts.content.PropertyType
 	 * @see com.mozu.api.contracts.content.PropertyType
@@ -206,13 +204,13 @@ public class PropertyTypeClient {
 	}
 
 	/**
-	 * Delete a specific
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePropertyTypeClient(dataViewMode,  propertyTypeName);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param propertyTypeName The name of the property type.
+	 * @param propertyTypeName 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePropertyTypeClient(com.mozu.api.DataViewMode dataViewMode, String propertyTypeName) throws Exception

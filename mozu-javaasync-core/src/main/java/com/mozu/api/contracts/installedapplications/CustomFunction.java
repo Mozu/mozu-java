@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.installedapplications;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CustomFunction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction applicationKey ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String applicationKey;
 
 	public String getApplicationKey() {
@@ -33,9 +26,6 @@ public class CustomFunction implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
-	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -46,9 +36,6 @@ public class CustomFunction implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction exceptionBehavior ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String exceptionBehavior;
 
 	public String getExceptionBehavior() {
@@ -59,9 +46,6 @@ public class CustomFunction implements Serializable
 		this.exceptionBehavior = exceptionBehavior;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction functionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String functionId;
 
 	public String getFunctionId() {
@@ -72,9 +56,6 @@ public class CustomFunction implements Serializable
 		this.functionId = functionId;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction logLevel ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String logLevel;
 
 	public String getLogLevel() {
@@ -85,9 +66,6 @@ public class CustomFunction implements Serializable
 		this.logLevel = logLevel;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction timeoutMilliseconds ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer timeoutMilliseconds;
 
 	public Integer getTimeoutMilliseconds() {
@@ -98,9 +76,6 @@ public class CustomFunction implements Serializable
 		this.timeoutMilliseconds = timeoutMilliseconds;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction configuration ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {

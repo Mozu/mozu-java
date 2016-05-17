@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 	}
 
 	/**
-	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
+	 * The string value of the product property set in the language specified the locale code.
 	 */
 	protected String stringValue;
 

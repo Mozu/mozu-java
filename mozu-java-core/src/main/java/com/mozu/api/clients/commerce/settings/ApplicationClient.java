@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.settings;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -71,7 +69,7 @@ public class ApplicationClient {
 	 * client.executeRequest();
 	 * Application application = client.Result();
 	 * </code></pre></p>
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
@@ -90,7 +88,7 @@ public class ApplicationClient {
 	 * Application application = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param application Properties of an application installed in a tenant.
+	 * @param application Properties of the application to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.application.Application>
 	 * @see com.mozu.api.contracts.sitesettings.application.Application
 	 * @see com.mozu.api.contracts.sitesettings.application.Application

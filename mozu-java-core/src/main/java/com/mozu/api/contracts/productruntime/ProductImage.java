@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class ProductImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
+	 * Descriptive text associated with the image or video that appears on the storefront.
 	 */
 	protected String altText;
 
@@ -34,7 +33,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
 	 */
 	protected String cmsId;
 
@@ -47,7 +46,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
+	 * Image title that appears on the storefront.
 	 */
 	protected String imageLabel;
 
@@ -60,7 +59,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The URL link for the image file associated with a product or category.
+	 * URL of the product image.
 	 */
 	protected String imageUrl;
 
@@ -73,7 +72,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
+	 * Type of media specification required to successfully render the product image, video, or other content.
 	 */
 	protected String mediaType;
 
@@ -86,7 +85,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
 	protected Integer sequence;
 
@@ -99,7 +98,7 @@ public class ProductImage implements Serializable
 	}
 
 	/**
-	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
+	 * The file link or URL of the product video.
 	 */
 	protected String videoUrl;
 

@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class AuthTicketRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * The refresh token string from the application authentication ticket.
 	 */
 	protected String refreshToken;
 

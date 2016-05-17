@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.customer.credits;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @return com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 */
@@ -58,7 +56,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CountDownLatch latch = creditauditentry.getAuditEntries( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 * @see com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
@@ -74,7 +72,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CreditAuditEntryCollection creditAuditEntryCollection = creditauditentry.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -98,7 +96,7 @@ public class CreditAuditEntryResource {
 	 *	CreditAuditEntry creditauditentry = new CreditAuditEntry();
 	 *	CountDownLatch latch = creditauditentry.getAuditEntries( code,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.

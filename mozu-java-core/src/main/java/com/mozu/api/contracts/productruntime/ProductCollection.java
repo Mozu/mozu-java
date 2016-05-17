@@ -7,14 +7,13 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productruntime.Product;
 
 /**
- *	The container for a set of products.
+ *	Collection of products and their related properties.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCollection implements Serializable

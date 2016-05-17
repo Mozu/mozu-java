@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.couponsets;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,10 +15,10 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for GetCoupon
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
-	 * @param includeCounts Specifies whether to return the redemptionCount property in the response body object.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param couponCode 
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCouponUrl(String couponCode, String couponSetCode, Boolean includeCounts, String responseFields)
@@ -35,13 +33,13 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for GetCoupons
-	 * @param couponSetCode The unique identifier of the coupon set that the coupons belongs to.
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeCounts Specifies whether to include the redemptionCount property in the response body object.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param couponSetCode 
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getCouponsUrl(String couponSetCode, String filter, Boolean includeCounts, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -59,7 +57,7 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for AddCoupons
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCouponsUrl(String couponSetCode)
@@ -71,7 +69,7 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for DeleteCoupons
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCouponsUrl(String couponSetCode)
@@ -83,8 +81,8 @@ public class CouponUrl
 
 	/**
 	 * Get Resource Url for DeleteCoupon
-	 * @param couponCode Code associated with the coupon to remove from the cart.
-	 * @param couponSetCode The unique identifier of the coupon set that the coupon belongs to.
+	 * @param couponCode 
+	 * @param couponSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCouponUrl(String couponCode, String couponSetCode)

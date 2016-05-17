@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.catalog.admin.attributedefinition;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -118,7 +116,7 @@ public class AttributeResource {
 	 *	Attribute attribute = attribute.addAttribute( attribute);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -136,7 +134,7 @@ public class AttributeResource {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -158,7 +156,7 @@ public class AttributeResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -177,7 +175,7 @@ public class AttributeResource {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute

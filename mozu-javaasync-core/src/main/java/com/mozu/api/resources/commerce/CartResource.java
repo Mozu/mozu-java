@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use this resource to manage storefront shopping carts as shoppers add and remove items for purchase. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
+ * Use the Carts resource to manage storefront shopping carts as items are added and removed. Each time a shopper's cart is modified, the Carts resource updates the estimated total with any applicable discounts.
  * </summary>
  */
 public class CartResource {
@@ -43,7 +41,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getCart( cartId);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -58,7 +56,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCart( cartId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -74,7 +72,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getCart( cartId,  responseFields);
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -94,7 +92,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getCart( cartId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Identifier of the cart to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -248,7 +246,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CartSummary cartSummary = cart.getUserCartSummary( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -263,7 +261,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCartSummary( userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -280,7 +278,7 @@ public class CartResource {
 	 *	CartSummary cartSummary = cart.getUserCartSummary( userId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 */
@@ -300,7 +298,7 @@ public class CartResource {
 	 *	CountDownLatch latch = cart.getUserCartSummary( userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart details you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.CartSummary
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartSummary
@@ -319,7 +317,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.getUserCart( userId);
 	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -334,7 +332,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	CountDownLatch latch = cart.getUserCart( userId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -351,7 +349,7 @@ public class CartResource {
 	 *	Cart cart = cart.getUserCart( userId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -371,7 +369,7 @@ public class CartResource {
 	 *	CountDownLatch latch = cart.getUserCart( userId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the user whose cart you want to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -390,7 +388,7 @@ public class CartResource {
 	 *	Cart cart = new Cart();
 	 *	Cart cart = cart.updateCart( cart);
 	 * </code></pre></p>
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -407,7 +405,7 @@ public class CartResource {
 	 *	CountDownLatch latch = cart.updateCart( cart, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -424,7 +422,7 @@ public class CartResource {
 	 *	Cart cart = cart.updateCart( cart,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -446,7 +444,7 @@ public class CartResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param cart Properties of a shopping cart.
+	 * @param cart All of the properties of the cart to update. The product code is required.
 	 * @return com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart

@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.orders;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,8 +15,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetAvailablePackageFulfillmentActions
-	 * @param orderId Unique identifier of the order.
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param orderId Unique identifier of the order associated with the package fulfillment.
+	 * @param packageId Unique identifier of the package associated with the fulfillment actions to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getAvailablePackageFulfillmentActionsUrl(String orderId, String packageId)
@@ -31,7 +29,7 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackageLabel
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the package label to retrieve.
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
 	 * @return   String Resource Url
 	 */
@@ -45,8 +43,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for GetPackage
-	 * @param orderId Unique identifier of the order.
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param orderId Unique identifier of the order associated with the package to retrieve.
+	 * @param packageId Unique identifier of the package to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -61,7 +59,7 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for CreatePackage
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with this package.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -75,8 +73,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for UpdatePackage
-	 * @param orderId Unique identifier of the order.
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param orderId Unique identifier of the order associated with the package to update.
+	 * @param packageId Unique identifier of the package of order items to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -91,8 +89,8 @@ public class PackageUrl
 
 	/**
 	 * Get Resource Url for DeletePackage
-	 * @param orderId Unique identifier of the order.
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param orderId Unique identifier of the order associated with the package to delete.
+	 * @param packageId Unique identifier of the package to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePackageUrl(String orderId, String packageId)

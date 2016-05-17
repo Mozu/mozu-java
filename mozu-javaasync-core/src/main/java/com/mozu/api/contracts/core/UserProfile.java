@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -60,7 +59,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 * Identifier of the user.
 	 */
 	protected String userId;
 
@@ -73,7 +72,7 @@ public class UserProfile implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * The user name associated with the user profile.
 	 */
 	protected String userName;
 

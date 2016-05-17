@@ -7,24 +7,17 @@
 package com.mozu.api.contracts.sitesettings.general.general.routing;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Route;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomRouteSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings mappings ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> mappings;
 	public List<String> getMappings() {
 		return this.mappings;
@@ -33,9 +26,6 @@ public class CustomRouteSettings implements Serializable
 		this.mappings = mappings;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings validators ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> validators;
 	public List<String> getValidators() {
 		return this.validators;
@@ -44,9 +34,6 @@ public class CustomRouteSettings implements Serializable
 		this.validators = validators;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings routes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Route> routes;
 	public List<Route> getRoutes() {
 		return this.routes;

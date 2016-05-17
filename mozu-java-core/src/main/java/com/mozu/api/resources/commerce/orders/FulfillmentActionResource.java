@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.orders;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -41,8 +39,8 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
+	 * @param action The action to perform for the order fulfillment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -58,9 +56,9 @@ public class FulfillmentActionResource {
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.performFulfillmentAction( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
+	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
+	 * @param action The action to perform for the order fulfillment.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -75,13 +73,13 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction
@@ -92,14 +90,14 @@ public class FulfillmentActionResource {
 	}
 
 	/**
-	 * Resends an email with details about the package fulfillment to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	FulfillmentAction fulfillmentaction = new FulfillmentAction();
 	 *	Order order = fulfillmentaction.resendPackageFulfillmentEmail( action,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param action Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param action 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentAction

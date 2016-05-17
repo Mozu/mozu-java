@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.orders;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -56,7 +54,7 @@ public class OrderValidationResultClient {
 	 * OrderValidationResult orderValidationResult = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
@@ -76,7 +74,7 @@ public class OrderValidationResultClient {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param validationResult Properties of the resulting order validation performed by an order validation capability.
+	 * @param validationResult Properties of the validation result to add for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderValidationResult

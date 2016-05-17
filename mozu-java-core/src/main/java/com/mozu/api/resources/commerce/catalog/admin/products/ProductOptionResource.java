@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.catalog.admin.products;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -106,7 +104,7 @@ public class ProductOptionResource {
 	 *	ProductOption productOption = productoption.addOption( productOption,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -124,7 +122,7 @@ public class ProductOptionResource {
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productOption Properties of the option attribute to define for the product.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -146,7 +144,7 @@ public class ProductOptionResource {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
@@ -165,7 +163,7 @@ public class ProductOptionResource {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param productOption Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+	 * @param productOption Properties of the product option attribute configuration to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption
 	 * @see com.mozu.api.contracts.productadmin.ProductOption

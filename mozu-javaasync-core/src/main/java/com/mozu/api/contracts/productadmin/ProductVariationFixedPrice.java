@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVariationFixedPrice implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
-	 */
 	protected Double creditValue;
 
 	public Double getCreditValue() {
@@ -33,9 +26,6 @@ public class ProductVariationFixedPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * The localized currency code for the monetary amount. 
-	 */
 	protected String currencyCode;
 
 	public String getCurrencyCode() {
@@ -46,9 +36,6 @@ public class ProductVariationFixedPrice implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * Variation price for fixed pricing
-	 */
 	protected Double listPrice;
 
 	public Double getListPrice() {
@@ -59,9 +46,6 @@ public class ProductVariationFixedPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
-	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
-	 */
 	protected Double msrp;
 
 	public Double getMsrp() {
@@ -72,9 +56,6 @@ public class ProductVariationFixedPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
-	 */
 	protected Double salePrice;
 
 	public Double getSalePrice() {

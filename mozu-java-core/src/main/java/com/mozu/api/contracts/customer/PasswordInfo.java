@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,9 +19,6 @@ public class PasswordInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The External Password, typically used for imports in conjunction with a custom action
-	 */
 	protected String externalPassword;
 
 	public String getExternalPassword() {
@@ -34,7 +30,7 @@ public class PasswordInfo implements Serializable
 	}
 
 	/**
-	 * The new password entered and saved by the user of the account. 
+	 * The new account password value.
 	 */
 	protected String newPassword;
 

@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.commerceruntime.products;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -23,45 +22,6 @@ public class ProductProperty implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
-	protected String dataType;
-
-	public String getDataType() {
-		return this.dataType;
-	}
-
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
-
-	/**
-	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
-	 */
-	protected Boolean isMultiValue;
-
-	public Boolean getIsMultiValue() {
-		return this.isMultiValue;
-	}
-
-	public void setIsMultiValue(Boolean isMultiValue) {
-		this.isMultiValue = isMultiValue;
-	}
-
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
-	protected String name;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
 	protected String attributeFQN;
@@ -75,7 +35,46 @@ public class ProductProperty implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * The data type of the property attribute, which is Bool, DateTime, Number, or String.
+	 */
+	protected String dataType;
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+
+	/**
+	 * If true, the product property can have more than one value.
+	 */
+	protected Boolean isMultiValue;
+
+	public Boolean getIsMultiValue() {
+		return this.isMultiValue;
+	}
+
+	public void setIsMultiValue(Boolean isMultiValue) {
+		this.isMultiValue = isMultiValue;
+	}
+
+	/**
+	 * The name of the product property.
+	 */
+	protected String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * The list of possible values for the product property.
 	 */
 	protected List<ProductPropertyValue> values;
 	public List<ProductPropertyValue> getValues() {

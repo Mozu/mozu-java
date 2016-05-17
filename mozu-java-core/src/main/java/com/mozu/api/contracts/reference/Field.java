@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.reference;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -23,7 +22,7 @@ public class Field implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the field.
 	 */
 	protected Integer id;
 
@@ -36,7 +35,7 @@ public class Field implements Serializable
 	}
 
 	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 * Label for the field.
 	 */
 	protected String label;
 
@@ -49,7 +48,7 @@ public class Field implements Serializable
 	}
 
 	/**
-	 * Integer that represents the sequence order of the attribute.
+	 * Sequence of the field.
 	 */
 	protected Integer order;
 

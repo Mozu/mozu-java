@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.settings.checkout;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,8 +15,8 @@ public class PaymentSettingsUrl
 
 	/**
 	 * Get Resource Url for GetThirdPartyPaymentWorkflowWithValues
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getThirdPartyPaymentWorkflowWithValuesUrl(String fullyQualifiedName, String responseFields)
@@ -51,7 +49,7 @@ public class PaymentSettingsUrl
 
 	/**
 	 * Get Resource Url for DeleteThirdPartyPaymentWorkflow
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteThirdPartyPaymentWorkflowUrl(String fullyQualifiedName)

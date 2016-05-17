@@ -7,7 +7,6 @@
 package com.mozu.api.resources.platform;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
+ * 
  * </summary>
  */
 public class SecureAppDataResource {
@@ -38,13 +36,13 @@ public class SecureAppDataResource {
 
 	
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -54,13 +52,13 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -71,14 +69,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	JObject json = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -92,14 +90,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	CountDownLatch latch = secureappdata.getDBValue( appKeyId,  dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -113,14 +111,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Post CreateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.createDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param dbEntryQuery 
+	 * @param value 
 	 * @return 
 	 * @see JObject
 	 */
@@ -134,14 +132,14 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Put UpdateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.updateDBValue( value,  appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param dbEntryQuery 
+	 * @param value 
 	 * @return 
 	 * @see JObject
 	 */
@@ -155,13 +153,13 @@ public class SecureAppDataResource {
 	}
 
 	/**
-	 * platform-secureappdata Delete DeleteDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	SecureAppData secureappdata = new SecureAppData();
 	 *	secureappdata.deleteDBValue( appKeyId,  dbEntryQuery);
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return 
 	 */
 	public void deleteDBValue(String appKeyId, String dbEntryQuery) throws Exception

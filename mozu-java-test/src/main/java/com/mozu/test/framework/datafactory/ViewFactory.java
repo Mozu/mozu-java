@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.content.documentlists.ViewResource;
 
 /** <summary>
- * Properties and content for views within a site/tenant. Views provide the schema, formatting, and associated content and entities for displaying content within a site/tenant.
+ * 
  * </summary>
  */
 public class ViewFactory
