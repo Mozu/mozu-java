@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.commerce.carts;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -31,7 +29,7 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 */
@@ -48,7 +46,7 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -113,7 +111,7 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItem Properties of an item added to an active shopping cart.
+	 * @param cartItem All properties of the new cart item. The product code is required.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -132,7 +130,7 @@ public class CartItemClient {
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cartItem Properties of an item added to an active shopping cart.
+	 * @param cartItem All properties of the new cart item. The product code is required.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -158,7 +156,7 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -176,7 +174,7 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to update quantity.
 	 * @param quantity The number of cart items in the shopper's active cart.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
@@ -202,8 +200,8 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
-	 * @param cartItem Properties of an item added to an active shopping cart.
+	 * @param cartItemId Identifier of the cart item to update.
+	 * @param cartItem The properties of the cart item to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
@@ -221,9 +219,9 @@ public class CartItemClient {
 	 * client.executeRequest();
 	 * CartItem cartItem = client.Result();
 	 * </code></pre></p>
-	 * @param cartItemId Identifier of the cart item to delete.
+	 * @param cartItemId Identifier of the cart item to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param cartItem Properties of an item added to an active shopping cart.
+	 * @param cartItem The properties of the cart item to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.CartItem>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem
 	 * @see com.mozu.api.contracts.commerceruntime.carts.CartItem

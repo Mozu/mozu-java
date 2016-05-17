@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.settings;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -29,7 +27,7 @@ public class LocationUsageUrl
 
 	/**
 	 * Get Resource Url for GetLocationUsage
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -43,7 +41,7 @@ public class LocationUsageUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationUsage
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder" for store finder.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -33,9 +32,6 @@ public class Transaction implements Serializable
 		this.amount = amount;
 	}
 
-	/**
-	 * The localized currency code for the monetary amount. 
-	 */
 	protected String currencyCode;
 
 	public String getCurrencyCode() {
@@ -47,7 +43,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * The date and time recording for a customer action including a transaction and storefront visit.
+	 * The date and time the customer transaction occurred.
 	 */
 	protected DateTime date;
 
@@ -60,7 +56,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
+	 * The type of interaction the customer used to perform the transaction, which is "Website," "Call," "Store," or "Unknown."
 	 */
 	protected String interactionType;
 
@@ -86,7 +82,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
+	 * The type of transaction the customer performed, which is "Order," "Return," "OrderPickup," or "Wishlist."
 	 */
 	protected String transactionType;
 
@@ -99,7 +95,7 @@ public class Transaction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 * Unique identifier of the customer visit associated with the transaction. Customers can perform multiple transactions in the same visit.
 	 */
 	protected String visitId;
 

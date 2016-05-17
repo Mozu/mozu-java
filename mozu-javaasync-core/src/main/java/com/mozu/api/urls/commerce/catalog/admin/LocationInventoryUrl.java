@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for GetLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -34,7 +32,7 @@ public class LocationInventoryUrl
 	/**
 	 * Get Resource Url for GetLocationInventories
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -55,8 +53,8 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for AddLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param locationCode User-defined code that uniquely identifies the location.
+	 * @param performUpserts 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationInventoryUrl(String locationCode, Boolean performUpserts)
@@ -69,7 +67,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationInventoryUrl(String locationCode)
@@ -81,7 +79,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that uniquely identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */

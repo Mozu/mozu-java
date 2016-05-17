@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.entitylists.EntityContainerResource;
 
 /** <summary>
- * Entity containers provide all properties and data for entities within a site/tenant. This data encapsulates all associated IDs including entity lists, entity views, site, tenant, entities, and more.
+ * 
  * </summary>
  */
 public class EntityContainerFactory

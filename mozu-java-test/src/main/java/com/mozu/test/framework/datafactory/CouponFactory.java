@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.couponsets.CouponResource;
 
 /** <summary>
- * Use the Coupons subresource to manage coupons within manual coupon sets.
+ * 
  * </summary>
  */
 public class CouponFactory

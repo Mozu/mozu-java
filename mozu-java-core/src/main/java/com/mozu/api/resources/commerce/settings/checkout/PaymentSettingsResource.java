@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.settings.checkout;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -36,12 +34,12 @@ public class PaymentSettingsResource {
 
 	
 	/**
-	 * Retrieves the schema and definition along with the actual instance values of the third-party payment service workflow configured for the corresponding fully qualified name.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -51,13 +49,13 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Retrieves the schema and definition along with the actual instance values of the third-party payment service workflow configured for the corresponding fully qualified name.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param fullyQualifiedName 
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -71,7 +69,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Retrieves the schema and definition of all third-party payment service workflows configured for the site.
+	 * Retrieves the details of the third-party payment service workflows configured for the site.
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflows();
@@ -89,12 +87,12 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Adds a third-party payment workflow to the site. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the Mozu platform.
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.addThirdPartyPaymentWorkflow( definition);
 	 * </code></pre></p>
-	 * @param definition Properties of an external payment processing workflow defined for the site. At this time, only PayPal Express is supported.
+	 * @param definition 
 	 * @return 
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */
@@ -108,12 +106,12 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Deletes a third-party payment workflow. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the Mozu platform. 
+	 * 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);
 	 * </code></pre></p>
-	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
+	 * @param fullyQualifiedName 
 	 * @return 
 	 */
 	public void deleteThirdPartyPaymentWorkflow(String fullyQualifiedName) throws Exception

@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.orders;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,8 +15,8 @@ public class FulfillmentActionUrl
 
 	/**
 	 * Get Resource Url for PerformFulfillmentAction
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param orderId Unique identifier of the order for which to perform the fulfillment action.
+	 * @param responseFields Updated order with a new fulfillment status resulting from the action supplied in the request.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl performFulfillmentActionUrl(String orderId, String responseFields)
@@ -31,8 +29,8 @@ public class FulfillmentActionUrl
 
 	/**
 	 * Get Resource Url for ResendPackageFulfillmentEmail
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param orderId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl resendPackageFulfillmentEmailUrl(String orderId, String responseFields)

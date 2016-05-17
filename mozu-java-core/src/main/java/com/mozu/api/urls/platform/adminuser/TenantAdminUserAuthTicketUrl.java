@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.platform.adminuser;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -45,7 +43,7 @@ public class TenantAdminUserAuthTicketUrl
 
 	/**
 	 * Get Resource Url for DeleteUserAuthTicket
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * @param refreshToken Refresh token string associated with the user authentication ticket.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteUserAuthTicketUrl(String refreshToken)

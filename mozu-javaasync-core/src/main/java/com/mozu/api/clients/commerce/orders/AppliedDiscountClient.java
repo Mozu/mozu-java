@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.orders;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -34,7 +32,7 @@ public class AppliedDiscountClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order to associate the coupon. System-supplied and read-only.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -52,9 +50,9 @@ public class AppliedDiscountClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order to associate the coupon. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param updateMode Specifies whether to apply the coupon by updating the original order, updating the order in draft mode, or updating the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -80,7 +78,7 @@ public class AppliedDiscountClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order with the coupon to remove.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -98,8 +96,8 @@ public class AppliedDiscountClient {
 	 * Order order = client.Result();
 	 * </code></pre></p>
 	 * @param couponCode Alphanumeric code associated with the coupon or promotion that results in a discounted price.
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param orderId Unique identifier of the order with the coupon to remove.
+	 * @param updateMode Specifies whether to remove the coupon by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
@@ -124,7 +122,7 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order with the coupons to remove.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 */
@@ -141,8 +139,8 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param orderId Unique identifier of the order with the coupons to remove.
+	 * @param updateMode Specifies whether to remove coupons by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order

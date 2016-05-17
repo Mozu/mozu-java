@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class CategoryDiscountCondition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of a category. 
+	 * The unique identifier of the product category associated with the discount.
 	 */
 	protected Integer categoryId;
 

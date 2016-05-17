@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.customer;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -28,7 +27,7 @@ public class CustomerAccount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
+	 * If true, the customer prefers to receive marketing material such as newsletters or email offers.
 	 */
 	protected Boolean acceptsMarketing;
 
@@ -53,9 +52,6 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
-	/**
-	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
@@ -67,7 +63,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
+	 * The email address associated with the customer account.
 	 */
 	protected String emailAddress;
 
@@ -80,7 +76,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
+	 * Unique identifier an external system uses to identify this customer account.
 	 */
 	protected String externalId;
 
@@ -93,7 +89,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The full first name of a customer or contact name.
+	 * The first name associated with the customer account.
 	 */
 	protected String firstName;
 
@@ -105,9 +101,6 @@ public class CustomerAccount implements Serializable
 		this.firstName = firstName;
 	}
 
-	/**
-	 * Indicates if an external password is set on this account
-	 */
 	protected Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {
@@ -119,7 +112,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the entity.
 	 */
 	protected Integer id;
 
@@ -131,9 +124,6 @@ public class CustomerAccount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
-	 */
 	protected Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -157,9 +147,6 @@ public class CustomerAccount implements Serializable
 		this.isAnonymous = isAnonymous;
 	}
 
-	/**
-	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
-	 */
 	protected Boolean isLocked;
 
 	public Boolean getIsLocked() {
@@ -171,7 +158,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The full last name of a customer or contact name.
+	 * The last name associated with the customer account.
 	 */
 	protected String lastName;
 
@@ -223,7 +210,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 * Unique identifier of the user associated with the customer account. All customer accounts must have a defined user ID. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
 	protected String userId;
 
@@ -236,7 +223,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * The user name of the user associated with the customer account.
 	 */
 	protected String userName;
 
@@ -249,7 +236,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
+	 * Collection of customer account attributes.
 	 */
 	protected List<CustomerAttribute> attributes;
 	public List<CustomerAttribute> getAttributes() {
@@ -297,7 +284,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
+	 * List of customer account notes.
 	 */
 	protected List<CustomerNote> notes;
 	public List<CustomerNote> getNotes() {

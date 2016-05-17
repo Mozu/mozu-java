@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.storefront;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -33,7 +31,7 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -52,7 +50,7 @@ public class ShippingClient {
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

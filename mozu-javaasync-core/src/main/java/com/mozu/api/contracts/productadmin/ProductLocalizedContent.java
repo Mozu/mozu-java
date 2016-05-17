@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -36,7 +35,7 @@ public class ProductLocalizedContent implements Serializable
 	}
 
 	/**
-	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
+	 * More detailed or full product description typically used for a product details page.
 	 */
 	protected String productFullDescription;
 
@@ -49,7 +48,7 @@ public class ProductLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
+	 * The descriptive brief product name.
 	 */
 	protected String productName;
 
@@ -62,7 +61,7 @@ public class ProductLocalizedContent implements Serializable
 	}
 
 	/**
-	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
+	 * Brief description of the product typically used when the product is displayed in a list or in search results.
 	 */
 	protected String productShortDescription;
 
@@ -75,7 +74,7 @@ public class ProductLocalizedContent implements Serializable
 	}
 
 	/**
-	 * List of image files associated with a product. This content may include the image file URL, name, and other information as available.
+	 * List of product images associated with a product.
 	 */
 	protected List<ProductLocalizedImage> productImages;
 	public List<ProductLocalizedImage> getProductImages() {

@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.location;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class Hours implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 * Label that describes the range of operating hours for a location. For example - {"Label": "10:00 AM - 6:00 PM"}
 	 */
 	protected String label;
 

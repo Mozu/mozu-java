@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -58,7 +56,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -74,7 +72,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getLocation( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -94,7 +92,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getLocation( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
@@ -260,7 +258,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
 	 */
@@ -275,7 +273,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getInStorePickupLocation( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -291,7 +289,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	Location location = location.getInStorePickupLocation( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.location.Location
 	 * @see com.mozu.api.contracts.location.Location
@@ -311,7 +309,7 @@ public class LocationResource {
 	 *	Location location = new Location();
 	 *	CountDownLatch latch = location.getInStorePickupLocation( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The user-defined code that identifies the location to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.location.Location

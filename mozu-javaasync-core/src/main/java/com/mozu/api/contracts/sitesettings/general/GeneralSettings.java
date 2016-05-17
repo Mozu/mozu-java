@@ -7,13 +7,13 @@
 package com.mozu.api.contracts.sitesettings.general;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.general.CacheSettings;
 import com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings;
+import com.mozu.api.contracts.sitesettings.general.EmailTypeSetting;
 import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
 import com.mozu.api.contracts.sitesettings.general.general.ViewAuthorizations;
@@ -28,19 +28,6 @@ public class GeneralSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the theme used on the storefront.
-	 */
-	protected String theme;
-
-	public String getTheme() {
-		return this.theme;
-	}
-
-	public void setTheme(String theme) {
-		this.theme = theme;
-	}
-
-	/**
 	 * If true, the site allows entry of addresses not verified by an address validation service.
 	 */
 	protected Boolean allowInvalidAddresses;
@@ -53,9 +40,16 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
-	/**
-	 * Custom dns host name for cnd edge caching.
-	 */
+	protected String bccEmailAlias;
+
+	public String getBccEmailAlias() {
+		return this.bccEmailAlias;
+	}
+
+	public void setBccEmailAlias(String bccEmailAlias) {
+		this.bccEmailAlias = bccEmailAlias;
+	}
+
 	protected String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -196,9 +190,6 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
-	/**
-	 * MissingImageSubstitute for 404 image requests. Can be name or id of cmsImage in files@mozu.
-	 */
 	protected String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -248,9 +239,6 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
-	/**
-	 * Email alias used in emails sent to your shoppers.
-	 */
 	protected String senderEmailAlias;
 
 	public String getSenderEmailAlias() {
@@ -314,6 +302,19 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
+	 * The name of the theme used on the storefront.
+	 */
+	protected String theme;
+
+	public String getTheme() {
+		return this.theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
+	/**
 	 * The name of the website to display on the storefront with no spaces.
 	 */
 	protected String websiteName;
@@ -339,9 +340,6 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Set of settings to deal with site caching.
-	 */
 	protected CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -352,9 +350,6 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
-	/**
-	 * Site-level control over request routing for SEO purposes. Not available for update, must use its own subresource.
-	 */
 	protected CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {
@@ -365,9 +360,14 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
-	/**
-	 * Supressed emails. Setting any of these to 'true' will block Mozu from sending that email and an event will be published instead.
-	 */
+	protected List<EmailTypeSetting> emailTypes;
+	public List<EmailTypeSetting> getEmailTypes() {
+		return this.emailTypes;
+	}
+	public void setEmailTypes(List<EmailTypeSetting> emailTypes) {
+		this.emailTypes = emailTypes;
+	}
+
 	protected EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {
@@ -389,9 +389,6 @@ public class GeneralSettings implements Serializable
 		this.taxableTerritories = taxableTerritories;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.GeneralSettings viewAuthorizations ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected ViewAuthorizations viewAuthorizations;
 
 	public ViewAuthorizations getViewAuthorizations() {

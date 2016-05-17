@@ -7,23 +7,16 @@
 package com.mozu.api.contracts.sitesettings.general.general.routing;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.Route ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Route implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route canonical ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean canonical;
 
 	public Boolean getCanonical() {
@@ -34,9 +27,6 @@ public class Route implements Serializable
 		this.canonical = canonical;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route defaults ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> defaults;
 	public List<String> getDefaults() {
 		return this.defaults;
@@ -45,9 +35,6 @@ public class Route implements Serializable
 		this.defaults = defaults;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route functionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String functionId;
 
 	public String getFunctionId() {
@@ -58,9 +45,6 @@ public class Route implements Serializable
 		this.functionId = functionId;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route internalRoute ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String internalRoute;
 
 	public String getInternalRoute() {
@@ -71,9 +55,6 @@ public class Route implements Serializable
 		this.internalRoute = internalRoute;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route mappings ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> mappings;
 	public List<String> getMappings() {
 		return this.mappings;
@@ -82,9 +63,6 @@ public class Route implements Serializable
 		this.mappings = mappings;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route template ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String template;
 
 	public String getTemplate() {
@@ -95,9 +73,6 @@ public class Route implements Serializable
 		this.template = template;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route urlScheme ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String urlScheme;
 
 	public String getUrlScheme() {
@@ -108,9 +83,6 @@ public class Route implements Serializable
 		this.urlScheme = urlScheme;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route validators ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> validators;
 	public List<String> getValidators() {
 		return this.validators;

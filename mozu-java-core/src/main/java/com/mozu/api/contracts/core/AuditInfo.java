@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;

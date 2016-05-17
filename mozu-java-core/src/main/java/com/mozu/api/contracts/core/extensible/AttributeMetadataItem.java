@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.core.extensible;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class AttributeMetadataItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * Key used for metadata defined for an extensible attribute.
 	 */
 	protected String key;
 
@@ -34,7 +33,7 @@ public class AttributeMetadataItem implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * Value of a metadata item defined for an extensible attribute.
 	 */
 	protected String value;
 

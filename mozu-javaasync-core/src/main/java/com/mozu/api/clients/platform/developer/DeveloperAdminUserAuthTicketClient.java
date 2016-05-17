@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.platform.developer;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,12 +14,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Authtickets resource to manage authentication tickets for your developer account.
+ * Use this resource to manage authentication tickets for your developer account.
  * </summary>
  */
 public class DeveloperAdminUserAuthTicketClient {
@@ -33,7 +31,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * client.executeRequest();
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param userAuthInfo Information required to authenticate a user.
+	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -53,7 +51,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userAuthInfo Information required to authenticate a user.
+	 * @param userAuthInfo The user authentication information required to generate the developer account user authentication ticket, which consists of a user name and password.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.core.UserAuthInfo
@@ -79,7 +77,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * client.executeRequest();
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -99,7 +97,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to refresh. The refresh token is required to complete this request.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -124,7 +122,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * @param refreshToken Refresh token string associated with the developer account authentication ticket.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteUserAuthTicketClient(String refreshToken) throws Exception

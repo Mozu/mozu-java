@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.discounts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -22,7 +21,7 @@ public class ShippingDiscount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Carrier-supplied, unique code that represents the shipping method service type associated with the shipping discount.
+	 * Carrier-supplied code that represents the shipping method service type associated with the shipping discount.
 	 */
 	protected String methodCode;
 
@@ -35,7 +34,7 @@ public class ShippingDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * Properties of the shipping discount.
 	 */
 	protected AppliedDiscount discount;
 

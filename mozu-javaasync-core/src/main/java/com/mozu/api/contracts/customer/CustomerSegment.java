@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -35,7 +34,7 @@ public class CustomerSegment implements Serializable
 	}
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * Description of the customer segment.
 	 */
 	protected String description;
 
@@ -48,7 +47,7 @@ public class CustomerSegment implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the customer segment. System-supplied and read only.
 	 */
 	protected Integer id;
 
@@ -61,7 +60,7 @@ public class CustomerSegment implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * Name of the customer segment.
 	 */
 	protected String name;
 

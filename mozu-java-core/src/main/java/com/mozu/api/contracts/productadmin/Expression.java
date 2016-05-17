@@ -7,24 +7,17 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.productadmin.Expression;
 
-/**
- *	Mozu.ProductAdmin.Contracts.Expression ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Expression implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The field target of a predicate
-	 */
 	protected String left;
 
 	public String getLeft() {
@@ -35,9 +28,6 @@ public class Expression implements Serializable
 		this.left = left;
 	}
 
-	/**
-	 * And or Or (if Container with More than one Node)
-	 */
 	protected String logicalOperator;
 
 	public String getLogicalOperator() {
@@ -48,9 +38,6 @@ public class Expression implements Serializable
 		this.logicalOperator = logicalOperator;
 	}
 
-	/**
-	 * The operator of a predicate
-	 */
 	protected String operator;
 
 	public String getOperator() {
@@ -61,9 +48,6 @@ public class Expression implements Serializable
 		this.operator = operator;
 	}
 
-	/**
-	 * The literal values of a predicate
-	 */
 	protected Object right;
 
 	public Object getRight() {
@@ -74,9 +58,6 @@ public class Expression implements Serializable
 		this.right = right;
 	}
 
-	/**
-	 * Container or Predicate
-	 */
 	protected String type;
 
 	public String getType() {
@@ -87,9 +68,6 @@ public class Expression implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Expression nodes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Expression> nodes;
 	public List<Expression> getNodes() {
 		return this.nodes;

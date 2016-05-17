@@ -348,6 +348,31 @@ public class CustomerAccountFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getCustomersPurchaseOrderAccounts(apiContext,  null,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection returnObj = new com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection();
+		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
+		try
+		{
+			returnObj = resource.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static void resetPassword(ApiContext apiContext, com.mozu.api.contracts.customer.ResetPasswordInfo resetPasswordInfo, int expectedCode) throws Exception
 	{
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);

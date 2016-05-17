@@ -7,24 +7,17 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.appdev.Attribute;
 
-/**
- *	Mozu.AppDev.Contracts.ApplicationAttribute ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationAttribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Comma delimited list of attribute codes.
-	 */
 	protected String attributeCodes;
 
 	public String getAttributeCodes() {
@@ -35,9 +28,6 @@ public class ApplicationAttribute implements Serializable
 		this.attributeCodes = attributeCodes;
 	}
 
-	/**
-	 * json representation of attribute definitions
-	 */
 	protected String attributeJson;
 
 	public String getAttributeJson() {
@@ -48,9 +38,6 @@ public class ApplicationAttribute implements Serializable
 		this.attributeJson = attributeJson;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationAttribute isAppliedToBase ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Boolean isAppliedToBase;
 
 	public Boolean getIsAppliedToBase() {
@@ -61,9 +48,6 @@ public class ApplicationAttribute implements Serializable
 		this.isAppliedToBase = isAppliedToBase;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.ApplicationAttribute packageId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer packageId;
 
 	public Integer getPackageId() {
@@ -74,9 +58,6 @@ public class ApplicationAttribute implements Serializable
 		this.packageId = packageId;
 	}
 
-	/**
-	 * Will contain ProductTypeCollection if Product, else AttributeSet
-	 */
 	protected String productTypeJson;
 
 	public String getProductTypeJson() {
@@ -87,9 +68,6 @@ public class ApplicationAttribute implements Serializable
 		this.productTypeJson = productTypeJson;
 	}
 
-	/**
-	 * Source Tenant Id
-	 */
 	protected Integer sourceTenantId;
 
 	public Integer getSourceTenantId() {
@@ -100,9 +78,6 @@ public class ApplicationAttribute implements Serializable
 		this.sourceTenantId = sourceTenantId;
 	}
 
-	/**
-	 * Source Tenant Name
-	 */
 	protected String sourceTenantName;
 
 	public String getSourceTenantName() {
@@ -113,9 +88,6 @@ public class ApplicationAttribute implements Serializable
 		this.sourceTenantName = sourceTenantName;
 	}
 
-	/**
-	 * Customer, Order, or Product
-	 */
 	protected String subsystem;
 
 	public String getSubsystem() {
@@ -126,9 +98,6 @@ public class ApplicationAttribute implements Serializable
 		this.subsystem = subsystem;
 	}
 
-	/**
-	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
-	 */
 	protected List<Attribute> attributes;
 	public List<Attribute> getAttributes() {
 		return this.attributes;

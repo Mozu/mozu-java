@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.PaymentService.Contracts.Address ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The associated city.
-	 */
 	protected String city;
 
 	public String getCity() {
@@ -33,9 +26,6 @@ public class Address implements Serializable
 		this.city = city;
 	}
 
-	/**
-	 * The company name associated to this address object.
-	 */
 	protected String companyName;
 
 	public String getCompanyName() {
@@ -46,9 +36,6 @@ public class Address implements Serializable
 		this.companyName = companyName;
 	}
 
-	/**
-	 * The associated country
-	 */
 	protected String country;
 
 	public String getCountry() {
@@ -59,9 +46,6 @@ public class Address implements Serializable
 		this.country = country;
 	}
 
-	/**
-	 * Address 1
-	 */
 	protected String line1;
 
 	public String getLine1() {
@@ -72,9 +56,6 @@ public class Address implements Serializable
 		this.line1 = line1;
 	}
 
-	/**
-	 * Address 2
-	 */
 	protected String line2;
 
 	public String getLine2() {
@@ -85,9 +66,6 @@ public class Address implements Serializable
 		this.line2 = line2;
 	}
 
-	/**
-	 * Address 3
-	 */
 	protected String line3;
 
 	public String getLine3() {
@@ -98,9 +76,6 @@ public class Address implements Serializable
 		this.line3 = line3;
 	}
 
-	/**
-	 * The associated postal code.
-	 */
 	protected String postalCode;
 
 	public String getPostalCode() {
@@ -111,9 +86,6 @@ public class Address implements Serializable
 		this.postalCode = postalCode;
 	}
 
-	/**
-	 * The associated state.
-	 */
 	protected String state;
 
 	public String getState() {

@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.SearchResource;
 
 /** <summary>
- * The Search resource manages all settings and options for providing product search on your site.
+ * 
  * </summary>
  */
 public class SearchFactory
@@ -195,7 +195,6 @@ public class SearchFactory
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
 	}
-
 
 	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, int expectedCode) throws Exception
 	{

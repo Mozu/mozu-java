@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class CategoryLocalizedImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
+	 * Descriptive text associated with the image or video that appears on the web storefront.
 	 */
 	protected String altText;
 
@@ -34,7 +33,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the category image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected String cmsId;
 
@@ -47,7 +46,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the localized product category image.
 	 */
 	protected Integer id;
 
@@ -60,7 +59,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
+	 * Image title that appears on the web storefront set to the language specified by the site's LocaleCode.
 	 */
 	protected String imageLabel;
 
@@ -73,7 +72,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The URL link for the image file associated with a product or category.
+	 * URL of the product category image.
 	 */
 	protected String imageUrl;
 
@@ -99,7 +98,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
+	 * Type of media specification required to successfully render the image, video, or other media content for the product category.
 	 */
 	protected String mediaType;
 
@@ -112,7 +111,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 * Integer that represents the sequential order of this category image or video.
 	 */
 	protected Integer sequence;
 
@@ -125,7 +124,7 @@ public class CategoryLocalizedImage implements Serializable
 	}
 
 	/**
-	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
+	 * The URL of the product category video. The path name is set in the language specified by the LocaleCode.
 	 */
 	protected String videoUrl;
 

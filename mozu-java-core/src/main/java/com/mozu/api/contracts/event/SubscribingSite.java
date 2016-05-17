@@ -6,15 +6,11 @@
  */
 package com.mozu.api.contracts.event;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Properties for the site associated with a subscription including audit info, if active, and the unique ID for the site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubscribingSite implements Serializable
 {
@@ -22,7 +18,7 @@ public class SubscribingSite implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * This specifies if the subscription is active at the site level.
 	 */
 	protected Boolean isActive;
 
@@ -34,9 +30,6 @@ public class SubscribingSite implements Serializable
 		this.isActive = isActive;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected Integer siteId;
 
 	public Integer getSiteId() {

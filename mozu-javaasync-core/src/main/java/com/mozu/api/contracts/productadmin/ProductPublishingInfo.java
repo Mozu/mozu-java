@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -59,9 +58,6 @@ public class ProductPublishingInfo implements Serializable
 		this.publishedState = publishedState;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.ProductPublishingInfo publishSetCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {

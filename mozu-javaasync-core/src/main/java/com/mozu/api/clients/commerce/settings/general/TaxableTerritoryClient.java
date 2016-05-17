@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.settings.general;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -56,7 +54,7 @@ public class TaxableTerritoryClient {
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -75,7 +73,7 @@ public class TaxableTerritoryClient {
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param taxableTerritory Properties of the territory which is subject to sales tax.
+	 * @param taxableTerritory Properties of the taxable territory to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.TaxableTerritory>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
@@ -101,7 +99,7 @@ public class TaxableTerritoryClient {
 	 * client.executeRequest();
 	 * TaxableTerritory taxableTerritory = client.Result();
 	 * </code></pre></p>
-	 * @param taxableterritories Properties of the territory which is subject to sales tax.
+	 * @param taxableterritories Properties of the taxable territories to update.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.sitesettings.general.TaxableTerritory>>
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory
 	 * @see com.mozu.api.contracts.sitesettings.general.TaxableTerritory

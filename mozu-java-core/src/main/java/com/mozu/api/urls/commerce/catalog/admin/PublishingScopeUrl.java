@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,8 +15,8 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for GetPublishSet
-	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param publishSetCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetUrl(String publishSetCode, String responseFields)
@@ -31,7 +29,7 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for GetPublishSets
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetsUrl(String responseFields)
@@ -63,7 +61,7 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for AssignProductsToPublishSet
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl assignProductsToPublishSetUrl(String responseFields)
@@ -75,8 +73,8 @@ public class PublishingScopeUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param discardDrafts Specifies whether to discard all the drafts assigned to the publish set when the publish set is deleted.
-	 * @param publishSetCode The unique identifier of the publish set.
+	 * @param discardDrafts 
+	 * @param publishSetCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePublishSetUrl(Boolean discardDrafts, String publishSetCode)

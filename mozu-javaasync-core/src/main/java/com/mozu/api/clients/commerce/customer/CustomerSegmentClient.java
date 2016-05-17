@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.customer;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -119,7 +117,7 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -138,7 +136,7 @@ public class CustomerSegmentClient {
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to add.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -163,7 +161,7 @@ public class CustomerSegmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
 	 * @param accountIds List of customer account IDs to add to the customer segment specified in the request.
 	 * @return Mozu.Api.MozuClient 
 	 * @see int
@@ -188,8 +186,8 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param id Unique identifier of the customer segment.
+	 * @param segment Properties of the customer segment to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -207,9 +205,9 @@ public class CustomerSegmentClient {
 	 * client.executeRequest();
 	 * CustomerSegment customerSegment = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param segment The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+	 * @param segment Properties of the customer segment to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerSegment>
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
 	 * @see com.mozu.api.contracts.customer.CustomerSegment
@@ -234,7 +232,7 @@ public class CustomerSegmentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteSegmentClient(Integer id) throws Exception
@@ -249,14 +247,14 @@ public class CustomerSegmentClient {
 	}
 
 	/**
-	 * Removes single account from a segment.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=RemoveSegmentAccountClient( id,  accountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param accountId 
+	 * @param id 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient removeSegmentAccountClient(Integer id, Integer accountId) throws Exception

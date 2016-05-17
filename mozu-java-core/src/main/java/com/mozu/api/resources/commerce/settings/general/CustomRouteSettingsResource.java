@@ -7,19 +7,17 @@
 package com.mozu.api.resources.commerce.settings.general;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Custom Routes resource to manage your custom route settings. Custom routing allows you to display SEO-friendly URLs on your site that map behind-the-scenes to conventional Mozu resources such as a product page or a search results page. With custom routing, you gain advanced control over the URL structures on your site and can more visibly highlight the products or categories your shoppers are interested in purchasing.To learn more about custom routing, refer to the [Custom Route Settings](../../../guides/settings/custom-routes.htm) topic.
+ * 
  * </summary>
  */
 public class CustomRouteSettingsResource {
@@ -36,7 +34,7 @@ public class CustomRouteSettingsResource {
 
 	
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings();
@@ -50,12 +48,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Retrieves the custom route settings configured for a site. These are the same settings configured through  in the Custom Routing JSON Editor.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.getCustomRouteSettings( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 */
@@ -69,12 +67,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings);
 	 * </code></pre></p>
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -85,13 +83,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Create new custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.createCustomRouteSettings( settings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param settings 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -106,12 +104,12 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings);
 	 * </code></pre></p>
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -122,13 +120,13 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Updates custom route settings.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	CustomRouteSettings customRouteSettings = customroutesettings.updateCustomRouteSettings( settings,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param settings 
 	 * @return com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -143,7 +141,7 @@ public class CustomRouteSettingsResource {
 	}
 
 	/**
-	 * Deletes all the custom route settings for a site, returning all routes to their Mozu defaults.
+	 * 
 	 * <p><pre><code>
 	 *	CustomRouteSettings customroutesettings = new CustomRouteSettings();
 	 *	customroutesettings.deleteCustomRouteSettings();

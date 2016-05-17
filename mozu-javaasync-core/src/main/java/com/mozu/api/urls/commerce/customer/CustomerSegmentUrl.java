@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -63,7 +61,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for AddSegmentAccounts
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment for which to add the associated customer accounts.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addSegmentAccountsUrl(Integer id)
@@ -75,7 +73,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for UpdateSegment
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -89,7 +87,7 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for DeleteSegment
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer segment to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteSegmentUrl(Integer id)
@@ -101,8 +99,8 @@ public class CustomerSegmentUrl
 
 	/**
 	 * Get Resource Url for RemoveSegmentAccount
-	 * @param accountId Unique identifier of the customer account.
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param accountId 
+	 * @param id 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl removeSegmentAccountUrl(Integer accountId, Integer id)

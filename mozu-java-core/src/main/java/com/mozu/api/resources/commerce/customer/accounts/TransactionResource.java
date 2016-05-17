@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.customer.accounts;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -41,7 +39,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	Transaction transaction = transaction.getTransactions( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return List<com.mozu.api.contracts.customer.Transaction>
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 */
@@ -61,7 +59,7 @@ public class TransactionResource {
 	 *	Transaction transaction = transaction.addTransaction( transaction,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -79,7 +77,7 @@ public class TransactionResource {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param transaction Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
+	 * @param transaction Properties of the transaction to create for the customer account.
 	 * @return com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
 	 * @see com.mozu.api.contracts.customer.Transaction
@@ -99,7 +97,7 @@ public class TransactionResource {
 	 *	Transaction transaction = new Transaction();
 	 *	transaction.removeTransaction( accountId,  transactionId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
 	 * @return 
 	 */

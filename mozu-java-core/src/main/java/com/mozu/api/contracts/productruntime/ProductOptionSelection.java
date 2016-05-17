@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class ProductOptionSelection implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the attribute's value.
+	 * Identifier of the value of this attribute.
 	 */
 	protected Integer attributeValueId;
 
@@ -47,7 +46,7 @@ public class ProductOptionSelection implements Serializable
 	}
 
 	/**
-	 * The value a shopper entered for an attribute that requires additional input for the product on a storefront. This entered value is a selected option or entered content for an extra, such as selecting a color or entering content for a monogram.
+	 * The custom value the shopper entered for an option set up in product admin.
 	 */
 	protected Object shopperEnteredValue;
 
@@ -60,7 +59,7 @@ public class ProductOptionSelection implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * The attribute value.
 	 */
 	protected Object value;
 

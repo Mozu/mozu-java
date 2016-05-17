@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.products;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -39,7 +37,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for GetLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode User-defined code that identifies the location.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -55,7 +53,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for AddLocationInventory
-	 * @param performUpserts Query string parameter lets the service perform an update for a new or existing record. When run, the update occurs without throwing a conflict exception that the record exists. If true, the updates completes regardless of the record currently existing. By default, if no value is specified, the service assumes this value is false.
+	 * @param performUpserts The performUpserts query string parameter lets the service perform an update if the record already exists instead of throwing an already exists conflict exception. PerformUpserts=true means it updates if the record already exists. By default, no value specified means that the service assumes PerformUpserts=false.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @return   String Resource Url
 	 */
@@ -69,7 +67,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationInventory
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The product code of the product for which to update active stock on hand inventory at a specified location.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationInventoryUrl(String productCode)
@@ -81,8 +79,8 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for DeleteLocationInventory
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param locationCode The code that identifies the location for which to delete product inventory.
+	 * @param productCode The product code for which to delete a location's inventory.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationInventoryUrl(String locationCode, String productCode)

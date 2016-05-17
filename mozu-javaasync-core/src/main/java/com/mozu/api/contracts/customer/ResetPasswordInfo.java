@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class ResetPasswordInfo implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * User name of the user associated with the customer account.
 	 */
 	protected String userName;
 

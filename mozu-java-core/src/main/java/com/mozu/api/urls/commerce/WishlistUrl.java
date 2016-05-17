@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -19,7 +17,7 @@ public class WishlistUrl
 	 * Get Resource Url for GetWishlists
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param q A list of search terms to use in the query when searching across wish list name. Separate multiple search terms with a space character.
 	 * @param qLimit The maximum number of search results to return in the response. You can limit any range between 1-100.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -42,7 +40,7 @@ public class WishlistUrl
 	/**
 	 * Get Resource Url for GetWishlist
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the shopper wish list to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getWishlistUrl(String responseFields, String wishlistId)
@@ -84,7 +82,7 @@ public class WishlistUrl
 	/**
 	 * Get Resource Url for UpdateWishlist
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the shopper wish list to update.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateWishlistUrl(String responseFields, String wishlistId)
@@ -97,7 +95,7 @@ public class WishlistUrl
 
 	/**
 	 * Get Resource Url for DeleteWishlist
-	 * @param wishlistId Unique identifier of the wish list.
+	 * @param wishlistId Unique identifier of the wish list to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteWishlistUrl(String wishlistId)

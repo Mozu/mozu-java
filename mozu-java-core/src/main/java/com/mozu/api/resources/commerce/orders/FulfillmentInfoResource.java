@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.orders;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -56,7 +54,7 @@ public class FulfillmentInfoResource {
 	 *	FulfillmentInfo fulfillmentinfo = new FulfillmentInfo();
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.getFulfillmentInfo( orderId,  draft,  responseFields);
 	 * </code></pre></p>
-	 * @param draft If true, retrieve the draft version of the order, which might include uncommitted changes to the order or its components.
+	 * @param draft If true, retrieve the draft version of the order's fulfillment information, which might include uncommitted changes.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -78,7 +76,7 @@ public class FulfillmentInfoResource {
 	 *	FulfillmentInfo fulfillmentInfo = fulfillmentinfo.setFulFillmentInfo( fulfillmentInfo,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
+	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
@@ -96,9 +94,9 @@ public class FulfillmentInfoResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
+	 * @param updateMode Specifies whether to set the fulfillment information by updating the original order, updating the order in draft mode, or updating the order in draft mode and then committing the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
-	 * @param fulfillmentInfo Properties of the information needed to fulfill an order, whether via in-store pickup or direct shipping.
+	 * @param fulfillmentInfo Array list of fulfillment information associated with an order.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.FulfillmentInfo

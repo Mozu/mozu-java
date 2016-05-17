@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.customer.accounts;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class TransactionUrl
 
 	/**
 	 * Get Resource Url for GetTransactions
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account for which to retrieve transactions.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getTransactionsUrl(Integer accountId)
@@ -43,7 +41,7 @@ public class TransactionUrl
 
 	/**
 	 * Get Resource Url for RemoveTransaction
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Unique identifier of the customer account from which to delete the transaction.
 	 * @param transactionId Unique identifier of the transaction to delete.
 	 * @return   String Resource Url
 	 */

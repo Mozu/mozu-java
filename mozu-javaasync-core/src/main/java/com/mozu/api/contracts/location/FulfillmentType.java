@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.location;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class FulfillmentType implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The system-supplied name of the fulfillment type, which is "Direct Ship" or "In Store Pickup".
 	 */
 	protected String name;
 

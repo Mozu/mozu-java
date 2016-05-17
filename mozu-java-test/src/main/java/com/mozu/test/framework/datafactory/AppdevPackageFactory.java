@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.appdev.PackageResource;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class AppdevPackageFactory

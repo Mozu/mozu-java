@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.customer.accounts;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -43,7 +41,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -59,7 +57,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -76,7 +74,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
@@ -97,7 +95,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttribute( accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute to retrieve.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
@@ -118,7 +116,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 */
@@ -133,7 +131,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerAttributeCollection
 	 * @see com.mozu.api.contracts.customer.CustomerAttributeCollection
@@ -149,7 +147,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttributeCollection customerAttributeCollection = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -173,7 +171,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.getAccountAttributes( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attributes to retrieve.
 	 * @param filter 
 	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -198,7 +196,7 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerAttribute = customerattribute.addAccountAttribute( attribute,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute The attribute to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -216,7 +214,7 @@ public class CustomerAttributeResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute The attribute to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -234,7 +232,7 @@ public class CustomerAttributeResource {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute The attribute to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -257,7 +255,7 @@ public class CustomerAttributeResource {
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute The attribute to add to the customer account.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -276,9 +274,9 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -294,10 +292,10 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -313,10 +311,10 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CustomerAttribute customerAttribute = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
@@ -336,11 +334,11 @@ public class CustomerAttributeResource {
 	 *	CustomerAttribute customerattribute = new CustomerAttribute();
 	 *	CountDownLatch latch = customerattribute.updateAccountAttribute( attribute,  accountId,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param accountId Unique identifier of the customer account.
+	 * @param accountId Identifier of the customer account associated with the attribute.
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute associated with a customer account.
+	 * @param attribute Properties of the customer account attribute to update.
 	 * @return com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute
 	 * @see com.mozu.api.contracts.customer.CustomerAttribute

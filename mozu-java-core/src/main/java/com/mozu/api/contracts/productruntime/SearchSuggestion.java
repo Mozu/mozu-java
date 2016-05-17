@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -20,9 +19,6 @@ public class SearchSuggestion implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * A suggested entity based on the search query. Use the SuggestionType to determine the type of entity. Could be a SearchTerm, Product, or Category
-	 */
 	protected Object suggestion;
 
 	public Object getSuggestion() {
@@ -33,9 +29,6 @@ public class SearchSuggestion implements Serializable
 		this.suggestion = suggestion;
 	}
 
-	/**
-	 * The type of Suggestion (e.g. Term, Product, Category). Will be one of the values of the SuggestionTypeConst type.
-	 */
 	protected String suggestionType;
 
 	public String getSuggestionType() {

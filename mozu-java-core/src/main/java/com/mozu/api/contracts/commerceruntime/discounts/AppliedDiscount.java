@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.discounts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -35,7 +34,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
+	 * If true, the system ignores this discount when pricing the order.
 	 */
 	protected Boolean excluded;
 
@@ -61,7 +60,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * Discount currently applied to the cart or order.
 	 */
 	protected Discount discount;
 

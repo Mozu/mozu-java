@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.settings;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -73,7 +71,7 @@ public class GeneralSettingsClient {
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -92,7 +90,7 @@ public class GeneralSettingsClient {
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

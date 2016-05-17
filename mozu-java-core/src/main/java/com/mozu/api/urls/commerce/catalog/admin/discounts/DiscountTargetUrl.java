@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.discounts;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class DiscountTargetUrl
 
 	/**
 	 * Get Resource Url for GetDiscountTarget
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -31,7 +29,7 @@ public class DiscountTargetUrl
 
 	/**
 	 * Get Resource Url for UpdateDiscountTarget
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

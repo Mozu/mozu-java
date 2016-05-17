@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.AppDev.Contracts.Event ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The Api Version Number which defines what events are available for a given API version.
-	 */
 	protected String apiVersionNumber;
 
 	public String getApiVersionNumber() {
@@ -33,9 +26,6 @@ public class Event implements Serializable
 		this.apiVersionNumber = apiVersionNumber;
 	}
 
-	/**
-	 * The category the event belongs to.
-	 */
 	protected String eventCategory;
 
 	public String getEventCategory() {
@@ -46,9 +36,6 @@ public class Event implements Serializable
 		this.eventCategory = eventCategory;
 	}
 
-	/**
-	 * Unique identifier for the event. 
-	 */
 	protected Integer eventId;
 
 	public Integer getEventId() {
@@ -59,9 +46,6 @@ public class Event implements Serializable
 		this.eventId = eventId;
 	}
 
-	/**
-	 * The name of the event.
-	 */
 	protected String eventName;
 
 	public String getEventName() {

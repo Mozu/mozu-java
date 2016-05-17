@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -35,7 +34,7 @@ public class PublishingScope implements Serializable
 	}
 
 	/**
-	 * List of product codes of associated products, used for pending product changes to publish or delete and returned in a product inventory location query.
+	 * List of product codes for each pending product change you want to publish or delete.
 	 */
 	protected List<String> productCodes;
 	public List<String> getProductCodes() {
@@ -45,9 +44,6 @@ public class PublishingScope implements Serializable
 		this.productCodes = productCodes;
 	}
 
-	/**
-	 * The Publish Set to publish
-	 */
 	protected String publishSetCode;
 
 	public String getPublishSetCode() {

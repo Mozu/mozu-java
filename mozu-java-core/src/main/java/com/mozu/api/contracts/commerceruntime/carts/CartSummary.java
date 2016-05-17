@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.carts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class CartSummary implements Serializable
 	}
 
 	/**
-	 * suaIf true, the cart's period of inactivity is past its calculated expiration date and the cart is considered abandoned.
+	 * If true, the cart's period of inactivity is past its calculated expiration date and the cart is considered abandoned.
 	 */
 	protected Boolean isExpired;
 
@@ -60,7 +59,7 @@ public class CartSummary implements Serializable
 	}
 
 	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 * Estimated total amount of the cart, including items, sales tax, shipping costs, and other fees.
 	 */
 	protected Double total;
 

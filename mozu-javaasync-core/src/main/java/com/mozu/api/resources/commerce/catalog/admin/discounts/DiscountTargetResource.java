@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.catalog.admin.discounts;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -51,7 +49,7 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.getDiscountTarget( discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 */
@@ -66,7 +64,7 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	CountDownLatch latch = discounttarget.getDiscountTarget( discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -82,7 +80,7 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.getDiscountTarget( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -102,7 +100,7 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	CountDownLatch latch = discounttarget.getDiscountTarget( discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
@@ -122,8 +120,8 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -139,9 +137,9 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	CountDownLatch latch = discounttarget.updateDiscountTarget( discountTarget,  discountId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -157,9 +155,9 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	DiscountTarget discountTarget = discounttarget.updateDiscountTarget( discountTarget,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
@@ -179,10 +177,10 @@ public class DiscountTargetResource {
 	 *	DiscountTarget discounttarget = new DiscountTarget();
 	 *	CountDownLatch latch = discounttarget.updateDiscountTarget( discountTarget,  discountId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discountTarget Properties of the target to which the discount applies, such as the type of discount and which products, categories, or shipping methods are eligible for the discount and the properties of this discount target.
+	 * @param discountTarget Properties of the discount target to modify. Required properties: Target.Type. Any unspecified properties are set to null and boolean variables to false.
 	 * @return com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget
 	 * @see com.mozu.api.contracts.productadmin.DiscountTarget

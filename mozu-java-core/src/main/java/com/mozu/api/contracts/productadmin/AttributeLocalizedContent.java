@@ -6,13 +6,12 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	The localized name and description of the attribute, displayed in the locale defined for the master catalog.
+ *	Localized content displayed in the storefront for this attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeLocalizedContent implements Serializable
@@ -21,7 +20,7 @@ public class AttributeLocalizedContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * Localized content for the description of this attribute displayed in the storefront.
 	 */
 	protected String description;
 
@@ -47,7 +46,7 @@ public class AttributeLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * Localized content for the attribute name displayed in the storefront.
 	 */
 	protected String name;
 

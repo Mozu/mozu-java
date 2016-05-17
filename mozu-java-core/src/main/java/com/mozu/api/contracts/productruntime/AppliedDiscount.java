@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -35,7 +34,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
+	 * The value of the discount applied to the product, represented as a negative currency amount to apply to the original price.
 	 */
 	protected Double impact;
 
@@ -48,7 +47,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * Properties of the discount currently applied to the product.
 	 */
 	protected Discount discount;
 

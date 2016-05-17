@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	The targeted shipping zone for the product.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetedShippingZone implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The zone string for the tenant domain.
-	 */
 	protected String zone;
 
 	public String getZone() {

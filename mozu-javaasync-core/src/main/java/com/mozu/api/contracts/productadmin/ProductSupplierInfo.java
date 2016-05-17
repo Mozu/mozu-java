@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -35,7 +34,7 @@ public class ProductSupplierInfo implements Serializable
 	}
 
 	/**
-	 * The manufacturer's part number for the product.
+	 * The manufacturer part number associated with this product, defined by the product manufacturer.
 	 */
 	protected String mfgPartNumber;
 

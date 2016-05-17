@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.returns;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class ReturnReason implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The quantity of the item returned for the specified reason.
 	 */
 	protected Integer quantity;
 
@@ -34,7 +33,7 @@ public class ReturnReason implements Serializable
 	}
 
 	/**
-	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
+	 * The reason for which an item is returned to the merchant.
 	 */
 	protected String reason;
 

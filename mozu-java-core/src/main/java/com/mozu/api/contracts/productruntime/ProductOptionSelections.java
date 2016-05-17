@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -23,7 +22,7 @@ public class ProductOptionSelections implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
+	 * Product code that represents the product variation selected based on the option values the shopper entered.
 	 */
 	protected String variationProductCode;
 
@@ -36,7 +35,7 @@ public class ProductOptionSelections implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * List of option attributes associated with the product and the associated values currently defined for this product configuration.
 	 */
 	protected List<ProductOptionSelection> options;
 	public List<ProductOptionSelection> getOptions() {

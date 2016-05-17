@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.payments;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/cards related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublicCardResource {
@@ -42,12 +40,12 @@ public PublicCardResource(ApiContext apiContext)
 
 	
 	/**
-	 * payments-cards Post Create description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.create( request);
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -62,13 +60,13 @@ public PublicCardResource(ApiContext apiContext)
 	}
 
 	/**
-	 * payments-cards Post Create description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.create( request, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -82,13 +80,13 @@ public PublicCardResource(ApiContext apiContext)
 	}
 
 	/**
-	 * payments-cards Put Update description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.update( request,  cardId);
 	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param cardId 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -103,14 +101,14 @@ public PublicCardResource(ApiContext apiContext)
 	}
 
 	/**
-	 * payments-cards Put Update description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.update( request,  cardId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
@@ -124,12 +122,12 @@ public PublicCardResource(ApiContext apiContext)
 	}
 
 	/**
-	 * payments-cards Delete Delete description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	publiccard.delete( cardId);
 	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @return 
 	 */
 	public void delete(String cardId) throws Exception

@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -36,7 +35,7 @@ public class ProductPurchasableState implements Serializable
 	}
 
 	/**
-	 * Array list of validation and status messages associated with shipping rates, orders, and product purchasable state.
+	 * List of messages associated with the product if the product is not ready for purchase.
 	 */
 	protected List<ValidationMessage> messages;
 	public List<ValidationMessage> getMessages() {

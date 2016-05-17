@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.content.documentlists;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -34,8 +32,8 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -53,15 +51,15 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId 
+	 * @param documentListName 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -71,22 +69,22 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Performs transformations on a document. For example, resizing an image.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=TransformDocumentContentClient( documentListName,  documentId,  width,  height,  max,  maxWidth,  maxHeight,  crop,  quality);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
-	 * @param crop Crops the image based on the specified coordinates. The reference point for positive coordinates is the top-left corner of the image, and the reference point for negative coordinates is the bottom-right corner of the image.Usage: Example:  removes 10 pixels from all edges of the image.  leaves the image uncropped.
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param height Specifies an exact height dimension for the image, in pixels.
-	 * @param max Specifies a pixel limitation for the largest side of an image.
-	 * @param maxHeight Specifies a pixel limitation for the height of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param maxWidth Specifies a pixel limitation for the width of the image, preserving the aspect ratio if the image needs resizing.
-	 * @param quality Adjusts the image compression. Accepts values from 0-100, where 100 = highest quality, least compression.
-	 * @param width Specifies an exact width dimension for the image, in pixels.
+	 * @param crop 
+	 * @param documentId 
+	 * @param documentListName 
+	 * @param height 
+	 * @param max 
+	 * @param maxHeight 
+	 * @param maxWidth 
+	 * @param quality 
+	 * @param width 
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
@@ -110,8 +108,8 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Identifier of the document being retrieved.
+	 * @param documentListName The name of the document list associated with the document to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 */
@@ -128,9 +126,9 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param includeInactive Include inactive content.
+	 * @param documentId Identifier of the document being retrieved.
+	 * @param documentListName The name of the document list associated with the document to retrieve.
+	 * @param includeInactive 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
@@ -156,7 +154,7 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * DocumentCollection documentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentCollection>
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
@@ -173,9 +171,9 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * DocumentCollection documentCollection = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param includeInactive Include inactive content.
+	 * @param documentListName The name of the document list.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter a document's search results by any of its properties, including its name or folder path. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+sw+Events"
+	 * @param includeInactive 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
@@ -204,8 +202,8 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentListName The descriptive alphanumeric document list name being created.
+	 * @param document The descriptive name of the newly created document.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -223,9 +221,9 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The descriptive alphanumeric document list name being created.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param document The descriptive name of the newly created document.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -245,15 +243,15 @@ public class DocumentClient {
 	}
 
 	/**
-	 * Updates the binary data or content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
+	 * Updates the content associated with a document, such as a product image or PDF specifications file, by supplying the document ID.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDocumentContentClient( stream,  documentListName,  documentId,  contentType);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param stream Data stream that delivers information. Used to input and output data.
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
+	 * @param stream Input output stream that delivers information.
 	 * @return Mozu.Api.MozuClient 
 	 * @see Stream
 	 */
@@ -279,9 +277,9 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param documentId Unique identifier of the document to update.
+	 * @param documentListName Name of the document list associated with the document.
+	 * @param document Properties of the document to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -299,10 +297,10 @@ public class DocumentClient {
 	 * client.executeRequest();
 	 * Document document = client.Result();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Unique identifier of the document to update.
+	 * @param documentListName Name of the document list associated with the document.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param document The document properties that define the content used by the content management system (CMS).
+	 * @param document Properties of the document to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.Document>
 	 * @see com.mozu.api.contracts.content.Document
 	 * @see com.mozu.api.contracts.content.Document
@@ -327,8 +325,8 @@ public class DocumentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Identifier of the document being deleted.
+	 * @param documentListName The name of the document list associated with the document list being deleted.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDocumentClient(String documentListName, String documentId) throws Exception
@@ -349,8 +347,8 @@ public class DocumentClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param documentId Unique identifier for a document, used by content and document calls. Document IDs are associated with document types, document type lists, sites, and tenants.
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentId Unique identifier of the document.
+	 * @param documentListName The name of the document list associated with the document.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDocumentContentClient(String documentListName, String documentId) throws Exception

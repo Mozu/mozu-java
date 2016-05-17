@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.content;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,9 +15,9 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSets
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetsUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -33,12 +31,12 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSetItems
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param code 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetItemsUrl(String code, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -55,9 +53,9 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
+	 * @param code 
+	 * @param responseFields 
+	 * @param shouldDiscard 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePublishSetUrl(String code, String responseFields, Boolean shouldDiscard)
@@ -71,8 +69,8 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for AddPublishSetItems
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param code 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPublishSetItemsUrl(String code, String responseFields)

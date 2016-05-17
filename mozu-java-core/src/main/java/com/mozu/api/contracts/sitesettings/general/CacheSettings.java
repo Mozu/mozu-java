@@ -6,23 +6,16 @@
  */
 package com.mozu.api.contracts.sitesettings.general;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.CacheSettings ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CacheSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The a query string value that can be used to invalidate a client browser cache/ cdn cache.
-	 */
 	protected String cdnCacheBustKey;
 
 	public String getCdnCacheBustKey() {

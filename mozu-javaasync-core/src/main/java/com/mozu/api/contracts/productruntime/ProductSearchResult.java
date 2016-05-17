@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -95,9 +94,6 @@ public class ProductSearchResult implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.ProductSearchResult solrDebugInfo ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected SolrDebugInfo solrDebugInfo;
 
 	public SolrDebugInfo getSolrDebugInfo() {

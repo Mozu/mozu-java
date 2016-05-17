@@ -6,33 +6,31 @@
  */
 package com.mozu.api.clients.commerce.orders;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the refunds resource to create a refund.
+ * 
  * </summary>
  */
 public class RefundClient {
 	
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param orderId 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -43,16 +41,16 @@ public class RefundClient {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.refunds.Refund> mozuClient=CreateRefundClient( refund,  orderId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Refund refund = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param refund 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.refunds.Refund>
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -71,15 +69,14 @@ public class RefundClient {
 	}
 
 	/**
-	 * Resends the order refund email previously sent to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendRefundEmailClient( orderId,  refundId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refundId Unique ID of the refund.
-        
+	 * @param orderId 
+	 * @param refundId 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendRefundEmailClient(String orderId, String refundId) throws Exception

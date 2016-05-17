@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class UserAuthInfo implements Serializable
 	}
 
 	/**
-	 * The saved password for the customer account. 
+	 * Password of the user.
 	 */
 	protected String password;
 

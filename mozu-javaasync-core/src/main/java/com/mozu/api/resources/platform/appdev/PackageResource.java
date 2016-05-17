@@ -7,7 +7,6 @@
 package com.mozu.api.resources.platform.appdev;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PackageResource {
@@ -42,12 +40,12 @@ public PackageResource(ApiContext apiContext)
 
 	
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);
 	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @return Stream
 	 * @see Stream
@@ -62,12 +60,12 @@ public PackageResource(ApiContext apiContext)
 	}
 
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	CountDownLatch latch = package.getFile( applicationKey,  fileName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}. 
+	 * @param applicationKey 
 	 * @param fileName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return Stream

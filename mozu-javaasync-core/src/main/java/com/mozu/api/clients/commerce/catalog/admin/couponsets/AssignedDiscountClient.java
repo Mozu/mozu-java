@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin.couponsets;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,25 +14,24 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountClient {
 	
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.AssignedDiscount>> mozuClient=GetAssignedDiscountsClient( couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * AssignedDiscount assignedDiscount = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.AssignedDiscount>>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -50,14 +48,14 @@ public class AssignedDiscountClient {
 	}
 
 	/**
-	 * Assigns or associates an existing discount to a specified coupon set. Use the couponSetCode parameter to specify the coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=AssignDiscountClient( assignedDiscount,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param assignedDiscount 
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -74,14 +72,14 @@ public class AssignedDiscountClient {
 	}
 
 	/**
-	 * Unassigns or disassociates the specified discount with the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UnAssignDiscountClient( couponSetCode,  discountId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param discountId 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient unAssignDiscountClient(String couponSetCode, Integer discountId) throws Exception

@@ -6,13 +6,12 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 
 /**
- *	Describes whether a facet is currently valid and the reason. 			A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).		
+ *	System-supplied and read only parameter that validates a facet for its associated category.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetValidity implements Serializable
@@ -21,7 +20,7 @@ public class FacetValidity implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the facet is currently valid.
+	 * If true, the facet source is valid for its associated category.
 	 */
 	protected Boolean isValid;
 
@@ -34,7 +33,7 @@ public class FacetValidity implements Serializable
 	}
 
 	/**
-	 * A code indicating the reason why a facet is invalid.
+	 * Code associated with a reason for facet validation to return false for its associated category.
 	 */
 	protected String reasonCode;
 

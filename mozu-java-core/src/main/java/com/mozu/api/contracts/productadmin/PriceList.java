@@ -7,24 +7,17 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceList implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceList defaultForSites ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Integer> defaultForSites;
 	public List<Integer> getDefaultForSites() {
 		return this.defaultForSites;
@@ -33,9 +26,6 @@ public class PriceList implements Serializable
 		this.defaultForSites = defaultForSites;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected String description;
 
 	public String getDescription() {
@@ -46,9 +36,6 @@ public class PriceList implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -59,9 +46,6 @@ public class PriceList implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * When true, only products with valid price list entries will be visible in the storefront. Default is false
-	 */
 	protected Boolean filteredInStorefront;
 
 	public Boolean getFilteredInStorefront() {
@@ -72,9 +56,14 @@ public class PriceList implements Serializable
 		this.filteredInStorefront = filteredInStorefront;
 	}
 
-	/**
-	 * List of customer segment code associated with this price list. Used to resolve default price list
-	 */
+	protected List<Integer> indexedSites;
+	public List<Integer> getIndexedSites() {
+		return this.indexedSites;
+	}
+	public void setIndexedSites(List<Integer> indexedSites) {
+		this.indexedSites = indexedSites;
+	}
+
 	protected List<String> mappedCustomerSegments;
 	public List<String> getMappedCustomerSegments() {
 		return this.mappedCustomerSegments;
@@ -83,9 +72,6 @@ public class PriceList implements Serializable
 		this.mappedCustomerSegments = mappedCustomerSegments;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected String name;
 
 	public String getName() {
@@ -96,9 +82,6 @@ public class PriceList implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Parent PriceList code, Can be null for root level priceLists
-	 */
 	protected String parentPriceListCode;
 
 	public String getParentPriceListCode() {
@@ -109,9 +92,6 @@ public class PriceList implements Serializable
 		this.parentPriceListCode = parentPriceListCode;
 	}
 
-	/**
-	 * Parent PriceList name, Can be null for root level priceLists. Read only in contract.
-	 */
 	protected String parentPriceListName;
 
 	public String getParentPriceListName() {
@@ -122,9 +102,6 @@ public class PriceList implements Serializable
 		this.parentPriceListName = parentPriceListName;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceList priceListCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected String priceListCode;
 
 	public String getPriceListCode() {
@@ -135,9 +112,6 @@ public class PriceList implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.PriceList priceListSequence ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected Integer priceListSequence;
 
 	public Integer getPriceListSequence() {
@@ -148,9 +122,6 @@ public class PriceList implements Serializable
 		this.priceListSequence = priceListSequence;
 	}
 
-	/**
-	 * Used to prioritize price list resolution when more than 1 price list maps
-	 */
 	protected Integer rank;
 
 	public Integer getRank() {
@@ -161,9 +132,6 @@ public class PriceList implements Serializable
 		this.rank = rank;
 	}
 
-	/**
-	 * Determines if this price list can be resolved as the current price list within a session.
-	 */
 	protected Boolean resolvable;
 
 	public Boolean getResolvable() {
@@ -174,9 +142,6 @@ public class PriceList implements Serializable
 		this.resolvable = resolvable;
 	}
 
-	/**
-	 * When true, no valid sites need to be specifiied. Price list is considered valid for all sites. Default is true
-	 */
 	protected Boolean validForAllSites;
 
 	public Boolean getValidForAllSites() {
@@ -187,9 +152,6 @@ public class PriceList implements Serializable
 		this.validForAllSites = validForAllSites;
 	}
 
-	/**
-	 * When ValidForAllSites = false, a list of siteIDs that the price list is valid for should be supplied
-	 */
 	protected List<Integer> validSites;
 	public List<Integer> getValidSites() {
 		return this.validSites;
@@ -198,9 +160,6 @@ public class PriceList implements Serializable
 		this.validSites = validSites;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

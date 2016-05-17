@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.sitesettings.order;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -50,7 +49,7 @@ public class CheckoutSettings implements Serializable
 	}
 
 	/**
-	 * Payment gateway settings defined for the site. A payment gateway is an eCommerce application service provider that authorizes payments for eBusinesses, online retailers, and other stores that have an online commerce component.
+	 * Payment gateway settings defined for the site. A payment gateway is an eCommerce application service provider that authorizes payments for eBusinesses, online retailers, and other stores that have an online commerce component. Currently, only the Authorize.net gateway is supported.
 	 */
 	protected PaymentSettings paymentSettings;
 

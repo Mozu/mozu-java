@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.pricingruntime.thirdparty;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -21,7 +20,7 @@ public class ItemTaxContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the line item in the order.
 	 */
 	protected String id;
 
@@ -47,7 +46,7 @@ public class ItemTaxContext implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * Quantity of the line item in the order.
 	 */
 	protected Integer quantity;
 
@@ -60,7 +59,7 @@ public class ItemTaxContext implements Serializable
 	}
 
 	/**
-	 * Amount of tax applied to shipping costs for line items in and entire orders.
+	 * Amount of tax applied to shipping costs for the line item in the order.
 	 */
 	protected Double shippingTax;
 

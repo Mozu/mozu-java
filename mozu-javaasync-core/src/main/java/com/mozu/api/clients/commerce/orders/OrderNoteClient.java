@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.orders;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -57,8 +55,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -75,8 +73,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -101,8 +99,8 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderId Unique identifier of the order for which to add a note.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -120,9 +118,9 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to add a note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -148,9 +146,9 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -168,10 +166,10 @@ public class OrderNoteClient {
 	 * client.executeRequest();
 	 * OrderNote orderNote = client.Result();
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -196,8 +194,8 @@ public class OrderNoteClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to delete.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteOrderNoteClient(String orderId, String noteId) throws Exception

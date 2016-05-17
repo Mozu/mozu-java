@@ -6,7 +6,6 @@
  */
 package com.mozu.api.contracts.commerceruntime.returns;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,7 +33,7 @@ public class ReturnBundle implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The number of returned product bundles in the return.
 	 */
 	protected Integer quantity;
 

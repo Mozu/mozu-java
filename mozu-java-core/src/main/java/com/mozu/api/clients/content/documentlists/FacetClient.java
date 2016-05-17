@@ -6,14 +6,12 @@
  */
 package com.mozu.api.clients.content.documentlists;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -31,7 +29,7 @@ public class FacetClient {
 	 * client.executeRequest();
 	 * Facet facet = client.Result();
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The document list associated with the facets to retrieve.
 	 * @param propertyName The property name associated with the facets to retrieve.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.content.Facet>>
 	 * @see com.mozu.api.contracts.content.Facet

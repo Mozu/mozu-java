@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.returns;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -41,8 +39,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Stream stream = package.getPackageLabel( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package for which to retrieve the label.
+	 * @param returnId Unique identifier of the return associated with the replacement package label to retrieve.
 	 * @return Stream
 	 * @see Stream
 	 */
@@ -61,8 +59,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -77,9 +75,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.getPackage( returnId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param packageId Unique identifier of the return replacement package to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the replacement package to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 */
@@ -98,8 +96,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.createPackage( pkg,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param package Properties of the physical package for a return replacement.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -116,8 +114,8 @@ public class PackageResource {
 	 *	Package package = package.createPackage( pkg,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param returnId Unique identifier of the return for which to create a replacement package.
+	 * @param package Properties of the physical package for a return replacement.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -137,9 +135,9 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param packageId Unique identifier of the return replacement package to update.
+	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param package Properties of the return replacement package to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -155,10 +153,10 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	Package package = package.updatePackage( pkg,  returnId,  packageId,  responseFields);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param packageId Unique identifier of the return replacement package to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param package Properties of a physical package shipped for an order.
+	 * @param returnId Unique identifier of the return associated with the replacement package to update.
+	 * @param package Properties of the return replacement package to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Package
@@ -178,8 +176,8 @@ public class PackageResource {
 	 *	Package package = new Package();
 	 *	package.deletePackage( returnId,  packageId);
 	 * </code></pre></p>
-	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param packageId Unique identifier of the return replacement package to delete.
+	 * @param returnId Unique identifier of the return associated with the replacement package to delete.
 	 * @return 
 	 */
 	public void deletePackage(String returnId, String packageId) throws Exception

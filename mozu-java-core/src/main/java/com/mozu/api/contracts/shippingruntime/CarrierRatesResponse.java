@@ -7,7 +7,6 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -37,7 +36,7 @@ public class CarrierRatesResponse implements Serializable
 	}
 
 	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
+	 * Collection of carrier-specific key-value attribute pairs required to retrieve a shipping rate request.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
