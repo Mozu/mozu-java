@@ -196,7 +196,6 @@ public class SearchFactory
 		return returnObj;
 	}
 
-
 	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection updateSynonymDefinitionCollection(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinitionCollection collection, String localeCode, int expectedCode) throws Exception
 	{
 		return updateSynonymDefinitionCollection(apiContext,  collection,  localeCode,  null, expectedCode);

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.event;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for the HTTP status for an event.
@@ -23,7 +24,7 @@ public class HttpStatus implements Serializable
 	/**
 	 * The higher-level integer based HTTP Status Code returned by the remote endpoint
 	 */
-	protected Integer code;
+	protected  Integer code;
 
 	public Integer getCode() {
 		return this.code;
@@ -36,7 +37,7 @@ public class HttpStatus implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -45,5 +46,6 @@ public class HttpStatus implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

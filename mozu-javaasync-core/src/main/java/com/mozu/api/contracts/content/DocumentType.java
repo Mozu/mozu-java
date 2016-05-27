@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.content;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.Property;
 
 /**
@@ -25,7 +26,7 @@ public class DocumentType implements Serializable
 	/**
 	 * The administrator name associated with the object/data.
 	 */
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -38,7 +39,7 @@ public class DocumentType implements Serializable
 	/**
 	 * Fully qualified name of the document type. 
 	 */
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -51,7 +52,7 @@ public class DocumentType implements Serializable
 	/**
 	 * The package of document lists and content documents to be installed.
 	 */
-	protected String installationPackage;
+	protected  String installationPackage;
 
 	public String getInstallationPackage() {
 		return this.installationPackage;
@@ -64,7 +65,7 @@ public class DocumentType implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -77,7 +78,7 @@ public class DocumentType implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -90,7 +91,7 @@ public class DocumentType implements Serializable
 	/**
 	 * The current version number of the order, wish list, document list, or document type list.
 	 */
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -103,7 +104,7 @@ public class DocumentType implements Serializable
 	/**
 	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -122,6 +123,23 @@ public class DocumentType implements Serializable
 	}
 	public void setProperties(List<Property> properties) {
 		this.properties = properties;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

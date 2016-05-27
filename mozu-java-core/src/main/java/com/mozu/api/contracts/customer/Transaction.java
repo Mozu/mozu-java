@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a transaction performed by a customer account. The system creates a transaction each time the customer submits an order, returns an item, picks up items for an order, or manages items on a wish list.
@@ -23,7 +24,7 @@ public class Transaction implements Serializable
 	/**
 	 * If applicable, the amount of the transaction.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -36,7 +37,7 @@ public class Transaction implements Serializable
 	/**
 	 * The localized currency code for the monetary amount. 
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -49,7 +50,7 @@ public class Transaction implements Serializable
 	/**
 	 * The date and time recording for a customer action including a transaction and storefront visit.
 	 */
-	protected DateTime date;
+	protected  DateTime date;
 
 	public DateTime getDate() {
 		return this.date;
@@ -62,7 +63,7 @@ public class Transaction implements Serializable
 	/**
 	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
 	 */
-	protected String interactionType;
+	protected  String interactionType;
 
 	public String getInteractionType() {
 		return this.interactionType;
@@ -75,7 +76,7 @@ public class Transaction implements Serializable
 	/**
 	 * The unique identifier of the transaction.
 	 */
-	protected String transactionId;
+	protected  String transactionId;
 
 	public String getTransactionId() {
 		return this.transactionId;
@@ -88,7 +89,7 @@ public class Transaction implements Serializable
 	/**
 	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
 	 */
-	protected String transactionType;
+	protected  String transactionType;
 
 	public String getTransactionType() {
 		return this.transactionType;
@@ -101,7 +102,7 @@ public class Transaction implements Serializable
 	/**
 	 * Unique identifier of the customer visit in which the cart was created or last modified.
 	 */
-	protected String visitId;
+	protected  String visitId;
 
 	public String getVisitId() {
 		return this.visitId;
@@ -110,5 +111,6 @@ public class Transaction implements Serializable
 	public void setVisitId(String visitId) {
 		this.visitId = visitId;
 	}
+
 
 }

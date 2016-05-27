@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the credential fields associated with the payment gateway.
@@ -23,7 +24,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	/**
 	 * The sequential display order of the gateway in .
 	 */
-	protected Integer adminDisplayOrder;
+	protected  Integer adminDisplayOrder;
 
 	public Integer getAdminDisplayOrder() {
 		return this.adminDisplayOrder;
@@ -36,7 +37,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	/**
 	 * The name that displays for the payment gateway or third-party credentials field. 
 	 */
-	protected String displayName;
+	protected  String displayName;
 
 	public String getDisplayName() {
 		return this.displayName;
@@ -49,7 +50,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -62,7 +63,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	/**
 	 * The name of the Volusion store.
 	 */
-	protected String volusionStoreName;
+	protected  String volusionStoreName;
 
 	public String getVolusionStoreName() {
 		return this.volusionStoreName;
@@ -71,5 +72,6 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	public void setVolusionStoreName(String volusionStoreName) {
 		this.volusionStoreName = volusionStoreName;
 	}
+
 
 }

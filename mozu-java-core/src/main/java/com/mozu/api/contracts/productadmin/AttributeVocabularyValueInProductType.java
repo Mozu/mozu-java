@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
@@ -25,7 +26,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * Integer that represents the sequence order of the attribute.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -38,7 +39,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -51,7 +52,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
-	protected AttributeVocabularyValueDisplayInfo displayInfo;
+	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
 		return this.displayInfo;
@@ -64,7 +65,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * Navigates vocabulary value details for an attribute defined for a product type.
 	 */
-	protected AttributeVocabularyValue vocabularyValueDetail;
+	protected  AttributeVocabularyValue vocabularyValueDetail;
 
 	public AttributeVocabularyValue getVocabularyValueDetail() {
 		return this.vocabularyValueDetail;
@@ -73,5 +74,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	public void setVocabularyValueDetail(AttributeVocabularyValue vocabularyValueDetail) {
 		this.vocabularyValueDetail = vocabularyValueDetail;
 	}
+
 
 }

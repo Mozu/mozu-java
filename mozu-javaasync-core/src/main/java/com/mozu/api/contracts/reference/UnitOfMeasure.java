@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.reference;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties to describe the unit of measure.
@@ -23,7 +24,7 @@ public class UnitOfMeasure implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,7 +37,7 @@ public class UnitOfMeasure implements Serializable
 	/**
 	 * The plural name of the unit of measure, such as "feet".
 	 */
-	protected String pluralName;
+	protected  String pluralName;
 
 	public String getPluralName() {
 		return this.pluralName;
@@ -49,7 +50,7 @@ public class UnitOfMeasure implements Serializable
 	/**
 	 * The abbreviated symbol for the unit of measure, such as "ft".
 	 */
-	protected String symbol;
+	protected  String symbol;
 
 	public String getSymbol() {
 		return this.symbol;
@@ -62,7 +63,7 @@ public class UnitOfMeasure implements Serializable
 	/**
 	 * The type of measurement, such as length or volume.
 	 */
-	protected String unitOfMeasureType;
+	protected  String unitOfMeasureType;
 
 	public String getUnitOfMeasureType() {
 		return this.unitOfMeasureType;
@@ -71,5 +72,6 @@ public class UnitOfMeasure implements Serializable
 	public void setUnitOfMeasureType(String unitOfMeasureType) {
 		this.unitOfMeasureType = unitOfMeasureType;
 	}
+
 
 }

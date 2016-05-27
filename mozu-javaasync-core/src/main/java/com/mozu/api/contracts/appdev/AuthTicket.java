@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the authentication ticket used to authenticate applications.
@@ -23,7 +24,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * Alphanumeric string used to authenticate the user in API request headers. The token stores an encrypted list of the application's configured behaviors and authenticates the application.
 	 */
-	protected String accessToken;
+	protected  String accessToken;
 
 	public String getAccessToken() {
 		return this.accessToken;
@@ -36,7 +37,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * The date and time the user access token expires. If the token will expire, a new token will need to be generated and assigned to the account to continue and restore access to the store, data, and account.
 	 */
-	protected DateTime accessTokenExpiration;
+	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
 		return this.accessTokenExpiration;
@@ -49,7 +50,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 */
-	protected String refreshToken;
+	protected  String refreshToken;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -62,7 +63,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * The date and time the developer account or application refresh token expires.
 	 */
-	protected DateTime refreshTokenExpiration;
+	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
 		return this.refreshTokenExpiration;
@@ -71,5 +72,6 @@ public class AuthTicket implements Serializable
 	public void setRefreshTokenExpiration(DateTime refreshTokenExpiration) {
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
+
 
 }

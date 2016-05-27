@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CustomerSegment;
 import com.mozu.api.contracts.productadmin.CategoryDiscountCondition;
 import com.mozu.api.contracts.productadmin.ProductDiscountCondition;
@@ -27,7 +28,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * Code of a discount coupon. This code can be used by a shopper when a coupon code is required to earn the associated discount on a purchase.
 	 */
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -40,7 +41,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -64,7 +65,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * The maximum number of times the discount can be redeemed.
 	 */
-	protected Integer maxRedemptionCount;
+	protected  Integer maxRedemptionCount;
 
 	public Integer getMaxRedemptionCount() {
 		return this.maxRedemptionCount;
@@ -77,7 +78,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * This pecifies the minimum amount that must be purchased in the combined categories defined in IncludedCategories. This amount is calculated before discounting and it is not used if IncludedCategories is empty.
 	 */
-	protected Double minimumCategorySubtotalBeforeDiscounts;
+	protected  Double minimumCategorySubtotalBeforeDiscounts;
 
 	public Double getMinimumCategorySubtotalBeforeDiscounts() {
 		return this.minimumCategorySubtotalBeforeDiscounts;
@@ -90,7 +91,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * The minimum customer lifetime value amount required to redeem this discount.
 	 */
-	protected Double minimumLifetimeValueAmount;
+	protected  Double minimumLifetimeValueAmount;
 
 	public Double getMinimumLifetimeValueAmount() {
 		return this.minimumLifetimeValueAmount;
@@ -103,7 +104,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * The minimum order amount required to redeem this discount.
 	 */
-	protected Double minimumOrderAmount;
+	protected  Double minimumOrderAmount;
 
 	public Double getMinimumOrderAmount() {
 		return this.minimumOrderAmount;
@@ -116,7 +117,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * This specifies the minimum quantity of products in the categories specified in IncludedCategories, which must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedCategories has values.
 	 */
-	protected Integer minimumQuantityProductsRequiredInCategories;
+	protected  Integer minimumQuantityProductsRequiredInCategories;
 
 	public Integer getMinimumQuantityProductsRequiredInCategories() {
 		return this.minimumQuantityProductsRequiredInCategories;
@@ -129,7 +130,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * This specifies the minimum quantity of products in the specified IncludedProducts that must be purchased to qualify for the associated discount. This defaults to 1 if  null, and IncludedProducts has values.
 	 */
-	protected Integer minimumQuantityRequiredProducts;
+	protected  Integer minimumQuantityRequiredProducts;
 
 	public Integer getMinimumQuantityRequiredProducts() {
 		return this.minimumQuantityRequiredProducts;
@@ -142,7 +143,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * If true, only authenticated users can redeem the discount. If false, anonymous users can redeem the discount.
 	 */
-	protected Boolean requiresAuthenticatedUser;
+	protected  Boolean requiresAuthenticatedUser;
 
 	public Boolean getRequiresAuthenticatedUser() {
 		return this.requiresAuthenticatedUser;
@@ -155,7 +156,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * If true, redemption of this discount requires entry of a coupon code.
 	 */
-	protected Boolean requiresCoupon;
+	protected  Boolean requiresCoupon;
 
 	public Boolean getRequiresCoupon() {
 		return this.requiresCoupon;
@@ -168,7 +169,7 @@ public class DiscountCondition implements Serializable
 	/**
 	 * The earliest date and time this discount can be redeemed.
 	 */
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -232,5 +233,6 @@ public class DiscountCondition implements Serializable
 	public void setIncludedProducts(List<ProductDiscountCondition> includedProducts) {
 		this.includedProducts = includedProducts;
 	}
+
 
 }

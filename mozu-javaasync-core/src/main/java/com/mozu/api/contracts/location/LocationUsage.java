@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.location;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -47,7 +48,7 @@ public class LocationUsage implements Serializable
 	/**
 	 * The system-defined code used to identify the location usage type, which is "DS" for direct ship, "SP" for in-store pickup, or "storeFinder".
 	 */
-	protected String locationUsageTypeCode;
+	protected  String locationUsageTypeCode;
 
 	public String getLocationUsageTypeCode() {
 		return this.locationUsageTypeCode;
@@ -57,7 +58,7 @@ public class LocationUsage implements Serializable
 		this.locationUsageTypeCode = locationUsageTypeCode;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -66,5 +67,6 @@ public class LocationUsage implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

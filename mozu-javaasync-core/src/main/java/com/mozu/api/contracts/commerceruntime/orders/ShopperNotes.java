@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.orders;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Comments and/or gift message provided by the shopper which are associated with the order.
@@ -23,7 +24,7 @@ public class ShopperNotes implements Serializable
 	/**
 	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
 	 */
-	protected String comments;
+	protected  String comments;
 
 	public String getComments() {
 		return this.comments;
@@ -36,7 +37,7 @@ public class ShopperNotes implements Serializable
 	/**
 	 * Shopper-entered gift message for the associated order.
 	 */
-	protected String giftMessage;
+	protected  String giftMessage;
 
 	public String getGiftMessage() {
 		return this.giftMessage;
@@ -45,5 +46,6 @@ public class ShopperNotes implements Serializable
 	public void setGiftMessage(String giftMessage) {
 		this.giftMessage = giftMessage;
 	}
+
 
 }

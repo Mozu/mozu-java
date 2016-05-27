@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class CouponSet implements Serializable
 	/**
 	 * ReadOnly sum of all redemptions for this coupon. Use "counts" response group.
 	 */
-	protected Integer assignedDiscountCount;
+	protected  Integer assignedDiscountCount;
 
 	public Integer getAssignedDiscountCount() {
 		return this.assignedDiscountCount;
@@ -37,7 +38,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Signifies that the coupon has not been exported and can be updated ReadOnly
 	 */
-	protected Boolean canBeDeleted;
+	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
 		return this.canBeDeleted;
@@ -50,7 +51,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Count of associated couponCodes. Must use "counts" response group to get this value ReadOnly
 	 */
-	protected Integer couponCodeCount;
+	protected  Integer couponCodeCount;
 
 	public Integer getCouponCodeCount() {
 		return this.couponCodeCount;
@@ -63,7 +64,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Determines if the coupon is a persisted list of codes (static) or a list based on generated specification (dynamic).
 	 */
-	protected String couponCodeType;
+	protected  String couponCodeType;
 
 	public String getCouponCodeType() {
 		return this.couponCodeType;
@@ -76,7 +77,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Unique tenant supplied identifier. Used as the prefix for generated sets. Required System generated if left null.
 	 */
-	protected String couponSetCode;
+	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
 		return this.couponSetCode;
@@ -89,7 +90,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Date and time that the coupon codes becomes expired
 	 */
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -102,7 +103,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -115,7 +116,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Maximum number of times any code can de used. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
 	 */
-	protected Integer maxRedemptionsPerCouponCode;
+	protected  Integer maxRedemptionsPerCouponCode;
 
 	public Integer getMaxRedemptionsPerCouponCode() {
 		return this.maxRedemptionsPerCouponCode;
@@ -128,7 +129,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Maximum number of times any single user can redeem any code. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
 	 */
-	protected Integer maxRedemptionsPerUser;
+	protected  Integer maxRedemptionsPerUser;
 
 	public Integer getMaxRedemptionsPerUser() {
 		return this.maxRedemptionsPerUser;
@@ -141,7 +142,7 @@ public class CouponSet implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -154,7 +155,7 @@ public class CouponSet implements Serializable
 	/**
 	 * ReadOnly count of all redemptions for this coupon set.
 	 */
-	protected Integer redemptionCount;
+	protected  Integer redemptionCount;
 
 	public Integer getRedemptionCount() {
 		return this.redemptionCount;
@@ -167,7 +168,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Sets the number of codes to generate for dynamic coupons Required when CouponCodeType is "Dynamic"
 	 */
-	protected Integer setSize;
+	protected  Integer setSize;
 
 	public Integer getSetSize() {
 		return this.setSize;
@@ -180,7 +181,7 @@ public class CouponSet implements Serializable
 	/**
 	 * The date and time in UTC format that the coupon codes in the coupon set become active.
 	 */
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -193,7 +194,7 @@ public class CouponSet implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -206,7 +207,7 @@ public class CouponSet implements Serializable
 	/**
 	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -215,5 +216,6 @@ public class CouponSet implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

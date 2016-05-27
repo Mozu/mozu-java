@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.orders;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a message returned by an order validation capability for the order specified in the request.
@@ -23,7 +24,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -36,7 +37,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * The type of message returned by the order validation capability, such as "Fraud Score."
 	 */
-	protected String messageType;
+	protected  String messageType;
 
 	public String getMessageType() {
 		return this.messageType;
@@ -49,7 +50,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * Unique identifier of the order item associated with a validation message, order, or return.
 	 */
-	protected String orderItemId;
+	protected  String orderItemId;
 
 	public String getOrderItemId() {
 		return this.orderItemId;
@@ -58,5 +59,6 @@ public class OrderValidationMessage implements Serializable
 	public void setOrderItemId(String orderItemId) {
 		this.orderItemId = orderItemId;
 	}
+
 
 }

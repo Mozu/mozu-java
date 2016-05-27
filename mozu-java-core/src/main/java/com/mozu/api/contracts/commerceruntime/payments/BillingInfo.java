@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.payments;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentCard;
@@ -26,7 +27,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * Transaction Id from third party payment source like Visa Checkout, Amazon
 	 */
-	protected String externalTransactionId;
+	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
 		return this.externalTransactionId;
@@ -39,7 +40,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * If true, the system overrides the customer's billing address information with the supplied fulfillment information.
 	 */
-	protected Boolean isSameBillingShippingAddress;
+	protected  Boolean isSameBillingShippingAddress;
 
 	public Boolean getIsSameBillingShippingAddress() {
 		return this.isSameBillingShippingAddress;
@@ -52,7 +53,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
 	 */
-	protected String paymentType;
+	protected  String paymentType;
 
 	public String getPaymentType() {
 		return this.paymentType;
@@ -65,7 +66,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * Mozu.CommerceRuntime.Contracts.Payments.BillingInfo paymentWorkflow ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String paymentWorkflow;
+	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
 		return this.paymentWorkflow;
@@ -78,7 +79,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * The code that identifies the store credit to apply to the order.
 	 */
-	protected String storeCreditCode;
+	protected  String storeCreditCode;
 
 	public String getStoreCreditCode() {
 		return this.storeCreditCode;
@@ -91,7 +92,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -104,7 +105,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * The cardholder's billing contact information, including addresses.
 	 */
-	protected Contact billingContact;
+	protected  Contact billingContact;
 
 	public Contact getBillingContact() {
 		return this.billingContact;
@@ -117,7 +118,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * If the customer is paying by card, the credit card information.
 	 */
-	protected PaymentCard card;
+	protected  PaymentCard card;
 
 	public PaymentCard getCard() {
 		return this.card;
@@ -130,7 +131,7 @@ public class BillingInfo implements Serializable
 	/**
 	 * Custom data from payment providers
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -138,6 +139,23 @@ public class BillingInfo implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

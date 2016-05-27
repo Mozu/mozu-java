@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductRuntime.Contracts.SolrDebugInfo ApiType DOCUMENT_HERE 
@@ -68,7 +69,7 @@ public class SolrDebugInfo implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String searchTuningRuleCode;
+	protected  String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {
 		return this.searchTuningRuleCode;
@@ -77,5 +78,6 @@ public class SolrDebugInfo implements Serializable
 	public void setSearchTuningRuleCode(String searchTuningRuleCode) {
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
+
 
 }

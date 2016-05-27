@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
@@ -26,7 +27,7 @@ public class Event implements Serializable
 	/**
 	 * The unique identifier of the catalog of products used by a site.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -39,7 +40,7 @@ public class Event implements Serializable
 	/**
 	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
 	 */
-	protected String correlationId;
+	protected  String correlationId;
 
 	public String getCorrelationId() {
 		return this.correlationId;
@@ -52,7 +53,7 @@ public class Event implements Serializable
 	/**
 	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
 	 */
-	protected String entityId;
+	protected  String entityId;
 
 	public String getEntityId() {
 		return this.entityId;
@@ -65,7 +66,7 @@ public class Event implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -78,7 +79,7 @@ public class Event implements Serializable
 	/**
 	 * Indicates if the event is a test request or test entity. If true, the generated and captured event record was generated as a test request for an application.
 	 */
-	protected Boolean isTest;
+	protected  Boolean isTest;
 
 	public Boolean getIsTest() {
 		return this.isTest;
@@ -91,7 +92,7 @@ public class Event implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -101,7 +102,7 @@ public class Event implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -114,7 +115,7 @@ public class Event implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -127,7 +128,7 @@ public class Event implements Serializable
 	/**
 	 * The type of event that was performed, such as "product.created" or "category.deleted".
 	 */
-	protected String topic;
+	protected  String topic;
 
 	public String getTopic() {
 		return this.topic;
@@ -140,7 +141,7 @@ public class Event implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -161,7 +162,7 @@ public class Event implements Serializable
 		this.extendedProperties = extendedProperties;
 	}
 
-	protected String eventId;
+	protected  String eventId;
 
 	public String getEventId() {
 		return this.eventId;
@@ -170,5 +171,6 @@ public class Event implements Serializable
 	public void setEventId(String eventId) {
 		this.eventId = eventId;
 	}
+
 
 }

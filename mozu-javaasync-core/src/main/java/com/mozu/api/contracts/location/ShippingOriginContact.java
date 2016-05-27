@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.location;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a fulfillment contact for the shipping origin address associated with a location.
@@ -23,7 +24,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
 	 */
-	protected String companyOrOrganization;
+	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
 		return this.companyOrOrganization;
@@ -36,7 +37,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -49,7 +50,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * The full first name of a customer or contact name.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -62,7 +63,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * The full last name or surname of a customer or contact name.
 	 */
-	protected String lastNameOrSurname;
+	protected  String lastNameOrSurname;
 
 	public String getLastNameOrSurname() {
 		return this.lastNameOrSurname;
@@ -75,7 +76,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * Character string of the middle name or initial for the customer.
 	 */
-	protected String middleNameOrInitial;
+	protected  String middleNameOrInitial;
 
 	public String getMiddleNameOrInitial() {
 		return this.middleNameOrInitial;
@@ -88,7 +89,7 @@ public class ShippingOriginContact implements Serializable
 	/**
 	 * Collection of phone numbers associated with the shipping origin contact.
 	 */
-	protected String phoneNumber;
+	protected  String phoneNumber;
 
 	public String getPhoneNumber() {
 		return this.phoneNumber;
@@ -97,5 +98,6 @@ public class ShippingOriginContact implements Serializable
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 
 }

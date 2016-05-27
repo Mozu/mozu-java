@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the scope in which a user operates, which represents a developer account or Mozu production tenant.
@@ -23,7 +24,7 @@ public class UserScope implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -36,7 +37,7 @@ public class UserScope implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -49,7 +50,7 @@ public class UserScope implements Serializable
 	/**
 	 * The type of scope, which is a developer account or production tenant.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -58,5 +59,6 @@ public class UserScope implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

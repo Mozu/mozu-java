@@ -6,18 +6,25 @@
  */
 package com.mozu.api.contracts.shippingadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetRule implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	/**
+	 * The user defined code for this rule must be unique
+	 */
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -27,7 +34,10 @@ public class TargetRule implements Serializable
 		this.code = code;
 	}
 
-	protected String description;
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -37,7 +47,10 @@ public class TargetRule implements Serializable
 		this.description = description;
 	}
 
-	protected String domain;
+	/**
+	 * The domain associated with the site and/or tenant.
+	 */
+	protected  String domain;
 
 	public String getDomain() {
 		return this.domain;
@@ -47,7 +60,10 @@ public class TargetRule implements Serializable
 		this.domain = domain;
 	}
 
-	protected String expression;
+	/**
+	 * the expression of this rule
+	 */
+	protected  String expression;
 
 	public String getExpression() {
 		return this.expression;
@@ -56,5 +72,6 @@ public class TargetRule implements Serializable
 	public void setExpression(String expression) {
 		this.expression = expression;
 	}
+
 
 }

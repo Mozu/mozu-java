@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.products;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.ProductPropertyValue;
 
 /**
@@ -23,9 +24,22 @@ public class ProductProperty implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
+	 */
+	protected  String attributeFQN;
+
+	public String getAttributeFQN() {
+		return this.attributeFQN;
+	}
+
+	public void setAttributeFQN(String attributeFQN) {
+		this.attributeFQN = attributeFQN;
+	}
+
+	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -38,7 +52,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
-	protected Boolean isMultiValue;
+	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
 		return this.isMultiValue;
@@ -51,7 +65,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -59,19 +73,6 @@ public class ProductProperty implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	/**
-	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 */
-	protected String attributeFQN;
-
-	public String getAttributeFQN() {
-		return this.attributeFQN;
-	}
-
-	public void setAttributeFQN(String attributeFQN) {
-		this.attributeFQN = attributeFQN;
 	}
 
 	/**
@@ -84,5 +85,6 @@ public class ProductProperty implements Serializable
 	public void setValues(List<ProductPropertyValue> values) {
 		this.values = values;
 	}
+
 
 }

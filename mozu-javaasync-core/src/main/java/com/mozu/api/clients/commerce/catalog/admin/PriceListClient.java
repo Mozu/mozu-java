@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -77,7 +75,7 @@ public class PriceListClient {
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceList>
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 */
@@ -94,7 +92,7 @@ public class PriceListClient {
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceList>
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -164,7 +162,7 @@ public class PriceListClient {
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceList>
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -183,7 +181,7 @@ public class PriceListClient {
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.PriceList>
@@ -210,7 +208,7 @@ public class PriceListClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePriceListClient(String priceListCode) throws Exception
@@ -225,8 +223,8 @@ public class PriceListClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param cascadeDeleteEntries 
-	 * @param priceListCode 
+	 * @param cascadeDeleteEntries Specifies whether to deletes all price list entries associated with the price list.
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePriceListClient(String priceListCode, Boolean cascadeDeleteEntries) throws Exception

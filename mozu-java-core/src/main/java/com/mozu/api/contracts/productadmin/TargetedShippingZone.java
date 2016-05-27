@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The targeted shipping zone for the product.
@@ -23,7 +24,7 @@ public class TargetedShippingZone implements Serializable
 	/**
 	 * The zone string for the tenant domain.
 	 */
-	protected String zone;
+	protected  String zone;
 
 	public String getZone() {
 		return this.zone;
@@ -32,5 +33,6 @@ public class TargetedShippingZone implements Serializable
 	public void setZone(String zone) {
 		this.zone = zone;
 	}
+
 
 }

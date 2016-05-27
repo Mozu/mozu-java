@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.shipping;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the handling fee to apply to order shipments for the site.
@@ -23,7 +24,7 @@ public class SiteShippingHandlingFee implements Serializable
 	/**
 	 * The amount of the order handling fee.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -32,5 +33,6 @@ public class SiteShippingHandlingFee implements Serializable
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
+
 
 }

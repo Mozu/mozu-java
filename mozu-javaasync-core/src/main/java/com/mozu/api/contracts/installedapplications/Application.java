@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.installedapplications;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.Capability;
 
 /**
@@ -25,7 +26,7 @@ public class Application implements Serializable
 	/**
 	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
 	 */
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -38,7 +39,7 @@ public class Application implements Serializable
 	/**
 	 * denotes the Application Key for the app.
 	 */
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -51,7 +52,7 @@ public class Application implements Serializable
 	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -64,7 +65,7 @@ public class Application implements Serializable
 	/**
 	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -77,7 +78,7 @@ public class Application implements Serializable
 	/**
 	 * Indicates if the installed application is of type extension. If true, the application type is Extension.
 	 */
-	protected Boolean isExtension;
+	protected  Boolean isExtension;
 
 	public Boolean getIsExtension() {
 		return this.isExtension;
@@ -90,7 +91,7 @@ public class Application implements Serializable
 	/**
 	 * denotes if the Application is certified to use extension
 	 */
-	protected Boolean isExtensionCertified;
+	protected  Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {
 		return this.isExtensionCertified;
@@ -103,7 +104,7 @@ public class Application implements Serializable
 	/**
 	 * The URL defined for the application that represents the configuration website for the capability. This value is used by installed applications or the site.
 	 */
-	protected String uiConfigurationUrl;
+	protected  String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
 		return this.uiConfigurationUrl;
@@ -123,5 +124,6 @@ public class Application implements Serializable
 	public void setCapabilities(List<Capability> capabilities) {
 		this.capabilities = capabilities;
 	}
+
 
 }

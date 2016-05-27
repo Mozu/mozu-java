@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.payments;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
@@ -28,7 +29,7 @@ public class Payment implements Serializable
 	/**
 	 * The total monetary amount collected in this payment transaction for the order.
 	 */
-	protected Double amountCollected;
+	protected  Double amountCollected;
 
 	public Double getAmountCollected() {
 		return this.amountCollected;
@@ -41,7 +42,7 @@ public class Payment implements Serializable
 	/**
 	 * If the payment transaction is a shopper store credit, the total monetary amount credited in this payment transaction for the order.
 	 */
-	protected Double amountCredited;
+	protected  Double amountCredited;
 
 	public Double getAmountCredited() {
 		return this.amountCredited;
@@ -54,7 +55,7 @@ public class Payment implements Serializable
 	/**
 	 * The total amount originally requested for this payment.
 	 */
-	protected Double amountRequested;
+	protected  Double amountRequested;
 
 	public Double getAmountRequested() {
 		return this.amountRequested;
@@ -78,7 +79,7 @@ public class Payment implements Serializable
 	/**
 	 * The external/third party transaction Id for this payment. This is used to store the transaction Id from digital wallet like Visa Checkout
 	 */
-	protected String externalTransactionId;
+	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
 		return this.externalTransactionId;
@@ -91,7 +92,7 @@ public class Payment implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -104,7 +105,7 @@ public class Payment implements Serializable
 	/**
 	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -117,7 +118,7 @@ public class Payment implements Serializable
 	/**
 	 * Unique identifier of the order associated with the payment.
 	 */
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -130,7 +131,7 @@ public class Payment implements Serializable
 	/**
 	 * The transaction ID supplied by the payment service to associate with this order payment.
 	 */
-	protected String paymentServiceTransactionId;
+	protected  String paymentServiceTransactionId;
 
 	public String getPaymentServiceTransactionId() {
 		return this.paymentServiceTransactionId;
@@ -143,7 +144,7 @@ public class Payment implements Serializable
 	/**
 	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
 	 */
-	protected String paymentType;
+	protected  String paymentType;
 
 	public String getPaymentType() {
 		return this.paymentType;
@@ -156,7 +157,7 @@ public class Payment implements Serializable
 	/**
 	 * The source of data for this payment. By default, this will be set to 'mozu'
 	 */
-	protected String paymentWorkflow;
+	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
 		return this.paymentWorkflow;
@@ -169,7 +170,7 @@ public class Payment implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -182,7 +183,7 @@ public class Payment implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -195,7 +196,7 @@ public class Payment implements Serializable
 	/**
 	 * Properties for the customer's billing information associated with an order or specific payment.
 	 */
-	protected BillingInfo billingInfo;
+	protected  BillingInfo billingInfo;
 
 	public BillingInfo getBillingInfo() {
 		return this.billingInfo;
@@ -219,7 +220,7 @@ public class Payment implements Serializable
 	/**
 	 * Custom data from payment providers
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -238,6 +239,23 @@ public class Payment implements Serializable
 	}
 	public void setInteractions(List<PaymentInteraction> interactions) {
 		this.interactions = interactions;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

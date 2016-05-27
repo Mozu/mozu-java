@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.Category;
 import com.mozu.api.contracts.shippingruntime.ProductOption;
 import com.mozu.api.contracts.shippingruntime.ProductProperty;
@@ -28,7 +29,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * Price (unit price * quantity)
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -41,7 +42,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -54,7 +55,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * Product name/description
 	 */
-	protected String productDescription;
+	protected  String productDescription;
 
 	public String getProductDescription() {
 		return this.productDescription;
@@ -67,7 +68,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * The product type template associated with the product on the storefront.
 	 */
-	protected String productType;
+	protected  String productType;
 
 	public String getProductType() {
 		return this.productType;
@@ -80,7 +81,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -126,7 +127,7 @@ public class ProductSummary implements Serializable
 	/**
 	 * Product specific dimensions used for shipping, used by product summary and rate request items.  The dimensions can differ between the two uses as a `RateRequestItem `package may contain one or more products.
 	 */
-	protected ItemMeasurements unitMeasurements;
+	protected  ItemMeasurements unitMeasurements;
 
 	public ItemMeasurements getUnitMeasurements() {
 		return this.unitMeasurements;
@@ -135,5 +136,6 @@ public class ProductSummary implements Serializable
 	public void setUnitMeasurements(ItemMeasurements unitMeasurements) {
 		this.unitMeasurements = unitMeasurements;
 	}
+
 
 }

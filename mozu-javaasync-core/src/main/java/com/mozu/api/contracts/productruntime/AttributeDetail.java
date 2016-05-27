@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeValidation;
 
 /**
@@ -24,7 +25,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Indicates whether the attribute should be able to be used in filters, facets, and sorting on the public storefront.
 	 */
-	protected Boolean allowFilteringAndSortingInStorefront;
+	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
 		return this.allowFilteringAndSortingInStorefront;
@@ -37,7 +38,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -50,7 +51,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Unique sequence of the attribute for its data type.
 	 */
-	protected Integer dataTypeSequence;
+	protected  Integer dataTypeSequence;
 
 	public Integer getDataTypeSequence() {
 		return this.dataTypeSequence;
@@ -63,7 +64,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -76,7 +77,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
-	protected String displayIntention;
+	protected  String displayIntention;
 
 	public String getDisplayIntention() {
 		return this.displayIntention;
@@ -89,7 +90,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -102,7 +103,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -115,7 +116,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Indicates if the attribute value is searchable on the public storefront.
 	 */
-	protected Boolean searchableInStorefront;
+	protected  Boolean searchableInStorefront;
 
 	public Boolean getSearchableInStorefront() {
 		return this.searchableInStorefront;
@@ -128,7 +129,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Indicates what kind of values search queries and returns. If true, the system indexes the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for non-string attributes.
 	 */
-	protected Boolean searchDisplayValue;
+	protected  Boolean searchDisplayValue;
 
 	public Boolean getSearchDisplayValue() {
 		return this.searchDisplayValue;
@@ -141,7 +142,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The usage type of the product attribute, which is property, option, or extra.
 	 */
-	protected String usageType;
+	protected  String usageType;
 
 	public String getUsageType() {
 		return this.usageType;
@@ -154,7 +155,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -167,7 +168,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
 	 */
-	protected AttributeValidation validation;
+	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
 		return this.validation;
@@ -176,5 +177,6 @@ public class AttributeDetail implements Serializable
 	public void setValidation(AttributeValidation validation) {
 		this.validation = validation;
 	}
+
 
 }

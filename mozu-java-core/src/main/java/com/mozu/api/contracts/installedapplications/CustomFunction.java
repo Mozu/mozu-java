@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.installedapplications;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.InstalledApplications.Contracts.CustomFunction ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction applicationKey ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationKey;
+	protected  String applicationKey;
 
 	public String getApplicationKey() {
 		return this.applicationKey;
@@ -36,7 +37,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -49,7 +50,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction exceptionBehavior ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String exceptionBehavior;
+	protected  String exceptionBehavior;
 
 	public String getExceptionBehavior() {
 		return this.exceptionBehavior;
@@ -62,7 +63,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction functionId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String functionId;
+	protected  String functionId;
 
 	public String getFunctionId() {
 		return this.functionId;
@@ -75,7 +76,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction logLevel ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String logLevel;
+	protected  String logLevel;
 
 	public String getLogLevel() {
 		return this.logLevel;
@@ -88,7 +89,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction timeoutMilliseconds ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer timeoutMilliseconds;
+	protected  Integer timeoutMilliseconds;
 
 	public Integer getTimeoutMilliseconds() {
 		return this.timeoutMilliseconds;
@@ -101,7 +102,7 @@ public class CustomFunction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunction configuration ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode configuration;
+	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {
 		return this.configuration;
@@ -109,6 +110,23 @@ public class CustomFunction implements Serializable
 
 	public void setConfiguration(com.fasterxml.jackson.databind.JsonNode configuration) {
 		this.configuration = configuration;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(configuration == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, configuration);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.configuration = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

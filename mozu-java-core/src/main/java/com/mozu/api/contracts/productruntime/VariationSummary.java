@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.VariationOption;
 
@@ -26,7 +27,7 @@ public class VariationSummary implements Serializable
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -39,7 +40,7 @@ public class VariationSummary implements Serializable
 	/**
 	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
 	 */
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -59,5 +60,6 @@ public class VariationSummary implements Serializable
 	public void setOptions(List<VariationOption> options) {
 		this.options = options;
 	}
+
 
 }

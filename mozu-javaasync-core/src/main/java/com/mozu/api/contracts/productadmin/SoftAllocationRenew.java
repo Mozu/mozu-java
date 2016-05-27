@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE 
@@ -24,7 +25,7 @@ public class SoftAllocationRenew implements Serializable
 	/**
 	 * The UTC DateTime these allocations will expire
 	 */
-	protected DateTime expiresAt;
+	protected  DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
 		return this.expiresAt;
@@ -44,5 +45,6 @@ public class SoftAllocationRenew implements Serializable
 	public void setIds(List<Integer> ids) {
 		this.ids = ids;
 	}
+
 
 }

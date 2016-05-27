@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.pricingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a value for a product property.
@@ -23,7 +24,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -36,7 +37,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -45,5 +46,6 @@ public class ProductPropertyValue implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

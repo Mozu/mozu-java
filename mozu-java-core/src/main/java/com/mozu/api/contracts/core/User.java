@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.core;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.UserRole;
 import com.mozu.api.contracts.core.UserSystemData;
 
@@ -26,7 +27,7 @@ public class User implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -39,7 +40,7 @@ public class User implements Serializable
 	/**
 	 * The first name of the contact. The maximum character length is 200.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -52,7 +53,7 @@ public class User implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -65,7 +66,7 @@ public class User implements Serializable
 	/**
 	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -78,7 +79,7 @@ public class User implements Serializable
 	/**
 	 * The last name or surname of the contact. The maximum character length is 200.
 	 */
-	protected String lastName;
+	protected  String lastName;
 
 	public String getLastName() {
 		return this.lastName;
@@ -91,7 +92,7 @@ public class User implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -104,7 +105,7 @@ public class User implements Serializable
 	/**
 	 * The saved password for the customer account. 
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -128,7 +129,7 @@ public class User implements Serializable
 	/**
 	 * Collection of system-supplied data about the user.
 	 */
-	protected UserSystemData systemData;
+	protected  UserSystemData systemData;
 
 	public UserSystemData getSystemData() {
 		return this.systemData;
@@ -137,5 +138,6 @@ public class User implements Serializable
 	public void setSystemData(UserSystemData systemData) {
 		this.systemData = systemData;
 	}
+
 
 }

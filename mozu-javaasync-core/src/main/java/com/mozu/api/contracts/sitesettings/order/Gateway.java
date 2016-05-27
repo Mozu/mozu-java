@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.GatewayAccount;
 import com.mozu.api.contracts.paymentservice.GatewayDefinition;
 
@@ -26,7 +27,7 @@ public class Gateway implements Serializable
 	/**
 	 * If true, the credential fields for the gateway are configured with valid values. For security purposes, Mozu does not return the credential fields for the gateway subresource.
 	 */
-	protected Boolean areGatewayCredentialFieldsSet;
+	protected  Boolean areGatewayCredentialFieldsSet;
 
 	public Boolean getAreGatewayCredentialFieldsSet() {
 		return this.areGatewayCredentialFieldsSet;
@@ -50,7 +51,7 @@ public class Gateway implements Serializable
 	/**
 	 * Account information associated with the specified payment gateway.
 	 */
-	protected GatewayAccount gatewayAccount;
+	protected  GatewayAccount gatewayAccount;
 
 	public GatewayAccount getGatewayAccount() {
 		return this.gatewayAccount;
@@ -63,7 +64,7 @@ public class Gateway implements Serializable
 	/**
 	 * Properties of the payment gateway definition.
 	 */
-	protected GatewayDefinition gatewayDefinition;
+	protected  GatewayDefinition gatewayDefinition;
 
 	public GatewayDefinition getGatewayDefinition() {
 		return this.gatewayDefinition;
@@ -72,5 +73,6 @@ public class Gateway implements Serializable
 	public void setGatewayDefinition(GatewayDefinition gatewayDefinition) {
 		this.gatewayDefinition = gatewayDefinition;
 	}
+
 
 }

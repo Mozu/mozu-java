@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The authentication information required to generate an authentication ticket for a customer account.
@@ -23,7 +24,7 @@ public class CustomerUserAuthInfo implements Serializable
 	/**
 	 * The saved password for the customer account. 
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -36,7 +37,7 @@ public class CustomerUserAuthInfo implements Serializable
 	/**
 	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
-	protected String username;
+	protected  String username;
 
 	public String getUsername() {
 		return this.username;
@@ -45,5 +46,6 @@ public class CustomerUserAuthInfo implements Serializable
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 }

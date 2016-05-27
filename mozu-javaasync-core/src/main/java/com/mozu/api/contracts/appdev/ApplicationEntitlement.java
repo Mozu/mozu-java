@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationTransaction;
 
 /**
@@ -25,7 +26,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement appKey ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -38,7 +39,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationEntitlementId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationEntitlementId;
+	protected  Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
 		return this.applicationEntitlementId;
@@ -51,7 +52,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -64,7 +65,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationLicenseType ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationLicenseType;
+	protected  String applicationLicenseType;
 
 	public String getApplicationLicenseType() {
 		return this.applicationLicenseType;
@@ -77,7 +78,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -90,7 +91,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationStatusId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationStatusId;
+	protected  String applicationStatusId;
 
 	public String getApplicationStatusId() {
 		return this.applicationStatusId;
@@ -103,7 +104,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement applicationVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationVersion;
+	protected  String applicationVersion;
 
 	public String getApplicationVersion() {
 		return this.applicationVersion;
@@ -116,7 +117,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Denotes the application owner dev account id
 	 */
-	protected Integer appOwnerDevAccountId;
+	protected  Integer appOwnerDevAccountId;
 
 	public Integer getAppOwnerDevAccountId() {
 		return this.appOwnerDevAccountId;
@@ -129,7 +130,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement devAccountId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer devAccountId;
+	protected  Integer devAccountId;
 
 	public Integer getDevAccountId() {
 		return this.devAccountId;
@@ -142,7 +143,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement effectiveEndDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime effectiveEndDate;
+	protected  DateTime effectiveEndDate;
 
 	public DateTime getEffectiveEndDate() {
 		return this.effectiveEndDate;
@@ -155,7 +156,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement effectiveStartDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime effectiveStartDate;
+	protected  DateTime effectiveStartDate;
 
 	public DateTime getEffectiveStartDate() {
 		return this.effectiveStartDate;
@@ -168,7 +169,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement entitlementStatus ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String entitlementStatus;
+	protected  String entitlementStatus;
 
 	public String getEntitlementStatus() {
 		return this.entitlementStatus;
@@ -181,7 +182,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedAppsApplicationId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String installedAppsApplicationId;
+	protected  String installedAppsApplicationId;
 
 	public String getInstalledAppsApplicationId() {
 		return this.installedAppsApplicationId;
@@ -194,7 +195,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByFirstName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String installedByFirstName;
+	protected  String installedByFirstName;
 
 	public String getInstalledByFirstName() {
 		return this.installedByFirstName;
@@ -207,7 +208,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedByLastName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String installedByLastName;
+	protected  String installedByLastName;
 
 	public String getInstalledByLastName() {
 		return this.installedByLastName;
@@ -220,7 +221,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement installedDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime installedDate;
+	protected  DateTime installedDate;
 
 	public DateTime getInstalledDate() {
 		return this.installedDate;
@@ -233,7 +234,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -246,7 +247,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement packageName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String packageName;
+	protected  String packageName;
 
 	public String getPackageName() {
 		return this.packageName;
@@ -259,7 +260,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -272,7 +273,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -285,7 +286,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationEntitlement tenantName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String tenantName;
+	protected  String tenantName;
 
 	public String getTenantName() {
 		return this.tenantName;
@@ -305,5 +306,6 @@ public class ApplicationEntitlement implements Serializable
 	public void setApplicationTransactions(List<ApplicationTransaction> applicationTransactions) {
 		this.applicationTransactions = applicationTransactions;
 	}
+
 
 }

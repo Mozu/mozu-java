@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Summary properties of an unpublished document draft.
@@ -23,7 +24,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Detailed information of the date and time for the active update date for the document draft summary. This data is associated to document and content data.
 	 */
-	protected DateTime activeUpdateDate;
+	protected  DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
 		return this.activeUpdateDate;
@@ -36,7 +37,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Mozu.Content.Contracts.DocumentDraftSummary activeUpdatedBy ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String activeUpdatedBy;
+	protected  String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {
 		return this.activeUpdatedBy;
@@ -49,7 +50,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -62,7 +63,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Fully qualified name of the document type. 
 	 */
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -75,7 +76,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Detailed information of the date and time for the draft update date for the document draft summary. This data is associated to document and content data.
 	 */
-	protected DateTime draftUpdateDate;
+	protected  DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
 		return this.draftUpdateDate;
@@ -88,7 +89,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -101,7 +102,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * The fully qualified name of the document list.
 	 */
-	protected String listFQN;
+	protected  String listFQN;
 
 	public String getListFQN() {
 		return this.listFQN;
@@ -114,7 +115,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Unique identifier for the master catalog. 
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -127,7 +128,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -140,7 +141,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Mozu.Content.Contracts.DocumentDraftSummary publishSetCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -153,7 +154,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Whether the draft has been published.
 	 */
-	protected String publishType;
+	protected  String publishType;
 
 	public String getPublishType() {
 		return this.publishType;
@@ -166,7 +167,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -179,7 +180,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Unique identifier of the user who last modified the item. This value is system-supplied and read-only.
 	 */
-	protected String updatedBy;
+	protected  String updatedBy;
 
 	public String getUpdatedBy() {
 		return this.updatedBy;
@@ -188,5 +189,6 @@ public class DocumentDraftSummary implements Serializable
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
+
 
 }

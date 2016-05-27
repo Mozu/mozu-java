@@ -7,21 +7,28 @@
 package com.mozu.api.contracts.shippingadmin.profile;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingProfile implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	/**
+	 * Merchant entered unique identifier for a ShippingProfile
+	 */
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -31,6 +38,9 @@ public class ShippingProfile implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * The siteid's for which this profile applies for now there is a 1-1 relationship between this profile and site so only 1 siteid should be in this list
+	 */
 	protected List<Integer> targetedSiteIds;
 	public List<Integer> getTargetedSiteIds() {
 		return this.targetedSiteIds;
@@ -39,7 +49,10 @@ public class ShippingProfile implements Serializable
 		this.targetedSiteIds = targetedSiteIds;
 	}
 
-	protected AuditInfo auditInfo;
+	/**
+	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -49,6 +62,9 @@ public class ShippingProfile implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
+	/**
+	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile orderHandlingFeeRules ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<HandlingFeeRule> orderHandlingFeeRules;
 	public List<HandlingFeeRule> getOrderHandlingFeeRules() {
 		return this.orderHandlingFeeRules;
@@ -57,6 +73,9 @@ public class ShippingProfile implements Serializable
 		this.orderHandlingFeeRules = orderHandlingFeeRules;
 	}
 
+	/**
+	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile productHandlingFeeRules ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<HandlingFeeRule> productHandlingFeeRules;
 	public List<HandlingFeeRule> getProductHandlingFeeRules() {
 		return this.productHandlingFeeRules;
@@ -65,6 +84,9 @@ public class ShippingProfile implements Serializable
 		this.productHandlingFeeRules = productHandlingFeeRules;
 	}
 
+	/**
+	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile shippingInclusionRules ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected List<ShippingInclusionRule> shippingInclusionRules;
 	public List<ShippingInclusionRule> getShippingInclusionRules() {
 		return this.shippingInclusionRules;
@@ -72,5 +94,6 @@ public class ShippingProfile implements Serializable
 	public void setShippingInclusionRules(List<ShippingInclusionRule> shippingInclusionRules) {
 		this.shippingInclusionRules = shippingInclusionRules;
 	}
+
 
 }

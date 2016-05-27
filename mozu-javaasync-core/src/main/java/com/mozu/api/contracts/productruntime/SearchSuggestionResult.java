@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.SearchSuggestionGroup;
 
 /**
@@ -25,7 +26,7 @@ public class SearchSuggestionResult implements Serializable
 	/**
 	 * Text that the shopper types in a search query.
 	 */
-	protected String query;
+	protected  String query;
 
 	public String getQuery() {
 		return this.query;
@@ -45,5 +46,6 @@ public class SearchSuggestionResult implements Serializable
 	public void setSuggestionGroups(List<SearchSuggestionGroup> suggestionGroups) {
 		this.suggestionGroups = suggestionGroups;
 	}
+
 
 }

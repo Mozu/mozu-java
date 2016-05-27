@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.AppDev.Contracts.AppVersion ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class AppVersion implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.AppVersion majorVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -36,7 +37,7 @@ public class AppVersion implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.AppVersion minorVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -49,7 +50,7 @@ public class AppVersion implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.AppVersion revision ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -58,5 +59,6 @@ public class AppVersion implements Serializable
 	public void setRevision(Integer revision) {
 		this.revision = revision;
 	}
+
 
 }

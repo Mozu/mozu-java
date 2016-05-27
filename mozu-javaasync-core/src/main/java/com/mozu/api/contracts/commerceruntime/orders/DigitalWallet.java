@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.orders;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.CommerceRuntime.Contracts.Orders.DigitalWallet ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class DigitalWallet implements Serializable
 	/**
 	 * Cart ID Note: This property should only be set if the order is not created and user opted to create the order from cart using digital wallet.
 	 */
-	protected String cartId;
+	protected  String cartId;
 
 	public String getCartId() {
 		return this.cartId;
@@ -36,7 +37,7 @@ public class DigitalWallet implements Serializable
 	/**
 	 * Digital wallet data. Note: Transform the Json data to a string.
 	 */
-	protected String digitalWalletData;
+	protected  String digitalWalletData;
 
 	public String getDigitalWalletData() {
 		return this.digitalWalletData;
@@ -45,5 +46,6 @@ public class DigitalWallet implements Serializable
 	public void setDigitalWalletData(String digitalWalletData) {
 		this.digitalWalletData = digitalWalletData;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.shippingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The name of the shipping rate in the language specified by the defined locale code.
@@ -23,7 +24,7 @@ public class ShippingRateLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -36,7 +37,7 @@ public class ShippingRateLocalizedContent implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -45,5 +46,6 @@ public class ShippingRateLocalizedContent implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

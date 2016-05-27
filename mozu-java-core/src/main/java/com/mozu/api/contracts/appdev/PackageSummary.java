@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.AppDev.Contracts.PackageSummary ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Application Name
 	 */
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -36,7 +37,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Application Type Id
 	 */
-	protected Integer applicationTypeId;
+	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
 		return this.applicationTypeId;
@@ -49,7 +50,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -62,7 +63,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Application Major Version
 	 */
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -75,7 +76,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Application Minor Version
 	 */
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -88,7 +89,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -101,7 +102,7 @@ public class PackageSummary implements Serializable
 	/**
 	 * Application Revision
 	 */
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -110,5 +111,6 @@ public class PackageSummary implements Serializable
 	public void setRevision(Integer revision) {
 		this.revision = revision;
 	}
+
 
 }

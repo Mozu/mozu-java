@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.location;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the geographical coordinates associated with a specific location.
@@ -23,7 +24,7 @@ public class Coordinates implements Serializable
 	/**
 	 * The latitude coordinate of the location.
 	 */
-	protected double lat;
+	protected  double lat;
 
 	public double getLat() {
 		return this.lat;
@@ -36,7 +37,7 @@ public class Coordinates implements Serializable
 	/**
 	 * The longitude coordinate of the location.
 	 */
-	protected double lng;
+	protected  double lng;
 
 	public double getLng() {
 		return this.lng;
@@ -45,5 +46,6 @@ public class Coordinates implements Serializable
 	public void setLng(double lng) {
 		this.lng = lng;
 	}
+
 
 }

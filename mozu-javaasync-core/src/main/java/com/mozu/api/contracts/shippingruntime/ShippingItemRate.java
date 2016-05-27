@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.shippingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a shipping rate calculated for a line item in a shipment.
@@ -23,7 +24,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * The calculated shipping amount for an item in a shipment.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -36,7 +37,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * Unique identifier of an item used to calculate or request a shipping rate.
 	 */
-	protected String itemId;
+	protected  String itemId;
 
 	public String getItemId() {
 		return this.itemId;
@@ -49,7 +50,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -58,5 +59,6 @@ public class ShippingItemRate implements Serializable
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 }

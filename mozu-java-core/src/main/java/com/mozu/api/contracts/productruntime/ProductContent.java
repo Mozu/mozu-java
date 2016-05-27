@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductImage;
 
 /**
@@ -25,7 +26,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -38,7 +39,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -51,7 +52,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -64,7 +65,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
 	 */
-	protected String productFullDescription;
+	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
 		return this.productFullDescription;
@@ -77,7 +78,7 @@ public class ProductContent implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -90,7 +91,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
 	 */
-	protected String productShortDescription;
+	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
 		return this.productShortDescription;
@@ -103,7 +104,7 @@ public class ProductContent implements Serializable
 	/**
 	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
 	 */
-	protected String seoFriendlyUrl;
+	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
 		return this.seoFriendlyUrl;
@@ -123,5 +124,6 @@ public class ProductContent implements Serializable
 	public void setProductImages(List<ProductImage> productImages) {
 		this.productImages = productImages;
 	}
+
 
 }

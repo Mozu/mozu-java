@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.shipping.admin.profiles;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,26 +14,25 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the ShippingInclusionRules sub-resource to manage your shipping inclusion rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class ShippingInclusionRuleClient {
 	
 	/**
-	 * 
+	 * Retrieves the details of the specified shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=GetShippingInclusionRuleClient( profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -45,16 +43,16 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of the specified shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=GetShippingInclusionRuleClient( profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -72,14 +70,14 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of shipping inclusion rules and their details.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection> mozuClient=GetShippingInclusionRulesClient( profilecode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRuleCollection shippingInclusionRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -90,15 +88,15 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of shipping inclusion rules and their details.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection> mozuClient=GetShippingInclusionRulesClient( profilecode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRuleCollection shippingInclusionRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -116,16 +114,16 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=CreateShippingInclusionRuleClient( rule,  profilecode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -136,17 +134,17 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=CreateShippingInclusionRuleClient( rule,  profilecode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -165,17 +163,17 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the specified shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=UpdateShippingInclusionRuleClient( rule,  profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -186,18 +184,18 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the specified shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule> mozuClient=UpdateShippingInclusionRuleClient( rule,  profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingInclusionRule shippingInclusionRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -216,14 +214,14 @@ public class ShippingInclusionRuleClient {
 	}
 
 	/**
-	 * 
+	 * Deletes the specified shipping inclusion rule.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteShippingInclusionRuleClient( profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

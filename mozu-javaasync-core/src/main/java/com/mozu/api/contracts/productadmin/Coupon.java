@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class Coupon implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.Coupon canBeDeleted ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean canBeDeleted;
+	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
 		return this.canBeDeleted;
@@ -37,7 +38,7 @@ public class Coupon implements Serializable
 	/**
 	 * Code of a discount coupon. This code can be used by a shopper when a coupon code is required to earn the associated discount on a purchase.
 	 */
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -50,7 +51,7 @@ public class Coupon implements Serializable
 	/**
 	 * Link to associated coupon
 	 */
-	protected String couponSetCode;
+	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
 		return this.couponSetCode;
@@ -63,7 +64,7 @@ public class Coupon implements Serializable
 	/**
 	 * ReadOnly system id for releated couponset.
 	 */
-	protected Integer couponSetId;
+	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
 		return this.couponSetId;
@@ -76,7 +77,7 @@ public class Coupon implements Serializable
 	/**
 	 * Total number of times this code has been redeemed. ReadOnly, calculated. Only returned with response group includeCounts
 	 */
-	protected Integer redemptionCount;
+	protected  Integer redemptionCount;
 
 	public Integer getRedemptionCount() {
 		return this.redemptionCount;
@@ -89,7 +90,7 @@ public class Coupon implements Serializable
 	/**
 	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -98,5 +99,6 @@ public class Coupon implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

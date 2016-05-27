@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.discounts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an invalid coupon code a shopper attempts to enter for a cart or order.
@@ -20,7 +21,7 @@ public class InvalidCoupon implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -33,7 +34,7 @@ public class InvalidCoupon implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -46,7 +47,7 @@ public class InvalidCoupon implements Serializable
 	/**
 	 * Unique identifier for the discount in the storefront.
 	 */
-	protected Integer discountId;
+	protected  Integer discountId;
 
 	public Integer getDiscountId() {
 		return this.discountId;
@@ -59,7 +60,7 @@ public class InvalidCoupon implements Serializable
 	/**
 	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -72,7 +73,7 @@ public class InvalidCoupon implements Serializable
 	/**
 	 * A code indicating the reason why a facet is invalid.
 	 */
-	protected Integer reasonCode;
+	protected  Integer reasonCode;
 
 	public Integer getReasonCode() {
 		return this.reasonCode;
@@ -81,5 +82,6 @@ public class InvalidCoupon implements Serializable
 	public void setReasonCode(Integer reasonCode) {
 		this.reasonCode = reasonCode;
 	}
+
 
 }

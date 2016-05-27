@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.AppDev.Contracts.ApplicationTransaction ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationEntitlementId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationEntitlementId;
+	protected  Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
 		return this.applicationEntitlementId;
@@ -36,7 +37,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -49,7 +50,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction applicationTransactionId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationTransactionId;
+	protected  Integer applicationTransactionId;
 
 	public Integer getApplicationTransactionId() {
 		return this.applicationTransactionId;
@@ -62,7 +63,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * The three character ISO currency code for the monetary amount. For example, USD is used for US Dollars. 
 	 */
-	protected String isoCurrencyCode;
+	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
 		return this.isoCurrencyCode;
@@ -75,7 +76,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected Integer localeCode;
+	protected  Integer localeCode;
 
 	public Integer getLocaleCode() {
 		return this.localeCode;
@@ -88,7 +89,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction orderNumber ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String orderNumber;
+	protected  String orderNumber;
 
 	public String getOrderNumber() {
 		return this.orderNumber;
@@ -101,7 +102,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -114,7 +115,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -127,7 +128,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime transactionDate;
+	protected  DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
 		return this.transactionDate;
@@ -140,7 +141,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionPrice ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double transactionPrice;
+	protected  Double transactionPrice;
 
 	public Double getTransactionPrice() {
 		return this.transactionPrice;
@@ -153,7 +154,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionTax ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double transactionTax;
+	protected  Double transactionTax;
 
 	public Double getTransactionTax() {
 		return this.transactionTax;
@@ -166,7 +167,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationTransaction transactionTotal ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double transactionTotal;
+	protected  Double transactionTotal;
 
 	public Double getTransactionTotal() {
 		return this.transactionTotal;
@@ -175,5 +176,6 @@ public class ApplicationTransaction implements Serializable
 	public void setTransactionTotal(Double transactionTotal) {
 		this.transactionTotal = transactionTotal;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.installedapplications;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForAction;
 import com.mozu.api.contracts.installedapplications.ExtensionConfiguration;
 
@@ -26,7 +27,7 @@ public class TenantExtensions implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.TenantExtensions defaultLogLevel ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String defaultLogLevel;
+	protected  String defaultLogLevel;
 
 	public String getDefaultLogLevel() {
 		return this.defaultLogLevel;
@@ -57,5 +58,6 @@ public class TenantExtensions implements Serializable
 	public void setConfigurations(List<ExtensionConfiguration> configurations) {
 		this.configurations = configurations;
 	}
+
 
 }

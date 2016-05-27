@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The site category to which a product belongs.
@@ -23,7 +24,7 @@ public class ProductCategory implements Serializable
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -32,5 +33,6 @@ public class ProductCategory implements Serializable
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.Phone;
 
@@ -25,7 +26,7 @@ public class Contact implements Serializable
 	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
 	 */
-	protected String companyOrOrganization;
+	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
 		return this.companyOrOrganization;
@@ -38,7 +39,7 @@ public class Contact implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -51,7 +52,7 @@ public class Contact implements Serializable
 	/**
 	 * The first name of the contact. The maximum character length is 200.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -64,7 +65,7 @@ public class Contact implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -77,7 +78,7 @@ public class Contact implements Serializable
 	/**
 	 * The last name or surname of the contact. The maximum character length is 200.
 	 */
-	protected String lastNameOrSurname;
+	protected  String lastNameOrSurname;
 
 	public String getLastNameOrSurname() {
 		return this.lastNameOrSurname;
@@ -90,7 +91,7 @@ public class Contact implements Serializable
 	/**
 	 * The middle name or the first initial of the middle name of the contact. The maximum character length is 100.
 	 */
-	protected String middleNameOrInitial;
+	protected  String middleNameOrInitial;
 
 	public String getMiddleNameOrInitial() {
 		return this.middleNameOrInitial;
@@ -103,7 +104,7 @@ public class Contact implements Serializable
 	/**
 	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
 	 */
-	protected Address address;
+	protected  Address address;
 
 	public Address getAddress() {
 		return this.address;
@@ -116,7 +117,7 @@ public class Contact implements Serializable
 	/**
 	 * List of phone numbers associated with the customer account contact. The phone numbers include area codes.
 	 */
-	protected Phone phoneNumbers;
+	protected  Phone phoneNumbers;
 
 	public Phone getPhoneNumbers() {
 		return this.phoneNumbers;
@@ -125,5 +126,6 @@ public class Contact implements Serializable
 	public void setPhoneNumbers(Phone phoneNumbers) {
 		this.phoneNumbers = phoneNumbers;
 	}
+
 
 }

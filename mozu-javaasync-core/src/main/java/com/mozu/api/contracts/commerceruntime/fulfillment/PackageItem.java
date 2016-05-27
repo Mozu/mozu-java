@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an item shipped in a physical package.
@@ -23,7 +24,7 @@ public class PackageItem implements Serializable
 	/**
 	 * This specifies the fulfillment type of digital package item.
 	 */
-	protected String fulfillmentItemType;
+	protected  String fulfillmentItemType;
 
 	public String getFulfillmentItemType() {
 		return this.fulfillmentItemType;
@@ -36,7 +37,7 @@ public class PackageItem implements Serializable
 	/**
 	 * The line id associated with the fulfillment.
 	 */
-	protected Integer lineId;
+	protected  Integer lineId;
 
 	public Integer getLineId() {
 		return this.lineId;
@@ -49,7 +50,7 @@ public class PackageItem implements Serializable
 	/**
 	 * Fully qualified name of the selected option's attribute. Bundledproducts result from a static bundle or are dynamically added as a result of the shopper selecting products as extras. When the bundled item is dynamic, it includes the attribute's fully qualified name of the extra that it came from. When `optionAttributeFQN `is null, the bundled item was statically defined. When not null, the item came from an extra selection.
 	 */
-	protected String optionAttributeFQN;
+	protected  String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
 		return this.optionAttributeFQN;
@@ -62,7 +63,7 @@ public class PackageItem implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -75,7 +76,7 @@ public class PackageItem implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -84,5 +85,6 @@ public class PackageItem implements Serializable
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 }

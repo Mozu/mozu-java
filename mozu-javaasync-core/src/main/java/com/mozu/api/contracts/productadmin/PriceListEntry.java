@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.PriceListEntryExtra;
 import com.mozu.api.contracts.productadmin.ProductOption;
@@ -28,7 +29,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry cost ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double cost;
+	protected  Double cost;
 
 	public Double getCost() {
 		return this.cost;
@@ -41,7 +42,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry costMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String costMode;
+	protected  String costMode;
 
 	public String getCostMode() {
 		return this.costMode;
@@ -54,7 +55,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The localized currency code for the monetary amount. 
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -67,7 +68,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
 	 */
-	protected Boolean discountsRestricted;
+	protected  Boolean discountsRestricted;
 
 	public Boolean getDiscountsRestricted() {
 		return this.discountsRestricted;
@@ -80,7 +81,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The date and time on which the discount restriction period ends.
 	 */
-	protected DateTime discountsRestrictedEndDate;
+	protected  DateTime discountsRestrictedEndDate;
 
 	public DateTime getDiscountsRestrictedEndDate() {
 		return this.discountsRestrictedEndDate;
@@ -93,7 +94,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry discountsRestrictedMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String discountsRestrictedMode;
+	protected  String discountsRestrictedMode;
 
 	public String getDiscountsRestrictedMode() {
 		return this.discountsRestrictedMode;
@@ -106,7 +107,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The date and time on which the discount restriction period starts.
 	 */
-	protected DateTime discountsRestrictedStartDate;
+	protected  DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
 		return this.discountsRestrictedStartDate;
@@ -119,7 +120,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry endDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -132,7 +133,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry isVariation ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isVariation;
+	protected  Boolean isVariation;
 
 	public Boolean getIsVariation() {
 		return this.isVariation;
@@ -145,7 +146,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry map ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double map;
+	protected  Double map;
 
 	public Double getMap() {
 		return this.map;
@@ -158,7 +159,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry mapEndDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime mapEndDate;
+	protected  DateTime mapEndDate;
 
 	public DateTime getMapEndDate() {
 		return this.mapEndDate;
@@ -171,7 +172,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry mapMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String mapMode;
+	protected  String mapMode;
 
 	public String getMapMode() {
 		return this.mapMode;
@@ -184,7 +185,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry mapStartDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime mapStartDate;
+	protected  DateTime mapStartDate;
 
 	public DateTime getMapStartDate() {
 		return this.mapStartDate;
@@ -197,7 +198,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -210,7 +211,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry msrpMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String msrpMode;
+	protected  String msrpMode;
 
 	public String getMsrpMode() {
 		return this.msrpMode;
@@ -223,7 +224,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * External unique identifier of the PriceList. Must be unique an only contain url sanitized characters. Max length is 50
 	 */
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -236,7 +237,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry priceListEntryMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String priceListEntryMode;
+	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
 		return this.priceListEntryMode;
@@ -249,7 +250,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry priceListEntrySequence ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer priceListEntrySequence;
+	protected  Integer priceListEntrySequence;
 
 	public Integer getPriceListEntrySequence() {
 		return this.priceListEntrySequence;
@@ -262,7 +263,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -275,7 +276,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -288,7 +289,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntry startDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -301,7 +302,7 @@ public class PriceListEntry implements Serializable
 	/**
 	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -343,5 +344,6 @@ public class PriceListEntry implements Serializable
 	public void setPriceEntries(List<PriceListEntryPrice> priceEntries) {
 		this.priceEntries = priceEntries;
 	}
+
 
 }

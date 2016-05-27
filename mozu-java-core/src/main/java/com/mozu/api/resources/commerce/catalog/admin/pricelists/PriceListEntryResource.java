@@ -7,19 +7,21 @@
 package com.mozu.api.resources.commerce.catalog.admin.pricelists;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
+
 import org.apache.commons.lang.StringUtils;
+import org.joda.time.DateTime;
 
 /** <summary>
- * commerce/catalog/admin/pricelists/entries related resources. DOCUMENT_HERE 
+ * Use the Entries sub-resource to interact with price list entries. Price list entries enable you to override product pricing as well as control what products shoppers can view and purchase when the price list is exclusive. Refer to the [Price Lists](../../../guides/catalog/price-lists.htm) guides topic for more information.
  * </summary>
  */
 public class PriceListEntryResource {
@@ -36,13 +38,13 @@ public class PriceListEntryResource {
 
 	
 	/**
-	 * pricelists-entries Get GetPriceListEntry description DOCUMENT_HERE 
+	 * Retrieves the details of a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.getPriceListEntry( priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -53,16 +55,16 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Get GetPriceListEntry description DOCUMENT_HERE 
+	 * Retrieves the details of a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.getPriceListEntry( priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
 	 */
@@ -76,12 +78,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Get GetPriceListEntries description DOCUMENT_HERE 
+	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntryCollection priceListEntryCollection = pricelistentry.getPriceListEntries( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntryCollection
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntryCollection
 	 */
@@ -91,14 +93,14 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Get GetPriceListEntries description DOCUMENT_HERE 
+	 * Retrieves a list of price list entries associated with the specified price list according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntryCollection priceListEntryCollection = pricelistentry.getPriceListEntries( priceListCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
@@ -115,12 +117,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Post AddPriceListEntry description DOCUMENT_HERE 
+	 * Adds a new price list entry to the specified price list.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.addPriceListEntry( priceListEntryIn,  priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The specified price list to which you want to add the price list entry.
 	 * @param priceListEntryIn Mozu.ProductAdmin.Contracts.PriceListEntry ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -132,12 +134,12 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Post AddPriceListEntry description DOCUMENT_HERE 
+	 * Adds a new price list entry to the specified price list.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.addPriceListEntry( priceListEntryIn,  priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The specified price list to which you want to add the price list entry.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param priceListEntryIn Mozu.ProductAdmin.Contracts.PriceListEntry ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
@@ -154,13 +156,13 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Put UpdatePriceListEntry description DOCUMENT_HERE 
+	 * Updates the details of a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.updatePriceListEntry( priceListEntryIn,  priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param priceListEntryIn Mozu.ProductAdmin.Contracts.PriceListEntry ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
@@ -173,16 +175,16 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Put UpdatePriceListEntry description DOCUMENT_HERE 
+	 * Updates the details of a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	PriceListEntry priceListEntry = pricelistentry.updatePriceListEntry( priceListEntryIn,  priceListCode,  productCode,  currencyCode,  startDate,  responseFields);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @param priceListEntryIn Mozu.ProductAdmin.Contracts.PriceListEntry ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceListEntry
 	 * @see com.mozu.api.contracts.productadmin.PriceListEntry
@@ -198,13 +200,13 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Delete DeletePriceListEntry description DOCUMENT_HERE 
+	 * Deletes a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	pricelistentry.deletePriceListEntry( priceListCode,  productCode,  currencyCode);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @return 
 	 */
@@ -214,15 +216,15 @@ public class PriceListEntryResource {
 	}
 
 	/**
-	 * pricelists-entries Delete DeletePriceListEntry description DOCUMENT_HERE 
+	 * Deletes a price list entry.
 	 * <p><pre><code>
 	 *	PriceListEntry pricelistentry = new PriceListEntry();
 	 *	pricelistentry.deletePriceListEntry( priceListCode,  productCode,  currencyCode,  startDate);
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @return 
 	 */
 	public void deletePriceListEntry(String priceListCode, String productCode, String currencyCode, DateTime startDate) throws Exception

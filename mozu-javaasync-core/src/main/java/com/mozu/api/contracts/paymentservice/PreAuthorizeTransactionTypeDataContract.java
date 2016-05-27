@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The type of preauthorization gateway.
@@ -23,7 +24,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -36,7 +37,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -49,7 +50,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * The type of preauthorization transaction.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -58,5 +59,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

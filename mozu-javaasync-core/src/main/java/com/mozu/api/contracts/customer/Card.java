@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a credit card used to submit payment for an order.
@@ -23,7 +24,7 @@ public class Card implements Serializable
 	/**
 	 * The masked credit card number part returned from the payment gateway.
 	 */
-	protected String cardNumberPart;
+	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
 		return this.cardNumberPart;
@@ -36,7 +37,7 @@ public class Card implements Serializable
 	/**
 	 * The type of credit card, such as Visa or Amex.
 	 */
-	protected String cardType;
+	protected  String cardType;
 
 	public String getCardType() {
 		return this.cardType;
@@ -49,7 +50,7 @@ public class Card implements Serializable
 	/**
 	 * Unique identifier of the customer account contact associated with the credit card.
 	 */
-	protected Integer contactId;
+	protected  Integer contactId;
 
 	public Integer getContactId() {
 		return this.contactId;
@@ -62,7 +63,7 @@ public class Card implements Serializable
 	/**
 	 * The two-digit month a credit card expires for a payment method.
 	 */
-	protected short expireMonth;
+	protected  short expireMonth;
 
 	public short getExpireMonth() {
 		return this.expireMonth;
@@ -75,7 +76,7 @@ public class Card implements Serializable
 	/**
 	 * The four-digit year the credit card expires for a payment method.
 	 */
-	protected short expireYear;
+	protected  short expireYear;
 
 	public short getExpireYear() {
 		return this.expireYear;
@@ -88,7 +89,7 @@ public class Card implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -101,7 +102,7 @@ public class Card implements Serializable
 	/**
 	 * Mozu.Customer.Contracts.Card isDefaultPayMethod ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isDefaultPayMethod;
+	protected  Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {
 		return this.isDefaultPayMethod;
@@ -114,7 +115,7 @@ public class Card implements Serializable
 	/**
 	 * The full name printed on a credit card. The name should match what is printed on the card exactly, used in validation during a payment.
 	 */
-	protected String nameOnCard;
+	protected  String nameOnCard;
 
 	public String getNameOnCard() {
 		return this.nameOnCard;
@@ -123,5 +124,6 @@ public class Card implements Serializable
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Details of a property defined for a product.
@@ -24,7 +25,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -37,7 +38,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -57,5 +58,6 @@ public class ProductProperty implements Serializable
 	public void setValues(List<Object> values) {
 		this.values = values;
 	}
+
 
 }

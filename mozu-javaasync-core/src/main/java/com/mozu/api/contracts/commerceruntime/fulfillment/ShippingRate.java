@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an estimated shipping rate for a shipment.
@@ -24,7 +25,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -37,7 +38,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * Indicates if the facet is currently valid.
 	 */
-	protected Boolean isValid;
+	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
 		return this.isValid;
@@ -61,7 +62,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * The amount the company and the shopper pay for shipping based on the current rate. Depending on any company discounts or fees, the price the company pays for shipping may differ from what the shopper pays.
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -74,7 +75,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.
 	 */
-	protected String shippingMethodCode;
+	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
 		return this.shippingMethodCode;
@@ -87,7 +88,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
 	 */
-	protected String shippingMethodName;
+	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
 		return this.shippingMethodName;
@@ -100,7 +101,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * The shipping zone to which this rate applies.
 	 */
-	protected String shippingZoneCode;
+	protected  String shippingZoneCode;
 
 	public String getShippingZoneCode() {
 		return this.shippingZoneCode;
@@ -113,7 +114,7 @@ public class ShippingRate implements Serializable
 	/**
 	 * Custom data returned by the shipping service.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -121,6 +122,23 @@ public class ShippingRate implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

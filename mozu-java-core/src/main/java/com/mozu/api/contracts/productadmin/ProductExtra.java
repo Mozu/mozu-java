@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductExtraValue;
 
 /**
@@ -25,7 +26,7 @@ public class ProductExtra implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -38,7 +39,7 @@ public class ProductExtra implements Serializable
 	/**
 	 * If true, the shopper can select more than one value from a predefined list for this extra.
 	 */
-	protected Boolean isMultiSelect;
+	protected  Boolean isMultiSelect;
 
 	public Boolean getIsMultiSelect() {
 		return this.isMultiSelect;
@@ -51,7 +52,7 @@ public class ProductExtra implements Serializable
 	/**
 	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
 	 */
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -71,5 +72,6 @@ public class ProductExtra implements Serializable
 	public void setValues(List<ProductExtraValue> values) {
 		this.values = values;
 	}
+
 
 }

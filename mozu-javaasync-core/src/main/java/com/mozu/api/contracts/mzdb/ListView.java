@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.mzdb;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.mzdb.ListViewField;
 
 /**
@@ -25,7 +26,7 @@ public class ListView implements Serializable
 	/**
 	 * Sets the default sorting for content. Sort does not use AND in determining the order.
 	 */
-	protected String defaultSort;
+	protected  String defaultSort;
 
 	public String getDefaultSort() {
 		return this.defaultSort;
@@ -38,7 +39,7 @@ public class ListView implements Serializable
 	/**
 	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 */
-	protected String filter;
+	protected  String filter;
 
 	public String getFilter() {
 		return this.filter;
@@ -51,7 +52,7 @@ public class ListView implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -64,7 +65,7 @@ public class ListView implements Serializable
 	/**
 	 * Indicates the security level for the document content as public, administrator, or owner.
 	 */
-	protected String security;
+	protected  String security;
 
 	public String getSecurity() {
 		return this.security;
@@ -99,7 +100,7 @@ public class ListView implements Serializable
 	/**
 	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode metaData;
+	protected transient com.fasterxml.jackson.databind.JsonNode metaData;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetaData() {
 		return this.metaData;
@@ -107,6 +108,23 @@ public class ListView implements Serializable
 
 	public void setMetaData(com.fasterxml.jackson.databind.JsonNode metaData) {
 		this.metaData = metaData;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metaData == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metaData);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metaData = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

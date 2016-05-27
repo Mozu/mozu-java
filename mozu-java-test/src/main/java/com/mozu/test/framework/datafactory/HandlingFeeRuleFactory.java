@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.HandlingFeeRuleResource;
 
 /** <summary>
- * 
+ * Use the OrderHandlingFeeRules sub-resource to manage your order handling fee rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class HandlingFeeRuleFactory
@@ -32,7 +32,7 @@ public class HandlingFeeRuleFactory
 		HandlingFeeRuleResource resource = new HandlingFeeRuleResource(apiContext);
 		try
 		{
-//			returnObj = resource.getOrderHandlingFeeRule( profilecode,  id,  responseFields);
+			returnObj = resource.getOrderHandlingFeeRule( profilecode,  id,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -57,7 +57,7 @@ public class HandlingFeeRuleFactory
 		HandlingFeeRuleResource resource = new HandlingFeeRuleResource(apiContext);
 		try
 		{
-//			returnObj = resource.getOrderHandlingFeeRules( profilecode,  responseFields);
+			returnObj = resource.getOrderHandlingFeeRules( profilecode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -82,7 +82,7 @@ public class HandlingFeeRuleFactory
 		HandlingFeeRuleResource resource = new HandlingFeeRuleResource(apiContext);
 		try
 		{
-//			returnObj = resource.createOrderHandlingFeeRule( rule,  profilecode,  responseFields);
+			returnObj = resource.createOrderHandlingFeeRule( rule,  profilecode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -107,7 +107,7 @@ public class HandlingFeeRuleFactory
 		HandlingFeeRuleResource resource = new HandlingFeeRuleResource(apiContext);
 		try
 		{
-//			returnObj = resource.updateOrderHandlingFeeRule( rule,  profilecode,  id,  responseFields);
+			returnObj = resource.updateOrderHandlingFeeRule( rule,  profilecode,  id,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -126,7 +126,7 @@ public class HandlingFeeRuleFactory
 		HandlingFeeRuleResource resource = new HandlingFeeRuleResource(apiContext);
 		try
 		{
-//			resource.deleteOrderHandlingFeeRule( profilecode,  id);
+			resource.deleteOrderHandlingFeeRule( profilecode,  id);
 		}
 		catch (ApiException e)
 		{

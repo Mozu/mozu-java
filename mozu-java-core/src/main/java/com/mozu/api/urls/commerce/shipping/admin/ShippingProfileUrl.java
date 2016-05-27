@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.shipping.admin;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class ShippingProfileUrl
 
 	/**
 	 * Get Resource Url for GetProfiles
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProfilesUrl(String responseFields)

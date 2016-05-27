@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.pricingruntime.thirdparty;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.thirdparty.TaxContext;
 
@@ -26,7 +27,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -39,7 +40,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
 	 */
-	protected Double handlingFee;
+	protected  Double handlingFee;
 
 	public Double getHandlingFee() {
 		return this.handlingFee;
@@ -52,7 +53,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The date and time the order was submitted for purchase. 
 	 */
-	protected DateTime orderDate;
+	protected  DateTime orderDate;
 
 	public DateTime getOrderDate() {
 		return this.orderDate;
@@ -65,7 +66,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The unique identifier of the original order, used to track order changes for tax purposes.
 	 */
-	protected String originalDocumentCode;
+	protected  String originalDocumentCode;
 
 	public String getOriginalDocumentCode() {
 		return this.originalDocumentCode;
@@ -78,7 +79,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
 	 */
-	protected DateTime originalOrderDate;
+	protected  DateTime originalOrderDate;
 
 	public DateTime getOriginalOrderDate() {
 		return this.originalOrderDate;
@@ -91,7 +92,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The calculated monetary amount of shipping for a line items within and an entire order.
 	 */
-	protected Double shippingAmount;
+	protected  Double shippingAmount;
 
 	public Double getShippingAmount() {
 		return this.shippingAmount;
@@ -104,7 +105,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The type of request for which to tax this entity, which is Order or Return.
 	 */
-	protected String taxRequestType;
+	protected  String taxRequestType;
 
 	public String getTaxRequestType() {
 		return this.taxRequestType;
@@ -128,7 +129,7 @@ public class TaxableOrder implements Serializable
 	/**
 	 * The tax properties associated with the order.
 	 */
-	protected TaxContext taxContext;
+	protected  TaxContext taxContext;
 
 	public TaxContext getTaxContext() {
 		return this.taxContext;
@@ -137,5 +138,6 @@ public class TaxableOrder implements Serializable
 	public void setTaxContext(TaxContext taxContext) {
 		this.taxContext = taxContext;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Information required to authenticate a user.
@@ -23,7 +24,7 @@ public class UserAuthInfo implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -36,7 +37,7 @@ public class UserAuthInfo implements Serializable
 	/**
 	 * The saved password for the customer account. 
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -45,5 +46,6 @@ public class UserAuthInfo implements Serializable
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 
 }

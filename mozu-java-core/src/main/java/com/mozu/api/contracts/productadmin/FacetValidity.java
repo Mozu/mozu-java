@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Describes whether a facet is currently valid and the reason. 			A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).		
@@ -23,7 +24,7 @@ public class FacetValidity implements Serializable
 	/**
 	 * Indicates if the facet is currently valid.
 	 */
-	protected Boolean isValid;
+	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
 		return this.isValid;
@@ -36,7 +37,7 @@ public class FacetValidity implements Serializable
 	/**
 	 * A code indicating the reason why a facet is invalid.
 	 */
-	protected String reasonCode;
+	protected  String reasonCode;
 
 	public String getReasonCode() {
 		return this.reasonCode;
@@ -45,5 +46,6 @@ public class FacetValidity implements Serializable
 	public void setReasonCode(String reasonCode) {
 		this.reasonCode = reasonCode;
 	}
+
 
 }

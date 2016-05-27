@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.core;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an application's behavior.
@@ -24,7 +25,7 @@ public class Behavior implements Serializable
 	/**
 	 * Unique identifier of a category. 
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -37,7 +38,7 @@ public class Behavior implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -50,7 +51,7 @@ public class Behavior implements Serializable
 	/**
 	 * If true, this application behavior is not part of the public Mozu API.
 	 */
-	protected Boolean isPrivate;
+	protected  Boolean isPrivate;
 
 	public Boolean getIsPrivate() {
 		return this.isPrivate;
@@ -63,7 +64,7 @@ public class Behavior implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -105,5 +106,6 @@ public class Behavior implements Serializable
 	public void setValidUserTypes(List<String> validUserTypes) {
 		this.validUserTypes = validUserTypes;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.shippingadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.LocalizableString;
 
@@ -23,9 +24,9 @@ public class Setting implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Carrier-specific key field.
+	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -36,9 +37,9 @@ public class Setting implements Serializable
 	}
 
 	/**
-	 * Carrier-specific value for the associated key.
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -51,7 +52,7 @@ public class Setting implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -62,9 +63,9 @@ public class Setting implements Serializable
 	}
 
 	/**
-	 * The label of the carrier-specific key.
+	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */
-	protected LocalizableString label;
+	protected  LocalizableString label;
 
 	public LocalizableString getLabel() {
 		return this.label;
@@ -73,5 +74,6 @@ public class Setting implements Serializable
 	public void setLabel(LocalizableString label) {
 		this.label = label;
 	}
+
 
 }

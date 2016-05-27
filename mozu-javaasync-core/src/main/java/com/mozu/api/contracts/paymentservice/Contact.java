@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.PaymentService.Contracts.Contact ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class Contact implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.Contact country ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String country;
+	protected  String country;
 
 	public String getCountry() {
 		return this.country;
@@ -36,7 +37,7 @@ public class Contact implements Serializable
 	/**
 	 * The email address for the customer account and contact. This email may be used for login to the storefront, receiving in-stock product notifications, and subscription mailing lists.
 	 */
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -49,7 +50,7 @@ public class Contact implements Serializable
 	/**
 	 * The full first name of a customer or contact name.
 	 */
-	protected String firstname;
+	protected  String firstname;
 
 	public String getFirstname() {
 		return this.firstname;
@@ -62,7 +63,7 @@ public class Contact implements Serializable
 	/**
 	 * The full last name of a customer or contact name.
 	 */
-	protected String lastname;
+	protected  String lastname;
 
 	public String getLastname() {
 		return this.lastname;
@@ -75,7 +76,7 @@ public class Contact implements Serializable
 	/**
 	 * The associated contact's phone number.
 	 */
-	protected String phone;
+	protected  String phone;
 
 	public String getPhone() {
 		return this.phone;
@@ -84,5 +85,6 @@ public class Contact implements Serializable
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 
 }

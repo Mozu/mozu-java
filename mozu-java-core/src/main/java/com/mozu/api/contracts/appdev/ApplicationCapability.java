@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.AppDev.Contracts.ApplicationCapability ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ApplicationCapability implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationCapabilityId;
+	protected  Integer applicationCapabilityId;
 
 	public Integer getApplicationCapabilityId() {
 		return this.applicationCapabilityId;
@@ -36,7 +37,7 @@ public class ApplicationCapability implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapability applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationCapabilityTypeId;
+	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
 		return this.applicationCapabilityTypeId;
@@ -49,7 +50,7 @@ public class ApplicationCapability implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapability applicationEndPoint ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationEndPoint;
+	protected  String applicationEndPoint;
 
 	public String getApplicationEndPoint() {
 		return this.applicationEndPoint;
@@ -62,7 +63,7 @@ public class ApplicationCapability implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapability capabilityTypeContractId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer capabilityTypeContractId;
+	protected  Integer capabilityTypeContractId;
 
 	public Integer getCapabilityTypeContractId() {
 		return this.capabilityTypeContractId;
@@ -75,7 +76,7 @@ public class ApplicationCapability implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapability packageId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -84,5 +85,6 @@ public class ApplicationCapability implements Serializable
 	public void setPackageId(Integer packageId) {
 		this.packageId = packageId;
 	}
+
 
 }

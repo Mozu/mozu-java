@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core.extensible;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The localized name and description of the attribute, displayed in the locale defined for the master catalog.
@@ -23,7 +24,7 @@ public class AttributeLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -36,7 +37,7 @@ public class AttributeLocalizedContent implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -45,5 +46,6 @@ public class AttributeLocalizedContent implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

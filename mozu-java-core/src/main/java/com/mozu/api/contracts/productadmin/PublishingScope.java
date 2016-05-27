@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Describes the scope of the product publishing update, which can include individual product codes or all pending changes.
@@ -24,7 +25,7 @@ public class PublishingScope implements Serializable
 	/**
 	 * If true, publish or discard all pending product changes in the master catalog.
 	 */
-	protected Boolean allPending;
+	protected  Boolean allPending;
 
 	public Boolean getAllPending() {
 		return this.allPending;
@@ -48,7 +49,7 @@ public class PublishingScope implements Serializable
 	/**
 	 * The Publish Set to publish
 	 */
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -57,5 +58,6 @@ public class PublishingScope implements Serializable
 	public void setPublishSetCode(String publishSetCode) {
 		this.publishSetCode = publishSetCode;
 	}
+
 
 }

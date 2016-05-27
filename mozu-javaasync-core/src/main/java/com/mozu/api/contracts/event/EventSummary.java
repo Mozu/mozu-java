@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
 /**
@@ -25,7 +26,7 @@ public class EventSummary implements Serializable
 	/**
 	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -38,7 +39,7 @@ public class EventSummary implements Serializable
 	/**
 	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
 	 */
-	protected String correlationId;
+	protected  String correlationId;
 
 	public String getCorrelationId() {
 		return this.correlationId;
@@ -51,7 +52,7 @@ public class EventSummary implements Serializable
 	/**
 	 * The date time in UTC format set when the object was created. 
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -64,7 +65,7 @@ public class EventSummary implements Serializable
 	/**
 	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
 	 */
-	protected String entityId;
+	protected  String entityId;
 
 	public String getEntityId() {
 		return this.entityId;
@@ -77,7 +78,7 @@ public class EventSummary implements Serializable
 	/**
 	 * Unique identifier for the event. 
 	 */
-	protected String eventId;
+	protected  String eventId;
 
 	public String getEventId() {
 		return this.eventId;
@@ -90,7 +91,7 @@ public class EventSummary implements Serializable
 	/**
 	 * Unique identifier for the master catalog. 
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -103,7 +104,7 @@ public class EventSummary implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -116,7 +117,7 @@ public class EventSummary implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -129,7 +130,7 @@ public class EventSummary implements Serializable
 	/**
 	 * The type of event that was performed, such as "product.created" or "category.deleted".
 	 */
-	protected String topic;
+	protected  String topic;
 
 	public String getTopic() {
 		return this.topic;
@@ -149,5 +150,6 @@ public class EventSummary implements Serializable
 	public void setExtendedProperties(List<EventExtendedProperty> extendedProperties) {
 		this.extendedProperties = extendedProperties;
 	}
+
 
 }

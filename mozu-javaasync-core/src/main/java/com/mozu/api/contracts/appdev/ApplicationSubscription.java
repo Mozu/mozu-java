@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Event;
 
 /**
@@ -25,7 +26,7 @@ public class ApplicationSubscription implements Serializable
 	/**
 	 * The End Point where the event information will be sent to when the event is fired.
 	 */
-	protected String applicationEndPoint;
+	protected  String applicationEndPoint;
 
 	public String getApplicationEndPoint() {
 		return this.applicationEndPoint;
@@ -38,7 +39,7 @@ public class ApplicationSubscription implements Serializable
 	/**
 	 * The unique identifier of an ApplicationVersionEvent record.
 	 */
-	protected Integer applicationSubscriptionId;
+	protected  Integer applicationSubscriptionId;
 
 	public Integer getApplicationSubscriptionId() {
 		return this.applicationSubscriptionId;
@@ -51,7 +52,7 @@ public class ApplicationSubscription implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationSubscription noCallback ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean noCallback;
+	protected  Boolean noCallback;
 
 	public Boolean getNoCallback() {
 		return this.noCallback;
@@ -64,7 +65,7 @@ public class ApplicationSubscription implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationSubscription packageId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -84,5 +85,6 @@ public class ApplicationSubscription implements Serializable
 	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
+
 
 }

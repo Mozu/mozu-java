@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The localized product search engine optimized content in the language specified by the LocaleCode.
@@ -23,7 +24,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -36,7 +37,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -49,7 +50,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -62,7 +63,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -75,7 +76,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
 	 */
-	protected String seoFriendlyUrl;
+	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
 		return this.seoFriendlyUrl;
@@ -88,7 +89,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	/**
 	 * Customizes the HTML title tag within the header section of the product details page for the specified product.
 	 */
-	protected String titleTagTitle;
+	protected  String titleTagTitle;
 
 	public String getTitleTagTitle() {
 		return this.titleTagTitle;
@@ -97,5 +98,6 @@ public class ProductLocalizedSEOContent implements Serializable
 	public void setTitleTagTitle(String titleTagTitle) {
 		this.titleTagTitle = titleTagTitle;
 	}
+
 
 }

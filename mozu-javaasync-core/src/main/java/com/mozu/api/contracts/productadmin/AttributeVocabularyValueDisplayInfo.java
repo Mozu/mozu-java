@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Provides the display information for attribute vocabulary values. 
@@ -23,7 +24,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	/**
 	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
-	protected String cmsId;
+	protected  String cmsId;
 
 	public String getCmsId() {
 		return this.cmsId;
@@ -36,7 +37,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	/**
 	 * Hex value for a color to display in a color picker. This is an HTML supported code for color.
 	 */
-	protected String colorValue;
+	protected  String colorValue;
 
 	public String getColorValue() {
 		return this.colorValue;
@@ -49,7 +50,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	/**
 	 * The URL link for the image file associated with a product or category.
 	 */
-	protected String imageUrl;
+	protected  String imageUrl;
 
 	public String getImageUrl() {
 		return this.imageUrl;
@@ -58,5 +59,6 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
@@ -23,7 +24,7 @@ public class Discount implements Serializable
 	/**
 	 * Unique identifier for the discount in the storefront.
 	 */
-	protected Integer discountId;
+	protected  Integer discountId;
 
 	public Integer getDiscountId() {
 		return this.discountId;
@@ -36,7 +37,7 @@ public class Discount implements Serializable
 	/**
 	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -49,7 +50,7 @@ public class Discount implements Serializable
 	/**
 	 * The localizable, shopper-facing description defined for a discount or a storefront message. 
 	 */
-	protected String friendlyDescription;
+	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
 		return this.friendlyDescription;
@@ -62,7 +63,7 @@ public class Discount implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -71,5 +72,6 @@ public class Discount implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

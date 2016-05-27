@@ -121,6 +121,24 @@ public class CategoryFactory
 		return returnObj;
 	}
 
+	public static void updateCategoryTree(ApiContext apiContext, com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies, int expectedCode) throws Exception
+	{
+		CategoryResource resource = new CategoryResource(apiContext);
+		try
+		{
+			resource.updateCategoryTree( categorySequencies);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
 	public static com.mozu.api.contracts.productadmin.DynamicExpression validateDynamicExpression(ApiContext apiContext, com.mozu.api.contracts.productadmin.DynamicExpression dynamicExpressionIn, int expectedCode) throws Exception
 	{
 		return validateDynamicExpression(apiContext,  dynamicExpressionIn,  null, expectedCode);

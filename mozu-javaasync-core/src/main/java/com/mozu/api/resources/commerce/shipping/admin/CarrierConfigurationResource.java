@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.shipping.admin;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Carrier Configuration for managing credentials and some settings for the various carriers installed with the default mozu application
  * </summary>
  */
 public class CarrierConfigurationResource {
@@ -38,7 +36,7 @@ public class CarrierConfigurationResource {
 
 	
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations();
@@ -52,7 +50,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.getConfigurations( callback );
@@ -67,16 +65,16 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
 	 */
@@ -90,16 +88,16 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.getConfigurations( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
@@ -113,12 +111,12 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId);
 	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 */
@@ -128,12 +126,12 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.getConfiguration( carrierId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -144,13 +142,13 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId,  responseFields);
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 */
@@ -164,13 +162,13 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.getConfiguration( carrierId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -184,13 +182,13 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId);
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -201,14 +199,14 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param carrierConfiguration 
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -219,14 +217,14 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId,  responseFields);
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -241,15 +239,15 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param carrierConfiguration 
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -263,13 +261,13 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId);
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -280,14 +278,14 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param carrierConfiguration 
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -298,14 +296,14 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId,  responseFields);
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -320,15 +318,15 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CountDownLatch latch = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param carrierConfiguration 
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -342,12 +340,12 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * 
+	 * Delete an existing Carrier Configuration
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	carrierconfiguration.deleteConfiguration( carrierId);
 	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier configuration.
 	 * @return 
 	 */
 	public void deleteConfiguration(String carrierId) throws Exception

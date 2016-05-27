@@ -7,13 +7,14 @@
 package com.mozu.api.contracts.shippingadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.CustomTableRate;
 import com.mozu.api.contracts.shippingadmin.Setting;
-import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	Properties of a carrier configured in the shipping admin.
@@ -24,7 +25,10 @@ public class CarrierConfiguration implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean areCredentialsSet;
+	/**
+	 * Indicates whether the credentials/passwords are set. Credetials are updated only if this flag is set to true
+	 */
+	protected  Boolean areCredentialsSet;
 
 	public Boolean getAreCredentialsSet() {
 		return this.areCredentialsSet;
@@ -34,7 +38,10 @@ public class CarrierConfiguration implements Serializable
 		this.areCredentialsSet = areCredentialsSet;
 	}
 
-	protected Boolean enabled;
+	/**
+	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
+	 */
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -45,9 +52,9 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * Identifier of the carrier configuration.
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -57,6 +64,22 @@ public class CarrierConfiguration implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
+	/**
+	 * A list of custom table rates for the 'Custom' carrier only use this if Id == 'Custom'
+	 */
 	protected List<CustomTableRate> customTableRates;
 	public List<CustomTableRate> getCustomTableRates() {
 		return this.customTableRates;
@@ -76,17 +99,5 @@ public class CarrierConfiguration implements Serializable
 		this.settings = settings;
 	}
 
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
-	}
 
 }

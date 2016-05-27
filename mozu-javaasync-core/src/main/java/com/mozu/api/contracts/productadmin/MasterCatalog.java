@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a master product catalog defined for a tenant. All catalogs and sites associated with a master catalog share product definitions.
@@ -23,7 +24,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * If the publishingMode is Pending and LiveEditsEnabled = true, DataViewMode live can be passed in the header and live products can be directly edited.
 	 */
-	protected Boolean enableLiveEdit;
+	protected  Boolean enableLiveEdit;
 
 	public Boolean getEnableLiveEdit() {
 		return this.enableLiveEdit;
@@ -36,7 +37,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -49,7 +50,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
 	 */
-	protected Boolean isDeleted;
+	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
@@ -62,7 +63,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -75,7 +76,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The mode this master catalog uses for product updates. Possible values are "Pending" which saves product updates as a draft until they are published, and "Live" which publishes all product updates immediately.
 	 */
-	protected String productPublishingMode;
+	protected  String productPublishingMode;
 
 	public String getProductPublishingMode() {
 		return this.productPublishingMode;
@@ -84,5 +85,6 @@ public class MasterCatalog implements Serializable
 	public void setProductPublishingMode(String productPublishingMode) {
 		this.productPublishingMode = productPublishingMode;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.mzdb;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the EntityContainer within a specific tenant and site.
@@ -23,7 +24,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -36,7 +37,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Identifier of the user that created the object. System created and read only.
 	 */
-	protected String createBy;
+	protected  String createBy;
 
 	public String getCreateBy() {
 		return this.createBy;
@@ -49,7 +50,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * The date time in UTC format set when the object was created. 
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -62,7 +63,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -75,7 +76,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * The nameSpace and name for the EntityList in the format name@nameSpace.
 	 */
-	protected String listFullName;
+	protected  String listFullName;
 
 	public String getListFullName() {
 		return this.listFullName;
@@ -88,7 +89,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -101,7 +102,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier for the master catalog. 
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -114,7 +115,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -127,7 +128,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -140,7 +141,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Identifier of the user that updated the entity most recently.
 	 */
-	protected String updateBy;
+	protected  String updateBy;
 
 	public String getUpdateBy() {
 		return this.updateBy;
@@ -153,7 +154,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * The date and time the object was updated most recently. The date is in UTC format.
 	 */
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -166,7 +167,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -179,7 +180,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * The entity in JSON format.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode item;
+	protected transient com.fasterxml.jackson.databind.JsonNode item;
 
 	public com.fasterxml.jackson.databind.JsonNode getItem() {
 		return this.item;
@@ -187,6 +188,23 @@ public class EntityContainer implements Serializable
 
 	public void setItem(com.fasterxml.jackson.databind.JsonNode item) {
 		this.item = item;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(item == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, item);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.item = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

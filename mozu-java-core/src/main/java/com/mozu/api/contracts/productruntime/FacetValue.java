@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.FacetValue;
 
 /**
@@ -25,7 +26,7 @@ public class FacetValue implements Serializable
 	/**
 	 * The number of facet results for a product search.
 	 */
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -38,7 +39,7 @@ public class FacetValue implements Serializable
 	/**
 	 * Submits the selected facet value as a facet value filter.
 	 */
-	protected String filterValue;
+	protected  String filterValue;
 
 	public String getFilterValue() {
 		return this.filterValue;
@@ -51,7 +52,7 @@ public class FacetValue implements Serializable
 	/**
 	 * If true, the facet value is applied as a filter in the storefront product search.
 	 */
-	protected Boolean isApplied;
+	protected  Boolean isApplied;
 
 	public Boolean getIsApplied() {
 		return this.isApplied;
@@ -64,7 +65,7 @@ public class FacetValue implements Serializable
 	/**
 	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
-	protected Boolean isDisplayed;
+	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
 		return this.isDisplayed;
@@ -77,7 +78,7 @@ public class FacetValue implements Serializable
 	/**
 	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -90,7 +91,7 @@ public class FacetValue implements Serializable
 	/**
 	 * If applicable, the values of any parent category facets in a hierarchy. Hierarchical facets only apply for product categories.
 	 */
-	protected String parentFacetValue;
+	protected  String parentFacetValue;
 
 	public String getParentFacetValue() {
 		return this.parentFacetValue;
@@ -103,7 +104,7 @@ public class FacetValue implements Serializable
 	/**
 	 * The maximum value selected or entered for the facet range query.
 	 */
-	protected String rangeQueryValueEnd;
+	protected  String rangeQueryValueEnd;
 
 	public String getRangeQueryValueEnd() {
 		return this.rangeQueryValueEnd;
@@ -116,7 +117,7 @@ public class FacetValue implements Serializable
 	/**
 	 * The minimum value selected or entered for the facet range query.
 	 */
-	protected String rangeQueryValueStart;
+	protected  String rangeQueryValueStart;
 
 	public String getRangeQueryValueStart() {
 		return this.rangeQueryValueStart;
@@ -129,7 +130,7 @@ public class FacetValue implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -149,5 +150,6 @@ public class FacetValue implements Serializable
 	public void setChildrenFacetValues(List<FacetValue> childrenFacetValues) {
 		this.childrenFacetValues = childrenFacetValues;
 	}
+
 
 }

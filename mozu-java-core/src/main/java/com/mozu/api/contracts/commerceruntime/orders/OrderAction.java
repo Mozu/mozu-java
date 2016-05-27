@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.orders;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The action to perform for the order.
@@ -23,7 +24,7 @@ public class OrderAction implements Serializable
 	/**
 	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
 	 */
-	protected String actionName;
+	protected  String actionName;
 
 	public String getActionName() {
 		return this.actionName;
@@ -32,5 +33,6 @@ public class OrderAction implements Serializable
 	public void setActionName(String actionName) {
 		this.actionName = actionName;
 	}
+
 
 }

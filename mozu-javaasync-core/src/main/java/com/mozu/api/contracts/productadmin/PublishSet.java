@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
@@ -24,7 +25,7 @@ public class PublishSet implements Serializable
 	/**
 	 * The PublishSet unique identifier
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -48,7 +49,7 @@ public class PublishSet implements Serializable
 	/**
 	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
 	 */
-	protected Integer productCount;
+	protected  Integer productCount;
 
 	public Integer getProductCount() {
 		return this.productCount;
@@ -57,5 +58,6 @@ public class PublishSet implements Serializable
 	public void setProductCount(Integer productCount) {
 		this.productCount = productCount;
 	}
+
 
 }

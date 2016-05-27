@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.FacetValue;
 
 /**
@@ -25,7 +26,7 @@ public class Facet implements Serializable
 	/**
 	 * The type of facet. Valid values are "range" (enables creation of a range of values) or "value" (populates the facet values based on the associated attribute or category).
 	 */
-	protected String facetType;
+	protected  String facetType;
 
 	public String getFacetType() {
 		return this.facetType;
@@ -38,7 +39,7 @@ public class Facet implements Serializable
 	/**
 	 * The field name associated with the facet.
 	 */
-	protected String field;
+	protected  String field;
 
 	public String getField() {
 		return this.field;
@@ -51,7 +52,7 @@ public class Facet implements Serializable
 	/**
 	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -71,5 +72,6 @@ public class Facet implements Serializable
 	public void setValues(List<FacetValue> values) {
 		this.values = values;
 	}
+
 
 }

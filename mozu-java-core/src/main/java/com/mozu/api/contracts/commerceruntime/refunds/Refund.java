@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.refunds;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 
@@ -25,7 +26,7 @@ public class Refund implements Serializable
 	/**
 	 * Amount refunded.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -38,7 +39,7 @@ public class Refund implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -51,7 +52,7 @@ public class Refund implements Serializable
 	/**
 	 * Unique identifier of the order associated with the payment.
 	 */
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -64,7 +65,7 @@ public class Refund implements Serializable
 	/**
 	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -77,7 +78,7 @@ public class Refund implements Serializable
 	/**
 	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -90,7 +91,7 @@ public class Refund implements Serializable
 	/**
 	 * The payment associated with this refund (if applicable).
 	 */
-	protected Payment payment;
+	protected  Payment payment;
 
 	public Payment getPayment() {
 		return this.payment;
@@ -99,5 +100,6 @@ public class Refund implements Serializable
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+
 
 }

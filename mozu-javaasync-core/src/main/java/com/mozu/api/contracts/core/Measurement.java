@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Dimensions of the packaged product.
@@ -23,7 +24,7 @@ public class Measurement implements Serializable
 	/**
 	 * The unit of measurement, such as length or weight.
 	 */
-	protected String unit;
+	protected  String unit;
 
 	public String getUnit() {
 		return this.unit;
@@ -36,7 +37,7 @@ public class Measurement implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Double value;
+	protected  Double value;
 
 	public Double getValue() {
 		return this.value;
@@ -45,5 +46,6 @@ public class Measurement implements Serializable
 	public void setValue(Double value) {
 		this.value = value;
 	}
+
 
 }

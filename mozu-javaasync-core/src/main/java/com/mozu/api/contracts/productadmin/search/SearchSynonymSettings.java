@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin.search;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Settings for search synonyms for search results.
@@ -23,7 +24,7 @@ public class SearchSynonymSettings implements Serializable
 	/**
 	 * Indicates if synonyms should be expanded.
 	 */
-	protected Boolean expandSynonyms;
+	protected  Boolean expandSynonyms;
 
 	public Boolean getExpandSynonyms() {
 		return this.expandSynonyms;
@@ -36,7 +37,7 @@ public class SearchSynonymSettings implements Serializable
 	/**
 	 * Sets the boost for the words actually sent in the query.
 	 */
-	protected Double mainPartBoost;
+	protected  Double mainPartBoost;
 
 	public Double getMainPartBoost() {
 		return this.mainPartBoost;
@@ -49,7 +50,7 @@ public class SearchSynonymSettings implements Serializable
 	/**
 	 * Boosts the synonyms to affect rankings for search results.
 	 */
-	protected Double synonymPartBoost;
+	protected  Double synonymPartBoost;
 
 	public Double getSynonymPartBoost() {
 		return this.synonymPartBoost;
@@ -58,5 +59,6 @@ public class SearchSynonymSettings implements Serializable
 	public void setSynonymPartBoost(Double synonymPartBoost) {
 		this.synonymPartBoost = synonymPartBoost;
 	}
+
 
 }

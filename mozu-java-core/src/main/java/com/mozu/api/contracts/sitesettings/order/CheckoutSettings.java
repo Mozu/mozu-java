@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.order;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.CustomerCheckoutSettings;
 import com.mozu.api.contracts.sitesettings.order.OrderProcessingSettings;
 import com.mozu.api.contracts.sitesettings.order.PaymentSettings;
@@ -26,7 +27,7 @@ public class CheckoutSettings implements Serializable
 	/**
 	 * Settings for the checkout login. Choose whether or not shoppers must first login before a purchase can be processed. Choose the option for guests to purchase without logging in, prompt guests to login, or require them to login before a purchase can be completed.
 	 */
-	protected CustomerCheckoutSettings customerCheckoutSettings;
+	protected  CustomerCheckoutSettings customerCheckoutSettings;
 
 	public CustomerCheckoutSettings getCustomerCheckoutSettings() {
 		return this.customerCheckoutSettings;
@@ -39,7 +40,7 @@ public class CheckoutSettings implements Serializable
 	/**
 	 * Credit card payment authorization setting defined for the site for order processing.
 	 */
-	protected OrderProcessingSettings orderProcessingSettings;
+	protected  OrderProcessingSettings orderProcessingSettings;
 
 	public OrderProcessingSettings getOrderProcessingSettings() {
 		return this.orderProcessingSettings;
@@ -52,7 +53,7 @@ public class CheckoutSettings implements Serializable
 	/**
 	 * Payment gateway settings defined for the site. A payment gateway is an eCommerce application service provider that authorizes payments for eBusinesses, online retailers, and other stores that have an online commerce component.
 	 */
-	protected PaymentSettings paymentSettings;
+	protected  PaymentSettings paymentSettings;
 
 	public PaymentSettings getPaymentSettings() {
 		return this.paymentSettings;
@@ -61,5 +62,6 @@ public class CheckoutSettings implements Serializable
 	public void setPaymentSettings(PaymentSettings paymentSettings) {
 		this.paymentSettings = paymentSettings;
 	}
+
 
 }

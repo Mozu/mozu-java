@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.CustomAttribute;
 import com.mozu.api.contracts.shippingruntime.ShippingRate;
 
@@ -26,7 +27,7 @@ public class CarrierRatesResponse implements Serializable
 	/**
 	 * Unique identifier of the shipping carrier.
 	 */
-	protected String carrierId;
+	protected  String carrierId;
 
 	public String getCarrierId() {
 		return this.carrierId;
@@ -57,5 +58,6 @@ public class CarrierRatesResponse implements Serializable
 	public void setShippingRates(List<ShippingRate> shippingRates) {
 		this.shippingRates = shippingRates;
 	}
+
 
 }

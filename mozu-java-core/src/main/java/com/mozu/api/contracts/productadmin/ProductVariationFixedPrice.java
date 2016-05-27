@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ProductVariationFixedPrice implements Serializable
 	/**
 	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -36,7 +37,7 @@ public class ProductVariationFixedPrice implements Serializable
 	/**
 	 * The localized currency code for the monetary amount. 
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -49,7 +50,7 @@ public class ProductVariationFixedPrice implements Serializable
 	/**
 	 * Variation price for fixed pricing
 	 */
-	protected Double listPrice;
+	protected  Double listPrice;
 
 	public Double getListPrice() {
 		return this.listPrice;
@@ -62,7 +63,7 @@ public class ProductVariationFixedPrice implements Serializable
 	/**
 	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -75,7 +76,7 @@ public class ProductVariationFixedPrice implements Serializable
 	/**
 	 * The set sale price for a product consisting of a price with a discount already applied.
 	 */
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -84,5 +85,6 @@ public class ProductVariationFixedPrice implements Serializable
 	public void setSalePrice(Double salePrice) {
 		this.salePrice = salePrice;
 	}
+
 
 }

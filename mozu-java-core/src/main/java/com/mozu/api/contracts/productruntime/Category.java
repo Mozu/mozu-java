@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.CategoryContent;
 import com.mozu.api.contracts.productruntime.Category;
 
@@ -26,7 +27,7 @@ public class Category implements Serializable
 	/**
 	 * External unique identifier of the category.
 	 */
-	protected String categoryCode;
+	protected  String categoryCode;
 
 	public String getCategoryCode() {
 		return this.categoryCode;
@@ -39,7 +40,7 @@ public class Category implements Serializable
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -52,7 +53,7 @@ public class Category implements Serializable
 	/**
 	 * The number of facet results for a product search.
 	 */
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -65,7 +66,7 @@ public class Category implements Serializable
 	/**
 	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
-	protected Boolean isDisplayed;
+	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
 		return this.isDisplayed;
@@ -78,7 +79,7 @@ public class Category implements Serializable
 	/**
 	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -91,7 +92,7 @@ public class Category implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected CategoryContent content;
+	protected  CategoryContent content;
 
 	public CategoryContent getContent() {
 		return this.content;
@@ -115,7 +116,7 @@ public class Category implements Serializable
 	/**
 	 * If applicable, the parent category in the hierarchy for the specified category.
 	 */
-	protected Category parentCategory;
+	protected  Category parentCategory;
 
 	public Category getParentCategory() {
 		return this.parentCategory;
@@ -124,5 +125,6 @@ public class Category implements Serializable
 	public void setParentCategory(Category parentCategory) {
 		this.parentCategory = parentCategory;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.tenant;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.tenant.MasterCatalog;
 import com.mozu.api.contracts.tenant.Site;
 
@@ -26,7 +27,7 @@ public class Tenant implements Serializable
 	/**
 	 * The domain associated with the site and/or tenant.
 	 */
-	protected String domain;
+	protected  String domain;
 
 	public String getDomain() {
 		return this.domain;
@@ -39,7 +40,7 @@ public class Tenant implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -52,7 +53,7 @@ public class Tenant implements Serializable
 	/**
 	 * Indicates if the tenant is a development tenant. If true, the tenant represents a collection of master catalogs and catalogs for a development tenant, used by a developer account to test applications and themes.
 	 */
-	protected Boolean isDevTenant;
+	protected  Boolean isDevTenant;
 
 	public Boolean getIsDevTenant() {
 		return this.isDevTenant;
@@ -65,7 +66,7 @@ public class Tenant implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -96,5 +97,6 @@ public class Tenant implements Serializable
 	public void setSites(List<Site> sites) {
 		this.sites = sites;
 	}
+
 
 }

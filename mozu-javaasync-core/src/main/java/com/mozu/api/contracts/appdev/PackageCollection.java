@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Package;
 
 /**
@@ -25,7 +26,7 @@ public class PackageCollection implements Serializable
 	/**
 	 * The total number of pages of the results divided per the `pageSize`.
 	 */
-	protected Integer pageCount;
+	protected  Integer pageCount;
 
 	public Integer getPageCount() {
 		return this.pageCount;
@@ -38,7 +39,7 @@ public class PackageCollection implements Serializable
 	/**
 	 * The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 */
-	protected Integer pageSize;
+	protected  Integer pageSize;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -51,7 +52,7 @@ public class PackageCollection implements Serializable
 	/**
 	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
 	 */
-	protected Integer startIndex;
+	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
 		return this.startIndex;
@@ -64,7 +65,7 @@ public class PackageCollection implements Serializable
 	/**
 	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
 	 */
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -84,5 +85,6 @@ public class PackageCollection implements Serializable
 	public void setItems(List<Package> items) {
 		this.items = items;
 	}
+
 
 }

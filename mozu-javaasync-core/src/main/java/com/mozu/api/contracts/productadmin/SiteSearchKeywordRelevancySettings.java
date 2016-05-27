@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for the site search keyword relevancy settings. Relevancy determines the calculated matched of entered search strings against keywords. The relevancy weight can determine the order of importance for matching a search term such as categories before or after product names.
@@ -23,7 +24,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for the attributes.
 	 */
-	protected Integer attributesWeight;
+	protected  Integer attributesWeight;
 
 	public Integer getAttributesWeight() {
 		return this.attributesWeight;
@@ -36,7 +37,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for category names.
 	 */
-	protected Integer categoryNamesWeight;
+	protected  Integer categoryNamesWeight;
 
 	public Integer getCategoryNamesWeight() {
 		return this.categoryNamesWeight;
@@ -49,7 +50,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for descriptions.
 	 */
-	protected Integer descriptionWeight;
+	protected  Integer descriptionWeight;
 
 	public Integer getDescriptionWeight() {
 		return this.descriptionWeight;
@@ -62,7 +63,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for keywords.
 	 */
-	protected Integer keywordsWeight;
+	protected  Integer keywordsWeight;
 
 	public Integer getKeywordsWeight() {
 		return this.keywordsWeight;
@@ -75,7 +76,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for mpn provider.
 	 */
-	protected Integer mpnWeight;
+	protected  Integer mpnWeight;
 
 	public Integer getMpnWeight() {
 		return this.mpnWeight;
@@ -88,7 +89,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The weight for the name used in ranking search results.
 	 */
-	protected Integer nameWeight;
+	protected  Integer nameWeight;
 
 	public Integer getNameWeight() {
 		return this.nameWeight;
@@ -101,7 +102,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for product code, as loose.
 	 */
-	protected Integer productCodeLooseWeight;
+	protected  Integer productCodeLooseWeight;
 
 	public Integer getProductCodeLooseWeight() {
 		return this.productCodeLooseWeight;
@@ -114,7 +115,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for product code.
 	 */
-	protected Integer productCodeWeight;
+	protected  Integer productCodeWeight;
 
 	public Integer getProductCodeWeight() {
 		return this.productCodeWeight;
@@ -127,7 +128,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	/**
 	 * The considered relevancy weight for UPCs.
 	 */
-	protected Integer upcWeight;
+	protected  Integer upcWeight;
 
 	public Integer getUpcWeight() {
 		return this.upcWeight;
@@ -136,5 +137,6 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	public void setUpcWeight(Integer upcWeight) {
 		this.upcWeight = upcWeight;
 	}
+
 
 }

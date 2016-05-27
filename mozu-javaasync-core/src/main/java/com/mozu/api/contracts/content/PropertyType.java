@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Property type available for content. Property types are like templates that can be reused.
@@ -23,7 +24,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The administrator name associated with the object/data.
 	 */
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -36,7 +37,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -49,7 +50,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The package of document lists and content documents to be installed.
 	 */
-	protected String installationPackage;
+	protected  String installationPackage;
 
 	public String getInstallationPackage() {
 		return this.installationPackage;
@@ -62,7 +63,7 @@ public class PropertyType implements Serializable
 	/**
 	 * If true, this entity can be grouped.
 	 */
-	protected Boolean isAggregatable;
+	protected  Boolean isAggregatable;
 
 	public Boolean getIsAggregatable() {
 		return this.isAggregatable;
@@ -75,7 +76,7 @@ public class PropertyType implements Serializable
 	/**
 	 * Indicates if the entity can be located and returned in a search, used for fields and property types. If true, the entity can be searched. 
 	 */
-	protected Boolean isQueryable;
+	protected  Boolean isQueryable;
 
 	public Boolean getIsQueryable() {
 		return this.isQueryable;
@@ -88,7 +89,7 @@ public class PropertyType implements Serializable
 	/**
 	 * Indicates if the fields or property types are sortable on the page. If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
 	 */
-	protected Boolean isSortable;
+	protected  Boolean isSortable;
 
 	public Boolean getIsSortable() {
 		return this.isSortable;
@@ -101,7 +102,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -114,7 +115,7 @@ public class PropertyType implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -127,7 +128,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The fully qualified name for the property type for content.
 	 */
-	protected String propertyTypeFQN;
+	protected  String propertyTypeFQN;
 
 	public String getPropertyTypeFQN() {
 		return this.propertyTypeFQN;
@@ -140,7 +141,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The current version number of the order, wish list, document list, or document type list.
 	 */
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -149,5 +150,6 @@ public class PropertyType implements Serializable
 	public void setVersion(String version) {
 		this.version = version;
 	}
+
 
 }

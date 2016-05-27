@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.payments;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an interaction with the payment gateway.
@@ -23,7 +24,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * If required by the payment gateway, the authorization code of the transaction.
 	 */
-	protected String gatewayAuthCode;
+	protected  String gatewayAuthCode;
 
 	public String getGatewayAuthCode() {
 		return this.gatewayAuthCode;
@@ -36,7 +37,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * AVS (Address Verification Service) codes supplied by the payment gateway. The codes indicate partial to complete or failed matches against the billing address for the shopper against the financial institute data through the gateway.
 	 */
-	protected String gatewayAVSCodes;
+	protected  String gatewayAVSCodes;
 
 	public String getGatewayAVSCodes() {
 		return this.gatewayAVSCodes;
@@ -49,7 +50,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * CVV2 (Card Verification Value) codes supplied by the payment gateway. The codes indicate a verified or failed match of the encrypted code entered against the financial institution data through the gateway.
 	 */
-	protected String gatewayCVV2Codes;
+	protected  String gatewayCVV2Codes;
 
 	public String getGatewayCVV2Codes() {
 		return this.gatewayCVV2Codes;
@@ -62,7 +63,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * Unique identifier of the payment interaction from the payment gateway.
 	 */
-	protected Integer gatewayInteractionId;
+	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
 		return this.gatewayInteractionId;
@@ -75,7 +76,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
 	 */
-	protected String gatewayResponseCode;
+	protected  String gatewayResponseCode;
 
 	public String getGatewayResponseCode() {
 		return this.gatewayResponseCode;
@@ -88,7 +89,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * Textual message returned by the payment gateway for the associated success or failure code.
 	 */
-	protected String gatewayResponseText;
+	protected  String gatewayResponseText;
 
 	public String getGatewayResponseText() {
 		return this.gatewayResponseText;
@@ -101,7 +102,7 @@ public class PaymentGatewayInteraction implements Serializable
 	/**
 	 * Unique identifier of the gateway transaction associated with the payment interaction.
 	 */
-	protected String gatewayTransactionId;
+	protected  String gatewayTransactionId;
 
 	public String getGatewayTransactionId() {
 		return this.gatewayTransactionId;
@@ -110,5 +111,6 @@ public class PaymentGatewayInteraction implements Serializable
 	public void setGatewayTransactionId(String gatewayTransactionId) {
 		this.gatewayTransactionId = gatewayTransactionId;
 	}
+
 
 }

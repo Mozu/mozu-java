@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.ThirdPartyCredentialField;
 
 /**
@@ -25,7 +26,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -38,7 +39,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * Fully qualified name of the attribute for the order or customer. 
 	 */
-	protected String fullyQualifiedName;
+	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
 		return this.fullyQualifiedName;
@@ -51,7 +52,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
 	 */
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -64,7 +65,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -77,7 +78,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -97,5 +98,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	public void setCredentials(List<ThirdPartyCredentialField> credentials) {
 		this.credentials = credentials;
 	}
+
 
 }

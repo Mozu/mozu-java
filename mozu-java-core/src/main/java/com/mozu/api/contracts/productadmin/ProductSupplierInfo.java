@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductCost;
 
 /**
@@ -24,7 +25,7 @@ public class ProductSupplierInfo implements Serializable
 	/**
 	 * The distributor part number associated with this product, defined by the product distributor.
 	 */
-	protected String distPartNumber;
+	protected  String distPartNumber;
 
 	public String getDistPartNumber() {
 		return this.distPartNumber;
@@ -37,7 +38,7 @@ public class ProductSupplierInfo implements Serializable
 	/**
 	 * The manufacturer's part number for the product.
 	 */
-	protected String mfgPartNumber;
+	protected  String mfgPartNumber;
 
 	public String getMfgPartNumber() {
 		return this.mfgPartNumber;
@@ -50,7 +51,7 @@ public class ProductSupplierInfo implements Serializable
 	/**
 	 * The amount the client pays the supplier to stock this product in its catalogs.
 	 */
-	protected ProductCost cost;
+	protected  ProductCost cost;
 
 	public ProductCost getCost() {
 		return this.cost;
@@ -59,5 +60,6 @@ public class ProductSupplierInfo implements Serializable
 	public void setCost(ProductCost cost) {
 		this.cost = cost;
 	}
+
 
 }

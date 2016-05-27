@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.installedapplications;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForContext;
 
 /**
@@ -25,7 +26,7 @@ public class CustomFunctionsForAction implements Serializable
 	/**
 	 * Mozu.InstalledApplications.Contracts.CustomFunctionsForAction actionId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String actionId;
+	protected  String actionId;
 
 	public String getActionId() {
 		return this.actionId;
@@ -45,5 +46,6 @@ public class CustomFunctionsForAction implements Serializable
 	public void setContexts(List<CustomFunctionsForContext> contexts) {
 		this.contexts = contexts;
 	}
+
 
 }

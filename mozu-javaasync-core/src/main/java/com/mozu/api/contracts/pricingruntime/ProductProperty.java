@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.pricingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.ProductAttribute;
 import com.mozu.api.contracts.pricingruntime.ProductPropertyValue;
 
@@ -26,7 +27,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -39,7 +40,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
-	protected Boolean isHidden;
+	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
 		return this.isHidden;
@@ -52,7 +53,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
-	protected Boolean isMultiValue;
+	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
 		return this.isMultiValue;
@@ -65,7 +66,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
-	protected ProductAttribute attributeDetail;
+	protected  ProductAttribute attributeDetail;
 
 	public ProductAttribute getAttributeDetail() {
 		return this.attributeDetail;
@@ -85,5 +86,6 @@ public class ProductProperty implements Serializable
 	public void setValues(List<ProductPropertyValue> values) {
 		this.values = values;
 	}
+
 
 }

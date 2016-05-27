@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 
 /**
@@ -24,7 +25,7 @@ public class AddressValidationRequest implements Serializable
 	/**
 	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
 	 */
-	protected Address address;
+	protected  Address address;
 
 	public Address getAddress() {
 		return this.address;
@@ -33,5 +34,6 @@ public class AddressValidationRequest implements Serializable
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
 
 }

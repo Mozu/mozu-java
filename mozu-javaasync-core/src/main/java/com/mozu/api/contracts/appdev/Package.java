@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationAttribute;
 import com.mozu.api.contracts.appdev.ApplicationBehavior;
 import com.mozu.api.contracts.appdev.ApplicationCapability;
@@ -30,7 +31,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package apiVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String apiVersion;
+	protected  String apiVersion;
 
 	public String getApiVersion() {
 		return this.apiVersion;
@@ -43,7 +44,7 @@ public class Package implements Serializable
 	/**
 	 * This will be used by the 3rd party developers to set a URL the intalled applications can call from the Tenant installation/
 	 */
-	protected String appConfigUrl;
+	protected  String appConfigUrl;
 
 	public String getAppConfigUrl() {
 		return this.appConfigUrl;
@@ -56,7 +57,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
 	 */
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -69,7 +70,7 @@ public class Package implements Serializable
 	/**
 	 * App Key for the package in question.
 	 */
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -82,7 +83,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationDescription ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationDescription;
+	protected  String applicationDescription;
 
 	public String getApplicationDescription() {
 		return this.applicationDescription;
@@ -95,7 +96,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationDetailId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationDetailId;
+	protected  Integer applicationDetailId;
 
 	public Integer getApplicationDetailId() {
 		return this.applicationDetailId;
@@ -108,7 +109,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -121,7 +122,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -134,7 +135,7 @@ public class Package implements Serializable
 	/**
 	 * This is the DevAccountId that owns the application
 	 */
-	protected Integer applicationOwnerDevAccountId;
+	protected  Integer applicationOwnerDevAccountId;
 
 	public Integer getApplicationOwnerDevAccountId() {
 		return this.applicationOwnerDevAccountId;
@@ -147,7 +148,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationStatus ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationStatus;
+	protected  String applicationStatus;
 
 	public String getApplicationStatus() {
 		return this.applicationStatus;
@@ -160,7 +161,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationStatusId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationStatusId;
+	protected  Integer applicationStatusId;
 
 	public Integer getApplicationStatusId() {
 		return this.applicationStatusId;
@@ -173,7 +174,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationStatusName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationStatusName;
+	protected  String applicationStatusName;
 
 	public String getApplicationStatusName() {
 		return this.applicationStatusName;
@@ -186,7 +187,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationTypeId;
+	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
 		return this.applicationTypeId;
@@ -199,7 +200,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package applicationTypeName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String applicationTypeName;
+	protected  String applicationTypeName;
 
 	public String getApplicationTypeName() {
 		return this.applicationTypeName;
@@ -212,7 +213,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package appSchemeVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Byte appSchemeVersion;
+	protected  Byte appSchemeVersion;
 
 	public Byte getAppSchemeVersion() {
 		return this.appSchemeVersion;
@@ -225,7 +226,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package assetFileCount ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer assetFileCount;
+	protected  Integer assetFileCount;
 
 	public Integer getAssetFileCount() {
 		return this.assetFileCount;
@@ -238,7 +239,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package attributeNamespace ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String attributeNamespace;
+	protected  String attributeNamespace;
 
 	public String getAttributeNamespace() {
 		return this.attributeNamespace;
@@ -251,7 +252,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package dataNamespace ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String dataNamespace;
+	protected  String dataNamespace;
 
 	public String getDataNamespace() {
 		return this.dataNamespace;
@@ -264,7 +265,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package hasApplicationVersions ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean hasApplicationVersions;
+	protected  Boolean hasApplicationVersions;
 
 	public Boolean getHasApplicationVersions() {
 		return this.hasApplicationVersions;
@@ -277,7 +278,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -290,7 +291,7 @@ public class Package implements Serializable
 	/**
 	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
 	 */
-	protected Boolean isDeleted;
+	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
@@ -303,7 +304,7 @@ public class Package implements Serializable
 	/**
 	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
 	 */
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -316,7 +317,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package isReleasePackage ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isReleasePackage;
+	protected  Boolean isReleasePackage;
 
 	public Boolean getIsReleasePackage() {
 		return this.isReleasePackage;
@@ -329,7 +330,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package legacyNamespace ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String legacyNamespace;
+	protected  String legacyNamespace;
 
 	public String getLegacyNamespace() {
 		return this.legacyNamespace;
@@ -342,7 +343,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package majorVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -355,7 +356,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package minorVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -368,7 +369,7 @@ public class Package implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -381,7 +382,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package namespaceRegistryId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String namespaceRegistryId;
+	protected  String namespaceRegistryId;
 
 	public String getNamespaceRegistryId() {
 		return this.namespaceRegistryId;
@@ -394,7 +395,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package packageDescription ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String packageDescription;
+	protected  String packageDescription;
 
 	public String getPackageDescription() {
 		return this.packageDescription;
@@ -407,7 +408,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package packageGuid ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String packageGuid;
+	protected  String packageGuid;
 
 	public String getPackageGuid() {
 		return this.packageGuid;
@@ -420,7 +421,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package packageName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String packageName;
+	protected  String packageName;
 
 	public String getPackageName() {
 		return this.packageName;
@@ -433,7 +434,7 @@ public class Package implements Serializable
 	/**
 	 * The parent theme AppKey if this is a theme and the theme extends a valid, published theme.
 	 */
-	protected String parentThemeAppKey;
+	protected  String parentThemeAppKey;
 
 	public String getParentThemeAppKey() {
 		return this.parentThemeAppKey;
@@ -446,7 +447,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package parentThemeName ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String parentThemeName;
+	protected  String parentThemeName;
 
 	public String getParentThemeName() {
 		return this.parentThemeName;
@@ -459,7 +460,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package publishedParentSemanticVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String publishedParentSemanticVersion;
+	protected  String publishedParentSemanticVersion;
 
 	public String getPublishedParentSemanticVersion() {
 		return this.publishedParentSemanticVersion;
@@ -472,7 +473,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package publishedParentThemeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer publishedParentThemeId;
+	protected  Integer publishedParentThemeId;
 
 	public Integer getPublishedParentThemeId() {
 		return this.publishedParentThemeId;
@@ -485,7 +486,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package revision ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -498,7 +499,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package semanticVersionRange ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String semanticVersionRange;
+	protected  String semanticVersionRange;
 
 	public String getSemanticVersionRange() {
 		return this.semanticVersionRange;
@@ -511,7 +512,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package sharedSecret ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String sharedSecret;
+	protected  String sharedSecret;
 
 	public String getSharedSecret() {
 		return this.sharedSecret;
@@ -524,7 +525,7 @@ public class Package implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Package themeEngineVersion ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String themeEngineVersion;
+	protected  String themeEngineVersion;
 
 	public String getThemeEngineVersion() {
 		return this.themeEngineVersion;
@@ -537,7 +538,7 @@ public class Package implements Serializable
 	/**
 	 * Whether or not there's a theme update.
 	 */
-	protected Boolean updateAvailable;
+	protected  Boolean updateAvailable;
 
 	public Boolean getUpdateAvailable() {
 		return this.updateAvailable;
@@ -550,7 +551,7 @@ public class Package implements Serializable
 	/**
 	 * The AppKey is a runtime type. This only applies for themes that inherit from another theme. It shows the most current update available.
 	 */
-	protected String updateParentAppKey;
+	protected  String updateParentAppKey;
 
 	public String getUpdateParentAppKey() {
 		return this.updateParentAppKey;
@@ -563,7 +564,7 @@ public class Package implements Serializable
 	/**
 	 * This only applies for themes that inherit from another theme. It shows the name of the most current update available.
 	 */
-	protected String updateParentThemeName;
+	protected  String updateParentThemeName;
 
 	public String getUpdateParentThemeName() {
 		return this.updateParentThemeName;
@@ -576,7 +577,7 @@ public class Package implements Serializable
 	/**
 	 * This only applies for themes that inherit from another theme. It shows the version of the most current update available.
 	 */
-	protected String updateParentThemeVersion;
+	protected  String updateParentThemeVersion;
 
 	public String getUpdateParentThemeVersion() {
 		return this.updateParentThemeVersion;
@@ -589,7 +590,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -675,5 +676,6 @@ public class Package implements Serializable
 	public void setApplicationSubscriptions(List<ApplicationSubscription> applicationSubscriptions) {
 		this.applicationSubscriptions = applicationSubscriptions;
 	}
+
 
 }

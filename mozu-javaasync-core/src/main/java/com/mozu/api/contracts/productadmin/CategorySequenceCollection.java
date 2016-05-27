@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CategorySequence;
 
 /**
@@ -32,5 +33,6 @@ public class CategorySequenceCollection implements Serializable
 	public void setItems(List<CategorySequence> items) {
 		this.items = items;
 	}
+
 
 }

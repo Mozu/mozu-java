@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.paymentservice.response;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.FraudScreenResponseData;
 
 /**
@@ -25,7 +26,7 @@ public class FraudScreen implements Serializable
 	/**
 	 * Unique identifier of the payment interaction from the payment gateway.
 	 */
-	protected Integer gatewayInteractionId;
+	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
 		return this.gatewayInteractionId;
@@ -38,7 +39,7 @@ public class FraudScreen implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -51,7 +52,7 @@ public class FraudScreen implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.Response.FraudScreen transactionId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String transactionId;
+	protected  String transactionId;
 
 	public String getTransactionId() {
 		return this.transactionId;
@@ -71,5 +72,6 @@ public class FraudScreen implements Serializable
 	public void setFraudScreenResponseData(List<FraudScreenResponseData> fraudScreenResponseData) {
 		this.fraudScreenResponseData = fraudScreenResponseData;
 	}
+
 
 }

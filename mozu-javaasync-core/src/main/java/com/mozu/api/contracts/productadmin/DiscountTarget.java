@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.TargetedCategory;
 import com.mozu.api.contracts.productadmin.TargetedProduct;
 import com.mozu.api.contracts.productadmin.TargetedShippingMethod;
@@ -28,7 +29,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Determines which way the discount is optimized. Consumers favor(default - false/null) or tenants favor (when this is set to true) Applies to discounts where target is not a specific product or list of products. May also impact behavior of Buy X Get Y so that X is the most expensive items and Y the least expensive.
 	 */
-	protected Boolean appliesToLeastExpensiveProductsFirst;
+	protected  Boolean appliesToLeastExpensiveProductsFirst;
 
 	public Boolean getAppliesToLeastExpensiveProductsFirst() {
 		return this.appliesToLeastExpensiveProductsFirst;
@@ -41,7 +42,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Applies to Included categories Defaults to Any
 	 */
-	protected String excludedCategoriesOperator;
+	protected  String excludedCategoriesOperator;
 
 	public String getExcludedCategoriesOperator() {
 		return this.excludedCategoriesOperator;
@@ -54,7 +55,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Prevents order scoped discounts from layering over items that already have a product discount with the same type.
 	 */
-	protected Boolean excludeItemsWithExistingProductDiscounts;
+	protected  Boolean excludeItemsWithExistingProductDiscounts;
 
 	public Boolean getExcludeItemsWithExistingProductDiscounts() {
 		return this.excludeItemsWithExistingProductDiscounts;
@@ -67,7 +68,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Prevents order scoped discounts from layering over items that already have a shipping discount with the same type.
 	 */
-	protected Boolean excludeItemsWithExistingShippingDiscounts;
+	protected  Boolean excludeItemsWithExistingShippingDiscounts;
 
 	public Boolean getExcludeItemsWithExistingShippingDiscounts() {
 		return this.excludeItemsWithExistingShippingDiscounts;
@@ -80,7 +81,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * If true, the target discount applies to all products sold on the site, regardless of product category.
 	 */
-	protected Boolean includeAllProducts;
+	protected  Boolean includeAllProducts;
 
 	public Boolean getIncludeAllProducts() {
 		return this.includeAllProducts;
@@ -93,7 +94,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Applies to Included categories Defaults to Any
 	 */
-	protected String includedCategoriesOperator;
+	protected  String includedCategoriesOperator;
 
 	public String getIncludedCategoriesOperator() {
 		return this.includedCategoriesOperator;
@@ -106,7 +107,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * When a condition is specified, this property limits the number of items that are targeted for each discount redemption with an order. If multiple redemptions are allowed for each order then multiples of this value are allowed in multiples of the associated condition. If no condition is specified, then this value is not used. If null and condition exists, then defaults to 1.
 	 */
-	protected Integer maximumQuantityPerRedemption;
+	protected  Integer maximumQuantityPerRedemption;
 
 	public Integer getMaximumQuantityPerRedemption() {
 		return this.maximumQuantityPerRedemption;
@@ -119,7 +120,7 @@ public class DiscountTarget implements Serializable
 	/**
 	 * Properties of the object to which this discount is targeted, which can be Product or Shipping. If the discount type is Product, the target properties describe the product or product categories to which the discount applies. If the discount type is Shipping, the target properties describe the shipping methods eligible for the discount.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -194,5 +195,6 @@ public class DiscountTarget implements Serializable
 	public void setShippingZones(List<TargetedShippingZone> shippingZones) {
 		this.shippingZones = shippingZones;
 	}
+
 
 }

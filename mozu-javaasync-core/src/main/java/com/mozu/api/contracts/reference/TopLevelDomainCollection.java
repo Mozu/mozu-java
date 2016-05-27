@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.reference;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The paged collection of all top level internet domains that the system supports including general, USA-specific, infrastructure, and country codes. The Internet Assigned Numbers Authority (IANA) maintains this list.
@@ -35,7 +36,7 @@ public class TopLevelDomainCollection implements Serializable
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -44,5 +45,6 @@ public class TopLevelDomainCollection implements Serializable
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
+
 
 }

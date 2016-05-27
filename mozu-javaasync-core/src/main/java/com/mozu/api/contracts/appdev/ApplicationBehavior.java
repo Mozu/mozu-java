@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.AppDev.Contracts.ApplicationBehavior ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ApplicationBehavior implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationBehavior behaviorId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer behaviorId;
+	protected  Integer behaviorId;
 
 	public Integer getBehaviorId() {
 		return this.behaviorId;
@@ -36,7 +37,7 @@ public class ApplicationBehavior implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationBehavior packageId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -45,5 +46,6 @@ public class ApplicationBehavior implements Serializable
 	public void setPackageId(Integer packageId) {
 		this.packageId = packageId;
 	}
+
 
 }

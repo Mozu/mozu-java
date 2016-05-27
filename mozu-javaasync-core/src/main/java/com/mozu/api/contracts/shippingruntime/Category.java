@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.shippingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.Category;
 
 /**
@@ -24,7 +25,7 @@ public class Category implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -37,7 +38,7 @@ public class Category implements Serializable
 	/**
 	 * If applicable, the parent category in the category tree. This can be associated to a product as the parent category.
 	 */
-	protected Category parent;
+	protected  Category parent;
 
 	public Category getParent() {
 		return this.parent;
@@ -46,5 +47,6 @@ public class Category implements Serializable
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
+
 
 }
