@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.ServiceType;
 
@@ -19,7 +21,7 @@ public class HandlingFeeRule implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String appliesTo;
+	protected  String appliesTo;
 
 	public String getAppliesTo() {
 		return this.appliesTo;
@@ -29,7 +31,7 @@ public class HandlingFeeRule implements Serializable
 		this.appliesTo = appliesTo;
 	}
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -47,7 +49,7 @@ public class HandlingFeeRule implements Serializable
 		this.productTargetRuleCodes = productTargetRuleCodes;
 	}
 
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -65,7 +67,7 @@ public class HandlingFeeRule implements Serializable
 		this.shippingTargetRuleCodes = shippingTargetRuleCodes;
 	}
 
-	protected Double value;
+	protected  Double value;
 
 	public Double getValue() {
 		return this.value;
@@ -75,7 +77,7 @@ public class HandlingFeeRule implements Serializable
 		this.value = value;
 	}
 
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -85,7 +87,7 @@ public class HandlingFeeRule implements Serializable
 		this.valueType = valueType;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -102,5 +104,6 @@ public class HandlingFeeRule implements Serializable
 	public void setServiceTypes(List<ServiceType> serviceTypes) {
 		this.serviceTypes = serviceTypes;
 	}
+
 
 }

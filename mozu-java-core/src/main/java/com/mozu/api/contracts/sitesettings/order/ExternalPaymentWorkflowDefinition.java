@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.ThirdPartyCredentialField;
 
 /**
@@ -21,7 +23,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -31,7 +33,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.description = description;
 	}
 
-	protected String fullyQualifiedName;
+	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
 		return this.fullyQualifiedName;
@@ -44,7 +46,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * If true, the associated external payment workflow definition is enabled for the site.
 	 */
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -57,7 +59,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	/**
 	 * The name of the external payment workflow definition.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -67,7 +69,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.name = name;
 	}
 
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -87,5 +89,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	public void setCredentials(List<ThirdPartyCredentialField> credentials) {
 		this.credentials = credentials;
 	}
+
 
 }

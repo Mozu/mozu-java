@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
@@ -40,7 +42,7 @@ public class Return implements Serializable
 	/**
 	 * The code that identifies the channel associated with the return, which is typically the same channel associated with the order.
 	 */
-	protected String channelCode;
+	protected  String channelCode;
 
 	public String getChannelCode() {
 		return this.channelCode;
@@ -53,7 +55,7 @@ public class Return implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -66,7 +68,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the customer account associated with the return.
 	 */
-	protected Integer customerAccountId;
+	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
 		return this.customerAccountId;
@@ -79,7 +81,7 @@ public class Return implements Serializable
 	/**
 	 * String that describes the customer interaction used to return an item. Possible values are Website, Store, Call, and Unknown.
 	 */
-	protected String customerInteractionType;
+	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
 		return this.customerInteractionType;
@@ -92,7 +94,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the return.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -105,7 +107,7 @@ public class Return implements Serializable
 	/**
 	 * The code that uniquely identifies the location where items were returned.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -118,7 +120,7 @@ public class Return implements Serializable
 	/**
 	 * The total value of the return to the merchant for accounting purposes. This total represents the combined product loss and shipping loss associated with the return.
 	 */
-	protected Double lossTotal;
+	protected  Double lossTotal;
 
 	public Double getLossTotal() {
 		return this.lossTotal;
@@ -131,7 +133,7 @@ public class Return implements Serializable
 	/**
 	 * If this return is associated with a previously completed order, the unique identifier of the original order.
 	 */
-	protected String originalOrderId;
+	protected  String originalOrderId;
 
 	public String getOriginalOrderId() {
 		return this.originalOrderId;
@@ -144,7 +146,7 @@ public class Return implements Serializable
 	/**
 	 * The total tax amount levied on the product loss amount.
 	 */
-	protected Double productLossTaxTotal;
+	protected  Double productLossTaxTotal;
 
 	public Double getProductLossTaxTotal() {
 		return this.productLossTaxTotal;
@@ -157,7 +159,7 @@ public class Return implements Serializable
 	/**
 	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
 	 */
-	protected Double productLossTotal;
+	protected  Double productLossTotal;
 
 	public Double getProductLossTotal() {
 		return this.productLossTotal;
@@ -170,7 +172,7 @@ public class Return implements Serializable
 	/**
 	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
 	 */
-	protected Double refundAmount;
+	protected  Double refundAmount;
 
 	public Double getRefundAmount() {
 		return this.refundAmount;
@@ -183,7 +185,7 @@ public class Return implements Serializable
 	/**
 	 * A merchant-specific identifier used to sequentially order returns.
 	 */
-	protected Integer returnNumber;
+	protected  Integer returnNumber;
 
 	public Integer getReturnNumber() {
 		return this.returnNumber;
@@ -196,7 +198,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier for the order created as a result of the return. If the return results in shipping a replacement item, the order includes shipment information for the replaced items. If the return results in a refund, the order includes payment transactions to credit the shopper.
 	 */
-	protected String returnOrderId;
+	protected  String returnOrderId;
 
 	public String getReturnOrderId() {
 		return this.returnOrderId;
@@ -209,7 +211,7 @@ public class Return implements Serializable
 	/**
 	 * The type of return, which is "Refund" or "Replace".
 	 */
-	protected String returnType;
+	protected  String returnType;
 
 	public String getReturnType() {
 		return this.returnType;
@@ -222,7 +224,7 @@ public class Return implements Serializable
 	/**
 	 * The date by which a shopper must ship items associated with a return in an "awaiting items" state to the merchant.
 	 */
-	protected DateTime rmaDeadline;
+	protected  DateTime rmaDeadline;
 
 	public DateTime getRmaDeadline() {
 		return this.rmaDeadline;
@@ -235,7 +237,7 @@ public class Return implements Serializable
 	/**
 	 * The total tax amount levied on the shipping loss amount.
 	 */
-	protected Double shippingLossTaxTotal;
+	protected  Double shippingLossTaxTotal;
 
 	public Double getShippingLossTaxTotal() {
 		return this.shippingLossTaxTotal;
@@ -248,7 +250,7 @@ public class Return implements Serializable
 	/**
 	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
 	 */
-	protected Double shippingLossTotal;
+	protected  Double shippingLossTotal;
 
 	public Double getShippingLossTotal() {
 		return this.shippingLossTotal;
@@ -261,7 +263,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -274,7 +276,7 @@ public class Return implements Serializable
 	/**
 	 * Current status of the return, such as "ReturnAuthorized".
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -287,7 +289,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -300,7 +302,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the user responsible for the return. Read only and supplied by the original order.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -313,7 +315,7 @@ public class Return implements Serializable
 	/**
 	 * The unique identifier of the customer visit associated with the return transaction.
 	 */
-	protected String visitId;
+	protected  String visitId;
 
 	public String getVisitId() {
 		return this.visitId;
@@ -326,7 +328,7 @@ public class Return implements Serializable
 	/**
 	 * Unique identifier of the web session in which the return was created or last modified, which is system-supplied and read only.
 	 */
-	protected String webSessionId;
+	protected  String webSessionId;
 
 	public String getWebSessionId() {
 		return this.webSessionId;
@@ -339,7 +341,7 @@ public class Return implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -403,5 +405,6 @@ public class Return implements Serializable
 	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
 	}
+
 
 }

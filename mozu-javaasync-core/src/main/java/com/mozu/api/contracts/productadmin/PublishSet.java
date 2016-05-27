@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSet implements Serializable
@@ -17,7 +19,7 @@ public class PublishSet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -35,7 +37,7 @@ public class PublishSet implements Serializable
 		this.productCodes = productCodes;
 	}
 
-	protected Integer productCount;
+	protected  Integer productCount;
 
 	public Integer getProductCount() {
 		return this.productCount;
@@ -44,5 +46,6 @@ public class PublishSet implements Serializable
 	public void setProductCount(Integer productCount) {
 		this.productCount = productCount;
 	}
+
 
 }

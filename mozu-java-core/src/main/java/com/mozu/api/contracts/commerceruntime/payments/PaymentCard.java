@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.payments;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a credit card used to submit payment for an order.
@@ -22,7 +24,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * The masked credit card number part returned from the payment gateway.
 	 */
-	protected String cardNumberPartOrMask;
+	protected  String cardNumberPartOrMask;
 
 	public String getCardNumberPartOrMask() {
 		return this.cardNumberPartOrMask;
@@ -35,7 +37,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * The two-digit month the credit card expires.
 	 */
-	protected short expireMonth;
+	protected  short expireMonth;
 
 	public short getExpireMonth() {
 		return this.expireMonth;
@@ -48,7 +50,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * The four-digit year the credit card expires.
 	 */
-	protected short expireYear;
+	protected  short expireYear;
 
 	public short getExpireYear() {
 		return this.expireYear;
@@ -61,7 +63,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * If true, the credit card information is saved to the customer account for future use.
 	 */
-	protected Boolean isCardInfoSaved;
+	protected  Boolean isCardInfoSaved;
 
 	public Boolean getIsCardInfoSaved() {
 		return this.isCardInfoSaved;
@@ -74,7 +76,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * If true, the credit card is used for a recurring order payment.
 	 */
-	protected Boolean isUsedRecurring;
+	protected  Boolean isUsedRecurring;
 
 	public Boolean getIsUsedRecurring() {
 		return this.isUsedRecurring;
@@ -87,7 +89,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * The name printed on the credit card.
 	 */
-	protected String nameOnCard;
+	protected  String nameOnCard;
 
 	public String getNameOnCard() {
 		return this.nameOnCard;
@@ -100,7 +102,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * The type of credit card, such as Visa or Amex.
 	 */
-	protected String paymentOrCardType;
+	protected  String paymentOrCardType;
 
 	public String getPaymentOrCardType() {
 		return this.paymentOrCardType;
@@ -113,7 +115,7 @@ public class PaymentCard implements Serializable
 	/**
 	 * Unique identifier of the credit card from the payment service.
 	 */
-	protected String paymentServiceCardId;
+	protected  String paymentServiceCardId;
 
 	public String getPaymentServiceCardId() {
 		return this.paymentServiceCardId;
@@ -122,5 +124,6 @@ public class PaymentCard implements Serializable
 	public void setPaymentServiceCardId(String paymentServiceCardId) {
 		this.paymentServiceCardId = paymentServiceCardId;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Route;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -41,5 +43,6 @@ public class CustomRouteSettings implements Serializable
 	public void setRoutes(List<Route> routes) {
 		this.routes = routes;
 	}
+
 
 }

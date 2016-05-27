@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties that describe the behavior the system uses when determining the price of the product.
@@ -22,7 +24,7 @@ public class ProductPricingBehaviorInfo implements Serializable
 	/**
 	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
 	 */
-	protected Boolean discountsRestricted;
+	protected  Boolean discountsRestricted;
 
 	public Boolean getDiscountsRestricted() {
 		return this.discountsRestricted;
@@ -35,7 +37,7 @@ public class ProductPricingBehaviorInfo implements Serializable
 	/**
 	 * If discounts are restricted for this product, the date and time the discount restriction ends, in UTC datetime.
 	 */
-	protected DateTime discountsRestrictedEndDate;
+	protected  DateTime discountsRestrictedEndDate;
 
 	public DateTime getDiscountsRestrictedEndDate() {
 		return this.discountsRestrictedEndDate;
@@ -48,7 +50,7 @@ public class ProductPricingBehaviorInfo implements Serializable
 	/**
 	 * If discounts are restricted for this product, the date and time the discount restriction begins, in UTC datetime.
 	 */
-	protected DateTime discountsRestrictedStartDate;
+	protected  DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
 		return this.discountsRestrictedStartDate;
@@ -58,7 +60,7 @@ public class ProductPricingBehaviorInfo implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
-	protected String variationPricingMethod;
+	protected  String variationPricingMethod;
 
 	public String getVariationPricingMethod() {
 		return this.variationPricingMethod;
@@ -67,5 +69,6 @@ public class ProductPricingBehaviorInfo implements Serializable
 	public void setVariationPricingMethod(String variationPricingMethod) {
 		this.variationPricingMethod = variationPricingMethod;
 	}
+
 
 }

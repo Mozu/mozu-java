@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the scope in which a user operates, which represents a developer account or Mozu production tenant.
@@ -22,7 +24,7 @@ public class UserScope implements Serializable
 	/**
 	 * Identifier of the scope, which represents a developer account ID or tenant ID.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -35,7 +37,7 @@ public class UserScope implements Serializable
 	/**
 	 * The name of the developer account or tenant.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -48,7 +50,7 @@ public class UserScope implements Serializable
 	/**
 	 * The type of scope, which is a developer account or production tenant.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -57,5 +59,6 @@ public class UserScope implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

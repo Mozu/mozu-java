@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.SubscribingTenant;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class Subscription implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String apiVersion;
+	protected  String apiVersion;
 
 	public String getApiVersion() {
 		return this.apiVersion;
@@ -28,7 +30,7 @@ public class Subscription implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -38,7 +40,7 @@ public class Subscription implements Serializable
 		this.appId = appId;
 	}
 
-	protected Boolean confirmed;
+	protected  Boolean confirmed;
 
 	public Boolean getConfirmed() {
 		return this.confirmed;
@@ -48,7 +50,7 @@ public class Subscription implements Serializable
 		this.confirmed = confirmed;
 	}
 
-	protected String contentType;
+	protected  String contentType;
 
 	public String getContentType() {
 		return this.contentType;
@@ -58,7 +60,7 @@ public class Subscription implements Serializable
 		this.contentType = contentType;
 	}
 
-	protected String createBy;
+	protected  String createBy;
 
 	public String getCreateBy() {
 		return this.createBy;
@@ -68,7 +70,7 @@ public class Subscription implements Serializable
 		this.createBy = createBy;
 	}
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -78,7 +80,7 @@ public class Subscription implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected String endpoint;
+	protected  String endpoint;
 
 	public String getEndpoint() {
 		return this.endpoint;
@@ -88,7 +90,7 @@ public class Subscription implements Serializable
 		this.endpoint = endpoint;
 	}
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -98,7 +100,7 @@ public class Subscription implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -108,7 +110,7 @@ public class Subscription implements Serializable
 		this.isActive = isActive;
 	}
 
-	protected Boolean noCallback;
+	protected  Boolean noCallback;
 
 	public Boolean getNoCallback() {
 		return this.noCallback;
@@ -118,7 +120,7 @@ public class Subscription implements Serializable
 		this.noCallback = noCallback;
 	}
 
-	protected String notificationDeliveryType;
+	protected  String notificationDeliveryType;
 
 	public String getNotificationDeliveryType() {
 		return this.notificationDeliveryType;
@@ -136,7 +138,7 @@ public class Subscription implements Serializable
 		this.topics = topics;
 	}
 
-	protected String updateBy;
+	protected  String updateBy;
 
 	public String getUpdateBy() {
 		return this.updateBy;
@@ -146,7 +148,7 @@ public class Subscription implements Serializable
 		this.updateBy = updateBy;
 	}
 
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -166,5 +168,6 @@ public class Subscription implements Serializable
 	public void setSubscribingTenants(List<SubscribingTenant> subscribingTenants) {
 		this.subscribingTenants = subscribingTenants;
 	}
+
 
 }

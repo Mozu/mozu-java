@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Summary properties of an unpublished document draft.
@@ -19,7 +21,7 @@ public class DocumentDraftSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime activeUpdateDate;
+	protected  DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
 		return this.activeUpdateDate;
@@ -29,7 +31,7 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
-	protected String activeUpdatedBy;
+	protected  String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {
 		return this.activeUpdatedBy;
@@ -39,7 +41,7 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdatedBy = activeUpdatedBy;
 	}
 
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -49,7 +51,7 @@ public class DocumentDraftSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -59,7 +61,7 @@ public class DocumentDraftSummary implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	protected DateTime draftUpdateDate;
+	protected  DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
 		return this.draftUpdateDate;
@@ -72,7 +74,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Identifier of document draft.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -82,7 +84,7 @@ public class DocumentDraftSummary implements Serializable
 		this.id = id;
 	}
 
-	protected String listFQN;
+	protected  String listFQN;
 
 	public String getListFQN() {
 		return this.listFQN;
@@ -92,7 +94,7 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -105,7 +107,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Name of the document draft.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -115,7 +117,7 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -128,7 +130,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Whether the draft has been published.
 	 */
-	protected String publishType;
+	protected  String publishType;
 
 	public String getPublishType() {
 		return this.publishType;
@@ -138,7 +140,7 @@ public class DocumentDraftSummary implements Serializable
 		this.publishType = publishType;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -151,7 +153,7 @@ public class DocumentDraftSummary implements Serializable
 	/**
 	 * Unique identifier of the user who last modified the item. This value is system-supplied and read-only.
 	 */
-	protected String updatedBy;
+	protected  String updatedBy;
 
 	public String getUpdatedBy() {
 		return this.updatedBy;
@@ -160,5 +162,6 @@ public class DocumentDraftSummary implements Serializable
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
+
 
 }

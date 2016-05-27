@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Attribute search settings are a container for all of the search and indexing settings of an attribute.
@@ -19,7 +21,7 @@ public class AttributeSearchSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean allowFilteringAndSortingInStorefront;
+	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
 		return this.allowFilteringAndSortingInStorefront;
@@ -32,7 +34,7 @@ public class AttributeSearchSettings implements Serializable
 	/**
 	 * Indicates whether the attribute value is searchable in the merchant catalog admin.
 	 */
-	protected Boolean searchableInAdmin;
+	protected  Boolean searchableInAdmin;
 
 	public Boolean getSearchableInAdmin() {
 		return this.searchableInAdmin;
@@ -45,7 +47,7 @@ public class AttributeSearchSettings implements Serializable
 	/**
 	 * Indicates whether the attribute value is searchable on the public storefront.
 	 */
-	protected Boolean searchableInStorefront;
+	protected  Boolean searchableInStorefront;
 
 	public Boolean getSearchableInStorefront() {
 		return this.searchableInStorefront;
@@ -58,7 +60,7 @@ public class AttributeSearchSettings implements Serializable
 	/**
 	 * If true, the system indexs the display value of string attributes instead of the canonical value for searching. Always use the canonical value for filtering. This does not apply for for non-string attributes.
 	 */
-	protected Boolean searchDisplayValue;
+	protected  Boolean searchDisplayValue;
 
 	public Boolean getSearchDisplayValue() {
 		return this.searchDisplayValue;
@@ -67,5 +69,6 @@ public class AttributeSearchSettings implements Serializable
 	public void setSearchDisplayValue(Boolean searchDisplayValue) {
 		this.searchDisplayValue = searchDisplayValue;
 	}
+
 
 }

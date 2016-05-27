@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core.extensible;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.extensible.AttributeValueLocalizedContent;
 
 /**
@@ -23,7 +25,7 @@ public class AttributeVocabularyValue implements Serializable
 	/**
 	 * If true, the attribute vocabulary value does not appear in the list when defining a value for the attribute.
 	 */
-	protected Boolean isHidden;
+	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
 		return this.isHidden;
@@ -36,7 +38,7 @@ public class AttributeVocabularyValue implements Serializable
 	/**
 	 * The numeric order of a vocabulary value defined for an extensible attribute.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -49,7 +51,7 @@ public class AttributeVocabularyValue implements Serializable
 	/**
 	 * Possible value associated with a vocabulary value defined for an extensible attribute.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -62,7 +64,7 @@ public class AttributeVocabularyValue implements Serializable
 	/**
 	 * List of content associated with a vocabulary value defined for an extensible attribute.
 	 */
-	protected AttributeValueLocalizedContent content;
+	protected  AttributeValueLocalizedContent content;
 
 	public AttributeValueLocalizedContent getContent() {
 		return this.content;
@@ -71,5 +73,6 @@ public class AttributeVocabularyValue implements Serializable
 	public void setContent(AttributeValueLocalizedContent content) {
 		this.content = content;
 	}
+
 
 }

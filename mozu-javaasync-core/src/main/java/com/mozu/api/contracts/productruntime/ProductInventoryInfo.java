@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the active inventory managed for the product.
@@ -22,7 +24,7 @@ public class ProductInventoryInfo implements Serializable
 	/**
 	 * If true, Mozu manages inventoried stock levels for this product.
 	 */
-	protected Boolean manageStock;
+	protected  Boolean manageStock;
 
 	public Boolean getManageStock() {
 		return this.manageStock;
@@ -35,7 +37,7 @@ public class ProductInventoryInfo implements Serializable
 	/**
 	 * The location code for the direct ship location associated with the available online stock.
 	 */
-	protected String onlineLocationCode;
+	protected  String onlineLocationCode;
 
 	public String getOnlineLocationCode() {
 		return this.onlineLocationCode;
@@ -45,7 +47,7 @@ public class ProductInventoryInfo implements Serializable
 		this.onlineLocationCode = onlineLocationCode;
 	}
 
-	protected Integer onlineSoftStockAvailable;
+	protected  Integer onlineSoftStockAvailable;
 
 	public Integer getOnlineSoftStockAvailable() {
 		return this.onlineSoftStockAvailable;
@@ -58,7 +60,7 @@ public class ProductInventoryInfo implements Serializable
 	/**
 	 * The current number of products that are available for purchase.
 	 */
-	protected Integer onlineStockAvailable;
+	protected  Integer onlineStockAvailable;
 
 	public Integer getOnlineStockAvailable() {
 		return this.onlineStockAvailable;
@@ -71,7 +73,7 @@ public class ProductInventoryInfo implements Serializable
 	/**
 	 * Determines the method this product uses when active stock is depeleted. Options are "DisplayMessage" to display an out of stock message to the shopper, "HideProduct" to disable the product on the storefront, or "AllowBackOrder" to allow the shopper to back order the product. This property is required only if Mozu manages inventory for this product.
 	 */
-	protected String outOfStockBehavior;
+	protected  String outOfStockBehavior;
 
 	public String getOutOfStockBehavior() {
 		return this.outOfStockBehavior;
@@ -80,5 +82,6 @@ public class ProductInventoryInfo implements Serializable
 	public void setOutOfStockBehavior(String outOfStockBehavior) {
 		this.outOfStockBehavior = outOfStockBehavior;
 	}
+
 
 }

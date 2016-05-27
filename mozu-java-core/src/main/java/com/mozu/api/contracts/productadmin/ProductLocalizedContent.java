@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductLocalizedImage;
 
 /**
@@ -24,7 +26,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -37,7 +39,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * More detailed or full product description typically used for a product details page.
 	 */
-	protected String productFullDescription;
+	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
 		return this.productFullDescription;
@@ -50,7 +52,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * The descriptive brief product name.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -63,7 +65,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * Brief description of the product typically used when the product is displayed in a list or in search results.
 	 */
-	protected String productShortDescription;
+	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
 		return this.productShortDescription;
@@ -83,5 +85,6 @@ public class ProductLocalizedContent implements Serializable
 	public void setProductImages(List<ProductLocalizedImage> productImages) {
 		this.productImages = productImages;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.FraudScreenResponseData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class FraudScreen implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer gatewayInteractionId;
+	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
 		return this.gatewayInteractionId;
@@ -28,7 +30,7 @@ public class FraudScreen implements Serializable
 		this.gatewayInteractionId = gatewayInteractionId;
 	}
 
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -38,7 +40,7 @@ public class FraudScreen implements Serializable
 		this.status = status;
 	}
 
-	protected String transactionId;
+	protected  String transactionId;
 
 	public String getTransactionId() {
 		return this.transactionId;
@@ -55,5 +57,6 @@ public class FraudScreen implements Serializable
 	public void setFraudScreenResponseData(List<FraudScreenResponseData> fraudScreenResponseData) {
 		this.fraudScreenResponseData = fraudScreenResponseData;
 	}
+
 
 }

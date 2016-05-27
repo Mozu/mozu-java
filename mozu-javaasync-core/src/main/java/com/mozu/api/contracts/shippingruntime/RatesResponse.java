@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.CarrierRatesResponse;
 
 /**
@@ -21,7 +23,7 @@ public class RatesResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String resolvedShippingZoneCode;
+	protected  String resolvedShippingZoneCode;
 
 	public String getResolvedShippingZoneCode() {
 		return this.resolvedShippingZoneCode;
@@ -49,5 +51,6 @@ public class RatesResponse implements Serializable
 	public void setRates(List<CarrierRatesResponse> rates) {
 		this.rates = rates;
 	}
+
 
 }

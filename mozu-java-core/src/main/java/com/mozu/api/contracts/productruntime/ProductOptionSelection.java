@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The selection the shopper made from a list of options set up in product admin.
@@ -22,7 +24,7 @@ public class ProductOptionSelection implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -35,7 +37,7 @@ public class ProductOptionSelection implements Serializable
 	/**
 	 * Identifier of the value of this attribute.
 	 */
-	protected Integer attributeValueId;
+	protected  Integer attributeValueId;
 
 	public Integer getAttributeValueId() {
 		return this.attributeValueId;
@@ -48,7 +50,7 @@ public class ProductOptionSelection implements Serializable
 	/**
 	 * The custom value the shopper entered for an option set up in product admin.
 	 */
-	protected Object shopperEnteredValue;
+	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
 		return this.shopperEnteredValue;
@@ -61,7 +63,7 @@ public class ProductOptionSelection implements Serializable
 	/**
 	 * The attribute value.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -70,5 +72,6 @@ public class ProductOptionSelection implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

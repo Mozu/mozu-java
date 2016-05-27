@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeVocabularyValueDisplayInfo implements Serializable
@@ -16,7 +18,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String cmsId;
+	protected  String cmsId;
 
 	public String getCmsId() {
 		return this.cmsId;
@@ -26,7 +28,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 		this.cmsId = cmsId;
 	}
 
-	protected String colorValue;
+	protected  String colorValue;
 
 	public String getColorValue() {
 		return this.colorValue;
@@ -36,7 +38,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 		this.colorValue = colorValue;
 	}
 
-	protected String imageUrl;
+	protected  String imageUrl;
 
 	public String getImageUrl() {
 		return this.imageUrl;
@@ -45,5 +47,6 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 
 }

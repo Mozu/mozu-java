@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The properties of the price difference between the product extra and the base product.
@@ -22,7 +24,7 @@ public class ProductExtraValueDeltaPrice implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -35,7 +37,7 @@ public class ProductExtraValueDeltaPrice implements Serializable
 	/**
 	 * The difference between the price associated with this product extra and the base product. For example, if a product with a defined monogram extra costs an additional $10, the DeltaPrice value is "10".
 	 */
-	protected Double deltaPrice;
+	protected  Double deltaPrice;
 
 	public Double getDeltaPrice() {
 		return this.deltaPrice;
@@ -44,5 +46,6 @@ public class ProductExtraValueDeltaPrice implements Serializable
 	public void setDeltaPrice(Double deltaPrice) {
 		this.deltaPrice = deltaPrice;
 	}
+
 
 }

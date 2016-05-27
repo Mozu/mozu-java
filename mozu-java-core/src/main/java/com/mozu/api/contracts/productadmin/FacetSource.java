@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Container for the facet source information, which includes the category, price, or attribute properties.
@@ -20,22 +22,9 @@ public class FacetSource implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300.
-	 */
-	protected Boolean allowsRangeQuery;
-
-	public Boolean getAllowsRangeQuery() {
-		return this.allowsRangeQuery;
-	}
-
-	public void setAllowsRangeQuery(Boolean allowsRangeQuery) {
-		this.allowsRangeQuery = allowsRangeQuery;
-	}
-
-	/**
 	 * The data type associated with the attribute or category that generates the facet, such as bool or string.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -46,9 +35,22 @@ public class FacetSource implements Serializable
 	}
 
 	/**
+	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300.
+	 */
+	protected  Boolean allowsRangeQuery;
+
+	public Boolean getAllowsRangeQuery() {
+		return this.allowsRangeQuery;
+	}
+
+	public void setAllowsRangeQuery(Boolean allowsRangeQuery) {
+		this.allowsRangeQuery = allowsRangeQuery;
+	}
+
+	/**
 	 * Identifier of the facet source, which is attribute, category, or price. For attribute facets, the AttributeFQN.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -61,7 +63,7 @@ public class FacetSource implements Serializable
 	/**
 	 * System-supplied and read-only name of the associated facet source.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -74,7 +76,7 @@ public class FacetSource implements Serializable
 	/**
 	 * The source type for the facet, either "Attribute" or "Element". Category and price facets are elements.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -83,5 +85,6 @@ public class FacetSource implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

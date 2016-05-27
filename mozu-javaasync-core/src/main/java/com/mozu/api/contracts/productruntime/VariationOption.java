@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VariationOption implements Serializable
@@ -16,7 +18,7 @@ public class VariationOption implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -26,7 +28,7 @@ public class VariationOption implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -36,7 +38,7 @@ public class VariationOption implements Serializable
 		this.value = value;
 	}
 
-	protected Integer valueSequence;
+	protected  Integer valueSequence;
 
 	public Integer getValueSequence() {
 		return this.valueSequence;
@@ -45,5 +47,6 @@ public class VariationOption implements Serializable
 	public void setValueSequence(Integer valueSequence) {
 		this.valueSequence = valueSequence;
 	}
+
 
 }

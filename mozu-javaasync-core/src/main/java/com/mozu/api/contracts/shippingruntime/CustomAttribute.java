@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.CustomAttribute;
 
 /**
@@ -24,7 +26,7 @@ public class CustomAttribute implements Serializable
 	/**
 	 * Key required for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -37,7 +39,7 @@ public class CustomAttribute implements Serializable
 	/**
 	 * Value for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -57,5 +59,6 @@ public class CustomAttribute implements Serializable
 	public void setChildAttributes(List<CustomAttribute> childAttributes) {
 		this.childAttributes = childAttributes;
 	}
+
 
 }

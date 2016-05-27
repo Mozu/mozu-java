@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable
@@ -16,7 +18,7 @@ public class Address implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String city;
+	protected  String city;
 
 	public String getCity() {
 		return this.city;
@@ -26,7 +28,7 @@ public class Address implements Serializable
 		this.city = city;
 	}
 
-	protected String companyName;
+	protected  String companyName;
 
 	public String getCompanyName() {
 		return this.companyName;
@@ -36,7 +38,7 @@ public class Address implements Serializable
 		this.companyName = companyName;
 	}
 
-	protected String country;
+	protected  String country;
 
 	public String getCountry() {
 		return this.country;
@@ -46,7 +48,7 @@ public class Address implements Serializable
 		this.country = country;
 	}
 
-	protected String line1;
+	protected  String line1;
 
 	public String getLine1() {
 		return this.line1;
@@ -56,7 +58,7 @@ public class Address implements Serializable
 		this.line1 = line1;
 	}
 
-	protected String line2;
+	protected  String line2;
 
 	public String getLine2() {
 		return this.line2;
@@ -66,7 +68,7 @@ public class Address implements Serializable
 		this.line2 = line2;
 	}
 
-	protected String line3;
+	protected  String line3;
 
 	public String getLine3() {
 		return this.line3;
@@ -76,7 +78,7 @@ public class Address implements Serializable
 		this.line3 = line3;
 	}
 
-	protected String postalCode;
+	protected  String postalCode;
 
 	public String getPostalCode() {
 		return this.postalCode;
@@ -86,7 +88,7 @@ public class Address implements Serializable
 		this.postalCode = postalCode;
 	}
 
-	protected String state;
+	protected  String state;
 
 	public String getState() {
 		return this.state;
@@ -95,5 +97,6 @@ public class Address implements Serializable
 	public void setState(String state) {
 		this.state = state;
 	}
+
 
 }

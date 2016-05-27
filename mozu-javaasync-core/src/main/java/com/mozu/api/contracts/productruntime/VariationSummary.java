@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.VariationOption;
 
@@ -19,7 +21,7 @@ public class VariationSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -29,7 +31,7 @@ public class VariationSummary implements Serializable
 		this.productCode = productCode;
 	}
 
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -46,5 +48,6 @@ public class VariationSummary implements Serializable
 	public void setOptions(List<VariationOption> options) {
 		this.options = options;
 	}
+
 
 }

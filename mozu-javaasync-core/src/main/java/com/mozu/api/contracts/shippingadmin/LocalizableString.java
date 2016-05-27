@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a localized string value used in the shipping admin.
@@ -22,7 +24,7 @@ public class LocalizableString implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -35,7 +37,7 @@ public class LocalizableString implements Serializable
 	/**
 	 * Value of the localizable string in the language specified by the locale code.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -44,5 +46,6 @@ public class LocalizableString implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

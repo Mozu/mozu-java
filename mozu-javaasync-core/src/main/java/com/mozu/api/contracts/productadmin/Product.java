@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Discount;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.BundledProduct;
@@ -39,7 +41,7 @@ public class Product implements Serializable
 	/**
 	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
-	protected String baseProductCode;
+	protected  String baseProductCode;
 
 	public String getBaseProductCode() {
 		return this.baseProductCode;
@@ -63,7 +65,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product has configurable options. This option means that a product is not purchasable until the shopper selects options that resolve into a product variation. Configurable options for a product are the choices a shopper makes when ordering a product. Size and color are configurable options. System-supplied and read-only.
 	 */
-	protected Boolean hasConfigurableOptions;
+	protected  Boolean hasConfigurableOptions;
 
 	public Boolean getHasConfigurableOptions() {
 		return this.hasConfigurableOptions;
@@ -76,7 +78,7 @@ public class Product implements Serializable
 	/**
 	 * If true, this product has standalone options that a shopper can select without configuring a defined product variations. System-supplied and read only.
 	 */
-	protected Boolean hasStandAloneOptions;
+	protected  Boolean hasStandAloneOptions;
 
 	public Boolean getHasStandAloneOptions() {
 		return this.hasStandAloneOptions;
@@ -89,7 +91,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product must be packaged on its own and should not be jointly packaged with other products.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -102,7 +104,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription. This property is reserved for future functionality and is system-supplied and read only.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -115,7 +117,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the entity is subject to sales tax based on the relevant tax rate.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -128,7 +130,7 @@ public class Product implements Serializable
 	/**
 	 * If true, this product is valid for the assigned product type.
 	 */
-	protected Boolean isValidForProductType;
+	protected  Boolean isValidForProductType;
 
 	public Boolean getIsValidForProductType() {
 		return this.isValidForProductType;
@@ -141,7 +143,7 @@ public class Product implements Serializable
 	/**
 	 * If true, this configured product represents a product variation defined with configurable options. System-supplied and read only.
 	 */
-	protected Boolean isVariation;
+	protected  Boolean isVariation;
 
 	public Boolean getIsVariation() {
 		return this.isVariation;
@@ -154,7 +156,7 @@ public class Product implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -167,7 +169,7 @@ public class Product implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -180,7 +182,7 @@ public class Product implements Serializable
 	/**
 	 * Integer that represents the sequential order of the product.
 	 */
-	protected Integer productSequence;
+	protected  Integer productSequence;
 
 	public Integer getProductSequence() {
 		return this.productSequence;
@@ -193,7 +195,7 @@ public class Product implements Serializable
 	/**
 	 * Unique identifier of the product type assigned for this product. Tenant administrators can only define one product type per product.
 	 */
-	protected Integer productTypeId;
+	protected  Integer productTypeId;
 
 	public Integer getProductTypeId() {
 		return this.productTypeId;
@@ -206,7 +208,7 @@ public class Product implements Serializable
 	/**
 	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
-	protected String productUsage;
+	protected  String productUsage;
 
 	public String getProductUsage() {
 		return this.productUsage;
@@ -219,7 +221,7 @@ public class Product implements Serializable
 	/**
 	 * Identifier of the shipping class.
 	 */
-	protected Integer shippingClassId;
+	protected  Integer shippingClassId;
 
 	public Integer getShippingClassId() {
 		return this.shippingClassId;
@@ -232,7 +234,7 @@ public class Product implements Serializable
 	/**
 	 * If the product must be packaged separately, the type of standalone package to use.
 	 */
-	protected String standAlonePackageType;
+	protected  String standAlonePackageType;
 
 	public String getStandAlonePackageType() {
 		return this.standAlonePackageType;
@@ -245,7 +247,7 @@ public class Product implements Serializable
 	/**
 	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -258,7 +260,7 @@ public class Product implements Serializable
 	/**
 	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 */
-	protected String variationKey;
+	protected  String variationKey;
 
 	public String getVariationKey() {
 		return this.variationKey;
@@ -282,7 +284,7 @@ public class Product implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -303,7 +305,7 @@ public class Product implements Serializable
 		this.bundledProducts = bundledProducts;
 	}
 
-	protected ProductLocalizedContent content;
+	protected  ProductLocalizedContent content;
 
 	public ProductLocalizedContent getContent() {
 		return this.content;
@@ -327,7 +329,7 @@ public class Product implements Serializable
 	/**
 	 * Properties of the inventory levels manages for the product.
 	 */
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -351,7 +353,7 @@ public class Product implements Serializable
 	/**
 	 * Height of the package in imperial units of feet and inches.
 	 */
-	protected Measurement packageHeight;
+	protected  Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
 		return this.packageHeight;
@@ -364,7 +366,7 @@ public class Product implements Serializable
 	/**
 	 * Length of the package in imperial units of feet and inches.
 	 */
-	protected Measurement packageLength;
+	protected  Measurement packageLength;
 
 	public Measurement getPackageLength() {
 		return this.packageLength;
@@ -377,7 +379,7 @@ public class Product implements Serializable
 	/**
 	 * Weight of the package in imperial units of pounds and ounces.
 	 */
-	protected Measurement packageWeight;
+	protected  Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
 		return this.packageWeight;
@@ -390,7 +392,7 @@ public class Product implements Serializable
 	/**
 	 * Width of the package in imperial units of feet and inches.
 	 */
-	protected Measurement packageWidth;
+	protected  Measurement packageWidth;
 
 	public Measurement getPackageWidth() {
 		return this.packageWidth;
@@ -403,7 +405,7 @@ public class Product implements Serializable
 	/**
 	 * Unit price that the client intends to sell the product if no sale price is set.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -416,7 +418,7 @@ public class Product implements Serializable
 	/**
 	 * Describes the behavior the system uses when determining the price of the product.
 	 */
-	protected ProductPricingBehaviorInfo pricingBehavior;
+	protected  ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {
 		return this.pricingBehavior;
@@ -451,7 +453,7 @@ public class Product implements Serializable
 	/**
 	 * Properties of the product publishing settings for the associated product.
 	 */
-	protected ProductPublishingInfo publishingInfo;
+	protected  ProductPublishingInfo publishingInfo;
 
 	public ProductPublishingInfo getPublishingInfo() {
 		return this.publishingInfo;
@@ -464,7 +466,7 @@ public class Product implements Serializable
 	/**
 	 * The search engine optimized content defined for this product.
 	 */
-	protected ProductLocalizedSEOContent seoContent;
+	protected  ProductLocalizedSEOContent seoContent;
 
 	public ProductLocalizedSEOContent getSeoContent() {
 		return this.seoContent;
@@ -477,7 +479,7 @@ public class Product implements Serializable
 	/**
 	 * Supplier-defined properties assigned for the product.
 	 */
-	protected ProductSupplierInfo supplierInfo;
+	protected  ProductSupplierInfo supplierInfo;
 
 	public ProductSupplierInfo getSupplierInfo() {
 		return this.supplierInfo;
@@ -497,5 +499,6 @@ public class Product implements Serializable
 	public void setVariationOptions(List<ProductVariationOption> variationOptions) {
 		this.variationOptions = variationOptions;
 	}
+
 
 }

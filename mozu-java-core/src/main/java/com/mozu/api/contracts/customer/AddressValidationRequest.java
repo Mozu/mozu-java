@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 
 /**
@@ -23,7 +25,7 @@ public class AddressValidationRequest implements Serializable
 	/**
 	 * Properties of the address to validate.
 	 */
-	protected Address address;
+	protected  Address address;
 
 	public Address getAddress() {
 		return this.address;
@@ -32,5 +34,6 @@ public class AddressValidationRequest implements Serializable
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
 
 }

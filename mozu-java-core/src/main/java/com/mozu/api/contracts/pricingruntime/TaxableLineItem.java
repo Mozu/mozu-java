@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.ProductProperty;
 
 /**
@@ -24,7 +26,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * Unique identifier of the taxable line item.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -37,7 +39,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * If true, the line item in the order is subject to tax.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -50,7 +52,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The sale price of the line item in the order.
 	 */
-	protected Double lineItemPrice;
+	protected  Double lineItemPrice;
 
 	public Double getLineItemPrice() {
 		return this.lineItemPrice;
@@ -63,7 +65,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -76,7 +78,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -89,7 +91,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The quantity of the line item in the order.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -102,7 +104,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The reason the item is either taxed or returned.
 	 */
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -115,7 +117,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The amount of shipping calculated for a line item in an order.
 	 */
-	protected Double shippingAmount;
+	protected  Double shippingAmount;
 
 	public Double getShippingAmount() {
 		return this.shippingAmount;
@@ -125,7 +127,7 @@ public class TaxableLineItem implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
-	protected String variantProductCode;
+	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
 		return this.variantProductCode;
@@ -145,5 +147,6 @@ public class TaxableLineItem implements Serializable
 	public void setProductProperties(List<ProductProperty> productProperties) {
 		this.productProperties = productProperties;
 	}
+
 
 }

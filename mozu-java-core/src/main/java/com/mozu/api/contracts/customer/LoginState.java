@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the login state of a customer account.
@@ -22,7 +24,7 @@ public class LoginState implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createdOn;
+	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
 		return this.createdOn;
@@ -35,7 +37,7 @@ public class LoginState implements Serializable
 	/**
 	 * The total number of times the customer account has unsuccessfully attempted to log in.
 	 */
-	protected Byte failedLoginAttemptCount;
+	protected  Byte failedLoginAttemptCount;
 
 	public Byte getFailedLoginAttemptCount() {
 		return this.failedLoginAttemptCount;
@@ -48,7 +50,7 @@ public class LoginState implements Serializable
 	/**
 	 * The date and time the customer's first unsuccessful attempt to log in was recorded.
 	 */
-	protected DateTime firstFailedLoginAttemptOn;
+	protected  DateTime firstFailedLoginAttemptOn;
 
 	public DateTime getFirstFailedLoginAttemptOn() {
 		return this.firstFailedLoginAttemptOn;
@@ -61,7 +63,7 @@ public class LoginState implements Serializable
 	/**
 	 * If true, the customer account is locked and the customer cannot log in.
 	 */
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -74,7 +76,7 @@ public class LoginState implements Serializable
 	/**
 	 * If true, the customer account user must change the password for the account.
 	 */
-	protected Boolean isPasswordChangeRequired;
+	protected  Boolean isPasswordChangeRequired;
 
 	public Boolean getIsPasswordChangeRequired() {
 		return this.isPasswordChangeRequired;
@@ -87,7 +89,7 @@ public class LoginState implements Serializable
 	/**
 	 * The date and time the customer account was most recently locked.
 	 */
-	protected DateTime lastLockedOn;
+	protected  DateTime lastLockedOn;
 
 	public DateTime getLastLockedOn() {
 		return this.lastLockedOn;
@@ -100,7 +102,7 @@ public class LoginState implements Serializable
 	/**
 	 * The date and time the customer account last logged in.
 	 */
-	protected DateTime lastLoginOn;
+	protected  DateTime lastLoginOn;
 
 	public DateTime getLastLoginOn() {
 		return this.lastLoginOn;
@@ -113,7 +115,7 @@ public class LoginState implements Serializable
 	/**
 	 * The date and the time the user associated with the customer account last changed the account password.
 	 */
-	protected DateTime lastPasswordChangeOn;
+	protected  DateTime lastPasswordChangeOn;
 
 	public DateTime getLastPasswordChangeOn() {
 		return this.lastPasswordChangeOn;
@@ -126,7 +128,7 @@ public class LoginState implements Serializable
 	/**
 	 * The remaining number of login attempts the customer can perform before the system locks the customer account.
 	 */
-	protected Integer remainingLoginAttempts;
+	protected  Integer remainingLoginAttempts;
 
 	public Integer getRemainingLoginAttempts() {
 		return this.remainingLoginAttempts;
@@ -139,7 +141,7 @@ public class LoginState implements Serializable
 	/**
 	 * Date and time when the entity was last updated, represented in UTC Date/Time.
 	 */
-	protected DateTime updatedOn;
+	protected  DateTime updatedOn;
 
 	public DateTime getUpdatedOn() {
 		return this.updatedOn;
@@ -148,5 +150,6 @@ public class LoginState implements Serializable
 	public void setUpdatedOn(DateTime updatedOn) {
 		this.updatedOn = updatedOn;
 	}
+
 
 }

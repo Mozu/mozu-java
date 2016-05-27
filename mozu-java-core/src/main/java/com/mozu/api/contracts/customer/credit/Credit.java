@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer.credit;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class Credit implements Serializable
 	/**
 	 * The date and time the store credit or gift card was activated by the shopper. Credits cannot be used until activated. After the credit is activated, this property value is read-only.
 	 */
-	protected DateTime activationDate;
+	protected  DateTime activationDate;
 
 	public DateTime getActivationDate() {
 		return this.activationDate;
@@ -36,7 +38,7 @@ public class Credit implements Serializable
 	/**
 	 * User-defined identifier of the credit, which is unique within the tenant.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -49,7 +51,7 @@ public class Credit implements Serializable
 	/**
 	 * The type of customer credit, which is "GiftCard" or "StoreCredit".
 	 */
-	protected String creditType;
+	protected  String creditType;
 
 	public String getCreditType() {
 		return this.creditType;
@@ -62,7 +64,7 @@ public class Credit implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -75,7 +77,7 @@ public class Credit implements Serializable
 	/**
 	 * The current remaining balance of the credit applied to the customer account.
 	 */
-	protected Double currentBalance;
+	protected  Double currentBalance;
 
 	public Double getCurrentBalance() {
 		return this.currentBalance;
@@ -88,7 +90,7 @@ public class Credit implements Serializable
 	/**
 	 * Unique identifier of the shopper associated with the applied credit. For gift cards, this property is not required.
 	 */
-	protected Integer customerId;
+	protected  Integer customerId;
 
 	public Integer getCustomerId() {
 		return this.customerId;
@@ -101,7 +103,7 @@ public class Credit implements Serializable
 	/**
 	 * The date and time the credit expires and can no longer be redeemed.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -114,7 +116,7 @@ public class Credit implements Serializable
 	/**
 	 * The initial balance of the credit applied to the customer account. This value cannot be changed after it is set.
 	 */
-	protected Double initialBalance;
+	protected  Double initialBalance;
 
 	public Double getInitialBalance() {
 		return this.initialBalance;
@@ -127,7 +129,7 @@ public class Credit implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -136,5 +138,6 @@ public class Credit implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

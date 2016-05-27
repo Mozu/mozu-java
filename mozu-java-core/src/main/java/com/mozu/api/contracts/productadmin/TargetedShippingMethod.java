@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Shipping method service type, such as UPS Ground or USPS Priority Mail, targeted for a defined discount.
@@ -22,7 +24,7 @@ public class TargetedShippingMethod implements Serializable
 	/**
 	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -35,7 +37,7 @@ public class TargetedShippingMethod implements Serializable
 	/**
 	 * Name of the shipping method service type associated with the targeted discount.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -44,5 +46,6 @@ public class TargetedShippingMethod implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

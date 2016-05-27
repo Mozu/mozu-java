@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.GatewayCredentialFieldValue;
 
 /**
@@ -24,7 +26,7 @@ public class GatewayAccount implements Serializable
 	/**
 	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
 	 */
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -37,7 +39,7 @@ public class GatewayAccount implements Serializable
 	/**
 	 * Identifier of the payment gateway.
 	 */
-	protected String gatewayDefinitionId;
+	protected  String gatewayDefinitionId;
 
 	public String getGatewayDefinitionId() {
 		return this.gatewayDefinitionId;
@@ -50,7 +52,7 @@ public class GatewayAccount implements Serializable
 	/**
 	 * Identifier of the entity.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -63,7 +65,7 @@ public class GatewayAccount implements Serializable
 	/**
 	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -83,5 +85,6 @@ public class GatewayAccount implements Serializable
 	public void setCredentialFields(List<GatewayCredentialFieldValue> credentialFields) {
 		this.credentialFields = credentialFields;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductPropertyValue;
 
@@ -25,7 +27,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -38,7 +40,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * If true, the product property does not appear for the product in the storefront.
 	 */
-	protected Boolean isHidden;
+	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
 		return this.isHidden;
@@ -51,7 +53,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * If true, the product property can have more than one selected value.
 	 */
-	protected Boolean isMultiValue;
+	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
 		return this.isMultiValue;
@@ -64,7 +66,7 @@ public class ProductProperty implements Serializable
 	/**
 	 * Details of the attribute defined as a product property.
 	 */
-	protected AttributeDetail attributeDetail;
+	protected  AttributeDetail attributeDetail;
 
 	public AttributeDetail getAttributeDetail() {
 		return this.attributeDetail;
@@ -84,5 +86,6 @@ public class ProductProperty implements Serializable
 	public void setValues(List<ProductPropertyValue> values) {
 		this.values = values;
 	}
+
 
 }

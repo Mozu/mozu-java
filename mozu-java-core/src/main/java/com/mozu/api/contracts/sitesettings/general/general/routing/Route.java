@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Route implements Serializable
@@ -17,7 +19,7 @@ public class Route implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean canonical;
+	protected  Boolean canonical;
 
 	public Boolean getCanonical() {
 		return this.canonical;
@@ -35,7 +37,7 @@ public class Route implements Serializable
 		this.defaults = defaults;
 	}
 
-	protected String functionId;
+	protected  String functionId;
 
 	public String getFunctionId() {
 		return this.functionId;
@@ -45,7 +47,7 @@ public class Route implements Serializable
 		this.functionId = functionId;
 	}
 
-	protected String internalRoute;
+	protected  String internalRoute;
 
 	public String getInternalRoute() {
 		return this.internalRoute;
@@ -63,7 +65,7 @@ public class Route implements Serializable
 		this.mappings = mappings;
 	}
 
-	protected String template;
+	protected  String template;
 
 	public String getTemplate() {
 		return this.template;
@@ -73,7 +75,7 @@ public class Route implements Serializable
 		this.template = template;
 	}
 
-	protected String urlScheme;
+	protected  String urlScheme;
 
 	public String getUrlScheme() {
 		return this.urlScheme;
@@ -90,5 +92,6 @@ public class Route implements Serializable
 	public void setValidators(List<String> validators) {
 		this.validators = validators;
 	}
+
 
 }

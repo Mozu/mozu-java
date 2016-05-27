@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.discounts;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 
 /**
@@ -23,7 +25,7 @@ public class ShippingDiscount implements Serializable
 	/**
 	 * Carrier-supplied code that represents the shipping method service type associated with the shipping discount.
 	 */
-	protected String methodCode;
+	protected  String methodCode;
 
 	public String getMethodCode() {
 		return this.methodCode;
@@ -36,7 +38,7 @@ public class ShippingDiscount implements Serializable
 	/**
 	 * Properties of the shipping discount.
 	 */
-	protected AppliedDiscount discount;
+	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {
 		return this.discount;
@@ -45,5 +47,6 @@ public class ShippingDiscount implements Serializable
 	public void setDiscount(AppliedDiscount discount) {
 		this.discount = discount;
 	}
+
 
 }

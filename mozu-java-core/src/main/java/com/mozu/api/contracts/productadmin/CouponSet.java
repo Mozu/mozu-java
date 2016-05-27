@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class CouponSet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer assignedDiscountCount;
+	protected  Integer assignedDiscountCount;
 
 	public Integer getAssignedDiscountCount() {
 		return this.assignedDiscountCount;
@@ -27,7 +29,7 @@ public class CouponSet implements Serializable
 		this.assignedDiscountCount = assignedDiscountCount;
 	}
 
-	protected Boolean canBeDeleted;
+	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
 		return this.canBeDeleted;
@@ -37,7 +39,7 @@ public class CouponSet implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	protected Integer couponCodeCount;
+	protected  Integer couponCodeCount;
 
 	public Integer getCouponCodeCount() {
 		return this.couponCodeCount;
@@ -47,7 +49,7 @@ public class CouponSet implements Serializable
 		this.couponCodeCount = couponCodeCount;
 	}
 
-	protected String couponCodeType;
+	protected  String couponCodeType;
 
 	public String getCouponCodeType() {
 		return this.couponCodeType;
@@ -57,7 +59,7 @@ public class CouponSet implements Serializable
 		this.couponCodeType = couponCodeType;
 	}
 
-	protected String couponSetCode;
+	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
 		return this.couponSetCode;
@@ -67,7 +69,7 @@ public class CouponSet implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -77,7 +79,7 @@ public class CouponSet implements Serializable
 		this.endDate = endDate;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -87,7 +89,7 @@ public class CouponSet implements Serializable
 		this.id = id;
 	}
 
-	protected Integer maxRedemptionsPerCouponCode;
+	protected  Integer maxRedemptionsPerCouponCode;
 
 	public Integer getMaxRedemptionsPerCouponCode() {
 		return this.maxRedemptionsPerCouponCode;
@@ -97,7 +99,7 @@ public class CouponSet implements Serializable
 		this.maxRedemptionsPerCouponCode = maxRedemptionsPerCouponCode;
 	}
 
-	protected Integer maxRedemptionsPerUser;
+	protected  Integer maxRedemptionsPerUser;
 
 	public Integer getMaxRedemptionsPerUser() {
 		return this.maxRedemptionsPerUser;
@@ -107,7 +109,7 @@ public class CouponSet implements Serializable
 		this.maxRedemptionsPerUser = maxRedemptionsPerUser;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -117,7 +119,7 @@ public class CouponSet implements Serializable
 		this.name = name;
 	}
 
-	protected Integer redemptionCount;
+	protected  Integer redemptionCount;
 
 	public Integer getRedemptionCount() {
 		return this.redemptionCount;
@@ -127,7 +129,7 @@ public class CouponSet implements Serializable
 		this.redemptionCount = redemptionCount;
 	}
 
-	protected Integer setSize;
+	protected  Integer setSize;
 
 	public Integer getSetSize() {
 		return this.setSize;
@@ -137,7 +139,7 @@ public class CouponSet implements Serializable
 		this.setSize = setSize;
 	}
 
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -147,7 +149,7 @@ public class CouponSet implements Serializable
 		this.startDate = startDate;
 	}
 
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -157,7 +159,7 @@ public class CouponSet implements Serializable
 		this.status = status;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -166,5 +168,6 @@ public class CouponSet implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

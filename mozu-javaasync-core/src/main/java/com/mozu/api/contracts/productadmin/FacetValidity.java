@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	System-supplied and read only parameter that validates a facet for its associated category.
@@ -22,7 +24,7 @@ public class FacetValidity implements Serializable
 	/**
 	 * If true, the facet source is valid for its associated category.
 	 */
-	protected Boolean isValid;
+	protected  Boolean isValid;
 
 	public Boolean getIsValid() {
 		return this.isValid;
@@ -35,7 +37,7 @@ public class FacetValidity implements Serializable
 	/**
 	 * Code associated with a reason for facet validation to return false for its associated category.
 	 */
-	protected String reasonCode;
+	protected  String reasonCode;
 
 	public String getReasonCode() {
 		return this.reasonCode;
@@ -44,5 +46,6 @@ public class FacetValidity implements Serializable
 	public void setReasonCode(String reasonCode) {
 		this.reasonCode = reasonCode;
 	}
+
 
 }

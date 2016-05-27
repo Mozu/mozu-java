@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.discounts;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.discounts.Discount;
 
 /**
@@ -23,7 +25,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * Determines if the discount applies to the sale price of the order.
 	 */
-	protected Boolean appliesToSalePrice;
+	protected  Boolean appliesToSalePrice;
 
 	public Boolean getAppliesToSalePrice() {
 		return this.appliesToSalePrice;
@@ -36,7 +38,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 */
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -49,7 +51,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * The number of the line items that are used for this particular discount.
 	 */
-	protected Integer discountQuantity;
+	protected  Integer discountQuantity;
 
 	public Integer getDiscountQuantity() {
 		return this.discountQuantity;
@@ -59,7 +61,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.discountQuantity = discountQuantity;
 	}
 
-	protected Boolean excluded;
+	protected  Boolean excluded;
 
 	public Boolean getExcluded() {
 		return this.excluded;
@@ -72,7 +74,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * The value of the applied discount. This is a negative number, which is subtracted from the original price to get the final price.
 	 */
-	protected Double impact;
+	protected  Double impact;
 
 	public Double getImpact() {
 		return this.impact;
@@ -85,7 +87,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * The impact of this discount for each discount quantity.
 	 */
-	protected Double impactPerUnit;
+	protected  Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
 		return this.impactPerUnit;
@@ -95,7 +97,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
-	protected Integer productQuantity;
+	protected  Integer productQuantity;
 
 	public Integer getProductQuantity() {
 		return this.productQuantity;
@@ -108,7 +110,7 @@ public class AppliedLineItemProductDiscount implements Serializable
 	/**
 	 * This describes discounts that apply to the order, if any. For example, when the subtotal of the order exceeds a certain amount, or a discount for free shipping.
 	 */
-	protected Discount discount;
+	protected  Discount discount;
 
 	public Discount getDiscount() {
 		return this.discount;
@@ -117,5 +119,6 @@ public class AppliedLineItemProductDiscount implements Serializable
 	public void setDiscount(Discount discount) {
 		this.discount = discount;
 	}
+
 
 }

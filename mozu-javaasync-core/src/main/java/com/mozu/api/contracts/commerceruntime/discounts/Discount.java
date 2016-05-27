@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a discount defined for a product, order, or shipping on a web storefront.
@@ -23,7 +25,7 @@ public class Discount implements Serializable
 	/**
 	 * The date and time at which the discount can no longer be applied to a product or order.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -36,7 +38,7 @@ public class Discount implements Serializable
 	/**
 	 * Unique identifier of the discount.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -60,7 +62,7 @@ public class Discount implements Serializable
 	/**
 	 * The name of the discount, in the language specified by the LocaleCode of the storefront.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -69,5 +71,6 @@ public class Discount implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

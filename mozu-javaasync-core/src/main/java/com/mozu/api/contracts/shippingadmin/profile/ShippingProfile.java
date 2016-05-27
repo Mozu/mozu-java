@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule;
 import com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule;
@@ -20,7 +22,7 @@ public class ShippingProfile implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -38,7 +40,7 @@ public class ShippingProfile implements Serializable
 		this.targetedSiteIds = targetedSiteIds;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -71,5 +73,6 @@ public class ShippingProfile implements Serializable
 	public void setShippingInclusionRules(List<ShippingInclusionRule> shippingInclusionRules) {
 		this.shippingInclusionRules = shippingInclusionRules;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CategoryLocalizedImage;
 
 /**
@@ -24,7 +26,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Description of the product category in the language specified by the locale code.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -37,7 +39,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -50,7 +52,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Description defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -63,7 +65,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Keywords defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -76,7 +78,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Title defined for the product category metadata, used to manage internal product information, in the language specified by the locale code.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -89,7 +91,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * The name of the product category in the language specified by the locale code.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -102,7 +104,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Title that appears on new product category pages, in the language specified by the locale code.
 	 */
-	protected String pageTitle;
+	protected  String pageTitle;
 
 	public String getPageTitle() {
 		return this.pageTitle;
@@ -115,7 +117,7 @@ public class CategoryLocalizedContent implements Serializable
 	/**
 	 * Human-readable identifier to assign to the category to generate user-friendly URLs.
 	 */
-	protected String slug;
+	protected  String slug;
 
 	public String getSlug() {
 		return this.slug;
@@ -135,5 +137,6 @@ public class CategoryLocalizedContent implements Serializable
 	public void setCategoryImages(List<CategoryLocalizedImage> categoryImages) {
 		this.categoryImages = categoryImages;
 	}
+
 
 }

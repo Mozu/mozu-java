@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeTypeRule;
 
 /**
@@ -21,10 +23,20 @@ public class AttributeTypeRuleCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer startIndex;
+
+	public Integer getStartIndex() {
+		return this.startIndex;
+	}
+
+	public void setStartIndex(Integer startIndex) {
+		this.startIndex = startIndex;
+	}
+
 	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */
-	protected Integer pageCount;
+	protected  Integer pageCount;
 
 	public Integer getPageCount() {
 		return this.pageCount;
@@ -37,7 +49,7 @@ public class AttributeTypeRuleCollection implements Serializable
 	/**
 	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 */
-	protected Integer pageSize;
+	protected  Integer pageSize;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -47,20 +59,10 @@ public class AttributeTypeRuleCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
-	protected Integer startIndex;
-
-	public Integer getStartIndex() {
-		return this.startIndex;
-	}
-
-	public void setStartIndex(Integer startIndex) {
-		this.startIndex = startIndex;
-	}
-
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -80,5 +82,6 @@ public class AttributeTypeRuleCollection implements Serializable
 	public void setItems(List<AttributeTypeRule> items) {
 		this.items = items;
 	}
+
 
 }

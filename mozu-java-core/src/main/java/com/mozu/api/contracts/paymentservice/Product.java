@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product implements Serializable
@@ -16,7 +18,7 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -26,7 +28,7 @@ public class Product implements Serializable
 		this.productCode = productCode;
 	}
 
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -36,7 +38,7 @@ public class Product implements Serializable
 		this.productName = productName;
 	}
 
-	protected String variantProductCode;
+	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
 		return this.variantProductCode;
@@ -45,5 +47,6 @@ public class Product implements Serializable
 	public void setVariantProductCode(String variantProductCode) {
 		this.variantProductCode = variantProductCode;
 	}
+
 
 }

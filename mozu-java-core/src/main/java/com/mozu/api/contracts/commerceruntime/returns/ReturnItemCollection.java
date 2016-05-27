@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
 
 /**
@@ -21,7 +23,7 @@ public class ReturnItemCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -41,5 +43,6 @@ public class ReturnItemCollection implements Serializable
 	public void setItems(List<ReturnItem> items) {
 		this.items = items;
 	}
+
 
 }

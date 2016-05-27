@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageSummary implements Serializable
@@ -16,7 +18,7 @@ public class PackageSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -26,7 +28,7 @@ public class PackageSummary implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	protected Integer applicationTypeId;
+	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
 		return this.applicationTypeId;
@@ -36,7 +38,7 @@ public class PackageSummary implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -46,7 +48,7 @@ public class PackageSummary implements Serializable
 		this.id = id;
 	}
 
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -56,7 +58,7 @@ public class PackageSummary implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -66,7 +68,7 @@ public class PackageSummary implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -76,7 +78,7 @@ public class PackageSummary implements Serializable
 		this.name = name;
 	}
 
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -85,5 +87,6 @@ public class PackageSummary implements Serializable
 	public void setRevision(Integer revision) {
 		this.revision = revision;
 	}
+
 
 }

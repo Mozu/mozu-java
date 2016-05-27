@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
@@ -23,7 +25,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * Property string value in the language specified in the locale code for the product storefront.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -36,7 +38,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * Value of the product property.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -46,7 +48,7 @@ public class ProductPropertyValue implements Serializable
 		this.value = value;
 	}
 
-	protected AttributeVocabularyValueDisplayInfo displayInfo;
+	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
 		return this.displayInfo;
@@ -55,5 +57,6 @@ public class ProductPropertyValue implements Serializable
 	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
 		this.displayInfo = displayInfo;
 	}
+
 
 }

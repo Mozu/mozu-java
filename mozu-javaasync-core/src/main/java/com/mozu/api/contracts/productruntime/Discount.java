@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a defined product, order, or shipping discount.
@@ -22,7 +24,7 @@ public class Discount implements Serializable
 	/**
 	 * Unique identifier of the discount. System-supplied and read only.
 	 */
-	protected Integer discountId;
+	protected  Integer discountId;
 
 	public Integer getDiscountId() {
 		return this.discountId;
@@ -35,7 +37,7 @@ public class Discount implements Serializable
 	/**
 	 * The date and time the discount can no longer be redeemed. Date in UTC Date/Time. System-supplied and read only.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -48,7 +50,7 @@ public class Discount implements Serializable
 	/**
 	 * Client-defined description that displays for the shopper on the web storefront.
 	 */
-	protected String friendlyDescription;
+	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
 		return this.friendlyDescription;
@@ -61,7 +63,7 @@ public class Discount implements Serializable
 	/**
 	 * The localizable name assigned for the product discount.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -70,5 +72,6 @@ public class Discount implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

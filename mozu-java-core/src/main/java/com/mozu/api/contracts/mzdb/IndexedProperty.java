@@ -9,6 +9,8 @@ package com.mozu.api.contracts.mzdb;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IndexedProperty implements Serializable
@@ -16,7 +18,7 @@ public class IndexedProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -26,7 +28,7 @@ public class IndexedProperty implements Serializable
 		this.dataType = dataType;
 	}
 
-	protected String propertyName;
+	protected  String propertyName;
 
 	public String getPropertyName() {
 		return this.propertyName;
@@ -35,5 +37,6 @@ public class IndexedProperty implements Serializable
 	public void setPropertyName(String propertyName) {
 		this.propertyName = propertyName;
 	}
+
 
 }

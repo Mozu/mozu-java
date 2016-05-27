@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.orders;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The action to perform for the order.
@@ -22,7 +24,7 @@ public class OrderAction implements Serializable
 	/**
 	 * The name of the action for the order.
 	 */
-	protected String actionName;
+	protected  String actionName;
 
 	public String getActionName() {
 		return this.actionName;
@@ -31,5 +33,6 @@ public class OrderAction implements Serializable
 	public void setActionName(String actionName) {
 		this.actionName = actionName;
 	}
+
 
 }

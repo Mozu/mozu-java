@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CurrencyAmount;
 
 /**
@@ -23,7 +25,7 @@ public class CommerceSummary implements Serializable
 	/**
 	 * The date and time the shopper last submitted an order for any site associated with the tenant.
 	 */
-	protected DateTime lastOrderDate;
+	protected  DateTime lastOrderDate;
 
 	public DateTime getLastOrderDate() {
 		return this.lastOrderDate;
@@ -36,7 +38,7 @@ public class CommerceSummary implements Serializable
 	/**
 	 * The total number of order the shopper submitted across all sites associated with the tenant.
 	 */
-	protected Integer orderCount;
+	protected  Integer orderCount;
 
 	public Integer getOrderCount() {
 		return this.orderCount;
@@ -49,7 +51,7 @@ public class CommerceSummary implements Serializable
 	/**
 	 * The number of visits to a site associated with a customer account.
 	 */
-	protected Integer visitsCount;
+	protected  Integer visitsCount;
 
 	public Integer getVisitsCount() {
 		return this.visitsCount;
@@ -62,7 +64,7 @@ public class CommerceSummary implements Serializable
 	/**
 	 * The number of wish lists associated with a customer account. This number represents the total number of a shopper's wish lists across all sites associated with a tenant.
 	 */
-	protected Integer wishlistCount;
+	protected  Integer wishlistCount;
 
 	public Integer getWishlistCount() {
 		return this.wishlistCount;
@@ -75,7 +77,7 @@ public class CommerceSummary implements Serializable
 	/**
 	 * The aggregate total amount of all orders the shopper submitted, across all sites associated with the tenant.
 	 */
-	protected CurrencyAmount totalOrderAmount;
+	protected  CurrencyAmount totalOrderAmount;
 
 	public CurrencyAmount getTotalOrderAmount() {
 		return this.totalOrderAmount;
@@ -84,5 +86,6 @@ public class CommerceSummary implements Serializable
 	public void setTotalOrderAmount(CurrencyAmount totalOrderAmount) {
 		this.totalOrderAmount = totalOrderAmount;
 	}
+
 
 }

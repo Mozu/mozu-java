@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an action a user can perform for a return.
@@ -23,7 +25,7 @@ public class ReturnAction implements Serializable
 	/**
 	 * The name of the action to perform for the return.
 	 */
-	protected String actionName;
+	protected  String actionName;
 
 	public String getActionName() {
 		return this.actionName;
@@ -43,5 +45,6 @@ public class ReturnAction implements Serializable
 	public void setReturnIds(List<String> returnIds) {
 		this.returnIds = returnIds;
 	}
+
 
 }

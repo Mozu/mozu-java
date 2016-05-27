@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.FacetRangeQuery;
 import com.mozu.api.contracts.productadmin.FacetSource;
@@ -24,20 +26,10 @@ public class Facet implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String valueSortType;
-
-	public String getValueSortType() {
-		return this.valueSortType;
-	}
-
-	public void setValueSortType(String valueSortType) {
-		this.valueSortType = valueSortType;
-	}
-
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -50,7 +42,7 @@ public class Facet implements Serializable
 	/**
 	 * Unique identifier of the facet.
 	 */
-	protected Integer facetId;
+	protected  Integer facetId;
 
 	public Integer getFacetId() {
 		return this.facetId;
@@ -63,7 +55,7 @@ public class Facet implements Serializable
 	/**
 	 * The type of facet. Valid values are "range," which enables creation of a range of values, or "value," which populates the facet values based on the associated attribute or category.
 	 */
-	protected String facetType;
+	protected  String facetType;
 
 	public String getFacetType() {
 		return this.facetType;
@@ -76,7 +68,7 @@ public class Facet implements Serializable
 	/**
 	 * If true, disables a facet inherited from a parent category.
 	 */
-	protected Boolean isHidden;
+	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
 		return this.isHidden;
@@ -89,7 +81,7 @@ public class Facet implements Serializable
 	/**
 	 * The numeric sequence of the facet for its associated category.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -102,7 +94,7 @@ public class Facet implements Serializable
 	/**
 	 * Overrides a facet inherited from a parent category for a specified subcategory. System-supplied and read only.
 	 */
-	protected Integer overrideFacetId;
+	protected  Integer overrideFacetId;
 
 	public Integer getOverrideFacetId() {
 		return this.overrideFacetId;
@@ -112,10 +104,20 @@ public class Facet implements Serializable
 		this.overrideFacetId = overrideFacetId;
 	}
 
+	protected  String valueSortType;
+
+	public String getValueSortType() {
+		return this.valueSortType;
+	}
+
+	public void setValueSortType(String valueSortType) {
+		this.valueSortType = valueSortType;
+	}
+
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -139,7 +141,7 @@ public class Facet implements Serializable
 	/**
 	 * Container for the facet source information, which includes the category, price, or attribute properties.
 	 */
-	protected FacetSource source;
+	protected  FacetSource source;
 
 	public FacetSource getSource() {
 		return this.source;
@@ -152,7 +154,7 @@ public class Facet implements Serializable
 	/**
 	 * System-supplied and read only parameter that validates a facet for its associated category.
 	 */
-	protected FacetValidity validity;
+	protected  FacetValidity validity;
 
 	public FacetValidity getValidity() {
 		return this.validity;
@@ -161,5 +163,6 @@ public class Facet implements Serializable
 	public void setValidity(FacetValidity validity) {
 		this.validity = validity;
 	}
+
 
 }

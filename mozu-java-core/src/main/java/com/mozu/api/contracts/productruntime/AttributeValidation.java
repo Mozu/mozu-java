@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Validates the attribute configured for the product in the storefront against the attribute configured in product admin.
@@ -22,7 +24,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * System-supplied and read-only.
 	 */
-	protected DateTime maxDateValue;
+	protected  DateTime maxDateValue;
 
 	public DateTime getMaxDateValue() {
 		return this.maxDateValue;
@@ -35,7 +37,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The maximum number of characters for the numeric length.
 	 */
-	protected double maxNumericValue;
+	protected  double maxNumericValue;
 
 	public double getMaxNumericValue() {
 		return this.maxNumericValue;
@@ -48,7 +50,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The maximum number of characters for the string length.
 	 */
-	protected Integer maxStringLength;
+	protected  Integer maxStringLength;
 
 	public Integer getMaxStringLength() {
 		return this.maxStringLength;
@@ -61,7 +63,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * System-supplied and read-only.
 	 */
-	protected DateTime minDateValue;
+	protected  DateTime minDateValue;
 
 	public DateTime getMinDateValue() {
 		return this.minDateValue;
@@ -74,7 +76,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The minimum number of characters for the numeric length.
 	 */
-	protected double minNumericValue;
+	protected  double minNumericValue;
 
 	public double getMinNumericValue() {
 		return this.minNumericValue;
@@ -87,7 +89,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The minimum character length of the string.
 	 */
-	protected Integer minStringLength;
+	protected  Integer minStringLength;
 
 	public Integer getMinStringLength() {
 		return this.minStringLength;
@@ -100,7 +102,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * Regular expression used to process attribute values that require special formatting such as phone numbers.
 	 */
-	protected String regularExpression;
+	protected  String regularExpression;
 
 	public String getRegularExpression() {
 		return this.regularExpression;
@@ -109,5 +111,6 @@ public class AttributeValidation implements Serializable
 	public void setRegularExpression(String regularExpression) {
 		this.regularExpression = regularExpression;
 	}
+
 
 }

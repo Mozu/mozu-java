@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The login information for a customer account.
@@ -22,7 +24,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The email address associated with the customer login.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -32,7 +34,7 @@ public class CustomerLoginInfo implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	protected String externalPassword;
+	protected  String externalPassword;
 
 	public String getExternalPassword() {
 		return this.externalPassword;
@@ -45,7 +47,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * If true, this customer account data was imported from an external program.
 	 */
-	protected Boolean isImport;
+	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
 		return this.isImport;
@@ -58,7 +60,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The password associated with the customer login.
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -71,7 +73,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The user name associated with the customer login.
 	 */
-	protected String username;
+	protected  String username;
 
 	public String getUsername() {
 		return this.username;
@@ -80,5 +82,6 @@ public class CustomerLoginInfo implements Serializable
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 }

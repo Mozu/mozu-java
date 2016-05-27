@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The type of preauthorization gateway.
@@ -22,7 +24,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * Description of the preauthorization transaction type.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -35,7 +37,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * Identifier of the entity.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -48,7 +50,7 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	/**
 	 * The type of preauthorization transaction.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -57,5 +59,6 @@ public class PreAuthorizeTransactionTypeDataContract implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReasonCollection implements Serializable
@@ -25,7 +27,7 @@ public class ReasonCollection implements Serializable
 		this.items = items;
 	}
 
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -34,5 +36,6 @@ public class ReasonCollection implements Serializable
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the facet used to retrieve documents.
@@ -22,7 +24,7 @@ public class Facet implements Serializable
 	/**
 	 * The number of facet results.
 	 */
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -35,7 +37,7 @@ public class Facet implements Serializable
 	/**
 	 * The name of the facet.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -44,5 +46,6 @@ public class Facet implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

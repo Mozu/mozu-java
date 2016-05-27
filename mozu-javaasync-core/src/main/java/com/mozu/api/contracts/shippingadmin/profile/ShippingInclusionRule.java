@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.ServiceType;
 
@@ -19,7 +21,7 @@ public class ShippingInclusionRule implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -37,7 +39,7 @@ public class ShippingInclusionRule implements Serializable
 		this.productTargetRuleCodes = productTargetRuleCodes;
 	}
 
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -55,7 +57,7 @@ public class ShippingInclusionRule implements Serializable
 		this.shippingTargetRuleCodes = shippingTargetRuleCodes;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -72,5 +74,6 @@ public class ShippingInclusionRule implements Serializable
 	public void setServiceTypes(List<ServiceType> serviceTypes) {
 		this.serviceTypes = serviceTypes;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class CartMessage implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -28,7 +30,7 @@ public class CartMessage implements Serializable
 		this.message = message;
 	}
 
-	protected String messageType;
+	protected  String messageType;
 
 	public String getMessageType() {
 		return this.messageType;
@@ -45,5 +47,6 @@ public class CartMessage implements Serializable
 	public void setProductsRemoved(List<Product> productsRemoved) {
 		this.productsRemoved = productsRemoved;
 	}
+
 
 }

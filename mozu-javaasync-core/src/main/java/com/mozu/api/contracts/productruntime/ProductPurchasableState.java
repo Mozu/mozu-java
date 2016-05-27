@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ValidationMessage;
 
 /**
@@ -24,7 +26,7 @@ public class ProductPurchasableState implements Serializable
 	/**
 	 * If true, the entity has met all requirements and considered a purchasable entity.
 	 */
-	protected Boolean isPurchasable;
+	protected  Boolean isPurchasable;
 
 	public Boolean getIsPurchasable() {
 		return this.isPurchasable;
@@ -44,5 +46,6 @@ public class ProductPurchasableState implements Serializable
 	public void setMessages(List<ValidationMessage> messages) {
 		this.messages = messages;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Information required to update the name of a file in a package, which consists of the original name and the new name.
@@ -22,7 +24,7 @@ public class RenameInfo implements Serializable
 	/**
 	 * The destination file location and file name to specify.
 	 */
-	protected String newFullPath;
+	protected  String newFullPath;
 
 	public String getNewFullPath() {
 		return this.newFullPath;
@@ -35,7 +37,7 @@ public class RenameInfo implements Serializable
 	/**
 	 * The original file location and file name.
 	 */
-	protected String oldFullPath;
+	protected  String oldFullPath;
 
 	public String getOldFullPath() {
 		return this.oldFullPath;
@@ -44,5 +46,6 @@ public class RenameInfo implements Serializable
 	public void setOldFullPath(String oldFullPath) {
 		this.oldFullPath = oldFullPath;
 	}
+
 
 }

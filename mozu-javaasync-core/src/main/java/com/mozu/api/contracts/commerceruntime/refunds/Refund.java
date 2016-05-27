@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.refunds;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.Payment;
 
@@ -18,7 +20,7 @@ public class Refund implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -28,7 +30,7 @@ public class Refund implements Serializable
 		this.amount = amount;
 	}
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -38,7 +40,7 @@ public class Refund implements Serializable
 		this.id = id;
 	}
 
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -48,7 +50,7 @@ public class Refund implements Serializable
 		this.orderId = orderId;
 	}
 
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -58,7 +60,7 @@ public class Refund implements Serializable
 		this.reason = reason;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -68,7 +70,7 @@ public class Refund implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	protected Payment payment;
+	protected  Payment payment;
 
 	public Payment getPayment() {
 		return this.payment;
@@ -77,5 +79,6 @@ public class Refund implements Serializable
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+
 
 }

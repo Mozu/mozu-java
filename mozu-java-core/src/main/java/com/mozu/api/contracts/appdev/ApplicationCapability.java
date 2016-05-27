@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapability implements Serializable
@@ -16,7 +18,7 @@ public class ApplicationCapability implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationCapabilityId;
+	protected  Integer applicationCapabilityId;
 
 	public Integer getApplicationCapabilityId() {
 		return this.applicationCapabilityId;
@@ -26,7 +28,7 @@ public class ApplicationCapability implements Serializable
 		this.applicationCapabilityId = applicationCapabilityId;
 	}
 
-	protected Integer applicationCapabilityTypeId;
+	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
 		return this.applicationCapabilityTypeId;
@@ -36,7 +38,7 @@ public class ApplicationCapability implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	protected String applicationEndPoint;
+	protected  String applicationEndPoint;
 
 	public String getApplicationEndPoint() {
 		return this.applicationEndPoint;
@@ -46,7 +48,7 @@ public class ApplicationCapability implements Serializable
 		this.applicationEndPoint = applicationEndPoint;
 	}
 
-	protected Integer capabilityTypeContractId;
+	protected  Integer capabilityTypeContractId;
 
 	public Integer getCapabilityTypeContractId() {
 		return this.capabilityTypeContractId;
@@ -56,7 +58,7 @@ public class ApplicationCapability implements Serializable
 		this.capabilityTypeContractId = capabilityTypeContractId;
 	}
 
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -65,5 +67,6 @@ public class ApplicationCapability implements Serializable
 	public void setPackageId(Integer packageId) {
 		this.packageId = packageId;
 	}
+
 
 }

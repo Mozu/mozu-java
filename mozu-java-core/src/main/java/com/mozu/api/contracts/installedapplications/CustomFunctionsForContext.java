@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunction;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class CustomFunctionsForContext implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer context;
+	protected  Integer context;
 
 	public Integer getContext() {
 		return this.context;
@@ -35,5 +37,6 @@ public class CustomFunctionsForContext implements Serializable
 	public void setCustomFunctions(List<CustomFunction> customFunctions) {
 		this.customFunctions = customFunctions;
 	}
+
 
 }

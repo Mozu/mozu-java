@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategorySequence implements Serializable
@@ -16,7 +18,7 @@ public class CategorySequence implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -26,7 +28,7 @@ public class CategorySequence implements Serializable
 		this.categoryId = categoryId;
 	}
 
-	protected Integer parentCategoryId;
+	protected  Integer parentCategoryId;
 
 	public Integer getParentCategoryId() {
 		return this.parentCategoryId;
@@ -36,7 +38,7 @@ public class CategorySequence implements Serializable
 		this.parentCategoryId = parentCategoryId;
 	}
 
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -45,5 +47,6 @@ public class CategorySequence implements Serializable
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.Category;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -27,7 +29,7 @@ public class Category implements Serializable
 		this.id = id;
 	}
 
-	protected Category parent;
+	protected  Category parent;
 
 	public Category getParent() {
 		return this.parent;
@@ -36,5 +38,6 @@ public class Category implements Serializable
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
+
 
 }

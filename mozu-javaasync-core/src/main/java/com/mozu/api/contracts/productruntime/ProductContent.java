@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductImage;
 
 /**
@@ -24,7 +26,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Description defined for the metadata used to internally manage information about the product.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -37,7 +39,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Keywords defined for the metadata used to internally manage information about the product.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -50,7 +52,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Title defined for the metadata used to internally manage information about the product.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -63,7 +65,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Full description of the product, which typically appears on the product details page.
 	 */
-	protected String productFullDescription;
+	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
 		return this.productFullDescription;
@@ -76,7 +78,7 @@ public class ProductContent implements Serializable
 	/**
 	 * The descriptive brief product name.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -89,7 +91,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Brief description of the product typically used when the product is displayed in a list or in search results.
 	 */
-	protected String productShortDescription;
+	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
 		return this.productShortDescription;
@@ -102,7 +104,7 @@ public class ProductContent implements Serializable
 	/**
 	 * Product URL defined for search engine optimization.
 	 */
-	protected String seoFriendlyUrl;
+	protected  String seoFriendlyUrl;
 
 	public String getSeoFriendlyUrl() {
 		return this.seoFriendlyUrl;
@@ -122,5 +124,6 @@ public class ProductContent implements Serializable
 	public void setProductImages(List<ProductImage> productImages) {
 		this.productImages = productImages;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventDeliveryAttempt;
 import com.mozu.api.contracts.event.EventSummary;
 
@@ -19,7 +21,7 @@ public class EventDeliverySummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -29,7 +31,7 @@ public class EventDeliverySummary implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected String deliveryStatus;
+	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
 		return this.deliveryStatus;
@@ -39,7 +41,7 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryStatus = deliveryStatus;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -49,7 +51,7 @@ public class EventDeliverySummary implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isRunning;
+	protected  Boolean isRunning;
 
 	public Boolean getIsRunning() {
 		return this.isRunning;
@@ -59,7 +61,7 @@ public class EventDeliverySummary implements Serializable
 		this.isRunning = isRunning;
 	}
 
-	protected DateTime lastExecutionDate;
+	protected  DateTime lastExecutionDate;
 
 	public DateTime getLastExecutionDate() {
 		return this.lastExecutionDate;
@@ -69,7 +71,7 @@ public class EventDeliverySummary implements Serializable
 		this.lastExecutionDate = lastExecutionDate;
 	}
 
-	protected DateTime nextExecutionDate;
+	protected  DateTime nextExecutionDate;
 
 	public DateTime getNextExecutionDate() {
 		return this.nextExecutionDate;
@@ -79,7 +81,7 @@ public class EventDeliverySummary implements Serializable
 		this.nextExecutionDate = nextExecutionDate;
 	}
 
-	protected Integer retriesRemaining;
+	protected  Integer retriesRemaining;
 
 	public Integer getRetriesRemaining() {
 		return this.retriesRemaining;
@@ -89,7 +91,7 @@ public class EventDeliverySummary implements Serializable
 		this.retriesRemaining = retriesRemaining;
 	}
 
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -107,7 +109,7 @@ public class EventDeliverySummary implements Serializable
 		this.deliveryAttempts = deliveryAttempts;
 	}
 
-	protected EventSummary eventSummary;
+	protected  EventSummary eventSummary;
 
 	public EventSummary getEventSummary() {
 		return this.eventSummary;
@@ -116,5 +118,6 @@ public class EventDeliverySummary implements Serializable
 	public void setEventSummary(EventSummary eventSummary) {
 		this.eventSummary = eventSummary;
 	}
+
 
 }

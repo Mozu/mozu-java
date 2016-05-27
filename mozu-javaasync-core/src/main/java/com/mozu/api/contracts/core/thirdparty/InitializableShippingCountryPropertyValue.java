@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.thirdparty.InitializablePropertyValue;
 
 /**
@@ -24,7 +26,7 @@ public class InitializableShippingCountryPropertyValue implements Serializable
 	/**
 	 * If true, the property value is initialized.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -37,7 +39,7 @@ public class InitializableShippingCountryPropertyValue implements Serializable
 	/**
 	 * Value of the initializable third-party capability property.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -57,5 +59,6 @@ public class InitializableShippingCountryPropertyValue implements Serializable
 	public void setChild(List<InitializablePropertyValue> child) {
 		this.child = child;
 	}
+
 
 }

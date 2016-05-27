@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class CustomerSegment implements Serializable
 	/**
 	 * The user-defined code assigned for the customer segment.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -36,7 +38,7 @@ public class CustomerSegment implements Serializable
 	/**
 	 * Description of the customer segment.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -49,7 +51,7 @@ public class CustomerSegment implements Serializable
 	/**
 	 * Unique identifier of the customer segment. System-supplied and read only.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -62,7 +64,7 @@ public class CustomerSegment implements Serializable
 	/**
 	 * Name of the customer segment.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -72,7 +74,7 @@ public class CustomerSegment implements Serializable
 		this.name = name;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -81,5 +83,6 @@ public class CustomerSegment implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

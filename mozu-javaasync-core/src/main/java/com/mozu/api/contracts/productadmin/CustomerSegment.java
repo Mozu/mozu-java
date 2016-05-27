@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a customer segment used to group sets of customers for targeted reporting and discounts.
@@ -22,7 +24,7 @@ public class CustomerSegment implements Serializable
 	/**
 	 * Unique identifier of the customer segment.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -31,5 +33,6 @@ public class CustomerSegment implements Serializable
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 }

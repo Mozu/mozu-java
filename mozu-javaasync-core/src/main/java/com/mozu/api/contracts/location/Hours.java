@@ -9,6 +9,8 @@ package com.mozu.api.contracts.location;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Container for the label that describes the range of operating hours for a location.
@@ -22,7 +24,7 @@ public class Hours implements Serializable
 	/**
 	 * Label that describes the range of operating hours for a location. For example - {"Label": "10:00 AM - 6:00 PM"}
 	 */
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -31,5 +33,6 @@ public class Hours implements Serializable
 	public void setLabel(String label) {
 		this.label = label;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.pricingruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Details of the product attribute, such its name and description.
@@ -22,7 +24,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The data type of the attribute. There are four valid data types: "Bool", "DateTime", "Number", "String"
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -35,7 +37,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The description of this product attribute.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -48,7 +50,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The storefront interface input type for this attribute such as a radio button or drop-down menu selection.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -61,7 +63,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The name of the product attribute.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -74,7 +76,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * An attribute value type is either predefined vocabulary by the admin during product attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -83,5 +85,6 @@ public class ProductAttribute implements Serializable
 	public void setValueType(String valueType) {
 		this.valueType = valueType;
 	}
+
 
 }

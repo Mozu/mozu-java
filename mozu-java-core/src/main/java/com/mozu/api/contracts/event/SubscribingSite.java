@@ -9,6 +9,8 @@ package com.mozu.api.contracts.event;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -20,7 +22,7 @@ public class SubscribingSite implements Serializable
 	/**
 	 * This specifies if the subscription is active at the site level.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -30,7 +32,7 @@ public class SubscribingSite implements Serializable
 		this.isActive = isActive;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -43,7 +45,7 @@ public class SubscribingSite implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -52,5 +54,6 @@ public class SubscribingSite implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

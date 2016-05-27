@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Localized content displayed in the storefront for this attribute.
@@ -22,7 +24,7 @@ public class AttributeLocalizedContent implements Serializable
 	/**
 	 * Localized content for the description of this attribute displayed in the storefront.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -35,7 +37,7 @@ public class AttributeLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -48,7 +50,7 @@ public class AttributeLocalizedContent implements Serializable
 	/**
 	 * Localized content for the attribute name displayed in the storefront.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -57,5 +59,6 @@ public class AttributeLocalizedContent implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

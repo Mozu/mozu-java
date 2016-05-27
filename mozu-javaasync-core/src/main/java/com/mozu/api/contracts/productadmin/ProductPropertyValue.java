@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 import com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent;
 
@@ -25,7 +27,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * Value details for a product property attribute.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -38,7 +40,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * Details of the vocabulary value for predefined product property attributes.
 	 */
-	protected AttributeVocabularyValue attributeVocabularyValueDetail;
+	protected  AttributeVocabularyValue attributeVocabularyValueDetail;
 
 	public AttributeVocabularyValue getAttributeVocabularyValueDetail() {
 		return this.attributeVocabularyValueDetail;
@@ -51,7 +53,7 @@ public class ProductPropertyValue implements Serializable
 	/**
 	 * Content of the product property value.
 	 */
-	protected ProductPropertyValueLocalizedContent content;
+	protected  ProductPropertyValueLocalizedContent content;
 
 	public ProductPropertyValueLocalizedContent getContent() {
 		return this.content;
@@ -68,5 +70,6 @@ public class ProductPropertyValue implements Serializable
 	public void setLocalizedContent(List<ProductPropertyValueLocalizedContent> localizedContent) {
 		this.localizedContent = localizedContent;
 	}
+
 
 }

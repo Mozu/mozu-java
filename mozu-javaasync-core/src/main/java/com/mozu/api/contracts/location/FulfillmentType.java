@@ -9,6 +9,8 @@ package com.mozu.api.contracts.location;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a method used to fulfill items for an order. Fulfillment types are system-supplied, and include direct ship (DS) or in-store pickup (SP) at this time.
@@ -22,7 +24,7 @@ public class FulfillmentType implements Serializable
 	/**
 	 * The system-supplied code that identifies the fulfillment type, which is "DS" for direct ship or "SP" for in-store pickup.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -35,7 +37,7 @@ public class FulfillmentType implements Serializable
 	/**
 	 * The system-supplied name of the fulfillment type, which is "Direct Ship" or "In Store Pickup".
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -44,5 +46,6 @@ public class FulfillmentType implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

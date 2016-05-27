@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contact implements Serializable
@@ -16,7 +18,7 @@ public class Contact implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String country;
+	protected  String country;
 
 	public String getCountry() {
 		return this.country;
@@ -26,7 +28,7 @@ public class Contact implements Serializable
 		this.country = country;
 	}
 
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -36,7 +38,7 @@ public class Contact implements Serializable
 		this.email = email;
 	}
 
-	protected String firstname;
+	protected  String firstname;
 
 	public String getFirstname() {
 		return this.firstname;
@@ -46,7 +48,7 @@ public class Contact implements Serializable
 		this.firstname = firstname;
 	}
 
-	protected String lastname;
+	protected  String lastname;
 
 	public String getLastname() {
 		return this.lastname;
@@ -56,7 +58,7 @@ public class Contact implements Serializable
 		this.lastname = lastname;
 	}
 
-	protected String phone;
+	protected  String phone;
 
 	public String getPhone() {
 		return this.phone;
@@ -65,5 +67,6 @@ public class Contact implements Serializable
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 
 }

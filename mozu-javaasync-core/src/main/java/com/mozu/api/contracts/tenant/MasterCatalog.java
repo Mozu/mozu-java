@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.tenant.Catalog;
 
 /**
@@ -21,7 +23,7 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -34,7 +36,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The default three-letter ISO currency code associated with this master catalog. At this time, only "USD" is supported.
 	 */
-	protected String defaultCurrencyCode;
+	protected  String defaultCurrencyCode;
 
 	public String getDefaultCurrencyCode() {
 		return this.defaultCurrencyCode;
@@ -47,7 +49,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The default locale code associated with this master catalog. At this time, only "en-US" is supported.
 	 */
-	protected String defaultLocaleCode;
+	protected  String defaultLocaleCode;
 
 	public String getDefaultLocaleCode() {
 		return this.defaultLocaleCode;
@@ -60,7 +62,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The date and time the master catalog was deleted.
 	 */
-	protected DateTime deleteDate;
+	protected  DateTime deleteDate;
 
 	public DateTime getDeleteDate() {
 		return this.deleteDate;
@@ -70,7 +72,7 @@ public class MasterCatalog implements Serializable
 		this.deleteDate = deleteDate;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -83,7 +85,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * If true, this master catalog and its associated catalogs have been deleted from the tenant.
 	 */
-	protected Boolean isDeleted;
+	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
@@ -96,7 +98,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * User-defined name of the master catalog.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -109,7 +111,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The current status of the master catalog.
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -122,7 +124,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -132,7 +134,7 @@ public class MasterCatalog implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -152,5 +154,6 @@ public class MasterCatalog implements Serializable
 	public void setCatalogs(List<Catalog> catalogs) {
 		this.catalogs = catalogs;
 	}
+
 
 }

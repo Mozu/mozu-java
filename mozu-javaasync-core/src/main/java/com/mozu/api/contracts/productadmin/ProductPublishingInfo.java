@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the publishing status of the product, including its current state and the details of the last product change published to the catalog.
@@ -22,7 +24,7 @@ public class ProductPublishingInfo implements Serializable
 	/**
 	 * The user ID of the user who last published changes for this product in the catalog.
 	 */
-	protected String lastPublishedBy;
+	protected  String lastPublishedBy;
 
 	public String getLastPublishedBy() {
 		return this.lastPublishedBy;
@@ -35,7 +37,7 @@ public class ProductPublishingInfo implements Serializable
 	/**
 	 * The date and time a draft change for this product was published to the catalog.
 	 */
-	protected DateTime lastPublishedDate;
+	protected  DateTime lastPublishedDate;
 
 	public DateTime getLastPublishedDate() {
 		return this.lastPublishedDate;
@@ -48,7 +50,7 @@ public class ProductPublishingInfo implements Serializable
 	/**
 	 * The current publishing state of this product in the catalog, which is Live, New, or Draft. Live products appear on the storefront and have no pending changes. New products have been created but do not yet appear on the storefront. Draft products appear on the storefront but have pending changes that have not yet been published.
 	 */
-	protected String publishedState;
+	protected  String publishedState;
 
 	public String getPublishedState() {
 		return this.publishedState;
@@ -58,7 +60,7 @@ public class ProductPublishingInfo implements Serializable
 		this.publishedState = publishedState;
 	}
 
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -67,5 +69,6 @@ public class ProductPublishingInfo implements Serializable
 	public void setPublishSetCode(String publishSetCode) {
 		this.publishSetCode = publishSetCode;
 	}
+
 
 }

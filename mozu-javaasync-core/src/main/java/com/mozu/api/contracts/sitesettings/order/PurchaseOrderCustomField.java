@@ -9,6 +9,8 @@ package com.mozu.api.contracts.sitesettings.order;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderCustomField implements Serializable
@@ -16,7 +18,7 @@ public class PurchaseOrderCustomField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -26,7 +28,7 @@ public class PurchaseOrderCustomField implements Serializable
 		this.code = code;
 	}
 
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -36,7 +38,7 @@ public class PurchaseOrderCustomField implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -46,7 +48,7 @@ public class PurchaseOrderCustomField implements Serializable
 		this.isRequired = isRequired;
 	}
 
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -55,5 +57,16 @@ public class PurchaseOrderCustomField implements Serializable
 	public void setLabel(String label) {
 		this.label = label;
 	}
+
+	protected  Integer sequenceNumber;
+
+	public Integer getSequenceNumber() {
+		return this.sequenceNumber;
+	}
+
+	public void setSequenceNumber(Integer sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
 /**
@@ -23,7 +25,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Value of the product option attribute.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -36,7 +38,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Detailed properties of the product option attribute's vocabulary value.
 	 */
-	protected AttributeVocabularyValue attributeVocabularyValueDetail;
+	protected  AttributeVocabularyValue attributeVocabularyValueDetail;
 
 	public AttributeVocabularyValue getAttributeVocabularyValueDetail() {
 		return this.attributeVocabularyValueDetail;
@@ -45,5 +47,6 @@ public class ProductOptionValue implements Serializable
 	public void setAttributeVocabularyValueDetail(AttributeVocabularyValue attributeVocabularyValueDetail) {
 		this.attributeVocabularyValueDetail = attributeVocabularyValueDetail;
 	}
+
 
 }

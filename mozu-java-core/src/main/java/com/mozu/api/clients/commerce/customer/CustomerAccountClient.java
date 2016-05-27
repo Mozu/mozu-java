@@ -154,6 +154,51 @@ public class CustomerAccountClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( customeraccountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> getCustomerPurchaseOrderTransactionsClient(Integer customeraccountId) throws Exception
+	{
+		return getCustomerPurchaseOrderTransactionsClient( customeraccountId,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient=GetCustomerPurchaseOrderTransactionsClient( customeraccountId,  startIndex,  pageSize,  sortBy,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> getCustomerPurchaseOrderTransactionsClient(Integer customeraccountId, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getCustomerPurchaseOrderTransactionsUrl(customeraccountId, pageSize, responseFields, sortBy, startIndex);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection.class;
+		MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a new customer account based on the information specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAccount> mozuClient=AddAccountClient( account);
@@ -357,6 +402,53 @@ public class CustomerAccountClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  customeraccountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransaction purchaseOrderTransaction = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @param purchaseOrderTransaction 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> createPurchaseOrderTransactionClient(com.mozu.api.contracts.customer.PurchaseOrderTransaction purchaseOrderTransaction, Integer customeraccountId) throws Exception
+	{
+		return createPurchaseOrderTransactionClient( purchaseOrderTransaction,  customeraccountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionClient( purchaseOrderTransaction,  customeraccountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransaction purchaseOrderTransaction = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @param responseFields 
+	 * @param purchaseOrderTransaction 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> createPurchaseOrderTransactionClient(com.mozu.api.contracts.customer.PurchaseOrderTransaction purchaseOrderTransaction, Integer customeraccountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.createPurchaseOrderTransactionUrl(customeraccountId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.PurchaseOrderTransaction.class;
+		MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient = (MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(purchaseOrderTransaction);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Creates a new customer account and logs the user associated with the customer account into the site.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.customer.CustomerAuthTicket> mozuClient=AddAccountAndLoginClient( accountAndAuthInfo);
@@ -487,6 +579,53 @@ public class CustomerAccountClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(accountPasswordInfos);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionInternalClient( purchaseOrderTransaction,  customeraccountId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransaction purchaseOrderTransaction = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @param purchaseOrderTransaction 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> createPurchaseOrderTransactionInternalClient(com.mozu.api.contracts.customer.PurchaseOrderTransaction purchaseOrderTransaction, Integer customeraccountId) throws Exception
+	{
+		return createPurchaseOrderTransactionInternalClient( purchaseOrderTransaction,  customeraccountId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient=CreatePurchaseOrderTransactionInternalClient( purchaseOrderTransaction,  customeraccountId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * PurchaseOrderTransaction purchaseOrderTransaction = client.Result();
+	 * </code></pre></p>
+	 * @param customeraccountId 
+	 * @param responseFields 
+	 * @param purchaseOrderTransaction 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.PurchaseOrderTransaction>
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> createPurchaseOrderTransactionInternalClient(com.mozu.api.contracts.customer.PurchaseOrderTransaction purchaseOrderTransaction, Integer customeraccountId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.createPurchaseOrderTransactionInternalUrl(customeraccountId, responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.PurchaseOrderTransaction.class;
+		MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction> mozuClient = (MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransaction>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(purchaseOrderTransaction);
 		return mozuClient;
 
 	}

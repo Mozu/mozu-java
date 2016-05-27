@@ -9,6 +9,8 @@ package com.mozu.api.contracts.event;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EventExtendedProperty implements Serializable
@@ -16,7 +18,7 @@ public class EventExtendedProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -26,7 +28,7 @@ public class EventExtendedProperty implements Serializable
 		this.key = key;
 	}
 
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -35,5 +37,6 @@ public class EventExtendedProperty implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

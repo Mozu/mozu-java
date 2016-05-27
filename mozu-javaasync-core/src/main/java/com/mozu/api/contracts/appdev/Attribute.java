@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Attribute implements Serializable
@@ -16,7 +18,7 @@ public class Attribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String vocabularyValues;
+	protected  String vocabularyValues;
 
 	public String getVocabularyValues() {
 		return this.vocabularyValues;
@@ -26,7 +28,7 @@ public class Attribute implements Serializable
 		this.vocabularyValues = vocabularyValues;
 	}
 
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -36,7 +38,7 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	protected Integer applicationAttributeId;
+	protected  Integer applicationAttributeId;
 
 	public Integer getApplicationAttributeId() {
 		return this.applicationAttributeId;
@@ -46,7 +48,7 @@ public class Attribute implements Serializable
 		this.applicationAttributeId = applicationAttributeId;
 	}
 
-	protected Integer attributeId;
+	protected  Integer attributeId;
 
 	public Integer getAttributeId() {
 		return this.attributeId;
@@ -56,7 +58,7 @@ public class Attribute implements Serializable
 		this.attributeId = attributeId;
 	}
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -66,7 +68,7 @@ public class Attribute implements Serializable
 		this.code = code;
 	}
 
-	protected String fqn;
+	protected  String fqn;
 
 	public String getFqn() {
 		return this.fqn;
@@ -76,7 +78,7 @@ public class Attribute implements Serializable
 		this.fqn = fqn;
 	}
 
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -86,7 +88,7 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -96,7 +98,7 @@ public class Attribute implements Serializable
 		this.name = name;
 	}
 
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -106,7 +108,7 @@ public class Attribute implements Serializable
 		this.sequence = sequence;
 	}
 
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -116,7 +118,7 @@ public class Attribute implements Serializable
 		this.type = type;
 	}
 
-	protected String vocabularyJson;
+	protected  String vocabularyJson;
 
 	public String getVocabularyJson() {
 		return this.vocabularyJson;
@@ -125,5 +127,6 @@ public class Attribute implements Serializable
 	public void setVocabularyJson(String vocabularyJson) {
 		this.vocabularyJson = vocabularyJson;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.products;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	An option attribute configured for a product on a storefront.
@@ -22,7 +24,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -35,7 +37,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The data type, such as bool or string, used in this option attribute.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -48,7 +50,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The name of the product option attribute in the language of the locale code specified for the storefront.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -61,7 +63,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The value a shopper entered for an option attribute that requires additional input for the product on a storefront.
 	 */
-	protected Object shopperEnteredValue;
+	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
 		return this.shopperEnteredValue;
@@ -74,7 +76,7 @@ public class ProductOption implements Serializable
 	/**
 	 * If the value is a string, the string entered for the value.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -87,7 +89,7 @@ public class ProductOption implements Serializable
 	/**
 	 * If the value if an object, the value selected.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -96,5 +98,6 @@ public class ProductOption implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

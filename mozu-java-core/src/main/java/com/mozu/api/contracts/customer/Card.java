@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a credit card used to submit payment for an order.
@@ -22,7 +24,7 @@ public class Card implements Serializable
 	/**
 	 * The masked credit card number part returned from the payment gateway.
 	 */
-	protected String cardNumberPart;
+	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
 		return this.cardNumberPart;
@@ -35,7 +37,7 @@ public class Card implements Serializable
 	/**
 	 * The type of credit card, such as Visa or Amex.
 	 */
-	protected String cardType;
+	protected  String cardType;
 
 	public String getCardType() {
 		return this.cardType;
@@ -48,7 +50,7 @@ public class Card implements Serializable
 	/**
 	 * Unique identifier of the customer account contact associated with the credit card.
 	 */
-	protected Integer contactId;
+	protected  Integer contactId;
 
 	public Integer getContactId() {
 		return this.contactId;
@@ -61,7 +63,7 @@ public class Card implements Serializable
 	/**
 	 * The two-digit month the credit card expires.
 	 */
-	protected short expireMonth;
+	protected  short expireMonth;
 
 	public short getExpireMonth() {
 		return this.expireMonth;
@@ -74,7 +76,7 @@ public class Card implements Serializable
 	/**
 	 * The four-digit year the credit card expires.
 	 */
-	protected short expireYear;
+	protected  short expireYear;
 
 	public short getExpireYear() {
 		return this.expireYear;
@@ -87,7 +89,7 @@ public class Card implements Serializable
 	/**
 	 * Unique ID of the credit card for the customer account. This identifier is separate from the credit card number.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -97,7 +99,7 @@ public class Card implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isDefaultPayMethod;
+	protected  Boolean isDefaultPayMethod;
 
 	public Boolean getIsDefaultPayMethod() {
 		return this.isDefaultPayMethod;
@@ -110,7 +112,7 @@ public class Card implements Serializable
 	/**
 	 * The name printed on the credit card.
 	 */
-	protected String nameOnCard;
+	protected  String nameOnCard;
 
 	public String getNameOnCard() {
 		return this.nameOnCard;
@@ -119,5 +121,6 @@ public class Card implements Serializable
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core.thirdparty;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a value that can be initialized for a capability property.
@@ -22,7 +24,7 @@ public class InitializablePropertyValue implements Serializable
 	/**
 	 * If true, the property value is initialized.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -35,7 +37,7 @@ public class InitializablePropertyValue implements Serializable
 	/**
 	 * Value of the initializable third-party capability property.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -44,5 +46,6 @@ public class InitializablePropertyValue implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

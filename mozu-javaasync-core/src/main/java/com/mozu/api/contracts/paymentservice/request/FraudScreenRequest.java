@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.Address;
 import com.mozu.api.contracts.paymentservice.Contact;
 import com.mozu.api.contracts.paymentservice.GatewayCredentialFieldValue;
@@ -22,7 +24,7 @@ public class FraudScreenRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String avsCodes;
+	protected  String avsCodes;
 
 	public String getAvsCodes() {
 		return this.avsCodes;
@@ -32,7 +34,7 @@ public class FraudScreenRequest implements Serializable
 		this.avsCodes = avsCodes;
 	}
 
-	protected String cardId;
+	protected  String cardId;
 
 	public String getCardId() {
 		return this.cardId;
@@ -42,7 +44,7 @@ public class FraudScreenRequest implements Serializable
 		this.cardId = cardId;
 	}
 
-	protected String cardNumberPart;
+	protected  String cardNumberPart;
 
 	public String getCardNumberPart() {
 		return this.cardNumberPart;
@@ -52,7 +54,7 @@ public class FraudScreenRequest implements Serializable
 		this.cardNumberPart = cardNumberPart;
 	}
 
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -62,7 +64,7 @@ public class FraudScreenRequest implements Serializable
 		this.countryCode = countryCode;
 	}
 
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -72,7 +74,7 @@ public class FraudScreenRequest implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	protected String customerId;
+	protected  String customerId;
 
 	public String getCustomerId() {
 		return this.customerId;
@@ -82,7 +84,7 @@ public class FraudScreenRequest implements Serializable
 		this.customerId = customerId;
 	}
 
-	protected String cvV2Codes;
+	protected  String cvV2Codes;
 
 	public String getCvV2Codes() {
 		return this.cvV2Codes;
@@ -92,7 +94,7 @@ public class FraudScreenRequest implements Serializable
 		this.cvV2Codes = cvV2Codes;
 	}
 
-	protected Integer expireMonth;
+	protected  Integer expireMonth;
 
 	public Integer getExpireMonth() {
 		return this.expireMonth;
@@ -102,7 +104,7 @@ public class FraudScreenRequest implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	protected Integer expireYear;
+	protected  Integer expireYear;
 
 	public Integer getExpireYear() {
 		return this.expireYear;
@@ -112,7 +114,7 @@ public class FraudScreenRequest implements Serializable
 		this.expireYear = expireYear;
 	}
 
-	protected String gatewayAccountId;
+	protected  String gatewayAccountId;
 
 	public String getGatewayAccountId() {
 		return this.gatewayAccountId;
@@ -122,7 +124,7 @@ public class FraudScreenRequest implements Serializable
 		this.gatewayAccountId = gatewayAccountId;
 	}
 
-	protected String merchantTransactionId;
+	protected  String merchantTransactionId;
 
 	public String getMerchantTransactionId() {
 		return this.merchantTransactionId;
@@ -132,7 +134,7 @@ public class FraudScreenRequest implements Serializable
 		this.merchantTransactionId = merchantTransactionId;
 	}
 
-	protected Integer orderNumber;
+	protected  Integer orderNumber;
 
 	public Integer getOrderNumber() {
 		return this.orderNumber;
@@ -142,7 +144,7 @@ public class FraudScreenRequest implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
-	protected String paymentTransactionId;
+	protected  String paymentTransactionId;
 
 	public String getPaymentTransactionId() {
 		return this.paymentTransactionId;
@@ -152,7 +154,7 @@ public class FraudScreenRequest implements Serializable
 		this.paymentTransactionId = paymentTransactionId;
 	}
 
-	protected String paymentType;
+	protected  String paymentType;
 
 	public String getPaymentType() {
 		return this.paymentType;
@@ -162,7 +164,7 @@ public class FraudScreenRequest implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	protected String requestorIp;
+	protected  String requestorIp;
 
 	public String getRequestorIp() {
 		return this.requestorIp;
@@ -172,7 +174,7 @@ public class FraudScreenRequest implements Serializable
 		this.requestorIp = requestorIp;
 	}
 
-	protected String requestorUrl;
+	protected  String requestorUrl;
 
 	public String getRequestorUrl() {
 		return this.requestorUrl;
@@ -182,7 +184,7 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUrl = requestorUrl;
 	}
 
-	protected String requestorUserAgent;
+	protected  String requestorUserAgent;
 
 	public String getRequestorUserAgent() {
 		return this.requestorUserAgent;
@@ -192,7 +194,7 @@ public class FraudScreenRequest implements Serializable
 		this.requestorUserAgent = requestorUserAgent;
 	}
 
-	protected String shipType;
+	protected  String shipType;
 
 	public String getShipType() {
 		return this.shipType;
@@ -202,7 +204,7 @@ public class FraudScreenRequest implements Serializable
 		this.shipType = shipType;
 	}
 
-	protected Double total;
+	protected  Double total;
 
 	public Double getTotal() {
 		return this.total;
@@ -212,7 +214,7 @@ public class FraudScreenRequest implements Serializable
 		this.total = total;
 	}
 
-	protected Address billingAddress;
+	protected  Address billingAddress;
 
 	public Address getBillingAddress() {
 		return this.billingAddress;
@@ -222,7 +224,7 @@ public class FraudScreenRequest implements Serializable
 		this.billingAddress = billingAddress;
 	}
 
-	protected Contact billingContact;
+	protected  Contact billingContact;
 
 	public Contact getBillingContact() {
 		return this.billingContact;
@@ -256,7 +258,7 @@ public class FraudScreenRequest implements Serializable
 		this.orderItems = orderItems;
 	}
 
-	protected Address shippingAddress;
+	protected  Address shippingAddress;
 
 	public Address getShippingAddress() {
 		return this.shippingAddress;
@@ -266,7 +268,7 @@ public class FraudScreenRequest implements Serializable
 		this.shippingAddress = shippingAddress;
 	}
 
-	protected Contact shippingContact;
+	protected  Contact shippingContact;
 
 	public Contact getShippingContact() {
 		return this.shippingContact;
@@ -275,5 +277,6 @@ public class FraudScreenRequest implements Serializable
 	public void setShippingContact(Contact shippingContact) {
 		this.shippingContact = shippingContact;
 	}
+
 
 }

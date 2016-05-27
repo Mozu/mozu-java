@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.tenant.Tenant;
 import com.mozu.api.contracts.core.UserProfile;
 
@@ -25,7 +27,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * Alphanumeric string used to authenticate the user in API request headers.
 	 */
-	protected String accessToken;
+	protected  String accessToken;
 
 	public String getAccessToken() {
 		return this.accessToken;
@@ -38,7 +40,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * The date and time the user access token expires.
 	 */
-	protected DateTime accessTokenExpiration;
+	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
 		return this.accessTokenExpiration;
@@ -51,7 +53,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createdOn;
+	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
 		return this.createdOn;
@@ -75,7 +77,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * Alphanumeric string used to generate a new user authentication ticket after the access token expires.
 	 */
-	protected String refreshToken;
+	protected  String refreshToken;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -88,7 +90,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * The date and time the user refresh token expires.
 	 */
-	protected DateTime refreshTokenExpiration;
+	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
 		return this.refreshTokenExpiration;
@@ -112,7 +114,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * Tenant information associated with the user authentication ticket.
 	 */
-	protected Tenant tenant;
+	protected  Tenant tenant;
 
 	public Tenant getTenant() {
 		return this.tenant;
@@ -125,7 +127,7 @@ public class TenantAdminUserAuthTicket implements Serializable
 	/**
 	 * User information associated with the authentication ticket.
 	 */
-	protected UserProfile user;
+	protected  UserProfile user;
 
 	public UserProfile getUser() {
 		return this.user;
@@ -134,5 +136,6 @@ public class TenantAdminUserAuthTicket implements Serializable
 	public void setUser(UserProfile user) {
 		this.user = user;
 	}
+
 
 }

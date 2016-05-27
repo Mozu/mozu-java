@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.AppVersion;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class ApplicationSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -27,7 +29,7 @@ public class ApplicationSummary implements Serializable
 		this.appId = appId;
 	}
 
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -37,7 +39,7 @@ public class ApplicationSummary implements Serializable
 		this.appKey = appKey;
 	}
 
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -47,7 +49,7 @@ public class ApplicationSummary implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	protected String applicationNamespace;
+	protected  String applicationNamespace;
 
 	public String getApplicationNamespace() {
 		return this.applicationNamespace;
@@ -57,7 +59,7 @@ public class ApplicationSummary implements Serializable
 		this.applicationNamespace = applicationNamespace;
 	}
 
-	protected Integer applicationStatusId;
+	protected  Integer applicationStatusId;
 
 	public Integer getApplicationStatusId() {
 		return this.applicationStatusId;
@@ -67,7 +69,7 @@ public class ApplicationSummary implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	protected String applicationStatusName;
+	protected  String applicationStatusName;
 
 	public String getApplicationStatusName() {
 		return this.applicationStatusName;
@@ -77,7 +79,7 @@ public class ApplicationSummary implements Serializable
 		this.applicationStatusName = applicationStatusName;
 	}
 
-	protected Integer applicationTypeId;
+	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
 		return this.applicationTypeId;
@@ -87,7 +89,7 @@ public class ApplicationSummary implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	protected Byte appSchemeVersion;
+	protected  Byte appSchemeVersion;
 
 	public Byte getAppSchemeVersion() {
 		return this.appSchemeVersion;
@@ -97,7 +99,7 @@ public class ApplicationSummary implements Serializable
 		this.appSchemeVersion = appSchemeVersion;
 	}
 
-	protected Boolean hasVersions;
+	protected  Boolean hasVersions;
 
 	public Boolean getHasVersions() {
 		return this.hasVersions;
@@ -107,7 +109,7 @@ public class ApplicationSummary implements Serializable
 		this.hasVersions = hasVersions;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -117,7 +119,7 @@ public class ApplicationSummary implements Serializable
 		this.name = name;
 	}
 
-	protected String parentAppKey;
+	protected  String parentAppKey;
 
 	public String getParentAppKey() {
 		return this.parentAppKey;
@@ -127,7 +129,7 @@ public class ApplicationSummary implements Serializable
 		this.parentAppKey = parentAppKey;
 	}
 
-	protected String parentName;
+	protected  String parentName;
 
 	public String getParentName() {
 		return this.parentName;
@@ -137,7 +139,7 @@ public class ApplicationSummary implements Serializable
 		this.parentName = parentName;
 	}
 
-	protected Integer releasePackageId;
+	protected  Integer releasePackageId;
 
 	public Integer getReleasePackageId() {
 		return this.releasePackageId;
@@ -147,7 +149,7 @@ public class ApplicationSummary implements Serializable
 		this.releasePackageId = releasePackageId;
 	}
 
-	protected String releasePackageName;
+	protected  String releasePackageName;
 
 	public String getReleasePackageName() {
 		return this.releasePackageName;
@@ -157,7 +159,7 @@ public class ApplicationSummary implements Serializable
 		this.releasePackageName = releasePackageName;
 	}
 
-	protected Boolean updateAvailable;
+	protected  Boolean updateAvailable;
 
 	public Boolean getUpdateAvailable() {
 		return this.updateAvailable;
@@ -167,7 +169,7 @@ public class ApplicationSummary implements Serializable
 		this.updateAvailable = updateAvailable;
 	}
 
-	protected String updateParentAppKey;
+	protected  String updateParentAppKey;
 
 	public String getUpdateParentAppKey() {
 		return this.updateParentAppKey;
@@ -177,7 +179,7 @@ public class ApplicationSummary implements Serializable
 		this.updateParentAppKey = updateParentAppKey;
 	}
 
-	protected AppVersion applicationVersion;
+	protected  AppVersion applicationVersion;
 
 	public AppVersion getApplicationVersion() {
 		return this.applicationVersion;
@@ -186,5 +188,6 @@ public class ApplicationSummary implements Serializable
 	public void setApplicationVersion(AppVersion applicationVersion) {
 		this.applicationVersion = applicationVersion;
 	}
+
 
 }

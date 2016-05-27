@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Expression;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class Expression implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String left;
+	protected  String left;
 
 	public String getLeft() {
 		return this.left;
@@ -28,7 +30,7 @@ public class Expression implements Serializable
 		this.left = left;
 	}
 
-	protected String logicalOperator;
+	protected  String logicalOperator;
 
 	public String getLogicalOperator() {
 		return this.logicalOperator;
@@ -38,7 +40,7 @@ public class Expression implements Serializable
 		this.logicalOperator = logicalOperator;
 	}
 
-	protected String operator;
+	protected  String operator;
 
 	public String getOperator() {
 		return this.operator;
@@ -48,7 +50,7 @@ public class Expression implements Serializable
 		this.operator = operator;
 	}
 
-	protected Object right;
+	protected  Object right;
 
 	public Object getRight() {
 		return this.right;
@@ -58,7 +60,7 @@ public class Expression implements Serializable
 		this.right = right;
 	}
 
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -75,5 +77,6 @@ public class Expression implements Serializable
 	public void setNodes(List<Expression> nodes) {
 		this.nodes = nodes;
 	}
+
 
 }

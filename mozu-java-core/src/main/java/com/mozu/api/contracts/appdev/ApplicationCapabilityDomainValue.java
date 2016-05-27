@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityDomainValue implements Serializable
@@ -16,7 +18,7 @@ public class ApplicationCapabilityDomainValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationCapabilityDomainId1;
+	protected  Integer applicationCapabilityDomainId1;
 
 	public Integer getApplicationCapabilityDomainId1() {
 		return this.applicationCapabilityDomainId1;
@@ -26,7 +28,7 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainId1 = applicationCapabilityDomainId1;
 	}
 
-	protected Integer applicationCapabilityDomainId2;
+	protected  Integer applicationCapabilityDomainId2;
 
 	public Integer getApplicationCapabilityDomainId2() {
 		return this.applicationCapabilityDomainId2;
@@ -36,7 +38,7 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainId2 = applicationCapabilityDomainId2;
 	}
 
-	protected Integer applicationCapabilityDomainValueId;
+	protected  Integer applicationCapabilityDomainValueId;
 
 	public Integer getApplicationCapabilityDomainValueId() {
 		return this.applicationCapabilityDomainValueId;
@@ -46,7 +48,7 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.applicationCapabilityDomainValueId = applicationCapabilityDomainValueId;
 	}
 
-	protected String displayName;
+	protected  String displayName;
 
 	public String getDisplayName() {
 		return this.displayName;
@@ -56,7 +58,7 @@ public class ApplicationCapabilityDomainValue implements Serializable
 		this.displayName = displayName;
 	}
 
-	protected String valueName;
+	protected  String valueName;
 
 	public String getValueName() {
 		return this.valueName;
@@ -65,5 +67,6 @@ public class ApplicationCapabilityDomainValue implements Serializable
 	public void setValueName(String valueName) {
 		this.valueName = valueName;
 	}
+
 
 }

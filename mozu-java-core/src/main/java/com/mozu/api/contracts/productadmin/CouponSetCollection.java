@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.CouponSet;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class CouponSetCollection implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer pageCount;
+	protected  Integer pageCount;
 
 	public Integer getPageCount() {
 		return this.pageCount;
@@ -28,7 +30,7 @@ public class CouponSetCollection implements Serializable
 		this.pageCount = pageCount;
 	}
 
-	protected Integer pageSize;
+	protected  Integer pageSize;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -38,7 +40,7 @@ public class CouponSetCollection implements Serializable
 		this.pageSize = pageSize;
 	}
 
-	protected Integer startIndex;
+	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
 		return this.startIndex;
@@ -48,7 +50,7 @@ public class CouponSetCollection implements Serializable
 		this.startIndex = startIndex;
 	}
 
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -65,5 +67,6 @@ public class CouponSetCollection implements Serializable
 	public void setItems(List<CouponSet> items) {
 		this.items = items;
 	}
+
 
 }

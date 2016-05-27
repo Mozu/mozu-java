@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class SoftAllocation implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime expiresAt;
+	protected  DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
 		return this.expiresAt;
@@ -27,7 +29,7 @@ public class SoftAllocation implements Serializable
 		this.expiresAt = expiresAt;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -37,7 +39,7 @@ public class SoftAllocation implements Serializable
 		this.id = id;
 	}
 
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -47,7 +49,7 @@ public class SoftAllocation implements Serializable
 		this.locationCode = locationCode;
 	}
 
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -57,7 +59,7 @@ public class SoftAllocation implements Serializable
 		this.productCode = productCode;
 	}
 
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -67,7 +69,7 @@ public class SoftAllocation implements Serializable
 		this.quantity = quantity;
 	}
 
-	protected String referenceId;
+	protected  String referenceId;
 
 	public String getReferenceId() {
 		return this.referenceId;
@@ -77,7 +79,7 @@ public class SoftAllocation implements Serializable
 		this.referenceId = referenceId;
 	}
 
-	protected String referenceItemId;
+	protected  String referenceItemId;
 
 	public String getReferenceItemId() {
 		return this.referenceItemId;
@@ -87,7 +89,7 @@ public class SoftAllocation implements Serializable
 		this.referenceItemId = referenceItemId;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -96,5 +98,6 @@ public class SoftAllocation implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

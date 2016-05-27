@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublicCard implements Serializable
@@ -16,7 +18,7 @@ public class PublicCard implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String cardHolderName;
+	protected  String cardHolderName;
 
 	public String getCardHolderName() {
 		return this.cardHolderName;
@@ -26,7 +28,7 @@ public class PublicCard implements Serializable
 		this.cardHolderName = cardHolderName;
 	}
 
-	protected Integer cardIssueMonth;
+	protected  Integer cardIssueMonth;
 
 	public Integer getCardIssueMonth() {
 		return this.cardIssueMonth;
@@ -36,7 +38,7 @@ public class PublicCard implements Serializable
 		this.cardIssueMonth = cardIssueMonth;
 	}
 
-	protected String cardIssueNumber;
+	protected  String cardIssueNumber;
 
 	public String getCardIssueNumber() {
 		return this.cardIssueNumber;
@@ -46,7 +48,7 @@ public class PublicCard implements Serializable
 		this.cardIssueNumber = cardIssueNumber;
 	}
 
-	protected Integer cardIssueYear;
+	protected  Integer cardIssueYear;
 
 	public Integer getCardIssueYear() {
 		return this.cardIssueYear;
@@ -56,7 +58,7 @@ public class PublicCard implements Serializable
 		this.cardIssueYear = cardIssueYear;
 	}
 
-	protected String cardNumber;
+	protected  String cardNumber;
 
 	public String getCardNumber() {
 		return this.cardNumber;
@@ -66,7 +68,7 @@ public class PublicCard implements Serializable
 		this.cardNumber = cardNumber;
 	}
 
-	protected String cardType;
+	protected  String cardType;
 
 	public String getCardType() {
 		return this.cardType;
@@ -76,7 +78,7 @@ public class PublicCard implements Serializable
 		this.cardType = cardType;
 	}
 
-	protected String cvv;
+	protected  String cvv;
 
 	public String getCvv() {
 		return this.cvv;
@@ -86,7 +88,7 @@ public class PublicCard implements Serializable
 		this.cvv = cvv;
 	}
 
-	protected Integer expireMonth;
+	protected  Integer expireMonth;
 
 	public Integer getExpireMonth() {
 		return this.expireMonth;
@@ -96,7 +98,7 @@ public class PublicCard implements Serializable
 		this.expireMonth = expireMonth;
 	}
 
-	protected Integer expireYear;
+	protected  Integer expireYear;
 
 	public Integer getExpireYear() {
 		return this.expireYear;
@@ -105,5 +107,6 @@ public class PublicCard implements Serializable
 	public void setExpireYear(Integer expireYear) {
 		this.expireYear = expireYear;
 	}
+
 
 }

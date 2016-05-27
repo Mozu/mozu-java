@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DocumentInstallation implements Serializable
@@ -16,7 +18,7 @@ public class DocumentInstallation implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -26,7 +28,7 @@ public class DocumentInstallation implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	protected String locale;
+	protected  String locale;
 
 	public String getLocale() {
 		return this.locale;
@@ -36,7 +38,7 @@ public class DocumentInstallation implements Serializable
 		this.locale = locale;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -46,7 +48,7 @@ public class DocumentInstallation implements Serializable
 		this.name = name;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode properties;
+	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 
 	public com.fasterxml.jackson.databind.JsonNode getProperties() {
 		return this.properties;
@@ -54,6 +56,23 @@ public class DocumentInstallation implements Serializable
 
 	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
 		this.properties = properties;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(properties == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, properties);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.properties = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

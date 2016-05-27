@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductOptionValue;
 
@@ -25,7 +27,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -38,7 +40,7 @@ public class ProductOption implements Serializable
 	/**
 	 * If true, the product attribute or option has multiple values.
 	 */
-	protected Boolean isMultiValue;
+	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
 		return this.isMultiValue;
@@ -51,7 +53,7 @@ public class ProductOption implements Serializable
 	/**
 	 * If true, the entity is required for the request to return a valid response.
 	 */
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -64,7 +66,7 @@ public class ProductOption implements Serializable
 	/**
 	 * Details of the product option attribute.
 	 */
-	protected AttributeDetail attributeDetail;
+	protected  AttributeDetail attributeDetail;
 
 	public AttributeDetail getAttributeDetail() {
 		return this.attributeDetail;
@@ -84,5 +86,6 @@ public class ProductOption implements Serializable
 	public void setValues(List<ProductOptionValue> values) {
 		this.values = values;
 	}
+
 
 }

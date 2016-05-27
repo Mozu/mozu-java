@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SoftAllocationRenew implements Serializable
@@ -17,7 +19,7 @@ public class SoftAllocationRenew implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime expiresAt;
+	protected  DateTime expiresAt;
 
 	public DateTime getExpiresAt() {
 		return this.expiresAt;
@@ -34,5 +36,6 @@ public class SoftAllocationRenew implements Serializable
 	public void setIds(List<Integer> ids) {
 		this.ids = ids;
 	}
+
 
 }

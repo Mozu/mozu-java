@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.products;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Category;
 
 /**
@@ -23,7 +25,7 @@ public class Category implements Serializable
 	/**
 	 * Identifier of the category.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -36,7 +38,7 @@ public class Category implements Serializable
 	/**
 	 * If applicable, the parent category in the category tree.
 	 */
-	protected Category parent;
+	protected  Category parent;
 
 	public Category getParent() {
 		return this.parent;
@@ -45,5 +47,6 @@ public class Category implements Serializable
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
+
 
 }

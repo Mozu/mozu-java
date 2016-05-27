@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListEntryPrice implements Serializable
@@ -16,7 +18,7 @@ public class PriceListEntryPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double listPrice;
+	protected  Double listPrice;
 
 	public Double getListPrice() {
 		return this.listPrice;
@@ -26,7 +28,7 @@ public class PriceListEntryPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
-	protected String listPriceMode;
+	protected  String listPriceMode;
 
 	public String getListPriceMode() {
 		return this.listPriceMode;
@@ -36,7 +38,7 @@ public class PriceListEntryPrice implements Serializable
 		this.listPriceMode = listPriceMode;
 	}
 
-	protected Integer minQty;
+	protected  Integer minQty;
 
 	public Integer getMinQty() {
 		return this.minQty;
@@ -46,7 +48,7 @@ public class PriceListEntryPrice implements Serializable
 		this.minQty = minQty;
 	}
 
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -56,7 +58,7 @@ public class PriceListEntryPrice implements Serializable
 		this.salePrice = salePrice;
 	}
 
-	protected String salePriceMode;
+	protected  String salePriceMode;
 
 	public String getSalePriceMode() {
 		return this.salePriceMode;
@@ -65,5 +67,6 @@ public class PriceListEntryPrice implements Serializable
 	public void setSalePriceMode(String salePriceMode) {
 		this.salePriceMode = salePriceMode;
 	}
+
 
 }

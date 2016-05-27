@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an image defined for a product.
@@ -22,7 +24,7 @@ public class ProductImage implements Serializable
 	/**
 	 * Descriptive text associated with the image or video that appears on the storefront.
 	 */
-	protected String altText;
+	protected  String altText;
 
 	public String getAltText() {
 		return this.altText;
@@ -35,7 +37,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The identifier of the product image in the Mozu CMS. Supply a value for either the CMS ID or the Image URL parameter.
 	 */
-	protected String cmsId;
+	protected  String cmsId;
 
 	public String getCmsId() {
 		return this.cmsId;
@@ -48,7 +50,7 @@ public class ProductImage implements Serializable
 	/**
 	 * Image title that appears on the storefront.
 	 */
-	protected String imageLabel;
+	protected  String imageLabel;
 
 	public String getImageLabel() {
 		return this.imageLabel;
@@ -61,7 +63,7 @@ public class ProductImage implements Serializable
 	/**
 	 * URL of the product image.
 	 */
-	protected String imageUrl;
+	protected  String imageUrl;
 
 	public String getImageUrl() {
 		return this.imageUrl;
@@ -74,7 +76,7 @@ public class ProductImage implements Serializable
 	/**
 	 * Type of media specification required to successfully render the product image, video, or other content.
 	 */
-	protected String mediaType;
+	protected  String mediaType;
 
 	public String getMediaType() {
 		return this.mediaType;
@@ -87,7 +89,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -100,7 +102,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The file link or URL of the product video.
 	 */
-	protected String videoUrl;
+	protected  String videoUrl;
 
 	public String getVideoUrl() {
 		return this.videoUrl;
@@ -109,5 +111,6 @@ public class ProductImage implements Serializable
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
 	}
+
 
 }

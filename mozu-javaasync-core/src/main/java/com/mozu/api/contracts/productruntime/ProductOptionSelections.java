@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductOptionSelection;
 
 /**
@@ -24,7 +26,7 @@ public class ProductOptionSelections implements Serializable
 	/**
 	 * Product code that represents the product variation selected based on the option values the shopper entered.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -44,5 +46,6 @@ public class ProductOptionSelections implements Serializable
 	public void setOptions(List<ProductOptionSelection> options) {
 		this.options = options;
 	}
+
 
 }

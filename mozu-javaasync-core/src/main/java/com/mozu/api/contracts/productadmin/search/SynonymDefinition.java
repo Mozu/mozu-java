@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SynonymDefinition implements Serializable
@@ -17,7 +19,7 @@ public class SynonymDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -34,5 +36,6 @@ public class SynonymDefinition implements Serializable
 	public void setSynonyms(List<String> synonyms) {
 		this.synonyms = synonyms;
 	}
+
 
 }

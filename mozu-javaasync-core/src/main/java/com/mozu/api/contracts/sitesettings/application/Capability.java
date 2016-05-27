@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.thirdparty.ActiveShippingCountry;
 import com.mozu.api.contracts.core.thirdparty.OperationUrl;
 import com.mozu.api.contracts.core.thirdparty.InitializablePropertyValue;
@@ -49,7 +51,7 @@ public class Capability implements Serializable
 	/**
 	 * The enablement mode of the capability.
 	 */
-	protected String capabilityMode;
+	protected  String capabilityMode;
 
 	public String getCapabilityMode() {
 		return this.capabilityMode;
@@ -62,7 +64,7 @@ public class Capability implements Serializable
 	/**
 	 * The capability type installed in the tenant.
 	 */
-	protected String capabilityType;
+	protected  String capabilityType;
 
 	public String getCapabilityType() {
 		return this.capabilityType;
@@ -75,7 +77,7 @@ public class Capability implements Serializable
 	/**
 	 * If true, the capability is enabled in the installed tenant.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -88,7 +90,7 @@ public class Capability implements Serializable
 	/**
 	 * Unique identifier of the capability.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -101,7 +103,7 @@ public class Capability implements Serializable
 	/**
 	 * If true, the application is initialized with the defined settings.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -114,7 +116,7 @@ public class Capability implements Serializable
 	/**
 	 * Unique identifier of the developer account or tenant associated for which the capability is entitled.
 	 */
-	protected Integer scopeId;
+	protected  Integer scopeId;
 
 	public Integer getScopeId() {
 		return this.scopeId;
@@ -127,7 +129,7 @@ public class Capability implements Serializable
 	/**
 	 * The type of scope for which the tenant is entitled, which is developer or tenant.
 	 */
-	protected String scopeType;
+	protected  String scopeType;
 
 	public String getScopeType() {
 		return this.scopeType;
@@ -191,5 +193,6 @@ public class Capability implements Serializable
 	public void setSupportedShoppingCountries(List<InitializablePropertyValue> supportedShoppingCountries) {
 		this.supportedShoppingCountries = supportedShoppingCountries;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.products;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The price of a product that appears on a storefront after any applied discounts.
@@ -22,7 +24,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The credit value when the product happens to be a gift card or similar product.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -35,7 +37,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The manufacturer's suggested retail price for the product.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -48,7 +50,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The price the merchant charges for a product on a storefront if no sales price is defined.
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -58,7 +60,7 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -68,7 +70,7 @@ public class ProductPrice implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	protected String priceListEntryMode;
+	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
 		return this.priceListEntryMode;
@@ -81,7 +83,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * Current sale price defined for a product on a storefront.
 	 */
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -94,7 +96,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The override price defined by the tenant for this cart or order item.
 	 */
-	protected Double tenantOverridePrice;
+	protected  Double tenantOverridePrice;
 
 	public Double getTenantOverridePrice() {
 		return this.tenantOverridePrice;
@@ -103,5 +105,6 @@ public class ProductPrice implements Serializable
 	public void setTenantOverridePrice(Double tenantOverridePrice) {
 		this.tenantOverridePrice = tenantOverridePrice;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
@@ -22,7 +24,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	/**
 	 * The credit amount for the product.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -35,7 +37,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -48,7 +50,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	/**
 	 * The manufacturer's suggested retail price, as defined by the supplier.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -61,7 +63,7 @@ public class ProductVariationDeltaPrice implements Serializable
 	/**
 	 * Positive or negative decimal value that represents the difference between this variation and the base product.
 	 */
-	protected Double value;
+	protected  Double value;
 
 	public Double getValue() {
 		return this.value;
@@ -70,5 +72,6 @@ public class ProductVariationDeltaPrice implements Serializable
 	public void setValue(Double value) {
 		this.value = value;
 	}
+
 
 }

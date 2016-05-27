@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.View;
 
 /**
@@ -21,7 +23,7 @@ public class DocumentList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String documentListType;
+	protected  String documentListType;
 
 	public String getDocumentListType() {
 		return this.documentListType;
@@ -42,7 +44,7 @@ public class DocumentList implements Serializable
 		this.documentTypes = documentTypes;
 	}
 
-	protected Boolean enableActiveDateRanges;
+	protected  Boolean enableActiveDateRanges;
 
 	public Boolean getEnableActiveDateRanges() {
 		return this.enableActiveDateRanges;
@@ -55,7 +57,7 @@ public class DocumentList implements Serializable
 	/**
 	 * If true, publishing of draft documents in this document list is enabled for the site. If false, all document changes are immediately published in live mode.
 	 */
-	protected Boolean enablePublishing;
+	protected  Boolean enablePublishing;
 
 	public Boolean getEnablePublishing() {
 		return this.enablePublishing;
@@ -65,7 +67,7 @@ public class DocumentList implements Serializable
 		this.enablePublishing = enablePublishing;
 	}
 
-	protected String listFQN;
+	protected  String listFQN;
 
 	public String getListFQN() {
 		return this.listFQN;
@@ -78,7 +80,7 @@ public class DocumentList implements Serializable
 	/**
 	 * The name of the document list.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -88,7 +90,7 @@ public class DocumentList implements Serializable
 		this.name = name;
 	}
 
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -98,7 +100,7 @@ public class DocumentList implements Serializable
 		this.namespace = namespace;
 	}
 
-	protected Integer scopeId;
+	protected  Integer scopeId;
 
 	public Integer getScopeId() {
 		return this.scopeId;
@@ -108,7 +110,7 @@ public class DocumentList implements Serializable
 		this.scopeId = scopeId;
 	}
 
-	protected String scopeType;
+	protected  String scopeType;
 
 	public String getScopeType() {
 		return this.scopeType;
@@ -118,7 +120,7 @@ public class DocumentList implements Serializable
 		this.scopeType = scopeType;
 	}
 
-	protected String security;
+	protected  String security;
 
 	public String getSecurity() {
 		return this.security;
@@ -128,7 +130,7 @@ public class DocumentList implements Serializable
 		this.security = security;
 	}
 
-	protected Boolean supportsActiveDateRanges;
+	protected  Boolean supportsActiveDateRanges;
 
 	public Boolean getSupportsActiveDateRanges() {
 		return this.supportsActiveDateRanges;
@@ -141,7 +143,7 @@ public class DocumentList implements Serializable
 	/**
 	 * If true, changes documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
-	protected Boolean supportsPublishing;
+	protected  Boolean supportsPublishing;
 
 	public Boolean getSupportsPublishing() {
 		return this.supportsPublishing;
@@ -159,7 +161,7 @@ public class DocumentList implements Serializable
 		this.usages = usages;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -175,6 +177,23 @@ public class DocumentList implements Serializable
 	}
 	public void setViews(List<View> views) {
 		this.views = views;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

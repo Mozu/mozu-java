@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 
@@ -36,7 +38,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -49,7 +51,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The read-only name of the component in a bundled product.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -62,7 +64,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The quantity of an individual component product in a bundle. For example, if a product bundle represents a 10-pack of socks, the quantity value for the bundled product would be 10.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -75,7 +77,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Height of the bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageHeight;
+	protected  Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
 		return this.packageHeight;
@@ -88,7 +90,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Length of the bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageLength;
+	protected  Measurement packageLength;
 
 	public Measurement getPackageLength() {
 		return this.packageLength;
@@ -101,7 +103,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Weight of the bundle package in imperial units of pounds and ounces.
 	 */
-	protected Measurement packageWeight;
+	protected  Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
 		return this.packageWeight;
@@ -114,7 +116,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Width of the bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageWidth;
+	protected  Measurement packageWidth;
 
 	public Measurement getPackageWidth() {
 		return this.packageWidth;
@@ -127,7 +129,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The price of the bundled product set for the tenant.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -136,5 +138,6 @@ public class BundledProduct implements Serializable
 	public void setPrice(ProductPrice price) {
 		this.price = price;
 	}
+
 
 }

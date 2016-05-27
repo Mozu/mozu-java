@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an adjustment to the active product inventory of a specific location.
@@ -22,7 +24,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * User-defined code that identifies the location.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -35,7 +37,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -48,7 +50,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * The type of inventory adjustment to perform, which is "Absolute" or "Delta". If adjusting by an absolute value, enter the integer in the Value parameter. If adjusting by a delta value, enter the delta in the Value parameter.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -61,7 +63,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * Value of the location inventory adjustment, which is an absolute integer or delta. For example, to decrease the current inventory level by 2, set the Type parameter to "Delta" and the Value parameter to "-2". To adjust the inventory to a current level of 12, set the Type parameter to "Absolute" and the Value parameter to "12".
 	 */
-	protected Integer value;
+	protected  Integer value;
 
 	public Integer getValue() {
 		return this.value;
@@ -70,5 +72,6 @@ public class LocationInventoryAdjustment implements Serializable
 	public void setValue(Integer value) {
 		this.value = value;
 	}
+
 
 }

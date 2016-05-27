@@ -9,6 +9,8 @@ package com.mozu.api.contracts.sitesettings.order;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class OrderProcessingSettings implements Serializable
 	/**
 	 * Abandoned order threshold in minutes indicates the number of minutes until a pending order is considered abandoned.
 	 */
-	protected Integer abandonedOrderThresholdInMinutes;
+	protected  Integer abandonedOrderThresholdInMinutes;
 
 	public Integer getAbandonedOrderThresholdInMinutes() {
 		return this.abandonedOrderThresholdInMinutes;
@@ -36,7 +38,7 @@ public class OrderProcessingSettings implements Serializable
 	/**
 	 * Determines whether payment authorization occurs when the order is placed or when the order is shipped.
 	 */
-	protected String paymentProcessingFlowType;
+	protected  String paymentProcessingFlowType;
 
 	public String getPaymentProcessingFlowType() {
 		return this.paymentProcessingFlowType;
@@ -49,7 +51,7 @@ public class OrderProcessingSettings implements Serializable
 	/**
 	 * If true, use the override price defined for products in the order to calculate discounts for the order.
 	 */
-	protected Boolean useOverridePriceToCalculateDiscounts;
+	protected  Boolean useOverridePriceToCalculateDiscounts;
 
 	public Boolean getUseOverridePriceToCalculateDiscounts() {
 		return this.useOverridePriceToCalculateDiscounts;
@@ -62,7 +64,7 @@ public class OrderProcessingSettings implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -71,5 +73,6 @@ public class OrderProcessingSettings implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

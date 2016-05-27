@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.ActiveDateRange;
 
 /**
@@ -23,7 +25,7 @@ public class Document implements Serializable
 	/**
 	 * The character length associated with the document content.
 	 */
-	protected Long contentLength;
+	protected  Long contentLength;
 
 	public Long getContentLength() {
 		return this.contentLength;
@@ -36,7 +38,7 @@ public class Document implements Serializable
 	/**
 	 * The mime type associated with the document content, if applicable.
 	 */
-	protected String contentMimeType;
+	protected  String contentMimeType;
 
 	public String getContentMimeType() {
 		return this.contentMimeType;
@@ -49,7 +51,7 @@ public class Document implements Serializable
 	/**
 	 * The date and time the most recent content update was made. UTC date/time. System-supplied and read-only.
 	 */
-	protected DateTime contentUpdateDate;
+	protected  DateTime contentUpdateDate;
 
 	public DateTime getContentUpdateDate() {
 		return this.contentUpdateDate;
@@ -59,7 +61,7 @@ public class Document implements Serializable
 		this.contentUpdateDate = contentUpdateDate;
 	}
 
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -72,7 +74,7 @@ public class Document implements Serializable
 	/**
 	 * If applicable, the file extension associated with the document content.
 	 */
-	protected String extension;
+	protected  String extension;
 
 	public String getExtension() {
 		return this.extension;
@@ -85,7 +87,7 @@ public class Document implements Serializable
 	/**
 	 * Unique identifier of the document.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -98,7 +100,7 @@ public class Document implements Serializable
 	/**
 	 * When the document was added to the document list. System-supplied and read-only.
 	 */
-	protected DateTime insertDate;
+	protected  DateTime insertDate;
 
 	public DateTime getInsertDate() {
 		return this.insertDate;
@@ -108,7 +110,7 @@ public class Document implements Serializable
 		this.insertDate = insertDate;
 	}
 
-	protected String listFQN;
+	protected  String listFQN;
 
 	public String getListFQN() {
 		return this.listFQN;
@@ -121,7 +123,7 @@ public class Document implements Serializable
 	/**
 	 * The name of the document, which is unique within its folder.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -131,7 +133,7 @@ public class Document implements Serializable
 		this.name = name;
 	}
 
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -144,7 +146,7 @@ public class Document implements Serializable
 	/**
 	 * The current state of the document, which is Active, Draft, or Latest. Active documents are published and cannot be deleted. Querying Latest returns the most recent version of the document, regardless of whether it is published or a draft.
 	 */
-	protected String publishState;
+	protected  String publishState;
 
 	public String getPublishState() {
 		return this.publishState;
@@ -157,7 +159,7 @@ public class Document implements Serializable
 	/**
 	 * Date and time when the entity was last updated, represented in UTC Date/Time.
 	 */
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -167,10 +169,20 @@ public class Document implements Serializable
 		this.updateDate = updateDate;
 	}
 
+	protected  ActiveDateRange activeDateRange;
+
+	public ActiveDateRange getActiveDateRange() {
+		return this.activeDateRange;
+	}
+
+	public void setActiveDateRange(ActiveDateRange activeDateRange) {
+		this.activeDateRange = activeDateRange;
+	}
+
 	/**
 	 * List of properties for the given property value.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode properties;
+	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 
 	public com.fasterxml.jackson.databind.JsonNode getProperties() {
 		return this.properties;
@@ -180,14 +192,21 @@ public class Document implements Serializable
 		this.properties = properties;
 	}
 
-	protected ActiveDateRange activeDateRange;
-
-	public ActiveDateRange getActiveDateRange() {
-		return this.activeDateRange;
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(properties == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, properties);
+		}
 	}
 
-	public void setActiveDateRange(ActiveDateRange activeDateRange) {
-		this.activeDateRange = activeDateRange;
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.properties = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

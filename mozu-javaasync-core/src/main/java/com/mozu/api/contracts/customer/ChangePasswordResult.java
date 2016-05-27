@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ChangePasswordResult implements Serializable
@@ -16,7 +18,7 @@ public class ChangePasswordResult implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer accountId;
+	protected  Integer accountId;
 
 	public Integer getAccountId() {
 		return this.accountId;
@@ -26,7 +28,7 @@ public class ChangePasswordResult implements Serializable
 		this.accountId = accountId;
 	}
 
-	protected String errorMessage;
+	protected  String errorMessage;
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -36,7 +38,7 @@ public class ChangePasswordResult implements Serializable
 		this.errorMessage = errorMessage;
 	}
 
-	protected Boolean succeeded;
+	protected  Boolean succeeded;
 
 	public Boolean getSucceeded() {
 		return this.succeeded;
@@ -45,5 +47,6 @@ public class ChangePasswordResult implements Serializable
 	public void setSucceeded(Boolean succeeded) {
 		this.succeeded = succeeded;
 	}
+
 
 }

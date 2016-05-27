@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCodeRename implements Serializable
@@ -16,7 +18,7 @@ public class ProductCodeRename implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String existingProductCode;
+	protected  String existingProductCode;
 
 	public String getExistingProductCode() {
 		return this.existingProductCode;
@@ -26,7 +28,7 @@ public class ProductCodeRename implements Serializable
 		this.existingProductCode = existingProductCode;
 	}
 
-	protected String newProductCode;
+	protected  String newProductCode;
 
 	public String getNewProductCode() {
 		return this.newProductCode;
@@ -35,5 +37,6 @@ public class ProductCodeRename implements Serializable
 	public void setNewProductCode(String newProductCode) {
 		this.newProductCode = newProductCode;
 	}
+
 
 }

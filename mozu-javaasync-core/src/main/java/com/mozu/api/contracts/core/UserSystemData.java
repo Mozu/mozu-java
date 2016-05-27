@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	System-supplied and read-only information about the user.
@@ -22,7 +24,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createdOn;
+	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
 		return this.createdOn;
@@ -35,7 +37,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The number of failed authentication attempts associated with the user.
 	 */
-	protected Byte failedLoginAttemptCount;
+	protected  Byte failedLoginAttemptCount;
 
 	public Byte getFailedLoginAttemptCount() {
 		return this.failedLoginAttemptCount;
@@ -48,7 +50,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The date and time the initial login was unsuccessful, which is system-supplied and read only. Each time user authentication fails, an update occurs on this field.
 	 */
-	protected DateTime firstFailedLoginAttemptOn;
+	protected  DateTime firstFailedLoginAttemptOn;
 
 	public DateTime getFirstFailedLoginAttemptOn() {
 		return this.firstFailedLoginAttemptOn;
@@ -61,7 +63,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * If true, the user account is locked due to multiple failed authentication attempts.
 	 */
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -74,7 +76,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * If true, the login requires a password change for increased security. If false, the login does not require a password change.
 	 */
-	protected Boolean isPasswordChangeRequired;
+	protected  Boolean isPasswordChangeRequired;
 
 	public Boolean getIsPasswordChangeRequired() {
 		return this.isPasswordChangeRequired;
@@ -87,7 +89,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * When the user's account was last locked. System-supplied and read-only.
 	 */
-	protected DateTime lastLockedOn;
+	protected  DateTime lastLockedOn;
 
 	public DateTime getLastLockedOn() {
 		return this.lastLockedOn;
@@ -100,7 +102,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * When the user last logged into the store. System-supplied and read-only.
 	 */
-	protected DateTime lastLoginOn;
+	protected  DateTime lastLoginOn;
 
 	public DateTime getLastLoginOn() {
 		return this.lastLoginOn;
@@ -113,7 +115,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * When the password was last modified. System-supplied and read-only.
 	 */
-	protected DateTime lastPasswordChangeOn;
+	protected  DateTime lastPasswordChangeOn;
 
 	public DateTime getLastPasswordChangeOn() {
 		return this.lastPasswordChangeOn;
@@ -126,7 +128,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The number of login attempts left for the user. The user must login successfully before this value reaches zero otherwise the account will be locked.
 	 */
-	protected Integer remainingLoginAttempts;
+	protected  Integer remainingLoginAttempts;
 
 	public Integer getRemainingLoginAttempts() {
 		return this.remainingLoginAttempts;
@@ -139,7 +141,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Date and time when the entity was last updated, represented in UTC Date/Time.
 	 */
-	protected DateTime updatedOn;
+	protected  DateTime updatedOn;
 
 	public DateTime getUpdatedOn() {
 		return this.updatedOn;
@@ -148,5 +150,6 @@ public class UserSystemData implements Serializable
 	public void setUpdatedOn(DateTime updatedOn) {
 		this.updatedOn = updatedOn;
 	}
+
 
 }

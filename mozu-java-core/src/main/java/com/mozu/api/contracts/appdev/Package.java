@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationAttribute;
 import com.mozu.api.contracts.appdev.ApplicationBehavior;
 import com.mozu.api.contracts.appdev.ApplicationCapability;
@@ -26,7 +28,7 @@ public class Package implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String apiVersion;
+	protected  String apiVersion;
 
 	public String getApiVersion() {
 		return this.apiVersion;
@@ -36,7 +38,7 @@ public class Package implements Serializable
 		this.apiVersion = apiVersion;
 	}
 
-	protected String appConfigUrl;
+	protected  String appConfigUrl;
 
 	public String getAppConfigUrl() {
 		return this.appConfigUrl;
@@ -46,7 +48,7 @@ public class Package implements Serializable
 		this.appConfigUrl = appConfigUrl;
 	}
 
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -56,7 +58,7 @@ public class Package implements Serializable
 		this.appId = appId;
 	}
 
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -66,7 +68,7 @@ public class Package implements Serializable
 		this.appKey = appKey;
 	}
 
-	protected String applicationDescription;
+	protected  String applicationDescription;
 
 	public String getApplicationDescription() {
 		return this.applicationDescription;
@@ -76,7 +78,7 @@ public class Package implements Serializable
 		this.applicationDescription = applicationDescription;
 	}
 
-	protected Integer applicationDetailId;
+	protected  Integer applicationDetailId;
 
 	public Integer getApplicationDetailId() {
 		return this.applicationDetailId;
@@ -86,7 +88,7 @@ public class Package implements Serializable
 		this.applicationDetailId = applicationDetailId;
 	}
 
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -96,7 +98,7 @@ public class Package implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -106,7 +108,7 @@ public class Package implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	protected Integer applicationOwnerDevAccountId;
+	protected  Integer applicationOwnerDevAccountId;
 
 	public Integer getApplicationOwnerDevAccountId() {
 		return this.applicationOwnerDevAccountId;
@@ -116,7 +118,7 @@ public class Package implements Serializable
 		this.applicationOwnerDevAccountId = applicationOwnerDevAccountId;
 	}
 
-	protected String applicationStatus;
+	protected  String applicationStatus;
 
 	public String getApplicationStatus() {
 		return this.applicationStatus;
@@ -126,7 +128,7 @@ public class Package implements Serializable
 		this.applicationStatus = applicationStatus;
 	}
 
-	protected Integer applicationStatusId;
+	protected  Integer applicationStatusId;
 
 	public Integer getApplicationStatusId() {
 		return this.applicationStatusId;
@@ -136,7 +138,7 @@ public class Package implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	protected String applicationStatusName;
+	protected  String applicationStatusName;
 
 	public String getApplicationStatusName() {
 		return this.applicationStatusName;
@@ -146,7 +148,7 @@ public class Package implements Serializable
 		this.applicationStatusName = applicationStatusName;
 	}
 
-	protected Integer applicationTypeId;
+	protected  Integer applicationTypeId;
 
 	public Integer getApplicationTypeId() {
 		return this.applicationTypeId;
@@ -156,7 +158,7 @@ public class Package implements Serializable
 		this.applicationTypeId = applicationTypeId;
 	}
 
-	protected String applicationTypeName;
+	protected  String applicationTypeName;
 
 	public String getApplicationTypeName() {
 		return this.applicationTypeName;
@@ -166,7 +168,7 @@ public class Package implements Serializable
 		this.applicationTypeName = applicationTypeName;
 	}
 
-	protected Byte appSchemeVersion;
+	protected  Byte appSchemeVersion;
 
 	public Byte getAppSchemeVersion() {
 		return this.appSchemeVersion;
@@ -176,7 +178,7 @@ public class Package implements Serializable
 		this.appSchemeVersion = appSchemeVersion;
 	}
 
-	protected Integer assetFileCount;
+	protected  Integer assetFileCount;
 
 	public Integer getAssetFileCount() {
 		return this.assetFileCount;
@@ -186,7 +188,7 @@ public class Package implements Serializable
 		this.assetFileCount = assetFileCount;
 	}
 
-	protected String attributeNamespace;
+	protected  String attributeNamespace;
 
 	public String getAttributeNamespace() {
 		return this.attributeNamespace;
@@ -196,7 +198,7 @@ public class Package implements Serializable
 		this.attributeNamespace = attributeNamespace;
 	}
 
-	protected String dataNamespace;
+	protected  String dataNamespace;
 
 	public String getDataNamespace() {
 		return this.dataNamespace;
@@ -206,7 +208,7 @@ public class Package implements Serializable
 		this.dataNamespace = dataNamespace;
 	}
 
-	protected Boolean hasApplicationVersions;
+	protected  Boolean hasApplicationVersions;
 
 	public Boolean getHasApplicationVersions() {
 		return this.hasApplicationVersions;
@@ -216,7 +218,7 @@ public class Package implements Serializable
 		this.hasApplicationVersions = hasApplicationVersions;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -226,7 +228,7 @@ public class Package implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isDeleted;
+	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
@@ -236,7 +238,7 @@ public class Package implements Serializable
 		this.isDeleted = isDeleted;
 	}
 
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -246,7 +248,7 @@ public class Package implements Serializable
 		this.isLocked = isLocked;
 	}
 
-	protected Boolean isReleasePackage;
+	protected  Boolean isReleasePackage;
 
 	public Boolean getIsReleasePackage() {
 		return this.isReleasePackage;
@@ -256,7 +258,7 @@ public class Package implements Serializable
 		this.isReleasePackage = isReleasePackage;
 	}
 
-	protected String legacyNamespace;
+	protected  String legacyNamespace;
 
 	public String getLegacyNamespace() {
 		return this.legacyNamespace;
@@ -266,7 +268,7 @@ public class Package implements Serializable
 		this.legacyNamespace = legacyNamespace;
 	}
 
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -276,7 +278,7 @@ public class Package implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -286,7 +288,7 @@ public class Package implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -296,7 +298,7 @@ public class Package implements Serializable
 		this.namespace = namespace;
 	}
 
-	protected String namespaceRegistryId;
+	protected  String namespaceRegistryId;
 
 	public String getNamespaceRegistryId() {
 		return this.namespaceRegistryId;
@@ -306,7 +308,7 @@ public class Package implements Serializable
 		this.namespaceRegistryId = namespaceRegistryId;
 	}
 
-	protected String packageDescription;
+	protected  String packageDescription;
 
 	public String getPackageDescription() {
 		return this.packageDescription;
@@ -316,7 +318,7 @@ public class Package implements Serializable
 		this.packageDescription = packageDescription;
 	}
 
-	protected String packageGuid;
+	protected  String packageGuid;
 
 	public String getPackageGuid() {
 		return this.packageGuid;
@@ -326,7 +328,7 @@ public class Package implements Serializable
 		this.packageGuid = packageGuid;
 	}
 
-	protected String packageName;
+	protected  String packageName;
 
 	public String getPackageName() {
 		return this.packageName;
@@ -336,7 +338,7 @@ public class Package implements Serializable
 		this.packageName = packageName;
 	}
 
-	protected String parentThemeAppKey;
+	protected  String parentThemeAppKey;
 
 	public String getParentThemeAppKey() {
 		return this.parentThemeAppKey;
@@ -346,7 +348,7 @@ public class Package implements Serializable
 		this.parentThemeAppKey = parentThemeAppKey;
 	}
 
-	protected String parentThemeName;
+	protected  String parentThemeName;
 
 	public String getParentThemeName() {
 		return this.parentThemeName;
@@ -356,7 +358,7 @@ public class Package implements Serializable
 		this.parentThemeName = parentThemeName;
 	}
 
-	protected String publishedParentSemanticVersion;
+	protected  String publishedParentSemanticVersion;
 
 	public String getPublishedParentSemanticVersion() {
 		return this.publishedParentSemanticVersion;
@@ -366,7 +368,7 @@ public class Package implements Serializable
 		this.publishedParentSemanticVersion = publishedParentSemanticVersion;
 	}
 
-	protected Integer publishedParentThemeId;
+	protected  Integer publishedParentThemeId;
 
 	public Integer getPublishedParentThemeId() {
 		return this.publishedParentThemeId;
@@ -376,7 +378,7 @@ public class Package implements Serializable
 		this.publishedParentThemeId = publishedParentThemeId;
 	}
 
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -386,7 +388,7 @@ public class Package implements Serializable
 		this.revision = revision;
 	}
 
-	protected String semanticVersionRange;
+	protected  String semanticVersionRange;
 
 	public String getSemanticVersionRange() {
 		return this.semanticVersionRange;
@@ -396,7 +398,7 @@ public class Package implements Serializable
 		this.semanticVersionRange = semanticVersionRange;
 	}
 
-	protected String sharedSecret;
+	protected  String sharedSecret;
 
 	public String getSharedSecret() {
 		return this.sharedSecret;
@@ -406,7 +408,7 @@ public class Package implements Serializable
 		this.sharedSecret = sharedSecret;
 	}
 
-	protected String themeEngineVersion;
+	protected  String themeEngineVersion;
 
 	public String getThemeEngineVersion() {
 		return this.themeEngineVersion;
@@ -416,7 +418,7 @@ public class Package implements Serializable
 		this.themeEngineVersion = themeEngineVersion;
 	}
 
-	protected Boolean updateAvailable;
+	protected  Boolean updateAvailable;
 
 	public Boolean getUpdateAvailable() {
 		return this.updateAvailable;
@@ -426,7 +428,7 @@ public class Package implements Serializable
 		this.updateAvailable = updateAvailable;
 	}
 
-	protected String updateParentAppKey;
+	protected  String updateParentAppKey;
 
 	public String getUpdateParentAppKey() {
 		return this.updateParentAppKey;
@@ -436,7 +438,7 @@ public class Package implements Serializable
 		this.updateParentAppKey = updateParentAppKey;
 	}
 
-	protected String updateParentThemeName;
+	protected  String updateParentThemeName;
 
 	public String getUpdateParentThemeName() {
 		return this.updateParentThemeName;
@@ -446,7 +448,7 @@ public class Package implements Serializable
 		this.updateParentThemeName = updateParentThemeName;
 	}
 
-	protected String updateParentThemeVersion;
+	protected  String updateParentThemeVersion;
 
 	public String getUpdateParentThemeVersion() {
 		return this.updateParentThemeVersion;
@@ -456,7 +458,7 @@ public class Package implements Serializable
 		this.updateParentThemeVersion = updateParentThemeVersion;
 	}
 
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -521,5 +523,6 @@ public class Package implements Serializable
 	public void setApplicationSubscriptions(List<ApplicationSubscription> applicationSubscriptions) {
 		this.applicationSubscriptions = applicationSubscriptions;
 	}
+
 
 }

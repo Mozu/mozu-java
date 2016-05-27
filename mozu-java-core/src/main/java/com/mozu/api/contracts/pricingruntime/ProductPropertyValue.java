@@ -9,6 +9,8 @@ package com.mozu.api.contracts.pricingruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a value for a product property.
@@ -20,9 +22,22 @@ public class ProductPropertyValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * If the product property value is a text entry, the string value of the product property.
+	 */
+	protected  String stringValue;
+
+	public String getStringValue() {
+		return this.stringValue;
+	}
+
+	public void setStringValue(String stringValue) {
+		this.stringValue = stringValue;
+	}
+
+	/**
 	 * If the product property value is selected from a list of possible values, the selected value.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -32,17 +47,5 @@ public class ProductPropertyValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * If the product property value is a text entry, the string value of the product property.
-	 */
-	protected String stringValue;
-
-	public String getStringValue() {
-		return this.stringValue;
-	}
-
-	public void setStringValue(String stringValue) {
-		this.stringValue = stringValue;
-	}
 
 }

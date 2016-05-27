@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin.search;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSynonymSettings implements Serializable
@@ -16,7 +18,7 @@ public class SearchSynonymSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean expandSynonyms;
+	protected  Boolean expandSynonyms;
 
 	public Boolean getExpandSynonyms() {
 		return this.expandSynonyms;
@@ -26,7 +28,7 @@ public class SearchSynonymSettings implements Serializable
 		this.expandSynonyms = expandSynonyms;
 	}
 
-	protected Double mainPartBoost;
+	protected  Double mainPartBoost;
 
 	public Double getMainPartBoost() {
 		return this.mainPartBoost;
@@ -36,7 +38,7 @@ public class SearchSynonymSettings implements Serializable
 		this.mainPartBoost = mainPartBoost;
 	}
 
-	protected Double synonymPartBoost;
+	protected  Double synonymPartBoost;
 
 	public Double getSynonymPartBoost() {
 		return this.synonymPartBoost;
@@ -45,5 +47,6 @@ public class SearchSynonymSettings implements Serializable
 	public void setSynonymPartBoost(Double synonymPartBoost) {
 		this.synonymPartBoost = synonymPartBoost;
 	}
+
 
 }

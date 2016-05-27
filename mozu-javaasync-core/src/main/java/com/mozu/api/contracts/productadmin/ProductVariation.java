@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationFixedPrice;
 import com.mozu.api.contracts.productadmin.ProductVariationOption;
@@ -27,7 +29,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * The difference between the base weight for a product and this variation of the product, which can be a positive or negative decimal value.
 	 */
-	protected Double deltaWeight;
+	protected  Double deltaWeight;
 
 	public Double getDeltaWeight() {
 		return this.deltaWeight;
@@ -37,7 +39,7 @@ public class ProductVariation implements Serializable
 		this.deltaWeight = deltaWeight;
 	}
 
-	protected Double fixedWeight;
+	protected  Double fixedWeight;
 
 	public Double getFixedWeight() {
 		return this.fixedWeight;
@@ -61,7 +63,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * If true, this variation of this product is marked available for sale.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -74,7 +76,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * If true, the production variation is no longer available for sale. For example, if a client stops selling all "small" shirts, all product variations with the "small" option are set to IsOrphan. System-supplied and read only.
 	 */
-	protected Boolean isOrphan;
+	protected  Boolean isOrphan;
 
 	public Boolean getIsOrphan() {
 		return this.isOrphan;
@@ -87,7 +89,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * The universal product code associated with the product variation. The UPC of a product is unique across all sales channels.
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -100,7 +102,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * If true, one or more product variations are configured for the specified product code.
 	 */
-	protected Boolean variationExists;
+	protected  Boolean variationExists;
 
 	public Boolean getVariationExists() {
 		return this.variationExists;
@@ -113,7 +115,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 */
-	protected String variationkey;
+	protected  String variationkey;
 
 	public String getVariationkey() {
 		return this.variationkey;
@@ -126,7 +128,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -139,7 +141,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
 	 */
-	protected ProductVariationDeltaPrice deltaPrice;
+	protected  ProductVariationDeltaPrice deltaPrice;
 
 	public ProductVariationDeltaPrice getDeltaPrice() {
 		return this.deltaPrice;
@@ -149,7 +151,7 @@ public class ProductVariation implements Serializable
 		this.deltaPrice = deltaPrice;
 	}
 
-	protected ProductVariationFixedPrice fixedPrice;
+	protected  ProductVariationFixedPrice fixedPrice;
 
 	public ProductVariationFixedPrice getFixedPrice() {
 		return this.fixedPrice;
@@ -189,7 +191,7 @@ public class ProductVariation implements Serializable
 	/**
 	 * Supplier-defined properties assigned for the product variation.
 	 */
-	protected ProductSupplierInfo supplierInfo;
+	protected  ProductSupplierInfo supplierInfo;
 
 	public ProductSupplierInfo getSupplierInfo() {
 		return this.supplierInfo;
@@ -198,5 +200,6 @@ public class ProductVariation implements Serializable
 	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
 		this.supplierInfo = supplierInfo;
 	}
+
 
 }

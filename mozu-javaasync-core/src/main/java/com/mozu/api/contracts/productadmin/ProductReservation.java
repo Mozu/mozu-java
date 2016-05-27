@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * Identifier of the entity.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -36,7 +38,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * Code that identifies the location associated with this product reservation.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -49,7 +51,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * Unique identifier of the order.
 	 */
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -62,7 +64,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * The unique identifier of the item in the order.
 	 */
-	protected String orderItemId;
+	protected  String orderItemId;
 
 	public String getOrderItemId() {
 		return this.orderItemId;
@@ -75,7 +77,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -88,7 +90,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * The quantity of items associated with the product reservation.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -101,7 +103,7 @@ public class ProductReservation implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -110,5 +112,6 @@ public class ProductReservation implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

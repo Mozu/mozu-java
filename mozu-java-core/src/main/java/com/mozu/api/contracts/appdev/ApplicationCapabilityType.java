@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationCapability;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomain;
 
@@ -19,7 +21,7 @@ public class ApplicationCapabilityType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationCapabilityTypeId;
+	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
 		return this.applicationCapabilityTypeId;
@@ -29,7 +31,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -39,7 +41,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	protected Integer capabilityTypeId;
+	protected  Integer capabilityTypeId;
 
 	public Integer getCapabilityTypeId() {
 		return this.capabilityTypeId;
@@ -49,7 +51,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.capabilityTypeId = capabilityTypeId;
 	}
 
-	protected String capabilityTypeName;
+	protected  String capabilityTypeName;
 
 	public String getCapabilityTypeName() {
 		return this.capabilityTypeName;
@@ -59,7 +61,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.capabilityTypeName = capabilityTypeName;
 	}
 
-	protected Boolean isImplemented;
+	protected  Boolean isImplemented;
 
 	public Boolean getIsImplemented() {
 		return this.isImplemented;
@@ -69,7 +71,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.isImplemented = isImplemented;
 	}
 
-	protected Boolean isInitializedByDefault;
+	protected  Boolean isInitializedByDefault;
 
 	public Boolean getIsInitializedByDefault() {
 		return this.isInitializedByDefault;
@@ -79,7 +81,7 @@ public class ApplicationCapabilityType implements Serializable
 		this.isInitializedByDefault = isInitializedByDefault;
 	}
 
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -104,5 +106,6 @@ public class ApplicationCapabilityType implements Serializable
 	public void setApplicationCapabilityDomains(List<ApplicationCapabilityDomain> applicationCapabilityDomains) {
 		this.applicationCapabilityDomains = applicationCapabilityDomains;
 	}
+
 
 }

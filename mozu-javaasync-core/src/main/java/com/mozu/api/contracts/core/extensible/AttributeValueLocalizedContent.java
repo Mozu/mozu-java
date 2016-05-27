@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core.extensible;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The attribute value localized content are the content strings used to describe an attribute value in the localized language specified by the site's locale code. Extensible only for customer and order.
@@ -22,7 +24,7 @@ public class AttributeValueLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -35,7 +37,7 @@ public class AttributeValueLocalizedContent implements Serializable
 	/**
 	 * Localized content for the extensible attribute value.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -44,5 +46,6 @@ public class AttributeValueLocalizedContent implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

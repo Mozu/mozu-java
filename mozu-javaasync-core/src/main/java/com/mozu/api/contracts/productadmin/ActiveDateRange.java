@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
@@ -16,7 +18,7 @@ public class ActiveDateRange implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -26,7 +28,7 @@ public class ActiveDateRange implements Serializable
 		this.endDate = endDate;
 	}
 
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -35,5 +37,6 @@ public class ActiveDateRange implements Serializable
 	public void setStartDate(DateTime startDate) {
 		this.startDate = startDate;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteSearchKeywordRelevancySettings implements Serializable
@@ -16,7 +18,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer attributesWeight;
+	protected  Integer attributesWeight;
 
 	public Integer getAttributesWeight() {
 		return this.attributesWeight;
@@ -26,7 +28,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.attributesWeight = attributesWeight;
 	}
 
-	protected Integer categoryNamesWeight;
+	protected  Integer categoryNamesWeight;
 
 	public Integer getCategoryNamesWeight() {
 		return this.categoryNamesWeight;
@@ -36,7 +38,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.categoryNamesWeight = categoryNamesWeight;
 	}
 
-	protected Integer descriptionWeight;
+	protected  Integer descriptionWeight;
 
 	public Integer getDescriptionWeight() {
 		return this.descriptionWeight;
@@ -46,7 +48,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.descriptionWeight = descriptionWeight;
 	}
 
-	protected Integer keywordsWeight;
+	protected  Integer keywordsWeight;
 
 	public Integer getKeywordsWeight() {
 		return this.keywordsWeight;
@@ -56,7 +58,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.keywordsWeight = keywordsWeight;
 	}
 
-	protected Integer mpnWeight;
+	protected  Integer mpnWeight;
 
 	public Integer getMpnWeight() {
 		return this.mpnWeight;
@@ -66,7 +68,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.mpnWeight = mpnWeight;
 	}
 
-	protected Integer nameWeight;
+	protected  Integer nameWeight;
 
 	public Integer getNameWeight() {
 		return this.nameWeight;
@@ -76,7 +78,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.nameWeight = nameWeight;
 	}
 
-	protected Integer productCodeLooseWeight;
+	protected  Integer productCodeLooseWeight;
 
 	public Integer getProductCodeLooseWeight() {
 		return this.productCodeLooseWeight;
@@ -86,7 +88,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.productCodeLooseWeight = productCodeLooseWeight;
 	}
 
-	protected Integer productCodeWeight;
+	protected  Integer productCodeWeight;
 
 	public Integer getProductCodeWeight() {
 		return this.productCodeWeight;
@@ -96,7 +98,7 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 		this.productCodeWeight = productCodeWeight;
 	}
 
-	protected Integer upcWeight;
+	protected  Integer upcWeight;
 
 	public Integer getUpcWeight() {
 		return this.upcWeight;
@@ -105,5 +107,6 @@ public class SiteSearchKeywordRelevancySettings implements Serializable
 	public void setUpcWeight(Integer upcWeight) {
 		this.upcWeight = upcWeight;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer.credit;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class CreditAuditEntry implements Serializable
 	/**
 	 * The type of activity associated with the audit entry. Possible values are: Created, Updated, Deleted, Activated, Deactivated, or Transaction.
 	 */
-	protected String activityType;
+	protected  String activityType;
 
 	public String getActivityType() {
 		return this.activityType;
@@ -36,7 +38,7 @@ public class CreditAuditEntry implements Serializable
 	/**
 	 * Detail log that describes the activity performed for this credit audit entry.
 	 */
-	protected String details;
+	protected  String details;
 
 	public String getDetails() {
 		return this.details;
@@ -49,7 +51,7 @@ public class CreditAuditEntry implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -58,5 +60,6 @@ public class CreditAuditEntry implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

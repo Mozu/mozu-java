@@ -70,6 +70,26 @@ public class CustomerAccountUrl
 	}
 
 	/**
+	 * Get Resource Url for GetCustomerPurchaseOrderTransactions
+	 * @param customeraccountId 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCustomerPurchaseOrderTransactionsUrl(Integer customeraccountId, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{customeraccountId}/PurchaseOrderTransaction?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
+		formatter.formatUrl("customeraccountId", customeraccountId);
+		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("sortBy", sortBy);
+		formatter.formatUrl("startIndex", startIndex);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddAccount
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -146,6 +166,20 @@ public class CustomerAccountUrl
 	}
 
 	/**
+	 * Get Resource Url for CreatePurchaseOrderTransaction
+	 * @param customeraccountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createPurchaseOrderTransactionUrl(Integer customeraccountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{customeraccountId}/PurchaseOrderTransaction?responseFields={responseFields}");
+		formatter.formatUrl("customeraccountId", customeraccountId);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddAccountAndLogin
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -177,6 +211,20 @@ public class CustomerAccountUrl
 	public static MozuUrl changePasswordsUrl(String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/Change-Passwords?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for CreatePurchaseOrderTransactionInternal
+	 * @param customeraccountId 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createPurchaseOrderTransactionInternalUrl(Integer customeraccountId, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/internal/{customeraccountId}/PurchaseOrderTransaction?responseFields={responseFields}");
+		formatter.formatUrl("customeraccountId", customeraccountId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

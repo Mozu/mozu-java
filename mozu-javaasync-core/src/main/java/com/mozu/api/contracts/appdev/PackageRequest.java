@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PackageRequest implements Serializable
@@ -16,7 +18,7 @@ public class PackageRequest implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -26,7 +28,7 @@ public class PackageRequest implements Serializable
 		this.appKey = appKey;
 	}
 
-	protected String parentThemeAppKey;
+	protected  String parentThemeAppKey;
 
 	public String getParentThemeAppKey() {
 		return this.parentThemeAppKey;
@@ -35,5 +37,6 @@ public class PackageRequest implements Serializable
 	public void setParentThemeAppKey(String parentThemeAppKey) {
 		this.parentThemeAppKey = parentThemeAppKey;
 	}
+
 
 }

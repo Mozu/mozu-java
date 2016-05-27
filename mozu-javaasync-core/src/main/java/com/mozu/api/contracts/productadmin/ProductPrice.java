@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchang intends to sell the product.
@@ -22,7 +24,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The credit amount of the product.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -35,7 +37,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String isoCurrencyCode;
+	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
 		return this.isoCurrencyCode;
@@ -48,7 +50,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The minimum advertised price a client can charge for the associated product, as determined by the supplier. Client administrators can override the minimum advertised price at the catalog level.
 	 */
-	protected Double map;
+	protected  Double map;
 
 	public Double getMap() {
 		return this.map;
@@ -61,7 +63,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * If the product has a supplier-defined minimum advertised price, the date and time after which the client can sell the product for less than the minimum advertised price.
 	 */
-	protected DateTime mapEndDate;
+	protected  DateTime mapEndDate;
 
 	public DateTime getMapEndDate() {
 		return this.mapEndDate;
@@ -74,7 +76,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * If the product has a supplier-defined minimum advertised price, the date and time after which the client cannot sell the product for less than the minimum advertised price.
 	 */
-	protected DateTime mapStartDate;
+	protected  DateTime mapStartDate;
 
 	public DateTime getMapStartDate() {
 		return this.mapStartDate;
@@ -87,7 +89,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The manufacturer's suggested retail price, as defined by the supplier.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -100,7 +102,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -113,7 +115,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * Price of the product with a discount already applied which the merchant intends to sell the product.
 	 */
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -122,5 +124,6 @@ public class ProductPrice implements Serializable
 	public void setSalePrice(Double salePrice) {
 		this.salePrice = salePrice;
 	}
+
 
 }

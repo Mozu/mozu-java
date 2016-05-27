@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
 /**
@@ -20,7 +22,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String externalPassword;
+	protected  String externalPassword;
 
 	public String getExternalPassword() {
 		return this.externalPassword;
@@ -33,7 +35,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * If true, this customer account and its associated data was imported from an external source.
 	 */
-	protected Boolean isImport;
+	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
 		return this.isImport;
@@ -46,7 +48,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * The password required to authenticate this customer account.
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -59,7 +61,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * The unique identifier of the customer account.
 	 */
-	protected CustomerAccount account;
+	protected  CustomerAccount account;
 
 	public CustomerAccount getAccount() {
 		return this.account;
@@ -68,5 +70,6 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	public void setAccount(CustomerAccount account) {
 		this.account = account;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.CategoryImage;
 
 /**
@@ -24,7 +26,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * The localized description of the category to display on a storefront.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -37,7 +39,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Defined description of the metadata used to manage product information internally, such as search engine optimization.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -50,7 +52,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Defined keywords of the metadata used to manage product information internally, such as search engine optimization.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -63,7 +65,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Defined title of the metadata used to manage product information internally, such as search engine optimization.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -76,7 +78,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Name of the product category.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -89,7 +91,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Title that appears on the top of new pages associated with the product category on the storefront.
 	 */
-	protected String pageTitle;
+	protected  String pageTitle;
 
 	public String getPageTitle() {
 		return this.pageTitle;
@@ -102,7 +104,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Human-readable identifier to associated with a product category to create friendly URLs.
 	 */
-	protected String slug;
+	protected  String slug;
 
 	public String getSlug() {
 		return this.slug;
@@ -122,5 +124,6 @@ public class CategoryContent implements Serializable
 	public void setCategoryImages(List<CategoryImage> categoryImages) {
 		this.categoryImages = categoryImages;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.Category;
 import com.mozu.api.contracts.shippingruntime.ProductOption;
 import com.mozu.api.contracts.shippingruntime.ProductProperty;
@@ -21,7 +23,7 @@ public class ProductSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -31,7 +33,7 @@ public class ProductSummary implements Serializable
 		this.price = price;
 	}
 
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -41,7 +43,7 @@ public class ProductSummary implements Serializable
 		this.productCode = productCode;
 	}
 
-	protected String productDescription;
+	protected  String productDescription;
 
 	public String getProductDescription() {
 		return this.productDescription;
@@ -51,7 +53,7 @@ public class ProductSummary implements Serializable
 		this.productDescription = productDescription;
 	}
 
-	protected String productType;
+	protected  String productType;
 
 	public String getProductType() {
 		return this.productType;
@@ -61,7 +63,7 @@ public class ProductSummary implements Serializable
 		this.productType = productType;
 	}
 
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -95,7 +97,7 @@ public class ProductSummary implements Serializable
 		this.properties = properties;
 	}
 
-	protected ItemMeasurements unitMeasurements;
+	protected  ItemMeasurements unitMeasurements;
 
 	public ItemMeasurements getUnitMeasurements() {
 		return this.unitMeasurements;
@@ -104,5 +106,6 @@ public class ProductSummary implements Serializable
 	public void setUnitMeasurements(ItemMeasurements unitMeasurements) {
 		this.unitMeasurements = unitMeasurements;
 	}
+
 
 }

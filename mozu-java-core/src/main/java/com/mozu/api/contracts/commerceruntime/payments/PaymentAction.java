@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.payments;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayInteraction;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 
@@ -24,7 +26,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * The name of the payment action, such as "AuthorizeAndCapture".
 	 */
-	protected String actionName;
+	protected  String actionName;
 
 	public String getActionName() {
 		return this.actionName;
@@ -37,7 +39,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * The total monetary amount of the payment transaction.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -50,7 +52,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * The URL provided to cancel payments submitted using PayPal Express or another non-gateway payment provider.
 	 */
-	protected String cancelUrl;
+	protected  String cancelUrl;
 
 	public String getCancelUrl() {
 		return this.cancelUrl;
@@ -63,7 +65,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * If applicable, the check number associated with the payment action.
 	 */
-	protected String checkNumber;
+	protected  String checkNumber;
 
 	public String getCheckNumber() {
 		return this.checkNumber;
@@ -76,7 +78,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -86,7 +88,7 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	protected String externalTransactionId;
+	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
 		return this.externalTransactionId;
@@ -99,7 +101,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * Date and time the payment gateway interaction was performed.
 	 */
-	protected DateTime interactionDate;
+	protected  DateTime interactionDate;
 
 	public DateTime getInteractionDate() {
 		return this.interactionDate;
@@ -112,7 +114,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * Unique ID that references an original transaction in the event of a credit back.
 	 */
-	protected String referenceSourcePaymentId;
+	protected  String referenceSourcePaymentId;
 
 	public String getReferenceSourcePaymentId() {
 		return this.referenceSourcePaymentId;
@@ -125,7 +127,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * The URL provided to redirect users who submit payments using PayPal Express or another non-gateway payment provider.
 	 */
-	protected String returnUrl;
+	protected  String returnUrl;
 
 	public String getReturnUrl() {
 		return this.returnUrl;
@@ -135,7 +137,7 @@ public class PaymentAction implements Serializable
 		this.returnUrl = returnUrl;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -148,7 +150,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * Properties of a manually performed interaction with the payment gateway.
 	 */
-	protected PaymentGatewayInteraction manualGatewayInteraction;
+	protected  PaymentGatewayInteraction manualGatewayInteraction;
 
 	public PaymentGatewayInteraction getManualGatewayInteraction() {
 		return this.manualGatewayInteraction;
@@ -161,7 +163,7 @@ public class PaymentAction implements Serializable
 	/**
 	 * The billing information associated with this payment action.
 	 */
-	protected BillingInfo newBillingInfo;
+	protected  BillingInfo newBillingInfo;
 
 	public BillingInfo getNewBillingInfo() {
 		return this.newBillingInfo;
@@ -169,6 +171,23 @@ public class PaymentAction implements Serializable
 
 	public void setNewBillingInfo(BillingInfo newBillingInfo) {
 		this.newBillingInfo = newBillingInfo;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

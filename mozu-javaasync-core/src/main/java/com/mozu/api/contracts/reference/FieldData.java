@@ -9,6 +9,8 @@ package com.mozu.api.contracts.reference;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The field property that describes the type of information pertaining to how the field renders and functions.
@@ -22,7 +24,7 @@ public class FieldData implements Serializable
 	/**
 	 * Code of the field.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -35,7 +37,7 @@ public class FieldData implements Serializable
 	/**
 	 * The field value.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -44,5 +46,6 @@ public class FieldData implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

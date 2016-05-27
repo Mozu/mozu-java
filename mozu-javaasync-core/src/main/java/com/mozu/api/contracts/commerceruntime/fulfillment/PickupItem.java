@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.fulfillment;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an item in an in-store pickup.
@@ -22,7 +24,7 @@ public class PickupItem implements Serializable
 	/**
 	 * This specifies the type of fulfillment item.
 	 */
-	protected String fulfillmentItemType;
+	protected  String fulfillmentItemType;
 
 	public String getFulfillmentItemType() {
 		return this.fulfillmentItemType;
@@ -32,7 +34,7 @@ public class PickupItem implements Serializable
 		this.fulfillmentItemType = fulfillmentItemType;
 	}
 
-	protected Integer lineId;
+	protected  Integer lineId;
 
 	public Integer getLineId() {
 		return this.lineId;
@@ -42,7 +44,7 @@ public class PickupItem implements Serializable
 		this.lineId = lineId;
 	}
 
-	protected String optionAttributeFQN;
+	protected  String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
 		return this.optionAttributeFQN;
@@ -55,7 +57,7 @@ public class PickupItem implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -68,7 +70,7 @@ public class PickupItem implements Serializable
 	/**
 	 * The quantity of the item in the in-store pickup.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -77,5 +79,6 @@ public class PickupItem implements Serializable
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 }

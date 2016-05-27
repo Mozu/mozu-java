@@ -9,6 +9,8 @@ package com.mozu.api.contracts.pricingruntime.thirdparty;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 
 /**
@@ -23,7 +25,7 @@ public class TaxContext implements Serializable
 	/**
 	 * Unique identifier of the customer.
 	 */
-	protected String customerId;
+	protected  String customerId;
 
 	public String getCustomerId() {
 		return this.customerId;
@@ -36,7 +38,7 @@ public class TaxContext implements Serializable
 	/**
 	 * Unique identifier of the tax context.
 	 */
-	protected String taxContextId;
+	protected  String taxContextId;
 
 	public String getTaxContextId() {
 		return this.taxContextId;
@@ -49,7 +51,7 @@ public class TaxContext implements Serializable
 	/**
 	 * If the order is exempt from sales tax, the unique identifier of the tax exempt entity.
 	 */
-	protected String taxExemptId;
+	protected  String taxExemptId;
 
 	public String getTaxExemptId() {
 		return this.taxExemptId;
@@ -62,7 +64,7 @@ public class TaxContext implements Serializable
 	/**
 	 * The taxable amount that can be levied against shipping charges.
 	 */
-	protected Boolean taxShipping;
+	protected  Boolean taxShipping;
 
 	public Boolean getTaxShipping() {
 		return this.taxShipping;
@@ -75,7 +77,7 @@ public class TaxContext implements Serializable
 	/**
 	 * The address to which item in the order will ship.
 	 */
-	protected Address destinationAddress;
+	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
 		return this.destinationAddress;
@@ -88,7 +90,7 @@ public class TaxContext implements Serializable
 	/**
 	 * The address from which the item in the order will ship.
 	 */
-	protected Address originAddress;
+	protected  Address originAddress;
 
 	public Address getOriginAddress() {
 		return this.originAddress;
@@ -97,5 +99,6 @@ public class TaxContext implements Serializable
 	public void setOriginAddress(Address originAddress) {
 		this.originAddress = originAddress;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class DiscountLocalizedContent implements Serializable
 	/**
 	 * The localizable, shopper-facing description defined for the discount.
 	 */
-	protected String friendlyDescription;
+	protected  String friendlyDescription;
 
 	public String getFriendlyDescription() {
 		return this.friendlyDescription;
@@ -36,7 +38,7 @@ public class DiscountLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -49,7 +51,7 @@ public class DiscountLocalizedContent implements Serializable
 	/**
 	 * The localizable name of the discount.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -62,7 +64,7 @@ public class DiscountLocalizedContent implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -71,5 +73,6 @@ public class DiscountLocalizedContent implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.event;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HttpStatus implements Serializable
@@ -16,7 +18,7 @@ public class HttpStatus implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer code;
+	protected  Integer code;
 
 	public Integer getCode() {
 		return this.code;
@@ -26,7 +28,7 @@ public class HttpStatus implements Serializable
 		this.code = code;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -35,5 +37,6 @@ public class HttpStatus implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

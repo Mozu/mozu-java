@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
 
@@ -25,7 +27,7 @@ public class Shipment implements Serializable
 	/**
 	 * Total cost of shipping the shipment to the shopper.
 	 */
-	protected Double cost;
+	protected  Double cost;
 
 	public Double getCost() {
 		return this.cost;
@@ -38,7 +40,7 @@ public class Shipment implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -51,7 +53,7 @@ public class Shipment implements Serializable
 	/**
 	 * Unique identifier of the shipment.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -75,7 +77,7 @@ public class Shipment implements Serializable
 	/**
 	 * Code that identifies the service type method used to perform the shipment, such as UPS_GROUND.
 	 */
-	protected String shippingMethodCode;
+	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
 		return this.shippingMethodCode;
@@ -88,7 +90,7 @@ public class Shipment implements Serializable
 	/**
 	 * If true, a shopper signature is required to deliver this shipment.
 	 */
-	protected Boolean signatureRequired;
+	protected  Boolean signatureRequired;
 
 	public Boolean getSignatureRequired() {
 		return this.signatureRequired;
@@ -101,7 +103,7 @@ public class Shipment implements Serializable
 	/**
 	 * The shipping tracking number supplied by the shipping provider to track the shipment.
 	 */
-	protected String trackingNumber;
+	protected  String trackingNumber;
 
 	public String getTrackingNumber() {
 		return this.trackingNumber;
@@ -114,7 +116,7 @@ public class Shipment implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -127,7 +129,7 @@ public class Shipment implements Serializable
 	/**
 	 * The address to which to shipment will ship.
 	 */
-	protected Contact destinationAddress;
+	protected  Contact destinationAddress;
 
 	public Contact getDestinationAddress() {
 		return this.destinationAddress;
@@ -140,7 +142,7 @@ public class Shipment implements Serializable
 	/**
 	 * The address from which the shipment will ship.
 	 */
-	protected Contact originAddress;
+	protected  Contact originAddress;
 
 	public Contact getOriginAddress() {
 		return this.originAddress;
@@ -149,5 +151,6 @@ public class Shipment implements Serializable
 	public void setOriginAddress(Contact originAddress) {
 		this.originAddress = originAddress;
 	}
+
 
 }

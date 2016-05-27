@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.PackageItem;
@@ -38,7 +40,7 @@ public class Package implements Serializable
 	/**
 	 * The code of the product to be fulfilled.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -51,7 +53,7 @@ public class Package implements Serializable
 	/**
 	 * The date and time the package shipped to the customer.
 	 */
-	protected DateTime fulfillmentDate;
+	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
 		return this.fulfillmentDate;
@@ -64,7 +66,7 @@ public class Package implements Serializable
 	/**
 	 * The location code that represents the location from which this package will ship.
 	 */
-	protected String fulfillmentLocationCode;
+	protected  String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
 		return this.fulfillmentLocationCode;
@@ -74,7 +76,7 @@ public class Package implements Serializable
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
 	}
 
-	protected Boolean hasLabel;
+	protected  Boolean hasLabel;
 
 	public Boolean getHasLabel() {
 		return this.hasLabel;
@@ -87,7 +89,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of a package.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -100,7 +102,7 @@ public class Package implements Serializable
 	/**
 	 * The package type associated with this physical package. Possible values include Tube, Letter, Pak, Small Box (carrier_box_small), Medium Box (carrier_box_medium), Large Box (carrier_box_large), or Custom.
 	 */
-	protected String packagingType;
+	protected  String packagingType;
 
 	public String getPackagingType() {
 		return this.packagingType;
@@ -113,7 +115,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of the shipment associated with this package.
 	 */
-	protected String shipmentId;
+	protected  String shipmentId;
 
 	public String getShipmentId() {
 		return this.shipmentId;
@@ -126,7 +128,7 @@ public class Package implements Serializable
 	/**
 	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
 	 */
-	protected String shippingMethodCode;
+	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
 		return this.shippingMethodCode;
@@ -139,7 +141,7 @@ public class Package implements Serializable
 	/**
 	 * Name of the shipping method associated with the package. For example: UPS Ground or 2nd Day Air.
 	 */
-	protected String shippingMethodName;
+	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
 		return this.shippingMethodName;
@@ -152,7 +154,7 @@ public class Package implements Serializable
 	/**
 	 * Status of the package, which is "Fulfilled" or "NotFulfilled".
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -165,7 +167,7 @@ public class Package implements Serializable
 	/**
 	 * Tracking number for the package supplied by the carrier.
 	 */
-	protected String trackingNumber;
+	protected  String trackingNumber;
 
 	public String getTrackingNumber() {
 		return this.trackingNumber;
@@ -178,7 +180,7 @@ public class Package implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -213,7 +215,7 @@ public class Package implements Serializable
 	/**
 	 * Dimensional properties of the package.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -222,5 +224,6 @@ public class Package implements Serializable
 	public void setMeasurements(PackageMeasurements measurements) {
 		this.measurements = measurements;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.commerce;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an ad-hoc price adjustment for an order.
@@ -22,7 +24,7 @@ public class Adjustment implements Serializable
 	/**
 	 * The amount of the order-level adjustment, which can be a positive or negative amount.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -35,7 +37,7 @@ public class Adjustment implements Serializable
 	/**
 	 * The shopper-facing description of the order-level adjustment.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -48,7 +50,7 @@ public class Adjustment implements Serializable
 	/**
 	 * Administrator notes associated with the order adjustment. These comments are not shopper facing.
 	 */
-	protected String internalComment;
+	protected  String internalComment;
 
 	public String getInternalComment() {
 		return this.internalComment;
@@ -57,5 +59,6 @@ public class Adjustment implements Serializable
 	public void setInternalComment(String internalComment) {
 		this.internalComment = internalComment;
 	}
+
 
 }

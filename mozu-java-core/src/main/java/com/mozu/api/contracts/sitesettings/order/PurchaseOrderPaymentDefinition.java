@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.PurchaseOrderCustomField;
 import com.mozu.api.contracts.sitesettings.order.PurchaseOrderPaymentTerm;
 
@@ -19,7 +21,7 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean allowSplitPayment;
+	protected  Boolean allowSplitPayment;
 
 	public Boolean getAllowSplitPayment() {
 		return this.allowSplitPayment;
@@ -29,7 +31,7 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 		this.allowSplitPayment = allowSplitPayment;
 	}
 
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -54,5 +56,6 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 	public void setPaymentTerms(List<PurchaseOrderPaymentTerm> paymentTerms) {
 		this.paymentTerms = paymentTerms;
 	}
+
 
 }

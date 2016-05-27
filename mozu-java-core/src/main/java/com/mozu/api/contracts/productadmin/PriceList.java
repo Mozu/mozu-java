@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -26,7 +28,7 @@ public class PriceList implements Serializable
 		this.defaultForSites = defaultForSites;
 	}
 
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -36,7 +38,7 @@ public class PriceList implements Serializable
 		this.description = description;
 	}
 
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -46,7 +48,7 @@ public class PriceList implements Serializable
 		this.enabled = enabled;
 	}
 
-	protected Boolean filteredInStorefront;
+	protected  Boolean filteredInStorefront;
 
 	public Boolean getFilteredInStorefront() {
 		return this.filteredInStorefront;
@@ -72,7 +74,7 @@ public class PriceList implements Serializable
 		this.mappedCustomerSegments = mappedCustomerSegments;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -82,7 +84,7 @@ public class PriceList implements Serializable
 		this.name = name;
 	}
 
-	protected String parentPriceListCode;
+	protected  String parentPriceListCode;
 
 	public String getParentPriceListCode() {
 		return this.parentPriceListCode;
@@ -92,7 +94,7 @@ public class PriceList implements Serializable
 		this.parentPriceListCode = parentPriceListCode;
 	}
 
-	protected String parentPriceListName;
+	protected  String parentPriceListName;
 
 	public String getParentPriceListName() {
 		return this.parentPriceListName;
@@ -102,7 +104,7 @@ public class PriceList implements Serializable
 		this.parentPriceListName = parentPriceListName;
 	}
 
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -112,7 +114,7 @@ public class PriceList implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	protected Integer priceListSequence;
+	protected  Integer priceListSequence;
 
 	public Integer getPriceListSequence() {
 		return this.priceListSequence;
@@ -122,7 +124,7 @@ public class PriceList implements Serializable
 		this.priceListSequence = priceListSequence;
 	}
 
-	protected Integer rank;
+	protected  Integer rank;
 
 	public Integer getRank() {
 		return this.rank;
@@ -132,7 +134,7 @@ public class PriceList implements Serializable
 		this.rank = rank;
 	}
 
-	protected Boolean resolvable;
+	protected  Boolean resolvable;
 
 	public Boolean getResolvable() {
 		return this.resolvable;
@@ -142,7 +144,7 @@ public class PriceList implements Serializable
 		this.resolvable = resolvable;
 	}
 
-	protected Boolean validForAllSites;
+	protected  Boolean validForAllSites;
 
 	public Boolean getValidForAllSites() {
 		return this.validForAllSites;
@@ -160,7 +162,7 @@ public class PriceList implements Serializable
 		this.validSites = validSites;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -169,5 +171,6 @@ public class PriceList implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

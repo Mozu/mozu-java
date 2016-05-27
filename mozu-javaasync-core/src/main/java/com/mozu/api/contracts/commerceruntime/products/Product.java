@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.BundledProduct;
 import com.mozu.api.contracts.commerceruntime.products.Category;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
@@ -26,7 +28,7 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime allocationExpiration;
+	protected  DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
 		return this.allocationExpiration;
@@ -36,7 +38,7 @@ public class Product implements Serializable
 		this.allocationExpiration = allocationExpiration;
 	}
 
-	protected Integer allocationId;
+	protected  Integer allocationId;
 
 	public Integer getAllocationId() {
 		return this.allocationId;
@@ -49,7 +51,7 @@ public class Product implements Serializable
 	/**
 	 * Short description of the product in the language specified in the locale code for the storefront.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -62,7 +64,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
 	 */
-	protected Boolean discountsRestricted;
+	protected  Boolean discountsRestricted;
 
 	public Boolean getDiscountsRestricted() {
 		return this.discountsRestricted;
@@ -75,7 +77,7 @@ public class Product implements Serializable
 	/**
 	 * The date and time on which the discount restriction period ends.
 	 */
-	protected DateTime discountsRestrictedEndDate;
+	protected  DateTime discountsRestrictedEndDate;
 
 	public DateTime getDiscountsRestrictedEndDate() {
 		return this.discountsRestrictedEndDate;
@@ -88,7 +90,7 @@ public class Product implements Serializable
 	/**
 	 * The date and time on which the discount restriction period starts.
 	 */
-	protected DateTime discountsRestrictedStartDate;
+	protected  DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
 		return this.discountsRestrictedStartDate;
@@ -98,7 +100,7 @@ public class Product implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
-	protected String fulfillmentStatus;
+	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
 		return this.fulfillmentStatus;
@@ -122,7 +124,7 @@ public class Product implements Serializable
 	/**
 	 * The type of goods of a product. For example: physical, digital, or digital credit.
 	 */
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -135,7 +137,7 @@ public class Product implements Serializable
 	/**
 	 * The alternate image description defined for the product, in the language specified in the locale code for the storefront.
 	 */
-	protected String imageAlternateText;
+	protected  String imageAlternateText;
 
 	public String getImageAlternateText() {
 		return this.imageAlternateText;
@@ -148,7 +150,7 @@ public class Product implements Serializable
 	/**
 	 * The URL of the image file associated with a product on a storefront.
 	 */
-	protected String imageUrl;
+	protected  String imageUrl;
 
 	public String getImageUrl() {
 		return this.imageUrl;
@@ -161,7 +163,7 @@ public class Product implements Serializable
 	/**
 	 * If true, this product cannot ship in a package with other items and must ship in a package by itself.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -174,7 +176,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -187,7 +189,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the entity is subject to sales tax based on the relevant tax rate.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -200,7 +202,7 @@ public class Product implements Serializable
 	/**
 	 * The manufacturer's part number for the product.
 	 */
-	protected String mfgPartNumber;
+	protected  String mfgPartNumber;
 
 	public String getMfgPartNumber() {
 		return this.mfgPartNumber;
@@ -213,7 +215,7 @@ public class Product implements Serializable
 	/**
 	 * The name of the product that appears on the storefront.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -226,7 +228,7 @@ public class Product implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -239,7 +241,7 @@ public class Product implements Serializable
 	/**
 	 * The unique identifier of the product reservation created for this item in the cart or order.
 	 */
-	protected Integer productReservationId;
+	protected  Integer productReservationId;
 
 	public Integer getProductReservationId() {
 		return this.productReservationId;
@@ -252,7 +254,7 @@ public class Product implements Serializable
 	/**
 	 * The product type template associated with the product on the storefront.
 	 */
-	protected String productType;
+	protected  String productType;
 
 	public String getProductType() {
 		return this.productType;
@@ -265,7 +267,7 @@ public class Product implements Serializable
 	/**
 	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
-	protected String productUsage;
+	protected  String productUsage;
 
 	public String getProductUsage() {
 		return this.productUsage;
@@ -278,7 +280,7 @@ public class Product implements Serializable
 	/**
 	 * The universal product code defined for the product.
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -291,7 +293,7 @@ public class Product implements Serializable
 	/**
 	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -326,7 +328,7 @@ public class Product implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -350,7 +352,7 @@ public class Product implements Serializable
 	/**
 	 * The price of the product that appears on the storefront including any applied discounts.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -370,5 +372,6 @@ public class Product implements Serializable
 	public void setProperties(List<ProductProperty> properties) {
 		this.properties = properties;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.location.FulfillmentType;
@@ -27,7 +29,7 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean allowFulfillmentWithNoStock;
+	protected  Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
 		return this.allowFulfillmentWithNoStock;
@@ -40,7 +42,7 @@ public class Location implements Serializable
 	/**
 	 * User-defined code to assign to this location.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -53,7 +55,7 @@ public class Location implements Serializable
 	/**
 	 * User-defined description of this location.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -66,7 +68,7 @@ public class Location implements Serializable
 	/**
 	 * The fax number associated with this location.
 	 */
-	protected String fax;
+	protected  String fax;
 
 	public String getFax() {
 		return this.fax;
@@ -76,7 +78,7 @@ public class Location implements Serializable
 		this.fax = fax;
 	}
 
-	protected Boolean isDisabled;
+	protected  Boolean isDisabled;
 
 	public Boolean getIsDisabled() {
 		return this.isDisabled;
@@ -89,7 +91,7 @@ public class Location implements Serializable
 	/**
 	 * The user-defined name of the location.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -102,7 +104,7 @@ public class Location implements Serializable
 	/**
 	 * Any tenant-defined notes associated with this location.
 	 */
-	protected String note;
+	protected  String note;
 
 	public String getNote() {
 		return this.note;
@@ -115,7 +117,7 @@ public class Location implements Serializable
 	/**
 	 * The phone number associated with this location.
 	 */
-	protected String phone;
+	protected  String phone;
 
 	public String getPhone() {
 		return this.phone;
@@ -128,7 +130,7 @@ public class Location implements Serializable
 	/**
 	 * If true, this location maintains its own product inventory. If the location uses the direct ship fulfillment type, it must also support inventory.
 	 */
-	protected Boolean supportsInventory;
+	protected  Boolean supportsInventory;
 
 	public Boolean getSupportsInventory() {
 		return this.supportsInventory;
@@ -152,7 +154,7 @@ public class Location implements Serializable
 	/**
 	 * The physical address properties of the location.
 	 */
-	protected Address address;
+	protected  Address address;
 
 	public Address getAddress() {
 		return this.address;
@@ -162,7 +164,7 @@ public class Location implements Serializable
 		this.address = address;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -186,7 +188,7 @@ public class Location implements Serializable
 	/**
 	 * The geographical coordinates associated with this location.
 	 */
-	protected Coordinates geo;
+	protected  Coordinates geo;
 
 	public Coordinates getGeo() {
 		return this.geo;
@@ -210,7 +212,7 @@ public class Location implements Serializable
 	/**
 	 * List of standard operating hours for each day of the week this location is open for shopper business.
 	 */
-	protected RegularHours regularHours;
+	protected  RegularHours regularHours;
 
 	public RegularHours getRegularHours() {
 		return this.regularHours;
@@ -223,7 +225,7 @@ public class Location implements Serializable
 	/**
 	 * Properties of a fulfillment contact for the shipping origin address associated with a location.
 	 */
-	protected ShippingOriginContact shippingOriginContact;
+	protected  ShippingOriginContact shippingOriginContact;
 
 	public ShippingOriginContact getShippingOriginContact() {
 		return this.shippingOriginContact;
@@ -232,5 +234,6 @@ public class Location implements Serializable
 	public void setShippingOriginContact(ShippingOriginContact shippingOriginContact) {
 		this.shippingOriginContact = shippingOriginContact;
 	}
+
 
 }

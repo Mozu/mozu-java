@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.mzdb.IndexedProperty;
 import com.mozu.api.contracts.mzdb.ListView;
 
@@ -19,7 +21,7 @@ public class EntityList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String contextLevel;
+	protected  String contextLevel;
 
 	public String getContextLevel() {
 		return this.contextLevel;
@@ -29,7 +31,7 @@ public class EntityList implements Serializable
 		this.contextLevel = contextLevel;
 	}
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -39,7 +41,7 @@ public class EntityList implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected Boolean isLocaleSpecific;
+	protected  Boolean isLocaleSpecific;
 
 	public Boolean getIsLocaleSpecific() {
 		return this.isLocaleSpecific;
@@ -49,7 +51,7 @@ public class EntityList implements Serializable
 		this.isLocaleSpecific = isLocaleSpecific;
 	}
 
-	protected Boolean isSandboxDataCloningSupported;
+	protected  Boolean isSandboxDataCloningSupported;
 
 	public Boolean getIsSandboxDataCloningSupported() {
 		return this.isSandboxDataCloningSupported;
@@ -59,7 +61,7 @@ public class EntityList implements Serializable
 		this.isSandboxDataCloningSupported = isSandboxDataCloningSupported;
 	}
 
-	protected Boolean isShopperSpecific;
+	protected  Boolean isShopperSpecific;
 
 	public Boolean getIsShopperSpecific() {
 		return this.isShopperSpecific;
@@ -69,7 +71,7 @@ public class EntityList implements Serializable
 		this.isShopperSpecific = isShopperSpecific;
 	}
 
-	protected Boolean isVisibleInStorefront;
+	protected  Boolean isVisibleInStorefront;
 
 	public Boolean getIsVisibleInStorefront() {
 		return this.isVisibleInStorefront;
@@ -79,7 +81,7 @@ public class EntityList implements Serializable
 		this.isVisibleInStorefront = isVisibleInStorefront;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -89,7 +91,7 @@ public class EntityList implements Serializable
 		this.name = name;
 	}
 
-	protected String nameSpace;
+	protected  String nameSpace;
 
 	public String getNameSpace() {
 		return this.nameSpace;
@@ -102,7 +104,7 @@ public class EntityList implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -112,7 +114,7 @@ public class EntityList implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -130,7 +132,7 @@ public class EntityList implements Serializable
 		this.usages = usages;
 	}
 
-	protected Boolean useSystemAssignedId;
+	protected  Boolean useSystemAssignedId;
 
 	public Boolean getUseSystemAssignedId() {
 		return this.useSystemAssignedId;
@@ -140,17 +142,7 @@ public class EntityList implements Serializable
 		this.useSystemAssignedId = useSystemAssignedId;
 	}
 
-	protected IndexedProperty indexA;
-
-	public IndexedProperty getIndexA() {
-		return this.indexA;
-	}
-
-	public void setIndexA(IndexedProperty indexA) {
-		this.indexA = indexA;
-	}
-
-	protected IndexedProperty idProperty;
+	protected  IndexedProperty idProperty;
 
 	public IndexedProperty getIdProperty() {
 		return this.idProperty;
@@ -160,7 +152,17 @@ public class EntityList implements Serializable
 		this.idProperty = idProperty;
 	}
 
-	protected IndexedProperty indexB;
+	protected  IndexedProperty indexA;
+
+	public IndexedProperty getIndexA() {
+		return this.indexA;
+	}
+
+	public void setIndexA(IndexedProperty indexA) {
+		this.indexA = indexA;
+	}
+
+	protected  IndexedProperty indexB;
 
 	public IndexedProperty getIndexB() {
 		return this.indexB;
@@ -170,7 +172,7 @@ public class EntityList implements Serializable
 		this.indexB = indexB;
 	}
 
-	protected IndexedProperty indexC;
+	protected  IndexedProperty indexC;
 
 	public IndexedProperty getIndexC() {
 		return this.indexC;
@@ -180,7 +182,7 @@ public class EntityList implements Serializable
 		this.indexC = indexC;
 	}
 
-	protected IndexedProperty indexD;
+	protected  IndexedProperty indexD;
 
 	public IndexedProperty getIndexD() {
 		return this.indexD;
@@ -190,7 +192,7 @@ public class EntityList implements Serializable
 		this.indexD = indexD;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -206,6 +208,23 @@ public class EntityList implements Serializable
 	}
 	public void setViews(List<ListView> views) {
 		this.views = views;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.reference;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State implements Serializable
@@ -16,7 +18,7 @@ public class State implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -26,7 +28,7 @@ public class State implements Serializable
 		this.code = code;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,7 +38,7 @@ public class State implements Serializable
 		this.name = name;
 	}
 
-	protected String tags;
+	protected  String tags;
 
 	public String getTags() {
 		return this.tags;
@@ -45,5 +47,6 @@ public class State implements Serializable
 	public void setTags(String tags) {
 		this.tags = tags;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a message displayed when a product validation failure occurs for a shopper in a storefront.
@@ -22,7 +24,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * The contents of the message displayed to the user when the product validation failure occurs.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -35,7 +37,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * The severity level of the product validation failure.
 	 */
-	protected String severity;
+	protected  String severity;
 
 	public String getSeverity() {
 		return this.severity;
@@ -48,7 +50,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * The entity that triggered the product validation.
 	 */
-	protected String source;
+	protected  String source;
 
 	public String getSource() {
 		return this.source;
@@ -61,7 +63,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * Unique identifier of the entity that triggered the validation.
 	 */
-	protected String sourceId;
+	protected  String sourceId;
 
 	public String getSourceId() {
 		return this.sourceId;
@@ -71,7 +73,7 @@ public class ValidationMessage implements Serializable
 		this.sourceId = sourceId;
 	}
 
-	protected String validationType;
+	protected  String validationType;
 
 	public String getValidationType() {
 		return this.validationType;
@@ -80,5 +82,6 @@ public class ValidationMessage implements Serializable
 	public void setValidationType(String validationType) {
 		this.validationType = validationType;
 	}
+
 
 }

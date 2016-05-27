@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.SiteSearchRelevancyCustomField;
 import com.mozu.api.contracts.productadmin.SiteSearchKeywordRelevancySettings;
 import com.mozu.api.contracts.productadmin.SiteSearchPhraseRelevancySettings;
@@ -28,7 +30,7 @@ public class SiteSearchSettings implements Serializable
 		this.customBoosts = customBoosts;
 	}
 
-	protected Boolean isDefault;
+	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
 		return this.isDefault;
@@ -38,7 +40,7 @@ public class SiteSearchSettings implements Serializable
 		this.isDefault = isDefault;
 	}
 
-	protected Integer minimumMatchPercent;
+	protected  Integer minimumMatchPercent;
 
 	public Integer getMinimumMatchPercent() {
 		return this.minimumMatchPercent;
@@ -48,7 +50,7 @@ public class SiteSearchSettings implements Serializable
 		this.minimumMatchPercent = minimumMatchPercent;
 	}
 
-	protected String settingsName;
+	protected  String settingsName;
 
 	public String getSettingsName() {
 		return this.settingsName;
@@ -66,7 +68,7 @@ public class SiteSearchSettings implements Serializable
 		this.customFields = customFields;
 	}
 
-	protected SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
+	protected  SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
 
 	public SiteSearchKeywordRelevancySettings getSiteKeywordRelevancy() {
 		return this.siteKeywordRelevancy;
@@ -76,7 +78,7 @@ public class SiteSearchSettings implements Serializable
 		this.siteKeywordRelevancy = siteKeywordRelevancy;
 	}
 
-	protected SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
+	protected  SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
 
 	public SiteSearchPhraseRelevancySettings getSitePhraseRelevancy() {
 		return this.sitePhraseRelevancy;
@@ -85,5 +87,6 @@ public class SiteSearchSettings implements Serializable
 	public void setSitePhraseRelevancy(SiteSearchPhraseRelevancySettings sitePhraseRelevancy) {
 		this.sitePhraseRelevancy = sitePhraseRelevancy;
 	}
+
 
 }

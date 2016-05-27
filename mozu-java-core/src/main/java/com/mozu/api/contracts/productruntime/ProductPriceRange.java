@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductPrice;
 
 /**
@@ -23,7 +25,7 @@ public class ProductPriceRange implements Serializable
 	/**
 	 * The lowest possible price value for a product with options that vary the cost of the product.
 	 */
-	protected ProductPrice lower;
+	protected  ProductPrice lower;
 
 	public ProductPrice getLower() {
 		return this.lower;
@@ -36,7 +38,7 @@ public class ProductPriceRange implements Serializable
 	/**
 	 * Thw highest possible price value for a product with options that vary the cost of the product.
 	 */
-	protected ProductPrice upper;
+	protected  ProductPrice upper;
 
 	public ProductPrice getUpper() {
 		return this.upper;
@@ -45,5 +47,6 @@ public class ProductPriceRange implements Serializable
 	public void setUpper(ProductPrice upper) {
 		this.upper = upper;
 	}
+
 
 }

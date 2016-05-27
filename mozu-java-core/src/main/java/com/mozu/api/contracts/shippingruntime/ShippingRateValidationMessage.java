@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a success/failure message notification associated with validating a shipping rate.
@@ -22,7 +24,7 @@ public class ShippingRateValidationMessage implements Serializable
 	/**
 	 * URL displayed with the shipping validation message that links to help information.
 	 */
-	protected String helpLink;
+	protected  String helpLink;
 
 	public String getHelpLink() {
 		return this.helpLink;
@@ -35,7 +37,7 @@ public class ShippingRateValidationMessage implements Serializable
 	/**
 	 * Content of the shipping rate validation message.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -48,7 +50,7 @@ public class ShippingRateValidationMessage implements Serializable
 	/**
 	 * Severity level of the shipping rate validation failure.
 	 */
-	protected String severity;
+	protected  String severity;
 
 	public String getSeverity() {
 		return this.severity;
@@ -57,5 +59,6 @@ public class ShippingRateValidationMessage implements Serializable
 	public void setSeverity(String severity) {
 		this.severity = severity;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomainValue;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class ApplicationCapabilityDomain implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationCapabilityDomainId;
+	protected  Integer applicationCapabilityDomainId;
 
 	public Integer getApplicationCapabilityDomainId() {
 		return this.applicationCapabilityDomainId;
@@ -28,7 +30,7 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.applicationCapabilityDomainId = applicationCapabilityDomainId;
 	}
 
-	protected Integer applicationCapabilityTypeId;
+	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
 		return this.applicationCapabilityTypeId;
@@ -38,7 +40,7 @@ public class ApplicationCapabilityDomain implements Serializable
 		this.applicationCapabilityTypeId = applicationCapabilityTypeId;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -63,5 +65,6 @@ public class ApplicationCapabilityDomain implements Serializable
 	public void setApplicationCapabilityDomainValues2(List<ApplicationCapabilityDomainValue> applicationCapabilityDomainValues2) {
 		this.applicationCapabilityDomainValues2 = applicationCapabilityDomainValues2;
 	}
+
 
 }

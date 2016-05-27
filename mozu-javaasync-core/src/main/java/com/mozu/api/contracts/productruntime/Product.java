@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.Discount;
 import com.mozu.api.contracts.productruntime.BundledProduct;
 import com.mozu.api.contracts.productruntime.Category;
@@ -33,7 +35,7 @@ public class Product implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime catalogEndDate;
+	protected  DateTime catalogEndDate;
 
 	public DateTime getCatalogEndDate() {
 		return this.catalogEndDate;
@@ -43,7 +45,7 @@ public class Product implements Serializable
 		this.catalogEndDate = catalogEndDate;
 	}
 
-	protected DateTime catalogStartDate;
+	protected  DateTime catalogStartDate;
 
 	public DateTime getCatalogStartDate() {
 		return this.catalogStartDate;
@@ -56,7 +58,7 @@ public class Product implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -66,7 +68,7 @@ public class Product implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected DateTime dateFirstAvailableInCatalog;
+	protected  DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
 		return this.dateFirstAvailableInCatalog;
@@ -76,7 +78,7 @@ public class Product implements Serializable
 		this.dateFirstAvailableInCatalog = dateFirstAvailableInCatalog;
 	}
 
-	protected Integer daysAvailableInCatalog;
+	protected  Integer daysAvailableInCatalog;
 
 	public Integer getDaysAvailableInCatalog() {
 		return this.daysAvailableInCatalog;
@@ -97,7 +99,7 @@ public class Product implements Serializable
 		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
 	}
 
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -110,7 +112,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product is marked as available for sale. Setting a product to IsActive = false will prevent it from being shown on the customer facing storefront.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -123,7 +125,7 @@ public class Product implements Serializable
 	/**
 	 * If true, this product cannot ship in a package with other products and must ship in a package by itself.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -136,7 +138,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the product can be purchased or fulfilled at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -149,7 +151,7 @@ public class Product implements Serializable
 	/**
 	 * If true, the entity is subject to tax based on the relevant tax rate.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -162,7 +164,7 @@ public class Product implements Serializable
 	/**
 	 * The manufacturer part number defined for the product.
 	 */
-	protected String mfgPartNumber;
+	protected  String mfgPartNumber;
 
 	public String getMfgPartNumber() {
 		return this.mfgPartNumber;
@@ -186,7 +188,7 @@ public class Product implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -199,7 +201,7 @@ public class Product implements Serializable
 	/**
 	 * Integer that represents the sequential order of the product.
 	 */
-	protected Integer productSequence;
+	protected  Integer productSequence;
 
 	public Integer getProductSequence() {
 		return this.productSequence;
@@ -212,7 +214,7 @@ public class Product implements Serializable
 	/**
 	 * A product type is like a product template that can be reused.
 	 */
-	protected String productType;
+	protected  String productType;
 
 	public String getProductType() {
 		return this.productType;
@@ -222,7 +224,7 @@ public class Product implements Serializable
 		this.productType = productType;
 	}
 
-	protected Integer productTypeId;
+	protected  Integer productTypeId;
 
 	public Integer getProductTypeId() {
 		return this.productTypeId;
@@ -235,7 +237,7 @@ public class Product implements Serializable
 	/**
 	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
-	protected String productUsage;
+	protected  String productUsage;
 
 	public String getProductUsage() {
 		return this.productUsage;
@@ -248,7 +250,7 @@ public class Product implements Serializable
 	/**
 	 * The publishing state of the product definition in the master catalog, which is "New", "Draft", or "Live".
 	 */
-	protected String publishState;
+	protected  String publishState;
 
 	public String getPublishState() {
 		return this.publishState;
@@ -261,7 +263,7 @@ public class Product implements Serializable
 	/**
 	 * The universal product code associated with the product. The UPC of a product is unique across all sales channels.
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -293,7 +295,7 @@ public class Product implements Serializable
 	/**
 	 * Product code that represents the product variation selected based on the option values the shopper entered.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -339,7 +341,7 @@ public class Product implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected ProductContent content;
+	protected  ProductContent content;
 
 	public ProductContent getContent() {
 		return this.content;
@@ -352,7 +354,7 @@ public class Product implements Serializable
 	/**
 	 * Array of active inventory level information associated with the product.
 	 */
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -365,7 +367,7 @@ public class Product implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -389,7 +391,7 @@ public class Product implements Serializable
 	/**
 	 * Unit price that the tenant intends to sell the product if no sale price is set.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -402,7 +404,7 @@ public class Product implements Serializable
 	/**
 	 * For products with options that vary the cost of the product, the range between lowest and highest possible price of the product based on the current selection of options.
 	 */
-	protected ProductPriceRange priceRange;
+	protected  ProductPriceRange priceRange;
 
 	public ProductPriceRange getPriceRange() {
 		return this.priceRange;
@@ -415,7 +417,7 @@ public class Product implements Serializable
 	/**
 	 * Describes the behavior the system uses when determining the price of the product.
 	 */
-	protected ProductPricingBehaviorInfo pricingBehavior;
+	protected  ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {
 		return this.pricingBehavior;
@@ -439,7 +441,7 @@ public class Product implements Serializable
 	/**
 	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
 	 */
-	protected ProductPurchasableState purchasableState;
+	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {
 		return this.purchasableState;
@@ -456,5 +458,6 @@ public class Product implements Serializable
 	public void setVariations(List<VariationSummary> variations) {
 		this.variations = variations;
 	}
+
 
 }

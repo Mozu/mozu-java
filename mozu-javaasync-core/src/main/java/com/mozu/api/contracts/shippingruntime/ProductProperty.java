@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductProperty implements Serializable
@@ -17,7 +19,7 @@ public class ProductProperty implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -27,7 +29,7 @@ public class ProductProperty implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -44,5 +46,6 @@ public class ProductProperty implements Serializable
 	public void setValues(List<Object> values) {
 		this.values = values;
 	}
+
 
 }

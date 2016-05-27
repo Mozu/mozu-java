@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationTransaction;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class ApplicationEntitlement implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -28,7 +30,7 @@ public class ApplicationEntitlement implements Serializable
 		this.appKey = appKey;
 	}
 
-	protected Integer applicationEntitlementId;
+	protected  Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
 		return this.applicationEntitlementId;
@@ -38,7 +40,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -48,7 +50,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	protected String applicationLicenseType;
+	protected  String applicationLicenseType;
 
 	public String getApplicationLicenseType() {
 		return this.applicationLicenseType;
@@ -58,7 +60,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationLicenseType = applicationLicenseType;
 	}
 
-	protected String applicationName;
+	protected  String applicationName;
 
 	public String getApplicationName() {
 		return this.applicationName;
@@ -68,7 +70,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationName = applicationName;
 	}
 
-	protected String applicationStatusId;
+	protected  String applicationStatusId;
 
 	public String getApplicationStatusId() {
 		return this.applicationStatusId;
@@ -78,7 +80,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationStatusId = applicationStatusId;
 	}
 
-	protected String applicationVersion;
+	protected  String applicationVersion;
 
 	public String getApplicationVersion() {
 		return this.applicationVersion;
@@ -88,7 +90,7 @@ public class ApplicationEntitlement implements Serializable
 		this.applicationVersion = applicationVersion;
 	}
 
-	protected Integer appOwnerDevAccountId;
+	protected  Integer appOwnerDevAccountId;
 
 	public Integer getAppOwnerDevAccountId() {
 		return this.appOwnerDevAccountId;
@@ -98,7 +100,7 @@ public class ApplicationEntitlement implements Serializable
 		this.appOwnerDevAccountId = appOwnerDevAccountId;
 	}
 
-	protected Integer devAccountId;
+	protected  Integer devAccountId;
 
 	public Integer getDevAccountId() {
 		return this.devAccountId;
@@ -108,7 +110,7 @@ public class ApplicationEntitlement implements Serializable
 		this.devAccountId = devAccountId;
 	}
 
-	protected DateTime effectiveEndDate;
+	protected  DateTime effectiveEndDate;
 
 	public DateTime getEffectiveEndDate() {
 		return this.effectiveEndDate;
@@ -118,7 +120,7 @@ public class ApplicationEntitlement implements Serializable
 		this.effectiveEndDate = effectiveEndDate;
 	}
 
-	protected DateTime effectiveStartDate;
+	protected  DateTime effectiveStartDate;
 
 	public DateTime getEffectiveStartDate() {
 		return this.effectiveStartDate;
@@ -128,7 +130,7 @@ public class ApplicationEntitlement implements Serializable
 		this.effectiveStartDate = effectiveStartDate;
 	}
 
-	protected String entitlementStatus;
+	protected  String entitlementStatus;
 
 	public String getEntitlementStatus() {
 		return this.entitlementStatus;
@@ -138,7 +140,7 @@ public class ApplicationEntitlement implements Serializable
 		this.entitlementStatus = entitlementStatus;
 	}
 
-	protected String installedAppsApplicationId;
+	protected  String installedAppsApplicationId;
 
 	public String getInstalledAppsApplicationId() {
 		return this.installedAppsApplicationId;
@@ -148,7 +150,7 @@ public class ApplicationEntitlement implements Serializable
 		this.installedAppsApplicationId = installedAppsApplicationId;
 	}
 
-	protected String installedByFirstName;
+	protected  String installedByFirstName;
 
 	public String getInstalledByFirstName() {
 		return this.installedByFirstName;
@@ -158,7 +160,7 @@ public class ApplicationEntitlement implements Serializable
 		this.installedByFirstName = installedByFirstName;
 	}
 
-	protected String installedByLastName;
+	protected  String installedByLastName;
 
 	public String getInstalledByLastName() {
 		return this.installedByLastName;
@@ -168,7 +170,7 @@ public class ApplicationEntitlement implements Serializable
 		this.installedByLastName = installedByLastName;
 	}
 
-	protected DateTime installedDate;
+	protected  DateTime installedDate;
 
 	public DateTime getInstalledDate() {
 		return this.installedDate;
@@ -178,7 +180,7 @@ public class ApplicationEntitlement implements Serializable
 		this.installedDate = installedDate;
 	}
 
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -188,7 +190,7 @@ public class ApplicationEntitlement implements Serializable
 		this.packageId = packageId;
 	}
 
-	protected String packageName;
+	protected  String packageName;
 
 	public String getPackageName() {
 		return this.packageName;
@@ -198,7 +200,7 @@ public class ApplicationEntitlement implements Serializable
 		this.packageName = packageName;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -211,7 +213,7 @@ public class ApplicationEntitlement implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -221,7 +223,7 @@ public class ApplicationEntitlement implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected String tenantName;
+	protected  String tenantName;
 
 	public String getTenantName() {
 		return this.tenantName;
@@ -238,5 +240,6 @@ public class ApplicationEntitlement implements Serializable
 	public void setApplicationTransactions(List<ApplicationTransaction> applicationTransactions) {
 		this.applicationTransactions = applicationTransactions;
 	}
+
 
 }

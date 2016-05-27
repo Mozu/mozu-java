@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationTransaction implements Serializable
@@ -16,7 +18,7 @@ public class ApplicationTransaction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer applicationEntitlementId;
+	protected  Integer applicationEntitlementId;
 
 	public Integer getApplicationEntitlementId() {
 		return this.applicationEntitlementId;
@@ -26,7 +28,7 @@ public class ApplicationTransaction implements Serializable
 		this.applicationEntitlementId = applicationEntitlementId;
 	}
 
-	protected Integer applicationId;
+	protected  Integer applicationId;
 
 	public Integer getApplicationId() {
 		return this.applicationId;
@@ -36,7 +38,7 @@ public class ApplicationTransaction implements Serializable
 		this.applicationId = applicationId;
 	}
 
-	protected Integer applicationTransactionId;
+	protected  Integer applicationTransactionId;
 
 	public Integer getApplicationTransactionId() {
 		return this.applicationTransactionId;
@@ -46,7 +48,7 @@ public class ApplicationTransaction implements Serializable
 		this.applicationTransactionId = applicationTransactionId;
 	}
 
-	protected String isoCurrencyCode;
+	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
 		return this.isoCurrencyCode;
@@ -59,7 +61,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected Integer localeCode;
+	protected  Integer localeCode;
 
 	public Integer getLocaleCode() {
 		return this.localeCode;
@@ -69,7 +71,7 @@ public class ApplicationTransaction implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	protected String orderNumber;
+	protected  String orderNumber;
 
 	public String getOrderNumber() {
 		return this.orderNumber;
@@ -79,7 +81,7 @@ public class ApplicationTransaction implements Serializable
 		this.orderNumber = orderNumber;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -92,7 +94,7 @@ public class ApplicationTransaction implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -102,7 +104,7 @@ public class ApplicationTransaction implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected DateTime transactionDate;
+	protected  DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
 		return this.transactionDate;
@@ -112,7 +114,7 @@ public class ApplicationTransaction implements Serializable
 		this.transactionDate = transactionDate;
 	}
 
-	protected Double transactionPrice;
+	protected  Double transactionPrice;
 
 	public Double getTransactionPrice() {
 		return this.transactionPrice;
@@ -122,7 +124,7 @@ public class ApplicationTransaction implements Serializable
 		this.transactionPrice = transactionPrice;
 	}
 
-	protected Double transactionTax;
+	protected  Double transactionTax;
 
 	public Double getTransactionTax() {
 		return this.transactionTax;
@@ -132,7 +134,7 @@ public class ApplicationTransaction implements Serializable
 		this.transactionTax = transactionTax;
 	}
 
-	protected Double transactionTotal;
+	protected  Double transactionTotal;
 
 	public Double getTransactionTotal() {
 		return this.transactionTotal;
@@ -141,5 +143,6 @@ public class ApplicationTransaction implements Serializable
 	public void setTransactionTotal(Double transactionTotal) {
 		this.transactionTotal = transactionTotal;
 	}
+
 
 }

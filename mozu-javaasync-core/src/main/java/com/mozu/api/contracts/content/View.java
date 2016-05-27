@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.ViewField;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -21,7 +23,7 @@ public class View implements Serializable
 	/**
 	 * A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 */
-	protected String filter;
+	protected  String filter;
 
 	public String getFilter() {
 		return this.filter;
@@ -31,7 +33,7 @@ public class View implements Serializable
 		this.filter = filter;
 	}
 
-	protected Boolean isVisibleInStorefront;
+	protected  Boolean isVisibleInStorefront;
 
 	public Boolean getIsVisibleInStorefront() {
 		return this.isVisibleInStorefront;
@@ -41,7 +43,7 @@ public class View implements Serializable
 		this.isVisibleInStorefront = isVisibleInStorefront;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -67,7 +69,7 @@ public class View implements Serializable
 		this.fields = fields;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -75,6 +77,23 @@ public class View implements Serializable
 
 	public void setMetadata(com.fasterxml.jackson.databind.JsonNode metadata) {
 		this.metadata = metadata;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

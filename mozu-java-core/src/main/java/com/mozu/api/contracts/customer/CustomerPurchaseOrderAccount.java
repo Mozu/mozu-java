@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CustomerPurchaseOrderPaymentTerm;
 
@@ -19,7 +21,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer accountId;
+	protected  Integer accountId;
 
 	public Integer getAccountId() {
 		return this.accountId;
@@ -29,7 +31,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.accountId = accountId;
 	}
 
-	protected Double availableBalance;
+	protected  Double availableBalance;
 
 	public Double getAvailableBalance() {
 		return this.availableBalance;
@@ -39,7 +41,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.availableBalance = availableBalance;
 	}
 
-	protected Double creditLimit;
+	protected  Double creditLimit;
 
 	public Double getCreditLimit() {
 		return this.creditLimit;
@@ -49,7 +51,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.creditLimit = creditLimit;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -59,7 +61,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -69,7 +71,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	protected Double overdraftAllowance;
+	protected  Double overdraftAllowance;
 
 	public Double getOverdraftAllowance() {
 		return this.overdraftAllowance;
@@ -79,7 +81,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.overdraftAllowance = overdraftAllowance;
 	}
 
-	protected String overdraftAllowanceType;
+	protected  String overdraftAllowanceType;
 
 	public String getOverdraftAllowanceType() {
 		return this.overdraftAllowanceType;
@@ -89,7 +91,7 @@ public class CustomerPurchaseOrderAccount implements Serializable
 		this.overdraftAllowanceType = overdraftAllowanceType;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -106,5 +108,6 @@ public class CustomerPurchaseOrderAccount implements Serializable
 	public void setCustomerPurchaseOrderPaymentTerms(List<CustomerPurchaseOrderPaymentTerm> customerPurchaseOrderPaymentTerms) {
 		this.customerPurchaseOrderPaymentTerms = customerPurchaseOrderPaymentTerms;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.sitesettings.general;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmailTransactionSettings implements Serializable
@@ -16,7 +18,7 @@ public class EmailTransactionSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean backInStock;
+	protected  Boolean backInStock;
 
 	public Boolean getBackInStock() {
 		return this.backInStock;
@@ -26,7 +28,7 @@ public class EmailTransactionSettings implements Serializable
 		this.backInStock = backInStock;
 	}
 
-	protected Boolean giftCardCreated;
+	protected  Boolean giftCardCreated;
 
 	public Boolean getGiftCardCreated() {
 		return this.giftCardCreated;
@@ -36,7 +38,7 @@ public class EmailTransactionSettings implements Serializable
 		this.giftCardCreated = giftCardCreated;
 	}
 
-	protected Boolean orderChanged;
+	protected  Boolean orderChanged;
 
 	public Boolean getOrderChanged() {
 		return this.orderChanged;
@@ -46,7 +48,7 @@ public class EmailTransactionSettings implements Serializable
 		this.orderChanged = orderChanged;
 	}
 
-	protected Boolean orderFulfillmentDetailsChanged;
+	protected  Boolean orderFulfillmentDetailsChanged;
 
 	public Boolean getOrderFulfillmentDetailsChanged() {
 		return this.orderFulfillmentDetailsChanged;
@@ -56,7 +58,7 @@ public class EmailTransactionSettings implements Serializable
 		this.orderFulfillmentDetailsChanged = orderFulfillmentDetailsChanged;
 	}
 
-	protected Boolean orderShipped;
+	protected  Boolean orderShipped;
 
 	public Boolean getOrderShipped() {
 		return this.orderShipped;
@@ -66,7 +68,7 @@ public class EmailTransactionSettings implements Serializable
 		this.orderShipped = orderShipped;
 	}
 
-	protected Boolean refundCreated;
+	protected  Boolean refundCreated;
 
 	public Boolean getRefundCreated() {
 		return this.refundCreated;
@@ -76,7 +78,7 @@ public class EmailTransactionSettings implements Serializable
 		this.refundCreated = refundCreated;
 	}
 
-	protected Boolean returnAuthorized;
+	protected  Boolean returnAuthorized;
 
 	public Boolean getReturnAuthorized() {
 		return this.returnAuthorized;
@@ -86,7 +88,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnAuthorized = returnAuthorized;
 	}
 
-	protected Boolean returnCancelled;
+	protected  Boolean returnCancelled;
 
 	public Boolean getReturnCancelled() {
 		return this.returnCancelled;
@@ -96,7 +98,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnCancelled = returnCancelled;
 	}
 
-	protected Boolean returnClosed;
+	protected  Boolean returnClosed;
 
 	public Boolean getReturnClosed() {
 		return this.returnClosed;
@@ -106,7 +108,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnClosed = returnClosed;
 	}
 
-	protected Boolean returnCreated;
+	protected  Boolean returnCreated;
 
 	public Boolean getReturnCreated() {
 		return this.returnCreated;
@@ -116,7 +118,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnCreated = returnCreated;
 	}
 
-	protected Boolean returnRejected;
+	protected  Boolean returnRejected;
 
 	public Boolean getReturnRejected() {
 		return this.returnRejected;
@@ -126,7 +128,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnRejected = returnRejected;
 	}
 
-	protected Boolean returnUpdated;
+	protected  Boolean returnUpdated;
 
 	public Boolean getReturnUpdated() {
 		return this.returnUpdated;
@@ -136,7 +138,7 @@ public class EmailTransactionSettings implements Serializable
 		this.returnUpdated = returnUpdated;
 	}
 
-	protected Boolean shopperLoginCreated;
+	protected  Boolean shopperLoginCreated;
 
 	public Boolean getShopperLoginCreated() {
 		return this.shopperLoginCreated;
@@ -146,7 +148,7 @@ public class EmailTransactionSettings implements Serializable
 		this.shopperLoginCreated = shopperLoginCreated;
 	}
 
-	protected Boolean shopperPasswordReset;
+	protected  Boolean shopperPasswordReset;
 
 	public Boolean getShopperPasswordReset() {
 		return this.shopperPasswordReset;
@@ -156,7 +158,7 @@ public class EmailTransactionSettings implements Serializable
 		this.shopperPasswordReset = shopperPasswordReset;
 	}
 
-	protected Boolean storeCreditCreated;
+	protected  Boolean storeCreditCreated;
 
 	public Boolean getStoreCreditCreated() {
 		return this.storeCreditCreated;
@@ -166,7 +168,7 @@ public class EmailTransactionSettings implements Serializable
 		this.storeCreditCreated = storeCreditCreated;
 	}
 
-	protected Boolean storeCreditUpdated;
+	protected  Boolean storeCreditUpdated;
 
 	public Boolean getStoreCreditUpdated() {
 		return this.storeCreditUpdated;
@@ -175,5 +177,6 @@ public class EmailTransactionSettings implements Serializable
 	public void setStoreCreditUpdated(Boolean storeCreditUpdated) {
 		this.storeCreditUpdated = storeCreditUpdated;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Phone number information for a contact.
@@ -22,7 +24,7 @@ public class Phone implements Serializable
 	/**
 	 * Home phone number.
 	 */
-	protected String home;
+	protected  String home;
 
 	public String getHome() {
 		return this.home;
@@ -35,7 +37,7 @@ public class Phone implements Serializable
 	/**
 	 * Mobile phone number.
 	 */
-	protected String mobile;
+	protected  String mobile;
 
 	public String getMobile() {
 		return this.mobile;
@@ -48,7 +50,7 @@ public class Phone implements Serializable
 	/**
 	 * Work phone number.
 	 */
-	protected String work;
+	protected  String work;
 
 	public String getWork() {
 		return this.work;
@@ -57,5 +59,6 @@ public class Phone implements Serializable
 	public void setWork(String work) {
 		this.work = work;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the authentication ticket used to authenticate applications.
@@ -22,7 +24,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * The token that stores an encrypted list of the application's configured behaviors and authenticates the application.
 	 */
-	protected String accessToken;
+	protected  String accessToken;
 
 	public String getAccessToken() {
 		return this.accessToken;
@@ -35,7 +37,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * Date and time the access token expires. After the access token expires, refresh the authentication ticket using the refresh koken.
 	 */
-	protected DateTime accessTokenExpiration;
+	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
 		return this.accessTokenExpiration;
@@ -48,7 +50,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * The token that refreshes the application's authentication ticket.
 	 */
-	protected String refreshToken;
+	protected  String refreshToken;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -61,7 +63,7 @@ public class AuthTicket implements Serializable
 	/**
 	 * Date and time the refresh token expires. After the refresh token expires, generate a new authentication ticket.
 	 */
-	protected DateTime refreshTokenExpiration;
+	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
 		return this.refreshTokenExpiration;
@@ -70,5 +72,6 @@ public class AuthTicket implements Serializable
 	public void setRefreshTokenExpiration(DateTime refreshTokenExpiration) {
 		this.refreshTokenExpiration = refreshTokenExpiration;
 	}
+
 
 }

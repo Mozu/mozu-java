@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.orders;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class OrderNote implements Serializable
 	/**
 	 * Unique identifier of the order note.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -36,7 +38,7 @@ public class OrderNote implements Serializable
 	/**
 	 * The text content of the order note.
 	 */
-	protected String text;
+	protected  String text;
 
 	public String getText() {
 		return this.text;
@@ -49,7 +51,7 @@ public class OrderNote implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -58,5 +60,6 @@ public class OrderNote implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

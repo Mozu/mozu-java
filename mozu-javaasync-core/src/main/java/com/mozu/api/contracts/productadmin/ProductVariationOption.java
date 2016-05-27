@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent;
 
 /**
@@ -23,7 +25,7 @@ public class ProductVariationOption implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -36,7 +38,7 @@ public class ProductVariationOption implements Serializable
 	/**
 	 * The value of an attribute option specified for this product variation.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -49,7 +51,7 @@ public class ProductVariationOption implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected AttributeVocabularyValueLocalizedContent content;
+	protected  AttributeVocabularyValueLocalizedContent content;
 
 	public AttributeVocabularyValueLocalizedContent getContent() {
 		return this.content;
@@ -58,5 +60,6 @@ public class ProductVariationOption implements Serializable
 	public void setContent(AttributeVocabularyValueLocalizedContent content) {
 		this.content = content;
 	}
+
 
 }

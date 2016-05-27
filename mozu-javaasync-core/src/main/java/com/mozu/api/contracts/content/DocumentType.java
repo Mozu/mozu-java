@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.Property;
 
 /**
@@ -21,7 +23,17 @@ public class DocumentType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String adminName;
+	protected  String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -31,7 +43,7 @@ public class DocumentType implements Serializable
 		this.adminName = adminName;
 	}
 
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -41,7 +53,7 @@ public class DocumentType implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	protected String installationPackage;
+	protected  String installationPackage;
 
 	public String getInstallationPackage() {
 		return this.installationPackage;
@@ -54,7 +66,7 @@ public class DocumentType implements Serializable
 	/**
 	 * The name of the document type.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -64,17 +76,7 @@ public class DocumentType implements Serializable
 		this.name = name;
 	}
 
-	protected String namespace;
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-	}
-
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -84,7 +86,7 @@ public class DocumentType implements Serializable
 		this.version = version;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -100,6 +102,23 @@ public class DocumentType implements Serializable
 	}
 	public void setProperties(List<Property> properties) {
 		this.properties = properties;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

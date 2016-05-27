@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListEntryExtra implements Serializable
@@ -16,7 +18,7 @@ public class PriceListEntryExtra implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String attributeCode;
+	protected  String attributeCode;
 
 	public String getAttributeCode() {
 		return this.attributeCode;
@@ -26,7 +28,7 @@ public class PriceListEntryExtra implements Serializable
 		this.attributeCode = attributeCode;
 	}
 
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -36,7 +38,7 @@ public class PriceListEntryExtra implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	protected String attributeName;
+	protected  String attributeName;
 
 	public String getAttributeName() {
 		return this.attributeName;
@@ -46,7 +48,7 @@ public class PriceListEntryExtra implements Serializable
 		this.attributeName = attributeName;
 	}
 
-	protected String displayValue;
+	protected  String displayValue;
 
 	public String getDisplayValue() {
 		return this.displayValue;
@@ -56,7 +58,7 @@ public class PriceListEntryExtra implements Serializable
 		this.displayValue = displayValue;
 	}
 
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -66,7 +68,7 @@ public class PriceListEntryExtra implements Serializable
 		this.price = price;
 	}
 
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -75,5 +77,6 @@ public class PriceListEntryExtra implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

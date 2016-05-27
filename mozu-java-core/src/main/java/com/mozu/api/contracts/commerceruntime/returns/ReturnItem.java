@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnBundle;
 import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.products.Product;
@@ -27,7 +29,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * Unique identifier of the return whose items you want to get.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -40,7 +42,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * Unique identifier of the item in the original completed order. All return items should be associated with a corresponding order item.
 	 */
-	protected String orderItemId;
+	protected  String orderItemId;
 
 	public String getOrderItemId() {
 		return this.orderItemId;
@@ -50,7 +52,7 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
-	protected String orderItemOptionAttributeFQN;
+	protected  String orderItemOptionAttributeFQN;
 
 	public String getOrderItemOptionAttributeFQN() {
 		return this.orderItemOptionAttributeFQN;
@@ -60,7 +62,7 @@ public class ReturnItem implements Serializable
 		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
 	}
 
-	protected Integer orderLineId;
+	protected  Integer orderLineId;
 
 	public Integer getOrderLineId() {
 		return this.orderLineId;
@@ -73,7 +75,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The total value of the product returned to the merchant for accounting purposes, calculated by multiplying the cost of the item by its quantity returned.
 	 */
-	protected Double productLossAmount;
+	protected  Double productLossAmount;
 
 	public Double getProductLossAmount() {
 		return this.productLossAmount;
@@ -86,7 +88,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The total tax amount levied on the product loss amount.
 	 */
-	protected Double productLossTaxAmount;
+	protected  Double productLossTaxAmount;
 
 	public Double getProductLossTaxAmount() {
 		return this.productLossTaxAmount;
@@ -99,7 +101,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The actual quantity received for the return item.
 	 */
-	protected Integer quantityReceived;
+	protected  Integer quantityReceived;
 
 	public Integer getQuantityReceived() {
 		return this.quantityReceived;
@@ -112,7 +114,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The quantity of returned items that can be returned to active product stock.
 	 */
-	protected Integer quantityRestockable;
+	protected  Integer quantityRestockable;
 
 	public Integer getQuantityRestockable() {
 		return this.quantityRestockable;
@@ -125,7 +127,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The quantity of the item shipped to the shopper in the event of a return item replacement.
 	 */
-	protected Integer quantityShipped;
+	protected  Integer quantityShipped;
 
 	public Integer getQuantityShipped() {
 		return this.quantityShipped;
@@ -138,7 +140,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
 	 */
-	protected Double shippingLossAmount;
+	protected  Double shippingLossAmount;
 
 	public Double getShippingLossAmount() {
 		return this.shippingLossAmount;
@@ -151,7 +153,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * The total tax amount levied on the shipping loss amount.
 	 */
-	protected Double shippingLossTaxAmount;
+	protected  Double shippingLossTaxAmount;
 
 	public Double getShippingLossTaxAmount() {
 		return this.shippingLossTaxAmount;
@@ -186,7 +188,7 @@ public class ReturnItem implements Serializable
 	/**
 	 * Properties of the product definition associated with the item in the return.
 	 */
-	protected Product product;
+	protected  Product product;
 
 	public Product getProduct() {
 		return this.product;
@@ -206,5 +208,6 @@ public class ReturnItem implements Serializable
 	public void setReasons(List<ReturnReason> reasons) {
 		this.reasons = reasons;
 	}
+
 
 }

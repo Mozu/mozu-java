@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a master catalog associated with a tenant.
@@ -19,7 +21,7 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean enableLiveEdit;
+	protected  Boolean enableLiveEdit;
 
 	public Boolean getEnableLiveEdit() {
 		return this.enableLiveEdit;
@@ -32,7 +34,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -42,7 +44,7 @@ public class MasterCatalog implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isDeleted;
+	protected  Boolean isDeleted;
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
@@ -55,7 +57,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The name of the master catalog.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -68,7 +70,7 @@ public class MasterCatalog implements Serializable
 	/**
 	 * The mode this master catalog uses for product updates. Possible values are "Pending" which saves product updates as a draft until they are published, and "Live" which publishes all product updates immediately.
 	 */
-	protected String productPublishingMode;
+	protected  String productPublishingMode;
 
 	public String getProductPublishingMode() {
 		return this.productPublishingMode;
@@ -77,5 +79,6 @@ public class MasterCatalog implements Serializable
 	public void setProductPublishingMode(String productPublishingMode) {
 		this.productPublishingMode = productPublishingMode;
 	}
+
 
 }

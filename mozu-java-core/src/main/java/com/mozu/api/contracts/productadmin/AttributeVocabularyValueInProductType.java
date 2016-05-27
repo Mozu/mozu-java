@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 
@@ -24,7 +26,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * Sequence of the attribute value within the product type.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -37,7 +39,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * The vocabulary value of an attribute defined for a product type.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -47,7 +49,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 		this.value = value;
 	}
 
-	protected AttributeVocabularyValueDisplayInfo displayInfo;
+	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
 		return this.displayInfo;
@@ -60,7 +62,7 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	/**
 	 * Navigates vocabulary value details for an attribute defined for a product type.
 	 */
-	protected AttributeVocabularyValue vocabularyValueDetail;
+	protected  AttributeVocabularyValue vocabularyValueDetail;
 
 	public AttributeVocabularyValue getVocabularyValueDetail() {
 		return this.vocabularyValueDetail;
@@ -69,5 +71,6 @@ public class AttributeVocabularyValueInProductType implements Serializable
 	public void setVocabularyValueDetail(AttributeVocabularyValue vocabularyValueDetail) {
 		this.vocabularyValueDetail = vocabularyValueDetail;
 	}
+
 
 }

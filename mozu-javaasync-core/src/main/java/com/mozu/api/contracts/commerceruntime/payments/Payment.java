@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.payments.BillingInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
@@ -27,7 +29,7 @@ public class Payment implements Serializable
 	/**
 	 * The total monetary amount collected in this payment transaction for the order.
 	 */
-	protected Double amountCollected;
+	protected  Double amountCollected;
 
 	public Double getAmountCollected() {
 		return this.amountCollected;
@@ -40,7 +42,7 @@ public class Payment implements Serializable
 	/**
 	 * If the payment transaction is a shopper store credit, the total monetary amount credited in this payment transaction for the order.
 	 */
-	protected Double amountCredited;
+	protected  Double amountCredited;
 
 	public Double getAmountCredited() {
 		return this.amountCredited;
@@ -53,7 +55,7 @@ public class Payment implements Serializable
 	/**
 	 * The total amount originally requested for this payment.
 	 */
-	protected Double amountRequested;
+	protected  Double amountRequested;
 
 	public Double getAmountRequested() {
 		return this.amountRequested;
@@ -74,7 +76,7 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	protected String externalTransactionId;
+	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
 		return this.externalTransactionId;
@@ -87,7 +89,7 @@ public class Payment implements Serializable
 	/**
 	 * Unique identifier of the payment transaction.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -100,7 +102,7 @@ public class Payment implements Serializable
 	/**
 	 * If true, the payment transaction occurs at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -113,7 +115,7 @@ public class Payment implements Serializable
 	/**
 	 * Unique identifier of the order associated with the payment.
 	 */
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -126,7 +128,7 @@ public class Payment implements Serializable
 	/**
 	 * The transaction ID supplied by the payment service to associate with this order payment.
 	 */
-	protected String paymentServiceTransactionId;
+	protected  String paymentServiceTransactionId;
 
 	public String getPaymentServiceTransactionId() {
 		return this.paymentServiceTransactionId;
@@ -139,7 +141,7 @@ public class Payment implements Serializable
 	/**
 	 * The type of payment transaction performed, such as check, credit card, or PayPal Express. Additional payment types will be supported in future releases.
 	 */
-	protected String paymentType;
+	protected  String paymentType;
 
 	public String getPaymentType() {
 		return this.paymentType;
@@ -149,7 +151,7 @@ public class Payment implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	protected String paymentWorkflow;
+	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
 		return this.paymentWorkflow;
@@ -162,7 +164,7 @@ public class Payment implements Serializable
 	/**
 	 * Current status of the payment transaction for the order.
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -175,7 +177,7 @@ public class Payment implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -188,7 +190,7 @@ public class Payment implements Serializable
 	/**
 	 * Properties of the customer billing information associated with this payment.
 	 */
-	protected BillingInfo billingInfo;
+	protected  BillingInfo billingInfo;
 
 	public BillingInfo getBillingInfo() {
 		return this.billingInfo;
@@ -209,7 +211,7 @@ public class Payment implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -228,6 +230,23 @@ public class Payment implements Serializable
 	}
 	public void setInteractions(List<PaymentInteraction> interactions) {
 		this.interactions = interactions;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

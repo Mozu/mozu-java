@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class AssignedDiscount implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String couponSetCode;
+	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
 		return this.couponSetCode;
@@ -27,7 +29,7 @@ public class AssignedDiscount implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
-	protected Integer couponSetId;
+	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
 		return this.couponSetId;
@@ -37,7 +39,7 @@ public class AssignedDiscount implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	protected Integer discountId;
+	protected  Integer discountId;
 
 	public Integer getDiscountId() {
 		return this.discountId;
@@ -47,7 +49,7 @@ public class AssignedDiscount implements Serializable
 		this.discountId = discountId;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -56,5 +58,6 @@ public class AssignedDiscount implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

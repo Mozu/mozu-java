@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationInventoryQuery implements Serializable
@@ -32,5 +34,6 @@ public class LocationInventoryQuery implements Serializable
 	public void setProductCodes(List<String> productCodes) {
 		this.productCodes = productCodes;
 	}
+
 
 }

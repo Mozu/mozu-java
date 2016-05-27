@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.ProductSummary;
 import com.mozu.api.contracts.shippingruntime.ItemMeasurements;
 
@@ -25,7 +27,7 @@ public class RateRequestItem implements Serializable
 	/**
 	 * Unique identifier of the item to ship, for which to calculate a shipping rate.
 	 */
-	protected String itemId;
+	protected  String itemId;
 
 	public String getItemId() {
 		return this.itemId;
@@ -38,7 +40,7 @@ public class RateRequestItem implements Serializable
 	/**
 	 * Quantity of the item for which to calculate the shipping rate.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -51,7 +53,7 @@ public class RateRequestItem implements Serializable
 	/**
 	 * If true, this item must ship separately from other items in a shipment.
 	 */
-	protected Boolean shipsByItself;
+	protected  Boolean shipsByItself;
 
 	public Boolean getShipsByItself() {
 		return this.shipsByItself;
@@ -61,7 +63,7 @@ public class RateRequestItem implements Serializable
 		this.shipsByItself = shipsByItself;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -82,7 +84,7 @@ public class RateRequestItem implements Serializable
 	/**
 	 * The measured weight and dimensions of the item to ship.
 	 */
-	protected ItemMeasurements unitMeasurements;
+	protected  ItemMeasurements unitMeasurements;
 
 	public ItemMeasurements getUnitMeasurements() {
 		return this.unitMeasurements;
@@ -90,6 +92,23 @@ public class RateRequestItem implements Serializable
 
 	public void setUnitMeasurements(ItemMeasurements unitMeasurements) {
 		this.unitMeasurements = unitMeasurements;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

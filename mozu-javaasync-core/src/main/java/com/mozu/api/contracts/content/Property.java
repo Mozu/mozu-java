@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.PropertyType;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class Property implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean isMultiValued;
+	protected  Boolean isMultiValued;
 
 	public Boolean getIsMultiValued() {
 		return this.isMultiValued;
@@ -27,7 +29,7 @@ public class Property implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -37,7 +39,7 @@ public class Property implements Serializable
 		this.isRequired = isRequired;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -47,7 +49,7 @@ public class Property implements Serializable
 		this.name = name;
 	}
 
-	protected PropertyType propertyType;
+	protected  PropertyType propertyType;
 
 	public PropertyType getPropertyType() {
 		return this.propertyType;
@@ -56,5 +58,6 @@ public class Property implements Serializable
 	public void setPropertyType(PropertyType propertyType) {
 		this.propertyType = propertyType;
 	}
+
 
 }

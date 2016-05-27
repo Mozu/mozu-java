@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core.extensible;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Validates the attribute configured for the customer in the storefront against the attribute configured in Mozu admin.
@@ -22,7 +24,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The latest possible date and time the extensible attribute can be validated.
 	 */
-	protected DateTime maxDateTime;
+	protected  DateTime maxDateTime;
 
 	public DateTime getMaxDateTime() {
 		return this.maxDateTime;
@@ -35,7 +37,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The maximum number that can be entered as a value for an extensible attribute.
 	 */
-	protected Double maxNumericValue;
+	protected  Double maxNumericValue;
 
 	public Double getMaxNumericValue() {
 		return this.maxNumericValue;
@@ -48,7 +50,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The maximum length possible for a string value entered for an extensible attribute.
 	 */
-	protected Integer maxStringLength;
+	protected  Integer maxStringLength;
 
 	public Integer getMaxStringLength() {
 		return this.maxStringLength;
@@ -61,7 +63,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The earliest date and time an extensible attribute can be validated.
 	 */
-	protected DateTime minDateTime;
+	protected  DateTime minDateTime;
 
 	public DateTime getMinDateTime() {
 		return this.minDateTime;
@@ -74,7 +76,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The minimum numeric value required to validate an extensible attribute.
 	 */
-	protected Double minNumericValue;
+	protected  Double minNumericValue;
 
 	public Double getMinNumericValue() {
 		return this.minNumericValue;
@@ -87,7 +89,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * The maximum length possible for a string value entered for an extensible attribute.
 	 */
-	protected Integer minStringLength;
+	protected  Integer minStringLength;
 
 	public Integer getMinStringLength() {
 		return this.minStringLength;
@@ -100,7 +102,7 @@ public class AttributeValidation implements Serializable
 	/**
 	 * Regular expression used to validate the extensible attribute value.
 	 */
-	protected String regularExpression;
+	protected  String regularExpression;
 
 	public String getRegularExpression() {
 		return this.regularExpression;
@@ -109,5 +111,6 @@ public class AttributeValidation implements Serializable
 	public void setRegularExpression(String regularExpression) {
 		this.regularExpression = regularExpression;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.commerce;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Pricing details for a product in a cart or an order, including the original price, discount amount, and final price.
@@ -22,7 +24,7 @@ public class CommerceUnitPrice implements Serializable
 	/**
 	 * Represents the total price of the line item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount.
 	 */
-	protected Double extendedAmount;
+	protected  Double extendedAmount;
 
 	public Double getExtendedAmount() {
 		return this.extendedAmount;
@@ -35,7 +37,7 @@ public class CommerceUnitPrice implements Serializable
 	/**
 	 * The price the item is listed for in the storefront.
 	 */
-	protected Double listAmount;
+	protected  Double listAmount;
 
 	public Double getListAmount() {
 		return this.listAmount;
@@ -48,7 +50,7 @@ public class CommerceUnitPrice implements Serializable
 	/**
 	 * The override price of the item set by the merchant for a given order.
 	 */
-	protected Double overrideAmount;
+	protected  Double overrideAmount;
 
 	public Double getOverrideAmount() {
 		return this.overrideAmount;
@@ -61,7 +63,7 @@ public class CommerceUnitPrice implements Serializable
 	/**
 	 * The sale price set for the item.
 	 */
-	protected Double saleAmount;
+	protected  Double saleAmount;
 
 	public Double getSaleAmount() {
 		return this.saleAmount;
@@ -70,5 +72,6 @@ public class CommerceUnitPrice implements Serializable
 	public void setSaleAmount(Double saleAmount) {
 		this.saleAmount = saleAmount;
 	}
+
 
 }

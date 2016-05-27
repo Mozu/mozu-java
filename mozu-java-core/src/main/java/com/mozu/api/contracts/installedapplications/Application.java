@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.Capability;
 
 /**
@@ -24,7 +26,7 @@ public class Application implements Serializable
 	/**
 	 * The unique identifier of the application in Mozu Dev Center.
 	 */
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -34,7 +36,7 @@ public class Application implements Serializable
 		this.appId = appId;
 	}
 
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -47,7 +49,7 @@ public class Application implements Serializable
 	/**
 	 * If true, the application is enabled for the tenant. System-supplied and read-only.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -60,7 +62,7 @@ public class Application implements Serializable
 	/**
 	 * If true, the third party application settings have been configured and the application is initialized.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -73,7 +75,7 @@ public class Application implements Serializable
 	/**
 	 * If true, the application type is Extension.
 	 */
-	protected Boolean isExtension;
+	protected  Boolean isExtension;
 
 	public Boolean getIsExtension() {
 		return this.isExtension;
@@ -83,7 +85,7 @@ public class Application implements Serializable
 		this.isExtension = isExtension;
 	}
 
-	protected Boolean isExtensionCertified;
+	protected  Boolean isExtensionCertified;
 
 	public Boolean getIsExtensionCertified() {
 		return this.isExtensionCertified;
@@ -96,7 +98,7 @@ public class Application implements Serializable
 	/**
 	 * The URL defined for the application that represents the configuration website for the capability.
 	 */
-	protected String uiConfigurationUrl;
+	protected  String uiConfigurationUrl;
 
 	public String getUiConfigurationUrl() {
 		return this.uiConfigurationUrl;
@@ -116,5 +118,6 @@ public class Application implements Serializable
 	public void setCapabilities(List<Capability> capabilities) {
 		this.capabilities = capabilities;
 	}
+
 
 }

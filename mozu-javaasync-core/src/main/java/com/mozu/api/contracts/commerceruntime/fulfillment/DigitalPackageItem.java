@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.fulfillment;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DigitalPackageItem implements Serializable
@@ -19,7 +21,7 @@ public class DigitalPackageItem implements Serializable
 	/**
 	 * This specifies the fulfillment type of digital package item.
 	 */
-	protected String fulfillmentItemType;
+	protected  String fulfillmentItemType;
 
 	public String getFulfillmentItemType() {
 		return this.fulfillmentItemType;
@@ -32,7 +34,7 @@ public class DigitalPackageItem implements Serializable
 	/**
 	 * Specifies the gift card code for the digital package item.
 	 */
-	protected String giftCardCode;
+	protected  String giftCardCode;
 
 	public String getGiftCardCode() {
 		return this.giftCardCode;
@@ -42,7 +44,7 @@ public class DigitalPackageItem implements Serializable
 		this.giftCardCode = giftCardCode;
 	}
 
-	protected Integer lineId;
+	protected  Integer lineId;
 
 	public Integer getLineId() {
 		return this.lineId;
@@ -52,7 +54,7 @@ public class DigitalPackageItem implements Serializable
 		this.lineId = lineId;
 	}
 
-	protected String optionAttributeFQN;
+	protected  String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
 		return this.optionAttributeFQN;
@@ -65,7 +67,7 @@ public class DigitalPackageItem implements Serializable
 	/**
 	 * The product code is the code of the digital product to be fulfilled.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -78,7 +80,7 @@ public class DigitalPackageItem implements Serializable
 	/**
 	 * This specifies the quantity of the digital order item.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -87,5 +89,6 @@ public class DigitalPackageItem implements Serializable
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 }

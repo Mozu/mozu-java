@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.SearchSuggestionGroup;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class SearchSuggestionResult implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String query;
+	protected  String query;
 
 	public String getQuery() {
 		return this.query;
@@ -35,5 +37,6 @@ public class SearchSuggestionResult implements Serializable
 	public void setSuggestionGroups(List<SearchSuggestionGroup> suggestionGroups) {
 		this.suggestionGroups = suggestionGroups;
 	}
+
 
 }

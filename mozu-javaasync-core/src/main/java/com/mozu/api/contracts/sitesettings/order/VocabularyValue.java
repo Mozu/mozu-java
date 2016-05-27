@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.LocalizedContent;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class VocabularyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -35,5 +37,6 @@ public class VocabularyValue implements Serializable
 	public void setContents(List<LocalizedContent> contents) {
 		this.contents = contents;
 	}
+
 
 }

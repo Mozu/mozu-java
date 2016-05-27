@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.Discount;
 import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
@@ -41,7 +43,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * The manufacturer part number supplied for the product.
 	 */
-	protected String mfgPartNumber;
+	protected  String mfgPartNumber;
 
 	public String getMfgPartNumber() {
 		return this.mfgPartNumber;
@@ -54,7 +56,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -67,7 +69,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * The universal product code defined for the product.
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -80,7 +82,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -104,7 +106,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
 	 */
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -117,7 +119,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -141,7 +143,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * Unit price that the tenant intends to sell the product if no sale price is set.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -154,7 +156,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * For products with options that vary the cost of the product, the range between lowest and highest possible price of the product based on the current selection of options.
 	 */
-	protected ProductPriceRange priceRange;
+	protected  ProductPriceRange priceRange;
 
 	public ProductPriceRange getPriceRange() {
 		return this.priceRange;
@@ -167,7 +169,7 @@ public class ConfiguredProduct implements Serializable
 	/**
 	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
 	 */
-	protected ProductPurchasableState purchasableState;
+	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {
 		return this.purchasableState;
@@ -176,5 +178,6 @@ public class ConfiguredProduct implements Serializable
 	public void setPurchasableState(ProductPurchasableState purchasableState) {
 		this.purchasableState = purchasableState;
 	}
+
 
 }

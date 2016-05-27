@@ -9,6 +9,8 @@ package com.mozu.api.contracts.event;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.HttpStatus;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class EventDeliveryAttempt implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String deliveryStatus;
+	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
 		return this.deliveryStatus;
@@ -27,7 +29,7 @@ public class EventDeliveryAttempt implements Serializable
 		this.deliveryStatus = deliveryStatus;
 	}
 
-	protected String errorType;
+	protected  String errorType;
 
 	public String getErrorType() {
 		return this.errorType;
@@ -37,7 +39,7 @@ public class EventDeliveryAttempt implements Serializable
 		this.errorType = errorType;
 	}
 
-	protected DateTime executionDate;
+	protected  DateTime executionDate;
 
 	public DateTime getExecutionDate() {
 		return this.executionDate;
@@ -47,7 +49,7 @@ public class EventDeliveryAttempt implements Serializable
 		this.executionDate = executionDate;
 	}
 
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -57,7 +59,7 @@ public class EventDeliveryAttempt implements Serializable
 		this.message = message;
 	}
 
-	protected HttpStatus httpStatus;
+	protected  HttpStatus httpStatus;
 
 	public HttpStatus getHttpStatus() {
 		return this.httpStatus;
@@ -66,5 +68,6 @@ public class EventDeliveryAttempt implements Serializable
 	public void setHttpStatus(HttpStatus httpStatus) {
 		this.httpStatus = httpStatus;
 	}
+
 
 }

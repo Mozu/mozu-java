@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,27 @@ public class PurchaseOrderTransaction implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double creditLimit;
+	protected  String additionalTransactionDetail;
+
+	public String getAdditionalTransactionDetail() {
+		return this.additionalTransactionDetail;
+	}
+
+	public void setAdditionalTransactionDetail(String additionalTransactionDetail) {
+		this.additionalTransactionDetail = additionalTransactionDetail;
+	}
+
+	protected  Double availableBalance;
+
+	public Double getAvailableBalance() {
+		return this.availableBalance;
+	}
+
+	public void setAvailableBalance(Double availableBalance) {
+		this.availableBalance = availableBalance;
+	}
+
+	protected  Double creditLimit;
 
 	public Double getCreditLimit() {
 		return this.creditLimit;
@@ -27,7 +49,7 @@ public class PurchaseOrderTransaction implements Serializable
 		this.creditLimit = creditLimit;
 	}
 
-	protected Integer customerPurchaseOrderAccountId;
+	protected  Integer customerPurchaseOrderAccountId;
 
 	public Integer getCustomerPurchaseOrderAccountId() {
 		return this.customerPurchaseOrderAccountId;
@@ -37,7 +59,7 @@ public class PurchaseOrderTransaction implements Serializable
 		this.customerPurchaseOrderAccountId = customerPurchaseOrderAccountId;
 	}
 
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -47,17 +69,7 @@ public class PurchaseOrderTransaction implements Serializable
 		this.orderId = orderId;
 	}
 
-	protected String orderType;
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-	}
-
-	protected String purchaseOrderNumber;
+	protected  String purchaseOrderNumber;
 
 	public String getPurchaseOrderNumber() {
 		return this.purchaseOrderNumber;
@@ -67,7 +79,7 @@ public class PurchaseOrderTransaction implements Serializable
 		this.purchaseOrderNumber = purchaseOrderNumber;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -77,7 +89,17 @@ public class PurchaseOrderTransaction implements Serializable
 		this.siteId = siteId;
 	}
 
-	protected Double transactionAmount;
+	protected  Integer tenantId;
+
+	public Integer getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	protected  Double transactionAmount;
 
 	public Double getTransactionAmount() {
 		return this.transactionAmount;
@@ -87,7 +109,7 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionAmount = transactionAmount;
 	}
 
-	protected DateTime transactionDate;
+	protected  DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
 		return this.transactionDate;
@@ -97,17 +119,17 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionDate = transactionDate;
 	}
 
-	protected String transactionDetail;
+	protected  Integer transactionTypeId;
 
-	public String getTransactionDetail() {
-		return this.transactionDetail;
+	public Integer getTransactionTypeId() {
+		return this.transactionTypeId;
 	}
 
-	public void setTransactionDetail(String transactionDetail) {
-		this.transactionDetail = transactionDetail;
+	public void setTransactionTypeId(Integer transactionTypeId) {
+		this.transactionTypeId = transactionTypeId;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -116,5 +138,6 @@ public class PurchaseOrderTransaction implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

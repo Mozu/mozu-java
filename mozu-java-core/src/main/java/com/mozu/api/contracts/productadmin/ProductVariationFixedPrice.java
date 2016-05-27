@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVariationFixedPrice implements Serializable
@@ -16,7 +18,7 @@ public class ProductVariationFixedPrice implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -26,7 +28,7 @@ public class ProductVariationFixedPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -36,7 +38,7 @@ public class ProductVariationFixedPrice implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	protected Double listPrice;
+	protected  Double listPrice;
 
 	public Double getListPrice() {
 		return this.listPrice;
@@ -46,7 +48,7 @@ public class ProductVariationFixedPrice implements Serializable
 		this.listPrice = listPrice;
 	}
 
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -56,7 +58,7 @@ public class ProductVariationFixedPrice implements Serializable
 		this.msrp = msrp;
 	}
 
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -65,5 +67,6 @@ public class ProductVariationFixedPrice implements Serializable
 	public void setSalePrice(Double salePrice) {
 		this.salePrice = salePrice;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListNode implements Serializable
@@ -16,7 +18,7 @@ public class PriceListNode implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer parentPriceListId;
+	protected  Integer parentPriceListId;
 
 	public Integer getParentPriceListId() {
 		return this.parentPriceListId;
@@ -26,7 +28,7 @@ public class PriceListNode implements Serializable
 		this.parentPriceListId = parentPriceListId;
 	}
 
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -36,7 +38,7 @@ public class PriceListNode implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	protected Integer priceListId;
+	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
 		return this.priceListId;
@@ -46,7 +48,7 @@ public class PriceListNode implements Serializable
 		this.priceListId = priceListId;
 	}
 
-	protected Integer priceListLevel;
+	protected  Integer priceListLevel;
 
 	public Integer getPriceListLevel() {
 		return this.priceListLevel;
@@ -55,5 +57,6 @@ public class PriceListNode implements Serializable
 	public void setPriceListLevel(Integer priceListLevel) {
 		this.priceListLevel = priceListLevel;
 	}
+
 
 }

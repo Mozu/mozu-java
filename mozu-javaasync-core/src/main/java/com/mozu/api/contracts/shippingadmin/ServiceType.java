@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.ServiceTypeLocalizedContent;
 
 /**
@@ -23,7 +25,7 @@ public class ServiceType implements Serializable
 	/**
 	 * The service type code supplied by the carrier. Service type codes include a prefix that indicates the carrier name. For example: FEDEX_INTERNATIONAL_STANDARD.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -36,7 +38,7 @@ public class ServiceType implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected ServiceTypeLocalizedContent content;
+	protected  ServiceTypeLocalizedContent content;
 
 	public ServiceTypeLocalizedContent getContent() {
 		return this.content;
@@ -45,5 +47,6 @@ public class ServiceType implements Serializable
 	public void setContent(ServiceTypeLocalizedContent content) {
 		this.content = content;
 	}
+
 
 }

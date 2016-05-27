@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ActiveDateRange;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.ProductLocalizedContent;
@@ -29,7 +31,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * The unique identifier of the catalog of products used by a site.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -39,7 +41,7 @@ public class ProductInCatalogInfo implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	protected DateTime dateFirstAvailableInCatalog;
+	protected  DateTime dateFirstAvailableInCatalog;
 
 	public DateTime getDateFirstAvailableInCatalog() {
 		return this.dateFirstAvailableInCatalog;
@@ -52,7 +54,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * If true, the product is actively available (for sale) in the associated catalog.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -65,7 +67,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * If true, the content defined for this product in the master catalog in overridden in the catalog with the content specified in the request body. If false, this catalog uses the content defined in the master catalog for the product.
 	 */
-	protected Boolean isContentOverridden;
+	protected  Boolean isContentOverridden;
 
 	public Boolean getIsContentOverridden() {
 		return this.isContentOverridden;
@@ -78,7 +80,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * If true, the price defined for this product in the master catalog in overridden in the catalog with the price specified in the request body. If false, this catalog uses the price defined in the master catalog for the product.
 	 */
-	protected Boolean isPriceOverridden;
+	protected  Boolean isPriceOverridden;
 
 	public Boolean getIsPriceOverridden() {
 		return this.isPriceOverridden;
@@ -91,7 +93,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * If true, the SEO content defined for this product in the master catalog in overridden in the catalog with the SEO content specified in the request body. If false, this catalog uses the SEO content defined in the master catalog for the product.
 	 */
-	protected Boolean isseoContentOverridden;
+	protected  Boolean isseoContentOverridden;
 
 	public Boolean getIsseoContentOverridden() {
 		return this.isseoContentOverridden;
@@ -101,7 +103,7 @@ public class ProductInCatalogInfo implements Serializable
 		this.isseoContentOverridden = isseoContentOverridden;
 	}
 
-	protected ActiveDateRange activeDateRange;
+	protected  ActiveDateRange activeDateRange;
 
 	public ActiveDateRange getActiveDateRange() {
 		return this.activeDateRange;
@@ -114,7 +116,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -127,7 +129,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * Localizable content for a product associated with a specific catalog. If no catalog-level content is specified, the master catalog content is used. To override content at the catalog level, the IsContentOverridden flag must be set to "true".
 	 */
-	protected ProductLocalizedContent content;
+	protected  ProductLocalizedContent content;
 
 	public ProductLocalizedContent getContent() {
 		return this.content;
@@ -140,7 +142,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * The price of the product associated with the specified catalog. If no price is specified in the request, this catalog uses the price defined in the master catalog. To override the product price for this catalog, the IsPriceOverridden flag must be set to "true".
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -164,7 +166,7 @@ public class ProductInCatalogInfo implements Serializable
 	/**
 	 * The SEO content of the product associated with the specific catalog. If no SEO content is specified in the request, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the IsSEOContentOverridden flag must be set to "true".
 	 */
-	protected ProductLocalizedSEOContent seoContent;
+	protected  ProductLocalizedSEOContent seoContent;
 
 	public ProductLocalizedSEOContent getSeoContent() {
 		return this.seoContent;
@@ -173,5 +175,6 @@ public class ProductInCatalogInfo implements Serializable
 	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
 		this.seoContent = seoContent;
 	}
+
 
 }

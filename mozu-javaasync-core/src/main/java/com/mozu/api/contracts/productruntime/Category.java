@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.CategoryContent;
 import com.mozu.api.contracts.productruntime.Category;
 
@@ -22,7 +24,7 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String categoryCode;
+	protected  String categoryCode;
 
 	public String getCategoryCode() {
 		return this.categoryCode;
@@ -35,7 +37,7 @@ public class Category implements Serializable
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -45,7 +47,7 @@ public class Category implements Serializable
 		this.categoryId = categoryId;
 	}
 
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -58,7 +60,7 @@ public class Category implements Serializable
 	/**
 	 * If true, the category is displayed on the website storefront.
 	 */
-	protected Boolean isDisplayed;
+	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
 		return this.isDisplayed;
@@ -71,7 +73,7 @@ public class Category implements Serializable
 	/**
 	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -84,7 +86,7 @@ public class Category implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected CategoryContent content;
+	protected  CategoryContent content;
 
 	public CategoryContent getContent() {
 		return this.content;
@@ -108,7 +110,7 @@ public class Category implements Serializable
 	/**
 	 * If applicable, the parent category in the hierarchy for the specified category.
 	 */
-	protected Category parentCategory;
+	protected  Category parentCategory;
 
 	public Category getParentCategory() {
 		return this.parentCategory;
@@ -117,5 +119,6 @@ public class Category implements Serializable
 	public void setParentCategory(Category parentCategory) {
 		this.parentCategory = parentCategory;
 	}
+
 
 }

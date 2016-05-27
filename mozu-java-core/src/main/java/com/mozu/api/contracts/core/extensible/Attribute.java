@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.extensible.AttributeMetadataItem;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.extensible.AttributeLocalizedContent;
@@ -28,7 +30,7 @@ public class Attribute implements Serializable
 	/**
 	 * Name of this extensible attribute defined in Mozu Admin.
 	 */
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -41,7 +43,7 @@ public class Attribute implements Serializable
 	/**
 	 * Merchant-defined code for an extensible attribute.
 	 */
-	protected String attributeCode;
+	protected  String attributeCode;
 
 	public String getAttributeCode() {
 		return this.attributeCode;
@@ -51,7 +53,7 @@ public class Attribute implements Serializable
 		this.attributeCode = attributeCode;
 	}
 
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -64,7 +66,7 @@ public class Attribute implements Serializable
 	/**
 	 * The data type of the customer or order attribute, which is Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -77,7 +79,7 @@ public class Attribute implements Serializable
 	/**
 	 * Whether the customer or order attribute appears in Mozu Admin only, or in both Mozu Admin and the website storefront. Possible values are Admin and AdminAndStorefront.
 	 */
-	protected String displayGroup;
+	protected  String displayGroup;
 
 	public String getDisplayGroup() {
 		return this.displayGroup;
@@ -87,7 +89,7 @@ public class Attribute implements Serializable
 		this.displayGroup = displayGroup;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -100,7 +102,7 @@ public class Attribute implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, which is YesNo, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -113,7 +115,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the customer or order attribute is active.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -126,7 +128,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the attribute can have more than one value.
 	 */
-	protected Boolean isMultiValued;
+	protected  Boolean isMultiValued;
 
 	public Boolean getIsMultiValued() {
 		return this.isMultiValued;
@@ -136,7 +138,7 @@ public class Attribute implements Serializable
 		this.isMultiValued = isMultiValued;
 	}
 
-	protected Boolean isReadOnly;
+	protected  Boolean isReadOnly;
 
 	public Boolean getIsReadOnly() {
 		return this.isReadOnly;
@@ -149,7 +151,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the attribute must have a defined value.
 	 */
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -162,7 +164,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the attribute is visible in its defined display group.
 	 */
-	protected Boolean isVisible;
+	protected  Boolean isVisible;
 
 	public Boolean getIsVisible() {
 		return this.isVisible;
@@ -175,7 +177,7 @@ public class Attribute implements Serializable
 	/**
 	 * Namespace associated with this extensible attribute.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -188,7 +190,7 @@ public class Attribute implements Serializable
 	/**
 	 * Integer that represents the sequence of the attribute.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -201,7 +203,7 @@ public class Attribute implements Serializable
 	/**
 	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -222,7 +224,7 @@ public class Attribute implements Serializable
 		this.attributeMetadata = attributeMetadata;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -235,7 +237,7 @@ public class Attribute implements Serializable
 	/**
 	 * The localized name and description of the attribute, displayed in the locale code specified for the master catalog.
 	 */
-	protected AttributeLocalizedContent content;
+	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
 		return this.content;
@@ -248,7 +250,7 @@ public class Attribute implements Serializable
 	/**
 	 * Properties used when validating a value entered for an extensible attribute.
 	 */
-	protected AttributeValidation validation;
+	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
 		return this.validation;
@@ -268,5 +270,6 @@ public class Attribute implements Serializable
 	public void setVocabularyValues(List<AttributeVocabularyValue> vocabularyValues) {
 		this.vocabularyValues = vocabularyValues;
 	}
+
 
 }

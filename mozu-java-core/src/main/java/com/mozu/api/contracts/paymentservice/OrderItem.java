@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.Product;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class OrderItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -27,7 +29,7 @@ public class OrderItem implements Serializable
 		this.id = id;
 	}
 
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -37,7 +39,7 @@ public class OrderItem implements Serializable
 		this.quantity = quantity;
 	}
 
-	protected Double taxAmount;
+	protected  Double taxAmount;
 
 	public Double getTaxAmount() {
 		return this.taxAmount;
@@ -47,7 +49,7 @@ public class OrderItem implements Serializable
 		this.taxAmount = taxAmount;
 	}
 
-	protected Double totalAmount;
+	protected  Double totalAmount;
 
 	public Double getTotalAmount() {
 		return this.totalAmount;
@@ -57,7 +59,7 @@ public class OrderItem implements Serializable
 		this.totalAmount = totalAmount;
 	}
 
-	protected Double unitPrice;
+	protected  Double unitPrice;
 
 	public Double getUnitPrice() {
 		return this.unitPrice;
@@ -67,7 +69,7 @@ public class OrderItem implements Serializable
 		this.unitPrice = unitPrice;
 	}
 
-	protected Product product;
+	protected  Product product;
 
 	public Product getProduct() {
 		return this.product;
@@ -76,5 +78,6 @@ public class OrderItem implements Serializable
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 
 }

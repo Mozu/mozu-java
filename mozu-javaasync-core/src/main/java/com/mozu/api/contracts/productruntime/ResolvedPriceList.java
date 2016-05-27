@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResolvedPriceList implements Serializable
@@ -16,7 +18,7 @@ public class ResolvedPriceList implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -26,7 +28,7 @@ public class ResolvedPriceList implements Serializable
 		this.description = description;
 	}
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,7 +38,7 @@ public class ResolvedPriceList implements Serializable
 		this.name = name;
 	}
 
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -46,7 +48,7 @@ public class ResolvedPriceList implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	protected Integer priceListId;
+	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
 		return this.priceListId;
@@ -55,5 +57,6 @@ public class ResolvedPriceList implements Serializable
 	public void setPriceListId(Integer priceListId) {
 		this.priceListId = priceListId;
 	}
+
 
 }

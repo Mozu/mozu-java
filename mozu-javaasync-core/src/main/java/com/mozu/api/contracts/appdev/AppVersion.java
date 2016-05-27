@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppVersion implements Serializable
@@ -16,7 +18,7 @@ public class AppVersion implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer majorVersion;
+	protected  Integer majorVersion;
 
 	public Integer getMajorVersion() {
 		return this.majorVersion;
@@ -26,7 +28,7 @@ public class AppVersion implements Serializable
 		this.majorVersion = majorVersion;
 	}
 
-	protected Integer minorVersion;
+	protected  Integer minorVersion;
 
 	public Integer getMinorVersion() {
 		return this.minorVersion;
@@ -36,7 +38,7 @@ public class AppVersion implements Serializable
 		this.minorVersion = minorVersion;
 	}
 
-	protected Integer revision;
+	protected  Integer revision;
 
 	public Integer getRevision() {
 		return this.revision;
@@ -45,5 +47,6 @@ public class AppVersion implements Serializable
 	public void setRevision(Integer revision) {
 		this.revision = revision;
 	}
+
 
 }

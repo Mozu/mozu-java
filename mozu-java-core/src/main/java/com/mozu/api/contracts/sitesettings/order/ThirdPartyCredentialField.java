@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.VocabularyValue;
 
 /**
@@ -24,7 +26,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * System-supplied API name required to communicate with the external payment processor.
 	 */
-	protected String apiName;
+	protected  String apiName;
 
 	public String getApiName() {
 		return this.apiName;
@@ -37,7 +39,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * System-supplied name that displays for the third party credential field.
 	 */
-	protected String displayName;
+	protected  String displayName;
 
 	public String getDisplayName() {
 		return this.displayName;
@@ -47,7 +49,7 @@ public class ThirdPartyCredentialField implements Serializable
 		this.displayName = displayName;
 	}
 
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -57,7 +59,7 @@ public class ThirdPartyCredentialField implements Serializable
 		this.inputType = inputType;
 	}
 
-	protected Boolean isSensitive;
+	protected  Boolean isSensitive;
 
 	public Boolean getIsSensitive() {
 		return this.isSensitive;
@@ -70,7 +72,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * The value supplied for the third party credential.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -87,5 +89,6 @@ public class ThirdPartyCredentialField implements Serializable
 	public void setVocabularyValues(List<VocabularyValue> vocabularyValues) {
 		this.vocabularyValues = vocabularyValues;
 	}
+
 
 }

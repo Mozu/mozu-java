@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.search.SearchTuningRuleFilter;
 
@@ -19,7 +21,7 @@ public class SearchTuningRule implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean active;
+	protected  Boolean active;
 
 	public Boolean getActive() {
 		return this.active;
@@ -29,7 +31,7 @@ public class SearchTuningRule implements Serializable
 		this.active = active;
 	}
 
-	protected DateTime activeEndDate;
+	protected  DateTime activeEndDate;
 
 	public DateTime getActiveEndDate() {
 		return this.activeEndDate;
@@ -39,7 +41,7 @@ public class SearchTuningRule implements Serializable
 		this.activeEndDate = activeEndDate;
 	}
 
-	protected DateTime activeStartDate;
+	protected  DateTime activeStartDate;
 
 	public DateTime getActiveStartDate() {
 		return this.activeStartDate;
@@ -65,7 +67,7 @@ public class SearchTuningRule implements Serializable
 		this.boostedProductCodes = boostedProductCodes;
 	}
 
-	protected Boolean isDefault;
+	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
 		return this.isDefault;
@@ -83,7 +85,7 @@ public class SearchTuningRule implements Serializable
 		this.keywords = keywords;
 	}
 
-	protected String searchTuningRuleCode;
+	protected  String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {
 		return this.searchTuningRuleCode;
@@ -93,7 +95,7 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
 
-	protected String searchTuningRuleDescription;
+	protected  String searchTuningRuleDescription;
 
 	public String getSearchTuningRuleDescription() {
 		return this.searchTuningRuleDescription;
@@ -103,7 +105,7 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleDescription = searchTuningRuleDescription;
 	}
 
-	protected String searchTuningRuleName;
+	protected  String searchTuningRuleName;
 
 	public String getSearchTuningRuleName() {
 		return this.searchTuningRuleName;
@@ -113,7 +115,7 @@ public class SearchTuningRule implements Serializable
 		this.searchTuningRuleName = searchTuningRuleName;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -123,7 +125,7 @@ public class SearchTuningRule implements Serializable
 		this.siteId = siteId;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -140,5 +142,6 @@ public class SearchTuningRule implements Serializable
 	public void setFilters(List<SearchTuningRuleFilter> filters) {
 		this.filters = filters;
 	}
+
 
 }

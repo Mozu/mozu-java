@@ -9,6 +9,9 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerPurchaseOrderPaymentTerm implements Serializable
@@ -16,7 +19,17 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String description;
+	protected  String code;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -26,17 +39,7 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 		this.description = description;
 	}
 
-	protected Integer id;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -45,5 +48,16 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 	public void setSiteId(Integer siteId) {
 		this.siteId = siteId;
 	}
+
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
 
 }

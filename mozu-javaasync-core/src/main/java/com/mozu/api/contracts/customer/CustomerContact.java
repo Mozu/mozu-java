@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Phone;
@@ -27,7 +29,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * Unique identifier of the customer account.
 	 */
-	protected Integer accountId;
+	protected  Integer accountId;
 
 	public Integer getAccountId() {
 		return this.accountId;
@@ -40,7 +42,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
 	 */
-	protected String companyOrOrganization;
+	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
 		return this.companyOrOrganization;
@@ -53,7 +55,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -66,7 +68,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The fax number associated with the customer account.
 	 */
-	protected String faxNumber;
+	protected  String faxNumber;
 
 	public String getFaxNumber() {
 		return this.faxNumber;
@@ -79,7 +81,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The first name of the contact. The maximum character length is 200.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -92,7 +94,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * Identifier of the customer contact.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -102,7 +104,7 @@ public class CustomerContact implements Serializable
 		this.id = id;
 	}
 
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -115,7 +117,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The last name or surname of the contact. The maximum character length is 200.
 	 */
-	protected String lastNameOrSurname;
+	protected  String lastNameOrSurname;
 
 	public String getLastNameOrSurname() {
 		return this.lastNameOrSurname;
@@ -128,7 +130,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * The middle name or the first initial of the middle name of the contact. The maximum character length is 100.
 	 */
-	protected String middleNameOrInitial;
+	protected  String middleNameOrInitial;
 
 	public String getMiddleNameOrInitial() {
 		return this.middleNameOrInitial;
@@ -141,7 +143,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * Address associated with the customer account contact.
 	 */
-	protected Address address;
+	protected  Address address;
 
 	public Address getAddress() {
 		return this.address;
@@ -154,7 +156,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -167,7 +169,7 @@ public class CustomerContact implements Serializable
 	/**
 	 * List of phone numbers associated with the customer account contact.
 	 */
-	protected Phone phoneNumbers;
+	protected  Phone phoneNumbers;
 
 	public Phone getPhoneNumbers() {
 		return this.phoneNumbers;
@@ -187,5 +189,6 @@ public class CustomerContact implements Serializable
 	public void setTypes(List<ContactType> types) {
 		this.types = types;
 	}
+
 
 }

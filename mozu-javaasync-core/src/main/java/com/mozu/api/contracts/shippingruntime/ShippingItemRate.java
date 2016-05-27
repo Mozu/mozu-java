@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a shipping rate calculated for a line item in a shipment.
@@ -22,7 +24,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * The calculated shipping amount for an item in a shipment.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -35,7 +37,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * Unique identifier of the item for which to calculate a shipping rate.
 	 */
-	protected String itemId;
+	protected  String itemId;
 
 	public String getItemId() {
 		return this.itemId;
@@ -48,7 +50,7 @@ public class ShippingItemRate implements Serializable
 	/**
 	 * The quantity of the line item for which to calculate shipping.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -57,5 +59,6 @@ public class ShippingItemRate implements Serializable
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 
 }

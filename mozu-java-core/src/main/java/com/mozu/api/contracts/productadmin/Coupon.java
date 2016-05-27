@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class Coupon implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean canBeDeleted;
+	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
 		return this.canBeDeleted;
@@ -27,7 +29,7 @@ public class Coupon implements Serializable
 		this.canBeDeleted = canBeDeleted;
 	}
 
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -37,7 +39,7 @@ public class Coupon implements Serializable
 		this.couponCode = couponCode;
 	}
 
-	protected String couponSetCode;
+	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
 		return this.couponSetCode;
@@ -47,7 +49,7 @@ public class Coupon implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
-	protected Integer couponSetId;
+	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
 		return this.couponSetId;
@@ -57,7 +59,7 @@ public class Coupon implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	protected Integer redemptionCount;
+	protected  Integer redemptionCount;
 
 	public Integer getRedemptionCount() {
 		return this.redemptionCount;
@@ -67,7 +69,7 @@ public class Coupon implements Serializable
 		this.redemptionCount = redemptionCount;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -76,5 +78,6 @@ public class Coupon implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

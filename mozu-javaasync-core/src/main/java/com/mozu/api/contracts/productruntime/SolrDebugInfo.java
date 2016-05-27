@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SolrDebugInfo implements Serializable
@@ -49,7 +51,7 @@ public class SolrDebugInfo implements Serializable
 		this.boostQueries = boostQueries;
 	}
 
-	protected String searchTuningRuleCode;
+	protected  String searchTuningRuleCode;
 
 	public String getSearchTuningRuleCode() {
 		return this.searchTuningRuleCode;
@@ -58,5 +60,6 @@ public class SolrDebugInfo implements Serializable
 	public void setSearchTuningRuleCode(String searchTuningRuleCode) {
 		this.searchTuningRuleCode = searchTuningRuleCode;
 	}
+
 
 }

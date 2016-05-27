@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewField implements Serializable
@@ -16,7 +18,7 @@ public class ViewField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -26,7 +28,7 @@ public class ViewField implements Serializable
 		this.name = name;
 	}
 
-	protected String target;
+	protected  String target;
 
 	public String getTarget() {
 		return this.target;
@@ -35,5 +37,6 @@ public class ViewField implements Serializable
 	public void setTarget(String target) {
 		this.target = target;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.LocalizableString;
 
@@ -24,7 +26,7 @@ public class Setting implements Serializable
 	/**
 	 * Carrier-specific key field.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -37,7 +39,7 @@ public class Setting implements Serializable
 	/**
 	 * Carrier-specific value for the associated key.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -50,7 +52,7 @@ public class Setting implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -63,7 +65,7 @@ public class Setting implements Serializable
 	/**
 	 * The label of the carrier-specific key.
 	 */
-	protected LocalizableString label;
+	protected  LocalizableString label;
 
 	public LocalizableString getLabel() {
 		return this.label;
@@ -72,5 +74,6 @@ public class Setting implements Serializable
 	public void setLabel(LocalizableString label) {
 		this.label = label;
 	}
+
 
 }

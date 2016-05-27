@@ -9,6 +9,8 @@ package com.mozu.api.contracts.mzdb;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ListViewField implements Serializable
@@ -16,7 +18,7 @@ public class ListViewField implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -26,7 +28,7 @@ public class ListViewField implements Serializable
 		this.name = name;
 	}
 
-	protected String target;
+	protected  String target;
 
 	public String getTarget() {
 		return this.target;
@@ -36,7 +38,7 @@ public class ListViewField implements Serializable
 		this.target = target;
 	}
 
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -45,5 +47,6 @@ public class ListViewField implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

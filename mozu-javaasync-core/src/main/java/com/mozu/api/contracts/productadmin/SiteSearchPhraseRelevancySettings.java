@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteSearchPhraseRelevancySettings implements Serializable
@@ -16,7 +18,7 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer attributeWeight;
+	protected  Integer attributeWeight;
 
 	public Integer getAttributeWeight() {
 		return this.attributeWeight;
@@ -26,7 +28,7 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 		this.attributeWeight = attributeWeight;
 	}
 
-	protected Integer descriptionWeight;
+	protected  Integer descriptionWeight;
 
 	public Integer getDescriptionWeight() {
 		return this.descriptionWeight;
@@ -36,7 +38,7 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 		this.descriptionWeight = descriptionWeight;
 	}
 
-	protected Integer nameWeight;
+	protected  Integer nameWeight;
 
 	public Integer getNameWeight() {
 		return this.nameWeight;
@@ -45,5 +47,6 @@ public class SiteSearchPhraseRelevancySettings implements Serializable
 	public void setNameWeight(Integer nameWeight) {
 		this.nameWeight = nameWeight;
 	}
+
 
 }

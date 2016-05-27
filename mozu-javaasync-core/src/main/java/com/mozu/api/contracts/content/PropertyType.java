@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Property type available for content. Property types are like templates that can be reused.
@@ -19,7 +21,7 @@ public class PropertyType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -29,7 +31,7 @@ public class PropertyType implements Serializable
 		this.adminName = adminName;
 	}
 
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -39,7 +41,7 @@ public class PropertyType implements Serializable
 		this.dataType = dataType;
 	}
 
-	protected String installationPackage;
+	protected  String installationPackage;
 
 	public String getInstallationPackage() {
 		return this.installationPackage;
@@ -52,7 +54,7 @@ public class PropertyType implements Serializable
 	/**
 	 * If true, this entity can be grouped.
 	 */
-	protected Boolean isAggregatable;
+	protected  Boolean isAggregatable;
 
 	public Boolean getIsAggregatable() {
 		return this.isAggregatable;
@@ -65,7 +67,7 @@ public class PropertyType implements Serializable
 	/**
 	 * If true, the entity can be searched. If false, the entity cannot be searched.
 	 */
-	protected Boolean isQueryable;
+	protected  Boolean isQueryable;
 
 	public Boolean getIsQueryable() {
 		return this.isQueryable;
@@ -78,7 +80,7 @@ public class PropertyType implements Serializable
 	/**
 	 * If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
 	 */
-	protected Boolean isSortable;
+	protected  Boolean isSortable;
 
 	public Boolean getIsSortable() {
 		return this.isSortable;
@@ -91,7 +93,7 @@ public class PropertyType implements Serializable
 	/**
 	 * The name of the content property type.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -101,7 +103,7 @@ public class PropertyType implements Serializable
 		this.name = name;
 	}
 
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -111,7 +113,7 @@ public class PropertyType implements Serializable
 		this.namespace = namespace;
 	}
 
-	protected String propertyTypeFQN;
+	protected  String propertyTypeFQN;
 
 	public String getPropertyTypeFQN() {
 		return this.propertyTypeFQN;
@@ -121,7 +123,7 @@ public class PropertyType implements Serializable
 		this.propertyTypeFQN = propertyTypeFQN;
 	}
 
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -130,5 +132,6 @@ public class PropertyType implements Serializable
 	public void setVersion(String version) {
 		this.version = version;
 	}
+
 
 }

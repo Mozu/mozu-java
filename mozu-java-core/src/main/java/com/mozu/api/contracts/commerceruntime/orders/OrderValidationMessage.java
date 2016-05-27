@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.orders;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a message returned by an order validation capability for the order specified in the request.
@@ -22,7 +24,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * The body of the message returned by the order validation capability.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -35,7 +37,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * The type of message returned by the order validation capability, such as "Fraud Score."
 	 */
-	protected String messageType;
+	protected  String messageType;
 
 	public String getMessageType() {
 		return this.messageType;
@@ -48,7 +50,7 @@ public class OrderValidationMessage implements Serializable
 	/**
 	 * Unique identifier of the order item associated with the validation message.
 	 */
-	protected String orderItemId;
+	protected  String orderItemId;
 
 	public String getOrderItemId() {
 		return this.orderItemId;
@@ -57,5 +59,6 @@ public class OrderValidationMessage implements Serializable
 	public void setOrderItemId(String orderItemId) {
 		this.orderItemId = orderItemId;
 	}
+
 
 }

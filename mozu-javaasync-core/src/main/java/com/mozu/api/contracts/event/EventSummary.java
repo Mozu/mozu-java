@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventExtendedProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class EventSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -28,7 +30,7 @@ public class EventSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	protected String correlationId;
+	protected  String correlationId;
 
 	public String getCorrelationId() {
 		return this.correlationId;
@@ -38,7 +40,7 @@ public class EventSummary implements Serializable
 		this.correlationId = correlationId;
 	}
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -48,7 +50,7 @@ public class EventSummary implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected String entityId;
+	protected  String entityId;
 
 	public String getEntityId() {
 		return this.entityId;
@@ -58,7 +60,7 @@ public class EventSummary implements Serializable
 		this.entityId = entityId;
 	}
 
-	protected String eventId;
+	protected  String eventId;
 
 	public String getEventId() {
 		return this.eventId;
@@ -68,7 +70,7 @@ public class EventSummary implements Serializable
 		this.eventId = eventId;
 	}
 
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -78,7 +80,7 @@ public class EventSummary implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -91,7 +93,7 @@ public class EventSummary implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -101,7 +103,7 @@ public class EventSummary implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected String topic;
+	protected  String topic;
 
 	public String getTopic() {
 		return this.topic;
@@ -118,5 +120,6 @@ public class EventSummary implements Serializable
 	public void setExtendedProperties(List<EventExtendedProperty> extendedProperties) {
 		this.extendedProperties = extendedProperties;
 	}
+
 
 }

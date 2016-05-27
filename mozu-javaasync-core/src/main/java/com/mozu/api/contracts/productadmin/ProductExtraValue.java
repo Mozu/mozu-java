@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValue;
 import com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice;
 
@@ -25,7 +27,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * The difference between the weight associated with this product extra and the base product. For example, if a product with a monogram weighs an extra 1/4 lb, the DeltaWeight value is "0.25".
 	 */
-	protected Double deltaWeight;
+	protected  Double deltaWeight;
 
 	public Double getDeltaWeight() {
 		return this.deltaWeight;
@@ -38,7 +40,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * If true, the value for the product extra is selected by default. Shopper entered extras cannot be defaulted.
 	 */
-	protected Boolean isDefaulted;
+	protected  Boolean isDefaulted;
 
 	public Boolean getIsDefaulted() {
 		return this.isDefaulted;
@@ -51,7 +53,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * When setting up the extra on a parent product, you can specify a quantity. You can have an extra that is a quantity > 1 of another product.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -64,7 +66,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * Properties of a defined value for a product extra attribute.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -77,7 +79,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * Detail of the product extra attribute vocabulary value.
 	 */
-	protected AttributeVocabularyValue attributeVocabularyValueDetail;
+	protected  AttributeVocabularyValue attributeVocabularyValueDetail;
 
 	public AttributeVocabularyValue getAttributeVocabularyValueDetail() {
 		return this.attributeVocabularyValueDetail;
@@ -90,7 +92,7 @@ public class ProductExtraValue implements Serializable
 	/**
 	 * The difference between the price associated with this product extra and the base product. For example, if a product with a defined monogram extra costs an additional $10, the DeltaPrice value is "10".
 	 */
-	protected ProductExtraValueDeltaPrice deltaPrice;
+	protected  ProductExtraValueDeltaPrice deltaPrice;
 
 	public ProductExtraValueDeltaPrice getDeltaPrice() {
 		return this.deltaPrice;
@@ -107,5 +109,6 @@ public class ProductExtraValue implements Serializable
 	public void setLocalizedDeltaPrice(List<ProductExtraValueDeltaPrice> localizedDeltaPrice) {
 		this.localizedDeltaPrice = localizedDeltaPrice;
 	}
+
 
 }

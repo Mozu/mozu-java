@@ -9,6 +9,8 @@ package com.mozu.api.contracts.sitesettings.general;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmailTypeSetting implements Serializable
@@ -16,7 +18,7 @@ public class EmailTypeSetting implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String bccEmailAddressOverride;
+	protected  String bccEmailAddressOverride;
 
 	public String getBccEmailAddressOverride() {
 		return this.bccEmailAddressOverride;
@@ -26,7 +28,7 @@ public class EmailTypeSetting implements Serializable
 		this.bccEmailAddressOverride = bccEmailAddressOverride;
 	}
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -36,7 +38,7 @@ public class EmailTypeSetting implements Serializable
 		this.id = id;
 	}
 
-	protected String replyToEmailAddressOverride;
+	protected  String replyToEmailAddressOverride;
 
 	public String getReplyToEmailAddressOverride() {
 		return this.replyToEmailAddressOverride;
@@ -46,7 +48,7 @@ public class EmailTypeSetting implements Serializable
 		this.replyToEmailAddressOverride = replyToEmailAddressOverride;
 	}
 
-	protected String senderEmailAddressOverride;
+	protected  String senderEmailAddressOverride;
 
 	public String getSenderEmailAddressOverride() {
 		return this.senderEmailAddressOverride;
@@ -56,7 +58,7 @@ public class EmailTypeSetting implements Serializable
 		this.senderEmailAddressOverride = senderEmailAddressOverride;
 	}
 
-	protected String senderEmailAliasOverride;
+	protected  String senderEmailAliasOverride;
 
 	public String getSenderEmailAliasOverride() {
 		return this.senderEmailAliasOverride;
@@ -65,5 +67,6 @@ public class EmailTypeSetting implements Serializable
 	public void setSenderEmailAliasOverride(String senderEmailAliasOverride) {
 		this.senderEmailAliasOverride = senderEmailAliasOverride;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.sitesettings.general;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CacheSettings implements Serializable
@@ -16,7 +18,7 @@ public class CacheSettings implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String cdnCacheBustKey;
+	protected  String cdnCacheBustKey;
 
 	public String getCdnCacheBustKey() {
 		return this.cdnCacheBustKey;
@@ -25,5 +27,6 @@ public class CacheSettings implements Serializable
 	public void setCdnCacheBustKey(String cdnCacheBustKey) {
 		this.cdnCacheBustKey = cdnCacheBustKey;
 	}
+
 
 }

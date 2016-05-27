@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
 /**
@@ -23,7 +25,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * Access token string that enables authentication for the customer account.
 	 */
-	protected String accessToken;
+	protected  String accessToken;
 
 	public String getAccessToken() {
 		return this.accessToken;
@@ -36,7 +38,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * The date and time the access token expires.
 	 */
-	protected DateTime accessTokenExpiration;
+	protected  DateTime accessTokenExpiration;
 
 	public DateTime getAccessTokenExpiration() {
 		return this.accessTokenExpiration;
@@ -49,7 +51,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * Refresh token string used to generate a new access token after expiration for a customer account authentication ticket.
 	 */
-	protected String refreshToken;
+	protected  String refreshToken;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -62,7 +64,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * The date and time the refresh token expires.
 	 */
-	protected DateTime refreshTokenExpiration;
+	protected  DateTime refreshTokenExpiration;
 
 	public DateTime getRefreshTokenExpiration() {
 		return this.refreshTokenExpiration;
@@ -75,7 +77,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * User ID associated with the customer account authentication ticket.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -88,7 +90,7 @@ public class CustomerAuthTicket implements Serializable
 	/**
 	 * Properties of the customer account associated with the authentication ticket.
 	 */
-	protected CustomerAccount customerAccount;
+	protected  CustomerAccount customerAccount;
 
 	public CustomerAccount getCustomerAccount() {
 		return this.customerAccount;
@@ -97,5 +99,6 @@ public class CustomerAuthTicket implements Serializable
 	public void setCustomerAccount(CustomerAccount customerAccount) {
 		this.customerAccount = customerAccount;
 	}
+
 
 }

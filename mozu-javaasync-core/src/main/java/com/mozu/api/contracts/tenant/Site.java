@@ -9,6 +9,8 @@ package com.mozu.api.contracts.tenant;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a site associated with a tenant.
@@ -22,7 +24,7 @@ public class Site implements Serializable
 	/**
 	 * The unique identifier of the catalog of products used by a site.
 	 */
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -32,7 +34,7 @@ public class Site implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -45,7 +47,7 @@ public class Site implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -58,7 +60,7 @@ public class Site implements Serializable
 	/**
 	 * The domain associated with the site.
 	 */
-	protected String domain;
+	protected  String domain;
 
 	public String getDomain() {
 		return this.domain;
@@ -68,7 +70,7 @@ public class Site implements Serializable
 		this.domain = domain;
 	}
 
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -81,7 +83,7 @@ public class Site implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -94,7 +96,7 @@ public class Site implements Serializable
 	/**
 	 * The name of the site.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -107,7 +109,7 @@ public class Site implements Serializable
 	/**
 	 * The primary custom domain of the site.
 	 */
-	protected String primaryCustomDomain;
+	protected  String primaryCustomDomain;
 
 	public String getPrimaryCustomDomain() {
 		return this.primaryCustomDomain;
@@ -120,7 +122,7 @@ public class Site implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -129,5 +131,6 @@ public class Site implements Serializable
 	public void setTenantId(Integer tenantId) {
 		this.tenantId = tenantId;
 	}
+
 
 }

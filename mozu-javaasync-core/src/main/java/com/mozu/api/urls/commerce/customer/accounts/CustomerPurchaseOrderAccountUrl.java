@@ -28,26 +28,6 @@ public class CustomerPurchaseOrderAccountUrl
 	}
 
 	/**
-	 * Get Resource Url for GetCustomerPurchaseOrderTransactions
-	 * @param accountId 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl getCustomerPurchaseOrderTransactionsUrl(Integer accountId, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/PurchaseOrderTransaction?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
-		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("pageSize", pageSize);
-		formatter.formatUrl("responseFields", responseFields);
-		formatter.formatUrl("sortBy", sortBy);
-		formatter.formatUrl("startIndex", startIndex);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
 	 * Get Resource Url for CreateCustomerPurchaseOrderAccount
 	 * @param accountId 
 	 * @param responseFields 
@@ -56,20 +36,6 @@ public class CustomerPurchaseOrderAccountUrl
 	public static MozuUrl createCustomerPurchaseOrderAccountUrl(Integer accountId, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/purchaseOrderAccount?responseFields={responseFields}");
-		formatter.formatUrl("accountId", accountId);
-		formatter.formatUrl("responseFields", responseFields);
-		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
-	}
-
-	/**
-	 * Get Resource Url for CreatePurchaseOrderTransaction
-	 * @param accountId 
-	 * @param responseFields 
-	 * @return   String Resource Url
-	 */
-	public static MozuUrl createPurchaseOrderTransactionUrl(Integer accountId, String responseFields)
-	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/PurchaseOrderTransaction?responseFields={responseFields}");
 		formatter.formatUrl("accountId", accountId);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -96,7 +62,7 @@ public class CustomerPurchaseOrderAccountUrl
 	 */
 	public static MozuUrl deleteCustomerPurchaseOrderAccountUrl(Integer accountId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/{accountId}/purchaseOrderAccount");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/internal/{accountId}/purchaseOrderAccount");
 		formatter.formatUrl("accountId", accountId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +26,7 @@ public class Channel implements Serializable
 	/**
 	 * User-defined code that uniquely identifies the channel.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -34,7 +36,7 @@ public class Channel implements Serializable
 		this.code = code;
 	}
 
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -47,7 +49,7 @@ public class Channel implements Serializable
 	/**
 	 * User-defined code that identifies the channel group.
 	 */
-	protected String groupCode;
+	protected  String groupCode;
 
 	public String getGroupCode() {
 		return this.groupCode;
@@ -60,7 +62,7 @@ public class Channel implements Serializable
 	/**
 	 * User-defined name of the channel.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -73,7 +75,7 @@ public class Channel implements Serializable
 	/**
 	 * The geographical region associated with this channel. This region could represent any geographical entity from a state to a continent.
 	 */
-	protected String region;
+	protected  String region;
 
 	public String getRegion() {
 		return this.region;
@@ -97,7 +99,7 @@ public class Channel implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -110,7 +112,7 @@ public class Channel implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -119,5 +121,6 @@ public class Channel implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

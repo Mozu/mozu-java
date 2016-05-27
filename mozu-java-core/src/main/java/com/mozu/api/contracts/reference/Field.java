@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.reference.FieldData;
 
 /**
@@ -24,7 +26,7 @@ public class Field implements Serializable
 	/**
 	 * Identifier of the field.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -37,7 +39,7 @@ public class Field implements Serializable
 	/**
 	 * Label for the field.
 	 */
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -50,7 +52,7 @@ public class Field implements Serializable
 	/**
 	 * Sequence of the field.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -63,7 +65,7 @@ public class Field implements Serializable
 	/**
 	 * Type of field.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -83,5 +85,6 @@ public class Field implements Serializable
 	public void setData(List<FieldData> data) {
 		this.data = data;
 	}
+
 
 }

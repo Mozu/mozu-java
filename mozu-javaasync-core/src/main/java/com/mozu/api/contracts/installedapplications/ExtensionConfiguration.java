@@ -9,6 +9,8 @@ package com.mozu.api.contracts.installedapplications;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExtensionConfiguration implements Serializable
@@ -16,7 +18,7 @@ public class ExtensionConfiguration implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String applicationKey;
+	protected  String applicationKey;
 
 	public String getApplicationKey() {
 		return this.applicationKey;
@@ -26,7 +28,7 @@ public class ExtensionConfiguration implements Serializable
 		this.applicationKey = applicationKey;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode configuration;
+	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 
 	public com.fasterxml.jackson.databind.JsonNode getConfiguration() {
 		return this.configuration;
@@ -34,6 +36,23 @@ public class ExtensionConfiguration implements Serializable
 
 	public void setConfiguration(com.fasterxml.jackson.databind.JsonNode configuration) {
 		this.configuration = configuration;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(configuration == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, configuration);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.configuration = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Address information to supply for a contact.
@@ -22,7 +24,7 @@ public class Address implements Serializable
 	/**
 	 * Physical or mailing address line one. Usually includes the street number and street name or it could be a P.O. Box. Max length: 200.
 	 */
-	protected String address1;
+	protected  String address1;
 
 	public String getAddress1() {
 		return this.address1;
@@ -35,7 +37,7 @@ public class Address implements Serializable
 	/**
 	 * Physical or mailing address line two. Usually supplements the main street address with apartment, floor, suite, building, or unit information. Max length: 200.
 	 */
-	protected String address2;
+	protected  String address2;
 
 	public String getAddress2() {
 		return this.address2;
@@ -48,7 +50,7 @@ public class Address implements Serializable
 	/**
 	 * Physical or mailing address line three. Max length: 200.
 	 */
-	protected String address3;
+	protected  String address3;
 
 	public String getAddress3() {
 		return this.address3;
@@ -61,7 +63,7 @@ public class Address implements Serializable
 	/**
 	 * Physical or mailing address line four. Max length: 200.
 	 */
-	protected String address4;
+	protected  String address4;
 
 	public String getAddress4() {
 		return this.address4;
@@ -74,7 +76,7 @@ public class Address implements Serializable
 	/**
 	 * The type of address, which is commercial or residential.
 	 */
-	protected String addressType;
+	protected  String addressType;
 
 	public String getAddressType() {
 		return this.addressType;
@@ -87,7 +89,7 @@ public class Address implements Serializable
 	/**
 	 * City or town for the physical or mailing address. The maximum character length is 100.
 	 */
-	protected String cityOrTown;
+	protected  String cityOrTown;
 
 	public String getCityOrTown() {
 		return this.cityOrTown;
@@ -100,7 +102,7 @@ public class Address implements Serializable
 	/**
 	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
 	 */
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -113,7 +115,7 @@ public class Address implements Serializable
 	/**
 	 * If true, the address has been verified by an address validation service.
 	 */
-	protected Boolean isValidated;
+	protected  Boolean isValidated;
 
 	public Boolean getIsValidated() {
 		return this.isValidated;
@@ -126,7 +128,7 @@ public class Address implements Serializable
 	/**
 	 * The postal or zip code for the address. For example, a USPS-approved ZIP code standard is ZIP+4: 12345-6789. The maximum character length is 100.
 	 */
-	protected String postalOrZipCode;
+	protected  String postalOrZipCode;
 
 	public String getPostalOrZipCode() {
 		return this.postalOrZipCode;
@@ -139,7 +141,7 @@ public class Address implements Serializable
 	/**
 	 * The two-letter geographic code representing the state for the physical or mailing address. This is currently limited to the US.
 	 */
-	protected String stateOrProvince;
+	protected  String stateOrProvince;
 
 	public String getStateOrProvince() {
 		return this.stateOrProvince;
@@ -148,5 +150,6 @@ public class Address implements Serializable
 	public void setStateOrProvince(String stateOrProvince) {
 		this.stateOrProvince = stateOrProvince;
 	}
+
 
 }

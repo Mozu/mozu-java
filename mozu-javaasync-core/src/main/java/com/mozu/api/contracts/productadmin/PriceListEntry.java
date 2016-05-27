@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.PriceListEntryExtra;
 import com.mozu.api.contracts.productadmin.ProductOption;
@@ -21,7 +23,7 @@ public class PriceListEntry implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Double cost;
+	protected  Double cost;
 
 	public Double getCost() {
 		return this.cost;
@@ -31,7 +33,7 @@ public class PriceListEntry implements Serializable
 		this.cost = cost;
 	}
 
-	protected String costMode;
+	protected  String costMode;
 
 	public String getCostMode() {
 		return this.costMode;
@@ -41,7 +43,7 @@ public class PriceListEntry implements Serializable
 		this.costMode = costMode;
 	}
 
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -51,7 +53,7 @@ public class PriceListEntry implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	protected Boolean discountsRestricted;
+	protected  Boolean discountsRestricted;
 
 	public Boolean getDiscountsRestricted() {
 		return this.discountsRestricted;
@@ -61,7 +63,7 @@ public class PriceListEntry implements Serializable
 		this.discountsRestricted = discountsRestricted;
 	}
 
-	protected DateTime discountsRestrictedEndDate;
+	protected  DateTime discountsRestrictedEndDate;
 
 	public DateTime getDiscountsRestrictedEndDate() {
 		return this.discountsRestrictedEndDate;
@@ -71,7 +73,7 @@ public class PriceListEntry implements Serializable
 		this.discountsRestrictedEndDate = discountsRestrictedEndDate;
 	}
 
-	protected String discountsRestrictedMode;
+	protected  String discountsRestrictedMode;
 
 	public String getDiscountsRestrictedMode() {
 		return this.discountsRestrictedMode;
@@ -81,7 +83,7 @@ public class PriceListEntry implements Serializable
 		this.discountsRestrictedMode = discountsRestrictedMode;
 	}
 
-	protected DateTime discountsRestrictedStartDate;
+	protected  DateTime discountsRestrictedStartDate;
 
 	public DateTime getDiscountsRestrictedStartDate() {
 		return this.discountsRestrictedStartDate;
@@ -91,7 +93,7 @@ public class PriceListEntry implements Serializable
 		this.discountsRestrictedStartDate = discountsRestrictedStartDate;
 	}
 
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -101,7 +103,7 @@ public class PriceListEntry implements Serializable
 		this.endDate = endDate;
 	}
 
-	protected Boolean isVariation;
+	protected  Boolean isVariation;
 
 	public Boolean getIsVariation() {
 		return this.isVariation;
@@ -111,7 +113,7 @@ public class PriceListEntry implements Serializable
 		this.isVariation = isVariation;
 	}
 
-	protected Double map;
+	protected  Double map;
 
 	public Double getMap() {
 		return this.map;
@@ -121,7 +123,7 @@ public class PriceListEntry implements Serializable
 		this.map = map;
 	}
 
-	protected DateTime mapEndDate;
+	protected  DateTime mapEndDate;
 
 	public DateTime getMapEndDate() {
 		return this.mapEndDate;
@@ -131,7 +133,7 @@ public class PriceListEntry implements Serializable
 		this.mapEndDate = mapEndDate;
 	}
 
-	protected String mapMode;
+	protected  String mapMode;
 
 	public String getMapMode() {
 		return this.mapMode;
@@ -141,7 +143,7 @@ public class PriceListEntry implements Serializable
 		this.mapMode = mapMode;
 	}
 
-	protected DateTime mapStartDate;
+	protected  DateTime mapStartDate;
 
 	public DateTime getMapStartDate() {
 		return this.mapStartDate;
@@ -151,7 +153,7 @@ public class PriceListEntry implements Serializable
 		this.mapStartDate = mapStartDate;
 	}
 
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -161,7 +163,7 @@ public class PriceListEntry implements Serializable
 		this.msrp = msrp;
 	}
 
-	protected String msrpMode;
+	protected  String msrpMode;
 
 	public String getMsrpMode() {
 		return this.msrpMode;
@@ -171,7 +173,7 @@ public class PriceListEntry implements Serializable
 		this.msrpMode = msrpMode;
 	}
 
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -181,7 +183,7 @@ public class PriceListEntry implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	protected String priceListEntryMode;
+	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
 		return this.priceListEntryMode;
@@ -191,7 +193,7 @@ public class PriceListEntry implements Serializable
 		this.priceListEntryMode = priceListEntryMode;
 	}
 
-	protected Integer priceListEntrySequence;
+	protected  Integer priceListEntrySequence;
 
 	public Integer getPriceListEntrySequence() {
 		return this.priceListEntrySequence;
@@ -201,7 +203,7 @@ public class PriceListEntry implements Serializable
 		this.priceListEntrySequence = priceListEntrySequence;
 	}
 
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -211,7 +213,7 @@ public class PriceListEntry implements Serializable
 		this.productCode = productCode;
 	}
 
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -221,7 +223,7 @@ public class PriceListEntry implements Serializable
 		this.productName = productName;
 	}
 
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -231,7 +233,7 @@ public class PriceListEntry implements Serializable
 		this.startDate = startDate;
 	}
 
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -264,5 +266,6 @@ public class PriceListEntry implements Serializable
 	public void setPriceEntries(List<PriceListEntryPrice> priceEntries) {
 		this.priceEntries = priceEntries;
 	}
+
 
 }

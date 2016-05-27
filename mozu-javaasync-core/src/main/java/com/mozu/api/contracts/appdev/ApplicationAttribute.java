@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Attribute;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -18,7 +20,7 @@ public class ApplicationAttribute implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String attributeCodes;
+	protected  String attributeCodes;
 
 	public String getAttributeCodes() {
 		return this.attributeCodes;
@@ -28,7 +30,7 @@ public class ApplicationAttribute implements Serializable
 		this.attributeCodes = attributeCodes;
 	}
 
-	protected String attributeJson;
+	protected  String attributeJson;
 
 	public String getAttributeJson() {
 		return this.attributeJson;
@@ -38,7 +40,7 @@ public class ApplicationAttribute implements Serializable
 		this.attributeJson = attributeJson;
 	}
 
-	protected Boolean isAppliedToBase;
+	protected  Boolean isAppliedToBase;
 
 	public Boolean getIsAppliedToBase() {
 		return this.isAppliedToBase;
@@ -48,7 +50,7 @@ public class ApplicationAttribute implements Serializable
 		this.isAppliedToBase = isAppliedToBase;
 	}
 
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -58,7 +60,7 @@ public class ApplicationAttribute implements Serializable
 		this.packageId = packageId;
 	}
 
-	protected String productTypeJson;
+	protected  String productTypeJson;
 
 	public String getProductTypeJson() {
 		return this.productTypeJson;
@@ -68,7 +70,7 @@ public class ApplicationAttribute implements Serializable
 		this.productTypeJson = productTypeJson;
 	}
 
-	protected Integer sourceTenantId;
+	protected  Integer sourceTenantId;
 
 	public Integer getSourceTenantId() {
 		return this.sourceTenantId;
@@ -78,7 +80,7 @@ public class ApplicationAttribute implements Serializable
 		this.sourceTenantId = sourceTenantId;
 	}
 
-	protected String sourceTenantName;
+	protected  String sourceTenantName;
 
 	public String getSourceTenantName() {
 		return this.sourceTenantName;
@@ -88,7 +90,7 @@ public class ApplicationAttribute implements Serializable
 		this.sourceTenantName = sourceTenantName;
 	}
 
-	protected String subsystem;
+	protected  String subsystem;
 
 	public String getSubsystem() {
 		return this.subsystem;
@@ -105,5 +107,6 @@ public class ApplicationAttribute implements Serializable
 	public void setAttributes(List<Attribute> attributes) {
 		this.attributes = attributes;
 	}
+
 
 }

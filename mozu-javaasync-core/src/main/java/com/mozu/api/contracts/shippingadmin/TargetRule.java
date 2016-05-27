@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetRule implements Serializable
@@ -16,7 +18,7 @@ public class TargetRule implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -26,7 +28,7 @@ public class TargetRule implements Serializable
 		this.code = code;
 	}
 
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -36,7 +38,7 @@ public class TargetRule implements Serializable
 		this.description = description;
 	}
 
-	protected String domain;
+	protected  String domain;
 
 	public String getDomain() {
 		return this.domain;
@@ -46,7 +48,7 @@ public class TargetRule implements Serializable
 		this.domain = domain;
 	}
 
-	protected String expression;
+	protected  String expression;
 
 	public String getExpression() {
 		return this.expression;
@@ -55,5 +57,6 @@ public class TargetRule implements Serializable
 	public void setExpression(String expression) {
 		this.expression = expression;
 	}
+
 
 }

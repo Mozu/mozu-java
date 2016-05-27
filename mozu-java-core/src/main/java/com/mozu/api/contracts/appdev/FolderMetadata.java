@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.FileMetadata;
 import com.mozu.api.contracts.appdev.FolderMetadata;
 
@@ -25,7 +27,7 @@ public class FolderMetadata implements Serializable
 	/**
 	 * The directory of the file location of the folder in the package.
 	 */
-	protected String fullPath;
+	protected  String fullPath;
 
 	public String getFullPath() {
 		return this.fullPath;
@@ -38,7 +40,7 @@ public class FolderMetadata implements Serializable
 	/**
 	 * The name of the folder.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -69,5 +71,6 @@ public class FolderMetadata implements Serializable
 	public void setSubFolders(List<FolderMetadata> subFolders) {
 		this.subFolders = subFolders;
 	}
+
 
 }

@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.returns;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The reason for which the item is returned. Valid values include Damaged, Defective, MissingParts, DifferentExpectations, Late, NoLongerWanted, or Other.
@@ -22,7 +24,7 @@ public class ReturnReason implements Serializable
 	/**
 	 * The quantity of the item returned for the specified reason.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -35,7 +37,7 @@ public class ReturnReason implements Serializable
 	/**
 	 * The reason for which an item is returned to the merchant.
 	 */
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -44,5 +46,6 @@ public class ReturnReason implements Serializable
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
+
 
 }

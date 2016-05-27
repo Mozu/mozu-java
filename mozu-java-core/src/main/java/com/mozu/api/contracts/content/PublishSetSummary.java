@@ -9,6 +9,8 @@ package com.mozu.api.contracts.content;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishSetSummary implements Serializable
@@ -16,7 +18,7 @@ public class PublishSetSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -26,7 +28,7 @@ public class PublishSetSummary implements Serializable
 		this.count = count;
 	}
 
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -35,5 +37,6 @@ public class PublishSetSummary implements Serializable
 	public void setPublishSetCode(String publishSetCode) {
 		this.publishSetCode = publishSetCode;
 	}
+
 
 }

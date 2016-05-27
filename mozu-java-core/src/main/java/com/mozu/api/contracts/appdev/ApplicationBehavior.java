@@ -9,6 +9,8 @@ package com.mozu.api.contracts.appdev;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationBehavior implements Serializable
@@ -16,7 +18,7 @@ public class ApplicationBehavior implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer behaviorId;
+	protected  Integer behaviorId;
 
 	public Integer getBehaviorId() {
 		return this.behaviorId;
@@ -26,7 +28,7 @@ public class ApplicationBehavior implements Serializable
 		this.behaviorId = behaviorId;
 	}
 
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -35,5 +37,6 @@ public class ApplicationBehavior implements Serializable
 	public void setPackageId(Integer packageId) {
 		this.packageId = packageId;
 	}
+
 
 }

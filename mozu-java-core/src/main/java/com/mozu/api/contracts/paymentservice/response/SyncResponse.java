@@ -9,6 +9,8 @@ package com.mozu.api.contracts.paymentservice.response;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SyncResponse implements Serializable
@@ -16,7 +18,7 @@ public class SyncResponse implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -26,7 +28,7 @@ public class SyncResponse implements Serializable
 		this.id = id;
 	}
 
-	protected Boolean isSuccessful;
+	protected  Boolean isSuccessful;
 
 	public Boolean getIsSuccessful() {
 		return this.isSuccessful;
@@ -36,7 +38,7 @@ public class SyncResponse implements Serializable
 		this.isSuccessful = isSuccessful;
 	}
 
-	protected String numberPart;
+	protected  String numberPart;
 
 	public String getNumberPart() {
 		return this.numberPart;
@@ -45,5 +47,6 @@ public class SyncResponse implements Serializable
 	public void setNumberPart(String numberPart) {
 		this.numberPart = numberPart;
 	}
+
 
 }

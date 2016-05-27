@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Item used to define additional key-value pairs of data associated with a product attribute.
@@ -22,7 +24,7 @@ public class AttributeMetadataItem implements Serializable
 	/**
 	 * User-defined key for attribute metadata.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -35,7 +37,7 @@ public class AttributeMetadataItem implements Serializable
 	/**
 	 * Value for the user-defined key.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -44,5 +46,6 @@ public class AttributeMetadataItem implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

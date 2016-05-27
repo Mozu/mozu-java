@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.products;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
 
 /**
@@ -20,7 +22,7 @@ public class BundledProduct implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected DateTime allocationExpiration;
+	protected  DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
 		return this.allocationExpiration;
@@ -30,7 +32,7 @@ public class BundledProduct implements Serializable
 		this.allocationExpiration = allocationExpiration;
 	}
 
-	protected Integer allocationId;
+	protected  Integer allocationId;
 
 	public Integer getAllocationId() {
 		return this.allocationId;
@@ -43,7 +45,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The credit value of the bundled product.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -56,7 +58,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The description defined for a component product in a product bundle. System-supplied and read only.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -66,7 +68,7 @@ public class BundledProduct implements Serializable
 		this.description = description;
 	}
 
-	protected String fulfillmentStatus;
+	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
 		return this.fulfillmentStatus;
@@ -79,7 +81,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The type of goods in a bundled product. For example: physical, digital, or digital credit.
 	 */
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -92,7 +94,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -105,7 +107,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The name of a component product in a product bundle. System-supplied and read only.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -118,7 +120,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String optionAttributeFQN;
+	protected  String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
 		return this.optionAttributeFQN;
@@ -131,7 +133,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The value of the bundled product.
 	 */
-	protected Object optionValue;
+	protected  Object optionValue;
 
 	public Object getOptionValue() {
 		return this.optionValue;
@@ -144,7 +146,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -157,7 +159,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Unique identifier of the product reservation associated with the component product in a product bundle. System-supplied and read only.
 	 */
-	protected Integer productReservationId;
+	protected  Integer productReservationId;
 
 	public Integer getProductReservationId() {
 		return this.productReservationId;
@@ -170,7 +172,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The quantity of a component product in its product bundle. System-supplied and read only.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -183,7 +185,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -192,5 +194,6 @@ public class BundledProduct implements Serializable
 	public void setMeasurements(PackageMeasurements measurements) {
 		this.measurements = measurements;
 	}
+
 
 }

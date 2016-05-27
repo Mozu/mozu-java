@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.fulfillment;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
 
@@ -24,7 +26,7 @@ public class FulfillmentInfo implements Serializable
 	/**
 	 * If true, the shipping destination for a shipment is a commercial address.
 	 */
-	protected Boolean isDestinationCommercial;
+	protected  Boolean isDestinationCommercial;
 
 	public Boolean getIsDestinationCommercial() {
 		return this.isDestinationCommercial;
@@ -37,7 +39,7 @@ public class FulfillmentInfo implements Serializable
 	/**
 	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
 	 */
-	protected String shippingMethodCode;
+	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
 		return this.shippingMethodCode;
@@ -50,7 +52,7 @@ public class FulfillmentInfo implements Serializable
 	/**
 	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
 	 */
-	protected String shippingMethodName;
+	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
 		return this.shippingMethodName;
@@ -63,7 +65,7 @@ public class FulfillmentInfo implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -73,7 +75,7 @@ public class FulfillmentInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -86,7 +88,7 @@ public class FulfillmentInfo implements Serializable
 	/**
 	 * The contact information of the person receiving the shipment or performing the pickup.
 	 */
-	protected Contact fulfillmentContact;
+	protected  Contact fulfillmentContact;
 
 	public Contact getFulfillmentContact() {
 		return this.fulfillmentContact;
@@ -94,6 +96,23 @@ public class FulfillmentInfo implements Serializable
 
 	public void setFulfillmentContact(Contact fulfillmentContact) {
 		this.fulfillmentContact = fulfillmentContact;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

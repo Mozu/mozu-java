@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a product category targeted for a defined discount.
@@ -22,7 +24,7 @@ public class TargetedCategory implements Serializable
 	/**
 	 * Identifier of the product category associated with the targeted discount.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -31,5 +33,6 @@ public class TargetedCategory implements Serializable
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 }

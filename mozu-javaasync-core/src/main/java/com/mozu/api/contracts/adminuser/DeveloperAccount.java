@@ -9,6 +9,8 @@ package com.mozu.api.contracts.adminuser;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a developer account used to build a company's applications and themes.
@@ -22,7 +24,7 @@ public class DeveloperAccount implements Serializable
 	/**
 	 * Unique identifier of the developer account.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -35,7 +37,7 @@ public class DeveloperAccount implements Serializable
 	/**
 	 * The name of the developer account.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -44,5 +46,6 @@ public class DeveloperAccount implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

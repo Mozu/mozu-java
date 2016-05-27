@@ -9,6 +9,8 @@ package com.mozu.api.contracts.commerceruntime.discounts;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.discounts.AppliedDiscount;
 
 /**
@@ -23,7 +25,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	/**
 	 * The number of the line item that is used for this particular discount.
 	 */
-	protected Integer discountQuantity;
+	protected  Integer discountQuantity;
 
 	public Integer getDiscountQuantity() {
 		return this.discountQuantity;
@@ -36,7 +38,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	/**
 	 * The impact of this discount for each discount quantity.
 	 */
-	protected Double impactPerUnit;
+	protected  Double impactPerUnit;
 
 	public Double getImpactPerUnit() {
 		return this.impactPerUnit;
@@ -46,7 +48,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 		this.impactPerUnit = impactPerUnit;
 	}
 
-	protected String methodCode;
+	protected  String methodCode;
 
 	public String getMethodCode() {
 		return this.methodCode;
@@ -59,7 +61,7 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	/**
 	 * This describes shipping discounts that apply to a line item in the order, if any.
 	 */
-	protected AppliedDiscount discount;
+	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {
 		return this.discount;
@@ -68,5 +70,6 @@ public class AppliedLineItemShippingDiscount implements Serializable
 	public void setDiscount(AppliedDiscount discount) {
 		this.discount = discount;
 	}
+
 
 }

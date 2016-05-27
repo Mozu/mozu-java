@@ -9,6 +9,8 @@ package com.mozu.api.contracts.core;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the admin user profile.
@@ -22,7 +24,7 @@ public class UserProfile implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -35,7 +37,7 @@ public class UserProfile implements Serializable
 	/**
 	 * The first name of the contact. The maximum character length is 200.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -48,7 +50,7 @@ public class UserProfile implements Serializable
 	/**
 	 * The last name or surname of the contact. The maximum character length is 200.
 	 */
-	protected String lastName;
+	protected  String lastName;
 
 	public String getLastName() {
 		return this.lastName;
@@ -61,7 +63,7 @@ public class UserProfile implements Serializable
 	/**
 	 * Identifier of the user.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -74,7 +76,7 @@ public class UserProfile implements Serializable
 	/**
 	 * The user name associated with the user profile.
 	 */
-	protected String userName;
+	protected  String userName;
 
 	public String getUserName() {
 		return this.userName;
@@ -83,5 +85,6 @@ public class UserProfile implements Serializable
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 
 }

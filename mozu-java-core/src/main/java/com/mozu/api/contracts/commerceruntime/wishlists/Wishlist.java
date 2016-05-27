@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty;
@@ -29,7 +31,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the channel associated with the wish list.
 	 */
-	protected String channelCode;
+	protected  String channelCode;
 
 	public String getChannelCode() {
 		return this.channelCode;
@@ -42,7 +44,7 @@ public class Wishlist implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -55,7 +57,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the customer account associated with the wish list.
 	 */
-	protected Integer customerAccountId;
+	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
 		return this.customerAccountId;
@@ -68,7 +70,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The interaction type the shopper uses to create the wish list, which is Website, Store, Call, or Unknown. This property is not used at this time and is reserved for future functionality.
 	 */
-	protected String customerInteractionType;
+	protected  String customerInteractionType;
 
 	public String getCustomerInteractionType() {
 		return this.customerInteractionType;
@@ -81,7 +83,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The discounted subtotal of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double discountedSubtotal;
+	protected  Double discountedSubtotal;
 
 	public Double getDiscountedSubtotal() {
 		return this.discountedSubtotal;
@@ -94,7 +96,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The subtotal of the cart including any applied discount calculations. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double discountedTotal;
+	protected  Double discountedTotal;
 
 	public Double getDiscountedTotal() {
 		return this.discountedTotal;
@@ -107,7 +109,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Estimated amount of discounts applied to all items in the wish list, which is system-supplied and read-only.   This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double discountTotal;
+	protected  Double discountTotal;
 
 	public Double getDiscountTotal() {
 		return this.discountTotal;
@@ -120,7 +122,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The date and time this wish list expires. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -133,7 +135,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The identifier an external program uses to identify the Mozu wish list.
 	 */
-	protected String externalId;
+	protected  String externalId;
 
 	public String getExternalId() {
 		return this.externalId;
@@ -146,7 +148,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The fee total of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double feeTotal;
+	protected  Double feeTotal;
 
 	public Double getFeeTotal() {
 		return this.feeTotal;
@@ -159,7 +161,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The tax amount levied against the handling fee for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double handlingTaxTotal;
+	protected  Double handlingTaxTotal;
 
 	public Double getHandlingTaxTotal() {
 		return this.handlingTaxTotal;
@@ -172,7 +174,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of this shopper wish list. System-supplied and read only.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -185,7 +187,7 @@ public class Wishlist implements Serializable
 	/**
 	 * If this wish list was imported from an external program, the date and time the wish list was imported.
 	 */
-	protected DateTime importDate;
+	protected  DateTime importDate;
 
 	public DateTime getImportDate() {
 		return this.importDate;
@@ -198,7 +200,7 @@ public class Wishlist implements Serializable
 	/**
 	 * If true, this wish list was imported from an external program.
 	 */
-	protected Boolean isImport;
+	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
 		return this.isImport;
@@ -211,7 +213,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The total amount of tax for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double itemTaxTotal;
+	protected  Double itemTaxTotal;
 
 	public Double getItemTaxTotal() {
 		return this.itemTaxTotal;
@@ -224,7 +226,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The date and time the wish list was last validated against the product catalog.
 	 */
-	protected DateTime lastValidationDate;
+	protected  DateTime lastValidationDate;
 
 	public DateTime getLastValidationDate() {
 		return this.lastValidationDate;
@@ -237,7 +239,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The user-defined name of the shopper wish list. The name defined for a wish list does not have to be unique.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -250,7 +252,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The type of privacy to apply to this wish list. Possible values are "Private" which makes the wish list viewable only to the shopper, "DirectShare" which makes the wish list viewable only to people with whom the shopper shares the wish list link, or "Public" which makes the wish list available to everyone. At this time, the system treats all shopper wish lists as "Public" regardless of the defined privacy type.
 	 */
-	protected String privacyType;
+	protected  String privacyType;
 
 	public String getPrivacyType() {
 		return this.privacyType;
@@ -263,7 +265,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The subtotaled shipping amount for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double shippingSubTotal;
+	protected  Double shippingSubTotal;
 
 	public Double getShippingSubTotal() {
 		return this.shippingSubTotal;
@@ -276,7 +278,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The total amount of tax levied against shipping charges for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double shippingTaxTotal;
+	protected  Double shippingTaxTotal;
 
 	public Double getShippingTaxTotal() {
 		return this.shippingTaxTotal;
@@ -289,7 +291,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The total shipping costs for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double shippingTotal;
+	protected  Double shippingTotal;
 
 	public Double getShippingTotal() {
 		return this.shippingTotal;
@@ -302,7 +304,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -315,7 +317,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The integer that represents the sequential order of this wish list in the customer's collection of wish lists.
 	 */
-	protected Integer sortOrder;
+	protected  Integer sortOrder;
 
 	public Integer getSortOrder() {
 		return this.sortOrder;
@@ -328,7 +330,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The subtotal of items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double subtotal;
+	protected  Double subtotal;
 
 	public Double getSubtotal() {
 		return this.subtotal;
@@ -341,7 +343,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The total tax amount for items in the wish list. This property value is not calculated at this time and is reserved for future functionality.
 	 */
-	protected Double taxTotal;
+	protected  Double taxTotal;
 
 	public Double getTaxTotal() {
 		return this.taxTotal;
@@ -354,7 +356,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -367,7 +369,7 @@ public class Wishlist implements Serializable
 	/**
 	 * The total amount of items in the wish list. This property value is not calculated at this time and is reserved for future functionality. If a site's structure distinguishes between wish list types, the site uses the value in this property to categorize the wish lists.
 	 */
-	protected Double total;
+	protected  Double total;
 
 	public Double getTotal() {
 		return this.total;
@@ -380,7 +382,7 @@ public class Wishlist implements Serializable
 	/**
 	 * User-defined string that defines the type of wish list to define, such as wish list, baby registry, or Christmas list.
 	 */
-	protected String typeTag;
+	protected  String typeTag;
 
 	public String getTypeTag() {
 		return this.typeTag;
@@ -393,7 +395,7 @@ public class Wishlist implements Serializable
 	/**
 	 * System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
 	 */
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -406,7 +408,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the customer visit in which the wish list was created or last modified. System-supplied and read only.
 	 */
-	protected String visitId;
+	protected  String visitId;
 
 	public String getVisitId() {
 		return this.visitId;
@@ -419,7 +421,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Unique identifier of the web session in which the wish list was created or last modified. System-supplied and read only.
 	 */
-	protected String webSessionId;
+	protected  String webSessionId;
 
 	public String getWebSessionId() {
 		return this.webSessionId;
@@ -432,7 +434,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -453,7 +455,7 @@ public class Wishlist implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -474,7 +476,7 @@ public class Wishlist implements Serializable
 	/**
 	 * Properties that determine how items in the wish list are fulfilled.
 	 */
-	protected FulfillmentInfo fulfillmentInfo;
+	protected  FulfillmentInfo fulfillmentInfo;
 
 	public FulfillmentInfo getFulfillmentInfo() {
 		return this.fulfillmentInfo;
@@ -504,6 +506,23 @@ public class Wishlist implements Serializable
 	}
 	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
 		this.orderDiscounts = orderDiscounts;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

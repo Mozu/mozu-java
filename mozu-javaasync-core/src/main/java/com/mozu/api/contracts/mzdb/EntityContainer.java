@@ -9,6 +9,8 @@ package com.mozu.api.contracts.mzdb;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EntityContainer implements Serializable
@@ -16,7 +18,7 @@ public class EntityContainer implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -26,7 +28,7 @@ public class EntityContainer implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	protected String createBy;
+	protected  String createBy;
 
 	public String getCreateBy() {
 		return this.createBy;
@@ -36,7 +38,7 @@ public class EntityContainer implements Serializable
 		this.createBy = createBy;
 	}
 
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -46,7 +48,7 @@ public class EntityContainer implements Serializable
 		this.createDate = createDate;
 	}
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -56,7 +58,7 @@ public class EntityContainer implements Serializable
 		this.id = id;
 	}
 
-	protected String listFullName;
+	protected  String listFullName;
 
 	public String getListFullName() {
 		return this.listFullName;
@@ -69,7 +71,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -79,7 +81,7 @@ public class EntityContainer implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -89,7 +91,7 @@ public class EntityContainer implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -102,7 +104,7 @@ public class EntityContainer implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -112,7 +114,7 @@ public class EntityContainer implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	protected String updateBy;
+	protected  String updateBy;
 
 	public String getUpdateBy() {
 		return this.updateBy;
@@ -122,7 +124,7 @@ public class EntityContainer implements Serializable
 		this.updateBy = updateBy;
 	}
 
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -132,7 +134,7 @@ public class EntityContainer implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -142,7 +144,7 @@ public class EntityContainer implements Serializable
 		this.userId = userId;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode item;
+	protected transient com.fasterxml.jackson.databind.JsonNode item;
 
 	public com.fasterxml.jackson.databind.JsonNode getItem() {
 		return this.item;
@@ -150,6 +152,23 @@ public class EntityContainer implements Serializable
 
 	public void setItem(com.fasterxml.jackson.databind.JsonNode item) {
 		this.item = item;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(item == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, item);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.item = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

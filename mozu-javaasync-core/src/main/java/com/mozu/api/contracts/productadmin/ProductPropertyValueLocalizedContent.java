@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Content of the product property value in the language defined for the locale code.
@@ -22,7 +24,7 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -35,7 +37,7 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 	/**
 	 * The string value of the product property set in the language specified the locale code.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -44,5 +46,6 @@ public class ProductPropertyValueLocalizedContent implements Serializable
 	public void setStringValue(String stringValue) {
 		this.stringValue = stringValue;
 	}
+
 
 }

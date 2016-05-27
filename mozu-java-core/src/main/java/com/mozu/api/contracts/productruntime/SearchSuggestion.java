@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Suggest product search terms to a customer based on defined queries.
@@ -19,7 +21,7 @@ public class SearchSuggestion implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Object suggestion;
+	protected  Object suggestion;
 
 	public Object getSuggestion() {
 		return this.suggestion;
@@ -29,7 +31,7 @@ public class SearchSuggestion implements Serializable
 		this.suggestion = suggestion;
 	}
 
-	protected String suggestionType;
+	protected  String suggestionType;
 
 	public String getSuggestionType() {
 		return this.suggestionType;
@@ -38,5 +40,6 @@ public class SearchSuggestion implements Serializable
 	public void setSuggestionType(String suggestionType) {
 		this.suggestionType = suggestionType;
 	}
+
 
 }

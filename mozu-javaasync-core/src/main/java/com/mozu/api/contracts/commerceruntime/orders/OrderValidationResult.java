@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.orders.OrderValidationMessage;
 
 /**
@@ -24,7 +26,7 @@ public class OrderValidationResult implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createdDate;
+	protected  DateTime createdDate;
 
 	public DateTime getCreatedDate() {
 		return this.createdDate;
@@ -37,7 +39,7 @@ public class OrderValidationResult implements Serializable
 	/**
 	 * The status returned from the order validation capability for the order specified in the request, which is Pass, Fail, Error, or Review.
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -50,7 +52,7 @@ public class OrderValidationResult implements Serializable
 	/**
 	 * Read-only identifier defined by the order validation capability that uniquely identifies this validation operation.
 	 */
-	protected String validationId;
+	protected  String validationId;
 
 	public String getValidationId() {
 		return this.validationId;
@@ -63,7 +65,7 @@ public class OrderValidationResult implements Serializable
 	/**
 	 * Read-only name of this order validator supplied by the capability.
 	 */
-	protected String validatorName;
+	protected  String validatorName;
 
 	public String getValidatorName() {
 		return this.validatorName;
@@ -76,7 +78,7 @@ public class OrderValidationResult implements Serializable
 	/**
 	 * The type of order validator supplied by the capability. At this time, the only supported validator type is Fraud.
 	 */
-	protected String validatorType;
+	protected  String validatorType;
 
 	public String getValidatorType() {
 		return this.validatorType;
@@ -96,5 +98,6 @@ public class OrderValidationResult implements Serializable
 	public void setMessages(List<OrderValidationMessage> messages) {
 		this.messages = messages;
 	}
+
 
 }

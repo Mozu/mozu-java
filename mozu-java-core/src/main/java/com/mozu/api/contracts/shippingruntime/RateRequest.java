@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.CustomAttribute;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.shippingruntime.RateRequestItem;
@@ -37,7 +39,7 @@ public class RateRequest implements Serializable
 	/**
 	 * The date and time the shipment will be shipped to the shopper.
 	 */
-	protected DateTime estimatedShipmentDate;
+	protected  DateTime estimatedShipmentDate;
 
 	public DateTime getEstimatedShipmentDate() {
 		return this.estimatedShipmentDate;
@@ -50,7 +52,7 @@ public class RateRequest implements Serializable
 	/**
 	 * If true, the destination address associated with the shipping rate request is a commercial address.
 	 */
-	protected Boolean isDestinationAddressCommercial;
+	protected  Boolean isDestinationAddressCommercial;
 
 	public Boolean getIsDestinationAddressCommercial() {
 		return this.isDestinationAddressCommercial;
@@ -63,7 +65,7 @@ public class RateRequest implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String isoCurrencyCode;
+	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
 		return this.isoCurrencyCode;
@@ -76,7 +78,7 @@ public class RateRequest implements Serializable
 	/**
 	 * The total amount of the order used to calculate the shipping rate estimate.
 	 */
-	protected Double orderTotal;
+	protected  Double orderTotal;
 
 	public Double getOrderTotal() {
 		return this.orderTotal;
@@ -108,7 +110,7 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
-	protected com.fasterxml.jackson.databind.JsonNode data;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
 		return this.data;
@@ -121,7 +123,7 @@ public class RateRequest implements Serializable
 	/**
 	 * The physical address to which the shipment will ship.
 	 */
-	protected Address destinationAddress;
+	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
 		return this.destinationAddress;
@@ -145,7 +147,7 @@ public class RateRequest implements Serializable
 	/**
 	 * The physical address from which the shipment will ship.
 	 */
-	protected Address originAddress;
+	protected  Address originAddress;
 
 	public Address getOriginAddress() {
 		return this.originAddress;
@@ -153,6 +155,23 @@ public class RateRequest implements Serializable
 
 	public void setOriginAddress(Address originAddress) {
 		this.originAddress = originAddress;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

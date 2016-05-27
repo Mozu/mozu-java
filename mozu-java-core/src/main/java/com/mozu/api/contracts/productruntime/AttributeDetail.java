@@ -9,6 +9,8 @@ package com.mozu.api.contracts.productruntime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeValidation;
 
 /**
@@ -20,7 +22,7 @@ public class AttributeDetail implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Boolean allowFilteringAndSortingInStorefront;
+	protected  Boolean allowFilteringAndSortingInStorefront;
 
 	public Boolean getAllowFilteringAndSortingInStorefront() {
 		return this.allowFilteringAndSortingInStorefront;
@@ -33,7 +35,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The data type (such as datetime or string) associated with the attribute.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -46,7 +48,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Unique sequence of the attribute for its data type.
 	 */
-	protected Integer dataTypeSequence;
+	protected  Integer dataTypeSequence;
 
 	public Integer getDataTypeSequence() {
 		return this.dataTypeSequence;
@@ -59,7 +61,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Description of the attribute in the language specified by the locale code.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -69,7 +71,7 @@ public class AttributeDetail implements Serializable
 		this.description = description;
 	}
 
-	protected String displayIntention;
+	protected  String displayIntention;
 
 	public String getDisplayIntention() {
 		return this.displayIntention;
@@ -82,7 +84,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The input type (such as date or text area) accepted for the attribute's data type.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -95,7 +97,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Name of the atrribute in the language specified by the locale code.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -108,7 +110,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Indicates whether the attribute value is searchable in the storefont by a shopper.
 	 */
-	protected Boolean searchableInStorefront;
+	protected  Boolean searchableInStorefront;
 
 	public Boolean getSearchableInStorefront() {
 		return this.searchableInStorefront;
@@ -121,7 +123,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * If true, the system indexes the display value of string attributes instead of the canonical value for searching. The canonical value is always used for filtering. This does not apply for for non-string attributes.
 	 */
-	protected Boolean searchDisplayValue;
+	protected  Boolean searchDisplayValue;
 
 	public Boolean getSearchDisplayValue() {
 		return this.searchDisplayValue;
@@ -134,7 +136,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The usage type of the product attribute, which is property, option, or extra.
 	 */
-	protected String usageType;
+	protected  String usageType;
 
 	public String getUsageType() {
 		return this.usageType;
@@ -147,7 +149,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * The type of value for the attribute, which is either ShopperEntered, AdminEntered, or Predefined.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -160,7 +162,7 @@ public class AttributeDetail implements Serializable
 	/**
 	 * Validation rules of an attribute that determine which values are valid for ShopperEntered and AdminEntered ValueTypes.
 	 */
-	protected AttributeValidation validation;
+	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
 		return this.validation;
@@ -169,5 +171,6 @@ public class AttributeDetail implements Serializable
 	public void setValidation(AttributeValidation validation) {
 		this.validation = validation;
 	}
+
 
 }

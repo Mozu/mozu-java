@@ -9,6 +9,8 @@ package com.mozu.api.contracts.customer;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -23,7 +25,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * Unique identifier of the customer associated with the in-stock notification subscription.
 	 */
-	protected Integer customerId;
+	protected  Integer customerId;
 
 	public Integer getCustomerId() {
 		return this.customerId;
@@ -36,7 +38,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String email;
+	protected  String email;
 
 	public String getEmail() {
 		return this.email;
@@ -49,7 +51,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * Unique identifier of the customer in-stock notification subscription.
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -62,7 +64,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * Tenant-defined code that identifies the customer in-stock notification subscription.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -75,7 +77,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -88,7 +90,7 @@ public class InStockNotificationSubscription implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -97,5 +99,6 @@ public class InStockNotificationSubscription implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.PickupItem;
@@ -37,7 +39,7 @@ public class Pickup implements Serializable
 	/**
 	 * The specific code that represents pickup.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -50,7 +52,7 @@ public class Pickup implements Serializable
 	/**
 	 * The date and time the customer picked up the order items.
 	 */
-	protected DateTime fulfillmentDate;
+	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
 		return this.fulfillmentDate;
@@ -63,7 +65,7 @@ public class Pickup implements Serializable
 	/**
 	 * The location code that represents the location where the shopper will fulfill this pickup.
 	 */
-	protected String fulfillmentLocationCode;
+	protected  String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
 		return this.fulfillmentLocationCode;
@@ -76,7 +78,7 @@ public class Pickup implements Serializable
 	/**
 	 * Unique identifier of the in-store pickup.
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -89,7 +91,7 @@ public class Pickup implements Serializable
 	/**
 	 * The fulfillment status of the in-store pickup, which is "Fulfilled," "NotFulfilled," or "PartiallyFulfilled."
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -102,7 +104,7 @@ public class Pickup implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -133,5 +135,6 @@ public class Pickup implements Serializable
 	public void setItems(List<PickupItem> items) {
 		this.items = items;
 	}
+
 
 }

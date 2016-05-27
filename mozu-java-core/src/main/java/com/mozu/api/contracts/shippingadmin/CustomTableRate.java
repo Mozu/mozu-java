@@ -9,6 +9,8 @@ package com.mozu.api.contracts.shippingadmin;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.CustomTableRateContent;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +19,7 @@ public class CustomTableRate implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -27,7 +29,7 @@ public class CustomTableRate implements Serializable
 		this.id = id;
 	}
 
-	protected String rateType;
+	protected  String rateType;
 
 	public String getRateType() {
 		return this.rateType;
@@ -37,7 +39,7 @@ public class CustomTableRate implements Serializable
 		this.rateType = rateType;
 	}
 
-	protected Double value;
+	protected  Double value;
 
 	public Double getValue() {
 		return this.value;
@@ -47,7 +49,7 @@ public class CustomTableRate implements Serializable
 		this.value = value;
 	}
 
-	protected CustomTableRateContent content;
+	protected  CustomTableRateContent content;
 
 	public CustomTableRateContent getContent() {
 		return this.content;
@@ -56,5 +58,6 @@ public class CustomTableRate implements Serializable
 	public void setContent(CustomTableRateContent content) {
 		this.content = content;
 	}
+
 
 }
