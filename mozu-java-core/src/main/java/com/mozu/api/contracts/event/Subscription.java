@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.SubscribingTenant;
 
 /**
@@ -25,7 +26,7 @@ public class Subscription implements Serializable
 	/**
 	 * ApiVersion
 	 */
-	protected String apiVersion;
+	protected  String apiVersion;
 
 	public String getApiVersion() {
 		return this.apiVersion;
@@ -38,7 +39,7 @@ public class Subscription implements Serializable
 	/**
 	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
 	 */
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -51,7 +52,7 @@ public class Subscription implements Serializable
 	/**
 	 * A boolean value that indicates if the subscription endpoint has been confirmed
 	 */
-	protected Boolean confirmed;
+	protected  Boolean confirmed;
 
 	public Boolean getConfirmed() {
 		return this.confirmed;
@@ -64,7 +65,7 @@ public class Subscription implements Serializable
 	/**
 	 * Content type of the payload that will be delivered.  This is utilized in combination with the notification delivery type.  Example:  A HTTP Post (notification delivery type) is performed with a JSON representation of the event data (content type).
 	 */
-	protected String contentType;
+	protected  String contentType;
 
 	public String getContentType() {
 		return this.contentType;
@@ -77,7 +78,7 @@ public class Subscription implements Serializable
 	/**
 	 * Identifier of the user that created the object. System created and read only.
 	 */
-	protected String createBy;
+	protected  String createBy;
 
 	public String getCreateBy() {
 		return this.createBy;
@@ -90,7 +91,7 @@ public class Subscription implements Serializable
 	/**
 	 * The date time in UTC format set when the object was created. 
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -103,7 +104,7 @@ public class Subscription implements Serializable
 	/**
 	 * The delivery endpoint that will receive notifications when events concerning the specified topics on the subscription occur.  The format of the endpoint may differ depending on the notification type.  For example, the endpoint may be a URL in some cases and an email address in others if multiple notification types are available.
 	 */
-	protected String endpoint;
+	protected  String endpoint;
 
 	public String getEndpoint() {
 		return this.endpoint;
@@ -116,7 +117,7 @@ public class Subscription implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -129,7 +130,7 @@ public class Subscription implements Serializable
 	/**
 	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -142,7 +143,7 @@ public class Subscription implements Serializable
 	/**
 	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application.  If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
 	 */
-	protected Boolean noCallback;
+	protected  Boolean noCallback;
 
 	public Boolean getNoCallback() {
 		return this.noCallback;
@@ -155,7 +156,7 @@ public class Subscription implements Serializable
 	/**
 	 * Notification delivery type which is a string representation of an enumeration of values.  Example: Http (this is case insensitive, so http may also be passed in)
 	 */
-	protected String notificationDeliveryType;
+	protected  String notificationDeliveryType;
 
 	public String getNotificationDeliveryType() {
 		return this.notificationDeliveryType;
@@ -179,7 +180,7 @@ public class Subscription implements Serializable
 	/**
 	 * Identifier of the user that updated the entity most recently.
 	 */
-	protected String updateBy;
+	protected  String updateBy;
 
 	public String getUpdateBy() {
 		return this.updateBy;
@@ -192,7 +193,7 @@ public class Subscription implements Serializable
 	/**
 	 * The date and time the object was updated most recently. The date is in UTC format.
 	 */
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -212,5 +213,6 @@ public class Subscription implements Serializable
 	public void setSubscribingTenants(List<SubscribingTenant> subscribingTenants) {
 		this.subscribingTenants = subscribingTenants;
 	}
+
 
 }

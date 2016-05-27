@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.BundledProduct;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
@@ -25,7 +26,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Unique identifier of the attribute's value.
 	 */
-	protected Integer attributeValueId;
+	protected  Integer attributeValueId;
 
 	public Integer getAttributeValueId() {
 		return this.attributeValueId;
@@ -38,7 +39,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * The difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".
 	 */
-	protected Double deltaPrice;
+	protected  Double deltaPrice;
 
 	public Double getDeltaPrice() {
 		return this.deltaPrice;
@@ -51,7 +52,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * The difference between the weight associated with this product, variation option, or extra and the base product. For example, if a product with a monogram weighs an extra 1/4 lb, the DeltaWeight value is "0.25". The amount of the delta is set by the weight type for the storefront.
 	 */
-	protected Double deltaWeight;
+	protected  Double deltaWeight;
 
 	public Double getDeltaWeight() {
 		return this.deltaWeight;
@@ -64,7 +65,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
 	 */
-	protected Boolean isDefault;
+	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
 		return this.isDefault;
@@ -77,7 +78,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
 	 */
-	protected Boolean isEnabled;
+	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
 		return this.isEnabled;
@@ -90,7 +91,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * If true, the entity is selected. If false, the entity is not selected.
 	 */
-	protected Boolean isSelected;
+	protected  Boolean isSelected;
 
 	public Boolean getIsSelected() {
 		return this.isSelected;
@@ -103,7 +104,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * The value a shopper entered for an attribute that requires additional input for the product on a storefront. This entered value is a selected option or entered content for an extra, such as selecting a color or entering content for a monogram.
 	 */
-	protected Object shopperEnteredValue;
+	protected  Object shopperEnteredValue;
 
 	public Object getShopperEnteredValue() {
 		return this.shopperEnteredValue;
@@ -116,7 +117,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -129,7 +130,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -142,7 +143,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * The bundled product of a product as extra
 	 */
-	protected BundledProduct bundledProduct;
+	protected  BundledProduct bundledProduct;
 
 	public BundledProduct getBundledProduct() {
 		return this.bundledProduct;
@@ -155,7 +156,7 @@ public class ProductOptionValue implements Serializable
 	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
-	protected AttributeVocabularyValueDisplayInfo displayInfo;
+	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {
 		return this.displayInfo;
@@ -164,5 +165,6 @@ public class ProductOptionValue implements Serializable
 	public void setDisplayInfo(AttributeVocabularyValueDisplayInfo displayInfo) {
 		this.displayInfo = displayInfo;
 	}
+
 
 }

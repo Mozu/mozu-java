@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an image defined for a product.
@@ -23,7 +24,7 @@ public class ProductImage implements Serializable
 	/**
 	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
 	 */
-	protected String altText;
+	protected  String altText;
 
 	public String getAltText() {
 		return this.altText;
@@ -36,7 +37,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
-	protected String cmsId;
+	protected  String cmsId;
 
 	public String getCmsId() {
 		return this.cmsId;
@@ -49,7 +50,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The localized title for an image that displays on the storefront. If localized, the displayed content is set per the locale code for the site.
 	 */
-	protected String imageLabel;
+	protected  String imageLabel;
 
 	public String getImageLabel() {
 		return this.imageLabel;
@@ -62,7 +63,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The URL link for the image file associated with a product or category.
 	 */
-	protected String imageUrl;
+	protected  String imageUrl;
 
 	public String getImageUrl() {
 		return this.imageUrl;
@@ -75,7 +76,7 @@ public class ProductImage implements Serializable
 	/**
 	 * Type of media specification required to successfully render the image, video, or other media content for products and categories.
 	 */
-	protected String mediaType;
+	protected  String mediaType;
 
 	public String getMediaType() {
 		return this.mediaType;
@@ -88,7 +89,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -101,7 +102,7 @@ public class ProductImage implements Serializable
 	/**
 	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
 	 */
-	protected String videoUrl;
+	protected  String videoUrl;
 
 	public String getVideoUrl() {
 		return this.videoUrl;
@@ -110,5 +111,6 @@ public class ProductImage implements Serializable
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
 	}
+
 
 }

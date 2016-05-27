@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.SiteSearchRelevancyCustomField;
 import com.mozu.api.contracts.productadmin.SiteSearchKeywordRelevancySettings;
 import com.mozu.api.contracts.productadmin.SiteSearchPhraseRelevancySettings;
@@ -38,7 +39,7 @@ public class SiteSearchSettings implements Serializable
 	/**
 	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
 	 */
-	protected Boolean isDefault;
+	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
 		return this.isDefault;
@@ -51,7 +52,7 @@ public class SiteSearchSettings implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.SiteSearchSettings minimumMatchPercent ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer minimumMatchPercent;
+	protected  Integer minimumMatchPercent;
 
 	public Integer getMinimumMatchPercent() {
 		return this.minimumMatchPercent;
@@ -64,7 +65,7 @@ public class SiteSearchSettings implements Serializable
 	/**
 	 * The name for the search settings.
 	 */
-	protected String settingsName;
+	protected  String settingsName;
 
 	public String getSettingsName() {
 		return this.settingsName;
@@ -88,7 +89,7 @@ public class SiteSearchSettings implements Serializable
 	/**
 	 * The site keyword relevancy settings.
 	 */
-	protected SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
+	protected  SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
 
 	public SiteSearchKeywordRelevancySettings getSiteKeywordRelevancy() {
 		return this.siteKeywordRelevancy;
@@ -101,7 +102,7 @@ public class SiteSearchSettings implements Serializable
 	/**
 	 * The site phrase relevancy settings.
 	 */
-	protected SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
+	protected  SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
 
 	public SiteSearchPhraseRelevancySettings getSitePhraseRelevancy() {
 		return this.sitePhraseRelevancy;
@@ -110,5 +111,6 @@ public class SiteSearchSettings implements Serializable
 	public void setSitePhraseRelevancy(SiteSearchPhraseRelevancySettings sitePhraseRelevancy) {
 		this.sitePhraseRelevancy = sitePhraseRelevancy;
 	}
+
 
 }

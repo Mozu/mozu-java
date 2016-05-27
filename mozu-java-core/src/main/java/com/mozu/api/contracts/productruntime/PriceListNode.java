@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductRuntime.Contracts.PriceListNode ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class PriceListNode implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceListNode parentPriceListId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer parentPriceListId;
+	protected  Integer parentPriceListId;
 
 	public Integer getParentPriceListId() {
 		return this.parentPriceListId;
@@ -36,7 +37,7 @@ public class PriceListNode implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -49,7 +50,7 @@ public class PriceListNode implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer priceListId;
+	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
 		return this.priceListId;
@@ -62,7 +63,7 @@ public class PriceListNode implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListLevel ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer priceListLevel;
+	protected  Integer priceListLevel;
 
 	public Integer getPriceListLevel() {
 		return this.priceListLevel;
@@ -71,5 +72,6 @@ public class PriceListNode implements Serializable
 	public void setPriceListLevel(Integer priceListLevel) {
 		this.priceListLevel = priceListLevel;
 	}
+
 
 }

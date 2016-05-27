@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.catalog.admin;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,7 +15,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -118,7 +116,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 */
@@ -133,7 +131,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getPriceList( priceListCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -149,7 +147,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -169,7 +167,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.getPriceList( priceListCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productadmin.PriceList
@@ -264,7 +262,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -281,7 +279,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.updatePriceList( priceList,  priceListCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
@@ -299,7 +297,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PriceList
@@ -321,7 +319,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	CountDownLatch latch = pricelist.updatePriceList( priceList,  priceListCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
@@ -343,7 +341,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return 
 	 */
 	public void deletePriceList(String priceListCode) throws Exception
@@ -357,8 +355,8 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode,  cascadeDeleteEntries);
 	 * </code></pre></p>
-	 * @param cascadeDeleteEntries 
-	 * @param priceListCode 
+	 * @param cascadeDeleteEntries Specifies whether to deletes all price list entries associated with the price list.
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return 
 	 */
 	public void deletePriceList(String priceListCode, Boolean cascadeDeleteEntries) throws Exception

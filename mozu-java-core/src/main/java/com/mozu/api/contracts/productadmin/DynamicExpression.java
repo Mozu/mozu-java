@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Expression;
 
 /**
@@ -24,7 +25,7 @@ public class DynamicExpression implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.DynamicExpression text ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String text;
+	protected  String text;
 
 	public String getText() {
 		return this.text;
@@ -37,7 +38,7 @@ public class DynamicExpression implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.DynamicExpression tree ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Expression tree;
+	protected  Expression tree;
 
 	public Expression getTree() {
 		return this.tree;
@@ -46,5 +47,6 @@ public class DynamicExpression implements Serializable
 	public void setTree(Expression tree) {
 		this.tree = tree;
 	}
+
 
 }

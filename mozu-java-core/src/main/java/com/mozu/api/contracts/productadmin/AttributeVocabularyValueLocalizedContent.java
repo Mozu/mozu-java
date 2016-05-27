@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The localized text for the string value of a product attribute.
@@ -23,7 +24,7 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -36,7 +37,7 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 	/**
 	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
 	 */
-	protected String stringValue;
+	protected  String stringValue;
 
 	public String getStringValue() {
 		return this.stringValue;
@@ -45,5 +46,6 @@ public class AttributeVocabularyValueLocalizedContent implements Serializable
 	public void setStringValue(String stringValue) {
 		this.stringValue = stringValue;
 	}
+
 
 }

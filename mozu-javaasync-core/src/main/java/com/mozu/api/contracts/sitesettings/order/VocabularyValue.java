@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.LocalizedContent;
 
 /**
@@ -25,7 +26,7 @@ public class VocabularyValue implements Serializable
 	/**
 	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -45,5 +46,6 @@ public class VocabularyValue implements Serializable
 	public void setContents(List<LocalizedContent> contents) {
 		this.contents = contents;
 	}
+
 
 }

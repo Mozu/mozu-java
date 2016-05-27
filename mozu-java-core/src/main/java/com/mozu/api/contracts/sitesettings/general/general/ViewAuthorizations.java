@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.general.general;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Set whether you require users to be authenticated to preview content or view the live site.
@@ -23,7 +24,7 @@ public class ViewAuthorizations implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean requireAuthForLive;
+	protected  Boolean requireAuthForLive;
 
 	public Boolean getRequireAuthForLive() {
 		return this.requireAuthForLive;
@@ -36,7 +37,7 @@ public class ViewAuthorizations implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForPending ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean requireAuthForPending;
+	protected  Boolean requireAuthForPending;
 
 	public Boolean getRequireAuthForPending() {
 		return this.requireAuthForPending;
@@ -45,5 +46,6 @@ public class ViewAuthorizations implements Serializable
 	public void setRequireAuthForPending(Boolean requireAuthForPending) {
 		this.requireAuthForPending = requireAuthForPending;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.PropertyType;
 
 /**
@@ -24,7 +25,7 @@ public class Property implements Serializable
 	/**
 	 * If true, the attribute can have more than one value.
 	 */
-	protected Boolean isMultiValued;
+	protected  Boolean isMultiValued;
 
 	public Boolean getIsMultiValued() {
 		return this.isMultiValued;
@@ -37,7 +38,7 @@ public class Property implements Serializable
 	/**
 	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
 	 */
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -50,7 +51,7 @@ public class Property implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -63,7 +64,7 @@ public class Property implements Serializable
 	/**
 	 * The type of a property. These types are associated to properties for documents and document types.
 	 */
-	protected PropertyType propertyType;
+	protected  PropertyType propertyType;
 
 	public PropertyType getPropertyType() {
 		return this.propertyType;
@@ -72,5 +73,6 @@ public class Property implements Serializable
 	public void setPropertyType(PropertyType propertyType) {
 		this.propertyType = propertyType;
 	}
+
 
 }

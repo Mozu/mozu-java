@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an adjustment to the active product inventory of a specific location.
@@ -23,7 +24,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -36,7 +37,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -49,7 +50,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * The type of inventory adjustment to perform, which is "Absolute" or "Delta". If adjusting by an absolute value, enter the integer in the Value parameter. If adjusting by a delta value, enter the delta in the Value parameter.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -62,7 +63,7 @@ public class LocationInventoryAdjustment implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Integer value;
+	protected  Integer value;
 
 	public Integer getValue() {
 		return this.value;
@@ -71,5 +72,6 @@ public class LocationInventoryAdjustment implements Serializable
 	public void setValue(Integer value) {
 		this.value = value;
 	}
+
 
 }

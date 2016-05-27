@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an inventory definition that defines the level of inventory for a specific product at a given location.
@@ -23,7 +24,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -36,7 +37,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -49,7 +50,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.LocationInventory softStockAvailable ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer softStockAvailable;
+	protected  Integer softStockAvailable;
 
 	public Integer getSoftStockAvailable() {
 		return this.softStockAvailable;
@@ -62,7 +63,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
 	 */
-	protected Integer stockAvailable;
+	protected  Integer stockAvailable;
 
 	public Integer getStockAvailable() {
 		return this.stockAvailable;
@@ -71,5 +72,6 @@ public class LocationInventory implements Serializable
 	public void setStockAvailable(Integer stockAvailable) {
 		this.stockAvailable = stockAvailable;
 	}
+
 
 }

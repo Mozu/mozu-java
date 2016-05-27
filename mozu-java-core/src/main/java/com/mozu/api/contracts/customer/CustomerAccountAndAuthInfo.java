@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CustomerAccount;
 
 /**
@@ -24,7 +25,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * Mozu.Customer.Contracts.CustomerAccountAndAuthInfo externalPassword ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String externalPassword;
+	protected  String externalPassword;
 
 	public String getExternalPassword() {
 		return this.externalPassword;
@@ -37,7 +38,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
 	 */
-	protected Boolean isImport;
+	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
 		return this.isImport;
@@ -50,7 +51,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * The saved password for the customer account. 
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -63,7 +64,7 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	/**
 	 * The unique identifier of the customer account.
 	 */
-	protected CustomerAccount account;
+	protected  CustomerAccount account;
 
 	public CustomerAccount getAccount() {
 		return this.account;
@@ -72,5 +73,6 @@ public class CustomerAccountAndAuthInfo implements Serializable
 	public void setAccount(CustomerAccount account) {
 		this.account = account;
 	}
+
 
 }

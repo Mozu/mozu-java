@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Attribute;
 
 /**
@@ -25,7 +26,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Comma delimited list of attribute codes.
 	 */
-	protected String attributeCodes;
+	protected  String attributeCodes;
 
 	public String getAttributeCodes() {
 		return this.attributeCodes;
@@ -38,7 +39,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * json representation of attribute definitions
 	 */
-	protected String attributeJson;
+	protected  String attributeJson;
 
 	public String getAttributeJson() {
 		return this.attributeJson;
@@ -51,7 +52,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationAttribute isAppliedToBase ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isAppliedToBase;
+	protected  Boolean isAppliedToBase;
 
 	public Boolean getIsAppliedToBase() {
 		return this.isAppliedToBase;
@@ -64,7 +65,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationAttribute packageId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer packageId;
+	protected  Integer packageId;
 
 	public Integer getPackageId() {
 		return this.packageId;
@@ -77,7 +78,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Will contain ProductTypeCollection if Product, else AttributeSet
 	 */
-	protected String productTypeJson;
+	protected  String productTypeJson;
 
 	public String getProductTypeJson() {
 		return this.productTypeJson;
@@ -90,7 +91,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Source Tenant Id
 	 */
-	protected Integer sourceTenantId;
+	protected  Integer sourceTenantId;
 
 	public Integer getSourceTenantId() {
 		return this.sourceTenantId;
@@ -103,7 +104,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Source Tenant Name
 	 */
-	protected String sourceTenantName;
+	protected  String sourceTenantName;
 
 	public String getSourceTenantName() {
 		return this.sourceTenantName;
@@ -116,7 +117,7 @@ public class ApplicationAttribute implements Serializable
 	/**
 	 * Customer, Order, or Product
 	 */
-	protected String subsystem;
+	protected  String subsystem;
 
 	public String getSubsystem() {
 		return this.subsystem;
@@ -136,5 +137,6 @@ public class ApplicationAttribute implements Serializable
 	public void setAttributes(List<Attribute> attributes) {
 		this.attributes = attributes;
 	}
+
 
 }

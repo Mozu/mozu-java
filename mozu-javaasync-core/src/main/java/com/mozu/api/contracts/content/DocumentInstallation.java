@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for the document installation package and data. This information details the installation of document content and files within the site. 
@@ -23,7 +24,7 @@ public class DocumentInstallation implements Serializable
 	/**
 	 * Fully qualified name of the document type. 
 	 */
-	protected String documentTypeFQN;
+	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
 		return this.documentTypeFQN;
@@ -36,7 +37,7 @@ public class DocumentInstallation implements Serializable
 	/**
 	 * Localized properties for the document installation package and data. This information details the installation of document content and files within the site and is localized based on the `localeCode`.
 	 */
-	protected String locale;
+	protected  String locale;
 
 	public String getLocale() {
 		return this.locale;
@@ -49,7 +50,7 @@ public class DocumentInstallation implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -62,7 +63,7 @@ public class DocumentInstallation implements Serializable
 	/**
 	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode properties;
+	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 
 	public com.fasterxml.jackson.databind.JsonNode getProperties() {
 		return this.properties;
@@ -70,6 +71,23 @@ public class DocumentInstallation implements Serializable
 
 	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
 		this.properties = properties;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(properties == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, properties);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.properties = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

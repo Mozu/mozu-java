@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.carts;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Product;
 
 /**
@@ -25,7 +26,7 @@ public class CartMessage implements Serializable
 	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -38,7 +39,7 @@ public class CartMessage implements Serializable
 	/**
 	 * Mozu.CommerceRuntime.Contracts.Carts.CartMessage messageType ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String messageType;
+	protected  String messageType;
 
 	public String getMessageType() {
 		return this.messageType;
@@ -58,5 +59,6 @@ public class CartMessage implements Serializable
 	public void setProductsRemoved(List<Product> productsRemoved) {
 		this.productsRemoved = productsRemoved;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.CategoryImage;
 
 /**
@@ -25,7 +26,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -38,7 +39,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagDescription;
+	protected  String metaTagDescription;
 
 	public String getMetaTagDescription() {
 		return this.metaTagDescription;
@@ -51,7 +52,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagKeywords;
+	protected  String metaTagKeywords;
 
 	public String getMetaTagKeywords() {
 		return this.metaTagKeywords;
@@ -64,7 +65,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
-	protected String metaTagTitle;
+	protected  String metaTagTitle;
 
 	public String getMetaTagTitle() {
 		return this.metaTagTitle;
@@ -77,7 +78,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -90,7 +91,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Title that appears on new product category pages, in the language specified by the `localeCode`.
 	 */
-	protected String pageTitle;
+	protected  String pageTitle;
 
 	public String getPageTitle() {
 		return this.pageTitle;
@@ -103,7 +104,7 @@ public class CategoryContent implements Serializable
 	/**
 	 * Slug is used in place of a name, code, or ID to give an SEO, human-friendly URL link for an object, used by categories.
 	 */
-	protected String slug;
+	protected  String slug;
 
 	public String getSlug() {
 		return this.slug;
@@ -123,5 +124,6 @@ public class CategoryContent implements Serializable
 	public void setCategoryImages(List<CategoryImage> categoryImages) {
 		this.categoryImages = categoryImages;
 	}
+
 
 }

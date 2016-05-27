@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the conditions that must be met for a discount to apply to a product category.
@@ -23,7 +24,7 @@ public class CategoryDiscountCondition implements Serializable
 	/**
 	 * Unique identifier of a category. 
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -32,5 +33,6 @@ public class CategoryDiscountCondition implements Serializable
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
@@ -23,7 +24,7 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected Integer catalogId;
+	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
 		return this.catalogId;
@@ -36,7 +37,7 @@ public class Category implements Serializable
 	/**
 	 * External unique identifier of the category.
 	 */
-	protected String categoryCode;
+	protected  String categoryCode;
 
 	public String getCategoryCode() {
 		return this.categoryCode;
@@ -49,7 +50,7 @@ public class Category implements Serializable
 	/**
 	 * The Type of Category Static, Dyanmic, DynamicPreComputed
 	 */
-	protected String categoryType;
+	protected  String categoryType;
 
 	public String getCategoryType() {
 		return this.categoryType;
@@ -62,7 +63,7 @@ public class Category implements Serializable
 	/**
 	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
 	 */
-	protected Integer childCount;
+	protected  Integer childCount;
 
 	public Integer getChildCount() {
 		return this.childCount;
@@ -75,7 +76,7 @@ public class Category implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -88,7 +89,7 @@ public class Category implements Serializable
 	/**
 	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
-	protected Boolean isDisplayed;
+	protected  Boolean isDisplayed;
 
 	public Boolean getIsDisplayed() {
 		return this.isDisplayed;
@@ -101,7 +102,7 @@ public class Category implements Serializable
 	/**
 	 * Identifier of the parent or top-level category.
 	 */
-	protected Integer parentCategoryId;
+	protected  Integer parentCategoryId;
 
 	public Integer getParentCategoryId() {
 		return this.parentCategoryId;
@@ -114,7 +115,7 @@ public class Category implements Serializable
 	/**
 	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
 	 */
-	protected Integer productCount;
+	protected  Integer productCount;
 
 	public Integer getProductCount() {
 		return this.productCount;
@@ -127,7 +128,7 @@ public class Category implements Serializable
 	/**
 	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -140,7 +141,7 @@ public class Category implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -153,7 +154,7 @@ public class Category implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected CategoryLocalizedContent content;
+	protected  CategoryLocalizedContent content;
 
 	public CategoryLocalizedContent getContent() {
 		return this.content;
@@ -166,7 +167,7 @@ public class Category implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DynamicExpression dynamicExpression;
+	protected  DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {
 		return this.dynamicExpression;
@@ -175,5 +176,6 @@ public class Category implements Serializable
 	public void setDynamicExpression(DynamicExpression dynamicExpression) {
 		this.dynamicExpression = dynamicExpression;
 	}
+
 
 }

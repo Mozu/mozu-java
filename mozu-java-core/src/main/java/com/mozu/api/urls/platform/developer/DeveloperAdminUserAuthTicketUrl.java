@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.platform.developer;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 

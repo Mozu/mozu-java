@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.EventDeliveryAttempt;
 import com.mozu.api.contracts.event.EventSummary;
 
@@ -26,7 +27,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * The date time in UTC format set when the object was created. 
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -39,7 +40,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * Status of the delivery process `EventDeliveryStatusType`. System-supplied and read-only.
 	 */
-	protected String deliveryStatus;
+	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
 		return this.deliveryStatus;
@@ -52,7 +53,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -65,7 +66,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * Indicates whether delivery of the event is currently being attempted at this moment in time
 	 */
-	protected Boolean isRunning;
+	protected  Boolean isRunning;
 
 	public Boolean getIsRunning() {
 		return this.isRunning;
@@ -78,7 +79,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * The date that the delivery was last attempted (either successfully or not)
 	 */
-	protected DateTime lastExecutionDate;
+	protected  DateTime lastExecutionDate;
 
 	public DateTime getLastExecutionDate() {
 		return this.lastExecutionDate;
@@ -91,7 +92,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * The date that the delivery will next be attempted, if the event has not been successfully delivered yet and there are still retries remaining
 	 */
-	protected DateTime nextExecutionDate;
+	protected  DateTime nextExecutionDate;
 
 	public DateTime getNextExecutionDate() {
 		return this.nextExecutionDate;
@@ -104,7 +105,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * Number of delivery attempts remaining
 	 */
-	protected Integer retriesRemaining;
+	protected  Integer retriesRemaining;
 
 	public Integer getRetriesRemaining() {
 		return this.retriesRemaining;
@@ -117,7 +118,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * The date and time the object was updated most recently. The date is in UTC format.
 	 */
-	protected DateTime updateDate;
+	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
 		return this.updateDate;
@@ -141,7 +142,7 @@ public class EventDeliverySummary implements Serializable
 	/**
 	 * Event Summary
 	 */
-	protected EventSummary eventSummary;
+	protected  EventSummary eventSummary;
 
 	public EventSummary getEventSummary() {
 		return this.eventSummary;
@@ -150,5 +151,6 @@ public class EventDeliverySummary implements Serializable
 	public void setEventSummary(EventSummary eventSummary) {
 		this.eventSummary = eventSummary;
 	}
+
 
 }

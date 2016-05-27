@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.catalog.admin.products;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -103,7 +101,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * Retrieves a list of details of the localized price values for a product variation.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrices( productCode,  variationKey);
@@ -123,7 +121,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
@@ -140,7 +138,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields);
@@ -279,7 +277,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Adds the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey);
@@ -297,7 +295,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Adds the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields);
@@ -385,7 +383,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * Updates a list of localized price values for a product variation.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey);
@@ -407,7 +405,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Updates the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode);
@@ -426,7 +424,7 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Updates the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);

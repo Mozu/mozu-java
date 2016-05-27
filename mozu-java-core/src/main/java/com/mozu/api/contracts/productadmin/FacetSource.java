@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Describes the source of the facet data. It can be a product field (such as price and category) or a product attribute. 			All fields are System-supplied and read only.		
@@ -23,7 +24,7 @@ public class FacetSource implements Serializable
 	/**
 	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300. This is only allowed for numeric and date fields. 
 	 */
-	protected Boolean allowsRangeQuery;
+	protected  Boolean allowsRangeQuery;
 
 	public Boolean getAllowsRangeQuery() {
 		return this.allowsRangeQuery;
@@ -36,7 +37,7 @@ public class FacetSource implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -49,7 +50,7 @@ public class FacetSource implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -62,7 +63,7 @@ public class FacetSource implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -75,7 +76,7 @@ public class FacetSource implements Serializable
 	/**
 	 * The source type for the facet, either "Attribute" or "Element".  Elements are direct properties of the product and include category and price.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -84,5 +85,6 @@ public class FacetSource implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

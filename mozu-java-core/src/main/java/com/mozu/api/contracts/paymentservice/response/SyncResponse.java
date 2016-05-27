@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice.response;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.PaymentService.Contracts.Response.SyncResponse ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class SyncResponse implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -36,7 +37,7 @@ public class SyncResponse implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.Response.SyncResponse isSuccessful ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isSuccessful;
+	protected  Boolean isSuccessful;
 
 	public Boolean getIsSuccessful() {
 		return this.isSuccessful;
@@ -49,7 +50,7 @@ public class SyncResponse implements Serializable
 	/**
 	 * Credit card Number Part
 	 */
-	protected String numberPart;
+	protected  String numberPart;
 
 	public String getNumberPart() {
 		return this.numberPart;
@@ -58,5 +59,6 @@ public class SyncResponse implements Serializable
 	public void setNumberPart(String numberPart) {
 		this.numberPart = numberPart;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The cost a client pays the supplier to stock the product.
@@ -23,7 +24,7 @@ public class ProductCost implements Serializable
 	/**
 	 * The amount paid by the client to stock the product.
 	 */
-	protected Double cost;
+	protected  Double cost;
 
 	public Double getCost() {
 		return this.cost;
@@ -36,7 +37,7 @@ public class ProductCost implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String isoCurrencyCode;
+	protected  String isoCurrencyCode;
 
 	public String getIsoCurrencyCode() {
 		return this.isoCurrencyCode;
@@ -45,5 +46,6 @@ public class ProductCost implements Serializable
 	public void setIsoCurrencyCode(String isoCurrencyCode) {
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
+
 
 }

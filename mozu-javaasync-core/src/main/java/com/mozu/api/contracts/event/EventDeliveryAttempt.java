@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.event;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.event.HttpStatus;
 
 /**
@@ -24,7 +25,7 @@ public class EventDeliveryAttempt implements Serializable
 	/**
 	 * Status of the delivery process `EventDeliveryStatusType`. System-supplied and read-only.
 	 */
-	protected String deliveryStatus;
+	protected  String deliveryStatus;
 
 	public String getDeliveryStatus() {
 		return this.deliveryStatus;
@@ -37,7 +38,7 @@ public class EventDeliveryAttempt implements Serializable
 	/**
 	 * Type of error that occurred, if the delivery was unsuccessful
 	 */
-	protected String errorType;
+	protected  String errorType;
 
 	public String getErrorType() {
 		return this.errorType;
@@ -50,7 +51,7 @@ public class EventDeliveryAttempt implements Serializable
 	/**
 	 * The date that the delivery was attempted
 	 */
-	protected DateTime executionDate;
+	protected  DateTime executionDate;
 
 	public DateTime getExecutionDate() {
 		return this.executionDate;
@@ -63,7 +64,7 @@ public class EventDeliveryAttempt implements Serializable
 	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -76,7 +77,7 @@ public class EventDeliveryAttempt implements Serializable
 	/**
 	 * The HTTP Status (code and name) returned by the remote endpoint
 	 */
-	protected HttpStatus httpStatus;
+	protected  HttpStatus httpStatus;
 
 	public HttpStatus getHttpStatus() {
 		return this.httpStatus;
@@ -85,5 +86,6 @@ public class EventDeliveryAttempt implements Serializable
 	public void setHttpStatus(HttpStatus httpStatus) {
 		this.httpStatus = httpStatus;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.pricingruntime.thirdparty;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.thirdparty.ItemTaxContext;
 
 /**
@@ -25,7 +26,7 @@ public class OrderTaxContext implements Serializable
 	/**
 	 * Tax amount applied to the handling fee defined for orders on this site.
 	 */
-	protected Double handlingFeeTax;
+	protected  Double handlingFeeTax;
 
 	public Double getHandlingFeeTax() {
 		return this.handlingFeeTax;
@@ -38,7 +39,7 @@ public class OrderTaxContext implements Serializable
 	/**
 	 * Tax amount applied to the order.
 	 */
-	protected Double orderTax;
+	protected  Double orderTax;
 
 	public Double getOrderTax() {
 		return this.orderTax;
@@ -51,7 +52,7 @@ public class OrderTaxContext implements Serializable
 	/**
 	 * Amount of tax applied to shipping costs for line items in and entire orders.
 	 */
-	protected Double shippingTax;
+	protected  Double shippingTax;
 
 	public Double getShippingTax() {
 		return this.shippingTax;
@@ -71,5 +72,6 @@ public class OrderTaxContext implements Serializable
 	public void setItemTaxContexts(List<ItemTaxContext> itemTaxContexts) {
 		this.itemTaxContexts = itemTaxContexts;
 	}
+
 
 }

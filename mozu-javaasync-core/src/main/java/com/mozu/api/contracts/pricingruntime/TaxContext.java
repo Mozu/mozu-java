@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.pricingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 
 /**
@@ -24,7 +25,7 @@ public class TaxContext implements Serializable
 	/**
 	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
 	 */
-	protected String customerId;
+	protected  String customerId;
 
 	public String getCustomerId() {
 		return this.customerId;
@@ -37,7 +38,7 @@ public class TaxContext implements Serializable
 	/**
 	 * Unique identifier of the tax context.
 	 */
-	protected String taxContextId;
+	protected  String taxContextId;
 
 	public String getTaxContextId() {
 		return this.taxContextId;
@@ -50,7 +51,7 @@ public class TaxContext implements Serializable
 	/**
 	 * If the order is exempt from sales tax, the unique identifier of the tax exempt entity.
 	 */
-	protected String taxExemptId;
+	protected  String taxExemptId;
 
 	public String getTaxExemptId() {
 		return this.taxExemptId;
@@ -63,7 +64,7 @@ public class TaxContext implements Serializable
 	/**
 	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
 	 */
-	protected Address destinationAddress;
+	protected  Address destinationAddress;
 
 	public Address getDestinationAddress() {
 		return this.destinationAddress;
@@ -76,7 +77,7 @@ public class TaxContext implements Serializable
 	/**
 	 * The physical address from which the order or shipment will ship.
 	 */
-	protected Address originAddress;
+	protected  Address originAddress;
 
 	public Address getOriginAddress() {
 		return this.originAddress;
@@ -85,5 +86,6 @@ public class TaxContext implements Serializable
 	public void setOriginAddress(Address originAddress) {
 		this.originAddress = originAddress;
 	}
+
 
 }

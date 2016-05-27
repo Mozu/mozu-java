@@ -6,25 +6,23 @@
  */
 package com.mozu.api.clients.commerce.shipping.admin;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Carrier Configuration for managing credentials and some settings for the various carriers installed with the default mozu application
  * </summary>
  */
 public class CarrierConfigurationClient {
 	
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection> mozuClient=GetConfigurationsClient();
 	 * client.setBaseAddress(url);
@@ -40,18 +38,18 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection> mozuClient=GetConfigurationsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfigurationCollection carrierConfigurationCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter 
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
 	 */
@@ -68,14 +66,14 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=GetConfigurationClient( carrierId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 */
@@ -85,15 +83,15 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Get Carrier Configuration (for this particular site)
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=GetConfigurationClient( carrierId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 */
@@ -110,15 +108,15 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=CreateConfigurationClient( carrierConfiguration,  carrierId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -129,16 +127,16 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Create Carrier Configuration
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=CreateConfigurationClient( carrierConfiguration,  carrierId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -157,15 +155,15 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=UpdateConfigurationClient( carrierConfiguration,  carrierId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -176,16 +174,16 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Update an existing Carrier Configuration
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.CarrierConfiguration> mozuClient=UpdateConfigurationClient( carrierConfiguration,  carrierId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CarrierConfiguration carrierConfiguration = client.Result();
 	 * </code></pre></p>
-	 * @param carrierId 
-	 * @param responseFields 
-	 * @param carrierConfiguration 
+	 * @param carrierId The unique identifier of the carrier.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param carrierConfiguration Properties of a carrier configured in the shipping admin.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.CarrierConfiguration>
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfiguration
@@ -204,13 +202,13 @@ public class CarrierConfigurationClient {
 	}
 
 	/**
-	 * 
+	 * Delete an existing Carrier Configuration
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteConfigurationClient( carrierId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param carrierId 
+	 * @param carrierId The unique identifier of the carrier configuration.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteConfigurationClient(String carrierId) throws Exception

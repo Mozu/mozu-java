@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the authentication ticket refresh requests, which includes the refresh token string.
@@ -23,7 +24,7 @@ public class AuthTicketRequest implements Serializable
 	/**
 	 * Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
 	 */
-	protected String refreshToken;
+	protected  String refreshToken;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -32,5 +33,6 @@ public class AuthTicketRequest implements Serializable
 	public void setRefreshToken(String refreshToken) {
 		this.refreshToken = refreshToken;
 	}
+
 
 }

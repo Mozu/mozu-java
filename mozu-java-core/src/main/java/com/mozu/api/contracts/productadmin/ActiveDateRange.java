@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.ActiveDateRange ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ActiveDateRange implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.ActiveDateRange endDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime endDate;
+	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
 		return this.endDate;
@@ -36,7 +37,7 @@ public class ActiveDateRange implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.ActiveDateRange startDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime startDate;
+	protected  DateTime startDate;
 
 	public DateTime getStartDate() {
 		return this.startDate;
@@ -45,5 +46,6 @@ public class ActiveDateRange implements Serializable
 	public void setStartDate(DateTime startDate) {
 		this.startDate = startDate;
 	}
+
 
 }

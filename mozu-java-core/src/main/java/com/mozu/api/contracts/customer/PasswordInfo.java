@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The information required to modify a shopper account password.
@@ -23,7 +24,7 @@ public class PasswordInfo implements Serializable
 	/**
 	 * The External Password, typically used for imports in conjunction with a custom action
 	 */
-	protected String externalPassword;
+	protected  String externalPassword;
 
 	public String getExternalPassword() {
 		return this.externalPassword;
@@ -36,7 +37,7 @@ public class PasswordInfo implements Serializable
 	/**
 	 * The new password entered and saved by the user of the account. 
 	 */
-	protected String newPassword;
+	protected  String newPassword;
 
 	public String getNewPassword() {
 		return this.newPassword;
@@ -49,7 +50,7 @@ public class PasswordInfo implements Serializable
 	/**
 	 * The previous shopper account password value.
 	 */
-	protected String oldPassword;
+	protected  String oldPassword;
 
 	public String getOldPassword() {
 		return this.oldPassword;
@@ -58,5 +59,6 @@ public class PasswordInfo implements Serializable
 	public void setOldPassword(String oldPassword) {
 		this.oldPassword = oldPassword;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.CategorySequence ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class CategorySequence implements Serializable
 	/**
 	 * Unique identifier of a category. 
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -36,7 +37,7 @@ public class CategorySequence implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.CategorySequence parentCategoryId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer parentCategoryId;
+	protected  Integer parentCategoryId;
 
 	public Integer getParentCategoryId() {
 		return this.parentCategoryId;
@@ -49,7 +50,7 @@ public class CategorySequence implements Serializable
 	/**
 	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -58,5 +59,6 @@ public class CategorySequence implements Serializable
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
 	}
+
 
 }

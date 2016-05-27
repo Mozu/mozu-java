@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class CustomerNote implements Serializable
 	/**
 	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
 	 */
-	protected String content;
+	protected  String content;
 
 	public String getContent() {
 		return this.content;
@@ -37,7 +38,7 @@ public class CustomerNote implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -50,7 +51,7 @@ public class CustomerNote implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -59,5 +60,6 @@ public class CustomerNote implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

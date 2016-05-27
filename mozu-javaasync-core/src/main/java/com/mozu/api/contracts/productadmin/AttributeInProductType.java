@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Attribute;
 import com.mozu.api.contracts.productadmin.AttributeInProductTypeDisplayInfo;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueInProductType;
@@ -27,7 +28,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -40,7 +41,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If true, this property is not available on the storefront. If false, this property will be available on storefront. The IsHiddenProperty hides the property from the customer, but is still available from the API.
 	 */
-	protected Boolean isAdminOnlyProperty;
+	protected  Boolean isAdminOnlyProperty;
 
 	public Boolean getIsAdminOnlyProperty() {
 		return this.isAdminOnlyProperty;
@@ -53,7 +54,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If true, this property is hidden on the storefront. If false, this property is not hidden from the storefront.
 	 */
-	protected Boolean isHiddenProperty;
+	protected  Boolean isHiddenProperty;
 
 	public Boolean getIsHiddenProperty() {
 		return this.isHiddenProperty;
@@ -66,7 +67,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If true, this entity is inherited from the base type. If false, this entity is not inherited from the base type.
 	 */
-	protected Boolean isInheritedFromBaseType;
+	protected  Boolean isInheritedFromBaseType;
 
 	public Boolean getIsInheritedFromBaseType() {
 		return this.isInheritedFromBaseType;
@@ -79,7 +80,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If true, this attribute has more than one possible value.
 	 */
-	protected Boolean isMultiValueProperty;
+	protected  Boolean isMultiValueProperty;
 
 	public Boolean getIsMultiValueProperty() {
 		return this.isMultiValueProperty;
@@ -92,7 +93,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If True this property will not be returned storefront product listings (Search,GetProduct) it will still be returned on GetProduct, ValidateProduct...)
 	 */
-	protected Boolean isProductDetailsOnlyProperty;
+	protected  Boolean isProductDetailsOnlyProperty;
 
 	public Boolean getIsProductDetailsOnlyProperty() {
 		return this.isProductDetailsOnlyProperty;
@@ -105,7 +106,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * If true, the entity is required by the admin. If false, the entity is not required by the admin.
 	 */
-	protected Boolean isRequiredByAdmin;
+	protected  Boolean isRequiredByAdmin;
 
 	public Boolean getIsRequiredByAdmin() {
 		return this.isRequiredByAdmin;
@@ -118,7 +119,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * Integer that represents the sequence order of the attribute.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -131,7 +132,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
-	protected Attribute attributeDetail;
+	protected  Attribute attributeDetail;
 
 	public Attribute getAttributeDetail() {
 		return this.attributeDetail;
@@ -144,7 +145,7 @@ public class AttributeInProductType implements Serializable
 	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
-	protected AttributeInProductTypeDisplayInfo displayInfo;
+	protected  AttributeInProductTypeDisplayInfo displayInfo;
 
 	public AttributeInProductTypeDisplayInfo getDisplayInfo() {
 		return this.displayInfo;
@@ -164,5 +165,6 @@ public class AttributeInProductType implements Serializable
 	public void setVocabularyValues(List<AttributeVocabularyValueInProductType> vocabularyValues) {
 		this.vocabularyValues = vocabularyValues;
 	}
+
 
 }

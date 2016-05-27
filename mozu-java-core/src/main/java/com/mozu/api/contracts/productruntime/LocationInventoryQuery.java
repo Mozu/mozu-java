@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for the product location inventory provided for queries to locate products by their location.
@@ -42,5 +43,6 @@ public class LocationInventoryQuery implements Serializable
 	public void setProductCodes(List<String> productCodes) {
 		this.productCodes = productCodes;
 	}
+
 
 }

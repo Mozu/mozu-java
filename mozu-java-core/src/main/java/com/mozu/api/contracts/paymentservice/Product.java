@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
@@ -23,7 +24,7 @@ public class Product implements Serializable
 	/**
 	 * The unique, user-defined  product code of a product, used throughout Mozu to reference and associate to a product.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -36,7 +37,7 @@ public class Product implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -49,7 +50,7 @@ public class Product implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.Product variantProductCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String variantProductCode;
+	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
 		return this.variantProductCode;
@@ -58,5 +59,6 @@ public class Product implements Serializable
 	public void setVariantProductCode(String variantProductCode) {
 		this.variantProductCode = variantProductCode;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.Product;
 
 /**
@@ -24,7 +25,7 @@ public class OrderItem implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -37,7 +38,7 @@ public class OrderItem implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -50,7 +51,7 @@ public class OrderItem implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.OrderItem taxAmount ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double taxAmount;
+	protected  Double taxAmount;
 
 	public Double getTaxAmount() {
 		return this.taxAmount;
@@ -63,7 +64,7 @@ public class OrderItem implements Serializable
 	/**
 	 * Mozu.PaymentService.Contracts.OrderItem totalAmount ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double totalAmount;
+	protected  Double totalAmount;
 
 	public Double getTotalAmount() {
 		return this.totalAmount;
@@ -76,7 +77,7 @@ public class OrderItem implements Serializable
 	/**
 	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
 	 */
-	protected Double unitPrice;
+	protected  Double unitPrice;
 
 	public Double getUnitPrice() {
 		return this.unitPrice;
@@ -89,7 +90,7 @@ public class OrderItem implements Serializable
 	/**
 	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
 	 */
-	protected Product product;
+	protected  Product product;
 
 	public Product getProduct() {
 		return this.product;
@@ -98,5 +99,6 @@ public class OrderItem implements Serializable
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+
 
 }

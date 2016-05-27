@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductOptionValue;
 
 /**
@@ -25,7 +26,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -45,5 +46,6 @@ public class ProductOption implements Serializable
 	public void setValues(List<ProductOptionValue> values) {
 		this.values = values;
 	}
+
 
 }

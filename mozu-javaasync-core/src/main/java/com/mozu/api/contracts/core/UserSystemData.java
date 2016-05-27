@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	System-supplied and read-only information about the user.
@@ -23,7 +24,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createdOn;
+	protected  DateTime createdOn;
 
 	public DateTime getCreatedOn() {
 		return this.createdOn;
@@ -36,7 +37,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The total number of failed authentication attempts associated with a customer account attempting access.
 	 */
-	protected Byte failedLoginAttemptCount;
+	protected  Byte failedLoginAttemptCount;
 
 	public Byte getFailedLoginAttemptCount() {
 		return this.failedLoginAttemptCount;
@@ -49,7 +50,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The date and time the initial login was unsuccessful. System-supplied and read only. Each time user authentication fails, an update occurs on this field. The amount of failures is calculated together for `failedLoginAttemptCount`.
 	 */
-	protected DateTime firstFailedLoginAttemptOn;
+	protected  DateTime firstFailedLoginAttemptOn;
 
 	public DateTime getFirstFailedLoginAttemptOn() {
 		return this.firstFailedLoginAttemptOn;
@@ -62,7 +63,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
 	 */
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -75,7 +76,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Indicates if the customer account must have the password changed on login. If true, the login action requires a password change for increased security. If false, the login does not require a password change.
 	 */
-	protected Boolean isPasswordChangeRequired;
+	protected  Boolean isPasswordChangeRequired;
 
 	public Boolean getIsPasswordChangeRequired() {
 		return this.isPasswordChangeRequired;
@@ -88,7 +89,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Provides date and time data when the customer's account was last locked. System-supplied and read-only.
 	 */
-	protected DateTime lastLockedOn;
+	protected  DateTime lastLockedOn;
 
 	public DateTime getLastLockedOn() {
 		return this.lastLockedOn;
@@ -101,7 +102,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Provides the date and time the customer last logged into the store. System-supplied and read-only.
 	 */
-	protected DateTime lastLoginOn;
+	protected  DateTime lastLoginOn;
 
 	public DateTime getLastLoginOn() {
 		return this.lastLoginOn;
@@ -114,7 +115,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Date and time the customer's password was last modified. System-supplied and read-only.
 	 */
-	protected DateTime lastPasswordChangeOn;
+	protected  DateTime lastPasswordChangeOn;
 
 	public DateTime getLastPasswordChangeOn() {
 		return this.lastPasswordChangeOn;
@@ -127,7 +128,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * The number of login attempts remaining for the customer. The user must login successfully before this value reaches zero otherwise the account locks.
 	 */
-	protected Integer remainingLoginAttempts;
+	protected  Integer remainingLoginAttempts;
 
 	public Integer getRemainingLoginAttempts() {
 		return this.remainingLoginAttempts;
@@ -140,7 +141,7 @@ public class UserSystemData implements Serializable
 	/**
 	 * Date and time when the entity was last updated, represented in UTC Date/Time.
 	 */
-	protected DateTime updatedOn;
+	protected  DateTime updatedOn;
 
 	public DateTime getUpdatedOn() {
 		return this.updatedOn;
@@ -149,5 +150,6 @@ public class UserSystemData implements Serializable
 	public void setUpdatedOn(DateTime updatedOn) {
 		this.updatedOn = updatedOn;
 	}
+
 
 }

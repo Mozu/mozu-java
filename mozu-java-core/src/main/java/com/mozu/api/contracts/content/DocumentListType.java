@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.content;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.content.DocumentInstallation;
 import com.mozu.api.contracts.content.View;
 
@@ -26,7 +27,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * The fully qualified name for the document list type for content. 
 	 */
-	protected String documentListTypeFQN;
+	protected  String documentListTypeFQN;
 
 	public String getDocumentListTypeFQN() {
 		return this.documentListTypeFQN;
@@ -50,7 +51,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * Determines if documentLists belonging to this documentListType have ActiveDateRanges turned on or off. Each documentList created from the documentListType will use this value, but it can be overridden in an individual documentList.
 	 */
-	protected Boolean enableActiveDateRanges;
+	protected  Boolean enableActiveDateRanges;
 
 	public Boolean getEnableActiveDateRanges() {
 		return this.enableActiveDateRanges;
@@ -63,7 +64,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * Indicates if the document list and document list type are enabled to publish. If true, publishing of draft documents in this document list/document list type is enabled for the site. If false, all document changes are immediately published in live mode.
 	 */
-	protected Boolean enablePublishing;
+	protected  Boolean enablePublishing;
 
 	public Boolean getEnablePublishing() {
 		return this.enablePublishing;
@@ -76,7 +77,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * The package of document lists and content documents to be installed.
 	 */
-	protected String installationPackage;
+	protected  String installationPackage;
 
 	public String getInstallationPackage() {
 		return this.installationPackage;
@@ -89,7 +90,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -102,7 +103,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -115,7 +116,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
 	 */
-	protected String scopeType;
+	protected  String scopeType;
 
 	public String getScopeType() {
 		return this.scopeType;
@@ -128,7 +129,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * Determines if documentLists belonging to this documentListType will support drafting and ActiveDateRanges documents. This field defaults to false and cannot be updated. Each documentList created from the documentListType will use this value.
 	 */
-	protected Boolean supportsActiveDateRanges;
+	protected  Boolean supportsActiveDateRanges;
 
 	public Boolean getSupportsActiveDateRanges() {
 		return this.supportsActiveDateRanges;
@@ -141,7 +142,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
 	 */
-	protected Boolean supportsPublishing;
+	protected  Boolean supportsPublishing;
 
 	public Boolean getSupportsPublishing() {
 		return this.supportsPublishing;
@@ -165,7 +166,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * The current version number of the order, wish list, document list, or document type list.
 	 */
-	protected String version;
+	protected  String version;
 
 	public String getVersion() {
 		return this.version;
@@ -189,7 +190,7 @@ public class DocumentListType implements Serializable
 	/**
 	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
 	 */
-	protected com.fasterxml.jackson.databind.JsonNode metadata;
+	protected transient com.fasterxml.jackson.databind.JsonNode metadata;
 
 	public com.fasterxml.jackson.databind.JsonNode getMetadata() {
 		return this.metadata;
@@ -208,6 +209,23 @@ public class DocumentListType implements Serializable
 	}
 	public void setViews(List<View> views) {
 		this.views = views;
+	}
+
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(metadata == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, metadata);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.metadata = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
 
 }

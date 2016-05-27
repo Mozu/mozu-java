@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.location;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.location.Hours;
 
 /**
@@ -24,7 +25,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Friday label array describes the range of hours this location is normally open on Fridays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours friday;
+	protected  Hours friday;
 
 	public Hours getFriday() {
 		return this.friday;
@@ -37,7 +38,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Monday label array describes the range of hours this location is normally open on Mondays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours monday;
+	protected  Hours monday;
 
 	public Hours getMonday() {
 		return this.monday;
@@ -50,7 +51,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Saturday label array describes the range of hours this location is normally open on Saturdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours saturday;
+	protected  Hours saturday;
 
 	public Hours getSaturday() {
 		return this.saturday;
@@ -63,7 +64,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Sunday label array describes the range of hours this location is normally open on Sundays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours sunday;
+	protected  Hours sunday;
 
 	public Hours getSunday() {
 		return this.sunday;
@@ -76,7 +77,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Thursday label array describes the range of hours this location is normally open on Thursdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours thursday;
+	protected  Hours thursday;
 
 	public Hours getThursday() {
 		return this.thursday;
@@ -89,7 +90,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Tuesday label array describes the range of hours this location is normally open on Tuesdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours tuesday;
+	protected  Hours tuesday;
 
 	public Hours getTuesday() {
 		return this.tuesday;
@@ -102,7 +103,7 @@ public class RegularHours implements Serializable
 	/**
 	 * The Wednesday label array describes the range of hours this location is normally open on Wednesdays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
-	protected Hours wednesday;
+	protected  Hours wednesday;
 
 	public Hours getWednesday() {
 		return this.wednesday;
@@ -111,5 +112,6 @@ public class RegularHours implements Serializable
 	public void setWednesday(Hours wednesday) {
 		this.wednesday = wednesday;
 	}
+
 
 }

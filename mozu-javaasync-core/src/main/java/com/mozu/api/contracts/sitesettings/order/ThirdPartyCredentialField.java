@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.VocabularyValue;
 
 /**
@@ -25,7 +26,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * System-supplied API name required to communicate with the external payment processor.
 	 */
-	protected String apiName;
+	protected  String apiName;
 
 	public String getApiName() {
 		return this.apiName;
@@ -38,7 +39,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * The name that displays for the payment gateway or third-party credentials field. 
 	 */
-	protected String displayName;
+	protected  String displayName;
 
 	public String getDisplayName() {
 		return this.displayName;
@@ -51,7 +52,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -64,7 +65,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * the value holds sensitive information.
 	 */
-	protected Boolean isSensitive;
+	protected  Boolean isSensitive;
 
 	public Boolean getIsSensitive() {
 		return this.isSensitive;
@@ -77,7 +78,7 @@ public class ThirdPartyCredentialField implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -97,5 +98,6 @@ public class ThirdPartyCredentialField implements Serializable
 	public void setVocabularyValues(List<VocabularyValue> vocabularyValues) {
 		this.vocabularyValues = vocabularyValues;
 	}
+
 
 }

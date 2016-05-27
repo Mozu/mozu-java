@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for the intended view of the product attribute in the storefront.
@@ -23,7 +24,7 @@ public class AttributeInProductTypeDisplayInfo implements Serializable
 	/**
 	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
 	 */
-	protected String displayIntention;
+	protected  String displayIntention;
 
 	public String getDisplayIntention() {
 		return this.displayIntention;
@@ -32,5 +33,6 @@ public class AttributeInProductTypeDisplayInfo implements Serializable
 	public void setDisplayIntention(String displayIntention) {
 		this.displayIntention = displayIntention;
 	}
+
 
 }

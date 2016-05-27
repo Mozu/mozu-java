@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.customer;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.customer.CustomerAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
@@ -30,7 +31,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Indicates if the customer account is opted to receive marketing materials. If true, the customer account is opted in for receiving the content. 
 	 */
-	protected Boolean acceptsMarketing;
+	protected  Boolean acceptsMarketing;
 
 	public Boolean getAcceptsMarketing() {
 		return this.acceptsMarketing;
@@ -43,7 +44,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
 	 */
-	protected String companyOrOrganization;
+	protected  String companyOrOrganization;
 
 	public String getCompanyOrOrganization() {
 		return this.companyOrOrganization;
@@ -56,7 +57,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected DateTime customerSinceDate;
+	protected  DateTime customerSinceDate;
 
 	public DateTime getCustomerSinceDate() {
 		return this.customerSinceDate;
@@ -69,7 +70,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -82,7 +83,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
 	 */
-	protected String externalId;
+	protected  String externalId;
 
 	public String getExternalId() {
 		return this.externalId;
@@ -95,7 +96,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The full first name of a customer or contact name.
 	 */
-	protected String firstName;
+	protected  String firstName;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -108,7 +109,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Indicates if an external password is set on this account
 	 */
-	protected Boolean hasExternalPassword;
+	protected  Boolean hasExternalPassword;
 
 	public Boolean getHasExternalPassword() {
 		return this.hasExternalPassword;
@@ -121,7 +122,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -134,7 +135,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -147,7 +148,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * If true, this customer account represents an anonymous shopper.
 	 */
-	protected Boolean isAnonymous;
+	protected  Boolean isAnonymous;
 
 	public Boolean getIsAnonymous() {
 		return this.isAnonymous;
@@ -160,7 +161,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
 	 */
-	protected Boolean isLocked;
+	protected  Boolean isLocked;
 
 	public Boolean getIsLocked() {
 		return this.isLocked;
@@ -173,7 +174,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The full last name of a customer or contact name.
 	 */
-	protected String lastName;
+	protected  String lastName;
 
 	public String getLastName() {
 		return this.lastName;
@@ -186,7 +187,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -199,7 +200,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * If true, this customer account has tax exempt status.
 	 */
-	protected Boolean taxExempt;
+	protected  Boolean taxExempt;
 
 	public Boolean getTaxExempt() {
 		return this.taxExempt;
@@ -212,7 +213,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The tax identification number associated with the customer account.
 	 */
-	protected String taxId;
+	protected  String taxId;
 
 	public String getTaxId() {
 		return this.taxId;
@@ -225,7 +226,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -238,7 +239,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
-	protected String userName;
+	protected  String userName;
 
 	public String getUserName() {
 		return this.userName;
@@ -262,7 +263,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -275,7 +276,7 @@ public class CustomerAccount implements Serializable
 	/**
 	 * Properties of the commerce summary associated with a customer account, which includes details about the shopper's most recent order, wish lists, and total order value over time.
 	 */
-	protected CommerceSummary commerceSummary;
+	protected  CommerceSummary commerceSummary;
 
 	public CommerceSummary getCommerceSummary() {
 		return this.commerceSummary;
@@ -317,5 +318,6 @@ public class CustomerAccount implements Serializable
 	public void setSegments(List<CustomerSegment> segments) {
 		this.segments = segments;
 	}
+
 
 }

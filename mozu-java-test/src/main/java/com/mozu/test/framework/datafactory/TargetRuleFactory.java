@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.TargetRuleResource;
 
 /** <summary>
- * 
+ * commerce/targetrules related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class TargetRuleFactory

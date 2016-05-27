@@ -7,14 +7,12 @@
 package com.mozu.api.resources.commerce.catalog.storefront;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -41,7 +39,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
 	 * @return com.mozu.api.contracts.productruntime.PriceList
 	 * @see com.mozu.api.contracts.productruntime.PriceList
 	 */
@@ -56,7 +54,7 @@ public class PriceListResource {
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
 	 * </code></pre></p>
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.PriceList
 	 * @see com.mozu.api.contracts.productruntime.PriceList

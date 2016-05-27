@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.pricingruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Details of the product attribute, such its name and description.
@@ -23,7 +24,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -36,7 +37,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -49,7 +50,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -62,7 +63,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -75,7 +76,7 @@ public class ProductAttribute implements Serializable
 	/**
 	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -84,5 +85,6 @@ public class ProductAttribute implements Serializable
 	public void setValueType(String valueType) {
 		this.valueType = valueType;
 	}
+
 
 }

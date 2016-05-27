@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin.search;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
@@ -24,7 +25,7 @@ public class SearchTuningRuleSortFields implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields inclusionExclusionType ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String inclusionExclusionType;
+	protected  String inclusionExclusionType;
 
 	public String getInclusionExclusionType() {
 		return this.inclusionExclusionType;
@@ -44,5 +45,6 @@ public class SearchTuningRuleSortFields implements Serializable
 	public void setSortFields(List<String> sortFields) {
 		this.sortFields = sortFields;
 	}
+
 
 }

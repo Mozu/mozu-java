@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.FacetRangeQuery;
 import com.mozu.api.contracts.productadmin.FacetSource;
@@ -28,7 +29,7 @@ public class Facet implements Serializable
 	/**
 	 * Unique identifier for the storefront container used to organize products.
 	 */
-	protected Integer categoryId;
+	protected  Integer categoryId;
 
 	public Integer getCategoryId() {
 		return this.categoryId;
@@ -41,7 +42,7 @@ public class Facet implements Serializable
 	/**
 	 * Unique identifier of the facet.
 	 */
-	protected Integer facetId;
+	protected  Integer facetId;
 
 	public Integer getFacetId() {
 		return this.facetId;
@@ -54,7 +55,7 @@ public class Facet implements Serializable
 	/**
 	 * The type of facet. Valid values are "range" (enables creation of a range of values) or "value" (populates the facet values based on the associated attribute or category).
 	 */
-	protected String facetType;
+	protected  String facetType;
 
 	public String getFacetType() {
 		return this.facetType;
@@ -67,7 +68,7 @@ public class Facet implements Serializable
 	/**
 	 * Indicates if the object is hidden or breaks inheritance, primarily used by facets, products, and attribute vocabulary values. For example, if true, the attribute vocabulary value does not appear in the list when defining a value for an attribute.
 	 */
-	protected Boolean isHidden;
+	protected  Boolean isHidden;
 
 	public Boolean getIsHidden() {
 		return this.isHidden;
@@ -80,7 +81,7 @@ public class Facet implements Serializable
 	/**
 	 * Integer that represents the sequence order of the attribute.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -93,7 +94,7 @@ public class Facet implements Serializable
 	/**
 	 * Indicates the specific facet inherited from a parent category that is overridden by this facet. System-supplied and read only.
 	 */
-	protected Integer overrideFacetId;
+	protected  Integer overrideFacetId;
 
 	public Integer getOverrideFacetId() {
 		return this.overrideFacetId;
@@ -106,7 +107,7 @@ public class Facet implements Serializable
 	/**
 	 * Determines how the facet values will be sorted in the store. Must be a valid value for DataType defined in FacetValueSortTypeConst. Allowable values are: CountAscending, CountDescending, ValuesAscending, ValuesDescending. The default if no value is specified will be CountDescending.
 	 */
-	protected String valueSortType;
+	protected  String valueSortType;
 
 	public String getValueSortType() {
 		return this.valueSortType;
@@ -119,7 +120,7 @@ public class Facet implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -143,7 +144,7 @@ public class Facet implements Serializable
 	/**
 	 * Source for an action or container for originating content. Source is used as an origin for validation and notification messages based on successful or failed actions. For originating content, source is used for the facet source information, including the category, price, or attribute properties.
 	 */
-	protected FacetSource source;
+	protected  FacetSource source;
 
 	public FacetSource getSource() {
 		return this.source;
@@ -156,7 +157,7 @@ public class Facet implements Serializable
 	/**
 	 * System-supplied and read only indicator of whether a facet is currently valid and if not indicates the reason why. A facet may become invalid if the source data is changed in some ways (for example if the category tree structure is changed).
 	 */
-	protected FacetValidity validity;
+	protected  FacetValidity validity;
 
 	public FacetValidity getValidity() {
 		return this.validity;
@@ -165,5 +166,6 @@ public class Facet implements Serializable
 	public void setValidity(FacetValidity validity) {
 		this.validity = validity;
 	}
+
 
 }

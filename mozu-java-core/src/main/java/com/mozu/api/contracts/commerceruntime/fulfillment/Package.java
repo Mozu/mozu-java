@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.PackageItem;
@@ -39,7 +40,7 @@ public class Package implements Serializable
 	/**
 	 * The code of the product to be fulfilled.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -52,7 +53,7 @@ public class Package implements Serializable
 	/**
 	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
 	 */
-	protected DateTime fulfillmentDate;
+	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
 		return this.fulfillmentDate;
@@ -65,7 +66,7 @@ public class Package implements Serializable
 	/**
 	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
 	 */
-	protected String fulfillmentLocationCode;
+	protected  String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
 		return this.fulfillmentLocationCode;
@@ -78,7 +79,7 @@ public class Package implements Serializable
 	/**
 	 * If there is a shipping label present for this Package, this will be set to true
 	 */
-	protected Boolean hasLabel;
+	protected  Boolean hasLabel;
 
 	public Boolean getHasLabel() {
 		return this.hasLabel;
@@ -91,7 +92,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -104,7 +105,7 @@ public class Package implements Serializable
 	/**
 	 * The package type associated with this physical package. Possible values include Tube, Letter, Pak, Small Box (carrier_box_small), Medium Box (carrier_box_medium), Large Box (carrier_box_large), or Custom.
 	 */
-	protected String packagingType;
+	protected  String packagingType;
 
 	public String getPackagingType() {
 		return this.packagingType;
@@ -117,7 +118,7 @@ public class Package implements Serializable
 	/**
 	 * Unique identifier of the shipment associated with this package.
 	 */
-	protected String shipmentId;
+	protected  String shipmentId;
 
 	public String getShipmentId() {
 		return this.shipmentId;
@@ -130,7 +131,7 @@ public class Package implements Serializable
 	/**
 	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.
 	 */
-	protected String shippingMethodCode;
+	protected  String shippingMethodCode;
 
 	public String getShippingMethodCode() {
 		return this.shippingMethodCode;
@@ -143,7 +144,7 @@ public class Package implements Serializable
 	/**
 	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
 	 */
-	protected String shippingMethodName;
+	protected  String shippingMethodName;
 
 	public String getShippingMethodName() {
 		return this.shippingMethodName;
@@ -156,7 +157,7 @@ public class Package implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -169,7 +170,7 @@ public class Package implements Serializable
 	/**
 	 * Tracking number for the package or shipment, supplied by the shipping carrier to track the shipment until fulfillment completes. The tracking number format may differ between carriers.
 	 */
-	protected String trackingNumber;
+	protected  String trackingNumber;
 
 	public String getTrackingNumber() {
 		return this.trackingNumber;
@@ -182,7 +183,7 @@ public class Package implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -217,7 +218,7 @@ public class Package implements Serializable
 	/**
 	 * Dimensional properties (height, length, and width) of packages, products and bundles.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -226,5 +227,6 @@ public class Package implements Serializable
 	public void setMeasurements(PackageMeasurements measurements) {
 		this.measurements = measurements;
 	}
+
 
 }

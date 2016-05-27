@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.application;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.thirdparty.ActiveShippingCountry;
 import com.mozu.api.contracts.core.thirdparty.OperationUrl;
 import com.mozu.api.contracts.core.thirdparty.InitializablePropertyValue;
@@ -50,7 +51,7 @@ public class Capability implements Serializable
 	/**
 	 * The enablement mode of the capability, typically read only.
 	 */
-	protected String capabilityMode;
+	protected  String capabilityMode;
 
 	public String getCapabilityMode() {
 		return this.capabilityMode;
@@ -63,7 +64,7 @@ public class Capability implements Serializable
 	/**
 	 * The capability type installed in the tenant.
 	 */
-	protected String capabilityType;
+	protected  String capabilityType;
 
 	public String getCapabilityType() {
 		return this.capabilityType;
@@ -76,7 +77,7 @@ public class Capability implements Serializable
 	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -89,7 +90,7 @@ public class Capability implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -102,7 +103,7 @@ public class Capability implements Serializable
 	/**
 	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
 	 */
-	protected Boolean initialized;
+	protected  Boolean initialized;
 
 	public Boolean getInitialized() {
 		return this.initialized;
@@ -115,7 +116,7 @@ public class Capability implements Serializable
 	/**
 	 * The ID of the specific scope for the object. 
 	 */
-	protected Integer scopeId;
+	protected  Integer scopeId;
 
 	public Integer getScopeId() {
 		return this.scopeId;
@@ -128,7 +129,7 @@ public class Capability implements Serializable
 	/**
 	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
 	 */
-	protected String scopeType;
+	protected  String scopeType;
 
 	public String getScopeType() {
 		return this.scopeType;
@@ -192,5 +193,6 @@ public class Capability implements Serializable
 	public void setSupportedShoppingCountries(List<InitializablePropertyValue> supportedShoppingCountries) {
 		this.supportedShoppingCountries = supportedShoppingCountries;
 	}
+
 
 }

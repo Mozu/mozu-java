@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.products;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.commerce.PackageMeasurements;
 
 /**
@@ -24,7 +25,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Allocation ID associated with this product on this order.
 	 */
-	protected DateTime allocationExpiration;
+	protected  DateTime allocationExpiration;
 
 	public DateTime getAllocationExpiration() {
 		return this.allocationExpiration;
@@ -37,7 +38,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Allocation ID associated with this product on this order.
 	 */
-	protected Integer allocationId;
+	protected  Integer allocationId;
 
 	public Integer getAllocationId() {
 		return this.allocationId;
@@ -50,7 +51,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -63,7 +64,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -76,7 +77,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Fulfillment status of the product.
 	 */
-	protected String fulfillmentStatus;
+	protected  String fulfillmentStatus;
 
 	public String getFulfillmentStatus() {
 		return this.fulfillmentStatus;
@@ -89,7 +90,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -102,7 +103,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -115,7 +116,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -128,7 +129,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String optionAttributeFQN;
+	protected  String optionAttributeFQN;
 
 	public String getOptionAttributeFQN() {
 		return this.optionAttributeFQN;
@@ -141,7 +142,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The value of the option attribute. These values are associated and used by product bundles and options.
 	 */
-	protected Object optionValue;
+	protected  Object optionValue;
 
 	public Object getOptionValue() {
 		return this.optionValue;
@@ -154,7 +155,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -167,7 +168,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Unique identifier of the product reservation associated with the component product in a product bundle or item in a cart/order. System-supplied and read only.
 	 */
-	protected Integer productReservationId;
+	protected  Integer productReservationId;
 
 	public Integer getProductReservationId() {
 		return this.productReservationId;
@@ -180,7 +181,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -193,7 +194,7 @@ public class BundledProduct implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -202,5 +203,6 @@ public class BundledProduct implements Serializable
 	public void setMeasurements(PackageMeasurements measurements) {
 		this.measurements = measurements;
 	}
+
 
 }

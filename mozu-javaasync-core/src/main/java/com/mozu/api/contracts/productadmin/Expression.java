@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.Expression;
 
 /**
@@ -25,7 +26,7 @@ public class Expression implements Serializable
 	/**
 	 * The field target of a predicate
 	 */
-	protected String left;
+	protected  String left;
 
 	public String getLeft() {
 		return this.left;
@@ -38,7 +39,7 @@ public class Expression implements Serializable
 	/**
 	 * And or Or (if Container with More than one Node)
 	 */
-	protected String logicalOperator;
+	protected  String logicalOperator;
 
 	public String getLogicalOperator() {
 		return this.logicalOperator;
@@ -51,7 +52,7 @@ public class Expression implements Serializable
 	/**
 	 * The operator of a predicate
 	 */
-	protected String operator;
+	protected  String operator;
 
 	public String getOperator() {
 		return this.operator;
@@ -64,7 +65,7 @@ public class Expression implements Serializable
 	/**
 	 * The literal values of a predicate
 	 */
-	protected Object right;
+	protected  Object right;
 
 	public Object getRight() {
 		return this.right;
@@ -77,7 +78,7 @@ public class Expression implements Serializable
 	/**
 	 * Container or Predicate
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -97,5 +98,6 @@ public class Expression implements Serializable
 	public void setNodes(List<Expression> nodes) {
 		this.nodes = nodes;
 	}
+
 
 }

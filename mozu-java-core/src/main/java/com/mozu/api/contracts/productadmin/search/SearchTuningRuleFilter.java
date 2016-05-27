@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin.search;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class SearchTuningRuleFilter implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleFilter field ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String field;
+	protected  String field;
 
 	public String getField() {
 		return this.field;
@@ -36,7 +37,7 @@ public class SearchTuningRuleFilter implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -45,5 +46,6 @@ public class SearchTuningRuleFilter implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

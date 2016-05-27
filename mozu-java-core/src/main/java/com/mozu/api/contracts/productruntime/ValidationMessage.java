@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a message displayed when a product validation failure occurs for a shopper in a storefront.
@@ -23,7 +24,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -36,7 +37,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * The severity level of validation failures for shipping rates and products.
 	 */
-	protected String severity;
+	protected  String severity;
 
 	public String getSeverity() {
 		return this.severity;
@@ -49,7 +50,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * Source for an action or container for originating content. Source is used as an origin for validation and notification messages based on successful or failed actions. For originating content, source is used for the facet source information, including the category, price, or attribute properties.
 	 */
-	protected String source;
+	protected  String source;
 
 	public String getSource() {
 		return this.source;
@@ -62,7 +63,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * Unique identifier of the entity that triggered the validation.
 	 */
-	protected String sourceId;
+	protected  String sourceId;
 
 	public String getSourceId() {
 		return this.sourceId;
@@ -75,7 +76,7 @@ public class ValidationMessage implements Serializable
 	/**
 	 * Type of validation error that occurred. This can be checked programatically.              Must be one of the values in ValidationTypeConst.
 	 */
-	protected String validationType;
+	protected  String validationType;
 
 	public String getValidationType() {
 		return this.validationType;
@@ -84,5 +85,6 @@ public class ValidationMessage implements Serializable
 	public void setValidationType(String validationType) {
 		this.validationType = validationType;
 	}
+
 
 }

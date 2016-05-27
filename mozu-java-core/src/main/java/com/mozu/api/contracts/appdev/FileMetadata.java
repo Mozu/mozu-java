@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * Checksum function used to validate the local version of the file against the version on the server.
 	 */
-	protected String checkSum;
+	protected  String checkSum;
 
 	public String getCheckSum() {
 		return this.checkSum;
@@ -37,7 +38,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -50,7 +51,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * The path and file name that represents the file location.
 	 */
-	protected String path;
+	protected  String path;
 
 	public String getPath() {
 		return this.path;
@@ -63,7 +64,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * The total size of the package file, in bytes.
 	 */
-	protected Long sizeInBytes;
+	protected  Long sizeInBytes;
 
 	public Long getSizeInBytes() {
 		return this.sizeInBytes;
@@ -76,7 +77,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * The type of file in the package.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -89,7 +90,7 @@ public class FileMetadata implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -98,5 +99,6 @@ public class FileMetadata implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

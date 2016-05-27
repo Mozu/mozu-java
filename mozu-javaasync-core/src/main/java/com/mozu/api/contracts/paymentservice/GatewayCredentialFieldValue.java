@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Field value information for the payment gateway.
@@ -23,7 +24,7 @@ public class GatewayCredentialFieldValue implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,7 +37,7 @@ public class GatewayCredentialFieldValue implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected String value;
+	protected  String value;
 
 	public String getValue() {
 		return this.value;
@@ -45,5 +46,6 @@ public class GatewayCredentialFieldValue implements Serializable
 	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 }

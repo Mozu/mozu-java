@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.shipping.admin.profiles;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -17,7 +15,7 @@ public class ShippingStatesUrl
 
 	/**
 	 * Get Resource Url for GetStates
-	 * @param profileCode 
+	 * @param profileCode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getStatesUrl(String profileCode)
@@ -29,7 +27,7 @@ public class ShippingStatesUrl
 
 	/**
 	 * Get Resource Url for UpdateStates
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateStatesUrl(String profilecode)

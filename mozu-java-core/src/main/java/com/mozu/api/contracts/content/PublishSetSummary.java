@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.Content.Contracts.PublishSetSummary ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class PublishSetSummary implements Serializable
 	/**
 	 * The number of facet results for a product search.
 	 */
-	protected Integer count;
+	protected  Integer count;
 
 	public Integer getCount() {
 		return this.count;
@@ -36,7 +37,7 @@ public class PublishSetSummary implements Serializable
 	/**
 	 * the code of the associated publish set
 	 */
-	protected String publishSetCode;
+	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
 		return this.publishSetCode;
@@ -45,5 +46,6 @@ public class PublishSetSummary implements Serializable
 	public void setPublishSetCode(String publishSetCode) {
 		this.publishSetCode = publishSetCode;
 	}
+
 
 }

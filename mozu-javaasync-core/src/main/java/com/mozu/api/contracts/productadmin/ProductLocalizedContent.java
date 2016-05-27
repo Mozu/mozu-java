@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.ProductLocalizedImage;
 
 /**
@@ -25,7 +26,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -38,7 +39,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
 	 */
-	protected String productFullDescription;
+	protected  String productFullDescription;
 
 	public String getProductFullDescription() {
 		return this.productFullDescription;
@@ -51,7 +52,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -64,7 +65,7 @@ public class ProductLocalizedContent implements Serializable
 	/**
 	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
 	 */
-	protected String productShortDescription;
+	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
 		return this.productShortDescription;
@@ -84,5 +85,6 @@ public class ProductLocalizedContent implements Serializable
 	public void setProductImages(List<ProductLocalizedImage> productImages) {
 		this.productImages = productImages;
 	}
+
 
 }

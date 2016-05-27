@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.reference;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.reference.Field;
 
 /**
@@ -25,7 +26,7 @@ public class AddressSchema implements Serializable
 	/**
 	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
 	 */
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -38,7 +39,7 @@ public class AddressSchema implements Serializable
 	/**
 	 * The label associated with this country.
 	 */
-	protected String countryLabel;
+	protected  String countryLabel;
 
 	public String getCountryLabel() {
 		return this.countryLabel;
@@ -51,7 +52,7 @@ public class AddressSchema implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -71,5 +72,6 @@ public class AddressSchema implements Serializable
 	public void setFields(List<Field> fields) {
 		this.fields = fields;
 	}
+
 
 }

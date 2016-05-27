@@ -6,19 +6,26 @@
  */
 package com.mozu.api.contracts.shippingadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.CustomTableRateContent;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.CustomTableRate ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomTableRate implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String id;
+	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -28,7 +35,10 @@ public class CustomTableRate implements Serializable
 		this.id = id;
 	}
 
-	protected String rateType;
+	/**
+	 * The type of this rate see ../commerce/catalog/admin/shipping/global/carriers/custom/serviceTypes/en-us
+	 */
+	protected  String rateType;
 
 	public String getRateType() {
 		return this.rateType;
@@ -38,7 +48,10 @@ public class CustomTableRate implements Serializable
 		this.rateType = rateType;
 	}
 
-	protected Double value;
+	/**
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 */
+	protected  Double value;
 
 	public Double getValue() {
 		return this.value;
@@ -48,7 +61,10 @@ public class CustomTableRate implements Serializable
 		this.value = value;
 	}
 
-	protected CustomTableRateContent content;
+	/**
+	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
+	 */
+	protected  CustomTableRateContent content;
 
 	public CustomTableRateContent getContent() {
 		return this.content;
@@ -57,5 +73,6 @@ public class CustomTableRate implements Serializable
 	public void setContent(CustomTableRateContent content) {
 		this.content = content;
 	}
+
 
 }

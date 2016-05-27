@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin.pricelists;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -18,10 +16,10 @@ public class PriceListEntryUrl
 	/**
 	 * Get Resource Url for GetPriceListEntry
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPriceListEntryUrl(String currencyCode, String priceListCode, String productCode, String responseFields, DateTime startDate)
@@ -39,7 +37,7 @@ public class PriceListEntryUrl
 	 * Get Resource Url for GetPriceListEntries
 	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
@@ -59,7 +57,7 @@ public class PriceListEntryUrl
 
 	/**
 	 * Get Resource Url for AddPriceListEntry
-	 * @param priceListCode 
+	 * @param priceListCode The specified price list to which you want to add the price list entry.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -74,10 +72,10 @@ public class PriceListEntryUrl
 	/**
 	 * Get Resource Url for UpdatePriceListEntry
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The unique code of the price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePriceListEntryUrl(String currencyCode, String priceListCode, String productCode, String responseFields, DateTime startDate)
@@ -94,9 +92,9 @@ public class PriceListEntryUrl
 	/**
 	 * Get Resource Url for DeletePriceListEntry
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param priceListCode 
+	 * @param priceListCode The code of the specified price list associated with the price list entry.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param startDate 
+	 * @param startDate The start date of the price list entry.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePriceListEntryUrl(String currencyCode, String priceListCode, String productCode, DateTime startDate)

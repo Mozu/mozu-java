@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin.search;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of synonyms and their relations via keys and lists to determine search results.
@@ -24,7 +25,7 @@ public class SynonymDefinition implements Serializable
 	/**
 	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
 	 */
-	protected String key;
+	protected  String key;
 
 	public String getKey() {
 		return this.key;
@@ -44,5 +45,6 @@ public class SynonymDefinition implements Serializable
 	public void setSynonyms(List<String> synonyms) {
 		this.synonyms = synonyms;
 	}
+
 
 }

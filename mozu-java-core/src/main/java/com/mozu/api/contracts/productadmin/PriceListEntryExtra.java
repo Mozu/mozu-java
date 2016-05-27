@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.PriceListEntryExtra ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
 	 */
-	protected String attributeCode;
+	protected  String attributeCode;
 
 	public String getAttributeCode() {
 		return this.attributeCode;
@@ -36,7 +37,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * The fully qualified name of the attribute. The attributeDefiniteId may be used to generate this name.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -49,7 +50,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * Name of attribute that this extra is based on. ReadOnly
 	 */
-	protected String attributeName;
+	protected  String attributeName;
 
 	public String getAttributeName() {
 		return this.attributeName;
@@ -62,7 +63,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * Value to display. Currently only vaild when Value is a string type. ReadOnly
 	 */
-	protected String displayValue;
+	protected  String displayValue;
 
 	public String getDisplayValue() {
 		return this.displayValue;
@@ -75,7 +76,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * PriceList price for the extra
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -88,7 +89,7 @@ public class PriceListEntryExtra implements Serializable
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
-	protected Object value;
+	protected  Object value;
 
 	public Object getValue() {
 		return this.value;
@@ -97,5 +98,6 @@ public class PriceListEntryExtra implements Serializable
 	public void setValue(Object value) {
 		this.value = value;
 	}
+
 
 }

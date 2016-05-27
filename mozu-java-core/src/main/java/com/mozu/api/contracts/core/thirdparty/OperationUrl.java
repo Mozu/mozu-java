@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.core.thirdparty;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a URL endpoint associated with a capability operation.
@@ -23,7 +24,7 @@ public class OperationUrl implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,7 +37,7 @@ public class OperationUrl implements Serializable
 	/**
 	 * The URL endpoint address.
 	 */
-	protected String url;
+	protected  String url;
 
 	public String getUrl() {
 		return this.url;
@@ -45,5 +46,6 @@ public class OperationUrl implements Serializable
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.event;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.event.SubscribingSite;
 
@@ -26,7 +27,7 @@ public class SubscribingTenant implements Serializable
 	/**
 	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
 	 */
-	protected Boolean isActive;
+	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
 		return this.isActive;
@@ -39,7 +40,7 @@ public class SubscribingTenant implements Serializable
 	/**
 	 * This specifies the type of subscribing context, which is derived from the state of the subscription. If any subscribing sites exist; for example, a subscription that is not at the tenant level, then the value will be 'site'.
 	 */
-	protected String subscribingContextLevelType;
+	protected  String subscribingContextLevelType;
 
 	public String getSubscribingContextLevelType() {
 		return this.subscribingContextLevelType;
@@ -52,7 +53,7 @@ public class SubscribingTenant implements Serializable
 	/**
 	 * Unique identifier for the tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -65,7 +66,7 @@ public class SubscribingTenant implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -85,5 +86,6 @@ public class SubscribingTenant implements Serializable
 	public void setSubscribingSites(List<SubscribingSite> subscribingSites) {
 		this.subscribingSites = subscribingSites;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Suggest product search terms to a customer based on defined queries.
@@ -23,7 +24,7 @@ public class SearchSuggestion implements Serializable
 	/**
 	 * A suggested entity based on the search query. Use the SuggestionType to determine the type of entity. Could be a SearchTerm, Product, or Category
 	 */
-	protected Object suggestion;
+	protected  Object suggestion;
 
 	public Object getSuggestion() {
 		return this.suggestion;
@@ -36,7 +37,7 @@ public class SearchSuggestion implements Serializable
 	/**
 	 * The type of Suggestion (e.g. Term, Product, Category). Will be one of the values of the SuggestionTypeConst type.
 	 */
-	protected String suggestionType;
+	protected  String suggestionType;
 
 	public String getSuggestionType() {
 		return this.suggestionType;
@@ -45,5 +46,6 @@ public class SearchSuggestion implements Serializable
 	public void setSuggestionType(String suggestionType) {
 		this.suggestionType = suggestionType;
 	}
+
 
 }

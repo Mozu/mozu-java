@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AppliedDiscount;
 
 /**
@@ -24,7 +25,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The list price of the product in the catalog.
 	 */
-	protected Double catalogListPrice;
+	protected  Double catalogListPrice;
 
 	public Double getCatalogListPrice() {
 		return this.catalogListPrice;
@@ -37,7 +38,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The sale price defined for the product in the catalog.
 	 */
-	protected Double catalogSalePrice;
+	protected  Double catalogSalePrice;
 
 	public Double getCatalogSalePrice() {
 		return this.catalogSalePrice;
@@ -50,7 +51,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
-	protected Double creditValue;
+	protected  Double creditValue;
 
 	public Double getCreditValue() {
 		return this.creditValue;
@@ -63,7 +64,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The priceList that was applied to this product
 	 */
-	protected String effectivePricelistCode;
+	protected  String effectivePricelistCode;
 
 	public String getEffectivePricelistCode() {
 		return this.effectivePricelistCode;
@@ -76,7 +77,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
 	 */
-	protected Double msrp;
+	protected  Double msrp;
 
 	public Double getMsrp() {
 		return this.msrp;
@@ -89,7 +90,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The price the merchant intends to charge for the product.
 	 */
-	protected Double price;
+	protected  Double price;
 
 	public Double getPrice() {
 		return this.price;
@@ -102,7 +103,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The specific PriceListCode that was applied (includes inheritence
 	 */
-	protected String priceListEntryCode;
+	protected  String priceListEntryCode;
 
 	public String getPriceListEntryCode() {
 		return this.priceListEntryCode;
@@ -115,7 +116,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * IF a PriceList Entry was applied to this price it will be (simple, bulk...)
 	 */
-	protected String priceListEntryMode;
+	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
 		return this.priceListEntryMode;
@@ -128,7 +129,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The price type that displays on the storefront website for the Price field, which is List, MAP, or CatalogSalePrice
 	 */
-	protected String priceType;
+	protected  String priceType;
 
 	public String getPriceType() {
 		return this.priceType;
@@ -141,7 +142,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The set sale price for a product consisting of a price with a discount already applied.
 	 */
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -154,7 +155,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * The price type that displays on the storefront website for the Sale Price field, which is CatalogSalePrice, DiscountedList, or DiscountedCatalogSalePrice
 	 */
-	protected String salePriceType;
+	protected  String salePriceType;
 
 	public String getSalePriceType() {
 		return this.salePriceType;
@@ -167,7 +168,7 @@ public class ProductPrice implements Serializable
 	/**
 	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
-	protected AppliedDiscount discount;
+	protected  AppliedDiscount discount;
 
 	public AppliedDiscount getDiscount() {
 		return this.discount;
@@ -176,5 +177,6 @@ public class ProductPrice implements Serializable
 	public void setDiscount(AppliedDiscount discount) {
 		this.discount = discount;
 	}
+
 
 }

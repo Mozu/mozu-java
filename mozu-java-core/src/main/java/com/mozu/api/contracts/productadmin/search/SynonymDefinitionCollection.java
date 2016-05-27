@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin.search;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.search.SynonymDefinition;
 
 /**
@@ -25,7 +26,7 @@ public class SynonymDefinitionCollection implements Serializable
 	/**
 	 * Language used for the entity. Currently, only "en-US" is supported.
 	 */
-	protected String localeCode;
+	protected  String localeCode;
 
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -38,7 +39,7 @@ public class SynonymDefinitionCollection implements Serializable
 	/**
 	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
 	 */
-	protected Integer siteId;
+	protected  Integer siteId;
 
 	public Integer getSiteId() {
 		return this.siteId;
@@ -51,7 +52,7 @@ public class SynonymDefinitionCollection implements Serializable
 	/**
 	 * Unique identifier of the Mozu tenant.
 	 */
-	protected Integer tenantId;
+	protected  Integer tenantId;
 
 	public Integer getTenantId() {
 		return this.tenantId;
@@ -71,5 +72,6 @@ public class SynonymDefinitionCollection implements Serializable
 	public void setSynonymDefinitions(List<SynonymDefinition> synonymDefinitions) {
 		this.synonymDefinitions = synonymDefinitions;
 	}
+
 
 }

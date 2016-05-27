@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Measurement;
 
 /**
@@ -24,7 +25,7 @@ public class PackageMeasurements implements Serializable
 	/**
 	 * Height of a package or bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageHeight;
+	protected  Measurement packageHeight;
 
 	public Measurement getPackageHeight() {
 		return this.packageHeight;
@@ -37,7 +38,7 @@ public class PackageMeasurements implements Serializable
 	/**
 	 * Length of a package or bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageLength;
+	protected  Measurement packageLength;
 
 	public Measurement getPackageLength() {
 		return this.packageLength;
@@ -50,7 +51,7 @@ public class PackageMeasurements implements Serializable
 	/**
 	 * Weight of a package or bundle package in imperial units of pounds and ounces.
 	 */
-	protected Measurement packageWeight;
+	protected  Measurement packageWeight;
 
 	public Measurement getPackageWeight() {
 		return this.packageWeight;
@@ -63,7 +64,7 @@ public class PackageMeasurements implements Serializable
 	/**
 	 * Width of a package or bundle package in imperial units of feet and inches.
 	 */
-	protected Measurement packageWidth;
+	protected  Measurement packageWidth;
 
 	public Measurement getPackageWidth() {
 		return this.packageWidth;
@@ -72,5 +73,6 @@ public class PackageMeasurements implements Serializable
 	public void setPackageWidth(Measurement packageWidth) {
 		this.packageWidth = packageWidth;
 	}
+
 
 }

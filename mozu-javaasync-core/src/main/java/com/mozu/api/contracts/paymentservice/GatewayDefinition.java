@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.paymentservice;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.GatewayCredentialFieldDefinition;
 import com.mozu.api.contracts.paymentservice.PreAuthorizeDefinition;
 import com.mozu.api.contracts.paymentservice.SupportedCard;
@@ -27,7 +28,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
 	 */
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -40,7 +41,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -53,7 +54,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * The implementing type name of the integration with the payment gateway.
 	 */
-	protected String integrationImplTypeName;
+	protected  String integrationImplTypeName;
 
 	public String getIntegrationImplTypeName() {
 		return this.integrationImplTypeName;
@@ -66,7 +67,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -79,7 +80,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * URL of the production payment service.
 	 */
-	protected String prodServiceURL;
+	protected  String prodServiceURL;
 
 	public String getProdServiceURL() {
 		return this.prodServiceURL;
@@ -92,7 +93,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * URL of the test payment service environment.
 	 */
-	protected String testServiceURL;
+	protected  String testServiceURL;
 
 	public String getTestServiceURL() {
 		return this.testServiceURL;
@@ -116,7 +117,7 @@ public class GatewayDefinition implements Serializable
 	/**
 	 * Definition of the preauthorization gateway.
 	 */
-	protected PreAuthorizeDefinition preAuthorizeDefinition;
+	protected  PreAuthorizeDefinition preAuthorizeDefinition;
 
 	public PreAuthorizeDefinition getPreAuthorizeDefinition() {
 		return this.preAuthorizeDefinition;
@@ -136,5 +137,6 @@ public class GatewayDefinition implements Serializable
 	public void setSupportedCards(List<SupportedCard> supportedCards) {
 		this.supportedCards = supportedCards;
 	}
+
 
 }

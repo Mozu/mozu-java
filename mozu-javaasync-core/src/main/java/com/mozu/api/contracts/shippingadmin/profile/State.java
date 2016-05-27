@@ -6,18 +6,25 @@
  */
 package com.mozu.api.contracts.shippingadmin.profile;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.ShippingAdmin.Contracts.Profile.State ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected String code;
+	/**
+	 * Mozu.ShippingAdmin.Contracts.Profile.State code ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -27,7 +34,10 @@ public class State implements Serializable
 		this.code = code;
 	}
 
-	protected String name;
+	/**
+	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 */
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -36,5 +46,6 @@ public class State implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

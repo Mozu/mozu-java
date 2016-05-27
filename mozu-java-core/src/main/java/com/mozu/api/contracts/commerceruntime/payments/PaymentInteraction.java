@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.payments;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * If applicable, the total monetary amount associated with this payment interaction.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -37,7 +38,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * If applicable, the check number associated with the payment action or interaction.
 	 */
-	protected String checkNumber;
+	protected  String checkNumber;
 
 	public String getCheckNumber() {
 		return this.checkNumber;
@@ -50,7 +51,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
-	protected String currencyCode;
+	protected  String currencyCode;
 
 	public String getCurrencyCode() {
 		return this.currencyCode;
@@ -63,7 +64,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * If required by the payment gateway, the authorization code of the transaction.
 	 */
-	protected String gatewayAuthCode;
+	protected  String gatewayAuthCode;
 
 	public String getGatewayAuthCode() {
 		return this.gatewayAuthCode;
@@ -76,7 +77,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * AVS (Address Verification Service) codes supplied by the payment gateway. The codes indicate partial to complete or failed matches against the billing address for the shopper against the financial institute data through the gateway.
 	 */
-	protected String gatewayAVSCodes;
+	protected  String gatewayAVSCodes;
 
 	public String getGatewayAVSCodes() {
 		return this.gatewayAVSCodes;
@@ -89,7 +90,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * CVV2 (Card Verification Value) codes supplied by the payment gateway. The codes indicate a verified or failed match of the encrypted code entered against the financial institution data through the gateway.
 	 */
-	protected String gatewayCVV2Codes;
+	protected  String gatewayCVV2Codes;
 
 	public String getGatewayCVV2Codes() {
 		return this.gatewayCVV2Codes;
@@ -102,7 +103,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of the payment interaction from the payment gateway.
 	 */
-	protected Integer gatewayInteractionId;
+	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
 		return this.gatewayInteractionId;
@@ -115,7 +116,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
 	 */
-	protected String gatewayResponseCode;
+	protected  String gatewayResponseCode;
 
 	public String getGatewayResponseCode() {
 		return this.gatewayResponseCode;
@@ -128,7 +129,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Textual message returned by the payment gateway for the associated success or failure code.
 	 */
-	protected String gatewayResponseText;
+	protected  String gatewayResponseText;
 
 	public String getGatewayResponseText() {
 		return this.gatewayResponseText;
@@ -141,7 +142,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of the gateway transaction associated with the payment interaction.
 	 */
-	protected String gatewayTransactionId;
+	protected  String gatewayTransactionId;
 
 	public String getGatewayTransactionId() {
 		return this.gatewayTransactionId;
@@ -154,7 +155,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -167,7 +168,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
 	 */
-	protected DateTime interactionDate;
+	protected  DateTime interactionDate;
 
 	public DateTime getInteractionDate() {
 		return this.interactionDate;
@@ -180,7 +181,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
 	 */
-	protected String interactionType;
+	protected  String interactionType;
 
 	public String getInteractionType() {
 		return this.interactionType;
@@ -193,7 +194,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * If true, the payment interaction was manually defined s part of offline order processing.
 	 */
-	protected Boolean isManual;
+	protected  Boolean isManual;
 
 	public Boolean getIsManual() {
 		return this.isManual;
@@ -206,7 +207,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
 	 */
-	protected Boolean isRecurring;
+	protected  Boolean isRecurring;
 
 	public Boolean getIsRecurring() {
 		return this.isRecurring;
@@ -219,7 +220,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * User-entered notation content for an object, used to save information such as payment, return, account, and order notes.
 	 */
-	protected String note;
+	protected  String note;
 
 	public String getNote() {
 		return this.note;
@@ -232,7 +233,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of the order associated with the payment.
 	 */
-	protected String orderId;
+	protected  String orderId;
 
 	public String getOrderId() {
 		return this.orderId;
@@ -245,7 +246,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * The status of the payment prior to the interaction being performed, which enables manual rollback of previous transactions.
 	 */
-	protected String paymentEntryStatus;
+	protected  String paymentEntryStatus;
 
 	public String getPaymentEntryStatus() {
 		return this.paymentEntryStatus;
@@ -258,7 +259,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of the payment associated with this transaction.
 	 */
-	protected String paymentId;
+	protected  String paymentId;
 
 	public String getPaymentId() {
 		return this.paymentId;
@@ -271,7 +272,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Unique identifier of previous interaction that this payment interaction is modifying. For example, when refunding a payment, the crediting interaction would reference the capture interaction.
 	 */
-	protected Integer paymentTransactionInteractionIdReference;
+	protected  Integer paymentTransactionInteractionIdReference;
 
 	public Integer getPaymentTransactionInteractionIdReference() {
 		return this.paymentTransactionInteractionIdReference;
@@ -284,7 +285,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -297,7 +298,7 @@ public class PaymentInteraction implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -306,5 +307,6 @@ public class PaymentInteraction implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.carts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The properties of an active shopping cart.
@@ -23,7 +24,7 @@ public class CartSummary implements Serializable
 	/**
 	 * If true, this shopping cart is active.
 	 */
-	protected Boolean hasActiveCart;
+	protected  Boolean hasActiveCart;
 
 	public Boolean getHasActiveCart() {
 		return this.hasActiveCart;
@@ -36,7 +37,7 @@ public class CartSummary implements Serializable
 	/**
 	 * suaIf true, the cart's period of inactivity is past its calculated expiration date and the cart is considered abandoned.
 	 */
-	protected Boolean isExpired;
+	protected  Boolean isExpired;
 
 	public Boolean getIsExpired() {
 		return this.isExpired;
@@ -49,7 +50,7 @@ public class CartSummary implements Serializable
 	/**
 	 * The total number of line items in the cart. Each line item can have multiple quantities.
 	 */
-	protected Integer itemCount;
+	protected  Integer itemCount;
 
 	public Integer getItemCount() {
 		return this.itemCount;
@@ -62,7 +63,7 @@ public class CartSummary implements Serializable
 	/**
 	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
 	 */
-	protected Double total;
+	protected  Double total;
 
 	public Double getTotal() {
 		return this.total;
@@ -75,7 +76,7 @@ public class CartSummary implements Serializable
 	/**
 	 * The combined total quantity across all items in the cart.
 	 */
-	protected Integer totalQuantity;
+	protected  Integer totalQuantity;
 
 	public Integer getTotalQuantity() {
 		return this.totalQuantity;
@@ -84,5 +85,6 @@ public class CartSummary implements Serializable
 	public void setTotalQuantity(Integer totalQuantity) {
 		this.totalQuantity = totalQuantity;
 	}
+
 
 }

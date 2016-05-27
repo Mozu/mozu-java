@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.FacetSource;
 import com.mozu.api.contracts.productadmin.Facet;
 
@@ -44,5 +45,6 @@ public class FacetSet implements Serializable
 	public void setConfigured(List<Facet> configured) {
 		this.configured = configured;
 	}
+
 
 }

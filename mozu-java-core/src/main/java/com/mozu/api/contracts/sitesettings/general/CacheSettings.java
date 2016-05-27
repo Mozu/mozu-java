@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.general;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.SiteSettings.General.Contracts.CacheSettings ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class CacheSettings implements Serializable
 	/**
 	 * The a query string value that can be used to invalidate a client browser cache/ cdn cache.
 	 */
-	protected String cdnCacheBustKey;
+	protected  String cdnCacheBustKey;
 
 	public String getCdnCacheBustKey() {
 		return this.cdnCacheBustKey;
@@ -32,5 +33,6 @@ public class CacheSettings implements Serializable
 	public void setCdnCacheBustKey(String cdnCacheBustKey) {
 		this.cdnCacheBustKey = cdnCacheBustKey;
 	}
+
 
 }

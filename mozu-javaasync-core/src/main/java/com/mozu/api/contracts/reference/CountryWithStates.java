@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.reference;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.reference.State;
 
 /**
@@ -25,7 +26,7 @@ public class CountryWithStates implements Serializable
 	/**
 	 * The two character country code.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -45,5 +46,6 @@ public class CountryWithStates implements Serializable
 	public void setStates(List<State> states) {
 		this.states = states;
 	}
+
 
 }

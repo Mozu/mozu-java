@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.PriceListNode;
 
 /**
@@ -23,9 +24,20 @@ public class PriceList implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Mozu.ProductRuntime.Contracts.PriceList validSites ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected List<Integer> validSites;
+	public List<Integer> getValidSites() {
+		return this.validSites;
+	}
+	public void setValidSites(List<Integer> validSites) {
+		this.validSites = validSites;
+	}
+
+	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -38,7 +50,7 @@ public class PriceList implements Serializable
 	/**
 	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
 	 */
-	protected Boolean enabled;
+	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -51,7 +63,7 @@ public class PriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceList filteredInStoreFront ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean filteredInStoreFront;
+	protected  Boolean filteredInStoreFront;
 
 	public Boolean getFilteredInStoreFront() {
 		return this.filteredInStoreFront;
@@ -62,9 +74,22 @@ public class PriceList implements Serializable
 	}
 
 	/**
+	 * Mozu.ProductRuntime.Contracts.PriceList isIndexed ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  Boolean isIndexed;
+
+	public Boolean getIsIndexed() {
+		return this.isIndexed;
+	}
+
+	public void setIsIndexed(Boolean isIndexed) {
+		this.isIndexed = isIndexed;
+	}
+
+	/**
 	 * Mozu.ProductRuntime.Contracts.PriceList isSiteDefault ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean isSiteDefault;
+	protected  Boolean isSiteDefault;
 
 	public Boolean getIsSiteDefault() {
 		return this.isSiteDefault;
@@ -77,7 +102,7 @@ public class PriceList implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -90,7 +115,7 @@ public class PriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceList priceListCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -103,7 +128,7 @@ public class PriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceList priceListId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer priceListId;
+	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
 		return this.priceListId;
@@ -116,7 +141,7 @@ public class PriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.PriceList resolvable ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean resolvable;
+	protected  Boolean resolvable;
 
 	public Boolean getResolvable() {
 		return this.resolvable;
@@ -124,17 +149,6 @@ public class PriceList implements Serializable
 
 	public void setResolvable(Boolean resolvable) {
 		this.resolvable = resolvable;
-	}
-
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList validSites ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected List<Integer> validSites;
-	public List<Integer> getValidSites() {
-		return this.validSites;
-	}
-	public void setValidSites(List<Integer> validSites) {
-		this.validSites = validSites;
 	}
 
 	/**
@@ -158,5 +172,6 @@ public class PriceList implements Serializable
 	public void setDescendants(List<PriceListNode> descendants) {
 		this.descendants = descendants;
 	}
+
 
 }

@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.pricingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.pricingruntime.ProductProperty;
 
 /**
@@ -25,7 +26,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -38,7 +39,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -51,7 +52,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The sale price of the line item in the order.
 	 */
-	protected Double lineItemPrice;
+	protected  Double lineItemPrice;
 
 	public Double getLineItemPrice() {
 		return this.lineItemPrice;
@@ -64,7 +65,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -77,7 +78,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -90,7 +91,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
 	 */
-	protected Integer quantity;
+	protected  Integer quantity;
 
 	public Integer getQuantity() {
 		return this.quantity;
@@ -103,7 +104,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
-	protected String reason;
+	protected  String reason;
 
 	public String getReason() {
 		return this.reason;
@@ -116,7 +117,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * The calculated monetary amount of shipping for a line items within and an entire order.
 	 */
-	protected Double shippingAmount;
+	protected  Double shippingAmount;
 
 	public Double getShippingAmount() {
 		return this.shippingAmount;
@@ -129,7 +130,7 @@ public class TaxableLineItem implements Serializable
 	/**
 	 * For configurable products, the unique identifier of the product variation that has been selected.
 	 */
-	protected String variantProductCode;
+	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
 		return this.variantProductCode;
@@ -149,5 +150,6 @@ public class TaxableLineItem implements Serializable
 	public void setProductProperties(List<ProductProperty> productProperties) {
 		this.productProperties = productProperties;
 	}
+
 
 }

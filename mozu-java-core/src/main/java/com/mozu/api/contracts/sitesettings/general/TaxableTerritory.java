@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.general;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of the territory which is subject to sales tax.
@@ -23,7 +24,7 @@ public class TaxableTerritory implements Serializable
 	/**
 	 * The 2-letter geographic code representing the country for the physical or mailing address. Currently limited to the US.
 	 */
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -36,7 +37,7 @@ public class TaxableTerritory implements Serializable
 	/**
 	 * If true, all shipping charges for this territory are subject to sales tax.
 	 */
-	protected Boolean isShippingTaxable;
+	protected  Boolean isShippingTaxable;
 
 	public Boolean getIsShippingTaxable() {
 		return this.isShippingTaxable;
@@ -49,7 +50,7 @@ public class TaxableTerritory implements Serializable
 	/**
 	 * The two-letter geographic code representing the state for the physical or mailing address. This is currently limited to the US.
 	 */
-	protected String stateOrProvinceCode;
+	protected  String stateOrProvinceCode;
 
 	public String getStateOrProvinceCode() {
 		return this.stateOrProvinceCode;
@@ -58,5 +59,6 @@ public class TaxableTerritory implements Serializable
 	public void setStateOrProvinceCode(String stateOrProvinceCode) {
 		this.stateOrProvinceCode = stateOrProvinceCode;
 	}
+
 
 }

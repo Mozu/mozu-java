@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
-	protected String baseProductCode;
+	protected  String baseProductCode;
 
 	public String getBaseProductCode() {
 		return this.baseProductCode;
@@ -37,7 +38,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
-	protected String locationCode;
+	protected  String locationCode;
 
 	public String getLocationCode() {
 		return this.locationCode;
@@ -50,7 +51,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -63,7 +64,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -76,7 +77,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The stock level for the associated product currently available, at specified locations, and based on the number of pending product reservations as applicable. System-supplied and read only.
 	 */
-	protected Integer stockAvailable;
+	protected  Integer stockAvailable;
 
 	public Integer getStockAvailable() {
 		return this.stockAvailable;
@@ -89,7 +90,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The stock level for the associated product currently on back order for this location, based on the number of pending product reservations. System-supplied and read only.
 	 */
-	protected Integer stockOnBackOrder;
+	protected  Integer stockOnBackOrder;
 
 	public Integer getStockOnBackOrder() {
 		return this.stockOnBackOrder;
@@ -102,7 +103,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * The current physical stock level for the associated product, which does not account for pending product reservations.
 	 */
-	protected Integer stockOnHand;
+	protected  Integer stockOnHand;
 
 	public Integer getStockOnHand() {
 		return this.stockOnHand;
@@ -115,7 +116,7 @@ public class LocationInventory implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -124,5 +125,6 @@ public class LocationInventory implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

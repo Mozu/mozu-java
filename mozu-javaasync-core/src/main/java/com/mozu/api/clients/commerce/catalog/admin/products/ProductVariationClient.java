@@ -6,7 +6,6 @@
  */
 package com.mozu.api.clients.commerce.catalog.admin.products;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -15,7 +14,6 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
@@ -100,7 +98,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * Retrieves a list of details of the localized price values for a product variation.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>> mozuClient=GetProductVariationLocalizedPricesClient(dataViewMode,  productCode,  variationKey);
 	 * client.setBaseAddress(url);
@@ -126,7 +124,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=GetProductVariationLocalizedPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode);
 	 * client.setBaseAddress(url);
@@ -145,7 +143,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Get GetProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=GetProductVariationLocalizedPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * client.setBaseAddress(url);
@@ -315,7 +313,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Adds the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=AddProductVariationLocalizedPriceClient(dataViewMode,  localizedPrice,  productCode,  variationKey);
 	 * client.setBaseAddress(url);
@@ -335,7 +333,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Post AddProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Adds the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=AddProductVariationLocalizedPriceClient(dataViewMode,  localizedPrice,  productCode,  variationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -446,7 +444,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrices description DOCUMENT_HERE 
+	 * Updates a list of localized price values for a product variation.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>> mozuClient=UpdateProductVariationLocalizedPricesClient(dataViewMode,  localizedPrice,  productCode,  variationKey);
 	 * client.setBaseAddress(url);
@@ -475,7 +473,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Updates the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=UpdateProductVariationLocalizedPriceClient(dataViewMode,  localizedPrice,  productCode,  variationKey,  currencyCode);
 	 * client.setBaseAddress(url);
@@ -496,7 +494,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Put UpdateProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Updates the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice> mozuClient=UpdateProductVariationLocalizedPriceClient(dataViewMode,  localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * client.setBaseAddress(url);

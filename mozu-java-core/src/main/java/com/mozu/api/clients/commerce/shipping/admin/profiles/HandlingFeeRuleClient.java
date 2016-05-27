@@ -6,34 +6,32 @@
  */
 package com.mozu.api.clients.commerce.shipping.admin.profiles;
 
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * 
+ * Use the ProductHandlingFeeRules sub-resource to manage your product handling fee rules that are associated with a specific shipping profile.
  * </summary>
  */
 public class HandlingFeeRuleClient {
 	
 	/**
-	 * 
+	 * Retrieves the details of the specified product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=GetProductHandlingFeeRuleClient(dataViewMode,  profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -44,16 +42,16 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves the details of the specified product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=GetProductHandlingFeeRuleClient(dataViewMode,  profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -72,14 +70,14 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of product handling fee rules and their details.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection> mozuClient=GetProductHandlingFeeRulesClient(dataViewMode,  profilecode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRuleCollection handlingFeeRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -90,15 +88,15 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of product handling fee rules and their details.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection> mozuClient=GetProductHandlingFeeRulesClient(dataViewMode,  profilecode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRuleCollection handlingFeeRuleCollection = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -117,16 +115,16 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=CreateProductHandlingFeeRuleClient( rule,  profilecode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -137,17 +135,17 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Creates a new product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=CreateProductHandlingFeeRuleClient( rule,  profilecode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -166,17 +164,17 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the specified product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=UpdateProductHandlingFeeRuleClient(dataViewMode,  rule,  profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -187,18 +185,18 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the specified product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule> mozuClient=UpdateProductHandlingFeeRuleClient(dataViewMode,  rule,  profilecode,  id,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
-	 * @param responseFields 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param rule 
+	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -218,14 +216,14 @@ public class HandlingFeeRuleClient {
 	}
 
 	/**
-	 * 
+	 * Deletes the specified product handling fee rule.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteProductHandlingFeeRuleClient(dataViewMode,  profilecode,  id);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param id 
-	 * @param profilecode 
+	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient 
 	 */

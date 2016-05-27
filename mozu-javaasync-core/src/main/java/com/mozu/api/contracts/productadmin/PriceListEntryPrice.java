@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductAdmin.Contracts.PriceListEntryPrice ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class PriceListEntryPrice implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPrice ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Double listPrice;
+	protected  Double listPrice;
 
 	public Double getListPrice() {
 		return this.listPrice;
@@ -36,7 +37,7 @@ public class PriceListEntryPrice implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPriceMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String listPriceMode;
+	protected  String listPriceMode;
 
 	public String getListPriceMode() {
 		return this.listPriceMode;
@@ -49,7 +50,7 @@ public class PriceListEntryPrice implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice minQty ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer minQty;
+	protected  Integer minQty;
 
 	public Integer getMinQty() {
 		return this.minQty;
@@ -62,7 +63,7 @@ public class PriceListEntryPrice implements Serializable
 	/**
 	 * The set sale price for a product consisting of a price with a discount already applied.
 	 */
-	protected Double salePrice;
+	protected  Double salePrice;
 
 	public Double getSalePrice() {
 		return this.salePrice;
@@ -75,7 +76,7 @@ public class PriceListEntryPrice implements Serializable
 	/**
 	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice salePriceMode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String salePriceMode;
+	protected  String salePriceMode;
 
 	public String getSalePriceMode() {
 		return this.salePriceMode;
@@ -84,5 +85,6 @@ public class PriceListEntryPrice implements Serializable
 	public void setSalePriceMode(String salePriceMode) {
 		this.salePriceMode = salePriceMode;
 	}
+
 
 }

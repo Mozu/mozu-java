@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
 import com.mozu.api.contracts.commerceruntime.fulfillment.PickupItem;
@@ -38,7 +39,7 @@ public class Pickup implements Serializable
 	/**
 	 * The specific code that represents pickup.
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -51,7 +52,7 @@ public class Pickup implements Serializable
 	/**
 	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
 	 */
-	protected DateTime fulfillmentDate;
+	protected  DateTime fulfillmentDate;
 
 	public DateTime getFulfillmentDate() {
 		return this.fulfillmentDate;
@@ -64,7 +65,7 @@ public class Pickup implements Serializable
 	/**
 	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
 	 */
-	protected String fulfillmentLocationCode;
+	protected  String fulfillmentLocationCode;
 
 	public String getFulfillmentLocationCode() {
 		return this.fulfillmentLocationCode;
@@ -77,7 +78,7 @@ public class Pickup implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -90,7 +91,7 @@ public class Pickup implements Serializable
 	/**
 	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
 	 */
-	protected String status;
+	protected  String status;
 
 	public String getStatus() {
 		return this.status;
@@ -103,7 +104,7 @@ public class Pickup implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -134,5 +135,6 @@ public class Pickup implements Serializable
 	public void setItems(List<PickupItem> items) {
 		this.items = items;
 	}
+
 
 }

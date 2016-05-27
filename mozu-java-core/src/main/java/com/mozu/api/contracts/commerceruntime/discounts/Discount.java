@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.discounts;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a discount defined for a product, order, or shipping on a web storefront.
@@ -24,7 +25,7 @@ public class Discount implements Serializable
 	/**
 	 * Date and time in UTC format when a discount, credit, wish list, or cart expires. An expired discount no longer can be redeemed. An expired wish list is no longer available. An expired credit can no longer be redeemed for a purchase. Acart becomes inactive and expired based on a system-calculated interval. For example, if an anonymous shopper has 14 days of inactivity, the cart is considered abandoned after that period of inactivity. System-supplied and read-only.
 	 */
-	protected DateTime expirationDate;
+	protected  DateTime expirationDate;
 
 	public DateTime getExpirationDate() {
 		return this.expirationDate;
@@ -37,7 +38,7 @@ public class Discount implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -61,7 +62,7 @@ public class Discount implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -70,5 +71,6 @@ public class Discount implements Serializable
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 }

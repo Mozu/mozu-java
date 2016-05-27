@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The login information for a customer account.
@@ -23,7 +24,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -36,7 +37,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * Mozu.Customer.Contracts.CustomerLoginInfo externalPassword ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String externalPassword;
+	protected  String externalPassword;
 
 	public String getExternalPassword() {
 		return this.externalPassword;
@@ -49,7 +50,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
 	 */
-	protected Boolean isImport;
+	protected  Boolean isImport;
 
 	public Boolean getIsImport() {
 		return this.isImport;
@@ -62,7 +63,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The saved password for the customer account. 
 	 */
-	protected String password;
+	protected  String password;
 
 	public String getPassword() {
 		return this.password;
@@ -75,7 +76,7 @@ public class CustomerLoginInfo implements Serializable
 	/**
 	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
-	protected String username;
+	protected  String username;
 
 	public String getUsername() {
 		return this.username;
@@ -84,5 +85,6 @@ public class CustomerLoginInfo implements Serializable
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 }

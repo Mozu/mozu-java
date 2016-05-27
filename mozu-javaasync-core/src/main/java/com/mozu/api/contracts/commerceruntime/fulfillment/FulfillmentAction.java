@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.commerceruntime.fulfillment;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an action to perform when fulfilling an item in an order, whether through in-store pickup or direct shipping.
@@ -24,7 +25,7 @@ public class FulfillmentAction implements Serializable
 	/**
 	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
 	 */
-	protected String actionName;
+	protected  String actionName;
 
 	public String getActionName() {
 		return this.actionName;
@@ -66,5 +67,6 @@ public class FulfillmentAction implements Serializable
 	public void setPickupIds(List<String> pickupIds) {
 		this.pickupIds = pickupIds;
 	}
+
 
 }

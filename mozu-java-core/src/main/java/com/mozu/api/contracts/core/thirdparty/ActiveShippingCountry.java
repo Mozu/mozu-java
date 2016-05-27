@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.core.thirdparty;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a shipping country active for a third-party capability.
@@ -32,7 +33,7 @@ public class ActiveShippingCountry implements Serializable
 		this.activeCarriers = activeCarriers;
 	}
 
-	protected String countryCode;
+	protected  String countryCode;
 
 	public String getCountryCode() {
 		return this.countryCode;
@@ -41,5 +42,6 @@ public class ActiveShippingCountry implements Serializable
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
+
 
 }

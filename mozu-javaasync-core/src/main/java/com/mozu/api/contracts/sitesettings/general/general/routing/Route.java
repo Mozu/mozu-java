@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.general.general.routing;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.SiteSettings.General.Contracts.General.Routing.Route ApiType DOCUMENT_HERE 
@@ -24,7 +25,7 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route canonical ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Boolean canonical;
+	protected  Boolean canonical;
 
 	public Boolean getCanonical() {
 		return this.canonical;
@@ -48,7 +49,7 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route functionId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String functionId;
+	protected  String functionId;
 
 	public String getFunctionId() {
 		return this.functionId;
@@ -61,7 +62,7 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route internalRoute ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String internalRoute;
+	protected  String internalRoute;
 
 	public String getInternalRoute() {
 		return this.internalRoute;
@@ -85,7 +86,7 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route template ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String template;
+	protected  String template;
 
 	public String getTemplate() {
 		return this.template;
@@ -98,7 +99,7 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route urlScheme ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String urlScheme;
+	protected  String urlScheme;
 
 	public String getUrlScheme() {
 		return this.urlScheme;
@@ -118,5 +119,6 @@ public class Route implements Serializable
 	public void setValidators(List<String> validators) {
 		this.validators = validators;
 	}
+
 
 }

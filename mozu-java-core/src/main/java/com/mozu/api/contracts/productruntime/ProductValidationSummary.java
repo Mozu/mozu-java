@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.BundledProductSummary;
 import com.mozu.api.contracts.productruntime.Category;
 import com.mozu.api.contracts.productruntime.ProductImage;
@@ -44,7 +45,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -57,7 +58,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
 	 */
-	protected Boolean isPackagedStandAlone;
+	protected  Boolean isPackagedStandAlone;
 
 	public Boolean getIsPackagedStandAlone() {
 		return this.isPackagedStandAlone;
@@ -70,7 +71,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
-	protected Boolean isTaxable;
+	protected  Boolean isTaxable;
 
 	public Boolean getIsTaxable() {
 		return this.isTaxable;
@@ -83,7 +84,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The manufacturer's part number for the product.
 	 */
-	protected String mfgPartNumber;
+	protected  String mfgPartNumber;
 
 	public String getMfgPartNumber() {
 		return this.mfgPartNumber;
@@ -96,7 +97,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 */
-	protected String productCode;
+	protected  String productCode;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -109,7 +110,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The name of the product that represents a line item in a taxable order or product bundle.
 	 */
-	protected String productName;
+	protected  String productName;
 
 	public String getProductName() {
 		return this.productName;
@@ -122,7 +123,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
 	 */
-	protected String productShortDescription;
+	protected  String productShortDescription;
 
 	public String getProductShortDescription() {
 		return this.productShortDescription;
@@ -135,7 +136,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The product type template associated with the product on the storefront.
 	 */
-	protected String productType;
+	protected  String productType;
 
 	public String getProductType() {
 		return this.productType;
@@ -148,7 +149,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
 	 */
-	protected String productUsage;
+	protected  String productUsage;
 
 	public String getProductUsage() {
 		return this.productUsage;
@@ -161,7 +162,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
 	 */
-	protected String upc;
+	protected  String upc;
 
 	public String getUpc() {
 		return this.upc;
@@ -174,7 +175,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
-	protected String variationProductCode;
+	protected  String variationProductCode;
 
 	public String getVariationProductCode() {
 		return this.variationProductCode;
@@ -209,7 +210,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The image configured for the product on the storefront.
 	 */
-	protected ProductImage image;
+	protected  ProductImage image;
 
 	public ProductImage getImage() {
 		return this.image;
@@ -222,7 +223,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
 	 */
-	protected ProductInventoryInfo inventoryInfo;
+	protected  ProductInventoryInfo inventoryInfo;
 
 	public ProductInventoryInfo getInventoryInfo() {
 		return this.inventoryInfo;
@@ -235,7 +236,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Dimensions of the packaged product.
 	 */
-	protected PackageMeasurements measurements;
+	protected  PackageMeasurements measurements;
 
 	public PackageMeasurements getMeasurements() {
 		return this.measurements;
@@ -248,7 +249,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Price that the merchant intends to sell the product which is not necessarily the list price. This is the price the merchant intends to sell the product if no sale price is present.
 	 */
-	protected ProductPrice price;
+	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
 		return this.price;
@@ -261,7 +262,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * Properties that describe the behavior the system uses when determining the price of products.
 	 */
-	protected ProductPricingBehaviorInfo pricingBehavior;
+	protected  ProductPricingBehaviorInfo pricingBehavior;
 
 	public ProductPricingBehaviorInfo getPricingBehavior() {
 		return this.pricingBehavior;
@@ -285,7 +286,7 @@ public class ProductValidationSummary implements Serializable
 	/**
 	 * The current state of the configured product determines whether or not the product is eligible for purchase. Products with options are only purchasable if the shopper has selected all required options. If the product is not ready for purchase, a message lists missing options that are required.
 	 */
-	protected ProductPurchasableState purchasableState;
+	protected  ProductPurchasableState purchasableState;
 
 	public ProductPurchasableState getPurchasableState() {
 		return this.purchasableState;
@@ -294,5 +295,6 @@ public class ProductValidationSummary implements Serializable
 	public void setPurchasableState(ProductPurchasableState purchasableState) {
 		this.purchasableState = purchasableState;
 	}
+
 
 }

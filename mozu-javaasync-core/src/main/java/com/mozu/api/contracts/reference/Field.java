@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.reference;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.reference.FieldData;
 
 /**
@@ -25,7 +26,7 @@ public class Field implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -38,7 +39,7 @@ public class Field implements Serializable
 	/**
 	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
 	 */
-	protected String label;
+	protected  String label;
 
 	public String getLabel() {
 		return this.label;
@@ -51,7 +52,7 @@ public class Field implements Serializable
 	/**
 	 * Integer that represents the sequence order of the attribute.
 	 */
-	protected Integer order;
+	protected  Integer order;
 
 	public Integer getOrder() {
 		return this.order;
@@ -64,7 +65,7 @@ public class Field implements Serializable
 	/**
 	 * Type of field.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -84,5 +85,6 @@ public class Field implements Serializable
 	public void setData(List<FieldData> data) {
 		this.data = data;
 	}
+
 
 }

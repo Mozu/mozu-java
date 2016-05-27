@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of an attribute used to describe customers or orders.
@@ -23,7 +24,7 @@ public class Attribute implements Serializable
 	/**
 	 * List of valid vocabulary values defined for an attribute.
 	 */
-	protected String vocabularyValues;
+	protected  String vocabularyValues;
 
 	public String getVocabularyValues() {
 		return this.vocabularyValues;
@@ -36,7 +37,7 @@ public class Attribute implements Serializable
 	/**
 	 * The administrator name associated with the object/data.
 	 */
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -49,7 +50,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute applicationAttributeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationAttributeId;
+	protected  Integer applicationAttributeId;
 
 	public Integer getApplicationAttributeId() {
 		return this.applicationAttributeId;
@@ -62,7 +63,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute attributeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer attributeId;
+	protected  Integer attributeId;
 
 	public Integer getAttributeId() {
 		return this.attributeId;
@@ -75,7 +76,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute code ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String code;
+	protected  String code;
 
 	public String getCode() {
 		return this.code;
@@ -88,7 +89,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute fqn ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String fqn;
+	protected  String fqn;
 
 	public String getFqn() {
 		return this.fqn;
@@ -101,7 +102,7 @@ public class Attribute implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -114,7 +115,7 @@ public class Attribute implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -127,7 +128,7 @@ public class Attribute implements Serializable
 	/**
 	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
 	 */
-	protected Integer sequence;
+	protected  Integer sequence;
 
 	public Integer getSequence() {
 		return this.sequence;
@@ -140,7 +141,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute type ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -153,7 +154,7 @@ public class Attribute implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.Attribute vocabularyJson ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String vocabularyJson;
+	protected  String vocabularyJson;
 
 	public String getVocabularyJson() {
 		return this.vocabularyJson;
@@ -162,5 +163,6 @@ public class Attribute implements Serializable
 	public void setVocabularyJson(String vocabularyJson) {
 		this.vocabularyJson = vocabularyJson;
 	}
+
 
 }

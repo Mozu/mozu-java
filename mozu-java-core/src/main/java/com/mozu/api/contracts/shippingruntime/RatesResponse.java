@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.shippingruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingruntime.CarrierRatesResponse;
 
 /**
@@ -25,7 +26,7 @@ public class RatesResponse implements Serializable
 	/**
 	 * Resolved Shipping Zone Code. This value can be null if the tenant/site does not have shipping zones defined or there are no matching shipping zones for the request (e.g. the only zone defined is "UNITED-STATES" and the destination address of the rate request is in Canada)
 	 */
-	protected String resolvedShippingZoneCode;
+	protected  String resolvedShippingZoneCode;
 
 	public String getResolvedShippingZoneCode() {
 		return this.resolvedShippingZoneCode;
@@ -56,5 +57,6 @@ public class RatesResponse implements Serializable
 	public void setRates(List<CarrierRatesResponse> rates) {
 		this.rates = rates;
 	}
+
 
 }

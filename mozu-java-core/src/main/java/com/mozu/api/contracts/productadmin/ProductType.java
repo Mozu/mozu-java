@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.AttributeInProductType;
 
@@ -26,7 +27,7 @@ public class ProductType implements Serializable
 	/**
 	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
 	 */
-	protected String goodsType;
+	protected  String goodsType;
 
 	public String getGoodsType() {
 		return this.goodsType;
@@ -39,7 +40,7 @@ public class ProductType implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -52,7 +53,7 @@ public class ProductType implements Serializable
 	/**
 	 * If true, this product is associated with the overall product type. There is only one BaseProductType per site group. System-supplied and read-only.
 	 */
-	protected Boolean isBaseProductType;
+	protected  Boolean isBaseProductType;
 
 	public Boolean getIsBaseProductType() {
 		return this.isBaseProductType;
@@ -65,7 +66,7 @@ public class ProductType implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -78,7 +79,7 @@ public class ProductType implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -91,7 +92,7 @@ public class ProductType implements Serializable
 	/**
 	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
 	 */
-	protected Integer productCount;
+	protected  Integer productCount;
 
 	public Integer getProductCount() {
 		return this.productCount;
@@ -115,7 +116,7 @@ public class ProductType implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -157,5 +158,6 @@ public class ProductType implements Serializable
 	public void setProperties(List<AttributeInProductType> properties) {
 		this.properties = properties;
 	}
+
 
 }

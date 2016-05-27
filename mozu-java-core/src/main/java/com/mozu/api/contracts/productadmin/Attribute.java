@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeMetadataItem;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.AttributeLocalizedContent;
@@ -30,7 +31,7 @@ public class Attribute implements Serializable
 	/**
 	 * The administrator name associated with the object/data.
 	 */
-	protected String adminName;
+	protected  String adminName;
 
 	public String getAdminName() {
 		return this.adminName;
@@ -43,7 +44,7 @@ public class Attribute implements Serializable
 	/**
 	 * Merchant-defined code for an extensible attribute. This code may be used to generate an object's fully qualified name, such as for products.
 	 */
-	protected String attributeCode;
+	protected  String attributeCode;
 
 	public String getAttributeCode() {
 		return this.attributeCode;
@@ -56,7 +57,7 @@ public class Attribute implements Serializable
 	/**
 	 * Generated sequence that increments for each attribute and data type combination created. This value is system-supplied and read-only.
 	 */
-	protected Integer attributeDataTypeSequence;
+	protected  Integer attributeDataTypeSequence;
 
 	public Integer getAttributeDataTypeSequence() {
 		return this.attributeDataTypeSequence;
@@ -69,7 +70,7 @@ public class Attribute implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -82,7 +83,7 @@ public class Attribute implements Serializable
 	/**
 	 * Generated sequence that increments for each product attribute created. This value is system-supplied and read-only.
 	 */
-	protected Integer attributeSequence;
+	protected  Integer attributeSequence;
 
 	public Integer getAttributeSequence() {
 		return this.attributeSequence;
@@ -95,7 +96,7 @@ public class Attribute implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -108,7 +109,7 @@ public class Attribute implements Serializable
 	/**
 	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
 	 */
-	protected String inputType;
+	protected  String inputType;
 
 	public String getInputType() {
 		return this.inputType;
@@ -121,7 +122,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the product attribute is an add-on configuration made by the shopper that does not represent a product variation, such as a monogram.
 	 */
-	protected Boolean isExtra;
+	protected  Boolean isExtra;
 
 	public Boolean getIsExtra() {
 		return this.isExtra;
@@ -134,7 +135,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the product attribute is a merchant- or shopper-configurable option, such as size or color, that represents a product variation.
 	 */
-	protected Boolean isOption;
+	protected  Boolean isOption;
 
 	public Boolean getIsOption() {
 		return this.isOption;
@@ -147,7 +148,7 @@ public class Attribute implements Serializable
 	/**
 	 * If true, the product attribute describes aspects of the product that do not represent an option configurable by the shopper, such as screen resolution or brand.
 	 */
-	protected Boolean isProperty;
+	protected  Boolean isProperty;
 
 	public Boolean getIsProperty() {
 		return this.isProperty;
@@ -160,7 +161,7 @@ public class Attribute implements Serializable
 	/**
 	 * The unique identifier of the master catalog associated with the entity.
 	 */
-	protected Integer masterCatalogId;
+	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
 		return this.masterCatalogId;
@@ -173,7 +174,7 @@ public class Attribute implements Serializable
 	/**
 	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
 	 */
-	protected String namespace;
+	protected  String namespace;
 
 	public String getNamespace() {
 		return this.namespace;
@@ -186,7 +187,7 @@ public class Attribute implements Serializable
 	/**
 	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
-	protected String valueType;
+	protected  String valueType;
 
 	public String getValueType() {
 		return this.valueType;
@@ -210,7 +211,7 @@ public class Attribute implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -223,7 +224,7 @@ public class Attribute implements Serializable
 	/**
 	 * Complex type that contains content for a language specified by LocaleCode.
 	 */
-	protected AttributeLocalizedContent content;
+	protected  AttributeLocalizedContent content;
 
 	public AttributeLocalizedContent getContent() {
 		return this.content;
@@ -247,7 +248,7 @@ public class Attribute implements Serializable
 	/**
 	 * This API type provides the search and indexing settings for the attribute.
 	 */
-	protected AttributeSearchSettings searchSettings;
+	protected  AttributeSearchSettings searchSettings;
 
 	public AttributeSearchSettings getSearchSettings() {
 		return this.searchSettings;
@@ -260,7 +261,7 @@ public class Attribute implements Serializable
 	/**
 	 * Properties used when validating a value entered for an object, including extensible attributes, products attributes, and database entries.
 	 */
-	protected AttributeValidation validation;
+	protected  AttributeValidation validation;
 
 	public AttributeValidation getValidation() {
 		return this.validation;
@@ -280,5 +281,6 @@ public class Attribute implements Serializable
 	public void setVocabularyValues(List<AttributeVocabularyValue> vocabularyValues) {
 		this.vocabularyValues = vocabularyValues;
 	}
+
 
 }

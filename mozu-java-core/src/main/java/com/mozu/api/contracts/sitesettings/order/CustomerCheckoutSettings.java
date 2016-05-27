@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.order;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
 /**
@@ -24,7 +25,7 @@ public class CustomerCheckoutSettings implements Serializable
 	/**
 	 * The type of customer checking out in the order such as a guest who has not logged in or a customer who has logged in. Valid strings are either "LoginOptional," where shoppers are prompted to sign in but are not required to do so, or "LoginRequired," where shopppers must login before purchasing.
 	 */
-	protected String customerCheckoutType;
+	protected  String customerCheckoutType;
 
 	public String getCustomerCheckoutType() {
 		return this.customerCheckoutType;
@@ -37,7 +38,7 @@ public class CustomerCheckoutSettings implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -46,5 +47,6 @@ public class CustomerCheckoutSettings implements Serializable
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
 	}
+
 
 }

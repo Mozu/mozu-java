@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.content;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class AddOrDeletePublishItem implements Serializable
 	/**
 	 * Mozu.Content.Contracts.AddOrDeletePublishItem docListFQN ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String docListFQN;
+	protected  String docListFQN;
 
 	public String getDocListFQN() {
 		return this.docListFQN;
@@ -36,7 +37,7 @@ public class AddOrDeletePublishItem implements Serializable
 	/**
 	 * Mozu.Content.Contracts.AddOrDeletePublishItem documentId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String documentId;
+	protected  String documentId;
 
 	public String getDocumentId() {
 		return this.documentId;
@@ -49,7 +50,7 @@ public class AddOrDeletePublishItem implements Serializable
 	/**
 	 * The ID of the specific scope for the object. 
 	 */
-	protected Integer scopeId;
+	protected  Integer scopeId;
 
 	public Integer getScopeId() {
 		return this.scopeId;
@@ -62,7 +63,7 @@ public class AddOrDeletePublishItem implements Serializable
 	/**
 	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
 	 */
-	protected String scopeType;
+	protected  String scopeType;
 
 	public String getScopeType() {
 		return this.scopeType;
@@ -71,5 +72,6 @@ public class AddOrDeletePublishItem implements Serializable
 	public void setScopeType(String scopeType) {
 		this.scopeType = scopeType;
 	}
+
 
 }

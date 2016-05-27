@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.sitesettings.order;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition;
 import com.mozu.api.contracts.sitesettings.order.Gateway;
@@ -27,7 +28,7 @@ public class PaymentSettings implements Serializable
 	/**
 	 * Settings that provide for the ability to pay for an order by mail.
 	 */
-	protected Boolean payByMail;
+	protected  Boolean payByMail;
 
 	public Boolean getPayByMail() {
 		return this.payByMail;
@@ -40,7 +41,7 @@ public class PaymentSettings implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -71,5 +72,6 @@ public class PaymentSettings implements Serializable
 	public void setGateways(List<Gateway> gateways) {
 		this.gateways = gateways;
 	}
+
 
 }

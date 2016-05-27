@@ -7,7 +7,6 @@
 package com.mozu.api.resources.commerce.shipping.admin.profiles;
 
 import com.mozu.api.ApiContext;
-import org.joda.time.DateTime;
 import java.util.List;
 import java.util.ArrayList;
 import com.mozu.api.MozuClient;
@@ -16,12 +15,11 @@ import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
-
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the ShippingStates sub-resource to manage the states your shipping profile supports. For example, you can specify one of your shipping profiles to only support Texas, Oklahoma, Arkansas, Louisiana, and New Mexico.Each shipping state is composed of a user-definied code and name.
  * </summary>
  */
 public class ShippingStatesResource {
@@ -38,12 +36,12 @@ public class ShippingStatesResource {
 
 	
 	/**
-	 * 
+	 * Retrieves a list of shipping states and their details.
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.getStates( profileCode);
 	 * </code></pre></p>
-	 * @param profileCode 
+	 * @param profileCode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
@@ -58,12 +56,12 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves a list of shipping states and their details.
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	CountDownLatch latch = shippingstates.getStates( profileCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profileCode 
+	 * @param profileCode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
@@ -78,14 +76,14 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the shipping states.
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	ShippingStates shippingStates = shippingstates.updateStates( states,  profilecode);
 	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param states 
+	 * @param states Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
@@ -100,15 +98,15 @@ public class ShippingStatesResource {
 	}
 
 	/**
-	 * 
+	 * Updates the details of the shipping states.
 	 * <p><pre><code>
 	 *	ShippingStates shippingstates = new ShippingStates();
 	 *	CountDownLatch latch = shippingstates.updateStates( states,  profilecode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param profilecode 
+	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param states 
+	 * @param states Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates

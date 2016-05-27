@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.sitesettings.shipping;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee;
 import com.mozu.api.contracts.sitesettings.shipping.SiteShippingSignatureRequirement;
@@ -26,7 +27,7 @@ public class SiteShippingSettings implements Serializable
 	/**
 	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
 	 */
-	protected AuditInfo auditInfo;
+	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
 		return this.auditInfo;
@@ -39,7 +40,7 @@ public class SiteShippingSettings implements Serializable
 	/**
 	 * The combined price for all items in the order, including all selected options but excluding any discounts.
 	 */
-	protected SiteShippingHandlingFee orderHandlingFee;
+	protected  SiteShippingHandlingFee orderHandlingFee;
 
 	public SiteShippingHandlingFee getOrderHandlingFee() {
 		return this.orderHandlingFee;
@@ -52,7 +53,7 @@ public class SiteShippingSettings implements Serializable
 	/**
 	 * Properties of the package signature requirements for the site.
 	 */
-	protected SiteShippingSignatureRequirement signatureRequirement;
+	protected  SiteShippingSignatureRequirement signatureRequirement;
 
 	public SiteShippingSignatureRequirement getSignatureRequirement() {
 		return this.signatureRequirement;
@@ -61,5 +62,6 @@ public class SiteShippingSettings implements Serializable
 	public void setSignatureRequirement(SiteShippingSignatureRequirement signatureRequirement) {
 		this.signatureRequirement = signatureRequirement;
 	}
+
 
 }

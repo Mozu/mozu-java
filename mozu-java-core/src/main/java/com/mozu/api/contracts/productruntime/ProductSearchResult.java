@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.Facet;
 import com.mozu.api.contracts.productruntime.Product;
 import com.mozu.api.contracts.productruntime.SolrDebugInfo;
@@ -27,7 +28,7 @@ public class ProductSearchResult implements Serializable
 	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */
-	protected Integer pageCount;
+	protected  Integer pageCount;
 
 	public Integer getPageCount() {
 		return this.pageCount;
@@ -40,7 +41,7 @@ public class ProductSearchResult implements Serializable
 	/**
 	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 */
-	protected Integer pageSize;
+	protected  Integer pageSize;
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -50,7 +51,7 @@ public class ProductSearchResult implements Serializable
 		this.pageSize = pageSize;
 	}
 
-	protected Integer startIndex;
+	protected  Integer startIndex;
 
 	public Integer getStartIndex() {
 		return this.startIndex;
@@ -63,7 +64,7 @@ public class ProductSearchResult implements Serializable
 	/**
 	 * The number of results listed in the query collection, represented by a signed 64-bit (8-byte) integer. This value is system-supplied and read-only.
 	 */
-	protected Integer totalCount;
+	protected  Integer totalCount;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -98,7 +99,7 @@ public class ProductSearchResult implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.ProductSearchResult solrDebugInfo ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected SolrDebugInfo solrDebugInfo;
+	protected  SolrDebugInfo solrDebugInfo;
 
 	public SolrDebugInfo getSolrDebugInfo() {
 		return this.solrDebugInfo;
@@ -107,5 +108,6 @@ public class ProductSearchResult implements Serializable
 	public void setSolrDebugInfo(SolrDebugInfo solrDebugInfo) {
 		this.solrDebugInfo = solrDebugInfo;
 	}
+
 
 }

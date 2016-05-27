@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.commerce;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a system message displayed when a change, such as a change in product price, occurs for a cart or order.
@@ -23,7 +24,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The order or item amount changed, if applicable.
 	 */
-	protected Double amount;
+	protected  Double amount;
 
 	public Double getAmount() {
 		return this.amount;
@@ -36,7 +37,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
 	 */
-	protected String appId;
+	protected  String appId;
 
 	public String getAppId() {
 		return this.appId;
@@ -49,7 +50,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The application's key.
 	 */
-	protected String appKey;
+	protected  String appKey;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -62,7 +63,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The application's name.
 	 */
-	protected String appName;
+	protected  String appName;
 
 	public String getAppName() {
 		return this.appName;
@@ -75,7 +76,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
 	 */
-	protected String correlationId;
+	protected  String correlationId;
 
 	public String getCorrelationId() {
 		return this.correlationId;
@@ -88,7 +89,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Date and time when the entity was created, represented in UTC Date/Time.
 	 */
-	protected DateTime createDate;
+	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
 		return this.createDate;
@@ -101,7 +102,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected String id;
+	protected  String id;
 
 	public String getId() {
 		return this.id;
@@ -114,7 +115,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Identifier for the object associated with the change message, which can represent a cart, cart item, or an order.
 	 */
-	protected String identifier;
+	protected  String identifier;
 
 	public String getIdentifier() {
 		return this.identifier;
@@ -127,7 +128,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
 	 */
-	protected String message;
+	protected  String message;
 
 	public String getMessage() {
 		return this.message;
@@ -140,7 +141,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
 	 */
-	protected Object metadata;
+	protected  Object metadata;
 
 	public Object getMetadata() {
 		return this.metadata;
@@ -153,7 +154,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The new value of the object affected by the change, such as the new price of the product. System-supplied and read-only.
 	 */
-	protected String newValue;
+	protected  String newValue;
 
 	public String getNewValue() {
 		return this.newValue;
@@ -166,7 +167,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The prior value of the object affected by the change, such as the price of the product when it was added to the cart. System-supplied and read-only.
 	 */
-	protected String oldValue;
+	protected  String oldValue;
 
 	public String getOldValue() {
 		return this.oldValue;
@@ -179,7 +180,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The text that appears on the subject line of the message, such as "The product price has changed."
 	 */
-	protected String subject;
+	protected  String subject;
 
 	public String getSubject() {
 		return this.subject;
@@ -192,7 +193,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
 	 */
-	protected String subjectType;
+	protected  String subjectType;
 
 	public String getSubjectType() {
 		return this.subjectType;
@@ -205,7 +206,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * If true, the change associated with the message executed successfully.
 	 */
-	protected Boolean success;
+	protected  Boolean success;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -218,7 +219,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The user's first name.
 	 */
-	protected String userFirstName;
+	protected  String userFirstName;
 
 	public String getUserFirstName() {
 		return this.userFirstName;
@@ -231,7 +232,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
 	 */
-	protected String userId;
+	protected  String userId;
 
 	public String getUserId() {
 		return this.userId;
@@ -244,7 +245,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The user's last name.
 	 */
-	protected String userLastName;
+	protected  String userLastName;
 
 	public String getUserLastName() {
 		return this.userLastName;
@@ -257,7 +258,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The user type (e.g. Shopper, Admin, etc.).
 	 */
-	protected String userScopeType;
+	protected  String userScopeType;
 
 	public String getUserScopeType() {
 		return this.userScopeType;
@@ -270,7 +271,7 @@ public class ChangeMessage implements Serializable
 	/**
 	 * The action associated with this message. For example, if the price of a product changes, the verb could be "Increased" or "Decreased". If the product is no longer available, the verb could be "Invalidated". System-supplied and read-only.
 	 */
-	protected String verb;
+	protected  String verb;
 
 	public String getVerb() {
 		return this.verb;
@@ -279,5 +280,6 @@ public class ChangeMessage implements Serializable
 	public void setVerb(String verb) {
 		this.verb = verb;
 	}
+
 
 }

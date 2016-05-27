@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.appdev;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomainValue;
 
 /**
@@ -25,7 +26,7 @@ public class ApplicationCapabilityDomain implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityDomainId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationCapabilityDomainId;
+	protected  Integer applicationCapabilityDomainId;
 
 	public Integer getApplicationCapabilityDomainId() {
 		return this.applicationCapabilityDomainId;
@@ -38,7 +39,7 @@ public class ApplicationCapabilityDomain implements Serializable
 	/**
 	 * Mozu.AppDev.Contracts.ApplicationCapabilityDomain applicationCapabilityTypeId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer applicationCapabilityTypeId;
+	protected  Integer applicationCapabilityTypeId;
 
 	public Integer getApplicationCapabilityTypeId() {
 		return this.applicationCapabilityTypeId;
@@ -51,7 +52,7 @@ public class ApplicationCapabilityDomain implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -82,5 +83,6 @@ public class ApplicationCapabilityDomain implements Serializable
 	public void setApplicationCapabilityDomainValues2(List<ApplicationCapabilityDomainValue> applicationCapabilityDomainValues2) {
 		this.applicationCapabilityDomainValues2 = applicationCapabilityDomainValues2;
 	}
+
 
 }

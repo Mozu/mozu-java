@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.PreAuthorizeTransactionTypeDataContract;
 
 /**
@@ -24,7 +25,7 @@ public class PreAuthorizeDefinition implements Serializable
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
-	protected Integer id;
+	protected  Integer id;
 
 	public Integer getId() {
 		return this.id;
@@ -37,7 +38,7 @@ public class PreAuthorizeDefinition implements Serializable
 	/**
 	 * The product environment URL associated with the preauthorization gateway.
 	 */
-	protected String preAuthorizeProdUrl;
+	protected  String preAuthorizeProdUrl;
 
 	public String getPreAuthorizeProdUrl() {
 		return this.preAuthorizeProdUrl;
@@ -50,7 +51,7 @@ public class PreAuthorizeDefinition implements Serializable
 	/**
 	 * The test environment URL associated with the preauthorization gateway.
 	 */
-	protected String preAuthorizeTestUrl;
+	protected  String preAuthorizeTestUrl;
 
 	public String getPreAuthorizeTestUrl() {
 		return this.preAuthorizeTestUrl;
@@ -63,7 +64,7 @@ public class PreAuthorizeDefinition implements Serializable
 	/**
 	 * The type of preauthorization gateway.
 	 */
-	protected PreAuthorizeTransactionTypeDataContract type;
+	protected  PreAuthorizeTransactionTypeDataContract type;
 
 	public PreAuthorizeTransactionTypeDataContract getType() {
 		return this.type;
@@ -72,5 +73,6 @@ public class PreAuthorizeDefinition implements Serializable
 	public void setType(PreAuthorizeTransactionTypeDataContract type) {
 		this.type = type;
 	}
+
 
 }

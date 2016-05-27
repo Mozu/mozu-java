@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.search.SearchSynonymSettings;
 import com.mozu.api.contracts.productadmin.SiteSearchSettings;
 
@@ -26,7 +27,7 @@ public class SearchSettings implements Serializable
 	/**
 	 * Settings of keys and values for synonyms in search results.
 	 */
-	protected SearchSynonymSettings searchSynonymSettings;
+	protected  SearchSynonymSettings searchSynonymSettings;
 
 	public SearchSynonymSettings getSearchSynonymSettings() {
 		return this.searchSynonymSettings;
@@ -46,5 +47,6 @@ public class SearchSettings implements Serializable
 	public void setSiteSearchSettings(List<SiteSearchSettings> siteSearchSettings) {
 		this.siteSearchSettings = siteSearchSettings;
 	}
+
 
 }

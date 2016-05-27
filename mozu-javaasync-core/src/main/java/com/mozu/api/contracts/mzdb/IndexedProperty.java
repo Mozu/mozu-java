@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.mzdb;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Data for indexed properties within the database.
@@ -23,7 +24,7 @@ public class IndexedProperty implements Serializable
 	/**
 	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
 	 */
-	protected String dataType;
+	protected  String dataType;
 
 	public String getDataType() {
 		return this.dataType;
@@ -36,7 +37,7 @@ public class IndexedProperty implements Serializable
 	/**
 	 * A JPath query indicating the property that should be indexed to enable querying and sorting.  Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
 	 */
-	protected String propertyName;
+	protected  String propertyName;
 
 	public String getPropertyName() {
 		return this.propertyName;
@@ -45,5 +46,6 @@ public class IndexedProperty implements Serializable
 	public void setPropertyName(String propertyName) {
 		this.propertyName = propertyName;
 	}
+
 
 }

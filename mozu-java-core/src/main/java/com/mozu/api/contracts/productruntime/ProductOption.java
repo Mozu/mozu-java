@@ -7,10 +7,11 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductOptionValue;
 
@@ -26,7 +27,7 @@ public class ProductOption implements Serializable
 	/**
 	 * The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 */
-	protected String attributeFQN;
+	protected  String attributeFQN;
 
 	public String getAttributeFQN() {
 		return this.attributeFQN;
@@ -39,7 +40,7 @@ public class ProductOption implements Serializable
 	/**
 	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
 	 */
-	protected Boolean isMultiValue;
+	protected  Boolean isMultiValue;
 
 	public Boolean getIsMultiValue() {
 		return this.isMultiValue;
@@ -52,7 +53,7 @@ public class ProductOption implements Serializable
 	/**
 	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
 	 */
-	protected Boolean isRequired;
+	protected  Boolean isRequired;
 
 	public Boolean getIsRequired() {
 		return this.isRequired;
@@ -65,7 +66,7 @@ public class ProductOption implements Serializable
 	/**
 	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
 	 */
-	protected AttributeDetail attributeDetail;
+	protected  AttributeDetail attributeDetail;
 
 	public AttributeDetail getAttributeDetail() {
 		return this.attributeDetail;
@@ -85,5 +86,6 @@ public class ProductOption implements Serializable
 	public void setValues(List<ProductOptionValue> values) {
 		this.values = values;
 	}
+
 
 }

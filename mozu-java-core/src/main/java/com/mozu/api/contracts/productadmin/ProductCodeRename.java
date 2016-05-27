@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productadmin;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties for a product code current and changed content.
@@ -23,7 +24,7 @@ public class ProductCodeRename implements Serializable
 	/**
 	 * The existing product code to be changed.
 	 */
-	protected String existingProductCode;
+	protected  String existingProductCode;
 
 	public String getExistingProductCode() {
 		return this.existingProductCode;
@@ -36,7 +37,7 @@ public class ProductCodeRename implements Serializable
 	/**
 	 * The new product code for the product. This code must be unique across all catalogs.
 	 */
-	protected String newProductCode;
+	protected  String newProductCode;
 
 	public String getNewProductCode() {
 		return this.newProductCode;
@@ -45,5 +46,6 @@ public class ProductCodeRename implements Serializable
 	public void setNewProductCode(String newProductCode) {
 		this.newProductCode = newProductCode;
 	}
+
 
 }

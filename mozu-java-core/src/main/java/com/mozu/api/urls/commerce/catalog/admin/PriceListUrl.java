@@ -6,8 +6,6 @@
  */
 package com.mozu.api.urls.commerce.catalog.admin;
 
-import org.joda.time.DateTime;
-
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
 
@@ -37,7 +35,7 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetPriceList
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -63,7 +61,7 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for UpdatePriceList
-	 * @param priceListCode 
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
 	 * @return   String Resource Url
 	 */
@@ -77,8 +75,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for DeletePriceList
-	 * @param cascadeDeleteEntries 
-	 * @param priceListCode 
+	 * @param cascadeDeleteEntries Specifies whether to deletes all price list entries associated with the price list.
+	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePriceListUrl(Boolean cascadeDeleteEntries, String priceListCode)

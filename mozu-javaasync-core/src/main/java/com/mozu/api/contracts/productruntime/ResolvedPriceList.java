@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.productruntime;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Mozu.ProductRuntime.Contracts.ResolvedPriceList ApiType DOCUMENT_HERE 
@@ -23,7 +24,7 @@ public class ResolvedPriceList implements Serializable
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
-	protected String description;
+	protected  String description;
 
 	public String getDescription() {
 		return this.description;
@@ -36,7 +37,7 @@ public class ResolvedPriceList implements Serializable
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
-	protected String name;
+	protected  String name;
 
 	public String getName() {
 		return this.name;
@@ -49,7 +50,7 @@ public class ResolvedPriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.ResolvedPriceList priceListCode ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected String priceListCode;
+	protected  String priceListCode;
 
 	public String getPriceListCode() {
 		return this.priceListCode;
@@ -62,7 +63,7 @@ public class ResolvedPriceList implements Serializable
 	/**
 	 * Mozu.ProductRuntime.Contracts.ResolvedPriceList priceListId ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected Integer priceListId;
+	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
 		return this.priceListId;
@@ -71,5 +72,6 @@ public class ResolvedPriceList implements Serializable
 	public void setPriceListId(Integer priceListId) {
 		this.priceListId = priceListId;
 	}
+
 
 }

@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.paymentservice;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Properties of a supported credit card for the site's payment gateway.
@@ -23,7 +24,7 @@ public class SupportedCard implements Serializable
 	/**
 	 * Company-defined friendly name that identifies the supported card.
 	 */
-	protected String friendlyName;
+	protected  String friendlyName;
 
 	public String getFriendlyName() {
 		return this.friendlyName;
@@ -36,7 +37,7 @@ public class SupportedCard implements Serializable
 	/**
 	 * The card type of the supported payment card, such as Visa or Amex.
 	 */
-	protected String type;
+	protected  String type;
 
 	public String getType() {
 		return this.type;
@@ -45,5 +46,6 @@ public class SupportedCard implements Serializable
 	public void setType(String type) {
 		this.type = type;
 	}
+
 
 }

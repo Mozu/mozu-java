@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.commerceruntime.discounts;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.discounts.Discount;
 
 /**
@@ -24,7 +25,7 @@ public class AppliedDiscount implements Serializable
 	/**
 	 * Alphanumeric code associated with the coupon or promotion that results in a discounted price.
 	 */
-	protected String couponCode;
+	protected  String couponCode;
 
 	public String getCouponCode() {
 		return this.couponCode;
@@ -37,7 +38,7 @@ public class AppliedDiscount implements Serializable
 	/**
 	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
 	 */
-	protected Boolean excluded;
+	protected  Boolean excluded;
 
 	public Boolean getExcluded() {
 		return this.excluded;
@@ -50,7 +51,7 @@ public class AppliedDiscount implements Serializable
 	/**
 	 * The value of the discount applied to the cart or order, represented as a negative currency amount to apply to the original price.
 	 */
-	protected Double impact;
+	protected  Double impact;
 
 	public Double getImpact() {
 		return this.impact;
@@ -63,7 +64,7 @@ public class AppliedDiscount implements Serializable
 	/**
 	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
 	 */
-	protected Discount discount;
+	protected  Discount discount;
 
 	public Discount getDiscount() {
 		return this.discount;
@@ -72,5 +73,6 @@ public class AppliedDiscount implements Serializable
 	public void setDiscount(Discount discount) {
 		this.discount = discount;
 	}
+
 
 }

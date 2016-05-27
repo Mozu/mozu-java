@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.customer;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	Information required to reset the password for a customer account.
@@ -23,7 +24,7 @@ public class ResetPasswordInfo implements Serializable
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
-	protected String emailAddress;
+	protected  String emailAddress;
 
 	public String getEmailAddress() {
 		return this.emailAddress;
@@ -36,7 +37,7 @@ public class ResetPasswordInfo implements Serializable
 	/**
 	 * The user name associated with the user profile. The customer uses the user name to access the account.
 	 */
-	protected String userName;
+	protected  String userName;
 
 	public String getUserName() {
 		return this.userName;
@@ -45,5 +46,6 @@ public class ResetPasswordInfo implements Serializable
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 
 }

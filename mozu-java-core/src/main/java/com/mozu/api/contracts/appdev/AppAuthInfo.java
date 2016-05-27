@@ -6,10 +6,11 @@
  */
 package com.mozu.api.contracts.appdev;
 
-import org.joda.time.DateTime;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
+import java.io.IOException;
+import java.lang.ClassNotFoundException;
 
 /**
  *	The information required to authenticate third party applications against the Mozu API.
@@ -23,7 +24,7 @@ public class AppAuthInfo implements Serializable
 	/**
 	 * Unique identifier of the application. System-supplied and read-only.
 	 */
-	protected String applicationId;
+	protected  String applicationId;
 
 	public String getApplicationId() {
 		return this.applicationId;
@@ -36,7 +37,7 @@ public class AppAuthInfo implements Serializable
 	/**
 	 * System-supplied alphanumeric code used to authenticate applications. This string is only available for viewing in Mozu Dev Center.
 	 */
-	protected String sharedSecret;
+	protected  String sharedSecret;
 
 	public String getSharedSecret() {
 		return this.sharedSecret;
@@ -45,5 +46,6 @@ public class AppAuthInfo implements Serializable
 	public void setSharedSecret(String sharedSecret) {
 		this.sharedSecret = sharedSecret;
 	}
+
 
 }
