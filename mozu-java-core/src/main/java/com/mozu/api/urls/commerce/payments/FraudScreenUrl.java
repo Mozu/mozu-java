@@ -19,7 +19,7 @@ public class FraudScreenUrl
 	 */
 	public static MozuUrl screenUrl()
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen");
+		UrlFormatter formatter = new UrlFormatter("/Mozu.PaymentService.WebApi/commerce/payments/fraudscreen/screen");
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 
