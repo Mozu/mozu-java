@@ -152,7 +152,7 @@ public class ProductVariationClient {
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -341,7 +341,7 @@ public class ProductVariationClient {
 	 * ProductVariationFixedPrice productVariationFixedPrice = client.Result();
 	 * </code></pre></p>
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
@@ -503,7 +503,7 @@ public class ProductVariationClient {
 	 * </code></pre></p>
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @param localizedPrice Mozu.ProductAdmin.Contracts.ProductVariationFixedPrice ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
@@ -602,7 +602,7 @@ public class ProductVariationClient {
 	 * ProductVariationCollection productVariationCollection = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param productVariations Collection of variations configured for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductVariationCollection>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -670,7 +670,7 @@ public class ProductVariationClient {
 	}
 
 	/**
-	 * products-variations Delete DeleteProductVariationLocalizedPrice description DOCUMENT_HERE 
+	 * Deletes the localized price value for a product variation and a specific localized currency.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteProductVariationLocalizedPriceClient(dataViewMode,  productCode,  variationKey,  currencyCode);
 	 * client.setBaseAddress(url);

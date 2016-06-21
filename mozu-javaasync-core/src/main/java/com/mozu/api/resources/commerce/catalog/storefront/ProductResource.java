@@ -80,7 +80,7 @@ public class ProductResource {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
@@ -103,7 +103,7 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
@@ -157,7 +157,7 @@ public class ProductResource {
 	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 */
@@ -178,7 +178,7 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
@@ -231,7 +231,7 @@ public class ProductResource {
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
@@ -256,7 +256,7 @@ public class ProductResource {
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
@@ -311,7 +311,7 @@ public class ProductResource {
 	 * </code></pre></p>
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -332,7 +332,7 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -389,7 +389,7 @@ public class ProductResource {
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return com.mozu.api.contracts.productruntime.ConfiguredProduct
@@ -414,7 +414,7 @@ public class ProductResource {
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
@@ -557,7 +557,7 @@ public class ProductResource {
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
@@ -583,7 +583,7 @@ public class ProductResource {
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param  callback callback handler for asynchronous operations
@@ -639,7 +639,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	LocationInventoryCollection locationInventoryCollection = product.getProductInventories( query,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
@@ -660,7 +660,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInventories( query,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection

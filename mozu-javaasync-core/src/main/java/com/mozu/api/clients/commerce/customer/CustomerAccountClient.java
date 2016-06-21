@@ -474,7 +474,7 @@ public class CustomerAccountClient {
 	 * client.executeRequest();
 	 * ChangePasswordResultCollection changePasswordResultCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param accountPasswordInfos Mozu.Customer.Contracts.AccountPasswordInfoCollection ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.ChangePasswordResultCollection>
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
@@ -571,6 +571,49 @@ public class CustomerAccountClient {
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
 		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient=GetCustomersPurchaseOrderAccountsClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection>
+	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> getCustomersPurchaseOrderAccountsClient() throws Exception
+	{
+		return getCustomersPurchaseOrderAccountsClient( null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient=GetCustomersPurchaseOrderAccountsClient( startIndex,  pageSize,  sortBy,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = client.Result();
+	 * </code></pre></p>
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection>
+	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> getCustomersPurchaseOrderAccountsClient(Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getCustomersPurchaseOrderAccountsUrl(pageSize, responseFields, sortBy, startIndex);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection.class;
+		MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> mozuClient = (MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		return mozuClient;

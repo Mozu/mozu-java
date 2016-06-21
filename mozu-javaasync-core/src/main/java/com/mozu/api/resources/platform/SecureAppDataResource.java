@@ -76,7 +76,7 @@ public class SecureAppDataResource {
 	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -97,7 +97,7 @@ public class SecureAppDataResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject

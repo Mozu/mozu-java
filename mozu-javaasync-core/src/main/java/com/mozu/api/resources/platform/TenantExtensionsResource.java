@@ -70,7 +70,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.getExtensions( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -89,7 +89,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	CountDownLatch latch = tenantextensions.getExtensions( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -141,7 +141,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	TenantExtensions tenantExtensions = tenantextensions.updateExtensions( extensions,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -162,7 +162,7 @@ public class TenantExtensionsResource {
 	 *	TenantExtensions tenantextensions = new TenantExtensions();
 	 *	CountDownLatch latch = tenantextensions.updateExtensions( extensions,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param extensions Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.installedapplications.TenantExtensions

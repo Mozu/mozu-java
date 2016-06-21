@@ -53,7 +53,7 @@ public class CustomerAuthTicketResource {
 	 *	CustomerAuthTicket customerauthticket = new CustomerAuthTicket();
 	 *	CustomerAuthTicket customerAuthTicket = customerauthticket.createAnonymousShopperAuthTicket( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.customer.CustomerAuthTicket
 	 * @see com.mozu.api.contracts.customer.CustomerAuthTicket
 	 */

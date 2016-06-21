@@ -171,7 +171,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for ChangePasswords
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordsUrl(String responseFields)
@@ -206,6 +206,24 @@ public class CustomerAccountUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyusername?userName={userName}&responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("userName", userName);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetCustomersPurchaseOrderAccounts
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getCustomersPurchaseOrderAccountsUrl(Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/purchaseOrderAccounts?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
+		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("sortBy", sortBy);
+		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

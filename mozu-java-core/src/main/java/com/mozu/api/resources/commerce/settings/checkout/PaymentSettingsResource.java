@@ -55,7 +55,7 @@ public class PaymentSettingsResource {
 	 *	ExternalPaymentWorkflowDefinition externalPaymentWorkflowDefinition = paymentsettings.getThirdPartyPaymentWorkflowWithValues( fullyQualifiedName,  responseFields);
 	 * </code></pre></p>
 	 * @param fullyQualifiedName Fully qualified name of the attribute for the third-party payment workflow.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 * @see com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition
 	 */

@@ -77,7 +77,7 @@ public class RefundResource {
 	 *	Refund refund = refund.createRefund( refund,  orderId,  responseFields);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -99,7 +99,7 @@ public class RefundResource {
 	 *	CountDownLatch latch = refund.createRefund( refund,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund

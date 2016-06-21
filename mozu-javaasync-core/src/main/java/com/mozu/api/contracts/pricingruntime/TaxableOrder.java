@@ -25,6 +25,19 @@ public class TaxableOrder implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
+	 */
+	protected  String currencyCode;
+
+	public String getCurrencyCode() {
+		return this.currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	/**
 	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
 	 */
 	protected  Double handlingFee;
@@ -100,19 +113,6 @@ public class TaxableOrder implements Serializable
 
 	public void setTaxRequestType(String taxRequestType) {
 		this.taxRequestType = taxRequestType;
-	}
-
-	/**
-	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
-	 */
-	protected  String currencyCode;
-
-	public String getCurrencyCode() {
-		return this.currencyCode;
-	}
-
-	public void setCurrencyCode(String currencyCode) {
-		this.currencyCode = currencyCode;
 	}
 
 	/**

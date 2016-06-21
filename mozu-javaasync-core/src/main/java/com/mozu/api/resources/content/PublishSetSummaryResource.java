@@ -70,9 +70,9 @@ public class PublishSetSummaryResource {
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = publishsetsummary.getPublishSets( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 */
@@ -91,9 +91,9 @@ public class PublishSetSummaryResource {
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	CountDownLatch latch = publishsetsummary.getPublishSets( pageSize,  startIndex,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
@@ -144,11 +144,11 @@ public class PublishSetSummaryResource {
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -168,11 +168,11 @@ public class PublishSetSummaryResource {
 	 *	CountDownLatch latch = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
-	 * @param pageSize The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
@@ -223,7 +223,7 @@ public class PublishSetSummaryResource {
 	 *	object object = publishsetsummary.deletePublishSet( code,  shouldDiscard,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
 	 * @return object
 	 * @see object
@@ -244,7 +244,7 @@ public class PublishSetSummaryResource {
 	 *	CountDownLatch latch = publishsetsummary.deletePublishSet( code,  shouldDiscard,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return object
@@ -300,7 +300,7 @@ public class PublishSetSummaryResource {
 	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
 	 * @return object
 	 * @see object
@@ -322,7 +322,7 @@ public class PublishSetSummaryResource {
 	 *	CountDownLatch latch = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
 	 * @return object

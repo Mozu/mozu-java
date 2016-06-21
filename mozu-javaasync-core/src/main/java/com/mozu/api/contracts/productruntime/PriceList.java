@@ -24,17 +24,6 @@ public class PriceList implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList validSites ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected List<Integer> validSites;
-	public List<Integer> getValidSites() {
-		return this.validSites;
-	}
-	public void setValidSites(List<Integer> validSites) {
-		this.validSites = validSites;
-	}
-
-	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected  String description;
@@ -149,6 +138,17 @@ public class PriceList implements Serializable
 
 	public void setResolvable(Boolean resolvable) {
 		this.resolvable = resolvable;
+	}
+
+	/**
+	 * Mozu.ProductRuntime.Contracts.PriceList validSites ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected List<Integer> validSites;
+	public List<Integer> getValidSites() {
+		return this.validSites;
+	}
+	public void setValidSites(List<Integer> validSites) {
+		this.validSites = validSites;
 	}
 
 	/**

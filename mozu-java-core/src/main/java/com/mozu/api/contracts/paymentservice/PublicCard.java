@@ -22,45 +22,6 @@ public class PublicCard implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  String cardHolderName;
-
-	public String getCardHolderName() {
-		return this.cardHolderName;
-	}
-
-	public void setCardHolderName(String cardHolderName) {
-		this.cardHolderName = cardHolderName;
-	}
-
-	/**
-	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  Integer cardIssueMonth;
-
-	public Integer getCardIssueMonth() {
-		return this.cardIssueMonth;
-	}
-
-	public void setCardIssueMonth(Integer cardIssueMonth) {
-		this.cardIssueMonth = cardIssueMonth;
-	}
-
-	/**
-	 * For Amex Cards, this is an additional field for verification that is used in conjunction with a CVV
-	 */
-	protected  String cardIssueNumber;
-
-	public String getCardIssueNumber() {
-		return this.cardIssueNumber;
-	}
-
-	public void setCardIssueNumber(String cardIssueNumber) {
-		this.cardIssueNumber = cardIssueNumber;
-	}
-
-	/**
 	 * Mozu.PaymentService.Contracts.PublicCard cardIssueYear ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Integer cardIssueYear;
@@ -136,6 +97,45 @@ public class PublicCard implements Serializable
 
 	public void setExpireYear(Integer expireYear) {
 		this.expireYear = expireYear;
+	}
+
+	/**
+	 * Mozu.PaymentService.Contracts.PublicCard cardHolderName ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String cardHolderName;
+
+	public String getCardHolderName() {
+		return this.cardHolderName;
+	}
+
+	public void setCardHolderName(String cardHolderName) {
+		this.cardHolderName = cardHolderName;
+	}
+
+	/**
+	 * Mozu.PaymentService.Contracts.PublicCard cardIssueMonth ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  Integer cardIssueMonth;
+
+	public Integer getCardIssueMonth() {
+		return this.cardIssueMonth;
+	}
+
+	public void setCardIssueMonth(Integer cardIssueMonth) {
+		this.cardIssueMonth = cardIssueMonth;
+	}
+
+	/**
+	 * For Amex Cards, this is an additional field for verification that is used in conjunction with a CVV
+	 */
+	protected  String cardIssueNumber;
+
+	public String getCardIssueNumber() {
+		return this.cardIssueNumber;
+	}
+
+	public void setCardIssueNumber(String cardIssueNumber) {
+		this.cardIssueNumber = cardIssueNumber;
 	}
 
 

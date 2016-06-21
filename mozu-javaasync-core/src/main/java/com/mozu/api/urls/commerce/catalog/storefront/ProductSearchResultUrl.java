@@ -22,6 +22,7 @@ public class ProductSearchResultUrl
 	 * @param facetHierPrefix If filtering using category facets in a hierarchy, the parent categories you want to skip in the storefront product search. This parameter is only available for category facets.
 	 * @param facetHierValue If filtering using category facets in a hierarchy, the category in the hierarchy to begin faceting on. This parameter is only available for category facets.
 	 * @param facetPageSize The number of facet values to return for one or more facets.
+	 * @param facetPrefix Use this parameter to filter facet values that are returned by an associated search result by a prefix.For example, to filter on colors that start with b, such as blue, black, or brown you can specify the following:
 	 * @param facetSettings Settings reserved for future facet search functionality on a web storefront product search.
 	 * @param facetStartIndex When paging through multiple facets, the startIndex value for each facet.
 	 * @param facetTemplate The facet template to use on the storefront. A template displays all facets associated with the template on the web storefront product search. Currently, only category-level facet templates are available.
@@ -29,7 +30,7 @@ public class ProductSearchResultUrl
         
 	 * @param facetTemplateSubset Display a subset of the facets defined in the template specified in facetTemplate parameter.
 	 * @param facetValueFilter The facet values to apply to the filter.
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -40,9 +41,9 @@ public class ProductSearchResultUrl
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl searchUrl(Boolean enableSearchTuningRules, String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateExclude, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String searchSettings, String searchTuningRuleCode, String searchTuningRuleContext, String sortBy, Integer startIndex)
+	public static MozuUrl searchUrl(Boolean enableSearchTuningRules, String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetPrefix, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateExclude, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String searchSettings, String searchTuningRuleCode, String searchTuningRuleContext, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/search/?query={query}&filter={filter}&facetTemplate={facetTemplate}&facetTemplateSubset={facetTemplateSubset}&facet={facet}&facetFieldRangeQuery={facetFieldRangeQuery}&facetHierPrefix={facetHierPrefix}&facetHierValue={facetHierValue}&facetHierDepth={facetHierDepth}&facetStartIndex={facetStartIndex}&facetPageSize={facetPageSize}&facetSettings={facetSettings}&facetValueFilter={facetValueFilter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&searchSettings={searchSettings}&enableSearchTuningRules={enableSearchTuningRules}&searchTuningRuleContext={searchTuningRuleContext}&searchTuningRuleCode={searchTuningRuleCode}&facetTemplateExclude={facetTemplateExclude}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/search/?query={query}&filter={filter}&facetTemplate={facetTemplate}&facetTemplateSubset={facetTemplateSubset}&facet={facet}&facetFieldRangeQuery={facetFieldRangeQuery}&facetHierPrefix={facetHierPrefix}&facetHierValue={facetHierValue}&facetHierDepth={facetHierDepth}&facetStartIndex={facetStartIndex}&facetPageSize={facetPageSize}&facetSettings={facetSettings}&facetValueFilter={facetValueFilter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&searchSettings={searchSettings}&enableSearchTuningRules={enableSearchTuningRules}&searchTuningRuleContext={searchTuningRuleContext}&searchTuningRuleCode={searchTuningRuleCode}&facetTemplateExclude={facetTemplateExclude}&facetPrefix={facetPrefix}&responseFields={responseFields}");
 		formatter.formatUrl("enableSearchTuningRules", enableSearchTuningRules);
 		formatter.formatUrl("facet", facet);
 		formatter.formatUrl("facetFieldRangeQuery", facetFieldRangeQuery);
@@ -50,6 +51,7 @@ public class ProductSearchResultUrl
 		formatter.formatUrl("facetHierPrefix", facetHierPrefix);
 		formatter.formatUrl("facetHierValue", facetHierValue);
 		formatter.formatUrl("facetPageSize", facetPageSize);
+		formatter.formatUrl("facetPrefix", facetPrefix);
 		formatter.formatUrl("facetSettings", facetSettings);
 		formatter.formatUrl("facetStartIndex", facetStartIndex);
 		formatter.formatUrl("facetTemplate", facetTemplate);

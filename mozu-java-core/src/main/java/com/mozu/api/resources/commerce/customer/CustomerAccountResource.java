@@ -411,7 +411,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param accountPasswordInfos Mozu.Customer.Contracts.AccountPasswordInfoCollection ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
@@ -490,6 +490,42 @@ public class CustomerAccountResource {
 	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName, String responseFields) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAccount customeraccount = new CustomerAccount();
+	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 */
+	public com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts() throws Exception
+	{
+		return getCustomersPurchaseOrderAccounts( null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	CustomerAccount customeraccount = new CustomerAccount();
+	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
+	 * </code></pre></p>
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
+	 */
+	public com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection getCustomersPurchaseOrderAccounts(Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getCustomersPurchaseOrderAccountsClient( startIndex,  pageSize,  sortBy,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

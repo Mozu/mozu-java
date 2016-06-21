@@ -83,7 +83,7 @@ public class PublishingScopeResource {
 	 *	PublishSet publishSet = publishingscope.getPublishSet( publishSetCode,  responseFields);
 	 * </code></pre></p>
 	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
 	 * @see com.mozu.api.contracts.productadmin.PublishSet
@@ -104,7 +104,7 @@ public class PublishingScopeResource {
 	 *	CountDownLatch latch = publishingscope.getPublishSet( publishSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param publishSetCode The unique identifier of the publish set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -155,7 +155,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSetCollection publishSetCollection = publishingscope.getPublishSets( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
 	 * @see com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -175,7 +175,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.getPublishSets( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.PublishSetCollection
@@ -270,7 +270,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	PublishSet publishSet = publishingscope.assignProductsToPublishSet( publishSet,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.PublishSet
@@ -292,7 +292,7 @@ public class PublishingScopeResource {
 	 *	PublishingScope publishingscope = new PublishingScope();
 	 *	CountDownLatch latch = publishingscope.assignProductsToPublishSet( publishSet,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param publishSet Mozu.ProductAdmin.Contracts.PublishSet ApiType DOCUMENT_HERE 

@@ -42,6 +42,9 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
+	/**
+	 * Email address to use for Blind Carbon Copies of mails sent from your site.
+	 */
 	protected  String bccEmailAddress;
 
 	public String getBccEmailAddress() {
@@ -377,6 +380,9 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
+	/**
+	 * Specific Settings by Email type
+	 */
 	protected List<EmailTypeSetting> emailTypes;
 	public List<EmailTypeSetting> getEmailTypes() {
 		return this.emailTypes;

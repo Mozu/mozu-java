@@ -24,6 +24,32 @@ public class BundledProductSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The product type template associated with the product on the storefront.
+	 */
+	protected  String productType;
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
+	protected  Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	/**
 	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
 	 */
 	protected  Double creditValue;
@@ -125,32 +151,6 @@ public class BundledProductSummary implements Serializable
 
 	public void setProductShortDescription(String productShortDescription) {
 		this.productShortDescription = productShortDescription;
-	}
-
-	/**
-	 * The product type template associated with the product on the storefront.
-	 */
-	protected  String productType;
-
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-	}
-
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
-	protected  Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
 	}
 
 	/**

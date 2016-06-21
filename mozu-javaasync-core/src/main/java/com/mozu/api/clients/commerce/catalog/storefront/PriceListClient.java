@@ -49,7 +49,7 @@ public class PriceListClient {
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
 	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.PriceList>
 	 * @see com.mozu.api.contracts.productruntime.PriceList
 	 */
@@ -90,7 +90,7 @@ public class PriceListClient {
 	 * ResolvedPriceList resolvedPriceList = client.Result();
 	 * </code></pre></p>
 	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ResolvedPriceList>
 	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
 	 */

@@ -76,6 +76,19 @@ public class RateRequest implements Serializable
 	}
 
 	/**
+	 * The Order SubTotal After Discounts to be used in rate calculation
+	 */
+	protected  Double orderDiscountedSubTotal;
+
+	public Double getOrderDiscountedSubTotal() {
+		return this.orderDiscountedSubTotal;
+	}
+
+	public void setOrderDiscountedSubTotal(Double orderDiscountedSubTotal) {
+		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
+	}
+
+	/**
 	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
 	 */
 	protected  Double orderTotal;
@@ -86,6 +99,19 @@ public class RateRequest implements Serializable
 
 	public void setOrderTotal(Double orderTotal) {
 		this.orderTotal = orderTotal;
+	}
+
+	/**
+	 * The Order ID to be used in rate calculation Information al only
+	 */
+	protected  String relatedOrderId;
+
+	public String getRelatedOrderId() {
+		return this.relatedOrderId;
+	}
+
+	public void setRelatedOrderId(String relatedOrderId) {
+		this.relatedOrderId = relatedOrderId;
 	}
 
 	/**
