@@ -78,7 +78,7 @@ public class ShippingInclusionRuleResource {
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -100,7 +100,7 @@ public class ShippingInclusionRuleResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -154,7 +154,7 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRuleCollection shippingInclusionRuleCollection = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields);
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -175,7 +175,7 @@ public class ShippingInclusionRuleResource {
 	 *	CountDownLatch latch = shippinginclusionrule.getShippingInclusionRules( profilecode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRuleCollection
@@ -233,7 +233,7 @@ public class ShippingInclusionRuleResource {
 	 *	ShippingInclusionRule shippingInclusionRule = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields);
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -256,7 +256,7 @@ public class ShippingInclusionRuleResource {
 	 *	CountDownLatch latch = shippinginclusionrule.createShippingInclusionRule( rule,  profilecode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
@@ -319,7 +319,7 @@ public class ShippingInclusionRuleResource {
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingInclusionRule
@@ -343,7 +343,7 @@ public class ShippingInclusionRuleResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping inclusion rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 

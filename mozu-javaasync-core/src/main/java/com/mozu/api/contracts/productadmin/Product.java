@@ -12,6 +12,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.productadmin.ProductProperty;
+import com.mozu.api.contracts.productadmin.ProductPublishingInfo;
+import com.mozu.api.contracts.productadmin.ProductLocalizedSEOContent;
+import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
+import com.mozu.api.contracts.productadmin.ProductVariationOption;
 import com.mozu.api.contracts.productadmin.Discount;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.productadmin.BundledProduct;
@@ -23,11 +28,6 @@ import com.mozu.api.contracts.core.Measurement;
 import com.mozu.api.contracts.productadmin.ProductPrice;
 import com.mozu.api.contracts.productadmin.ProductPricingBehaviorInfo;
 import com.mozu.api.contracts.productadmin.ProductInCatalogInfo;
-import com.mozu.api.contracts.productadmin.ProductProperty;
-import com.mozu.api.contracts.productadmin.ProductPublishingInfo;
-import com.mozu.api.contracts.productadmin.ProductLocalizedSEOContent;
-import com.mozu.api.contracts.productadmin.ProductSupplierInfo;
-import com.mozu.api.contracts.productadmin.ProductVariationOption;
 
 /**
  *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
@@ -271,6 +271,67 @@ public class Product implements Serializable
 	}
 
 	/**
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 */
+	protected List<ProductProperty> properties;
+	public List<ProductProperty> getProperties() {
+		return this.properties;
+	}
+	public void setProperties(List<ProductProperty> properties) {
+		this.properties = properties;
+	}
+
+	/**
+	 * Properties of the product publishing settings for the associated product.
+	 */
+	protected  ProductPublishingInfo publishingInfo;
+
+	public ProductPublishingInfo getPublishingInfo() {
+		return this.publishingInfo;
+	}
+
+	public void setPublishingInfo(ProductPublishingInfo publishingInfo) {
+		this.publishingInfo = publishingInfo;
+	}
+
+	/**
+	 * The search engine optimized content defined for products or products associated with a catalog. If no SEO content is specified in the request for products associated with a catalog, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the `IsSEOContentOverridden `flag must be set to "true".
+	 */
+	protected  ProductLocalizedSEOContent seoContent;
+
+	public ProductLocalizedSEOContent getSeoContent() {
+		return this.seoContent;
+	}
+
+	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
+		this.seoContent = seoContent;
+	}
+
+	/**
+	 * Supplier-defined properties assigned for the product.
+	 */
+	protected  ProductSupplierInfo supplierInfo;
+
+	public ProductSupplierInfo getSupplierInfo() {
+		return this.supplierInfo;
+	}
+
+	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
+		this.supplierInfo = supplierInfo;
+	}
+
+	/**
+	 * The list of product variation configurations defined for this product based on its available product option attributes.
+	 */
+	protected List<ProductVariationOption> variationOptions;
+	public List<ProductVariationOption> getVariationOptions() {
+		return this.variationOptions;
+	}
+	public void setVariationOptions(List<ProductVariationOption> variationOptions) {
+		this.variationOptions = variationOptions;
+	}
+
+	/**
 	 * List of discounts available per configured conditions and criteria. These discounts are associated with products, orders, and shipping costs. Shoppers can view these discounts per order, per product in an order, or for their shipping depending on the configuration.
 	 */
 	protected List<Discount> applicableDiscounts;
@@ -437,67 +498,6 @@ public class Product implements Serializable
 	}
 	public void setProductInCatalogs(List<ProductInCatalogInfo> productInCatalogs) {
 		this.productInCatalogs = productInCatalogs;
-	}
-
-	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
-	 */
-	protected List<ProductProperty> properties;
-	public List<ProductProperty> getProperties() {
-		return this.properties;
-	}
-	public void setProperties(List<ProductProperty> properties) {
-		this.properties = properties;
-	}
-
-	/**
-	 * Properties of the product publishing settings for the associated product.
-	 */
-	protected  ProductPublishingInfo publishingInfo;
-
-	public ProductPublishingInfo getPublishingInfo() {
-		return this.publishingInfo;
-	}
-
-	public void setPublishingInfo(ProductPublishingInfo publishingInfo) {
-		this.publishingInfo = publishingInfo;
-	}
-
-	/**
-	 * The search engine optimized content defined for products or products associated with a catalog. If no SEO content is specified in the request for products associated with a catalog, this catalog uses the SEO content defined in the master catalog. To override the SEO content for this catalog, the `IsSEOContentOverridden `flag must be set to "true".
-	 */
-	protected  ProductLocalizedSEOContent seoContent;
-
-	public ProductLocalizedSEOContent getSeoContent() {
-		return this.seoContent;
-	}
-
-	public void setSeoContent(ProductLocalizedSEOContent seoContent) {
-		this.seoContent = seoContent;
-	}
-
-	/**
-	 * Supplier-defined properties assigned for the product.
-	 */
-	protected  ProductSupplierInfo supplierInfo;
-
-	public ProductSupplierInfo getSupplierInfo() {
-		return this.supplierInfo;
-	}
-
-	public void setSupplierInfo(ProductSupplierInfo supplierInfo) {
-		this.supplierInfo = supplierInfo;
-	}
-
-	/**
-	 * The list of product variation configurations defined for this product based on its available product option attributes.
-	 */
-	protected List<ProductVariationOption> variationOptions;
-	public List<ProductVariationOption> getVariationOptions() {
-		return this.variationOptions;
-	}
-	public void setVariationOptions(List<ProductVariationOption> variationOptions) {
-		this.variationOptions = variationOptions;
 	}
 
 

@@ -17,7 +17,7 @@ public class HandlingFeeRuleUrl
 	 * Get Resource Url for GetProductHandlingFeeRule
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductHandlingFeeRuleUrl(String id, String profilecode, String responseFields)
@@ -32,7 +32,7 @@ public class HandlingFeeRuleUrl
 	/**
 	 * Get Resource Url for GetProductHandlingFeeRules
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getProductHandlingFeeRulesUrl(String profilecode, String responseFields)
@@ -46,7 +46,7 @@ public class HandlingFeeRuleUrl
 	/**
 	 * Get Resource Url for CreateProductHandlingFeeRule
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createProductHandlingFeeRuleUrl(String profilecode, String responseFields)
@@ -61,7 +61,7 @@ public class HandlingFeeRuleUrl
 	 * Get Resource Url for UpdateProductHandlingFeeRule
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductHandlingFeeRuleUrl(String id, String profilecode, String responseFields)

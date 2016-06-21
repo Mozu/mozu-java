@@ -51,7 +51,7 @@ public class HandlingFeeRuleClient {
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule
@@ -96,7 +96,7 @@ public class HandlingFeeRuleClient {
 	 * HandlingFeeRuleCollection handlingFeeRuleCollection = client.Result();
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRuleCollection
@@ -143,7 +143,7 @@ public class HandlingFeeRuleClient {
 	 * HandlingFeeRule handlingFeeRule = client.Result();
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>
@@ -194,7 +194,7 @@ public class HandlingFeeRuleClient {
 	 * </code></pre></p>
 	 * @param id Unique identifier of the customer segment to retrieve.
 	 * @param profilecode The unique, user-defined code of the profile with which the product handling fee rule is associated.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
 	 * @param rule Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule>

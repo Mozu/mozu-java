@@ -14,6 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentCard;
+import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderPayment;
 
 /**
  *	Properties of the billing information entered for an order during checkout.
@@ -139,6 +140,16 @@ public class BillingInfo implements Serializable
 
 	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
 		this.data = data;
+	}
+
+	protected  PurchaseOrderPayment purchaseOrder;
+
+	public PurchaseOrderPayment getPurchaseOrder() {
+		return this.purchaseOrder;
+	}
+
+	public void setPurchaseOrder(PurchaseOrderPayment purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

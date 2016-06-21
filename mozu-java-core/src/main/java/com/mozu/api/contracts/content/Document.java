@@ -179,19 +179,6 @@ public class Document implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
-	 */
-	protected transient com.fasterxml.jackson.databind.JsonNode properties;
-
-	public com.fasterxml.jackson.databind.JsonNode getProperties() {
-		return this.properties;
-	}
-
-	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
-		this.properties = properties;
-	}
-
-	/**
 	 * Mozu.Content.Contracts.Document activeDateRange ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  ActiveDateRange activeDateRange;
@@ -202,6 +189,19 @@ public class Document implements Serializable
 
 	public void setActiveDateRange(ActiveDateRange activeDateRange) {
 		this.activeDateRange = activeDateRange;
+	}
+
+	/**
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 */
+	protected transient com.fasterxml.jackson.databind.JsonNode properties;
+
+	public com.fasterxml.jackson.databind.JsonNode getProperties() {
+		return this.properties;
+	}
+
+	public void setProperties(com.fasterxml.jackson.databind.JsonNode properties) {
+		this.properties = properties;
 	}
 
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {

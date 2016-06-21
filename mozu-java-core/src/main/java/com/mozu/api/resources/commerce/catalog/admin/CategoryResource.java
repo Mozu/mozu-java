@@ -53,7 +53,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	CategoryPagedCollection categoryPagedCollection = category.getCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query: eq=equals, ne=not equals, gt=greater than, lt = less than or equals, gt = greater than or equals, lt = less than or equals, sw = starts with, or cont = contains. Optional.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -219,7 +219,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateDynamicExpression( dynamicExpressionIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression
@@ -256,7 +256,7 @@ public class CategoryResource {
 	 *	Category category = new Category();
 	 *	DynamicExpression dynamicExpression = category.validateRealTimeDynamicExpression( dynamicExpressionIn,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dynamicExpressionIn Mozu.ProductAdmin.Contracts.DynamicExpression ApiType DOCUMENT_HERE 
 	 * @return com.mozu.api.contracts.productadmin.DynamicExpression
 	 * @see com.mozu.api.contracts.productadmin.DynamicExpression

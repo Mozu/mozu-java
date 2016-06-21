@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.SiteSettings.General.Contracts.EmailTypeSetting ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmailTypeSetting implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Email Address used to bcc in emails
+	 */
 	protected  String bccEmailAddressOverride;
 
 	public String getBccEmailAddressOverride() {
@@ -28,6 +34,9 @@ public class EmailTypeSetting implements Serializable
 		this.bccEmailAddressOverride = bccEmailAddressOverride;
 	}
 
+	/**
+	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 */
 	protected  String id;
 
 	public String getId() {
@@ -38,6 +47,9 @@ public class EmailTypeSetting implements Serializable
 		this.id = id;
 	}
 
+	/**
+	 * Email address to display on email messages sent from your site.
+	 */
 	protected  String replyToEmailAddressOverride;
 
 	public String getReplyToEmailAddressOverride() {
@@ -48,6 +60,9 @@ public class EmailTypeSetting implements Serializable
 		this.replyToEmailAddressOverride = replyToEmailAddressOverride;
 	}
 
+	/**
+	 * Email address used in emails sent to your shoppers
+	 */
 	protected  String senderEmailAddressOverride;
 
 	public String getSenderEmailAddressOverride() {
@@ -58,6 +73,9 @@ public class EmailTypeSetting implements Serializable
 		this.senderEmailAddressOverride = senderEmailAddressOverride;
 	}
 
+	/**
+	 * Email Alais used in emails sent to your shoppers
+	 */
 	protected  String senderEmailAliasOverride;
 
 	public String getSenderEmailAliasOverride() {

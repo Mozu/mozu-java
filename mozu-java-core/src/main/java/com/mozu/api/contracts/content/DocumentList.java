@@ -24,82 +24,6 @@ public class DocumentList implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The ID of the specific scope for the object. 
-	 */
-	protected  Integer scopeId;
-
-	public Integer getScopeId() {
-		return this.scopeId;
-	}
-
-	public void setScopeId(Integer scopeId) {
-		this.scopeId = scopeId;
-	}
-
-	/**
-	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
-	 */
-	protected  String scopeType;
-
-	public String getScopeType() {
-		return this.scopeType;
-	}
-
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
-	}
-
-	/**
-	 * Indicates the security level for the document content as public, administrator, or owner.
-	 */
-	protected  String security;
-
-	public String getSecurity() {
-		return this.security;
-	}
-
-	public void setSecurity(String security) {
-		this.security = security;
-	}
-
-	/**
-	 * Determines if the documentList will support ranges of dates that documents are considered 'active'. This field defaults to false and cannot be updated. If the documentList is based on a documentListType, then this value will be derived from the documentListType.
-	 */
-	protected  Boolean supportsActiveDateRanges;
-
-	public Boolean getSupportsActiveDateRanges() {
-		return this.supportsActiveDateRanges;
-	}
-
-	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
-		this.supportsActiveDateRanges = supportsActiveDateRanges;
-	}
-
-	/**
-	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
-	 */
-	protected  Boolean supportsPublishing;
-
-	public Boolean getSupportsPublishing() {
-		return this.supportsPublishing;
-	}
-
-	public void setSupportsPublishing(Boolean supportsPublishing) {
-		this.supportsPublishing = supportsPublishing;
-	}
-
-	/**
-	 * List description of usages for content within a view and scope.
-	 */
-	protected List<String> usages;
-	public List<String> getUsages() {
-		return this.usages;
-	}
-	public void setUsages(List<String> usages) {
-		this.usages = usages;
-	}
-
-	/**
 	 * The type of the document list, containing content for a site. For example, a list type could be web pages.
 	 */
 	protected  String documentListType;
@@ -186,6 +110,82 @@ public class DocumentList implements Serializable
 
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
+	}
+
+	/**
+	 * The ID of the specific scope for the object. 
+	 */
+	protected  Integer scopeId;
+
+	public Integer getScopeId() {
+		return this.scopeId;
+	}
+
+	public void setScopeId(Integer scopeId) {
+		this.scopeId = scopeId;
+	}
+
+	/**
+	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
+	 */
+	protected  String scopeType;
+
+	public String getScopeType() {
+		return this.scopeType;
+	}
+
+	public void setScopeType(String scopeType) {
+		this.scopeType = scopeType;
+	}
+
+	/**
+	 * Indicates the security level for the document content as public, administrator, or owner.
+	 */
+	protected  String security;
+
+	public String getSecurity() {
+		return this.security;
+	}
+
+	public void setSecurity(String security) {
+		this.security = security;
+	}
+
+	/**
+	 * Determines if the documentList will support ranges of dates that documents are considered 'active'. This field defaults to false and cannot be updated. If the documentList is based on a documentListType, then this value will be derived from the documentListType.
+	 */
+	protected  Boolean supportsActiveDateRanges;
+
+	public Boolean getSupportsActiveDateRanges() {
+		return this.supportsActiveDateRanges;
+	}
+
+	public void setSupportsActiveDateRanges(Boolean supportsActiveDateRanges) {
+		this.supportsActiveDateRanges = supportsActiveDateRanges;
+	}
+
+	/**
+	 * Indicates if modified documents are published automatically or saved to publish at a later time. If true, changed documents in this list can be saved as drafts until they are published to the site. If false, all document changes are immediately published in live mode. System-supplied and read only.
+	 */
+	protected  Boolean supportsPublishing;
+
+	public Boolean getSupportsPublishing() {
+		return this.supportsPublishing;
+	}
+
+	public void setSupportsPublishing(Boolean supportsPublishing) {
+		this.supportsPublishing = supportsPublishing;
+	}
+
+	/**
+	 * List description of usages for content within a view and scope.
+	 */
+	protected List<String> usages;
+	public List<String> getUsages() {
+		return this.usages;
+	}
+	public void setUsages(List<String> usages) {
+		this.usages = usages;
 	}
 
 	/**

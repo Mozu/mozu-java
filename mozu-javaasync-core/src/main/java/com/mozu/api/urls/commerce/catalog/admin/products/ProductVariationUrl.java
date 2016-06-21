@@ -63,7 +63,7 @@ public class ProductVariationUrl
 	 * Get Resource Url for GetProductVariationLocalizedPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -134,7 +134,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for AddProductVariationLocalizedPrice
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -197,7 +197,7 @@ public class ProductVariationUrl
 	 * Get Resource Url for UpdateProductVariationLocalizedPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -230,7 +230,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for UpdateProductVariations
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateProductVariationsUrl(String productCode, String responseFields)

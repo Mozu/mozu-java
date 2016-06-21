@@ -49,7 +49,7 @@ public class ApplicationClient {
 	 * PackageNamesCollection packageNamesCollection = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.PackageNamesCollection>
 	 * @see com.mozu.api.contracts.appdev.PackageNamesCollection
 	 */
@@ -91,7 +91,7 @@ public class ApplicationClient {
 	 * ApplicationVersionsCollection applicationVersionsCollection = client.Result();
 	 * </code></pre></p>
 	 * @param nsAndAppId The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.ApplicationVersionsCollection>
 	 * @see com.mozu.api.contracts.appdev.ApplicationVersionsCollection
 	 */
@@ -135,7 +135,7 @@ public class ApplicationClient {
 	 * </code></pre></p>
 	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param filepath Represents the file name and location.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
 	 */
@@ -177,7 +177,7 @@ public class ApplicationClient {
 	 * FolderMetadata folderMetadata = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FolderMetadata>
 	 * @see com.mozu.api.contracts.appdev.FolderMetadata
 	 */
@@ -224,7 +224,7 @@ public class ApplicationClient {
 	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param filepath The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
 	 * @param lastModifiedTime The date and time of the last file insert or update. This parameter is optional.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param stream Data stream that delivers information. Used to input and output data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata
@@ -273,7 +273,7 @@ public class ApplicationClient {
 	 * FileMetadata fileMetadata = client.Result();
 	 * </code></pre></p>
 	 * @param applicationKey The application key uniquely identifies the developer namespace, application ID, version, and package in Dev Center. The format is {Dev Account namespace}.{Application ID}.{Application Version}.{Package name}.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. For example, ) returns only the  and  items inside the  array of the specified product.This paramter should only be used to retrieve data. Attempting to update data using this parmater may cause data loss.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param renameInfo Information required to update the name of a file in a package, which consists of the original name and the new name.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.FileMetadata>
 	 * @see com.mozu.api.contracts.appdev.FileMetadata

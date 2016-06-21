@@ -15,6 +15,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.order.ExternalPaymentWorkflowDefinition;
 import com.mozu.api.contracts.sitesettings.order.Gateway;
+import com.mozu.api.contracts.sitesettings.order.PurchaseOrderPaymentDefinition;
 
 /**
  *	Properties of the payment settings used at order checkout time for the site.
@@ -71,6 +72,16 @@ public class PaymentSettings implements Serializable
 	}
 	public void setGateways(List<Gateway> gateways) {
 		this.gateways = gateways;
+	}
+
+	protected  PurchaseOrderPaymentDefinition purchaseOrder;
+
+	public PurchaseOrderPaymentDefinition getPurchaseOrder() {
+		return this.purchaseOrder;
+	}
+
+	public void setPurchaseOrder(PurchaseOrderPaymentDefinition purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
 	}
 
 

@@ -27,6 +27,58 @@ public class Discount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
+	 */
+	protected  Double amount;
+
+	public Double getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	/**
+	 * The type of discount amount, such as an amount or a percentage.
+	 */
+	protected  String amountType;
+
+	public String getAmountType() {
+		return this.amountType;
+	}
+
+	public void setAmountType(String amountType) {
+		this.amountType = amountType;
+	}
+
+	/**
+	 * Signifies that the discount is not referenced and can be hard deleted
+	 */
+	protected  Boolean canBeDeleted;
+
+	public Boolean getCanBeDeleted() {
+		return this.canBeDeleted;
+	}
+
+	public void setCanBeDeleted(Boolean canBeDeleted) {
+		this.canBeDeleted = canBeDeleted;
+	}
+
+	/**
+	 * The number of times this discount has been redeemed.
+	 */
+	protected  Integer currentRedemptionCount;
+
+	public Integer getCurrentRedemptionCount() {
+		return this.currentRedemptionCount;
+	}
+
+	public void setCurrentRedemptionCount(Integer currentRedemptionCount) {
+		this.currentRedemptionCount = currentRedemptionCount;
+	}
+
+	/**
 	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
 	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
@@ -152,58 +204,6 @@ public class Discount implements Serializable
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	/**
-	 * The integer amount of the discount. For example, an entry of "10" could represent a discount of $10.00 or a discount of 10%, depending on the type.
-	 */
-	protected  Double amount;
-
-	public Double getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
-
-	/**
-	 * The type of discount amount, such as an amount or a percentage.
-	 */
-	protected  String amountType;
-
-	public String getAmountType() {
-		return this.amountType;
-	}
-
-	public void setAmountType(String amountType) {
-		this.amountType = amountType;
-	}
-
-	/**
-	 * Signifies that the discount is not referenced and can be hard deleted
-	 */
-	protected  Boolean canBeDeleted;
-
-	public Boolean getCanBeDeleted() {
-		return this.canBeDeleted;
-	}
-
-	public void setCanBeDeleted(Boolean canBeDeleted) {
-		this.canBeDeleted = canBeDeleted;
-	}
-
-	/**
-	 * The number of times this discount has been redeemed.
-	 */
-	protected  Integer currentRedemptionCount;
-
-	public Integer getCurrentRedemptionCount() {
-		return this.currentRedemptionCount;
-	}
-
-	public void setCurrentRedemptionCount(Integer currentRedemptionCount) {
-		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
 	/**
