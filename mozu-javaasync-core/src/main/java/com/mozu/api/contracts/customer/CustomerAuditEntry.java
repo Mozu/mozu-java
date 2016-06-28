@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.Customer.Contracts.CustomerAuditEntry ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAuditEntry implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Applicattion associated with this entry
+	 */
 	protected  String application;
 
 	public String getApplication() {
@@ -28,6 +34,9 @@ public class CustomerAuditEntry implements Serializable
 		this.application = application;
 	}
 
+	/**
+	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
+	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -38,6 +47,9 @@ public class CustomerAuditEntry implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
+	/**
+	 * Id of this entry
+	 */
 	protected  Integer customerAuditEntryId;
 
 	public Integer getCustomerAuditEntryId() {
@@ -48,6 +60,9 @@ public class CustomerAuditEntry implements Serializable
 		this.customerAuditEntryId = customerAuditEntryId;
 	}
 
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -58,6 +73,9 @@ public class CustomerAuditEntry implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Date of the Entry
+	 */
 	protected  DateTime entryDate;
 
 	public DateTime getEntryDate() {
@@ -68,6 +86,9 @@ public class CustomerAuditEntry implements Serializable
 		this.entryDate = entryDate;
 	}
 
+	/**
+	 * User ID associated with this Entry
+	 */
 	protected  String entryUser;
 
 	public String getEntryUser() {
@@ -78,6 +99,9 @@ public class CustomerAuditEntry implements Serializable
 		this.entryUser = entryUser;
 	}
 
+	/**
+	 * Path of the field value being changed (e.g. /Customer/Contacts/1/FirstName)
+	 */
 	protected  String fieldPath;
 
 	public String getFieldPath() {
@@ -88,6 +112,9 @@ public class CustomerAuditEntry implements Serializable
 		this.fieldPath = fieldPath;
 	}
 
+	/**
+	 * New Value after this event
+	 */
 	protected  String newValue;
 
 	public String getNewValue() {
@@ -98,6 +125,9 @@ public class CustomerAuditEntry implements Serializable
 		this.newValue = newValue;
 	}
 
+	/**
+	 * Original value before this event
+	 */
 	protected  String oldValue;
 
 	public String getOldValue() {
@@ -108,6 +138,9 @@ public class CustomerAuditEntry implements Serializable
 		this.oldValue = oldValue;
 	}
 
+	/**
+	 * Site associated wit this entry
+	 */
 	protected  String site;
 
 	public String getSite() {

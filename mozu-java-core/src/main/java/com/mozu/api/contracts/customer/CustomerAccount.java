@@ -12,11 +12,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.customer.CustomerNote;
 import com.mozu.api.contracts.customer.CustomerAttribute;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.customer.CommerceSummary;
 import com.mozu.api.contracts.customer.CustomerContact;
+import com.mozu.api.contracts.customer.CustomerNote;
 import com.mozu.api.contracts.customer.CustomerSegment;
 
 /**
@@ -250,17 +250,6 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
-	 */
-	protected List<CustomerNote> notes;
-	public List<CustomerNote> getNotes() {
-		return this.notes;
-	}
-	public void setNotes(List<CustomerNote> notes) {
-		this.notes = notes;
-	}
-
-	/**
 	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type. 
 	 */
 	protected List<CustomerAttribute> attributes;
@@ -306,6 +295,17 @@ public class CustomerAccount implements Serializable
 	}
 	public void setContacts(List<CustomerContact> contacts) {
 		this.contacts = contacts;
+	}
+
+	/**
+	 * Paged list collection of note content for objects including customers, orders, and returns. 
+	 */
+	protected List<CustomerNote> notes;
+	public List<CustomerNote> getNotes() {
+		return this.notes;
+	}
+	public void setNotes(List<CustomerNote> notes) {
+		this.notes = notes;
 	}
 
 	/**

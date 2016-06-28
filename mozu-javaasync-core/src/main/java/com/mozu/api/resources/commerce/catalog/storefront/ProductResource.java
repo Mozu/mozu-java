@@ -54,7 +54,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductCollection getProducts() throws Exception
 	{
-		return getProducts( null,  null,  null,  null,  null);
+		return getProducts( null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -69,26 +69,27 @@ public class ProductResource {
 	 */
 	public CountDownLatch getProductsAsync( AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
 	{
-		return getProductsAsync( null,  null,  null,  null,  null, callback);
+		return getProductsAsync( null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves a list of products that appear on the web storefront according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductCollection getProducts(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -99,20 +100,21 @@ public class ProductResource {
 	 * Retrieves a list of products that appear on the web storefront according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	CountDownLatch latch = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseFields, callback );
+	 *	CountDownLatch latch = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCollection
 	 */
-	public CountDownLatch getProductsAsync(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
+	public CountDownLatch getProductsAsync(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductsClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseOptions,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

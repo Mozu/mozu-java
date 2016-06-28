@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerAuditEntryResource;
 
 /** <summary>
- * 
+ * commerce/customer/accounts/auditLog related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CustomerAuditEntryFactory

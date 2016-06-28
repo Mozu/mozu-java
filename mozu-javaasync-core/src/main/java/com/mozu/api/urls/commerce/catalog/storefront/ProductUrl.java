@@ -18,16 +18,18 @@ public class ProductUrl
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getProductsUrl(String filter, Integer pageSize, String responseFields, String responseOptions, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/?filter={filter}&startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&responseOptions={responseOptions}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("responseOptions", responseOptions);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

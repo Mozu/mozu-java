@@ -25,6 +25,7 @@ import com.mozu.api.contracts.productruntime.ProductPricingBehaviorInfo;
 import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 import com.mozu.api.contracts.productruntime.VariationSummary;
+import com.mozu.api.contracts.productruntime.ProductVolumePrice;
 
 /**
  *	The properties of a product, referenced and used by carts, orders, wish lists, and returns.
@@ -481,6 +482,24 @@ public class Product implements Serializable
 	}
 	public void setVariations(List<VariationSummary> variations) {
 		this.variations = variations;
+	}
+
+	protected List<ProductVolumePrice> volumePriceBands;
+	public List<ProductVolumePrice> getVolumePriceBands() {
+		return this.volumePriceBands;
+	}
+	public void setVolumePriceBands(List<ProductVolumePrice> volumePriceBands) {
+		this.volumePriceBands = volumePriceBands;
+	}
+
+	protected  ProductPriceRange volumePriceRange;
+
+	public ProductPriceRange getVolumePriceRange() {
+		return this.volumePriceRange;
+	}
+
+	public void setVolumePriceRange(ProductPriceRange volumePriceRange) {
+		this.volumePriceRange = volumePriceRange;
 	}
 
 

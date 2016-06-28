@@ -19,6 +19,7 @@ import com.mozu.api.contracts.productruntime.ProductOption;
 import com.mozu.api.contracts.productruntime.ProductPrice;
 import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
+import com.mozu.api.contracts.productruntime.ProductVolumePrice;
 
 /**
  *	Properties of a product configuration with shopper-selected options.
@@ -177,6 +178,24 @@ public class ConfiguredProduct implements Serializable
 
 	public void setPurchasableState(ProductPurchasableState purchasableState) {
 		this.purchasableState = purchasableState;
+	}
+
+	protected List<ProductVolumePrice> volumePriceBands;
+	public List<ProductVolumePrice> getVolumePriceBands() {
+		return this.volumePriceBands;
+	}
+	public void setVolumePriceBands(List<ProductVolumePrice> volumePriceBands) {
+		this.volumePriceBands = volumePriceBands;
+	}
+
+	protected  ProductPriceRange volumePriceRange;
+
+	public ProductPriceRange getVolumePriceRange() {
+		return this.volumePriceRange;
+	}
+
+	public void setVolumePriceRange(ProductPriceRange volumePriceRange) {
+		this.volumePriceRange = volumePriceRange;
 	}
 
 

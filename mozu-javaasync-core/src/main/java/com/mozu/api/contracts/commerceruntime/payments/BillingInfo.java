@@ -142,6 +142,9 @@ public class BillingInfo implements Serializable
 		this.data = data;
 	}
 
+	/**
+	 * Purchase order payment information
+	 */
 	protected  PurchaseOrderPayment purchaseOrder;
 
 	public PurchaseOrderPayment getPurchaseOrder() {

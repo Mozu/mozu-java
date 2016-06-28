@@ -28,58 +28,6 @@ public class Attribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the attribute is visible in its defined display group.
-	 */
-	protected  Boolean isVisible;
-
-	public Boolean getIsVisible() {
-		return this.isVisible;
-	}
-
-	public void setIsVisible(Boolean isVisible) {
-		this.isVisible = isVisible;
-	}
-
-	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
-	 */
-	protected  String namespace;
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-	}
-
-	/**
-	 * Integer that represents the sequence order of the attribute.
-	 */
-	protected  Integer order;
-
-	public Integer getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(Integer order) {
-		this.order = order;
-	}
-
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
-	protected  String valueType;
-
-	public String getValueType() {
-		return this.valueType;
-	}
-
-	public void setValueType(String valueType) {
-		this.valueType = valueType;
-	}
-
-	/**
 	 * The administrator name associated with the object/data.
 	 */
 	protected  String adminName;
@@ -220,6 +168,58 @@ public class Attribute implements Serializable
 
 	public void setIsRequired(Boolean isRequired) {
 		this.isRequired = isRequired;
+	}
+
+	/**
+	 * If true, the attribute is visible in its defined display group.
+	 */
+	protected  Boolean isVisible;
+
+	public Boolean getIsVisible() {
+		return this.isVisible;
+	}
+
+	public void setIsVisible(Boolean isVisible) {
+		this.isVisible = isVisible;
+	}
+
+	/**
+	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 */
+	protected  String namespace;
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	/**
+	 * Integer that represents the sequence order of the attribute.
+	 */
+	protected  Integer order;
+
+	public Integer getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+
+	/**
+	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 */
+	protected  String valueType;
+
+	public String getValueType() {
+		return this.valueType;
+	}
+
+	public void setValueType(String valueType) {
+		this.valueType = valueType;
 	}
 
 	/**

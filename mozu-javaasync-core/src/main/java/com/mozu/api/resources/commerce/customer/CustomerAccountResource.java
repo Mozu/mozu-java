@@ -877,7 +877,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * 
+	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts();
@@ -891,7 +891,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * 
+	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getCustomersPurchaseOrderAccounts( callback );
@@ -906,15 +906,15 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * 
+	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 */
@@ -928,15 +928,15 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * 
+	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CountDownLatch latch = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param pageSize 
-	 * @param responseFields 
-	 * @param sortBy 
-	 * @param startIndex 
+	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
