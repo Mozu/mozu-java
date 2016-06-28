@@ -34,6 +34,7 @@ public class ProductSearchResultUrl
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param responseOptions 
 	 * @param searchSettings The settings to control product search and indexing behavior.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @param searchTuningRuleContext The category ID that the search tuning rule applies to.
@@ -41,9 +42,9 @@ public class ProductSearchResultUrl
 	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl searchUrl(Boolean enableSearchTuningRules, String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetPrefix, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateExclude, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String searchSettings, String searchTuningRuleCode, String searchTuningRuleContext, String sortBy, Integer startIndex)
+	public static MozuUrl searchUrl(Boolean enableSearchTuningRules, String facet, String facetFieldRangeQuery, String facetHierDepth, String facetHierPrefix, String facetHierValue, String facetPageSize, String facetPrefix, String facetSettings, String facetStartIndex, String facetTemplate, String facetTemplateExclude, String facetTemplateSubset, String facetValueFilter, String filter, Integer pageSize, String query, String responseFields, String responseOptions, String searchSettings, String searchTuningRuleCode, String searchTuningRuleContext, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/search/?query={query}&filter={filter}&facetTemplate={facetTemplate}&facetTemplateSubset={facetTemplateSubset}&facet={facet}&facetFieldRangeQuery={facetFieldRangeQuery}&facetHierPrefix={facetHierPrefix}&facetHierValue={facetHierValue}&facetHierDepth={facetHierDepth}&facetStartIndex={facetStartIndex}&facetPageSize={facetPageSize}&facetSettings={facetSettings}&facetValueFilter={facetValueFilter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&searchSettings={searchSettings}&enableSearchTuningRules={enableSearchTuningRules}&searchTuningRuleContext={searchTuningRuleContext}&searchTuningRuleCode={searchTuningRuleCode}&facetTemplateExclude={facetTemplateExclude}&facetPrefix={facetPrefix}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/search/?query={query}&filter={filter}&facetTemplate={facetTemplate}&facetTemplateSubset={facetTemplateSubset}&facet={facet}&facetFieldRangeQuery={facetFieldRangeQuery}&facetHierPrefix={facetHierPrefix}&facetHierValue={facetHierValue}&facetHierDepth={facetHierDepth}&facetStartIndex={facetStartIndex}&facetPageSize={facetPageSize}&facetSettings={facetSettings}&facetValueFilter={facetValueFilter}&sortBy={sortBy}&pageSize={pageSize}&startIndex={startIndex}&searchSettings={searchSettings}&enableSearchTuningRules={enableSearchTuningRules}&searchTuningRuleContext={searchTuningRuleContext}&searchTuningRuleCode={searchTuningRuleCode}&facetTemplateExclude={facetTemplateExclude}&facetPrefix={facetPrefix}&responseOptions={responseOptions}&responseFields={responseFields}");
 		formatter.formatUrl("enableSearchTuningRules", enableSearchTuningRules);
 		formatter.formatUrl("facet", facet);
 		formatter.formatUrl("facetFieldRangeQuery", facetFieldRangeQuery);
@@ -62,6 +63,7 @@ public class ProductSearchResultUrl
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("query", query);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("responseOptions", responseOptions);
 		formatter.formatUrl("searchSettings", searchSettings);
 		formatter.formatUrl("searchTuningRuleCode", searchTuningRuleCode);
 		formatter.formatUrl("searchTuningRuleContext", searchTuningRuleContext);

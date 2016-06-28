@@ -379,6 +379,14 @@ public class Cart implements Serializable
 		this.cartMessage = cartMessage;
 	}
 
+	protected List<CartMessage> cartMessages;
+	public List<CartMessage> getCartMessages() {
+		return this.cartMessages;
+	}
+	public void setCartMessages(List<CartMessage> cartMessages) {
+		this.cartMessages = cartMessages;
+	}
+
 	/**
 	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
 	 */

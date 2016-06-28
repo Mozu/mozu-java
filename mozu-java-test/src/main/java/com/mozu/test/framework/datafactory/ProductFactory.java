@@ -23,16 +23,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode);
+		return getProducts(apiContext, dataViewMode,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.ProductCollection getProducts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseOptions, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.ProductCollection returnObj = new com.mozu.api.contracts.productruntime.ProductCollection();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+			returnObj = resource.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  responseFields);
 		}
 		catch (ApiException e)
 		{

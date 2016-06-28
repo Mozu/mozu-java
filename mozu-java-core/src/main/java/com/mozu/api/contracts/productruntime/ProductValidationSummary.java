@@ -32,6 +32,43 @@ public class ProductValidationSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 */
+	protected List<String> fulfillmentTypesSupported;
+	public List<String> getFulfillmentTypesSupported() {
+		return this.fulfillmentTypesSupported;
+	}
+	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
+		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
+	}
+
+	/**
+	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 */
+	protected  String goodsType;
+
+	public String getGoodsType() {
+		return this.goodsType;
+	}
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	/**
+	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
+	 */
+	protected  Boolean isPackagedStandAlone;
+
+	public Boolean getIsPackagedStandAlone() {
+		return this.isPackagedStandAlone;
+	}
+
+	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
+		this.isPackagedStandAlone = isPackagedStandAlone;
+	}
+
+	/**
 	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
 	 */
 	protected  Boolean isTaxable;
@@ -146,43 +183,6 @@ public class ProductValidationSummary implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
-	}
-
-	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
-	 */
-	protected List<String> fulfillmentTypesSupported;
-	public List<String> getFulfillmentTypesSupported() {
-		return this.fulfillmentTypesSupported;
-	}
-	public void setFulfillmentTypesSupported(List<String> fulfillmentTypesSupported) {
-		this.fulfillmentTypesSupported = fulfillmentTypesSupported;
-	}
-
-	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
-	 */
-	protected  String goodsType;
-
-	public String getGoodsType() {
-		return this.goodsType;
-	}
-
-	public void setGoodsType(String goodsType) {
-		this.goodsType = goodsType;
-	}
-
-	/**
-	 * Indicates if the product must be shipped alone in a container. This is used for products and products within a bundle. If true, this product cannot be shipped in a package with other items and must ship in a package by itself.
-	 */
-	protected  Boolean isPackagedStandAlone;
-
-	public Boolean getIsPackagedStandAlone() {
-		return this.isPackagedStandAlone;
-	}
-
-	public void setIsPackagedStandAlone(Boolean isPackagedStandAlone) {
-		this.isPackagedStandAlone = isPackagedStandAlone;
 	}
 
 	/**

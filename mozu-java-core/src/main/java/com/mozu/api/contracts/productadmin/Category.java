@@ -24,6 +24,42 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer catalogId;
+
+	public Integer getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(Integer catalogId) {
+		this.catalogId = catalogId;
+	}
+
+	/**
+	 * External unique identifier of the category.
+	 */
+	protected  String categoryCode;
+
+	public String getCategoryCode() {
+		return this.categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+
+	/**
+	 * The Type of Category Static, Dyanmic, DynamicPreComputed
+	 */
+	protected  String categoryType;
+
+	public String getCategoryType() {
+		return this.categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
+	}
+
 	/**
 	 * The number of children (subcategories, for example) that stem from a parent (top-level category).
 	 */
@@ -100,42 +136,6 @@ public class Category implements Serializable
 
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
-	}
-
-	protected  Integer catalogId;
-
-	public Integer getCatalogId() {
-		return this.catalogId;
-	}
-
-	public void setCatalogId(Integer catalogId) {
-		this.catalogId = catalogId;
-	}
-
-	/**
-	 * External unique identifier of the category.
-	 */
-	protected  String categoryCode;
-
-	public String getCategoryCode() {
-		return this.categoryCode;
-	}
-
-	public void setCategoryCode(String categoryCode) {
-		this.categoryCode = categoryCode;
-	}
-
-	/**
-	 * The Type of Category Static, Dyanmic, DynamicPreComputed
-	 */
-	protected  String categoryType;
-
-	public String getCategoryType() {
-		return this.categoryType;
-	}
-
-	public void setCategoryType(String categoryType) {
-		this.categoryType = categoryType;
 	}
 
 	/**

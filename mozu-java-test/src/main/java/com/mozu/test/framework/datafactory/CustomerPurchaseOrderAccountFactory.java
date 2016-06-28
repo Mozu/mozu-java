@@ -15,7 +15,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.customer.accounts.CustomerPurchaseOrderAccountResource;
 
 /** <summary>
- * 
+ * commerce/customer/accounts/purchaseOrder related resources. DOCUMENT_HERE 
  * </summary>
  */
 public class CustomerPurchaseOrderAccountFactory

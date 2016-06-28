@@ -43,6 +43,19 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 */
+	protected  String channelCode;
+
+	public String getChannelCode() {
+		return this.channelCode;
+	}
+
+	public void setChannelCode(String channelCode) {
+		this.channelCode = channelCode;
+	}
+
+	/**
 	 * The date and time the order was accepted by the tenant.
 	 */
 	protected  DateTime acceptedDate;
@@ -829,19 +842,6 @@ public class Order implements Serializable
 
 	public void setWebSessionId(String webSessionId) {
 		this.webSessionId = webSessionId;
-	}
-
-	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
-	 */
-	protected  String channelCode;
-
-	public String getChannelCode() {
-		return this.channelCode;
-	}
-
-	public void setChannelCode(String channelCode) {
-		this.channelCode = channelCode;
 	}
 
 	/**

@@ -74,6 +74,9 @@ public class PaymentSettings implements Serializable
 		this.gateways = gateways;
 	}
 
+	/**
+	 * Mozu.SiteSettings.Order.Contracts.PaymentSettings purchaseOrder ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  PurchaseOrderPaymentDefinition purchaseOrder;
 
 	public PurchaseOrderPaymentDefinition getPurchaseOrder() {

@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderCustomField ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderCustomField implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderCustomField code ApiTypeMember DOCUMENT_HERE 
+	 */
 	protected  String code;
 
 	public String getCode() {
@@ -28,6 +34,9 @@ public class PurchaseOrderCustomField implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 */
 	protected  String label;
 
 	public String getLabel() {
@@ -38,6 +47,9 @@ public class PurchaseOrderCustomField implements Serializable
 		this.label = label;
 	}
 
+	/**
+	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 */
 	protected  String value;
 
 	public String getValue() {

@@ -12,12 +12,18 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
+/**
+ *	Mozu.SiteSettings.Order.Contracts.PurchaseOrderPaymentTerm ApiType DOCUMENT_HERE 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPaymentTerm implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * A unique code for purchase order payment term
+	 */
 	protected  String code;
 
 	public String getCode() {
@@ -28,6 +34,9 @@ public class PurchaseOrderPaymentTerm implements Serializable
 		this.code = code;
 	}
 
+	/**
+	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -38,6 +47,9 @@ public class PurchaseOrderPaymentTerm implements Serializable
 		this.description = description;
 	}
 
+	/**
+	 * Sequence Number
+	 */
 	protected  Integer sequenceNumber;
 
 	public Integer getSequenceNumber() {
