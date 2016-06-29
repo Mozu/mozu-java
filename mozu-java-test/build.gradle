@@ -8,7 +8,7 @@ sourceCompatibility = 1.7
 
 archivesBaseName='MozuSDK'
 // Manually insert the version numbers here when building outside of TeamCity
-version = '1.20.1'
+version = '1.21.0-RC2'
 group='wars'
 httpPort = 8001 
 

@@ -428,6 +428,7 @@ public class GeneralTests extends MozuApiTestBase {
 		express.setTree(new Expression());
 		CategoryFactory.validateDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
 		CategoryFactory.validateRealTimeDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
+		CategoryFactory.updateCategoryTree(apiContext, null, HttpStatus.SC_BAD_REQUEST);
 	}
 	
 	@Test
@@ -535,6 +536,7 @@ public class GeneralTests extends MozuApiTestBase {
 		CustomerAccountFactory.deleteAccount(localApiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CustomerAccountFactory.getLoginStateByUserName(localApiContext, shopperAuth.getCustomerAccount().getUserName(), HttpStatus.SC_OK);
 		CustomerAccountFactory.getLoginStateByEmailAddress(localApiContext, shopperAuth.getCustomerAccount().getEmailAddress(), HttpStatus.SC_OK);
+		CustomerAccountFactory.getCustomersPurchaseOrderAccounts(localApiContext, HttpStatus.SC_OK);
 	}
 	
 	@Test
@@ -544,6 +546,11 @@ public class GeneralTests extends MozuApiTestBase {
         CustomerAttributeFactory.addAccountAttribute(apiContext, new CustomerAttribute(), shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_CONFLICT);
         CustomerAttributeFactory.updateAccountAttribute(apiContext, new CustomerAttribute(), shopperAuth.getCustomerAccount().getId(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
         CustomerAttributeFactory.deleteAccountAttribute(apiContext, Generator.randomInt(10000, 20000), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
+	}
+	
+	@Test
+	public void CustomerAuditEntryTests() throws Exception {
+		CustomerAuditEntryFactory.getAccountAuditLog(apiContext, null, HttpStatus.SC_BAD_REQUEST);
 	}
 	
 	@Test
@@ -575,6 +582,16 @@ public class GeneralTests extends MozuApiTestBase {
         /*bug 34991*/        CustomerNoteFactory.deleteAccountNote(apiContext, shopperAuth.getCustomerAccount().getId(), Generator.randomInt(100, 200), HttpStatus.SC_NOT_FOUND);
 	}
 
+	@Test
+	public void CustomerPurchaseOrderAccountTests() throws Exception {
+		CustomerPurchaseOrderAccountFactory.createCustomerPurchaseOrderAccount(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.createPurchaseOrderTransaction(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.deleteCustomerPurchaseOrderAccount(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.getCustomerPurchaseOrderAccount(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.getCustomerPurchaseOrderTransactions(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.updateCustomerPurchaseOrderAccount(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
+	}
+	
 	@Test
 	public void CustomerCustomerSegmentTests() throws Exception {
 		CustomerCustomerSegmentFactory.addSegment(apiContext, new CustomerSegment(), HttpStatus.SC_CONFLICT);
