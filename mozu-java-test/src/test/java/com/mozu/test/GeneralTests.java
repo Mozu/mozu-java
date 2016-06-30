@@ -422,13 +422,13 @@ public class GeneralTests extends MozuApiTestBase {
 		CategoryFactory.addCategory(apiContext, null, HttpStatus.SC_CONFLICT);
 		CategoryFactory.getChildCategories(apiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		CategoryFactory.updateCategory(apiContext, new Category(), Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
-		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(50, 100), HttpStatus.SC_NOT_FOUND);
+		CategoryFactory.deleteCategoryById(apiContext, Generator.randomInt(10000, 20000), HttpStatus.SC_NOT_FOUND);
 		DynamicExpression express = new DynamicExpression();
 		express.setText(Generator.randomString(5, Generator.AlphaChars));
 		express.setTree(new Expression());
-		CategoryFactory.validateDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
-		CategoryFactory.validateRealTimeDynamicExpression(apiContext, express, HttpStatus.SC_BAD_REQUEST);
-		CategoryFactory.updateCategoryTree(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CategoryFactory.validateDynamicExpression(apiContext, express, HttpStatus.SC_INTERNAL_SERVER_ERROR);
+		CategoryFactory.validateRealTimeDynamicExpression(apiContext, express, HttpStatus.SC_INTERNAL_SERVER_ERROR);
+		CategoryFactory.updateCategoryTree(apiContext, null, HttpStatus.SC_CONFLICT);
 	}
 	
 	@Test
@@ -501,7 +501,11 @@ public class GeneralTests extends MozuApiTestBase {
 	@Test
 	public void CreditTransactionTests() throws Exception {
         CreditTransactionFactory.getTransactions(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
-        CreditTransactionFactory.addTransaction(apiContext, new CreditTransaction(), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        CreditTransaction tran = new CreditTransaction();
+        tran.setComments(Generator.randomString(5, Generator.AlphaChars));
+        tran.setImpactAmount(2.0);
+        tran.setTransactionType("capture");
+        CreditTransactionFactory.addTransaction(apiContext, tran, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
 	}
 
 	@Test
@@ -544,13 +548,13 @@ public class GeneralTests extends MozuApiTestBase {
         CustomerAttributeFactory.getAccountAttributes(apiContext, shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_OK);
         CustomerAttribute attr = new CustomerAttribute();
         CustomerAttributeFactory.addAccountAttribute(apiContext, new CustomerAttribute(), shopperAuth.getCustomerAccount().getId(), HttpStatus.SC_CONFLICT);
-        CustomerAttributeFactory.updateAccountAttribute(apiContext, new CustomerAttribute(), shopperAuth.getCustomerAccount().getId(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
+        CustomerAttributeFactory.updateAccountAttribute(apiContext, new CustomerAttribute(), shopperAuth.getCustomerAccount().getId(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         CustomerAttributeFactory.deleteAccountAttribute(apiContext, Generator.randomInt(10000, 20000), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
 	public void CustomerAuditEntryTests() throws Exception {
-		CustomerAuditEntryFactory.getAccountAuditLog(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerAuditEntryFactory.getAccountAuditLog(apiContext, null, HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
@@ -584,9 +588,9 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void CustomerPurchaseOrderAccountTests() throws Exception {
-		CustomerPurchaseOrderAccountFactory.createCustomerPurchaseOrderAccount(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
-		CustomerPurchaseOrderAccountFactory.createPurchaseOrderTransaction(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
-		CustomerPurchaseOrderAccountFactory.deleteCustomerPurchaseOrderAccount(apiContext, null, HttpStatus.SC_BAD_REQUEST);
+		CustomerPurchaseOrderAccountFactory.createCustomerPurchaseOrderAccount(apiContext, null, null, HttpStatus.SC_NOT_FOUND);
+		CustomerPurchaseOrderAccountFactory.createPurchaseOrderTransaction(apiContext, null, null, HttpStatus.SC_NOT_FOUND);
+		CustomerPurchaseOrderAccountFactory.deleteCustomerPurchaseOrderAccount(apiContext, null, HttpStatus.SC_NOT_FOUND);
 		CustomerPurchaseOrderAccountFactory.getCustomerPurchaseOrderAccount(apiContext, null, HttpStatus.SC_BAD_REQUEST);
 		CustomerPurchaseOrderAccountFactory.getCustomerPurchaseOrderTransactions(apiContext, null, HttpStatus.SC_BAD_REQUEST);
 		CustomerPurchaseOrderAccountFactory.updateCustomerPurchaseOrderAccount(apiContext, null, null, HttpStatus.SC_BAD_REQUEST);
@@ -1107,6 +1111,7 @@ public class GeneralTests extends MozuApiTestBase {
 		ApiContext localApiContext = new MozuApiContext(tenantId, null, masterCatalogId, null);
 		ProductTypeFactory.addProductType(localApiContext, DataViewMode.Live, null, HttpStatus.SC_CONFLICT);
 		ProductTypeFactory.getProductTypes(localApiContext, DataViewMode.Live, HttpStatus.SC_OK);
+		//bug 88745
 		ProductTypeFactory.getProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
 		ProductTypeFactory.deleteProductType(localApiContext, DataViewMode.Live, Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
 		ProductTypeFactory.updateProductType(localApiContext, DataViewMode.Live, new ProductType(), Generator.randomInt(600, 700), HttpStatus.SC_NOT_FOUND);
@@ -1244,7 +1249,7 @@ public class GeneralTests extends MozuApiTestBase {
         ReturnFactory.getReturnItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.getReturnItems(apiContext, Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         ReturnFactory.createReturnItem(apiContext, new ReturnItem(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-        ReturnFactory.updateReturn(apiContext, new Return(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
+        ReturnFactory.updateReturn(apiContext, new Return(), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_INTERNAL_SERVER_ERROR);
         ReturnFactory.deleteOrderItem(apiContext, Generator.randomString(6, Generator.AlphaChars), Generator.randomString(6, Generator.AlphaChars), HttpStatus.SC_NOT_FOUND);
         ReturnFactory.getReasons(apiContext, HttpStatus.SC_OK);
         ReturnFactory.resendReturnEmail(apiContext, null, HttpStatus.SC_CONFLICT);
