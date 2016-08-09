@@ -36,8 +36,8 @@ repositories {
 
 dependencies {
 
-    compile "org.apache.httpcomponents:httpcore:4.3.2"
-    compile "org.apache.httpcomponents:httpclient:4.3.5"
+    compile "org.apache.httpcomponents:httpcore:4.3.3"
+    compile "org.apache.httpcomponents:httpclient:4.3.6"
 
     compile ("com.mozu:mozu-api-core:"+version) {
         exclude group: 'mysql'
