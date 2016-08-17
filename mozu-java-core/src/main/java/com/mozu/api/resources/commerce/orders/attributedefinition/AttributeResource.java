@@ -124,6 +124,82 @@ public class AttributeResource {
 
 	}
 
+	/**
+	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.createAttribute( attribute);
+	 * </code></pre></p>
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute createAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute) throws Exception
+	{
+		return createAttribute( attribute,  null);
+	}
+
+	/**
+	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.createAttribute( attribute,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute createAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.orders.attributedefinition.AttributeClient.createAttributeClient( attribute,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * Updates an existing attribute with attribute properties to set.
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute updateAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN) throws Exception
+	{
+		return updateAttribute( attribute,  attributeFQN,  null);
+	}
+
+	/**
+	 * Updates an existing attribute with attribute properties to set.
+	 * <p><pre><code>
+	 *	Attribute attribute = new Attribute();
+	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public com.mozu.api.contracts.core.extensible.Attribute updateAttribute(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> client = com.mozu.api.clients.commerce.orders.attributedefinition.AttributeClient.updateAttributeClient( attribute,  attributeFQN,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
 }
 
 

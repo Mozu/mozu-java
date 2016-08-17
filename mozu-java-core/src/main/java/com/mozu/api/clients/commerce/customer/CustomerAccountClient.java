@@ -505,25 +505,26 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByEmailAddressClient(String emailAddress) throws Exception
 	{
-		return getLoginStateByEmailAddressClient( emailAddress,  null);
+		return getLoginStateByEmailAddressClient( emailAddress,  null,  null);
 	}
 
 	/**
 	 * Retrieves the current login state of a customer account by providing the customer's email address.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateByEmailAddressClient( emailAddress,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateByEmailAddressClient( emailAddress,  customerSetCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LoginState loginState = client.Result();
 	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByEmailAddressClient(String emailAddress, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByEmailAddressClient(String emailAddress, String customerSetCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByEmailAddressUrl(emailAddress, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByEmailAddressUrl(customerSetCode, emailAddress, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
 		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);
@@ -547,25 +548,26 @@ public class CustomerAccountClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByUserNameClient(String userName) throws Exception
 	{
-		return getLoginStateByUserNameClient( userName,  null);
+		return getLoginStateByUserNameClient( userName,  null,  null);
 	}
 
 	/**
 	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateByUserNameClient( userName,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient=GetLoginStateByUserNameClient( userName,  customerSetCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LoginState loginState = client.Result();
 	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.LoginState>
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByUserNameClient(String userName, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.customer.LoginState> getLoginStateByUserNameClient(String userName, String customerSetCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByUserNameUrl(responseFields, userName);
+		MozuUrl url = com.mozu.api.urls.commerce.customer.CustomerAccountUrl.getLoginStateByUserNameUrl(customerSetCode, responseFields, userName);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.customer.LoginState.class;
 		MozuClient<com.mozu.api.contracts.customer.LoginState> mozuClient = (MozuClient<com.mozu.api.contracts.customer.LoginState>) MozuClientFactory.getInstance(clz);

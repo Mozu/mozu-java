@@ -9,6 +9,7 @@ package com.mozu.test.framework.datafactory;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
+import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -146,6 +147,56 @@ public class SearchFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection getSynonymDefinitions(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getSynonymDefinitions(apiContext,  null,  null,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection getSynonymDefinitions(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSynonymDefinitions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition getSynonymDefinition(ApiContext apiContext, Integer synonymId, int expectedCode) throws Exception
+	{
+		return getSynonymDefinition(apiContext,  synonymId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition getSynonymDefinition(ApiContext apiContext, Integer synonymId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinition returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinition();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.getSynonymDefinition( synonymId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule addSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, int expectedCode) throws Exception
 	{
 		return addSearchTuningRule(apiContext,  searchTuningRuleIn,  null, expectedCode);
@@ -221,6 +272,31 @@ public class SearchFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition addSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, int expectedCode) throws Exception
+	{
+		return addSynonymDefinition(apiContext,  synonymDefinition,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition addSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinition returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinition();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.addSynonymDefinition( synonymDefinition,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productadmin.search.SearchTuningRule updateSearchTuningRule(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SearchTuningRule searchTuningRuleIn, String searchTuningRuleCode, int expectedCode) throws Exception
 	{
 		return updateSearchTuningRule(apiContext,  searchTuningRuleIn,  searchTuningRuleCode,  null, expectedCode);
@@ -271,12 +347,55 @@ public class SearchFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, int expectedCode) throws Exception
+	{
+		return updateSynonymDefinition(apiContext,  synonymDefinition,  synonymId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productadmin.search.SynonymDefinition updateSynonymDefinition(ApiContext apiContext, com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productadmin.search.SynonymDefinition returnObj = new com.mozu.api.contracts.productadmin.search.SynonymDefinition();
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			returnObj = resource.updateSynonymDefinition( synonymDefinition,  synonymId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static void deleteSearchTuningRule(ApiContext apiContext, String searchTuningRuleCode, int expectedCode) throws Exception
 	{
 		SearchResource resource = new SearchResource(apiContext);
 		try
 		{
 			resource.deleteSearchTuningRule( searchTuningRuleCode);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void deleteSynonymDefinition(ApiContext apiContext, Integer synonymId, int expectedCode) throws Exception
+	{
+		SearchResource resource = new SearchResource(apiContext);
+		try
+		{
+			resource.deleteSynonymDefinition( synonymId);
 		}
 		catch (ApiException e)
 		{

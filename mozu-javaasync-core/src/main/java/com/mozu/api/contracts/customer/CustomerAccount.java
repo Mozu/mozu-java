@@ -54,6 +54,16 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	protected  String customerSet;
+
+	public String getCustomerSet() {
+		return this.customerSet;
+	}
+
+	public void setCustomerSet(String customerSet) {
+		this.customerSet = customerSet;
+	}
+
 	/**
 	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
 	 */

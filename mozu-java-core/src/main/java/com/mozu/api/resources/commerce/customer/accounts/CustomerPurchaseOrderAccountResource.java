@@ -80,16 +80,17 @@ public class CustomerPurchaseOrderAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(Integer accountId) throws Exception
 	{
-		return getCustomerPurchaseOrderTransactions( accountId,  null,  null,  null,  null);
+		return getCustomerPurchaseOrderTransactions( accountId,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderTransactions description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
-	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  responseFields);
+	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
+	 * @param filter 
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
@@ -97,9 +98,9 @@ public class CustomerPurchaseOrderAccountResource {
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 */
-	public com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerPurchaseOrderAccountClient.getCustomerPurchaseOrderTransactionsClient( accountId,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection> client = com.mozu.api.clients.commerce.customer.accounts.CustomerPurchaseOrderAccountClient.getCustomerPurchaseOrderTransactionsClient( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

@@ -9,6 +9,7 @@ package com.mozu.test.framework.datafactory;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
+import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -300,16 +301,16 @@ public class CustomerAccountFactory
 
 	public static com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(ApiContext apiContext, String emailAddress, int expectedCode) throws Exception
 	{
-		return getLoginStateByEmailAddress(apiContext,  emailAddress,  null, expectedCode);
+		return getLoginStateByEmailAddress(apiContext,  emailAddress,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(ApiContext apiContext, String emailAddress, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(ApiContext apiContext, String emailAddress, String customerSetCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getLoginStateByEmailAddress( emailAddress,  responseFields);
+			returnObj = resource.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -325,16 +326,16 @@ public class CustomerAccountFactory
 
 	public static com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(ApiContext apiContext, String userName, int expectedCode) throws Exception
 	{
-		return getLoginStateByUserName(apiContext,  userName,  null, expectedCode);
+		return getLoginStateByUserName(apiContext,  userName,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(ApiContext apiContext, String userName, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(ApiContext apiContext, String userName, String customerSetCode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.LoginState returnObj = new com.mozu.api.contracts.customer.LoginState();
 		CustomerAccountResource resource = new CustomerAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getLoginStateByUserName( userName,  responseFields);
+			returnObj = resource.getLoginStateByUserName( userName,  customerSetCode,  responseFields);
 		}
 		catch (ApiException e)
 		{

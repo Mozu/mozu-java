@@ -24,19 +24,6 @@ public class CustomerPurchaseOrderAccountCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
-	 */
-	protected  Integer totalCount;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	/**
 	 * The total number of pages of the results divided per the `pageSize`.
 	 */
 	protected  Integer pageCount;
@@ -73,6 +60,19 @@ public class CustomerPurchaseOrderAccountCollection implements Serializable
 
 	public void setStartIndex(Integer startIndex) {
 		this.startIndex = startIndex;
+	}
+
+	/**
+	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
+	 */
+	protected  Integer totalCount;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	/**

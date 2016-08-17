@@ -86,6 +86,40 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for GetSynonymDefinitions
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSynonymDefinitionsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("sortBy", sortBy);
+		formatter.formatUrl("startIndex", startIndex);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for GetSynonymDefinition
+	 * @param responseFields 
+	 * @param synonymId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getSynonymDefinitionUrl(String responseFields, Integer synonymId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/{synonymId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("synonymId", synonymId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for AddSearchTuningRule
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
@@ -124,6 +158,18 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for AddSynonymDefinition
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl addSynonymDefinitionUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdateSearchTuningRule
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
@@ -150,6 +196,20 @@ public class SearchUrl
 	}
 
 	/**
+	 * Get Resource Url for UpdateSynonymDefinition
+	 * @param responseFields 
+	 * @param synonymId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl updateSynonymDefinitionUrl(String responseFields, Integer synonymId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/{synonymId}?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("synonymId", synonymId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for DeleteSearchTuningRule
 	 * @param searchTuningRuleCode The unique identifier of the search tuning rule.
 	 * @return   String Resource Url
@@ -158,6 +218,18 @@ public class SearchUrl
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/searchtuningrules/{searchTuningRuleCode}");
 		formatter.formatUrl("searchTuningRuleCode", searchTuningRuleCode);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for DeleteSynonymDefinition
+	 * @param synonymId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl deleteSynonymDefinitionUrl(Integer synonymId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/search/synonyms/{synonymId}");
+		formatter.formatUrl("synonymId", synonymId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

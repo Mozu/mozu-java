@@ -183,13 +183,15 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByEmailAddress
+	 * @param customerSetCode 
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateByEmailAddressUrl(String emailAddress, String responseFields)
+	public static MozuUrl getLoginStateByEmailAddressUrl(String customerSetCode, String emailAddress, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyemailaddress?emailAddress={emailAddress}&responseFields={responseFields}");
+		formatter.formatUrl("customerSetCode", customerSetCode);
 		formatter.formatUrl("emailAddress", emailAddress);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
@@ -197,13 +199,15 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByUserName
+	 * @param customerSetCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLoginStateByUserNameUrl(String responseFields, String userName)
+	public static MozuUrl getLoginStateByUserNameUrl(String customerSetCode, String responseFields, String userName)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyusername?userName={userName}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/customer/accounts/loginstatebyusername?userName={userName}&customerSetCode={customerSetCode}&responseFields={responseFields}");
+		formatter.formatUrl("customerSetCode", customerSetCode);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("userName", userName);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

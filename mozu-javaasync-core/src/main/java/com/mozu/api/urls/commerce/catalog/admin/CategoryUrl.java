@@ -65,13 +65,15 @@ public class CategoryUrl
 	 * Get Resource Url for AddCategory
 	 * @param incrementSequence If true, when adding a new product category, set the sequence number of the new category to an increment of one integer greater than the maximum available sequence number across all product categories. If false, set the sequence number to zero.
 	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param useProvidedId 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl addCategoryUrl(Boolean incrementSequence, String responseFields)
+	public static MozuUrl addCategoryUrl(Boolean incrementSequence, String responseFields, Boolean useProvidedId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/?incrementSequence={incrementSequence}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/categories/?incrementSequence={incrementSequence}&useProvidedId={useProvidedId}&responseFields={responseFields}");
 		formatter.formatUrl("incrementSequence", incrementSequence);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("useProvidedId", useProvidedId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}
 

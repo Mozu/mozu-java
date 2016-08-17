@@ -26,56 +26,6 @@ public class RateRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The Order SubTotal After Discounts to be used in rate calculation
-	 */
-	protected  Double orderDiscountedSubTotal;
-
-	public Double getOrderDiscountedSubTotal() {
-		return this.orderDiscountedSubTotal;
-	}
-
-	public void setOrderDiscountedSubTotal(Double orderDiscountedSubTotal) {
-		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
-	}
-
-	/**
-	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
-	 */
-	protected  Double orderTotal;
-
-	public Double getOrderTotal() {
-		return this.orderTotal;
-	}
-
-	public void setOrderTotal(Double orderTotal) {
-		this.orderTotal = orderTotal;
-	}
-
-	/**
-	 * The Order ID to be used in rate calculation Information al only
-	 */
-	protected  String relatedOrderId;
-
-	public String getRelatedOrderId() {
-		return this.relatedOrderId;
-	}
-
-	public void setRelatedOrderId(String relatedOrderId) {
-		this.relatedOrderId = relatedOrderId;
-	}
-
-	/**
-	 * The shipping methods associated with this request.
-	 */
-	protected List<String> shippingServiceTypes;
-	public List<String> getShippingServiceTypes() {
-		return this.shippingServiceTypes;
-	}
-	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
-		this.shippingServiceTypes = shippingServiceTypes;
-	}
-
-	/**
 	 * List of shipping carriers for which to retrieve shipping rate information.
 	 */
 	protected List<String> carrierIds;
@@ -123,6 +73,56 @@ public class RateRequest implements Serializable
 
 	public void setIsoCurrencyCode(String isoCurrencyCode) {
 		this.isoCurrencyCode = isoCurrencyCode;
+	}
+
+	/**
+	 * The Order SubTotal After Discounts to be used in rate calculation
+	 */
+	protected  Double orderDiscountedSubTotal;
+
+	public Double getOrderDiscountedSubTotal() {
+		return this.orderDiscountedSubTotal;
+	}
+
+	public void setOrderDiscountedSubTotal(Double orderDiscountedSubTotal) {
+		this.orderDiscountedSubTotal = orderDiscountedSubTotal;
+	}
+
+	/**
+	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
+	 */
+	protected  Double orderTotal;
+
+	public Double getOrderTotal() {
+		return this.orderTotal;
+	}
+
+	public void setOrderTotal(Double orderTotal) {
+		this.orderTotal = orderTotal;
+	}
+
+	/**
+	 * The Order ID to be used in rate calculation Information al only
+	 */
+	protected  String relatedOrderId;
+
+	public String getRelatedOrderId() {
+		return this.relatedOrderId;
+	}
+
+	public void setRelatedOrderId(String relatedOrderId) {
+		this.relatedOrderId = relatedOrderId;
+	}
+
+	/**
+	 * The shipping methods associated with this request.
+	 */
+	protected List<String> shippingServiceTypes;
+	public List<String> getShippingServiceTypes() {
+		return this.shippingServiceTypes;
+	}
+	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
+		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
 	/**
