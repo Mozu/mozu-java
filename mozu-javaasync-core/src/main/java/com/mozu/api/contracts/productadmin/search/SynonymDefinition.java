@@ -35,6 +35,16 @@ public class SynonymDefinition implements Serializable
 		this.key = key;
 	}
 
+	protected  Integer synonymId;
+
+	public Integer getSynonymId() {
+		return this.synonymId;
+	}
+
+	public void setSynonymId(Integer synonymId) {
+		this.synonymId = synonymId;
+	}
+
 	/**
 	 * List of synonyms.  If no key is defined the matches are bidirectional
 	 */

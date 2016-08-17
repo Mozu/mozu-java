@@ -133,6 +133,98 @@ public class AttributeClient {
 
 	}
 
+	/**
+	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=CreateAttributeClient( attribute);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> createAttributeClient(com.mozu.api.contracts.core.extensible.Attribute attribute) throws Exception
+	{
+		return createAttributeClient( attribute,  null);
+	}
+
+	/**
+	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=CreateAttributeClient( attribute,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> createAttributeClient(com.mozu.api.contracts.core.extensible.Attribute attribute, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.createAttributeUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.core.extensible.Attribute>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(attribute);
+		return mozuClient;
+
+	}
+
+	/**
+	 * Updates an existing attribute with attribute properties to set.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> updateAttributeClient(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN) throws Exception
+	{
+		return updateAttributeClient( attribute,  attributeFQN,  null);
+	}
+
+	/**
+	 * Updates an existing attribute with attribute properties to set.
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient=UpdateAttributeClient( attribute,  attributeFQN,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Attribute attribute = client.Result();
+	 * </code></pre></p>
+	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.extensible.Attribute>
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 * @see com.mozu.api.contracts.core.extensible.Attribute
+	 */
+	public static MozuClient<com.mozu.api.contracts.core.extensible.Attribute> updateAttributeClient(com.mozu.api.contracts.core.extensible.Attribute attribute, String attributeFQN, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.attributedefinition.AttributeUrl.updateAttributeUrl(attributeFQN, responseFields);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.core.extensible.Attribute.class;
+		MozuClient<com.mozu.api.contracts.core.extensible.Attribute> mozuClient = (MozuClient<com.mozu.api.contracts.core.extensible.Attribute>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(attribute);
+		return mozuClient;
+
+	}
+
 }
 
 

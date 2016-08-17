@@ -21,6 +21,16 @@ public class ViewAuthorizations implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean enforceSitewideSSL;
+
+	public Boolean getEnforceSitewideSSL() {
+		return this.enforceSitewideSSL;
+	}
+
+	public void setEnforceSitewideSSL(Boolean enforceSitewideSSL) {
+		this.enforceSitewideSSL = enforceSitewideSSL;
+	}
+
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
 	 */

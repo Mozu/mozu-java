@@ -34,17 +34,18 @@ public class ProductSearchResultClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient() throws Exception
 	{
-		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
+		return searchClient( null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Searches the categories displayed on the web storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient( query,  filter,  facetTemplate,  facetTemplateSubset,  facet,  facetFieldRangeQuery,  facetHierPrefix,  facetHierValue,  facetHierDepth,  facetStartIndex,  facetPageSize,  facetSettings,  facetValueFilter,  sortBy,  pageSize,  startIndex,  searchSettings,  enableSearchTuningRules,  searchTuningRuleContext,  searchTuningRuleCode,  facetTemplateExclude,  facetPrefix,  responseOptions,  cursorMark,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductSearchResult productSearchResult = client.Result();
 	 * </code></pre></p>
+	 * @param cursorMark 
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.
 	 * @param facet Individually list the facet fields you want to display in a web storefront product search.
 	 * @param facetFieldRangeQuery Display a range facet not specified in a template in a web storefront product search by listing the facet field and the range to display.
@@ -73,9 +74,9 @@ public class ProductSearchResultClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchResult>
 	 * @see com.mozu.api.contracts.productruntime.ProductSearchResult
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> searchClient(String query, String filter, String facetTemplate, String facetTemplateSubset, String facet, String facetFieldRangeQuery, String facetHierPrefix, String facetHierValue, String facetHierDepth, String facetStartIndex, String facetPageSize, String facetSettings, String facetValueFilter, String sortBy, Integer pageSize, Integer startIndex, String searchSettings, Boolean enableSearchTuningRules, String searchTuningRuleContext, String searchTuningRuleCode, String facetTemplateExclude, String facetPrefix, String responseOptions, String cursorMark, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(enableSearchTuningRules, facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetPrefix, facetSettings, facetStartIndex, facetTemplate, facetTemplateExclude, facetTemplateSubset, facetValueFilter, filter, pageSize, query, responseFields, responseOptions, searchSettings, searchTuningRuleCode, searchTuningRuleContext, sortBy, startIndex);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.searchUrl(cursorMark, enableSearchTuningRules, facet, facetFieldRangeQuery, facetHierDepth, facetHierPrefix, facetHierValue, facetPageSize, facetPrefix, facetSettings, facetStartIndex, facetTemplate, facetTemplateExclude, facetTemplateSubset, facetValueFilter, filter, pageSize, query, responseFields, responseOptions, searchSettings, searchTuningRuleCode, searchTuningRuleContext, sortBy, startIndex);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductSearchResult.class;
 		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult>) MozuClientFactory.getInstance(clz);

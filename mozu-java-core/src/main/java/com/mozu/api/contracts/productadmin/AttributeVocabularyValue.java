@@ -36,6 +36,16 @@ public class AttributeVocabularyValue implements Serializable
 		this.value = value;
 	}
 
+	protected  Integer displayOrder;
+
+	public Integer getDisplayOrder() {
+		return this.displayOrder;
+	}
+
+	public void setDisplayOrder(Integer displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
 	/**
 	 * The number that denotes the order of the entity value within a list of entity values.
 	 */

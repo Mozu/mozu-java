@@ -232,6 +232,92 @@ public class SearchClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> mozuClient=GetSynonymDefinitionsClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> getSynonymDefinitionsClient() throws Exception
+	{
+		return getSynonymDefinitionsClient( null,  null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> mozuClient=GetSynonymDefinitionsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinitionPagedCollection synonymDefinitionPagedCollection = client.Result();
+	 * </code></pre></p>
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> getSynonymDefinitionsClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSynonymDefinitionsUrl(filter, pageSize, responseFields, sortBy, startIndex);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinitionPagedCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=GetSynonymDefinitionClient( synonymId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param synonymId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> getSynonymDefinitionClient(Integer synonymId) throws Exception
+	{
+		return getSynonymDefinitionClient( synonymId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=GetSynonymDefinitionClient( synonymId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param synonymId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> getSynonymDefinitionClient(Integer synonymId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.getSynonymDefinitionUrl(responseFields, synonymId);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinition.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * admin-search Post AddSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=AddSearchTuningRuleClient( searchTuningRuleIn);
@@ -369,6 +455,51 @@ public class SearchClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=AddSynonymDefinitionClient( synonymDefinition);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param synonymDefinition 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> addSynonymDefinitionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition) throws Exception
+	{
+		return addSynonymDefinitionClient( synonymDefinition,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=AddSynonymDefinitionClient( synonymDefinition,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param synonymDefinition 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> addSynonymDefinitionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.addSynonymDefinitionUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinition.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(synonymDefinition);
+		return mozuClient;
+
+	}
+
+	/**
 	 * admin-search Put UpdateSearchTuningRule description DOCUMENT_HERE 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.search.SearchTuningRule> mozuClient=UpdateSearchTuningRuleClient( searchTuningRuleIn,  searchTuningRuleCode);
@@ -461,6 +592,53 @@ public class SearchClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=UpdateSynonymDefinitionClient( synonymDefinition,  synonymId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param synonymId 
+	 * @param synonymDefinition 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> updateSynonymDefinitionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId) throws Exception
+	{
+		return updateSynonymDefinitionClient( synonymDefinition,  synonymId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient=UpdateSynonymDefinitionClient( synonymDefinition,  synonymId,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * SynonymDefinition synonymDefinition = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param synonymId 
+	 * @param synonymDefinition 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.search.SynonymDefinition>
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 * @see com.mozu.api.contracts.productadmin.search.SynonymDefinition
+	 */
+	public static MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> updateSynonymDefinitionClient(com.mozu.api.contracts.productadmin.search.SynonymDefinition synonymDefinition, Integer synonymId, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.updateSynonymDefinitionUrl(responseFields, synonymId);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.productadmin.search.SynonymDefinition.class;
+		MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.search.SynonymDefinition>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(synonymDefinition);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Deletes the specified search tuning rule.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSearchTuningRuleClient( searchTuningRuleCode);
@@ -473,6 +651,27 @@ public class SearchClient {
 	public static MozuClient deleteSearchTuningRuleClient(String searchTuningRuleCode) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.deleteSearchTuningRuleUrl(searchTuningRuleCode);
+		String verb = "DELETE";
+				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient mozuClient=DeleteSynonymDefinitionClient( synonymId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * </code></pre></p>
+	 * @param synonymId 
+	 * @return Mozu.Api.MozuClient 
+	 */
+	public static MozuClient deleteSynonymDefinitionClient(Integer synonymId) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.SearchUrl.deleteSynonymDefinitionUrl(synonymId);
 		String verb = "DELETE";
 				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
 		mozuClient.setVerb(verb);

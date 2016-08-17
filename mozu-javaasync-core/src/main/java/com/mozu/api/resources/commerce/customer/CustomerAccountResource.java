@@ -746,7 +746,7 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(String emailAddress) throws Exception
 	{
-		return getLoginStateByEmailAddress( emailAddress,  null);
+		return getLoginStateByEmailAddress( emailAddress,  null,  null);
 	}
 
 	/**
@@ -762,23 +762,24 @@ public class CustomerAccountResource {
 	 */
 	public CountDownLatch getLoginStateByEmailAddressAsync(String emailAddress, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
 	{
-		return getLoginStateByEmailAddressAsync( emailAddress,  null, callback);
+		return getLoginStateByEmailAddressAsync( emailAddress,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves the current login state of a customer account by providing the customer's email address.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress,  responseFields);
+	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields);
 	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(String emailAddress, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.LoginState getLoginStateByEmailAddress(String emailAddress, String customerSetCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress,  customerSetCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -789,17 +790,18 @@ public class CustomerAccountResource {
 	 * Retrieves the current login state of a customer account by providing the customer's email address.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CountDownLatch latch = customeraccount.getLoginStateByEmailAddress( emailAddress,  responseFields, callback );
+	 *	CountDownLatch latch = customeraccount.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public CountDownLatch getLoginStateByEmailAddressAsync(String emailAddress, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
+	public CountDownLatch getLoginStateByEmailAddressAsync(String emailAddress, String customerSetCode, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByEmailAddressClient( emailAddress,  customerSetCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -817,7 +819,7 @@ public class CustomerAccountResource {
 	 */
 	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName) throws Exception
 	{
-		return getLoginStateByUserName( userName,  null);
+		return getLoginStateByUserName( userName,  null,  null);
 	}
 
 	/**
@@ -833,23 +835,24 @@ public class CustomerAccountResource {
 	 */
 	public CountDownLatch getLoginStateByUserNameAsync(String userName, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
 	{
-		return getLoginStateByUserNameAsync( userName,  null, callback);
+		return getLoginStateByUserNameAsync( userName,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName,  responseFields);
+	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName,  customerSetCode,  responseFields);
 	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName, String responseFields) throws Exception
+	public com.mozu.api.contracts.customer.LoginState getLoginStateByUserName(String userName, String customerSetCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  customerSetCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -860,17 +863,18 @@ public class CustomerAccountResource {
 	 * Retrieves the current login state of a customer account by providing the user name associated with the customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
-	 *	CountDownLatch latch = customeraccount.getLoginStateByUserName( userName,  responseFields, callback );
+	 *	CountDownLatch latch = customeraccount.getLoginStateByUserName( userName,  customerSetCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param customerSetCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.LoginState
 	 * @see com.mozu.api.contracts.customer.LoginState
 	 */
-	public CountDownLatch getLoginStateByUserNameAsync(String userName, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
+	public CountDownLatch getLoginStateByUserNameAsync(String userName, String customerSetCode, String responseFields, AsyncCallback<com.mozu.api.contracts.customer.LoginState> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  responseFields);
+		MozuClient<com.mozu.api.contracts.customer.LoginState> client = com.mozu.api.clients.commerce.customer.CustomerAccountClient.getLoginStateByUserNameClient( userName,  customerSetCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

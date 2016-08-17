@@ -166,27 +166,28 @@ public class CategoryClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productadmin.Category> addCategoryClient(com.mozu.api.contracts.productadmin.Category category) throws Exception
 	{
-		return addCategoryClient( category,  null,  null);
+		return addCategoryClient( category,  null,  null,  null);
 	}
 
 	/**
 	 * Adds a new category to the site's category hierarchy. Specify a ParentCategoryID to determine where to place the category in the hierarchy. If no ParentCategoryID is specified, the new category is a top-level category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category,  incrementSequence,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=AddCategoryClient( category,  incrementSequence,  useProvidedId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Category category = client.Result();
 	 * </code></pre></p>
 	 * @param incrementSequence If true, when adding a new product category, set the sequence number of the new category to an increment of one integer greater than the maximum available sequence number across all product categories. If false, set the sequence number to zero.
 	 * @param responseFields Use this field to include those fields which are not included by default.
+	 * @param useProvidedId 
 	 * @param category A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Category> addCategoryClient(com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Category> addCategoryClient(com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, Boolean useProvidedId, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.addCategoryUrl(incrementSequence, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.addCategoryUrl(incrementSequence, responseFields, useProvidedId);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productadmin.Category.class;
 		MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Category>) MozuClientFactory.getInstance(clz);

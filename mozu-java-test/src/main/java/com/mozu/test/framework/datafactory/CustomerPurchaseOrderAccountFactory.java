@@ -9,6 +9,7 @@ package com.mozu.test.framework.datafactory;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
+import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -48,16 +49,16 @@ public class CustomerPurchaseOrderAccountFactory
 
 	public static com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(ApiContext apiContext, Integer accountId, int expectedCode) throws Exception
 	{
-		return getCustomerPurchaseOrderTransactions(apiContext,  accountId,  null,  null,  null,  null, expectedCode);
+		return getCustomerPurchaseOrderTransactions(apiContext,  accountId,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection getCustomerPurchaseOrderTransactions(ApiContext apiContext, Integer accountId, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection returnObj = new com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection();
 		CustomerPurchaseOrderAccountResource resource = new CustomerPurchaseOrderAccountResource(apiContext);
 		try
 		{
-			returnObj = resource.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  responseFields);
+			returnObj = resource.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		}
 		catch (ApiException e)
 		{

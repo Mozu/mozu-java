@@ -25,6 +25,16 @@ public class ProductSearchResult implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  String nextCursorMark;
+
+	public String getNextCursorMark() {
+		return this.nextCursorMark;
+	}
+
+	public void setNextCursorMark(String nextCursorMark) {
+		this.nextCursorMark = nextCursorMark;
+	}
+
 	/**
 	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
 	 */

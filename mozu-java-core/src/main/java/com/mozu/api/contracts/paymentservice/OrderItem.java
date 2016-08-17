@@ -23,6 +23,19 @@ public class OrderItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
+	 */
+	protected  Double unitPrice;
+
+	public Double getUnitPrice() {
+		return this.unitPrice;
+	}
+
+	public void setUnitPrice(Double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
 	protected  String id;
@@ -72,19 +85,6 @@ public class OrderItem implements Serializable
 
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
-	}
-
-	/**
-	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
-	 */
-	protected  Double unitPrice;
-
-	public Double getUnitPrice() {
-		return this.unitPrice;
-	}
-
-	public void setUnitPrice(Double unitPrice) {
-		this.unitPrice = unitPrice;
 	}
 
 	/**

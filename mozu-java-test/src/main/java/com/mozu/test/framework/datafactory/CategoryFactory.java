@@ -9,6 +9,7 @@ package com.mozu.test.framework.datafactory;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
+import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
@@ -98,16 +99,16 @@ public class CategoryFactory
 
 	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, int expectedCode) throws Exception
 	{
-		return addCategory(apiContext,  category,  null,  null, expectedCode);
+		return addCategory(apiContext,  category,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category addCategory(ApiContext apiContext, com.mozu.api.contracts.productadmin.Category category, Boolean incrementSequence, Boolean useProvidedId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
 		CategoryResource resource = new CategoryResource(apiContext);
 		try
 		{
-			returnObj = resource.addCategory( category,  incrementSequence,  responseFields);
+			returnObj = resource.addCategory( category,  incrementSequence,  useProvidedId,  responseFields);
 		}
 		catch (ApiException e)
 		{
