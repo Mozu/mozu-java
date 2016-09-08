@@ -9,7 +9,7 @@ public class ApiError {
 	
 	protected String applicationName;
 
-//    protected List<AdditionalErrorData> additionalErrorData;
+    protected List<AdditionalErrorData> additionalErrorData;
 	
 	protected String errorCode;
 	
@@ -177,13 +177,13 @@ public class ApiError {
 		this.items = items;
 	}
 
-//    public List<AdditionalErrorData> getAdditionalErrorData() {
-//        return additionalErrorData;
-//    }
-//
-//    public void setAdditionalErrorData(List<AdditionalErrorData> additionalErrorData) {
-//        this.additionalErrorData = additionalErrorData;
-//    }
+    public List<AdditionalErrorData> getAdditionalErrorData() {
+       return additionalErrorData;
+    }
+
+    public void setAdditionalErrorData(List<AdditionalErrorData> additionalErrorData) {
+        this.additionalErrorData = additionalErrorData;
+    }
 
     public String getCorrelationId() {
         return correlationId;
