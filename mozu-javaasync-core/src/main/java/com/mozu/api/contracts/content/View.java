@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.content;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -34,6 +35,26 @@ public class View implements Serializable
 
 	public void setFilter(String filter) {
 		this.filter = filter;
+	}
+
+	protected  String includeInactiveMode;
+
+	public String getIncludeInactiveMode() {
+		return this.includeInactiveMode;
+	}
+
+	public void setIncludeInactiveMode(String includeInactiveMode) {
+		this.includeInactiveMode = includeInactiveMode;
+	}
+
+	protected  Boolean isAdminDefault;
+
+	public Boolean getIsAdminDefault() {
+		return this.isAdminDefault;
+	}
+
+	public void setIsAdminDefault(Boolean isAdminDefault) {
+		this.isAdminDefault = isAdminDefault;
 	}
 
 	/**

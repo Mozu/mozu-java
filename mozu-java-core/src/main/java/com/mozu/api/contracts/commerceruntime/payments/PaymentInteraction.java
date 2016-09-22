@@ -6,12 +6,15 @@
  */
 package com.mozu.api.contracts.commerceruntime.payments;
 
+import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
+import com.mozu.api.contracts.commerceruntime.payments.PaymentGatewayResponseData;
 
 /**
  *	Properties of a resulting payment interaction that occurs when a payment action is performed.
@@ -306,6 +309,14 @@ public class PaymentInteraction implements Serializable
 
 	public void setAuditInfo(AuditInfo auditInfo) {
 		this.auditInfo = auditInfo;
+	}
+
+	protected List<PaymentGatewayResponseData> gatewayResponseData;
+	public List<PaymentGatewayResponseData> getGatewayResponseData() {
+		return this.gatewayResponseData;
+	}
+	public void setGatewayResponseData(List<PaymentGatewayResponseData> gatewayResponseData) {
+		this.gatewayResponseData = gatewayResponseData;
 	}
 
 

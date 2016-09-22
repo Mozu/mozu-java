@@ -13,9 +13,11 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+import org.joda.time.DateTime;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Storefront Categories resource to view the product category hierarchy as it appears to shoppers who are browsing the storefront. The hierarchy can be returned as a flat list or as a category tree.
  * </summary>
@@ -26,13 +28,20 @@ public class CategoryResource {
 	///
 	private ApiContext _apiContext;
 
+	private DataViewMode _dataViewMode;
 
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
 
-	
+	public CategoryResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
@@ -63,7 +72,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoriesClient( filter,  startIndex,  pageSize,  sortBy,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoriesClient(_dataViewMode,  filter,  startIndex,  pageSize,  sortBy,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -99,7 +108,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Category getCategory(Integer categoryId, Boolean allowInactive, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Category> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryClient( categoryId,  allowInactive,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Category> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryClient(_dataViewMode,  categoryId,  allowInactive,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -132,7 +141,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryTreeClient( responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.CategoryCollection> client = com.mozu.api.clients.commerce.catalog.storefront.CategoryClient.getCategoryTreeClient(_dataViewMode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

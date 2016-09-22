@@ -13,6 +13,7 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+import org.joda.time.DateTime;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
@@ -207,7 +208,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode) throws Exception
 	{
-		return getProduct( productCode,  null,  null,  null,  null,  null,  null);
+		return getProduct( productCode,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -223,15 +224,16 @@ public class ProductResource {
 	 */
 	public CountDownLatch getProductAsync(String productCode, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
 	{
-		return getProductAsync( productCode,  null,  null,  null,  null,  null,  null, callback);
+		return getProductAsync( productCode,  null,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves information about a single product given its product code.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields);
+	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 	 * </code></pre></p>
+	 * @param acceptVariantProductCode 
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -242,9 +244,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.Product getProduct(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -255,8 +257,9 @@ public class ProductResource {
 	 * Retrieves information about a single product given its product code.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	CountDownLatch latch = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields, callback );
+	 *	CountDownLatch latch = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param acceptVariantProductCode 
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -268,9 +271,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public CountDownLatch getProductAsync(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
+	public CountDownLatch getProductAsync(String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductClient(_dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

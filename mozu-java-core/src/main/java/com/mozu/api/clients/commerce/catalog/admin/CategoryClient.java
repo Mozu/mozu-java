@@ -12,9 +12,11 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+import org.joda.time.DateTime;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -24,7 +26,7 @@ public class CategoryClient {
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient();
+	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient(dataViewMode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CategoryPagedCollection categoryPagedCollection = client.Result();
@@ -32,15 +34,15 @@ public class CategoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryPagedCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> getCategoriesClient() throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> getCategoriesClient(com.mozu.api.DataViewMode dataViewMode) throws Exception
 	{
-		return getCategoriesClient( null,  null,  null,  null,  null);
+		return getCategoriesClient(dataViewMode,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient=GetCategoriesClient(dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CategoryPagedCollection categoryPagedCollection = client.Result();
@@ -53,7 +55,7 @@ public class CategoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CategoryPagedCollection>
 	 * @see com.mozu.api.contracts.productadmin.CategoryPagedCollection
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> getCategoriesClient(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> getCategoriesClient(com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.getCategoriesUrl(filter, pageSize, responseFields, sortBy, startIndex);
 		String verb = "GET";
@@ -61,6 +63,7 @@ public class CategoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}
@@ -110,7 +113,7 @@ public class CategoryClient {
 	/**
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient( categoryId);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient(dataViewMode,  categoryId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Category category = client.Result();
@@ -119,15 +122,15 @@ public class CategoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Category> getCategoryClient(Integer categoryId) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Category> getCategoryClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId) throws Exception
 	{
-		return getCategoryClient( categoryId,  null);
+		return getCategoryClient(dataViewMode,  categoryId,  null);
 	}
 
 	/**
 	 * Retrieves the details of a single category.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient( categoryId,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient=GetCategoryClient(dataViewMode,  categoryId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Category category = client.Result();
@@ -137,7 +140,7 @@ public class CategoryClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Category>
 	 * @see com.mozu.api.contracts.productadmin.Category
 	 */
-	public static MozuClient<com.mozu.api.contracts.productadmin.Category> getCategoryClient(Integer categoryId, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productadmin.Category> getCategoryClient(com.mozu.api.DataViewMode dataViewMode, Integer categoryId, String responseFields) throws Exception
 	{
 		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.getCategoryUrl(categoryId, responseFields);
 		String verb = "GET";
@@ -145,6 +148,7 @@ public class CategoryClient {
 		MozuClient<com.mozu.api.contracts.productadmin.Category> mozuClient = (MozuClient<com.mozu.api.contracts.productadmin.Category>) MozuClientFactory.getInstance(clz);
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
 		return mozuClient;
 
 	}

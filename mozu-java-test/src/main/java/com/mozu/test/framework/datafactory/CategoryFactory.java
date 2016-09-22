@@ -22,15 +22,15 @@ import com.mozu.api.resources.commerce.catalog.admin.CategoryResource;
 public class CategoryFactory
 {
 
-	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getCategories(apiContext,  null,  null,  null,  null,  null, expectedCode);
+		return getCategories(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.CategoryPagedCollection returnObj = new com.mozu.api.contracts.productadmin.CategoryPagedCollection();
-		CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getCategories( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -72,15 +72,15 @@ public class CategoryFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode) throws Exception
 	{
-		return getCategory(apiContext,  categoryId,  null, expectedCode);
+		return getCategory(apiContext, dataViewMode,  categoryId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, Integer categoryId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.Category getCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.Category returnObj = new com.mozu.api.contracts.productadmin.Category();
-		CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getCategory( categoryId,  responseFields);

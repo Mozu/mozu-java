@@ -22,15 +22,15 @@ import com.mozu.api.resources.commerce.catalog.storefront.CategoryResource;
 public class StorefrontCategoryFactory
 {
 
-	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getCategories(apiContext,  null,  null,  null,  null,  null, expectedCode);
+		return getCategories(apiContext, dataViewMode,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.CategoryPagedCollection getCategories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String filter, Integer startIndex, Integer pageSize, String sortBy, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.CategoryPagedCollection returnObj = new com.mozu.api.contracts.productruntime.CategoryPagedCollection();
-		CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getCategories( filter,  startIndex,  pageSize,  sortBy,  responseFields);
@@ -47,15 +47,15 @@ public class StorefrontCategoryFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, int expectedCode) throws Exception
 	{
-		return getCategory(apiContext,  categoryId,  null,  null, expectedCode);
+		return getCategory(apiContext, dataViewMode,  categoryId,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, Integer categoryId, Boolean allowInactive, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Category getCategory(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, Integer categoryId, Boolean allowInactive, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.Category returnObj = new com.mozu.api.contracts.productruntime.Category();
-		CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getCategory( categoryId,  allowInactive,  responseFields);
@@ -72,15 +72,15 @@ public class StorefrontCategoryFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, int expectedCode) throws Exception
 	{
-		return getCategoryTree(apiContext,  null, expectedCode);
+		return getCategoryTree(apiContext, dataViewMode,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.CategoryCollection getCategoryTree(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.CategoryCollection returnObj = new com.mozu.api.contracts.productruntime.CategoryCollection();
-		CategoryResource resource = new CategoryResource(apiContext);
+		CategoryResource resource = new CategoryResource(apiContext, dataViewMode);
 		try
 		{
 			returnObj = resource.getCategoryTree( responseFields);

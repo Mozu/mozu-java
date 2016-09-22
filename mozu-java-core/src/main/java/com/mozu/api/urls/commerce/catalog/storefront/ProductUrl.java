@@ -8,7 +8,7 @@ package com.mozu.api.urls.commerce.catalog.storefront;
 
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
-
+import org.joda.time.DateTime;
 
 public class ProductUrl
 {
@@ -55,6 +55,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProduct
+	 * @param acceptVariantProductCode 
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -64,9 +65,10 @@ public class ProductUrl
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductUrl(Boolean allowInactive, String productCode, Integer quantity, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode)
+	public static MozuUrl getProductUrl(Boolean acceptVariantProductCode, Boolean allowInactive, String productCode, Integer quantity, String responseFields, Boolean skipInventoryCheck, Boolean supressOutOfStock404, String variationProductCode)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&quantity={quantity}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/{productCode}?variationProductCode={variationProductCode}&allowInactive={allowInactive}&skipInventoryCheck={skipInventoryCheck}&supressOutOfStock404={supressOutOfStock404}&quantity={quantity}&acceptVariantProductCode={acceptVariantProductCode}&responseFields={responseFields}");
+		formatter.formatUrl("acceptVariantProductCode", acceptVariantProductCode);
 		formatter.formatUrl("allowInactive", allowInactive);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("quantity", quantity);

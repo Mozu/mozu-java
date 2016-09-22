@@ -8,7 +8,7 @@ package com.mozu.api.urls.commerce.customer.credits;
 
 import com.mozu.api.MozuUrl;
 import com.mozu.api.utils.UrlFormatter;
-
+import org.joda.time.DateTime;
 
 public class CreditTransactionUrl
 {

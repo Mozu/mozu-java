@@ -13,11 +13,13 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+import org.joda.time.DateTime;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
+import com.mozu.api.DataViewMode;
 /** <summary>
  * Use the Categories resource to organize products and control where they appear on the storefront. Create and maintain a hierarchy of categories and subcategories where the site will store properties.
  * </summary>
@@ -28,13 +30,20 @@ public class CategoryResource {
 	///
 	private ApiContext _apiContext;
 
+	private DataViewMode _dataViewMode;
 
 	public CategoryResource(ApiContext apiContext) 
 	{
 		_apiContext = apiContext;
+		_dataViewMode = DataViewMode.Live;
 	}
 
-	
+	public CategoryResource(ApiContext apiContext, DataViewMode dataViewMode) 
+	{
+		_apiContext = apiContext;
+		_dataViewMode = dataViewMode;
+	}
+		
 	/**
 	 * Retrieves a list of categories according to any specified filter criteria and sort options.
 	 * <p><pre><code>
@@ -80,7 +89,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.CategoryPagedCollection getCategories(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -104,7 +113,7 @@ public class CategoryResource {
 	 */
 	public CountDownLatch getCategoriesAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.CategoryPagedCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.CategoryPagedCollection> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoriesClient(_dataViewMode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -225,7 +234,7 @@ public class CategoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.Category getCategory(Integer categoryId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient( categoryId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient(_dataViewMode,  categoryId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -246,7 +255,7 @@ public class CategoryResource {
 	 */
 	public CountDownLatch getCategoryAsync(Integer categoryId, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.Category> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient( categoryId,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.Category> client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.getCategoryClient(_dataViewMode,  categoryId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
