@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.sitesettings.general.general.routing;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -38,11 +39,11 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route defaults ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected List<String> defaults;
-	public List<String> getDefaults() {
+	public HashMap<String,Object> defaults;
+	public HashMap<String,Object> getDefaults() {
 		return this.defaults;
 	}
-	public void setDefaults(List<String> defaults) {
+	public void setDefaults(HashMap<String,Object> defaults) {
 		this.defaults = defaults;
 	}
 
@@ -75,11 +76,11 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route mappings ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected List<String> mappings;
-	public List<String> getMappings() {
+	public HashMap<String,List<String>> mappings;
+	public HashMap<String,List<String>> getMappings() {
 		return this.mappings;
 	}
-	public void setMappings(List<String> mappings) {
+	public void setMappings(HashMap<String,List<String>> mappings) {
 		this.mappings = mappings;
 	}
 
@@ -112,11 +113,11 @@ public class Route implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.Route validators ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected List<String> validators;
-	public List<String> getValidators() {
+	public HashMap<String,List<String>> validators;
+	public HashMap<String,List<String>> getValidators() {
 		return this.validators;
 	}
-	public void setValidators(List<String> validators) {
+	public void setValidators(HashMap<String,List<String>> validators) {
 		this.validators = validators;
 	}
 

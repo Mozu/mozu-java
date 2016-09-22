@@ -12,6 +12,7 @@ import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
+import org.joda.time.DateTime;
 import com.mozu.api.AsyncCallback;
 import java.util.concurrent.CountDownLatch;
 import com.mozu.api.security.AuthTicket;
@@ -129,17 +130,18 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getProductClient(dataViewMode,  productCode,  null,  null,  null,  null,  null,  null);
+		return getProductClient(dataViewMode,  productCode,  null,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves information about a single product given its product code.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductClient(dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductClient(dataViewMode,  productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
+	 * @param acceptVariantProductCode 
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -150,9 +152,9 @@ public class ProductClient {
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String variationProductCode, Boolean allowInactive, Boolean skipInventoryCheck, Boolean supressOutOfStock404, Integer quantity, Boolean acceptVariantProductCode, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductUrl(allowInactive, productCode, quantity, responseFields, skipInventoryCheck, supressOutOfStock404, variationProductCode);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductUrl(acceptVariantProductCode, allowInactive, productCode, quantity, responseFields, skipInventoryCheck, supressOutOfStock404, variationProductCode);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.Product.class;
 		MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.Product>) MozuClientFactory.getInstance(clz);

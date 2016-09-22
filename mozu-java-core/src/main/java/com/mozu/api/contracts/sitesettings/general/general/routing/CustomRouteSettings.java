@@ -7,11 +7,14 @@
 package com.mozu.api.contracts.sitesettings.general.general.routing;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.sitesettings.general.general.routing.Mapping;
+import com.mozu.api.contracts.sitesettings.general.general.routing.Validator;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Route;
 
 /**
@@ -26,22 +29,22 @@ public class CustomRouteSettings implements Serializable
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings mappings ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected List<String> mappings;
-	public List<String> getMappings() {
+	public HashMap<String,Mapping> mappings;
+	public HashMap<String,Mapping> getMappings() {
 		return this.mappings;
 	}
-	public void setMappings(List<String> mappings) {
+	public void setMappings(HashMap<String,Mapping> mappings) {
 		this.mappings = mappings;
 	}
 
 	/**
 	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings validators ApiTypeMember DOCUMENT_HERE 
 	 */
-	protected List<String> validators;
-	public List<String> getValidators() {
+	public HashMap<String,Validator> validators;
+	public HashMap<String,Validator> getValidators() {
 		return this.validators;
 	}
-	public void setValidators(List<String> validators) {
+	public void setValidators(HashMap<String,Validator> validators) {
 		this.validators = validators;
 	}
 

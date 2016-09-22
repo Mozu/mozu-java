@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.productadmin;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -23,6 +24,16 @@ public class AttributeVocabularyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer displayOrder;
+
+	public Integer getDisplayOrder() {
+		return this.displayOrder;
+	}
+
+	public void setDisplayOrder(Integer displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
 	/**
 	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
@@ -34,16 +45,6 @@ public class AttributeVocabularyValue implements Serializable
 
 	public void setValue(Object value) {
 		this.value = value;
-	}
-
-	protected  Integer displayOrder;
-
-	public Integer getDisplayOrder() {
-		return this.displayOrder;
-	}
-
-	public void setDisplayOrder(Integer displayOrder) {
-		this.displayOrder = displayOrder;
 	}
 
 	/**

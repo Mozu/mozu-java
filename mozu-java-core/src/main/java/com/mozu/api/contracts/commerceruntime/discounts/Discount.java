@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.commerceruntime.discounts;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;

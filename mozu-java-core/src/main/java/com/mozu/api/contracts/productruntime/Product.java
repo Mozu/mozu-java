@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.productruntime;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -301,6 +302,16 @@ public class Product implements Serializable
 	}
 	public void setUpCs(List<String> upCs) {
 		this.upCs = upCs;
+	}
+
+	protected  DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
 	}
 
 	/**

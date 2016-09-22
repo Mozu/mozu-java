@@ -7,22 +7,17 @@
 package com.mozu.api.resources.commerce.catalog.admin.pricelists;
 
 import com.mozu.api.ApiContext;
-
 import java.util.List;
 import java.util.ArrayList;
-
 import com.mozu.api.MozuClient;
 import com.mozu.api.MozuClientFactory;
 import com.mozu.api.MozuUrl;
 import com.mozu.api.Headers;
-import com.mozu.api.AsyncCallback;
-
-import java.util.concurrent.CountDownLatch;
-
-import com.mozu.api.security.AuthTicket;
-
-import org.apache.commons.lang.StringUtils;
 import org.joda.time.DateTime;
+import com.mozu.api.AsyncCallback;
+import java.util.concurrent.CountDownLatch;
+import com.mozu.api.security.AuthTicket;
+import org.apache.commons.lang.StringUtils;
 
 /** <summary>
  * Use the Entries sub-resource to interact with price list entries. Price list entries enable you to override product pricing as well as control what products shoppers can view and purchase when the price list is exclusive. Refer to the [Price Lists](../../../guides/catalog/price-lists.htm) guides topic for more information.

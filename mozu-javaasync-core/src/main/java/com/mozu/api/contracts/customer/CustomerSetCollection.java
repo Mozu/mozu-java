@@ -7,6 +7,7 @@
 package com.mozu.api.contracts.customer;
 
 import java.util.List;
+import java.util.HashMap;
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
@@ -19,26 +20,6 @@ public class CustomerSetCollection implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	protected  Integer totalCount;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	protected  Integer pageCount;
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
 
 	protected  Integer pageSize;
 
@@ -58,6 +39,26 @@ public class CustomerSetCollection implements Serializable
 
 	public void setStartIndex(Integer startIndex) {
 		this.startIndex = startIndex;
+	}
+
+	protected  Integer totalCount;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	protected  Integer pageCount;
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	protected List<CustomerSet> items;
