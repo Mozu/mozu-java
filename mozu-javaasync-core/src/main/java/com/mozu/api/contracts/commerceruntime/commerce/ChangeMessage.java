@@ -22,6 +22,97 @@ public class ChangeMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
+	 */
+	protected  String subjectType;
+
+	public String getSubjectType() {
+		return this.subjectType;
+	}
+
+	public void setSubjectType(String subjectType) {
+		this.subjectType = subjectType;
+	}
+
+	/**
+	 * If true, the change associated with the message executed successfully.
+	 */
+	protected  Boolean success;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	/**
+	 * The user's first name.
+	 */
+	protected  String userFirstName;
+
+	public String getUserFirstName() {
+		return this.userFirstName;
+	}
+
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
+	}
+
+	/**
+	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 */
+	protected  String userId;
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	/**
+	 * The user's last name.
+	 */
+	protected  String userLastName;
+
+	public String getUserLastName() {
+		return this.userLastName;
+	}
+
+	public void setUserLastName(String userLastName) {
+		this.userLastName = userLastName;
+	}
+
+	/**
+	 * The user type (e.g. Shopper, Admin, etc.).
+	 */
+	protected  String userScopeType;
+
+	public String getUserScopeType() {
+		return this.userScopeType;
+	}
+
+	public void setUserScopeType(String userScopeType) {
+		this.userScopeType = userScopeType;
+	}
+
+	/**
+	 * The action associated with this message. For example, if the price of a product changes, the verb could be "Increased" or "Decreased". If the product is no longer available, the verb could be "Invalidated". System-supplied and read-only.
+	 */
+	protected  String verb;
+
+	public String getVerb() {
+		return this.verb;
+	}
+
+	public void setVerb(String verb) {
+		this.verb = verb;
+	}
+
+	/**
 	 * The order or item amount changed, if applicable.
 	 */
 	protected  Double amount;
@@ -188,97 +279,6 @@ public class ChangeMessage implements Serializable
 
 	public void setSubject(String subject) {
 		this.subject = subject;
-	}
-
-	/**
-	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
-	 */
-	protected  String subjectType;
-
-	public String getSubjectType() {
-		return this.subjectType;
-	}
-
-	public void setSubjectType(String subjectType) {
-		this.subjectType = subjectType;
-	}
-
-	/**
-	 * If true, the change associated with the message executed successfully.
-	 */
-	protected  Boolean success;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	/**
-	 * The user's first name.
-	 */
-	protected  String userFirstName;
-
-	public String getUserFirstName() {
-		return this.userFirstName;
-	}
-
-	public void setUserFirstName(String userFirstName) {
-		this.userFirstName = userFirstName;
-	}
-
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
-	protected  String userId;
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	/**
-	 * The user's last name.
-	 */
-	protected  String userLastName;
-
-	public String getUserLastName() {
-		return this.userLastName;
-	}
-
-	public void setUserLastName(String userLastName) {
-		this.userLastName = userLastName;
-	}
-
-	/**
-	 * The user type (e.g. Shopper, Admin, etc.).
-	 */
-	protected  String userScopeType;
-
-	public String getUserScopeType() {
-		return this.userScopeType;
-	}
-
-	public void setUserScopeType(String userScopeType) {
-		this.userScopeType = userScopeType;
-	}
-
-	/**
-	 * The action associated with this message. For example, if the price of a product changes, the verb could be "Increased" or "Decreased". If the product is no longer available, the verb could be "Invalidated". System-supplied and read-only.
-	 */
-	protected  String verb;
-
-	public String getVerb() {
-		return this.verb;
-	}
-
-	public void setVerb(String verb) {
-		this.verb = verb;
 	}
 
 

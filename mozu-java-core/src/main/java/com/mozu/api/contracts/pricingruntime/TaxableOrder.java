@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.pricingruntime.TaxAttribute;
 import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.TaxContext;
 
@@ -24,6 +25,19 @@ public class TaxableOrder implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The type of request for which to tax this entity, which is Order or Return.
+	 */
+	protected  String taxRequestType;
+
+	public String getTaxRequestType() {
+		return this.taxRequestType;
+	}
+
+	public void setTaxRequestType(String taxRequestType) {
+		this.taxRequestType = taxRequestType;
+	}
 
 	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
@@ -62,6 +76,16 @@ public class TaxableOrder implements Serializable
 
 	public void setOrderDate(DateTime orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	protected  Integer orderNumber;
+
+	public Integer getOrderNumber() {
+		return this.orderNumber;
+	}
+
+	public void setOrderNumber(Integer orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 
 	/**
@@ -103,17 +127,22 @@ public class TaxableOrder implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
-	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
-	 */
-	protected  String taxRequestType;
-
-	public String getTaxRequestType() {
-		return this.taxRequestType;
+	protected List<TaxAttribute> attributes;
+	public List<TaxAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<TaxAttribute> attributes) {
+		this.attributes = attributes;
 	}
 
-	public void setTaxRequestType(String taxRequestType) {
-		this.taxRequestType = taxRequestType;
+	protected transient com.fasterxml.jackson.databind.JsonNode data;
+
+	public com.fasterxml.jackson.databind.JsonNode getData() {
+		return this.data;
+	}
+
+	public void setData(com.fasterxml.jackson.databind.JsonNode data) {
+		this.data = data;
 	}
 
 	/**
@@ -140,5 +169,21 @@ public class TaxableOrder implements Serializable
 		this.taxContext = taxContext;
 	}
 
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(data == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, data);
+		}
+	}
+
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.data = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
+	}
 
 }

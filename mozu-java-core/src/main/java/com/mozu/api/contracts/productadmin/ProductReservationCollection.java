@@ -25,19 +25,6 @@ public class ProductReservationCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
-	 */
-	protected  Integer pageCount;
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
-	/**
 	 * The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 */
 	protected  Integer pageSize;
@@ -48,6 +35,19 @@ public class ProductReservationCollection implements Serializable
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	/**
+	 * The number of pages returned based on the startIndex and pageSize values specified. This value is system-supplied and read-only.
+	 */
+	protected  Integer pageCount;
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	protected  Integer startIndex;

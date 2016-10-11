@@ -156,6 +156,18 @@ public class ProductUrl
 	}
 
 	/**
+	 * Get Resource Url for GetProductCosts
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getProductCostsUrl(String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/costs?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetProductInventories
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url

@@ -28,6 +28,16 @@ public class OrderItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Double adjustedLineItemSubtotal;
+
+	public Double getAdjustedLineItemSubtotal() {
+		return this.adjustedLineItemSubtotal;
+	}
+
+	public void setAdjustedLineItemSubtotal(Double adjustedLineItemSubtotal) {
+		this.adjustedLineItemSubtotal = adjustedLineItemSubtotal;
+	}
+
 	/**
 	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
 	 */
@@ -236,6 +246,16 @@ public class OrderItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
+
+	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
+		return this.shippingAmountBeforeDiscountsAndAdjustments;
+	}
+
+	public void setShippingAmountBeforeDiscountsAndAdjustments(Double shippingAmountBeforeDiscountsAndAdjustments) {
+		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
+	}
+
 	/**
 	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
 	 */
@@ -299,6 +319,136 @@ public class OrderItem implements Serializable
 
 	public void setTotal(Double total) {
 		this.total = total;
+	}
+
+	protected  Double totalWithoutWeightedShippingAndHandling;
+
+	public Double getTotalWithoutWeightedShippingAndHandling() {
+		return this.totalWithoutWeightedShippingAndHandling;
+	}
+
+	public void setTotalWithoutWeightedShippingAndHandling(Double totalWithoutWeightedShippingAndHandling) {
+		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
+	}
+
+	protected  Double totalWithWeightedShippingAndHandling;
+
+	public Double getTotalWithWeightedShippingAndHandling() {
+		return this.totalWithWeightedShippingAndHandling;
+	}
+
+	public void setTotalWithWeightedShippingAndHandling(Double totalWithWeightedShippingAndHandling) {
+		this.totalWithWeightedShippingAndHandling = totalWithWeightedShippingAndHandling;
+	}
+
+	protected  Double weightedOrderAdjustment;
+
+	public Double getWeightedOrderAdjustment() {
+		return this.weightedOrderAdjustment;
+	}
+
+	public void setWeightedOrderAdjustment(Double weightedOrderAdjustment) {
+		this.weightedOrderAdjustment = weightedOrderAdjustment;
+	}
+
+	protected  Double weightedOrderDiscount;
+
+	public Double getWeightedOrderDiscount() {
+		return this.weightedOrderDiscount;
+	}
+
+	public void setWeightedOrderDiscount(Double weightedOrderDiscount) {
+		this.weightedOrderDiscount = weightedOrderDiscount;
+	}
+
+	protected  Double weightedOrderDuty;
+
+	public Double getWeightedOrderDuty() {
+		return this.weightedOrderDuty;
+	}
+
+	public void setWeightedOrderDuty(Double weightedOrderDuty) {
+		this.weightedOrderDuty = weightedOrderDuty;
+	}
+
+	protected  Double weightedOrderHandlingFee;
+
+	public Double getWeightedOrderHandlingFee() {
+		return this.weightedOrderHandlingFee;
+	}
+
+	public void setWeightedOrderHandlingFee(Double weightedOrderHandlingFee) {
+		this.weightedOrderHandlingFee = weightedOrderHandlingFee;
+	}
+
+	protected  Double weightedOrderHandlingFeeDiscount;
+
+	public Double getWeightedOrderHandlingFeeDiscount() {
+		return this.weightedOrderHandlingFeeDiscount;
+	}
+
+	public void setWeightedOrderHandlingFeeDiscount(Double weightedOrderHandlingFeeDiscount) {
+		this.weightedOrderHandlingFeeDiscount = weightedOrderHandlingFeeDiscount;
+	}
+
+	protected  Double weightedOrderHandlingFeeTax;
+
+	public Double getWeightedOrderHandlingFeeTax() {
+		return this.weightedOrderHandlingFeeTax;
+	}
+
+	public void setWeightedOrderHandlingFeeTax(Double weightedOrderHandlingFeeTax) {
+		this.weightedOrderHandlingFeeTax = weightedOrderHandlingFeeTax;
+	}
+
+	protected  Double weightedOrderShipping;
+
+	public Double getWeightedOrderShipping() {
+		return this.weightedOrderShipping;
+	}
+
+	public void setWeightedOrderShipping(Double weightedOrderShipping) {
+		this.weightedOrderShipping = weightedOrderShipping;
+	}
+
+	protected  Double weightedOrderShippingDiscount;
+
+	public Double getWeightedOrderShippingDiscount() {
+		return this.weightedOrderShippingDiscount;
+	}
+
+	public void setWeightedOrderShippingDiscount(Double weightedOrderShippingDiscount) {
+		this.weightedOrderShippingDiscount = weightedOrderShippingDiscount;
+	}
+
+	protected  Double weightedOrderShippingManualAdjustment;
+
+	public Double getWeightedOrderShippingManualAdjustment() {
+		return this.weightedOrderShippingManualAdjustment;
+	}
+
+	public void setWeightedOrderShippingManualAdjustment(Double weightedOrderShippingManualAdjustment) {
+		this.weightedOrderShippingManualAdjustment = weightedOrderShippingManualAdjustment;
+	}
+
+	protected  Double weightedOrderShippingTax;
+
+	public Double getWeightedOrderShippingTax() {
+		return this.weightedOrderShippingTax;
+	}
+
+	public void setWeightedOrderShippingTax(Double weightedOrderShippingTax) {
+		this.weightedOrderShippingTax = weightedOrderShippingTax;
+	}
+
+	protected  Double weightedOrderTax;
+
+	public Double getWeightedOrderTax() {
+		return this.weightedOrderTax;
+	}
+
+	public void setWeightedOrderTax(Double weightedOrderTax) {
+		this.weightedOrderTax = weightedOrderTax;
 	}
 
 	/**

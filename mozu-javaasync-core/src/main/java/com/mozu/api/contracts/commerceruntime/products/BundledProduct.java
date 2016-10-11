@@ -61,6 +61,16 @@ public class BundledProduct implements Serializable
 		this.creditValue = creditValue;
 	}
 
+	protected  Double deltaPrice;
+
+	public Double getDeltaPrice() {
+		return this.deltaPrice;
+	}
+
+	public void setDeltaPrice(Double deltaPrice) {
+		this.deltaPrice = deltaPrice;
+	}
+
 	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */

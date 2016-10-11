@@ -198,6 +198,16 @@ public class Cart implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	protected  Double lineItemSubtotalWithOrderAdjustments;
+
+	public Double getLineItemSubtotalWithOrderAdjustments() {
+		return this.lineItemSubtotalWithOrderAdjustments;
+	}
+
+	public void setLineItemSubtotalWithOrderAdjustments(Double lineItemSubtotalWithOrderAdjustments) {
+		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
+	}
+
 	/**
 	 * Pricelist code
 	 */
@@ -209,6 +219,16 @@ public class Cart implements Serializable
 
 	public void setPriceListCode(String priceListCode) {
 		this.priceListCode = priceListCode;
+	}
+
+	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
+
+	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
+		return this.shippingAmountBeforeDiscountsAndAdjustments;
+	}
+
+	public void setShippingAmountBeforeDiscountsAndAdjustments(Double shippingAmountBeforeDiscountsAndAdjustments) {
+		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
 	/**

@@ -26,32 +26,6 @@ public class Event implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The unique identifier of the catalog of products used by a site.
-	 */
-	protected  Integer catalogId;
-
-	public Integer getCatalogId() {
-		return this.catalogId;
-	}
-
-	public void setCatalogId(Integer catalogId) {
-		this.catalogId = catalogId;
-	}
-
-	/**
-	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
-	 */
-	protected  String correlationId;
-
-	public String getCorrelationId() {
-		return this.correlationId;
-	}
-
-	public void setCorrelationId(String correlationId) {
-		this.correlationId = correlationId;
-	}
-
-	/**
 	 * The unique identifier of the entity that caused the event. For example, if the event is "product.created", the entity ID value represents the product code of the product that was created.
 	 */
 	protected  String entityId;
@@ -137,6 +111,32 @@ public class Event implements Serializable
 
 	public void setTopic(String topic) {
 		this.topic = topic;
+	}
+
+	/**
+	 * The unique identifier of the catalog of products used by a site.
+	 */
+	protected  Integer catalogId;
+
+	public Integer getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(Integer catalogId) {
+		this.catalogId = catalogId;
+	}
+
+	/**
+	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
+	 */
+	protected  String correlationId;
+
+	public String getCorrelationId() {
+		return this.correlationId;
+	}
+
+	public void setCorrelationId(String correlationId) {
+		this.correlationId = correlationId;
 	}
 
 	/**

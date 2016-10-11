@@ -109,6 +109,16 @@ public class Category implements Serializable
 		this.isDisplayed = isDisplayed;
 	}
 
+	protected  String parentCategoryCode;
+
+	public String getParentCategoryCode() {
+		return this.parentCategoryCode;
+	}
+
+	public void setParentCategoryCode(String parentCategoryCode) {
+		this.parentCategoryCode = parentCategoryCode;
+	}
+
 	/**
 	 * Identifier of the parent or top-level category.
 	 */
@@ -120,6 +130,16 @@ public class Category implements Serializable
 
 	public void setParentCategoryId(Integer parentCategoryId) {
 		this.parentCategoryId = parentCategoryId;
+	}
+
+	protected  String parentCategoryName;
+
+	public String getParentCategoryName() {
+		return this.parentCategoryName;
+	}
+
+	public void setParentCategoryName(String parentCategoryName) {
+		this.parentCategoryName = parentCategoryName;
 	}
 
 	/**

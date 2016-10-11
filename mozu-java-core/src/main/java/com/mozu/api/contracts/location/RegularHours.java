@@ -23,6 +23,19 @@ public class RegularHours implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The Friday label array describes the range of hours this location is normally open on Fridays. For example: {"Label": "10:00 AM - 6:00 PM"}.
+	 */
+	protected  Hours friday;
+
+	public Hours getFriday() {
+		return this.friday;
+	}
+
+	public void setFriday(Hours friday) {
+		this.friday = friday;
+	}
+
+	/**
 	 * The Monday label array describes the range of hours this location is normally open on Mondays. For example: {"Label": "10:00 AM - 6:00 PM"}.
 	 */
 	protected  Hours monday;
@@ -98,19 +111,6 @@ public class RegularHours implements Serializable
 
 	public void setWednesday(Hours wednesday) {
 		this.wednesday = wednesday;
-	}
-
-	/**
-	 * The Friday label array describes the range of hours this location is normally open on Fridays. For example: {"Label": "10:00 AM - 6:00 PM"}.
-	 */
-	protected  Hours friday;
-
-	public Hours getFriday() {
-		return this.friday;
-	}
-
-	public void setFriday(Hours friday) {
-		this.friday = friday;
 	}
 
 

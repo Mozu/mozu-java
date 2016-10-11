@@ -237,6 +237,16 @@ public class Wishlist implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	protected  Double lineItemSubtotalWithOrderAdjustments;
+
+	public Double getLineItemSubtotalWithOrderAdjustments() {
+		return this.lineItemSubtotalWithOrderAdjustments;
+	}
+
+	public void setLineItemSubtotalWithOrderAdjustments(Double lineItemSubtotalWithOrderAdjustments) {
+		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
+	}
+
 	/**
 	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
 	 */
@@ -261,6 +271,16 @@ public class Wishlist implements Serializable
 
 	public void setPrivacyType(String privacyType) {
 		this.privacyType = privacyType;
+	}
+
+	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
+
+	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
+		return this.shippingAmountBeforeDiscountsAndAdjustments;
+	}
+
+	public void setShippingAmountBeforeDiscountsAndAdjustments(Double shippingAmountBeforeDiscountsAndAdjustments) {
+		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
 	/**

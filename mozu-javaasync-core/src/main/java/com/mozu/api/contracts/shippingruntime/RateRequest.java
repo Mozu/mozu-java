@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.shippingruntime.RateRequestAttribute;
 import com.mozu.api.contracts.shippingruntime.CustomAttribute;
 import com.mozu.api.contracts.core.Address;
 import com.mozu.api.contracts.shippingruntime.RateRequestItem;
@@ -115,6 +116,16 @@ public class RateRequest implements Serializable
 		this.relatedOrderId = relatedOrderId;
 	}
 
+	protected  Integer relatedOrderNumber;
+
+	public Integer getRelatedOrderNumber() {
+		return this.relatedOrderNumber;
+	}
+
+	public void setRelatedOrderNumber(Integer relatedOrderNumber) {
+		this.relatedOrderNumber = relatedOrderNumber;
+	}
+
 	/**
 	 * The shipping methods associated with this request.
 	 */
@@ -124,6 +135,14 @@ public class RateRequest implements Serializable
 	}
 	public void setShippingServiceTypes(List<String> shippingServiceTypes) {
 		this.shippingServiceTypes = shippingServiceTypes;
+	}
+
+	protected List<RateRequestAttribute> attributes;
+	public List<RateRequestAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<RateRequestAttribute> attributes) {
+		this.attributes = attributes;
 	}
 
 	/**

@@ -44,16 +44,16 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 * Pricelist code for the order
 	 */
-	protected  String channelCode;
+	protected  String priceListCode;
 
-	public String getChannelCode() {
-		return this.channelCode;
+	public String getPriceListCode() {
+		return this.priceListCode;
 	}
 
-	public void setChannelCode(String channelCode) {
-		this.channelCode = channelCode;
+	public void setPriceListCode(String priceListCode) {
+		this.priceListCode = priceListCode;
 	}
 
 	/**
@@ -143,6 +143,19 @@ public class Order implements Serializable
 
 	public void setCancelledDate(DateTime cancelledDate) {
 		this.cancelledDate = cancelledDate;
+	}
+
+	/**
+	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 */
+	protected  String channelCode;
+
+	public String getChannelCode() {
+		return this.channelCode;
+	}
+
+	public void setChannelCode(String channelCode) {
+		this.channelCode = channelCode;
 	}
 
 	/**
@@ -533,6 +546,16 @@ public class Order implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	protected  Double lineItemSubtotalWithOrderAdjustments;
+
+	public Double getLineItemSubtotalWithOrderAdjustments() {
+		return this.lineItemSubtotalWithOrderAdjustments;
+	}
+
+	public void setLineItemSubtotalWithOrderAdjustments(Double lineItemSubtotalWithOrderAdjustments) {
+		this.lineItemSubtotalWithOrderAdjustments = lineItemSubtotalWithOrderAdjustments;
+	}
+
 	/**
 	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
 	 */
@@ -612,19 +635,6 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * Pricelist code for the order
-	 */
-	protected  String priceListCode;
-
-	public String getPriceListCode() {
-		return this.priceListCode;
-	}
-
-	public void setPriceListCode(String priceListCode) {
-		this.priceListCode = priceListCode;
-	}
-
-	/**
 	 * Status of any returns associated with this order after it was completed.
 	 */
 	protected  String returnStatus;
@@ -635,6 +645,16 @@ public class Order implements Serializable
 
 	public void setReturnStatus(String returnStatus) {
 		this.returnStatus = returnStatus;
+	}
+
+	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
+
+	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
+		return this.shippingAmountBeforeDiscountsAndAdjustments;
+	}
+
+	public void setShippingAmountBeforeDiscountsAndAdjustments(Double shippingAmountBeforeDiscountsAndAdjustments) {
+		this.shippingAmountBeforeDiscountsAndAdjustments = shippingAmountBeforeDiscountsAndAdjustments;
 	}
 
 	/**

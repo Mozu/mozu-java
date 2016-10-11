@@ -358,6 +358,52 @@ public class ProductClient {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> mozuClient=GetProductCostsClient(dataViewMode,  query);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductCostCollection productCostCollection = client.Result();
+	 * </code></pre></p>
+	 * @param query 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCostCollection>
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> getProductCostsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productruntime.ProductCostQuery query) throws Exception
+	{
+		return getProductCostsClient(dataViewMode,  query,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> mozuClient=GetProductCostsClient(dataViewMode,  query,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductCostCollection productCostCollection = client.Result();
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param query 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCostCollection>
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> getProductCostsClient(com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productruntime.ProductCostQuery query, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductCostsUrl(responseFields);
+		String verb = "POST";
+		Class<?> clz = com.mozu.api.contracts.productruntime.ProductCostCollection.class;
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(query);
+		mozuClient.addHeader(Headers.X_VOL_DATAVIEW_MODE ,dataViewMode.toString());
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves product inventories for the storefront displayed products.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient=GetProductInventoriesClient(dataViewMode,  query);

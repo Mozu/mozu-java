@@ -136,7 +136,7 @@ public class LocationInventoryResource {
 	 */
 	public com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(String locationCode) throws Exception
 	{
-		return getLocationInventories( locationCode,  null,  null,  null,  null,  null);
+		return getLocationInventories( locationCode,  null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -153,16 +153,17 @@ public class LocationInventoryResource {
 	 */
 	public CountDownLatch getLocationInventoriesAsync(String locationCode, AsyncCallback<com.mozu.api.contracts.productadmin.LocationInventoryCollection> callback) throws Exception
 	{
-		return getLocationInventoriesAsync( locationCode,  null,  null,  null,  null,  null, callback);
+		return getLocationInventoriesAsync( locationCode,  null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves a list of all product inventory definitions for the location code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	LocationInventoryCollection locationInventoryCollection = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filterFunctions 
 	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -172,9 +173,9 @@ public class LocationInventoryResource {
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String filterFunctions, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.getLocationInventoriesClient(_dataViewMode,  locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.getLocationInventoriesClient(_dataViewMode,  locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -185,9 +186,10 @@ public class LocationInventoryResource {
 	 * Retrieves a list of all product inventory definitions for the location code specified in the request.
 	 * <p><pre><code>
 	 *	LocationInventory locationinventory = new LocationInventory();
-	 *	CountDownLatch latch = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
+	 *	CountDownLatch latch = locationinventory.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filterFunctions 
 	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -198,9 +200,9 @@ public class LocationInventoryResource {
 	 * @return com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productadmin.LocationInventoryCollection
 	 */
-	public CountDownLatch getLocationInventoriesAsync(String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.LocationInventoryCollection> callback) throws Exception
+	public CountDownLatch getLocationInventoriesAsync(String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String filterFunctions, String responseFields, AsyncCallback<com.mozu.api.contracts.productadmin.LocationInventoryCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.getLocationInventoriesClient(_dataViewMode,  locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.productadmin.LocationInventoryCollection> client = com.mozu.api.clients.commerce.catalog.admin.LocationInventoryClient.getLocationInventoriesClient(_dataViewMode,  locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
