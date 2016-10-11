@@ -32,6 +32,7 @@ public class LocationInventoryUrl
 	/**
 	 * Get Resource Url for GetLocationInventories
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
+	 * @param filterFunctions 
 	 * @param locationCode The unique, user-defined code that identifies a location. 
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -39,10 +40,11 @@ public class LocationInventoryUrl
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getLocationInventoriesUrl(String filter, String locationCode, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getLocationInventoriesUrl(String filter, String filterFunctions, String locationCode, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/locationinventory/{locationCode}?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/locationinventory/{locationCode}?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&filterFunctions={filterFunctions}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("filterFunctions", filterFunctions);
 		formatter.formatUrl("locationCode", locationCode);
 		formatter.formatUrl("pageSize", pageSize);
 		formatter.formatUrl("responseFields", responseFields);

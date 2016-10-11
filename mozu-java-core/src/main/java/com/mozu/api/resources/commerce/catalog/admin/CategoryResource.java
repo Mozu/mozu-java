@@ -189,25 +189,6 @@ public class CategoryResource {
 	}
 
 	/**
-	 * Modifies the sequence and hierarchy of multiple categories in a category tree in one operation. This is better for moving a category to a different location in the tree and adjusting the order of multiple categories than doing individual category updates.
-	 * <p><pre><code>
-	 *	Category category = new Category();
-	 *	category.updateCategoryTree( categorySequencies);
-	 * </code></pre></p>
-	 * @param categorySequencies Mozu.ProductAdmin.Contracts.CategorySequenceCollection ApiType DOCUMENT_HERE 
-	 * @return 
-	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
-	 */
-	public void updateCategoryTree(com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies) throws Exception
-	{
-		MozuClient client = com.mozu.api.clients.commerce.catalog.admin.CategoryClient.updateCategoryTreeClient( categorySequencies);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		client.cleanupHttpConnection();
-
-	}
-
-	/**
 	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 *	Category category = new Category();

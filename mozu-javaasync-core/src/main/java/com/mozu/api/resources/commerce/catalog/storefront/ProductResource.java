@@ -608,6 +608,81 @@ public class ProductResource {
 	}
 
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	ProductCostCollection productCostCollection = product.getProductCosts( query);
+	 * </code></pre></p>
+	 * @param query 
+	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public com.mozu.api.contracts.productruntime.ProductCostCollection getProductCosts(com.mozu.api.contracts.productruntime.ProductCostQuery query) throws Exception
+	{
+		return getProductCosts( query,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	CountDownLatch latch = product.getProductCosts( query, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param query 
+	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public CountDownLatch getProductCostsAsync(com.mozu.api.contracts.productruntime.ProductCostQuery query, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCostCollection> callback) throws Exception
+	{
+		return getProductCostsAsync( query,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	ProductCostCollection productCostCollection = product.getProductCosts( query,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param query 
+	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public com.mozu.api.contracts.productruntime.ProductCostCollection getProductCosts(com.mozu.api.contracts.productruntime.ProductCostQuery query, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductCostsClient(_dataViewMode,  query,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Product product = new Product();
+	 *	CountDownLatch latch = product.getProductCosts( query,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param query 
+	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
+	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
+	 */
+	public CountDownLatch getProductCostsAsync(com.mozu.api.contracts.productruntime.ProductCostQuery query, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductCostCollection> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductCostsClient(_dataViewMode,  query,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Retrieves product inventories for the storefront displayed products.
 	 * <p><pre><code>
 	 *	Product product = new Product();

@@ -7,6 +7,7 @@
 package com.mozu.test.framework.datafactory;
 
 import java.util.List;
+import java.util.HashMap;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
 import org.joda.time.DateTime;
@@ -184,6 +185,31 @@ public class ProductFactory
 		try
 		{
 			returnObj = resource.validateDiscounts( discountSelections,  productCode,  variationProductCode,  customerAccountId,  allowInactive,  skipInventoryCheck,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
+	public static com.mozu.api.contracts.productruntime.ProductCostCollection getProductCosts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productruntime.ProductCostQuery query, int expectedCode) throws Exception
+	{
+		return getProductCosts(apiContext, dataViewMode,  query,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productruntime.ProductCostCollection getProductCosts(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, com.mozu.api.contracts.productruntime.ProductCostQuery query, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productruntime.ProductCostCollection returnObj = new com.mozu.api.contracts.productruntime.ProductCostCollection();
+		ProductResource resource = new ProductResource(apiContext, dataViewMode);
+		try
+		{
+			returnObj = resource.getProductCosts( query,  responseFields);
 		}
 		catch (ApiException e)
 		{

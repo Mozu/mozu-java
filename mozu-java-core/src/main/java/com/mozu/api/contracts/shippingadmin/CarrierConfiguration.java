@@ -13,9 +13,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
-import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.CustomTableRate;
 import com.mozu.api.contracts.shippingadmin.Setting;
+import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	Properties of a carrier configured in the shipping admin.
@@ -66,19 +66,6 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected  AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
-	}
-
-	/**
 	 * A list of custom table rates for the 'Custom' carrier only use this if Id == 'Custom'
 	 */
 	protected List<CustomTableRate> customTableRates;
@@ -98,6 +85,19 @@ public class CarrierConfiguration implements Serializable
 	}
 	public void setSettings(List<Setting> settings) {
 		this.settings = settings;
+	}
+
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
 	}
 
 

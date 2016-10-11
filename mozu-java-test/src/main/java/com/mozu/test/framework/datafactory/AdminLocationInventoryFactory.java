@@ -7,6 +7,7 @@
 package com.mozu.test.framework.datafactory;
 
 import java.util.List;
+import java.util.HashMap;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
 import org.joda.time.DateTime;
@@ -49,16 +50,16 @@ public class AdminLocationInventoryFactory
 
 	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, int expectedCode) throws Exception
 	{
-		return getLocationInventories(apiContext, dataViewMode,  locationCode,  null,  null,  null,  null,  null, expectedCode);
+		return getLocationInventories(apiContext, dataViewMode,  locationCode,  null,  null,  null,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productadmin.LocationInventoryCollection getLocationInventories(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String locationCode, Integer startIndex, Integer pageSize, String sortBy, String filter, String filterFunctions, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productadmin.LocationInventoryCollection returnObj = new com.mozu.api.contracts.productadmin.LocationInventoryCollection();
 		LocationInventoryResource resource = new LocationInventoryResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
+			returnObj = resource.getLocationInventories( locationCode,  startIndex,  pageSize,  sortBy,  filter,  filterFunctions,  responseFields);
 		}
 		catch (ApiException e)
 		{

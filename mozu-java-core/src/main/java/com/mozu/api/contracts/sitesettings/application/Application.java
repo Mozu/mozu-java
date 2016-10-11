@@ -25,19 +25,6 @@ public class Application implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
-	 */
-	protected  String appId;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-	/**
 	 * denotes the Application Key for the app.
 	 */
 	protected  String appKey;
@@ -113,6 +100,19 @@ public class Application implements Serializable
 
 	public void setUiConfigurationUrl(String uiConfigurationUrl) {
 		this.uiConfigurationUrl = uiConfigurationUrl;
+	}
+
+	/**
+	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
+	 */
+	protected  String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
 	}
 
 	/**

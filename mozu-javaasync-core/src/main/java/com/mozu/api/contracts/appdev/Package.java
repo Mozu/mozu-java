@@ -211,6 +211,16 @@ public class Package implements Serializable
 		this.applicationTypeName = applicationTypeName;
 	}
 
+	protected  DateTime applicationUpdateDate;
+
+	public DateTime getApplicationUpdateDate() {
+		return this.applicationUpdateDate;
+	}
+
+	public void setApplicationUpdateDate(DateTime applicationUpdateDate) {
+		this.applicationUpdateDate = applicationUpdateDate;
+	}
+
 	/**
 	 * Mozu.AppDev.Contracts.Package appSchemeVersion ApiTypeMember DOCUMENT_HERE 
 	 */
@@ -547,6 +557,16 @@ public class Package implements Serializable
 
 	public void setUpdateAvailable(Boolean updateAvailable) {
 		this.updateAvailable = updateAvailable;
+	}
+
+	protected  DateTime updateDate;
+
+	public DateTime getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(DateTime updateDate) {
+		this.updateDate = updateDate;
 	}
 
 	/**

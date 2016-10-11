@@ -288,19 +288,6 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
-	protected  String upc;
-
-	public String getUpc() {
-		return this.upc;
-	}
-
-	public void setUpc(String upc) {
-		this.upc = upc;
-	}
-
-	/**
 	 * Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 */
 	protected  String variationProductCode;
@@ -311,6 +298,19 @@ public class Product implements Serializable
 
 	public void setVariationProductCode(String variationProductCode) {
 		this.variationProductCode = variationProductCode;
+	}
+
+	/**
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 */
+	protected  String upc;
+
+	public String getUpc() {
+		return this.upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
 	}
 
 	/**

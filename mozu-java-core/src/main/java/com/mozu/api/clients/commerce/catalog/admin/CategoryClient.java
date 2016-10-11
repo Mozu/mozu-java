@@ -201,29 +201,6 @@ public class CategoryClient {
 	}
 
 	/**
-	 * Modifies the sequence and hierarchy of multiple categories in a category tree in one operation. This is better for moving a category to a different location in the tree and adjusting the order of multiple categories than doing individual category updates.
-	 * <p><pre><code>
-	 * MozuClient mozuClient=UpdateCategoryTreeClient( categorySequencies);
-	 * client.setBaseAddress(url);
-	 * client.executeRequest();
-	 * </code></pre></p>
-	 * @param categorySequencies Mozu.ProductAdmin.Contracts.CategorySequenceCollection ApiType DOCUMENT_HERE 
-	 * @return Mozu.Api.MozuClient 
-	 * @see com.mozu.api.contracts.productadmin.CategorySequenceCollection
-	 */
-	public static MozuClient updateCategoryTreeClient(com.mozu.api.contracts.productadmin.CategorySequenceCollection categorySequencies) throws Exception
-	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.admin.CategoryUrl.updateCategoryTreeUrl();
-		String verb = "POST";
-				MozuClient mozuClient = (MozuClient) MozuClientFactory.getInstance();
-		mozuClient.setVerb(verb);
-		mozuClient.setResourceUrl(url);
-		mozuClient.setBody(categorySequencies);
-		return mozuClient;
-
-	}
-
-	/**
 	 * Validates the precomputed dynamic category expression.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.DynamicExpression> mozuClient=ValidateDynamicExpressionClient( dynamicExpressionIn);

@@ -22,45 +22,6 @@ public class AttributeValidation implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The minimum numeric value required to validate an extensible attribute.
-	 */
-	protected  double minNumericValue;
-
-	public double getMinNumericValue() {
-		return this.minNumericValue;
-	}
-
-	public void setMinNumericValue(double minNumericValue) {
-		this.minNumericValue = minNumericValue;
-	}
-
-	/**
-	 * The minimum character length possible for a string value entered for an extensible attribute.
-	 */
-	protected  Integer minStringLength;
-
-	public Integer getMinStringLength() {
-		return this.minStringLength;
-	}
-
-	public void setMinStringLength(Integer minStringLength) {
-		this.minStringLength = minStringLength;
-	}
-
-	/**
-	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
-	 */
-	protected  String regularExpression;
-
-	public String getRegularExpression() {
-		return this.regularExpression;
-	}
-
-	public void setRegularExpression(String regularExpression) {
-		this.regularExpression = regularExpression;
-	}
-
-	/**
 	 * The maximum date allowed including month, day, and year. System-supplied and read-only.
 	 */
 	protected  DateTime maxDateValue;
@@ -110,6 +71,45 @@ public class AttributeValidation implements Serializable
 
 	public void setMinDateValue(DateTime minDateValue) {
 		this.minDateValue = minDateValue;
+	}
+
+	/**
+	 * The minimum numeric value required to validate an extensible attribute.
+	 */
+	protected  double minNumericValue;
+
+	public double getMinNumericValue() {
+		return this.minNumericValue;
+	}
+
+	public void setMinNumericValue(double minNumericValue) {
+		this.minNumericValue = minNumericValue;
+	}
+
+	/**
+	 * The minimum character length possible for a string value entered for an extensible attribute.
+	 */
+	protected  Integer minStringLength;
+
+	public Integer getMinStringLength() {
+		return this.minStringLength;
+	}
+
+	public void setMinStringLength(Integer minStringLength) {
+		this.minStringLength = minStringLength;
+	}
+
+	/**
+	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
+	 */
+	protected  String regularExpression;
+
+	public String getRegularExpression() {
+		return this.regularExpression;
+	}
+
+	public void setRegularExpression(String regularExpression) {
+		this.regularExpression = regularExpression;
 	}
 
 

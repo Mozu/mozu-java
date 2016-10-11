@@ -61,6 +61,16 @@ public class CreditTransaction implements Serializable
 		this.impactAmount = impactAmount;
 	}
 
+	protected  String orderId;
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	/**
 	 * The type of transaction, pertaining to the transaction a customer performed or the type of customer credit. For customer credit, you will set the data to Debit to decrease or Credit to update. For the type of transaction, the type includes Order, Return, OrderPickup, or Wishlist.
 	 */
