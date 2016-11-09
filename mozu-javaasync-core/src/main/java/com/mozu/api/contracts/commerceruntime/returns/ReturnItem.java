@@ -118,6 +118,16 @@ public class ReturnItem implements Serializable
 		this.quantityReceived = quantityReceived;
 	}
 
+	protected  Integer quantityReplaced;
+
+	public Integer getQuantityReplaced() {
+		return this.quantityReplaced;
+	}
+
+	public void setQuantityReplaced(Integer quantityReplaced) {
+		this.quantityReplaced = quantityReplaced;
+	}
+
 	/**
 	 * The quantity of returned items that can be returned to active product stock.
 	 */
@@ -144,6 +154,66 @@ public class ReturnItem implements Serializable
 		this.quantityShipped = quantityShipped;
 	}
 
+	protected  String receiveStatus;
+
+	public String getReceiveStatus() {
+		return this.receiveStatus;
+	}
+
+	public void setReceiveStatus(String receiveStatus) {
+		this.receiveStatus = receiveStatus;
+	}
+
+	protected  Double refundAmount;
+
+	public Double getRefundAmount() {
+		return this.refundAmount;
+	}
+
+	public void setRefundAmount(Double refundAmount) {
+		this.refundAmount = refundAmount;
+	}
+
+	protected  String refundStatus;
+
+	public String getRefundStatus() {
+		return this.refundStatus;
+	}
+
+	public void setRefundStatus(String refundStatus) {
+		this.refundStatus = refundStatus;
+	}
+
+	protected  String replaceStatus;
+
+	public String getReplaceStatus() {
+		return this.replaceStatus;
+	}
+
+	public void setReplaceStatus(String replaceStatus) {
+		this.replaceStatus = replaceStatus;
+	}
+
+	protected  Boolean returnNotRequired;
+
+	public Boolean getReturnNotRequired() {
+		return this.returnNotRequired;
+	}
+
+	public void setReturnNotRequired(Boolean returnNotRequired) {
+		this.returnNotRequired = returnNotRequired;
+	}
+
+	protected  String returnType;
+
+	public String getReturnType() {
+		return this.returnType;
+	}
+
+	public void setReturnType(String returnType) {
+		this.returnType = returnType;
+	}
+
 	/**
 	 * The total value of shipping the returned product to the merchant for accounting purposes, calculated by multiplying the shipping cost of the item by its quantity returned.
 	 */
@@ -168,6 +238,26 @@ public class ReturnItem implements Serializable
 
 	public void setShippingLossTaxAmount(Double shippingLossTaxAmount) {
 		this.shippingLossTaxAmount = shippingLossTaxAmount;
+	}
+
+	protected  Double totalWithoutWeightedShippingAndHandling;
+
+	public Double getTotalWithoutWeightedShippingAndHandling() {
+		return this.totalWithoutWeightedShippingAndHandling;
+	}
+
+	public void setTotalWithoutWeightedShippingAndHandling(Double totalWithoutWeightedShippingAndHandling) {
+		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
+	}
+
+	protected  Double totalWithWeightedShippingAndHandling;
+
+	public Double getTotalWithWeightedShippingAndHandling() {
+		return this.totalWithWeightedShippingAndHandling;
+	}
+
+	public void setTotalWithWeightedShippingAndHandling(Double totalWithWeightedShippingAndHandling) {
+		this.totalWithWeightedShippingAndHandling = totalWithWeightedShippingAndHandling;
 	}
 
 	/**

@@ -30,6 +30,136 @@ public class Wishlist implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Unique identifier of the site.
+	 */
+	protected  Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
+	}
+
+	/**
+	 * The integer that represents the sequential order of this wish list in the customer's collection of wish lists.
+	 */
+	protected  Integer sortOrder;
+
+	public Integer getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	/**
+	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
+	 */
+	protected  Double subtotal;
+
+	public Double getSubtotal() {
+		return this.subtotal;
+	}
+
+	public void setSubtotal(Double subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	/**
+	 * The total monetary sum of sales tax estimated for a cart or order.
+	 */
+	protected  Double taxTotal;
+
+	public Double getTaxTotal() {
+		return this.taxTotal;
+	}
+
+	public void setTaxTotal(Double taxTotal) {
+		this.taxTotal = taxTotal;
+	}
+
+	/**
+	 * Unique identifier of the Mozu tenant.
+	 */
+	protected  Integer tenantId;
+
+	public Integer getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	/**
+	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 */
+	protected  Double total;
+
+	public Double getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+
+	/**
+	 * User-defined string that defines the type of wish list to define, such as wish list, baby registry, or Christmas list.
+	 */
+	protected  String typeTag;
+
+	public String getTypeTag() {
+		return this.typeTag;
+	}
+
+	public void setTypeTag(String typeTag) {
+		this.typeTag = typeTag;
+	}
+
+	/**
+	 * System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
+	 */
+	protected  String version;
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	/**
+	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 */
+	protected  String visitId;
+
+	public String getVisitId() {
+		return this.visitId;
+	}
+
+	public void setVisitId(String visitId) {
+		this.visitId = visitId;
+	}
+
+	/**
+	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
+	 */
+	protected  String webSessionId;
+
+	public String getWebSessionId() {
+		return this.webSessionId;
+	}
+
+	public void setWebSessionId(String webSessionId) {
+		this.webSessionId = webSessionId;
+	}
+
+	/**
 	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
 	 */
 	protected  String channelCode;
@@ -320,136 +450,6 @@ public class Wishlist implements Serializable
 
 	public void setShippingTotal(Double shippingTotal) {
 		this.shippingTotal = shippingTotal;
-	}
-
-	/**
-	 * Unique identifier of the site.
-	 */
-	protected  Integer siteId;
-
-	public Integer getSiteId() {
-		return this.siteId;
-	}
-
-	public void setSiteId(Integer siteId) {
-		this.siteId = siteId;
-	}
-
-	/**
-	 * The integer that represents the sequential order of this wish list in the customer's collection of wish lists.
-	 */
-	protected  Integer sortOrder;
-
-	public Integer getSortOrder() {
-		return this.sortOrder;
-	}
-
-	public void setSortOrder(Integer sortOrder) {
-		this.sortOrder = sortOrder;
-	}
-
-	/**
-	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
-	 */
-	protected  Double subtotal;
-
-	public Double getSubtotal() {
-		return this.subtotal;
-	}
-
-	public void setSubtotal(Double subtotal) {
-		this.subtotal = subtotal;
-	}
-
-	/**
-	 * The total monetary sum of sales tax estimated for a cart or order.
-	 */
-	protected  Double taxTotal;
-
-	public Double getTaxTotal() {
-		return this.taxTotal;
-	}
-
-	public void setTaxTotal(Double taxTotal) {
-		this.taxTotal = taxTotal;
-	}
-
-	/**
-	 * Unique identifier of the Mozu tenant.
-	 */
-	protected  Integer tenantId;
-
-	public Integer getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Integer tenantId) {
-		this.tenantId = tenantId;
-	}
-
-	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
-	 */
-	protected  Double total;
-
-	public Double getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Double total) {
-		this.total = total;
-	}
-
-	/**
-	 * User-defined string that defines the type of wish list to define, such as wish list, baby registry, or Christmas list.
-	 */
-	protected  String typeTag;
-
-	public String getTypeTag() {
-		return this.typeTag;
-	}
-
-	public void setTypeTag(String typeTag) {
-		this.typeTag = typeTag;
-	}
-
-	/**
-	 * System-supplied integer that represents the current version of the order, which prevents users from unintentionally overriding changes to the order. When a user performs an operation for a defined order, the system validates that the version of the updated order matches the version of the order on the server. After the operation completes successfully, the system increments the version number by one.
-	 */
-	protected  String version;
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
-	 */
-	protected  String visitId;
-
-	public String getVisitId() {
-		return this.visitId;
-	}
-
-	public void setVisitId(String visitId) {
-		this.visitId = visitId;
-	}
-
-	/**
-	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
-	 */
-	protected  String webSessionId;
-
-	public String getWebSessionId() {
-		return this.webSessionId;
-	}
-
-	public void setWebSessionId(String webSessionId) {
-		this.webSessionId = webSessionId;
 	}
 
 	/**

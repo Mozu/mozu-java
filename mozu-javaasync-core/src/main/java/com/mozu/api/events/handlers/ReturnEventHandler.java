@@ -13,6 +13,7 @@ import com.mozu.api.events.model.EventHandlerStatus;
 
 public interface ReturnEventHandler {
 
+		public EventHandlerStatus authorized(ApiContext apiContext, Event event);
 		public EventHandlerStatus cancelled(ApiContext apiContext, Event event);
 		public EventHandlerStatus closed(ApiContext apiContext, Event event);
 		public EventHandlerStatus opened(ApiContext apiContext, Event event);

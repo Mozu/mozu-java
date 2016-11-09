@@ -26,6 +26,69 @@ public class SearchTuningRule implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule keywords ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected List<String> keywords;
+	public List<String> getKeywords() {
+		return this.keywords;
+	}
+	public void setKeywords(List<String> keywords) {
+		this.keywords = keywords;
+	}
+
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String searchTuningRuleCode;
+
+	public String getSearchTuningRuleCode() {
+		return this.searchTuningRuleCode;
+	}
+
+	public void setSearchTuningRuleCode(String searchTuningRuleCode) {
+		this.searchTuningRuleCode = searchTuningRuleCode;
+	}
+
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleDescription ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String searchTuningRuleDescription;
+
+	public String getSearchTuningRuleDescription() {
+		return this.searchTuningRuleDescription;
+	}
+
+	public void setSearchTuningRuleDescription(String searchTuningRuleDescription) {
+		this.searchTuningRuleDescription = searchTuningRuleDescription;
+	}
+
+	/**
+	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleName ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String searchTuningRuleName;
+
+	public String getSearchTuningRuleName() {
+		return this.searchTuningRuleName;
+	}
+
+	public void setSearchTuningRuleName(String searchTuningRuleName) {
+		this.searchTuningRuleName = searchTuningRuleName;
+	}
+
+	/**
+	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
+	 */
+	protected  Integer siteId;
+
+	public Integer getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(Integer siteId) {
+		this.siteId = siteId;
+	}
+
+	/**
 	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule active ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  Boolean active;
@@ -97,69 +160,6 @@ public class SearchTuningRule implements Serializable
 
 	public void setIsDefault(Boolean isDefault) {
 		this.isDefault = isDefault;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule keywords ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected List<String> keywords;
-	public List<String> getKeywords() {
-		return this.keywords;
-	}
-	public void setKeywords(List<String> keywords) {
-		this.keywords = keywords;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  String searchTuningRuleCode;
-
-	public String getSearchTuningRuleCode() {
-		return this.searchTuningRuleCode;
-	}
-
-	public void setSearchTuningRuleCode(String searchTuningRuleCode) {
-		this.searchTuningRuleCode = searchTuningRuleCode;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleDescription ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  String searchTuningRuleDescription;
-
-	public String getSearchTuningRuleDescription() {
-		return this.searchTuningRuleDescription;
-	}
-
-	public void setSearchTuningRuleDescription(String searchTuningRuleDescription) {
-		this.searchTuningRuleDescription = searchTuningRuleDescription;
-	}
-
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRule searchTuningRuleName ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  String searchTuningRuleName;
-
-	public String getSearchTuningRuleName() {
-		return this.searchTuningRuleName;
-	}
-
-	public void setSearchTuningRuleName(String searchTuningRuleName) {
-		this.searchTuningRuleName = searchTuningRuleName;
-	}
-
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
-	protected  Integer siteId;
-
-	public Integer getSiteId() {
-		return this.siteId;
-	}
-
-	public void setSiteId(Integer siteId) {
-		this.siteId = siteId;
 	}
 
 	/**

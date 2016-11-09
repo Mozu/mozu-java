@@ -27,19 +27,6 @@ public class TaxableOrder implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
-	 */
-	protected  String taxRequestType;
-
-	public String getTaxRequestType() {
-		return this.taxRequestType;
-	}
-
-	public void setTaxRequestType(String taxRequestType) {
-		this.taxRequestType = taxRequestType;
-	}
-
-	/**
 	 * 3-letter ISO 4217 standard global currency code. Currently, only "USD" (US Dollar) is supported.
 	 */
 	protected  String currencyCode;
@@ -125,6 +112,19 @@ public class TaxableOrder implements Serializable
 
 	public void setShippingAmount(Double shippingAmount) {
 		this.shippingAmount = shippingAmount;
+	}
+
+	/**
+	 * The type of request for which to tax this entity, which is Order or Return.
+	 */
+	protected  String taxRequestType;
+
+	public String getTaxRequestType() {
+		return this.taxRequestType;
+	}
+
+	public void setTaxRequestType(String taxRequestType) {
+		this.taxRequestType = taxRequestType;
 	}
 
 	protected List<TaxAttribute> attributes;

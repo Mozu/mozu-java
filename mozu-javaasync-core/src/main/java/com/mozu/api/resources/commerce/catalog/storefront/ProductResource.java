@@ -291,7 +291,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode) throws Exception
 	{
-		return getProductForIndexing( productCode,  null,  null);
+		return getProductForIndexing( productCode,  null,  null,  null);
 	}
 
 	/**
@@ -307,24 +307,25 @@ public class ProductResource {
 	 */
 	public CountDownLatch getProductForIndexingAsync(String productCode, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
 	{
-		return getProductForIndexingAsync( productCode,  null,  null, callback);
+		return getProductForIndexingAsync( productCode,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  responseFields);
+	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * </code></pre></p>
+	 * @param lastModifiedDate 
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, Long productVersion, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.Product getProductForIndexing(String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -335,8 +336,9 @@ public class ProductResource {
 	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	CountDownLatch latch = product.getProductForIndexing( productCode,  productVersion,  responseFields, callback );
+	 *	CountDownLatch latch = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param lastModifiedDate 
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
@@ -344,9 +346,9 @@ public class ProductResource {
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public CountDownLatch getProductForIndexingAsync(String productCode, Long productVersion, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
+	public CountDownLatch getProductForIndexingAsync(String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.Product> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.Product> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.getProductForIndexingClient(_dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

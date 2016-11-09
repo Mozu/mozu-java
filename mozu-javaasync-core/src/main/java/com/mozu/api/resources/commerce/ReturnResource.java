@@ -47,7 +47,7 @@ public class ReturnResource {
 	 */
 	public com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns() throws Exception
 	{
-		return getReturns( null,  null,  null,  null,  null);
+		return getReturns( null,  null,  null,  null,  null,  null);
 	}
 
 	/**
@@ -62,26 +62,27 @@ public class ReturnResource {
 	 */
 	public CountDownLatch getReturnsAsync( AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> callback) throws Exception
 	{
-		return getReturnsAsync( null,  null,  null,  null,  null, callback);
+		return getReturnsAsync( null,  null,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Retrieves a list of all returns according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	ReturnCollection returnCollection = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+	 *	ReturnCollection returnCollection = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  q,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param q 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 */
-	public com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.returns.ReturnCollection getReturns(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReturnsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReturnsClient( startIndex,  pageSize,  sortBy,  filter,  q,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -92,10 +93,11 @@ public class ReturnResource {
 	 * Retrieves a list of all returns according to any filter and sort criteria.
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	CountDownLatch latch = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
+	 *	CountDownLatch latch = return.getReturns( startIndex,  pageSize,  sortBy,  filter,  q,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param q 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
@@ -103,9 +105,9 @@ public class ReturnResource {
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 */
-	public CountDownLatch getReturnsAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> callback) throws Exception
+	public CountDownLatch getReturnsAsync(Integer startIndex, Integer pageSize, String sortBy, String filter, String q, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReturnsClient( startIndex,  pageSize,  sortBy,  filter,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.returns.ReturnCollection> client = com.mozu.api.clients.commerce.ReturnClient.getReturnsClient( startIndex,  pageSize,  sortBy,  filter,  q,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -930,6 +932,77 @@ public class ReturnResource {
 	public CountDownLatch createPaymentActionForReturnAsync(com.mozu.api.contracts.commerceruntime.payments.PaymentAction action, String returnId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.returns.Return> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.returns.Return> client = com.mozu.api.clients.commerce.ReturnClient.createPaymentActionForReturnClient( action,  returnId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Order order = return.createReturnShippingOrder( returnId);
+	 * </code></pre></p>
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(String returnId) throws Exception
+	{
+		return createReturnShippingOrder( returnId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.createReturnShippingOrder( returnId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param returnId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch createReturnShippingOrderAsync(String returnId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		return createReturnShippingOrderAsync( returnId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	Order order = return.createReturnShippingOrder( returnId,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(String returnId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.ReturnClient.createReturnShippingOrderClient( returnId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Return return = new Return();
+	 *	CountDownLatch latch = return.createReturnShippingOrder( returnId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch createReturnShippingOrderAsync(String returnId, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.ReturnClient.createReturnShippingOrderClient( returnId,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

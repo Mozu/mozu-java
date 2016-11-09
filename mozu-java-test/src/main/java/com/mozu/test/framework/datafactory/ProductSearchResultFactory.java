@@ -23,6 +23,31 @@ import com.mozu.api.resources.commerce.catalog.storefront.ProductSearchResultRes
 public class ProductSearchResultFactory
 {
 
+	public static com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor getRandomAccessCursor(ApiContext apiContext, int expectedCode) throws Exception
+	{
+		return getRandomAccessCursor(apiContext,  null,  null,  null,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor getRandomAccessCursor(ApiContext apiContext, String query, String filter, Integer pageSize, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor returnObj = new com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor();
+		ProductSearchResultResource resource = new ProductSearchResultResource(apiContext);
+		try
+		{
+			returnObj = resource.getRandomAccessCursor( query,  filter,  pageSize,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.productruntime.ProductSearchResult search(ApiContext apiContext, int expectedCode) throws Exception
 	{
 		return search(apiContext,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null,  null, expectedCode);

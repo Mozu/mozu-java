@@ -40,84 +40,6 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the product type assigned for this product. Tenant administrators can only define one product type per product.
-	 */
-	protected  Integer productTypeId;
-
-	public Integer getProductTypeId() {
-		return this.productTypeId;
-	}
-
-	public void setProductTypeId(Integer productTypeId) {
-		this.productTypeId = productTypeId;
-	}
-
-	/**
-	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
-	 */
-	protected  String productUsage;
-
-	public String getProductUsage() {
-		return this.productUsage;
-	}
-
-	public void setProductUsage(String productUsage) {
-		this.productUsage = productUsage;
-	}
-
-	/**
-	 * Identifier of the shipping class.
-	 */
-	protected  Integer shippingClassId;
-
-	public Integer getShippingClassId() {
-		return this.shippingClassId;
-	}
-
-	public void setShippingClassId(Integer shippingClassId) {
-		this.shippingClassId = shippingClassId;
-	}
-
-	/**
-	 * If the product must be packaged separately, the type of standalone package to use.
-	 */
-	protected  String standAlonePackageType;
-
-	public String getStandAlonePackageType() {
-		return this.standAlonePackageType;
-	}
-
-	public void setStandAlonePackageType(String standAlonePackageType) {
-		this.standAlonePackageType = standAlonePackageType;
-	}
-
-	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
-	 */
-	protected  String upc;
-
-	public String getUpc() {
-		return this.upc;
-	}
-
-	public void setUpc(String upc) {
-		this.upc = upc;
-	}
-
-	/**
-	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 */
-	protected  String variationKey;
-
-	public String getVariationKey() {
-		return this.variationKey;
-	}
-
-	public void setVariationKey(String variationKey) {
-		this.variationKey = variationKey;
-	}
-
-	/**
 	 * Product code defined by the tenant administrator to use as a base prefix when generating product codes for any variations of this product.
 	 */
 	protected  String baseProductCode;
@@ -269,6 +191,84 @@ public class Product implements Serializable
 
 	public void setProductSequence(Integer productSequence) {
 		this.productSequence = productSequence;
+	}
+
+	/**
+	 * Unique identifier of the product type assigned for this product. Tenant administrators can only define one product type per product.
+	 */
+	protected  Integer productTypeId;
+
+	public Integer getProductTypeId() {
+		return this.productTypeId;
+	}
+
+	public void setProductTypeId(Integer productTypeId) {
+		this.productTypeId = productTypeId;
+	}
+
+	/**
+	 * The usage type that applies to this product, which is Standard (a single product without configurable options), Configurable (a product that includes configurable option attributes), Bundle (a collection of products sold as a single entity), or Component (an invididual product that represents a component in a bundle).
+	 */
+	protected  String productUsage;
+
+	public String getProductUsage() {
+		return this.productUsage;
+	}
+
+	public void setProductUsage(String productUsage) {
+		this.productUsage = productUsage;
+	}
+
+	/**
+	 * Identifier of the shipping class.
+	 */
+	protected  Integer shippingClassId;
+
+	public Integer getShippingClassId() {
+		return this.shippingClassId;
+	}
+
+	public void setShippingClassId(Integer shippingClassId) {
+		this.shippingClassId = shippingClassId;
+	}
+
+	/**
+	 * If the product must be packaged separately, the type of standalone package to use.
+	 */
+	protected  String standAlonePackageType;
+
+	public String getStandAlonePackageType() {
+		return this.standAlonePackageType;
+	}
+
+	public void setStandAlonePackageType(String standAlonePackageType) {
+		this.standAlonePackageType = standAlonePackageType;
+	}
+
+	/**
+	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 */
+	protected  String upc;
+
+	public String getUpc() {
+		return this.upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+
+	/**
+	 * System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 */
+	protected  String variationKey;
+
+	public String getVariationKey() {
+		return this.variationKey;
+	}
+
+	public void setVariationKey(String variationKey) {
+		this.variationKey = variationKey;
 	}
 
 	/**

@@ -47,7 +47,24 @@ public class PackageResource {
 	 */
 	public java.io.InputStream getPackageLabel(String returnId, String packageId) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageLabelClient( returnId,  packageId);
+		return getPackageLabel( returnId,  packageId,  null);
+	}
+
+	/**
+	 * Retrieves the package label image supplied by the carrier for a return replacement.
+	 * <p><pre><code>
+	 *	Package package = new Package();
+	 *	Stream stream = package.getPackageLabel( returnId,  packageId,  returnAsBase64);
+	 * </code></pre></p>
+	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnAsBase64 
+	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @return Stream
+	 * @see Stream
+	 */
+	public java.io.InputStream getPackageLabel(String returnId, String packageId, Boolean returnAsBase64) throws Exception
+	{
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageLabelClient( returnId,  packageId,  returnAsBase64);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

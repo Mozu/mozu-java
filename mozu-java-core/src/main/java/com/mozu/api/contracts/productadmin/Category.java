@@ -142,6 +142,16 @@ public class Category implements Serializable
 		this.parentCategoryName = parentCategoryName;
 	}
 
+	protected  Boolean parentIsActive;
+
+	public Boolean getParentIsActive() {
+		return this.parentIsActive;
+	}
+
+	public void setParentIsActive(Boolean parentIsActive) {
+		this.parentIsActive = parentIsActive;
+	}
+
 	/**
 	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
 	 */

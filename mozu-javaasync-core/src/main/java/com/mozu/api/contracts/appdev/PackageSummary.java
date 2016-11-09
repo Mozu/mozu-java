@@ -21,6 +21,16 @@ public class PackageSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Integer applicationId;
+
+	public Integer getApplicationId() {
+		return this.applicationId;
+	}
+
+	public void setApplicationId(Integer applicationId) {
+		this.applicationId = applicationId;
+	}
+
 	/**
 	 * Application Name
 	 */
@@ -58,6 +68,16 @@ public class PackageSummary implements Serializable
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	protected  Boolean isLocked;
+
+	public Boolean getIsLocked() {
+		return this.isLocked;
+	}
+
+	public void setIsLocked(Boolean isLocked) {
+		this.isLocked = isLocked;
 	}
 
 	/**

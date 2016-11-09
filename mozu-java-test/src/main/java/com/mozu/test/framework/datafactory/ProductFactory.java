@@ -100,16 +100,16 @@ public class ProductFactory
 
 	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, int expectedCode) throws Exception
 	{
-		return getProductForIndexing(apiContext, dataViewMode,  productCode,  null,  null, expectedCode);
+		return getProductForIndexing(apiContext, dataViewMode,  productCode,  null,  null,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.productruntime.Product getProductForIndexing(ApiContext apiContext, com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.productruntime.Product returnObj = new com.mozu.api.contracts.productruntime.Product();
 		ProductResource resource = new ProductResource(apiContext, dataViewMode);
 		try
 		{
-			returnObj = resource.getProductForIndexing( productCode,  productVersion,  responseFields);
+			returnObj = resource.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
 		}
 		catch (ApiException e)
 		{

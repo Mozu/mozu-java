@@ -22,19 +22,6 @@ public class ProductAttribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
-	protected  String dataType;
-
-	public String getDataType() {
-		return this.dataType;
-	}
-
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
-
-	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected  String description;
@@ -84,6 +71,19 @@ public class ProductAttribute implements Serializable
 
 	public void setValueType(String valueType) {
 		this.valueType = valueType;
+	}
+
+	/**
+	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 */
+	protected  String dataType;
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
 	}
 
 

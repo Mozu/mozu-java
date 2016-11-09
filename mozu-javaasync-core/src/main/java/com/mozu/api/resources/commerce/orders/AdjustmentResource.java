@@ -37,6 +37,89 @@ public class AdjustmentResource {
 
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	Order order = adjustment.applyHandlingAdjustment( adjustment,  orderId);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param adjustment 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order applyHandlingAdjustment(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId) throws Exception
+	{
+		return applyHandlingAdjustment( adjustment,  orderId,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	CountDownLatch latch = adjustment.applyHandlingAdjustment( adjustment,  orderId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param orderId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param adjustment 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public CountDownLatch applyHandlingAdjustmentAsync(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		return applyHandlingAdjustmentAsync( adjustment,  orderId,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	Order order = adjustment.applyHandlingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @param adjustment 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order applyHandlingAdjustment(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.AdjustmentClient.applyHandlingAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	CountDownLatch latch = adjustment.applyHandlingAdjustment( adjustment,  orderId,  updateMode,  version,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param adjustment 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public CountDownLatch applyHandlingAdjustmentAsync(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.AdjustmentClient.applyHandlingAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Applies a shipping adjustment to the specified order.
 	 * <p><pre><code>
 	 *	Adjustment adjustment = new Adjustment();
@@ -197,6 +280,79 @@ public class AdjustmentResource {
 	public CountDownLatch applyAdjustmentAsync(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
 	{
 		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.AdjustmentClient.applyAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	Order order = adjustment.removeHandlingAdjustment( orderId);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order removeHandlingAdjustment(String orderId) throws Exception
+	{
+		return removeHandlingAdjustment( orderId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	CountDownLatch latch = adjustment.removeHandlingAdjustment( orderId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param orderId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch removeHandlingAdjustmentAsync(String orderId, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		return removeHandlingAdjustmentAsync( orderId,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	Order order = adjustment.removeHandlingAdjustment( orderId,  updateMode,  version);
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public com.mozu.api.contracts.commerceruntime.orders.Order removeHandlingAdjustment(String orderId, String updateMode, String version) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.AdjustmentClient.removeHandlingAdjustmentClient( orderId,  updateMode,  version);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Adjustment adjustment = new Adjustment();
+	 *	CountDownLatch latch = adjustment.removeHandlingAdjustment( orderId,  updateMode,  version, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public CountDownLatch removeHandlingAdjustmentAsync(String orderId, String updateMode, String version, AsyncCallback<com.mozu.api.contracts.commerceruntime.orders.Order> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.orders.AdjustmentClient.removeHandlingAdjustmentClient( orderId,  updateMode,  version);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

@@ -14,6 +14,24 @@ public class ProductSearchResultUrl
 {
 
 	/**
+	 * Get Resource Url for GetRandomAccessCursor
+	 * @param filter 
+	 * @param pageSize 
+	 * @param query 
+	 * @param responseFields 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getRandomAccessCursorUrl(String filter, Integer pageSize, String query, String responseFields)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/productsearch/randomAccessCursor/?query={query}&filter={filter}&pageSize={pageSize}&responseFields={responseFields}");
+		formatter.formatUrl("filter", filter);
+		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("query", query);
+		formatter.formatUrl("responseFields", responseFields);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for Search
 	 * @param cursorMark 
 	 * @param enableSearchTuningRules Enables search tuning rules on your site.

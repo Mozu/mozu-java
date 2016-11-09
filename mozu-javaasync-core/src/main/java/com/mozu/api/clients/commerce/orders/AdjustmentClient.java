@@ -25,6 +25,55 @@ import org.apache.commons.lang.StringUtils;
 public class AdjustmentClient {
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyHandlingAdjustmentClient( adjustment,  orderId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param adjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyHandlingAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId) throws Exception
+	{
+		return applyHandlingAdjustmentClient( adjustment,  orderId,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyHandlingAdjustmentClient( adjustment,  orderId,  updateMode,  version,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @param adjustment 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.commerce.Adjustment
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> applyHandlingAdjustmentClient(com.mozu.api.contracts.commerceruntime.commerce.Adjustment adjustment, String orderId, String updateMode, String version, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.applyHandlingAdjustmentUrl(orderId, responseFields, updateMode, version);
+		String verb = "PUT";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(adjustment);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Applies a shipping adjustment to the specified order.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=ApplyShippingAdjustmentClient( adjustment,  orderId);
@@ -118,6 +167,49 @@ public class AdjustmentClient {
 		mozuClient.setVerb(verb);
 		mozuClient.setResourceUrl(url);
 		mozuClient.setBody(adjustment);
+		return mozuClient;
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=RemoveHandlingAdjustmentClient( orderId);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> removeHandlingAdjustmentClient(String orderId) throws Exception
+	{
+		return removeHandlingAdjustmentClient( orderId,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient=RemoveHandlingAdjustmentClient( orderId,  updateMode,  version);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * Order order = client.Result();
+	 * </code></pre></p>
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
+	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 */
+	public static MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> removeHandlingAdjustmentClient(String orderId, String updateMode, String version) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.orders.AdjustmentUrl.removeHandlingAdjustmentUrl(orderId, updateMode, version);
+		String verb = "DELETE";
+		Class<?> clz = com.mozu.api.contracts.commerceruntime.orders.Order.class;
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> mozuClient = (MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
 		return mozuClient;
 
 	}

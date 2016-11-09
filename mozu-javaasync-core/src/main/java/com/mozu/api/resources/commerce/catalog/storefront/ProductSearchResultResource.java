@@ -37,6 +37,79 @@ public class ProductSearchResultResource {
 
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
+	 *	ProductSearchRandomAccessCursor productSearchRandomAccessCursor = productsearchresult.getRandomAccessCursor();
+	 * </code></pre></p>
+	 * @return com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor getRandomAccessCursor() throws Exception
+	{
+		return getRandomAccessCursor( null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
+	 *	CountDownLatch latch = productsearchresult.getRandomAccessCursor( callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public CountDownLatch getRandomAccessCursorAsync( AsyncCallback<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> callback) throws Exception
+	{
+		return getRandomAccessCursorAsync( null,  null,  null,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
+	 *	ProductSearchRandomAccessCursor productSearchRandomAccessCursor = productsearchresult.getRandomAccessCursor( query,  filter,  pageSize,  responseFields);
+	 * </code></pre></p>
+	 * @param filter 
+	 * @param pageSize 
+	 * @param query 
+	 * @param responseFields 
+	 * @return com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor getRandomAccessCursor(String query, String filter, Integer pageSize, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.getRandomAccessCursorClient( query,  filter,  pageSize,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	ProductSearchResult productsearchresult = new ProductSearchResult();
+	 *	CountDownLatch latch = productsearchresult.getRandomAccessCursor( query,  filter,  pageSize,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param filter 
+	 * @param pageSize 
+	 * @param query 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @return com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public CountDownLatch getRandomAccessCursorAsync(String query, String filter, Integer pageSize, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> client = com.mozu.api.clients.commerce.catalog.storefront.ProductSearchResultClient.getRandomAccessCursorClient( query,  filter,  pageSize,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
 	 * Searches the categories displayed on the web storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
 	 *	ProductSearchResult productsearchresult = new ProductSearchResult();

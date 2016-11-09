@@ -22,19 +22,6 @@ public class AddOrDeletePublishItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.Content.Contracts.AddOrDeletePublishItem documentId ApiTypeMember DOCUMENT_HERE 
-	 */
-	protected  String documentId;
-
-	public String getDocumentId() {
-		return this.documentId;
-	}
-
-	public void setDocumentId(String documentId) {
-		this.documentId = documentId;
-	}
-
-	/**
 	 * Mozu.Content.Contracts.AddOrDeletePublishItem docListFQN ApiTypeMember DOCUMENT_HERE 
 	 */
 	protected  String docListFQN;
@@ -45,6 +32,19 @@ public class AddOrDeletePublishItem implements Serializable
 
 	public void setDocListFQN(String docListFQN) {
 		this.docListFQN = docListFQN;
+	}
+
+	/**
+	 * Mozu.Content.Contracts.AddOrDeletePublishItem documentId ApiTypeMember DOCUMENT_HERE 
+	 */
+	protected  String documentId;
+
+	public String getDocumentId() {
+		return this.documentId;
+	}
+
+	public void setDocumentId(String documentId) {
+		this.documentId = documentId;
 	}
 
 	/**

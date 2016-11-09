@@ -345,6 +345,16 @@ public class CartItem implements Serializable
 		this.weightedOrderDuty = weightedOrderDuty;
 	}
 
+	protected  Double weightedOrderHandlingAdjustment;
+
+	public Double getWeightedOrderHandlingAdjustment() {
+		return this.weightedOrderHandlingAdjustment;
+	}
+
+	public void setWeightedOrderHandlingAdjustment(Double weightedOrderHandlingAdjustment) {
+		this.weightedOrderHandlingAdjustment = weightedOrderHandlingAdjustment;
+	}
+
 	protected  Double weightedOrderHandlingFee;
 
 	public Double getWeightedOrderHandlingFee() {

@@ -14,6 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.payments.PaymentCard;
+import com.mozu.api.contracts.commerceruntime.payments.CheckPayment;
 import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderPayment;
 
 /**
@@ -127,6 +128,16 @@ public class BillingInfo implements Serializable
 
 	public void setCard(PaymentCard card) {
 		this.card = card;
+	}
+
+	protected  CheckPayment check;
+
+	public CheckPayment getCheck() {
+		return this.check;
+	}
+
+	public void setCheck(CheckPayment check) {
+		this.check = check;
 	}
 
 	/**

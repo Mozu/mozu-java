@@ -14,6 +14,24 @@ public class AdjustmentUrl
 {
 
 	/**
+	 * Get Resource Url for ApplyHandlingAdjustment
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param updateMode 
+	 * @param version 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl applyHandlingAdjustmentUrl(String orderId, String responseFields, String updateMode, String version)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/adjustment/handling?updatemode={updateMode}&version={version}&responseFields={responseFields}");
+		formatter.formatUrl("orderId", orderId);
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
+		formatter.formatUrl("version", version);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for ApplyShippingAdjustment
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
@@ -44,6 +62,22 @@ public class AdjustmentUrl
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/adjustment?updatemode={updateMode}&version={version}&responseFields={responseFields}");
 		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("updateMode", updateMode);
+		formatter.formatUrl("version", version);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for RemoveHandlingAdjustment
+	 * @param orderId 
+	 * @param updateMode 
+	 * @param version 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl removeHandlingAdjustmentUrl(String orderId, String updateMode, String version)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/orders/{orderId}/adjustment/handling?updatemode={updateMode}&version={version}");
+		formatter.formatUrl("orderId", orderId);
 		formatter.formatUrl("updateMode", updateMode);
 		formatter.formatUrl("version", version);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

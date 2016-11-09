@@ -14,22 +14,22 @@ import org.joda.time.DateTime;
 import com.mozu.api.ApiException;
 import com.mozu.api.ApiContext;
 import com.mozu.test.framework.core.TestFailException;
-import com.mozu.api.resources.commerce.orders.OrderNoteResource;
+import com.mozu.api.resources.commerce.returns.OrderNoteResource;
 
 /** <summary>
- * Use the Order Notes subresource to manage merchant-level notes associated with an active order.
+ * 
  * </summary>
  */
 public class OrderNoteFactory
 {
 
-	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderNote> getOrderNotes(ApiContext apiContext, String orderId, int expectedCode) throws Exception
+	public static List<com.mozu.api.contracts.commerceruntime.orders.OrderNote> getReturnNotes(ApiContext apiContext, String returnId, int expectedCode) throws Exception
 	{
 		List<com.mozu.api.contracts.commerceruntime.orders.OrderNote> returnObj = new ArrayList<com.mozu.api.contracts.commerceruntime.orders.OrderNote>();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrderNotes( orderId);
+			returnObj = resource.getReturnNotes( returnId);
 		}
 		catch (ApiException e)
 		{
@@ -43,18 +43,18 @@ public class OrderNoteFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getOrderNote(ApiContext apiContext, String orderId, String noteId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getReturnNote(ApiContext apiContext, String returnId, String noteId, int expectedCode) throws Exception
 	{
-		return getOrderNote(apiContext,  orderId,  noteId,  null, expectedCode);
+		return getReturnNote(apiContext,  returnId,  noteId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getOrderNote(ApiContext apiContext, String orderId, String noteId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote getReturnNote(ApiContext apiContext, String returnId, String noteId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.getOrderNote( orderId,  noteId,  responseFields);
+			returnObj = resource.getReturnNote( returnId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -68,18 +68,18 @@ public class OrderNoteFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createReturnNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote returnNote, String returnId, int expectedCode) throws Exception
 	{
-		return createOrderNote(apiContext,  orderNote,  orderId,  null, expectedCode);
+		return createReturnNote(apiContext,  returnNote,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote createReturnNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote returnNote, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.createOrderNote( orderNote,  orderId,  responseFields);
+			returnObj = resource.createReturnNote( returnNote,  returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -93,18 +93,18 @@ public class OrderNoteFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateReturnNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote returnNote, String returnId, String noteId, int expectedCode) throws Exception
 	{
-		return updateOrderNote(apiContext,  orderNote,  orderId,  noteId,  null, expectedCode);
+		return updateReturnNote(apiContext,  returnNote,  returnId,  noteId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateOrderNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote orderNote, String orderId, String noteId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.OrderNote updateReturnNote(ApiContext apiContext, com.mozu.api.contracts.commerceruntime.orders.OrderNote returnNote, String returnId, String noteId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.OrderNote returnObj = new com.mozu.api.contracts.commerceruntime.orders.OrderNote();
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			returnObj = resource.updateOrderNote( orderNote,  orderId,  noteId,  responseFields);
+			returnObj = resource.updateReturnNote( returnNote,  returnId,  noteId,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -118,12 +118,12 @@ public class OrderNoteFactory
 		return returnObj;
 	}
 
-	public static void deleteOrderNote(ApiContext apiContext, String orderId, String noteId, int expectedCode) throws Exception
+	public static void deleteReturnNote(ApiContext apiContext, String returnId, String noteId, int expectedCode) throws Exception
 	{
 		OrderNoteResource resource = new OrderNoteResource(apiContext);
 		try
 		{
-			resource.deleteOrderNote( orderId,  noteId);
+			resource.deleteReturnNote( returnId,  noteId);
 		}
 		catch (ApiException e)
 		{

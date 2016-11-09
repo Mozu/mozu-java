@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.commerceruntime.commerce.ChangeMessage;
+import com.mozu.api.contracts.core.Contact;
 import com.mozu.api.contracts.commerceruntime.returns.ReturnItem;
 import com.mozu.api.contracts.commerceruntime.orders.OrderNote;
 import com.mozu.api.contracts.commerceruntime.fulfillment.Package;
@@ -144,6 +145,16 @@ public class Return implements Serializable
 		this.originalOrderId = originalOrderId;
 	}
 
+	protected  Integer originalOrderNumber;
+
+	public Integer getOriginalOrderNumber() {
+		return this.originalOrderNumber;
+	}
+
+	public void setOriginalOrderNumber(Integer originalOrderNumber) {
+		this.originalOrderNumber = originalOrderNumber;
+	}
+
 	/**
 	 * The total tax amount levied on the product loss amount.
 	 */
@@ -170,6 +181,16 @@ public class Return implements Serializable
 		this.productLossTotal = productLossTotal;
 	}
 
+	protected  String receiveStatus;
+
+	public String getReceiveStatus() {
+		return this.receiveStatus;
+	}
+
+	public void setReceiveStatus(String receiveStatus) {
+		this.receiveStatus = receiveStatus;
+	}
+
 	/**
 	 * If a refund action was performed for this return, the total amount refunded to the shopper. The refund amount can differ from the sum of the price of the returned items.
 	 */
@@ -181,6 +202,26 @@ public class Return implements Serializable
 
 	public void setRefundAmount(Double refundAmount) {
 		this.refundAmount = refundAmount;
+	}
+
+	protected  String refundStatus;
+
+	public String getRefundStatus() {
+		return this.refundStatus;
+	}
+
+	public void setRefundStatus(String refundStatus) {
+		this.refundStatus = refundStatus;
+	}
+
+	protected  String replaceStatus;
+
+	public String getReplaceStatus() {
+		return this.replaceStatus;
+	}
+
+	public void setReplaceStatus(String replaceStatus) {
+		this.replaceStatus = replaceStatus;
 	}
 
 	/**
@@ -361,6 +402,16 @@ public class Return implements Serializable
 	}
 	public void setChangeMessages(List<ChangeMessage> changeMessages) {
 		this.changeMessages = changeMessages;
+	}
+
+	protected  Contact contact;
+
+	public Contact getContact() {
+		return this.contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
 	}
 
 	/**

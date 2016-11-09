@@ -44,19 +44,6 @@ public class Order implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Pricelist code for the order
-	 */
-	protected  String priceListCode;
-
-	public String getPriceListCode() {
-		return this.priceListCode;
-	}
-
-	public void setPriceListCode(String priceListCode) {
-		this.priceListCode = priceListCode;
-	}
-
-	/**
 	 * The date and time the order was accepted by the tenant.
 	 */
 	protected  DateTime acceptedDate;
@@ -609,6 +596,29 @@ public class Order implements Serializable
 	}
 
 	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
+	protected  String version;
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	protected  Integer parentOrderNumber;
+
+	public Integer getParentOrderNumber() {
+		return this.parentOrderNumber;
+	}
+
+	public void setParentOrderNumber(Integer parentOrderNumber) {
+		this.parentOrderNumber = parentOrderNumber;
+	}
+
+	/**
 	 * If this order was created to fulfill an item replacement as part of a return merchandise authorization (RMA), the unique identifier of the return.
 	 */
 	protected  String parentReturnId;
@@ -619,6 +629,16 @@ public class Order implements Serializable
 
 	public void setParentReturnId(String parentReturnId) {
 		this.parentReturnId = parentReturnId;
+	}
+
+	protected  Integer parentReturnNumber;
+
+	public Integer getParentReturnNumber() {
+		return this.parentReturnNumber;
+	}
+
+	public void setParentReturnNumber(Integer parentReturnNumber) {
+		this.parentReturnNumber = parentReturnNumber;
 	}
 
 	/**
@@ -632,6 +652,19 @@ public class Order implements Serializable
 
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
+	}
+
+	/**
+	 * Pricelist code for the order
+	 */
+	protected  String priceListCode;
+
+	public String getPriceListCode() {
+		return this.priceListCode;
+	}
+
+	public void setPriceListCode(String priceListCode) {
+		this.priceListCode = priceListCode;
 	}
 
 	/**
@@ -827,19 +860,6 @@ public class Order implements Serializable
 	}
 
 	/**
-	 * The current version number of the order, wish list, document list, or document type list.
-	 */
-	protected  String version;
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
 	 * Unique identifier of the customer visit in which the cart was created or last modified.
 	 */
 	protected  String visitId;
@@ -972,6 +992,16 @@ public class Order implements Serializable
 
 	public void setFulfillmentInfo(FulfillmentInfo fulfillmentInfo) {
 		this.fulfillmentInfo = fulfillmentInfo;
+	}
+
+	protected  Adjustment handlingAdjustment;
+
+	public Adjustment getHandlingAdjustment() {
+		return this.handlingAdjustment;
+	}
+
+	public void setHandlingAdjustment(Adjustment handlingAdjustment) {
+		this.handlingAdjustment = handlingAdjustment;
 	}
 
 	/**

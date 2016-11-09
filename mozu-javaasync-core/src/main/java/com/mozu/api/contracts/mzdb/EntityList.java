@@ -180,32 +180,6 @@ public class EntityList implements Serializable
 	}
 
 	/**
-	 * An IndexedProperty defintion which indicates the property on every entity provided should be used as the unique identifier for the document. Within an EntityList instance each entity must have a unique identifier.
-	 */
-	protected  IndexedProperty idProperty;
-
-	public IndexedProperty getIdProperty() {
-		return this.idProperty;
-	}
-
-	public void setIdProperty(IndexedProperty idProperty) {
-		this.idProperty = idProperty;
-	}
-
-	/**
-	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting.  Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
-	 */
-	protected  IndexedProperty indexA;
-
-	public IndexedProperty getIndexA() {
-		return this.indexA;
-	}
-
-	public void setIndexA(IndexedProperty indexA) {
-		this.indexA = indexA;
-	}
-
-	/**
 	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting.  Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
 	 */
 	protected  IndexedProperty indexB;
@@ -229,6 +203,32 @@ public class EntityList implements Serializable
 
 	public void setIndexC(IndexedProperty indexC) {
 		this.indexC = indexC;
+	}
+
+	/**
+	 * An IndexedProperty defintion which indicates the property on every entity provided should be used as the unique identifier for the document. Within an EntityList instance each entity must have a unique identifier.
+	 */
+	protected  IndexedProperty idProperty;
+
+	public IndexedProperty getIdProperty() {
+		return this.idProperty;
+	}
+
+	public void setIdProperty(IndexedProperty idProperty) {
+		this.idProperty = idProperty;
+	}
+
+	/**
+	 * An IndexedProperty defintion which indicates a property on every entity provided that should be indexed to enable querying and sorting.  Non-indexed properties may be used in queries as long as at least one indexed property is also provided in the query.
+	 */
+	protected  IndexedProperty indexA;
+
+	public IndexedProperty getIndexA() {
+		return this.indexA;
+	}
+
+	public void setIndexA(IndexedProperty indexA) {
+		this.indexA = indexA;
 	}
 
 	/**

@@ -22,19 +22,6 @@ public class ActiveDateRange implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The end of the active date range for this document
-	 */
-	protected  DateTime endDate;
-
-	public DateTime getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(DateTime endDate) {
-		this.endDate = endDate;
-	}
-
-	/**
 	 * The beginning of the active date range of this document
 	 */
 	protected  DateTime startDate;
@@ -45,6 +32,19 @@ public class ActiveDateRange implements Serializable
 
 	public void setStartDate(DateTime startDate) {
 		this.startDate = startDate;
+	}
+
+	/**
+	 * The end of the active date range for this document
+	 */
+	protected  DateTime endDate;
+
+	public DateTime getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(DateTime endDate) {
+		this.endDate = endDate;
 	}
 
 

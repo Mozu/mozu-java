@@ -23,6 +23,49 @@ import org.apache.commons.lang.StringUtils;
 public class ProductSearchResultClient {
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> mozuClient=GetRandomAccessCursorClient();
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductSearchRandomAccessCursor productSearchRandomAccessCursor = client.Result();
+	 * </code></pre></p>
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor>
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> getRandomAccessCursorClient() throws Exception
+	{
+		return getRandomAccessCursorClient( null,  null,  null,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> mozuClient=GetRandomAccessCursorClient( query,  filter,  pageSize,  responseFields);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * ProductSearchRandomAccessCursor productSearchRandomAccessCursor = client.Result();
+	 * </code></pre></p>
+	 * @param filter 
+	 * @param pageSize 
+	 * @param query 
+	 * @param responseFields 
+	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor>
+	 * @see com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor
+	 */
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> getRandomAccessCursorClient(String query, String filter, Integer pageSize, String responseFields) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductSearchResultUrl.getRandomAccessCursorUrl(filter, pageSize, query, responseFields);
+		String verb = "GET";
+		Class<?> clz = com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor.class;
+		MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductSearchRandomAccessCursor>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Searches the categories displayed on the web storefront for products or product options that the shopper types in a search query.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ProductSearchResult> mozuClient=SearchClient();

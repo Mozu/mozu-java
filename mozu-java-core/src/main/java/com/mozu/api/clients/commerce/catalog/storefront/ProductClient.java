@@ -177,26 +177,27 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductForIndexingClient(com.mozu.api.DataViewMode dataViewMode, String productCode) throws Exception
 	{
-		return getProductForIndexingClient(dataViewMode,  productCode,  null,  null);
+		return getProductForIndexingClient(dataViewMode,  productCode,  null,  null,  null);
 	}
 
 	/**
 	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode,  productVersion,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
+	 * @param lastModifiedDate 
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductForIndexingClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.Product> getProductForIndexingClient(com.mozu.api.DataViewMode dataViewMode, String productCode, Long productVersion, DateTime lastModifiedDate, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductForIndexingUrl(productCode, productVersion, responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.getProductForIndexingUrl(lastModifiedDate, productCode, productVersion, responseFields);
 		String verb = "GET";
 		Class<?> clz = com.mozu.api.contracts.productruntime.Product.class;
 		MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.Product>) MozuClientFactory.getInstance(clz);

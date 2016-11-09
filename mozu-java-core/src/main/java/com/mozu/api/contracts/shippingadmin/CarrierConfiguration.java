@@ -13,9 +13,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.CustomTableRate;
 import com.mozu.api.contracts.shippingadmin.Setting;
-import com.mozu.api.contracts.core.AuditInfo;
 
 /**
  *	Properties of a carrier configured in the shipping admin.
@@ -52,6 +52,16 @@ public class CarrierConfiguration implements Serializable
 		this.enabled = enabled;
 	}
 
+	protected  Boolean enabledForReturns;
+
+	public Boolean getEnabledForReturns() {
+		return this.enabledForReturns;
+	}
+
+	public void setEnabledForReturns(Boolean enabledForReturns) {
+		this.enabledForReturns = enabledForReturns;
+	}
+
 	/**
 	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
 	 */
@@ -63,6 +73,19 @@ public class CarrierConfiguration implements Serializable
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	/**
+	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 */
+	protected  AuditInfo auditInfo;
+
+	public AuditInfo getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(AuditInfo auditInfo) {
+		this.auditInfo = auditInfo;
 	}
 
 	/**
@@ -85,19 +108,6 @@ public class CarrierConfiguration implements Serializable
 	}
 	public void setSettings(List<Setting> settings) {
 		this.settings = settings;
-	}
-
-	/**
-	 * Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
-	protected  AuditInfo auditInfo;
-
-	public AuditInfo getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(AuditInfo auditInfo) {
-		this.auditInfo = auditInfo;
 	}
 
 

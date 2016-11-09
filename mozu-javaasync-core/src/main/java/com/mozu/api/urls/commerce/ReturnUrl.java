@@ -17,16 +17,18 @@ public class ReturnUrl
 	 * Get Resource Url for GetReturns
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
+	 * @param q 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getReturnsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
+	public static MozuUrl getReturnsUrl(String filter, Integer pageSize, String q, String responseFields, String sortBy, Integer startIndex)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/?startIndex={startIndex}&pageSize={pageSize}&sortBy={sortBy}&filter={filter}&q={q}&responseFields={responseFields}");
 		formatter.formatUrl("filter", filter);
 		formatter.formatUrl("pageSize", pageSize);
+		formatter.formatUrl("q", q);
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("sortBy", sortBy);
 		formatter.formatUrl("startIndex", startIndex);
@@ -196,6 +198,20 @@ public class ReturnUrl
 	public static MozuUrl createPaymentActionForReturnUrl(String responseFields, String returnId)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/payments/actions?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
+		formatter.formatUrl("returnId", returnId);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for CreateReturnShippingOrder
+	 * @param responseFields 
+	 * @param returnId 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl createReturnShippingOrderUrl(String responseFields, String returnId)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/ship?responseFields={responseFields}");
 		formatter.formatUrl("responseFields", responseFields);
 		formatter.formatUrl("returnId", returnId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;

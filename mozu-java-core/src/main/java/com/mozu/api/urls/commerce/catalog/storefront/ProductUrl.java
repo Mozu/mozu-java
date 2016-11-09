@@ -81,14 +81,16 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for GetProductForIndexing
+	 * @param lastModifiedDate 
 	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
 	 * @param productVersion 
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getProductForIndexingUrl(String productCode, Long productVersion, String responseFields)
+	public static MozuUrl getProductForIndexingUrl(DateTime lastModifiedDate, String productCode, Long productVersion, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}&productVersion={productVersion}?responseFields={responseFields}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/products/indexing/{productCode}&productVersion={productVersion}&lastModifiedDate={lastModifiedDate}?responseFields={responseFields}");
+		formatter.formatUrl("lastModifiedDate", lastModifiedDate);
 		formatter.formatUrl("productCode", productCode);
 		formatter.formatUrl("productVersion", productVersion);
 		formatter.formatUrl("responseFields", responseFields);

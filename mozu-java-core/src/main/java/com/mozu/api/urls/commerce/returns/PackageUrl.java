@@ -16,13 +16,15 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for GetPackageLabel
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
+	 * @param returnAsBase64 
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPackageLabelUrl(String packageId, String returnId)
+	public static MozuUrl getPackageLabelUrl(String packageId, Boolean returnAsBase64, String returnId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/packages/{packageId}/label");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/packages/{packageId}/label?returnAsBase64={returnAsBase64}");
 		formatter.formatUrl("packageId", packageId);
+		formatter.formatUrl("returnAsBase64", returnAsBase64);
 		formatter.formatUrl("returnId", returnId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

@@ -22,6 +22,32 @@ public class ChangeMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The prior value of the object affected by the change, such as the price of the product when it was added to the cart. System-supplied and read-only.
+	 */
+	protected  String oldValue;
+
+	public String getOldValue() {
+		return this.oldValue;
+	}
+
+	public void setOldValue(String oldValue) {
+		this.oldValue = oldValue;
+	}
+
+	/**
+	 * The text that appears on the subject line of the message, such as "The product price has changed."
+	 */
+	protected  String subject;
+
+	public String getSubject() {
+		return this.subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	/**
 	 * Represents the type of object affected by the change, such as Cart Item or Product. System-supplied and read-only.
 	 */
 	protected  String subjectType;
@@ -253,32 +279,6 @@ public class ChangeMessage implements Serializable
 
 	public void setNewValue(String newValue) {
 		this.newValue = newValue;
-	}
-
-	/**
-	 * The prior value of the object affected by the change, such as the price of the product when it was added to the cart. System-supplied and read-only.
-	 */
-	protected  String oldValue;
-
-	public String getOldValue() {
-		return this.oldValue;
-	}
-
-	public void setOldValue(String oldValue) {
-		this.oldValue = oldValue;
-	}
-
-	/**
-	 * The text that appears on the subject line of the message, such as "The product price has changed."
-	 */
-	protected  String subject;
-
-	public String getSubject() {
-		return this.subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
 	}
 
 
