@@ -25,6 +25,19 @@ public class PublishSetSummaryPagedCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The total number of pages of the results divided per the `pageSize`.
+	 */
+	protected  Integer pageCount;
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	/**
 	 * The number of results to display on each page when creating paged results from a query. The amount is divided and displayed on the `pageCount `amount of pages. The default is 20 and maximum value is 200 per page.
 	 */
 	protected  Integer pageSize;
@@ -61,19 +74,6 @@ public class PublishSetSummaryPagedCollection implements Serializable
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	/**
-	 * The total number of pages of the results divided per the `pageSize`.
-	 */
-	protected  Integer pageCount;
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
 	}
 
 	/**

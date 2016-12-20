@@ -22,6 +22,19 @@ public class Catalog implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The date time in UTC format set when the object was created. 
+	 */
+	protected  DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
 	 * The default three-letter ISO currency code for monetary amounts. Currently, only "USD" is supported for U.S. Dollar.
 	 */
 	protected  String defaultCurrencyCode;
@@ -149,19 +162,6 @@ public class Catalog implements Serializable
 
 	public void setUpdateDate(DateTime updateDate) {
 		this.updateDate = updateDate;
-	}
-
-	/**
-	 * The date time in UTC format set when the object was created. 
-	 */
-	protected  DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
 	}
 
 

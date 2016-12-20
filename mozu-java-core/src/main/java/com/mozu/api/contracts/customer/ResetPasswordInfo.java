@@ -21,16 +21,6 @@ public class ResetPasswordInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	protected  String customerSetCode;
-
-	public String getCustomerSetCode() {
-		return this.customerSetCode;
-	}
-
-	public void setCustomerSetCode(String customerSetCode) {
-		this.customerSetCode = customerSetCode;
-	}
-
 	/**
 	 * The email address of the specified user or the email address associated with the specified entity.
 	 */
@@ -55,6 +45,16 @@ public class ResetPasswordInfo implements Serializable
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	protected  String customerSetCode;
+
+	public String getCustomerSetCode() {
+		return this.customerSetCode;
+	}
+
+	public void setCustomerSetCode(String customerSetCode) {
+		this.customerSetCode = customerSetCode;
 	}
 
 

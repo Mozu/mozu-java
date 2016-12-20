@@ -26,6 +26,19 @@ public class PaymentInteraction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 */
+	protected  String status;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
 	 * If applicable, the total monetary amount associated with this payment interaction.
 	 */
 	protected  Double amount;
@@ -283,19 +296,6 @@ public class PaymentInteraction implements Serializable
 
 	public void setPaymentTransactionInteractionIdReference(Integer paymentTransactionInteractionIdReference) {
 		this.paymentTransactionInteractionIdReference = paymentTransactionInteractionIdReference;
-	}
-
-	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
-	 */
-	protected  String status;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	/**

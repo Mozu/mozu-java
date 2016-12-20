@@ -159,6 +159,16 @@ public class ProductInCatalogInfo implements Serializable
 		this.price = price;
 	}
 
+	protected  ProductCategory primaryProductCategory;
+
+	public ProductCategory getPrimaryProductCategory() {
+		return this.primaryProductCategory;
+	}
+
+	public void setPrimaryProductCategory(ProductCategory primaryProductCategory) {
+		this.primaryProductCategory = primaryProductCategory;
+	}
+
 	/**
 	 * The product categories to define for the product associated with the specified catalog.
 	 */

@@ -22,32 +22,6 @@ public class CategoryImage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
-	protected  Integer sequence;
-
-	public Integer getSequence() {
-		return this.sequence;
-	}
-
-	public void setSequence(Integer sequence) {
-		this.sequence = sequence;
-	}
-
-	/**
-	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
-	 */
-	protected  String videoUrl;
-
-	public String getVideoUrl() {
-		return this.videoUrl;
-	}
-
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-	}
-
-	/**
 	 * Descriptive text associated with the image or video that appears on the web storefront. This text displays on a hover-over in the browser, providing further information on the content displayed. The alternate text should be plain alphanumeric text without special characters or HTML coding.
 	 */
 	protected  String altText;
@@ -110,6 +84,32 @@ public class CategoryImage implements Serializable
 
 	public void setMediaType(String mediaType) {
 		this.mediaType = mediaType;
+	}
+
+	/**
+	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 */
+	protected  Integer sequence;
+
+	public Integer getSequence() {
+		return this.sequence;
+	}
+
+	public void setSequence(Integer sequence) {
+		this.sequence = sequence;
+	}
+
+	/**
+	 * The URL of a video files for a product or category. The path name is set in the language specified by the LocaleCode.
+	 */
+	protected  String videoUrl;
+
+	public String getVideoUrl() {
+		return this.videoUrl;
+	}
+
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
 	}
 
 

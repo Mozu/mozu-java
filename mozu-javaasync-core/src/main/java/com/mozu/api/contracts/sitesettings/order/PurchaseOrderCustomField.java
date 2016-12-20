@@ -22,32 +22,6 @@ public class PurchaseOrderCustomField implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
-	 */
-	protected  String label;
-
-	public String getLabel() {
-		return this.label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-	}
-
-	/**
-	 * Sequence Number
-	 */
-	protected  Integer sequenceNumber;
-
-	public Integer getSequenceNumber() {
-		return this.sequenceNumber;
-	}
-
-	public void setSequenceNumber(Integer sequenceNumber) {
-		this.sequenceNumber = sequenceNumber;
-	}
-
-	/**
 	 * Unique code/name for memo field
 	 */
 	protected  String code;
@@ -84,6 +58,32 @@ public class PurchaseOrderCustomField implements Serializable
 
 	public void setIsRequired(Boolean isRequired) {
 		this.isRequired = isRequired;
+	}
+
+	/**
+	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 */
+	protected  String label;
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	/**
+	 * Sequence Number
+	 */
+	protected  Integer sequenceNumber;
+
+	public Integer getSequenceNumber() {
+		return this.sequenceNumber;
+	}
+
+	public void setSequenceNumber(Integer sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 	}
 
 
