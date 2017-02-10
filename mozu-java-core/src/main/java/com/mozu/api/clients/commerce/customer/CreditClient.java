@@ -196,7 +196,7 @@ public class CreditClient {
 	}
 
 	/**
-	 * customer-credits Put ResendCreditCreatedEmail description DOCUMENT_HERE 
+	 * Resend the notification email that informs a shopper that a credit has been created.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendCreditCreatedEmailClient( code);
 	 * client.setBaseAddress(url);

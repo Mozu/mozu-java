@@ -131,7 +131,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * Detail data for a product or product options attribute. This acts as a wrapper for the properties to configure or generate from the system in the product Admin. Properties may include namespace, attribute code, attribute sequence, site group ID, input type, and value.
+	 * The product attribute details common between all attribute types - properties, options, and extras.
 	 */
 	protected  Attribute attributeDetail;
 

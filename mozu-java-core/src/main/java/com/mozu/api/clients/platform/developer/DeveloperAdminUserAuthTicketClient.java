@@ -76,7 +76,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * client.executeRequest();
 	 * DeveloperAdminUserAuthTicket developerAdminUserAuthTicket = client.Result();
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
@@ -96,7 +96,7 @@ public class DeveloperAdminUserAuthTicketClient {
 	 * </code></pre></p>
 	 * @param developerAccountId Unique identifier of the developer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in developer account claims with the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket>
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.DeveloperAdminUserAuthTicket

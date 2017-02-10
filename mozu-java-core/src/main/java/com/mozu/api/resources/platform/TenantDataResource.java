@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenant data resource to store tenant-level information required for a third-party application in the Mozu database.
+ * Use the tenant data resource to store tenant-level information required for a third-party application in the  database.
  * </summary>
  */
 public class TenantDataResource {
@@ -35,7 +35,7 @@ public class TenantDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery);
@@ -50,7 +50,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	string string = tenantdata.getDBValue( dbEntryQuery,  responseFields);
@@ -70,7 +70,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * Creates a new record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.createDBValue( value,  dbEntryQuery);
@@ -90,7 +90,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * Updates a record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.updateDBValue( value,  dbEntryQuery);
@@ -110,7 +110,7 @@ public class TenantDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * Removes a previously defined record in the  database.
 	 * <p><pre><code>
 	 *	TenantData tenantdata = new TenantData();
 	 *	tenantdata.deleteDBValue( dbEntryQuery);

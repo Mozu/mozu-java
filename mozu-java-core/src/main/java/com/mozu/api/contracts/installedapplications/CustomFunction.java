@@ -22,7 +22,7 @@ public class CustomFunction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction applicationKey ApiTypeMember DOCUMENT_HERE 
+	 * The Arc.js application key.
 	 */
 	protected  String applicationKey;
 
@@ -35,7 +35,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
+	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
 	 */
 	protected  Boolean enabled;
 
@@ -48,7 +48,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction exceptionBehavior ApiTypeMember DOCUMENT_HERE 
+	 * The behavior to take when an error is encountered. "fault" or "continue". The default is "fault".
 	 */
 	protected  String exceptionBehavior;
 
@@ -61,7 +61,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction functionId ApiTypeMember DOCUMENT_HERE 
+	 * The name of the custom function tied to a particular action.
 	 */
 	protected  String functionId;
 
@@ -74,7 +74,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction logLevel ApiTypeMember DOCUMENT_HERE 
+	 * The priority level to assign to logs related to a particular function. Possible values mirror Apache's log4net: "all", "debug", "info", "warn", "error", "fatal", and "off".
 	 */
 	protected  String logLevel;
 
@@ -87,7 +87,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction timeoutMilliseconds ApiTypeMember DOCUMENT_HERE 
+	 * The number of milliseconds that the function waits before timing out. The default is 5000 milliseconds
 	 */
 	protected  Integer timeoutMilliseconds;
 
@@ -100,7 +100,7 @@ public class CustomFunction implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.CustomFunction configuration ApiTypeMember DOCUMENT_HERE 
+	 * Custom function-level settings specified as key-value pairs.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 

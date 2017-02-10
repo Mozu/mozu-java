@@ -18,7 +18,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Customer Attribute Definition resource to manage the attributes to define for your shoppers.
+ * Attributes are used to add custom definitions and characteristics to the following objects:
+*  — are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
+
+*  — are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
+
+*  — are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
+
  * </summary>
  */
 public class AttributeResource {
@@ -35,7 +41,7 @@ public class AttributeResource {
 
 	
 	/**
-	 * Retrieves a list of customer attributes according to any filter and sort criteria specified in the request.
+	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes();
@@ -49,7 +55,7 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieves a list of customer attributes according to any filter and sort criteria specified in the request.
+	 * Retrieves a paged list of attributes according to any specified filter criteria and sort options.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	AttributeCollection attributeCollection = attribute.getAttributes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
@@ -91,7 +97,7 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieve a customer attribute definition by supplying its fully qualified name.
+	 * Retrieves the details of the specified product attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN);
@@ -106,7 +112,7 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Retrieve a customer attribute definition by supplying its fully qualified name.
+	 * Retrieves the details of the specified product attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.getAttribute( attributeFQN,  responseFields);

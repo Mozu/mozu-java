@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to get a price list. This may contain a hierarchy of price lists dependent on setup.
+ * Retrieves the details of a price list. The details may contain a hierarchy of ancestor and/or descendant price lists dependening on your configuration.
  * </summary>
  */
 public class PriceListResource {
@@ -35,7 +35,7 @@ public class PriceListResource {
 
 	
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * Retrieves the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
@@ -50,7 +50,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * Retrieves the price list for the given priceListCode
+	 * Retrieves the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
@@ -70,7 +70,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList();
@@ -84,7 +84,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * storefront-pricelists Get GetResolvedPriceList description DOCUMENT_HERE 
+	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	ResolvedPriceList resolvedPriceList = pricelist.getResolvedPriceList( customerAccountId,  responseFields);

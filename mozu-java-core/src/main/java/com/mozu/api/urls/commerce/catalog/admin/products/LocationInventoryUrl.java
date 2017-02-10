@@ -67,7 +67,7 @@ public class LocationInventoryUrl
 
 	/**
 	 * Get Resource Url for UpdateLocationInventory
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updateLocationInventoryUrl(String productCode)
@@ -80,7 +80,7 @@ public class LocationInventoryUrl
 	/**
 	 * Get Resource Url for DeleteLocationInventory
 	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationInventoryUrl(String locationCode, String productCode)

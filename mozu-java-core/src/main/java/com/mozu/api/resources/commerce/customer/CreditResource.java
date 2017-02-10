@@ -179,7 +179,7 @@ public class CreditResource {
 	}
 
 	/**
-	 * customer-credits Put ResendCreditCreatedEmail description DOCUMENT_HERE 
+	 * Resend the notification email that informs a shopper that a credit has been created.
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
 	 *	credit.resendCreditCreatedEmail( code);

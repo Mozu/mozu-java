@@ -38,7 +38,7 @@ public class CartMessage implements Serializable
 	}
 
 	/**
-	 * Mozu.CommerceRuntime.Contracts.Carts.CartMessage messageType ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the cart message type.
 	 */
 	protected  String messageType;
 
@@ -51,7 +51,7 @@ public class CartMessage implements Serializable
 	}
 
 	/**
-	 * Mozu.CommerceRuntime.Contracts.Carts.CartMessage productsRemoved ApiTypeMember DOCUMENT_HERE 
+	 * An array of product details for any products that have been removed from the cart.
 	 */
 	protected List<Product> productsRemoved;
 	public List<Product> getProductsRemoved() {

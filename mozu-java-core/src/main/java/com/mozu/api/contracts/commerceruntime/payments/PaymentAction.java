@@ -24,7 +24,7 @@ public class PaymentAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the fulfillment action to perform for the purchased product. Options include "Ship" or "PickUp" (in-store pick-up).
+	 * The name of the action to perform for the payment, fulfillment, order, or return.
 	 */
 	protected  String actionName;
 
@@ -89,7 +89,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * Mozu.CommerceRuntime.Contracts.Payments.PaymentAction externalTransactionId ApiTypeMember DOCUMENT_HERE 
+	 * An ID provided by a third party external payment service to identify a transaction.
 	 */
 	protected  String externalTransactionId;
 
@@ -141,7 +141,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * Custom data from payment providers
+	 * A general field for data to be communicated from an external payment service. 
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 

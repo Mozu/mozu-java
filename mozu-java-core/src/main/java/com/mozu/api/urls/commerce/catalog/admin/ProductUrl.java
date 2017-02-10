@@ -161,7 +161,7 @@ public class ProductUrl
 
 	/**
 	 * Get Resource Url for DeleteProduct
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteProductUrl(String productCode)

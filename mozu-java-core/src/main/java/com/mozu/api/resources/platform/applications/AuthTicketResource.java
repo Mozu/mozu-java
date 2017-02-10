@@ -44,7 +44,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authticket = new AuthTicket();
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo);
 	 * </code></pre></p>
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -61,7 +61,7 @@ public AuthTicketResource(ApiContext apiContext)
 	 *	AuthTicket authTicket = authticket.authenticateApp( appAuthInfo,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo

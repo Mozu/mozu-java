@@ -25,7 +25,7 @@ public class FacetValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of facet results for a product search.
+	 * The total number of associated items.
 	 */
 	protected  Integer count;
 
@@ -64,7 +64,7 @@ public class FacetValue implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
+	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If false, the category is not displayed.
 	 */
 	protected  Boolean isDisplayed;
 
@@ -129,7 +129,7 @@ public class FacetValue implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
 	 */
 	protected  String value;
 

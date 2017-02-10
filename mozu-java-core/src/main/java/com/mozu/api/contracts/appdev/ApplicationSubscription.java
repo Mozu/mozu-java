@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.Event;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationSubscription ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationSubscription implements Serializable

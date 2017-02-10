@@ -43,7 +43,7 @@ public class DocumentListTypeResource {
 	}
 		
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * Gets all the available documentListTypes.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes();
@@ -57,7 +57,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * Gets all the available documentListTypes.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListTypeCollection documentListTypeCollection = documentlisttype.getDocumentListTypes( pageSize,  startIndex,  responseFields);
@@ -78,7 +78,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * Gets a documentListType.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN);
@@ -93,7 +93,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * Gets a documentListType.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.getDocumentListType( documentListTypeFQN,  responseFields);
@@ -113,7 +113,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * Creates a new documentListType.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list);
@@ -129,7 +129,7 @@ public class DocumentListTypeResource {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * Creates a new documentListType.
 	 * <p><pre><code>
 	 *	DocumentListType documentlisttype = new DocumentListType();
 	 *	DocumentListType documentListType = documentlisttype.createDocumentListType( list,  responseFields);

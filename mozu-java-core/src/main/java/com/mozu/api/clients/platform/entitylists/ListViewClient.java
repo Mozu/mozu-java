@@ -30,9 +30,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -49,10 +49,10 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * JObject json = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -77,7 +77,7 @@ public class ListViewClient {
 	 * EntityCollection entityCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -99,7 +99,7 @@ public class ListViewClient {
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -123,9 +123,9 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -142,10 +142,10 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * EntityContainer entityContainer = client.Result();
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
+	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB ( Mongo DB).
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainer>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -170,7 +170,7 @@ public class ListViewClient {
 	 * EntityContainerCollection entityContainerCollection = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -192,7 +192,7 @@ public class ListViewClient {
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.EntityContainerCollection>
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -217,7 +217,7 @@ public class ListViewClient {
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -236,7 +236,7 @@ public class ListViewClient {
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -350,7 +350,7 @@ public class ListViewClient {
 	 * ListView listView = client.Result();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -371,7 +371,7 @@ public class ListViewClient {
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.mzdb.ListView>
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -398,7 +398,7 @@ public class ListViewClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteEntityListViewClient(String entityListFullName, String viewName) throws Exception

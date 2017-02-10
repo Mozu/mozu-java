@@ -17,13 +17,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * This resource is not public.
  * </summary>
  */
 public class PackageClient {
 	
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * This operation is not public.
 	 * <p><pre><code>
 	 * MozuClient<java.io.InputStream> mozuClient=GetFileClient( applicationKey,  fileName);
 	 * client.setBaseAddress(url);

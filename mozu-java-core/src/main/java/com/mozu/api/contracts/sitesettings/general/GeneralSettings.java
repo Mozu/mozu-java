@@ -44,7 +44,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Email address to use for Blind Carbon Copies of mails sent from your site.
+	 * An email address to blind carbon copy anytime an automatic email is sent from  to a shopper.
 	 */
 	protected  String bccEmailAddress;
 
@@ -57,7 +57,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Custom dns host name for cnd edge caching.
+	 * Custom override of the default subdomain for CDN-hosted content. For example, for SEO reasons you may prefer that the subdomain for your CDN content be  instead of the default subdomain, which might be something like .
 	 */
 	protected  String customCdnHostName;
 
@@ -148,7 +148,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * If true, this site represents a Mozu-hosted web storefront.
+	 * If true, this site represents a -hosted web storefront.
 	 */
 	protected  Boolean isMozuWebSite;
 
@@ -200,7 +200,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * MissingImageSubstitute for 404 image requests. Can be name or id of cmsImage in files@mozu.
+	 * Assigns an image to render in place of broken images and unspecified product images (and unspecified category images, if your theme developer has enabled category images). Specified by the name or ID of the CMS image within .
 	 */
 	protected  String missingImageSubstitute;
 
@@ -226,7 +226,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Email address to display on email messages sent from the site.
+	 * The email shoppers should use to reply to an automatically-generated email.
 	 */
 	protected  String replyToEmailAddress;
 
@@ -252,7 +252,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Email alias used in emails sent to your shoppers.
+	 * An alternate name for the sender email. For example, if your sender email is , you might want to use an alias of .
 	 */
 	protected  String senderEmailAlias;
 
@@ -304,7 +304,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the tenant site that site uses to render content for the shopper. For example, if this site represents a third-party sales channel such as Amazon but the company wants to send shopper emails, this value represents the Mozu-hosted web storefront site that maintains this content.
+	 * Unique identifier of the tenant site that site uses to render content for the shopper. For example, if this site represents a third-party sales channel such as Amazon but the company wants to send shopper emails, this value represents the -hosted web storefront site that maintains this content.
 	 */
 	protected  Integer templateSiteId;
 
@@ -369,7 +369,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Site-level control over request routing for SEO purposes. Not available for update, must use its own subresource.
+	 * Site-level settings for custom routing, which allows you to use your own custom URL patterns for common  pages.
 	 */
 	protected  CustomRouteSettings customRoutes;
 
@@ -382,7 +382,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Specific Settings by Email type
+	 * A collection of overrides that allow you to apply unique email settings to the email template(s) of your choice.
 	 */
 	protected List<EmailTypeSetting> emailTypes;
 	public List<EmailTypeSetting> getEmailTypes() {
@@ -393,7 +393,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Supressed emails. Setting any of these to 'true' will block Mozu from sending that email and an event will be published instead.
+	 * Supressed emails. Setting any of these to 'true' will block  from sending that email and an event will be published instead.
 	 */
 	protected  EmailTransactionSettings supressedEmailTransactions;
 
@@ -417,7 +417,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.GeneralSettings viewAuthorizations ApiTypeMember DOCUMENT_HERE 
+	 * A collection of authorizations that control access to viewing the pending and live sites.
 	 */
 	protected  ViewAuthorizations viewAuthorizations;
 

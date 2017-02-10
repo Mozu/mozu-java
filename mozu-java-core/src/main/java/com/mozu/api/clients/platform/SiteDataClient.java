@@ -17,13 +17,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
+ * Use the site data resource to store site-level information required for a third-party application in the  database.
  * </summary>
  */
 public class SiteDataClient {
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class SiteDataClient {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class SiteDataClient {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * Creates a new record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -89,7 +89,7 @@ public class SiteDataClient {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * Updates a record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -113,7 +113,7 @@ public class SiteDataClient {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * Removes a previously defined record in the  database.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);

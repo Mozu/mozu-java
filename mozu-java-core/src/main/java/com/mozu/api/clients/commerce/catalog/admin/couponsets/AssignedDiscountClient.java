@@ -54,7 +54,7 @@ public class AssignedDiscountClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return Mozu.Api.MozuClient 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */

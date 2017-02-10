@@ -22,7 +22,7 @@ public class PublishSetSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The number of facet results for a product search.
+	 * The total number of associated items.
 	 */
 	protected  Integer count;
 
@@ -35,7 +35,7 @@ public class PublishSetSummary implements Serializable
 	}
 
 	/**
-	 * the code of the associated publish set
+	 * The unique identifier of the content publish set.
 	 */
 	protected  String publishSetCode;
 

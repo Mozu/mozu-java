@@ -47,24 +47,25 @@ public class ShippingResource {
 	 */
 	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest) throws Exception
 	{
-		return getRates( rateRequest,  null);
+		return getRates( rateRequest,  null,  null);
 	}
 
 	/**
 	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
-	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  responseFields);
+	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  includeRawResponse,  responseFields);
 	 * </code></pre></p>
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param rateRequest Properties required to request a shipping rate calculation.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
 	 */
-	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields) throws Exception
+	public com.mozu.api.contracts.shippingruntime.RatesResponse getRates(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, Boolean includeRawResponse, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  responseFields);
+		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getRatesClient( rateRequest,  includeRawResponse,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

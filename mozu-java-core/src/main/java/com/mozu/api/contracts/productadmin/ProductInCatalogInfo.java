@@ -56,7 +56,7 @@ public class ProductInCatalogInfo implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 
@@ -159,6 +159,9 @@ public class ProductInCatalogInfo implements Serializable
 		this.price = price;
 	}
 
+	/**
+	 * Specifies which static category to use in the navigation breadcrumb, regardless of how shoppers navigate to the product. If not set, or if the product belongs only to dynamic categories, the default is to use the category with the smallest ID.
+	 */
 	protected  ProductCategory primaryProductCategory;
 
 	public ProductCategory getPrimaryProductCategory() {

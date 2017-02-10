@@ -74,7 +74,7 @@ public class ValidationMessage implements Serializable
 	}
 
 	/**
-	 * Type of validation error that occurred. This can be checked programatically.              Must be one of the values in ValidationTypeConst.
+	 * Type of validation error that occurred. This can be checked programatically. Must be one of the values in ValidationTypeConst.
 	 */
 	protected  String validationType;
 

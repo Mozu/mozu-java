@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.PaymentService.Contracts.Contact ApiType DOCUMENT_HERE 
+ *	Contact information for an account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contact implements Serializable

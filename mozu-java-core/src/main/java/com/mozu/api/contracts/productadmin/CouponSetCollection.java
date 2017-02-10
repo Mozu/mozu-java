@@ -51,7 +51,7 @@ public class CouponSetCollection implements Serializable
 	}
 
 	/**
-	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=3`.
+	 * When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a `pageSize `of 25, to get the 51st through the 75th items, use `startIndex=50`.
 	 */
 	protected  Integer startIndex;
 
@@ -64,7 +64,7 @@ public class CouponSetCollection implements Serializable
 	}
 
 	/**
-	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
+	 * The total number of items in the list.
 	 */
 	protected  Integer totalCount;
 
@@ -77,7 +77,7 @@ public class CouponSetCollection implements Serializable
 	}
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
 	 */
 	protected List<CouponSet> items;
 	public List<CouponSet> getItems() {

@@ -74,7 +74,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
+	 * Response code from the gateway associated with the payment interaction. The response code is unique to the gateway.The response code is associated with the , which contains the textual response message.Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
 	 */
 	protected  String gatewayResponseCode;
 
@@ -87,7 +87,7 @@ public class PaymentGatewayInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway for the associated success or failure code.
+	 * Textual message returned by the payment gateway for the associated .Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
 	 */
 	protected  String gatewayResponseText;
 

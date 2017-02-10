@@ -31,7 +31,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductProperty>>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
 	 */
@@ -57,7 +57,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -85,7 +85,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
 	 * @see com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent
@@ -105,7 +105,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
@@ -178,7 +178,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedContent Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
@@ -199,7 +199,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @param localizedContent Use this field to include those fields which are not included by default.
@@ -229,7 +229,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productProperty Details of a property defined for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -248,7 +248,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Details of a property defined for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
@@ -278,7 +278,7 @@ public class ProductPropertyClient {
 	 * ProductPropertyValueLocalizedContent productPropertyValueLocalizedContent = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedContent Content of the product property value in the language defined for the locale code.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>>
@@ -309,7 +309,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedContent Content of the product property value in the language defined for the locale code.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductPropertyValueLocalizedContent>
@@ -331,7 +331,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @param localizedContent Content of the product property value in the language defined for the locale code.
@@ -362,7 +362,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param productProperty Details of a property defined for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
 	 * @see com.mozu.api.contracts.productadmin.ProductProperty
@@ -382,7 +382,7 @@ public class ProductPropertyClient {
 	 * ProductProperty productProperty = client.Result();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param productProperty Details of a property defined for a product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.ProductProperty>
@@ -411,7 +411,7 @@ public class ProductPropertyClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deletePropertyClient(com.mozu.api.DataViewMode dataViewMode, String productCode, String attributeFQN) throws Exception
@@ -435,7 +435,7 @@ public class ProductPropertyClient {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return Mozu.Api.MozuClient 
 	 */

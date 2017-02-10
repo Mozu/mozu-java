@@ -30,7 +30,7 @@ public class AuthTicketClient {
 	 * client.executeRequest();
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo
@@ -49,7 +49,7 @@ public class AuthTicketClient {
 	 * AuthTicket authTicket = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param appAuthInfo The information required to authenticate third party applications against the Mozu API.
+	 * @param appAuthInfo The information required to authenticate third party applications against the  API.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.appdev.AuthTicket>
 	 * @see com.mozu.api.contracts.appdev.AuthTicket
 	 * @see com.mozu.api.contracts.appdev.AppAuthInfo

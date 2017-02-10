@@ -88,7 +88,7 @@ public class Credit implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 * Unique identifier of the customer in , used to associate customers with data, orders, returns, and in-store credit.
 	 */
 	protected  Integer customerId;
 

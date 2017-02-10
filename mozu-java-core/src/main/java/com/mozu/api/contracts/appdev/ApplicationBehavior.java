@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationBehavior ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationBehavior implements Serializable

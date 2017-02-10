@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/customer/accounts/purchaseOrder related resources. DOCUMENT_HERE 
+ * Use the Customer Account Purchase Order resource to manage purchase order details for specific customer acocunts.
  * </summary>
  */
 public class CustomerPurchaseOrderAccountResource {
@@ -35,7 +35,7 @@ public class CustomerPurchaseOrderAccountResource {
 
 	
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Retrieves the details of the specified customer purchase order account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId);
@@ -50,7 +50,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Retrieves the details of the specified customer purchase order account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.getCustomerPurchaseOrderAccount( accountId,  responseFields);
@@ -70,7 +70,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderTransactions description DOCUMENT_HERE 
+	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId);
@@ -85,16 +85,16 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Get GetCustomerPurchaseOrderTransactions description DOCUMENT_HERE 
+	 * Retrieves a list of purchase order transactions for the specified customer account according to any specified sort options.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransactionCollection purchaseOrderTransactionCollection = customerpurchaseorderaccount.getCustomerPurchaseOrderTransactions( accountId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param filter 
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransactionCollection
@@ -109,13 +109,13 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -126,14 +126,14 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Adds a purchase order account to the specified customer account.This adds the ability for the specified customer account to use the purchase order payment method.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.createCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -148,13 +148,13 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreatePurchaseOrderTransaction description DOCUMENT_HERE 
+	 * Creates a purchase order transaction on the specified customer purchase order account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param purchaseOrderTransaction Mozu.Customer.Contracts.PurchaseOrderTransaction ApiType DOCUMENT_HERE 
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -165,14 +165,14 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Post CreatePurchaseOrderTransaction description DOCUMENT_HERE 
+	 * Creates a purchase order transaction on the specified customer purchase order account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	PurchaseOrderTransaction purchaseOrderTransaction = customerpurchaseorderaccount.createPurchaseOrderTransaction( purchaseOrderTransaction,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param purchaseOrderTransaction Mozu.Customer.Contracts.PurchaseOrderTransaction ApiType DOCUMENT_HERE 
+	 * @param purchaseOrderTransaction The purchase order transaction type to add to the specified customer account.
 	 * @return com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
 	 * @see com.mozu.api.contracts.customer.PurchaseOrderTransaction
@@ -187,13 +187,13 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Put UpdateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Updates the details of the purchase order account for the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -204,14 +204,14 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Put UpdateCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Updates the details of the purchase order account for the specified customer account.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	CustomerPurchaseOrderAccount customerPurchaseOrderAccount = customerpurchaseorderaccount.updateCustomerPurchaseOrderAccount( customerPurchaseOrderAccount,  accountId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param customerPurchaseOrderAccount Mozu.Customer.Contracts.CustomerPurchaseOrderAccount ApiType DOCUMENT_HERE 
+	 * @param customerPurchaseOrderAccount Unique identifier of the customer purchase order account.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccount
@@ -226,7 +226,7 @@ public class CustomerPurchaseOrderAccountResource {
 	}
 
 	/**
-	 * accounts-purchaseOrder Delete DeleteCustomerPurchaseOrderAccount description DOCUMENT_HERE 
+	 * Deletes the specified customer purchase order account.This removes the ability for the specified customer account to use the purchase order payment method.
 	 * <p><pre><code>
 	 *	CustomerPurchaseOrderAccount customerpurchaseorderaccount = new CustomerPurchaseOrderAccount();
 	 *	customerpurchaseorderaccount.deleteCustomerPurchaseOrderAccount( accountId);

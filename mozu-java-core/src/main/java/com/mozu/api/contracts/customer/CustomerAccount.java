@@ -55,6 +55,9 @@ public class CustomerAccount implements Serializable
 		this.companyOrOrganization = companyOrOrganization;
 	}
 
+	/**
+	 * customerSet ApiType DOCUMENT_HERE 
+	 */
 	protected  String customerSet;
 
 	public String getCustomerSet() {
@@ -66,7 +69,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Mozu.Customer.Contracts.CustomerAccount customerSinceDate ApiTypeMember DOCUMENT_HERE 
+	 * This property tracks the customer account creation date. This date can be set manually via the API for customer accounts that are imported into . 
 	 */
 	protected  DateTime customerSinceDate;
 
@@ -92,7 +95,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
+	 * Unique identifier used by an external program to identify a  order, customer account, or wish list.
 	 */
 	protected  String externalId;
 
@@ -118,7 +121,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Indicates if an external password is set on this account
+	 * Indicates if an external password is set on this account.
 	 */
 	protected  Boolean hasExternalPassword;
 
@@ -131,7 +134,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  Integer id;
 
@@ -144,7 +147,7 @@ public class CustomerAccount implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 

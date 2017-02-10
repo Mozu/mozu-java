@@ -163,7 +163,7 @@ public class LocationInventoryResource {
 	 *	LocationInventory locationinventory = new LocationInventory();
 	 *	LocationInventory locationInventory = locationinventory.updateLocationInventory( locationInventoryAdjustments,  productCode);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param locationInventoryAdjustments Properties of an adjustment to the active product inventory of a specific location.
 	 * @return List<com.mozu.api.contracts.productadmin.LocationInventory>
 	 * @see com.mozu.api.contracts.productadmin.LocationInventory
@@ -185,7 +185,7 @@ public class LocationInventoryResource {
 	 *	locationinventory.deleteLocationInventory( productCode,  locationCode);
 	 * </code></pre></p>
 	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteLocationInventory(String productCode, String locationCode) throws Exception

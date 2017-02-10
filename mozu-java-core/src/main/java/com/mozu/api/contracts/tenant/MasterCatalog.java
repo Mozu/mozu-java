@@ -25,7 +25,7 @@ public class MasterCatalog implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The date time in UTC format set when the object was created. 
+	 * The date and time in UTC format set when the object was created.
 	 */
 	protected  DateTime createDate;
 
@@ -77,7 +77,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  Integer id;
 
@@ -103,7 +103,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -116,7 +116,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
 	 */
 	protected  String status;
 
@@ -142,7 +142,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The date and time the object was updated most recently. The date is in UTC format.
+	 * The date and time in UTC format the object was updated most recently.
 	 */
 	protected  DateTime updateDate;
 

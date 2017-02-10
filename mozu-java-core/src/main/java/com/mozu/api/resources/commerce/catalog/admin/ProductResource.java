@@ -375,7 +375,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	product.deleteProduct( productCode);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return 
 	 */
 	public void deleteProduct(String productCode) throws Exception

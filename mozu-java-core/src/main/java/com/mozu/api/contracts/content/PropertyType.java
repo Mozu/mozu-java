@@ -22,6 +22,19 @@ public class PropertyType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The current version number of the order, wish list, document list, or document type list.
+	 */
+	protected  String version;
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	/**
 	 * The administrator name associated with the object/data.
 	 */
 	protected  String adminName;
@@ -100,7 +113,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -113,7 +126,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
 	 */
 	protected  String namespace;
 
@@ -136,19 +149,6 @@ public class PropertyType implements Serializable
 
 	public void setPropertyTypeFQN(String propertyTypeFQN) {
 		this.propertyTypeFQN = propertyTypeFQN;
-	}
-
-	/**
-	 * The current version number of the order, wish list, document list, or document type list.
-	 */
-	protected  String version;
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
 	}
 
 

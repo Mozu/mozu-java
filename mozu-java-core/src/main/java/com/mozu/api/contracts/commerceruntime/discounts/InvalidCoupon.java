@@ -45,7 +45,7 @@ public class InvalidCoupon implements Serializable
 	}
 
 	/**
-	 * Unique identifier for the discount in the storefront.
+	 * The unique identifier of the discount.
 	 */
 	protected  Integer discountId;
 

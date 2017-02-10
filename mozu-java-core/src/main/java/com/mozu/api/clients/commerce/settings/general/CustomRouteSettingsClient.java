@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Custom Routes resource to manage your custom route settings. Custom routing allows you to display SEO-friendly URLs on your site that map behind-the-scenes to conventional Mozu resources such as a product page or a search results page. With custom routing, you gain advanced control over the URL structures on your site and can more visibly highlight the products or categories your shoppers are interested in purchasing.To learn more about custom routing, refer to the [Custom Route Settings](../../../guides/settings/custom-routes.htm) topic.
+ * Use the Custom Routes resource to manage your custom route settings. Custom routing allows you to display SEO-friendly URLs on your site that map behind-the-scenes to conventional  resources such as a product page or a search results page. With custom routing, you gain advanced control over the URL structures on your site and can more visibly highlight the products or categories your shoppers are interested in purchasing.To learn more about custom routing, refer to the [Custom Route Settings](../../../guides/settings/custom-routes.htm) topic.
  * </summary>
  */
 public class CustomRouteSettingsClient {
@@ -70,7 +70,7 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings The details of the new custom route setting.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -89,7 +89,7 @@ public class CustomRouteSettingsClient {
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings The details of the new custom route setting.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -115,7 +115,7 @@ public class CustomRouteSettingsClient {
 	 * client.executeRequest();
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings The updated details of the custom route settings.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -134,7 +134,7 @@ public class CustomRouteSettingsClient {
 	 * CustomRouteSettings customRouteSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param settings Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
+	 * @param settings The updated details of the custom route settings.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings
@@ -153,7 +153,7 @@ public class CustomRouteSettingsClient {
 	}
 
 	/**
-	 * Deletes all the custom route settings for a site, returning all routes to their Mozu defaults.
+	 * Deletes all the custom route settings for a site, returning all routes to their  defaults.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCustomRouteSettingsClient();
 	 * client.setBaseAddress(url);

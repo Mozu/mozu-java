@@ -22,7 +22,7 @@ public class ExtensionConfiguration implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.ExtensionConfiguration applicationKey ApiTypeMember DOCUMENT_HERE 
+	 * The Arc.js application key.
 	 */
 	protected  String applicationKey;
 
@@ -35,7 +35,7 @@ public class ExtensionConfiguration implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.ExtensionConfiguration configuration ApiTypeMember DOCUMENT_HERE 
+	 * Custom application-level settings specified as key-value pairs.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode configuration;
 

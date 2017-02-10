@@ -33,7 +33,7 @@ public class ProductValidationSummary implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -135,7 +135,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * The product type template associated with the product on the storefront.
+	 * A product type is like a product template.
 	 */
 	protected  String productType;
 
@@ -274,7 +274,7 @@ public class ProductValidationSummary implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {

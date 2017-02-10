@@ -43,20 +43,20 @@ public class PackageClient {
 	/**
 	 * Retrieves the package label image supplied by the carrier for a return replacement.
 	 * <p><pre><code>
-	 * MozuClient<java.io.InputStream> mozuClient=GetPackageLabelClient( returnId,  packageId,  returnAsBase64);
+	 * MozuClient<java.io.InputStream> mozuClient=GetPackageLabelClient( returnId,  packageId,  returnAsBase64Png);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Stream stream = client.Result();
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnAsBase64 
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Mozu.Api.MozuClient <Stream>
 	 * @see Stream
 	 */
-	public static MozuClient<java.io.InputStream> getPackageLabelClient(String returnId, String packageId, Boolean returnAsBase64) throws Exception
+	public static MozuClient<java.io.InputStream> getPackageLabelClient(String returnId, String packageId, Boolean returnAsBase64Png) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.returns.PackageUrl.getPackageLabelUrl(packageId, returnAsBase64, returnId);
+		MozuUrl url = com.mozu.api.urls.commerce.returns.PackageUrl.getPackageLabelUrl(packageId, returnAsBase64Png, returnId);
 		String verb = "GET";
 		Class<?> clz = java.io.InputStream.class;
 		MozuClient<java.io.InputStream> mozuClient = (MozuClient<java.io.InputStream>) MozuClientFactory.getInstance(clz);

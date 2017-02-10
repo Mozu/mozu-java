@@ -24,7 +24,7 @@ import com.mozu.api.DataViewMode;
 public class DocumentListTypeClient {
 	
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * Gets all the available documentListTypes.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListTypes description DOCUMENT_HERE 
+	 * Gets all the available documentListTypes.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListTypeCollection> mozuClient=GetDocumentListTypesClient(dataViewMode,  pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
@@ -67,7 +67,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * Gets a documentListType.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN);
 	 * client.setBaseAddress(url);
@@ -84,7 +84,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * content-documentlistTypes Get GetDocumentListType description DOCUMENT_HERE 
+	 * Gets a documentListType.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=GetDocumentListTypeClient(dataViewMode,  documentListTypeFQN,  responseFields);
 	 * client.setBaseAddress(url);
@@ -110,7 +110,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * Creates a new documentListType.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list);
 	 * client.setBaseAddress(url);
@@ -128,7 +128,7 @@ public class DocumentListTypeClient {
 	}
 
 	/**
-	 * Creates a new documentListType
+	 * Creates a new documentListType.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentListType> mozuClient=CreateDocumentListTypeClient(dataViewMode,  list,  responseFields);
 	 * client.setBaseAddress(url);

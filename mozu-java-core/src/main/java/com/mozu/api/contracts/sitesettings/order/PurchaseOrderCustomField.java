@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.SiteSettings.Order.Contracts.PurchaseOrderCustomField ApiType DOCUMENT_HERE 
+ *	The details of the custom fields associated with the purchase order payment.Refer to [Custom Text Fields](https://www.mozu.com/docs/guides/orders/purchase-order.htm#custom_text_fields) in the Purchase Orders guides topic for more information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderCustomField implements Serializable
@@ -22,7 +22,7 @@ public class PurchaseOrderCustomField implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique code/name for memo field
+	 * The unique code of the custom field associated with the purchase order payment type.Refer to [Custom Text Fields](https://www.mozu.com/docs/guides/orders/purchase-order.htm#custom_text_fields) in the Purchase Orders guides topic for more information.
 	 */
 	protected  String code;
 
@@ -74,7 +74,7 @@ public class PurchaseOrderCustomField implements Serializable
 	}
 
 	/**
-	 * Sequence Number
+	 * The order/sequence position in which  displays the custom field.
 	 */
 	protected  Integer sequenceNumber;
 

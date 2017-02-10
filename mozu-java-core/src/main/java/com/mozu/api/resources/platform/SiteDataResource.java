@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the site data resource to store site-level information required for a third-party application in the Mozu database.
+ * Use the site data resource to store site-level information required for a third-party application in the  database.
  * </summary>
  */
 public class SiteDataResource {
@@ -35,7 +35,7 @@ public class SiteDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery);
@@ -50,7 +50,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	string string = sitedata.getDBValue( dbEntryQuery,  responseFields);
@@ -70,7 +70,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * Creates a new record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.createDBValue( value,  dbEntryQuery);
@@ -90,7 +90,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * Updates a record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.updateDBValue( value,  dbEntryQuery);
@@ -110,7 +110,7 @@ public class SiteDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * Removes a previously defined record in the  database.
 	 * <p><pre><code>
 	 *	SiteData sitedata = new SiteData();
 	 *	sitedata.deleteDBValue( dbEntryQuery);

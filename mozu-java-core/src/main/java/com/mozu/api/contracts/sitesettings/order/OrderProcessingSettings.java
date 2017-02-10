@@ -23,6 +23,19 @@ public class OrderProcessingSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * If true, use the override price defined for products in the order to calculate discounts for the order.
+	 */
+	protected  Boolean useOverridePriceToCalculateDiscounts;
+
+	public Boolean getUseOverridePriceToCalculateDiscounts() {
+		return this.useOverridePriceToCalculateDiscounts;
+	}
+
+	public void setUseOverridePriceToCalculateDiscounts(Boolean useOverridePriceToCalculateDiscounts) {
+		this.useOverridePriceToCalculateDiscounts = useOverridePriceToCalculateDiscounts;
+	}
+
+	/**
 	 * Abandoned order threshold in minutes indicates the number of minutes until a pending order is considered abandoned.
 	 */
 	protected  Integer abandonedOrderThresholdInMinutes;
@@ -46,19 +59,6 @@ public class OrderProcessingSettings implements Serializable
 
 	public void setPaymentProcessingFlowType(String paymentProcessingFlowType) {
 		this.paymentProcessingFlowType = paymentProcessingFlowType;
-	}
-
-	/**
-	 * If true, use the override price defined for products in the order to calculate discounts for the order.
-	 */
-	protected  Boolean useOverridePriceToCalculateDiscounts;
-
-	public Boolean getUseOverridePriceToCalculateDiscounts() {
-		return this.useOverridePriceToCalculateDiscounts;
-	}
-
-	public void setUseOverridePriceToCalculateDiscounts(Boolean useOverridePriceToCalculateDiscounts) {
-		this.useOverridePriceToCalculateDiscounts = useOverridePriceToCalculateDiscounts;
 	}
 
 	/**

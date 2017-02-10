@@ -24,7 +24,7 @@ public class PackageNamesCollection implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
 	 */
 	protected List<String> items;
 	public List<String> getItems() {
@@ -35,7 +35,7 @@ public class PackageNamesCollection implements Serializable
 	}
 
 	/**
-	 * Total number of objects in am item collection. Total counts are calculated for numerous objects in Mozu, including location inventory, products, options, product types, product reservations, categories, addresses, carriers, tax rates, time zones, and much more.
+	 * The total number of items in the list.
 	 */
 	protected  Integer totalCount;
 

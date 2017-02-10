@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable Mozu administrator or developer account users to access development or production tenants.
+ * Use the Admin User authentication tickets resource to generate and refresh authentication tickets that enable  administrator or developer account users to access development or production tenants.
  * </summary>
  */
 public class TenantAdminUserAuthTicketResource {
@@ -82,7 +82,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 *	TenantAdminUserAuthTicket tenantadminuserauthticket = new TenantAdminUserAuthTicket();
 	 *	TenantAdminUserAuthTicket tenantAdminUserAuthTicket = tenantadminuserauthticket.refreshAuthTicket( existingAuthTicket);
 	 * </code></pre></p>
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
@@ -100,7 +100,7 @@ public TenantAdminUserAuthTicketResource(ApiContext apiContext)
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param tenantId 
-	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the Mozu API.
+	 * @param existingAuthTicket Properties of the authentication ticket to be used in user claims with the  API.
 	 * @return com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket
 	 * @see com.mozu.api.contracts.adminuser.TenantAdminUserAuthTicket

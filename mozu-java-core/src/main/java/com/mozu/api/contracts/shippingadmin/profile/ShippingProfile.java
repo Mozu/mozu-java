@@ -27,7 +27,7 @@ public class ShippingProfile implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Merchant entered unique identifier for a ShippingProfile
+	 * The unique code of the shipping profile.
 	 */
 	protected  String code;
 
@@ -40,7 +40,7 @@ public class ShippingProfile implements Serializable
 	}
 
 	/**
-	 * The siteid's for which this profile applies for now there is a 1-1 relationship between this profile and site so only 1 siteid should be in this list
+	 * A list of unique site identifiers that the shipping profile targets.
 	 */
 	protected List<Integer> targetedSiteIds;
 	public List<Integer> getTargetedSiteIds() {
@@ -51,7 +51,7 @@ public class ShippingProfile implements Serializable
 	}
 
 	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
 	 */
 	protected  AuditInfo auditInfo;
 
@@ -64,7 +64,7 @@ public class ShippingProfile implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile orderHandlingFeeRules ApiTypeMember DOCUMENT_HERE 
+	 * A list of order handling fee rules and their details.
 	 */
 	protected List<HandlingFeeRule> orderHandlingFeeRules;
 	public List<HandlingFeeRule> getOrderHandlingFeeRules() {
@@ -75,7 +75,7 @@ public class ShippingProfile implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile productHandlingFeeRules ApiTypeMember DOCUMENT_HERE 
+	 * A list of product handling fee rules and their details.
 	 */
 	protected List<HandlingFeeRule> productHandlingFeeRules;
 	public List<HandlingFeeRule> getProductHandlingFeeRules() {
@@ -86,7 +86,7 @@ public class ShippingProfile implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingProfile shippingInclusionRules ApiTypeMember DOCUMENT_HERE 
+	 * A list of shipping inclusion rules and their details.
 	 */
 	protected List<ShippingInclusionRule> shippingInclusionRules;
 	public List<ShippingInclusionRule> getShippingInclusionRules() {

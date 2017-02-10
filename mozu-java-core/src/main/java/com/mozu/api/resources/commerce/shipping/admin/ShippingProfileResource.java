@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/shipping/admin/profiles related resources. DOCUMENT_HERE 
+ * Use the Profiles resource to manage your shipping profiles.
  * </summary>
  */
 public class ShippingProfileResource {
@@ -35,7 +35,7 @@ public class ShippingProfileResource {
 
 	
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * Retrieves a list of shipping profiles.
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles();
@@ -50,7 +50,7 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * Retrieves a list of shipping profiles.
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles( responseFields);

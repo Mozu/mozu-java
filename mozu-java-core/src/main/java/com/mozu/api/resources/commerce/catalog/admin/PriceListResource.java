@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to create and manage products that you will offer on your storefront. You can create products with options that a shopper configures (such as a T-shirt color and size). You can set discounts and sale prices for your products, manage product inventory, and more.
+ * Use the Price Lists resource to view and create price lists. You can use price lists to override the catalog pricing of products for specific customer segments and/or sites. You can override products' list price, sale price, advanced pricing information such as MSRP, cost, MAP, and the catalog price of any extras associated with the product in a price list. You can also restrict discounts from applying to the overridden product pricing in a price list. Refer to [Price Lists](../../../guides/catalog/price-lists.htm) in the Guides section for more information about price lists.
  * </summary>
  */
 public class PriceListResource {
@@ -35,7 +35,7 @@ public class PriceListResource {
 
 	
 	/**
-	 * admin-pricelists Get GetPriceLists description DOCUMENT_HERE 
+	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists();
@@ -49,15 +49,15 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceLists description DOCUMENT_HERE 
+	 * Retrieves a list of price lists according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceListCollection priceListCollection = pricelist.getPriceLists( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.productadmin.PriceListCollection
 	 * @see com.mozu.api.contracts.productadmin.PriceListCollection
@@ -72,7 +72,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceList description DOCUMENT_HERE 
+	 * Retrieves the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode);
@@ -87,7 +87,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Get GetPriceList description DOCUMENT_HERE 
+	 * Retrieves the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.getPriceList( priceListCode,  responseFields);
@@ -107,12 +107,12 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Post AddPriceList description DOCUMENT_HERE 
+	 * Adds a new price list to the tenant.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList);
 	 * </code></pre></p>
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList The details of the new price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -123,13 +123,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Post AddPriceList description DOCUMENT_HERE 
+	 * Adds a new price list to the tenant.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.addPriceList( priceList,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList The details of the new price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -144,13 +144,13 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Put UpdatePriceList description DOCUMENT_HERE 
+	 * Updates the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode);
 	 * </code></pre></p>
 	 * @param priceListCode The unique, user-defined code of the price list.
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList The details of the updated price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -161,14 +161,14 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Put UpdatePriceList description DOCUMENT_HERE 
+	 * Updates the details of the specified price list.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	PriceList priceList = pricelist.updatePriceList( priceList,  priceListCode,  responseFields);
 	 * </code></pre></p>
 	 * @param priceListCode The unique, user-defined code of the price list.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param priceList Mozu.ProductAdmin.Contracts.PriceList ApiType DOCUMENT_HERE 
+	 * @param priceList The details of the updated price list.
 	 * @return com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
 	 * @see com.mozu.api.contracts.productadmin.PriceList
@@ -183,7 +183,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Delete DeletePriceList description DOCUMENT_HERE 
+	 * Deletes the specified price list from the tenant.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode);
@@ -197,7 +197,7 @@ public class PriceListResource {
 	}
 
 	/**
-	 * admin-pricelists Delete DeletePriceList description DOCUMENT_HERE 
+	 * Deletes the specified price list from the tenant.
 	 * <p><pre><code>
 	 *	PriceList pricelist = new PriceList();
 	 *	pricelist.deletePriceList( priceListCode,  cascadeDeleteEntries);

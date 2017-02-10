@@ -25,6 +25,32 @@ public class CategoryContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Title that appears on new product category pages, in the language specified by the `localeCode`.
+	 */
+	protected  String pageTitle;
+
+	public String getPageTitle() {
+		return this.pageTitle;
+	}
+
+	public void setPageTitle(String pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+
+	/**
+	 * Slug is used in place of a name, code, or ID to give an SEO, human-friendly URL link for an object, used by categories.
+	 */
+	protected  String slug;
+
+	public String getSlug() {
+		return this.slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
+	/**
 	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
 	 */
 	protected  String description;
@@ -51,7 +77,7 @@ public class CategoryContent implements Serializable
 	}
 
 	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
+	 * Keywords defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
 	 */
 	protected  String metaTagKeywords;
 
@@ -64,7 +90,7 @@ public class CategoryContent implements Serializable
 	}
 
 	/**
-	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
+	 * Title defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
 	protected  String metaTagTitle;
 
@@ -77,7 +103,7 @@ public class CategoryContent implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -87,32 +113,6 @@ public class CategoryContent implements Serializable
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	/**
-	 * Title that appears on new product category pages, in the language specified by the `localeCode`.
-	 */
-	protected  String pageTitle;
-
-	public String getPageTitle() {
-		return this.pageTitle;
-	}
-
-	public void setPageTitle(String pageTitle) {
-		this.pageTitle = pageTitle;
-	}
-
-	/**
-	 * Slug is used in place of a name, code, or ID to give an SEO, human-friendly URL link for an object, used by categories.
-	 */
-	protected  String slug;
-
-	public String getSlug() {
-		return this.slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
 	}
 
 	/**

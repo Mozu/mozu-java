@@ -78,7 +78,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The Order SubTotal After Discounts to be used in rate calculation
+	 * The sub total of the order including all applicable discounts.
 	 */
 	protected  Double orderDiscountedSubTotal;
 
@@ -104,7 +104,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The Order ID to be used in rate calculation Information al only
+	 * The unique identifier of the order to which the shipping rate is related.You can use Arc.js in combination with this property to retrieve other properties of the related order.
 	 */
 	protected  String relatedOrderId;
 
@@ -116,6 +116,9 @@ public class RateRequest implements Serializable
 		this.relatedOrderId = relatedOrderId;
 	}
 
+	/**
+	 * The order number that the customer sees on the storefront when they place the order.
+	 */
 	protected  Integer relatedOrderNumber;
 
 	public Integer getRelatedOrderNumber() {
@@ -137,6 +140,9 @@ public class RateRequest implements Serializable
 		this.shippingServiceTypes = shippingServiceTypes;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<RateRequestAttribute> attributes;
 	public List<RateRequestAttribute> getAttributes() {
 		return this.attributes;
@@ -157,7 +163,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingRuntime.Contracts.RateRequest data ApiTypeMember DOCUMENT_HERE 
+	 * Data included in the shipping rate information.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
@@ -183,7 +189,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * A list of requested items. All returned data is provided in an items array.For a failed request, the returned response may be success with an empty item array.
 	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {

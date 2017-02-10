@@ -17,13 +17,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/developer related resources. DOCUMENT_HERE 
+ * Use the Developer resource to view and update information and files related to application packages.
  * </summary>
  */
 public class ApplicationClient {
 	
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * Returns a collection of package names for the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.PackageNamesCollection> mozuClient=GetAppPackageNamesClient( applicationKey);
 	 * client.setBaseAddress(url);
@@ -40,7 +40,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetAppPackageNames description DOCUMENT_HERE 
+	 * Returns a collection of package names for the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.PackageNamesCollection> mozuClient=GetAppPackageNamesClient( applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -65,7 +65,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * Retrieves the available versions for the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.ApplicationVersionsCollection> mozuClient=GetAppVersionsClient( nsAndAppId);
 	 * client.setBaseAddress(url);
@@ -82,7 +82,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetAppVersions description DOCUMENT_HERE 
+	 * Retrieves the available versions for the application specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.ApplicationVersionsCollection> mozuClient=GetAppVersionsClient( nsAndAppId,  responseFields);
 	 * client.setBaseAddress(url);
@@ -107,7 +107,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * Retrieves the metadata for a file in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=GetPackageFileMetadataClient( applicationKey,  filepath);
 	 * client.setBaseAddress(url);
@@ -125,7 +125,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetPackageFileMetadata description DOCUMENT_HERE 
+	 * Retrieves the metadata for a file in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=GetPackageFileMetadataClient( applicationKey,  filepath,  responseFields);
 	 * client.setBaseAddress(url);
@@ -151,7 +151,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * Retrieves the metadata for a folder in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> mozuClient=GetPackageMetadataClient( applicationKey);
 	 * client.setBaseAddress(url);
@@ -168,7 +168,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Get GetPackageMetadata description DOCUMENT_HERE 
+	 * Retrieves the metadata for a folder in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FolderMetadata> mozuClient=GetPackageMetadataClient( applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -193,7 +193,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * Insert or update the specified file into the specified application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=UpsertPackageFileClient( stream,  applicationKey,  filepath,  contentType);
 	 * client.setBaseAddress(url);
@@ -213,7 +213,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Post UpsertPackageFile description DOCUMENT_HERE 
+	 * Insert or update the specified file into the specified application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=UpsertPackageFileClient( stream,  applicationKey,  filepath,  lastModifiedTime,  responseFields,  contentType);
 	 * client.setBaseAddress(url);
@@ -245,7 +245,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * Renames a file in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=RenamePackageFileClient( renameInfo,  applicationKey);
 	 * client.setBaseAddress(url);
@@ -264,7 +264,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Post RenamePackageFile description DOCUMENT_HERE 
+	 * Renames a file in an application package.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.appdev.FileMetadata> mozuClient=RenamePackageFileClient( renameInfo,  applicationKey,  responseFields);
 	 * client.setBaseAddress(url);
@@ -292,7 +292,7 @@ public class ApplicationClient {
 	}
 
 	/**
-	 * platform-developer Delete DeletePackageFile description DOCUMENT_HERE 
+	 * Deletes the specified file from the specified application package.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeletePackageFileClient( applicationKey,  filepath);
 	 * client.setBaseAddress(url);

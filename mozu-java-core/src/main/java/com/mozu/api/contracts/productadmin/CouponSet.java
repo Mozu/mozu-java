@@ -23,7 +23,7 @@ public class CouponSet implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ReadOnly sum of all redemptions for this coupon. Use "counts" response group.
+	 * The total number of discounts assigned to or associated with this coupon set. When you perform a GetCouponSet or GetCouponSets operation, set the includeCounts operation parameter to true to view this field. This field is read only.
 	 */
 	protected  Integer assignedDiscountCount;
 
@@ -36,7 +36,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Signifies that the coupon has not been exported and can be updated ReadOnly
+	 * Specifies whether the coupon set can be deleted. You cannot delete a coupon set if any of the coupons within the coupon set have been redeemed. This value is read only.
 	 */
 	protected  Boolean canBeDeleted;
 
@@ -49,7 +49,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Count of associated couponCodes. Must use "counts" response group to get this value ReadOnly
+	 * The total number of coupon codes within the coupon set. When you perform a GetCouponSet or GetCouponSets operation, set the includeCounts operation parameter to true to view this field.  This field is read only.
 	 */
 	protected  Integer couponCodeCount;
 
@@ -62,7 +62,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Determines if the coupon is a persisted list of codes (static) or a list based on generated specification (dynamic).
+	 * Determines whether the coupon set is a manual coupon set or a generated coupon set.Valid values for this field are: "Generated" and "Manual".
 	 */
 	protected  String couponCodeType;
 
@@ -75,7 +75,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Unique tenant supplied identifier. Used as the prefix for generated sets. Required System generated if left null.
+	 * The unique identifier of the coupon set. This value is also used as the coupon code prefix in generated coupon sets. If you specify a value, it must be unique to the catalog.  If you leave this field empty or null,  generates one. Use the GetUniqueCouponSetCode operation to retrieve a unique, random four character code.This value has a maximum length of 32. This value is required.
 	 */
 	protected  String couponSetCode;
 
@@ -88,7 +88,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Date and time that the coupon codes becomes expired
+	 * The date and time in UTC format that the coupon set and the coupon codes in the coupon set expire.
 	 */
 	protected  DateTime endDate;
 
@@ -101,7 +101,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  Integer id;
 
@@ -114,7 +114,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Maximum number of times any code can de used. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
+	 * The maximum number of times any coupon code in the coupon set can be used. This value must be either null, greater than or equal to 1, or -1. A value of -1 indicates unlimited.If you leave this value null,  defaults this value to 1 when you create the coupon set.
 	 */
 	protected  Integer maxRedemptionsPerCouponCode;
 
@@ -127,7 +127,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Maximum number of times any single user can redeem any code. Must be null, &gt;=1 or -1. Defaults to 1 on creation if null. -1 indicates unlimited.
+	 * The maximum number of times any single shopper can redeem any coupon code in the coupon set. This value must be either null, greater than or equal to 1, or -1. A value of -1 indicates unlimited.If you leave this value null,  defaults this value to 1 when you create the coupon set.
 	 */
 	protected  Integer maxRedemptionsPerUser;
 
@@ -140,7 +140,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -153,7 +153,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * ReadOnly count of all redemptions for this coupon set.
+	 * The total number of all redeemed coupons within the coupon set. When you perform a GetCouponSet or GetCouponSets operation, set the includeCounts operation parameter to true to view this field.This field is read only.
 	 */
 	protected  Integer redemptionCount;
 
@@ -166,7 +166,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Sets the number of codes to generate for dynamic coupons Required when CouponCodeType is "Dynamic"
+	 * The number of coupon codes within the coupon set.This value is required when couponCodeType is "Generated".
 	 */
 	protected  Integer setSize;
 
@@ -192,7 +192,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
 	 */
 	protected  String status;
 
@@ -205,7 +205,7 @@ public class CouponSet implements Serializable
 	}
 
 	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
+	 * Basic audit info about the object, including date, time, and user account. This data may be captured when creating, updating, and removing data.
 	 */
 	protected  AuditInfo auditInfo;
 

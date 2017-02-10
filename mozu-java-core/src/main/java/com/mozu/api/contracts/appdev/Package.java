@@ -56,7 +56,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
+	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
 	 */
 	protected  String appId;
 
@@ -211,6 +211,9 @@ public class Package implements Serializable
 		this.applicationTypeName = applicationTypeName;
 	}
 
+	/**
+	 * The date and time in UTC format when the application was updated most recently.
+	 */
 	protected  DateTime applicationUpdateDate;
 
 	public DateTime getApplicationUpdateDate() {
@@ -287,7 +290,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  Integer id;
 
@@ -378,7 +381,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
 	 */
 	protected  String namespace;
 
@@ -559,6 +562,9 @@ public class Package implements Serializable
 		this.updateAvailable = updateAvailable;
 	}
 
+	/**
+	 * The date and time in UTC format the object was updated most recently.
+	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -583,7 +589,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * This only applies for themes that inherit from another theme. It shows the name of the most current update available.
+	 * updateParentThemeName ApiType DOCUMENT_HERE 
 	 */
 	protected  String updateParentThemeName;
 
@@ -596,7 +602,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * This only applies for themes that inherit from another theme. It shows the version of the most current update available.
+	 * updateParentThemeVersion ApiType DOCUMENT_HERE 
 	 */
 	protected  String updateParentThemeVersion;
 

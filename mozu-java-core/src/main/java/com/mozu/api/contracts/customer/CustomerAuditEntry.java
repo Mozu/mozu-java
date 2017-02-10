@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.Customer.Contracts.CustomerAuditEntry ApiType DOCUMENT_HERE 
+ *	A list of audit details associated with a specific customer account.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAuditEntry implements Serializable
@@ -48,7 +48,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * Id of this entry
+	 * The unique identifier of the audit entry associated with the customer account.
 	 */
 	protected  Integer customerAuditEntryId;
 
@@ -74,7 +74,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * Date of the Entry
+	 * The date the audit entries was created.
 	 */
 	protected  DateTime entryDate;
 
@@ -87,7 +87,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * User ID associated with this Entry
+	 * The unique identifier of the user who created the audit entry.
 	 */
 	protected  String entryUser;
 
@@ -100,7 +100,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * Path of the field value being changed (e.g. /Customer/Contacts/1/FirstName)
+	 * The path of the field value that was changed, for example 
 	 */
 	protected  String fieldPath;
 
@@ -113,7 +113,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * New Value after this event
+	 * The field's new value after the audit entry event.
 	 */
 	protected  String newValue;
 
@@ -126,7 +126,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * Original value before this event
+	 * The field's original value before the audit entry event.
 	 */
 	protected  String oldValue;
 
@@ -139,7 +139,7 @@ public class CustomerAuditEntry implements Serializable
 	}
 
 	/**
-	 * Site associated wit this entry
+	 * The site identifier associated with this audit entry.
 	 */
 	protected  String site;
 

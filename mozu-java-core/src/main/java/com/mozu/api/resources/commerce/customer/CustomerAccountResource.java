@@ -183,7 +183,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Modify the password associated with a customer account.
+	 * Modifies the password associated with a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.changePassword( passwordInfo,  accountId);
@@ -199,13 +199,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Modify the password associated with a customer account.
+	 * Modifies the password associated with a customer account.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	customeraccount.changePassword( passwordInfo,  accountId,  unlockAccount);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param unlockAccount 
+	 * @param unlockAccount Specifies whether to unlock the specified customer account.
 	 * @param passwordInfo The information required to modify a shopper account password.
 	 * @return 
 	 * @see com.mozu.api.contracts.customer.PasswordInfo
@@ -391,12 +391,12 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Changes a collection of shopper passwords
+	 * Changes a collection of customer account passwords.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos);
 	 * </code></pre></p>
-	 * @param accountPasswordInfos Mozu.Customer.Contracts.AccountPasswordInfoCollection ApiType DOCUMENT_HERE 
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -407,13 +407,13 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * Changes a collection of shopper passwords
+	 * Changes a collection of customer account passwords.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	ChangePasswordResultCollection changePasswordResultCollection = customeraccount.changePasswords( accountPasswordInfos,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param accountPasswordInfos Mozu.Customer.Contracts.AccountPasswordInfoCollection ApiType DOCUMENT_HERE 
+	 * @param accountPasswordInfos The details of the changed customer account passwords.
 	 * @return com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.ChangePasswordResultCollection
 	 * @see com.mozu.api.contracts.customer.AccountPasswordInfoCollection
@@ -448,7 +448,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByEmailAddress( emailAddress,  customerSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -484,7 +484,7 @@ public class CustomerAccountResource {
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	LoginState loginState = customeraccount.getLoginStateByUserName( userName,  customerSetCode,  responseFields);
 	 * </code></pre></p>
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @return com.mozu.api.contracts.customer.LoginState
@@ -500,7 +500,7 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
+	 * Retrieves a list of customer purchase order accounts according to according to any specified sort options.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts();
@@ -514,14 +514,14 @@ public class CustomerAccountResource {
 	}
 
 	/**
-	 * customer-accounts Post GetCustomersPurchaseOrderAccounts description DOCUMENT_HERE 
+	 * Retrieves a list of customer purchase order accounts according to according to any specified sort options.
 	 * <p><pre><code>
 	 *	CustomerAccount customeraccount = new CustomerAccount();
 	 *	CustomerPurchaseOrderAccountCollection customerPurchaseOrderAccountCollection = customeraccount.getCustomersPurchaseOrderAccounts( startIndex,  pageSize,  sortBy,  responseFields);
 	 * </code></pre></p>
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection
 	 * @see com.mozu.api.contracts.customer.CustomerPurchaseOrderAccountCollection

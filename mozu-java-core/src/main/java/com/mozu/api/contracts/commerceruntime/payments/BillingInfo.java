@@ -27,7 +27,7 @@ public class BillingInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Transaction Id from third party payment source like Visa Checkout, Amazon
+	 * Holds the transaction ID for an external payment type service.
 	 */
 	protected  String externalTransactionId;
 
@@ -66,7 +66,7 @@ public class BillingInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.CommerceRuntime.Contracts.Payments.BillingInfo paymentWorkflow ApiTypeMember DOCUMENT_HERE 
+	 * Identifies a specific workflow the payment goes through. This is used to define a workflow for external payment services.
 	 */
 	protected  String paymentWorkflow;
 
@@ -130,6 +130,9 @@ public class BillingInfo implements Serializable
 		this.card = card;
 	}
 
+	/**
+	 * Information about the check used in the billing information, if it exists.
+	 */
 	protected  CheckPayment check;
 
 	public CheckPayment getCheck() {
@@ -141,7 +144,7 @@ public class BillingInfo implements Serializable
 	}
 
 	/**
-	 * Custom data from payment providers
+	 * Custom data originated by the billing service.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
@@ -154,7 +157,7 @@ public class BillingInfo implements Serializable
 	}
 
 	/**
-	 * Purchase order payment information
+	 * The purchase order payment details.
 	 */
 	protected  PurchaseOrderPayment purchaseOrder;
 

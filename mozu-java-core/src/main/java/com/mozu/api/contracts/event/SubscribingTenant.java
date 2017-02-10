@@ -26,7 +26,7 @@ public class SubscribingTenant implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 

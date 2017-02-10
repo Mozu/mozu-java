@@ -13,26 +13,13 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.Content.Contracts.ActiveDateRange ApiType DOCUMENT_HERE 
+ *	Specifies a start date and end date for when associated object is on the live site, if  is set to .If  is set to  ignores this property.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The beginning of the active date range of this document
-	 */
-	protected  DateTime startDate;
-
-	public DateTime getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(DateTime startDate) {
-		this.startDate = startDate;
-	}
 
 	/**
 	 * The end of the active date range for this document
@@ -45,6 +32,19 @@ public class ActiveDateRange implements Serializable
 
 	public void setEndDate(DateTime endDate) {
 		this.endDate = endDate;
+	}
+
+	/**
+	 * The beginning of the active date range of this document
+	 */
+	protected  DateTime startDate;
+
+	public DateTime getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(DateTime startDate) {
+		this.startDate = startDate;
 	}
 
 

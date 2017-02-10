@@ -84,7 +84,7 @@ public class CustomerAccountUrl
 	/**
 	 * Get Resource Url for ChangePassword
 	 * @param accountId Unique identifier of the customer account.
-	 * @param unlockAccount 
+	 * @param unlockAccount Specifies whether to unlock the specified customer account.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl changePasswordUrl(Integer accountId, Boolean unlockAccount)
@@ -183,7 +183,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByEmailAddress
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param emailAddress The email address associated with the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -199,7 +199,7 @@ public class CustomerAccountUrl
 
 	/**
 	 * Get Resource Url for GetLoginStateByUserName
-	 * @param customerSetCode 
+	 * @param customerSetCode The unique idenfitier of the customer set.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param userName The user name associated with the customer account.
 	 * @return   String Resource Url
@@ -217,7 +217,7 @@ public class CustomerAccountUrl
 	 * Get Resource Url for GetCustomersPurchaseOrderAccounts
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return   String Resource Url
 	 */

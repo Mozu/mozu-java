@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * 
+ * Use the Storefront Tax resource to retrieve tax information from the storefront.
  * </summary>
  */
 public class OrderTaxContextResource {
@@ -35,7 +35,7 @@ public class OrderTaxContextResource {
 
 	
 	/**
-	 * 
+	 * Retrieves tax information applicable to the site.
 	 * <p><pre><code>
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	OrderTaxContext orderTaxContext = ordertaxcontext.estimateTaxes( taxableOrder);
@@ -51,12 +51,12 @@ public class OrderTaxContextResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves tax information applicable to the site.
 	 * <p><pre><code>
 	 *	OrderTaxContext ordertaxcontext = new OrderTaxContext();
 	 *	OrderTaxContext orderTaxContext = ordertaxcontext.estimateTaxes( taxableOrder,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param taxableOrder 
 	 * @return com.mozu.api.contracts.pricingruntime.OrderTaxContext
 	 * @see com.mozu.api.contracts.pricingruntime.OrderTaxContext

@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Allows you to temporarily hold a product from inventory while a shopper is filling out payment information. You create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
+ * The Soft Allocations resource allows you to temporarily hold a product from inventory while a shopper is filling out payment information. You create a product reservation when a shopper proceeds to check out and then release the reservation when the order process is complete.
  * </summary>
  */
 public class SoftAllocationClient {
@@ -47,10 +47,10 @@ public class SoftAllocationClient {
 	 * client.executeRequest();
 	 * SoftAllocationCollection softAllocationCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.SoftAllocationCollection>
@@ -113,7 +113,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Creates a new product reservation for a product. This places a hold on the product inventory for the quantity specified during the ordering process.
+	 * Creates a new soft allocation for a product. This places a hold on the product inventory for the quantity specified during the ordering process.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=AddSoftAllocationsClient( softAllocationsIn);
 	 * client.setBaseAddress(url);
@@ -121,7 +121,7 @@ public class SoftAllocationClient {
 	 * SoftAllocation softAllocation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationsIn Mozu.ProductAdmin.Contracts.SoftAllocation ApiType DOCUMENT_HERE 
+	 * @param softAllocationsIn The details of the new soft allocation.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.SoftAllocation>>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -140,7 +140,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Converts a set of existing softAllocations into productReservations
+	 * Converts a set of existing soft product allocations into product reservations.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.ProductReservation>> mozuClient=ConvertToProductReservationClient( softAllocations);
 	 * client.setBaseAddress(url);
@@ -148,7 +148,7 @@ public class SoftAllocationClient {
 	 * ProductReservation productReservation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations Mozu.ProductAdmin.Contracts.SoftAllocation ApiType DOCUMENT_HERE 
+	 * @param softAllocations The details of the soft allocation which you want to convert into product reservations.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.ProductReservation>>
 	 * @see com.mozu.api.contracts.productadmin.ProductReservation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -167,7 +167,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Updates a set of softAllocations expiration time in a non trassactional batch
+	 * Updates the expiration time for a set of soft allocations in a non-transactional batch.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=RenewSoftAllocationsClient( softAllocationRenew);
 	 * client.setBaseAddress(url);
@@ -175,7 +175,7 @@ public class SoftAllocationClient {
 	 * SoftAllocation softAllocation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocationRenew Mozu.ProductAdmin.Contracts.SoftAllocationRenew ApiType DOCUMENT_HERE 
+	 * @param softAllocationRenew The details of the soft allocation that you want to renew.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.SoftAllocation>>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocationRenew
@@ -194,7 +194,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Updates a soft allocationt. This updates a hold on the product inventory for the quantity specified during the ordering process.
+	 * Updates a soft allocation. This updates a hold on the product inventory for the quantity specified during the ordering process.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.productadmin.SoftAllocation>> mozuClient=UpdateSoftAllocationsClient( softAllocations);
 	 * client.setBaseAddress(url);
@@ -202,7 +202,7 @@ public class SoftAllocationClient {
 	 * SoftAllocation softAllocation = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param softAllocations Mozu.ProductAdmin.Contracts.SoftAllocation ApiType DOCUMENT_HERE 
+	 * @param softAllocations The details of the updated soft allocations.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.productadmin.SoftAllocation>>
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
 	 * @see com.mozu.api.contracts.productadmin.SoftAllocation
@@ -221,7 +221,7 @@ public class SoftAllocationClient {
 	}
 
 	/**
-	 * Deletes a soft allocation. You might delete a allocation when an order or cart is not processed to return the product quantity back to inventory.
+	 * Deletes a soft allocation. You might delete a soft allocation when an order or cart is not processed in order to return the product quantity back to inventory.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteSoftAllocationClient( softAllocationId);
 	 * client.setBaseAddress(url);

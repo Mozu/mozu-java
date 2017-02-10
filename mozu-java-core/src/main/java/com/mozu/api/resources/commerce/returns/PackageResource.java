@@ -54,17 +54,17 @@ public class PackageResource {
 	 * Retrieves the package label image supplied by the carrier for a return replacement.
 	 * <p><pre><code>
 	 *	Package package = new Package();
-	 *	Stream stream = package.getPackageLabel( returnId,  packageId,  returnAsBase64);
+	 *	Stream stream = package.getPackageLabel( returnId,  packageId,  returnAsBase64Png);
 	 * </code></pre></p>
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnAsBase64 
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return Stream
 	 * @see Stream
 	 */
-	public java.io.InputStream getPackageLabel(String returnId, String packageId, Boolean returnAsBase64) throws Exception
+	public java.io.InputStream getPackageLabel(String returnId, String packageId, Boolean returnAsBase64Png) throws Exception
 	{
-		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageLabelClient( returnId,  packageId,  returnAsBase64);
+		MozuClient<java.io.InputStream> client = com.mozu.api.clients.commerce.returns.PackageClient.getPackageLabelClient( returnId,  packageId,  returnAsBase64Png);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();

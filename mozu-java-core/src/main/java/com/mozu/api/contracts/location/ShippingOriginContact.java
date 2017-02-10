@@ -22,45 +22,6 @@ public class ShippingOriginContact implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
-	 */
-	protected  String companyOrOrganization;
-
-	public String getCompanyOrOrganization() {
-		return this.companyOrOrganization;
-	}
-
-	public void setCompanyOrOrganization(String companyOrOrganization) {
-		this.companyOrOrganization = companyOrOrganization;
-	}
-
-	/**
-	 * The email address of the specified user or the email address associated with the specified entity.
-	 */
-	protected  String email;
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	/**
-	 * The full first name of a customer or contact name.
-	 */
-	protected  String firstName;
-
-	public String getFirstName() {
-		return this.firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	/**
 	 * The full last name or surname of a customer or contact name.
 	 */
 	protected  String lastNameOrSurname;
@@ -97,6 +58,45 @@ public class ShippingOriginContact implements Serializable
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	/**
+	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
+	 */
+	protected  String companyOrOrganization;
+
+	public String getCompanyOrOrganization() {
+		return this.companyOrOrganization;
+	}
+
+	public void setCompanyOrOrganization(String companyOrOrganization) {
+		this.companyOrOrganization = companyOrOrganization;
+	}
+
+	/**
+	 * The email address of the specified user or the email address associated with the specified entity.
+	 */
+	protected  String email;
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * The full first name of a customer or contact name.
+	 */
+	protected  String firstName;
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 

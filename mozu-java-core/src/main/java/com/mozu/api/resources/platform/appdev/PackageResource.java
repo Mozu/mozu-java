@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * platform/appdev/filebasedpackage related resources. DOCUMENT_HERE 
+ * This resource is not public.
  * </summary>
  */
 public class PackageResource {
@@ -39,7 +39,7 @@ public PackageResource(ApiContext apiContext)
 
 	
 	/**
-	 * appdev-filebasedpackage Get GetFile description DOCUMENT_HERE 
+	 * This operation is not public.
 	 * <p><pre><code>
 	 *	Package package = new Package();
 	 *	Stream stream = package.getFile( applicationKey,  fileName);

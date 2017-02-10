@@ -53,7 +53,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -441,7 +441,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {

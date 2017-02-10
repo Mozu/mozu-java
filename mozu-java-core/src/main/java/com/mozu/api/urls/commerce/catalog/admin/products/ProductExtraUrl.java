@@ -28,7 +28,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrices
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -45,7 +45,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for GetExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
@@ -80,7 +80,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for AddExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
@@ -112,7 +112,7 @@ public class ProductExtraUrl
 	/**
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrices
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
 	 */
@@ -129,7 +129,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for UpdateExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @return   String Resource Url
@@ -179,7 +179,7 @@ public class ProductExtraUrl
 	 * Get Resource Url for DeleteExtraValueLocalizedDeltaPrice
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

@@ -24,7 +24,7 @@ public class SoftAllocationRenew implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The UTC DateTime these allocations will expire
+	 * The updated date and time in UTC format that you wish the soft allocations to expire on.
 	 */
 	protected  DateTime expiresAt;
 
@@ -37,7 +37,7 @@ public class SoftAllocationRenew implements Serializable
 	}
 
 	/**
-	 * The allocation IDs to renew
+	 * A comma-separate list of unique identifiers of the soft allocations to renew.
 	 */
 	protected List<Integer> ids;
 	public List<Integer> getIds() {

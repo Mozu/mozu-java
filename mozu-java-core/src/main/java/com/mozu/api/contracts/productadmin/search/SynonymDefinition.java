@@ -24,7 +24,7 @@ public class SynonymDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.For search synonym definitions, refer to [Synonym Expansion Types](https://www.mozu.com/docs/Developer/api-guides/search-settings.htm#synonym_expansion_types) for more information about the key usage.
 	 */
 	protected  String key;
 
@@ -36,6 +36,9 @@ public class SynonymDefinition implements Serializable
 		this.key = key;
 	}
 
+	/**
+	 * The unique identifier of the synonym.
+	 */
 	protected  Integer synonymId;
 
 	public Integer getSynonymId() {
@@ -47,7 +50,7 @@ public class SynonymDefinition implements Serializable
 	}
 
 	/**
-	 * List of synonyms.  If no key is defined the matches are bidirectional
+	 * A list of comma seperated synonyms. If you do not specify a ,  uses a two way expansion. Refer to [Synonym Expansion Types](https://www.mozu.com/docs/Developer/api-guides/search-settings.htm#synonym_expansion_types) for more information.
 	 */
 	protected List<String> synonyms;
 	public List<String> getSynonyms() {

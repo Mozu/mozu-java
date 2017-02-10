@@ -41,7 +41,7 @@ public class ViewResource {
 	 *	DocumentCollection documentCollection = view.getViewDocuments( documentListName,  viewName);
 	 * </code></pre></p>
 	 * @param documentListName Name of content documentListName to delete
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */
@@ -61,9 +61,9 @@ public class ViewResource {
 	 * @param includeInactive Include inactive content.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName The name for a view. Views are used to render data in , such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
 	 * @return com.mozu.api.contracts.content.DocumentCollection
 	 * @see com.mozu.api.contracts.content.DocumentCollection
 	 */

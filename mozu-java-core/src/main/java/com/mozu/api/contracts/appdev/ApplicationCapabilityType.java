@@ -17,7 +17,7 @@ import com.mozu.api.contracts.appdev.ApplicationCapability;
 import com.mozu.api.contracts.appdev.ApplicationCapabilityDomain;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationCapabilityType ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationCapabilityType implements Serializable

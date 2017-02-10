@@ -18,7 +18,7 @@ import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.TaxContext;
 
 /**
- *	Properties of an order to calculate tax against. When a tax capability is enabled for a tenant, Mozu sends the `TaxableOrder `properties to the capability as read-only, system-supplied information.
+ *	Properties of an order to calculate tax against. When a tax capability is enabled for a tenant,  sends the `TaxableOrder `properties to the capability as read-only, system-supplied information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxableOrder implements Serializable
@@ -65,6 +65,9 @@ public class TaxableOrder implements Serializable
 		this.orderDate = orderDate;
 	}
 
+	/**
+	 * The order number that the customer sees on the storefront when they place the order.
+	 */
 	protected  Integer orderNumber;
 
 	public Integer getOrderNumber() {
@@ -127,6 +130,9 @@ public class TaxableOrder implements Serializable
 		this.taxRequestType = taxRequestType;
 	}
 
+	/**
+	 * Collection of attributes that may be paged list or a list, depending on the usage per object and API type.
+	 */
 	protected List<TaxAttribute> attributes;
 	public List<TaxAttribute> getAttributes() {
 		return this.attributes;
@@ -135,6 +141,9 @@ public class TaxableOrder implements Serializable
 		this.attributes = attributes;
 	}
 
+	/**
+	 * Custom data for a given vendor set within the commerce process.
+	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

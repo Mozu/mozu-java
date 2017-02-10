@@ -62,7 +62,7 @@ public class ShippingStatesResource {
 	 * </code></pre></p>
 	 * @param profilecode The unique, user-defined code of the profile with which the shipping state is associated.
 	 * @param dataViewMode DataViewMode
-	 * @param states Mozu.ShippingAdmin.Contracts.Profile.ShippingStates ApiType DOCUMENT_HERE 
+	 * @param states The updated details of the shipping states associated with the specified profilecode.
 	 * @return List<com.mozu.api.contracts.shippingadmin.profile.ShippingStates>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingStates

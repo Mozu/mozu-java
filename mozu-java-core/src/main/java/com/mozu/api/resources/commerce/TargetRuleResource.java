@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/targetrules related resources. DOCUMENT_HERE 
+ * Use the TargetRules resource to manage your target rules for products and zones. For example, you can set specific rules that dictate shipping options for specific products.
  * </summary>
  */
 public class TargetRuleResource {
@@ -35,7 +35,7 @@ public class TargetRuleResource {
 
 	
 	/**
-	 * Retrieves a list of TargetRules according to any specified filter criteria and sort options.
+	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRuleCollection targetRuleCollection = targetrule.getTargetRules();
@@ -50,15 +50,15 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Retrieves a list of TargetRules according to any specified filter criteria and sort options.
+	 * Retrieves a list of target rules and their details according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRuleCollection targetRuleCollection = targetrule.getTargetRules( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRuleCollection
@@ -74,7 +74,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Get Target Rule
+	 * Retrieves the details of the specified target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code);
@@ -90,7 +90,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * Get Target Rule
+	 * Retrieves the details of the specified target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.getTargetRule( code,  responseFields);
@@ -111,13 +111,13 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Post CreateTargetRule description DOCUMENT_HERE 
+	 * Creates a new target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+	 * @param targetRule The details of the new target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -128,14 +128,14 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Post CreateTargetRule description DOCUMENT_HERE 
+	 * Creates a new target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.createTargetRule( targetRule,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+	 * @param targetRule The details of the new target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -150,13 +150,13 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Post ValidateTargetRule description DOCUMENT_HERE 
+	 * Validates the details of a target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	targetrule.validateTargetRule( targetRule);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+	 * @param targetRule The details of the target rule you want to validate.
 	 * @return 
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 */
@@ -170,14 +170,14 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Put UpdateTargetRule description DOCUMENT_HERE 
+	 * Updates the details of the specified target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code);
 	 * </code></pre></p>
 	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+	 * @param targetRule The details of the updated target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -188,7 +188,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Put UpdateTargetRule description DOCUMENT_HERE 
+	 * Updates the details of the specified target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	TargetRule targetRule = targetrule.updateTargetRule( targetRule,  code,  responseFields);
@@ -196,7 +196,7 @@ public class TargetRuleResource {
 	 * @param code User-defined code that uniqely identifies the channel group.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param dataViewMode DataViewMode
-	 * @param targetRule Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
+	 * @param targetRule The details of the updated target rule.
 	 * @return com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
 	 * @see com.mozu.api.contracts.shippingadmin.TargetRule
@@ -211,7 +211,7 @@ public class TargetRuleResource {
 	}
 
 	/**
-	 * commerce-targetrules Delete DeleteTargetRule description DOCUMENT_HERE 
+	 * Deletes the specified target rule.
 	 * <p><pre><code>
 	 *	TargetRule targetrule = new TargetRule();
 	 *	targetrule.deleteTargetRule( code);

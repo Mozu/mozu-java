@@ -106,7 +106,7 @@ public class Facet implements Serializable
 	}
 
 	/**
-	 * Determines how the facet values will be sorted in the store. Must be a valid value for DataType defined in FacetValueSortTypeConst. Allowable values are: CountAscending, CountDescending, ValuesAscending, ValuesDescending. The default if no value is specified will be CountDescending.
+	 * Determines how the facet values will be sorted in the store. Must be a valid value for DataType defined in FacetValueSortTypeConst. Allowable values are:* * * * * * The default is .
 	 */
 	protected  String valueSortType;
 

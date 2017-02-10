@@ -38,7 +38,7 @@ public class Product implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogEndDate ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC when the product is no longer active in the catalog.
 	 */
 	protected  DateTime catalogEndDate;
 
@@ -51,7 +51,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product catalogStartDate ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC format when the product is active in the catalog.
 	 */
 	protected  DateTime catalogStartDate;
 
@@ -77,7 +77,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product dateFirstAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 * The date and time in UTC format when the product first became available in the catalog. This field is used to calculate the number of days the product has been available in the catalog for a dynamic expression.
 	 */
 	protected  DateTime dateFirstAvailableInCatalog;
 
@@ -90,7 +90,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product daysAvailableInCatalog ApiTypeMember DOCUMENT_HERE 
+	 * The total number of days the product has been available in the catalog. This field is related to the DaysAvailableInCatalog field in a dynamic expression.
 	 */
 	protected  Integer daysAvailableInCatalog;
 
@@ -103,7 +103,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -127,7 +127,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 
@@ -229,7 +229,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * The product type template associated with the product on the storefront.
+	 * A product type is like a product template.
 	 */
 	protected  String productType;
 
@@ -242,7 +242,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product productTypeId ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the product type of the product.
 	 */
 	protected  Integer productTypeId;
 
@@ -304,6 +304,9 @@ public class Product implements Serializable
 		this.upCs = upCs;
 	}
 
+	/**
+	 * The date and time in UTC format the object was updated most recently.
+	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -315,7 +318,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.Product validPriceLists ApiTypeMember DOCUMENT_HERE 
+	 * A list of price lists for which the product is valid.
 	 */
 	protected List<String> validPriceLists;
 	public List<String> getValidPriceLists() {
@@ -461,7 +464,7 @@ public class Product implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
 	 */
 	protected List<ProductProperty> properties;
 	public List<ProductProperty> getProperties() {
@@ -495,6 +498,9 @@ public class Product implements Serializable
 		this.variations = variations;
 	}
 
+	/**
+	 * The details of any volume price bands associated with the product.Refer to [Volume Pricing](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing) for more information.
+	 */
 	protected List<ProductVolumePrice> volumePriceBands;
 	public List<ProductVolumePrice> getVolumePriceBands() {
 		return this.volumePriceBands;
@@ -503,6 +509,9 @@ public class Product implements Serializable
 		this.volumePriceBands = volumePriceBands;
 	}
 
+	/**
+	 * The details of the volume price range associated with the product. Volume price ranges consist of a lower price and an upper price, and either lower or upper prices can be affected by discounts.You can display the volume price range on product listing pages, such as category and search result pages, and product detail pages.Refer to [Volume Pricing Storefront Behavior](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing_storefront_behavior) for more information.
+	 */
 	protected  ProductPriceRange volumePriceRange;
 
 	public ProductPriceRange getVolumePriceRange() {

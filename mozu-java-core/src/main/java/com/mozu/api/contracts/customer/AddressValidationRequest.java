@@ -23,7 +23,7 @@ public class AddressValidationRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
+	 * Address information to supply for a contact.
 	 */
 	protected  Address address;
 

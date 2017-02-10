@@ -103,7 +103,7 @@ public class BundledProduct implements Serializable
 	}
 
 	/**
-	 * The product type template associated with the product on the storefront.
+	 * A product type is like a product template.
 	 */
 	protected  String productType;
 

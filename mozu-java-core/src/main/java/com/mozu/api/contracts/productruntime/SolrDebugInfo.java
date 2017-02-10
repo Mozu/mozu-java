@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.ProductRuntime.Contracts.SolrDebugInfo ApiType DOCUMENT_HERE 
+ *	A container of debugging information from Solr.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SolrDebugInfo implements Serializable
@@ -24,7 +24,7 @@ public class SolrDebugInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo blockedProductCodes ApiTypeMember DOCUMENT_HERE 
+	 * A list of products that have been blocked in Solr by search tuning rules.
 	 */
 	protected List<String> blockedProductCodes;
 	public List<String> getBlockedProductCodes() {
@@ -35,7 +35,7 @@ public class SolrDebugInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostedProductCodes ApiTypeMember DOCUMENT_HERE 
+	 * A list of products that have been boosted in Solr by search tuning rules.
 	 */
 	protected List<String> boostedProductCodes;
 	public List<String> getBoostedProductCodes() {
@@ -46,7 +46,7 @@ public class SolrDebugInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostFunctions ApiTypeMember DOCUMENT_HERE 
+	 * A list of boost functions sent to Solr by search tuning rules.
 	 */
 	protected List<String> boostFunctions;
 	public List<String> getBoostFunctions() {
@@ -57,7 +57,7 @@ public class SolrDebugInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo boostQueries ApiTypeMember DOCUMENT_HERE 
+	 * A list of boost queries sent to Solr by search tuning rules.
 	 */
 	protected List<String> boostQueries;
 	public List<String> getBoostQueries() {
@@ -68,7 +68,7 @@ public class SolrDebugInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.SolrDebugInfo searchTuningRuleCode ApiTypeMember DOCUMENT_HERE 
+	 * A list of search tuning rule codes sent to Solr.
 	 */
 	protected  String searchTuningRuleCode;
 

@@ -41,7 +41,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Fixed weight of the product with this variation.
+	 * If the product is in explicit pricing mode, this is the fixed weight of the variation.
 	 */
 	protected  Double fixedWeight;
 
@@ -54,7 +54,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -65,7 +65,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 
@@ -143,7 +143,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * The difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".
+	 * If the product is in relative pricing mode, this is the difference between associated prices for a product, variation option, or extra. The difference is calculated by subtracting the base price from the associated price with this product, option, and/or extra. For example, if a product with a defined monogram extra costs an additional $10, the `deltaPrice `value is "10". Between options, a price for a medium may be $10 and a large $12 giving a `deltaPrice `value of "2".Refer to [Product Variant Pricing and Weight](../../../guides/catalog/products.htm#product_variant_pricing_and_weight) in the Products guides topic for more information.
 	 */
 	protected  ProductVariationDeltaPrice deltaPrice;
 
@@ -156,7 +156,7 @@ public class ProductVariation implements Serializable
 	}
 
 	/**
-	 * Price of the variation using fixed price
+	 * If the product is in Explicit pricing mode, this is the price of the variation.Refer to [Product Variant Pricing and Weight](../../../guides/catalog/products.htm#product_variant_pricing_and_weight) in the Products guides topic for more information.
 	 */
 	protected  ProductVariationFixedPrice fixedPrice;
 

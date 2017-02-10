@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Carrier Configuration for managing credentials and some settings for the various carriers installed with the default mozu application
+ * Use the Carriers resource to configure and manage your supported shipping carrier configurations.
  * </summary>
  */
 public class CarrierConfigurationResource {
@@ -35,7 +35,7 @@ public class CarrierConfigurationResource {
 
 	
 	/**
-	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
+	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations();
@@ -49,15 +49,15 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Retrieves a list of Carrier Configurations according to any specified filter criteria and sort options.
+	 * Retrieves a list of carrier configurations and their details according to any specified facets, filter criteria, and sort options.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfigurationCollection carrierConfigurationCollection = carrierconfiguration.getConfigurations( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
 	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
+	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
 	 * @return com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
 	 * @see com.mozu.api.contracts.shippingadmin.CarrierConfigurationCollection
@@ -72,7 +72,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Get Carrier Configuration (for this particular site)
+	 * Retrieves the details of the specified carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId);
@@ -87,7 +87,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Get Carrier Configuration (for this particular site)
+	 * Retrieves the details of the specified carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.getConfiguration( carrierId,  responseFields);
@@ -107,7 +107,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Create Carrier Configuration
+	 * Creates a new carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId);
@@ -124,7 +124,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Create Carrier Configuration
+	 * Creates a new carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.createConfiguration( carrierConfiguration,  carrierId,  responseFields);
@@ -146,7 +146,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Update an existing Carrier Configuration
+	 * Updates the details of the specified carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId);
@@ -163,7 +163,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Update an existing Carrier Configuration
+	 * Updates the details of the specified carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	CarrierConfiguration carrierConfiguration = carrierconfiguration.updateConfiguration( carrierConfiguration,  carrierId,  responseFields);
@@ -185,7 +185,7 @@ public class CarrierConfigurationResource {
 	}
 
 	/**
-	 * Delete an existing Carrier Configuration
+	 * Deletes the specified carrier configuration.
 	 * <p><pre><code>
 	 *	CarrierConfiguration carrierconfiguration = new CarrierConfiguration();
 	 *	carrierconfiguration.deleteConfiguration( carrierId);

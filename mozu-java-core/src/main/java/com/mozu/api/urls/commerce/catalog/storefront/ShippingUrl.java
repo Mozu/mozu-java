@@ -15,12 +15,14 @@ public class ShippingUrl
 
 	/**
 	 * Get Resource Url for GetRates
+	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getRatesUrl(String responseFields)
+	public static MozuUrl getRatesUrl(Boolean includeRawResponse, String responseFields)
 	{
 		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-rates?responseFields={responseFields}");
+		formatter.formatUrl("includeRawResponse", includeRawResponse);
 		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

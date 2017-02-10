@@ -48,7 +48,7 @@ public class DocumentInstallation implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -61,7 +61,7 @@ public class DocumentInstallation implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * Collection of property attributes defined for the object. Properties are associated to all objects within , including documents, products, and product types.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode properties;
 

@@ -22,7 +22,7 @@ public class EmailTransactionSettings implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings backInStock ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean backInStock;
 
@@ -35,7 +35,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings giftCardCreated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean giftCardCreated;
 
@@ -48,7 +48,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings orderChanged ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean orderChanged;
 
@@ -61,7 +61,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings orderFulfillmentDetailsChanged ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean orderFulfillmentDetailsChanged;
 
@@ -74,7 +74,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings orderShipped ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean orderShipped;
 
@@ -87,7 +87,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings refundCreated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean refundCreated;
 
@@ -100,7 +100,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnAuthorized ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean returnAuthorized;
 
@@ -139,7 +139,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnCreated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean returnCreated;
 
@@ -152,7 +152,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnRejected ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean returnRejected;
 
@@ -165,7 +165,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings returnUpdated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean returnUpdated;
 
@@ -178,7 +178,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperLoginCreated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean shopperLoginCreated;
 
@@ -191,7 +191,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings shopperPasswordReset ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean shopperPasswordReset;
 
@@ -204,7 +204,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.EmailTransactionSettings storeCreditCreated ApiTypeMember DOCUMENT_HERE 
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean storeCreditCreated;
 
@@ -217,7 +217,7 @@ public class EmailTransactionSettings implements Serializable
 	}
 
 	/**
-	 * The corresponding topic is not currently used by Mozu.
+	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
 	 */
 	protected  Boolean storeCreditUpdated;
 

@@ -49,7 +49,7 @@ public class Property implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -62,7 +62,7 @@ public class Property implements Serializable
 	}
 
 	/**
-	 * The type of a property. These types are associated to properties for documents and document types.
+	 * Property type available for content. Property types are like templates that can be reused.
 	 */
 	protected  PropertyType propertyType;
 

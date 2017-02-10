@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.search.SynonymDefinition;
 
 /**
- *	Collection of synonym definitions used for determining search results.
+ *	A collection of synonym definitions.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SynonymDefinitionCollection implements Serializable

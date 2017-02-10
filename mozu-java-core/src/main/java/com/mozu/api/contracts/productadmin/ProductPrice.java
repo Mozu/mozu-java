@@ -87,7 +87,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -113,7 +113,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
+	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
 	 */
 	protected  Double salePrice;
 

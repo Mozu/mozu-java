@@ -26,7 +26,7 @@ public class Tenant implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The domain associated with the site and/or tenant.
+	 * Properties of the domain that the tenant is associated with such as the domain name, the zone string, audit information (system-supplied and read-only), assignment data, and whether or not the domain is primary or requires a SSL for authentication.
 	 */
 	protected  String domain;
 
@@ -65,7 +65,7 @@ public class Tenant implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 

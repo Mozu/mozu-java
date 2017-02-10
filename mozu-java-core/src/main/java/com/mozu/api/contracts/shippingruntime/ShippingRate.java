@@ -91,7 +91,7 @@ public class ShippingRate implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingRuntime.Contracts.ShippingRate data ApiTypeMember DOCUMENT_HERE 
+	 * Shipping rate data.
 	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 

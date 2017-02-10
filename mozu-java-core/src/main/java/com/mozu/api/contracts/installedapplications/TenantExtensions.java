@@ -26,7 +26,7 @@ public class TenantExtensions implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions defaultLogLevel ApiTypeMember DOCUMENT_HERE 
+	 * The priority level to assign to application logs. Possible values mirror Apache's log4net: "all", "debug", "info", "warn", "error", "fatal", and "off".
 	 */
 	protected  String defaultLogLevel;
 
@@ -39,7 +39,7 @@ public class TenantExtensions implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions actions ApiTypeMember DOCUMENT_HERE 
+	 * The list of actions configured for the site.
 	 */
 	protected List<CustomFunctionsForAction> actions;
 	public List<CustomFunctionsForAction> getActions() {
@@ -50,7 +50,7 @@ public class TenantExtensions implements Serializable
 	}
 
 	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions configurations ApiTypeMember DOCUMENT_HERE 
+	 * An array of settings that apply to all actions within the application.
 	 */
 	protected List<ExtensionConfiguration> configurations;
 	public List<ExtensionConfiguration> getConfigurations() {

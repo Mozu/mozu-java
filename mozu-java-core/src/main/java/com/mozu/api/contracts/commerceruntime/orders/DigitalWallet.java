@@ -22,7 +22,7 @@ public class DigitalWallet implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Cart ID Note: This property should only be set if the order is not created and user opted to create the order from cart using digital wallet.
+	 * ID of the cart being used to create the order.
 	 */
 	protected  String cartId;
 
@@ -35,7 +35,7 @@ public class DigitalWallet implements Serializable
 	}
 
 	/**
-	 * Digital wallet data. Note: Transform the Json data to a string.
+	 * Digital wallet data.
 	 */
 	protected  String digitalWalletData;
 

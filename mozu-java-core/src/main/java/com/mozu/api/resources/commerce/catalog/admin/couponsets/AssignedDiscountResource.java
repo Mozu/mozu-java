@@ -60,7 +60,7 @@ public class AssignedDiscountResource {
 	 *	assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
 	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
+	 * @param assignedDiscount The details of the discount assigned to the coupon set.
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */

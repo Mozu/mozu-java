@@ -38,7 +38,7 @@ public class ShippingStates implements Serializable
 	}
 
 	/**
-	 * Mozu.ShippingAdmin.Contracts.Profile.ShippingStates states ApiTypeMember DOCUMENT_HERE 
+	 * The states of the shipping profile.
 	 */
 	protected List<State> states;
 	public List<State> getStates() {

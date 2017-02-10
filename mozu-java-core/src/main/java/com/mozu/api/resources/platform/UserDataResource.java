@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
+ * Use the user data subresource to store user-level data required for a third-party application in the  database.
  * </summary>
  */
 public class UserDataResource {
@@ -35,7 +35,7 @@ public class UserDataResource {
 
 	
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery);
@@ -50,7 +50,7 @@ public class UserDataResource {
 	}
 
 	/**
-	 * Retrieves the value of a record in the Mozu database.
+	 * Retrieves the value of a record in the  database.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery,  responseFields);
@@ -70,7 +70,7 @@ public class UserDataResource {
 	}
 
 	/**
-	 * Creates a new record in the Mozu database based on the information supplied in the request.
+	 * Creates a new record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
 	 *	userdata.createDBValue( value,  dbEntryQuery);
@@ -90,7 +90,7 @@ public class UserDataResource {
 	}
 
 	/**
-	 * Updates a record in the Mozu database based on the information supplied in the request.
+	 * Updates a record in the  database based on the information supplied in the request.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
 	 *	userdata.updateDBValue( value,  dbEntryQuery);
@@ -110,7 +110,7 @@ public class UserDataResource {
 	}
 
 	/**
-	 * Removes a previously defined record in the Mozu database.
+	 * Removes a previously defined record in the  database.
 	 * <p><pre><code>
 	 *	UserData userdata = new UserData();
 	 *	userdata.deleteDBValue( dbEntryQuery);

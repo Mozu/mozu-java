@@ -22,7 +22,7 @@ public class AttributeVocabularyValueDisplayInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The identifier of the image in the Mozu CMS. Supply a value for either the CMS ID or Image URL parameter.
+	 * The identifier of the image in the  CMS. Supply a value for either the CMS ID or Image URL parameter.
 	 */
 	protected  String cmsId;
 

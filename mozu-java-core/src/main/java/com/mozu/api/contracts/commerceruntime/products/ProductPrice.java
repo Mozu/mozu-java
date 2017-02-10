@@ -35,7 +35,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -61,7 +61,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * Pricelist code for the product
+	 * If the product's price comes from a price list, this property is the code of the price list with which the product is associated.
 	 */
 	protected  String priceListCode;
 
@@ -74,7 +74,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * Pricelist entry mode of the product. Note: possible values are below 1. null : Product doesn't participate in pricelist 2. Bulk : Bulk volume price available(unit price vary based on quantity) 3. Simple:
+	 * The price list entry mode of the product. This property is for future funtionality and currently should only be .
 	 */
 	protected  String priceListEntryMode;
 
@@ -87,7 +87,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
+	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
 	 */
 	protected  Double salePrice;
 

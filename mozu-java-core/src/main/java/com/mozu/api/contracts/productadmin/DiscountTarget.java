@@ -41,7 +41,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Applies to Included categories Defaults to Any
+	 * The operator to use on the excludedCategories field. Valid values are: "All" and "Any".
 	 */
 	protected  String excludedCategoriesOperator;
 
@@ -93,7 +93,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * Applies to Included categories Defaults to Any
+	 * The operator of the includedCategories field.Valid values are: "All" and "Any".
 	 */
 	protected  String includedCategoriesOperator;
 
@@ -165,7 +165,7 @@ public class DiscountTarget implements Serializable
 	}
 
 	/**
-	 * List of  product codes that represent the products to which the discount can apply.
+	 * List of product codes that represent the products to which the discount can apply.
 	 */
 	protected List<TargetedProduct> products;
 	public List<TargetedProduct> getProducts() {

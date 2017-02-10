@@ -52,7 +52,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The number of facet results for a product search.
+	 * The total number of associated items.
 	 */
 	protected  Integer count;
 
@@ -65,7 +65,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
+	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If false, the category is not displayed.
 	 */
 	protected  Boolean isDisplayed;
 

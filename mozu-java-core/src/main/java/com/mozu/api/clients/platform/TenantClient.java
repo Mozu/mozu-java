@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the tenants resource to manage information about a Mozu tenant.
+ * Use the tenants resource to manage information about a  tenant.
  * </summary>
  */
 public class TenantClient {

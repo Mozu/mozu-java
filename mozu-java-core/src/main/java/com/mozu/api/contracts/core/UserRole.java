@@ -63,7 +63,7 @@ public class UserRole implements Serializable
 	}
 
 	/**
-	 * Properties of the developer account or Mozu tenant associated with the user role.
+	 * Properties of the developer account or  tenant associated with the user role.
 	 */
 	protected  UserScope assignedInScope;
 

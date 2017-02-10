@@ -68,7 +68,7 @@ public class ProductExtraResource {
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.getExtraValueLocalizedDeltaPrices( productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -90,7 +90,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -108,7 +108,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -167,7 +167,7 @@ public class ProductExtraResource {
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -186,7 +186,7 @@ public class ProductExtraResource {
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.addExtraValueLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  attributeFQN,  value,  responseFields);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -249,7 +249,7 @@ public class ProductExtraResource {
 	 *	ProductExtraValueDeltaPrice productExtraValueDeltaPrice = productextra.updateExtraValueLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  attributeFQN,  value);
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return List<com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice>
@@ -273,7 +273,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
 	 * @return com.mozu.api.contracts.productadmin.ProductExtraValueDeltaPrice
@@ -293,7 +293,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param value The value string to create.
 	 * @param localizedDeltaPrice The properties of the price difference between the product extra and the base product.
@@ -378,7 +378,7 @@ public class ProductExtraResource {
 	 * </code></pre></p>
 	 * @param attributeFQN Fully qualified name for an attribute.
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param value Use this field to include those fields which are not included by default.
 	 * @return 
 	 */

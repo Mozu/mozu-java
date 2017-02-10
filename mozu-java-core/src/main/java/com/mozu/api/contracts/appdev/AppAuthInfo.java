@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	The information required to authenticate third party applications against the Mozu API.
+ *	The information required to authenticate third party applications against the  API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppAuthInfo implements Serializable
@@ -35,7 +35,7 @@ public class AppAuthInfo implements Serializable
 	}
 
 	/**
-	 * System-supplied alphanumeric code used to authenticate applications. This string is only available for viewing in Mozu Dev Center.
+	 * System-supplied alphanumeric code used to authenticate applications. This string is only available for viewing in  Dev Center.
 	 */
 	protected  String sharedSecret;
 

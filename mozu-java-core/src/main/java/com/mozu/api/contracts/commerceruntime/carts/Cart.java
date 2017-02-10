@@ -147,6 +147,32 @@ public class Cart implements Serializable
 	}
 
 	/**
+	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts.
+	 */
+	protected  Double handlingAmount;
+
+	public Double getHandlingAmount() {
+		return this.handlingAmount;
+	}
+
+	public void setHandlingAmount(Double handlingAmount) {
+		this.handlingAmount = handlingAmount;
+	}
+
+	/**
+	 * handlingSubTotal ApiType DOCUMENT_HERE 
+	 */
+	protected  Double handlingSubTotal;
+
+	public Double getHandlingSubTotal() {
+		return this.handlingSubTotal;
+	}
+
+	public void setHandlingSubTotal(Double handlingSubTotal) {
+		this.handlingSubTotal = handlingSubTotal;
+	}
+
+	/**
 	 * Calculated total tax amount for handling costs if the cart/order is subject to sales tax. 
 	 */
 	protected  Double handlingTaxTotal;
@@ -160,7 +186,20 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * handlingTotal ApiType DOCUMENT_HERE 
+	 */
+	protected  Double handlingTotal;
+
+	public Double getHandlingTotal() {
+		return this.handlingTotal;
+	}
+
+	public void setHandlingTotal(Double handlingTotal) {
+		this.handlingTotal = handlingTotal;
+	}
+
+	/**
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  String id;
 
@@ -198,6 +237,9 @@ public class Cart implements Serializable
 		this.lastValidationDate = lastValidationDate;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level manual adjustments.
+	 */
 	protected  Double lineItemSubtotalWithOrderAdjustments;
 
 	public Double getLineItemSubtotalWithOrderAdjustments() {
@@ -221,6 +263,9 @@ public class Cart implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
+	/**
+	 * The total shipping amount for the cart before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -388,7 +433,7 @@ public class Cart implements Serializable
 	}
 
 	/**
-	 * Mozu.CommerceRuntime.Contracts.Carts.Cart cartMessage ApiTypeMember DOCUMENT_HERE 
+	 * An array of message details associated with the cart.
 	 */
 	protected  CartMessage cartMessage;
 
@@ -400,6 +445,9 @@ public class Cart implements Serializable
 		this.cartMessage = cartMessage;
 	}
 
+	/**
+	 * A list of cart messages associated with the cart.
+	 */
 	protected List<CartMessage> cartMessages;
 	public List<CartMessage> getCartMessages() {
 		return this.cartMessages;

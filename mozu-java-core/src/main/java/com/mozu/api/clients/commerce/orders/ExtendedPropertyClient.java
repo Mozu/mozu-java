@@ -65,7 +65,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Create an extended property for the order.
+	 * Creates an extended property for the order.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId);
 	 * client.setBaseAddress(url);
@@ -73,7 +73,7 @@ public class ExtendedPropertyClient {
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperties The details of the extended property.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -84,7 +84,7 @@ public class ExtendedPropertyClient {
 	}
 
 	/**
-	 * Create an extended property for the order.
+	 * Creates an extended property for the order.
 	 * <p><pre><code>
 	 * MozuClient<List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>> mozuClient=AddExtendedPropertiesClient( extendedProperties,  orderId,  updateMode,  version);
 	 * client.setBaseAddress(url);
@@ -94,7 +94,7 @@ public class ExtendedPropertyClient {
 	 * @param orderId Unique identifier of the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperties The details of the extended property.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -122,7 +122,7 @@ public class ExtendedPropertyClient {
 	 * </code></pre></p>
 	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -147,7 +147,7 @@ public class ExtendedPropertyClient {
 	 * @param upsert Inserts and updates an extended property.
         
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperty Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperty The details of the updated extended property.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -174,7 +174,7 @@ public class ExtendedPropertyClient {
 	 * ExtendedProperty extendedProperty = client.Result();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -197,7 +197,7 @@ public class ExtendedPropertyClient {
 	 * @param upsert Inserts and updates the extended property.
         
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param extendedProperties Mozu.CommerceRuntime.Contracts.Commerce.ExtendedProperty ApiType DOCUMENT_HERE 
+	 * @param extendedProperties The details of the updated extended properties.
 	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty>>
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
 	 * @see com.mozu.api.contracts.commerceruntime.commerce.ExtendedProperty
@@ -222,7 +222,7 @@ public class ExtendedPropertyClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @return Mozu.Api.MozuClient 
 	 */
@@ -238,7 +238,7 @@ public class ExtendedPropertyClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param key 
+	 * @param key The extended property key.
 	 * @param orderId Unique identifier of the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
@@ -263,7 +263,7 @@ public class ExtendedPropertyClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param keys 
+	 * @param keys The extended property keys.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
@@ -282,7 +282,7 @@ public class ExtendedPropertyClient {
 	 * @param orderId Unique identifier of the order.
 	 * @param updateMode Specifies whether to update the original order, update the order in draft mode, or update the order in draft mode and then commit the changes to the original. Draft mode enables users to make incremental order changes before committing the changes to the original order. Valid values are "ApplyToOriginal," "ApplyToDraft," or "ApplyAndCommit."
 	 * @param version Determines whether or not to check versioning of items for concurrency purposes.
-	 * @param keys 
+	 * @param keys The extended property keys.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */

@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Storefront Products  resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
+ * Use the Storefront Products resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
  * </summary>
  */
 public class ProductResource {
@@ -62,11 +62,11 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	ProductCollection productCollection = product.getProducts( filter,  startIndex,  pageSize,  sortBy,  responseOptions,  cursorMark,  responseFields);
 	 * </code></pre></p>
-	 * @param cursorMark 
+	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param responseOptions 
+	 * @param responseOptions Options you can specify for the response. This parameter is null by default.You can primarily use this parameter to return volume price band information in product details, which you can then display on category pages and search results depanding on your theme configuration. To return volume price band information, set this parameter to .
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return com.mozu.api.contracts.productruntime.ProductCollection
@@ -138,7 +138,7 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 	 * </code></pre></p>
-	 * @param acceptVariantProductCode 
+	 * @param acceptVariantProductCode Specifies whether to accept a product variant's code as the .When you set this parameter to , you can pass in a product variant's code in the GetProduct call to retrieve the product variant details that are associated with the base product.
 	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param quantity The number of cart items in the shopper's active cart.
@@ -159,12 +159,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * Retrieves information about a single product given its product code for  to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -174,14 +174,14 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * Retrieves information about a single product given its product code for  to index in the search engine
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * </code></pre></p>
-	 * @param lastModifiedDate 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param productVersion 
+	 * @param lastModifiedDate The date when the product was last updated.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productVersion The product version.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -322,12 +322,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the product cost based on a list of product codes. The product cost is the amount the merchant pays for the product—it is not the price that the shopper sees on the storefront (which is usually higher).
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductCostCollection productCostCollection = product.getProductCosts( query);
 	 * </code></pre></p>
-	 * @param query 
+	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
@@ -338,13 +338,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * 
+	 * Retrieves the product cost based on a list of product codes. The product cost is the amount the merchant pays for the product—it is not the price that the shopper sees on the storefront (which is usually higher).
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	ProductCostCollection productCostCollection = product.getProductCosts( query,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields 
-	 * @param query 
+	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
 	 * @return com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery

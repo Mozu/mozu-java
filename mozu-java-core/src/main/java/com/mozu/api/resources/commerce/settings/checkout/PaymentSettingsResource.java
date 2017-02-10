@@ -88,7 +88,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Adds a third-party payment workflow to the site. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the Mozu platform.
+	 * Adds a third-party payment workflow to the site. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the  platform.
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.addThirdPartyPaymentWorkflow( definition);
@@ -107,7 +107,7 @@ public class PaymentSettingsResource {
 	}
 
 	/**
-	 * Deletes a third-party payment workflow. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the Mozu platform. 
+	 * Deletes a third-party payment workflow. A third-party payment workflow is a definition of a process by which a third-party payment provider (such as Amazon Payments or PayPal Express) interacts with the  platform. 
 	 * <p><pre><code>
 	 *	PaymentSettings paymentsettings = new PaymentSettings();
 	 *	paymentsettings.deleteThirdPartyPaymentWorkflow( fullyQualifiedName);

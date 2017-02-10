@@ -32,7 +32,7 @@ public class ConfiguredProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment  for the product or variation. The types include direct ship, in-store pickup, or both. 
+	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -181,6 +181,9 @@ public class ConfiguredProduct implements Serializable
 		this.purchasableState = purchasableState;
 	}
 
+	/**
+	 * The details of any volume price bands associated with the product.Refer to [Volume Pricing](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing) for more information.
+	 */
 	protected List<ProductVolumePrice> volumePriceBands;
 	public List<ProductVolumePrice> getVolumePriceBands() {
 		return this.volumePriceBands;
@@ -189,6 +192,9 @@ public class ConfiguredProduct implements Serializable
 		this.volumePriceBands = volumePriceBands;
 	}
 
+	/**
+	 * The details of the volume price range associated with the product. Volume price ranges consist of a lower price and an upper price, and either lower or upper prices can be affected by discounts.You can display the volume price range on product listing pages, such as category and search result pages, and product detail pages.Refer to [Volume Pricing Storefront Behavior](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing_storefront_behavior) for more information.
+	 */
 	protected  ProductPriceRange volumePriceRange;
 
 	public ProductPriceRange getVolumePriceRange() {

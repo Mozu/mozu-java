@@ -38,7 +38,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * Unique identifier of an app available in your Mozu tenant or within Mozu Dev Center. This ID is unique across all apps installed, initialized, and enabled in the Mozu Admin and those in development through the Dev Center Console.
+	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
 	 */
 	protected  String appId;
 
@@ -64,7 +64,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * Content type of the payload that will be delivered.  This is utilized in combination with the notification delivery type.  Example:  A HTTP Post (notification delivery type) is performed with a JSON representation of the event data (content type).
+	 * Content type of the payload that will be delivered. This is utilized in combination with the notification delivery type. Example: A HTTP Post (notification delivery type) is performed with a JSON representation of the event data (content type).
 	 */
 	protected  String contentType;
 
@@ -90,7 +90,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * The date time in UTC format set when the object was created. 
+	 * The date and time in UTC format set when the object was created.
 	 */
 	protected  DateTime createDate;
 
@@ -103,7 +103,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * The delivery endpoint that will receive notifications when events concerning the specified topics on the subscription occur.  The format of the endpoint may differ depending on the notification type.  For example, the endpoint may be a URL in some cases and an email address in others if multiple notification types are available.
+	 * The delivery endpoint that will receive notifications when events concerning the specified topics on the subscription occur. The format of the endpoint may differ depending on the notification type. For example, the endpoint may be a URL in some cases and an email address in others if multiple notification types are available.
 	 */
 	protected  String endpoint;
 
@@ -116,7 +116,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  String id;
 
@@ -129,7 +129,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or feature is active. This indicator is used for subscriptions (at the site or tenant level), customer accounts, products and variations.
+	 * Indicates if the object or feature is active.
 	 */
 	protected  Boolean isActive;
 
@@ -142,7 +142,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application.  If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
+	 * A boolean value that indicates if events should be delivered that resulted from an API call by the application. If true, any events that occur as a result of a direct API call by the same application will not be delivered. This can prevent an endless loop in certain scenarios.
 	 */
 	protected  Boolean noCallback;
 
@@ -155,7 +155,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * Notification delivery type which is a string representation of an enumeration of values.  Example: Http (this is case insensitive, so http may also be passed in)
+	 * Notification delivery type which is a string representation of an enumeration of values. Example: Http (this is case insensitive, so http may also be passed in)
 	 */
 	protected  String notificationDeliveryType;
 
@@ -192,7 +192,7 @@ public class Subscription implements Serializable
 	}
 
 	/**
-	 * The date and time the object was updated most recently. The date is in UTC format.
+	 * The date and time in UTC format the object was updated most recently.
 	 */
 	protected  DateTime updateDate;
 

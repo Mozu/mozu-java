@@ -28,6 +28,9 @@ public class CartItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The adjusted subtotal of the line item, including all manual adjustments, discounts, shipping charges and discounts, and duty or any other additional line item fees.
+	 */
 	protected  Double adjustedLineItemSubtotal;
 
 	public Double getAdjustedLineItemSubtotal() {
@@ -130,7 +133,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
 	 */
 	protected  String id;
 
@@ -220,6 +223,9 @@ public class CartItem implements Serializable
 		this.quantity = quantity;
 	}
 
+	/**
+	 * The total shipping amount for the line item before discounts and adjustments.
+	 */
 	protected  Double shippingAmountBeforeDiscountsAndAdjustments;
 
 	public Double getShippingAmountBeforeDiscountsAndAdjustments() {
@@ -295,6 +301,9 @@ public class CartItem implements Serializable
 		this.total = total;
 	}
 
+	/**
+	 * The total charge for the line item without any weighted order level shipping and handling charges.
+	 */
 	protected  Double totalWithoutWeightedShippingAndHandling;
 
 	public Double getTotalWithoutWeightedShippingAndHandling() {
@@ -305,6 +314,9 @@ public class CartItem implements Serializable
 		this.totalWithoutWeightedShippingAndHandling = totalWithoutWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total charge for the line item with all weighted order level shipping and handling charges.
+	 */
 	protected  Double totalWithWeightedShippingAndHandling;
 
 	public Double getTotalWithWeightedShippingAndHandling() {
@@ -315,6 +327,9 @@ public class CartItem implements Serializable
 		this.totalWithWeightedShippingAndHandling = totalWithWeightedShippingAndHandling;
 	}
 
+	/**
+	 * The total weighted order level manual adjustment amount.
+	 */
 	protected  Double weightedOrderAdjustment;
 
 	public Double getWeightedOrderAdjustment() {
@@ -325,6 +340,9 @@ public class CartItem implements Serializable
 		this.weightedOrderAdjustment = weightedOrderAdjustment;
 	}
 
+	/**
+	 * The total weighted order level discount amount.
+	 */
 	protected  Double weightedOrderDiscount;
 
 	public Double getWeightedOrderDiscount() {
@@ -335,6 +353,9 @@ public class CartItem implements Serializable
 		this.weightedOrderDiscount = weightedOrderDiscount;
 	}
 
+	/**
+	 * The total weighted order level duty charges.
+	 */
 	protected  Double weightedOrderDuty;
 
 	public Double getWeightedOrderDuty() {
@@ -345,6 +366,9 @@ public class CartItem implements Serializable
 		this.weightedOrderDuty = weightedOrderDuty;
 	}
 
+	/**
+	 * The amount to adjust the order handling fee.
+	 */
 	protected  Double weightedOrderHandlingAdjustment;
 
 	public Double getWeightedOrderHandlingAdjustment() {
@@ -355,6 +379,9 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingAdjustment = weightedOrderHandlingAdjustment;
 	}
 
+	/**
+	 * The total weighted order level handling fee amount.
+	 */
 	protected  Double weightedOrderHandlingFee;
 
 	public Double getWeightedOrderHandlingFee() {
@@ -365,6 +392,9 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFee = weightedOrderHandlingFee;
 	}
 
+	/**
+	 * The total weighted order handling fee discount amount.
+	 */
 	protected  Double weightedOrderHandlingFeeDiscount;
 
 	public Double getWeightedOrderHandlingFeeDiscount() {
@@ -375,6 +405,9 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFeeDiscount = weightedOrderHandlingFeeDiscount;
 	}
 
+	/**
+	 * The total weighted order level handling fee tax amount.
+	 */
 	protected  Double weightedOrderHandlingFeeTax;
 
 	public Double getWeightedOrderHandlingFeeTax() {
@@ -385,6 +418,9 @@ public class CartItem implements Serializable
 		this.weightedOrderHandlingFeeTax = weightedOrderHandlingFeeTax;
 	}
 
+	/**
+	 * The total weighted order level shipping charge.
+	 */
 	protected  Double weightedOrderShipping;
 
 	public Double getWeightedOrderShipping() {
@@ -395,6 +431,9 @@ public class CartItem implements Serializable
 		this.weightedOrderShipping = weightedOrderShipping;
 	}
 
+	/**
+	 * The total weighted order level shipping discount amount.
+	 */
 	protected  Double weightedOrderShippingDiscount;
 
 	public Double getWeightedOrderShippingDiscount() {
@@ -405,6 +444,9 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingDiscount = weightedOrderShippingDiscount;
 	}
 
+	/**
+	 * The total weighted order level shipping manual adjustment amount.
+	 */
 	protected  Double weightedOrderShippingManualAdjustment;
 
 	public Double getWeightedOrderShippingManualAdjustment() {
@@ -415,6 +457,9 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingManualAdjustment = weightedOrderShippingManualAdjustment;
 	}
 
+	/**
+	 * The total weighted order level shipping tax amount.
+	 */
 	protected  Double weightedOrderShippingTax;
 
 	public Double getWeightedOrderShippingTax() {
@@ -425,6 +470,9 @@ public class CartItem implements Serializable
 		this.weightedOrderShippingTax = weightedOrderShippingTax;
 	}
 
+	/**
+	 * The total weighted order level tax amount.
+	 */
 	protected  Double weightedOrderTax;
 
 	public Double getWeightedOrderTax() {

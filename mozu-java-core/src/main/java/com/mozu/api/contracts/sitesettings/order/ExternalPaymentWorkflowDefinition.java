@@ -64,7 +64,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 
@@ -77,7 +77,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	}
 
 	/**
-	 * If applicable, the registered namespace associated with objects, used to generate the fully qualified name. If no namespace is defined, the namespace associated with the tenant is automatically assigned.
+	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
 	 */
 	protected  String namespace;
 

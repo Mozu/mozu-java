@@ -17,7 +17,7 @@ import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderCustomField;
 import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderPaymentTerm;
 
 /**
- *	Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderPayment ApiType DOCUMENT_HERE 
+ *	The details of the purchase order payment.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPayment implements Serializable
@@ -26,7 +26,7 @@ public class PurchaseOrderPayment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Purchase order number
+	 * The purchase order number.
 	 */
 	protected  String purchaseOrderNumber;
 
@@ -39,7 +39,7 @@ public class PurchaseOrderPayment implements Serializable
 	}
 
 	/**
-	 * Memo/custom fields
+	 * Details of the custom text fields associated with the purchase order.Refer to [Custom Text Fields](https://www.mozu.com/docs/guides/orders/purchase-order.htm#custom_text_fields) in the Purchase Order guides topic for more information.
 	 */
 	protected List<PurchaseOrderCustomField> customFields;
 	public List<PurchaseOrderCustomField> getCustomFields() {
@@ -50,7 +50,7 @@ public class PurchaseOrderPayment implements Serializable
 	}
 
 	/**
-	 * Net term / Payment term
+	 * The details of the payment terms. The payment terms are made up of a  and a .Refer to [Payment Terms](https://www.mozu.com/docs/guides/orders/purchase-order.htm#payment_terms) in the Purchase Order guides topic for more information.
 	 */
 	protected  PurchaseOrderPaymentTerm paymentTerm;
 

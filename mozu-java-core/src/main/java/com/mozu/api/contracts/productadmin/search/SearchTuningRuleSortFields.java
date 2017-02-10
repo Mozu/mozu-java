@@ -24,7 +24,7 @@ public class SearchTuningRuleSortFields implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields inclusionExclusionType ApiTypeMember DOCUMENT_HERE 
+	 * Specifies whether you want the product properties in sortFields to be white listed or black listed. When you white list a product property, any search tuning rules that affect that product property will be in effect whenever a shopper sorts by that product property. When you black list a product product, any search tuning rules that affect that product property will never be in effect whenever a shopper sorts by that product property.Valid values are: "WhiteList" or "BlackList".For more information about search tuning rule sort fields, refer to [Search Tuning Rules](../../../../developer/api-guides/search-tuning-rules.htm).
 	 */
 	protected  String inclusionExclusionType;
 
@@ -37,7 +37,7 @@ public class SearchTuningRuleSortFields implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields sortFields ApiTypeMember DOCUMENT_HERE 
+	 * A list of product properties that you want to apply the search tuning rule sort fields to. For example, you can set this field to "popularity" in order to make all search tuning rules that affect product popularity to always be in effect whenever a shopper sorts by popularity.
 	 */
 	protected List<String> sortFields;
 	public List<String> getSortFields() {

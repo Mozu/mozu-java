@@ -48,7 +48,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
+	 * Keywords defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
 	 */
 	protected  String metaTagKeywords;
 
@@ -61,7 +61,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
+	 * Title defined for metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
 	 */
 	protected  String metaTagTitle;
 

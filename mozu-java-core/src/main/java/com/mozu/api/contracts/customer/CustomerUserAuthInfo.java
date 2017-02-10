@@ -22,7 +22,7 @@ public class CustomerUserAuthInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The saved password for the customer account. 
+	 * The write-only password for the customer account.
 	 */
 	protected  String password;
 

@@ -22,7 +22,7 @@ public class PriceListNode implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode parentPriceListId ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the id of the price list's parent within the ancestor/descendant hierarchy, if applicable.
 	 */
 	protected  Integer parentPriceListId;
 
@@ -35,7 +35,7 @@ public class PriceListNode implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListCode ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the code of the price list within the ancestor/descendant hierarchy, if applicable.
 	 */
 	protected  String priceListCode;
 
@@ -48,7 +48,7 @@ public class PriceListNode implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListId ApiTypeMember DOCUMENT_HERE 
+	 * Specifies the internal id of the price list within the ancestor/descendant hierarchy, if applicable.
 	 */
 	protected  Integer priceListId;
 
@@ -61,7 +61,7 @@ public class PriceListNode implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListLevel ApiTypeMember DOCUMENT_HERE 
+	 * Denotes the place of the ancestor/descendant within the hierarchy. A value of 1 is the closest ancestor/descendant to the current price list. For example an ancestor that has a value of 1 is the direct parent of the current price list.
 	 */
 	protected  Integer priceListLevel;
 

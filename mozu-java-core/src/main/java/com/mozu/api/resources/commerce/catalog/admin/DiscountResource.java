@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
+ * Use the Discounts resource to define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. You can create a coupon code that shoppers can use to redeem the discount.
  * </summary>
  */
 public class DiscountResource {
@@ -220,7 +220,7 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
+	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId);
@@ -237,7 +237,7 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
+	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId,  responseFields);
@@ -259,7 +259,7 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates one or more properties of a defined discount.
+	 * Updates one or more properties of the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId);
@@ -276,7 +276,7 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates one or more properties of a defined discount.
+	 * Updates one or more properties of the specified discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId,  responseFields);

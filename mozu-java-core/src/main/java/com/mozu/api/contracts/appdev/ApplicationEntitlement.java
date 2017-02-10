@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.appdev.ApplicationTransaction;
 
 /**
- *	Mozu.AppDev.Contracts.ApplicationEntitlement ApiType DOCUMENT_HERE 
+ *	This property is not exposed in documentation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationEntitlement implements Serializable

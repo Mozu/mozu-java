@@ -16,15 +16,15 @@ public class PackageUrl
 	/**
 	 * Get Resource Url for GetPackageLabel
 	 * @param packageId Unique identifier of the package for which to retrieve the label.
-	 * @param returnAsBase64 
+	 * @param returnAsBase64Png Specifies whether to return the RMA label image as Base64-encoded PNG image instead of as a byte array encoded in the original image format. The default is .
 	 * @param returnId Unique identifier of the return whose items you want to get.
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl getPackageLabelUrl(String packageId, Boolean returnAsBase64, String returnId)
+	public static MozuUrl getPackageLabelUrl(String packageId, Boolean returnAsBase64Png, String returnId)
 	{
-		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/packages/{packageId}/label?returnAsBase64={returnAsBase64}");
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/returns/{returnId}/packages/{packageId}/label?returnAsBase64Png={returnAsBase64Png}");
 		formatter.formatUrl("packageId", packageId);
-		formatter.formatUrl("returnAsBase64", returnAsBase64);
+		formatter.formatUrl("returnAsBase64Png", returnAsBase64Png);
 		formatter.formatUrl("returnId", returnId);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
 	}

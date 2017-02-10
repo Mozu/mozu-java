@@ -22,7 +22,7 @@ public class Discount implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier for the discount in the storefront.
+	 * The unique identifier of the discount.
 	 */
 	protected  Integer discountId;
 
@@ -61,7 +61,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The user supplied name that appears in . You can use this field for identification purposes.
 	 */
 	protected  String name;
 

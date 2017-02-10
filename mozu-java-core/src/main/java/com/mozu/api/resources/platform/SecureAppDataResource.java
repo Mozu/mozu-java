@@ -79,7 +79,7 @@ public class SecureAppDataResource {
 	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */
@@ -100,7 +100,7 @@ public class SecureAppDataResource {
 	 * </code></pre></p>
 	 * @param appKeyId 
 	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param value The value string to create.
 	 * @return 
 	 * @see JObject
 	 */

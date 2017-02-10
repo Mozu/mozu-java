@@ -61,7 +61,7 @@ public class ProductPublishingInfo implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.ProductPublishingInfo publishSetCode ApiTypeMember DOCUMENT_HERE 
+	 * The unique identifier of the publish set the pending product draft is assigned to. This field is not valid if the product is live.
 	 */
 	protected  String publishSetCode;
 

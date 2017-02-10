@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Mozu.SiteSettings.Order.Contracts.PurchaseOrderPaymentTerm ApiType DOCUMENT_HERE 
+ *	The details of the payment terms assocaited with the purchase order payment.Refer to [Payment Terms](https://www.mozu.com/docs/guides/orders/purchase-order.htm#payment_terms) in the Purchase Orders guides topic for more information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPaymentTerm implements Serializable
@@ -22,7 +22,7 @@ public class PurchaseOrderPaymentTerm implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * A unique code for purchase order payment term
+	 * The unique code for the payment term associated with the purchase order payment type.Refer to [Payment Terms](https://www.mozu.com/docs/guides/orders/purchase-order.htm#payment_terms) in the Purchase Orders guides topic for more information.
 	 */
 	protected  String code;
 
@@ -48,7 +48,7 @@ public class PurchaseOrderPaymentTerm implements Serializable
 	}
 
 	/**
-	 * Sequence Number
+	 * The order/sequence position in which  displays the payment term.
 	 */
 	protected  Integer sequenceNumber;
 

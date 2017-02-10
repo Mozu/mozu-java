@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Location resource to retrieve details about a location from a Mozu hosted storefront.
+ * Use the Location resource to retrieve details about a location from a  hosted storefront.
  * </summary>
  */
 public class LocationResource {

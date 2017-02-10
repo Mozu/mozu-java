@@ -22,7 +22,7 @@ public class PriceListEntryPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPrice ApiTypeMember DOCUMENT_HERE 
+	 * The product's list price if  is set to .
 	 */
 	protected  Double listPrice;
 
@@ -35,7 +35,7 @@ public class PriceListEntryPrice implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice listPriceMode ApiTypeMember DOCUMENT_HERE 
+	 * Specifies whether to use the product's default catalog list price, or to override the product's default catalog list price.This property has the following valid values:* * 
 	 */
 	protected  String listPriceMode;
 
@@ -48,7 +48,7 @@ public class PriceListEntryPrice implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice minQty ApiTypeMember DOCUMENT_HERE 
+	 * This property is for future price list entry functionality and currently should always be 1.
 	 */
 	protected  Integer minQty;
 
@@ -61,7 +61,7 @@ public class PriceListEntryPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
+	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
 	 */
 	protected  Double salePrice;
 
@@ -74,7 +74,7 @@ public class PriceListEntryPrice implements Serializable
 	}
 
 	/**
-	 * Mozu.ProductAdmin.Contracts.PriceListEntryPrice salePriceMode ApiTypeMember DOCUMENT_HERE 
+	 * Specifies whether to use the product's default catalog sale price, or to override the product's default catalog sale price.This property has the following valid values:* * 
 	 */
 	protected  String salePriceMode;
 

@@ -22,19 +22,6 @@ public class ReturnReason implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
-	protected  Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
-	/**
 	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
 	 */
 	protected  String reason;
@@ -45,6 +32,19 @@ public class ReturnReason implements Serializable
 
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+
+	/**
+	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 */
+	protected  Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 

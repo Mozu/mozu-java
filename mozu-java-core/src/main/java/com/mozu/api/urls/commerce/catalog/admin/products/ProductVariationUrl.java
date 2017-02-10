@@ -15,7 +15,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for GetProductVariationLocalizedDeltaPrices
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -30,7 +30,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for GetProductVariationLocalizedDeltaPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -47,7 +47,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for GetProductVariationLocalizedPrices
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -62,7 +62,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for GetProductVariationLocalizedPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -117,7 +117,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for AddProductVariationLocalizedDeltaPrice
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -133,7 +133,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for AddProductVariationLocalizedPrice
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -149,7 +149,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for UpdateProductVariationLocalizedDeltaPrices
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -164,7 +164,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for UpdateProductVariationLocalizedDeltaPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -181,7 +181,7 @@ public class ProductVariationUrl
 
 	/**
 	 * Get Resource Url for UpdateProductVariationLocalizedPrices
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -196,7 +196,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for UpdateProductVariationLocalizedPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
@@ -258,7 +258,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for DeleteProductVariationLocalizedDeltaPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */
@@ -274,7 +274,7 @@ public class ProductVariationUrl
 	/**
 	 * Get Resource Url for DeleteProductVariationLocalizedPrice
 	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
 	 * @return   String Resource Url
 	 */

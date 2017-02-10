@@ -17,7 +17,7 @@ import com.mozu.api.contracts.adminuser.DeveloperAccount;
 import com.mozu.api.contracts.core.UserProfile;
 
 /**
- *	Properties of the authentication ticket to be used in developer account claims with the Mozu API.
+ *	Properties of the authentication ticket to be used in developer account claims with the  API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DeveloperAdminUserAuthTicket implements Serializable
@@ -126,7 +126,7 @@ public class DeveloperAdminUserAuthTicket implements Serializable
 	}
 
 	/**
-	 * User information associated with the authentication ticket.
+	 * Properties of the user. Users include customers and  users.
 	 */
 	protected  UserProfile user;
 

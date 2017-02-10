@@ -20,7 +20,7 @@ import com.mozu.api.MozuApiContext;
 import com.mozu.api.contracts.appdev.AppAuthInfo;
 
 public class CryptoTest {
-	private static final String TEST_SHARED_SECRET = "bc0aa4944cc74341b59ba2fc01666571";
+	private static final String TEST_SHARED_SECRET = "1152aeac1a9f4e1998bfab9b5e3bab76";
 	
 	@Mocked AppAuthenticator mockAppAuthenticator;
 	

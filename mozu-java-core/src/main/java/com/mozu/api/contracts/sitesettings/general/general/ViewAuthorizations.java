@@ -21,6 +21,9 @@ public class ViewAuthorizations implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Specifies whether to enable secure communication across your entire site, using the SSL (Secure Socket Layer) security protocol. Every page on your site will display as an HTTPS page and contain an SSL certificate.
+	 */
 	protected  Boolean enforceSitewideSSL;
 
 	public Boolean getEnforceSitewideSSL() {
@@ -32,7 +35,7 @@ public class ViewAuthorizations implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
+	 * Require log in to view live storefront site.
 	 */
 	protected  Boolean requireAuthForLive;
 
@@ -45,7 +48,7 @@ public class ViewAuthorizations implements Serializable
 	}
 
 	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForPending ApiTypeMember DOCUMENT_HERE 
+	 * Require log in to view pending storefront site.
 	 */
 	protected  Boolean requireAuthForPending;
 
