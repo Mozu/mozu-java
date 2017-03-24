@@ -33,6 +33,7 @@ import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.UserAuthenticator;
+import java.lang.reflect.Field;
 
 import mockit.Expectations;
 import mockit.Mock;
@@ -72,6 +73,17 @@ public final class MozuClientUnitTest {
     @Mocked RequestLine mockRequestLine;
     @Mocked CacheManager<CacheItem> mockCacheManager;
     @Mocked Map<String, String> mockCustomHeader;
+
+    static {
+        try {
+            Class clss = Class.forName("javax.crypto.JceSecurity");
+            Field field = clss.getDeclaredField("isRestricted");
+            field.setAccessible(true);
+            field.set(null, java.lang.Boolean.FALSE);
+        } catch (Exception ex) {
+            System.out.println("javax.crypto.JceSecurity policy issue: " + ex.getMessage());
+        }
+    }
 
     @Before
     public void setUp() throws Exception {
