@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	A list of audit details associated with a specific customer account.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerAuditEntry implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Applicattion associated with this entry
-	 */
 	protected  String application;
 
 	public String getApplication() {
@@ -34,9 +28,6 @@ public class CustomerAuditEntry implements Serializable
 		this.application = application;
 	}
 
-	/**
-	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
-	 */
 	protected  Integer customerAccountId;
 
 	public Integer getCustomerAccountId() {
@@ -47,9 +38,6 @@ public class CustomerAuditEntry implements Serializable
 		this.customerAccountId = customerAccountId;
 	}
 
-	/**
-	 * The unique identifier of the audit entry associated with the customer account.
-	 */
 	protected  Integer customerAuditEntryId;
 
 	public Integer getCustomerAuditEntryId() {
@@ -60,9 +48,6 @@ public class CustomerAuditEntry implements Serializable
 		this.customerAuditEntryId = customerAuditEntryId;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -73,9 +58,6 @@ public class CustomerAuditEntry implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The date the audit entries was created.
-	 */
 	protected  DateTime entryDate;
 
 	public DateTime getEntryDate() {
@@ -86,9 +68,6 @@ public class CustomerAuditEntry implements Serializable
 		this.entryDate = entryDate;
 	}
 
-	/**
-	 * The unique identifier of the user who created the audit entry.
-	 */
 	protected  String entryUser;
 
 	public String getEntryUser() {
@@ -99,9 +78,6 @@ public class CustomerAuditEntry implements Serializable
 		this.entryUser = entryUser;
 	}
 
-	/**
-	 * The path of the field value that was changed, for example 
-	 */
 	protected  String fieldPath;
 
 	public String getFieldPath() {
@@ -112,9 +88,6 @@ public class CustomerAuditEntry implements Serializable
 		this.fieldPath = fieldPath;
 	}
 
-	/**
-	 * The field's new value after the audit entry event.
-	 */
 	protected  String newValue;
 
 	public String getNewValue() {
@@ -125,9 +98,6 @@ public class CustomerAuditEntry implements Serializable
 		this.newValue = newValue;
 	}
 
-	/**
-	 * The field's original value before the audit entry event.
-	 */
 	protected  String oldValue;
 
 	public String getOldValue() {
@@ -138,9 +108,6 @@ public class CustomerAuditEntry implements Serializable
 		this.oldValue = oldValue;
 	}
 
-	/**
-	 * The site identifier associated with this audit entry.
-	 */
 	protected  String site;
 
 	public String getSite() {

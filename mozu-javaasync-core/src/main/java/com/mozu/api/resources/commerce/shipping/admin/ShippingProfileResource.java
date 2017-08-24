@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/shipping/admin/profiles related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class ShippingProfileResource {
@@ -37,7 +37,7 @@ public class ShippingProfileResource {
 
 	
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles();
@@ -52,7 +52,7 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	CountDownLatch latch = shippingprofile.getProfiles( callback );
@@ -68,12 +68,12 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection
@@ -88,12 +88,12 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	CountDownLatch latch = shippingprofile.getProfiles( responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection

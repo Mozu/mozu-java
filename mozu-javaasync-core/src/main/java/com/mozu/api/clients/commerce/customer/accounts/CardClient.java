@@ -119,7 +119,7 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -139,7 +139,7 @@ public class CardClient {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -166,8 +166,8 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param cardId Unique identifier of the credit card.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -186,9 +186,9 @@ public class CardClient {
 	 * Card card = client.Result();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.Card>
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -214,7 +214,7 @@ public class CardClient {
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteAccountCardClient(Integer accountId, String cardId) throws Exception

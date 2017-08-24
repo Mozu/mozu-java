@@ -22,7 +22,7 @@ public class ShopperNotes implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Notes entered and saved with an order. These notes may be entered by a shopper on a wishlist or for an order. Comments may also be entered by Mozu Admins on an order that may be visible only to authorized shoppers and users.
+	 * Shopper-entered notes for the associated order.
 	 */
 	protected  String comments;
 

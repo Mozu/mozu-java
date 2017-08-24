@@ -36,7 +36,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * Indicates if a discount is not used for the product or product line item in an order. If true, the system ignores this discount when pricing the order.
+	 * If true, the system ignores this discount when pricing the order.
 	 */
 	protected  Boolean excluded;
 
@@ -62,7 +62,7 @@ public class AppliedDiscount implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * Discount currently applied to the cart or order.
 	 */
 	protected  Discount discount;
 

@@ -31,20 +31,7 @@ public class Return implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The date by which a shopper must ship items associated with a return in an "awaiting items" state to the merchant.
-	 */
-	protected  DateTime rmaDeadline;
-
-	public DateTime getRmaDeadline() {
-		return this.rmaDeadline;
-	}
-
-	public void setRmaDeadline(DateTime rmaDeadline) {
-		this.rmaDeadline = rmaDeadline;
-	}
-
-	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * The actions a user can perform for the return at this time.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -55,7 +42,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Code that identifies the channel associated with the site for the shopper's created shopping cart, order, and return.
+	 * The code that identifies the channel associated with the return, which is typically the same channel associated with the order.
 	 */
 	protected  String channelCode;
 
@@ -81,7 +68,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Unique identifer of the customer account. This ID is used to associate numerous types of data and object with the customer account, including orders, returns, wish lists, and in-store credit.
+	 * Unique identifier of the customer account associated with the return.
 	 */
 	protected  Integer customerAccountId;
 
@@ -94,7 +81,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * The type of customer interaction used to create this shopping cart. Possible values are Website, Call, Store, or Unknown.
+	 * String that describes the customer interaction used to return an item. Possible values are Website, Store, Call, and Unknown.
 	 */
 	protected  String customerInteractionType;
 
@@ -107,7 +94,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the return.
 	 */
 	protected  String id;
 
@@ -120,7 +107,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 * The code that uniquely identifies the location where items were returned.
 	 */
 	protected  String locationCode;
 
@@ -158,9 +145,6 @@ public class Return implements Serializable
 		this.originalOrderId = originalOrderId;
 	}
 
-	/**
-	 * The order number of the original order where the return was created.
-	 */
 	protected  Integer originalOrderNumber;
 
 	public Integer getOriginalOrderNumber() {
@@ -197,9 +181,6 @@ public class Return implements Serializable
 		this.productLossTotal = productLossTotal;
 	}
 
-	/**
-	 * The status that indicates whether you have received the return item from the shopper. The accepted values are , , or .
-	 */
 	protected  String receiveStatus;
 
 	public String getReceiveStatus() {
@@ -223,9 +204,6 @@ public class Return implements Serializable
 		this.refundAmount = refundAmount;
 	}
 
-	/**
-	 * The status of the refund. The accepted values are  if the shopper only wants a replacement or  if either a partial or full refund is applied to the return.
-	 */
 	protected  String refundStatus;
 
 	public String getRefundStatus() {
@@ -236,9 +214,6 @@ public class Return implements Serializable
 		this.refundStatus = refundStatus;
 	}
 
-	/**
-	 * The status of the replacement order. The accepted values are  if there is no replacement order or  if a replacement order exits.
-	 */
 	protected  String replaceStatus;
 
 	public String getReplaceStatus() {
@@ -289,6 +264,19 @@ public class Return implements Serializable
 	}
 
 	/**
+	 * The date by which a shopper must ship items associated with a return in an "awaiting items" state to the merchant.
+	 */
+	protected  DateTime rmaDeadline;
+
+	public DateTime getRmaDeadline() {
+		return this.rmaDeadline;
+	}
+
+	public void setRmaDeadline(DateTime rmaDeadline) {
+		this.rmaDeadline = rmaDeadline;
+	}
+
+	/**
 	 * The total tax amount levied on the shipping loss amount.
 	 */
 	protected  Double shippingLossTaxTotal;
@@ -328,7 +316,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * Current status of the return, such as "ReturnAuthorized".
 	 */
 	protected  String status;
 
@@ -354,7 +342,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 * Unique identifier of the user responsible for the return. Read only and supplied by the original order.
 	 */
 	protected  String userId;
 
@@ -367,7 +355,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer visit in which the cart was created or last modified.
+	 * The unique identifier of the customer visit associated with the return transaction.
 	 */
 	protected  String visitId;
 
@@ -380,7 +368,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the web session in which the cart, order, return, or wish list was created or last modified.
+	 * Unique identifier of the web session in which the return was created or last modified, which is system-supplied and read only.
 	 */
 	protected  String webSessionId;
 
@@ -406,7 +394,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * List of change messages associated with the return.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -416,9 +404,6 @@ public class Return implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * contact ApiType DOCUMENT_HERE 
-	 */
 	protected  Contact contact;
 
 	public Contact getContact() {
@@ -441,7 +426,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
+	 * Collection of merchant-supplied notes entered for the return.
 	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
@@ -452,7 +437,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Array list of physical packages shipped for a specified order.
+	 * List of packages associated with a replacement order for a return.
 	 */
 	protected List<Package> packages;
 	public List<Package> getPackages() {
@@ -463,7 +448,7 @@ public class Return implements Serializable
 	}
 
 	/**
-	 * Wrapper for a collection of payments associated with an order or return. An order can include a number of payments until the full total is covered. 
+	 * Array list of payments associated with this return, if applicable.
 	 */
 	protected List<Payment> payments;
 	public List<Payment> getPayments() {

@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.AttributeDetail;
 import com.mozu.api.contracts.productruntime.ProductOptionValue;
 
 /**
- *	Properties of the product option to create such as attribute detail, fully qualified name, and list of product option values.
+ *	Represents configurable options that a shopper can choose when ordering a product, such as a t-shirt color and size.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductOption implements Serializable
@@ -39,7 +39,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * Indicates if the object has or can have multiple properties or values. If true, the object can have more than one value, selectable by shoppers through the storefront or configurable through the catalogs. 
+	 * If true, the product attribute or option has multiple values.
 	 */
 	protected  Boolean isMultiValue;
 
@@ -52,7 +52,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * Indicates if the property, attribute, product option, or product extra is required. If true, the object must have a defined value.
+	 * If true, the entity is required for the request to return a valid response.
 	 */
 	protected  Boolean isRequired;
 
@@ -65,7 +65,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * The product attribute details common between all attribute types - properties, options, and extras.
+	 * Details of the product option attribute.
 	 */
 	protected  AttributeDetail attributeDetail;
 
@@ -78,7 +78,7 @@ public class ProductOption implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * List of possible values for a product option attribute.
 	 */
 	protected List<ProductOptionValue> values;
 	public List<ProductOptionValue> getValues() {

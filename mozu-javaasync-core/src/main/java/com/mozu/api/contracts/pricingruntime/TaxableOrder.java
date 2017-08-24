@@ -18,7 +18,7 @@ import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
 import com.mozu.api.contracts.pricingruntime.TaxContext;
 
 /**
- *	Properties of an order to calculate tax against. When a tax capability is enabled for a tenant, Mozu sends the `TaxableOrder `properties to the capability as read-only, system-supplied information.
+ *	Properties of an order for which to calculate tax. When a tax capability is enabled for a tenant, Mozu sends the TaxableOrder properties to the capability as read-only, system-supplied information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxableOrder implements Serializable
@@ -40,7 +40,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 * Handling fee associated with the order.
 	 */
 	protected  Double handlingFee;
 
@@ -53,7 +53,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the order was submitted for purchase. 
+	 * The date and time the order was submitted.
 	 */
 	protected  DateTime orderDate;
 
@@ -89,7 +89,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
+	 * The date and time the original order was placed.
 	 */
 	protected  DateTime originalOrderDate;
 
@@ -102,7 +102,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The calculated monetary amount of shipping for a line items within and an entire order.
+	 * The total shipping amount calculated for the order.
 	 */
 	protected  Double shippingAmount;
 
@@ -115,7 +115,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
+	 * The type of request for which to tax this entity, which is "Order" or "Return."
 	 */
 	protected  String taxRequestType;
 
@@ -146,7 +146,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * List of line items associated with the order.
+	 * The line items associated with the order.
 	 */
 	protected List<TaxableLineItem> lineItems;
 	public List<TaxableLineItem> getLineItems() {

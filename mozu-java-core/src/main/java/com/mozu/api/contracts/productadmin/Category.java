@@ -16,7 +16,7 @@ import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
 
 /**
- *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
+ *	A descriptive container in a storefront hierarchy to organize collections of products.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -34,9 +34,6 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * External unique identifier of the category.
-	 */
 	protected  String categoryCode;
 
 	public String getCategoryCode() {
@@ -47,9 +44,6 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
-	/**
-	 * Specifies the type of category. The following are the valid values:* * * 
-	 */
 	protected  String categoryType;
 
 	public String getCategoryType() {
@@ -74,7 +68,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Identifier of the entity.
 	 */
 	protected  Integer id;
 
@@ -86,9 +80,6 @@ public class Category implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Indicates if the object or feature is active.
-	 */
 	protected  Boolean isActive;
 
 	public Boolean getIsActive() {
@@ -100,7 +91,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If false, the category is not displayed.
+	 * If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
 	protected  Boolean isDisplayed;
 
@@ -112,9 +103,6 @@ public class Category implements Serializable
 		this.isDisplayed = isDisplayed;
 	}
 
-	/**
-	 * The code of the current category's parent category.
-	 */
 	protected  String parentCategoryCode;
 
 	public String getParentCategoryCode() {
@@ -126,7 +114,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * If the current category has a parent, the identifier of the category's parent category.
+	 * Identifier of the parent or top-level category.
 	 */
 	protected  Integer parentCategoryId;
 
@@ -138,9 +126,6 @@ public class Category implements Serializable
 		this.parentCategoryId = parentCategoryId;
 	}
 
-	/**
-	 * If the current category has a parent, the name of the category's parent category.
-	 */
 	protected  String parentCategoryName;
 
 	public String getParentCategoryName() {
@@ -151,9 +136,6 @@ public class Category implements Serializable
 		this.parentCategoryName = parentCategoryName;
 	}
 
-	/**
-	 * Indicates whether the parent category is active.
-	 */
 	protected  Boolean parentIsActive;
 
 	public Boolean getParentIsActive() {
@@ -165,7 +147,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
+	 * The number of products in a list.
 	 */
 	protected  Integer productCount;
 
@@ -178,7 +160,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
 	protected  Integer sequence;
 
@@ -216,9 +198,6 @@ public class Category implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {

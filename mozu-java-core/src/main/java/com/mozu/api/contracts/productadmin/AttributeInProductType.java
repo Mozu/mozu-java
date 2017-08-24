@@ -39,9 +39,6 @@ public class AttributeInProductType implements Serializable
 		this.attributeFQN = attributeFQN;
 	}
 
-	/**
-	 * If true, this property is not available on the storefront. If false, this property will be available on storefront. The IsHiddenProperty hides the property from the customer, but is still available from the API.
-	 */
 	protected  Boolean isAdminOnlyProperty;
 
 	public Boolean getIsAdminOnlyProperty() {
@@ -91,9 +88,6 @@ public class AttributeInProductType implements Serializable
 		this.isMultiValueProperty = isMultiValueProperty;
 	}
 
-	/**
-	 * If True this property will not be returned storefront product listings (Search,GetProduct) it will still be returned on GetProduct, ValidateProduct...)
-	 */
 	protected  Boolean isProductDetailsOnlyProperty;
 
 	public Boolean getIsProductDetailsOnlyProperty() {
@@ -118,7 +112,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * Integer that represents the sequence order of the attribute.
+	 * The sequence of this attribute within its product type.
 	 */
 	protected  Integer order;
 
@@ -131,7 +125,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * The product attribute details common between all attribute types - properties, options, and extras.
+	 * The wrapper for the properties of the product attribute to set up or generate from the system in the product admin. Properties include namespace, attribute code, attribute sequence, site group ID, input type, value type, data type, boolean flags, and metadata key value pairs.
 	 */
 	protected  Attribute attributeDetail;
 
@@ -143,9 +137,6 @@ public class AttributeInProductType implements Serializable
 		this.attributeDetail = attributeDetail;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  AttributeInProductTypeDisplayInfo displayInfo;
 
 	public AttributeInProductTypeDisplayInfo getDisplayInfo() {
@@ -157,7 +148,7 @@ public class AttributeInProductType implements Serializable
 	}
 
 	/**
-	 * List of valid vocabulary values defined for an attribute.
+	 * The list of vocabulary values available for the attribute associated with the product type.
 	 */
 	protected List<AttributeVocabularyValueInProductType> vocabularyValues;
 	public List<AttributeVocabularyValueInProductType> getVocabularyValues() {

@@ -28,13 +28,13 @@ public class PackageFactory
 		return getPackageLabel(apiContext,  returnId,  packageId,  null, expectedCode);
 	}
 
-	public static java.io.InputStream getPackageLabel(ApiContext apiContext, String returnId, String packageId, Boolean returnAsBase64, int expectedCode) throws Exception
+	public static java.io.InputStream getPackageLabel(ApiContext apiContext, String returnId, String packageId, Boolean returnAsBase64Png, int expectedCode) throws Exception
 	{
 		java.io.InputStream returnObj;
 		PackageResource resource = new PackageResource(apiContext);
 		try
 		{
-			returnObj = resource.getPackageLabel( returnId,  packageId,  returnAsBase64);
+			returnObj = resource.getPackageLabel( returnId,  packageId,  returnAsBase64Png);
 		}
 		catch (ApiException e)
 		{

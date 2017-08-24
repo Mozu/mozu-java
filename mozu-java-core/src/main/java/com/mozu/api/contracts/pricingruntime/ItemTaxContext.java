@@ -22,7 +22,43 @@ public class ItemTaxContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Amount of tax applied to shipping costs for line items in and entire orders.
+	 * Unique identifier of the line item in the order.
+	 */
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	protected  String productCode;
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	/**
+	 * Quantity of the line item in the order.
+	 */
+	protected  Integer quantity;
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	/**
+	 * Amount of tax applied to shipping costs for the line item in the order.
 	 */
 	protected  Double shippingTax;
 
@@ -47,44 +83,31 @@ public class ItemTaxContext implements Serializable
 		this.tax = tax;
 	}
 
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
-	protected  String id;
+	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
 
-	public String getId() {
-		return this.id;
+	public com.fasterxml.jackson.databind.JsonNode getTaxData() {
+		return this.taxData;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setTaxData(com.fasterxml.jackson.databind.JsonNode taxData) {
+		this.taxData = taxData;
 	}
 
-	/**
-	 * The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 */
-	protected  String productCode;
-
-	public String getProductCode() {
-		return this.productCode;
+	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+		out.defaultWriteObject();
+		if(taxData == null){
+			out.writeBoolean(false);
+		} else {
+			out.writeBoolean(true);
+			new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonGenerator.Feature.AUTO_CLOSE_TARGET, false).writeValue(out, taxData);
+		}
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		in.defaultReadObject();
+		if(in.readBoolean()){
+			this.taxData = new com.fasterxml.jackson.databind.ObjectMapper().configure(com.fasterxml.jackson.core.JsonParser.Feature.AUTO_CLOSE_SOURCE, false).readValue(in, com.fasterxml.jackson.databind.JsonNode.class);
+		}
 	}
-
-	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
-	 */
-	protected  Integer quantity;
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
 
 }

@@ -117,7 +117,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.getCredit( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -132,7 +132,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.getCredit( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -148,7 +148,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.getCredit( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -168,7 +168,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.getCredit( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.Credit
@@ -188,7 +188,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.addCredit( credit);
 	 * </code></pre></p>
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -205,7 +205,7 @@ public class CreditResource {
 	 *	CountDownLatch latch = credit.addCredit( credit, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -222,7 +222,7 @@ public class CreditResource {
 	 *	Credit credit = credit.addCredit( credit,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -244,7 +244,7 @@ public class CreditResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -263,7 +263,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.associateCreditToShopper( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -278,7 +278,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.associateCreditToShopper( code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -294,7 +294,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.associateCreditToShopper( code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -314,7 +314,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.associateCreditToShopper( code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.credit.Credit
@@ -329,12 +329,12 @@ public class CreditResource {
 	}
 
 	/**
-	 * customer-credits Put ResendCreditCreatedEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	Credit credit = new Credit();
 	 *	credit.resendCreditCreatedEmail( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return 
 	 */
 	public void resendCreditCreatedEmail(String code) throws Exception
@@ -352,8 +352,8 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.updateCredit( credit,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param code User-defined code of the store credit to update.
+	 * @param credit Properties of the store credit to update.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -369,9 +369,9 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.updateCredit( credit,  code, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to update.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to update.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -387,9 +387,9 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	Credit credit = credit.updateCredit( credit,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to update.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -409,10 +409,10 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	CountDownLatch latch = credit.updateCredit( credit,  code,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to update.
 	 * @return com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -431,7 +431,7 @@ public class CreditResource {
 	 *	Credit credit = new Credit();
 	 *	credit.deleteCredit( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to delete.
 	 * @return 
 	 */
 	public void deleteCredit(String code) throws Exception

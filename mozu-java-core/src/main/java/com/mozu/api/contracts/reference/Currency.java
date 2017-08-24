@@ -35,7 +35,7 @@ public class Currency implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the currency represented by the ISO currency code.
 	 */
 	protected  String name;
 

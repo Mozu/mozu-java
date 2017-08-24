@@ -117,7 +117,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 */
@@ -132,7 +132,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscription( id, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -148,7 +148,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -168,7 +168,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	CountDownLatch latch = instocknotificationsubscription.getInStockNotificationSubscription( id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the in-stock notification subscription to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -188,7 +188,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription);
 	 * </code></pre></p>
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -205,7 +205,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	CountDownLatch latch = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -222,7 +222,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription inStockNotificationSubscription = instocknotificationsubscription.addInStockNotificationSubscription( inStockNotificationSubscription,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -244,7 +244,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param inStockNotificationSubscription Properties of a push notification to which the shopper subscribes. This notification sends the shopper an alert when a new product or a product previously out of stock becomes available in the specified location's active product inventory.
+	 * @param inStockNotificationSubscription Properties of a subscription that sends the customer a notification when a product is available in a site's active stock.
 	 * @return com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
 	 * @see com.mozu.api.contracts.customer.InStockNotificationSubscription
@@ -263,7 +263,7 @@ public class InStockNotificationSubscriptionResource {
 	 *	InStockNotificationSubscription instocknotificationsubscription = new InStockNotificationSubscription();
 	 *	instocknotificationsubscription.deleteInStockNotificationSubscription( id);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id Unique identifier of the customer in-stock notification subscription to delete.
 	 * @return 
 	 */
 	public void deleteInStockNotificationSubscription(Integer id) throws Exception

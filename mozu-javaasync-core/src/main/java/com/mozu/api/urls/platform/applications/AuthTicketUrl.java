@@ -39,7 +39,7 @@ public class AuthTicketUrl
 
 	/**
 	 * Get Resource Url for DeleteAppAuthTicket
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * @param refreshToken The refresh token string from the application's authentication ticket.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteAppAuthTicketUrl(String refreshToken)

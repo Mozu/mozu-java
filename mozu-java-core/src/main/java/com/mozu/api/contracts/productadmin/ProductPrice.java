@@ -22,7 +22,7 @@ public class ProductPrice implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
+	 * The credit amount of the product.
 	 */
 	protected  Double creditValue;
 
@@ -87,7 +87,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price (MSRP) for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price, as defined by the supplier.
 	 */
 	protected  Double msrp;
 
@@ -113,7 +113,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.For price list entries, this property is the product's sale price if the  is set to .
+	 * Price of the product with a discount already applied which the merchant intends to sell the product.
 	 */
 	protected  Double salePrice;
 

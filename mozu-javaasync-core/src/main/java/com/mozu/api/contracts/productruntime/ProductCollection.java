@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.Product;
 
 /**
- *	The container for a set of products.
+ *	Collection of products and their related properties.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCollection implements Serializable

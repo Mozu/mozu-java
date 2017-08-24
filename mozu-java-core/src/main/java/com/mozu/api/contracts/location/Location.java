@@ -30,9 +30,6 @@ public class Location implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Allow fullfillment with no (or less) stock
-	 */
 	protected  Boolean allowFulfillmentWithNoStock;
 
 	public Boolean getAllowFulfillmentWithNoStock() {
@@ -57,7 +54,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * User-defined description of this location.
 	 */
 	protected  String description;
 
@@ -82,9 +79,6 @@ public class Location implements Serializable
 		this.fax = fax;
 	}
 
-	/**
-	 * Locations is disabled (soft delete)
-	 */
 	protected  Boolean isDisabled;
 
 	public Boolean getIsDisabled() {
@@ -96,7 +90,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The user-defined name of the location.
 	 */
 	protected  String name;
 
@@ -109,7 +103,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * User-entered notation content for an object, used to save information such as payment, return, account, and order notes.
+	 * Any tenant-defined notes associated with this location.
 	 */
 	protected  String note;
 
@@ -159,7 +153,7 @@ public class Location implements Serializable
 	}
 
 	/**
-	 * Address information to supply for a contact.
+	 * The physical address properties of the location.
 	 */
 	protected  Address address;
 

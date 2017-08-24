@@ -30,7 +30,7 @@ public class AdminUserUrl
 	/**
 	 * Get Resource Url for GetUser
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param userId Unique identifier of the user whose tenant scopes you want to retrieve.
+	 * @param userId Unique identifier of the administrator account to retrieve.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getUserUrl(String responseFields, String userId)

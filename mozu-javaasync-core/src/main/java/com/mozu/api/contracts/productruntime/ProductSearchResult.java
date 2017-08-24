@@ -107,9 +107,6 @@ public class ProductSearchResult implements Serializable
 		this.items = items;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.ProductSearchResult solrDebugInfo ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  SolrDebugInfo solrDebugInfo;
 
 	public SolrDebugInfo getSolrDebugInfo() {

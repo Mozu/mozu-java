@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Provides details for each attempted delivery of the event to the endpoint.
+ * 
  * </summary>
  */
 public class EventDeliverySummaryResource {
@@ -42,7 +42,7 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId);
 	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -57,7 +57,7 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	CountDownLatch latch = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
@@ -73,9 +73,9 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummary eventDeliverySummary = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId,  id,  responseFields);
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id This parameter is the unique identifer for an event attempt delivery summary.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -94,9 +94,9 @@ public class EventDeliverySummaryResource {
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	CountDownLatch latch = eventdeliverysummary.getDeliveryAttemptSummary( subscriptionId,  id,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id This parameter is the unique identifer for an event attempt delivery summary.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.event.EventDeliverySummary
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
@@ -110,12 +110,12 @@ public class EventDeliverySummaryResource {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId);
 	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */
@@ -125,12 +125,12 @@ public class EventDeliverySummaryResource {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	CountDownLatch latch = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
@@ -141,17 +141,17 @@ public class EventDeliverySummaryResource {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	EventDeliverySummaryCollection eventDeliverySummaryCollection = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @param subscriptionId 
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */
@@ -165,17 +165,17 @@ public class EventDeliverySummaryResource {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 *	EventDeliverySummary eventdeliverysummary = new EventDeliverySummary();
 	 *	CountDownLatch latch = eventdeliverysummary.getDeliveryAttemptSummaries( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @param subscriptionId 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection

@@ -21,9 +21,6 @@ public class PasswordInfo implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * If you are importing existing customer accounts to  or using two customer systems simultaneously, you use this property to store an external password hash that helps you migrate existing customer accounts seamlessly into , without having to require shoppers to create new passwords for the platform.  If you set this property, you must use the [embedded.verifyExternalPassword](http://developer.mozu.com/content/arcjs/Reference/commerce-customer-accounts/Actions/verifyExternalPassword.htm) action to verify that the hashed version of a cleartext password provided by a shopper matches the external password hash specified in this property.
-	 */
 	protected  String externalPassword;
 
 	public String getExternalPassword() {
@@ -35,7 +32,7 @@ public class PasswordInfo implements Serializable
 	}
 
 	/**
-	 * The new password entered and saved by the user of the account. 
+	 * The new account password value.
 	 */
 	protected  String newPassword;
 

@@ -51,7 +51,7 @@ public class CustomerAttribute implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * List of values for the attribute.
 	 */
 	protected List<Object> values;
 	public List<Object> getValues() {

@@ -18,7 +18,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Storefront Products resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
+ * Use the Storefront Products  resource to manage the shopper product selection process during a visit to the web storefront. You can update product options as shoppers pick and choose their product choices. A shopper cannot add a product to a cart until all of its required options have been selected.
  * </summary>
  */
 public class ProductClient {
@@ -47,11 +47,11 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * ProductCollection productCollection = client.Result();
 	 * </code></pre></p>
-	 * @param cursorMark In your first deep paged request, set this parameter to . Then, in all subsequent requests, set this parameter to the subsequent values of  that's returned in each response to continue paging through the results. Continue this pattern until  is null, which signifies the end of the paged results.
+	 * @param cursorMark 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param responseOptions Options you can specify for the response. This parameter is null by default.You can primarily use this parameter to return volume price band information in product details, which you can then display on category pages and search results depanding on your theme configuration. To return volume price band information, set this parameter to .
+	 * @param responseFields 
+	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCollection>
@@ -97,7 +97,7 @@ public class ProductClient {
 	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 */
@@ -139,13 +139,13 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param acceptVariantProductCode Specifies whether to accept a product variant's code as the .When you set this parameter to , you can pass in a product variant's code in the GetProduct call to retrieve the product variant details that are associated with the base product.
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
+	 * @param acceptVariantProductCode 
+	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -164,14 +164,14 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for  to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -181,17 +181,17 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for  to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.Product> mozuClient=GetProductForIndexingClient(dataViewMode,  productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Product product = client.Result();
 	 * </code></pre></p>
-	 * @param lastModifiedDate The date when the product was last updated.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param productVersion The product version.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param lastModifiedDate 
+	 * @param productCode 
+	 * @param productVersion 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.Product>
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -237,9 +237,9 @@ public class ProductClient {
 	 * </code></pre></p>
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ConfiguredProduct>
 	 * @see com.mozu.api.contracts.productruntime.ConfiguredProduct
@@ -274,29 +274,30 @@ public class ProductClient {
 	 */
 	public static MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> validateProductClient(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode) throws Exception
 	{
-		return validateProductClient( productOptionSelections,  productCode,  null,  null,  null);
+		return validateProductClient( productOptionSelections,  productCode,  null,  null,  null,  null);
 	}
 
 	/**
 	 * Validate the final state of shopper-selected options.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> mozuClient=ValidateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> mozuClient=ValidateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  skipDefaults,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductValidationSummary productValidationSummary = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param quantity 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipDefaults 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductValidationSummary>
 	 * @see com.mozu.api.contracts.productruntime.ProductValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.ProductOptionSelections
 	 */
-	public static MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> validateProductClient(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> validateProductClient(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, Boolean skipDefaults, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.validateProductUrl(productCode, quantity, responseFields, skipInventoryCheck);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ProductUrl.validateProductUrl(productCode, quantity, responseFields, skipDefaults, skipInventoryCheck);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.productruntime.ProductValidationSummary.class;
 		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> mozuClient = (MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary>) MozuClientFactory.getInstance(clz);
@@ -316,7 +317,7 @@ public class ProductClient {
 	 * DiscountValidationSummary discountValidationSummary = client.Result();
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.DiscountValidationSummary>
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -334,13 +335,13 @@ public class ProductClient {
 	 * client.executeRequest();
 	 * DiscountValidationSummary discountValidationSummary = client.Result();
 	 * </code></pre></p>
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.DiscountValidationSummary>
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -359,14 +360,14 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves the product cost based on a list of product codes. The product cost is the amount the merchant pays for the product—it is not the price that the shopper sees on the storefront (which is usually higher).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> mozuClient=GetProductCostsClient(dataViewMode,  query);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductCostCollection productCostCollection = client.Result();
 	 * </code></pre></p>
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param query 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCostCollection>
 	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
@@ -377,15 +378,15 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves the product cost based on a list of product codes. The product cost is the amount the merchant pays for the product—it is not the price that the shopper sees on the storefront (which is usually higher).
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ProductCostCollection> mozuClient=GetProductCostsClient(dataViewMode,  query,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ProductCostCollection productCostCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param responseFields 
+	 * @param query 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ProductCostCollection>
 	 * @see com.mozu.api.contracts.productruntime.ProductCostCollection
 	 * @see com.mozu.api.contracts.productruntime.ProductCostQuery
@@ -405,14 +406,14 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient=GetProductInventoriesClient(dataViewMode,  query);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param query 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery
@@ -423,15 +424,15 @@ public class ProductClient {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.LocationInventoryCollection> mozuClient=GetProductInventoriesClient(dataViewMode,  query,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * LocationInventoryCollection locationInventoryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param responseFields 
+	 * @param query 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.LocationInventoryCollection>
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery

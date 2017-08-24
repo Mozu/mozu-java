@@ -26,7 +26,7 @@ public class Tenant implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Properties of the domain that the tenant is associated with such as the domain name, the zone string, audit information (system-supplied and read-only), assignment data, and whether or not the domain is primary or requires a SSL for authentication.
+	 * The domain information associated with the tenant.
 	 */
 	protected  String domain;
 
@@ -52,7 +52,7 @@ public class Tenant implements Serializable
 	}
 
 	/**
-	 * Indicates if the tenant is a development tenant. If true, the tenant represents a collection of master catalogs and catalogs for a development tenant, used by a developer account to test applications and themes.
+	 * If true, the tenant represents a collection of master catalogs and catalogs for a development tenant, used by a developer account to test applications and themes.
 	 */
 	protected  Boolean isDevTenant;
 
@@ -65,7 +65,7 @@ public class Tenant implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the tenant.
 	 */
 	protected  String name;
 

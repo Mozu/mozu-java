@@ -35,12 +35,49 @@ public class ShippingResource {
 
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList);
+	 * </code></pre></p>
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup> getMultiRates(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList) throws Exception
+	{
+		return getMultiRates( rateRequestGroupList,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	Shipping shipping = new Shipping();
+	 *	RatesResponseGroup ratesResponseGroup = shipping.getMultiRates( rateRequestGroupList,  includeRawResponse);
+	 * </code></pre></p>
+	 * @param includeRawResponse 
+	 * @param rateRequestGroupList 
+	 * @return List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup> getMultiRates(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList, Boolean includeRawResponse) throws Exception
+	{
+		MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> client = com.mozu.api.clients.commerce.catalog.storefront.ShippingClient.getMultiRatesClient( rateRequestGroupList,  includeRawResponse);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
 	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest);
 	 * </code></pre></p>
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
@@ -56,9 +93,9 @@ public class ShippingResource {
 	 *	Shipping shipping = new Shipping();
 	 *	RatesResponse ratesResponse = shipping.getRates( rateRequest,  includeRawResponse,  responseFields);
 	 * </code></pre></p>
-	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param includeRawResponse 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest

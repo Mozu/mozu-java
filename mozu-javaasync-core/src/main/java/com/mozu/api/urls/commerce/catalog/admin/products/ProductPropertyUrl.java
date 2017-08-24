@@ -15,7 +15,7 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetProperties
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertiesUrl(String productCode)
@@ -27,9 +27,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyValueLocalizedContentsUrl(String attributeFQN, String productCode, String value)
@@ -43,11 +43,11 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for GetPropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
@@ -79,10 +79,10 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for AddPropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param attributeFQN 
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPropertyValueLocalizedContentUrl(String attributeFQN, String productCode, String responseFields, String value)
@@ -97,7 +97,7 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for AddProperty
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -111,9 +111,9 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContents
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param attributeFQN 
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyValueLocalizedContentsUrl(String attributeFQN, String productCode, String value)
@@ -127,11 +127,11 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for UpdatePropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param value The value string to create.
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String responseFields, String value)
@@ -148,7 +148,7 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for UpdateProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -164,7 +164,7 @@ public class ProductPropertyUrl
 	/**
 	 * Get Resource Url for DeleteProperty
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyUrl(String attributeFQN, String productCode)
@@ -177,10 +177,10 @@ public class ProductPropertyUrl
 
 	/**
 	 * Get Resource Url for DeletePropertyValueLocalizedContent
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param localeCode Language used for the entity. Currently, only "en-US" is supported.
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
-	 * @param value The value string to create.
+	 * @param productCode 
+	 * @param value 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePropertyValueLocalizedContentUrl(String attributeFQN, String localeCode, String productCode, String value)

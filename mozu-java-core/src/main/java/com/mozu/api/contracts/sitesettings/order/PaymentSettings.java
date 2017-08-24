@@ -65,7 +65,7 @@ public class PaymentSettings implements Serializable
 	}
 
 	/**
-	 * List of name and account information for a payment gateway.
+	 * List of name and account information for a payment gateway. Additional payment gateway providers will be supported in future releases.
 	 */
 	protected List<Gateway> gateways;
 	public List<Gateway> getGateways() {
@@ -75,9 +75,6 @@ public class PaymentSettings implements Serializable
 		this.gateways = gateways;
 	}
 
-	/**
-	 * The purchase order payment type settings associated with a site.Refer to [Enable the Purchase Order Payment Type](https://www.mozu.com/docs/guides/orders/purchase-order.htm#enable_the_purchase_order_payment_type) in the Purchase Orders guides topic for more information.
-	 */
 	protected  PurchaseOrderPaymentDefinition purchaseOrder;
 
 	public PurchaseOrderPaymentDefinition getPurchaseOrder() {

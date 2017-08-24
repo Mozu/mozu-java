@@ -35,7 +35,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
+	 * The description of the metatag used for the product SEO content set to the locale code language. The metadata description is used to manage information internally.
 	 */
 	protected  String metaTagDescription;
 
@@ -48,7 +48,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
+	 * The metatag keywords for the product SEO content set in the locale code language. The metatag keywords are used to manage information internally.
 	 */
 	protected  String metaTagKeywords;
 
@@ -61,7 +61,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
+	 * The metatag title for the product SEO content set in the locale code language. The metatag title is used to manage information internally.
 	 */
 	protected  String metaTagTitle;
 
@@ -74,7 +74,7 @@ public class ProductLocalizedSEOContent implements Serializable
 	}
 
 	/**
-	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
+	 * The search engine optimized human-readable portion of the URL in the language of the product's locale code.
 	 */
 	protected  String seoFriendlyUrl;
 

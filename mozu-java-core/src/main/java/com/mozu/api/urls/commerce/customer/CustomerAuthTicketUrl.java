@@ -15,7 +15,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for CreateAnonymousShopperAuthTicket
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl createAnonymousShopperAuthTicketUrl(String responseFields)
@@ -39,7 +39,7 @@ public class CustomerAuthTicketUrl
 
 	/**
 	 * Get Resource Url for RefreshUserAuthTicket
-	 * @param refreshToken Alphanumeric string used for access tokens. This token refreshes access for accounts by generating a new developer or application account authentication ticket after an access token expires.
+	 * @param refreshToken The refresh token string required to refresh a user's authentication ticket.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

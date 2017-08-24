@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.TargetRule ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TargetRule implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The user defined code for this rule must be unique
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +28,6 @@ public class TargetRule implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -47,9 +38,6 @@ public class TargetRule implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The domain associated with the site and/or tenant.
-	 */
 	protected  String domain;
 
 	public String getDomain() {
@@ -60,9 +48,6 @@ public class TargetRule implements Serializable
 		this.domain = domain;
 	}
 
-	/**
-	 * the expression of this rule
-	 */
 	protected  String expression;
 
 	public String getExpression() {

@@ -39,7 +39,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Array list of the countries (by country code) for which this capability can actively shop. All active shopping countries must be in the supported shopping country list. Validation rules determine the supported validity of the entered country against the list.
+	 * Array list of the countries for which this capability can actively shop.
 	 */
 	protected List<String> activeShoppingCountries;
 	public List<String> getActiveShoppingCountries() {
@@ -50,7 +50,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * The enablement mode of the capability, typically read only.
+	 * The enablement mode of the capability.
 	 */
 	protected  String capabilityMode;
 
@@ -76,7 +76,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
+	 * If true, the capability is enabled in the installed tenant.
 	 */
 	protected  Boolean enabled;
 
@@ -89,7 +89,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the capability.
 	 */
 	protected  String id;
 
@@ -102,7 +102,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Indicates if an app is initialized and capable of being enabled in the tenant and site. Apps will need to be installed and configured to become initialized, such as validating credentials and/or API keys with a third-party service. If true, the app is initialized and can be enabled for usage.
+	 * If true, the application is initialized with the defined settings.
 	 */
 	protected  Boolean initialized;
 
@@ -115,7 +115,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * The ID of the specific scope for the object. 
+	 * Unique identifier of the developer account or tenant associated for which the capability is entitled.
 	 */
 	protected  Integer scopeId;
 
@@ -128,7 +128,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * The scope at which the object exists, such as "Tenant", "MasterCatalog", or "Site". Scope delineates the level and area of Mozu the object exists within or affects.
+	 * The type of scope for which the tenant is entitled, which is developer or tenant.
 	 */
 	protected  String scopeType;
 
@@ -141,7 +141,7 @@ public class Capability implements Serializable
 	}
 
 	/**
-	 * Array list of the countries (by country code) to which this capability can actively ship. The entered shipping country is validated against a list of supported shipping countries. Messages return if the country code is not supported or duplicated. Supported carriers are also checked per country code.
+	 * Array list of the countries to which this capability can actively ship.
 	 */
 	protected List<ActiveShippingCountry> activeShippingCountries;
 	public List<ActiveShippingCountry> getActiveShippingCountries() {

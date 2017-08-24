@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.Customer.Contracts.PurchaseOrderTransaction ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderTransaction implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Any additional transaction detail other than transaction description
-	 */
 	protected  String additionalTransactionDetail;
 
 	public String getAdditionalTransactionDetail() {
@@ -35,9 +29,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.additionalTransactionDetail = additionalTransactionDetail;
 	}
 
-	/**
-	 * Mozu.Customer.Contracts.PurchaseOrderTransaction author ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String author;
 
 	public String getAuthor() {
@@ -48,9 +39,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.author = author;
 	}
 
-	/**
-	 * Current available balance on Purchase Order account
-	 */
 	protected  Double availableBalance;
 
 	public Double getAvailableBalance() {
@@ -61,9 +49,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.availableBalance = availableBalance;
 	}
 
-	/**
-	 * Maximum credit available on a purchase order account
-	 */
 	protected  Double creditLimit;
 
 	public Double getCreditLimit() {
@@ -74,9 +59,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.creditLimit = creditLimit;
 	}
 
-	/**
-	 * Unique identifier for Customer purchase order account
-	 */
 	protected  Integer customerPurchaseOrderAccountId;
 
 	public Integer getCustomerPurchaseOrderAccountId() {
@@ -87,9 +69,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.customerPurchaseOrderAccountId = customerPurchaseOrderAccountId;
 	}
 
-	/**
-	 * Unique identifier used by an external program to identify a Mozu order, customer account, or wish list.
-	 */
 	protected  String externalId;
 
 	public String getExternalId() {
@@ -100,9 +79,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.externalId = externalId;
 	}
 
-	/**
-	 * Unique identifier of the order associated with the payment.
-	 */
 	protected  String orderId;
 
 	public String getOrderId() {
@@ -113,9 +89,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.orderId = orderId;
 	}
 
-	/**
-	 * Purchase order number
-	 */
 	protected  String purchaseOrderNumber;
 
 	public String getPurchaseOrderNumber() {
@@ -126,9 +99,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.purchaseOrderNumber = purchaseOrderNumber;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -139,9 +109,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Unique identifier for the tenant.
-	 */
 	protected  Integer tenantId;
 
 	public Integer getTenantId() {
@@ -152,9 +119,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Transaction amount in transaction log for a purchase order account
-	 */
 	protected  Double transactionAmount;
 
 	public Double getTransactionAmount() {
@@ -165,9 +129,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionAmount = transactionAmount;
 	}
 
-	/**
-	 * Date when the transaction was made on a purchase order account
-	 */
 	protected  DateTime transactionDate;
 
 	public DateTime getTransactionDate() {
@@ -178,9 +139,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionDate = transactionDate;
 	}
 
-	/**
-	 * Purchase Order transaction description Line of Credit Change Order Submitted Payment Collected Payment Voided Payment Refund Manual Adjustment
-	 */
 	protected  String transactionDescription;
 
 	public String getTransactionDescription() {
@@ -191,9 +149,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionDescription = transactionDescription;
 	}
 
-	/**
-	 * Purchase Order transaction type 1 - Line of Credit Change 2 - Order Submitted 3 - Payment Collected 4 - Payment Voided 5 - Payment Refund 6 - Manual Adjustment
-	 */
 	protected  Integer transactionTypeId;
 
 	public Integer getTransactionTypeId() {
@@ -204,9 +159,6 @@ public class PurchaseOrderTransaction implements Serializable
 		this.transactionTypeId = transactionTypeId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

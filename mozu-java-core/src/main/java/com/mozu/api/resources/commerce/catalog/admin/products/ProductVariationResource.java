@@ -43,13 +43,13 @@ public class ProductVariationResource {
 	}
 		
 	/**
-	 * Retrieves a collection of the localized delta price values for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrices( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -63,14 +63,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -80,15 +80,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Retrieves the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.getProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param currencyCode 
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param variationKey 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 */
@@ -102,13 +102,13 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Retrieves a list of details of the localized price values for a product variation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrices( productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -122,14 +122,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -139,15 +139,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Retrieves the details of the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.getProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 */
@@ -237,14 +237,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Adds the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -255,15 +255,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Adds the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.addProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -278,14 +278,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Adds the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedPrice The details of the product variation localized price.
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -296,15 +296,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Adds the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.addProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  responseFields);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedPrice The details of the product variation localized price.
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
+	 * @param localizedPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -319,14 +319,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates all localized delta price values for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrices( localizedDeltaPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -341,15 +341,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -360,16 +360,16 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationDeltaPrice productVariationDeltaPrice = productvariation.updateProductVariationLocalizedDeltaPrice( localizedDeltaPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
+	 * @param currencyCode 
+	 * @param productCode 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedDeltaPrice The difference between the base price for the product and this variation of the product, which can be a positive or negative decimal value. For example, if the base price for a t-shirt product is $10, but the XL variation should cost $12, the DeltaPrice value should be "2". However, if the XS variation should only cost $8, the DeltaPrice value should be "-2".
+	 * @param variationKey 
+	 * @param localizedDeltaPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationDeltaPrice
@@ -384,14 +384,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates a list of localized price values for a product variation.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrices( localizedPrice,  productCode,  variationKey);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedPrice The details of the product variation localized price.
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedPrice 
 	 * @return List<com.mozu.api.contracts.productadmin.ProductVariationFixedPrice>
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -406,15 +406,15 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedPrice The details of the product variation localized price.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
+	 * @param localizedPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -425,16 +425,16 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Updates the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	ProductVariationFixedPrice productVariationFixedPrice = productvariation.updateProductVariationLocalizedPrice( localizedPrice,  productCode,  variationKey,  currencyCode,  responseFields);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param localizedPrice The details of the product variation localized price.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param responseFields 
+	 * @param variationKey 
+	 * @param localizedPrice 
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationFixedPrice
@@ -456,7 +456,7 @@ public class ProductVariationResource {
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param productVariation Properties of a specific product variation.
+	 * @param productVariation Wrapper for the properties of the specified product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -475,7 +475,7 @@ public class ProductVariationResource {
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
-	 * @param productVariation Properties of a specific product variation.
+	 * @param productVariation Wrapper for the properties of the specified product variation.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
 	 * @see com.mozu.api.contracts.productadmin.ProductVariation
@@ -496,7 +496,7 @@ public class ProductVariationResource {
 	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param productVariations Collection of variations configured for a product.
+	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -513,8 +513,8 @@ public class ProductVariationResource {
 	 *	ProductVariationCollection productVariationCollection = productvariation.updateProductVariations( productVariations,  productCode,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param productVariations Collection of variations configured for a product.
+	 * @param responseFields 
+	 * @param productVariations Wrapper for the collection of variations configured for the specified product code.
 	 * @return com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
 	 * @see com.mozu.api.contracts.productadmin.ProductVariationCollection
@@ -548,14 +548,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Deletes the localized delta price value for a product variation. Localized delta prices are deltas between two differing monetary conversion amounts between countries, such as US Dollar vs Euro.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	productvariation.deleteProductVariationLocalizedDeltaPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return 
 	 */
 	public void deleteProductVariationLocalizedDeltaPrice(String productCode, String variationKey, String currencyCode) throws Exception
@@ -568,14 +568,14 @@ public class ProductVariationResource {
 	}
 
 	/**
-	 * Deletes the localized price value for a product variation and a specific localized currency.
+	 * 
 	 * <p><pre><code>
 	 *	ProductVariation productvariation = new ProductVariation();
 	 *	productvariation.deleteProductVariationLocalizedPrice( productCode,  variationKey,  currencyCode);
 	 * </code></pre></p>
-	 * @param currencyCode The three character ISO currency code, such as USD for US Dollars.
-	 * @param productCode The unique, user-defined product code of a product, used throughout  to reference and associate to a product.
-	 * @param variationKey System-generated key that represents the attribute values that uniquely identify a specific product variation.
+	 * @param currencyCode 
+	 * @param productCode 
+	 * @param variationKey 
 	 * @return 
 	 */
 	public void deleteProductVariationLocalizedPrice(String productCode, String variationKey, String currencyCode) throws Exception

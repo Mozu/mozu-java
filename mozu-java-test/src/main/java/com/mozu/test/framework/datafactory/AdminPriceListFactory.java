@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.PriceListResource;
 
 /** <summary>
- * Allows you to create and manage products that you will offer on your storefront. You can create products with options that a shopper configures (such as a T-shirt color and size). You can set discounts and sale prices for your products, manage product inventory, and more.
+ * 
  * </summary>
  */
 public class AdminPriceListFactory
@@ -96,6 +96,75 @@ public class AdminPriceListFactory
 		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 		return returnObj;
+	}
+
+	public static void bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	{
+		bulkAddPriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+	}
+
+	public static void bulkAddPriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	{
+		PriceListResource resource = new PriceListResource(apiContext);
+		try
+		{
+			resource.bulkAddPriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	{
+		bulkDeletePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+	}
+
+	public static void bulkDeletePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	{
+		PriceListResource resource = new PriceListResource(apiContext);
+		try
+		{
+			resource.bulkDeletePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+	}
+
+	public static void bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, int expectedCode) throws Exception
+	{
+		bulkUpdatePriceListEntries(apiContext,  priceListEntriesIn,  null,  null, expectedCode);
+	}
+
+	public static void bulkUpdatePriceListEntries(ApiContext apiContext, List<com.mozu.api.contracts.productadmin.PriceListEntry> priceListEntriesIn, Boolean publishEvents, Boolean invalidateCache, int expectedCode) throws Exception
+	{
+		PriceListResource resource = new PriceListResource(apiContext);
+		try
+		{
+			resource.bulkUpdatePriceListEntries( priceListEntriesIn,  publishEvents,  invalidateCache);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
 	}
 
 	public static com.mozu.api.contracts.productadmin.PriceList updatePriceList(ApiContext apiContext, com.mozu.api.contracts.productadmin.PriceList priceList, String priceListCode, int expectedCode) throws Exception

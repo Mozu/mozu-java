@@ -16,8 +16,8 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.sitesettings.general.CacheSettings;
 import com.mozu.api.contracts.sitesettings.general.general.routing.CustomRouteSettings;
-import com.mozu.api.contracts.sitesettings.general.EmailTypeSetting;
 import com.mozu.api.contracts.sitesettings.general.EmailTransactionSettings;
+import com.mozu.api.contracts.sitesettings.general.EmailTypeSetting;
 import com.mozu.api.contracts.sitesettings.general.TaxableTerritory;
 import com.mozu.api.contracts.sitesettings.general.general.ViewAuthorizations;
 
@@ -43,9 +43,6 @@ public class GeneralSettings implements Serializable
 		this.allowInvalidAddresses = allowInvalidAddresses;
 	}
 
-	/**
-	 * An email address to blind carbon copy anytime an automatic email is sent from  to a shopper.
-	 */
 	protected  String bccEmailAddress;
 
 	public String getBccEmailAddress() {
@@ -56,9 +53,6 @@ public class GeneralSettings implements Serializable
 		this.bccEmailAddress = bccEmailAddress;
 	}
 
-	/**
-	 * Custom override of the default subdomain for CDN-hosted content. For example, for SEO reasons you may prefer that the subdomain for your CDN content be  instead of the default subdomain, which might be something like .
-	 */
 	protected  String customCdnHostName;
 
 	public String getCustomCdnHostName() {
@@ -148,7 +142,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * If true, this site represents a -hosted web storefront.
+	 * If true, this site represents a Mozu-hosted web storefront.
 	 */
 	protected  Boolean isMozuWebSite;
 
@@ -199,9 +193,6 @@ public class GeneralSettings implements Serializable
 		this.logoText = logoText;
 	}
 
-	/**
-	 * Assigns an image to render in place of broken images and unspecified product images (and unspecified category images, if your theme developer has enabled category images). Specified by the name or ID of the CMS image within .
-	 */
 	protected  String missingImageSubstitute;
 
 	public String getMissingImageSubstitute() {
@@ -226,7 +217,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * The email shoppers should use to reply to an automatically-generated email.
+	 * Email address to display on email messages sent from the site.
 	 */
 	protected  String replyToEmailAddress;
 
@@ -251,9 +242,6 @@ public class GeneralSettings implements Serializable
 		this.senderEmailAddress = senderEmailAddress;
 	}
 
-	/**
-	 * An alternate name for the sender email. For example, if your sender email is , you might want to use an alias of .
-	 */
 	protected  String senderEmailAlias;
 
 	public String getSenderEmailAlias() {
@@ -304,7 +292,7 @@ public class GeneralSettings implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the tenant site that site uses to render content for the shopper. For example, if this site represents a third-party sales channel such as Amazon but the company wants to send shopper emails, this value represents the -hosted web storefront site that maintains this content.
+	 * Unique identifier of the tenant site that site uses to render content for the shopper. For example, if this site represents a third-party sales channel such as Amazon but the company wants to send shopper emails, this value represents the Mozu-hosted web storefront site that maintains this content.
 	 */
 	protected  Integer templateSiteId;
 
@@ -355,9 +343,6 @@ public class GeneralSettings implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Set of settings to deal with site caching.
-	 */
 	protected  CacheSettings cacheSettings;
 
 	public CacheSettings getCacheSettings() {
@@ -368,9 +353,6 @@ public class GeneralSettings implements Serializable
 		this.cacheSettings = cacheSettings;
 	}
 
-	/**
-	 * Site-level settings for custom routing, which allows you to use your own custom URL patterns for common  pages.
-	 */
 	protected  CustomRouteSettings customRoutes;
 
 	public CustomRouteSettings getCustomRoutes() {
@@ -381,9 +363,16 @@ public class GeneralSettings implements Serializable
 		this.customRoutes = customRoutes;
 	}
 
-	/**
-	 * A collection of overrides that allow you to apply unique email settings to the email template(s) of your choice.
-	 */
+	protected  EmailTransactionSettings emailTransactionsOnlyOnRequest;
+
+	public EmailTransactionSettings getEmailTransactionsOnlyOnRequest() {
+		return this.emailTransactionsOnlyOnRequest;
+	}
+
+	public void setEmailTransactionsOnlyOnRequest(EmailTransactionSettings emailTransactionsOnlyOnRequest) {
+		this.emailTransactionsOnlyOnRequest = emailTransactionsOnlyOnRequest;
+	}
+
 	protected List<EmailTypeSetting> emailTypes;
 	public List<EmailTypeSetting> getEmailTypes() {
 		return this.emailTypes;
@@ -392,9 +381,6 @@ public class GeneralSettings implements Serializable
 		this.emailTypes = emailTypes;
 	}
 
-	/**
-	 * Supressed emails. Setting any of these to 'true' will block  from sending that email and an event will be published instead.
-	 */
 	protected  EmailTransactionSettings supressedEmailTransactions;
 
 	public EmailTransactionSettings getSupressedEmailTransactions() {
@@ -416,9 +402,6 @@ public class GeneralSettings implements Serializable
 		this.taxableTerritories = taxableTerritories;
 	}
 
-	/**
-	 * A collection of authorizations that control access to viewing the pending and live sites.
-	 */
 	protected  ViewAuthorizations viewAuthorizations;
 
 	public ViewAuthorizations getViewAuthorizations() {

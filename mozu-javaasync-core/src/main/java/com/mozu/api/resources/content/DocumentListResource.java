@@ -121,7 +121,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 */
@@ -136,7 +136,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.getDocumentList( documentListName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -152,7 +152,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.getDocumentList( documentListName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -172,7 +172,7 @@ public class DocumentListResource {
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.getDocumentList( documentListName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName The name of the document list.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.content.DocumentList
@@ -187,12 +187,12 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list);
 	 * </code></pre></p>
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -203,13 +203,13 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.createDocumentList( list, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -220,13 +220,13 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.createDocumentList( list,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -241,14 +241,14 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Creates a new documentList
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.createDocumentList( list,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -262,13 +262,13 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param documentListName 
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -279,14 +279,14 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.updateDocumentList( list,  documentListName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -297,14 +297,14 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	DocumentList documentList = documentlist.updateDocumentList( list,  documentListName,  responseFields);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -319,15 +319,15 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Updates a `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	CountDownLatch latch = documentlist.updateDocumentList( list,  documentListName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param list The list of document types and related properties that define content used by the content management system (CMS).
+	 * @param list 
 	 * @return com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
 	 * @see com.mozu.api.contracts.content.DocumentList
@@ -341,12 +341,12 @@ public class DocumentListResource {
 	}
 
 	/**
-	 * Deletes the specified `DocumentListName`.
+	 * 
 	 * <p><pre><code>
 	 *	DocumentList documentlist = new DocumentList();
 	 *	documentlist.deleteDocumentList( documentListName);
 	 * </code></pre></p>
-	 * @param documentListName Name of content documentListName to delete
+	 * @param documentListName 
 	 * @return 
 	 */
 	public void deleteDocumentList(String documentListName) throws Exception

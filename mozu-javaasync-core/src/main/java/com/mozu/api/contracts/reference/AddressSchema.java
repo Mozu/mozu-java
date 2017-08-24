@@ -51,7 +51,7 @@ public class AddressSchema implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * The unique identifier of this postal address schema.
 	 */
 	protected  Integer id;
 
@@ -64,7 +64,7 @@ public class AddressSchema implements Serializable
 	}
 
 	/**
-	 * The list of fields to display for a view or an associated schema. For example, the address schema would display fields for postal addresses.
+	 * The fields to display for postal addresses associated with this country.
 	 */
 	protected List<Field> fields;
 	public List<Field> getFields() {

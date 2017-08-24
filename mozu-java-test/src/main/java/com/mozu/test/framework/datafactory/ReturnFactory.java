@@ -338,18 +338,18 @@ public class ReturnFactory
 		return returnObj;
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(ApiContext apiContext, String returnId, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier> itemQuantities, String returnId, int expectedCode) throws Exception
 	{
-		return createReturnShippingOrder(apiContext,  returnId,  null, expectedCode);
+		return createReturnShippingOrder(apiContext,  itemQuantities,  returnId,  null, expectedCode);
 	}
 
-	public static com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(ApiContext apiContext, String returnId, String responseFields, int expectedCode) throws Exception
+	public static com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(ApiContext apiContext, List<com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier> itemQuantities, String returnId, String responseFields, int expectedCode) throws Exception
 	{
 		com.mozu.api.contracts.commerceruntime.orders.Order returnObj = new com.mozu.api.contracts.commerceruntime.orders.Order();
 		ReturnResource resource = new ReturnResource(apiContext);
 		try
 		{
-			returnObj = resource.createReturnShippingOrder( returnId,  responseFields);
+			returnObj = resource.createReturnShippingOrder( itemQuantities,  returnId,  responseFields);
 		}
 		catch (ApiException e)
 		{

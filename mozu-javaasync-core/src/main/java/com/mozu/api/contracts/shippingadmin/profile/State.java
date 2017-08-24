@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.Profile.State ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ShippingAdmin.Contracts.Profile.State code ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +28,6 @@ public class State implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {

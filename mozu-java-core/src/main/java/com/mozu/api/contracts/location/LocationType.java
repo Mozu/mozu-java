@@ -36,7 +36,7 @@ public class LocationType implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the location type.
 	 */
 	protected  String name;
 

@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunction;
 
-/**
- *	Mozu.InstalledApplications.Contracts.CustomFunctionsForContext ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFunctionsForContext implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The site ID for the site you want to apply a group of settings to. You do not need to provide this value if you want to apply the same settings to a particular action across all your sites.
-	 */
 	protected  Integer context;
 
 	public Integer getContext() {
@@ -37,9 +31,6 @@ public class CustomFunctionsForContext implements Serializable
 		this.context = context;
 	}
 
-	/**
-	 * An array of custom functions tied to a particular action.
-	 */
 	protected List<CustomFunction> customFunctions;
 	public List<CustomFunction> getCustomFunctions() {
 		return this.customFunctions;

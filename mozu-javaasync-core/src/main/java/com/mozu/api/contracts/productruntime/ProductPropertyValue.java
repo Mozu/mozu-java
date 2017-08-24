@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AttributeVocabularyValueDisplayInfo;
 
 /**
- *	Properties of a value for a product property.
+ *	Values of a product property attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPropertyValue implements Serializable
@@ -23,7 +23,7 @@ public class ProductPropertyValue implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If the object value is a String, this value provides that string value, used by vocabulary property values, products, and options.
+	 * Property string value in the language specified in the locale code for the product storefront.
 	 */
 	protected  String stringValue;
 
@@ -36,7 +36,7 @@ public class ProductPropertyValue implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * Value of the product property.
 	 */
 	protected  Object value;
 
@@ -48,9 +48,6 @@ public class ProductPropertyValue implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Defines the intended display of this attribute in the storefront. Options include Drop Down, Image Picker, and Radio Buttons.
-	 */
 	protected  AttributeVocabularyValueDisplayInfo displayInfo;
 
 	public AttributeVocabularyValueDisplayInfo getDisplayInfo() {

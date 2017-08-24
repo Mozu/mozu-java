@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.EmailTransactionSettings ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmailTransactionSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean backInStock;
 
 	public Boolean getBackInStock() {
@@ -34,9 +28,6 @@ public class EmailTransactionSettings implements Serializable
 		this.backInStock = backInStock;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean giftCardCreated;
 
 	public Boolean getGiftCardCreated() {
@@ -47,9 +38,6 @@ public class EmailTransactionSettings implements Serializable
 		this.giftCardCreated = giftCardCreated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean orderChanged;
 
 	public Boolean getOrderChanged() {
@@ -60,9 +48,6 @@ public class EmailTransactionSettings implements Serializable
 		this.orderChanged = orderChanged;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean orderFulfillmentDetailsChanged;
 
 	public Boolean getOrderFulfillmentDetailsChanged() {
@@ -73,9 +58,6 @@ public class EmailTransactionSettings implements Serializable
 		this.orderFulfillmentDetailsChanged = orderFulfillmentDetailsChanged;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean orderShipped;
 
 	public Boolean getOrderShipped() {
@@ -86,9 +68,6 @@ public class EmailTransactionSettings implements Serializable
 		this.orderShipped = orderShipped;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean refundCreated;
 
 	public Boolean getRefundCreated() {
@@ -99,9 +78,6 @@ public class EmailTransactionSettings implements Serializable
 		this.refundCreated = refundCreated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean returnAuthorized;
 
 	public Boolean getReturnAuthorized() {
@@ -112,9 +88,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnAuthorized = returnAuthorized;
 	}
 
-	/**
-	 * There is no corresponding template for this in the Core theme.
-	 */
 	protected  Boolean returnCancelled;
 
 	public Boolean getReturnCancelled() {
@@ -125,9 +98,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnCancelled = returnCancelled;
 	}
 
-	/**
-	 * This controls "email/product-return-received" in the Core theme.
-	 */
 	protected  Boolean returnClosed;
 
 	public Boolean getReturnClosed() {
@@ -138,9 +108,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnClosed = returnClosed;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean returnCreated;
 
 	public Boolean getReturnCreated() {
@@ -151,9 +118,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnCreated = returnCreated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean returnRejected;
 
 	public Boolean getReturnRejected() {
@@ -164,9 +128,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnRejected = returnRejected;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean returnUpdated;
 
 	public Boolean getReturnUpdated() {
@@ -177,9 +138,6 @@ public class EmailTransactionSettings implements Serializable
 		this.returnUpdated = returnUpdated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean shopperLoginCreated;
 
 	public Boolean getShopperLoginCreated() {
@@ -190,9 +148,6 @@ public class EmailTransactionSettings implements Serializable
 		this.shopperLoginCreated = shopperLoginCreated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean shopperPasswordReset;
 
 	public Boolean getShopperPasswordReset() {
@@ -203,9 +158,6 @@ public class EmailTransactionSettings implements Serializable
 		this.shopperPasswordReset = shopperPasswordReset;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean storeCreditCreated;
 
 	public Boolean getStoreCreditCreated() {
@@ -216,9 +168,6 @@ public class EmailTransactionSettings implements Serializable
 		this.storeCreditCreated = storeCreditCreated;
 	}
 
-	/**
-	 * A flag that determines if an email is sent to a shopper account when the described condition is met.
-	 */
 	protected  Boolean storeCreditUpdated;
 
 	public Boolean getStoreCreditUpdated() {

@@ -42,7 +42,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return string
 	 * @see string
 	 */
@@ -57,7 +57,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	CountDownLatch latch = userdata.getDBValue( dbEntryQuery, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
 	 * @see string
@@ -73,7 +73,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	string string = userdata.getDBValue( dbEntryQuery,  responseFields);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return string
 	 * @see string
@@ -93,7 +93,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	CountDownLatch latch = userdata.getDBValue( dbEntryQuery,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return string
@@ -133,8 +133,8 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	userdata.updateDBValue( value,  dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
 	 * @return 
 	 * @see string
 	 */
@@ -153,7 +153,7 @@ public class UserDataResource {
 	 *	UserData userdata = new UserData();
 	 *	userdata.deleteDBValue( dbEntryQuery);
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry string to delete.
 	 * @return 
 	 */
 	public void deleteDBValue(String dbEntryQuery) throws Exception

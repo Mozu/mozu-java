@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mozu-java-sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/mozu-java-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mozu-java-sdk_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mozu-java-sdk_main.iml" group="mozu-java-sdk" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mozu-java-sdk_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mozu-java-sdk_test.iml" group="mozu-java-sdk" />
+    </modules>
+  </component>
+</project>

@@ -12,9 +12,6 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Set whether you require users to be authenticated to preview content or view the live site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViewAuthorizations implements Serializable
 {
@@ -31,9 +28,6 @@ public class ViewAuthorizations implements Serializable
 		this.enforceSitewideSSL = enforceSitewideSSL;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForLive ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean requireAuthForLive;
 
 	public Boolean getRequireAuthForLive() {
@@ -44,9 +38,6 @@ public class ViewAuthorizations implements Serializable
 		this.requireAuthForLive = requireAuthForLive;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.ViewAuthorizations requireAuthForPending ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean requireAuthForPending;
 
 	public Boolean getRequireAuthForPending() {

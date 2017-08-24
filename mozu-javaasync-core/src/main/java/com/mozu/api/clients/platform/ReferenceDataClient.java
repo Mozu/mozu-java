@@ -155,7 +155,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -172,7 +172,7 @@ public class ReferenceDataClient {
 	 * client.executeRequest();
 	 * BehaviorCategory behaviorCategory = client.Result();
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.core.BehaviorCategory>
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -351,7 +351,7 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient();
 	 * client.setBaseAddress(url);
@@ -367,14 +367,14 @@ public class ReferenceDataClient {
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.reference.CountryWithStatesCollection> mozuClient=GetCountriesWithStatesClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CountryWithStatesCollection countryWithStatesCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.reference.CountryWithStatesCollection>
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */

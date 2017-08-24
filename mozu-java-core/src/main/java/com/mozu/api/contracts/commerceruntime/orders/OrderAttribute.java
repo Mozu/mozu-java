@@ -25,7 +25,7 @@ public class OrderAttribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the attribute definition.
+	 * Unique identifier of the order attribute definition.
 	 */
 	protected  Integer attributeDefinitionId;
 
@@ -51,7 +51,7 @@ public class OrderAttribute implements Serializable
 	}
 
 	/**
-	 * List of value data for objects.
+	 * The values defined for the order attribute.
 	 */
 	protected List<Object> values;
 	public List<Object> getValues() {

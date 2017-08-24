@@ -22,7 +22,7 @@ public class ContactType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the object is primary, used to indicate primary contacts and entities within a tenant. If true, this marker indicates that the object is the primary in a set.
+	 * If true, this is the primary contact of this contact type.
 	 */
 	protected  Boolean isPrimary;
 
@@ -35,7 +35,7 @@ public class ContactType implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of this contact type.
 	 */
 	protected  String name;
 

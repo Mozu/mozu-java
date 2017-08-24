@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductAdmin.Contracts.ActiveDateRange ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActiveDateRange implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.ActiveDateRange endDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DateTime endDate;
 
 	public DateTime getEndDate() {
@@ -34,9 +28,6 @@ public class ActiveDateRange implements Serializable
 		this.endDate = endDate;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.ActiveDateRange startDate ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DateTime startDate;
 
 	public DateTime getStartDate() {

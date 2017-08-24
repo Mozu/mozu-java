@@ -22,45 +22,6 @@ public class ShippingOriginContact implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The full last name or surname of a customer or contact name.
-	 */
-	protected  String lastNameOrSurname;
-
-	public String getLastNameOrSurname() {
-		return this.lastNameOrSurname;
-	}
-
-	public void setLastNameOrSurname(String lastNameOrSurname) {
-		this.lastNameOrSurname = lastNameOrSurname;
-	}
-
-	/**
-	 * Character string of the middle name or initial for the customer.
-	 */
-	protected  String middleNameOrInitial;
-
-	public String getMiddleNameOrInitial() {
-		return this.middleNameOrInitial;
-	}
-
-	public void setMiddleNameOrInitial(String middleNameOrInitial) {
-		this.middleNameOrInitial = middleNameOrInitial;
-	}
-
-	/**
-	 * Collection of phone numbers associated with the shipping origin contact.
-	 */
-	protected  String phoneNumber;
-
-	public String getPhoneNumber() {
-		return this.phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	/**
 	 * The legal or doing business as (DBA) or tradestyle name of the business or organization. The maximum character length is 200.
 	 */
 	protected  String companyOrOrganization;
@@ -87,7 +48,7 @@ public class ShippingOriginContact implements Serializable
 	}
 
 	/**
-	 * The full first name of a customer or contact name.
+	 * The first name of the shipping origin contact.
 	 */
 	protected  String firstName;
 
@@ -97,6 +58,45 @@ public class ShippingOriginContact implements Serializable
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	/**
+	 * The last name of the shipping origin contact.
+	 */
+	protected  String lastNameOrSurname;
+
+	public String getLastNameOrSurname() {
+		return this.lastNameOrSurname;
+	}
+
+	public void setLastNameOrSurname(String lastNameOrSurname) {
+		this.lastNameOrSurname = lastNameOrSurname;
+	}
+
+	/**
+	 * The middle name or middle initial of the shipping origin contact.
+	 */
+	protected  String middleNameOrInitial;
+
+	public String getMiddleNameOrInitial() {
+		return this.middleNameOrInitial;
+	}
+
+	public void setMiddleNameOrInitial(String middleNameOrInitial) {
+		this.middleNameOrInitial = middleNameOrInitial;
+	}
+
+	/**
+	 * Collection of phone numbers associated with the shipping origin contact.
+	 */
+	protected  String phoneNumber;
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 

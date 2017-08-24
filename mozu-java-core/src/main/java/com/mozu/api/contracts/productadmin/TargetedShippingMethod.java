@@ -35,7 +35,7 @@ public class TargetedShippingMethod implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * Name of the shipping method service type associated with the targeted discount.
 	 */
 	protected  String name;
 

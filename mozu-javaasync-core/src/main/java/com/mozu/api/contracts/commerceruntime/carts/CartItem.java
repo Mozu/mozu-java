@@ -39,7 +39,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The subtotal of the cart, order, and wishlist items, including any applied discount calculations. Wishlist subtotals may change depending on the length of time, available discounts, and stock amounts of products at the time of review by shoppers.
+	 * The subtotal of the cart item including any applied discount calculations.
 	 */
 	protected  Double discountedTotal;
 
@@ -52,7 +52,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Estimated amount of discounts applied to all items in the carts and orders. System-supplied and read-only. This value will be available at the wish list, cart item, order item, and wish list item level at a later time.
+	 * Estimated amount of discounts applied to the item in the cart, which is system-supplied and read-only.
 	 */
 	protected  Double discountTotal;
 
@@ -65,7 +65,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Represents the total price of the cart item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount. This value is not calculated for wish lists at this time.
+	 * Represents the total price of the cart item extended to the shopper. This begins with the Unit Price, then uses any of the following prices if they are defined, in the following order: Override Amount, Sale Amount, List Amount.
 	 */
 	protected  Double extendedTotal;
 
@@ -78,7 +78,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The monetary sum of all fees incurred in the cart, order, line item in a cart, or line item in an order. This value is not calculated for wish lists at this time.
+	 * The total amount of all fees incurred for the item.
 	 */
 	protected  Double feeTotal;
 
@@ -91,7 +91,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
+	 * The location code associated with the location where this cart item will be fulfilled.
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -104,7 +104,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The method used to fulfill this cart or order item. The method includes direct ship or in-store pickup. The available methods depend on the supported fulfillment types for the product. 
+	 * The method used to fulfill this cart item, which is direct ship or in-store pickup.
 	 */
 	protected  String fulfillmentMethod;
 
@@ -116,9 +116,6 @@ public class CartItem implements Serializable
 		this.fulfillmentMethod = fulfillmentMethod;
 	}
 
-	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
-	 */
 	protected  Double handlingAmount;
 
 	public Double getHandlingAmount() {
@@ -130,7 +127,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the cart item.
 	 */
 	protected  String id;
 
@@ -143,7 +140,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
 	 */
 	protected  Boolean isRecurring;
 
@@ -156,7 +153,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 * If true, the entity is subject to tax based on the relevant tax rate.
 	 */
 	protected  Boolean isTaxable;
 
@@ -169,7 +166,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The total amount of calculated tax for items, used by carts, orders, and wish lists.
+	 * The total amount of tax for the item in the cart.
 	 */
 	protected  Double itemTaxTotal;
 
@@ -181,9 +178,6 @@ public class CartItem implements Serializable
 		this.itemTaxTotal = itemTaxTotal;
 	}
 
-	/**
-	 * The line id assigned to the order item. Visible only in the Admin, this is set from the Admin or in CommerceRuntime when a cart is converted to an order.
-	 */
 	protected  Integer lineId;
 
 	public Integer getLineId() {
@@ -208,7 +202,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The specified quantity of the cart item.
 	 */
 	protected  Integer quantity;
 
@@ -231,7 +225,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The total amount of tax incurred on the shipping charges in the cart and order. This property is not calculated at this time for wish lists.
+	 * The total amount of tax incurred on the shipping charges in the cart.
 	 */
 	protected  Double shippingTaxTotal;
 
@@ -244,7 +238,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The calculated total shipping amount estimated for carts or orders, including tax. This amount is not calculated for wish lists at this time.
+	 * The estimated total amount of shipping fees for the item in the cart.
 	 */
 	protected  Double shippingTotal;
 
@@ -257,7 +251,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Estimated amount of the cart or order without sales tax, shipping costs, and other fees. This amount is not calculated for wish lists at this time.
+	 * Estimated amount of the item in the cart without sales tax, shipping costs, and other fees.
 	 */
 	protected  Double subtotal;
 
@@ -270,7 +264,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The monetary amount of an item in the cart that is subject to tax. This amount typically represents the line item subtotal before applied discounts for an order.
+	 * The amount of the item in the cart that is subject to tax.
 	 */
 	protected  Double taxableTotal;
 
@@ -283,7 +277,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * Total is used to indicate the monetary, estimated total amount of the cart or order, including items, sales tax, shipping costs, and other fees. Totals are not estimated for wish lists at this time.
+	 * Estimated total amount of the item, including the product price, sales tax, shipping costs, and other fees.
 	 */
 	protected  Double total;
 
@@ -448,9 +442,6 @@ public class CartItem implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -462,7 +453,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * The properties of the associated product.
 	 */
 	protected  Product product;
 
@@ -475,7 +466,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * The applicable product discount for an associated cart, order, or wish list. 
+	 * Product discounts displays a list of all applicable discount.
 	 */
 	protected  AppliedLineItemProductDiscount productDiscount;
 
@@ -488,7 +479,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * List of product-level discounts projected to apply to a cart, order, or wish list.
+	 * List of product-level discounts projected to apply to the cart item at checkout.
 	 */
 	protected List<AppliedLineItemProductDiscount> productDiscounts;
 	public List<AppliedLineItemProductDiscount> getProductDiscounts() {
@@ -499,7 +490,7 @@ public class CartItem implements Serializable
 	}
 
 	/**
-	 * List of shipping discounts projected to apply to carts, orders, and wish lists and items at checkout.
+	 * List of shipping discounts projected to apply to the cart item at checkout.
 	 */
 	protected List<AppliedLineItemShippingDiscount> shippingDiscounts;
 	public List<AppliedLineItemShippingDiscount> getShippingDiscounts() {
@@ -509,8 +500,18 @@ public class CartItem implements Serializable
 		this.shippingDiscounts = shippingDiscounts;
 	}
 
+	protected transient com.fasterxml.jackson.databind.JsonNode taxData;
+
+	public com.fasterxml.jackson.databind.JsonNode getTaxData() {
+		return this.taxData;
+	}
+
+	public void setTaxData(com.fasterxml.jackson.databind.JsonNode taxData) {
+		this.taxData = taxData;
+	}
+
 	/**
-	 * Properties of the price per unit of a product, associated with cart and order items. This price is not used for wish lists at this time.
+	 * Properties of the unit price associated with the cart item.
 	 */
 	protected  CommerceUnitPrice unitPrice;
 

@@ -17,7 +17,7 @@ import com.mozu.api.contracts.productruntime.CategoryContent;
 import com.mozu.api.contracts.productruntime.Category;
 
 /**
- *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
+ *	Properties of the product category that appears on the storefront.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -25,9 +25,6 @@ public class Category implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * External unique identifier of the category.
-	 */
 	protected  String categoryCode;
 
 	public String getCategoryCode() {
@@ -51,9 +48,6 @@ public class Category implements Serializable
 		this.categoryId = categoryId;
 	}
 
-	/**
-	 * The number of facet results for a product search.
-	 */
 	protected  Integer count;
 
 	public Integer getCount() {
@@ -65,7 +59,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
+	 * If true, the category is displayed on the website storefront.
 	 */
 	protected  Boolean isDisplayed;
 
@@ -78,7 +72,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
 	protected  Integer sequence;
 

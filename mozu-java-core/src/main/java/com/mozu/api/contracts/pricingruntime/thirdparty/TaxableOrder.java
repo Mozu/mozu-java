@@ -13,11 +13,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
+import com.mozu.api.contracts.pricingruntime.TaxAttribute;
+import com.mozu.api.contracts.pricingruntime.AppliedDiscount;
 import com.mozu.api.contracts.pricingruntime.TaxableLineItem;
+import com.mozu.api.contracts.pricingruntime.AppliedOrderShippingDiscount;
 import com.mozu.api.contracts.pricingruntime.thirdparty.TaxContext;
 
 /**
- *	Properties of an order for which to calculate tax. When a tax capability is enabled for a tenant,  sends the `TaxableOrder `properties to the capability as read-only, system-supplied information.
+ *	Properties of an order for which to calculate tax. When a tax capability is enabled for a tenant, Mozu sends the TaxableOrder properties to the capability as read-only, system-supplied information.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaxableOrder implements Serializable
@@ -39,7 +42,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The combined price for all handling costs calculated together for shipped orders, not for digital or in-store pickup. This includes all handling costs per the product line items and options, excluding taxes and discounts. 
+	 * Handling fee associated with the order.
 	 */
 	protected  Double handlingFee;
 
@@ -52,7 +55,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the order was submitted for purchase. 
+	 * The date and time the order was submitted.
 	 */
 	protected  DateTime orderDate;
 
@@ -62,6 +65,26 @@ public class TaxableOrder implements Serializable
 
 	public void setOrderDate(DateTime orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	protected  String orderId;
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	protected  Integer orderNumber;
+
+	public Integer getOrderNumber() {
+		return this.orderNumber;
+	}
+
+	public void setOrderNumber(Integer orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 
 	/**
@@ -78,7 +101,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The date and time the original order was placed. This date is set when the order is submitted with payment. 
+	 * The date and time the original order was placed.
 	 */
 	protected  DateTime originalOrderDate;
 
@@ -91,7 +114,7 @@ public class TaxableOrder implements Serializable
 	}
 
 	/**
-	 * The calculated monetary amount of shipping for a line items within and an entire order.
+	 * The total shipping amount calculated for the order.
 	 */
 	protected  Double shippingAmount;
 
@@ -103,8 +126,28 @@ public class TaxableOrder implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
+	protected  String shippingMethodCode;
+
+	public String getShippingMethodCode() {
+		return this.shippingMethodCode;
+	}
+
+	public void setShippingMethodCode(String shippingMethodCode) {
+		this.shippingMethodCode = shippingMethodCode;
+	}
+
+	protected  String shippingMethodName;
+
+	public String getShippingMethodName() {
+		return this.shippingMethodName;
+	}
+
+	public void setShippingMethodName(String shippingMethodName) {
+		this.shippingMethodName = shippingMethodName;
+	}
+
 	/**
-	 * The type of request for which to tax this entity, which is Order or Return.
+	 * The type of request for which to tax this entity, which is "Order" or "Return."
 	 */
 	protected  String taxRequestType;
 
@@ -116,8 +159,34 @@ public class TaxableOrder implements Serializable
 		this.taxRequestType = taxRequestType;
 	}
 
+	protected List<TaxAttribute> attributes;
+	public List<TaxAttribute> getAttributes() {
+		return this.attributes;
+	}
+	public void setAttributes(List<TaxAttribute> attributes) {
+		this.attributes = attributes;
+	}
+
+	protected  AppliedDiscount handlingDiscount;
+
+	public AppliedDiscount getHandlingDiscount() {
+		return this.handlingDiscount;
+	}
+
+	public void setHandlingDiscount(AppliedDiscount handlingDiscount) {
+		this.handlingDiscount = handlingDiscount;
+	}
+
+	protected List<AppliedDiscount> handlingDiscounts;
+	public List<AppliedDiscount> getHandlingDiscounts() {
+		return this.handlingDiscounts;
+	}
+	public void setHandlingDiscounts(List<AppliedDiscount> handlingDiscounts) {
+		this.handlingDiscounts = handlingDiscounts;
+	}
+
 	/**
-	 * List of line items associated with the order.
+	 * List of line items in a taxable order object.
 	 */
 	protected List<TaxableLineItem> lineItems;
 	public List<TaxableLineItem> getLineItems() {
@@ -125,6 +194,42 @@ public class TaxableOrder implements Serializable
 	}
 	public void setLineItems(List<TaxableLineItem> lineItems) {
 		this.lineItems = lineItems;
+	}
+
+	protected  AppliedDiscount orderDiscount;
+
+	public AppliedDiscount getOrderDiscount() {
+		return this.orderDiscount;
+	}
+
+	public void setOrderDiscount(AppliedDiscount orderDiscount) {
+		this.orderDiscount = orderDiscount;
+	}
+
+	protected List<AppliedDiscount> orderDiscounts;
+	public List<AppliedDiscount> getOrderDiscounts() {
+		return this.orderDiscounts;
+	}
+	public void setOrderDiscounts(List<AppliedDiscount> orderDiscounts) {
+		this.orderDiscounts = orderDiscounts;
+	}
+
+	protected  AppliedOrderShippingDiscount shippingDiscount;
+
+	public AppliedOrderShippingDiscount getShippingDiscount() {
+		return this.shippingDiscount;
+	}
+
+	public void setShippingDiscount(AppliedOrderShippingDiscount shippingDiscount) {
+		this.shippingDiscount = shippingDiscount;
+	}
+
+	protected List<AppliedOrderShippingDiscount> shippingDiscounts;
+	public List<AppliedOrderShippingDiscount> getShippingDiscounts() {
+		return this.shippingDiscounts;
+	}
+	public void setShippingDiscounts(List<AppliedOrderShippingDiscount> shippingDiscounts) {
+		this.shippingDiscounts = shippingDiscounts;
 	}
 
 	/**

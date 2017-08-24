@@ -25,7 +25,7 @@ public class ProductContent implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Description defined for metadata, used to interally manage data, in the language specified by the `localeCode`. This content is used by categories, products, localized content, and SEO content.
+	 * Description defined for the metadata used to internally manage information about the product.
 	 */
 	protected  String metaTagDescription;
 
@@ -38,7 +38,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * Keywords defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Keywords are used by content for categories, products, localized content, and SEO content.
+	 * Keywords defined for the metadata used to internally manage information about the product.
 	 */
 	protected  String metaTagKeywords;
 
@@ -51,7 +51,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * Title defined for  metadata, used to internally manage data, in the language specified by the `localeCode`. Titles are used by content for categories, products, localized content, and SEO content.
+	 * Title defined for the metadata used to internally manage information about the product.
 	 */
 	protected  String metaTagTitle;
 
@@ -64,7 +64,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * Lengthy full description for a product description, displayed on product detail pages within the storefront.
+	 * Full description of the product, which typically appears on the product details page.
 	 */
 	protected  String productFullDescription;
 
@@ -77,7 +77,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
+	 * The descriptive brief product name.
 	 */
 	protected  String productName;
 
@@ -90,7 +90,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * Brief text description of the product or component in a product bundle, typically used when the product is displayed in a list or in search results.
+	 * Brief description of the product typically used when the product is displayed in a list or in search results.
 	 */
 	protected  String productShortDescription;
 
@@ -103,7 +103,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * The search engine optimized, human-readable portion of the URL. The content is localized according to the product's `localeCode`.
+	 * Product URL defined for search engine optimization.
 	 */
 	protected  String seoFriendlyUrl;
 
@@ -116,7 +116,7 @@ public class ProductContent implements Serializable
 	}
 
 	/**
-	 * List of image files associated with a product. This content may include the image file URL, name, and other information as available.
+	 * List of image files associated with the product.
 	 */
 	protected List<ProductImage> productImages;
 	public List<ProductImage> getProductImages() {

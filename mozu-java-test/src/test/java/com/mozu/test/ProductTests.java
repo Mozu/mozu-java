@@ -187,7 +187,7 @@ public class ProductTests extends MozuApiTestBase {
 		ProductCollection productPerPage;
 		for (page=0; page<=products.getPageCount(); page++)
 		{
-		    productPerPage = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, page*pagesize, pagesize, null, null, HttpStatus.SC_OK);
+		    productPerPage = ProductFactory.getProducts(localapiContext, DataViewMode.Live, null, page*pagesize, pagesize, null, null,null,null, HttpStatus.SC_OK);
 /*			if (productPerPage.getItems().size() < 10)
 			{
 				System.out.println("Wrong Page" + page + " :" + products.getItems().size());

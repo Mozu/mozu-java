@@ -22,7 +22,7 @@ public class TargetedCategory implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the product category associated with the targeted discount.
 	 */
 	protected  Integer id;
 

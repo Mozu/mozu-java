@@ -39,7 +39,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The estimated date and time the shipment will be shipped to the shopper. This calculation is based on product stock, availability, date of order entry, and location.
+	 * The date and time the shipment will be shipped to the shopper.
 	 */
 	protected  DateTime estimatedShipmentDate;
 
@@ -49,6 +49,16 @@ public class RateRequest implements Serializable
 
 	public void setEstimatedShipmentDate(DateTime estimatedShipmentDate) {
 		this.estimatedShipmentDate = estimatedShipmentDate;
+	}
+
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
@@ -77,9 +87,6 @@ public class RateRequest implements Serializable
 		this.isoCurrencyCode = isoCurrencyCode;
 	}
 
-	/**
-	 * The Order SubTotal After Discounts to be used in rate calculation
-	 */
 	protected  Double orderDiscountedSubTotal;
 
 	public Double getOrderDiscountedSubTotal() {
@@ -91,7 +98,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The total monetary amount of the order. This amount is used to calculate the shipping rate estimate.
+	 * The total amount of the order used to calculate the shipping rate estimate.
 	 */
 	protected  Double orderTotal;
 
@@ -103,9 +110,6 @@ public class RateRequest implements Serializable
 		this.orderTotal = orderTotal;
 	}
 
-	/**
-	 * The Order ID to be used in rate calculation Information al only
-	 */
 	protected  String relatedOrderId;
 
 	public String getRelatedOrderId() {
@@ -146,7 +150,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Collection of carrier-specific key-value attribute pairs associated with a shipping carrier. These are required to retrieve a shipping rate request and are returned for the generated shipping label.
+	 * List of key-value pairs that represent custom attributes associated with the request.
 	 */
 	protected List<CustomAttribute> customAttributes;
 	public List<CustomAttribute> getCustomAttributes() {
@@ -156,9 +160,6 @@ public class RateRequest implements Serializable
 		this.customAttributes = customAttributes;
 	}
 
-	/**
-	 * Mozu.ShippingRuntime.Contracts.RateRequest data ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {
@@ -170,7 +171,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
+	 * The physical address to which the shipment will ship.
 	 */
 	protected  Address destinationAddress;
 
@@ -183,7 +184,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * Collection list of items. All returned data is provided in an items array. For a failed request, the returned response may be success with an empty item collection. Items are used throughout APIs for carts, wish lists, documents, payments, returns, properties, and more.
+	 * List of items to include in the shipping rate request.
 	 */
 	protected List<RateRequestItem> items;
 	public List<RateRequestItem> getItems() {
@@ -194,7 +195,7 @@ public class RateRequest implements Serializable
 	}
 
 	/**
-	 * The physical address from which the order or shipment will ship.
+	 * The physical address from which the shipment will ship.
 	 */
 	protected  Address originAddress;
 

@@ -24,7 +24,7 @@ public class FulfillmentAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the action to perform for the payment, fulfillment, order, or return.
+	 * The name of the fulfillment action to perform, which is "Ship" or "PickUp".
 	 */
 	protected  String actionName;
 
@@ -48,7 +48,7 @@ public class FulfillmentAction implements Serializable
 	}
 
 	/**
-	 * Array list of unique IDs of packages in a shipment planned for or finished a shipping fulfillment action. 
+	 * Array list of packages for which to perform the fulfillment action.
 	 */
 	protected List<String> packageIds;
 	public List<String> getPackageIds() {

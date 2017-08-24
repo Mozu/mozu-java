@@ -189,7 +189,7 @@ public class CardResource {
 	 *	Card card = card.addAccountCard( card,  accountId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -207,7 +207,7 @@ public class CardResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -225,7 +225,7 @@ public class CardResource {
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -248,7 +248,7 @@ public class CardResource {
 	 * @param accountId Unique identifier of the customer account.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer credit card to add to the account.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -268,8 +268,8 @@ public class CardResource {
 	 *	Card card = card.updateAccountCard( card,  accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param cardId Unique identifier of the credit card.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -286,9 +286,9 @@ public class CardResource {
 	 *	CountDownLatch latch = card.updateAccountCard( card,  accountId,  cardId, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -305,9 +305,9 @@ public class CardResource {
 	 *	Card card = card.updateAccountCard( card,  accountId,  cardId,  responseFields);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -328,10 +328,10 @@ public class CardResource {
 	 *	CountDownLatch latch = card.updateAccountCard( card,  accountId,  cardId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param card Properties of a credit card used to submit payment for an order.
+	 * @param card Properties of the customer account credit card to update.
 	 * @return com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
 	 * @see com.mozu.api.contracts.customer.Card
@@ -351,7 +351,7 @@ public class CardResource {
 	 *	card.deleteAccountCard( accountId,  cardId);
 	 * </code></pre></p>
 	 * @param accountId Unique identifier of the customer account.
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId Unique identifier of the credit card to delete.
 	 * @return 
 	 */
 	public void deleteAccountCard(Integer accountId, String cardId) throws Exception

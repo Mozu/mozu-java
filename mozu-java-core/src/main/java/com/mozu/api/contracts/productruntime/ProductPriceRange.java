@@ -36,7 +36,7 @@ public class ProductPriceRange implements Serializable
 	}
 
 	/**
-	 * The highest possible price value for a product with options that vary the cost of the product.
+	 * Thw highest possible price value for a product with options that vary the cost of the product.
 	 */
 	protected  ProductPrice upper;
 

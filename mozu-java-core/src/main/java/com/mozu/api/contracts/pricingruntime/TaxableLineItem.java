@@ -25,7 +25,7 @@ public class TaxableLineItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the taxable line item.
 	 */
 	protected  String id;
 
@@ -38,7 +38,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * Indicates if the item is subject to taxation, used by products, options, extras, cart and order items, line items, and wish lists. If true, the entity is subject to tax based on the relevant tax rate and rules.
+	 * If true, the line item in the order is subject to tax.
 	 */
 	protected  Boolean isTaxable;
 
@@ -77,7 +77,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
+	 * The name of the product that represents a line item in a taxable order.
 	 */
 	protected  String productName;
 
@@ -90,7 +90,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The specified quantity of objects and items. This property is used for numerous object types including products, options, components within a product bundle, cart and order items, returned items, shipping line items, items in a digital product. and items associated with types and reservations.
+	 * The quantity of the line item in the order.
 	 */
 	protected  Integer quantity;
 
@@ -103,7 +103,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The reason description for an action, including item return, coupon not valid, and item is taxed. 
+	 * The reason the item is either taxed or returned.
 	 */
 	protected  String reason;
 
@@ -116,7 +116,7 @@ public class TaxableLineItem implements Serializable
 	}
 
 	/**
-	 * The calculated monetary amount of shipping for a line items within and an entire order.
+	 * The amount of shipping calculated for a line item in an order.
 	 */
 	protected  Double shippingAmount;
 
@@ -128,9 +128,6 @@ public class TaxableLineItem implements Serializable
 		this.shippingAmount = shippingAmount;
 	}
 
-	/**
-	 * For configurable products, the unique identifier of the product variation that has been selected.
-	 */
 	protected  String variantProductCode;
 
 	public String getVariantProductCode() {
@@ -141,9 +138,6 @@ public class TaxableLineItem implements Serializable
 		this.variantProductCode = variantProductCode;
 	}
 
-	/**
-	 * Custom data for a given vendor set within the commerce process.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

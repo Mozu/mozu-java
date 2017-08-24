@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.PriceListNode;
 
-/**
- *	Mozu.ProductRuntime.Contracts.PriceList ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceList implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -37,9 +31,6 @@ public class PriceList implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -50,9 +41,6 @@ public class PriceList implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList filteredInStoreFront ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean filteredInStoreFront;
 
 	public Boolean getFilteredInStoreFront() {
@@ -63,9 +51,6 @@ public class PriceList implements Serializable
 		this.filteredInStoreFront = filteredInStoreFront;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList isIndexed ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean isIndexed;
 
 	public Boolean getIsIndexed() {
@@ -76,9 +61,6 @@ public class PriceList implements Serializable
 		this.isIndexed = isIndexed;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList isSiteDefault ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean isSiteDefault;
 
 	public Boolean getIsSiteDefault() {
@@ -89,9 +71,6 @@ public class PriceList implements Serializable
 		this.isSiteDefault = isSiteDefault;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -102,9 +81,6 @@ public class PriceList implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList priceListCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -115,9 +91,6 @@ public class PriceList implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList priceListId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
@@ -128,9 +101,6 @@ public class PriceList implements Serializable
 		this.priceListId = priceListId;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList resolvable ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Boolean resolvable;
 
 	public Boolean getResolvable() {
@@ -141,9 +111,6 @@ public class PriceList implements Serializable
 		this.resolvable = resolvable;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList validSites ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Integer> validSites;
 	public List<Integer> getValidSites() {
 		return this.validSites;
@@ -152,9 +119,6 @@ public class PriceList implements Serializable
 		this.validSites = validSites;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList ancestors ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<PriceListNode> ancestors;
 	public List<PriceListNode> getAncestors() {
 		return this.ancestors;
@@ -163,9 +127,6 @@ public class PriceList implements Serializable
 		this.ancestors = ancestors;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceList descendants ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<PriceListNode> descendants;
 	public List<PriceListNode> getDescendants() {
 		return this.descendants;

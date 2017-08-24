@@ -17,18 +17,12 @@ import com.mozu.api.contracts.sitesettings.general.general.routing.Mapping;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Validator;
 import com.mozu.api.contracts.sitesettings.general.general.routing.Route;
 
-/**
- *	Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomRouteSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings mappings ApiTypeMember DOCUMENT_HERE 
-	 */
 	public HashMap<String,Mapping> mappings;
 	public HashMap<String,Mapping> getMappings() {
 		return this.mappings;
@@ -37,9 +31,6 @@ public class CustomRouteSettings implements Serializable
 		this.mappings = mappings;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings validators ApiTypeMember DOCUMENT_HERE 
-	 */
 	public HashMap<String,Validator> validators;
 	public HashMap<String,Validator> getValidators() {
 		return this.validators;
@@ -48,9 +39,6 @@ public class CustomRouteSettings implements Serializable
 		this.validators = validators;
 	}
 
-	/**
-	 * Mozu.SiteSettings.General.Contracts.General.Routing.CustomRouteSettings routes ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<Route> routes;
 	public List<Route> getRoutes() {
 		return this.routes;

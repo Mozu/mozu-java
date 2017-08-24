@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Content Publish Set resource to manage content publish sets and the pending content drafts.You can use content publish sets to group pending content changes together and publish them all at the same time.
+ * 
  * </summary>
  */
 public class PublishSetSummaryResource {
@@ -35,7 +35,7 @@ public class PublishSetSummaryResource {
 
 	
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = publishsetsummary.getPublishSets();
@@ -49,14 +49,14 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Returns a list of content publish sets.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = publishsetsummary.getPublishSets( pageSize,  startIndex,  responseFields);
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 */
@@ -70,12 +70,12 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -85,17 +85,17 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Retrieves a list of content publish sets and their properties.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = publishsetsummary.getPublishSetItems( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param code 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -109,12 +109,12 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.deletePublishSet( code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return object
 	 * @see object
 	 */
@@ -124,14 +124,14 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Deletes the specified content publish set. You can use the shouldDiscard parameter to specify whether to discard the content drafts assigned to the content publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.deletePublishSet( code,  shouldDiscard,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
+	 * @param code 
+	 * @param responseFields 
+	 * @param shouldDiscard 
 	 * @return object
 	 * @see object
 	 */
@@ -145,13 +145,13 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param itemsToPublish The details of the items that you want to add to a specified publish set.
+	 * @param code 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
@@ -162,14 +162,14 @@ public class PublishSetSummaryResource {
 	}
 
 	/**
-	 * Adds a set of documents by id to a specified publish set.
+	 * 
 	 * <p><pre><code>
 	 *	PublishSetSummary publishsetsummary = new PublishSetSummary();
 	 *	object object = publishsetsummary.addPublishSetItems( itemsToPublish,  code,  responseFields);
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param itemsToPublish The details of the items that you want to add to a specified publish set.
+	 * @param code 
+	 * @param responseFields 
+	 * @param itemsToPublish 
 	 * @return object
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem

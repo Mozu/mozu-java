@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.ProductAdmin.Contracts.AssignedDiscount ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AssignedDiscount implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * ReadOnly, CouponSetCode copied from URI
-	 */
 	protected  String couponSetCode;
 
 	public String getCouponSetCode() {
@@ -35,9 +29,6 @@ public class AssignedDiscount implements Serializable
 		this.couponSetCode = couponSetCode;
 	}
 
-	/**
-	 * ReadOnly, CouponSetId
-	 */
 	protected  Integer couponSetId;
 
 	public Integer getCouponSetId() {
@@ -48,9 +39,6 @@ public class AssignedDiscount implements Serializable
 		this.couponSetId = couponSetId;
 	}
 
-	/**
-	 * Unique identifier for the discount in the storefront.
-	 */
 	protected  Integer discountId;
 
 	public Integer getDiscountId() {
@@ -61,9 +49,6 @@ public class AssignedDiscount implements Serializable
 		this.discountId = discountId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

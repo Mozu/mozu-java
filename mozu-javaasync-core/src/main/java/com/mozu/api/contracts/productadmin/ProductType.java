@@ -26,7 +26,7 @@ public class ProductType implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The type of goods in a bundled product. A bundled product is composed of products associated to sell together. Possible values include “Physical” and “DigitalCredit”. This comes from the `productType `of the product. Products are defaulted to a Physical `goodsType`. Gift cards have a `goodsType `of DigitalCredit.
+	 * The type of goods for this product.
 	 */
 	protected  String goodsType;
 
@@ -39,7 +39,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the product type.
 	 */
 	protected  Integer id;
 
@@ -78,7 +78,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * Name of the product type, such as "Shoes" or "TVs."
 	 */
 	protected  String name;
 
@@ -91,7 +91,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
+	 * The number of products associated with this product type.
 	 */
 	protected  Integer productCount;
 
@@ -128,7 +128,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * List of extra product attributes defined for this product. For example, monogram could be a possible extra for a shirt product.
+	 * The list of product type attributes which exist as extras. Example: monogram
 	 */
 	protected List<AttributeInProductType> extras;
 	public List<AttributeInProductType> getExtras() {
@@ -139,7 +139,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * The list of product type attributes which exist as options.
 	 */
 	protected List<AttributeInProductType> options;
 	public List<AttributeInProductType> getOptions() {
@@ -150,7 +150,7 @@ public class ProductType implements Serializable
 	}
 
 	/**
-	 * Collection of property attributes defined for the object. Properties are associated to all objects within Mozu, including documents, products, and product types.
+	 * The list of product type attributes which exist as properties, such as color.
 	 */
 	protected List<AttributeInProductType> properties;
 	public List<AttributeInProductType> getProperties() {

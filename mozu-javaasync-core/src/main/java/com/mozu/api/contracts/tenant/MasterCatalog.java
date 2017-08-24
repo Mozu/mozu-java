@@ -24,9 +24,6 @@ public class MasterCatalog implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The date time in UTC format set when the object was created. 
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -38,7 +35,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The default three-letter ISO currency code for monetary amounts. Currently, only "USD" is supported for U.S. Dollar.
+	 * The default three-letter ISO currency code associated with this master catalog. At this time, only "USD" is supported.
 	 */
 	protected  String defaultCurrencyCode;
 
@@ -51,7 +48,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The two-letter default locale code for setting the localized text content. Currently, only "en-US" is supported for U.S. English.
+	 * The default locale code associated with this master catalog. At this time, only "en-US" is supported.
 	 */
 	protected  String defaultLocaleCode;
 
@@ -64,7 +61,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The date and time the object was deleted. 
+	 * The date and time the master catalog was deleted.
 	 */
 	protected  DateTime deleteDate;
 
@@ -76,9 +73,6 @@ public class MasterCatalog implements Serializable
 		this.deleteDate = deleteDate;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  Integer id;
 
 	public Integer getId() {
@@ -90,7 +84,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is deleted. If true, the object has been deleted. This may affect associated child members and objects. For example, a deleted master catalog affects all associated catalogs. 
+	 * If true, this master catalog and its associated catalogs have been deleted from the tenant.
 	 */
 	protected  Boolean isDeleted;
 
@@ -103,7 +97,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * User-defined name of the master catalog.
 	 */
 	protected  String name;
 
@@ -116,7 +110,7 @@ public class MasterCatalog implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * The current status of the master catalog.
 	 */
 	protected  String status;
 
@@ -141,9 +135,6 @@ public class MasterCatalog implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * The date and time the object was updated most recently. The date is in UTC format.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {

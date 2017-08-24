@@ -23,7 +23,7 @@ public class InStockNotificationSubscription implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 * Unique identifier of the customer associated with the in-stock notification subscription.
 	 */
 	protected  Integer customerId;
 
@@ -49,7 +49,7 @@ public class InStockNotificationSubscription implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the customer in-stock notification subscription.
 	 */
 	protected  Integer id;
 
@@ -62,7 +62,7 @@ public class InStockNotificationSubscription implements Serializable
 	}
 
 	/**
-	 * The unique, user-defined code that identifies a location. This location can be the location where the order was entered, location for newly in-stock products, and where products are returned.
+	 * Tenant-defined code that identifies the customer in-stock notification subscription.
 	 */
 	protected  String locationCode;
 

@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.shippingadmin.CustomTableRateContent;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.CustomTableRate ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomTableRate implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -35,9 +29,6 @@ public class CustomTableRate implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The type of this rate see ../commerce/catalog/admin/shipping/global/carriers/custom/serviceTypes/en-us
-	 */
 	protected  String rateType;
 
 	public String getRateType() {
@@ -48,9 +39,6 @@ public class CustomTableRate implements Serializable
 		this.rateType = rateType;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Double value;
 
 	public Double getValue() {
@@ -61,9 +49,6 @@ public class CustomTableRate implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * Localizable content (such as a name and/or description) for an attribute. The content may be localized when displayed according to the locale code specified by the master catalog. Content can include descriptive text for product extensible attributes, catalog-level descriptions (displayed if isContentOverriden is true), product bundles, and customer account notes.
-	 */
 	protected  CustomTableRateContent content;
 
 	public CustomTableRateContent getContent() {

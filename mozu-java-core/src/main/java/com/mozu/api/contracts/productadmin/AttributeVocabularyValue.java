@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent;
 
 /**
- *	Properties of a vocabulary value defined for an extensible attribute.
+ *	Properties of an individual vocabulary value for an attribute. For example, a "color" attribute might have the following vocabulary values: Red, Blue, Green.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeVocabularyValue implements Serializable
@@ -24,9 +24,6 @@ public class AttributeVocabularyValue implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The order in which the attribute value displays. If you omit a value for this property,  infers the display order from the attribute value's position the list.
-	 */
 	protected  Integer displayOrder;
 
 	public Integer getDisplayOrder() {
@@ -37,9 +34,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.displayOrder = displayOrder;
 	}
 
-	/**
-	 * The name of the product that represents a line item in a taxable order or product bundle.
-	 */
 	protected  String productName;
 
 	public String getProductName() {
@@ -51,7 +45,7 @@ public class AttributeVocabularyValue implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * The actual vocabulary value.
 	 */
 	protected  Object value;
 
@@ -89,9 +83,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * The localized content associated with the object.
-	 */
 	protected List<AttributeVocabularyValueLocalizedContent> localizedContent;
 	public List<AttributeVocabularyValueLocalizedContent> getLocalizedContent() {
 		return this.localizedContent;

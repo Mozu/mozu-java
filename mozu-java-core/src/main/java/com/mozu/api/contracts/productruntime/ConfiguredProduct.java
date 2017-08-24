@@ -18,6 +18,7 @@ import com.mozu.api.contracts.productruntime.ProductInventoryInfo;
 import com.mozu.api.contracts.productruntime.PackageMeasurements;
 import com.mozu.api.contracts.productruntime.ProductOption;
 import com.mozu.api.contracts.productruntime.ProductPrice;
+import com.mozu.api.contracts.productruntime.ProductProperty;
 import com.mozu.api.contracts.productruntime.ProductPriceRange;
 import com.mozu.api.contracts.productruntime.ProductPurchasableState;
 import com.mozu.api.contracts.productruntime.ProductVolumePrice;
@@ -32,7 +33,7 @@ public class ConfiguredProduct implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * List of supported types of fulfillment for the product or variation. The types include direct ship, in-store pickup, or both.
+	 * The list of fulfillment types the product supports.
 	 */
 	protected List<String> fulfillmentTypesSupported;
 	public List<String> getFulfillmentTypesSupported() {
@@ -43,7 +44,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The manufacturer's part number for the product.
+	 * The manufacturer part number supplied for the product.
 	 */
 	protected  String mfgPartNumber;
 
@@ -69,7 +70,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * The universal product code (UPC) is the barcode defined for the product. The UPC is unique across all sales channels. 
+	 * The universal product code defined for the product.
 	 */
 	protected  String upc;
 
@@ -95,7 +96,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * List of shipping discounts that can be applied to the configured product. These discounts are calculated and updated as shoppers add content to their cart and continue checkout steps to order submission.
+	 * List of shipping discounts that can be applied to the configured product.
 	 */
 	protected List<Discount> availableShippingDiscounts;
 	public List<Discount> getAvailableShippingDiscounts() {
@@ -106,7 +107,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * Properties and data of inventory information for configured and bundled products. If product stock is managed, the data specifies out of stock behavior.
+	 * Properties of the inventory of the configured product, including the number of items in stock, whether the item appears on the storefront, and whether the item is out of stock or can be back ordered.
 	 */
 	protected  ProductInventoryInfo inventoryInfo;
 
@@ -132,7 +133,7 @@ public class ConfiguredProduct implements Serializable
 	}
 
 	/**
-	 * List of option attributes configured for an object. These values are associated and used by products, product bundles, and product types.
+	 * The list of options set up in product admin.
 	 */
 	protected List<ProductOption> options;
 	public List<ProductOption> getOptions() {
@@ -153,6 +154,16 @@ public class ConfiguredProduct implements Serializable
 
 	public void setPrice(ProductPrice price) {
 		this.price = price;
+	}
+
+	protected  ProductProperty priceListEntryTypeProperty;
+
+	public ProductProperty getPriceListEntryTypeProperty() {
+		return this.priceListEntryTypeProperty;
+	}
+
+	public void setPriceListEntryTypeProperty(ProductProperty priceListEntryTypeProperty) {
+		this.priceListEntryTypeProperty = priceListEntryTypeProperty;
 	}
 
 	/**
@@ -181,9 +192,6 @@ public class ConfiguredProduct implements Serializable
 		this.purchasableState = purchasableState;
 	}
 
-	/**
-	 * The details of any volume price bands associated with the product.Refer to [Volume Pricing](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing) for more information.
-	 */
 	protected List<ProductVolumePrice> volumePriceBands;
 	public List<ProductVolumePrice> getVolumePriceBands() {
 		return this.volumePriceBands;
@@ -192,9 +200,6 @@ public class ConfiguredProduct implements Serializable
 		this.volumePriceBands = volumePriceBands;
 	}
 
-	/**
-	 * The details of the volume price range associated with the product. Volume price ranges consist of a lower price and an upper price, and either lower or upper prices can be affected by discounts.You can display the volume price range on product listing pages, such as category and search result pages, and product detail pages.Refer to [Volume Pricing Storefront Behavior](https://www.mozu.com/docs/guides/catalog/price-lists.htm#volume_pricing_storefront_behavior) for more information.
-	 */
 	protected  ProductPriceRange volumePriceRange;
 
 	public ProductPriceRange getVolumePriceRange() {

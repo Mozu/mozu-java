@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Reference resource retrieves collections of standards the  system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
+ * The Reference resource retrieves collections of standards the Mozu system currently supports. This includes content locales, top-level domains, units of measure, countries, currencies, time zones, and shipping or billing address schemas.
  * </summary>
  */
 public class ReferenceDataResource {
@@ -146,7 +146,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
 	 */
@@ -161,7 +161,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	BehaviorCategory behaviorCategory = referencedata.getBehaviorCategory( categoryId,  responseFields);
 	 * </code></pre></p>
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the behavior category.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.core.BehaviorCategory
 	 * @see com.mozu.api.contracts.core.BehaviorCategory
@@ -309,7 +309,7 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates();
@@ -323,12 +323,12 @@ public ReferenceDataResource(ApiContext apiContext)
 	}
 
 	/**
-	 * Retrieves the entire list of countries that the system supports.
+	 * 
 	 * <p><pre><code>
 	 *	ReferenceData referencedata = new ReferenceData();
 	 *	CountryWithStatesCollection countryWithStatesCollection = referencedata.getCountriesWithStates( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 * @see com.mozu.api.contracts.reference.CountryWithStatesCollection
 	 */

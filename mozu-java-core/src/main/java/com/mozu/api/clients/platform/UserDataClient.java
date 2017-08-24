@@ -17,20 +17,20 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the user data subresource to store user-level data required for a third-party application in the  database.
+ * Use the user data subresource to store user-level data required for a third-party application in the Mozu database.
  * </summary>
  */
 public class UserDataClient {
 	
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * Retrieves the value of a record in the Mozu database.
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -40,14 +40,14 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Retrieves the value of a record in the  database.
+	 * Retrieves the value of a record in the Mozu database.
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetDBValueClient( dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry query string used to retrieve the record information.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
@@ -65,7 +65,7 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Creates a new record in the  database based on the information supplied in the request.
+	 * Creates a new record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -89,14 +89,14 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Updates a record in the  database based on the information supplied in the request.
+	 * Updates a record in the Mozu database based on the information supplied in the request.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value The value string to create.
+	 * @param dbEntryQuery The database entry query string used to update the record information.
+	 * @param value The database value to update.
 	 * @return Mozu.Api.MozuClient 
 	 * @see string
 	 */
@@ -113,13 +113,13 @@ public class UserDataClient {
 	}
 
 	/**
-	 * Removes a previously defined record in the  database.
+	 * Removes a previously defined record in the Mozu database.
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery The database entry string to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDBValueClient(String dbEntryQuery) throws Exception

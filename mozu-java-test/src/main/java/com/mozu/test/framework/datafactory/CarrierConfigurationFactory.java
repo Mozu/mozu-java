@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.CarrierConfigurationResource;
 
 /** <summary>
- * Carrier Configuration for managing credentials and some settings for the various carriers installed with the default mozu application
+ * 
  * </summary>
  */
 public class CarrierConfigurationFactory

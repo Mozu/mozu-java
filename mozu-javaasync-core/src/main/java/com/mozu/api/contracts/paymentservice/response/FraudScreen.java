@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.paymentservice.FraudScreenResponseData;
 
-/**
- *	Mozu.PaymentService.Contracts.Response.FraudScreen ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FraudScreen implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the payment interaction from the payment gateway.
-	 */
 	protected  Integer gatewayInteractionId;
 
 	public Integer getGatewayInteractionId() {
@@ -37,9 +31,6 @@ public class FraudScreen implements Serializable
 		this.gatewayInteractionId = gatewayInteractionId;
 	}
 
-	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
-	 */
 	protected  String status;
 
 	public String getStatus() {
@@ -50,9 +41,6 @@ public class FraudScreen implements Serializable
 		this.status = status;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Response.FraudScreen transactionId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String transactionId;
 
 	public String getTransactionId() {
@@ -63,9 +51,6 @@ public class FraudScreen implements Serializable
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * Mozu.PaymentService.Contracts.Response.FraudScreen fraudScreenResponseData ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<FraudScreenResponseData> fraudScreenResponseData;
 	public List<FraudScreenResponseData> getFraudScreenResponseData() {
 		return this.fraudScreenResponseData;

@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/shipping/admin/profiles related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class ShippingProfileClient {
 	
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient();
 	 * client.setBaseAddress(url);
@@ -42,14 +42,14 @@ public class ShippingProfileClient {
 	}
 
 	/**
-	 * Get Shipping Profiles for the Tenant/Master Catalog
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection> mozuClient=GetProfilesClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ShippingProfileCollection shippingProfileCollection = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection>
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection

@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Order Attribute Definition resource to manage the attributes that uniquely describe orders, such as the associated shopping season or "How did you hear about us?" information. Merchants can display order attributes on the order summary, the order confirmation page, invoices, or packing slips.
+ * Use the Order Attribute Definition resource to manage the attributes that uniquely describe orders, such as the associated shopping season or "How did you hear about us?". Merchants can display order attributes on the order summary, the order confirmation page, invoices, or packing slips.
  * </summary>
  */
 public class AttributeResource {
@@ -221,12 +221,12 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * Creates a new attribute to describe one aspect of an order.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.createAttribute( attribute);
 	 * </code></pre></p>
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute The properties of the order attribute to create.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -237,13 +237,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * Creates a new attribute to describe one aspect of an order.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.createAttribute( attribute, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute The properties of the order attribute to create.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -254,13 +254,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * Creates a new attribute to describe one aspect of an order.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.createAttribute( attribute,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param responseFields 
+	 * @param attribute The properties of the order attribute to create.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -275,14 +275,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Create and save a new attribute. These attributes are used in products and product options.
+	 * Creates a new attribute to describe one aspect of an order.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.createAttribute( attribute,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute The properties of the order attribute to create.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -296,13 +296,13 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * Updates one or more properties of an order attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attributeFQN 
+	 * @param attribute The properties of the order attribute to update.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -313,14 +313,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * Updates one or more properties of an order attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
+	 * @param attributeFQN 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute The properties of the order attribute to update.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -331,14 +331,14 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * Updates one or more properties of an order attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	Attribute attribute = attribute.updateAttribute( attribute,  attributeFQN,  responseFields);
 	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attributeFQN 
+	 * @param responseFields 
+	 * @param attribute The properties of the order attribute to update.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
@@ -353,15 +353,15 @@ public class AttributeResource {
 	}
 
 	/**
-	 * Updates an existing attribute with attribute properties to set.
+	 * Updates one or more properties of an order attribute.
 	 * <p><pre><code>
 	 *	Attribute attribute = new Attribute();
 	 *	CountDownLatch latch = attribute.updateAttribute( attribute,  attributeFQN,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param attributeFQN Fully qualified name for an attribute.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param attributeFQN 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute The properties of the order attribute to update.
 	 * @return com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute
 	 * @see com.mozu.api.contracts.core.extensible.Attribute

@@ -15,7 +15,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategories
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product category search results by any of its properties, including its position in the category hierarchy. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -35,7 +35,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetChildCategories
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category for which to retrieve subcategories.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -49,7 +49,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for GetCategory
-	 * @param categoryId Unique identifier of the category to modify.
+	 * @param categoryId Unique identifier of the category to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -65,7 +65,7 @@ public class CategoryUrl
 	 * Get Resource Url for AddCategory
 	 * @param incrementSequence If true, when adding a new product category, set the sequence number of the new category to an increment of one integer greater than the maximum available sequence number across all product categories. If false, set the sequence number to zero.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param useProvidedId Optional. If ,  uses the  you specify in the request as the category's id. If ,  generates an  for the category regardless if you specify an id in the request.If you specify an id already in use and set this parameter to ,  returns an error.
+	 * @param useProvidedId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addCategoryUrl(Boolean incrementSequence, String responseFields, Boolean useProvidedId)
@@ -79,7 +79,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for ValidateDynamicExpression
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateDynamicExpressionUrl(String responseFields)
@@ -91,7 +91,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for ValidateRealTimeDynamicExpression
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl validateRealTimeDynamicExpressionUrl(String responseFields)
@@ -103,7 +103,7 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for UpdateCategory
-	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. The default value is false.
+	 * @param cascadeVisibility If true, when changing the display option for the category, change it for all subcategories also. Default: False.
 	 * @param categoryId Unique identifier of the category to modify.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
@@ -119,10 +119,10 @@ public class CategoryUrl
 
 	/**
 	 * Get Resource Url for DeleteCategoryById
-	 * @param cascadeDelete Specifies whether to also delete all subcategories associated with the specified category.If you set this value is false, only the specified category is deleted.The default value is false.
-	 * @param categoryId Unique identifier of the category to modify.
-	 * @param forceDelete Specifies whether the category, and any associated subcategories, are deleted even if there are products that reference them. The default value is false.
-	 * @param reassignToParent Specifies whether any subcategories of the specified category are reassigned to the parent of the specified category.This field only applies if the cascadeDelete parameter is false.The default value is false.
+	 * @param cascadeDelete If true, also delete all subcategories associated with the specified category.
+	 * @param categoryId Unique identifier of the category to delete.
+	 * @param forceDelete 
+	 * @param reassignToParent 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteCategoryByIdUrl(Boolean cascadeDelete, Integer categoryId, Boolean forceDelete, Boolean reassignToParent)

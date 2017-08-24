@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.catalog.admin.couponsets.AssignedDiscountResource;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountFactory

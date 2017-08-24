@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.sitesettings.order.PurchaseOrderCustomField;
 import com.mozu.api.contracts.sitesettings.order.PurchaseOrderPaymentTerm;
 
-/**
- *	Mozu.SiteSettings.Order.Contracts.PurchaseOrderPaymentDefinition ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPaymentDefinition implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates whether another payment can be used with the purchase order
-	 */
 	protected  Boolean allowSplitPayment;
 
 	public Boolean getAllowSplitPayment() {
@@ -38,9 +32,6 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 		this.allowSplitPayment = allowSplitPayment;
 	}
 
-	/**
-	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
-	 */
 	protected  Boolean isEnabled;
 
 	public Boolean getIsEnabled() {
@@ -51,9 +42,6 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 		this.isEnabled = isEnabled;
 	}
 
-	/**
-	 * Mozu.SiteSettings.Order.Contracts.PurchaseOrderPaymentDefinition customFields ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<PurchaseOrderCustomField> customFields;
 	public List<PurchaseOrderCustomField> getCustomFields() {
 		return this.customFields;
@@ -62,9 +50,6 @@ public class PurchaseOrderPaymentDefinition implements Serializable
 		this.customFields = customFields;
 	}
 
-	/**
-	 * Allowed net terms
-	 */
 	protected List<PurchaseOrderPaymentTerm> paymentTerms;
 	public List<PurchaseOrderPaymentTerm> getPaymentTerms() {
 		return this.paymentTerms;

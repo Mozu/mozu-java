@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.ServiceType;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.Profile.ShippingInclusionRule ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShippingInclusionRule implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -38,9 +32,6 @@ public class ShippingInclusionRule implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * the product target rule codes associated with this rule leave empty or null to denote all products
-	 */
 	protected List<String> productTargetRuleCodes;
 	public List<String> getProductTargetRuleCodes() {
 		return this.productTargetRuleCodes;
@@ -49,9 +40,6 @@ public class ShippingInclusionRule implements Serializable
 		this.productTargetRuleCodes = productTargetRuleCodes;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -62,9 +50,6 @@ public class ShippingInclusionRule implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The shipping target rule codes associated with this rule leave empty or null to denote all destinations
-	 */
 	protected List<String> shippingTargetRuleCodes;
 	public List<String> getShippingTargetRuleCodes() {
 		return this.shippingTargetRuleCodes;
@@ -73,9 +58,6 @@ public class ShippingInclusionRule implements Serializable
 		this.shippingTargetRuleCodes = shippingTargetRuleCodes;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -86,9 +68,6 @@ public class ShippingInclusionRule implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * the servicetypes associated with this rule leave empty or null to denote all carriers and subsequent service types
-	 */
 	protected List<ServiceType> serviceTypes;
 	public List<ServiceType> getServiceTypes() {
 		return this.serviceTypes;

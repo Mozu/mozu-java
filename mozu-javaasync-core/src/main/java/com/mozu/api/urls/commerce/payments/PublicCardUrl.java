@@ -15,29 +15,33 @@ public class PublicCardUrl
 
 	/**
 	 * Get Resource Url for Create
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl createUrl()
+	public static MozuUrl createUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for Update
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl updateUrl(String cardId)
+	public static MozuUrl updateUrl(String cardId, String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/{cardId}");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/cards/{cardId}?responseFields={responseFields}");
 		formatter.formatUrl("cardId", cardId);
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 
 	/**
 	 * Get Resource Url for Delete
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteUrl(String cardId)

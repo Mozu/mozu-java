@@ -81,7 +81,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	ProductTypeCollection productTypeCollection = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -105,7 +105,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductTypes( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
+	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. You can filter product type search results by any of its properties. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=Name+cont+shoes"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy 
@@ -129,7 +129,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -145,7 +145,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductType( productTypeId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -162,7 +162,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.getProductType( productTypeId,  responseFields);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.productadmin.ProductType
@@ -183,7 +183,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.getProductType( productTypeId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
@@ -205,7 +205,7 @@ public class ProductTypeResource {
 	 *	ProductType productType = producttype.addProductType( productType);
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -223,7 +223,7 @@ public class ProductTypeResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -241,7 +241,7 @@ public class ProductTypeResource {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -264,7 +264,7 @@ public class ProductTypeResource {
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType Properties of the product type to create.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -283,9 +283,9 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -301,10 +301,10 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.updateProductType( productType,  productTypeId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -320,10 +320,10 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	ProductType productType = producttype.updateProductType( productType,  productTypeId,  responseFields);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -343,11 +343,11 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	CountDownLatch latch = producttype.updateProductType( productType,  productTypeId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param dataViewMode DataViewMode
-	 * @param productType A product type is like a product template.
+	 * @param productType The details of the product type to update.
 	 * @return com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
 	 * @see com.mozu.api.contracts.productadmin.ProductType
@@ -366,7 +366,7 @@ public class ProductTypeResource {
 	 *	ProductType producttype = new ProductType();
 	 *	producttype.deleteProductType( productTypeId);
 	 * </code></pre></p>
-	 * @param productTypeId Identifier of the product type.
+	 * @param productTypeId Identifier of the product type to delete.
 	 * @param dataViewMode DataViewMode
 	 * @return 
 	 */

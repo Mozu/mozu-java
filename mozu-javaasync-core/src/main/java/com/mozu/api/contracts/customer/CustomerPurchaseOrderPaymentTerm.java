@@ -13,18 +13,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 
-/**
- *	Mozu.Customer.Contracts.CustomerPurchaseOrderPaymentTerm ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerPurchaseOrderPaymentTerm implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.Customer.Contracts.CustomerPurchaseOrderPaymentTerm code ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -35,9 +29,6 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -48,9 +39,6 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -61,9 +49,6 @@ public class CustomerPurchaseOrderPaymentTerm implements Serializable
 		this.siteId = siteId;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {

@@ -19,7 +19,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.mozu.api.DataViewMode;
 /** <summary>
- * Use the Discounts resource to define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. You can create a coupon code that shoppers can use to redeem the discount.
+ * Define and manage discounts to apply to products, product categories, or orders. The discounts can be a specified amount off the price, percentage off the price, or for free shipping. Create a coupon code that shoppers can use to redeem the discount.
  * </summary>
  */
 public class DiscountResource {
@@ -85,7 +85,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 */
@@ -100,7 +100,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.getDiscountContent( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -120,7 +120,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.getDiscount( discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 */
@@ -135,7 +135,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.getDiscount( discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -188,7 +188,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.createDiscount( discount);
 	 * </code></pre></p>
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -205,7 +205,7 @@ public class DiscountResource {
 	 *	Discount discount = discount.createDiscount( discount,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Properties of the discount to create. You must specify the discount name, amount type, start date, and target.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -220,13 +220,13 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
+	 * @param content The discount content to update, including the discount name.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -237,14 +237,14 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates the localizable content for the specified discount or renames the discount without modifying its other properties.
+	 * Updates the localizable content for the specified discount or rename the discount without modifying its other properties.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	DiscountLocalizedContent discountLocalizedContent = discount.updateDiscountContent( content,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param content The container for the language-specific name of the discount. A container exists for each supported language (LocaleCode). This parameter enables you to display the discount name in multiple languages yet manage it as a single discount internally.
+	 * @param content The discount content to update, including the discount name.
 	 * @return com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
 	 * @see com.mozu.api.contracts.productadmin.DiscountLocalizedContent
@@ -259,13 +259,13 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates one or more properties of the specified discount.
+	 * Updates one or more properties of a defined discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discountId Unique identifier of the discount to update.
+	 * @param discount Properties of the discount to update.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -276,14 +276,14 @@ public class DiscountResource {
 	}
 
 	/**
-	 * Updates one or more properties of the specified discount.
+	 * Updates one or more properties of a defined discount.
 	 * <p><pre><code>
 	 *	Discount discount = new Discount();
 	 *	Discount discount = discount.updateDiscount( discount,  discountId,  responseFields);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param discount Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * @param discount Properties of the discount to update.
 	 * @return com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
 	 * @see com.mozu.api.contracts.productadmin.Discount
@@ -303,7 +303,7 @@ public class DiscountResource {
 	 *	Discount discount = new Discount();
 	 *	discount.deleteDiscount( discountId);
 	 * </code></pre></p>
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param discountId Unique identifier of the discount. System-supplied and read-only.
 	 * @return 
 	 */
 	public void deleteDiscount(Integer discountId) throws Exception

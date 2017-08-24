@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.event.push.subscriptions.EventDeliverySummaryResource;
 
 /** <summary>
- * Provides details for each attempted delivery of the event to the endpoint.
+ * 
  * </summary>
  */
 public class EventDeliverySummaryFactory

@@ -25,7 +25,7 @@ public class CustomAttribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.
+	 * Key required for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
 	 */
 	protected  String key;
 
@@ -38,7 +38,7 @@ public class CustomAttribute implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * Value for a custom attribute associated with a shipping provider integration, as part of a key-value pair.
 	 */
 	protected  String value;
 

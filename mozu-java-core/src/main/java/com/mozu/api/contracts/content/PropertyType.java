@@ -21,22 +21,6 @@ public class PropertyType implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The current version number of the order, wish list, document list, or document type list.
-	 */
-	protected  String version;
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
-	 * The administrator name associated with the object/data.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -47,9 +31,6 @@ public class PropertyType implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
-	 */
 	protected  String dataType;
 
 	public String getDataType() {
@@ -60,9 +41,6 @@ public class PropertyType implements Serializable
 		this.dataType = dataType;
 	}
 
-	/**
-	 * The package of document lists and content documents to be installed.
-	 */
 	protected  String installationPackage;
 
 	public String getInstallationPackage() {
@@ -87,7 +65,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * Indicates if the entity can be located and returned in a search, used for fields and property types. If true, the entity can be searched. 
+	 * If true, the entity can be searched. If false, the entity cannot be searched.
 	 */
 	protected  Boolean isQueryable;
 
@@ -100,7 +78,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * Indicates if the fields or property types are sortable on the page. If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
+	 * If true, the property type results are sortable. If false, the property type results cannot be sorted by any options.
 	 */
 	protected  Boolean isSortable;
 
@@ -113,7 +91,7 @@ public class PropertyType implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the content property type.
 	 */
 	protected  String name;
 
@@ -125,9 +103,6 @@ public class PropertyType implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {
@@ -138,9 +113,6 @@ public class PropertyType implements Serializable
 		this.namespace = namespace;
 	}
 
-	/**
-	 * The fully qualified name for the property type for content.
-	 */
 	protected  String propertyTypeFQN;
 
 	public String getPropertyTypeFQN() {
@@ -149,6 +121,16 @@ public class PropertyType implements Serializable
 
 	public void setPropertyTypeFQN(String propertyTypeFQN) {
 		this.propertyTypeFQN = propertyTypeFQN;
+	}
+
+	protected  String version;
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 

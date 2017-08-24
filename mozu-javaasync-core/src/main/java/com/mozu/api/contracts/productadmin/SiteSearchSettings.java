@@ -17,18 +17,12 @@ import com.mozu.api.contracts.productadmin.SiteSearchRelevancyCustomField;
 import com.mozu.api.contracts.productadmin.SiteSearchKeywordRelevancySettings;
 import com.mozu.api.contracts.productadmin.SiteSearchPhraseRelevancySettings;
 
-/**
- *	Properties for the site search settings.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteSearchSettings implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Custom boost value for searches.
-	 */
 	protected List<String> customBoosts;
 	public List<String> getCustomBoosts() {
 		return this.customBoosts;
@@ -37,9 +31,6 @@ public class SiteSearchSettings implements Serializable
 		this.customBoosts = customBoosts;
 	}
 
-	/**
-	 * Indicates if the object is default. This indicator is used for product variations and site search settings. If true, the value/object is the default option. 
-	 */
 	protected  Boolean isDefault;
 
 	public Boolean getIsDefault() {
@@ -50,9 +41,6 @@ public class SiteSearchSettings implements Serializable
 		this.isDefault = isDefault;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.SiteSearchSettings minimumMatchPercent ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer minimumMatchPercent;
 
 	public Integer getMinimumMatchPercent() {
@@ -63,9 +51,6 @@ public class SiteSearchSettings implements Serializable
 		this.minimumMatchPercent = minimumMatchPercent;
 	}
 
-	/**
-	 * The name for the search settings.
-	 */
 	protected  String settingsName;
 
 	public String getSettingsName() {
@@ -76,9 +61,6 @@ public class SiteSearchSettings implements Serializable
 		this.settingsName = settingsName;
 	}
 
-	/**
-	 * Custom field for searches.
-	 */
 	protected List<SiteSearchRelevancyCustomField> customFields;
 	public List<SiteSearchRelevancyCustomField> getCustomFields() {
 		return this.customFields;
@@ -87,9 +69,6 @@ public class SiteSearchSettings implements Serializable
 		this.customFields = customFields;
 	}
 
-	/**
-	 * The site keyword relevancy settings.
-	 */
 	protected  SiteSearchKeywordRelevancySettings siteKeywordRelevancy;
 
 	public SiteSearchKeywordRelevancySettings getSiteKeywordRelevancy() {
@@ -100,9 +79,6 @@ public class SiteSearchSettings implements Serializable
 		this.siteKeywordRelevancy = siteKeywordRelevancy;
 	}
 
-	/**
-	 * The site phrase relevancy settings.
-	 */
 	protected  SiteSearchPhraseRelevancySettings sitePhraseRelevancy;
 
 	public SiteSearchPhraseRelevancySettings getSitePhraseRelevancy() {

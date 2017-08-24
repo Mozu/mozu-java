@@ -16,7 +16,7 @@ import com.mozu.api.contracts.productadmin.CategoryLocalizedContent;
 import com.mozu.api.contracts.productadmin.DynamicExpression;
 
 /**
- *	A descriptive container that groups products. A category is merchant defined with associated products and discounts as configured. GThe storefront displays products in a hierarchy of categories. As such, categories can include a nesting of sub-categories to organize products and product options per set guidelines such as color, brand, material, and size.
+ *	A descriptive container in a storefront hierarchy to organize collections of products.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -34,9 +34,6 @@ public class Category implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * External unique identifier of the category.
-	 */
 	protected  String categoryCode;
 
 	public String getCategoryCode() {
@@ -47,9 +44,6 @@ public class Category implements Serializable
 		this.categoryCode = categoryCode;
 	}
 
-	/**
-	 * The Type of Category Static, Dyanmic, DynamicPreComputed
-	 */
 	protected  String categoryType;
 
 	public String getCategoryType() {
@@ -74,7 +68,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the entity.
 	 */
 	protected  Integer id;
 
@@ -97,7 +91,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * Indicates if the object is displayed on the storefront. If true, the admin product category is displayed in the store. If true, the category is not displayed.
+	 * If true, the admin product category is displayed in the store. If true, the category is not displayed.
 	 */
 	protected  Boolean isDisplayed;
 
@@ -153,7 +147,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The total number of products. This total may indicate the total products associate with a product type or number of products in a list.
+	 * The number of products in a list.
 	 */
 	protected  Integer productCount;
 
@@ -166,7 +160,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
+	 * The numeric value that denotes the place this entity occupies in the order of the entity list.
 	 */
 	protected  Integer sequence;
 
@@ -204,9 +198,6 @@ public class Category implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Category dynamicExpression ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  DynamicExpression dynamicExpression;
 
 	public DynamicExpression getDynamicExpression() {

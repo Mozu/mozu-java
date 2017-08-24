@@ -82,7 +82,7 @@ public class ProductResource {
 	 * @param cursorMark 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
@@ -107,7 +107,7 @@ public class ProductResource {
 	 * @param cursorMark 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param responseOptions 
 	 * @param sortBy 
 	 * @param startIndex 
@@ -162,7 +162,7 @@ public class ProductResource {
 	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 */
@@ -183,7 +183,7 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param locationCodes Array of location codes for which to retrieve product inventory information.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
@@ -234,12 +234,12 @@ public class ProductResource {
 	 *	Product product = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields);
 	 * </code></pre></p>
 	 * @param acceptVariantProductCode 
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
+	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -260,12 +260,12 @@ public class ProductResource {
 	 *	CountDownLatch latch = product.getProduct( productCode,  variationProductCode,  allowInactive,  skipInventoryCheck,  supressOutOfStock404,  quantity,  acceptVariantProductCode,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param acceptVariantProductCode 
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
+	 * @param allowInactive If true, returns an inactive product as part of the query.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
-	 * @param supressOutOfStock404 Specifies whether to supress the 404 error when the product is out of stock.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
+	 * @param supressOutOfStock404 
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
@@ -280,12 +280,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode);
 	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -295,12 +295,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductForIndexing( productCode, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -311,15 +311,15 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	Product product = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields);
 	 * </code></pre></p>
 	 * @param lastModifiedDate 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param productVersion 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
 	 */
@@ -333,15 +333,15 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves information about a single product given its product code for Mozu to index in the search engine
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductForIndexing( productCode,  productVersion,  lastModifiedDate,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param lastModifiedDate 
-	 * @param productCode The unique, user-defined product code of a product, used throughout Mozu to reference and associate to a product.
+	 * @param productCode 
 	 * @param productVersion 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.productruntime.Product
 	 * @see com.mozu.api.contracts.productruntime.Product
@@ -397,9 +397,9 @@ public class ProductResource {
 	 * </code></pre></p>
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return com.mozu.api.contracts.productruntime.ConfiguredProduct
 	 * @see com.mozu.api.contracts.productruntime.ConfiguredProduct
@@ -422,9 +422,9 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param includeOptionDetails If true, the response returns details about the product. If false, returns a product summary such as the product name, price, and sale price.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param quantity 
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return com.mozu.api.contracts.productruntime.ConfiguredProduct
@@ -453,7 +453,7 @@ public class ProductResource {
 	 */
 	public com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode) throws Exception
 	{
-		return validateProduct( productOptionSelections,  productCode,  null,  null,  null);
+		return validateProduct( productOptionSelections,  productCode,  null,  null,  null,  null);
 	}
 
 	/**
@@ -471,27 +471,28 @@ public class ProductResource {
 	 */
 	public CountDownLatch validateProductAsync(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, AsyncCallback<com.mozu.api.contracts.productruntime.ProductValidationSummary> callback) throws Exception
 	{
-		return validateProductAsync( productOptionSelections,  productCode,  null,  null,  null, callback);
+		return validateProductAsync( productOptionSelections,  productCode,  null,  null,  null,  null, callback);
 	}
 
 	/**
 	 * Validate the final state of shopper-selected options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	ProductValidationSummary productValidationSummary = product.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields);
+	 *	ProductValidationSummary productValidationSummary = product.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  skipDefaults,  responseFields);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param quantity 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipDefaults 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return com.mozu.api.contracts.productruntime.ProductValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.ProductValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.ProductOptionSelections
 	 */
-	public com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, String responseFields) throws Exception
+	public com.mozu.api.contracts.productruntime.ProductValidationSummary validateProduct(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, Boolean skipDefaults, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.validateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.validateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  skipDefaults,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -502,21 +503,22 @@ public class ProductResource {
 	 * Validate the final state of shopper-selected options.
 	 * <p><pre><code>
 	 *	Product product = new Product();
-	 *	CountDownLatch latch = product.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields, callback );
+	 *	CountDownLatch latch = product.validateProduct( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  skipDefaults,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param quantity The number of cart items in the shopper's active cart.
+	 * @param quantity 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param skipDefaults 
+	 * @param skipInventoryCheck If true, skip the inventory validation process for the specified product.
 	 * @param  callback callback handler for asynchronous operations
 	 * @param productOptionSelections For a product with shopper-configurable options, the properties of the product options selected by the shopper.
 	 * @return com.mozu.api.contracts.productruntime.ProductValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.ProductValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.ProductOptionSelections
 	 */
-	public CountDownLatch validateProductAsync(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductValidationSummary> callback) throws Exception
+	public CountDownLatch validateProductAsync(com.mozu.api.contracts.productruntime.ProductOptionSelections productOptionSelections, String productCode, Boolean skipInventoryCheck, Integer quantity, Boolean skipDefaults, String responseFields, AsyncCallback<com.mozu.api.contracts.productruntime.ProductValidationSummary> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.validateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  responseFields);
+		MozuClient<com.mozu.api.contracts.productruntime.ProductValidationSummary> client = com.mozu.api.clients.commerce.catalog.storefront.ProductClient.validateProductClient( productOptionSelections,  productCode,  skipInventoryCheck,  quantity,  skipDefaults,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
@@ -529,7 +531,7 @@ public class ProductResource {
 	 *	DiscountValidationSummary discountValidationSummary = product.validateDiscounts( discountSelections,  productCode);
 	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -547,7 +549,7 @@ public class ProductResource {
 	 *	latch.await()	 * </code></pre></p>
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -563,13 +565,13 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	DiscountValidationSummary discountValidationSummary = product.validateDiscounts( discountSelections,  productCode,  variationProductCode,  customerAccountId,  allowInactive,  skipInventoryCheck,  responseFields);
 	 * </code></pre></p>
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -589,14 +591,14 @@ public class ProductResource {
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.validateDiscounts( discountSelections,  productCode,  variationProductCode,  customerAccountId,  allowInactive,  skipInventoryCheck,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param allowInactive If true, allow inactive categories to be retrieved in the category list response. If false, the categories retrieved will not include ones marked inactive.
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
+	 * @param allowInactive If true, this operation returns inactive product discounts as part of the POST.
+	 * @param customerAccountId Unique ID of the customer account associated with the shopper requesting the discount.
 	 * @param productCode Merchant-created code that uniquely identifies the product such as a SKU or item number. Once created, the product code is read-only.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param skipInventoryCheck If true, skip the process to validate inventory when creating this product reservation.
+	 * @param responseFields 
+	 * @param skipInventoryCheck If true, do not validate the product inventory when evaluating the list of discounts.
 	 * @param variationProductCode Merchant-created code associated with a specific product variation. Variation product codes maintain an association with the base product code.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param discountSelections The discounts to evaluate for a specified product code at the time of purchase.
+	 * @param discountSelections List of discount IDs to evaluate for the specified product.
 	 * @return com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountValidationSummary
 	 * @see com.mozu.api.contracts.productruntime.DiscountSelections
@@ -685,12 +687,12 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	LocationInventoryCollection locationInventoryCollection = product.getProductInventories( query);
 	 * </code></pre></p>
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param query 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery
@@ -701,13 +703,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInventories( query, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param query 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery
@@ -718,13 +720,13 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	LocationInventoryCollection locationInventoryCollection = product.getProductInventories( query,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param responseFields 
+	 * @param query 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery
@@ -739,14 +741,14 @@ public class ProductResource {
 	}
 
 	/**
-	 * Retrieves product inventories for the storefront displayed products.
+	 * 
 	 * <p><pre><code>
 	 *	Product product = new Product();
 	 *	CountDownLatch latch = product.getProductInventories( query,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param query Properties for the product location inventory provided for queries to locate products by their location.
+	 * @param query 
 	 * @return com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryCollection
 	 * @see com.mozu.api.contracts.productruntime.LocationInventoryQuery

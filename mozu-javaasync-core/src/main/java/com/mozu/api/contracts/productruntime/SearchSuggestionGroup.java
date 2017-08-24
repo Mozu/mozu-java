@@ -15,18 +15,12 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.SearchSuggestion;
 
-/**
- *	A group of product search terms to suggest to a customer based on defined queries.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchSuggestionGroup implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -37,9 +31,6 @@ public class SearchSuggestionGroup implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * List of related SearchSuggestions
-	 */
 	protected List<SearchSuggestion> suggestions;
 	public List<SearchSuggestion> getSuggestions() {
 		return this.suggestions;

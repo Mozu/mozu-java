@@ -14,18 +14,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.ProductPrice;
 import com.mozu.api.contracts.productruntime.ProductPriceRange;
 
-/**
- *	The product price in the applicable volume band.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVolumePrice implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether the volume pricing is current for the product.
-	 */
 	protected  Boolean isCurrent;
 
 	public Boolean getIsCurrent() {
@@ -36,9 +30,6 @@ public class ProductVolumePrice implements Serializable
 		this.isCurrent = isCurrent;
 	}
 
-	/**
-	 * The maximum product quantity of the volume price band. A shopper must purchase a quantity equal to or less than down to the  in order to receive the pricing in the volume band.
-	 */
 	protected  Integer maxQty;
 
 	public Integer getMaxQty() {
@@ -49,9 +40,6 @@ public class ProductVolumePrice implements Serializable
 		this.maxQty = maxQty;
 	}
 
-	/**
-	 * The minimum product quantity of the volume price band. A shopper must purchase a quantity equal to or greater than up to the  in order to receive the pricing in the volume band.
-	 */
 	protected  Integer minQty;
 
 	public Integer getMinQty() {
@@ -62,9 +50,6 @@ public class ProductVolumePrice implements Serializable
 		this.minQty = minQty;
 	}
 
-	/**
-	 * The product price in the applicable volume band.
-	 */
 	protected  ProductPrice price;
 
 	public ProductPrice getPrice() {
@@ -75,9 +60,6 @@ public class ProductVolumePrice implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * For products with options that vary the cost of the product, the range between lowest and highest possible price of the product based on the current selection of options.
-	 */
 	protected  ProductPriceRange priceRange;
 
 	public ProductPriceRange getPriceRange() {

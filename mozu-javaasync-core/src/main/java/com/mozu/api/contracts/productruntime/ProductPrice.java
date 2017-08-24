@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productruntime.AppliedDiscount;
 
 /**
- *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchang intends to sell the product.
+ *	The price of the product in the specified currency code (USD). This price can either be the sale price or the price for which the merchant intends to sell the product.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductPrice implements Serializable
@@ -48,9 +48,6 @@ public class ProductPrice implements Serializable
 		this.catalogSalePrice = catalogSalePrice;
 	}
 
-	/**
-	 * The credit value of the product or bundled product. When the `goodsType `is `DigitalCredit`, this value is populated to indicate the value of the credit. This is used to create store credit in the fulfillment of gift cards.
-	 */
 	protected  Double creditValue;
 
 	public Double getCreditValue() {
@@ -61,9 +58,6 @@ public class ProductPrice implements Serializable
 		this.creditValue = creditValue;
 	}
 
-	/**
-	 * The priceList that was applied to this product
-	 */
 	protected  String effectivePricelistCode;
 
 	public String getEffectivePricelistCode() {
@@ -75,7 +69,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The manufacturer's suggested retail price for the product. This content may be defined by the supplier.
+	 * The manufacturer's suggested retail price for the product.
 	 */
 	protected  Double msrp;
 
@@ -100,9 +94,6 @@ public class ProductPrice implements Serializable
 		this.price = price;
 	}
 
-	/**
-	 * The specific PriceListCode that was applied (includes inheritence
-	 */
 	protected  String priceListEntryCode;
 
 	public String getPriceListEntryCode() {
@@ -113,9 +104,6 @@ public class ProductPrice implements Serializable
 		this.priceListEntryCode = priceListEntryCode;
 	}
 
-	/**
-	 * IF a PriceList Entry was applied to this price it will be (simple, bulk...)
-	 */
 	protected  String priceListEntryMode;
 
 	public String getPriceListEntryMode() {
@@ -140,7 +128,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * The set sale price for a product consisting of a price with a discount already applied.
+	 * The sale price defined for the product.
 	 */
 	protected  Double salePrice;
 
@@ -166,7 +154,7 @@ public class ProductPrice implements Serializable
 	}
 
 	/**
-	 * Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+	 * The discount applied to the product price.
 	 */
 	protected  AppliedDiscount discount;
 

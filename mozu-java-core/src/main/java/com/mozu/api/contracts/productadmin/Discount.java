@@ -19,7 +19,7 @@ import com.mozu.api.contracts.productadmin.DiscountLocalizedContent;
 import com.mozu.api.contracts.productadmin.DiscountTarget;
 
 /**
- *	Name of the discount added and applied to a shopping cart and order for a shopper's purchase. 
+ *	Discount used to calculate SalePrice. Includes coupon code if applicable, amount of the discount, and discount savings. Discounts can be either an absolute price or a percentage off. The sale price beats any discounts.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Discount implements Serializable
@@ -53,9 +53,16 @@ public class Discount implements Serializable
 		this.amountType = amountType;
 	}
 
-	/**
-	 * Signifies that the discount is not referenced and can be hard deleted
-	 */
+	protected  Boolean appliesToMultiShipToOrders;
+
+	public Boolean getAppliesToMultiShipToOrders() {
+		return this.appliesToMultiShipToOrders;
+	}
+
+	public void setAppliesToMultiShipToOrders(Boolean appliesToMultiShipToOrders) {
+		this.appliesToMultiShipToOrders = appliesToMultiShipToOrders;
+	}
+
 	protected  Boolean canBeDeleted;
 
 	public Boolean getCanBeDeleted() {
@@ -79,9 +86,6 @@ public class Discount implements Serializable
 		this.currentRedemptionCount = currentRedemptionCount;
 	}
 
-	/**
-	 * Determines whether or not a discount applies to a items with a sale price. Applicable on order and line item discounts. For line items, when this is true, the discount will be disqualified. For order level discounts, when true, the discount will not be applied to those items have a sale price.
-	 */
 	protected  Boolean doesNotApplyToProductsWithSalePrice;
 
 	public Boolean getDoesNotApplyToProductsWithSalePrice() {
@@ -106,7 +110,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the discount.
 	 */
 	protected  Integer id;
 
@@ -118,9 +122,6 @@ public class Discount implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * Products receiving a price from a price list specified here or a child of a specified price list can be discounted.
-	 */
 	protected List<String> includedPriceLists;
 	public List<String> getIncludedPriceLists() {
 		return this.includedPriceLists;
@@ -129,9 +130,6 @@ public class Discount implements Serializable
 		this.includedPriceLists = includedPriceLists;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single order. Must be either null or greater than zero.
-	 */
 	protected  Double maximumDiscountImpactPerOrder;
 
 	public Double getMaximumDiscountImpactPerOrder() {
@@ -142,9 +140,6 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerOrder = maximumDiscountImpactPerOrder;
 	}
 
-	/**
-	 * Maximum impact this discount can apply on a single line item. Must be either null or greater than zero.
-	 */
 	protected  Double maximumDiscountImpactPerRedemption;
 
 	public Double getMaximumDiscountImpactPerRedemption() {
@@ -155,9 +150,6 @@ public class Discount implements Serializable
 		this.maximumDiscountImpactPerRedemption = maximumDiscountImpactPerRedemption;
 	}
 
-	/**
-	 * Maximum number of redemptions allowed per order. If null, defaults to unlimited.
-	 */
 	protected  Integer maximumRedemptionsPerOrder;
 
 	public Integer getMaximumRedemptionsPerOrder() {
@@ -195,7 +187,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * Current status of the product discount. Possible values are "Active", "Scheduled", or "Expired".
 	 */
 	protected  String status;
 
@@ -247,7 +239,7 @@ public class Discount implements Serializable
 	}
 
 	/**
-	 * Targets represent the object, such as an item to apply discounts to(products or orders) or a view field for content. Targets are the dot notations that link to the source document property. For example, firstitem for the direct level or firstitem.seconditem.thirditem for a deeper property.
+	 * Properties of the target object to which the discount applies, such as a product or an order.
 	 */
 	protected  DiscountTarget target;
 

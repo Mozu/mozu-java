@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Manage Secure App Settings. Expose via arc.js so that arc apps can securely access secrets. Third-party extensions can also access their data. Secured via AppKey.AppId
+ * 
  * </summary>
  */
 public class SecureAppDataClient {
 	
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetDBValueClient( appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
@@ -33,7 +33,7 @@ public class SecureAppDataClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -43,7 +43,7 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Get GetDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.fasterxml.jackson.databind.JsonNode> mozuClient=GetDBValueClient( appKeyId,  dbEntryQuery,  responseFields);
 	 * client.setBaseAddress(url);
@@ -51,8 +51,8 @@ public class SecureAppDataClient {
 	 * JObject json = client.Result();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param dbEntryQuery 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <JObject>
 	 * @see JObject
 	 */
@@ -69,15 +69,15 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Post CreateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=CreateDBValueClient( value,  appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param dbEntryQuery 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient 
 	 * @see JObject
 	 */
@@ -94,15 +94,15 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Put UpdateDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=UpdateDBValueClient( value,  appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
-	 * @param value JSON code for objects.
+	 * @param dbEntryQuery 
+	 * @param value 
 	 * @return Mozu.Api.MozuClient 
 	 * @see JObject
 	 */
@@ -119,14 +119,14 @@ public class SecureAppDataClient {
 	}
 
 	/**
-	 * platform-secureappdata Delete DeleteDBValue description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteDBValueClient( appKeyId,  dbEntryQuery);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
 	 * @param appKeyId 
-	 * @param dbEntryQuery The database entry string to create.
+	 * @param dbEntryQuery 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteDBValueClient(String appKeyId, String dbEntryQuery) throws Exception

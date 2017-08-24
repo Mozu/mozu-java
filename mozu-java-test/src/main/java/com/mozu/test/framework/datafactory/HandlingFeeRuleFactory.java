@@ -17,13 +17,13 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.shipping.admin.profiles.HandlingFeeRuleResource;
 
 /** <summary>
- * Use the OrderHandlingFeeRules sub-resource to manage your order handling fee rules that are associated with a specific shipping profile.
+ * 
  * </summary>
  */
 public class HandlingFeeRuleFactory
 {
 
-	public static com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule getOrderHandlingFeeRule(ApiContext apiContext, String profilecode, String id, int expectedCode) throws Exception
+	/*public static com.mozu.api.contracts.shippingadmin.profile.HandlingFeeRule getOrderHandlingFeeRule(ApiContext apiContext, String profilecode, String id, int expectedCode) throws Exception
 	{
 		return getOrderHandlingFeeRule(apiContext,  profilecode,  id,  null, expectedCode);
 	}
@@ -139,7 +139,7 @@ public class HandlingFeeRuleFactory
 		}
 		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300))
 			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
-	}
+	}*/
 
 }
 

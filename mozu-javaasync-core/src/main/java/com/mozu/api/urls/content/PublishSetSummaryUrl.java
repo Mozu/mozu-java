@@ -15,9 +15,9 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSets
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetsUrl(Integer pageSize, String responseFields, Integer startIndex)
@@ -31,12 +31,12 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for GetPublishSetItems
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param code 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPublishSetItemsUrl(String code, String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -53,9 +53,9 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for DeletePublishSet
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
+	 * @param code 
+	 * @param responseFields 
+	 * @param shouldDiscard 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePublishSetUrl(String code, String responseFields, Boolean shouldDiscard)
@@ -69,8 +69,8 @@ public class PublishSetSummaryUrl
 
 	/**
 	 * Get Resource Url for AddPublishSetItems
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param code 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPublishSetItemsUrl(String code, String responseFields)

@@ -15,11 +15,11 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetPriceLists
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPriceListsUrl(String filter, Integer pageSize, String responseFields, String sortBy, Integer startIndex)
@@ -35,8 +35,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for GetPriceList
-	 * @param priceListCode The unique, user-defined code of the price list.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceListCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getPriceListUrl(String priceListCode, String responseFields)
@@ -49,7 +49,7 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for AddPriceList
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addPriceListUrl(String responseFields)
@@ -60,9 +60,51 @@ public class PriceListUrl
 	}
 
 	/**
+	 * Get Resource Url for BulkAddPriceListEntries
+	 * @param invalidateCache 
+	 * @param publishEvents 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkAddPriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkaddentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for BulkDeletePriceListEntries
+	 * @param invalidateCache 
+	 * @param publishEvents 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkDeletePriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkdeleteentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
+	 * Get Resource Url for BulkUpdatePriceListEntries
+	 * @param invalidateCache 
+	 * @param publishEvents 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl bulkUpdatePriceListEntriesUrl(Boolean invalidateCache, Boolean publishEvents)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/admin/pricelists/bulkupdateentries?publishEvents={publishEvents}&invalidateCache={invalidateCache}");
+		formatter.formatUrl("invalidateCache", invalidateCache);
+		formatter.formatUrl("publishEvents", publishEvents);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for UpdatePriceList
-	 * @param priceListCode The unique, user-defined code of the price list.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceListCode 
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl updatePriceListUrl(String priceListCode, String responseFields)
@@ -75,8 +117,8 @@ public class PriceListUrl
 
 	/**
 	 * Get Resource Url for DeletePriceList
-	 * @param cascadeDeleteEntries Specifies whether to deletes all price list entries associated with the price list.
-	 * @param priceListCode The unique, user-defined code of the price list.
+	 * @param cascadeDeleteEntries 
+	 * @param priceListCode 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deletePriceListUrl(Boolean cascadeDeleteEntries, String priceListCode)

@@ -25,6 +25,17 @@ public class Channel implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Array list of site identifiers associated with this channel. Each tenant site must have a channel association.
+	 */
+	protected List<Integer> siteIds;
+	public List<Integer> getSiteIds() {
+		return this.siteIds;
+	}
+	public void setSiteIds(List<Integer> siteIds) {
+		this.siteIds = siteIds;
+	}
+
+	/**
 	 * User-defined code that uniquely identifies the channel.
 	 */
 	protected  String code;
@@ -61,7 +72,7 @@ public class Channel implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * User-defined name of the channel.
 	 */
 	protected  String name;
 
@@ -84,17 +95,6 @@ public class Channel implements Serializable
 
 	public void setRegion(String region) {
 		this.region = region;
-	}
-
-	/**
-	 * Array list of site identifiers associated with this channel. Each tenant site must have a channel association.
-	 */
-	protected List<Integer> siteIds;
-	public List<Integer> getSiteIds() {
-		return this.siteIds;
-	}
-	public void setSiteIds(List<Integer> siteIds) {
-		this.siteIds = siteIds;
 	}
 
 	/**

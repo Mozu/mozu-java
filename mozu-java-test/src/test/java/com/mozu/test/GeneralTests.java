@@ -130,7 +130,7 @@ import com.mozu.test.framework.helper.Generator;
 import com.mozu.test.framework.helper.ProductCategoryGenerator;
 import com.mozu.test.framework.helper.ProductGenerator;
 import com.mozu.test.framework.helper.ProductTypeGenerator;
-import com.sun.corba.se.impl.orbutil.closure.Constant;
+
 
 public class GeneralTests extends MozuApiTestBase {
 
@@ -775,13 +775,13 @@ public class GeneralTests extends MozuApiTestBase {
         GeneralSettingsFactory.updateGeneralSettings(apiContext, null, HttpStatus.SC_CONFLICT);
 	}
 	
-	@Test
+	/*@Test
 	public void HandlingFeeRuleTests() throws Exception {
 		HandlingFeeRuleFactory.createOrderHandlingFeeRule(apiContext, null, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		HandlingFeeRuleFactory.getOrderHandlingFeeRules(apiContext, Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_OK);
 		HandlingFeeRuleFactory.getOrderHandlingFeeRule(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
 		HandlingFeeRuleFactory.deleteOrderHandlingFeeRule(apiContext, Generator.randomString(5, Generator.AlphaChars), Generator.randomString(5, Generator.AlphaChars), HttpStatus.SC_CONFLICT);
-	}
+	}*/
 	
 	@Test
 	public void InStockNotificationSubscriptionTests() throws Exception {
@@ -885,14 +885,14 @@ public class GeneralTests extends MozuApiTestBase {
         
 	}
 
-	@Test
+	/*@Test
 	public void OrderNoteTests() throws Exception {
         OrderNoteFactory.getOrderNotes(apiContext, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         OrderNoteFactory.createOrderNote(apiContext, null, Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         OrderNoteFactory.deleteOrderNote(apiContext, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         OrderNoteFactory.getOrderNote(apiContext, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
         OrderNoteFactory.updateOrderNote(apiContext, null, Generator.randomString(8, Generator.AlphaChars), Generator.randomString(8, Generator.AlphaChars), HttpStatus.SC_BAD_REQUEST);
-	}
+	}*/
 
 	@Test
 	public void OrdersPackageTests() throws Exception {
@@ -1350,9 +1350,9 @@ public class GeneralTests extends MozuApiTestBase {
 
 	@Test
 	public void StoreFrontCategoryTests() throws Exception {
-        StorefrontCategoryFactory.getCategories(shopperApiContext, HttpStatus.SC_OK);
-        StorefrontCategoryFactory.getCategoryTree(shopperApiContext, HttpStatus.SC_OK);
-        StorefrontCategoryFactory.getCategory(shopperApiContext, Generator.randomInt(1000, 2000), HttpStatus.SC_NOT_FOUND);
+        StorefrontCategoryFactory.getCategories(shopperApiContext, null, HttpStatus.SC_OK);
+        StorefrontCategoryFactory.getCategoryTree(shopperApiContext, null, HttpStatus.SC_OK);
+        StorefrontCategoryFactory.getCategory(shopperApiContext, null, Generator.randomInt(1000, 2000), HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test

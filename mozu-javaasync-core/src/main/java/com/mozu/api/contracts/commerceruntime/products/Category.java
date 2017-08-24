@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.products.Category;
 
 /**
- *	The category associated with assigned products. Products, product bundles, and options can be classified to multiple categories. 
+ *	The category into which products are classified.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category implements Serializable
@@ -23,7 +23,7 @@ public class Category implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the category.
 	 */
 	protected  Integer id;
 
@@ -36,7 +36,7 @@ public class Category implements Serializable
 	}
 
 	/**
-	 * If applicable, the parent category in the category tree. This can be associated to a product as the parent category.
+	 * If applicable, the parent category in the category tree.
 	 */
 	protected  Category parent;
 

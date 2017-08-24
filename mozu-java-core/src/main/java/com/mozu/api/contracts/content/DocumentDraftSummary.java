@@ -21,9 +21,6 @@ public class DocumentDraftSummary implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Detailed information of the date and time for the active update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected  DateTime activeUpdateDate;
 
 	public DateTime getActiveUpdateDate() {
@@ -34,9 +31,6 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdateDate = activeUpdateDate;
 	}
 
-	/**
-	 * The unique identifier of the user that last updated the content or document draft.
-	 */
 	protected  String activeUpdatedBy;
 
 	public String getActiveUpdatedBy() {
@@ -47,9 +41,6 @@ public class DocumentDraftSummary implements Serializable
 		this.activeUpdatedBy = activeUpdatedBy;
 	}
 
-	/**
-	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -60,9 +51,6 @@ public class DocumentDraftSummary implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * Fully qualified name of the document type. 
-	 */
 	protected  String documentTypeFQN;
 
 	public String getDocumentTypeFQN() {
@@ -73,9 +61,6 @@ public class DocumentDraftSummary implements Serializable
 		this.documentTypeFQN = documentTypeFQN;
 	}
 
-	/**
-	 * Detailed information of the date and time for the draft update date for the document draft summary. This data is associated to document and content data.
-	 */
 	protected  DateTime draftUpdateDate;
 
 	public DateTime getDraftUpdateDate() {
@@ -87,7 +72,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Identifier of document draft.
 	 */
 	protected  String id;
 
@@ -99,9 +84,6 @@ public class DocumentDraftSummary implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The fully qualified name of the document list.
-	 */
 	protected  String listFQN;
 
 	public String getListFQN() {
@@ -112,9 +94,6 @@ public class DocumentDraftSummary implements Serializable
 		this.listFQN = listFQN;
 	}
 
-	/**
-	 * Unique identifier for the master catalog. 
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -126,7 +105,7 @@ public class DocumentDraftSummary implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * Name of the document draft.
 	 */
 	protected  String name;
 
@@ -138,9 +117,6 @@ public class DocumentDraftSummary implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The unique identifier of the publish set.
-	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {
@@ -164,9 +140,6 @@ public class DocumentDraftSummary implements Serializable
 		this.publishType = publishType;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {

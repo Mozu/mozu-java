@@ -17,13 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Attributes are used to add custom definitions and characteristics to the following objects:
-*  — are attributes that define the characteristics of products, enabling you to uniquely describe a product. They consist of options, properties, and extras. Refer to [Product Attributes](https://www.mozu.com/docs/guides/catalog/product-attributes.htm) in the Guides section for more information.
-
-*  — are custom attributes that you can apply to customer accounts to add further definition for special uses, such as marketing campaigns, or discounts. Refer to [Customer Attributes](https://www.mozu.com/docs/guides/customers/customers.htm#customer_attributes) in the Guides section for more information.
-
-*  — are custom attributes that enable you to uniquely describe an aspect of an order. Depending on the attribute definition, either you or a shopper can enter values for the order attribute. Refer to [Order Attributes](https://www.mozu.com/docs/guides/orders/order-attributes.htm) in the Guides section for more information.
-
+ * Use the Attribute Definition resource to manage the properties, options, and extras that uniquely describe products of a specific type. Attributes can be associated with a product type, assigned values by a client or shopper, and added as faceted search filters for a product category. Options are product attributes that describe unique configurations made by the shopper, such as size or color, and generate a new product variation (or unique SKU). Properties are product attributes that describe aspects of the product that do not represent an option configurable by the shopper, such as screen resolution or brand. Extras are product attributes that describe add-on configurations made by the shopper that do not represent a product variation, such as a monogram.
  * </summary>
  */
 public class AttributeClient {
@@ -127,7 +121,7 @@ public class AttributeClient {
 	 * Attribute attribute = client.Result();
 	 * </code></pre></p>
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -147,7 +141,7 @@ public class AttributeClient {
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Properties of the new product attribute to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -175,7 +169,7 @@ public class AttributeClient {
 	 * </code></pre></p>
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute
@@ -196,7 +190,7 @@ public class AttributeClient {
 	 * @param attributeFQN The fully qualified name of the attribute, which is a user defined attribute identifier.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param dataViewMode DataViewMode
-	 * @param attribute Properties of an attribute used to describe customers or orders.
+	 * @param attribute Any properties of the attribute that to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.Attribute>
 	 * @see com.mozu.api.contracts.productadmin.Attribute
 	 * @see com.mozu.api.contracts.productadmin.Attribute

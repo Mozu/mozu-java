@@ -22,7 +22,7 @@ public class ProductAttribute implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 * The data type of the attribute. There are four valid data types: "Bool", "DateTime", "Number", "String"
 	 */
 	protected  String dataType;
 
@@ -35,7 +35,7 @@ public class ProductAttribute implements Serializable
 	}
 
 	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
+	 * The description of this product attribute.
 	 */
 	protected  String description;
 
@@ -48,7 +48,7 @@ public class ProductAttribute implements Serializable
 	}
 
 	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
+	 * The storefront interface input type for this attribute such as a radio button or drop-down menu selection.
 	 */
 	protected  String inputType;
 
@@ -61,7 +61,7 @@ public class ProductAttribute implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The name of the product attribute.
 	 */
 	protected  String name;
 
@@ -74,7 +74,7 @@ public class ProductAttribute implements Serializable
 	}
 
 	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
+	 * An attribute value type is either predefined vocabulary by the admin during product attribute set up or it can be "AdminEntered" or "ShopperEntered". The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
 	 */
 	protected  String valueType;
 

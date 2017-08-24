@@ -76,7 +76,7 @@ public class ChannelGroupClient {
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 */
@@ -93,7 +93,7 @@ public class ChannelGroupClient {
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that uniquely identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -118,7 +118,7 @@ public class ChannelGroupClient {
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -137,7 +137,7 @@ public class ChannelGroupClient {
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -163,8 +163,8 @@ public class ChannelGroupClient {
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param code Code that identifies the channel group.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
@@ -182,9 +182,9 @@ public class ChannelGroupClient {
 	 * client.executeRequest();
 	 * ChannelGroup channelGroup = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code Code that identifies the channel group.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param channelGroup Properties of a group of channels that share common information.
+	 * @param channelGroup Properties of the channel group to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.channels.ChannelGroup>
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup
 	 * @see com.mozu.api.contracts.commerceruntime.channels.ChannelGroup

@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Return Notes resource to access and modify internal notes associated with returns. These notes can be useful to customer service representatives viewing them in .
+ * 
  * </summary>
  */
 public class OrderNoteResource {
@@ -35,12 +35,12 @@ public class OrderNoteResource {
 
 	
 	/**
-	 * Retrieves all internal notes associated with a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNotes( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return List<com.mozu.api.contracts.commerceruntime.orders.OrderNote>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -54,13 +54,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -70,14 +70,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Retrieves a specific internal note from a return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getReturnNote( returnId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -91,12 +91,12 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -108,13 +108,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Creates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createReturnNote( returnNote,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -130,13 +130,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -148,14 +148,14 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Updates an internal note on a given return. This note is visible in  for customer service representatives to see.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateReturnNote( returnNote,  returnId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param responseFields 
+	 * @param returnId 
 	 * @param returnNote 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -171,13 +171,13 @@ public class OrderNoteResource {
 	}
 
 	/**
-	 * Deletes an internal note from a given return.
+	 * 
 	 * <p><pre><code>
 	 *	OrderNote ordernote = new OrderNote();
 	 *	ordernote.deleteReturnNote( returnId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param noteId 
+	 * @param returnId 
 	 * @return 
 	 */
 	public void deleteReturnNote(String returnId, String noteId) throws Exception

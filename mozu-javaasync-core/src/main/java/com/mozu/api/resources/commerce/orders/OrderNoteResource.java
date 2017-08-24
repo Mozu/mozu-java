@@ -80,8 +80,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 */
@@ -96,8 +96,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getOrderNote( orderId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -113,8 +113,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.getOrderNote( orderId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -134,8 +134,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.getOrderNote( orderId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to retrieve.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -155,8 +155,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderId Unique identifier of the order for which to add a note.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -172,9 +172,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createOrderNote( orderNote,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to add a note.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -190,9 +190,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.createOrderNote( orderNote,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to add a note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -212,10 +212,10 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.createOrderNote( orderNote,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to add a note.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The alphanumeric text contained in the note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -234,9 +234,9 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -252,10 +252,10 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateOrderNote( orderNote,  orderId,  noteId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -271,10 +271,10 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	OrderNote orderNote = ordernote.updateOrderNote( orderNote,  orderId,  noteId,  responseFields);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -294,11 +294,11 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	CountDownLatch latch = ordernote.updateOrderNote( orderNote,  orderId,  noteId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
+	 * @param noteId Unique identifier of the order note.
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param orderNote Properties of an order note for a merchant, which is internal only for administrative purposes and not available to the shopper.
+	 * @param orderNote The content of the order note. The maximum length is 256 characters.
 	 * @return com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
 	 * @see com.mozu.api.contracts.commerceruntime.orders.OrderNote
@@ -317,8 +317,8 @@ public class OrderNoteResource {
 	 *	OrderNote ordernote = new OrderNote();
 	 *	ordernote.deleteOrderNote( orderId,  noteId);
 	 * </code></pre></p>
-	 * @param noteId Unique identifier of a particular note to retrieve.
-	 * @param orderId Unique identifier of the order.
+	 * @param noteId Unique identifier of the order note to delete.
+	 * @param orderId Unique identifier of the order associated with the note.
 	 * @return 
 	 */
 	public void deleteOrderNote(String orderId, String noteId) throws Exception

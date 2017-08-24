@@ -23,7 +23,7 @@ public class TaxContext implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the customer in Mozu, used to associate customers with data, orders, returns, and in-store credit.
+	 * Unique identifier of the customer.
 	 */
 	protected  String customerId;
 
@@ -62,7 +62,7 @@ public class TaxContext implements Serializable
 	}
 
 	/**
-	 * The physical address orders are sent to as a shipping destination. This address may contain multiple lines, city, state/province, country, and zip/postal code. The destination is used to calculate shipping costs.
+	 * The address to which the order ships.
 	 */
 	protected  Address destinationAddress;
 
@@ -75,7 +75,7 @@ public class TaxContext implements Serializable
 	}
 
 	/**
-	 * The physical address from which the order or shipment will ship.
+	 * The address from which the order ships.
 	 */
 	protected  Address originAddress;
 

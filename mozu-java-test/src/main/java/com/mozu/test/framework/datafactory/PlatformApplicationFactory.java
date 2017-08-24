@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.platform.ApplicationResource;
 
 /** <summary>
- * platform/developer related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PlatformApplicationFactory

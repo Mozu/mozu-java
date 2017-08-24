@@ -76,7 +76,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -93,7 +93,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code that identifies the store credit to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -118,7 +118,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -137,7 +137,7 @@ public class CreditClient {
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to create.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -163,7 +163,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 */
@@ -180,7 +180,7 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code The code that represents the credit to claim for the shopper.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -198,13 +198,13 @@ public class CreditClient {
 	}
 
 	/**
-	 * customer-credits Put ResendCreditCreatedEmail description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ResendCreditCreatedEmailClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient resendCreditCreatedEmailClient(String code) throws Exception
@@ -226,8 +226,8 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param code User-defined code of the store credit to update.
+	 * @param credit Properties of the store credit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -245,9 +245,9 @@ public class CreditClient {
 	 * client.executeRequest();
 	 * Credit credit = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param credit Properties of the store credit of gift card applied to a customer account. At this time, gift card functionality is reserved for future use.
+	 * @param credit Properties of the store credit to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.Credit>
 	 * @see com.mozu.api.contracts.customer.credit.Credit
 	 * @see com.mozu.api.contracts.customer.credit.Credit
@@ -272,7 +272,7 @@ public class CreditClient {
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the store credit to delete.
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCreditClient(String code) throws Exception

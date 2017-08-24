@@ -23,7 +23,7 @@ public class PackageMeasurements implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Height of a package or bundle package in imperial units of feet and inches.
+	 * Height of the package in imperial units of feet and inches.
 	 */
 	protected  Measurement packageHeight;
 
@@ -36,7 +36,7 @@ public class PackageMeasurements implements Serializable
 	}
 
 	/**
-	 * Length of a package or bundle package in imperial units of feet and inches.
+	 * Length of the package in imperial units of feet and inches.
 	 */
 	protected  Measurement packageLength;
 
@@ -49,7 +49,7 @@ public class PackageMeasurements implements Serializable
 	}
 
 	/**
-	 * Weight of a package or bundle package in imperial units of pounds and ounces.
+	 * Weight of the package in imperial units of pounds and ounces.
 	 */
 	protected  Measurement packageWeight;
 
@@ -62,7 +62,7 @@ public class PackageMeasurements implements Serializable
 	}
 
 	/**
-	 * Width of a package or bundle package in imperial units of feet and inches.
+	 * Width of the package in imperial units of feet and inches.
 	 */
 	protected  Measurement packageWidth;
 

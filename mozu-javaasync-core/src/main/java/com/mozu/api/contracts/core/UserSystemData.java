@@ -35,7 +35,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * The total number of failed authentication attempts associated with a customer account attempting access.
+	 * The number of failed authentication attempts associated with the user.
 	 */
 	protected  Byte failedLoginAttemptCount;
 
@@ -48,7 +48,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * The date and time the initial login was unsuccessful. System-supplied and read only. Each time user authentication fails, an update occurs on this field. The amount of failures is calculated together for `failedLoginAttemptCount`.
+	 * The date and time the initial login was unsuccessful, which is system-supplied and read only. Each time user authentication fails, an update occurs on this field.
 	 */
 	protected  DateTime firstFailedLoginAttemptOn;
 
@@ -61,7 +61,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * Indicates if a customer account and associated data is locked. If true, the user account is locked due to multiple failed authentication attempts. The user cannot login until the account is unlocked.
+	 * If true, the user account is locked due to multiple failed authentication attempts.
 	 */
 	protected  Boolean isLocked;
 
@@ -74,7 +74,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * Indicates if the customer account must have the password changed on login. If true, the login action requires a password change for increased security. If false, the login does not require a password change.
+	 * If true, the login requires a password change for increased security. If false, the login does not require a password change.
 	 */
 	protected  Boolean isPasswordChangeRequired;
 
@@ -87,7 +87,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * Provides date and time data when the customer's account was last locked. System-supplied and read-only.
+	 * When the user's account was last locked. System-supplied and read-only.
 	 */
 	protected  DateTime lastLockedOn;
 
@@ -100,7 +100,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * Provides the date and time the customer last logged into the store. System-supplied and read-only.
+	 * When the user last logged into the store. System-supplied and read-only.
 	 */
 	protected  DateTime lastLoginOn;
 
@@ -113,7 +113,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * Date and time the customer's password was last modified. System-supplied and read-only.
+	 * When the password was last modified. System-supplied and read-only.
 	 */
 	protected  DateTime lastPasswordChangeOn;
 
@@ -126,7 +126,7 @@ public class UserSystemData implements Serializable
 	}
 
 	/**
-	 * The number of login attempts remaining for the customer. The user must login successfully before this value reaches zero otherwise the account locks.
+	 * The number of login attempts left for the user. The user must login successfully before this value reaches zero otherwise the account will be locked.
 	 */
 	protected  Integer remainingLoginAttempts;
 

@@ -24,7 +24,7 @@ public class ReturnAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the action to perform for the payment, fulfillment, order, or return.
+	 * The name of the action to perform for the return.
 	 */
 	protected  String actionName;
 

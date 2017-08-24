@@ -35,8 +35,8 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for GetLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param locationCode The merchant-defined code of the location to retrieve.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl getLocationUrl(String locationCode, String responseFields)
@@ -49,7 +49,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for AddLocation
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl addLocationUrl(String responseFields)
@@ -61,7 +61,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for UpdateLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code associated with the location to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */
@@ -75,7 +75,7 @@ public class LocationUrl
 
 	/**
 	 * Get Resource Url for DeleteLocation
-	 * @param locationCode The unique, user-defined code that identifies a location. 
+	 * @param locationCode The merchant-defined code of the location to delete.
 	 * @return   String Resource Url
 	 */
 	public static MozuUrl deleteLocationUrl(String locationCode)

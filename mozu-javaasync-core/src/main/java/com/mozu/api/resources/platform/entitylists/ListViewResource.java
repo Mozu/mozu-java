@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Provides settings and options for displaying associated content within a context level of site, tenant, catalog, or master catalog. ListViews can be associated with entity lists and entities.
+ * 
  * </summary>
  */
 public class ListViewResource {
@@ -37,14 +37,14 @@ public class ListViewResource {
 
 	
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	JObject json = listview.getViewEntity( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -54,14 +54,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntity( entityListFullName,  viewName,  entityId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -72,15 +72,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	JObject json = listview.getViewEntity( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return JObject
 	 * @see JObject
 	 */
@@ -94,15 +94,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a view for associated entities. A view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntity( entityListFullName,  viewName,  entityId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return JObject
 	 * @see JObject
@@ -116,13 +116,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityCollection entityCollection = listview.getViewEntities( entityListFullName,  viewName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -132,13 +132,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntities( entityListFullName,  viewName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
@@ -149,17 +149,17 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityCollection entityCollection = listview.getViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
 	 */
@@ -173,17 +173,17 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of views for associated entities. Each view provides display context levels (site, tenant, catalog, master catalog) and settings.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntities( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityCollection
@@ -197,14 +197,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityContainer entityContainer = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId);
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -214,14 +214,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityId 
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -232,15 +232,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityContainer entityContainer = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId,  responseFields);
 	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
 	 */
@@ -254,15 +254,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntityContainer( entityListFullName,  viewName,  entityId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityId Unique identifier for an entity, which defines the schema, rules, and formats for JSON entities within the MZDB (Mozu Mongo DB).
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityId 
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainer
 	 * @see com.mozu.api.contracts.mzdb.EntityContainer
@@ -276,13 +276,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityContainerCollection entityContainerCollection = listview.getViewEntityContainers( entityListFullName,  viewName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -292,13 +292,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntityContainers( entityListFullName,  viewName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -309,17 +309,17 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	EntityContainerCollection entityContainerCollection = listview.getViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 */
@@ -333,17 +333,17 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of container data for creating and displaying a view of entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getViewEntityContainers( entityListFullName,  viewName,  pageSize,  startIndex,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param startIndex 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.EntityContainerCollection
 	 * @see com.mozu.api.contracts.mzdb.EntityContainerCollection
@@ -357,13 +357,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.getEntityListView( entityListFullName,  viewName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -373,13 +373,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getEntityListView( entityListFullName,  viewName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -390,14 +390,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.getEntityListView( entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 */
@@ -411,14 +411,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a specific `EntityListView`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getEntityListView( entityListFullName,  viewName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -432,12 +432,12 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListViewCollection listViewCollection = listview.getEntityListViews( entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
 	 */
@@ -447,12 +447,12 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getEntityListViews( entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
@@ -463,12 +463,12 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListViewCollection listViewCollection = listview.getEntityListViews( entityListFullName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
 	 * @see com.mozu.api.contracts.mzdb.ListViewCollection
@@ -483,12 +483,12 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Retrieves a collection of `EntityListViews`. These views provide schema, rules, and formatting for all associated entities. 
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.getEntityListViews( entityListFullName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.mzdb.ListViewCollection
@@ -503,13 +503,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.createEntityListView( listView,  entityListFullName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -520,14 +520,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.createEntityListView( listView,  entityListFullName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -538,14 +538,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.createEntityListView( listView,  entityListFullName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -560,15 +560,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Creates an entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.createEntityListView( listView,  entityListFullName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param  callback callback handler for asynchronous operations
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -582,14 +582,14 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.updateEntityListView( listView,  entityListFullName,  viewName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param entityListFullName 
+	 * @param viewName 
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -600,15 +600,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.updateEntityListView( listView,  entityListFullName,  viewName, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -619,15 +619,15 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	ListView listView = listview.updateEntityListView( listView,  entityListFullName,  viewName,  responseFields);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param viewName 
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -642,16 +642,16 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Updates an existing entity list view. Each view provides display context levels (site, tenant, catalog, master catalog) and settings for the list of entities.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	CountDownLatch latch = listview.updateEntityListView( listView,  entityListFullName,  viewName,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
+	 * @param entityListFullName 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param viewName 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param listView Properties for the list view that specifies what fields and content display per page load. All associated fields in the list view correspond with object data.
+	 * @param listView 
 	 * @return com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
 	 * @see com.mozu.api.contracts.mzdb.ListView
@@ -665,13 +665,13 @@ public class ListViewResource {
 	}
 
 	/**
-	 * Deletes an entity list view. Any associated entities have the association removed.
+	 * 
 	 * <p><pre><code>
 	 *	ListView listview = new ListView();
 	 *	listview.deleteEntityListView( entityListFullName,  viewName);
 	 * </code></pre></p>
-	 * @param entityListFullName The full name of the EntityList including namespace in name@nameSpace format
-	 * @param viewName The name for a view. Views are used to render data in Mozu, such as document and entity lists. Each view includes a schema, format, name, ID, and associated data types to render.
+	 * @param entityListFullName 
+	 * @param viewName 
 	 * @return 
 	 */
 	public void deleteEntityListView(String entityListFullName, String viewName) throws Exception

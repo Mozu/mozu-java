@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderCustomField;
 import com.mozu.api.contracts.commerceruntime.payments.PurchaseOrderPaymentTerm;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderPayment ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPayment implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Purchase order number
-	 */
 	protected  String purchaseOrderNumber;
 
 	public String getPurchaseOrderNumber() {
@@ -38,9 +32,6 @@ public class PurchaseOrderPayment implements Serializable
 		this.purchaseOrderNumber = purchaseOrderNumber;
 	}
 
-	/**
-	 * Memo/custom fields
-	 */
 	protected List<PurchaseOrderCustomField> customFields;
 	public List<PurchaseOrderCustomField> getCustomFields() {
 		return this.customFields;
@@ -49,9 +40,6 @@ public class PurchaseOrderPayment implements Serializable
 		this.customFields = customFields;
 	}
 
-	/**
-	 * Net term / Payment term
-	 */
 	protected  PurchaseOrderPaymentTerm paymentTerm;
 
 	public PurchaseOrderPaymentTerm getPaymentTerm() {

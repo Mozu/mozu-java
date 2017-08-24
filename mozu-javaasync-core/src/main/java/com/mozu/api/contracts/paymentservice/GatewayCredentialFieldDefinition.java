@@ -22,7 +22,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The sequential display order of the gateway in .
+	 * The sequential display order of the gateway in Mozu Admin.
 	 */
 	protected  Integer adminDisplayOrder;
 
@@ -35,7 +35,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	}
 
 	/**
-	 * The name that displays for the payment gateway or third-party credentials field. 
+	 * The name that displays for the payment gateway.
 	 */
 	protected  String displayName;
 
@@ -48,7 +48,7 @@ public class GatewayCredentialFieldDefinition implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * The localizable name of the payment gateway.
 	 */
 	protected  String name;
 

@@ -72,7 +72,7 @@ public class GeneralSettingsClient {
 	 * client.executeRequest();
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
@@ -91,7 +91,7 @@ public class GeneralSettingsClient {
 	 * GeneralSettings generalSettings = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param generalSettings General settings used on the storefront site.
+	 * @param generalSettings The properties of the site's general settings to update.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.general.GeneralSettings>
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings
 	 * @see com.mozu.api.contracts.sitesettings.general.GeneralSettings

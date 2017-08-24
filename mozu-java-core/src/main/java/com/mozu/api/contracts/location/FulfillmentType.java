@@ -35,7 +35,7 @@ public class FulfillmentType implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The system-supplied name of the fulfillment type, which is "Direct Ship" or "In Store Pickup".
 	 */
 	protected  String name;
 

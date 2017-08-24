@@ -40,8 +40,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	string string = pickup.getAvailablePickupFulfillmentActions( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup for which to retrieve available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -60,8 +60,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 */
@@ -76,8 +76,8 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.getPickup( orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the pickup.
+	 * @param pickupId Unique identifier of the pickup to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -98,7 +98,7 @@ public class PickupResource {
 	 *	Pickup pickup = pickup.createPickup( pickup,  orderId);
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -116,7 +116,7 @@ public class PickupResource {
 	 * </code></pre></p>
 	 * @param orderId Unique identifier of the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to create.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -136,9 +136,9 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -154,10 +154,10 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	Pickup pickup = pickup.updatePickup( pickup,  orderId,  pickupId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param pickupId Unique identifier of the pickup to remove.
+	 * @param orderId Unique identifier of the order associated with the in-store pickup.
+	 * @param pickupId Unique identifier of the pickup to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param pickup Properties of an in-store pickup defined to fulfill items in an order.
+	 * @param pickup Properties of the in-store pickup to update.
 	 * @return com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
 	 * @see com.mozu.api.contracts.commerceruntime.fulfillment.Pickup
@@ -177,7 +177,7 @@ public class PickupResource {
 	 *	Pickup pickup = new Pickup();
 	 *	pickup.deletePickup( orderId,  pickupId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order associated with the pickup.
 	 * @param pickupId Unique identifier of the pickup to remove.
 	 * @return 
 	 */

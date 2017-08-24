@@ -22,7 +22,7 @@ public class CustomerLoginInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The email address for the customer account and contact. This email may be used for login to the storefront and for subscription mailing lists.
+	 * The email address associated with the customer login.
 	 */
 	protected  String emailAddress;
 
@@ -34,9 +34,6 @@ public class CustomerLoginInfo implements Serializable
 		this.emailAddress = emailAddress;
 	}
 
-	/**
-	 * Mozu.Customer.Contracts.CustomerLoginInfo externalPassword ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String externalPassword;
 
 	public String getExternalPassword() {
@@ -48,7 +45,7 @@ public class CustomerLoginInfo implements Serializable
 	}
 
 	/**
-	 * Indicates if this object/data was imported from an outside source such as a data import or synchronization via an app or service. If true, this data was originally imported into Mozu and accessible through your store database. Examples of imported objects/data include orders and customer accounts.
+	 * If true, this customer account data was imported from an external program.
 	 */
 	protected  Boolean isImport;
 
@@ -61,7 +58,7 @@ public class CustomerLoginInfo implements Serializable
 	}
 
 	/**
-	 * The saved password for the customer account. 
+	 * The password associated with the customer login.
 	 */
 	protected  String password;
 
@@ -74,7 +71,7 @@ public class CustomerLoginInfo implements Serializable
 	}
 
 	/**
-	 * The user name associated with the user profile. The customer uses the user name to access the account.
+	 * The user name associated with the customer login.
 	 */
 	protected  String username;
 

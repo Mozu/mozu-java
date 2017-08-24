@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Cart Coupons subresource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
+ * Use the Cart Coupons resource to apply a coupon to a defined cart or remove a coupon from a cart. When the shopper proceeds to checkout, the coupons applied to the cart apply to the order.
  * </summary>
  */
 public class AppliedDiscountClient {
@@ -30,8 +30,8 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -48,8 +48,8 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
-	 * @param couponCode Code associated with the coupon to remove from the cart.
+	 * @param cartId Unique identifier of the cart to which to apply the coupon.
+	 * @param couponCode Code associated with the coupon to apply to the cart.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
@@ -67,14 +67,14 @@ public class AppliedDiscountClient {
 	}
 
 	/**
-	 * Removes all coupons from the cart specified in the request.
+	 * Removes one or more applied coupons from the cart specified in the request.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.commerceruntime.carts.Cart> mozuClient=RemoveCouponsClient( cartId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart
 	 */
@@ -98,7 +98,7 @@ public class AppliedDiscountClient {
 	 * client.executeRequest();
 	 * Cart cart = client.Result();
 	 * </code></pre></p>
-	 * @param cartId Identifier of the cart to delete.
+	 * @param cartId Unique identifier of the cart.
 	 * @param couponCode Code associated with the coupon to remove from the cart.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.carts.Cart>
 	 * @see com.mozu.api.contracts.commerceruntime.carts.Cart

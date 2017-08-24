@@ -37,7 +37,7 @@ public class FulfillmentInfo implements Serializable
 	}
 
 	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
+	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
 	 */
 	protected  String shippingMethodCode;
 
@@ -50,7 +50,7 @@ public class FulfillmentInfo implements Serializable
 	}
 
 	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
+	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".
 	 */
 	protected  String shippingMethodName;
 
@@ -75,9 +75,6 @@ public class FulfillmentInfo implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Custom data originated by the shipping service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

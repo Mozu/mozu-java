@@ -28,7 +28,7 @@ public class Package implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * The actions that a user can perform for a package at this time.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -52,7 +52,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Date and time when a shipment completes fulfillment by delivery to a customer's physical address, picked up by a customer at a store, or delivered digitally for downloadable products.
+	 * The date and time the package shipped to the customer.
 	 */
 	protected  DateTime fulfillmentDate;
 
@@ -65,7 +65,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The code that identifies the location used to fulfill the cart/cart item or order/order item. This code can include physical store locations for in-store pickup, warehouse locations providing the products for shipment, or the location for the digital file(s).
+	 * The location code that represents the location from which this package will ship.
 	 */
 	protected  String fulfillmentLocationCode;
 
@@ -77,9 +77,6 @@ public class Package implements Serializable
 		this.fulfillmentLocationCode = fulfillmentLocationCode;
 	}
 
-	/**
-	 * If there is a shipping label present for this Package, this will be set to true
-	 */
 	protected  Boolean hasLabel;
 
 	public Boolean getHasLabel() {
@@ -91,7 +88,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of a package.
 	 */
 	protected  String id;
 
@@ -104,7 +101,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The package type associated with this physical package. Possible values include , , , , , , or .
+	 * The package type associated with this physical package. Possible values include Tube, Letter, Pak, Small Box (carrier_box_small), Medium Box (carrier_box_medium), Large Box (carrier_box_large), or Custom.
 	 */
 	protected  String packagingType;
 
@@ -117,7 +114,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The read-only, system-generated ID of the shipment associated with the shipment. When a package is first created, it is not associated with a shipment. However, once the [CreatePackageShipments](https://www.mozu.com/docs/api/commerce/orders/operations/createpackageshipments.htm) operation runs, it creates a shipment for the package (and any other packages that are part of the shipment) and generates shipping labels.
+	 * Unique identifier of the shipment associated with this package.
 	 */
 	protected  String shipmentId;
 
@@ -130,7 +127,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The code associated with a carrier's shipping method service type, used during fulfillment of packages and shipments. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD and UPS_GROUND.If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
+	 * The code associated with the carrier's shipping method service type. Service type codes include a prefix that indicates the carrier. For example: FEDEX_INTERNATIONAL_STANDARD
 	 */
 	protected  String shippingMethodCode;
 
@@ -143,7 +140,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The carrier-supplied name for the shipping service type, such as "UPS Ground" or "2nd Day Air".If using a custom rate, this property corresponds to the  field in  when you navigate to  &gt;  &gt; , and then click on an existing rate or on .
+	 * Name of the shipping method associated with the package. For example: UPS Ground or 2nd Day Air.
 	 */
 	protected  String shippingMethodName;
 
@@ -156,7 +153,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * Status of the package, which is "Fulfilled" or "NotFulfilled".
 	 */
 	protected  String status;
 
@@ -169,7 +166,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Tracking number for the package or shipment, supplied by the shipping carrier to track the shipment until fulfillment completes. The tracking number format may differ between carriers.
+	 * Tracking number for the package supplied by the carrier.
 	 */
 	protected  String trackingNumber;
 
@@ -195,7 +192,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * List of change messages associated with the package.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -217,7 +214,7 @@ public class Package implements Serializable
 	}
 
 	/**
-	 * Dimensional properties (height, length, and width) of packages, products and bundles.
+	 * Dimensional properties of the package.
 	 */
 	protected  PackageMeasurements measurements;
 

@@ -58,7 +58,7 @@ public class Site implements Serializable
 	}
 
 	/**
-	 * Properties of the domain that the tenant is associated with such as the domain name, the zone string, audit information (system-supplied and read-only), assignment data, and whether or not the domain is primary or requires a SSL for authentication.
+	 * The domain associated with the site.
 	 */
 	protected  String domain;
 
@@ -94,7 +94,7 @@ public class Site implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the site.
 	 */
 	protected  String name;
 

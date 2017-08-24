@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderPaymentTerm ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseOrderPaymentTerm implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.CommerceRuntime.Contracts.Payments.PurchaseOrderPaymentTerm code ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +28,6 @@ public class PurchaseOrderPaymentTerm implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {

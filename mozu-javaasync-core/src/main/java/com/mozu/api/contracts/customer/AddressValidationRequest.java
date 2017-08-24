@@ -14,7 +14,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.Address;
 
 /**
- *	Properties of the address used for validation of the account's full address. This content may include multiple lines of an address, city, state/province, zip/postal code, and country.
+ *	Properties of the address to validate.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressValidationRequest implements Serializable
@@ -23,7 +23,7 @@ public class AddressValidationRequest implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * All address information for the contact. This data is used to validate the address for the customer account and includes the full address.
+	 * Properties of the address to validate.
 	 */
 	protected  Address address;
 

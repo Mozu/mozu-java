@@ -22,7 +22,7 @@ public class Facet implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The total number of associated items.
+	 * The number of facet results.
 	 */
 	protected  Integer count;
 
@@ -35,7 +35,7 @@ public class Facet implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the facet.
 	 */
 	protected  String name;
 

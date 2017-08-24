@@ -24,9 +24,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -37,9 +34,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * Fully qualified name of the attribute for the order or customer. 
-	 */
 	protected  String fullyQualifiedName;
 
 	public String getFullyQualifiedName() {
@@ -51,7 +45,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	}
 
 	/**
-	 * Indicates if the object or process is enabled. This indicator is used on external payment workflows and product option values. For product options, if true, the product option value is available for a shopper to choose. During configuration, this property will be false if the option value is invalid with other selected options. For external payment workflows, if true, the workflow is enabled and available for routing payments for the submitted order.
+	 * If true, the associated external payment workflow definition is enabled for the site.
 	 */
 	protected  Boolean isEnabled;
 
@@ -64,7 +58,7 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the external payment workflow definition.
 	 */
 	protected  String name;
 
@@ -76,9 +70,6 @@ public class ExternalPaymentWorkflowDefinition implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The namespace for the accessible APIs and source capabilities in the core of  APIs.
-	 */
 	protected  String namespace;
 
 	public String getNamespace() {

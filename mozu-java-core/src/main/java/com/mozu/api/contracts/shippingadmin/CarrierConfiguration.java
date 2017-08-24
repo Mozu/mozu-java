@@ -26,9 +26,6 @@ public class CarrierConfiguration implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Specifies whether credentials for the carrier are set.
-	 */
 	protected  Boolean areCredentialsSet;
 
 	public Boolean getAreCredentialsSet() {
@@ -39,9 +36,6 @@ public class CarrierConfiguration implements Serializable
 		this.areCredentialsSet = areCredentialsSet;
 	}
 
-	/**
-	 * Indicates if a capability, function tied to an Arc.js action, application, or price list is enabled for the tenant/site. If true, the capability/application/function/price list is enabled for the tenant. System-supplied and read-only with the exception of functions tied to an Arc.js action and price lists.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -52,9 +46,6 @@ public class CarrierConfiguration implements Serializable
 		this.enabled = enabled;
 	}
 
-	/**
-	 * Specifies whether the carrier is enabled for creating RMA labels.
-	 */
 	protected  Boolean enabledForReturns;
 
 	public Boolean getEnabledForReturns() {
@@ -66,7 +57,7 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Identifier of the carrier configuration.
 	 */
 	protected  String id;
 
@@ -91,9 +82,6 @@ public class CarrierConfiguration implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * A list of any custom table rates for the carrier.
-	 */
 	protected List<CustomTableRate> customTableRates;
 	public List<CustomTableRate> getCustomTableRates() {
 		return this.customTableRates;

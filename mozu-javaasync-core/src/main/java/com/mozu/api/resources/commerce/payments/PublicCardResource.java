@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/cards related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublicCardResource {
@@ -41,60 +41,53 @@ public PublicCardResource(ApiContext apiContext)
 
 	
 	/**
-	 * payments-cards Post Create description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	SyncResponse syncResponse = publiccard.create( request);
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
 	 */
 	public com.mozu.api.contracts.paymentservice.response.SyncResponse create(com.mozu.api.contracts.paymentservice.PublicCard request) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.createClient( request);
-		client.setContext(_apiContext);
-		client.executeRequest();
-		return client.getResult();
-
+		return create( request,  null);
 	}
 
 	/**
-	 * payments-cards Post Create description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	CountDownLatch latch = publiccard.create( request, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
 	 */
 	public CountDownLatch createAsync(com.mozu.api.contracts.paymentservice.PublicCard request, AsyncCallback<com.mozu.api.contracts.paymentservice.response.SyncResponse> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.createClient( request);
-		client.setContext(_apiContext);
-		return client.executeRequest(callback);
-
+		return createAsync( request,  null, callback);
 	}
 
 	/**
-	 * payments-cards Put Update description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
-	 *	SyncResponse syncResponse = publiccard.update( request,  cardId);
+	 *	SyncResponse syncResponse = publiccard.create( request,  responseFields);
 	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
 	 */
-	public com.mozu.api.contracts.paymentservice.response.SyncResponse update(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId) throws Exception
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse create(com.mozu.api.contracts.paymentservice.PublicCard request, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.updateClient( request,  cardId);
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.createClient( request,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -102,33 +95,112 @@ public PublicCardResource(ApiContext apiContext)
 	}
 
 	/**
-	 * payments-cards Put Update description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
-	 *	CountDownLatch latch = publiccard.update( request,  cardId, callback );
+	 *	CountDownLatch latch = publiccard.create( request,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request Mozu.PaymentService.Contracts.PublicCard ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
 	 * @see com.mozu.api.contracts.paymentservice.PublicCard
 	 */
-	public CountDownLatch updateAsync(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, AsyncCallback<com.mozu.api.contracts.paymentservice.response.SyncResponse> callback) throws Exception
+	public CountDownLatch createAsync(com.mozu.api.contracts.paymentservice.PublicCard request, String responseFields, AsyncCallback<com.mozu.api.contracts.paymentservice.response.SyncResponse> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.updateClient( request,  cardId);
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.createClient( request,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 
 	}
 
 	/**
-	 * payments-cards Delete Delete description DOCUMENT_HERE 
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.update( request,  cardId);
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.PublicCard
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse update(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId) throws Exception
+	{
+		return update( request,  cardId,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	CountDownLatch latch = publiccard.update( request,  cardId, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cardId 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.PublicCard
+	 */
+	public CountDownLatch updateAsync(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, AsyncCallback<com.mozu.api.contracts.paymentservice.response.SyncResponse> callback) throws Exception
+	{
+		return updateAsync( request,  cardId,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	SyncResponse syncResponse = publiccard.update( request,  cardId,  responseFields);
+	 * </code></pre></p>
+	 * @param cardId 
+	 * @param responseFields 
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.PublicCard
+	 */
+	public com.mozu.api.contracts.paymentservice.response.SyncResponse update(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.updateClient( request,  cardId,  responseFields);
+		client.setContext(_apiContext);
+		client.executeRequest();
+		return client.getResult();
+
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	PublicCard publiccard = new PublicCard();
+	 *	CountDownLatch latch = publiccard.update( request,  cardId,  responseFields, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param cardId 
+	 * @param responseFields 
+	 * @param  callback callback handler for asynchronous operations
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.response.SyncResponse
+	 * @see com.mozu.api.contracts.paymentservice.PublicCard
+	 */
+	public CountDownLatch updateAsync(com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, String responseFields, AsyncCallback<com.mozu.api.contracts.paymentservice.response.SyncResponse> callback) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.SyncResponse> client = com.mozu.api.clients.commerce.payments.PublicCardClient.updateClient( request,  cardId,  responseFields);
+		client.setContext(_apiContext);
+		return client.executeRequest(callback);
+
+	}
+
+	/**
+	 * 
 	 * <p><pre><code>
 	 *	PublicCard publiccard = new PublicCard();
 	 *	publiccard.delete( cardId);
 	 * </code></pre></p>
-	 * @param cardId Unique identifier of the card associated with the customer account billing contact.
+	 * @param cardId 
 	 * @return 
 	 */
 	public void delete(String cardId) throws Exception

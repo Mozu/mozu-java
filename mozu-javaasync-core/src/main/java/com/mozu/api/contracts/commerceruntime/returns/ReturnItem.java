@@ -27,8 +27,18 @@ public class ReturnItem implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
+	protected  Boolean excludeProductExtras;
+
+	public Boolean getExcludeProductExtras() {
+		return this.excludeProductExtras;
+	}
+
+	public void setExcludeProductExtras(Boolean excludeProductExtras) {
+		this.excludeProductExtras = excludeProductExtras;
+	}
+
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the return whose items you want to get.
 	 */
 	protected  String id;
 
@@ -41,7 +51,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order item associated with a validation message, order, or return.
+	 * Unique identifier of the item in the original completed order. All return items should be associated with a corresponding order item.
 	 */
 	protected  String orderItemId;
 
@@ -53,9 +63,6 @@ public class ReturnItem implements Serializable
 		this.orderItemId = orderItemId;
 	}
 
-	/**
-	 * This is the Option attribute FQN for the item being returned .. typically only when the return item is a product bundle item.
-	 */
 	protected  String orderItemOptionAttributeFQN;
 
 	public String getOrderItemOptionAttributeFQN() {
@@ -66,9 +73,6 @@ public class ReturnItem implements Serializable
 		this.orderItemOptionAttributeFQN = orderItemOptionAttributeFQN;
 	}
 
-	/**
-	 * The OrderLineId that this ReturnItem is associated with. If order item is present, the orderLineId should be present also.
-	 */
 	protected  Integer orderLineId;
 
 	public Integer getOrderLineId() {
@@ -261,7 +265,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Properties of a collection of component products that make up a single product bundle with its own product code. Tenants can define product bundles for any product type that supports the Bundle product usage.
+	 * Properties of a collection of component products that make up a single returned product bundle with its own product code.
 	 */
 	protected List<ReturnBundle> bundledProducts;
 	public List<ReturnBundle> getBundledProducts() {
@@ -272,7 +276,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * Paged list collection of note content for objects including customers, orders, and returns. 
+	 * List of merchant-supplied notes associated with the return item.
 	 */
 	protected List<OrderNote> notes;
 	public List<OrderNote> getNotes() {
@@ -283,7 +287,7 @@ public class ReturnItem implements Serializable
 	}
 
 	/**
-	 * The properties of a product, referenced and used by carts, orders, wish lists, and returns.
+	 * Properties of the product definition associated with the item in the return.
 	 */
 	protected  Product product;
 

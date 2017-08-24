@@ -24,7 +24,7 @@ public class Setting implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.For search synonym definitions, refer to [Synonym Expansion Types](https://www.mozu.com/docs/Developer/api-guides/search-settings.htm#synonym_expansion_types) for more information about the key usage.
+	 * Carrier-specific key field.
 	 */
 	protected  String key;
 
@@ -37,7 +37,7 @@ public class Setting implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * Carrier-specific value for the associated key.
 	 */
 	protected  String value;
 
@@ -63,7 +63,7 @@ public class Setting implements Serializable
 	}
 
 	/**
-	 * Descriptive text used as a label for objects, such as field names, facets, date ranges, contact information, and package information.
+	 * The label of the carrier-specific key.
 	 */
 	protected  LocalizableString label;
 

@@ -22,7 +22,7 @@ public class ProductPricingBehaviorInfo implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Indicates if the discount is restricted. If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
+	 * If true, the system cannot apply any discounts to this product. Discount restrictions are defined at the master catalog level. Client administrators cannot override discount restrictions at the catalog level, but they can limit the restriction to a defined time interval.
 	 */
 	protected  Boolean discountsRestricted;
 

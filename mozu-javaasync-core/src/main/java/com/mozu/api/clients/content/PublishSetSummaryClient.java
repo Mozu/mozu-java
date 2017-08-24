@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * content/publishsets related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublishSetSummaryClient {
 	
 	/**
-	 * Returns a List of current Publishing sets with counts of drafts in each
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient();
 	 * client.setBaseAddress(url);
@@ -41,16 +41,16 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Returns a List of current Publishing sets with counts of drafts in each
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.PublishSetSummaryPagedCollection> mozuClient=GetPublishSetsClient( pageSize,  startIndex,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PublishSetSummaryPagedCollection publishSetSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.PublishSetSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.PublishSetSummaryPagedCollection
 	 */
@@ -67,14 +67,14 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Retrieve a paged collection of publish set Items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -84,19 +84,19 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Retrieve a paged collection of publish set Items.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection> mozuClient=GetPublishSetItemsClient( code,  pageSize,  startIndex,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * DocumentDraftSummaryPagedCollection documentDraftSummaryPagedCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param code 
+	 * @param filter 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection>
 	 * @see com.mozu.api.contracts.content.DocumentDraftSummaryPagedCollection
 	 */
@@ -113,14 +113,14 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a publish set
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 */
@@ -130,16 +130,16 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a publish set
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=DeletePublishSetClient( code,  shouldDiscard,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param shouldDiscard Specifies whether to discard the pending content changes assigned to the content publish set when the publish set is deleted.
+	 * @param code 
+	 * @param responseFields 
+	 * @param shouldDiscard 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 */
@@ -156,15 +156,15 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a publish set
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
+	 * @param code 
+	 * @param itemsToPublish 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem
@@ -175,16 +175,16 @@ public class PublishSetSummaryClient {
 	}
 
 	/**
-	 * Adds a set of documents by id to a publish set
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<Object> mozuClient=AddPublishSetItemsClient( itemsToPublish,  code,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * object object = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param itemsToPublish Mozu.Content.Contracts.AddOrDeletePublishItem ApiType DOCUMENT_HERE 
+	 * @param code 
+	 * @param responseFields 
+	 * @param itemsToPublish 
 	 * @return Mozu.Api.MozuClient <object>
 	 * @see object
 	 * @see com.mozu.api.contracts.content.AddOrDeletePublishItem

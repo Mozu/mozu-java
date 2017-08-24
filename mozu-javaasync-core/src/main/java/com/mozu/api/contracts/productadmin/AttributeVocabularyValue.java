@@ -16,7 +16,7 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.productadmin.AttributeVocabularyValueLocalizedContent;
 
 /**
- *	Properties of a vocabulary value defined for an extensible attribute.
+ *	Properties of an individual vocabulary value for an attribute. For example, a "color" attribute might have the following vocabulary values: Red, Blue, Green.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeVocabularyValue implements Serializable
@@ -34,8 +34,18 @@ public class AttributeVocabularyValue implements Serializable
 		this.displayOrder = displayOrder;
 	}
 
+	protected  String productName;
+
+	public String getProductName() {
+		return this.productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
 	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * The actual vocabulary value.
 	 */
 	protected  Object value;
 
@@ -73,9 +83,6 @@ public class AttributeVocabularyValue implements Serializable
 		this.content = content;
 	}
 
-	/**
-	 * The localized content of an attribute determined by the `localeCode`. This content is always in the default language of the MasterCatalog.
-	 */
 	protected List<AttributeVocabularyValueLocalizedContent> localizedContent;
 	public List<AttributeVocabularyValueLocalizedContent> getLocalizedContent() {
 		return this.localizedContent;

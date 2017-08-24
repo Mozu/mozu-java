@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Properties of a metadata item defined for an attribute.
+ *	Item used to define additional key-value pairs of data associated with a product attribute.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeMetadataItem implements Serializable
@@ -22,7 +22,7 @@ public class AttributeMetadataItem implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Key used for metadata defined for objects, including extensible attributes, custom attributes associated with a shipping provider, and search synonyms definitions. This content may be user-defined depending on the object and usage.For search synonym definitions, refer to [Synonym Expansion Types](https://www.mozu.com/docs/Developer/api-guides/search-settings.htm#synonym_expansion_types) for more information about the key usage.
+	 * User-defined key for attribute metadata.
 	 */
 	protected  String key;
 
@@ -35,7 +35,7 @@ public class AttributeMetadataItem implements Serializable
 	}
 
 	/**
-	 * The value of a property, used by numerous objects within  including facets, attributes, products, localized content, metadata, capabilities ( and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
+	 * Value for the user-defined key.
 	 */
 	protected  String value;
 

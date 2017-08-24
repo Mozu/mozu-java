@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductRuntime.Contracts.ResolvedPriceList ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResolvedPriceList implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The localized description in text for the object, displayed per the locale code. For example, descriptions are used for product descriptions, attributes, and pre-authorization transaction types.
-	 */
 	protected  String description;
 
 	public String getDescription() {
@@ -34,9 +28,6 @@ public class ResolvedPriceList implements Serializable
 		this.description = description;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -47,9 +38,6 @@ public class ResolvedPriceList implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.ResolvedPriceList priceListCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -60,9 +48,6 @@ public class ResolvedPriceList implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.ResolvedPriceList priceListId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer priceListId;
 
 	public Integer getPriceListId() {

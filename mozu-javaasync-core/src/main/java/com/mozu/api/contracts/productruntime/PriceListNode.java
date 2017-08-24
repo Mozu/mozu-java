@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductRuntime.Contracts.PriceListNode ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PriceListNode implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode parentPriceListId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer parentPriceListId;
 
 	public Integer getParentPriceListId() {
@@ -34,9 +28,6 @@ public class PriceListNode implements Serializable
 		this.parentPriceListId = parentPriceListId;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String priceListCode;
 
 	public String getPriceListCode() {
@@ -47,9 +38,6 @@ public class PriceListNode implements Serializable
 		this.priceListCode = priceListCode;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer priceListId;
 
 	public Integer getPriceListId() {
@@ -60,9 +48,6 @@ public class PriceListNode implements Serializable
 		this.priceListId = priceListId;
 	}
 
-	/**
-	 * Mozu.ProductRuntime.Contracts.PriceListNode priceListLevel ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer priceListLevel;
 
 	public Integer getPriceListLevel() {

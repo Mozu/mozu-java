@@ -17,20 +17,20 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Retrieves the details of a price list. The details may contain a hierarchy of ancestor and/or descendant price lists dependening on your configuration.
+ * 
  * </summary>
  */
 public class PriceListClient {
 	
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
+	 * @param priceListCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.PriceList>
 	 * @see com.mozu.api.contracts.productruntime.PriceList
 	 */
@@ -40,15 +40,15 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of the specified price list.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.PriceList> mozuClient=GetPriceListClient( priceListCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * PriceList priceList = client.Result();
 	 * </code></pre></p>
-	 * @param priceListCode The unique code of the price list for which you want to retrieve the details.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param priceListCode 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.PriceList>
 	 * @see com.mozu.api.contracts.productruntime.PriceList
 	 */
@@ -65,7 +65,7 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient();
 	 * client.setBaseAddress(url);
@@ -81,15 +81,15 @@ public class PriceListClient {
 	}
 
 	/**
-	 * Retrieves the details of a price list to which the specified customer resolves. This is primarly used when creating an offline order for a shopper.You can use this operation alongside custom Arc.js actions to alter the price list to which a shopper resolves.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productruntime.ResolvedPriceList> mozuClient=GetResolvedPriceListClient( customerAccountId,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * ResolvedPriceList resolvedPriceList = client.Result();
 	 * </code></pre></p>
-	 * @param customerAccountId The unique identifier of the customer account for which to retrieve wish lists.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param customerAccountId 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productruntime.ResolvedPriceList>
 	 * @see com.mozu.api.contracts.productruntime.ResolvedPriceList
 	 */

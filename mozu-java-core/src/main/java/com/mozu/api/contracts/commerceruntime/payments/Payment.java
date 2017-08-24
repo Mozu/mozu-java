@@ -67,7 +67,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * The actions a user can perform for a payment at this time.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -77,9 +77,6 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * The external/third party transaction Id for this payment. This is used to store the transaction Id from digital wallet like Visa Checkout
-	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -91,7 +88,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the payment transaction.
 	 */
 	protected  String id;
 
@@ -104,7 +101,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, the payment transaction occurs at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
 	protected  Boolean isRecurring;
 
@@ -143,7 +140,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
+	 * The type of payment transaction performed, such as check, credit card, or PayPal Express. Additional payment types will be supported in future releases.
 	 */
 	protected  String paymentType;
 
@@ -155,9 +152,6 @@ public class Payment implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * The source of data for this payment. By default, this will be set to 'mozu'
-	 */
 	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -169,7 +163,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * Current status of the payment transaction for the order.
 	 */
 	protected  String status;
 
@@ -195,7 +189,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Properties for the customer's billing information associated with an order or specific payment.
+	 * Properties of the customer billing information associated with this payment.
 	 */
 	protected  BillingInfo billingInfo;
 
@@ -208,7 +202,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * List of change messages associated with the payment.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -218,9 +212,6 @@ public class Payment implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data originated by the payment service.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.FraudScreenResource;
 
 /** <summary>
- * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class FraudScreenFactory
@@ -25,11 +25,16 @@ public class FraudScreenFactory
 
 	public static com.mozu.api.contracts.paymentservice.response.FraudScreen screen(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, int expectedCode) throws Exception
 	{
+		return screen(apiContext,  request,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.FraudScreen screen(ApiContext apiContext, com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, String responseFields, int expectedCode) throws Exception
+	{
 		com.mozu.api.contracts.paymentservice.response.FraudScreen returnObj = new com.mozu.api.contracts.paymentservice.response.FraudScreen();
 		FraudScreenResource resource = new FraudScreenResource(apiContext);
 		try
 		{
-			returnObj = resource.screen( request);
+			returnObj = resource.screen( request,  responseFields);
 		}
 		catch (ApiException e)
 		{

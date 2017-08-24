@@ -22,7 +22,7 @@ public class OperationUrl implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the URL endpoint.
 	 */
 	protected  String name;
 

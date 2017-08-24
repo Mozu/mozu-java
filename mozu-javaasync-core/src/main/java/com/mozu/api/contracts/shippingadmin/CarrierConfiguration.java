@@ -26,9 +26,6 @@ public class CarrierConfiguration implements Serializable
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Indicates whether the credentials/passwords are set. Credetials are updated only if this flag is set to true
-	 */
 	protected  Boolean areCredentialsSet;
 
 	public Boolean getAreCredentialsSet() {
@@ -39,9 +36,6 @@ public class CarrierConfiguration implements Serializable
 		this.areCredentialsSet = areCredentialsSet;
 	}
 
-	/**
-	 * Indicates if the capability or app is enabled for the tenant/site. If true, the capability/application is enabled for the tenant. System-supplied and read-only.
-	 */
 	protected  Boolean enabled;
 
 	public Boolean getEnabled() {
@@ -63,7 +57,7 @@ public class CarrierConfiguration implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the carrier configuration.
 	 */
 	protected  String id;
 
@@ -88,9 +82,6 @@ public class CarrierConfiguration implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * A list of custom table rates for the 'Custom' carrier only use this if Id == 'Custom'
-	 */
 	protected List<CustomTableRate> customTableRates;
 	public List<CustomTableRate> getCustomTableRates() {
 		return this.customTableRates;

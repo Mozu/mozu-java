@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.installedapplications.CustomFunctionsForAction;
 import com.mozu.api.contracts.installedapplications.ExtensionConfiguration;
 
-/**
- *	Mozu.InstalledApplications.Contracts.TenantExtensions ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TenantExtensions implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions defaultLogLevel ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String defaultLogLevel;
 
 	public String getDefaultLogLevel() {
@@ -38,9 +32,6 @@ public class TenantExtensions implements Serializable
 		this.defaultLogLevel = defaultLogLevel;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions actions ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<CustomFunctionsForAction> actions;
 	public List<CustomFunctionsForAction> getActions() {
 		return this.actions;
@@ -49,9 +40,6 @@ public class TenantExtensions implements Serializable
 		this.actions = actions;
 	}
 
-	/**
-	 * Mozu.InstalledApplications.Contracts.TenantExtensions configurations ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<ExtensionConfiguration> configurations;
 	public List<ExtensionConfiguration> getConfigurations() {
 		return this.configurations;

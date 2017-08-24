@@ -16,18 +16,12 @@ import java.lang.ClassNotFoundException;
 import com.mozu.api.contracts.core.AuditInfo;
 import com.mozu.api.contracts.shippingadmin.ServiceType;
 
-/**
- *	Mozu.ShippingAdmin.Contracts.Profile.HandlingFeeRule ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HandlingFeeRule implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The level at which this fee applies shippingrate order
-	 */
 	protected  String appliesTo;
 
 	public String getAppliesTo() {
@@ -38,9 +32,6 @@ public class HandlingFeeRule implements Serializable
 		this.appliesTo = appliesTo;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -51,9 +42,6 @@ public class HandlingFeeRule implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * the product target rule codes associated with this rule leave empty or null to denote all products
-	 */
 	protected List<String> productTargetRuleCodes;
 	public List<String> getProductTargetRuleCodes() {
 		return this.productTargetRuleCodes;
@@ -62,9 +50,6 @@ public class HandlingFeeRule implements Serializable
 		this.productTargetRuleCodes = productTargetRuleCodes;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -75,9 +60,6 @@ public class HandlingFeeRule implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * The shipping target rule codes associated with this rule leave empty or null to denote all destinations
-	 */
 	protected List<String> shippingTargetRuleCodes;
 	public List<String> getShippingTargetRuleCodes() {
 		return this.shippingTargetRuleCodes;
@@ -86,9 +68,6 @@ public class HandlingFeeRule implements Serializable
 		this.shippingTargetRuleCodes = shippingTargetRuleCodes;
 	}
 
-	/**
-	 * The value of a property, used by numerous objects within Mozu including facets, attributes, products, localized content, metadata, capabilities (Mozu and third-party), location inventory adjustment, and more. The value may be a string, integer, or double. Validation may be run against the entered and saved values depending on the object type.
-	 */
 	protected  Double value;
 
 	public Double getValue() {
@@ -99,9 +78,6 @@ public class HandlingFeeRule implements Serializable
 		this.value = value;
 	}
 
-	/**
-	 * An attribute value type is either predefined vocabulary by the admin during attribute set up or user-defined with an appropriate type (AdminEntered or ShopperEntered depending on the user). These types are used by products and attributes. The difference between predefined values versus manually entered values is such that the first choice is a set of options to choose from. AdminEntered and ShopperEntered are values that are entered rather than system-supplied and are not stored in the database, but captured during a live commerce operations such as during an order.
-	 */
 	protected  String valueType;
 
 	public String getValueType() {
@@ -112,9 +88,6 @@ public class HandlingFeeRule implements Serializable
 		this.valueType = valueType;
 	}
 
-	/**
-	 * Basic audit info about the object, including date, time, and user account. Identifier and datetime stamp information recorded when a user or application creates, updates, or deletes a resource entity. This value is system-supplied and read-only.
-	 */
 	protected  AuditInfo auditInfo;
 
 	public AuditInfo getAuditInfo() {
@@ -125,9 +98,6 @@ public class HandlingFeeRule implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * the servicetypes associated with this rule leave empty or null to denote all carriers and subsequent service types
-	 */
 	protected List<ServiceType> serviceTypes;
 	public List<ServiceType> getServiceTypes() {
 		return this.serviceTypes;

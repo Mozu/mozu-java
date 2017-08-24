@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Profiles resource to manage your shipping profiles.
+ * 
  * </summary>
  */
 public class ShippingProfileResource {
@@ -35,7 +35,7 @@ public class ShippingProfileResource {
 
 	
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles();
@@ -50,12 +50,12 @@ public class ShippingProfileResource {
 	}
 
 	/**
-	 * Retrieves a list of shipping profiles.
+	 * 
 	 * <p><pre><code>
 	 *	ShippingProfile shippingprofile = new ShippingProfile();
 	 *	ShippingProfileCollection shippingProfileCollection = shippingprofile.getProfiles( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @param dataViewMode DataViewMode
 	 * @return com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection
 	 * @see com.mozu.api.contracts.shippingadmin.profile.ShippingProfileCollection

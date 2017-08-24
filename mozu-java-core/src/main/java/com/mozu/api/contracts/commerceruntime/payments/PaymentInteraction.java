@@ -39,7 +39,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * If applicable, the check number associated with the payment action or interaction.
+	 * If applicable, the check number associated with this payment interaction.
 	 */
 	protected  String checkNumber;
 
@@ -78,7 +78,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * AVS (Address Verification Service) codes supplied by the payment gateway. The codes indicate partial to complete or failed matches against the billing address for the shopper against the financial institute data through the gateway.
+	 * AVS codes supplied by the payment gateway.
 	 */
 	protected  String gatewayAVSCodes;
 
@@ -91,7 +91,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * CVV2 (Card Verification Value) codes supplied by the payment gateway. The codes indicate a verified or failed match of the encrypted code entered against the financial institution data through the gateway.
+	 * CVV2 codes supplied by the payment gateway.
 	 */
 	protected  String gatewayCVV2Codes;
 
@@ -104,7 +104,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the payment interaction from the payment gateway.
+	 * Unique identifier of the gateway interaction. Used for credit card transactions where the payment creates a GatewayInteractionId for each interaction. System-supplied and read-only.
 	 */
 	protected  Integer gatewayInteractionId;
 
@@ -117,7 +117,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Response code from the gateway associated with the payment interaction. The response code is unique to the gateway.The response code is associated with the , which contains the textual response message.Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
+	 * Response code from the gateway associated with the payment interaction. For example, if the gateway returns "Not Authorized," an interaction for voiding the payment transaction would result.
 	 */
 	protected  String gatewayResponseCode;
 
@@ -130,7 +130,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Textual message returned by the payment gateway for the associated .Refer to [Gateway Response Code and Text](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_code_and_text) in the API Guides for more information.
+	 * Textual message returned by the payment gateway.
 	 */
 	protected  String gatewayResponseText;
 
@@ -156,7 +156,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
+	 * Unique identifier of the payment interaction.
 	 */
 	protected  String id;
 
@@ -169,7 +169,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
+	 * Date and time the payment interaction occured.
 	 */
 	protected  DateTime interactionDate;
 
@@ -182,7 +182,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * The type of payment interaction. The payment can be Capture or CheckReceived. The value also includes customer payment interactions such as Website, Call, Store, or Unknown.
+	 * The type of payment interaction, such as Capture or CheckReceived.
 	 */
 	protected  String interactionType;
 
@@ -208,7 +208,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, this payment interaction repeats on a scheduled interval.
 	 */
 	protected  Boolean isRecurring;
 
@@ -221,7 +221,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * User-entered notation content for an object, used to save information such as payment, return, account, and order notes.
+	 * Note content entered for a payment interaction.
 	 */
 	protected  String note;
 
@@ -234,7 +234,7 @@ public class PaymentInteraction implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the order associated with the payment.
+	 * Unique identifier of the order associated with this payment interaction.
 	 */
 	protected  String orderId;
 
@@ -285,8 +285,28 @@ public class PaymentInteraction implements Serializable
 		this.paymentTransactionInteractionIdReference = paymentTransactionInteractionIdReference;
 	}
 
+	protected  String refundId;
+
+	public String getRefundId() {
+		return this.refundId;
+	}
+
+	public void setRefundId(String refundId) {
+		this.refundId = refundId;
+	}
+
+	protected  String returnId;
+
+	public String getReturnId() {
+		return this.returnId;
+	}
+
+	public void setReturnId(String returnId) {
+		this.returnId = returnId;
+	}
+
 	/**
-	 * The current status of the object.This value is read only. Valid values for this field are: "Active", "Expired", and "Inactive".
+	 * The status of this payment interaction. Possible values are New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack.
 	 */
 	protected  String status;
 
@@ -311,9 +331,6 @@ public class PaymentInteraction implements Serializable
 		this.auditInfo = auditInfo;
 	}
 
-	/**
-	 * Additional response data from the gateway that's unique to each gateway.This is a list of key value pairs.Refer to [Gateway Response Data](https://www.mozu.com/docs/developer/api-guides/payment-gateways.htm#gateway_response_data) in the API Guides for more information.
-	 */
 	protected List<PaymentGatewayResponseData> gatewayResponseData;
 	public List<PaymentGatewayResponseData> getGatewayResponseData() {
 		return this.gatewayResponseData;

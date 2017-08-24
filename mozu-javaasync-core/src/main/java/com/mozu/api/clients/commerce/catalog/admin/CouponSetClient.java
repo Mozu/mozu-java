@@ -19,13 +19,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Coupon Sets resource to view and create coupon sets. You can use coupon sets to group multiple coupon codes together and associate them with one or more discounts.
+ * 
  * </summary>
  */
 public class CouponSetClient {
 	
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient();
 	 * client.setBaseAddress(url);
@@ -41,19 +41,19 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Retrieves a list of coupon sets according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSetCollection> mozuClient=GetCouponSetsClient( startIndex,  pageSize,  sortBy,  filter,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSetCollection couponSetCollection = client.Result();
 	 * </code></pre></p>
-	 * @param filter A set of filter expressions representing the search parameters for a query. This parameter is optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for a list of supported filters.
-	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param filter 
+	 * @param includeCounts 
+	 * @param pageSize 
+	 * @param responseFields 
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSetCollection>
 	 * @see com.mozu.api.contracts.productadmin.CouponSetCollection
 	 */
@@ -70,14 +70,14 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
@@ -87,16 +87,16 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a single
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=GetCouponSetClient( couponSetCode,  includeCounts,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param includeCounts Specifies whether to include the number of redeemed coupons, existing coupon codes, and assigned discounts in the response body.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param couponSetCode 
+	 * @param includeCounts 
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 */
@@ -113,7 +113,7 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetUniqueCouponSetCodeClient();
 	 * client.setBaseAddress(url);
@@ -129,14 +129,14 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Returns a random, unique four character coupon set code.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<String> mozuClient=GetUniqueCouponSetCodeClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <string>
 	 * @see string
 	 */
@@ -153,14 +153,14 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=AddCouponSetClient( couponSet);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -171,15 +171,15 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Adds a new coupon set.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=AddCouponSetClient( couponSet,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param responseFields 
+	 * @param couponSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -198,13 +198,13 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Validates the coupon set code and tests it for uniqueness.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=ValidateUniqueCouponSetCodeClient( code);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient validateUniqueCouponSetCodeClient(String code) throws Exception
@@ -219,15 +219,15 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=UpdateCouponSetClient( couponSet,  couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param couponSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -238,16 +238,16 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * Update a representation. You can not update the Code or ID once the set is created.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.productadmin.CouponSet> mozuClient=UpdateCouponSetClient( couponSet,  couponSetCode,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * CouponSet couponSet = client.Result();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param couponSet Mozu.ProductAdmin.Contracts.CouponSet ApiType DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param responseFields 
+	 * @param couponSet 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.productadmin.CouponSet>
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
 	 * @see com.mozu.api.contracts.productadmin.CouponSet
@@ -266,13 +266,13 @@ public class CouponSetClient {
 	}
 
 	/**
-	 * admin-couponsets Delete DeleteCouponSet description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 * MozuClient mozuClient=DeleteCouponSetClient( couponSetCode);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return Mozu.Api.MozuClient 
 	 */
 	public static MozuClient deleteCouponSetClient(String couponSetCode) throws Exception

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Validates the attribute configured for the customer in the storefront against the attribute configured in .
+ *	Validates the attribute configured for the customer in the storefront against the attribute configured in Mozu admin.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValidation implements Serializable
@@ -48,7 +48,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The maximum character length possible for a string value entered for an extensible attribute.
+	 * The maximum length possible for a string value entered for an extensible attribute.
 	 */
 	protected  Integer maxStringLength;
 
@@ -87,7 +87,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * The minimum character length possible for a string value entered for an extensible attribute.
+	 * The maximum length possible for a string value entered for an extensible attribute.
 	 */
 	protected  Integer minStringLength;
 
@@ -100,7 +100,7 @@ public class AttributeValidation implements Serializable
 	}
 
 	/**
-	 * Regular expression used to process and validate an extensible attribute value that require special formatting, such as phone numbers.
+	 * Regular expression used to validate the extensible attribute value.
 	 */
 	protected  String regularExpression;
 

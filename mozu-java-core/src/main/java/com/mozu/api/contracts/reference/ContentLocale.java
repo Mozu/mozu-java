@@ -35,7 +35,7 @@ public class ContentLocale implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the content locale.
 	 */
 	protected  String name;
 

@@ -98,6 +98,31 @@ public class CustomerContactFactory
 		return returnObj;
 	}
 
+	public static com.mozu.api.contracts.customer.CustomerContactCollection addAccountContactList(ApiContext apiContext, List<com.mozu.api.contracts.customer.CustomerContact> contactList, Integer accountId, int expectedCode) throws Exception
+	{
+		return addAccountContactList(apiContext,  contactList,  accountId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.customer.CustomerContactCollection addAccountContactList(ApiContext apiContext, List<com.mozu.api.contracts.customer.CustomerContact> contactList, Integer accountId, String responseFields, int expectedCode) throws Exception
+	{
+		com.mozu.api.contracts.customer.CustomerContactCollection returnObj = new com.mozu.api.contracts.customer.CustomerContactCollection();
+		CustomerContactResource resource = new CustomerContactResource(apiContext);
+		try
+		{
+			returnObj = resource.addAccountContactList( contactList,  accountId,  responseFields);
+		}
+		catch (ApiException e)
+		{
+			if(e.getHttpStatusCode() != expectedCode)
+				throw new TestFailException("" + e.getHttpStatusCode(), Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+			else
+				return null;
+		}
+		if(expectedCode != 304 && !(expectedCode >= 200 && expectedCode <= 300) && !(expectedCode == HttpStatus.SC_NOT_FOUND && returnObj == null))
+			throw new TestFailException("304 or between 200 and 300", Thread.currentThread().getStackTrace()[2].getMethodName(), "" + expectedCode, "");
+		return returnObj;
+	}
+
 	public static com.mozu.api.contracts.customer.CustomerContact updateAccountContact(ApiContext apiContext, com.mozu.api.contracts.customer.CustomerContact contact, Integer accountId, Integer contactId, int expectedCode) throws Exception
 	{
 		return updateAccountContact(apiContext,  contact,  accountId,  contactId,  null, expectedCode);

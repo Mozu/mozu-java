@@ -14,18 +14,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields ApiType DOCUMENT_HERE 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchTuningRuleSortFields implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields inclusionExclusionType ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String inclusionExclusionType;
 
 	public String getInclusionExclusionType() {
@@ -36,9 +30,6 @@ public class SearchTuningRuleSortFields implements Serializable
 		this.inclusionExclusionType = inclusionExclusionType;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.Search.SearchTuningRuleSortFields sortFields ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected List<String> sortFields;
 	public List<String> getSortFields() {
 		return this.sortFields;

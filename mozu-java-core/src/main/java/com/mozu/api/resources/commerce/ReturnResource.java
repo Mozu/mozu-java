@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original  order. Each return must either be associated with an original order or a product definition to represent each returned item.
+ * Use the Returns resource to manage returned items that were previously fufilled. Returns can include any number of items associated with an original Mozu order. Each return must either be associated with an original order or a product definition to represent each returned item.
  * </summary>
  */
 public class ReturnResource {
@@ -56,7 +56,7 @@ public class ReturnResource {
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
-	 * @param q A list of order search terms (not phrases) to use in the query when searching across order number and the name or email of the billing contact. When entering, separate multiple search terms with a space character.
+	 * @param q 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @param sortBy The property by which to sort results and whether the results appear in ascending (a-z) order, represented by ASC or in descending (z-a) order, represented by DESC. The sortBy parameter follows an available property. For example: "sortBy=productCode+asc"
 	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with a PageSize of 25, to get the 51st through the 75th items, use startIndex=3.
@@ -78,7 +78,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	string string = return.getAvailableReturnActions( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return for which to retrieve available actions.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -92,13 +92,13 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Retrieves the details of a single return item.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -108,14 +108,14 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Retrieves the details of a single return item.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnItem returnItem = return.getReturnItem( returnId,  returnItemId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
 	 */
@@ -129,12 +129,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Retrieves the details of all return items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -144,13 +144,13 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Retrieves the details of all return items in an order.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReturnItemCollection returnItemCollection = return.getReturnItems( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemCollection
 	 */
@@ -170,7 +170,7 @@ public class ReturnResource {
 	 *	string string = return.getAvailablePaymentActionsForReturn( returnId,  paymentId);
 	 * </code></pre></p>
 	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return List<string>
 	 * @see string
 	 */
@@ -189,8 +189,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Payment payment = return.getPayment( returnId,  paymentId);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param paymentId Unique identifier of the return payment to retrieve.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -205,9 +205,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Payment payment = return.getPayment( returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param paymentId Unique identifier of the return payment to retrieve.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return associated with the payment.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.Payment
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -226,7 +226,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	PaymentCollection paymentCollection = return.getPayments( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -242,7 +242,7 @@ public class ReturnResource {
 	 *	PaymentCollection paymentCollection = return.getPayments( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the details of the refund payment associated with the return specified in the request.
 	 * @return com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentCollection
 	 */
@@ -261,7 +261,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.getReturn( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -277,7 +277,7 @@ public class ReturnResource {
 	 *	Return return = return.getReturn( returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Returns the properties of the return specified in the request as well as system-supplied information.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -291,7 +291,7 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Returns a list of reasons for a return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReasonCollection reasonCollection = return.getReasons();
@@ -305,12 +305,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Returns a list of reasons for a return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	ReasonCollection reasonCollection = return.getReasons( responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReasonCollection
 	 */
@@ -329,7 +329,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createReturn( ret);
 	 * </code></pre></p>
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param ret Wrapper for the properties of the return to create.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -346,7 +346,7 @@ public class ReturnResource {
 	 *	Return return = return.createReturn( ret,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param ret Wrapper for the properties of the return to create.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -361,13 +361,13 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Adds a return item to the return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	Return return = return.createReturnItem( returnItem,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItem Properties of a previously fulfilled item associated with a return.
+	 * @param returnId 
+	 * @param returnItem 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -378,14 +378,14 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Adds a return item to the return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	Return return = return.createReturnItem( returnItem,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItem Properties of a previously fulfilled item associated with a return.
+	 * @param returnId 
+	 * @param returnItem 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItem
@@ -405,9 +405,9 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param paymentId Unique identifier of the return payment to update.
+	 * @param returnId Unique identifier of the return associated with the refund payment.
+	 * @param action The payment action to perform for the refund payment.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -423,10 +423,10 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.performPaymentActionForReturn( action,  returnId,  paymentId,  responseFields);
 	 * </code></pre></p>
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param paymentId Unique identifier of the return payment to update.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param returnId Unique identifier of the return associated with the refund payment.
+	 * @param action The payment action to perform for the refund payment.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -446,8 +446,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.createPaymentActionForReturn( action,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param returnId Unique identifier of the return associated with the payment action.
+	 * @param action The payment action to perform for the customer return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -464,8 +464,8 @@ public class ReturnResource {
 	 *	Return return = return.createPaymentActionForReturn( action,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param returnId Unique identifier of the return associated with the payment action.
+	 * @param action The payment action to perform for the customer return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -480,34 +480,38 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Creates a replacement order for the return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Order order = return.createReturnShippingOrder( returnId);
+	 *	Order order = return.createReturnShippingOrder( itemQuantities,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId 
+	 * @param itemQuantities 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(String returnId) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(List<com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier> itemQuantities, String returnId) throws Exception
 	{
-		return createReturnShippingOrder( returnId,  null);
+		return createReturnShippingOrder( itemQuantities,  returnId,  null);
 	}
 
 	/**
-	 * Creates a replacement order for the return.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
-	 *	Order order = return.createReturnShippingOrder( returnId,  responseFields);
+	 *	Order order = return.createReturnShippingOrder( itemQuantities,  returnId,  responseFields);
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param responseFields 
+	 * @param returnId 
+	 * @param itemQuantities 
 	 * @return com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
+	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier
 	 */
-	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(String returnId, String responseFields) throws Exception
+	public com.mozu.api.contracts.commerceruntime.orders.Order createReturnShippingOrder(List<com.mozu.api.contracts.commerceruntime.returns.ReturnItemSpecifier> itemQuantities, String returnId, String responseFields) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.ReturnClient.createReturnShippingOrderClient( returnId,  responseFields);
+		MozuClient<com.mozu.api.contracts.commerceruntime.orders.Order> client = com.mozu.api.clients.commerce.ReturnClient.createReturnShippingOrderClient( itemQuantities,  returnId,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -520,7 +524,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	ReturnCollection returnCollection = return.performReturnActions( action);
 	 * </code></pre></p>
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -537,7 +541,7 @@ public class ReturnResource {
 	 *	ReturnCollection returnCollection = return.performReturnActions( action,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param action The name of the return action to perform, such as "Reject" or "Authorize".
 	 * @return com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnCollection
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
@@ -557,8 +561,8 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	Return return = return.updateReturn( ret,  returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param returnId Unique identifier of the return.
+	 * @param ret Wrapper for the array of properties to update for the return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -575,8 +579,8 @@ public class ReturnResource {
 	 *	Return return = return.updateReturn( ret,  returnId,  responseFields);
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param ret Properties of a return of one or more previously fulfilled items.
+	 * @param returnId Unique identifier of the return.
+	 * @param ret Wrapper for the array of properties to update for the return.
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
@@ -591,12 +595,12 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Resend the email notification to a shopper that a return has been created.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	return.resendReturnEmail( action);
 	 * </code></pre></p>
-	 * @param action Properties of an action a user can perform for a return.
+	 * @param action 
 	 * @return 
 	 * @see com.mozu.api.contracts.commerceruntime.returns.ReturnAction
 	 */
@@ -610,13 +614,13 @@ public class ReturnResource {
 	}
 
 	/**
-	 * Removes a particular order item from the order of the current shopper.
+	 * 
 	 * <p><pre><code>
 	 *	Return return = new Return();
 	 *	Return return = return.deleteOrderItem( returnId,  returnItemId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
-	 * @param returnItemId Unique identifier of the return item whose details you want to get.
+	 * @param returnId 
+	 * @param returnItemId 
 	 * @return com.mozu.api.contracts.commerceruntime.returns.Return
 	 * @see com.mozu.api.contracts.commerceruntime.returns.Return
 	 */
@@ -635,7 +639,7 @@ public class ReturnResource {
 	 *	Return return = new Return();
 	 *	return.deleteReturn( returnId);
 	 * </code></pre></p>
-	 * @param returnId Unique identifier of the return whose items you want to get.
+	 * @param returnId Unique identifier of the return to delete.
 	 * @return 
 	 */
 	public void deleteReturn(String returnId) throws Exception

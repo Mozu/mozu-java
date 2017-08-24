@@ -70,7 +70,7 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
+	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -89,7 +89,7 @@ public class SiteShippingHandlingFeeClient {
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
+	 * @param orderHandlingFee Properties of the order handling fee to assess for order shipment.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -115,7 +115,7 @@ public class SiteShippingHandlingFeeClient {
 	 * client.executeRequest();
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
-	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
+	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
@@ -134,7 +134,7 @@ public class SiteShippingHandlingFeeClient {
 	 * SiteShippingHandlingFee siteShippingHandlingFee = client.Result();
 	 * </code></pre></p>
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param orderHandlingFee Properties of the handling fee to apply to order shipments for the site.
+	 * @param orderHandlingFee The combined price for all items in the order, including all selected options but excluding any discounts.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee>
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee
 	 * @see com.mozu.api.contracts.sitesettings.shipping.SiteShippingHandlingFee

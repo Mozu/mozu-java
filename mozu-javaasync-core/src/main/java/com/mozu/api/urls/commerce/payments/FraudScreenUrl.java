@@ -15,11 +15,13 @@ public class FraudScreenUrl
 
 	/**
 	 * Get Resource Url for Screen
+	 * @param responseFields 
 	 * @return   String Resource Url
 	 */
-	public static MozuUrl screenUrl()
+	public static MozuUrl screenUrl(String responseFields)
 	{
-		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen");
+		UrlFormatter formatter = new UrlFormatter("/payments/commerce/payments/fraudscreen/screen?responseFields={responseFields}");
+		formatter.formatUrl("responseFields", responseFields);
 		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.PCI_POD) ;
 	}
 

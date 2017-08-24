@@ -14,8 +14,20 @@ public class ShippingUrl
 {
 
 	/**
+	 * Get Resource Url for GetMultiRates
+	 * @param includeRawResponse 
+	 * @return   String Resource Url
+	 */
+	public static MozuUrl getMultiRatesUrl(Boolean includeRawResponse)
+	{
+		UrlFormatter formatter = new UrlFormatter("/api/commerce/catalog/storefront/shipping/request-multi-rates");
+		formatter.formatUrl("includeRawResponse", includeRawResponse);
+		return new MozuUrl(formatter.getResourceUrl(), MozuUrl.UrlLocation.TENANT_POD) ;
+	}
+
+	/**
 	 * Get Resource Url for GetRates
-	 * @param includeRawResponse Set this parameter to  to retrieve the full raw JSON response from a shipping carrier (instead of just the shipping rate).
+	 * @param includeRawResponse 
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return   String Resource Url
 	 */

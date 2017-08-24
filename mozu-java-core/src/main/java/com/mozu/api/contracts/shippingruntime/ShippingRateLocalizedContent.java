@@ -35,7 +35,7 @@ public class ShippingRateLocalizedContent implements Serializable
 	}
 
 	/**
-	 * The user supplied name that appears in . You can use this field for identification purposes.
+	 * The name of the shipping rate in the language specified by the defined locale code.
 	 */
 	protected  String name;
 

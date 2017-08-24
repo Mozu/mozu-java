@@ -17,7 +17,7 @@ import com.mozu.test.framework.core.TestFailException;
 import com.mozu.api.resources.commerce.payments.PublicCardResource;
 
 /** <summary>
- * commerce/payments/cards related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class PublicCardFactory
@@ -25,11 +25,16 @@ public class PublicCardFactory
 
 	public static com.mozu.api.contracts.paymentservice.response.SyncResponse create(ApiContext apiContext, com.mozu.api.contracts.paymentservice.PublicCard request, int expectedCode) throws Exception
 	{
+		return create(apiContext,  request,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse create(ApiContext apiContext, com.mozu.api.contracts.paymentservice.PublicCard request, String responseFields, int expectedCode) throws Exception
+	{
 		com.mozu.api.contracts.paymentservice.response.SyncResponse returnObj = new com.mozu.api.contracts.paymentservice.response.SyncResponse();
 		PublicCardResource resource = new PublicCardResource(apiContext);
 		try
 		{
-			returnObj = resource.create( request);
+			returnObj = resource.create( request,  responseFields);
 		}
 		catch (ApiException e)
 		{
@@ -45,11 +50,16 @@ public class PublicCardFactory
 
 	public static com.mozu.api.contracts.paymentservice.response.SyncResponse update(ApiContext apiContext, com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, int expectedCode) throws Exception
 	{
+		return update(apiContext,  request,  cardId,  null, expectedCode);
+	}
+
+	public static com.mozu.api.contracts.paymentservice.response.SyncResponse update(ApiContext apiContext, com.mozu.api.contracts.paymentservice.PublicCard request, String cardId, String responseFields, int expectedCode) throws Exception
+	{
 		com.mozu.api.contracts.paymentservice.response.SyncResponse returnObj = new com.mozu.api.contracts.paymentservice.response.SyncResponse();
 		PublicCardResource resource = new PublicCardResource(apiContext);
 		try
 		{
-			returnObj = resource.update( request,  cardId);
+			returnObj = resource.update( request,  cardId,  responseFields);
 		}
 		catch (ApiException e)
 		{

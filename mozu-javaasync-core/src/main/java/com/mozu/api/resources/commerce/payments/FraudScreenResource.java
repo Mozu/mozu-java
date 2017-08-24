@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * commerce/payments/fraudscreen related resources. DOCUMENT_HERE 
+ * 
  * </summary>
  */
 public class FraudScreenResource {
@@ -37,19 +37,53 @@ public class FraudScreenResource {
 
 	
 	/**
-	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FraudScreen fraudscreen = new FraudScreen();
 	 *	FraudScreen fraudScreen = fraudscreen.screen( request);
 	 * </code></pre></p>
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
 	 */
 	public com.mozu.api.contracts.paymentservice.response.FraudScreen screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request);
+		return screen( request,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	FraudScreen fraudscreen = new FraudScreen();
+	 *	CountDownLatch latch = fraudscreen.screen( request, callback );
+	 *	latch.await()	 * </code></pre></p>
+	 * @param  callback callback handler for asynchronous operations
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
+	 */
+	public CountDownLatch screenAsync(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, AsyncCallback<com.mozu.api.contracts.paymentservice.response.FraudScreen> callback) throws Exception
+	{
+		return screenAsync( request,  null, callback);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 *	FraudScreen fraudscreen = new FraudScreen();
+	 *	FraudScreen fraudScreen = fraudscreen.screen( request,  responseFields);
+	 * </code></pre></p>
+	 * @param responseFields 
+	 * @param request 
+	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
+	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
+	 */
+	public com.mozu.api.contracts.paymentservice.response.FraudScreen screen(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, String responseFields) throws Exception
+	{
+		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request,  responseFields);
 		client.setContext(_apiContext);
 		client.executeRequest();
 		return client.getResult();
@@ -57,20 +91,21 @@ public class FraudScreenResource {
 	}
 
 	/**
-	 * payments-fraudscreen Post Screen description DOCUMENT_HERE 
+	 * 
 	 * <p><pre><code>
 	 *	FraudScreen fraudscreen = new FraudScreen();
-	 *	CountDownLatch latch = fraudscreen.screen( request, callback );
+	 *	CountDownLatch latch = fraudscreen.screen( request,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param request Mozu.PaymentService.Contracts.Request.FraudScreenRequest ApiType DOCUMENT_HERE 
+	 * @param request 
 	 * @return com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.response.FraudScreen
 	 * @see com.mozu.api.contracts.paymentservice.request.FraudScreenRequest
 	 */
-	public CountDownLatch screenAsync(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, AsyncCallback<com.mozu.api.contracts.paymentservice.response.FraudScreen> callback) throws Exception
+	public CountDownLatch screenAsync(com.mozu.api.contracts.paymentservice.request.FraudScreenRequest request, String responseFields, AsyncCallback<com.mozu.api.contracts.paymentservice.response.FraudScreen> callback) throws Exception
 	{
-		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request);
+		MozuClient<com.mozu.api.contracts.paymentservice.response.FraudScreen> client = com.mozu.api.clients.commerce.payments.FraudScreenClient.screenClient( request,  responseFields);
 		client.setContext(_apiContext);
 		return client.executeRequest(callback);
 

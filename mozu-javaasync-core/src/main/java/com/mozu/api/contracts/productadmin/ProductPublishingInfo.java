@@ -60,9 +60,6 @@ public class ProductPublishingInfo implements Serializable
 		this.publishedState = publishedState;
 	}
 
-	/**
-	 * Mozu.ProductAdmin.Contracts.ProductPublishingInfo publishSetCode ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String publishSetCode;
 
 	public String getPublishSetCode() {

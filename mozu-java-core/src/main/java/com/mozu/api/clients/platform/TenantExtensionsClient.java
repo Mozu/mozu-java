@@ -17,13 +17,13 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the Extensions resource to manage Arc.js configuration settings. These are the same settings you can configure through  in the Action Management JSON Editor.
+ * 
  * </summary>
  */
 public class TenantExtensionsClient {
 	
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient();
 	 * client.setBaseAddress(url);
@@ -39,14 +39,14 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Retrieves the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=GetExtensionsClient( responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param responseFields 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 */
@@ -63,14 +63,14 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param extensions The updated details of the Arc.js configuration settings.
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
@@ -81,15 +81,15 @@ public class TenantExtensionsClient {
 	}
 
 	/**
-	 * Updates the Arc.js configuration settings for a site.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.installedapplications.TenantExtensions> mozuClient=UpdateExtensionsClient( extensions,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * TenantExtensions tenantExtensions = client.Result();
 	 * </code></pre></p>
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param extensions The updated details of the Arc.js configuration settings.
+	 * @param responseFields 
+	 * @param extensions 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.installedapplications.TenantExtensions>
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions
 	 * @see com.mozu.api.contracts.installedapplications.TenantExtensions

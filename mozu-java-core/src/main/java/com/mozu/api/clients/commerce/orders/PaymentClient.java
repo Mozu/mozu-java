@@ -72,8 +72,8 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * string string = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to retrieve available actions.
 	 * @return Mozu.Api.MozuClient <List<string>>
 	 * @see string
 	 */
@@ -97,8 +97,8 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
 	 */
@@ -115,8 +115,8 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Payment payment = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment transaction.
+	 * @param paymentId Unique identifier of the payment transaction submitted for the order.
 	 * @param responseFields Use this field to include those fields which are not included by default.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.payments.Payment>
 	 * @see com.mozu.api.contracts.commerceruntime.payments.Payment
@@ -141,9 +141,9 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -161,10 +161,10 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param paymentId Unique identifier of the payment for which to perform the action.
+	 * @param orderId Unique identifier of the order associated with the payment.
+	 * @param paymentId Unique identifer of the payment for which to perform the action.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action The action to perform for the payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -190,8 +190,8 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction
@@ -209,9 +209,9 @@ public class PaymentClient {
 	 * client.executeRequest();
 	 * Order order = client.Result();
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId Unique identifier of the order for which to apply the payment.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param action Properties of the payment action performed for an order.
+	 * @param action To action to perform for the newly created payment. Possible values are AuthAndCapture, AuthorizePayment, CapturePayment, VoidPayment, CreditPayment, RequestCheck, ApplyCheck, DeclineCheck.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.commerceruntime.orders.Order>
 	 * @see com.mozu.api.contracts.commerceruntime.orders.Order
 	 * @see com.mozu.api.contracts.commerceruntime.payments.PaymentAction

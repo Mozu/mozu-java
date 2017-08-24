@@ -22,6 +22,85 @@ public class ChangeMessage implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The order or item amount changed, if applicable.
+	 */
+	protected  Double amount;
+
+	public Double getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	protected  String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	protected  String appKey;
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+	}
+
+	protected  String appName;
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+
+	protected  String correlationId;
+
+	public String getCorrelationId() {
+		return this.correlationId;
+	}
+
+	public void setCorrelationId(String correlationId) {
+		this.correlationId = correlationId;
+	}
+
+	/**
+	 * Date and time when the entity was created, represented in UTC Date/Time.
+	 */
+	protected  DateTime createDate;
+
+	public DateTime getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(DateTime createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
+	 * Unique identifier of the change message. System-supplied and read-only.
+	 */
+	protected  String id;
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
 	 * Identifier for the object associated with the change message, which can represent a cart, cart item, or an order.
 	 */
 	protected  String identifier;
@@ -35,7 +114,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * The text of the change message, such as "This product is no longer available." System-supplied and read-only.
+	 * The text of the change message, such as "This product is no longer available". System-supplied and read-only.
 	 */
 	protected  String message;
 
@@ -47,9 +126,6 @@ public class ChangeMessage implements Serializable
 		this.message = message;
 	}
 
-	/**
-	 * Metadata content for entities, used by document lists, document type lists, document type, views, entity lists, and list views.
-	 */
 	protected  Object metadata;
 
 	public Object getMetadata() {
@@ -125,9 +201,6 @@ public class ChangeMessage implements Serializable
 		this.success = success;
 	}
 
-	/**
-	 * The user's first name.
-	 */
 	protected  String userFirstName;
 
 	public String getUserFirstName() {
@@ -139,7 +212,7 @@ public class ChangeMessage implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
+	 * The unique identifier of the user who initiated the change.
 	 */
 	protected  String userId;
 
@@ -151,9 +224,6 @@ public class ChangeMessage implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The user's last name.
-	 */
 	protected  String userLastName;
 
 	public String getUserLastName() {
@@ -164,9 +234,6 @@ public class ChangeMessage implements Serializable
 		this.userLastName = userLastName;
 	}
 
-	/**
-	 * The user type (e.g. Shopper, Admin, etc.).
-	 */
 	protected  String userScopeType;
 
 	public String getUserScopeType() {
@@ -188,97 +255,6 @@ public class ChangeMessage implements Serializable
 
 	public void setVerb(String verb) {
 		this.verb = verb;
-	}
-
-	/**
-	 * The order or item amount changed, if applicable.
-	 */
-	protected  Double amount;
-
-	public Double getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
-
-	/**
-	 * Unique identifier of an app available in your  tenant or within  Dev Center. This ID is unique across all apps installed, initialized, and enabled in the  and those in development through the Dev Center Console.
-	 */
-	protected  String appId;
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-	/**
-	 * The application's key.
-	 */
-	protected  String appKey;
-
-	public String getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
-	}
-
-	/**
-	 * The application's name.
-	 */
-	protected  String appName;
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-	}
-
-	/**
-	 * The unique identifier of the API request associated with the event action, which might contain multiple actions.
-	 */
-	protected  String correlationId;
-
-	public String getCorrelationId() {
-		return this.correlationId;
-	}
-
-	public void setCorrelationId(String correlationId) {
-		this.correlationId = correlationId;
-	}
-
-	/**
-	 * Date and time when the entity was created, represented in UTC Date/Time.
-	 */
-	protected  DateTime createDate;
-
-	public DateTime getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(DateTime createDate) {
-		this.createDate = createDate;
-	}
-
-	/**
-	 * Unique identifier of the source property, such as a catalog, discount, order, or email template.For a product field it will be the name of the field.For a category ID, must be a positive integer not greater than 2000000. By default,  auto-generates a category ID when categories are created. If you want to specify an ID during creation (which preserves category link relationships when migrating tenant data from one sandbox to another), you must also include the  query string in the endpoint. For example, . Then, use the  property to specify the desired category ID.For a product attribute it will be the Attribute FQN.For a document, the ID must be specified as a 32 character, case-insensitive, alphanumeric string. You can specify the ID as 32 sequential characters or as groups separated by dashes in the format 8-4-4-4-12. For example, or.For email templates, the ID must be one of the following values:			
-	 */
-	protected  String id;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 

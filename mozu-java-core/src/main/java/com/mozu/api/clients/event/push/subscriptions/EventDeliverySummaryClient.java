@@ -17,7 +17,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Provides details for each attempted delivery of the event to the endpoint.
+ * 
  * </summary>
  */
 public class EventDeliverySummaryClient {
@@ -30,7 +30,7 @@ public class EventDeliverySummaryClient {
 	 * client.executeRequest();
 	 * EventDeliverySummary eventDeliverySummary = client.Result();
 	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.EventDeliverySummary>
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -47,9 +47,9 @@ public class EventDeliverySummaryClient {
 	 * client.executeRequest();
 	 * EventDeliverySummary eventDeliverySummary = client.Result();
 	 * </code></pre></p>
-	 * @param id Unique identifier of the customer segment to retrieve.
+	 * @param id This parameter is the unique identifer for an event attempt delivery summary.
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId This operation paramenter is the unique identifer for a subscription.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.EventDeliverySummary>
 	 * @see com.mozu.api.contracts.event.EventDeliverySummary
 	 */
@@ -66,14 +66,14 @@ public class EventDeliverySummaryClient {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> mozuClient=GetDeliveryAttemptSummariesClient( subscriptionId);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * EventDeliverySummaryCollection eventDeliverySummaryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param subscriptionId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.EventDeliverySummaryCollection>
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */
@@ -83,7 +83,7 @@ public class EventDeliverySummaryClient {
 	}
 
 	/**
-	 * Retrieves a collection of data for delivery attempts of events and notifications. These are notifications sent to subscribing sites and tenants. A paged list is returned sorted and filtered per the entered parameters.
+	 * 
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.event.EventDeliverySummaryCollection> mozuClient=GetDeliveryAttemptSummariesClient( subscriptionId,  startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * client.setBaseAddress(url);
@@ -91,11 +91,11 @@ public class EventDeliverySummaryClient {
 	 * EventDeliverySummaryCollection eventDeliverySummaryCollection = client.Result();
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/api-guides/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
-	 * @param subscriptionId Unique identifier for a subscription, such as subscribing tenants for an event or to receive a notification.
+	 * @param sortBy 
+	 * @param startIndex 
+	 * @param subscriptionId 
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.event.EventDeliverySummaryCollection>
 	 * @see com.mozu.api.contracts.event.EventDeliverySummaryCollection
 	 */

@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties of an attribute used to describe customers or orders.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Attribute implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * List of valid vocabulary values defined for an attribute.
-	 */
 	protected  String vocabularyValues;
 
 	public String getVocabularyValues() {
@@ -34,9 +28,6 @@ public class Attribute implements Serializable
 		this.vocabularyValues = vocabularyValues;
 	}
 
-	/**
-	 * The administrator name associated with the object/data.
-	 */
 	protected  String adminName;
 
 	public String getAdminName() {
@@ -47,9 +38,6 @@ public class Attribute implements Serializable
 		this.adminName = adminName;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute applicationAttributeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer applicationAttributeId;
 
 	public Integer getApplicationAttributeId() {
@@ -60,9 +48,6 @@ public class Attribute implements Serializable
 		this.applicationAttributeId = applicationAttributeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute attributeId ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  Integer attributeId;
 
 	public Integer getAttributeId() {
@@ -73,9 +58,6 @@ public class Attribute implements Serializable
 		this.attributeId = attributeId;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute code ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -86,9 +68,6 @@ public class Attribute implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute fqn ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String fqn;
 
 	public String getFqn() {
@@ -99,9 +78,6 @@ public class Attribute implements Serializable
 		this.fqn = fqn;
 	}
 
-	/**
-	 * The type of input selection used to define a value for the attribute, including Yes/No, Date, DateTime, List, TextBox, or TextArea.
-	 */
 	protected  String inputType;
 
 	public String getInputType() {
@@ -112,9 +88,6 @@ public class Attribute implements Serializable
 		this.inputType = inputType;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -125,9 +98,6 @@ public class Attribute implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * The numeric order of objects, used by a vocabulary value defined for an extensible attribute, images, and categories.
-	 */
 	protected  Integer sequence;
 
 	public Integer getSequence() {
@@ -138,9 +108,6 @@ public class Attribute implements Serializable
 		this.sequence = sequence;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute type ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String type;
 
 	public String getType() {
@@ -151,9 +118,6 @@ public class Attribute implements Serializable
 		this.type = type;
 	}
 
-	/**
-	 * Mozu.AppDev.Contracts.Attribute vocabularyJson ApiTypeMember DOCUMENT_HERE 
-	 */
 	protected  String vocabularyJson;
 
 	public String getVocabularyJson() {

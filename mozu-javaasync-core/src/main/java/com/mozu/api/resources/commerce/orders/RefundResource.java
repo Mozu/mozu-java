@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the refunds resource to create a refund.
+ * 
  * </summary>
  */
 public class RefundResource {
@@ -37,13 +37,13 @@ public class RefundResource {
 
 	
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param orderId 
+	 * @param refund 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -54,14 +54,14 @@ public class RefundResource {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	CountDownLatch latch = refund.createRefund( refund,  orderId, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
+	 * @param orderId 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param refund 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -72,14 +72,14 @@ public class RefundResource {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	Refund refund = refund.createRefund( refund,  orderId,  responseFields);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param orderId 
+	 * @param responseFields 
+	 * @param refund 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -94,15 +94,15 @@ public class RefundResource {
 	}
 
 	/**
-	 * Creates a refund based on the information supplied in the request.  
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	CountDownLatch latch = refund.createRefund( refund,  orderId,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param responseFields Filtering syntax appended to an API call to increase or decrease the amount of data returned inside a JSON object. This parameter should only be used to retrieve data. Attempting to update data using this parameter may cause data loss.
+	 * @param orderId 
+	 * @param responseFields 
 	 * @param  callback callback handler for asynchronous operations
-	 * @param refund Mozu.CommerceRuntime.Contracts.Refunds.Refund ApiType DOCUMENT_HERE 
+	 * @param refund 
 	 * @return com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
 	 * @see com.mozu.api.contracts.commerceruntime.refunds.Refund
@@ -116,14 +116,13 @@ public class RefundResource {
 	}
 
 	/**
-	 * Resends the order refund email previously sent to the shopper. 
+	 * 
 	 * <p><pre><code>
 	 *	Refund refund = new Refund();
 	 *	refund.resendRefundEmail( orderId,  refundId);
 	 * </code></pre></p>
-	 * @param orderId Unique identifier of the order.
-	 * @param refundId Unique ID of the refund.
-        
+	 * @param orderId 
+	 * @param refundId 
 	 * @return 
 	 */
 	public void resendRefundEmail(String orderId, String refundId) throws Exception

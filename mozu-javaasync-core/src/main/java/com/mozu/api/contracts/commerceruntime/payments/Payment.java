@@ -67,7 +67,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Available actions you can complete for an order. These actions may differ depending on the status of the order, such as actions required to enter a payment, return of a package, and fulfillment of a shipment.
+	 * The actions a user can perform for a payment at this time.
 	 */
 	protected List<String> availableActions;
 	public List<String> getAvailableActions() {
@@ -77,9 +77,6 @@ public class Payment implements Serializable
 		this.availableActions = availableActions;
 	}
 
-	/**
-	 * The external/third party transaction Id for this payment. This is used to store the transaction Id from digital wallet like Visa Checkout
-	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -91,7 +88,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the payment transaction.
 	 */
 	protected  String id;
 
@@ -104,7 +101,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Indicates if the product in a cart, order, or wish list is purchased on a recurring schedule. If true, the item can be purchased or fulfilled at regular intervals, such as a monthly billing cycle. For example, digital or physical product subscriptions are recurring cart items. This property is not used at this time and is reserved for future functionality.
+	 * If true, the payment transaction occurs at regular intervals such as a monthly billing cycle or a digital or physical subscription.
 	 */
 	protected  Boolean isRecurring;
 
@@ -143,7 +140,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * The type of payment, such as credit card, check, or PayPal Express. Additional payment types will be supported in future releases.
+	 * The type of payment transaction performed, such as check, credit card, or PayPal Express. Additional payment types will be supported in future releases.
 	 */
 	protected  String paymentType;
 
@@ -155,9 +152,6 @@ public class Payment implements Serializable
 		this.paymentType = paymentType;
 	}
 
-	/**
-	 * The source of data for this payment. By default, this will be set to 'mozu'
-	 */
 	protected  String paymentWorkflow;
 
 	public String getPaymentWorkflow() {
@@ -169,7 +163,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * The current status of an object. This status is specific to the object including payment (New, Authorized, Captured, Declined, Failed, Voided, Credited, CheckRequested, or RolledBack), discount (Active, Scheduled, or Expired), returns (ReturnAuthorized), tenant, package (Fulfilled or NotFulfilled), application, master and product catalogs, orders (Pending, Submitted, Processing, Pending Review, Closed, or Canceled), and order validation results (Pass, Fail, Error, or Review).
+	 * Current status of the payment transaction for the order.
 	 */
 	protected  String status;
 
@@ -195,7 +189,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Properties for the customer's billing information associated with an order or specific payment.
+	 * Properties of the customer billing information associated with this payment.
 	 */
 	protected  BillingInfo billingInfo;
 
@@ -208,7 +202,7 @@ public class Payment implements Serializable
 	}
 
 	/**
-	 * Collection (list or paged) of change messages logged for each modification made by a shopper to their carts, wishlists, orders, package, payment, pickup, and returns. Change log messages are system-supplied based on shopper actions and read only.
+	 * List of change messages associated with the payment.
 	 */
 	protected List<ChangeMessage> changeMessages;
 	public List<ChangeMessage> getChangeMessages() {
@@ -218,9 +212,6 @@ public class Payment implements Serializable
 		this.changeMessages = changeMessages;
 	}
 
-	/**
-	 * Custom data from payment providers
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

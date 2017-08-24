@@ -30,7 +30,7 @@ public class CreditAuditEntryClient {
 	 * client.executeRequest();
 	 * CreditAuditEntryCollection creditAuditEntryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection>
 	 * @see com.mozu.api.contracts.customer.credit.CreditAuditEntryCollection
 	 */
@@ -47,7 +47,7 @@ public class CreditAuditEntryClient {
 	 * client.executeRequest();
 	 * CreditAuditEntryCollection creditAuditEntryCollection = client.Result();
 	 * </code></pre></p>
-	 * @param code User-defined code that uniqely identifies the channel group.
+	 * @param code User-defined code of the credit for which to retrieve audit entries.
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
 	 * @param pageSize The number of results to display on each page when creating paged results from a query. The maximum value is 200.
 	 * @param responseFields Use this field to include those fields which are not included by default.

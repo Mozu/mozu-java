@@ -18,7 +18,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * Use the AssignedDiscounts resource to manage the discounts assigned to coupon sets.
+ * 
  * </summary>
  */
 public class AssignedDiscountResource {
@@ -35,12 +35,12 @@ public class AssignedDiscountResource {
 
 	
 	/**
-	 * Retrieves the discountIds of any assigned discounts for the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	AssignedDiscount assignedDiscount = assigneddiscount.getAssignedDiscounts( couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
+	 * @param couponSetCode 
 	 * @return List<com.mozu.api.contracts.productadmin.AssignedDiscount>
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -54,13 +54,13 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Assigns or associates an existing discount to a specified coupon set. Use the couponSetCode parameter to specify the coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.assignDiscount( assignedDiscount,  couponSetCode);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param assignedDiscount The details of the discount assigned to the coupon set.
+	 * @param couponSetCode 
+	 * @param assignedDiscount 
 	 * @return 
 	 * @see com.mozu.api.contracts.productadmin.AssignedDiscount
 	 */
@@ -74,13 +74,13 @@ public class AssignedDiscountResource {
 	}
 
 	/**
-	 * Unassigns or disassociates the specified discount with the specified coupon set.
+	 * 
 	 * <p><pre><code>
 	 *	AssignedDiscount assigneddiscount = new AssignedDiscount();
 	 *	assigneddiscount.unAssignDiscount( couponSetCode,  discountId);
 	 * </code></pre></p>
-	 * @param couponSetCode The unique identifier of the coupon set.
-	 * @param discountId discountId parameter description DOCUMENT_HERE 
+	 * @param couponSetCode 
+	 * @param discountId 
 	 * @return 
 	 */
 	public void unAssignDiscount(String couponSetCode, Integer discountId) throws Exception

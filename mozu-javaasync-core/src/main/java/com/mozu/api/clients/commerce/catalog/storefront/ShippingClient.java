@@ -25,6 +25,51 @@ import org.apache.commons.lang.StringUtils;
 public class ShippingClient {
 	
 	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> mozuClient=GetMultiRatesClient( rateRequestGroupList);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * RatesResponseGroup ratesResponseGroup = client.Result();
+	 * </code></pre></p>
+	 * @param rateRequestGroupList 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> getMultiRatesClient(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList) throws Exception
+	{
+		return getMultiRatesClient( rateRequestGroupList,  null);
+	}
+
+	/**
+	 * 
+	 * <p><pre><code>
+	 * MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> mozuClient=GetMultiRatesClient( rateRequestGroupList,  includeRawResponse);
+	 * client.setBaseAddress(url);
+	 * client.executeRequest();
+	 * RatesResponseGroup ratesResponseGroup = client.Result();
+	 * </code></pre></p>
+	 * @param includeRawResponse 
+	 * @param rateRequestGroupList 
+	 * @return Mozu.Api.MozuClient <List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>>
+	 * @see com.mozu.api.contracts.shippingruntime.RatesResponseGroup
+	 * @see com.mozu.api.contracts.shippingruntime.RateRequestGroup
+	 */
+	public static MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> getMultiRatesClient(List<com.mozu.api.contracts.shippingruntime.RateRequestGroup> rateRequestGroupList, Boolean includeRawResponse) throws Exception
+	{
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ShippingUrl.getMultiRatesUrl(includeRawResponse);
+		String verb = "POST";
+		Class<?> clz = new ArrayList<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>(){}.getClass();
+		MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>> mozuClient = (MozuClient<List<com.mozu.api.contracts.shippingruntime.RatesResponseGroup>>) MozuClientFactory.getInstance(clz);
+		mozuClient.setVerb(verb);
+		mozuClient.setResourceUrl(url);
+		mozuClient.setBody(rateRequestGroupList);
+		return mozuClient;
+
+	}
+
+	/**
 	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
 	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest);
@@ -32,33 +77,34 @@ public class ShippingClient {
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
 	 */
 	public static MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> getRatesClient(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest) throws Exception
 	{
-		return getRatesClient( rateRequest,  null);
+		return getRatesClient( rateRequest,  null,  null);
 	}
 
 	/**
 	 * Retrieves the shipping rates applicable for the site.
 	 * <p><pre><code>
-	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest,  responseFields);
+	 * MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient=GetRatesClient( rateRequest,  includeRawResponse,  responseFields);
 	 * client.setBaseAddress(url);
 	 * client.executeRequest();
 	 * RatesResponse ratesResponse = client.Result();
 	 * </code></pre></p>
+	 * @param includeRawResponse 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param rateRequest Properties required to request a shipping rate calculation.
+	 * @param rateRequest Properties of the shipping rate request sent on behalf of the storefront website.
 	 * @return Mozu.Api.MozuClient <com.mozu.api.contracts.shippingruntime.RatesResponse>
 	 * @see com.mozu.api.contracts.shippingruntime.RatesResponse
 	 * @see com.mozu.api.contracts.shippingruntime.RateRequest
 	 */
-	public static MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> getRatesClient(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, String responseFields) throws Exception
+	public static MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> getRatesClient(com.mozu.api.contracts.shippingruntime.RateRequest rateRequest, Boolean includeRawResponse, String responseFields) throws Exception
 	{
-		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ShippingUrl.getRatesUrl(responseFields);
+		MozuUrl url = com.mozu.api.urls.commerce.catalog.storefront.ShippingUrl.getRatesUrl(includeRawResponse, responseFields);
 		String verb = "POST";
 		Class<?> clz = com.mozu.api.contracts.shippingruntime.RatesResponse.class;
 		MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse> mozuClient = (MozuClient<com.mozu.api.contracts.shippingruntime.RatesResponse>) MozuClientFactory.getInstance(clz);

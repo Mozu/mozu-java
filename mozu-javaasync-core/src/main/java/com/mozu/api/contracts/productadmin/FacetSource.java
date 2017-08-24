@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	Describes the source of the facet data. It can be a product field (such as price and category) or a product attribute. 			All fields are System-supplied and read only.		
+ *	Container for the facet source information, which includes the category, price, or attribute properties.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FacetSource implements Serializable
@@ -22,7 +22,7 @@ public class FacetSource implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300. This is only allowed for numeric and date fields. 
+	 * If true, the facet allows for values that consist of one or more ranges, such as 0-100, 100-200, and 200-300.
 	 */
 	protected  Boolean allowsRangeQuery;
 
@@ -35,7 +35,7 @@ public class FacetSource implements Serializable
 	}
 
 	/**
-	 * The data type of the source product property, typically of type Bool, DateTime, Number, or String.
+	 * The data type associated with the attribute or category that generates the facet, such as bool or string.
 	 */
 	protected  String dataType;
 
@@ -48,7 +48,7 @@ public class FacetSource implements Serializable
 	}
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Identifier of the facet source, which is attribute, category, or price. For attribute facets, the AttributeFQN.
 	 */
 	protected  String id;
 
@@ -61,7 +61,7 @@ public class FacetSource implements Serializable
 	}
 
 	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
+	 * System-supplied and read-only name of the associated facet source.
 	 */
 	protected  String name;
 
@@ -74,7 +74,7 @@ public class FacetSource implements Serializable
 	}
 
 	/**
-	 * The source type for the facet, either "Attribute" or "Element".  Elements are direct properties of the product and include category and price.
+	 * The source type for the facet, either "Attribute" or "Element". Category and price facets are elements.
 	 */
 	protected  String type;
 

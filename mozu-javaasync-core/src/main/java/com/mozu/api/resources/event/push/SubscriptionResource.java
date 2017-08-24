@@ -20,7 +20,7 @@ import com.mozu.api.security.AuthTicket;
 import org.apache.commons.lang.StringUtils;
 
 /** <summary>
- * The Subscriptions resource triggers a push service to sent immediate notifications to the subscribed tenants and applications when triggers. The resource sends messages regarding a subscription event tha occurs in the tenant or site.
+ * 
  * </summary>
  */
 public class SubscriptionResource {
@@ -37,7 +37,7 @@ public class SubscriptionResource {
 
 	
 	/**
-	 * Retrieves a list of events according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
 	 *	SubscriptionCollection subscriptionCollection = subscription.getSubscriptions();
@@ -51,7 +51,7 @@ public class SubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of events according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
 	 *	CountDownLatch latch = subscription.getSubscriptions( callback );
@@ -66,16 +66,16 @@ public class SubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of events according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
 	 *	SubscriptionCollection subscriptionCollection = subscription.getSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields);
 	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @return com.mozu.api.contracts.event.SubscriptionCollection
 	 * @see com.mozu.api.contracts.event.SubscriptionCollection
 	 */
@@ -89,16 +89,16 @@ public class SubscriptionResource {
 	}
 
 	/**
-	 * Retrieves a list of events according to any specified filter criteria and sort options.
+	 * 
 	 * <p><pre><code>
 	 *	Subscription subscription = new Subscription();
 	 *	CountDownLatch latch = subscription.getSubscriptions( startIndex,  pageSize,  sortBy,  filter,  responseFields, callback );
 	 *	latch.await()	 * </code></pre></p>
 	 * @param filter A set of expressions that consist of a field, operator, and value and represent search parameter syntax when filtering results of a query. Valid operators include equals (eq), does not equal (ne), greater than (gt), less than (lt), greater than or equal to (ge), less than or equal to (le), starts with (sw), or contains (cont). For example - "filter=IsDisplayed+eq+true"
-	 * @param pageSize When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with this parameter set to 25, to get the 51st through the 75th items, set startIndex to 50.
+	 * @param pageSize 
 	 * @param responseFields Use this field to include those fields which are not included by default.
-	 * @param sortBy The element to sort the results by and the channel in which the results appear. Either ascending (a-z) or descending (z-a) channel. Optional. Refer to [Sorting and Filtering](../../../../Developer/applications/sorting-filtering.htm) for more information.
-	 * @param startIndex When creating paged results from a query, this value indicates the zero-based offset in the complete result set where the returned entities begin. For example, with pageSize set to 25, to get the 51st through the 75th items, set this parameter to 50.
+	 * @param sortBy 
+	 * @param startIndex 
 	 * @param  callback callback handler for asynchronous operations
 	 * @return com.mozu.api.contracts.event.SubscriptionCollection
 	 * @see com.mozu.api.contracts.event.SubscriptionCollection

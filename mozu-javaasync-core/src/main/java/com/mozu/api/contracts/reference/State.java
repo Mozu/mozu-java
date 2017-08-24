@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	The state code, name, and tags, if applicable. 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The two character state code. 
-	 */
 	protected  String code;
 
 	public String getCode() {
@@ -34,9 +28,6 @@ public class State implements Serializable
 		this.code = code;
 	}
 
-	/**
-	 * The display name of the source product property. For a product field it will be the display name of the field. For a product attribute it will be the Attribute Name.
-	 */
 	protected  String name;
 
 	public String getName() {
@@ -47,9 +38,6 @@ public class State implements Serializable
 		this.name = name;
 	}
 
-	/**
-	 * Distinguishing information about a state, such as IsArmedForces or IsUSTerritory
-	 */
 	protected  String tags;
 
 	public String getTags() {

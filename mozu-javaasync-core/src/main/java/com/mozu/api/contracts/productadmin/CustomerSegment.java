@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
 /**
- *	The Customer Segment object includes properties of a defined customer segment used to group customer accounts.
+ *	Properties of a customer segment used to group sets of customers for targeted reporting and discounts.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerSegment implements Serializable
@@ -22,7 +22,7 @@ public class CustomerSegment implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
+	 * Unique identifier of the customer segment.
 	 */
 	protected  Integer id;
 

@@ -24,7 +24,7 @@ public class PaymentAction implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The name of the action to perform for the payment, fulfillment, order, or return.
+	 * The name of the payment action, such as "AuthorizeAndCapture".
 	 */
 	protected  String actionName;
 
@@ -63,7 +63,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * If applicable, the check number associated with the payment action or interaction.
+	 * If applicable, the check number associated with the payment action.
 	 */
 	protected  String checkNumber;
 
@@ -88,9 +88,6 @@ public class PaymentAction implements Serializable
 		this.currencyCode = currencyCode;
 	}
 
-	/**
-	 * An ID provided by a third party external payment service to identify a transaction.
-	 */
 	protected  String externalTransactionId;
 
 	public String getExternalTransactionId() {
@@ -102,7 +99,7 @@ public class PaymentAction implements Serializable
 	}
 
 	/**
-	 * Date and time of a payment interaction, including handling and processing a payment and validating and completing a payment with a payment gateway.
+	 * Date and time the payment gateway interaction was performed.
 	 */
 	protected  DateTime interactionDate;
 
@@ -140,9 +137,6 @@ public class PaymentAction implements Serializable
 		this.returnUrl = returnUrl;
 	}
 
-	/**
-	 * A general field for data to be communicated from an external payment service. 
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode data;
 
 	public com.fasterxml.jackson.databind.JsonNode getData() {

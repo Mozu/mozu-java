@@ -12,18 +12,12 @@ import org.joda.time.DateTime;
 import java.io.IOException;
 import java.lang.ClassNotFoundException;
 
-/**
- *	Properties of the EntityContainer within a specific tenant and site.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EntityContainer implements Serializable
 {
 	// Default Serial Version UID
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The unique identifier for the product catalog. Catalogs are part of a master catalog.
-	 */
 	protected  Integer catalogId;
 
 	public Integer getCatalogId() {
@@ -34,9 +28,6 @@ public class EntityContainer implements Serializable
 		this.catalogId = catalogId;
 	}
 
-	/**
-	 * Identifier of the user that created the object. System created and read only.
-	 */
 	protected  String createBy;
 
 	public String getCreateBy() {
@@ -47,9 +38,6 @@ public class EntityContainer implements Serializable
 		this.createBy = createBy;
 	}
 
-	/**
-	 * The date time in UTC format set when the object was created. 
-	 */
 	protected  DateTime createDate;
 
 	public DateTime getCreateDate() {
@@ -60,9 +48,6 @@ public class EntityContainer implements Serializable
 		this.createDate = createDate;
 	}
 
-	/**
-	 * Unique identifier of the source product property. For a product field it will be the name of the field. For a product attribute it will be the Attribute FQN. 
-	 */
 	protected  String id;
 
 	public String getId() {
@@ -73,9 +58,6 @@ public class EntityContainer implements Serializable
 		this.id = id;
 	}
 
-	/**
-	 * The nameSpace and name for the EntityList in the format name@nameSpace.
-	 */
 	protected  String listFullName;
 
 	public String getListFullName() {
@@ -99,9 +81,6 @@ public class EntityContainer implements Serializable
 		this.localeCode = localeCode;
 	}
 
-	/**
-	 * Unique identifier for the master catalog. 
-	 */
 	protected  Integer masterCatalogId;
 
 	public Integer getMasterCatalogId() {
@@ -112,9 +91,6 @@ public class EntityContainer implements Serializable
 		this.masterCatalogId = masterCatalogId;
 	}
 
-	/**
-	 * Unique identifier for the site. This ID is used at all levels of a store, catalog, and tenant to associate objects to a site.
-	 */
 	protected  Integer siteId;
 
 	public Integer getSiteId() {
@@ -138,9 +114,6 @@ public class EntityContainer implements Serializable
 		this.tenantId = tenantId;
 	}
 
-	/**
-	 * Identifier of the user that updated the entity most recently.
-	 */
 	protected  String updateBy;
 
 	public String getUpdateBy() {
@@ -151,9 +124,6 @@ public class EntityContainer implements Serializable
 		this.updateBy = updateBy;
 	}
 
-	/**
-	 * The date and time the object was updated most recently. The date is in UTC format.
-	 */
 	protected  DateTime updateDate;
 
 	public DateTime getUpdateDate() {
@@ -164,9 +134,6 @@ public class EntityContainer implements Serializable
 		this.updateDate = updateDate;
 	}
 
-	/**
-	 * Unique identifier of the customer account (shopper or system user). System-supplied and read-only. If the shopper user is anonymous, the user ID represents a system-generated user ID string.
-	 */
 	protected  String userId;
 
 	public String getUserId() {
@@ -177,9 +144,6 @@ public class EntityContainer implements Serializable
 		this.userId = userId;
 	}
 
-	/**
-	 * The entity in JSON format.
-	 */
 	protected transient com.fasterxml.jackson.databind.JsonNode item;
 
 	public com.fasterxml.jackson.databind.JsonNode getItem() {
