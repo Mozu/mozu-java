@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 archivesBaseName='mozu-api-javaasync'
 // Dynamically insert TeamCity build number if available
@@ -26,8 +26,9 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
+    gradleVersion = '3.2.1'
 }
+
 
 repositories {
     mavenLocal()

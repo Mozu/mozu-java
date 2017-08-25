@@ -4,7 +4,7 @@ apply plugin: 'maven'
 apply plugin: 'war'
 apply plugin: 'jetty'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 archivesBaseName='MozuSDK'
 // Manually insert the version numbers here when building outside of TeamCity
@@ -18,9 +18,11 @@ jar {
     }
 }
 
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
+    gradleVersion = '3.2.1'
 }
+
 
 repositories {
     mavenCentral()
