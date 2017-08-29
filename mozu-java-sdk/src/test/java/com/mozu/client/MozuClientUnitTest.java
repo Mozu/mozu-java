@@ -1,25 +1,5 @@
 package com.mozu.client;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
-import java.io.InputStream;
-import java.util.Map;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.RequestLine;
-import org.apache.http.StatusLine;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.message.BasicHttpEntityEnclosingRequest;
-import org.apache.http.util.EntityUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.mozu.api.ApiContext;
 import com.mozu.api.ApiException;
 import com.mozu.api.MozuConfig;
@@ -33,13 +13,36 @@ import com.mozu.api.security.AppAuthenticator;
 import com.mozu.api.security.AuthTicket;
 import com.mozu.api.security.AuthenticationProfile;
 import com.mozu.api.security.UserAuthenticator;
+import com.mozu.api.utils.MozuHttpClientPool;
+import org.apache.http.*;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.message.BasicHttpEntityEnclosingRequest;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.util.Map;
 
-import mockit.Expectations;
-import mockit.Mock;
-import mockit.MockUp;
-import mockit.Mocked;
+import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.when;
 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({AppAuthenticator.class, MozuHttpClientPool.class})
 public final class MozuClientUnitTest {
     private static final Integer TENANT_ID = new Integer(11);
     private static final Integer SITE_ID = new Integer(22);
@@ -55,24 +58,25 @@ public final class MozuClientUnitTest {
     private static final String LOCALE = "en_US";
     private static final String CURRENCY = "USD";
     
-    @Mocked ApiContext mockApiContext;
-    @Mocked MozuUrl mockResourceUrl;
-    @Mocked AppAuthenticator mockAppAuthenticator;
-    @Mocked AuthTicket mockAuthTicket;
-    @Mocked AuthenticationProfile mockAuthenticationProfile;
-    @Mocked InputStream mockInStream;
-    @Mocked CloseableHttpResponse mockHttpResponse;
-    @Mocked TenantResource mockTenantResource;
-    @Mocked Tenant mockTenant;
-    @Mocked BasicHttpEntityEnclosingRequest mockHttpRequest;
-    @Mocked CloseableHttpClient mockHttpClient;
-    @Mocked UserAuthenticator mockUserAuthenticator;
-    @Mocked StatusLine mockStatusLine;
-    @Mocked HttpEntity mockHttpEntity;
-    @Mocked InputStream mockInputStream;
-    @Mocked RequestLine mockRequestLine;
-    @Mocked CacheManager<CacheItem> mockCacheManager;
-    @Mocked Map<String, String> mockCustomHeader;
+    @Mock ApiContext mockApiContext;
+    @Mock MozuUrl mockResourceUrl;
+    @Mock AppAuthenticator mockAppAuthenticator;
+    @Mock AuthTicket mockAuthTicket;
+    @Mock AuthenticationProfile mockAuthenticationProfile;
+    @Mock InputStream mockInStream;
+    @Mock CloseableHttpResponse mockHttpResponse;
+    @Mock TenantResource mockTenantResource;
+    @Mock Tenant mockTenant;
+    @Mock BasicHttpEntityEnclosingRequest mockHttpRequest;
+    @Mock CloseableHttpClient mockHttpClient;
+    @Mock UserAuthenticator mockUserAuthenticator;
+    @Mock StatusLine mockStatusLine;
+    @Mock HttpEntity mockHttpEntity;
+    @Mock InputStream mockInputStream;
+    @Mock RequestLine mockRequestLine;
+    @Mock CacheManager<CacheItem> mockCacheManager;
+    @Mock Map<String, String> mockCustomHeader;
+    @Mock MozuHttpClientPool mockClientPool;
 
     static {
         try {
@@ -87,6 +91,7 @@ public final class MozuClientUnitTest {
 
     @Before
     public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
     }
 
     @After
@@ -96,22 +101,22 @@ public final class MozuClientUnitTest {
     @Test
     public void setContextTest() throws Exception {
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2; }
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2; }
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
+
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
            
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
-        };
+        // validateContext
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
+
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
@@ -122,32 +127,27 @@ public final class MozuClientUnitTest {
     @Test
     public void setContextEmptyUrlTest() throws Exception {
 
-        new MockUp<TenantResource>() {
-            @Mock void $init() {}
-            @Mock Tenant getTenant(Integer tenantId) throws Exception {
-                        return mockTenant;
-            }
-        };
+        TenantResource mockTenantResource =  Mockito.mock(TenantResource.class);
+        when(mockTenantResource.getTenant(TENANT_ID)).thenReturn(mockTenant);
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2; }
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2; }
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
 
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=""; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockTenant.getDomain(); result=TENANT_DOMAIN; }
-            { AppAuthenticator.isUseSSL(); result=anyBoolean; }
-        };
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+
+        // validateContext
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        BDDMockito.given(AppAuthenticator.isUseSSL()).willReturn(true);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
+        when(mockTenant.getDomain()).thenReturn(TENANT_DOMAIN);
+
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
@@ -158,28 +158,26 @@ public final class MozuClientUnitTest {
     @Test
     public void setContextBadTenantIdTest() {
 
-        new Expectations() {
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=new Integer(0); }
-        };
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockApiContext.getTenantId()).thenReturn(0);
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
-            fail("ApiException expected");
         } catch (ApiException apiException) {
-            // expected
             assertEquals("TenantId is missing", apiException.getMessage());
         } catch (Exception e) {
             fail("Context failed validation: " + e.getMessage());
@@ -189,50 +187,47 @@ public final class MozuClientUnitTest {
     @Test
     public void setContextBadResourceUrlTest() {
 
-        new Expectations() {
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
-            
-        };
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.HOME_POD);
 
         MozuConfig.setBaseUrl(BASE_URL);
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
         } catch (Exception e) {
             fail("Context failed validation " + e.getMessage());
         }
     }
-    
+
     @Test
     public void setBlankAppAuthenticatorTest() {
 
-        new Expectations() {
-        	{ mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=null; }
-           
-        };
-   
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(null);
+
+
+
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
-              
+
         try {
             mozuClient.validateContext();
             fail("ApiException expected");
@@ -243,31 +238,28 @@ public final class MozuClientUnitTest {
             fail("Context failed validation " + e.getMessage());
         }
     }
-    
+
 
     @Test
     public void setContextBlankAuthBaseUrlTest() {
 
-        new Expectations() {
-        	{ mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.HOME_POD; }
-           
-            { MozuConfig.getBaseUrl(); result=""; }
-        };
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.HOME_POD);
+
 
         MozuConfig.setBaseUrl("");
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
             fail("ApiException expected");
@@ -278,32 +270,30 @@ public final class MozuClientUnitTest {
             fail("Context failed validation " + e.getMessage());
         }
     }
-    
+
     @Test
     public void setContextBlankBasePciUrlTest() {
 
-        new Expectations() {
-        	{ mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-           
-        };
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.PCI_POD);
+
+
 
         MozuConfig.setBasePciUrl("");
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         //mozuClient.set
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
             fail("ApiException expected");
@@ -314,76 +304,73 @@ public final class MozuClientUnitTest {
             fail("Context failed validation " + e.getMessage());
         }
     }
-    
+
     @Test
-    public void setContextBasePciUrlTest() {
-    	new MockUp<TenantResource>() {
-            @Mock void $init() {}
-            @Mock Tenant getTenant(Integer tenantId) throws Exception {
-                        return mockTenant;
-            }
-        };
-    	new Expectations() {
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockTenant.getIsDevTenant(); result=false;}
-            
-        };
+    public void setContextBasePciUrlTest() throws Exception {
+        TenantResource mockTenantResource =  Mockito.mock(TenantResource.class);
+        when(mockTenantResource.getTenant(TENANT_ID)).thenReturn(mockTenant);
+
+
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
+
+
+
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        BDDMockito.given(AppAuthenticator.isUseSSL()).willReturn(false);
+
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockTenant.getDomain()).thenReturn(TENANT_DOMAIN);
+        when(mockTenant.getIsDevTenant()).thenReturn(false);
 
         MozuConfig.setBasePciUrl(BASE_PCI_URL);
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
         } catch (Exception e) {
             fail("Context failed validation " + e.getMessage());
         }
     }
-    
+
     @Test
-    public void setContextBaseDevPciUrl() {
-    	new MockUp<TenantResource>() {
-            @Mock void $init() {}
-            @Mock Tenant getTenant(Integer tenantId) throws Exception {
-                        return mockTenant;
-            }
-        };
-    	new Expectations() {
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.PCI_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockTenant.getIsDevTenant(); result=true;}
-            
-        };
+    public void setContextBaseDevPciUrl() throws Exception {
+        TenantResource mockTenantResource =  Mockito.mock(TenantResource.class);
+        when(mockTenantResource.getTenant(TENANT_ID)).thenReturn(mockTenant);
+
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+
+
+
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        BDDMockito.given(AppAuthenticator.isUseSSL()).willReturn(false);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
+        when(mockTenant.getDomain()).thenReturn(TENANT_DOMAIN);
+        when(mockTenant.getIsDevTenant()).thenReturn(true);
 
         MozuConfig.setBaseDevPciUrl(BASE_DEV_PCI_URL);
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
-        
+
         try {
             mozuClient.validateContext();
         } catch (Exception e) {
@@ -394,70 +381,53 @@ public final class MozuClientUnitTest {
 
     @Test
     public void executeRequestGetTest() throws Exception {
-        
-        new MockUp<BasicHttpEntityEnclosingRequest>() {
-            @Mock void $init(String method, String uri) {}
-            @Mock void setEntity(HttpEntity entity) {}
-            @Mock void setHeader(String name, String value) {}
-            @Mock void addHeader(String name, String value) {}
-            
-        };
-        
-        new MockUp<org.apache.commons.io.IOUtils>() {
-            @Mock String toString(InputStream inStream, String type) {
-                return "{}";
-            }
-        };
-        
-        new MockUp<EntityUtils>() {
-            @Mock void consume(HttpEntity entity) {}
-        };
+        //Mock stubs
+        PowerMockito.mockStatic(MozuHttpClientPool.class);
+        PowerMockito.mockStatic(AppAuthenticator.class);
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=null; }
-            
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
 
-            // buildRequest
-            { mockResourceUrl.getUrl(); result=TENANT_URL; }
-            { mockApiContext.getUserAuthTicket(); result=null; }
-            
-            { AppAuthenticator.addAuthHeader(); result=anyString; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            {mockRequestLine.getUri(); result="SomeString";}
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(null);
 
-            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
-            {mockApiContext.getCurrency(); result=null;}
-            {mockApiContext.getLocale(); result=null;}
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
-            {mockHttpRequest.containsHeader(anyString); result=false;}
-            
-                      
-            { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getStatusCode(); result=200; }
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getStatusCode(); result=200; }
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpResponse.close(); }
-        };
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        BDDMockito.given(AppAuthenticator.isUseSSL()).willReturn(true);
+
+        //Setup Request
+        when(mockHttpClient.execute(any(HttpHost.class), any(HttpRequest.class))).thenReturn(mockHttpResponse);
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+        when(mockStatusLine.getStatusCode()).thenReturn(200);
+        when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
+        when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
+        when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+        when(mockHttpResponse.getEntity()).thenReturn(mockHttpEntity);
+
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
+        when(mockTenant.getDomain()).thenReturn(TENANT_DOMAIN);
+        when(mockTenant.getIsDevTenant()).thenReturn(true);
+        when(mockClientPool.getHttpClient()).thenReturn(mockHttpClient);
+
+
+        BDDMockito.given(MozuHttpClientPool.getInstance()).willReturn(mockClientPool);
+
+        // buildRequest
+        when(mockResourceUrl.getUrl()).thenReturn(TENANT_URL);
+        when(mockApiContext.getUserAuthTicket()).thenReturn(null);
+
+
+        BDDMockito.given(AppAuthenticator.addAuthHeader()).willReturn("");
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockRequestLine.getUri()).thenReturn("SomeString");
+        when(mockHttpRequest.containsHeader(anyString())).thenReturn(false);
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
+
         mozuClient.setContext(mockApiContext);
         mozuClient.setResourceUrl(mockResourceUrl);
         mozuClient.setBaseAddress(BASE_URL);
@@ -469,68 +439,47 @@ public final class MozuClientUnitTest {
 
     @Test
     public void executeRequestGetExceptionTest() throws Exception {
-        
-        new MockUp<BasicHttpEntityEnclosingRequest>() {
-            @Mock void $init(String method, String uri) {}
-            @Mock void setEntity(HttpEntity entity) {}
-            @Mock void setHeader(String name, String value) {}
-            @Mock void addHeader(String name, String value) {}
-            
-        };
-        
-        new MockUp<org.apache.commons.io.IOUtils>() {
-            @Mock String toString(InputStream inStream, String type) {
-                return "{}";
-            }
-        };
-        
-        new MockUp<EntityUtils>() {
-            @Mock void consume(HttpEntity entity) {}
-        };
+        PowerMockito.mockStatic(MozuHttpClientPool.class);
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
 
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
+        //Stub client pool methods
+        BDDMockito.given(MozuHttpClientPool.getInstance()).willReturn(mockClientPool);
+        when(mockClientPool.getHttpClient()).thenReturn(mockHttpClient);
 
-            // buildRequest
-            { mockResourceUrl.getUrl(); result=TENANT_URL; }
-            { mockApiContext.getUserAuthTicket(); result=null; }
-            
-            { AppAuthenticator.addAuthHeader(); result=anyString; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            {mockRequestLine.getUri(); result="SomeString";}
+        // setContext
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
 
-            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
-            {mockApiContext.getCurrency(); result=null;}
-            {mockApiContext.getLocale(); result=null;}
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
-            {mockHttpRequest.containsHeader(anyString); result=false;}
-            
-                      
-            { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
+        //Validate Context
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
 
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getStatusCode(); result=404; }
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-            {mockRequestLine.getUri(); result="SomeString";}
-            
-            { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-            { mockHttpResponse.close(); }
-        };
+        //buildRequest
+        when(mockResourceUrl.getUrl()).thenReturn(TENANT_URL);
+        when(mockApiContext.getUserAuthTicket()).thenReturn(null);
+
+        BDDMockito.given(AppAuthenticator.addAuthHeader()).willReturn("");
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockRequestLine.getUri()).thenReturn("SomeString");
+        when(mockApiContext.getCurrency()).thenReturn(null);
+        when(mockApiContext.getLocale()).thenReturn(null);
+        when(mockHttpRequest.containsHeader(anyString())).thenReturn(false);
+
+        when(mockHttpClient.execute(any(HttpHost.class),any(HttpRequest.class))).thenReturn(mockHttpResponse);
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+        when(mockStatusLine.getStatusCode()).thenReturn(404);
+        when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
+        when(mockRequestLine.getUri()).thenReturn("SomeString");
+        when(mockHttpResponse.getEntity()).thenReturn(mockHttpEntity);
+
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
@@ -549,54 +498,43 @@ public final class MozuClientUnitTest {
 
     @Test
     public void executeRequestPostTest() throws Exception {
-        
-        new MockUp<BasicHttpEntityEnclosingRequest>() {
-            @Mock void $init(String method, String uri) {}
-            @Mock void setEntity(HttpEntity entity) {}
-            @Mock void setHeader(String name, String value) {}
-            @Mock void addHeader(String name, String value) {}
-            
-        };
+        PowerMockito.mockStatic(MozuHttpClientPool.class);
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
+        //Stub client pool methods
+        BDDMockito.given(MozuHttpClientPool.getInstance()).willReturn(mockClientPool);
+        when(mockClientPool.getHttpClient()).thenReturn(mockHttpClient);
 
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
+        //setContext
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
 
-            // buildRequest
-            { mockResourceUrl.getUrl(); result=TENANT_URL; }
-            { mockApiContext.getUserAuthTicket(); result=null; }
-            
-            { AppAuthenticator.addAuthHeader(); result=anyString; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            {mockRequestLine.getUri(); result="SomeString";}
+        //validateContext
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
 
-            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
-            {mockApiContext.getCurrency(); result=null;}
-            {mockApiContext.getLocale(); result=null;}
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
-            {mockHttpRequest.containsHeader(anyString); result=false;}
-            
-           
-            { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getStatusCode(); result=200; }
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-        };
+        // buildRequest
+        when(mockResourceUrl.getUrl()).thenReturn(TENANT_URL);
+        when(mockApiContext.getUserAuthTicket()).thenReturn(null);
+
+        BDDMockito.given(AppAuthenticator.addAuthHeader()).willReturn("");
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockRequestLine.getUri()).thenReturn("SomeString");
+
+        when(mockApiContext.getCurrency()).thenReturn(null);
+        when(mockApiContext.getLocale()).thenReturn(null);
+        when(mockHttpRequest.containsHeader(anyString())).thenReturn(false);
+        when(mockHttpClient.execute(any(HttpHost.class),any(HttpRequest.class))).thenReturn(mockHttpResponse);
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+        when(mockStatusLine.getStatusCode()).thenReturn(200);
+        when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
@@ -606,134 +544,100 @@ public final class MozuClientUnitTest {
         mozuClient.setVerb("POST");
         mozuClient.executeRequest();
     }
-    
+
    @Test
     public void executeRequestPutTest() throws Exception {
-       
-       new MockUp<BasicHttpEntityEnclosingRequest>() {
-           @Mock void $init(String method, String uri) {}
-           @Mock void setEntity(HttpEntity entity) {}
-           @Mock void setHeader(String name, String value) {}
-           @Mock void addHeader(String name, String value) {}
-           
-       };
-       
-       new MockUp<org.apache.commons.io.IOUtils>() {
-           @Mock String toString(InputStream inStream, String type) {
-               return "{}";
-           }
-       };
-       
-       new MockUp<EntityUtils>() {
-           @Mock void consume(HttpEntity entity) {}
-       };
+       PowerMockito.mockStatic(MozuHttpClientPool.class);
 
-       new Expectations() {
-           // setContext
-           { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-           { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-           { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-           { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-           { mockApiContext.getLocale(); result=LOCALE; times=2;}
-           { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-           { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-           
-           // validateContext
-           { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-           { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-           { mockApiContext.getTenantId(); result=TENANT_ID; }
-           { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
+       //Stub client pool methods
+       BDDMockito.given(MozuHttpClientPool.getInstance()).willReturn(mockClientPool);
+       when(mockClientPool.getHttpClient()).thenReturn(mockHttpClient);
 
-           // buildRequest
-           { mockResourceUrl.getUrl(); result=TENANT_URL; }
-           { mockApiContext.getUserAuthTicket(); result=null; }
-           
-           { AppAuthenticator.addAuthHeader(); result=anyString; }
-           {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-           {mockRequestLine.getUri(); result="SomeString";}
+       //setContext
+       when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+       when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+       when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+       when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+       when(mockApiContext.getLocale()).thenReturn(LOCALE);
+       when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+       when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+       when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
 
-           { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
-           {mockApiContext.getCurrency(); result=null;}
-           {mockApiContext.getLocale(); result=null;}
-           { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
-           { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
-           {mockHttpRequest.containsHeader(anyString); result=false;}
-           
-                     
-           { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
-           {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-           { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-           { mockStatusLine.getStatusCode(); result=200; }
-           {mockHttpResponse.containsHeader(anyString); result=false;}
-           {mockHttpResponse.containsHeader(anyString); result=false;}
-           { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-           { mockStatusLine.getStatusCode(); result=200; }
-           { mockHttpResponse.getEntity(); result=mockHttpEntity; }
-           { mockHttpResponse.close(); }
-       };
+       //validateContext
+       PowerMockito.mockStatic(AppAuthenticator.class);
+       BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+       when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+
+       // buildRequest
+       when(mockResourceUrl.getUrl()).thenReturn(TENANT_URL);
+       when(mockApiContext.getUserAuthTicket()).thenReturn(null);
+       BDDMockito.given(AppAuthenticator.addAuthHeader()).willReturn("");
+       when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+       when(mockRequestLine.getUri()).thenReturn("SomeString");
+
+       when(mockApiContext.getCurrency()).thenReturn(null);
+       when(mockApiContext.getLocale()).thenReturn(null);
+       when(mockHttpRequest.containsHeader(anyString())).thenReturn(false);
+
+       when(mockHttpClient.execute(any(HttpHost.class),any(HttpRequest.class))).thenReturn(mockHttpResponse);
+       when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+       when(mockStatusLine.getStatusCode()).thenReturn(200);
+       when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
+       when(mockHttpResponse.getEntity()).thenReturn(mockHttpEntity);
 
        CacheManagerFactory.setCacheManager(mockCacheManager);;
-       
+
        MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
-        mozuClient.setContext(mockApiContext);
-        mozuClient.setResourceUrl(mockResourceUrl);
-        mozuClient.setBaseAddress(BASE_URL);
-        mozuClient.setBody(BODY_STRING);
-        mozuClient.setVerb("PUT");
-        mozuClient.executeRequest();
-        mozuClient.getResult();
+
+       mozuClient.setContext(mockApiContext);
+       mozuClient.setResourceUrl(mockResourceUrl);
+       mozuClient.setBaseAddress(BASE_URL);
+       mozuClient.setBody(BODY_STRING);
+       mozuClient.setVerb("PUT");
+       mozuClient.executeRequest();
+       mozuClient.getResult();
     }
- 
+
     @Test
     public void executeRequestDeleteTest() throws Exception {
-        
-        new MockUp<BasicHttpEntityEnclosingRequest>() {
-            @Mock void $init(String method, String uri) {}
-            @Mock void setEntity(HttpEntity entity) {}
-            @Mock void setHeader(String name, String value) {}
-            @Mock void addHeader(String name, String value) {}
-            
-        };
+        PowerMockito.mockStatic(MozuHttpClientPool.class);
 
-        new Expectations() {
-            // setContext
-            { mockApiContext.getTenantId(); result=TENANT_ID; times=2; }
-            { mockApiContext.getSiteId(); result=SITE_ID; times=3; }
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=3; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=3; }
-            { mockApiContext.getLocale(); result=LOCALE; times=2;}
-            { mockApiContext.getCurrency(); result=CURRENCY; times=2;}
-            { mockApiContext.getCustomHeaders(); result=mockCustomHeader; times=2; }
-            
-            // validateContext
-            { AppAuthenticator.getInstance(); result=mockAppAuthenticator; }
-            { mockResourceUrl.getLocation(); result=MozuUrl.UrlLocation.TENANT_POD; }
-            { mockApiContext.getTenantId(); result=TENANT_ID; }
-            { mockApiContext.getTenantUrl(); result=TENANT_URL; times=2; }
+        //Stub client pool methods
+        BDDMockito.given(MozuHttpClientPool.getInstance()).willReturn(mockClientPool);
+        when(mockClientPool.getHttpClient()).thenReturn(mockHttpClient);
 
-            // buildRequest
-            { mockResourceUrl.getUrl(); result=TENANT_URL; }
-            { mockApiContext.getUserAuthTicket(); result=null; }
-            
-            { AppAuthenticator.addAuthHeader(); result=anyString; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            {mockRequestLine.getUri(); result="SomeString";}
+        //setContext
+        when(mockApiContext.getTenantId()).thenReturn(TENANT_ID);
+        when(mockApiContext.getSiteId()).thenReturn(SITE_ID);
+        when(mockApiContext.getMasterCatalogId()).thenReturn(MASTER_CATALOG_ID);
+        when(mockApiContext.getCatalogId()).thenReturn(CATALOG_ID);
+        when(mockApiContext.getLocale()).thenReturn(LOCALE);
+        when(mockApiContext.getCurrency()).thenReturn(CURRENCY);
+        when(mockApiContext.getCustomHeaders()).thenReturn(mockCustomHeader);
+        when(mockApiContext.getTenantUrl()).thenReturn(TENANT_URL);
 
-            { mockApiContext.getSiteId(); result=SITE_ID; times=2; }
-            {mockApiContext.getCurrency(); result=null;}
-            {mockApiContext.getLocale(); result=null;}
-            { mockApiContext.getMasterCatalogId(); result=MASTER_CATALOG_ID; times=2; }
-            { mockApiContext.getCatalogId(); result=CATALOG_ID; times=2; }
-            {mockHttpRequest.containsHeader(anyString); result=false;}
-            
-                       
-            { mockHttpClient.execute((HttpHost)any, (HttpRequest)any); result=mockHttpResponse; }
-            {mockHttpRequest.getRequestLine(); result=mockRequestLine;}
-            { mockHttpResponse.getStatusLine(); result=mockStatusLine; }
-            { mockStatusLine.getStatusCode(); result=200; }
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-            {mockHttpResponse.containsHeader(anyString); result=false;}
-        };
+        //validateContext
+        PowerMockito.mockStatic(AppAuthenticator.class);
+        BDDMockito.given(AppAuthenticator.getInstance()).willReturn(mockAppAuthenticator);
+        when(mockResourceUrl.getLocation()).thenReturn(MozuUrl.UrlLocation.TENANT_POD);
+        when(mockResourceUrl.getUrl()).thenReturn(TENANT_URL);
+
+        //Build Request
+        when(mockApiContext.getUserAuthTicket()).thenReturn(null);
+        BDDMockito.given(AppAuthenticator.addAuthHeader()).willReturn("");
+        when(mockHttpRequest.getRequestLine()).thenReturn(mockRequestLine);
+        when(mockRequestLine.getUri()).thenReturn("SomeString");
+
+        when(mockApiContext.getCurrency()).thenReturn(null);
+        when(mockApiContext.getLocale()).thenReturn(null);
+        when(mockHttpRequest.containsHeader(anyString())).thenReturn(false);
+
+
+        when(mockHttpClient.execute(any(HttpHost.class),any(HttpRequest.class))).thenReturn(mockHttpResponse);
+        when(mockHttpResponse.getStatusLine()).thenReturn(mockStatusLine);
+        when(mockStatusLine.getStatusCode()).thenReturn(200);
+        when(mockHttpResponse.containsHeader(anyString())).thenReturn(false);
+        when(mockHttpResponse.getEntity()).thenReturn(mockHttpEntity);
 
         MozuClientImpl<InputStream> mozuClient = new MozuClientImpl<InputStream>();
         mozuClient.setContext(mockApiContext);
